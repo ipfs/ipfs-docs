@@ -1,0 +1,3 @@
+# sorry robot friends, we're not ready for the spotlight yet
+User-agent: *
+Disallow: /
