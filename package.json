@@ -4,10 +4,8 @@
   "description": "IPFS Docs platform",
   "author": "cwaring",
   "license": "MIT",
-  "dependencies": {
-    "vuepress": "^1.2.0"
-  },
   "devDependencies": {
+    "vuepress": "^1.2.0",
     "@vuepress/plugin-back-to-top": "^1.2.0",
     "@vuepress/plugin-last-updated": "^1.2.0",
     "husky": "^3.0.9",
