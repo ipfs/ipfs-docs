@@ -2,7 +2,7 @@
 
 # IPFS Docs 2.x
 
-IPFS next gen documentation platform, build on top of [VuePress](https://github.com/vuejs/vuepress).
+IPFS next gen documentation platform, built on top of [VuePress](https://github.com/vuejs/vuepress).
 
 ## Developing this application
 
@@ -15,6 +15,7 @@ npm start
 ```
 
 #### With thanks, from your Docs WG core members:
+
 - [@cwaring](https://github.com/cwaring)
 - [@ericronne](https://github.com/ericronne)
 - [@dominguesgm](https://github.com/dominguesgm)
