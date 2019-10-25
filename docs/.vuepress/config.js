@@ -30,6 +30,7 @@ module.exports = {
               {
                 title: 'IPFS in a nutshell',
                 sidebarDepth: 1,
+                collapsable: false,
                 children: [
                   '/essentials/what-is-ipfs',
                   '/essentials/how-ipfs-works',
@@ -41,6 +42,7 @@ module.exports = {
               {
                 title: 'Content-addressed storage',
                 sidebarDepth: 1,
+                collapsable: false,
                 children: [
                   '/essentials/content-addressing',
                   '/essentials/hashing',
@@ -51,6 +53,7 @@ module.exports = {
               {
                 title: 'Peer-to-peer sharing',
                 sidebarDepth: 1,
+                collapsable: false,
                 children: [
                   '/essentials/merkle-dags',
                   '/essentials/bitswap',
@@ -63,6 +66,7 @@ module.exports = {
               {
                 title: 'Integrating with the Web',
                 sidebarDepth: 1,
+                collapsable: false,
                 children: ['/essentials/ipfs-gateway', '/essentials/dnslink']
               }
             ]
@@ -74,6 +78,7 @@ module.exports = {
               {
                 title: 'Customize your install',
                 sidebarDepth: 1,
+                collapsable: false,
                 children: [
                   '/how-tos/configure-node',
                   '/how-tos/modify-peers-list',
@@ -83,6 +88,7 @@ module.exports = {
               {
                 title: 'Manage files',
                 sidebarDepth: 1,
+                collapsable: false,
                 children: [
                   [
                     'https://github.com/ipfs/js-ipfs/tree/master/examples/ipfs-101',
@@ -105,6 +111,7 @@ module.exports = {
               {
                 title: 'Work with peers',
                 sidebarDepth: 1,
+                collapsable: false,
                 children: [
                   '/how-tos/observe-peers',
                   ['http://ipfs.io', 'Customize libp2p bundles'],
@@ -114,16 +121,19 @@ module.exports = {
               {
                 title: 'Host websites',
                 sidebarDepth: 1,
+                collapsable: false,
                 children: ['/how-tos/host-single-page-site']
               },
               {
                 title: 'Work with blockchains',
                 sidebarDepth: 1,
+                collapsable: false,
                 children: [['http://ipfs.io', 'Explore the Ethereum chain']]
               },
               {
                 title: 'Build apps',
                 sidebarDepth: 1,
+                collapsable: false,
                 children: [
                   '/how-tos/make-service',
                   ['http://ipfs.io', 'Use the IPFS API'],
@@ -133,6 +143,7 @@ module.exports = {
               {
                 title: 'IPFS in the browser',
                 sidebarDepth: 1,
+                collapsable: false,
                 children: [
                   [
                     'http://ipfs.io-addressinginbrowsers',
