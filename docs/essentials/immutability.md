@@ -1,7 +1,8 @@
 ---
 title: Immutability
+sidebarDepth: 0
 ---
 
 # Immutability
 
-Content to come.
+## Sorry, this content hasn't touched down yet.

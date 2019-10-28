@@ -1,7 +1,8 @@
 ---
 title: Usage ideas & examples
+sidebarDepth: 0
 ---
 
 # Usage ideas and examples
 
-Content to come.
+## Sorry, this content hasn't touched down yet.

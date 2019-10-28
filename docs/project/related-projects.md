@@ -4,34 +4,38 @@ title: Related Protocol Labs projects
 
 # Related projects
 
-## MFS
-
-Some explanatory text and a link out to the thing ⬈
-
-## IPNS
-
-Some explanatory text and a link out to the thing ⬈
-
 ## IPLD
 
-Some explanatory text and a link out to the thing ⬈
+Some explanatory text to come.
+
+[https://ipld.io/](https://ipld.io/)
 
 ## libp2p
 
-Some explanatory text and a link out to the thing ⬈
+Some explanatory text to come.
+
+[http://libp2p.io/](http://libp2p.io/)
 
 ## IPFS Cluster
 
-Some explanatory text and a link out to the thing ⬈
+Some explanatory text to come.
+
+[https://cluster.ipfs.io/](https://cluster.ipfs.io/)
 
 ## DNSLink
 
-Some explanatory text and a link out to the thing ⬈
+Some explanatory text to come.
+
+[http://dnslink.io/](http://dnslink.io/)
 
 ## Multiformats
 
-Some explanatory text and a link out to the thing ⬈
+Some explanatory text to come.
+
+[https://multiformats.io/](https://multiformats.io/)
 
 ## ProtoSchool
 
-Some explanatory text and a link out to the thing ⬈
+Some explanatory text to come.
+
+[https://proto.school/](https://proto.school/)
