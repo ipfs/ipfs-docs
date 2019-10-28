@@ -1,7 +1,8 @@
 ---
 title: Bitswap
+sidebarDepth: 0
 ---
 
 # Bitswap
 
-Content to come.
+## Sorry, this content hasn't touched down yet.

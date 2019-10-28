@@ -1,7 +1,10 @@
 ---
 title: History
+sidebarDepth: 0
 ---
 
 # History of the IPFS project
 
-This document should eventually live on the main ipfs.io site. Until then, let's park the "nothing here yet" content on this page.
+## Sorry, this content hasn't touched down yet.
+
+Note, however, that this document should eventually live on the main ipfs.io site.
