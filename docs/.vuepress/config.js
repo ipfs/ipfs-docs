@@ -82,7 +82,10 @@ module.exports = {
                 children: [
                   '/how-tos/configure-node',
                   '/how-tos/modify-peers-list',
-                  ['http://ipfs.io', 'Customize an IPFS repo']
+                  [
+                    'https://github.com/ipfs/js-ipfs/tree/master/examples/custom-ipfs-repo',
+                    'Customize an IPFS repo'
+                  ]
                 ]
               },
               {
@@ -100,12 +103,21 @@ module.exports = {
                   ],
                   '/how-tos/work-with-blocks',
                   '/how-tos/pin-files',
-                  ['http://ipfs.io', 'Troubleshoot file transfers'],
-                  ['http://ipfs.io', 'Traverse IPLD graphs'],
+                  [
+                    'https://github.com/ipfs/go-ipfs/blob/master/docs/file-transfer.md',
+                    'Troubleshoot file transfers'
+                  ],
+                  [
+                    'https://github.com/ipfs/js-ipfs/blob/master/examples/traverse-ipld-graphs',
+                    'Traverse IPLD graphs'
+                  ],
                   '/how-tos/take-snapshot',
                   '/how-tos/store-play-videos',
                   '/how-tos/host-git-style-repo',
-                  ['http://ipfs.io', 'Replicate large datasets']
+                  [
+                    'https://github.com/ipfs/archives/tree/master/tutorials/replicating-large-datasets',
+                    'Replicate large datasets'
+                  ]
                 ]
               },
               {
@@ -114,8 +126,14 @@ module.exports = {
                 collapsable: false,
                 children: [
                   '/how-tos/observe-peers',
-                  ['http://ipfs.io', 'Customize libp2p bundles'],
-                  ['http://ipfs.io', 'Use circuit relay']
+                  [
+                    'https://github.com/ipfs/js-ipfs/blob/master/examples/custom-libp2p',
+                    'Customize libp2p bundles'
+                  ],
+                  [
+                    'https://github.com/ipfs/js-ipfs/blob/master/examples/circuit-relaying',
+                    'Use circuit relay'
+                  ]
                 ]
               },
               {
@@ -128,7 +146,12 @@ module.exports = {
                 title: 'Work with blockchains',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: [['http://ipfs.io', 'Explore the Ethereum chain']]
+                children: [
+                  [
+                    'https://github.com/ipfs/js-ipfs/blob/master/examples/explore-ethereum-blockchain',
+                    'Explore the Ethereum chain'
+                  ]
+                ]
               },
               {
                 title: 'Build apps',
@@ -136,8 +159,14 @@ module.exports = {
                 collapsable: false,
                 children: [
                   '/how-tos/make-service',
-                  ['http://ipfs.io', 'Use the IPFS API'],
-                  ['http://ipfs.io', 'Build a basic libp2p app']
+                  [
+                    'https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_C',
+                    'Build with the IPFS API'
+                  ],
+                  [
+                    'https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_B',
+                    'Make a basic libp2p app'
+                  ]
                 ]
               },
               {
@@ -145,16 +174,31 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
+                  'how-tos/address-ipfs-on-web',
                   [
-                    'http://ipfs.io-addressinginbrowsers',
-                    'Address IPFS on the Web'
+                    'https://github.com/ipfs/js-ipfs/blob/master/examples/exchange-files-in-browser',
+                    'Exchange files between nodes'
                   ],
-                  ['http://ipfs.io', 'Exchange files between nodes'],
-                  ['http://ipfs.io', 'Use MFS in the browser'],
-                  ['http://ipfs.io', 'Add directories using streams'],
-                  ['http://ipfs.io', 'Make a pubsub room'],
-                  ['http://ipfs.io', 'Edit collaboratively with CRDT'],
-                  ['http://ipfs.io', 'Stream video'],
+                  [
+                    'https://github.com/ipfs/js-ipfs/tree/master/examples/browser-mfs',
+                    'Use MFS in the browser'
+                  ],
+                  [
+                    'https://github.com/ipfs/js-ipfs/blob/master/examples/browser-add-readable-stream',
+                    'Add directories using streams'
+                  ],
+                  [
+                    'https://www.youtube.com/watch?v=Nv_Teb--1zg',
+                    'Make a pubsub room'
+                  ],
+                  [
+                    'https://www.youtube.com/watch?v=-kdx8rJd8rQ',
+                    'Edit collaboratively with CRDT'
+                  ],
+                  [
+                    'https://github.com/ipfs/js-ipfs/blob/master/examples/browser-readablestream',
+                    'Stream video'
+                  ],
                   '/how-tos/browser-tools-frameworks'
                 ]
               }
@@ -183,22 +227,31 @@ module.exports = {
               ['https://proto.school/#/chapters', 'ProtoSchool chapters'],
               ['https://www.meetup.com/members/249142444/', 'Meetups'],
               '/support-community/social-media',
-              ['http://ipfs.io', 'Awesome IPFS']
+              ['https://awesome.ipfs.io', 'Awesome IPFS']
             ]
           },
           {
             title: 'Project',
             path: '/project/',
             children: [
-              ['http://ipfs.io', 'History'],
-              ['http://ipfs.io', 'Roadmap'],
-              ['http://ipfs.io', 'Implementation status'],
-              ['http://ipfs.io', 'Specifications'],
-              ['http://ipfs.io', 'Research'],
-              ['http://ipfs.io', 'Team org planning'],
+              'project/history',
+              [
+                'https://github.com/ipfs/ipfs/blob/master/REQUIREMENTS.md',
+                'Roadmap'
+              ],
+              [
+                'https://github.com/ipfs/ipfs/blob/master/IMPLEMENTATION_STATUS.md',
+                'Implementation status'
+              ],
+              ['https://github.com/ipfs/specs', 'Specifications'],
+              ['https://github.com/ipfs/research', 'Research'],
+              ['https://github.com/ipfs/team-mgmt', 'Team org planning'],
               '/project/related-projects',
               '/project/contribute',
-              ['http://ipfs.io', 'Code of conduct']
+              [
+                'https://github.com/ipfs/community/blob/master/code-of-conduct.md',
+                'Code of conduct'
+              ]
             ]
           }
         ]
