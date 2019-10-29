@@ -4,20 +4,16 @@ title: Content addressing
 
 # Content addressing and CIDs
 
-::: warning
-This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
-:::
-
 A _content identifier_, or CID, is a label used to point to material in IPFS. It doesn't indicate _where_ the content is stored, but it forms a kind of address based on the content itself. CIDs are short, regardless of the size of their underlying content.
 
-CIDs are based on the content’s [cryptographic hash](./hashes.md). That means:
+CIDs are based on the content’s [cryptographic hash](/essentials/hashing/). That means:
 
 - Any difference in content will produce a different CID and
 - The same piece of content added to two different IPFS nodes using the same settings will produce _exactly the same CID_.
 
 ## CID formats
 
-CIDs can take a few different forms with different encoding bases or CID versions. Many of the existing IPFS tools still generate v0 CIDs, although the `files` ([MFS](./mfs.md)) and `object` operations now use CIDv1 by default.
+CIDs can take a few different forms with different encoding bases or CID versions. Many of the existing IPFS tools still generate v0 CIDs, although the `files` ([Mutable File System](/essentials/file-systems/#mutable-file-system-mfs)) and `object` operations now use CIDv1 by default.
 
 ### Version 0
 
