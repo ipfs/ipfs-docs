@@ -4,12 +4,6 @@ title: DNSLink
 
 # DNSLink
 
-::: warning
-This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
-:::
-
-**NOTE: The info below is a quick guide to DNSLink. For a more complete guide, including tutorials, usage examples and FAQs, check out [dnslink.io](http://dnslink.io/).**
-
 ## About DNSLink
 
 DNSLink uses [DNS TXT](https://en.wikipedia.org/wiki/TXT_record) records to map
@@ -19,7 +13,7 @@ object in IPFS (remember that an IPFS object’s address changes if you modify
 the object). Because DNSLink uses DNS records, the names it produces are also
 usually easy to type and read.
 
-A DNSLink address looks like an [IPNS](/guides/concepts/ipns) address, but it
+A DNSLink address looks like an [IPNS](/essentials/ipns/) address, but it
 uses a domain name in place of a hashed public key:
 
 ```
@@ -45,19 +39,19 @@ $ dig +noall +answer TXT ipfs.io
 ipfs.io.		59	IN	TXT	"dnslink=/ipfs/QmYNQJoKGNHTpPxCBPh9KkDpaExgd2duMa3aF6ytMpHdao"
 ```
 
-Based on that, this address:
+Based on that, this address ...
 
 ```
 /ipns/ipfs.io/media/
 ```
 
-Will get you this block:
+... will get you this block:
 
 ```
 /ipfs/QmYNQJoKGNHTpPxCBPh9KkDpaExgd2duMa3aF6ytMpHdao/media/
 ```
 
-## Publishing via a Subdomain
+## Publishing via subdomain
 
 You can also publish DNSLink records using a special subdomain named `_dnslink`. This is useful when you want to improve the security of an automated setup or delegate control over your DNSLink records to a third-party without giving away full control over the original DNS zone.
 
@@ -68,3 +62,7 @@ because a TXT record exists for `_dnslink.docs.ipfs.io`:
 $ dig +noall +answer TXT _dnslink.docs.ipfs.io
 _dnslink.docs.ipfs.io.  34  IN  TXT "dnslink=/ipfs/QmeveuwF5wWBSgUXLG6p1oxF3GKkgjEnhA6AAwHUoVsx6E"
 ```
+
+## Further resources
+
+For a complete guide to DNSLink — including tutorials, usage examples and FAQs — check out [dnslink.io](http://dnslink.io/).

@@ -55,6 +55,7 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
+                  '/essentials/dht',
                   '/essentials/merkle-dags',
                   '/essentials/bitswap',
                   '/essentials/ipld',
@@ -76,6 +77,12 @@ module.exports = {
             path: '/how-tos/',
             children: [
               {
+                title: 'Quick start',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: ['/how-tos/command-line-quick-start']
+              },
+              {
                 title: 'Customize your install',
                 sidebarDepth: 1,
                 collapsable: false,
@@ -95,11 +102,11 @@ module.exports = {
                 children: [
                   [
                     'https://github.com/ipfs/js-ipfs/tree/master/examples/ipfs-101',
-                    'Spawn a node (JS)'
+                    'Use js-ipfs as a library'
                   ],
                   [
                     'https://github.com/ipfs/go-ipfs/tree/master/docs/examples/go-ipfs-as-a-library/README.md',
-                    'Spawn a node (Go)'
+                    'Use go-ipfs as a library'
                   ],
                   '/how-tos/work-with-blocks',
                   '/how-tos/pin-files',
