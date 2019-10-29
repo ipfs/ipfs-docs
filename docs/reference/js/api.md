@@ -4,6 +4,10 @@ title: js-ipfs API
 
 # API resources: js-ipfs
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 ## Working with IPFS in JS
 
 There are two main JavaScript libraries for working with IPFS. Both work in Node.js and in modern web browsers:

@@ -4,6 +4,10 @@ title: Take a snapshot
 
 # Take and store a snapshot using IPFS
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 Let's take a quick look at how IPFS can be used to take basic _snapshots_ of files — an action that enables you to access those files later in the same state as they were when you "snapshotted" them.
 
 Save your directory:

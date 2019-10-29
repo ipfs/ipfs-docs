@@ -4,6 +4,10 @@ title: What is IPFS?
 
 # What is IPFS?
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 Welcome! If you’re new to IPFS, you’ve come to the right place. Here is a quick overview of what IPFS is, how it works, and how to use it.
 
 ## IPFS is a distributed system for storing and accessing files, websites, applications, and data.

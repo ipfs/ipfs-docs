@@ -4,6 +4,10 @@ title: How IPFS works
 
 # How IPFS works
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 IPFS is a peer-to-peer (p2p) storage network. Content is accessible through peers that might relay information or store it (or do both), and those peers can be located anywhere in the world. IPFS knows how to find what you ask for by its content address, rather than where it is.
 
 ## There are three important things to understand about IPFS

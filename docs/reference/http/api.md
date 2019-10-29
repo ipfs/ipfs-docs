@@ -4,6 +4,10 @@ title: HTTP API
 
 # HTTP API dictionary
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 ## IMPORTANT! This document is truncated for some reason. See comment lines in MD at line 427; something's broken after there.
 
 <!-- TODO: Describe how to change ports and configure the API server -->

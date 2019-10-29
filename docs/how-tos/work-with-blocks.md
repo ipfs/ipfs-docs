@@ -4,6 +4,10 @@ title: Work with blocks
 
 # Work with blocks
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 The `ipfs add` command will create a Merkle DAG out of the data in the files you
 specify. It follows the [unixfs data format](https://github.com/ipfs/go-unixfs/blob/master/pb/unixfs.proto) when doing this. This means
 that your files are broken down into blocks, and then arranged in a tree-like

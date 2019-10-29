@@ -4,6 +4,10 @@ title: Pin files
 
 # Pin files using IPFS
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 Pinning is a very important concept in ipfs. ipfs semantics try
 to make it feel like every single object is local, there is no "retrieve this
 file for me from a remote server", just `ipfs cat` or `ipfs get` which act

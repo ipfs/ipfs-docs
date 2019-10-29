@@ -4,6 +4,10 @@ title: FAQ
 
 # Frequently Asked Questions
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 Content to come. Let's use H2s for topic areas, rather than individual questions, so this doesn't get too long in the left nav.
 
 ## What is IPFS?

@@ -4,6 +4,10 @@ title: Content addressing
 
 # Content addressing and CIDs
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 A _content identifier_, or CID, is a label used to point to material in IPFS. It doesn't indicate _where_ the content is stored, but it forms a kind of address based on the content itself. CIDs are short, regardless of the size of their underlying content.
 
 CIDs are based on the content’s [cryptographic hash](./hashes.md). That means:

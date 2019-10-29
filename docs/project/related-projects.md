@@ -4,6 +4,10 @@ title: Related Protocol Labs projects
 
 # Related projects
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 ## IPLD
 
 Some explanatory text to come.

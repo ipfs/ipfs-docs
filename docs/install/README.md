@@ -5,6 +5,10 @@ sidebarDepth: 0
 
 # Install IPFS
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 So you want to install IPFS. Yay! But what flavor? Here's some advice to help you.
 
 ## Dip your toes in the water: Desktop & Companion

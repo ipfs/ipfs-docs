@@ -4,6 +4,10 @@ title: Observe peers
 
 # Observe peers
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 IPFS is all about networking! Included are a useful set of commands
 to aid in observing the network.
 

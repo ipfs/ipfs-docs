@@ -4,6 +4,10 @@ title: Hashing
 
 # Cryptographic hashing
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 Hashes are functions that take some arbitrary input and return a fixed-length value. The particular value depends on the given hash algorithm in use, such as [SHA-1](https://en.wikipedia.org/wiki/SHA-1) (used by Git), [SHA-256](https://en.wikipedia.org/wiki/SHA-2), or [BLAKE2](<https://en.wikipedia.org/wiki/BLAKE_(hash_function)#BLAKE2>), but a given hash algorithm always returns the same value for a given input. Have a look at the [full list of hash functions](https://en.wikipedia.org/wiki/List_of_hash_functions) for more.
 
 As an example, the input:
