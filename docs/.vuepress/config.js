@@ -95,11 +95,11 @@ module.exports = {
                 children: [
                   [
                     'https://github.com/ipfs/js-ipfs/tree/master/examples/ipfs-101',
-                    'Spawn a node (JS)'
+                    'Use js-ipfs as a library'
                   ],
                   [
                     'https://github.com/ipfs/go-ipfs/tree/master/docs/examples/go-ipfs-as-a-library/README.md',
-                    'Spawn a node (Go)'
+                    'Use go-ipfs as a library'
                   ],
                   '/how-tos/work-with-blocks',
                   '/how-tos/pin-files',
