@@ -4,6 +4,10 @@ title: Contribute to IPFS
 
 # Contribute to IPFS
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 So you want to contribute to IPFS and the ecosystem? Here is a quick listing
 of things we need help with and how you can get started. Even if what you want
 to do is not listed here, we probably accept contributions for it! If you're

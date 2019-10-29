@@ -4,6 +4,10 @@ title: Make a service
 
 # Make your own IPFS service
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 ## NOTE: This needs to be reworked before launch.
 
 IPFS has a few default services that it runs by default, such as the dht,

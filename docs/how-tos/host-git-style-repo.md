@@ -4,6 +4,10 @@ title: Host a Git-style repo
 
 # Host a Git-style repo on IPFS
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 Have you ever said to yourself: "Man, my git server isn't distributed enough" or
 "I wish I had an easy way to serve a static git repository worldwide". Well wish
 no more, I have the solution for you!

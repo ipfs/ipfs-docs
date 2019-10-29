@@ -4,6 +4,10 @@ title: Store & play videos
 
 # Store and play videos using IPFS
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 IPFS can be used to store and play videos. Suppose we add a video:
 
 ```

@@ -4,6 +4,10 @@ title: Configure a node
 
 # Configure an IPFS node
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 IPFS is configured through a json formatted text file, located by default at
 `~/.ipfs/config`.
 

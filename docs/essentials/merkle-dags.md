@@ -4,6 +4,10 @@ title: Merkle DAGs
 
 # Merkle Distributed Acyclic Graphs (DAGs)
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 A _Direct Acyclic Graph_ (DAG)is a type of graph in which edges have direction and cycles are not allowed. For example, a linked list like _A→B→C_ is an instance of a DAG where _A_ references _B_ and so on. We say that _B_ is _a child_ or _a descendant of A_, and that _node A has a link to B_. Conversely _A_ is a _parent of B_. We call nodes that are not children to any other node in the DAG _root nodes_.
 
 A Merkle-DAG is a DAG where each node has an identifier and this is the result of hashing the node’s contents — any opaque payload carried by the node and the list of identifiers of its children — using a cryptographic hash function like SHA256. This brings some important considerations:

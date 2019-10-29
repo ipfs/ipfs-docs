@@ -4,6 +4,10 @@ title: DNSLink
 
 # DNSLink
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 **NOTE: The info below is a quick guide to DNSLink. For a more complete guide, including tutorials, usage examples and FAQs, check out [dnslink.io](http://dnslink.io/).**
 
 ## About DNSLink

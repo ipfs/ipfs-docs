@@ -2,7 +2,11 @@
 title: IPFS Documentation
 ---
 
-### ALERT! Links in this page are broken; they're ported straight from legacy docs.
+# IPFS documentation
+
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
 
 Welcome to the IPFS documentation portal! Whether you’re just learning about IPFS or are looking for detailed reference information, this is the place to start. You might have noticed that IPFS is a project with a big scope — and a _lot_ of different tools, sites, and code.
 

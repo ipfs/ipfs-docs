@@ -4,6 +4,10 @@ title: CLI commands
 
 # Command-line interface (CLI) commands
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 <!-- TODO: Remove index since it's handled by the TOC in the menu? -->
 <!-- TODO: Structure this around command groups (dag, object, files, etc.) -->
 

@@ -4,6 +4,10 @@ title: Host a single-page site
 
 # Host a single-page website
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 **Note:** [@agentofuser](https://github.com/agentofuser/)'s "Complete Beginner's Guide to Deploying Your First Static Website to IPFS" (see the [writeup](https://interplanetarygatsby.com/ipfs-deploy/) and [repo](https://github.com/agentofuser/ipfs-deploy)) is another useful resource for learning more about hosting your site on IPFS.
 
 ### Create your site

@@ -4,6 +4,10 @@ title: IRC
 
 # IPFS on Internet Relay Chat (IRC)
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 There are several IRC channels on Freenode dedicated to IPFS, and it’s a great place for live chat:
 
 ## Channels

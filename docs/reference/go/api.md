@@ -4,6 +4,10 @@ title: go-ipfs API
 
 # API resources: go-ipfs
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 ## Working with go-IPFS
 
 `go-ipfs` is the primary reference implementation of IPFS. It is a command-line application, but can also be used as a library in other Go programs.

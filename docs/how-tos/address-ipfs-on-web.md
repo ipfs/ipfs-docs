@@ -4,6 +4,10 @@ title: Address IPFS on the Web
 
 # Address IPFS on the Web
 
+::: warning
+This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+:::
+
 <!--
 Based on the existing spec at:
 https://github.com/ipfs/in-web-browsers/blob/2896b7a642011bc92493971232b146e04c9a889c/ADDRESSING.md
