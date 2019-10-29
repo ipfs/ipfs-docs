@@ -77,6 +77,12 @@ module.exports = {
             path: '/how-tos/',
             children: [
               {
+                title: 'Quick start',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: ['/how-tos/command-line-quick-start']
+              },
+              {
                 title: 'Customize your install',
                 sidebarDepth: 1,
                 collapsable: false,
