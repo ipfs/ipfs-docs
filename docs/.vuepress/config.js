@@ -55,6 +55,7 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
+                  '/essentials/dht',
                   '/essentials/merkle-dags',
                   '/essentials/bitswap',
                   '/essentials/ipld',
