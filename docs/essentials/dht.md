@@ -22,7 +22,9 @@ DHTs' decentralization provides advantages compared to a traditional key-value s
 - _fault tolerance_ via redundancy, so that lookups are possible even if peers unexpectedly leave or join the DHT. Additionally, requests can be addressed to any peer if another peer is slow or unavailable.
 - _load balancing_, since requests are made to different nodes and no unique peers process all the requests.
 
-## How does the IPFS DHT work?
+## DHTs on IPFS
+
+Now that we know what DHTs are, let's take a look specifically at how DHTs work on IPFS.
 
 ### Peer IDs
 
