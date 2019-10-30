@@ -9,6 +9,12 @@ module.exports = {
       description: 'IPFS Documentation'
     }
   },
+  markdown: {
+    extendMarkdown: md => {
+      md.set({ breaks: true })
+      md.use(require('markdown-it-video'))
+    }
+  },
   themeConfig: {
     logo: '/images/ipfs-logo.svg',
     smoothScroll: true,

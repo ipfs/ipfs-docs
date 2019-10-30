@@ -21,7 +21,7 @@ MFS is accessed through the [`files`](/reference/api/cli/#ipfs-files) commands i
 
 This video also provides a good overview of MFS:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FX_AXNDsZ9k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+@[youtube](FX_AXNDsZ9k)
 
 ## UnixFS
 
