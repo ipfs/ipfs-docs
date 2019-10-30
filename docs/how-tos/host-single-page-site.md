@@ -117,13 +117,17 @@ you plan to use, you can find it using the command like:
 $ nslookup gateway.ipfs.io
 ```
 
-And noting the IPv4 addresses returned. You should create an A record for each address.
+1. Note the IP addresses returned.
+1. Create an A record for each IPv4 address (e.g. `209.94.90.1` for ipfs.io).
+1. Create an AAAA record for each IPv6 address (e.g. use `2602:fea2:2::1` for ipfs.io).
+
+Note: The ipfs.io gateway IP addresses won't change, so you can set them and forget them. If you use a custom gateway where you don't control the IP address and they could change you may need to re-check them periodically and update your DNS records if they do.
 
 Visitors' browsers will send `your.domain` in the Host header of their requests.
 The ipfs gateway will recognize `your.domain`, look up the value of the DNS TXT for your domain,
 then serve the files in `/ipns/your.domain/` instead of `/`.
 
-If you point `your.domain`'s A record to the IPv4 addreses of `gateway.ipfs.io`, and
+If you point `your.domain`'s A and AAAA record to the IP addreses of `gateway.ipfs.io`, and
 then wait for the DNS to propagate, then anyone should be able to access your
 ipfs-hosted site without any extra configuration at `http://your.domain`.
 
