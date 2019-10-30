@@ -94,7 +94,7 @@ You can explore other objects in the repository. In particular, the `quick-start
 ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/quick-start
 ```
 
-## Taking your Node Online
+## Take your node online
 
 Once you're ready to join your node to the public network, run the ipfs daemon in another terminal and wait for all three lines below to appear to know that your node is ready:
 
@@ -156,7 +156,7 @@ I <3 IPFS -<your username>
 
 By default, your gateway is not exposed to the world, it only works locally.
 
-## Web Console
+## Web console
 
 We also have a web console you can use to check the state of your node.
 In your favorite web browser, open:
@@ -167,7 +167,7 @@ This should bring up a console like this:
 
 ![Web console connection view](https://docs.ipfs.io/introduction/assets/webui-connection.png)
 
-## Companion Browser Extension
+## IPFS Companion
 
 While we are at it, [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion) is a
 browser extension that simplifies access to IPFS resources and adds support for
