@@ -24,6 +24,25 @@
   .sidebar-group.is-sub-group > .sidebar-heading:not(.clickable)
     opacity: 1
     font-weight: bold
+    text-transform: uppercase
+    font-size: .875em
+    line-height: 2em
 
   .icon.outbound
     padding-left: 0.2rem
+
+// sidebar scrollbar style
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+    position: fixed;
+    right: 0;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: transparent;
+    transition: background-color 2s;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,.sidebar:hover::-webkit-scrollbar-thumb {
+    background: $borderColor
+}
