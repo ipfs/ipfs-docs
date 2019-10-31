@@ -6,9 +6,9 @@ title: The IPFS project
 
 Curious about how it all got started, or where we're headed? Learn about the history, current state, and future trajectory of the IPFS project here.
 
-## History of the IPFS project
+## History of IPFS
 
-Want to know how it all began? Learn the [history of IPFS](/project/history/).
+Want to know how it all began? Learn the [history of the IPFS project](/project/history/).
 
 ## Roadmap
 

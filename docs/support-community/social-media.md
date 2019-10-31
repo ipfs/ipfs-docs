@@ -7,7 +7,7 @@ sidebarDepth: 0
 
 IPFS is everywhere on the internet — and that includes social media. Find your favorite flavor here.
 
-### YouTube
+## YouTube
 
 The [IPFS YouTube channel](https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqqsew) is home to a wealth of information about the IPFS project — everything from IPFS Camp course content to video tutorials to working group meeting archives — so you can explore playlists and subscribe to ones that interest and inform you.
 
