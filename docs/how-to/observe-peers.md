@@ -2,14 +2,9 @@
 title: Observe peers
 ---
 
-# Observe peers
+# Observe peers on the network
 
-::: warning
-This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
-:::
-
-IPFS is all about networking! Included are a useful set of commands
-to aid in observing the network.
+Included in IPFS are a useful set of commands to aid in observing the network.
 
 See who you're directly connected to:
 
@@ -29,4 +24,4 @@ Search for a given peer on the network:
 ipfs dht findpeer QmSoLnSGccFuZQJzRadHn95W2CrSFmZuTdDWP8HXaHca9z
 ```
 
-By [whyrusleeping](http://github.com/whyrusleeping)
+_By [whyrusleeping](http://github.com/whyrusleeping)_

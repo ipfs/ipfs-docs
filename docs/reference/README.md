@@ -4,8 +4,22 @@ title: API & CLI
 
 # API & CLI reference
 
-::: warning
-This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
-:::
+Looking for developer references for IPFS? Find them here.
 
-You get to this main page when you click on the highest-level nav. What goes here?
+We're currently investigating improved ways to present our API and CLI reference materials. Have ideas you'd like to share with us? Please [leave a comment](https://github.com/ipfs/docs/issues/339) to let us know!
+
+## Go (go-ipfs)
+
+[API resources for go-ipfs](/reference/go/api/) (the reference implementation of IPFS), including the Go CoreAPI, the Go embedded client, and the experimental Go CoreAPI implementation using HTTP API.
+
+## JavaScript (js-ipfs)
+
+[API resources for js-ipfs](/reference/js/api/), including the JS core API reference and the JS HTTP client library.
+
+## HTTP
+
+The [HTTP API reference](http/api) for IPFS — control your node using the same commands you can from the command line!
+
+## CLI commands
+
+Working in the terminal? Here's where you'll find the IPFS [command-line interface (CLI) reference](/reference/cli/).

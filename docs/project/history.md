@@ -7,4 +7,4 @@ sidebarDepth: 0
 
 ## This content is still preparing for liftoff.
 
-Note, however, that this document should eventually live on the main ipfs.io site.
+Note, however, that this document should eventually live on the main ipfs.io site. Make sure this links elegantly to the original IPFS whitepaper.
