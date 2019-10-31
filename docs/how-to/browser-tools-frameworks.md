@@ -16,7 +16,7 @@ Want to learn how to use IPFS in combination with your favorite framework or bro
 
 ## Vue
 
-A [minimal demonstration](https://github.com/ipfs/js-ipfs/blob/master/examples/browser-vue) of how to use js-ipfs with Vue.
+[Minimal demonstration](https://github.com/ipfs/js-ipfs/blob/master/examples/browser-vue) of how to use js-ipfs with Vue.
 
 ## Webpack
 
@@ -24,8 +24,8 @@ A [minimal demonstration](https://github.com/ipfs/js-ipfs/blob/master/examples/b
 
 ## With a `<script>` tag
 
-A [minimal example](https://github.com/ipfs/js-ipfs/blob/master/examples/browser-script-tag) of how to use IPFS in your in-browser JavaScript code with just a `<script>` tag.
+[Minimal example](https://github.com/ipfs/js-ipfs/blob/master/examples/browser-script-tag) of how to use IPFS in your in-browser JavaScript code with just a `<script>` tag.
 
 ## Electron
 
-A [minimal example](https://github.com/ipfs/js-ipfs/blob/master/examples/run-in-electron) of how to use js-ipfs in your Electron app.
+[Minimal example](https://github.com/ipfs/js-ipfs/blob/master/examples/run-in-electron) of how to use js-ipfs in your Electron app.

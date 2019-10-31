@@ -18,7 +18,7 @@ We're currently investigating improved ways to present our API and CLI reference
 
 ## HTTP
 
-The [HTTP API reference](http/api) for IPFS — control your node using the same commands you can from the command line!
+[HTTP API reference](http/api) for IPFS — control your node using the same commands you can from the command line!
 
 ## CLI commands
 
