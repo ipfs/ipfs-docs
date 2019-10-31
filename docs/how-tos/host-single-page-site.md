@@ -4,17 +4,15 @@ title: Host a single-page site
 
 # Host a single-page website
 
-::: warning
-This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
+::: tip
+You may also wish to see the "Complete Beginner's Guide to Deploying Your First Static Website to IPFS" (see the [writeup](https://interplanetarygatsby.com/ipfs-deploy/) and [repo](https://github.com/agentofuser/ipfs-deploy)) created by [@agentofuser](https://github.com/agentofuser/) — another useful resource for learning more about hosting your site on IPFS.
 :::
 
-**Note:** [@agentofuser](https://github.com/agentofuser/)'s "Complete Beginner's Guide to Deploying Your First Static Website to IPFS" (see the [writeup](https://interplanetarygatsby.com/ipfs-deploy/) and [repo](https://github.com/agentofuser/ipfs-deploy)) is another useful resource for learning more about hosting your site on IPFS.
-
-### Create your site
+## Create your site
 
 Assume you have a static website in a directory `mysite`.
 
-In order to publish it as a site, [install ipfs](https://docs.ipfs.io/guides/guides/install/) and make sure your ipfs daemon is running:
+In order to publish it as a site, [install IPFS](/install/) and make sure your IPFS daemon is running:
 
 ```bash
 $ ipfs daemon
@@ -44,12 +42,12 @@ where you added the site's file.
 
 Those hashes are difficult to remember. Let's look at some ways to get rid of them.
 
-### Using a DNS TXT record as a shortcut
+## DNS TXT records as shortcuts
 
 Assume you have the domain name `your.domain` and can access your registrar's
 control panel to manage DNS entries for it.
 
-Create a DNS TXT record ([DNSLink](https://docs.ipfs.io/guides/concepts/dnslink/)), with the key `your.domain.` and the value
+Create a DNS TXT record ([DNSLink](/essentials/dnslink/)), with the key `your.domain.` and the value
 `dnslink=/ipfs/$SITE_CID` where `$SITE_CID` is the value from the section above.
 
 Once you've created that record, and it has propagated you should be able to find it.
@@ -63,22 +61,22 @@ Now you can view your site at `http://localhost:8080/ipns/your.domain`.
 
 You can also try this on the gateway at `http://gateway.ipfs.io/ipns/your.domain`.
 
-More questions about DNSLink? Check out the website for tutorials, examples, and FAQ: http://dnslink.io/
+More questions about DNSLink? Check out the [DNSLink website](http://dnslink.io/) for tutorials, examples, and FAQs.
 
-### Using the Interplanetary Naming System
+## Use IPNS
 
 Each time you change your website, you will have to republish it, update the DNS TXT
 record with the new value of `$SITE_CID` and wait for it to propagate.
 
-You can get around that limitation by using IPNS, the [InterPlanetary Naming System](https://docs.ipfs.io/guides/concepts/ipns/).
+You can get around that limitation by using IPNS, the [InterPlanetary Naming System](/essentials/ipns/).
 
 You might have noticed `/ipns/` instead of `/ipfs/` in the updated links in the previous
 section.
 
-The IPNS is used for mutable content in the ipfs network. It's relatively easy to use,
+The IPNS is used for mutable content in the IPFS network. It's relatively easy to use,
 and will allow you to change your website without updating the dns record every time.
 
-To enable the IPNS for your content run the following command where `$SITE_CID` is the
+To enable the IPNS for your content, run the following command, where `$SITE_CID` is the
 hash value from the first step.
 
 ```bash
@@ -100,7 +98,7 @@ and `http://gateway.ipfs.io/ipns/your.domain`.
 resolved hashes while the update propagates. This may result in outdated URLs
 or missing assets until the update has completely propagated.
 
-### Pointing your.domain to IPFS
+## Point your.domain to IPFS
 
 You now have a website on ipfs/ipns, but your visitors can't access it at
 `http://your.domain`.
@@ -127,7 +125,7 @@ If you point `your.domain`'s A record to the IPv4 addreses of `gateway.ipfs.io`,
 then wait for the DNS to propagate, then anyone should be able to access your
 ipfs-hosted site without any extra configuration at `http://your.domain`.
 
-### Using CNAMES
+## Use CNAMEs
 
 Alternatively, it is possible to use CNAME records to point at the DNS records
 of the gateway. This way, IP addresses of the gateway are automatically
@@ -140,7 +138,7 @@ So by creating a CNAME for `your.domain` to `gateway.ipfs.io` and adding a
 `_dnslink.your.domain` record with `dnslink=/ipns/<your peer id>` you can host
 your website without explicitly referring to IP addresses of the ipfs gateway.
 
-Happy Hacking!
+Happy hacking!
 
 By
 [Whyrusleeping](https://github.com/whyrusleeping) and
