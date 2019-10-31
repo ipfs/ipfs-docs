@@ -4,23 +4,15 @@ title: Command-line quick start
 
 # Command-line quick start
 
-::: warning
-This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
-:::
-
 ## Install IPFS
 
-If you haven’t done so already, your first step is to **install IPFS**! Most people prefer to install a prebuilt package, which you can do on the [IPFS distributions page](https://dist.ipfs.io/#go-ipfs) by clicking “Install go-ipfs” (our reference implementation written in Go) and then following the instructions for [installing from a prebuilt package](../install/#installing-from-a-prebuilt-package).
+If you haven’t done so already, your first step is to **install IPFS**! Most people prefer to install a prebuilt package, which you can do on the [IPFS distributions page](https://dist.ipfs.io/#go-ipfs) by clicking “Install go-ipfs” (our reference implementation written in Go) and then following the instructions for [installing from a prebuilt package](/install/).
 
-<a class="button button-primary" href="https://dist.ipfs.io/#go-ipfs" role="button">
-  Download IPFS for your platform &nbsp;&nbsp;<i class="fa fa-download" aria-hidden="true"></i>
-</a>
+::: tip
+Don’t want to use the command line right now? Give the desktop-app implementation of IPFS a try. <a href="https://github.com/ipfs-shipyard/ipfs-desktop">Get started with IPFS Desktop here <i class="fas fa-external-link-square-alt fa-sm"></i></a>
+:::
 
-<aside class="alert alert-info">
-  Don’t want to use the command line right now? You can give the desktop-app implementation of IPFS a go! <a href="https://github.com/ipfs-shipyard/ipfs-desktop">Get started with IPFS Desktop here <i class="fas fa-external-link-square-alt fa-sm"></i></a>
-</aside>
-
-For more install options, such as building from source, and toubleshooting tips, visit our [install guide]{guides/guides/install.md). If you have any questions or get stuck, feel free to ask for help in [the Help section of the IPFS forums](https://discuss.ipfs.io/c/help) or in [#ipfs on chat.freenode.net](irc://chat.freenode.net/%23ipfs).
+For more install options, such as building from source, and toubleshooting tips, visit our [install guide](/install). If you have any questions or get stuck, feel free to ask for help in [the Help section of the IPFS forums](https://discuss.ipfs.io/c/help) or in [#ipfs on chat.freenode.net](irc://chat.freenode.net/%23ipfs).
 
 ## Initialize the repository
 
@@ -173,15 +165,11 @@ While we are at it, [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-compa
 browser extension that simplifies access to IPFS resources and adds support for
 the IPFS protocol.
 
-<div class="alert alert-info">
-It will automatically redirect IPFS gateway requests to
-your local daemon so that you are not relying on, or trusting, remote gateways.
-</div>
+It will automatically redirect IPFS gateway requests to your local daemon so that you are not relying on, or trusting, remote gateways.
 
-It runs in Firefox (Desktop and Android)
-and various Chromium-based browsers such as Google Chrome or Brave.
-Check [its features](https://github.com/ipfs-shipyard/ipfs-companion#features) and [**install it**](https://github.com/ipfs-shipyard/ipfs-companion#install) today!
+It runs in Firefox (desktop and Android) and various Chromium-based browsers such as Google Chrome or [Brave](https://brave.com).
+[Check out its features](https://github.com/ipfs-shipyard/ipfs-companion#features) and install it today!
 
-| [Firefox](https://www.mozilla.org/firefox/new/) / [Firefox for Android](https://play.google.com/store/apps/details?id=org.mozilla.firefox)                       | [Chrome](https://www.google.com/chrome/) / [Brave](https://brave.com/)                                                                                                                   |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [![Install From Firefox Add-ons](https://docs.ipfs.io/introduction/assets/get-the-firefox-add-on.png)](https://addons.mozilla.org/firefox/addon/ipfs-companion/) | [![Install from Chrome Store](https://docs.ipfs.io/introduction/assets/chrome-web-store.png)](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch) |
+- [Direct download](https://github.com/ipfs-shipyard/ipfs-companion#install)
+- [Install from Firefox Add-ons](https://addons.mozilla.org/firefox/addon/ipfs-companion/)
+- [Install from Chrome Store](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch)
