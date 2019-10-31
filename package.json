@@ -9,12 +9,13 @@
     "@vuepress/plugin-back-to-top": "^1.2.0",
     "@vuepress/plugin-last-updated": "^1.2.0",
     "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
     "markdown-it-deflist": "^2.0.3",
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-task-lists": "^2.1.1",
     "markdown-it-video": "^0.6.3",
     "prettier": "^1.18.2",
-    "pretty-quick": "^2.0.0",
+    "stylus-supremacy": "^2.14.0",
     "vuepress": "^1.2.0",
     "vuepress-plugin-clean-urls": "^1.0.3"
   },
@@ -31,14 +32,25 @@
     "trailingComma": "none",
     "useTabs": false
   },
+  "lint-staged": {
+    "*.{js,json,css,less,scss,html,md,vue}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.styl": [
+      "stylus-supremacy format --replace",
+      "git add"
+    ]
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "lint-staged"
     }
   },
   "scripts": {
     "start": "npm run docs:dev",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "format:styles": "stylus-supremacy format ./docs/.vuepress/**/*.styl --replace",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   }
