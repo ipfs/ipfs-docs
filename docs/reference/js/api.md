@@ -2,7 +2,7 @@
 title: js-ipfs API
 ---
 
-# API resources: js-ipfs
+# API resources for js-ipfs
 
 ## Working with IPFS in JS
 
