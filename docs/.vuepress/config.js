@@ -65,7 +65,7 @@ module.exports = {
                 collapsable: false,
                 children: [
                   '/essentials/dht',
-                  '/essentials/merkle-dags',
+                  '/essentials/merkle-dag',
                   '/essentials/bitswap',
                   '/essentials/ipld',
                   '/essentials/ipns',
@@ -83,21 +83,21 @@ module.exports = {
           },
           {
             title: 'How-tos',
-            path: '/how-tos/',
+            path: '/how-to/',
             children: [
               {
                 title: 'Quick start',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/how-tos/command-line-quick-start']
+                children: ['/how-to/command-line-quick-start']
               },
               {
                 title: 'Customize your install',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/how-tos/configure-node',
-                  '/how-tos/modify-peers-list',
+                  '/how-to/configure-node',
+                  '/how-to/modify-bootstrap-list',
                   [
                     'https://github.com/ipfs/js-ipfs/tree/master/examples/custom-ipfs-repo',
                     'Customize an IPFS repo'
@@ -117,8 +117,8 @@ module.exports = {
                     'https://github.com/ipfs/go-ipfs/tree/master/docs/examples/go-ipfs-as-a-library/README.md',
                     'Use go-ipfs as a library'
                   ],
-                  '/how-tos/work-with-blocks',
-                  '/how-tos/pin-files',
+                  '/how-to/work-with-blocks',
+                  '/how-to/pin-files',
                   [
                     'https://github.com/ipfs/go-ipfs/blob/master/docs/file-transfer.md',
                     'Troubleshoot file transfers'
@@ -127,9 +127,9 @@ module.exports = {
                     'https://github.com/ipfs/js-ipfs/blob/master/examples/traverse-ipld-graphs',
                     'Traverse IPLD graphs'
                   ],
-                  '/how-tos/take-snapshot',
-                  '/how-tos/store-play-videos',
-                  '/how-tos/host-git-style-repo',
+                  '/how-to/take-snapshot',
+                  '/how-to/store-play-videos',
+                  '/how-to/host-git-style-repo',
                   [
                     'https://github.com/ipfs/archives/tree/master/tutorials/replicating-large-datasets',
                     'Replicate large datasets'
@@ -141,7 +141,7 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/how-tos/observe-peers',
+                  '/how-to/observe-peers',
                   [
                     'https://github.com/ipfs/js-ipfs/blob/master/examples/custom-libp2p',
                     'Customize libp2p bundles'
@@ -156,7 +156,7 @@ module.exports = {
                 title: 'Host websites',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/how-tos/host-single-page-site']
+                children: ['/how-to/host-single-page-site']
               },
               {
                 title: 'Work with blockchains',
@@ -174,7 +174,7 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/how-tos/make-service',
+                  '/how-to/make-service',
                   [
                     'https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_C',
                     'Build with the IPFS API'
@@ -190,7 +190,7 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  'how-tos/address-ipfs-on-web',
+                  'how-to/address-ipfs-on-web',
                   [
                     'https://github.com/ipfs/js-ipfs/blob/master/examples/exchange-files-in-browser',
                     'Exchange files between nodes'
@@ -215,7 +215,7 @@ module.exports = {
                     'https://github.com/ipfs/js-ipfs/blob/master/examples/browser-readablestream',
                     'Stream video'
                   ],
-                  '/how-tos/browser-tools-frameworks'
+                  '/how-to/browser-tools-frameworks'
                 ]
               }
             ]
@@ -224,8 +224,8 @@ module.exports = {
             title: 'API & CLI',
             path: '/reference/',
             children: [
-              '/reference/js/api',
               '/reference/go/api',
+              '/reference/js/api',
               '/reference/http/api',
               '/reference/cli'
             ]

@@ -22,7 +22,7 @@ To learn more, see the [“what is IPFS?”](/essentials/what-is-ipfs) guide.
 
 The quickest way to get IPFS up and running on your machine is by installing [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop), the easy-to-use app that enables you to run an IPFS node on your computer without having to bother with terminal commands.
 
-For installing and initializing IPFS from the command line, check out the [command-line quick start](/how-tos/command-line-quick-start/) guide.
+For installing and initializing IPFS from the command line, check out the [command-line quick start](/how-to/command-line-quick-start/) guide.
 
 ## Contributing to IPFS
 

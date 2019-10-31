@@ -4,15 +4,11 @@ title: Support & community
 
 # Support & community
 
-::: warning
-This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
-:::
-
-You get to this main page when you click on the highest-level nav. What goes here? Probably a summary of its constituent items, since this section contains a lot of external links.
+IPFS is home to a vibrant, diverse community of thousands of contributors and participants from all over the globe! Here's how to get help, support, or just hang out with other folks who are helping to build the distributed web.
 
 ## IPFS forums
 
-Some explanatory text and a link out to the thing ⬈
+The official [IPFS forums](https://discuss.ipfs.io/) are the primary home of IPFS-related discussion. Join the conversation on [https://discuss.ipfs.io/](https://discuss.ipfs.io/) for everything from technical questions, project brainstorming, talk on IPFS use cases and more.
 
 ## IRC
 
@@ -20,15 +16,15 @@ IRC fan? Here are [all our channels](irc). New to IRC? There's getting-started a
 
 ## Community video calls
 
-Some explanatory text and a link out to the thing ⬈
+As an open-source project, most IPFS planning and synchronous discussion happens in open community video calls. Check the [IPFS community calendar](https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com) for all recurring and one-off public calls, and join in the conversation!
 
 ## ProtoSchool chapters
 
-Some explanatory text and a link out to the thing ⬈
+ProtoSchool isn't just home to interactive tutorials on dweb topics — it's also a vibrant community of makers and do-ers around the globe! [ProtoSchool chapters](https://proto.school/#/chapters) worldwide host events regularly, offering you the opportunity to complete our interactive tutorials with the support of local mentors.
 
 ## Meetups
 
-Some explanatory text and a link out to the thing ⬈
+IPFS meetups are also all over the world. [Find one close to you](https://www.meetup.com/members/249142444/) ... or [contact IPFS Community on Meetup.com](https://secure.meetup.com/messages/?new_convo=true&member_id=249142444&name=IPFS+Community) to start your own in your area!
 
 ## Social media
 
@@ -36,4 +32,4 @@ We're in a lot of places. Here's [how to find them all](social-media) for your f
 
 ## Awesome IPFS
 
-Some explanatory text explaining they're community projects and a link out to the thing ⬈
+Get inspired by [Awesome IPFS](https://awesome.ipfs.io/), a catalog of community-built projects using IPFS for everything from image sharing to decentralized archiving. Have a project of your own to add to Awesome IPFS? Make a PR [in the repo!](https://github.com/ipfs/awesome-ipfs)

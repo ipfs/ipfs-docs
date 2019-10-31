@@ -5,4 +5,4 @@ sidebarDepth: 0
 
 # The InterPlanetary Linked Data (IPLD) Data Model
 
-## Sorry, this content hasn't touched down yet.
+## This content is still preparing for liftoff.

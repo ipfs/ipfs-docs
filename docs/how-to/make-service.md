@@ -4,19 +4,9 @@ title: Make a service
 
 # Make your own IPFS service
 
-::: warning
-This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
-:::
+IPFS has a few default services that it runs by default, such as the dht, bitswap, and the diagnostics service. Each of these simply registers a handler on the IPFS PeerHost, and listens on it for new connections. The `corenet` package has a very clean interface to this functionality. So let's try building an easy demo service to try this out!
 
-## NOTE: This needs to be reworked before launch.
-
-IPFS has a few default services that it runs by default, such as the dht,
-bitswap, and the diagnostics service. Each of these simply registers a
-handler on the IPFS PeerHost, and listens on it for new connections. The
-`corenet` package has a very clean interface to this functionality. So lets
-try building an easy demo service to try this out!
-
-Lets start by building the service host:
+Let's start by building the service host:
 
 ```
 package main
@@ -32,10 +22,9 @@ import (
 )
 ```
 
-We don't need too many imports for this.
-Now, the only other thing we need is our main function:
+We don't need too many imports for this. Now, the only other thing we need is our main function:
 
-Set up an ipfsnode.
+Set up an IPFS node.
 
 ```
 func main() {
@@ -60,8 +49,7 @@ func main() {
 	}
 ```
 
-That's just the basic template of code to initiate a default ipfsnode from
-the config in the users `~/.ipfs` directory.
+That's just the basic template of code to initiate a default IPFS node from the config in the user's `~/.ipfs` directory.
 
 Next, we are going to build our service.
 
@@ -88,10 +76,7 @@ Next, we are going to build our service.
 }
 ```
 
-And thats really all you need to write a service on top of IPFS. When a client
-connects, we send them our greeting, print their peer ID to our log, and close
-the session. This is the simplest possible service, and you can really write
-anything you want to handle the connection.
+And that's really all you need to write a service on top of IPFS. When a client connects, we send them our greeting, print their peer ID to our log, and close the session. This is the simplest possible service, and you can really write anything you want to handle the connection.
 
 Now we need a client to connect to us:
 
@@ -153,9 +138,7 @@ func main() {
 }
 ```
 
-This client will set up their IPFS node (note: this is moderately expensive and
-you normally wont just spin up an instance for a single connection) and dial the
-service we just created.
+This client will set up their IPFS node (note: this is moderately expensive and you normally wont just spin up an instance for a single connection) and dial the service we just created.
 
 To try it out, run the following on one computer:
 
@@ -164,7 +147,7 @@ $ ipfs init # if you havent already
 $ go run host.go
 ```
 
-That should print out that peers ID, copy it and use it on a second machine:
+That should print out that peer's ID, copy it and use it on a second machine:
 
 ```
 $ ipfs init # if you havent already
@@ -173,11 +156,10 @@ $ go run client.go <peerID>
 
 It should print out `Hello! This is whyrusleepings awesome ipfs service`
 
-Now, you might be asking yourself: "Why would I use this? How is it better than
-the `net` package?". Well, here are the advantages:
+Now, you might be asking yourself: "Why would I use this? How is it better than the `net` package?". Here are the advantages:
 
 1. You dial a specific peerID, no matter what their IP address happens to be at the moment.
 2. You take advantage of the NAT traversal built into our net package.
 3. Instead of a 'port' number, you get a much more meaningful protocol ID string.
 
-By [whyrusleeping](http://github.com/whyrusleeping)
+_By [whyrusleeping](http://github.com/whyrusleeping)_

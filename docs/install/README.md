@@ -5,201 +5,52 @@ sidebarDepth: 0
 
 # Install IPFS
 
-::: warning
-This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
-:::
+We're glad you're interested in giving IPFS a try! There are a lot of different ways to install and use IPFS — the best way to find the right one for you is to first consider what you want to accomplish or try out with IPFS. Take a look at the guide below to find the flavor of IPFS that's best for your needs.
 
-So you want to install IPFS. Yay! But what flavor? Here's some advice to help you.
+_Just looking for instructions for installing straight from the command line? Follow our [quick-start guide](/how-to/command-line-quick-start)._
 
-## Dip your toes in the water: Desktop & Companion
+## Dip your toes in decentralized waters
 
-Just want to try things out? Companion, maybe Desktop
+Are you new to the decentralized web in general, or to IPFS in particular? Just want to get a feel for the technology before you dig any deeper? Try the IPFS Companion browser extension.
 
-## Host and share files on your own: Desktop & Companion
+### Install IPFS Companion
 
-New to IPFS? Install Desktop and/or Companion
+IPFS Companion is a browser extension that enables you to request and use content delivered via IPFS just like any other content in your browser. [Learn more about IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion), or just try it out in your favorite browser:
 
-## Host and share files at scale: Cluster
+- [Firefox](https://addons.mozilla.org/firefox/addon/ipfs-companion/) (desktop and Android)
+- [Chrome](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch)
+- [Brave](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch)
+- [Opera](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch)
+- [Edge](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch)
 
-Want to run IPFS for/with others? Install Cluster
+## Host and share files on your own
 
-## Integrate IPFS into your app: go-ipfs & js-ipfs
+Want to go a step further than the IPFS browser extension? Try the IPFS desktop app.
 
-Want to integrate IPFS in your app? Install go & js, with comparison
+### Install IPFS Desktop
 
-## Original legacy docs install guide — these items will need to be incorporated somewhere
+IPFS Desktop enables you to host and share files directly from your computer with an easy-to-use interface — no programming required. And when you're ready to dig deeper, it also includes the same tool set you get if you'd installed directly from the commnand line. [Learn more about IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop), or just download it for your OS and give it a spin:
 
-There are a variety of ways to install a copy of IPFS on your system. We generally recommend [installing a prebuilt package](#installing-from-a-prebuilt-package), but here are a few other supported options:
+- [macOS](https://github.com/ipfs-shipyard/ipfs-desktop/releases/download/v0.9.7/ipfs-desktop-0.9.7.dmg)
+- [Windows](https://github.com/ipfs-shipyard/ipfs-desktop/releases/download/v0.9.7/ipfs-desktop-setup-0.9.7.exe)
+- [Linux](https://github.com/ipfs-shipyard/ipfs-desktop/releases/download/v0.9.7/ipfs-desktop-0.9.7-linux-x86_64.AppImage)
 
-- [Installing from a Prebuilt Package](#installing-from-a-prebuilt-package) (recommended)
-- [Installing with ipfs-update](#installing-with-ipfs-update)
-- [Building from source](#building-from-source)
-- [Upgrading IPFS](#upgrading-ipfs)
-- [Troubleshooting](#troubleshooting)
+## Host and share files at scale
 
-Note these instructions all make use of the **command line.** We use `$` to indicate the command prompt — commands to type are on lines that are prefixed with that, while output lines are un-prefixed.
+If you're interested in running IPFS for or with others, particularly at scale, IPFS Cluster is for you.
 
----
+### Install IPFS Cluster
 
-## Installing from a Prebuilt Package
+IPFS Cluster enables you to coordinate and orchestrate data across a "swarm" of multiple IPFS nodes, making it possible to distribute large data sets and "pin" data across peers to ensure redundancy and availability. It's useful for data sharing in academic and archival institutions or anyone engaged in a big-data endeavor. [Install IPFS Cluster now](https://cluster.ipfs.io/)
 
-First, download the right version of IPFS for your platform:
+## Integrate IPFS into your app
 
-<a class="button button-primary" href="https://dist.ipfs.io/#go-ipfs" role="button">
-  Download IPFS for your platform &nbsp;&nbsp;<i class="fa fa-download" aria-hidden="true"></i>
-</a>
+Want to enhance your app with IPFS superpowers? Install the Go or JavaScript implementations of IPFS and get building.
 
-### macOS and Linux
+### Install go-ipfs
 
-After downloading, untar the archive, and move the `ipfs` binary somewhere in your executables `$PATH` using the `install.sh` script:
+Go developers, this reference implementation of IPFS is for you. [Install go-ipfs now](https://dist.ipfs.io/#go-ipfs)
 
-```sh
-$ tar xvfz go-ipfs.tar.gz
-$ cd go-ipfs
-$ ./install.sh
-```
+### Install js-ipfs
 
-Test it out:
-
-```sh
-$ ipfs help
-USAGE:
-
-    ipfs - Global p2p merkle-dag filesystem.
-...
-```
-
-Congratulations! You now have a working IPFS installation on your computer.
-
-### Windows
-
-After downloading, unzip the archive, and move `ipfs.exe` somewhere in your `%PATH%`.
-
-Test it out:
-
-```sh
-$ ipfs help
-USAGE:
-
-    ipfs - Global p2p merkle-dag filesystem.
-...
-```
-
-Congratulations! You now have a working IPFS installation on your computer.
-
----
-
-## Installing with ipfs-update
-
-`ipfs-update` is a command-line tool to install and upgrade the `ipfs` binary.
-
-### Getting ipfs-update
-
-`ipfs-update` can be downloaded for your platform at: https://dist.ipfs.io/#ipfs-update
-
-If you have a working Go environment (>=1.12), you can also install it with:
-
-```
-$ go get -u github.com/ipfs/ipfs-update
-```
-
-When installing new versions of `ipfs` or upgrading make sure you are using the latest version of `ipfs-update`.
-
-### Installing ipfs with ipfs-update
-
-`ipfs-update versions` lists all the available `ipfs` versions which are available for download:
-
-```
-$ ipfs-update versions
-v0.3.2
-[...]
-v0.4.20
-v0.4.21
-```
-
-`ipfs-update install latest` will install the latest available version:
-
-```
-$ ipfs-update install latest
-fetching go-ipfs version v0.4.21
-binary downloaded, verifying...
-success!
-stashing old binary
-installing new binary to /home/hector/go/bin/ipfs
-checking if repo migration is needed...
-Installation complete!
-```
-
-Note that the latest available version may not be stable (i.e. release candidates
-in the form `vX.X.X-rcX`). So it is recommended to specify the version you want
-to install, for example: `ipfs-update install v0.4.21`.
-
----
-
-## Building from Source
-
-If you want, you can also build IPFS from source.
-If you are on macOS or Linux, take a look at [the readme](https://github.com/ipfs/go-ipfs#build-from-source) for install instructions.
-If you are on Windows, take a look at [this document](https://github.com/ipfs/go-ipfs/blob/master/docs/windows.md) for instructions.
-
----
-
-## Upgrading IPFS
-
-`ipfs` upgrades (and downgrades) may involve a repository upgrade process performed by the
-[fs-repo-migrations](https://dist.ipfs.io/#fs-repo-migrations) tool.
-
-### Upgrading using ipfs-update
-
-`ipfs-update install` will download and run `fs-repo-migrations` when needed, during the installation of
-a newer or older `ipfs` version (as explained above). This is the easiest way of upgrading.
-
-<div class="message mb">
-  <strong>Warning:</strong> Make sure that the ipfs daemon is not running during an upgrade
-</div>
-
-### Upgrading manually
-
-In order to perform a manual upgrade of `ipfs`, you will need to manually run any repository migrations. The
-procedure is as follows:
-
-- Stop the `ipfs` daemon if it is running
-- Optionally backup your `ipfs` data folder (i.e. `cp -aL ~/.ipfs ~/.ipfs.bk`)
-- Download and install the latest version of `ipfs` from [https://dist.ipfs.io/#go-ipfs](https://dist.ipfs.io/#go-ipfs)
-- Run `ipfs daemon`.
-
-When a repository migration is necessary, `ipfs` will inform the user, download and install `fs-repo-migrations`
-and perform the upgrade. If you wish the procedure to happen unattended, launch the daemon with the `--migrate`
-flag.
-
-Migrations can be also run manually by downloading the latest version of `fs-repo-migrations`
-from [https://dist.ipfs.io/#fs-repo-migrations](https://dist.ipfs.io/#fs-repo-migrations) and
-[following these instructions](https://github.com/ipfs/fs-repo-migrations/blob/master/run.md).
-
----
-
-## Troubleshooting
-
-### Help!
-
-If you have any problems, come get live help at
-[#ipfs](/#community) or via [the mailing list](/#community).
-
-### Check Go Version
-
-IPFS works with Go 1.12.0 or later.
-To check what go version you have installed, type `go version`.
-Here's what I get:
-
-```sh
-$ go version
-go version go1.12.2 linux/amd64
-```
-
-If you need to update, it is recommended to install from the
-[canonical Go packages](https://golang.org/doc/install).
-Package managers often contain out-of-date Go packages.
-
-### Install FUSE
-
-For more details on setting up FUSE (so that you can mount the filesystem), see [github.com/ipfs/go-ipfs/blob/master/docs/fuse.md](https://github.com/ipfs/go-ipfs/blob/master/docs/fuse.md)
+Building for the browser, or for JavaScript-driven frameworks like Electron? Bake in IPFS goodness with the JS implementation. [Install js-ipfs now](https://www.npmjs.com/package/ipfs)

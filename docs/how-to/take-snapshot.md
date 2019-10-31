@@ -4,10 +4,6 @@ title: Take a snapshot
 
 # Take and store a snapshot using IPFS
 
-::: warning
-This draft content ported from the legacy docs site may contain broken links and other errors. (Please remove this alert once content has been reviewed.)
-:::
-
 Let's take a quick look at how IPFS can be used to take basic _snapshots_ of files — an action that enables you to access those files later in the same state as they were when you "snapshotted" them.
 
 Save your directory:
@@ -28,8 +24,7 @@ Or all at once:
 $ echo `ipfs add -q -r ~/code/myproject | tail -n1` `date` >> snapshots
 ```
 
-(Note: the `-q` makes the output only contain the hashes, and piping through
-`tail -n1` ensures that only the hash of the top folder is output.)
+(Note: the `-q` makes the output only contain the hashes, and piping through `tail -n1` ensures that only the hash of the top folder is output.)
 
 Make sure to have the placeholders for the mount points:
 
@@ -52,7 +47,6 @@ $ cd /ipfs/$hash/
 $ ls
 ```
 
-Through the FUSE interface, you'll be able to access your files exactly as
-they were when you took the snapshot.
+Through the FUSE interface, you'll be able to access your files exactly as they were when you took the snapshot.
 
-By [whyrusleeping](http://github.com/whyrusleeping)
+_By [whyrusleeping](http://github.com/whyrusleeping)_
