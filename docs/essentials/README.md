@@ -6,6 +6,14 @@ title: Essentials
 
 New to IPFS or the distributed web? Here's where to get started on understanding the key ingredients in what makes IPFS work. Because IPFS is a system that hopes to change how we use the Internet, it comes with many new concepts! This section aims to get you up to speed quickly.
 
+## Video overviews
+
+Want the basics, in theater mode? Check out these Core Courses from IPFS Camp 2019 for an overview of how IPFS works with files and the overall data lifecycle in dweb.
+
+@[youtube](fLUq0RkiTBA)
+
+@[youtube](Z5zNPwMDYGg)
+
 ## IPFS in a nutshell
 
 Get the basic concepts of IPFS in one place, including:
