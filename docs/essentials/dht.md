@@ -4,6 +4,10 @@ title: Distributed Hash Tables (DHTs)
 
 # Distributed Hash Tables (DHTs)
 
+::: tip
+If you're interested in how DHTs fit into the overall lifecycle of data in IPFS, check out this video from IPFS Camp 2019! [Core Course: The Lifecycle of Data in Dweb](https://www.youtube.com/watch?v=fLUq0RkiTBA)
+:::
+
 ## What is a DHT?
 
 [Distributed Hash Tables](https://en.wikipedia.org/wiki/Distributed_hash_table) (DHTs) are distributed key-value stores where keys are [cryptographic hashes](/essentials/hashing).

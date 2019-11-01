@@ -11,6 +11,10 @@ Working with files in IPFS can be a little different than you're used to for sev
 
 MFS and UnixFS can help you address these new ways of thinking of files.
 
+::: tip
+If you're interested in how MFS and UnixFS play into how IPFS works with files in general, check out this video from IPFS Camp 2019! [Core Course: How IPFS Deals With Files](https://www.youtube.com/watch?v=Z5zNPwMDYGg)
+:::
+
 ## Mutable File System (MFS)
 
 Because files in IPFS are content-addressed and immutable, they can be complicated to edit. Mutable File System (MFS) is a tool built into IPFS that lets you treat files like you would a normal name-based filesystem — you can add, remove, move, and edit MFS files and have all the work of updating links and hashes taken care of for you.
