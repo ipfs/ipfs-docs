@@ -19,16 +19,30 @@ module.exports = {
     }
   },
   themeConfig: {
+    // edit links
+    repo: 'ipfs/ipfs-docs-v2',
+    docsDir: 'docs',
+    docsBranch: 'master',
+    editLinks: true,
+    // page nav
+    nextLinks: false,
+    prevLinks: false,
+    // ui/ux
     logo: '/images/ipfs-logo.svg',
     smoothScroll: true,
-    editLinks: true,
     locales: {
       '/': {
         label: 'English',
         selectText: 'Languages',
         ariaLabel: 'Select language',
-        editLinkText: 'Edit this page on GitHub',
+        editLinkText: 'Help us improve this page on GitHub',
         lastUpdated: 'Last Updated',
+        serviceWorker: {
+          updatePopup: {
+            message: 'New content is available.',
+            buttonText: 'Refresh'
+          }
+        },
         nav: require('./nav/en'),
         sidebar: [
           '/install/',
