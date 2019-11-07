@@ -21,8 +21,8 @@ module.exports = {
       md.use(require('markdown-it-footnote'))
       md.use(require('markdown-it-task-lists'))
       md.use(require('markdown-it-deflist')),
-      md.use(require('markdown-it-imsize')),
-      md.use(require('markdown-it-image-lazy-loading'))
+        md.use(require('markdown-it-imsize')),
+        md.use(require('markdown-it-image-lazy-loading'))
     }
   },
   themeConfig: {
@@ -374,6 +374,14 @@ module.exports = {
   },
   plugins: [
     '@vuepress/plugin-back-to-top',
+    [
+      '@vuepress/pwa',
+      {
+        serviceWorker: true,
+        updatePopup: true,
+        popupComponent: 'DocsSWUpdatePopup'
+      }
+    ],
     [
       '@vuepress/google-analytics',
       {
