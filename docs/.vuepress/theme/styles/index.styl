@@ -1,11 +1,9 @@
+@import 'util';
+@import 'layout-center';
 @import 'sidebar';
 @import 'video';
 
 #app {
-	.theme-container {
-		max-width: 1080px;
-	}
-
 	.navbar .logo {
 		margin-right: 0.5rem;
 	}
@@ -28,4 +26,12 @@
 			}
 		}
 	}
+}
+
+:root {
+	--accent-color: $accentColor;
+	--text-color: $textColor;
+	--border-color: $borderColor;
+	--code-bg-color: $codeBgColor;
+	--highlight-color: $highlightColor;
 }

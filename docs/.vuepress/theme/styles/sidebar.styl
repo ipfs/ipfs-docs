@@ -1,7 +1,12 @@
-// custom sidebar overrides
-#app {
-	.sidebar-group a.sidebar-link {
-		padding-left: 1.25rem;
+li > a.sidebar-link {
+	padding-left: 1.25rem;
+	color: $sidebarTextColor;
+	font-weight: 500;
+}
+
+.sidebar {
+	.sidebar-heading {
+		font-weight: 700 !important;
 	}
 
 	.sidebar-group .arrow {
@@ -10,14 +15,19 @@
 
 	.sidebar-group.is-sub-group a.sidebar-link {
 		padding-left: 0.25rem;
+		margin-bottom: 0.2rem;
 	}
 
 	.sidebar-group.is-sub-group > .sidebar-group-items {
-		padding-left: 1.25rem;
+		padding-left: 1.25rem !important;
 	}
 
 	.sidebar-group.is-sub-group {
 		margin-bottom: 0.5rem;
+	}
+
+	.sidebar-group .sidebar-sub-headers {
+		padding-left: 0.5rem;
 	}
 
 	.sidebar-links.sidebar-group-items li:last-child .sidebar-group.is-sub-group {
@@ -25,20 +35,22 @@
 	}
 
 	.sidebar-group.is-sub-group > .sidebar-heading {
-		padding-left: 1.25rem;
+		padding-left: 1.25rem !important;
 	}
 
 	.sidebar-group.is-sub-group > .sidebar-heading:not(.clickable) {
 		opacity: 1;
 		font-weight: bold;
 		text-transform: uppercase;
-		font-size: 0.875em;
+		font-size: 0.8rem;
+		letter-spacing: 0.025em;
 		line-height: 2em;
+		color: lighten($sidebarTextColor, 50%);
 	}
+}
 
-	.icon.outbound {
-		padding-left: 0.2rem;
-	}
+.icon.outbound {
+	padding-left: 0.2rem;
 }
 
 // sidebar scrollbar style

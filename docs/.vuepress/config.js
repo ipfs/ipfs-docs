@@ -21,6 +21,7 @@ module.exports = {
   themeConfig: {
     // edit links
     repo: 'ipfs/ipfs-docs-v2',
+    docsRepo: 'ipfs/ipfs-docs-v2',
     docsDir: 'docs',
     docsBranch: 'master',
     editLinks: true,
