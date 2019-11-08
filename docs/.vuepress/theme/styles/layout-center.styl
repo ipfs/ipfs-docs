@@ -1,0 +1,34 @@
+// draft center layout
+.theme-container, .navbar {
+	@extend .max-w-screen-xl;
+	@extend .mx-auto;
+	@extend .relative;
+}
+
+@media (min-width: $MQNarrow) {
+	.sidebar {
+		position: fixed;
+		left: inherit;
+		border-right: none;
+	}
+
+	.navbar {
+		position: sticky;
+	}
+
+	.search-box input {
+		width: 20em;
+	}
+
+	footer.page-edit {
+		margin: inherit;
+	}
+}
+
+.theme-default-content:not(.custom) {
+	margin: inherit;
+
+	& > h1 {
+		padding-top: 1em;
+	}
+}
