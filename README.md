@@ -21,4 +21,4 @@ npm start
 - [@dominguesgm](https://github.com/dominguesgm)
 - [@jessicaschilling](https://github.com/jessicaschilling)
 - [@terichadbourne](https://github.com/terichadbourne)
-- [@mohnjatthews](https://github.com/mohnjatthews)
+- [@johnnymatthews](https://github.com/johnnymatthews)
