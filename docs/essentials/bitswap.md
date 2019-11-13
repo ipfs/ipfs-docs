@@ -1,8 +1,11 @@
 ---
 title: Bitswap
 sidebarDepth: 0
+status: 2
 ---
 
 # Bitswap
 
-> This content is still preparing for liftoff. In the meantime, check out [this video from IPFS Camp 2019](https://www.youtube.com/watch?v=fLUq0RkiTBA) on how Bitswap fits into the overall lifecycle of data in IPFS!
+<ContentStatus />
+
+In the meantime, check out [this video from IPFS Camp 2019](https://www.youtube.com/watch?v=fLUq0RkiTBA) on how Bitswap fits into the overall lifecycle of data in IPFS!
