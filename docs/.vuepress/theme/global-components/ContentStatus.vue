@@ -5,6 +5,7 @@
         <h3>{{ title }}</h3>
         <div class="content-status-status">
           <img src="../assets/status.png" />
+          {{ status }}
         </div>
       </div>
       <div class="illustration col-6">
