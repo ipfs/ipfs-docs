@@ -1,5 +1,5 @@
 ---
-title: Install IPFS ✨
+title: Install IPFS
 sidebarDepth: 0
 ---
 
