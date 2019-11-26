@@ -2,7 +2,7 @@
 title: Content addressing
 ---
 
-# Content addressing and CIDs
+# Content Addressing and CIDs
 
 ::: tip
 If you're interested in how content addressing fits into how IPFS works with files in general, check out this video from IPFS Camp 2019! [Core Course: How IPFS Deals With Files](https://www.youtube.com/watch?v=Z5zNPwMDYGg)
@@ -15,17 +15,17 @@ CIDs are based on the content’s [cryptographic hash](/essentials/hashing/). Th
 - Any difference in content will produce a different CID and
 - The same piece of content added to two different IPFS nodes using the same settings will produce _exactly the same CID_.
 
-## CID formats
+## Identifier Formats
 
 CIDs can take a few different forms with different encoding bases or CID versions. Many of the existing IPFS tools still generate v0 CIDs, although the `files` ([Mutable File System](/essentials/file-systems/#mutable-file-system-mfs)) and `object` operations now use CIDv1 by default.
 
-### Version 0
+### Version 0 (v0)
 
 When IPFS was first designed, we used base 58-encoded multihashes as the content identifiers (This is simpler, but much less flexible than newer CIDs). CIDv0 is still used by default for many IPFS operations, so you should generally try to support v0.
 
 If a CID is 46 characters starting with "Qm", it's a CIDv0 (for more details, check the [decoding algorithm](https://github.com/ipld/cid/blob/ef1b2002394b15b1e6c26c30545fd485f2c4c138/README.md#decoding-algorithm) in the CID specification).
 
-### Version 1
+### Version 1 (v1)
 
 CID v1 contains some leading identifiers that clarify exactly which representation is used, along with the content-hash itself. These include:
 
