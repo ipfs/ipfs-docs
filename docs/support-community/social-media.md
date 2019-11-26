@@ -3,7 +3,7 @@ title: Social media
 sidebarDepth: 0
 ---
 
-# IPFS on social media
+# Social media
 
 IPFS is everywhere on the internet — and that includes social media. Find your favorite flavor here.
 
