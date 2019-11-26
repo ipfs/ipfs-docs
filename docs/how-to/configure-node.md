@@ -2,7 +2,7 @@
 title: Configure a node
 ---
 
-# Configure an IPFS node
+# Configure a node
 
 IPFS is configured through a json formatted text file, located by default at `~/.ipfs/config`.
 
@@ -10,7 +10,7 @@ IPFS is configured through a json formatted text file, located by default at `~/
 
 The config file stores a few different address types, all of which use the multiaddr addressing format. Lets go over what each address type means.
 
-```
+```json
 "Addresses": {
     "Swarm": [
       "/ip4/0.0.0.0/tcp/4001"
@@ -39,5 +39,3 @@ The mounts config values specifies the default mount points for the IPFS and ipn
 ## Bootstrap
 
 The Bootstrap config array specifies the list of IPFS peers that your daemon will connect to on startup. The default values for this are the 'ipfs solarnet' nodes, which are a set of VPS servers distributed around the country.
-
-_By [whyrusleeping](http://github.com/whyrusleeping)_
