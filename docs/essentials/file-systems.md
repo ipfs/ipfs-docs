@@ -27,7 +27,7 @@ This video also provides a good overview of MFS:
 
 @[youtube](FX_AXNDsZ9k)
 
-## UnixFS
+## Unix File System (UnixFS)
 
 A file in IPFS isn’t just content. It might be too big to fit in a single block, so it needs metadata to link all its blocks together. It might be a symlink or a directory, so it needs metadata to link to other files. UnixFS is the data format used to represent files and all their links and metadata in IPFS, and is loosely based on how files work in Unix. When you add a _file_ to IPFS, you are creating a block (or a tree of blocks) in the UnixFS format.
 
