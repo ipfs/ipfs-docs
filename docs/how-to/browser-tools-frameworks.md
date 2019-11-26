@@ -1,8 +1,8 @@
 ---
-title: Use browser tools & frameworks
+title: Browser Tools and Frameworks
 ---
 
-# Using browser implementation tools and frameworks
+# Browser Tools and Frameworks
 
 Want to learn how to use IPFS in combination with your favorite framework or browser implementation tool? See below for some common examples, including hints and boilerplate code. Don't see your framework or tool of choice here? Let us know by [filing an issue](https://github.com/ipfs/docs/issues/new?assignees=&labels=OKR+3%3A+Content+Improvement%2C+docs-ipfs&template=content-request.md&title=%5BCONTENT+REQUEST%5D+%20Browser%20Implementation%20Tools%20and%20Frameworks) in the IPFS docs GitHub repo.
 

@@ -12,9 +12,9 @@ Don’t want to use the command line right now? Give the desktop-app implementat
 
 ## Install IPFS
 
-You can install IPFS via a variety of methods — it's simplest to install from a prebuilt package, but feel free to take your pick from the options below.
+You can install IPFS via a variety of methods — it's simplest to install from a [prebuilt package](#prebuilt-package), but you can also install it through the [command-line](#command-line), or by [building everything from source](#building-from-source)
 
-### Installing from a prebuilt package
+### Prebuilt package
 
 First, [download IPFS for your platform](https://dist.ipfs.io/#go-ipfs).
 
@@ -38,7 +38,7 @@ USAGE:
 ...
 ```
 
-### Installing from the command line
+### Command line
 
 If you want to install from the command line, use `ipfs-update`. That way, you can install the IPFS binary now and upgrade it whenever you wish.
 
@@ -84,11 +84,15 @@ If you want, you can also build IPFS from source. For more detailed instructions
 ::: tip
 **Already have IPFS installed, but need to upgrade?** Note that upgrades (and downgrades) may involve a repository upgrade process performed by the [fs-repo-migrations](https://dist.ipfs.io/#fs-repo-migrations) tool.
 
-#### Upgrading using ipfs-update
+#### Updade IPFS
+
+You can upate IPFS using the [built-in tool](#ipfs-update), or by editing the files [manually](#upgrade-manually).
+
+#### IPFS-Update
 
 `ipfs-update install` will download and run `fs-repo-migrations` when needed, during the installation of a newer or older `ipfs` version (as explained above). This is the easiest way of upgrading, but it's **important** to make sure that the IPFS daemon is not running during an upgrade.
 
-#### Upgrading manually
+#### Upgrade manually
 
 To upgrade manually, you will also need to manually run any repository migrations as follows:
 
