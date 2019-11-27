@@ -84,7 +84,7 @@ Return to your registrar's control panel, change the DNS TXT record with the key
 
 **Note:** When using IPNS to update websites, assets may be loaded from two different resolved hashes while the update propagates. This may result in outdated URLs or missing assets until the update has completely propagated.
 
-## Point Your Domain to IPFS
+## Point your domain to IPFS
 
 You now have a website on ipfs/ipns, but your visitors can't access it at `http://your.domain`.
 
