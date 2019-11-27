@@ -2,7 +2,7 @@
 title: Content addressing
 ---
 
-# Content Addressing and CIDs
+# Content addressing and CIDs
 
 ::: tip
 If you're interested in how content addressing fits into how IPFS works with files in general, check out this video from IPFS Camp 2019! [Core Course: How IPFS Deals With Files](https://www.youtube.com/watch?v=Z5zNPwMDYGg)
