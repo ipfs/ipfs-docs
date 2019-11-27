@@ -2,7 +2,7 @@
 title: IRC
 ---
 
-# IRC
+# Internet Relay Chat (IRC)
 
 If IRC is your go-to for discussions and help on dev topics, there are several IRC channels on Freenode dedicated to IPFS, and it’s a great place for live chat:
 
