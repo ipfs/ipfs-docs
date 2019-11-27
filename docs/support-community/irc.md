@@ -13,7 +13,7 @@ If IRC is your go-to for discussions and help on dev topics, there are several I
 
 For longer-lived discussions and for support, please use the discussion forums at [https://discuss.ipfs.io](https://discuss.ipfs.io) instead of IRC! It’s easy for complex discussions to get lost in a sea of new messages on IRC, and posting longer discussions and support requests on the forums helps future visitors, too.
 
-## New to IRC
+## Getting started with IRC
 
 If you’re new to IRC, there are _lots_ of mobile and desktop clients for working with it. Here are a few to get you started:
 
