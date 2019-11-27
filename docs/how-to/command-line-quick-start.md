@@ -84,7 +84,7 @@ If you want, you can also build IPFS from source. For more detailed instructions
 ::: tip
 **Already have IPFS installed, but need to upgrade?** Note that upgrades (and downgrades) may involve a repository upgrade process performed by the [fs-repo-migrations](https://dist.ipfs.io/#fs-repo-migrations) tool.
 
-#### Updade IPFS
+#### Update/upgrade IPFS
 
 You can upate IPFS using the [built-in tool](#ipfs-update), or by editing the files [manually](#upgrade-manually).
 
