@@ -57,7 +57,7 @@ The higher m is, the harder it is to find peers that have the same ID up to m bi
 "Close" here is defined as the XOR distance, so the longer the prefix they share, the closer they are.
 Lists also have a maximum of entries (k) — otherwise the first lists would contain half the network, then a fourth of the network, and so on.
 
-## How to Use DHTs
+## How to use DHTs
 
 When a peer receives a lookup request, it will either answer with a value if it falls into its own bucket, or answer with the contacting information (IP+port, `peerID`, etc.) of a closer peer. The requesting peer can then send its request to this closer peer. The process goes on until a peer is able to answer it.
 A request for a hash of length n will take at maximum log2(n) steps, or even log2m(n).
