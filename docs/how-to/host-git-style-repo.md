@@ -2,7 +2,7 @@
 title: Host a Git-style repo
 ---
 
-# Host a Git-style repo on IPFS
+# Host a Git-style repo
 
 Have you ever said to yourself: "Man, my Git server isn't distributed enough" or "I wish I had an easy way to serve a static Git repository worldwide". Well, wish no more.
 
@@ -10,25 +10,25 @@ In this gude, we discuss how to serve a Git repository through the IPFS network.
 
 To start, select a Git repository you want to host, and do a bare clone of it:
 
-```
-$ git clone --bare git@myhost.io/myrepo
+```bash
+git clone --bare git@myhost.io/myrepo
 ```
 
 For those who aren't super Git-savvy, a bare repository means that it doesn't have a working tree, and can be used as a server. They have a slightly different format than your normal Git repository.
 
 Now, to get it ready to be cloned, you need to do the following:
 
-```
-$ cd myrepo
-$ git update-server-info
+```bash
+cd myrepo
+git update-server-info
 ```
 
 Optionally, you can unpack all of Git's objects:
 
 ```
-$ cp objects/pack/*.pack .
-$ git unpack-objects < ./*.pack
-$ rm ./*.pack
+cp objects/pack/*.pack .
+git unpack-objects < ./*.pack
+rm ./*.pack
 ```
 
 Doing this breaks up Git's large packfile into all of its individual objects. This will allow IPFS to deduplicate objects if you add multiple versions of this Git repository.
@@ -76,5 +76,3 @@ import (
 And you will be guaranteed to have the same code every time!
 
 Note: Since Go doesn't allow the usage of localhost for import paths, we use the public HTTP gateways. This provides no security guarantees, as a man-in-the-middle attack could ship you bad code. You could use a domain name that redirects to the localhost instead to avoid the issue.
-
-_By [whyrusleeping](http://github.com/whyrusleeping)_

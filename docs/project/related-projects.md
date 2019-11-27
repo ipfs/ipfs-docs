@@ -1,5 +1,5 @@
 ---
-title: Related Protocol Labs projects
+title: Related projects
 ---
 
 # Related projects

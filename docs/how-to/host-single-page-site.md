@@ -40,7 +40,7 @@ To view it from another ipfs node, you can try `http://gateway.ipfs.io/ipfs/$SIT
 
 Those hashes are difficult to remember. Let's look at some ways to get rid of them.
 
-## DNS TXT records as shortcuts
+## Edit your DNS records
 
 Assume you have the domain name `your.domain` and can access your registrar's control panel to manage DNS entries for it.
 
@@ -84,7 +84,7 @@ Return to your registrar's control panel, change the DNS TXT record with the key
 
 **Note:** When using IPNS to update websites, assets may be loaded from two different resolved hashes while the update propagates. This may result in outdated URLs or missing assets until the update has completely propagated.
 
-## Point your.domain to IPFS
+## Point your domain to IPFS
 
 You now have a website on ipfs/ipns, but your visitors can't access it at `http://your.domain`.
 
@@ -113,7 +113,3 @@ Alternatively, it is possible to use CNAME records to point at the DNS records o
 However you will need to change the key for the TXT record from `your.domain` to `_dnslink.your.domain`.
 
 So by creating a CNAME for `your.domain` to `gateway.ipfs.io` and adding a `_dnslink.your.domain` record with `dnslink=/ipns/<your peer id>` you can host your website without explicitly referring to IP addresses of the ipfs gateway.
-
-Happy hacking!
-
-_By [Whyrusleeping](https://github.com/whyrusleeping) and [Emma Humphries](https://github.com/emceeaich)_

@@ -4,8 +4,6 @@ title: IPNS
 
 # InterPlanetary Name System (IPNS)
 
-## IPNS in brief
-
 The InterPlanetary Name System (IPNS) is a system for creating and updating mutable links to IPFS content. Since objects in IPFS are [content addressed](/essentials/content-addressing/), an object's address changes every time an object's content changes. That’s useful for a variety of things, but it makes it hard to get the latest version of something.
 
 A _name_ in IPNS is the [hash](/essentials/hashing) of a public key. It is associated with a record containing information about the hash it links to that is signed by the corresponding private key. New records can be signed and published at any time.
@@ -16,7 +14,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 /ipns/QmSrPmbaUKA3ZodhzPWZnpFgcPMFWF4QsxXbkWfEptTBJd
 ```
 
-## An example
+## Example IPNS Setup
 
 Imagine you want to publish your website under IPFS. You can use the [Files API](/essentials/file-systems/#mutable-file-system-mfs) to publish your static website, and then you'll get a CID you can link to. But when you need to make a change, a problem arises: you get a new CID because you now have different content. And it is not possible for you to be always giving others the new address.
 

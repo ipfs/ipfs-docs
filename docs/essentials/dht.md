@@ -8,8 +8,6 @@ title: Distributed Hash Tables (DHTs)
 If you're interested in how DHTs fit into the overall lifecycle of data in IPFS, check out this video from IPFS Camp 2019! [Core Course: The Lifecycle of Data in Dweb](https://www.youtube.com/watch?v=fLUq0RkiTBA)
 :::
 
-## What is a DHT?
-
 [Distributed Hash Tables](https://en.wikipedia.org/wiki/Distributed_hash_table) (DHTs) are distributed key-value stores where keys are [cryptographic hashes](/essentials/hashing).
 
 DHTs are, by definition, distributed. Each "peer" (or "node") is responsible for a subset of the DHT.
@@ -26,15 +24,11 @@ DHTs' decentralization provides advantages compared to a traditional key-value s
 - _fault tolerance_ via redundancy, so that lookups are possible even if peers unexpectedly leave or join the DHT. Additionally, requests can be addressed to any peer if another peer is slow or unavailable.
 - _load balancing_, since requests are made to different nodes and no unique peers process all the requests.
 
-## DHTs on IPFS
-
-Now that we know what DHTs are, let's take a look specifically at how DHTs work on IPFS.
-
-### Peer IDs
+## Peer IDs
 
 Each peer has a `peerID`, which is a hash with the same length _n_ as the DHT keys.
 
-### Buckets
+## Buckets
 
 A subset of the DHT maintained by a peer is called a 'bucket'.
 A bucket maps to hashes with the same prefix as the `peerID`, up to _m_ bits. There are 2^m buckets. Each bucket maps for 2^(n-m) hashes.
@@ -47,7 +41,7 @@ Several peers can be in charge of the same bucket if they have the same prefix.
 
 In most DHTs, including [IPFS's Kademlia implementation](https://github.com/libp2p/specs/blob/8b89dc2521b48bf6edab7c93e8129156a7f5f02c/kad-dht/README.md), the size of the buckets (and the size of the prefix), are dynamic.
 
-### Peer lists
+## Peer lists
 
 Peers also keep a connection to other peers in order to forward requests if the requested hash is not in their own bucket.
 
@@ -63,15 +57,14 @@ The higher m is, the harder it is to find peers that have the same ID up to m bi
 "Close" here is defined as the XOR distance, so the longer the prefix they share, the closer they are.
 Lists also have a maximum of entries (k) — otherwise the first lists would contain half the network, then a fourth of the network, and so on.
 
-### Using the DHT
+## How to use DHTs
 
 When a peer receives a lookup request, it will either answer with a value if it falls into its own bucket, or answer with the contacting information (IP+port, `peerID`, etc.) of a closer peer. The requesting peer can then send its request to this closer peer. The process goes on until a peer is able to answer it.
 A request for a hash of length n will take at maximum log2(n) steps, or even log2m(n).
 
-### Keys and hashes
+### Keys and Hashes
 
-In IPFS's Kademlia DHT, keys are SHA256 hashes.
-[PeerIDs](https://docs.libp2p.io/concepts/peer-id/) are those of [libp2p](https://libp2p.io/), the networking library used by IPFS.
+In IPFS's Kademlia DHT, keys are SHA256 hashes. [PeerIDs](https://docs.libp2p.io/concepts/peer-id/) are those of [libp2p](https://libp2p.io/), the networking library used by IPFS.
 
 We use the DHT to look up two types of objects, both represented by SHA256 hashes:
 
@@ -82,9 +75,7 @@ Consequently, IPFS's DHT is one of the ways to achieve mutable and immutable [co
 
 You can learn more in the [libp2p Kademlia DHT specification](https://github.com/libp2p/specs/blob/8b89dc2521b48bf6edab7c93e8129156a7f5f02c/kad-dht/README.md).
 
-## Usage
-
-### Adding an entry
+### Add an Entry
 
 Adding a blob of data to IPFS is the equivalent of advertising that you have it. Since DHT is the only content routing implemented, you can just use:
 `ipfs add myData`

@@ -2,12 +2,6 @@
 title: What is IPFS?
 ---
 
-# What is IPFS?
-
-Welcome! If you’re new to IPFS — the InterPlanetary File System — you’ve come to the right place. Here is a quick overview of what IPFS is, how it works, and how to use it.
-
-## IPFS, defined
-
 Let's just start with a one-line definition of IPFS:
 
 **IPFS is a distributed system for storing and accessing files, websites, applications, and data.**
@@ -32,7 +26,7 @@ And, when you use IPFS, you don’t just download files from someone else — yo
 
 IPFS makes this possible for not only web pages, but also any kind of file a computer might store, whether it’s a document, an email, or even a database record.
 
-## Why decentralization matters
+## Decentralization
 
 Making it possible to download a file from many locations that aren’t managed by one organization…
 
@@ -42,7 +36,7 @@ Making it possible to download a file from many locations that aren’t managed 
 
 That last point is actually where IPFS gets its full name: the **InterPlanetary File System**. We’re striving to build a system that works across places as disconnected or as far apart as planets. While that's an idealistic goal, it keeps us working and thinking hard, and most everything we create in pursuit of that goal is also useful here at home.
 
-## Why content addressing matters
+## Content addressing
 
 What about that link to the aardvark page above? It looked a little unusual:
 
@@ -75,7 +69,7 @@ Of course, people want to update and change content all the time, and don’t wa
 
 It’s important to remember in all of these situations, using IPFS is participatory and collaborative. If nobody using IPFS has the content identified by a given address available for others to access, you won’t be able to get it. On the other hand, content can’t be removed from IPFS as long as _someone_ is interested enough to make it available, whether that person is the original author or not. Note that this is similar to the current web, where it is also impossible to remove content that's been copied across an unknowable number websites; the difference with IPFS is that you are always able to find those copies.
 
-## Why participation matters
+## Participation
 
 While there’s lots of complex technology in IPFS, the fundamental ideas are about changing how networks of people and computers communicate. Today’s World Wide Web is structured on _ownership_ and _access_, meaning that you get files from whoever owns them — if they choose to grant you access. IPFS is based on the ideas of _possession_ and _participation_, where many people _possess_ each others’ files and _participate_ in making them available.
 

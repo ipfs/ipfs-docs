@@ -2,7 +2,7 @@
 title: Observe peers
 ---
 
-# Observe peers on the network
+# Observe peers
 
 Included in IPFS are a useful set of commands to aid in observing the network.
 
@@ -23,5 +23,3 @@ Search for a given peer on the network:
 ```sh
 ipfs dht findpeer QmSoLnSGccFuZQJzRadHn95W2CrSFmZuTdDWP8HXaHca9z
 ```
-
-_By [whyrusleeping](http://github.com/whyrusleeping)_
