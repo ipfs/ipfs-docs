@@ -40,7 +40,7 @@ To view it from another ipfs node, you can try `http://gateway.ipfs.io/ipfs/$SIT
 
 Those hashes are difficult to remember. Let's look at some ways to get rid of them.
 
-## Edit your DNS Records
+## Edit your DNS records
 
 Assume you have the domain name `your.domain` and can access your registrar's control panel to manage DNS entries for it.
 
