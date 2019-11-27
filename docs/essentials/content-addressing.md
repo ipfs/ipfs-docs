@@ -15,7 +15,7 @@ CIDs are based on the content’s [cryptographic hash](/essentials/hashing/). Th
 - Any difference in content will produce a different CID and
 - The same piece of content added to two different IPFS nodes using the same settings will produce _exactly the same CID_.
 
-## Identifier Formats
+## Identifier formats
 
 CIDs can take a few different forms with different encoding bases or CID versions. Many of the existing IPFS tools still generate v0 CIDs, although the `files` ([Mutable File System](/essentials/file-systems/#mutable-file-system-mfs)) and `object` operations now use CIDv1 by default.
 
