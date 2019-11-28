@@ -9,8 +9,8 @@
     "@vuepress/plugin-active-header-links": "^1.2.0",
     "@vuepress/plugin-back-to-top": "^1.2.0",
     "@vuepress/plugin-last-updated": "^1.2.0",
-    "husky": "^3.0.9",
-    "lint-staged": "^9.4.2",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
     "markdown-it-deflist": "^2.0.3",
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-task-lists": "^2.1.1",
@@ -18,7 +18,7 @@
     "prettier": "^1.18.2",
     "stylus-supremacy": "^2.14.0",
     "vuepress": "^1.2.0",
-    "vuepress-plugin-clean-urls": "^1.0.3"
+    "vuepress-plugin-clean-urls": "^1.1.0"
   },
   "prettier": {
     "arrowParens": "avoid",
