@@ -15,6 +15,8 @@ CIDs are based on the content’s [cryptographic hash](/essentials/hashing/). Th
 - Any difference in content will produce a different CID and
 - The same piece of content added to two different IPFS nodes using the same settings will produce _exactly the same CID_.
 
+IPFS uses the `sha-256` hashing algorithm by default, but there is support for a number of other algorithms. The [Mulithash](https://multiformats.io/multihash/) project represents the work for this, with the aim of future-proofing applications' use of hashes, and allowing multiple hash functions to coexist. (If you're curious about how hash types in IPFS are decided upon, you may wish to keep an eye on [this forum discussion](https://discuss.ipfs.io/t/who-decides-what-hashing-algorithms-ipfs-allows/6742).)
+
 ## Identifier formats
 
 CIDs can take a few different forms with different encoding bases or CID versions. Many of the existing IPFS tools still generate v0 CIDs, although the `files` ([Mutable File System](/essentials/file-systems/#mutable-file-system-mfs)) and `object` operations now use CIDv1 by default.
