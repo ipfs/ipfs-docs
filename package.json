@@ -8,6 +8,7 @@
     "@centerforopenscience/markdown-it-video": "^1.0.0",
     "@vuepress/plugin-active-header-links": "^1.2.0",
     "@vuepress/plugin-back-to-top": "^1.2.0",
+    "@vuepress/plugin-google-analytics": "^1.2.0",
     "@vuepress/plugin-last-updated": "^1.2.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",

@@ -307,6 +307,12 @@ module.exports = {
         indexSuffix: '/',
         notFoundPath: '/404/'
       }
+    ],
+    [
+      '@vuepress/google-analytics',
+      {
+        ga: 'UA-96910779-15'
+      }
     ]
   ],
   extraWatchFiles: ['.vuepress/nav/en.js']
