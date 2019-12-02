@@ -26,8 +26,8 @@
 
 	// center links/search
 	header.navbar .links {
-		right: inherit;
-		left: 21rem;
+		position: absolute;
+		right: 1.5rem;
 
 		.nav-links {
 			margin-left: auto;
@@ -36,14 +36,22 @@
 
 	div.search-box {
 		margin-right: 0;
+		border-radius: 2rem;
 
 		input, .suggestions {
-			width: 30em;
-			border-radius: 3px;
+			width: 15em;
 		}
 	}
 
 	footer.page-edit {
 		margin: inherit;
+	}
+}
+
+.theme-default-content:not(.custom) {
+	margin: inherit;
+
+	& > h1 {
+		padding-top: 1em;
 	}
 }
