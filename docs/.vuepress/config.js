@@ -248,18 +248,18 @@ module.exports = {
             ]
           },
           {
-            title: 'Support & community',
-            path: '/support-community/',
+            title: 'Community',
+            path: '/community/',
             children: [
               ['https://discuss.ipfs.io/', 'IPFS forums'],
-              '/support-community/irc',
+              '/community/irc',
               [
                 'https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com',
                 'Community video calls'
               ],
               ['https://proto.school/#/chapters', 'ProtoSchool chapters'],
               ['https://www.meetup.com/members/249142444/', 'Meetups'],
-              '/support-community/social-media',
+              '/community/social-media',
               ['https://awesome.ipfs.io', 'Awesome IPFS']
             ]
           },

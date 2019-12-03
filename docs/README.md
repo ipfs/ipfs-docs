@@ -26,9 +26,9 @@ Also, check out [ProtoSchool](https://www.proto.school) for interactive tutorial
 
 [Find developer references](/reference/) to help you get things done — whether you're using IPFS via the command line, interacting with IPFS nodes using HTTP, or creating your own new applications on top of IPFS using Go or JavaScript.
 
-## Support & community
+## Community
 
-[Get support or just get together](/support-community/) with IPFS developers and enthusiasts all over the globe. Here's where to find the IPFS community in forums, in person, on social media, and more.
+[Get support or just get together](/community/) with IPFS developers and enthusiasts all over the globe. Here's where to find the IPFS community in forums, in person, on social media, and more.
 
 ## The IPFS project
 
