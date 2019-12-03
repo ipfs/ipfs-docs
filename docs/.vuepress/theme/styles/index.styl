@@ -5,26 +5,19 @@
 
 #app {
 	.navbar .logo {
-		margin-right: 0.5rem;
+		border-right: 1px solid $accentColorLight;
+		margin-right: 0.7rem;
+		padding-right: 0.7rem;
 	}
 
 	.site-name:after {
 		content: 'beta';
 		font-size: 0.6rem;
-		margin-left: 0.5rem;
+		margin-left: 0.3rem;
 		position: relative;
 		top: -7px;
 		background-color: $highlightColor;
 		padding: 0.2rem;
-		transition: all 0.5s;
-	}
-
-	.site-name {
-		&:hover {
-			&:after {
-				top: -9px;
-			}
-		}
 	}
 }
 

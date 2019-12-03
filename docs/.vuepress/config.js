@@ -5,7 +5,7 @@ module.exports = {
   locales: {
     '/': {
       lang: 'en-US',
-      title: 'IPFS Docs',
+      title: 'Docs',
       description: 'IPFS Documentation'
     }
   },
@@ -31,7 +31,7 @@ module.exports = {
     nextLinks: false,
     prevLinks: false,
     // ui/ux
-    logo: '/images/ipfs-logo.svg',
+    logo: '/images/ipfs-logo-text-black.svg',
     smoothScroll: true,
     locales: {
       '/': {
