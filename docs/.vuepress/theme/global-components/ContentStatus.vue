@@ -5,12 +5,8 @@
         <img src="../assets/pencil-rocket.svg" />
       </div>
       <h2>{{ title }}</h2>
-      <div v-if="issueNum" class="content-status-status">
-        <a
-          target="_blank"
-          :href="`https://github.com/${repo}/issue/${issueNum}`"
-          >Check the status</a
-        >
+      <div v-if="issueUrl" class="content-status-status">
+        <a target="_blank" :href="issueUrl">Check the status</a>
         of this page on GitHub.
       </div>
       <div class="section content-status-vote">
@@ -21,10 +17,8 @@
       <div class="section content-status-info">
         <h3>Give us a hand</h3>
         <ul>
-          <li v-if="issueNum">
-            <a :href="`https://github.com/${repo}/issue/${issueNum}`"
-              >Help write this page</a
-            >
+          <li v-if="issueUrl">
+            <a target="_blank" :href="issueUrl">Help write this page</a>
           </li>
           <li v-if="$site.themeConfig.betaTestFormUrl">
             <a :href="$site.themeConfig.betaTestFormUrl" target="_blank"
@@ -51,8 +45,8 @@
 <script>
 export default {
   computed: {
-    issueNum: function() {
-      return this.$frontmatter && this.$frontmatter.issueNum
+    issueUrl: function() {
+      return this.$frontmatter && this.$frontmatter.issueUrl
     },
     repo: function() {
       return this.$site && this.$site.themeConfig && this.$site.themeConfig.repo
