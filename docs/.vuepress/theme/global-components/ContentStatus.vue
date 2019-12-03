@@ -1,70 +1,65 @@
 <template>
   <main class="content-status">
     <div>
-      <div class="col-6">
-        <h3>{{ title }}</h3>
-        <div class="content-status-status">
-          <img src="../assets/status.png" />
-          {{ status }}
-        </div>
-      </div>
-      <div class="illustration col-6">
+      <div class="illustration">
         <img src="../assets/pencil-rocket.svg" />
       </div>
+      <h2>{{ title }}</h2>
+      <div v-if="issueNum" class="content-status-status">
+        <a
+          target="_blank"
+          :href="`https://github.com/${repo}/issue/${issueNum}`"
+          >Check the status</a
+        >
+        of this page on GitHub.
+      </div>
+      <div class="section content-status-vote">
+        <h4>Is this topic important to you?</h4>
+        <button>Yes</button>
+        <button>Not really</button>
+      </div>
+      <div class="section content-status-info">
+        <h3>Give us a hand</h3>
+        <ul>
+          <li v-if="issueNum">
+            <a :href="`https://github.com/${repo}/issue/${issueNum}`"
+              >Help write this page</a
+            >
+          </li>
+          <li v-if="$site.themeConfig.betaTestFormUrl">
+            <a :href="$site.themeConfig.betaTestFormUrl" target="_blank"
+              >Sign up to be a beta tester</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <div class="content-status-vote">
-      <h3>How important is this topic to you</h3>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-    </div>
-    <h3>Info</h3>
-    <div class="content-status-info">
-      <div class="col-6">
-        <h3>Help us write this!</h3>
-        <p>
-          Community contribu Lorem, ipsum dolor sit amet consectetur adipisicing
-          elit. Quidem laudantium dolores ullam dolorem? Odio fugit consequuntur
-          ipsam incidunt necessitatibus praesentium quidem voluptas, explicabo
-          harum. Voluptatibus optio aliquam iste temporibus magnam.
-        </p>
-      </div>
-      <div class="col-6">
-        <h3>Be a docs tester</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi
-          provident dolor neque ducimus autem blanditiis et accusantium, hic
-          ipsa minima repellat ea recusandae nam officiis voluptates labore
-          repudiandae! Voluptates, deleniti!
-        </p>
+    <div class="section content-status-info" style="clear: both">
+      <div v-if="related" class="content-other-resources">
+        <h3>Other resources to try</h3>
+        <ul>
+          <li v-for="(item, title) in related">
+            <a :href="item" :alt="title" target="_blank">{{ title }}</a>
+          </li>
+        </ul>
       </div>
     </div>
-
-    <div class="content-status-info">
-      <h3>Other resources</h3>
-      <p>Here's some content from around the web that you might find useful</p>
-      <div>
-        <div class="col-4">
-          <h5>Tutorials</h5>
-        </div>
-        <div class="col-4">
-          <h5>Video</h5>
-        </div>
-        <div class="col-4">
-          <h5>Articles</h5>
-        </div>
-      </div>
-    </div>
-    {{ $page }}
+    {{ $site.themeConfig.betaTestFormUrl }}
   </main>
 </template>
 
 <script>
 export default {
   computed: {
-    status: function() {
-      return (this.$frontmatter && this.$frontmatter.status) || 0
+    issueNum: function() {
+      return this.$frontmatter && this.$frontmatter.issueNum
+    },
+    repo: function() {
+      return this.$site && this.$site.themeConfig && this.$site.themeConfig.repo
+    },
+    related: function() {
+      return this.$frontmatter.related
     }
   },
   props: {
@@ -77,36 +72,48 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.col {
-  box-sizing: border-box;
-  float: left;
-  padding-left: $gutterWidth;
-  padding-right: $gutterWidth;
+h2, h3 {
+  border-bottom: none;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.content-status-vote {
+  margin-top: 3rem;
+}
+
+.illustration {
+  width: 40%;
+  float: right;
+}
+
+.content-status-vote {
+  // display: none;
+  button {
+    padding: 10px;
+    background-color: darken($accentColor, 30%);
+    border: none;
+    font-size: 1em;
+    color: white;
+    margin-right: 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $accentColor;
+    }
+
+    outline: none;
+  }
 }
 
 @media (min-width: $MQNarrow) {
-  .col-6 {
-    @extend .col;
-    width: 50%;
-  }
-
-  .col-4 {
-    @extend .col;
-    width: 33%;
-  }
-
-  div {
-    > .col-6:first-child, > .col-4:first-child {
-      padding-left: 0;
-    }
-
-    > .col-6:last-child, > .col-4:last-child {
-      padding-right: 0;
-    }
-  }
-
   .illustration {
-    text-align: right;
+    width: 30%;
+    float: right;
   }
 }
 
