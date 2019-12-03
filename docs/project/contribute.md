@@ -18,14 +18,14 @@ The biggest and most active repositories we have today are:
 - [https://github.com/libp2p/go-libp2p](https://github.com/libp2p/go-libp2p)
 - [https://github.com/libp2p/js-libp2p](https://github.com/libp2p/js-libp2p)
 
-If you want to start contributing to the core of IPFS, those repositories are a great place to start. But the “Help Wanted” label exists in all of our repositories across the GitHub organizations
-[IPFS](https://github.com/ipfs), [libp2p](https://github.com/libp2p), [IPLD](https://github.com/libp2p), and [Multiformats](https://github.com/multiformats).
+If you want to start contributing to the core of IPFS, those repositories are a great place to start. But the `Help Wanted` label exists in all of our repositories across the GitHub organizations
+[IPFS](https://github.com/search?q=org%3Aipfs+is%3Aissue+is%3Aopen+label%3A%22help+wanted%22&unscoped_q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), [libp2p](https://github.com/search?q=org%3Alibp2p+is%3Aissue+is%3Aopen+label%3A%22help+wanted%22&unscoped_q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), [IPLD](https://github.com/search?q=org%3Aipld+org%3Alibp2p+is%3Aissue+is%3Aopen+label%3A%22help+wanted%22&unscoped_q=org%3Alibp2p+is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), and [Multiformats](https://github.com/search?q=org%3Amultiformats+is%3Aissue+is%3Aopen+label%3A%22help+wanted%22&unscoped_q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22).
 
 ## Documentation
 
 Again, IPFS is a huge project and undertaking. With lots of code comes the need for lots of good documentation! However, we need a lot more help to write the awesome docs the project needs. If writing technical documentation is your area, we’d absolutely love your help!
 
-The best place to get started is by looking through the GitHub readme and issues at [https://github.com/ipfs/docs](https://github.com/ipfs/docs).
+The best place to get started is by looking through the GitHub readme and issues at [https://github.com/ipfs/docs](https://github.com/ipfs/docs). If you'd like to jump straight in, check the docs repo for [issues labeled `Help Wanted`](https://github.com/ipfs/docs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22).
 
 ## Support
 
