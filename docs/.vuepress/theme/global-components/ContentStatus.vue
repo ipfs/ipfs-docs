@@ -18,7 +18,7 @@
         <h3>Give us a hand</h3>
         <ul>
           <li v-if="issueUrl">
-            <a :href="issueUrl">Help write this page</a>
+            <a target="_blank" :href="issueUrl">Help write this page</a>
           </li>
           <li v-if="$site.themeConfig.betaTestFormUrl">
             <a :href="$site.themeConfig.betaTestFormUrl" target="_blank"
