@@ -1,7 +1,10 @@
 ---
 title: Bitswap
 sidebarDepth: 0
-status: 2
+issueNum: 333
+related:
+  an interesting article: https://ipfs.io
+  another interesting article: https://ipfs.io
 ---
 
 # Bitswap
