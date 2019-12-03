@@ -8,7 +8,7 @@ title: FAQ
 
 IPFS stands for the InterPlanetary File System — a peer-to-peer network for storing and accessing files, websites, applications, and data in a distributed file system.
 
-To learn more, see the [“what is IPFS?”](/essentials/what-is-ipfs) guide.
+To learn more, see the [“what is IPFS?”](/concepts/what-is-ipfs) guide.
 
 ## IPFS in action
 

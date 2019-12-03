@@ -12,9 +12,9 @@ IPFS docs are organized into the following main categories:
 
 [Here's your guide](/install/) if you just want to install IPFS and get started right away!
 
-## Essentials
+## Concepts
 
-[Check out these IPFS essentials](/essentials/) if you're new to IPFS or the distributed web in general. Because IPFS is a system that hopes to change how we use the Internet, it comes with many new concepts! This section aims to get you up to speed quickly.
+[Check out these key IPFS concepts](/concepts/) if you're new to IPFS or the distributed web in general. Because IPFS is a system that hopes to change how we use the Internet, it comes with many new concepts! This section aims to get you up to speed quickly.
 
 ## How-tos
 

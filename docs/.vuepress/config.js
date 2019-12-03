@@ -50,19 +50,19 @@ module.exports = {
         sidebar: [
           '/install/',
           {
-            title: 'Essentials',
-            path: '/essentials/',
+            title: 'Concepts',
+            path: '/concepts/',
             children: [
               {
                 title: 'IPFS 101',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/essentials/what-is-ipfs',
-                  '/essentials/how-ipfs-works',
-                  '/essentials/usage-ideas-examples',
-                  '/essentials/glossary',
-                  '/essentials/faq'
+                  '/concepts/what-is-ipfs',
+                  '/concepts/how-ipfs-works',
+                  '/concepts/usage-ideas-examples',
+                  '/concepts/glossary',
+                  '/concepts/faq'
                 ]
               },
               {
@@ -70,10 +70,10 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/essentials/content-addressing',
-                  '/essentials/hashing',
-                  '/essentials/immutability',
-                  '/essentials/persistence'
+                  '/concepts/content-addressing',
+                  '/concepts/hashing',
+                  '/concepts/immutability',
+                  '/concepts/persistence'
                 ]
               },
               {
@@ -81,20 +81,20 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/essentials/dht',
-                  '/essentials/merkle-dag',
-                  '/essentials/bitswap',
-                  '/essentials/ipld',
-                  '/essentials/ipns',
-                  '/essentials/libp2p',
-                  '/essentials/file-systems'
+                  '/concepts/dht',
+                  '/concepts/merkle-dag',
+                  '/concepts/bitswap',
+                  '/concepts/ipld',
+                  '/concepts/ipns',
+                  '/concepts/libp2p',
+                  '/concepts/file-systems'
                 ]
               },
               {
                 title: 'Integrating with the Web',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/essentials/ipfs-gateway', '/essentials/dnslink']
+                children: ['/concepts/ipfs-gateway', '/concepts/dnslink']
               }
             ]
           },

@@ -8,7 +8,7 @@ title: Distributed Hash Tables (DHTs)
 If you're interested in how DHTs fit into the overall lifecycle of data in IPFS, check out this video from IPFS Camp 2019! [Core Course: The Lifecycle of Data in Dweb](https://www.youtube.com/watch?v=fLUq0RkiTBA)
 :::
 
-[Distributed Hash Tables](https://en.wikipedia.org/wiki/Distributed_hash_table) (DHTs) are distributed key-value stores where keys are [cryptographic hashes](/essentials/hashing).
+[Distributed Hash Tables](https://en.wikipedia.org/wiki/Distributed_hash_table) (DHTs) are distributed key-value stores where keys are [cryptographic hashes](/concepts/hashing).
 
 DHTs are, by definition, distributed. Each "peer" (or "node") is responsible for a subset of the DHT.
 When a peer receives a request, it either answers it, or the request is passed to another peer until a peer that can answer it is found.
@@ -68,8 +68,8 @@ In IPFS's Kademlia DHT, keys are SHA256 hashes. [PeerIDs](https://docs.libp2p.io
 
 We use the DHT to look up two types of objects, both represented by SHA256 hashes:
 
-- [Content IDs](/essentials/content-addressing) of the data added to IPFS. A lookup of this value will give the `peerID`s of the peers having this immutable content.
-- [IPNS records](/essentials/ipns). A lookup will give the last Content ID associated with this IPNS address, enabling the routing of mutable content.
+- [Content IDs](/concepts/content-addressing) of the data added to IPFS. A lookup of this value will give the `peerID`s of the peers having this immutable content.
+- [IPNS records](/concepts/ipns). A lookup will give the last Content ID associated with this IPNS address, enabling the routing of mutable content.
 
 Consequently, IPFS's DHT is one of the ways to achieve mutable and immutable [content routing](https://docs.libp2p.io/concepts/content-routing/). It's currently the only one [implemented](https://libp2p.io/implementations/#peer-routing).
 
@@ -81,4 +81,4 @@ Adding a blob of data to IPFS is the equivalent of advertising that you have it.
 `ipfs add myData`
 IPFS will automatically chunk your data and add a mapping on the DHT between the Content ID and your `peerID`. Note that there can be other `peerID`s already mapped to that value, so you will be added to the list. Also note that if the provided data is bigger than 124KB, it will be chunked into "blocks", and both those blocks and the overall data will be mapped.
 
-You can publish an IPNS record using [`ipfs.name.publish`](/essentials/ipns).
+You can publish an IPNS record using [`ipfs.name.publish`](/concepts/ipns).

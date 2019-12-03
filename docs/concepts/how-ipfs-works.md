@@ -28,7 +28,7 @@ It’s the same on the internet and on your computer. Right now, content is foun
 - `/Users/Alice/Documents/term_paper.doc`
 - `C:\Users\Joe\My Documents\project_sprint_presentation.ppt`
 
-By contrast, every piece of content that uses the IPFS protocol has a [_content identifier_](/essentials/content-addressing/), or CID, that is its _hash_. The hash is unique to the content that it came from, even though it may look short compared to the original content. If hashes are new to you, check out our [guide to cryptographic hashing](/essentials/hashing/) for an introduction.
+By contrast, every piece of content that uses the IPFS protocol has a [_content identifier_](/concepts/content-addressing/), or CID, that is its _hash_. The hash is unique to the content that it came from, even though it may look short compared to the original content. If hashes are new to you, check out our [guide to cryptographic hashing](/concepts/hashing/) for an introduction.
 
 Content addressing through hashes has become a widely-used means of connecting data in distributed systems — everything from the commits that back your code to the blockchains that run cryptocurrencies. However, the underlying data structures in these systems are not necessarily interoperable.
 
@@ -40,7 +40,7 @@ The IPFS protocol uses IPLD to get from raw content to an IPFS address. IPFS has
 
 ## Directed acyclic graphs (DAGs)
 
-IPFS and many other distributed systems take advantage of a data structure called [directed acyclic graphs](https://en.wikipedia.org/wiki/Directed_acyclic_graph), or DAGs. Specifically, they use _Merkle DAGs_, which are DAGs where each node has an identifier that is a hash of the node’s contents. Sound familiar? This refers back to the _CID_ concept that we covered in the previous section. Another way to look the this CID-linked-data concept: identifying a data object (like a Merkle DAG node) by the value of its hash is _content addressing_. Check out our [guide to Merkle DAGs](/essentials/merkle-dag/) for a more in-depth treatment of this topic.
+IPFS and many other distributed systems take advantage of a data structure called [directed acyclic graphs](https://en.wikipedia.org/wiki/Directed_acyclic_graph), or DAGs. Specifically, they use _Merkle DAGs_, which are DAGs where each node has an identifier that is a hash of the node’s contents. Sound familiar? This refers back to the _CID_ concept that we covered in the previous section. Another way to look the this CID-linked-data concept: identifying a data object (like a Merkle DAG node) by the value of its hash is _content addressing_. Check out our [guide to Merkle DAGs](/concepts/merkle-dag/) for a more in-depth treatment of this topic.
 
 IPFS uses a Merkle DAG that is optimized for representing directories and files, but you can structure a Merkle DAG in many different ways. For example, Git uses a Merkle DAG that has many versions of your repo inside of it.
 
@@ -54,7 +54,7 @@ Another useful feature of Merkle DAGs and breaking content into blocks is that i
 
 So, to recap, IPFS lets you give CIDs to content, and link that content together in a Merkle DAG using IPLD. Now let’s move on to the last piece: how you find and move content.
 
-To find which peers are hosting the content you’re after (_discovery_), IPFS uses a [distributed hash table](/essentials/dht/), or DHT. A hash table is a database of keys to values. A _distributed_ hash table is one where the table is split across all the peers in a distributed network. To find content, you ask these peers.
+To find which peers are hosting the content you’re after (_discovery_), IPFS uses a [distributed hash table](/concepts/dht/), or DHT. A hash table is a database of keys to values. A _distributed_ hash table is one where the table is split across all the peers in a distributed network. To find content, you ask these peers.
 
 The [libp2p project](https://libp2p.io/) is the part of the IPFS ecosystem that provides the DHT and handles peers connecting and talking to each other. (Note that, as with IPLD, libp2p can also be used as a tool for other distributed systems, not just IPFS.)
 
