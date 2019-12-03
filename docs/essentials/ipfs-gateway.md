@@ -1,7 +1,7 @@
 ---
 title: IPFS Gateway
 sidebarDepth: 0
-issueNum: https://github.com/ipfs/docs/issues/93
+issueUrl: https://github.com/ipfs/docs/issues/93
 related:
   'IPFS Docs: Address IPFS on the Web': /how-to/address-ipfs-on-web/
   'IPFS public gateway checker': https://ipfs.github.io/public-gateway-checker/
