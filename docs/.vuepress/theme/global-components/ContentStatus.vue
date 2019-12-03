@@ -89,9 +89,8 @@ h2, h3 {
 }
 
 .content-status-vote {
-  // display: none;
   button {
-    padding: 10px;
+    padding: 10px 15px;
     background-color: darken($accentColor, 30%);
     border: none;
     font-size: 1em;
@@ -100,6 +99,7 @@ h2, h3 {
     border-radius: 2px;
     cursor: pointer;
     transition: all 0.3s;
+    min-width: 45%;
 
     &:hover {
       background-color: $accentColor;
@@ -114,9 +114,11 @@ h2, h3 {
     width: 40%;
     float: right;
   }
-}
 
-.content-status {
-  border: 1px red;
+  .content-status-vote {
+    button {
+      min-width: auto;
+    }
+  }
 }
 </style>
