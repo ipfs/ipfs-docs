@@ -84,7 +84,7 @@ h2, h3 {
 }
 
 .illustration {
-  width: 40%;
+  width: 20%;
   float: right;
 }
 
@@ -111,7 +111,7 @@ h2, h3 {
 
 @media (min-width: $MQNarrow) {
   .illustration {
-    width: 30%;
+    width: 40%;
     float: right;
   }
 }
