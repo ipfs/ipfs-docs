@@ -1,22 +1,139 @@
 <template>
-  <main>
-    <h1>This content is still preparing for liftoff!</h1>
-    <img src="../assets/pencil-rocket.svg" />
-    {{ $page }}
+  <main class="content-status">
+    <div>
+      <div class="illustration">
+        <img src="../assets/pencil-rocket.svg" />
+      </div>
+      <h2>{{ title }}</h2>
+      <div v-if="issueNum" class="content-status-status">
+        <a
+          target="_blank"
+          :href="`https://github.com/${repo}/issue/${issueNum}`"
+          >Check the status</a
+        >
+        of this page on GitHub.
+      </div>
+      <div class="section content-status-vote">
+        <h3>Is this topic important to you?</h3>
+        <button>Yes</button>
+        <button>Not really</button>
+      </div>
+      <div class="section content-status-info">
+        <h3>Give us a hand</h3>
+        <ul>
+          <li v-if="issueNum">
+            <a :href="`https://github.com/${repo}/issue/${issueNum}`"
+              >Help write this page</a
+            >
+          </li>
+          <li v-if="$site.themeConfig.betaTestFormUrl">
+            <a :href="$site.themeConfig.betaTestFormUrl" target="_blank"
+              >Sign up to be a beta tester</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-status-info" style="clear: both">
+      <div v-if="related" class="section content-other-resources">
+        <h3>Other resources to try</h3>
+        <ul>
+          <li v-for="(item, title) in related">
+            <a :href="item" :alt="title" target="_blank">{{ title }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </main>
 </template>
 
 <script>
 export default {
-  name: 'ContentStatus',
+  computed: {
+    issueNum: function() {
+      return this.$frontmatter && this.$frontmatter.issueNum
+    },
+    repo: function() {
+      return this.$site && this.$site.themeConfig && this.$site.themeConfig.repo
+    },
+    related: function() {
+      return this.$frontmatter.related
+    }
+  },
   props: {
-    test: String
+    title: {
+      type: String,
+      default: 'This content is still preparing for liftoff!'
+    }
   }
 }
 </script>
 
-<style scoped>
-h1 {
-  color: red;
+<style lang="stylus" scoped>
+h2, h3 {
+  border-bottom: none;
+  margin: 0.5rem 0; // TODO: make global
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.content-status-vote {
+  margin-top: 3rem;
+}
+
+.illustration {
+  width: 20%;
+  float: right;
+}
+
+// TODO: make global
+.section {
+  margin-bottom: 3rem;
+}
+
+// TODO: make global
+.content-status-vote {
+  button {
+    font-weight: bold;
+    padding: 10px 15px;
+    background-color: darken($accentColor, 30%);
+    border: none;
+    font-size: 1em;
+    color: white;
+    margin-right: 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 45%;
+
+    &:hover {
+      background-color: $accentColor;
+    }
+
+    outline: none;
+  }
+}
+
+@media (min-width: $MQNarrow) {
+  .illustration {
+    width: 40%;
+    float: right;
+  }
+
+  .content-status-vote {
+    button {
+      min-width: auto;
+    }
+  }
 }
 </style>
