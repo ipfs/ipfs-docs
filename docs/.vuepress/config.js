@@ -54,7 +54,7 @@ module.exports = {
             path: '/essentials/',
             children: [
               {
-                title: 'IPFS in a nutshell',
+                title: 'IPFS 101',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [

@@ -14,7 +14,7 @@ Want the basics, in theater mode? Check out these Core Courses from IPFS Camp 20
 
 @[youtube](Z5zNPwMDYGg)
 
-## IPFS in a nutshell
+## IPFS 101
 
 Get the basic concepts of IPFS in one place, including:
 
