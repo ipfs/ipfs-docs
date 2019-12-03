@@ -6,7 +6,7 @@
       </div>
       <h2>{{ title }}</h2>
       <div v-if="issueNum" class="content-status-status">
-        <a target="_blank" :href="`${issueNum}`">Check the status</a>
+        <a target="_blank" :href="issueUrl">Check the status</a>
         of this page on GitHub.
       </div>
       <div class="section content-status-vote">
