@@ -1,14 +1,13 @@
 ---
 title: Bitswap
 sidebarDepth: 0
-issueNum: 333
+issueNum: https://github.com/ipfs/docs/issues/85
 related:
-  an interesting article: https://ipfs.io
-  another interesting article: https://ipfs.io
+  'Article: Swapping bits and distributing hashes on the decentralized web (Textile)': https://medium.com/textileio/swapping-bits-and-distributing-hashes-on-the-decentralized-web-5da98a3507
+  'GitHub repo: Go Bitswap implementation': https://github.com/ipfs/go-bitswap
+  'GitHub repo: JavaScript Bitswap implementation': https://github.com/ipfs/js-ipfs-bitswap
 ---
 
 # Bitswap
 
 <ContentStatus />
-
-In the meantime, check out [this video from IPFS Camp 2019](https://www.youtube.com/watch?v=fLUq0RkiTBA) on how Bitswap fits into the overall lifecycle of data in IPFS!
