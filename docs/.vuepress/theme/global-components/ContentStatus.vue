@@ -45,7 +45,6 @@
         </ul>
       </div>
     </div>
-    {{ $site.themeConfig.betaTestFormUrl }}
   </main>
 </template>
 
