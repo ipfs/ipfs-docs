@@ -31,7 +31,7 @@ module.exports = {
     nextLinks: false,
     prevLinks: false,
     // ui/ux
-    logo: '/images/ipfs-logo-text-black.svg',
+    logo: '/images/ipfs-logo.svg',
     smoothScroll: true,
     locales: {
       '/': {
