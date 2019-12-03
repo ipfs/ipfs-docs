@@ -1,7 +1,7 @@
 ---
 title: Usage ideas & examples
 sidebarDepth: 0
-issueNum: https://github.com/ipfs/docs/issues/387
+issueUrl: https://github.com/ipfs/docs/issues/387
 related:
   'Awesome IPFS: Showcase of projects and tools built on IPFS': https://awesome.ipfs.io/
   'IPFS Forums: Use cases and applications': https://discuss.ipfs.io/c/ecosystem/applications-of-ipfs
