@@ -5,7 +5,7 @@ module.exports = {
   locales: {
     '/': {
       lang: 'en-US',
-      title: 'Docs',
+      title: 'IPFS Docs',
       description: 'IPFS Documentation'
     }
   },
