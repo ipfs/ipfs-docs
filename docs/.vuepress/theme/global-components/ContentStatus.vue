@@ -14,7 +14,7 @@
         of this page on GitHub.
       </div>
       <div class="section content-status-vote">
-        <h4>Is this topic important to you?</h4>
+        <h3>Is this topic important to you?</h3>
         <button>Yes</button>
         <button>Not really</button>
       </div>
@@ -35,8 +35,8 @@
       </div>
     </div>
 
-    <div class="section content-status-info" style="clear: both">
-      <div v-if="related" class="content-other-resources">
+    <div class="content-status-info" style="clear: both">
+      <div v-if="related" class="section content-other-resources">
         <h3>Other resources to try</h3>
         <ul>
           <li v-for="(item, title) in related">
@@ -73,6 +73,7 @@ export default {
 <style lang="stylus" scoped>
 h2, h3 {
   border-bottom: none;
+  margin: 0.5rem 0; // TODO: make global
 }
 
 ul {
@@ -86,10 +87,6 @@ ul {
   }
 }
 
-.section {
-  margin-bottom: 3rem;
-}
-
 .content-status-vote {
   margin-top: 3rem;
 }
@@ -99,8 +96,15 @@ ul {
   float: right;
 }
 
+// TODO: make global
+.section {
+  margin-bottom: 3rem;
+}
+
+// TODO: make global
 .content-status-vote {
   button {
+    font-weight: bold;
     padding: 10px 15px;
     background-color: darken($accentColor, 30%);
     border: none;
