@@ -39,6 +39,11 @@
         </ul>
       </div>
     </div>
+    <style>
+      footer.page-edit {
+        display: none;
+      }
+    </style>
   </main>
 </template>
 
