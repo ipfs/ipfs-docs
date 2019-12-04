@@ -1,6 +1,7 @@
 ---
 title: Social media
 sidebarDepth: 0
+legacyUrl: https://docs.ipfs.io/community/
 ---
 
 # Social media
@@ -22,3 +23,5 @@ Get your IPFS news in tweet-sized bites. Follow these accounts for the latest:
 - [@IPFSbot](https://twitter.com/IPFSbot) for news and other updates
 - [@IPFSevents](https://twitter.com/ipfsevents) for info on IPFS-related events
 - [@ProtoSchool](https://twitter.com/protoschool) for updates on ProtoSchool chapters and tutorials
+
+<LegacyCallout />

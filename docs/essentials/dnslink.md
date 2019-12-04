@@ -1,5 +1,6 @@
 ---
 title: DNSLink
+legacyUrl: https://docs.ipfs.io/guides/concepts/dnslink/
 ---
 
 # DNSLink
@@ -60,3 +61,5 @@ Will get you this block:
 ## Further Resources
 
 For a complete guide to DNSLink — including tutorials, usage examples and FAQs — check out [dnslink.io](http://dnslink.io/).
+
+<LegacyCallout />

@@ -1,5 +1,6 @@
 ---
 title: Persistence
+legacyUrl: https://docs.ipfs.io/guides/concepts/pinning/
 ---
 
 # Persistence, permanence and pinning
@@ -25,3 +26,5 @@ To ensure that your important data is retained, you may want to use a pinning se
 - You don’t have a lot of disk space, but you want to ensure some data sticks around.
 - Your computer is a laptop, phone, or tablet that will have intermittent connectivity to the network, but you want to be able to access your data on IPFS from anywhere at any time, even when the device you added it from is offline.
 - You want a backup that ensures your data is always available from another computer on the network in case you accidentally delete or garbage-collect on your own computer.
+
+<LegacyCallout />

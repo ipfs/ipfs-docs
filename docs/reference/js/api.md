@@ -1,5 +1,6 @@
 ---
 title: js-ipfs API
+legacyUrl: https://docs.ipfs.io/reference/js/
 ---
 
 # API resources for js-ipfs
@@ -29,3 +30,5 @@ See the [JS core API reference](https://github.com/ipfs/interface-ipfs-core/tree
 ## JS HTTP client library
 
 A [client library](https://github.com/ipfs/js-ipfs-http-client) for the IPFS HTTP API, implemented in JavaScript. This client library implements the interface-ipfs-core enabling applications to change between an embedded js-ipfs node and any remote IPFS node without having to change the code. In addition, this client library implements a set of utility functions.
+
+<LegacyCallout />

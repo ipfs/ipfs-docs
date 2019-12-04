@@ -1,5 +1,6 @@
 ---
 title: Observe peers
+legacyUrl: https://docs.ipfs.io/guides/examples/network/
 ---
 
 # Observe peers
@@ -23,3 +24,5 @@ Search for a given peer on the network:
 ```sh
 ipfs dht findpeer QmSoLnSGccFuZQJzRadHn95W2CrSFmZuTdDWP8HXaHca9z
 ```
+
+<LegacyCallout />

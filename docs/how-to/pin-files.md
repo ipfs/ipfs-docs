@@ -1,5 +1,6 @@
 ---
 title: Pin files
+legacyUrl: https://docs.ipfs.io/guides/examples/pinning/
 ---
 
 # Pin files using IPFS
@@ -38,3 +39,5 @@ ipfs pin rm -r <foo hash>
 ipfs repo gc
 ipfs cat <foo hash>
 ```
+
+<LegacyCallout />

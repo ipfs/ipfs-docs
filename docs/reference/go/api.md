@@ -1,5 +1,6 @@
 ---
 title: go-ipfs API
+legacyUrl: https://docs.ipfs.io/reference/go/overview/
 ---
 
 # API resources for go-ipfs
@@ -44,3 +45,5 @@ If you are running IPFS as a separate process, you should use `go-ipfs-api` to w
 ## Go HTTP clients
 
 [CoreAPI implementation using HTTP API](https://godoc.org/github.com/ipfs/go-ipfs-http-client). **This package is experimental and subject to change.** For an old but stable Go HTTP client, use [CoreAPI interfaces](https://godoc.org/github.com/ipfs/interface-go-ipfs-core).
+
+<LegacyCallout />

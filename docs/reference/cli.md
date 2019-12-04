@@ -1,5 +1,6 @@
 ---
 title: CLI commands
+legacyUrl: https://docs.ipfs.io/reference/api/cli/
 ---
 
 # Command-line interface (CLI) reference
@@ -4478,3 +4479,5 @@ DESCRIPTION
 
 
 ```
+
+<LegacyCallout />

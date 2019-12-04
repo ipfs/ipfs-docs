@@ -1,5 +1,6 @@
 ---
 title: API & CLI
+legacyUrl: https://docs.ipfs.io/reference/api/
 ---
 
 # API & CLI reference
@@ -23,3 +24,5 @@ We're currently investigating improved ways to present our API and CLI reference
 ## CLI commands
 
 Working in the terminal? Here's where you'll find the IPFS [command-line interface (CLI) reference](/reference/cli/).
+
+<LegacyCallout />

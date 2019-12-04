@@ -1,5 +1,6 @@
 ---
 title: Store & play videos
+legacyUrl: https://docs.ipfs.io/guides/examples/videos/
 ---
 
 # Store and play videos
@@ -29,3 +30,5 @@ Or open it up in a browser tab (in this example, Chrome):
 ```bash
 chromium http://localhost:8080/ipfs/$vidhash
 ```
+
+<LegacyCallout />

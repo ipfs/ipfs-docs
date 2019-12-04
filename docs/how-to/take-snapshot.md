@@ -1,5 +1,6 @@
 ---
 title: Take a snapshot
+legacyUrl: https://docs.ipfs.io/guides/examples/snapshots/
 ---
 
 # Take a snapshot
@@ -48,3 +49,5 @@ ls
 ```
 
 Through the FUSE interface, you'll be able to access your files exactly as they were when you took the snapshot.
+
+<LegacyCallout />

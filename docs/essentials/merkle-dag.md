@@ -1,5 +1,6 @@
 ---
 title: Merkle DAGs
+legacyUrl: https://docs.ipfs.io/guides/concepts/merkle-dag/
 ---
 
 # Merkle Distributed Acyclic Graphs (DAGs)
@@ -25,3 +26,5 @@ Merkle DAGs are _self-verified_ structures. The CID of a node is univocally link
 ## Further resources
 
 For more information, you may want to read the full [draft Merkle-CRDTs paper](https://hector.link/presentations/merkle-crdts/merkle-crdts.pdf) by [@hsanjuan](https://www.github.com/hsanuan), [@haadcode](https://www.github.com/haadcode), and [@pgte](https://www.github.com/pgte).
+
+<LegacyCallout />

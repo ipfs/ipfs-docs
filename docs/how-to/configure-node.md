@@ -1,6 +1,6 @@
 ---
 title: Configure a node
-legacyUrl: https://www.google.com
+legacyUrl: https://docs.ipfs.io/guides/examples/config/
 ---
 
 # Configure a node

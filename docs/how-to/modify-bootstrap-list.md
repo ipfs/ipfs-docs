@@ -1,5 +1,6 @@
 ---
 title: Modify the bootstrap list
+legacyUrl: https://docs.ipfs.io/guides/examples/bootstrap/
 ---
 
 # Modify the bootstrap peers list
@@ -61,3 +62,5 @@ Remove the entire bootstrap list again, and restore our saved one by piping the 
 ipfs bootstrap rm --all
 cat save | ipfs bootstrap add
 ```
+
+<LegacyCallout />

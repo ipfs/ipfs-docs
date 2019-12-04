@@ -1,5 +1,6 @@
 ---
 title: File systems
+legacyUrl: https://docs.ipfs.io/guides/concepts/mfs/
 ---
 
 # File systems and IPFS
@@ -34,3 +35,5 @@ A file in IPFS isn’t just content. It might be too big to fit in a single bloc
 UnixFS is a [protocol-buffers](https://developers.google.com/protocol-buffers/)-based format. You can find the definitions for it [here](https://github.com/ipfs/go-unixfs/blob/master/pb/unixfs.proto).
 
 _Note: we are currently designing an updated version of UnixFS that will be [IPLD](https://ipld.io)-compatible. You can follow along or participate [on GitHub](https://github.com/ipfs/unixfs-v2)._
+
+<LegacyCallout />

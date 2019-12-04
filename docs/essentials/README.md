@@ -1,5 +1,6 @@
 ---
 title: Essentials
+legacyUrl: https://docs.ipfs.io/guides/concepts/
 ---
 
 # IPFS essentials
@@ -55,3 +56,5 @@ IPFS aims to be the future of the internet, but it still needs to play well with
 ## Don't see what you're looking for?
 
 We're adding more documentation all the time and making ongoing revisions to existing docs, but if you don't see what you need, please [file an issue](https://github.com/ipfs/docs/issues/new?assignees=&labels=OKR+3%3A+Content+Improvement%2C+docs-ipfs&template=content-request.md&title=%5BCONTENT+REQUEST%5D+%28add+your+title+here%21%29) to let us know! We also recommend visiting the [IPFS forums](https://discuss.ipfs.io/) for support and discussion with IPFS enthusiasts and experts worldwide.
+
+<LegacyCallout />
