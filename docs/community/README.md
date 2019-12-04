@@ -1,9 +1,9 @@
 ---
-title: Support & community
+title: Community
 legacyUrl: https://docs.ipfs.io/community/
 ---
 
-# Support & community
+# Community
 
 IPFS is home to a vibrant, diverse community of thousands of contributors and participants from all over the globe! Here's how to get help, support, or just hang out with other folks who are helping to build the distributed web.
 
