@@ -10,7 +10,7 @@ If you're interested in how content addressing fits into how IPFS works with fil
 
 A _content identifier_, or CID, is a label used to point to material in IPFS. It doesn't indicate _where_ the content is stored, but it forms a kind of address based on the content itself. CIDs are short, regardless of the size of their underlying content.
 
-CIDs are based on the content’s [cryptographic hash](/essentials/hashing/). That means:
+CIDs are based on the content’s [cryptographic hash](/concepts/hashing/). That means:
 
 - Any difference in content will produce a different CID and
 - The same piece of content added to two different IPFS nodes using the same settings will produce _exactly the same CID_.
@@ -19,7 +19,7 @@ IPFS uses the `sha-256` hashing algorithm by default, but there is support for a
 
 ## Identifier formats
 
-CIDs can take a few different forms with different encoding bases or CID versions. Many of the existing IPFS tools still generate v0 CIDs, although the `files` ([Mutable File System](/essentials/file-systems/#mutable-file-system-mfs)) and `object` operations now use CIDv1 by default.
+CIDs can take a few different forms with different encoding bases or CID versions. Many of the existing IPFS tools still generate v0 CIDs, although the `files` ([Mutable File System](/concepts/file-systems/#mutable-file-system-mfs)) and `object` operations now use CIDv1 by default.
 
 ### Version 0 (v0)
 

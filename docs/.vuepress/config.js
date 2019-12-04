@@ -50,30 +50,30 @@ module.exports = {
         sidebar: [
           '/install/',
           {
-            title: 'Essentials',
-            path: '/essentials/',
+            title: 'Concepts',
+            path: '/concepts/',
             children: [
               {
-                title: 'IPFS in a nutshell',
+                title: 'IPFS 101',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/essentials/what-is-ipfs',
-                  '/essentials/how-ipfs-works',
-                  '/essentials/usage-ideas-examples',
-                  '/essentials/glossary',
-                  '/essentials/faq'
+                  '/concepts/what-is-ipfs',
+                  '/concepts/how-ipfs-works',
+                  '/concepts/usage-ideas-examples',
+                  '/concepts/glossary',
+                  '/concepts/faq'
                 ]
               },
               {
-                title: 'Content-addressed storage',
+                title: 'Content-addressed data',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/essentials/content-addressing',
-                  '/essentials/hashing',
-                  '/essentials/immutability',
-                  '/essentials/persistence'
+                  '/concepts/content-addressing',
+                  '/concepts/hashing',
+                  '/concepts/immutability',
+                  '/concepts/persistence'
                 ]
               },
               {
@@ -81,20 +81,20 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/essentials/dht',
-                  '/essentials/merkle-dag',
-                  '/essentials/bitswap',
-                  '/essentials/ipld',
-                  '/essentials/ipns',
-                  '/essentials/libp2p',
-                  '/essentials/file-systems'
+                  '/concepts/dht',
+                  '/concepts/merkle-dag',
+                  '/concepts/bitswap',
+                  '/concepts/ipld',
+                  '/concepts/ipns',
+                  '/concepts/libp2p',
+                  '/concepts/file-systems'
                 ]
               },
               {
                 title: 'Integrating with the Web',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/essentials/ipfs-gateway', '/essentials/dnslink']
+                children: ['/concepts/ipfs-gateway', '/concepts/dnslink']
               }
             ]
           },
@@ -248,18 +248,18 @@ module.exports = {
             ]
           },
           {
-            title: 'Support & community',
-            path: '/support-community/',
+            title: 'Community',
+            path: '/community/',
             children: [
               ['https://discuss.ipfs.io/', 'IPFS forums'],
-              '/support-community/irc',
+              '/community/irc',
               [
                 'https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com',
                 'Community video calls'
               ],
               ['https://proto.school/#/chapters', 'ProtoSchool chapters'],
               ['https://www.meetup.com/members/249142444/', 'Meetups'],
-              '/support-community/social-media',
+              '/community/social-media',
               ['https://awesome.ipfs.io', 'Awesome IPFS']
             ]
           },
