@@ -1,10 +1,7 @@
 <template>
   <main class="content-status">
     <div>
-      <div
-        class="tip custom-block"
-        style="background-color:#f6f9fa; color: #737681; border-color: #5db5be;"
-      >
+      <div class="tip custom-block legacy-callout">
         <p>
           This site is in beta.
           <a
@@ -42,6 +39,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.legacy-callout {
+  background-color:#f6f9fa;
+  color: #737681;
+  border-color: #5db5be;
+}
 @media (min-width: $MQNarrow) {
 }
 </style>
