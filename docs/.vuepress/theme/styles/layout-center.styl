@@ -9,6 +9,10 @@
 	position: sticky;
 }
 
+.navbar a {
+	padding-left: 1.5rem;
+}
+
 .theme-default-content:not(.custom) {
 	margin: inherit;
 
@@ -26,16 +30,14 @@
 
 	// center links/search
 	header.navbar .links {
+		display: flex;
+		flex-direction: row-reverse;
 		position: absolute;
-		right: 1.5rem;
-
-		.nav-links {
-			margin-left: auto;
-		}
 	}
 
 	div.search-box {
 		margin-right: 0;
+		padding-left: 1.5rem;
 		border-radius: 2rem;
 
 		input, .suggestions {
