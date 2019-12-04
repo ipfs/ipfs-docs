@@ -66,7 +66,7 @@ module.exports = {
                 ]
               },
               {
-                title: 'Content-addressed storage',
+                title: 'Content-addressed data',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
