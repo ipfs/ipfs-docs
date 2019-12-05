@@ -38,28 +38,28 @@ module.exports = [
     'meta',
     {
       name: 'twitter:site',
-      content: '@IPFSbot'
+      content: 'IPFSbot'
     }
   ],
   [
     'meta',
     {
       property: 'og:image',
-      content: 'https://docs-beta.ipfs.io/images/socialcard.png'
+      content: '/images/socialcard.png'
     }
   ],
   [
     'meta',
     {
       name: 'twitter:image',
-      content: 'https://docs-beta.ipfs.io/images/socialcard.png'
+      content: '/images/socialcard.png'
     }
   ],
   [
     'meta',
     {
       itemprop: 'image',
-      content: 'https://docs-beta.ipfs.io/images/socialcard.png'
+      content: '/images/socialcard.png'
     }
   ],
   [
@@ -80,14 +80,14 @@ module.exports = [
     'meta',
     {
       property: 'og:image:height',
-      content: '200'
+      content: '630'
     }
   ],
   [
     'meta',
     {
       property: 'og:image:width',
-      content: '200'
+      content: '1200'
     }
   ],
   [
