@@ -14,7 +14,7 @@ meta:
   - property: og:description
     content: description of this page less than 150 char
   - name: twitter:card
-    content: description of this page less than 150 char
+    content: summary
 ---
 
 # Distributed Hash Tables (DHTs)

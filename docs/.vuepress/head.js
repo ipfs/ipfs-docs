@@ -37,6 +37,13 @@ module.exports = [
   [
     'meta',
     {
+      name: 'twitter:site',
+      content: 'IPFSbot'
+    }
+  ],
+  [
+    'meta',
+    {
       property: 'og:image',
       content: '/images/socialcard.png'
     }
