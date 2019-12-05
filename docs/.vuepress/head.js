@@ -45,21 +45,24 @@ module.exports = [
     'meta',
     {
       property: 'og:image',
-      content: '/images/socialcard.png'
+      content:
+        'https://deploy-preview-36--ipfs-docs-v2.netlify.com/images/socialcard.png'
     }
   ],
   [
     'meta',
     {
       name: 'twitter:image',
-      content: '/images/socialcard.png'
+      content:
+        'https://deploy-preview-36--ipfs-docs-v2.netlify.com/images/socialcard.png'
     }
   ],
   [
     'meta',
     {
       itemprop: 'image',
-      content: '/images/socialcard.png'
+      content:
+        'https://deploy-preview-36--ipfs-docs-v2.netlify.com/images/socialcard.png'
     }
   ],
   [
