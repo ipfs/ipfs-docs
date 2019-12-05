@@ -13,8 +13,6 @@ meta:
     content: description of this page less than 150 char
   - property: og:description
     content: description of this page less than 150 char
-  - name: twitter:card
-    content: summary
 ---
 
 # Distributed Hash Tables (DHTs)

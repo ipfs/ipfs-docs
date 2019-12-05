@@ -44,6 +44,13 @@ module.exports = [
   [
     'meta',
     {
+      name: 'twitter:card',
+      content: 'summary'
+    }
+  ],
+  [
+    'meta',
+    {
       property: 'og:image',
       content:
         'https://deploy-preview-36--ipfs-docs-v2.netlify.com/images/socialcard.png'
