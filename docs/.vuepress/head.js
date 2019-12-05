@@ -38,7 +38,7 @@ module.exports = [
     'meta',
     {
       name: 'twitter:site',
-      content: '@ipfsbot'
+      content: '@IPFSbot'
     }
   ],
   [
