@@ -13,6 +13,10 @@ meta:
     content: 0o0o0opage
   - property: og:image
     content: https://docs-beta.ipfs.io/images/ipfs-logo.svg
+  - property: og:image:width
+    content: 180
+  - property: og:image:height
+    content: 200
   - property: og:image:alt
     content: The IPFS Documentation website logo
   - property: og:description
