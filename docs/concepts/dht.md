@@ -2,17 +2,17 @@
 title: Distributed Hash Tables (DHTs)
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Distributed Hash Tables (DHTs)
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Distributed Hash Tables (DHTs)
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Distributed Hash Tables (DHTs)
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about how distributed hash tables (DHTs) play a part in the overall lifecycle of IPFS, the InterPlanetary File System.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn about how distributed hash tables (DHTs) play a part in the overall lifecycle of IPFS, the InterPlanetary File System.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about how distributed hash tables (DHTs) play a part in the overall lifecycle of IPFS, the InterPlanetary File System.
 ---
 
 # Distributed Hash Tables (DHTs)
