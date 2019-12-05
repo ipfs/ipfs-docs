@@ -1,44 +1,20 @@
 ---
 title: Distributed Hash Tables (DHTs)
 meta:
-  - name: description
-    content: 0o0o0odescription of this page less than 150 char0o0o0o
-  - name: subject
-    content: IPFS (InterPlanetary File System) documentation on 0o0o0opage title0o0o0o
-  - name: keywords
-    content: IPFS, InterPlanetary File System, dweb, dapp, documentation, docs, Protocol Labs
-  - property: og:type
-    content: website
-  - property: og:title
-    content: 0o0o0opage
-  - property: og:image
-    content: https://docs-beta.ipfs.io/images/ipfs-logo.svg
-  - property: og:image:width
-    content: 180
-  - property: og:image:height
-    content: 200
-  - property: og:image:alt
-    content: The IPFS Documentation website logo
-  - property: og:description
-    content: 0o0o0odescription of this page less than 150 char0o0o0o
-  - property: og:site name
-    content: IPFS Documentation
-  - name: twitter:card
-    content: 0o0o0odescription of this page0o0o0o
-  - name: twitter:site
-    content: '@ipfsbot'
   - name: twitter:title
-    content: 0o0o0opage title0o0o0o
-  - name: twitter:description
-    content: 0o0o0odescription of this page less than 150 char0o0o0o
-  - name: twitter:image
-    content: https://docs-beta.ipfs.io/images/ipfs-logo.svg
-  - name: twitter:image:alt
-    content: The IPFS Documentation website logo
+    content: IPFS Docs - page title
+  - property: og:title
+    content: IPFS Docs - page title
   - itemprop: name
-    content: 0o0o0opage title0o0o0o
-  - itemprop: image
-    content: https://docs-beta.ipfs.io/images/ipfs-logo.svg
+    content: IPFS Docs - page title
+  - name: description
+    content: description of this page less than 150 char
+  - name: twitter:description
+    content: description of this page less than 150 char
+  - property: og:description
+    content: description of this page less than 150 char
+  - name: twitter:card
+    content: description of this page less than 150 char
 ---
 
 # Distributed Hash Tables (DHTs)
