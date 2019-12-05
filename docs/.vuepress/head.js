@@ -45,21 +45,21 @@ module.exports = [
     'meta',
     {
       property: 'og:image',
-      content: 'https://docs-beta.ipfs.io/images/ipfs-logo.svg'
+      content: 'https://docs-beta.ipfs.io/images/socialcard.png'
     }
   ],
   [
     'meta',
     {
       name: 'twitter:image',
-      content: 'https://docs-beta.ipfs.io/images/ipfs-logo.svg'
+      content: 'https://docs-beta.ipfs.io/images/socialcard.png'
     }
   ],
   [
     'meta',
     {
       itemprop: 'image',
-      content: 'https://docs-beta.ipfs.io/images/ipfs-logo.svg'
+      content: 'https://docs-beta.ipfs.io/images/socialcard.png'
     }
   ],
   [
