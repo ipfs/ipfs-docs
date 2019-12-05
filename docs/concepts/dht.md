@@ -2,9 +2,39 @@
 title: Distributed Hash Tables (DHTs)
 meta:
   - name: description
-    content: hello
+    content: **description of this page less than 150 char**
+  - name: subject
+    content: IPFS (InterPlanetary File System) documentation on **page title**
   - name: keywords
-    content: super duper SEO
+    content: IPFS, InterPlanetary File System, dweb, dapp, documentation, docs, Protocol Labs
+  - property: og:type
+    content: website
+  - property: og:title
+    content: **page title**
+  - property: og:image
+    content: https://docs-beta.ipfs.io/images/ipfs-logo.svg
+  - property: og:image:alt
+    content: The IPFS Documentation website logo
+  - property: og:description
+    content: **description of this page less than 150 char**
+  - property: og:site name
+    content: IPFS Documentation
+  - name: twitter:card
+    content: **description of this page**
+  - name: twitter:site
+    content: @ipfsbot
+  - name: twitter:title
+    content: **page title**
+  - name: twitter:description
+    content: **description of this page less than 150 char**
+  - name: twitter:image
+    content: https://docs-beta.ipfs.io/images/ipfs-logo.svg
+  - name: twitter:image:alt
+    content: The IPFS Documentation website logo
+  - itemprop: name
+    content: **page title**
+  - itemprop: image
+    content: https://docs-beta.ipfs.io/images/ipfs-logo.svg
 ---
 
 # Distributed Hash Tables (DHTs)
