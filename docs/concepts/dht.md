@@ -1,5 +1,10 @@
 ---
 title: Distributed Hash Tables (DHTs)
+meta:
+  - name: description
+    content: hello
+  - name: keywords
+    content: super duper SEO
 ---
 
 # Distributed Hash Tables (DHTs)
