@@ -53,7 +53,7 @@ module.exports = [
     {
       property: 'og:image',
       content:
-        'https://deploy-preview-36--ipfs-docs-v2.netlify.com/images/socialcard.png'
+        'https://deploy-preview-36--ipfs-docs-v2.netlify.com/images/social-card.png'
     }
   ],
   [
@@ -61,7 +61,7 @@ module.exports = [
     {
       name: 'twitter:image',
       content:
-        'https://deploy-preview-36--ipfs-docs-v2.netlify.com/images/socialcard.png'
+        'https://deploy-preview-36--ipfs-docs-v2.netlify.com/images/social-card.png'
     }
   ],
   [
@@ -69,7 +69,7 @@ module.exports = [
     {
       itemprop: 'image',
       content:
-        'https://deploy-preview-36--ipfs-docs-v2.netlify.com/images/socialcard.png'
+        'https://deploy-preview-36--ipfs-docs-v2.netlify.com/images/social-card.png'
     }
   ],
   [
