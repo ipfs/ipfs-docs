@@ -10,17 +10,17 @@ related:
   'Tutorial: Setting up an IPFS gateway on Google Cloud Platform (Stacktical)': https://blog.stacktical.com/ipfs/gateway/dapp/2019/09/21/ipfs-server-google-cloud-platform.html
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - IPFS Gateway
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - IPFS Gateway
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - IPFS Gateway
   - name: description
-    content: description of this page less than 150 char
+    content: Learn why gateways are an important part of using IPFS in conjunction with the legacy web.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn why gateways are an important part of using IPFS in conjunction with the legacy web.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn why gateways are an important part of using IPFS in conjunction with the legacy web.
 ---
 
 # IPFS Gateway

@@ -2,17 +2,17 @@
 title: CLI commands
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - CLI Reference
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - CLI Reference
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - CLI Reference
   - name: description
-    content: description of this page less than 150 char
+    content: Command-line interace (CLI) reference materials for IPFS, the InterPlanetary File System.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Command-line interace (CLI) reference materials for IPFS, the InterPlanetary File System.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Command-line interace (CLI) reference materials for IPFS, the InterPlanetary File System.
 ---
 
 # Command-line interface (CLI) reference

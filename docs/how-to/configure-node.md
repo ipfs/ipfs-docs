@@ -2,17 +2,17 @@
 title: Configure a node
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Configuring a Node
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Configuring a Node
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Configuring a Node
   - name: description
-    content: description of this page less than 150 char
+    content: Learn how to configure a node in IPFS, the InterPlanetary File System.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn how to configure a node in IPFS, the InterPlanetary File System.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn how to configure a node in IPFS, the InterPlanetary File System.
 ---
 
 # Configure a node

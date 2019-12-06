@@ -2,17 +2,17 @@
 title: go-ipfs API
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Golang API Resources
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Golang API Resources
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Golang API Resources
   - name: description
-    content: description of this page less than 150 char
+    content: Developer resources for working in Go with IPFS, the InterPlanetary File System.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Developer resources for working in Go with IPFS, the InterPlanetary File System.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Developer resources for working in Go with IPFS, the InterPlanetary File System.
 ---
 
 # API resources for go-ipfs

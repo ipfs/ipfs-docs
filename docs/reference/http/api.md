@@ -2,17 +2,17 @@
 title: HTTP API
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - HTTP API Reference
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - HTTP API Reference
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - HTTP API Reference
   - name: description
-    content: description of this page less than 150 char
+    content: HTTP API developer reference materials for IPFS, the InterPlanetary File System.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: HTTP API developer reference materials for IPFS, the InterPlanetary File System.
   - property: og:description
-    content: description of this page less than 150 char
+    content: HTTP API developer reference materials for IPFS, the InterPlanetary File System.
 ---
 
 # HTTP API reference

@@ -8,17 +8,17 @@ related:
   'GitHub repo: JavaScript Bitswap implementation': https://github.com/ipfs/js-ipfs-bitswap
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Bitswap
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Bitswap
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Bitswap
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about Bitswap and how it plays into the overall architecture of IPFS, the InterPlanetary File System.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn about Bitswap and how it plays into the overall architecture of IPFS, the InterPlanetary File System.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about Bitswap and how it plays into the overall architecture of IPFS, the InterPlanetary File System.
 ---
 
 # Bitswap

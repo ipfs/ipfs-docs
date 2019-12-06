@@ -3,17 +3,17 @@ title: Social media
 sidebarDepth: 0
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - IPFS on Social Media
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - IPFS on Social Media
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - IPFS on Social Media
   - name: description
-    content: description of this page less than 150 char
+    content: Learn where to find IPFS on your favorite social media platform.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn where to find IPFS on your favorite social media platform.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn where to find IPFS on your favorite social media platform.
 ---
 
 # Social media

@@ -2,17 +2,17 @@
 title: Persistence
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Persistence, Permanence and Pinning
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Persistence, Permanence and Pinning
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Persistence, Permanence and Pinning
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about how IPFS treats persistence and permanence on the web, and how pinning can help keep data from being discarded.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn about how IPFS treats persistence and permanence on the web, and how pinning can help keep data from being discarded.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about how IPFS treats persistence and permanence on the web, and how pinning can help keep data from being discarded.
 ---
 
 # Persistence, permanence and pinning

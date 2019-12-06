@@ -2,17 +2,17 @@
 title: Concepts
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Concept Guides
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Concept Guides
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Concept Guides
   - name: description
-    content: description of this page less than 150 char
+    content: Get started on understanding the key ingredients in the decentralized web, and how IPFS works.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Get started on understanding the key ingredients in the decentralized web, and how IPFS works.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Get started on understanding the key ingredients in the decentralized web, and how IPFS works.
 ---
 
 # IPFS concepts

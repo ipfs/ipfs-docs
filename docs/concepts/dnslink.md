@@ -2,17 +2,17 @@
 title: DNSLink
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - DNSLink
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - DNSLink
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - DNSLink
   - name: description
-    content: description of this page less than 150 char
+    content: Learn how DNSLink works in conjunction with IPFS to map domain names to IPFS content.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn how DNSLink works in conjunction with IPFS to map domain names to IPFS content.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn how DNSLink works in conjunction with IPFS to map domain names to IPFS content.
 ---
 
 # DNSLink

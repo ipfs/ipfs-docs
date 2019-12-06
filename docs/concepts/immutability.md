@@ -9,17 +9,17 @@ related:
   'Wikipedia: Content-addressable storage': https://en.wikipedia.org/wiki/Content-addressable_storage
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Immutability
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Immutability
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Immutability
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about the concept of data immutability and how it's critical to how IPFS works.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn about the concept of data immutability and how it's critical to how IPFS works.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about the concept of data immutability and how it's critical to how IPFS works.
 ---
 
 # Immutability

@@ -2,17 +2,17 @@
 title: What is IPFS?
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - What is IPFS?
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - What is IPFS?
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - What is IPFS?
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about IPFS, the InterPlanetary File System, how it works, and why it's important to the future of the internet.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn about IPFS, the InterPlanetary File System, how it works, and why it's important to the future of the internet.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about IPFS, the InterPlanetary File System, how it works, and why it's important to the future of the internet.
 ---
 
 Let's just start with a one-line definition of IPFS:

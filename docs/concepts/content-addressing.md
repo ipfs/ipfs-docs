@@ -2,17 +2,17 @@
 title: Content addressing
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Content Addressing
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Content Addressing
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Content Addressing
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about how content addressing works and how content identifiers, or CIDs, play a crucial role in IPFS.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn about how content addressing works and how content identifiers, or CIDs, play a crucial role in IPFS.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about how content addressing works and how content identifiers, or CIDs, play a crucial role in IPFS.
 ---
 
 # Content addressing and CIDs

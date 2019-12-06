@@ -2,17 +2,17 @@
 title: IPNS
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - IPNS
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - IPNS
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - IPNS
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about the InterPlanetary Name System (IPNS) and how it can be used in conjunction with IPFS.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn about the InterPlanetary Name System (IPNS) and how it can be used in conjunction with IPFS.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about the InterPlanetary Name System (IPNS) and how it can be used in conjunction with IPFS.
 ---
 
 # InterPlanetary Name System (IPNS)

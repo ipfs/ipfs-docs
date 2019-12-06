@@ -2,17 +2,17 @@
 title: Related projects
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Related Projects
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Related Projects
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Related Projects
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about the modular projects that help make up IPFS, the InterPlanetary File System.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn about the modular projects that help make up IPFS, the InterPlanetary File System.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about the modular projects that help make up IPFS, the InterPlanetary File System.
 ---
 
 # Related projects

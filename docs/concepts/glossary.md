@@ -8,17 +8,17 @@ related:
   'Decentralized Web Primer': https://flyingzumwalt.gitbooks.io/decentralized-web-primer
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Glossary
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Glossary
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Glossary
   - name: description
-    content: description of this page less than 150 char
+    content: A glossary guide to key terminology for IPFS, the InterPlanetary File System.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: A glossary guide to key terminology for IPFS, the InterPlanetary File System.
   - property: og:description
-    content: description of this page less than 150 char
+    content: A glossary guide to key terminology for IPFS, the InterPlanetary File System.
 ---
 
 # IPFS glossary

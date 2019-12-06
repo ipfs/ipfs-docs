@@ -2,17 +2,17 @@
 title: How IPFS works
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - How IPFS Works
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - How IPFS Works
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - How IPFS Works
   - name: description
-    content: description of this page less than 150 char
+    content: Learn how the InterPlanetary File System (IPFS) works and why it's important to the future of the internet.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn how the InterPlanetary File System (IPFS) works and why it's important to the future of the internet.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn how the InterPlanetary File System (IPFS) works and why it's important to the future of the internet.
 ---
 
 # How IPFS works

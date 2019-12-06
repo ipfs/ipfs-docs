@@ -8,17 +8,17 @@ related:
   'IPLD specifications': https://github.com/ipld/specs
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - IPLD
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - IPLD
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - IPLD
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about the InterPlanetary Linked Data (IPLD) model and how it forms an important ingredient in IPFS.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn about the InterPlanetary Linked Data (IPLD) model and how it forms an important ingredient in IPFS.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about the InterPlanetary Linked Data (IPLD) model and how it forms an important ingredient in IPFS.
 ---
 
 # The InterPlanetary Linked Data (IPLD) model

@@ -2,17 +2,17 @@
 title: Community
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Community
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Community
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Community
   - name: description
-    content: description of this page less than 150 char
+    content: Become part of the IPFS community! Learn how here.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Become part of the IPFS community! Learn how here.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Become part of the IPFS community! Learn how here.
 ---
 
 # Community

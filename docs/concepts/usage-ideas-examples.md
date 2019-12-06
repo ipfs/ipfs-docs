@@ -9,17 +9,17 @@ related:
   "IPFS GitHub repo: Issues labeled 'applications of IPFS'": https://github.com/ipfs/ipfs/labels/applications%20of%20ipfs
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Usage Ideas and Examples
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Usage Ideas and Examples
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Usage Ideas and Examples
   - name: description
-    content: description of this page less than 150 char
+    content: Explore some helpful use cases, ideas, and examples for IPFS, the InterPlanetary File System.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Explore some helpful use cases, ideas, and examples for IPFS, the InterPlanetary File System.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Explore some helpful use cases, ideas, and examples for IPFS, the InterPlanetary File System.
 ---
 
 # Usage ideas and examples

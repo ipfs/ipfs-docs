@@ -2,17 +2,17 @@
 title: Address IPFS on the Web
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Addressing IPFS on the Web
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Addressing IPFS on the Web
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Addressing IPFS on the Web
   - name: description
-    content: description of this page less than 150 char
+    content: Learn how to address IPFS content paths on the legacy web.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn how to address IPFS content paths on the legacy web.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn how to address IPFS content paths on the legacy web.
 ---
 
 # Address IPFS on the Web

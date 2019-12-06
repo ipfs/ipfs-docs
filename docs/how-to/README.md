@@ -2,17 +2,17 @@
 title: How-tos
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - How-Tos and Tutorials
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - How-Tos and Tutorials
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - How-Tos and Tutorials
   - name: description
-    content: description of this page less than 150 char
+    content: Hands-on guides to using and developing with IPFS to build decentralized web apps and services.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Hands-on guides to using and developing with IPFS to build decentralized web apps and services.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Hands-on guides to using and developing with IPFS to build decentralized web apps and services.
 ---
 
 # IPFS how-tos and tutorials

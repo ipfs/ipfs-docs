@@ -2,17 +2,17 @@
 title: Modify the bootstrap list
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Modifying the Bootstrap List
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Modifying the Bootstrap List
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Modifying the Bootstrap List
   - name: description
-    content: description of this page less than 150 char
+    content: Learn how to modify the IPFS bootstrap peers list to create a personal IPFS network.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn how to modify the IPFS bootstrap peers list to create a personal IPFS network.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn how to modify the IPFS bootstrap peers list to create a personal IPFS network.
 ---
 
 # Modify the bootstrap peers list

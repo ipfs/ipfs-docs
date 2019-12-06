@@ -2,17 +2,17 @@
 title: Merkle DAGs
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Merkle DAGs
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Merkle DAGs
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Merkle DAGs
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about Merkle Distributed Acyclic Graphs (DAGs) and why they're important to IPFS.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn about Merkle Distributed Acyclic Graphs (DAGs) and why they're important to IPFS.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about Merkle Distributed Acyclic Graphs (DAGs) and why they're important to IPFS.
 ---
 
 # Merkle Distributed Acyclic Graphs (DAGs)

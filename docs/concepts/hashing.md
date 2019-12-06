@@ -2,17 +2,17 @@
 title: Hashing
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Hashing
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Hashing
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Hashing
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about cryptographic hashes and why they're critical to how IPFS, the InterPlanetary File System, works.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn about cryptographic hashes and why they're critical to how IPFS, the InterPlanetary File System, works.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about cryptographic hashes and why they're critical to how IPFS, the InterPlanetary File System, works.
 ---
 
 # Hashing

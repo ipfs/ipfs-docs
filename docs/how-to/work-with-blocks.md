@@ -2,17 +2,17 @@
 title: Work with blocks
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Working With Blocks
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Working With Blocks
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Working With Blocks
   - name: description
-    content: description of this page less than 150 char
+    content: Learn how your files are broken down into blocks in IPFS and how to work with them.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn how your files are broken down into blocks in IPFS and how to work with them.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn how your files are broken down into blocks in IPFS and how to work with them.
 ---
 
 # Work with blocks

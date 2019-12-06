@@ -2,17 +2,17 @@
 title: Host a single-page site
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Hosting a Website
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Hosting a Website
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Hosting a Website
   - name: description
-    content: description of this page less than 150 char
+    content: Learn how to host a simple single-page website on the decentralized web using IPFS.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn how to host a simple single-page website on the decentralized web using IPFS.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn how to host a simple single-page website on the decentralized web using IPFS.
 ---
 
 # Host a single-page website

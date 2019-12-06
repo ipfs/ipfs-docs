@@ -9,17 +9,17 @@ related:
   'Examples of libp2p key features': https://docs.libp2p.io/examples/
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - libp2p
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - libp2p
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - libp2p
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about the libp2p protocol and why it's an important ingredient in how IPFS works.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: dLearn about the libp2p protocol and why it's an important ingredient in how IPFS works.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about the libp2p protocol and why it's an important ingredient in how IPFS works.
 ---
 
 # The libp2p protocol

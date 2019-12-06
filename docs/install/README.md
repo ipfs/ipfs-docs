@@ -3,17 +3,17 @@ title: Install IPFS
 sidebarDepth: 0
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Install IPFS
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Install IPFS
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Install IPFS
   - name: description
-    content: description of this page less than 150 char
+    content: Get started installing and using IPFS, the InterPlanetary File System, and become part of the decentralized web today.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Get started installing and using IPFS, the InterPlanetary File System, and become part of the decentralized web today.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Get started installing and using IPFS, the InterPlanetary File System, and become part of the decentralized web today.
 ---
 
 # Install IPFS

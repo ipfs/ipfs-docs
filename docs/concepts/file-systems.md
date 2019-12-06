@@ -2,17 +2,17 @@
 title: File systems
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - File Systems
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - File Systems
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - File Systems
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about file systems in IPFS and why working with files in IPFS can be a little different than you may be used to.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn about file systems in IPFS and why working with files in IPFS can be a little different than you may be used to.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about file systems in IPFS and why working with files in IPFS can be a little different than you may be used to.
 ---
 
 # File systems and IPFS

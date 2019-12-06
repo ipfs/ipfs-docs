@@ -2,17 +2,17 @@
 title: IRC
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - IRC
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - IRC
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - IRC
   - name: description
-    content: description of this page less than 150 char
+    content: How to connect with the IPFS community using Internet Relay Chat (IRC).
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: How to connect with the IPFS community using Internet Relay Chat (IRC).
   - property: og:description
-    content: description of this page less than 150 char
+    content: How to connect with the IPFS community using Internet Relay Chat (IRC).
 ---
 
 # Internet Relay Chat (IRC)

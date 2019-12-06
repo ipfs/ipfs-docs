@@ -2,17 +2,17 @@
 title: IPFS Documentation
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Home
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Home
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Home
   - name: description
-    content: description of this page less than 150 char
+    content: The home page for developer documentation for IPFS, the InterPlanetary File System.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: The home page for developer documentation for IPFS, the InterPlanetary File System.
   - property: og:description
-    content: description of this page less than 150 char
+    content: The home page for developer documentation for IPFS, the InterPlanetary File System.
 ---
 
 # IPFS Documentation

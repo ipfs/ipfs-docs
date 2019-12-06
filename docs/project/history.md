@@ -9,17 +9,17 @@ related:
   "Article: It's time for the distributed web — September 2015 (Neocities)": https://blog.neocities.org/blog/2015/09/08/its-time-for-the-distributed-web.html
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - History of the IPFS Project
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - History of the IPFS Project
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - History of the IPFS Project
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about the history of IPFS, the InterPlanetary File System.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn about the history of IPFS, the InterPlanetary File System.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about the history of IPFS, the InterPlanetary File System.
 ---
 
 # History of the IPFS project

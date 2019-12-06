@@ -2,17 +2,17 @@
 title: The IPFS project
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - About the IPFS Project
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - About the IPFS Project
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - About the IPFS Project
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about the history, roadmap, current status and more for IPFS, the InterPlanetary File System.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn about the history, roadmap, current status and more for IPFS, the InterPlanetary File System.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about the history, roadmap, current status and more for IPFS, the InterPlanetary File System.
 ---
 
 # The IPFS project

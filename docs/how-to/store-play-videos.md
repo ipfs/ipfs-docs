@@ -2,17 +2,17 @@
 title: Store & play videos
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Storing and Playing Videos
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Storing and Playing Videos
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Storing and Playing Videos
   - name: description
-    content: description of this page less than 150 char
+    content: Learn how to store, play, and work with videos in IPFS, the InterPlanetary File System.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn how to store, play, and work with videos in IPFS, the InterPlanetary File System.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn how to store, play, and work with videos in IPFS, the InterPlanetary File System.
 ---
 
 # Store and play videos

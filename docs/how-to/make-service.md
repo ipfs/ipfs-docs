@@ -2,17 +2,17 @@
 title: Make a service
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Making a Service
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Making a Service
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Making a Service
   - name: description
-    content: description of this page less than 150 char
+    content: Learn how to build an easy demo service on IPFS.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn how to build an easy demo service on IPFS.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn how to build an easy demo service on IPFS.
 ---
 
 # Make a service

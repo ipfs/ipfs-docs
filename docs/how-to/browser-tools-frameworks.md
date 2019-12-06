@@ -2,17 +2,17 @@
 title: Browser Tools and Frameworks
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Using Browser Tools and Frameworks
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Using Browser Tools and Frameworks
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Using Browser Tools and Frameworks
   - name: description
-    content: description of this page less than 150 char
+    content: Information on how to use IPFS in combination with your favorite frameworks or browser implementation tools.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Information on how to use IPFS in combination with your favorite frameworks or browser implementation tools.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Information on how to use IPFS in combination with your favorite frameworks or browser implementation tools.
 ---
 
 # Browser Tools and Frameworks

@@ -2,17 +2,17 @@
 title: API & CLI
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - API and CLI Reference
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - API and CLI Reference
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - API and CLI Reference
   - name: description
-    content: description of this page less than 150 char
+    content: API and CLI reference materials for IPFS, the InterPlanetary File System.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: API and CLI reference materials for IPFS, the InterPlanetary File System.
   - property: og:description
-    content: description of this page less than 150 char
+    content: API and CLI reference materials for IPFS, the InterPlanetary File System.
 ---
 
 # API & CLI reference

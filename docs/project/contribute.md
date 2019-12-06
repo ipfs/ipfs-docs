@@ -2,17 +2,17 @@
 title: Contribute to IPFS
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Contribute to IPFS
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Contribute to IPFS
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Contribute to IPFS
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about how to contribute to IPFS, the InterPlanetary File System.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn about how to contribute to IPFS, the InterPlanetary File System.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about how to contribute to IPFS, the InterPlanetary File System.
 ---
 
 # Contribute to IPFS

@@ -2,17 +2,17 @@
 title: Command-line quick start
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Command-Line Quick Start
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Command-Line Quick Start
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Command-Line Quick Start
   - name: description
-    content: description of this page less than 150 char
+    content: Quick-start guide for installing and getting started with IPFS from the command line.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Quick-start guide for installing and getting started with IPFS from the command line.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Quick-start guide for installing and getting started with IPFS from the command line.
 ---
 
 # Command-line quick start

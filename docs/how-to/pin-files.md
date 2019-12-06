@@ -2,17 +2,17 @@
 title: Pin files
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Pinning Files
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Pinning Files
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Pinning Files
   - name: description
-    content: description of this page less than 150 char
+    content: Learn how to pin files in IPFS in order to keep your files and other objects local.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn how to pin files in IPFS in order to keep your files and other objects local.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn how to pin files in IPFS in order to keep your files and other objects local.
 ---
 
 # Pin files using IPFS

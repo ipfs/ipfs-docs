@@ -2,17 +2,17 @@
 title: Observe peers
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Observing the Network
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - Observing the Network
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - Observing the Network
   - name: description
-    content: description of this page less than 150 char
+    content: Learn the built-in IPFS commands that help you observe peers on the network.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn the built-in IPFS commands that help you observe peers on the network.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn the built-in IPFS commands that help you observe peers on the network.
 ---
 
 # Observe peers

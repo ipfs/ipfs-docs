@@ -2,17 +2,17 @@
 title: Take a snapshot
 meta:
   - name: twitter:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - File Snapshots
   - property: og:title
-    content: IPFS Docs - page title
+    content: IPFS Docs - File Snapshots
   - itemprop: name
-    content: IPFS Docs - page title
+    content: IPFS Docs - File Snapshots
   - name: description
-    content: description of this page less than 150 char
+    content: Learn about how to take and use snapshots of files in IPFS, the InterPlanetary File System.
   - name: twitter:description
-    content: description of this page less than 150 char
+    content: Learn about how to take and use snapshots of files in IPFS, the InterPlanetary File System.
   - property: og:description
-    content: description of this page less than 150 char
+    content: Learn about how to take and use snapshots of files in IPFS, the InterPlanetary File System.
 ---
 
 # Take a snapshot
