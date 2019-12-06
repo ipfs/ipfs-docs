@@ -1,5 +1,18 @@
 ---
 title: HTTP API
+meta:
+  - name: twitter:title
+    content: IPFS Docs - page title
+  - property: og:title
+    content: IPFS Docs - page title
+  - itemprop: name
+    content: IPFS Docs - page title
+  - name: description
+    content: description of this page less than 150 char
+  - name: twitter:description
+    content: description of this page less than 150 char
+  - property: og:description
+    content: description of this page less than 150 char
 ---
 
 # HTTP API reference
@@ -88,12 +101,14 @@ flag is the `&encoding=json` query parameter below:
 ```
 
 ## HTTP status codes
+
 Status codes used at the RPC layer are simple:
-* `500` - RPC endpoint returned an error
-* `404` - RPC endpoint doesn't exist
-* `400` - Malformed RPC, argument type error, etc
-* `403` - RPC call forbidden
-In other words, `500` means that the function _does_ exist, it just failed internally for some reason. To know that reason, you have to look at the "application layer" error (commands lib error).
+
+- `500` - RPC endpoint returned an error
+- `404` - RPC endpoint doesn't exist
+- `400` - Malformed RPC, argument type error, etc
+- `403` - RPC call forbidden
+  In other words, `500` means that the function _does_ exist, it just failed internally for some reason. To know that reason, you have to look at the "application layer" error (commands lib error).
 
 ## HTTP commands
 
@@ -3626,5 +3641,3 @@ On success, the call to this endpoint will return with 200 and the following bod
 ### cURL Example
 
 `curl "http://localhost:5001/api/v0/version/deps"`
-
-

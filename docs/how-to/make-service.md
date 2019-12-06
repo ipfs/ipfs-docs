@@ -1,5 +1,18 @@
 ---
 title: Make a service
+meta:
+  - name: twitter:title
+    content: IPFS Docs - page title
+  - property: og:title
+    content: IPFS Docs - page title
+  - itemprop: name
+    content: IPFS Docs - page title
+  - name: description
+    content: description of this page less than 150 char
+  - name: twitter:description
+    content: description of this page less than 150 char
+  - property: og:description
+    content: description of this page less than 150 char
 ---
 
 # Make a service
