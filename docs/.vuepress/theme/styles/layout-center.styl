@@ -5,10 +5,6 @@
 	@extend .relative;
 }
 
-.navbar {
-	position: sticky;
-}
-
 .theme-default-content:not(.custom) {
 	margin: inherit;
 
@@ -24,37 +20,8 @@
 		border-right: none;
 	}
 
-	// center links/search
-	header.navbar .links {
-		display: flex;
-		flex-direction: row-reverse;
-		position: absolute;
-	}
-
-	div.search-box {
-		margin-right: 0;
-		padding-left: 1.5rem;
-		border-radius: 2rem;
-
-		input, .suggestions {
-			width: 10em;
-		}
-
-		input:focus, .suggestions {
-			width: 20em;
-		}
-	}
-
 	footer.page-edit {
 		margin: inherit;
-	}
-}
-
-@media (max-width: $MQNarrow) {
-	div.search-box {
-		input {
-			font-size: 1rem;
-		}
 	}
 }
 
