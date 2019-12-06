@@ -37,12 +37,24 @@
 		border-radius: 2rem;
 
 		input, .suggestions {
-			width: 15em;
+			width: 10em;
+		}
+
+		input:focus, .suggestions {
+			width: 20em;
 		}
 	}
 
 	footer.page-edit {
 		margin: inherit;
+	}
+}
+
+@media (max-width: $MQNarrow) {
+	div.search-box {
+		input {
+			font-size: 1rem;
+		}
 	}
 }
 
