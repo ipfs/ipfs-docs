@@ -1,8 +1,10 @@
 @media (min-width: $MQNarrow) {
+	.nav-links {
+	}
+
 	header.navbar .links {
 		display: flex;
 		flex-direction: row-reverse;
-		position: absolute;
 	}
 
 	div.search-box {
@@ -20,7 +22,7 @@
 	}
 }
 
-@media (max-width: $MQNarrow) {
+@media (max-width: $MQMobile) {
 	div.search-box {
 		input {
 			// prevent zooming on iOS
@@ -33,7 +35,7 @@
 	}
 }
 
-@media (max-width: $MQMobileNarrow) {
+@media (max-width: $MQMobile) {
 	.home-link {
 		position: absolute;
 		width: 45px;
