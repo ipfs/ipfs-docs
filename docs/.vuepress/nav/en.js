@@ -1,6 +1,6 @@
 module.exports = [
   {
-    text: 'Suggest a Feature',
+    text: 'Suggest a Topic',
     link: 'https://ipfs.canny.io/docs-features'
   }
 ]
