@@ -11,8 +11,8 @@
       </div>
       <div class="section content-status-vote">
         <h3>Is this topic important to you?</h3>
-        <button>Yes</button>
-        <button>Not really</button>
+        <button class="btn btn-primary">Yes</button>
+        <button class="btn btn-primary">Not really</button>
       </div>
       <div class="section content-status-info">
         <h3>Give us a hand</h3>
@@ -95,32 +95,13 @@ ul {
   float: right;
 }
 
-// TODO: make global
-.section {
-  margin-bottom: 3rem;
+button {
+  min-width: 45%;
 }
 
 // TODO: make global
-.content-status-vote {
-  button {
-    font-weight: bold;
-    padding: 10px 15px;
-    background-color: darken($accentColor, 30%);
-    border: none;
-    font-size: 1em;
-    color: white;
-    margin-right: 10px;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.3s;
-    min-width: 45%;
-
-    &:hover {
-      background-color: $accentColor;
-    }
-
-    outline: none;
-  }
+.section {
+  margin-bottom: 3rem;
 }
 
 @media (min-width: $MQNarrow) {
