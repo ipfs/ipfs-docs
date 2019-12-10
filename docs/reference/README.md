@@ -1,5 +1,6 @@
 ---
 title: API & CLI
+legacyUrl: https://docs.ipfs.io/reference/api/
 ---
 
 # API & CLI reference

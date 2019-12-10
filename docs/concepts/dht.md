@@ -1,5 +1,6 @@
 ---
 title: Distributed Hash Tables (DHTs)
+legacyUrl: https://docs.ipfs.io/guides/concepts/dht/
 ---
 
 # Distributed Hash Tables (DHTs)

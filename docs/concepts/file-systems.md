@@ -1,5 +1,6 @@
 ---
 title: File systems
+legacyUrl: https://docs.ipfs.io/guides/concepts/mfs/
 ---
 
 # File systems and IPFS

@@ -1,5 +1,6 @@
 ---
 title: Observe peers
+legacyUrl: https://docs.ipfs.io/guides/examples/network/
 ---
 
 # Observe peers

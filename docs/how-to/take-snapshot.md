@@ -1,5 +1,6 @@
 ---
 title: Take a snapshot
+legacyUrl: https://docs.ipfs.io/guides/examples/snapshots/
 ---
 
 # Take a snapshot

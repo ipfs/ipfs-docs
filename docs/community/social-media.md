@@ -1,6 +1,7 @@
 ---
 title: Social media
 sidebarDepth: 0
+legacyUrl: https://docs.ipfs.io/community/
 ---
 
 # Social media

@@ -1,5 +1,6 @@
 ---
 title: Work with blocks
+legacyUrl: https://docs.ipfs.io/guides/examples/blocks/
 ---
 
 # Work with blocks

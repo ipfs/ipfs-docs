@@ -1,5 +1,6 @@
 ---
 title: DNSLink
+legacyUrl: https://docs.ipfs.io/guides/concepts/dnslink/
 ---
 
 # DNSLink

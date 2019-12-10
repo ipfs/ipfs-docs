@@ -1,5 +1,6 @@
 ---
 title: How IPFS works
+legacyUrl: https://docs.ipfs.io/introduction/how-ipfs-works/
 ---
 
 # How IPFS works

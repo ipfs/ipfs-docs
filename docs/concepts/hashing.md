@@ -1,5 +1,6 @@
 ---
 title: Hashing
+legacyUrl: https://docs.ipfs.io/guides/concepts/hashes/
 ---
 
 # Hashing

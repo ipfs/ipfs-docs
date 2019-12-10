@@ -1,5 +1,6 @@
 ---
 title: go-ipfs API
+legacyUrl: https://docs.ipfs.io/reference/go/overview/
 ---
 
 # API resources for go-ipfs

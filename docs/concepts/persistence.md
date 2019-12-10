@@ -1,5 +1,6 @@
 ---
 title: Persistence
+legacyUrl: https://docs.ipfs.io/guides/concepts/pinning/
 ---
 
 # Persistence, permanence and pinning

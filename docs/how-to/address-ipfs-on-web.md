@@ -1,5 +1,6 @@
 ---
 title: Address IPFS on the Web
+legacyUrl: https://docs.ipfs.io/guides/guides/addressing/
 ---
 
 # Address IPFS on the Web

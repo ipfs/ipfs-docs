@@ -1,5 +1,6 @@
 ---
 title: Contribute to IPFS
+legacyUrl: https://docs.ipfs.io/community/contribute/how-to-help/
 ---
 
 # Contribute to IPFS

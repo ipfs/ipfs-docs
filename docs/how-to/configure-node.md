@@ -1,5 +1,6 @@
 ---
 title: Configure a node
+legacyUrl: https://docs.ipfs.io/guides/examples/config/
 ---
 
 # Configure a node

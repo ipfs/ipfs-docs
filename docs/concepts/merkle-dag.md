@@ -1,5 +1,6 @@
 ---
 title: Merkle DAGs
+legacyUrl: https://docs.ipfs.io/guides/concepts/merkle-dag/
 ---
 
 # Merkle Distributed Acyclic Graphs (DAGs)

@@ -1,6 +1,9 @@
 ---
 title: What is IPFS?
+legacyUrl: https://docs.ipfs.io/introduction/overview/
 ---
+
+# What is IPFS?
 
 Let's just start with a one-line definition of IPFS:
 

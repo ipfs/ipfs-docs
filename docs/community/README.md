@@ -1,5 +1,6 @@
 ---
 title: Community
+legacyUrl: https://docs.ipfs.io/community/
 ---
 
 # Community

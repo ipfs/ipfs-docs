@@ -1,5 +1,6 @@
 ---
 title: IRC
+legacyUrl: https://docs.ipfs.io/community/irc/
 ---
 
 # Internet Relay Chat (IRC)

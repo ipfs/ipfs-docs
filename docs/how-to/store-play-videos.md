@@ -1,5 +1,6 @@
 ---
 title: Store & play videos
+legacyUrl: https://docs.ipfs.io/guides/examples/videos/
 ---
 
 # Store and play videos

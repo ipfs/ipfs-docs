@@ -1,5 +1,6 @@
 ---
 title: Pin files
+legacyUrl: https://docs.ipfs.io/guides/examples/pinning/
 ---
 
 # Pin files using IPFS
