@@ -42,19 +42,28 @@
 export default {
   data: function() {
     return {
-      voteSubmitted: false
+      voteSubmitted: false,
+      currentPath: this.$route.path
     }
   },
   methods: {
     sendFeedback: function(evnType) {
-      console.log('hellop', evnType)
       this.voteSubmitted = true
+
+      // bail if ga is not enabled
       if (!window.ga) return
+
       window.ga('send', 'event', {
         eventCategory: evnType,
         eventAction: 'click',
         eventLabel: window.location.href
       })
+    }
+  },
+  watch: {
+    '$route.path': function(path) {
+      this.voteSubmitted = false
+      this.currentPath = path
     }
   },
   props: {

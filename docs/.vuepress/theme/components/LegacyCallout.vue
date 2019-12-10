@@ -46,9 +46,9 @@ export default {
 
 <style lang="stylus" scoped>
 .legacy-callout {
-  background-color: #f6f9fa;
+  background-color: lighten($accentColor, 95%);
   color: #737681;
-  border-color: #5db5be;
+  border-color: $accentColor;
 }
 
 @media (min-width: $MQNarrow) {
