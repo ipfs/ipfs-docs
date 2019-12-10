@@ -22,7 +22,7 @@ module.exports = {
     betaTestFormUrl:
       'https://docs.google.com/forms/d/1LVaD1B2uyW6Ff0jfU_iQ5mCeyQcHfyQO6BDD99XAgK0/viewform',
     // edit links
-    repo: 'ipfs/ipfs-docs-v2',
+    // repo: 'ipfs/ipfs-docs-v2',
     docsRepo: 'ipfs/ipfs-docs-v2',
     docsDir: 'docs',
     docsBranch: 'master',

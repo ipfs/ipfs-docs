@@ -54,7 +54,9 @@ export default {
       return this.$frontmatter && this.$frontmatter.issueUrl
     },
     repo: function() {
-      return this.$site && this.$site.themeConfig && this.$site.themeConfig.repo
+      return (
+        this.$site && this.$site.themeConfig && this.$site.themeConfig.docsRepo
+      )
     },
     related: function() {
       return this.$frontmatter.related
