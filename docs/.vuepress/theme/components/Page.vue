@@ -4,8 +4,10 @@
       <div class="theme-default-content">
         <p>{{ $page }}</p>
       </div>
-      <Feedback />
-      <LegacyCallout />
+      <div v-if="!isContentStatus">
+        <Feedback />
+        <LegacyCallout />
+      </div>
     </template>
   </ParentLayout>
 </template>
@@ -21,6 +23,11 @@ export default {
     ParentLayout,
     Feedback,
     LegacyCallout
+  },
+  computed: {
+    isContentStatus: function() {
+      return !!(this.$frontmatter && this.$frontmatter.issueUrl)
+    }
   }
 }
 </script>
