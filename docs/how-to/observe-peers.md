@@ -24,5 +24,3 @@ Search for a given peer on the network:
 ```sh
 ipfs dht findpeer QmSoLnSGccFuZQJzRadHn95W2CrSFmZuTdDWP8HXaHca9z
 ```
-
-<LegacyCallout />

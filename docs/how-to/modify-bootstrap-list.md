@@ -62,5 +62,3 @@ Remove the entire bootstrap list again, and restore our saved one by piping the 
 ipfs bootstrap rm --all
 cat save | ipfs bootstrap add
 ```
-
-<LegacyCallout />

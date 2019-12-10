@@ -50,5 +50,3 @@ IPFS is an open source project, with a community of more than four thousand cont
 ## Don't see your question?
 
 We're working on expanding this FAQ with more content, including questions from the original-generation [IPFS forums](https://discuss.ipfs.io/c/help/Old-FAQ), so please watch this space! However, if you don’t see your question, please [ask in the forums](https://discuss.ipfs.io/) so you can get the answers you need and make us aware of new FAQ items.
-
-<LegacyCallout />

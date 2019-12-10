@@ -3629,5 +3629,3 @@ On success, the call to this endpoint will return with 200 and the following bod
 ### cURL Example
 
 `curl "http://localhost:5001/api/v0/version/deps"`
-
-<LegacyCallout />

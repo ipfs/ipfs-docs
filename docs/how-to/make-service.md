@@ -161,5 +161,3 @@ Now, you might be asking yourself: "Why would I use this? How is it better than 
 1. You dial a specific peerID, no matter what their IP address happens to be at the moment.
 2. You take advantage of the NAT traversal built into our net package.
 3. Instead of a 'port' number, you get a much more meaningful protocol ID string.
-
-<LegacyCallout />

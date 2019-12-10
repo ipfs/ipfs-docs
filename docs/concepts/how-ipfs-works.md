@@ -76,5 +76,3 @@ This is useful because establishing connections is usually hard to set up and ex
 As you may have noticed from this discussion, the IPFS ecosystem is made up of many modular libraries that support specific parts of any distributed system. You can certainly use any part of the stack independently, or combine them in novel ways.
 
 The IPFS ecosystem gives CIDs to content, and links that content together by generating IPLD Merkle DAGs. You can discover content using a DHT that's provided by libp2p, and open a connection to any provider of that content and download it using a multiplexed connection. All of this is held together by the “middle” of the stack, which is linked, unique identifiers; that's the essential part that IPFS is built on.
-
-<LegacyCallout />

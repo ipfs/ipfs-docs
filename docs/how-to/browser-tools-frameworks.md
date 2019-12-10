@@ -29,5 +29,3 @@ Want to learn how to use IPFS in combination with your favorite framework or bro
 ## Electron
 
 [Minimal example](https://github.com/ipfs/js-ipfs/blob/master/examples/run-in-electron) of how to use js-ipfs in your Electron app.
-
-<LegacyCallout />

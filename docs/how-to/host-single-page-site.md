@@ -114,5 +114,3 @@ Alternatively, it is possible to use CNAME records to point at the DNS records o
 However you will need to change the key for the TXT record from `your.domain` to `_dnslink.your.domain`.
 
 So by creating a CNAME for `your.domain` to `gateway.ipfs.io` and adding a `_dnslink.your.domain` record with `dnslink=/ipns/<your peer id>` you can host your website without explicitly referring to IP addresses of the ipfs gateway.
-
-<LegacyCallout />

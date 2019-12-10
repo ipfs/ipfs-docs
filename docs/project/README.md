@@ -41,5 +41,3 @@ Thousands of people contribute to IPFS from all over the world — and that can 
 ## Code of conduct
 
 The IPFS community believes that our mission is best served in an environment that is friendly, safe, and accepting, and free from intimidation or harassment. To that end, we ask that everyone involved in IPFS read and respect our [code of conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md).
-
-<LegacyCallout />

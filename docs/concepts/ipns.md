@@ -38,5 +38,3 @@ In the same way, you can republish a new version of your website under the same 
 ## Alternatives to IPNS
 
 IPNS is not the only way to create mutable addresses on IPFS. You can also use [DNSLink](/concepts/dnslink/), which is currently much faster than IPNS and also uses more readable names. Other community members are exploring ways to use blockchains to store common name records.
-
-<LegacyCallout />

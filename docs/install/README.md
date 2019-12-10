@@ -55,5 +55,3 @@ Go developers, this reference implementation of IPFS is for you. [Install go-ipf
 ### Install js-ipfs
 
 Building for the browser, or for JavaScript-driven frameworks like Electron? Bake in IPFS goodness with the JS implementation. [Install js-ipfs now](https://www.npmjs.com/package/ipfs)
-
-<LegacyCallout />

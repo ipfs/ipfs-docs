@@ -30,5 +30,3 @@ Or open it up in a browser tab (in this example, Chrome):
 ```bash
 chromium http://localhost:8080/ipfs/$vidhash
 ```
-
-<LegacyCallout />

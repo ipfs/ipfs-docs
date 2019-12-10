@@ -49,5 +49,3 @@ ls
 ```
 
 Through the FUSE interface, you'll be able to access your files exactly as they were when you took the snapshot.
-
-<LegacyCallout />

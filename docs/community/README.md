@@ -34,5 +34,3 @@ We're in a lot of places. Here's [how to find them all](social-media) for your f
 ## Awesome IPFS
 
 Get inspired by [Awesome IPFS](https://awesome.ipfs.io/), a catalog of community-built projects using IPFS for everything from image sharing to decentralized archiving. Have a project of your own to add to Awesome IPFS? Make a PR [in the repo!](https://github.com/ipfs/awesome-ipfs)
-
-<LegacyCallout />

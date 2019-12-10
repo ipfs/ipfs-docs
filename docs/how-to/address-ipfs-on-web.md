@@ -123,5 +123,3 @@ This concept isn't yet built, but may be explored and experimented with in the f
 
 - `dweb://` protocol handler ([arewedistributedyet/issues/28](https://github.com/arewedistributedyet/arewedistributedyet/issues/28))
 - `.dweb` special-use top-level domain name ([arewedistributedyet/issues/34](https://github.com/arewedistributedyet/arewedistributedyet/issues/34))
-
-<LegacyCallout />

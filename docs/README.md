@@ -34,5 +34,3 @@ Also, check out [ProtoSchool](https://www.proto.school) for interactive tutorial
 ## The IPFS project
 
 [Learn all about the IPFS project](/project/), including its history, current state, specifications, and future trajectory — plus, find everything you need to know in order to join the thousands of IPFS contributors from around the world!
-
-<LegacyCallout />

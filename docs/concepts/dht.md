@@ -83,5 +83,3 @@ Adding a blob of data to IPFS is the equivalent of advertising that you have it.
 IPFS will automatically chunk your data and add a mapping on the DHT between the Content ID and your `peerID`. Note that there can be other `peerID`s already mapped to that value, so you will be added to the list. Also note that if the provided data is bigger than 124KB, it will be chunked into "blocks", and both those blocks and the overall data will be mapped.
 
 You can publish an IPNS record using [`ipfs.name.publish`](/concepts/ipns).
-
-<LegacyCallout />

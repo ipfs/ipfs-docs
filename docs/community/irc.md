@@ -22,5 +22,3 @@ If you’re new to IRC, there are _lots_ of mobile and desktop clients for worki
 - [Textual](https://www.codeux.com/textual/) or [Adium](https://adium.im) on macOS
 - [mIRC](http://standaloneinstaller.com/download-mirc) or [HexChat](https://hexchat.github.io) on Windows
 - [XChat](http://xchat.org) or [Irssi](https://irssi.org) on Linux
-
-<LegacyCallout />

@@ -77,5 +77,3 @@ import (
 And you will be guaranteed to have the same code every time!
 
 Note: Since Go doesn't allow the usage of localhost for import paths, we use the public HTTP gateways. This provides no security guarantees, as a man-in-the-middle attack could ship you bad code. You could use a domain name that redirects to the localhost instead to avoid the issue.
-
-<LegacyCallout />

@@ -39,5 +39,3 @@ ipfs pin rm -r <foo hash>
 ipfs repo gc
 ipfs cat <foo hash>
 ```
-
-<LegacyCallout />
