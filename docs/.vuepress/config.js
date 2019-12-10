@@ -26,7 +26,7 @@ module.exports = {
     docsRepo: 'ipfs/ipfs-docs-v2',
     docsDir: 'docs',
     docsBranch: 'master',
-    editLinks: true,
+    editLinks: false,
     // page nav
     nextLinks: false,
     prevLinks: false,
@@ -38,7 +38,7 @@ module.exports = {
         label: 'English',
         selectText: 'Languages',
         ariaLabel: 'Select language',
-        editLinkText: 'Help us improve this page on GitHub',
+        editLinkText: 'Edit this page on GitHub',
         lastUpdated: 'Last Updated',
         serviceWorker: {
           updatePopup: {
