@@ -1,19 +1,23 @@
 <template>
   <div class="feedback">
     <h3>Was this information helpful?</h3>
-    <div class="feedback--actions">
-      <button class="btn btn-primary" title="Helpful" data-title="helpful">
-        Yes
+    <div v-if="!voteSubmitted" class="feedback--actions">
+      <button
+        class="btn btn-primary"
+        :title="evtYes"
+        v-on:click="sendFeedback(evtYes)"
+      >
+        {{ evtYes }}
       </button>
       <button
         class="btn btn-primary"
-        title="Not Helpful"
-        data-title="not helpful"
+        :title="evtNo"
+        v-on:click="sendFeedback(evtNo)"
       >
-        No
+        {{ evtNo }}
       </button>
     </div>
-    <div class="feedback--result">
+    <div v-if="voteSubmitted" class="feedback--result feedback--show">
       <p>Thank you for the feedback.</p>
     </div>
     <p class="feedback--edit-or-open">
@@ -35,7 +39,35 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data: function() {
+    return {
+      voteSubmitted: false
+    }
+  },
+  methods: {
+    sendFeedback: function(evnType) {
+      console.log('hellop', evnType)
+      this.voteSubmitted = true
+      if (!window.ga) return
+      window.ga('send', 'event', {
+        eventCategory: evnType,
+        eventAction: 'click',
+        eventLabel: window.location.href
+      })
+    }
+  },
+  props: {
+    evtYes: {
+      type: String,
+      default: 'yes'
+    },
+    evtNo: {
+      type: String,
+      default: 'no'
+    }
+  }
+}
 </script>
 
 <style lang="stylus" scoped>
@@ -47,6 +79,10 @@ export default {}
   to {
     opacity: 1;
   }
+}
+
+button {
+  text-transform: capitalize;
 }
 
 .feedback {
@@ -66,7 +102,7 @@ export default {}
   }
 
   &--result.feedback--show {
-    min-height: 40px;
+    min-height: 38px;
     display: flex;
     align-items: center;
 
