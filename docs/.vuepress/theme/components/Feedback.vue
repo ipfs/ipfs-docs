@@ -1,6 +1,6 @@
 <template>
   <div class="feedback">
-    <h3>Was this information helpful?</h3>
+    <h3>{{ titleMsg }}</h3>
     <div v-if="!voteSubmitted" class="feedback-actions">
       <button
         class="btn btn-primary"
@@ -18,7 +18,7 @@
       </button>
     </div>
     <div v-if="voteSubmitted" class="feedback-result feedback-show">
-      <p>Thank you for the feedback.</p>
+      <p>{{ thanksMsg }}</p>
     </div>
     <div v-if="editOrIssueLinks" class="feedback-edit-or-issue">
       <EditOrIssue />
@@ -57,6 +57,14 @@ export default {
     }
   },
   props: {
+    titleMsg: {
+      type: String,
+      default: 'Was this information helpful?'
+    },
+    thanksMsg: {
+      type: String,
+      default: 'Thank you for the feedback.'
+    },
     evtYes: {
       type: String,
       default: 'yes'
