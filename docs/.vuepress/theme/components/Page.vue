@@ -1,29 +1,38 @@
 <template>
-  <ParentLayout>
-    <template #top>
-      <div class="theme-default-content">
-        <p>{{ $page }}</p>
-      </div>
-      <div v-if="!isContentStatus">
-        <Feedback />
-        <LegacyCallout />
-      </div>
-    </template>
-  </ParentLayout>
+  <main class="page">
+    <slot name="top" />
+
+    <Content class="theme-default-content" />
+
+    <div v-if="!isContentStatus">
+      <Feedback />
+      <LegacyCallout />
+    </div>
+
+    <PageEdit />
+
+    <PageNav v-bind="{ sidebarItems }" />
+
+    <slot name="bottom" />
+  </main>
 </template>
 
 <script>
-import ParentLayout from '@parent-theme/components/Page.vue'
+import PageEdit from '@parent-theme/components/PageEdit.vue'
+import PageNav from '@parent-theme/components/PageNav.vue'
+
 import Feedback from './Feedback.vue'
 import LegacyCallout from './LegacyCallout.vue'
 
 export default {
   name: 'Page',
   components: {
-    ParentLayout,
+    PageEdit,
+    PageNav,
     Feedback,
     LegacyCallout
   },
+  props: ['sidebarItems'],
   computed: {
     isContentStatus: function() {
       return !!(this.$frontmatter && this.$frontmatter.issueUrl)
@@ -31,3 +40,9 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+.page
+  padding-bottom 2rem
+  display block
+</style>
