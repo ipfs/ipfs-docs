@@ -10,9 +10,14 @@
         of this page on GitHub.
       </div>
       <div class="section content-status-vote">
-        <h3>Is this topic important to you?</h3>
-        <button class="btn btn-primary">Yes</button>
-        <button class="btn btn-primary">Not really</button>
+        <Feedback
+          titleTxt="Is this topic important to you?"
+          evtYes="yes"
+          evtNo="no"
+          noTxt="Not really"
+          yesTxt="Yes"
+          :editOrIssueLinks="false"
+        />
       </div>
       <div class="section content-status-info">
         <h3>Give us a hand</h3>
@@ -48,6 +53,8 @@
 </template>
 
 <script>
+import Feedback from '../components/Feedback.vue'
+
 export default {
   computed: {
     issueUrl: function() {
@@ -67,7 +74,8 @@ export default {
       type: String,
       default: 'This content is still preparing for liftoff!'
     }
-  }
+  },
+  components: { Feedback }
 }
 </script>
 
