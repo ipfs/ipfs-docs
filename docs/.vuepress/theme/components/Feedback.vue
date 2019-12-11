@@ -26,7 +26,7 @@
         target="_blank"
         >Edit this page</a
       >
-      in GitHub or
+      on GitHub or
       <a
         :href="
           `https://github.com/ipfs/docs/issues/new?assignees=&labels=OKR+3%3A+Content+Improvement%2C+docs-ipfs&template=documentation-issue.md&title=%5BDOCS+ISSUE%5D+Page:+${$page.title}`
