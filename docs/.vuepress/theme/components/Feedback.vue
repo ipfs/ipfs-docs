@@ -1,7 +1,7 @@
 <template>
   <div class="feedback">
     <h3>Was this information helpful?</h3>
-    <div v-if="!voteSubmitted" class="feedback--actions">
+    <div v-if="!voteSubmitted" class="feedback-actions">
       <button
         class="btn btn-primary"
         :title="evtYes"
@@ -17,12 +17,12 @@
         {{ evtNo }}
       </button>
     </div>
-    <div v-if="voteSubmitted" class="feedback--result feedback--show">
+    <div v-if="voteSubmitted" class="feedback-result feedback-show">
       <p>Thank you for the feedback.</p>
     </div>
-    <p class="feedback--edit-or-open">
+    <div v-if="editOrIssueLinks" class="feedback-edit-or-issue">
       <EditOrIssue />
-    </p>
+    </div>
   </div>
 </template>
 
@@ -64,6 +64,10 @@ export default {
     evtNo: {
       type: String,
       default: 'no'
+    },
+    editOrIssueLinks: {
+      type: Boolean,
+      default: true
     }
   },
   components: {
@@ -87,23 +91,27 @@ button {
   text-transform: capitalize;
 }
 
+.feedback-edit-or-issue {
+  padding: 1em 0;
+}
+
 .feedback {
   margin: 2em 0;
 
-  &--result {
+  &-result {
     display: none;
   }
 
-  &--show {
+  &-show {
     display: block;
     animation: fadein 1s;
   }
 
-  &--hide {
+  &-hide {
     display: none;
   }
 
-  &--result.feedback--show {
+  &-result.feedback-show {
     min-height: 38px;
     display: flex;
     align-items: center;
