@@ -4,6 +4,12 @@
       <a :href="editLink" target="_blank" rel="noopener noreferrer">{{
         editLinkText
       }}</a>
+      <span v-if="$site.themeConfig.docsRepoIssue">
+        or
+        <a :href="openIssueLink" target="_blank" rel="noopener noreferrer"
+          >open an issue</a
+        >
+      </span>
     </div>
   </div>
 </template>
@@ -26,6 +32,15 @@ export default {
         return this.$site.themeConfig.lastUpdated
       }
       return 'Last Updated'
+    },
+
+    openIssueLink() {
+      const {
+        repo,
+        docsRepo = repo,
+        docsRepoIssue = docsRepo || repo
+      } = this.$site.themeConfig
+      return `https://github.com/${docsRepoIssue}/issues/new?assignees=&labels=OKR+3%3A+Content+Improvement%2C+docs-ipfs&template=documentation-issue.md&title=%5BDOCS+ISSUE%5D+Page:+${this.$page.title}`
     },
 
     editLink() {

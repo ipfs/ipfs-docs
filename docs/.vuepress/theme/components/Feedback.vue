@@ -22,19 +22,6 @@
     </div>
     <p class="feedback--edit-or-open">
       <EditOrIssue />
-      <a
-        href="https://github.com/ipfs/docs/blob/master/content/"
-        target="_blank"
-        >Edit this page</a
-      >
-      on GitHub or
-      <a
-        :href="
-          `https://github.com/ipfs/docs/issues/new?assignees=&labels=OKR+3%3A+Content+Improvement%2C+docs-ipfs&template=documentation-issue.md&title=%5BDOCS+ISSUE%5D+Page:+${$page.title}`
-        "
-        target="_blank"
-        >open an issue</a
-      >
     </p>
   </div>
 </template>

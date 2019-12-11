@@ -24,6 +24,7 @@ module.exports = {
     // edit links
     // repo: 'ipfs/ipfs-docs-v2',
     docsRepo: 'ipfs/ipfs-docs-v2',
+    docsRepoIssue: 'ipfs/docs',
     docsDir: 'docs',
     docsBranch: 'master',
     editLinks: false,
