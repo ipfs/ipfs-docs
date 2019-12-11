@@ -21,6 +21,7 @@
       <p>Thank you for the feedback.</p>
     </div>
     <p class="feedback--edit-or-open">
+      <EditOrIssue />
       <a
         href="https://github.com/ipfs/docs/blob/master/content/"
         target="_blank"
@@ -39,6 +40,8 @@
 </template>
 
 <script>
+import EditOrIssue from './EditOrIssue.vue'
+
 export default {
   data: function() {
     return {
@@ -75,6 +78,9 @@ export default {
       type: String,
       default: 'no'
     }
+  },
+  components: {
+    EditOrIssue
   }
 }
 </script>
