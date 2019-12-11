@@ -1,24 +1,24 @@
 <template>
   <div class="feedback">
-    <h3>{{ titleMsg }}</h3>
+    <h3>{{ titleTxt }}</h3>
     <div v-if="!voteSubmitted" class="feedback-actions">
       <button
         class="btn btn-primary"
         :title="evtYes"
         v-on:click="sendFeedback(evtYes)"
       >
-        {{ evtYes }}
+        {{ yesTxt }}
       </button>
       <button
         class="btn btn-primary"
         :title="evtNo"
         v-on:click="sendFeedback(evtNo)"
       >
-        {{ evtNo }}
+        {{ noTxt }}
       </button>
     </div>
     <div v-if="voteSubmitted" class="feedback-result feedback-show">
-      <p>{{ thanksMsg }}</p>
+      <p>{{ thanksTxt }}</p>
     </div>
     <div v-if="editOrIssueLinks" class="feedback-edit-or-issue">
       <EditOrIssue />
@@ -57,11 +57,11 @@ export default {
     }
   },
   props: {
-    titleMsg: {
+    titleTxt: {
       type: String,
       default: 'Was this information helpful?'
     },
-    thanksMsg: {
+    thanksTxt: {
       type: String,
       default: 'Thank you for the feedback.'
     },
@@ -72,6 +72,14 @@ export default {
     evtNo: {
       type: String,
       default: 'no'
+    },
+    yesTxt: {
+      type: String,
+      default: 'Yes'
+    },
+    noTxt: {
+      type: String,
+      default: 'No'
     },
     editOrIssueLinks: {
       type: Boolean,
