@@ -61,6 +61,10 @@ export default {
   padding: 1rem 2rem;
 }
 
+.legacy-links a {
+  font-weight: 400;
+}
+
 section {
   margin: 1rem 0;
   ul {
