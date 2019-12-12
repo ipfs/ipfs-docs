@@ -52,6 +52,11 @@ export default {
   padding-top: 0;
 }
 
+.page-edit {
+  max-width: 100%;
+  padding: 2rem 2rem;
+}
+
 .content-feedback {
   padding: 0 2rem;
 }
@@ -64,6 +69,9 @@ export default {
   .content-feedback {
     padding: 0;
     margin: 0;
+  }
+  .page-edit {
+    padding: 2rem 0;
   }
   section {
      display: flex;
