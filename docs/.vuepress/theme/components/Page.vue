@@ -5,7 +5,11 @@
     <Content class="theme-default-content" />
 
     <div class="content-footer" v-if="!isContentStatus">
-      <Feedback evtYes="information_helpful" evtNo="information_not_helpful" />
+      <Feedback
+        class="content-feedback"
+        evtYes="information_helpful"
+        evtNo="information_not_helpful"
+      />
       <LegacyCallout />
       <PageEdit />
       <PageNav v-bind="{ sidebarItems }" />
@@ -39,14 +43,33 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .page {
   padding-bottom: 2rem;
   display: block;
 }
-
 .content-footer{
-  padding: 2rem 2.5rem;
   padding-top: 0;
+}
+
+.content-feedback {
+  padding: 0 2rem;
+}
+
+@media (min-width: $MQNarrow) {
+  .content-footer {
+    padding: 0 2rem;
+    padding-top: 0;
+  }
+  .content-feedback {
+    padding: 0;
+    margin: 0;
+  }
+  section {
+     display: flex;
+     .block {
+       flex: 1;
+      }
+  }
 }
 </style>

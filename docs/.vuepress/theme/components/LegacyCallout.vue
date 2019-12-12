@@ -1,5 +1,5 @@
 <template>
-  <div class="tip custom-block legacy-callout">
+  <div class="legacy-callout">
     <p>
       <b>This site is in beta. Help us improve it!</b>
     </p>
@@ -55,9 +55,9 @@ export default {
 
 <style lang="stylus" scoped>
 .legacy-callout {
-  background-color: lighten($accentColor, 95%);
+  background-color: lighten($badgeTipColor, 95%);
   color: #737681;
-  border-color: $accentColor;
+  border-color: $badgeTipColor;
   padding: 1rem 2rem;
   margin-top: 3rem;
 }
