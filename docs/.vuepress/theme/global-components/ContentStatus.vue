@@ -12,8 +12,8 @@
       <div class="section content-status-vote">
         <Feedback
           titleTxt="Is this topic important to you?"
-          evtYes="yes"
-          evtNo="no"
+          evtYes="topic_important"
+          evtNo="topic_not_important"
           noTxt="Not really"
           yesTxt="Yes"
           :editOrIssueLinks="false"

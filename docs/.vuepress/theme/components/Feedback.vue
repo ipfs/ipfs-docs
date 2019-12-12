@@ -39,7 +39,6 @@ export default {
   methods: {
     sendFeedback: function(evtType) {
       this.voteSubmitted = true
-      debugger
 
       // bail if ga is not enabled
       if (!window.ga) return
