@@ -4,14 +4,14 @@
     <div v-if="!voteSubmitted" class="feedback-actions">
       <button
         class="btn btn-primary"
-        :title="evtYes"
+        :title="yesTxt"
         v-on:click="sendFeedback(evtYes)"
       >
         {{ yesTxt }}
       </button>
       <button
         class="btn btn-primary"
-        :title="evtNo"
+        :title="noTxt"
         v-on:click="sendFeedback(evtNo)"
       >
         {{ noTxt }}
@@ -37,16 +37,17 @@ export default {
     }
   },
   methods: {
-    sendFeedback: function(evnType) {
+    sendFeedback: function(evtType) {
       this.voteSubmitted = true
+      debugger
 
       // bail if ga is not enabled
       if (!window.ga) return
 
       window.ga('send', 'event', {
-        eventCategory: evnType,
+        eventCategory: evtType,
         eventAction: 'click',
-        eventLabel: window.location.href
+        eventLabel: this.currentPath
       })
     }
   },

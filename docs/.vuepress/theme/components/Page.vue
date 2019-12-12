@@ -5,7 +5,7 @@
     <Content class="theme-default-content" />
 
     <div v-if="!isContentStatus">
-      <Feedback />
+      <Feedback evtYes="helpful" evtNo="not helpful" />
       <LegacyCallout />
     </div>
 
