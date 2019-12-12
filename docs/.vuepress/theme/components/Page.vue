@@ -4,14 +4,12 @@
 
     <Content class="theme-default-content" />
 
-    <div v-if="!isContentStatus">
+    <div class="content-footer" v-if="!isContentStatus">
       <Feedback evtYes="information_helpful" evtNo="information_not_helpful" />
       <LegacyCallout />
+      <PageEdit />
+      <PageNav v-bind="{ sidebarItems }" />
     </div>
-
-    <PageEdit />
-
-    <PageNav v-bind="{ sidebarItems }" />
 
     <slot name="bottom" />
   </main>
@@ -42,7 +40,13 @@ export default {
 </script>
 
 <style lang="stylus">
-.page
-  padding-bottom 2rem
-  display block
+.page {
+  padding-bottom: 2rem;
+  display: block;
+}
+
+.content-footer{
+  padding: 2rem 2.5rem;
+  padding-top: 0;
+}
 </style>

@@ -112,8 +112,6 @@ button {
 }
 
 .feedback {
-  margin: 2em 0;
-
   &-result {
     display: none;
   }

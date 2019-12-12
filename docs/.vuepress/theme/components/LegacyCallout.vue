@@ -59,6 +59,7 @@ export default {
   color: #737681;
   border-color: $accentColor;
   padding: 1rem 2rem;
+  margin-top: 3rem;
 }
 
 .legacy-links a {
