@@ -103,10 +103,6 @@ export default {
   }
 }
 
-button {
-  text-transform: capitalize;
-}
-
 .feedback-edit-or-issue {
   padding: 1em 0;
 }
