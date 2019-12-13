@@ -129,7 +129,7 @@ export default {
   }
 }
 
-@media (min-width: $MQNarrow) {
+@media (min-width: $MQMobile) {
   .illustration {
     width: 40%;
     float: right;
