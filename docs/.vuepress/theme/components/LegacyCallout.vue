@@ -56,7 +56,7 @@ export default {
 <style lang="stylus" scoped>
 .legacy-callout {
   background-color: lighten($badgeTipColor, 95%);
-  color: #737681;
+  color: lighten($textColor, 20%);
   border-color: $badgeTipColor;
   padding: 1rem 2rem;
   margin-top: 3rem;
@@ -68,10 +68,12 @@ export default {
 
 section {
   margin: 1rem 0;
+
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
+
     li {
       margin: 0;
       line-height: 2em;
@@ -82,10 +84,11 @@ section {
 
 @media (min-width: $MQNarrow) {
   section {
-     display: flex;
-     .block {
-       flex: 1;
-      }
+    display: flex;
+
+    .block {
+      flex: 1;
+    }
   }
 }
 </style>

@@ -17,7 +17,7 @@
         {{ noTxt }}
       </button>
     </div>
-    <div v-if="voteSubmitted" class="feedback-result feedback-show">
+    <div v-if="voteSubmitted" class="feedback-result">
       <p>{{ thanksTxt }}</p>
     </div>
     <div v-if="editOrIssueLinks" class="feedback-edit-or-issue">
@@ -109,19 +109,7 @@ export default {
 
 .feedback {
   &-result {
-    display: none;
-  }
-
-  &-show {
-    display: block;
-    animation: fadein 1s;
-  }
-
-  &-hide {
-    display: none;
-  }
-
-  &-result.feedback-show {
+    animation: fadein 0.5s;
     min-height: 38px;
     display: flex;
     align-items: center;
@@ -129,6 +117,26 @@ export default {
     * {
       margin: 0;
     }
+  }
+}
+
+.feedback-actions {
+  display: flex;
+  justify-content: center;
+
+  button {
+    flex: 1;
+  }
+}
+
+@media (min-width: $MQNarrow) {
+  .illustration {
+    width: 40%;
+    float: right;
+  }
+
+  .feedback-actions {
+    display: block;
   }
 }
 </style>
