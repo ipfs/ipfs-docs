@@ -1,5 +1,6 @@
 ---
 title: FAQ
+legacyUrl: https://docs.ipfs.io/introduction/faq/
 ---
 
 # Frequently asked questions

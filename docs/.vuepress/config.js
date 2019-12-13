@@ -22,11 +22,14 @@ module.exports = {
     betaTestFormUrl:
       'https://docs.google.com/forms/d/1LVaD1B2uyW6Ff0jfU_iQ5mCeyQcHfyQO6BDD99XAgK0/viewform',
     // edit links
-    repo: 'ipfs/ipfs-docs-v2',
+    // repo: 'ipfs/ipfs-docs-v2',
     docsRepo: 'ipfs/ipfs-docs-v2',
     docsDir: 'docs',
     docsBranch: 'master',
-    editLinks: true,
+    feedbackWidget: {
+      docsRepoIssue: 'ipfs/docs'
+    },
+    editLinks: false,
     // page nav
     nextLinks: false,
     prevLinks: false,
@@ -38,7 +41,7 @@ module.exports = {
         label: 'English',
         selectText: 'Languages',
         ariaLabel: 'Select language',
-        editLinkText: 'Help us improve this page on GitHub',
+        editLinkText: 'Edit this page on GitHub',
         lastUpdated: 'Last Updated',
         serviceWorker: {
           updatePopup: {

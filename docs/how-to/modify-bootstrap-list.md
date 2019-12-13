@@ -1,5 +1,6 @@
 ---
 title: Modify the bootstrap list
+legacyUrl: https://docs.ipfs.io/guides/examples/bootstrap/
 ---
 
 # Modify the bootstrap peers list

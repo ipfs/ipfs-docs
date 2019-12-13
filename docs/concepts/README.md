@@ -1,5 +1,6 @@
 ---
 title: Concepts
+legacyUrl: https://docs.ipfs.io/guides/concepts/
 ---
 
 # IPFS concepts

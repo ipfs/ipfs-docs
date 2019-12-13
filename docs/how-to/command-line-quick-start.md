@@ -1,5 +1,6 @@
 ---
 title: Command-line quick start
+legacyUrl: https://docs.ipfs.io/introduction/usage/
 ---
 
 # Command-line quick start

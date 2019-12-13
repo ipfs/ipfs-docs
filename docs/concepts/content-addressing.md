@@ -1,5 +1,6 @@
 ---
 title: Content addressing
+legacyUrl: https://docs.ipfs.io/guides/concepts/cid/
 ---
 
 # Content addressing and CIDs

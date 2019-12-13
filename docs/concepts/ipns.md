@@ -1,5 +1,6 @@
 ---
 title: IPNS
+legacyUrl: https://docs.ipfs.io/guides/concepts/ipns/
 ---
 
 # InterPlanetary Name System (IPNS)

@@ -1,6 +1,7 @@
 ---
 title: Install IPFS
 sidebarDepth: 0
+legacyUrl: https://docs.ipfs.io/introduction/usage/
 ---
 
 # Install IPFS

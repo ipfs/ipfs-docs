@@ -1,5 +1,6 @@
 ---
 title: Host a single-page site
+legacyUrl: https://docs.ipfs.io/guides/examples/websites/
 ---
 
 # Host a single-page website

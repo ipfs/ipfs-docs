@@ -1,5 +1,6 @@
 ---
 title: js-ipfs API
+legacyUrl: https://docs.ipfs.io/reference/js/
 ---
 
 # API resources for js-ipfs

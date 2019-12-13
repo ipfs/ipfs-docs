@@ -1,5 +1,6 @@
 ---
 title: IPFS Documentation
+legacyUrl: https://docs.ipfs.io/
 ---
 
 # IPFS Documentation

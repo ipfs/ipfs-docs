@@ -1,5 +1,6 @@
 ---
 title: How-tos
+legacyUrl: https://docs.ipfs.io/guides/examples/
 ---
 
 # IPFS how-tos and tutorials

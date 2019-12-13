@@ -10,9 +10,14 @@
         of this page on GitHub.
       </div>
       <div class="section content-status-vote">
-        <h3>Is this topic important to you?</h3>
-        <button>Yes</button>
-        <button>Not really</button>
+        <Feedback
+          titleTxt="Is this topic important to you?"
+          evtYes="topic_important"
+          evtNo="topic_not_important"
+          noTxt="Not really"
+          yesTxt="Yes"
+          :editOrIssueLinks="false"
+        />
       </div>
       <div class="section content-status-info">
         <h3>Give us a hand</h3>
@@ -48,13 +53,17 @@
 </template>
 
 <script>
+import Feedback from '../components/Feedback.vue'
+
 export default {
   computed: {
     issueUrl: function() {
       return this.$frontmatter && this.$frontmatter.issueUrl
     },
     repo: function() {
-      return this.$site && this.$site.themeConfig && this.$site.themeConfig.repo
+      return (
+        this.$site && this.$site.themeConfig && this.$site.themeConfig.docsRepo
+      )
     },
     related: function() {
       return this.$frontmatter.related
@@ -65,7 +74,8 @@ export default {
       type: String,
       default: 'This content is still preparing for liftoff!'
     }
-  }
+  },
+  components: { Feedback }
 }
 </script>
 
@@ -100,39 +110,10 @@ ul {
   margin-bottom: 3rem;
 }
 
-// TODO: make global
-.content-status-vote {
-  button {
-    font-weight: bold;
-    padding: 10px 15px;
-    background-color: darken($accentColor, 30%);
-    border: none;
-    font-size: 1em;
-    color: white;
-    margin-right: 10px;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.3s;
-    min-width: 45%;
-
-    &:hover {
-      background-color: $accentColor;
-    }
-
-    outline: none;
-  }
-}
-
 @media (min-width: $MQNarrow) {
   .illustration {
     width: 40%;
     float: right;
-  }
-
-  .content-status-vote {
-    button {
-      min-width: auto;
-    }
   }
 }
 </style>

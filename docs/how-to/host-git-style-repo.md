@@ -1,5 +1,6 @@
 ---
 title: Host a Git-style repo
+legacyUrl: https://docs.ipfs.io/guides/examples/git/
 ---
 
 # Host a Git-style repo
