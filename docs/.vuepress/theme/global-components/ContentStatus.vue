@@ -105,10 +105,6 @@ ul {
   float: right;
 }
 
-button {
-  min-width: 45%;
-}
-
 // TODO: make global
 .section {
   margin-bottom: 3rem;
@@ -118,12 +114,6 @@ button {
   .illustration {
     width: 40%;
     float: right;
-  }
-
-  .content-status-vote {
-    button {
-      min-width: auto;
-    }
   }
 }
 </style>
