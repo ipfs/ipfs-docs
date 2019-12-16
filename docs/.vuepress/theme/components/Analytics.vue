@@ -29,14 +29,17 @@ export default {
   watch: {
     '$route.path': function(path) {
       if (this.queryVal) {
-        console.log(this.queryVal, path)
-        this.queryVal = null
+        this.trackQuery(path)
       }
     }
   },
   methods: {
     captureSearch(q) {
       this.queryVal = this.searchBox.value
+    },
+    trackQuery(path) {
+      console.log(this.queryVal, path)
+      this.queryVal = null
     },
     trackOutbound(e) {
       if (!window.ga) return
