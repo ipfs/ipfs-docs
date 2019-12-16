@@ -49,7 +49,7 @@ export default {
       if (!window.ga) return
       let link = e.target.closest('a')
       if (link === null || window.location.host === link.host) return
-      ga('send', 'event', 'outbound', 'click', href)
+      ga('send', 'event', 'outbound', 'click', link.href)
     }
   }
 }
