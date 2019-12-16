@@ -15,6 +15,8 @@
       <PageNav v-bind="{ sidebarItems }" />
     </div>
 
+    <Analytics />
+
     <slot name="bottom" />
   </main>
 </template>
@@ -25,6 +27,7 @@ import PageNav from '@parent-theme/components/PageNav.vue'
 
 import Feedback from './Feedback.vue'
 import LegacyCallout from './LegacyCallout.vue'
+import Analytics from './Analytics.vue'
 
 export default {
   name: 'Page',
@@ -32,7 +35,8 @@ export default {
     PageEdit,
     PageNav,
     Feedback,
-    LegacyCallout
+    LegacyCallout,
+    Analytics
   },
   props: ['sidebarItems'],
   computed: {
@@ -48,7 +52,8 @@ export default {
   padding-bottom: 2rem;
   display: block;
 }
-.content-footer{
+
+.content-footer {
   padding-top: 0;
 }
 
@@ -66,18 +71,22 @@ export default {
     padding: 0 2rem;
     padding-top: 0;
   }
+
   .content-feedback {
     padding: 0;
     margin: 0;
   }
+
   .page-edit {
     padding: 2rem 0;
   }
+
   section {
-     display: flex;
-     .block {
-       flex: 1;
-      }
+    display: flex;
+
+    .block {
+      flex: 1;
+    }
   }
 }
 </style>
