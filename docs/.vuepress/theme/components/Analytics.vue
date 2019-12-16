@@ -38,12 +38,16 @@ export default {
       this.queryVal = this.searchBox.value
     },
     trackQuery(path) {
-      console.log(this.queryVal, path)
+      if (!window.ga) return
+      // encode search query to suitable ga format
+      let encodedQuery = encodeURIComponent(this.queryVal).replace(/%20/g, '+')
+      // send fake page query to track searches
+      ga('send', 'pageview', `/search/?q=${encodedQuery}`)
       this.queryVal = null
     },
     trackOutbound(e) {
       if (!window.ga) return
-      var link = e.target.closest('a')
+      let link = e.target.closest('a')
       if (link === null || window.location.host === link.host) return
       ga('send', 'event', 'outbound', 'click', href)
     }
