@@ -28,8 +28,10 @@ export default {
   },
   watch: {
     '$route.path': function(path) {
-      console.log(this.queryVal, path)
-      this.queryVal = null
+      if (this.queryVal) {
+        console.log(this.queryVal, path)
+        this.queryVal = null
+      }
     }
   },
   methods: {
