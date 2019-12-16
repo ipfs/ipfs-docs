@@ -5,15 +5,16 @@ legacyUrl: https://docs.ipfs.io/guides/guides/addressing/
 
 # Address IPFS on the Web
 
-<!--
-Based on the existing spec at:
-https://github.com/ipfs/in-web-browsers/blob/2896b7a642011bc92493971232b146e04c9a889c/ADDRESSING.md
-
-Note there are pending tasks to update/extend spec:
-https://github.com/ipfs/in-web-browsers/issues/147
--->
-
 This document is a guide to how to address IPFS content paths on the web.
+
+## Dweb addressing in brief
+- In IPFS, addresses (for content) are path-like; they are components separated by slashes.
+- The first component is the protocol, which tells you how to interpret everything after it.
+- Content referenced by a hash might have named links. (For example, a Git commit has a link named `parent`, which is really just a pointer to the hash of another Git commit.) Everything after the CID in an IPFS address are those named links.
+- Since these addresses aren’t URLs, using them in a web browser requires reformatting them slightly:
+    - Through an HTTP gateway, as `http://<gateway host>/<IFPS address>`
+    - Through the gateway subdomain (more secure, harder to set up): `http://<cid>.ipfs.<gateway host>/<path>`, so the protocol and CID are subdomains.
+    - Through custom URL protocols like `ipfs://<CID>/<path>`, `ipns://<peer ID>/<path>`, and `dweb://<IFPS address>`
 
 ## HTTP gateways
 
@@ -112,8 +113,7 @@ Discussions around IPFS addressing have been going on since @jbenet published th
 
 ### IPFS Companion
 
-[IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion) is a
-browser extension that simplifies access to IPFS resources.
+[IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion) is a browser extension that simplifies access to IPFS resources.
 
 It provides support for native URLs and will automatically redirect IPFS gateway requests to your local daemon so that you are not relying on, or trusting, remote gateways.
 
