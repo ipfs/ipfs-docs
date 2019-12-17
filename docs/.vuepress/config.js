@@ -1,5 +1,4 @@
 // .vuepress/config.js
-const path = require('path')
 module.exports = {
   base: '/',
   head: require('./head'),
