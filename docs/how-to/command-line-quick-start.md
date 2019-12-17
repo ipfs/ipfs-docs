@@ -46,8 +46,13 @@ If you want to install from the command line, use `ipfs-update`. That way, you c
 If you have a working Go environment (>=1.12), install `ipfs-update` as follows:
 
 ```
-$ go get -u github.com/ipfs/ipfs-update
+# You need to CD to a directory _outside_ of your GOPATH.
+$ cd /
+# Install with go modules enabled
+$ GO111MODULE=on go get github.com/ipfs/ipfs-update
 ```
+
+Please note that `ipfs-update` uses Go modules, and your `$GOPATH/bin` should be within `$PATH` for the result `ipfs-update` binary to be found.
 
 If you don't have Go installed, you can also download `ipfs-update` for your platform [here](https://dist.ipfs.io/#ipfs-update). No matter how you get it, make sure that you keep it up to date itself!
 
