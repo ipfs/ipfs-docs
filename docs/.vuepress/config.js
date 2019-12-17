@@ -21,6 +21,8 @@ module.exports = {
   themeConfig: {
     betaTestFormUrl:
       'https://docs.google.com/forms/d/1LVaD1B2uyW6Ff0jfU_iQ5mCeyQcHfyQO6BDD99XAgK0/viewform',
+    defaultImage: '/images/social-card.png',
+    author: { name: 'IPFS Team', twitter: '@ipfsbot' },
     // edit links
     // repo: 'ipfs/ipfs-docs-v2',
     docsRepo: 'ipfs/ipfs-docs-v2',
@@ -317,6 +319,31 @@ module.exports = {
       '@vuepress/google-analytics',
       {
         ga: 'UA-96910779-15'
+      }
+    ],
+    [
+      'vuepress-plugin-seo',
+      {
+        siteTitle: (_, $site) => $site.title,
+        title: $page => $page.title,
+        description: $page => $page.frontmatter.description,
+        author: (_, $site) => $site.themeConfig.author,
+        tags: $page => $page.frontmatter.tags,
+        twitterCard: _ => 'summary_large_image',
+        type: $page =>
+          ['articles', 'posts', 'blog'].some(folder =>
+            $page.regularPath.startsWith('/' + folder)
+          )
+            ? 'article'
+            : 'website',
+        url: (_, $site, path) => ($site.themeConfig.domain || '') + path,
+        image: ($page, $site) =>
+          $page.frontmatter.image
+            ? ($site.themeConfig.domain || '') + $page.frontmatter.image
+            : ($site.themeConfig.domain || '') + $site.themeConfig.defaultImage,
+        publishedAt: $page =>
+          $page.frontmatter.date && new Date($page.frontmatter.date),
+        modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated)
       }
     ]
   ],
