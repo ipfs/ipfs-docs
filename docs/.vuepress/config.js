@@ -1,4 +1,5 @@
 // .vuepress/config.js
+const path = require('path')
 module.exports = {
   base: '/',
   head: require('./head'),
@@ -360,5 +361,12 @@ module.exports = {
       }
     ]
   ],
-  extraWatchFiles: ['.vuepress/nav/en.js']
+  extraWatchFiles: ['.vuepress/nav/en.js'],
+  configureWebpack: (config, isServer) => {
+    if (!isServer) {
+      config.entry = {
+        app: ['./docs/.vuepress/public-path.js', config.entry.app[0]]
+      }
+    }
+  }
 }
