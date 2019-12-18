@@ -55,6 +55,7 @@ export default {
 
 .content-footer {
   padding-top: 0;
+  max-width: $contentWidth;
 }
 
 .page-edit {
@@ -66,9 +67,9 @@ export default {
   padding: 0 2rem;
 }
 
-@media (min-width: $MQNarrow) {
+@media (min-width: $MQMobile) {
   .content-footer {
-    padding: 0 2rem;
+    padding: 0 2.5rem;
     padding-top: 0;
   }
 
@@ -78,7 +79,7 @@ export default {
   }
 
   .page-edit {
-    padding: 2rem 0;
+    padding: 2.5rem 0;
   }
 
   section {
