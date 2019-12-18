@@ -23,6 +23,8 @@ module.exports = {
       'https://docs.google.com/forms/d/1LVaD1B2uyW6Ff0jfU_iQ5mCeyQcHfyQO6BDD99XAgK0/viewform',
     defaultImage: '/images/social-card.png',
     author: { name: 'IPFS Team', twitter: '@ipfsbot' },
+    keywords:
+      'IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web',
     // edit links
     // repo: 'ipfs/ipfs-docs-v2',
     domain: 'https://docs-beta.ipfs.io',
@@ -325,10 +327,10 @@ module.exports = {
     [
       'vuepress-plugin-seo',
       {
-        siteTitle: (_, $site) => $site.title,
+        siteTitle: ($page, $site) => $site.title,
         title: $page => $page.title,
         description: $page => $page.frontmatter.description,
-        author: (_, $site) =>
+        author: ($page, $site) =>
           $page.frontmatter.author || $site.themeConfig.author,
         tags: $page => $page.frontmatter.tags,
         twitterCard: _ => 'summary_large_image',
@@ -338,7 +340,7 @@ module.exports = {
           )
             ? 'article'
             : 'website',
-        url: (_, $site, path) => ($site.themeConfig.domain || '') + path,
+        url: ($page, $site, path) => ($site.themeConfig.domain || '') + path,
         image: ($page, $site) =>
           $page.frontmatter.image
             ? ($site.themeConfig.domain || '') + $page.frontmatter.image
@@ -353,6 +355,7 @@ module.exports = {
             ($site.themeConfig.author && $site.themeConfig.author.twitter) || ''
           )
           add('image', image)
+          add('keywords', $site.themeConfig.keywords)
         }
       }
     ]
