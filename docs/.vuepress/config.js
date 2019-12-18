@@ -24,7 +24,7 @@ module.exports = {
     defaultImage: '/images/social-card.png',
     author: { name: 'IPFS Team', twitter: '@ipfsbot' },
     keywords:
-      'IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web',
+      'IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
     // edit links
     // repo: 'ipfs/ipfs-docs-v2',
     domain: 'https://docs-beta.ipfs.io',
