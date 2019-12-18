@@ -55,6 +55,7 @@ export default {
 
 .content-footer {
   padding-top: 0;
+  max-width: $contentWidth;
 }
 
 .page-edit {
