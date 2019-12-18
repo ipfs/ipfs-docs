@@ -328,7 +328,8 @@ module.exports = {
         siteTitle: (_, $site) => $site.title,
         title: $page => $page.title,
         description: $page => $page.frontmatter.description,
-        author: (_, $site) => $site.themeConfig.author,
+        author: (_, $site) =>
+          $page.frontmatter.author || $site.themeConfig.author,
         tags: $page => $page.frontmatter.tags,
         twitterCard: _ => 'summary_large_image',
         type: $page =>
