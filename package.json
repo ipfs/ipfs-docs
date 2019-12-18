@@ -19,7 +19,8 @@
     "prettier": "^1.19.1",
     "stylus-supremacy": "^2.14.0",
     "vuepress": "^1.2.0",
-    "vuepress-plugin-clean-urls": "^1.1.1"
+    "vuepress-plugin-clean-urls": "^1.1.1",
+    "vuepress-plugin-seo": "^0.1.2"
   },
   "prettier": {
     "arrowParens": "avoid",

@@ -1,6 +1,7 @@
 ---
 title: js-ipfs API
 legacyUrl: https://docs.ipfs.io/reference/js/
+description: Developer resources for working in JavaScript with IPFS, the InterPlanetary File System.
 ---
 
 # API resources for js-ipfs

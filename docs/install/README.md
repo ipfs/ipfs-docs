@@ -2,6 +2,7 @@
 title: Install IPFS
 sidebarDepth: 0
 legacyUrl: https://docs.ipfs.io/introduction/usage/
+description: Get started installing and using IPFS, the InterPlanetary File System, and become part of the decentralized web today.
 ---
 
 # Install IPFS

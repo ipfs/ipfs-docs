@@ -1,6 +1,7 @@
 ---
 title: HTTP API
 legacyUrl: https://docs.ipfs.io/reference/api/http/
+description: HTTP API developer reference materials for IPFS, the InterPlanetary File System.
 ---
 
 # HTTP API reference

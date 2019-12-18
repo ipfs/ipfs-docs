@@ -1,6 +1,7 @@
 ---
 title: Community
 legacyUrl: https://docs.ipfs.io/community/
+description: Become part of the IPFS community! Learn how here.
 ---
 
 # Community

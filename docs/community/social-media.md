@@ -2,6 +2,7 @@
 title: Social media
 sidebarDepth: 0
 legacyUrl: https://docs.ipfs.io/community/
+description: Learn where to find IPFS on your favorite social media platform.
 ---
 
 # Social media

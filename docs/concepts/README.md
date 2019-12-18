@@ -1,6 +1,7 @@
 ---
 title: Concepts
 legacyUrl: https://docs.ipfs.io/guides/concepts/
+description: Get started on understanding the key ingredients in the decentralized web, and how IPFS works.
 ---
 
 # IPFS concepts

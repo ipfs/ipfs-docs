@@ -1,6 +1,7 @@
 ---
 title: CLI commands
 legacyUrl: https://docs.ipfs.io/reference/api/cli/
+description: Command-line interace (CLI) reference materials for IPFS, the InterPlanetary File System.
 ---
 
 # Command-line interface (CLI) reference

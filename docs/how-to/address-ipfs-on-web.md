@@ -1,6 +1,7 @@
 ---
 title: Address IPFS on the Web
 legacyUrl: https://docs.ipfs.io/guides/guides/addressing/
+description: Hands-on guides to using and developing with IPFS to build decentralized web apps and services.
 ---
 
 # Address IPFS on the Web
@@ -8,13 +9,14 @@ legacyUrl: https://docs.ipfs.io/guides/guides/addressing/
 This document is a guide to how to address IPFS content paths on the web.
 
 ## Dweb addressing in brief
+
 - In IPFS, addresses (for content) are path-like; they are components separated by slashes.
 - The first component is the protocol, which tells you how to interpret everything after it.
 - Content referenced by a hash might have named links. (For example, a Git commit has a link named `parent`, which is really just a pointer to the hash of another Git commit.) Everything after the CID in an IPFS address are those named links.
 - Since these addresses aren’t URLs, using them in a web browser requires reformatting them slightly:
-    - Through an HTTP gateway, as `http://<gateway host>/<IFPS address>`
-    - Through the gateway subdomain (more secure, harder to set up): `http://<cid>.ipfs.<gateway host>/<path>`, so the protocol and CID are subdomains.
-    - Through custom URL protocols like `ipfs://<CID>/<path>`, `ipns://<peer ID>/<path>`, and `dweb://<IFPS address>`
+  - Through an HTTP gateway, as `http://<gateway host>/<IFPS address>`
+  - Through the gateway subdomain (more secure, harder to set up): `http://<cid>.ipfs.<gateway host>/<path>`, so the protocol and CID are subdomains.
+  - Through custom URL protocols like `ipfs://<CID>/<path>`, `ipns://<peer ID>/<path>`, and `dweb://<IFPS address>`
 
 ## HTTP gateways
 

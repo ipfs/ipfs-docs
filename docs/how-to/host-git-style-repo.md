@@ -1,6 +1,7 @@
 ---
 title: Host a Git-style repo
 legacyUrl: https://docs.ipfs.io/guides/examples/git/
+description: Learn how to serve a static Git repository worldwide using IPFS, the InterPlanetary File System.
 ---
 
 # Host a Git-style repo

@@ -1,5 +1,6 @@
 ---
 title: Browser Tools and Frameworks
+description: Information on how to use IPFS in combination with your favorite frameworks or browser implementation tools.
 ---
 
 # Browser Tools and Frameworks

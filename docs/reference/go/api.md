@@ -1,6 +1,7 @@
 ---
 title: go-ipfs API
 legacyUrl: https://docs.ipfs.io/reference/go/overview/
+description: Developer resources for working in Go with IPFS, the InterPlanetary File System.
 ---
 
 # API resources for go-ipfs

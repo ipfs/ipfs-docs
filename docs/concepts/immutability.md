@@ -2,6 +2,7 @@
 title: Immutability
 sidebarDepth: 0
 issueUrl: https://github.com/ipfs/docs/issues/386
+description: Learn about the concept of data immutability and how it's critical to how IPFS works.
 related:
   'IPFS Docs: Content addressing and CIDs': /concepts/content-addressing/
   'Video: How IPFS deals with files (IPFS Camp 2019)': https://www.youtube.com/watch?v=Z5zNPwMDYGg

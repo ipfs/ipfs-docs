@@ -1,6 +1,7 @@
 ---
 title: Persistence
 legacyUrl: https://docs.ipfs.io/guides/concepts/pinning/
+description: Learn about how IPFS treats persistence and permanence on the web, and how pinning can help keep data from being discarded.
 ---
 
 # Persistence, permanence and pinning
