@@ -25,6 +25,7 @@ module.exports = {
     author: { name: 'IPFS Team', twitter: '@ipfsbot' },
     // edit links
     // repo: 'ipfs/ipfs-docs-v2',
+    domain: 'https://docs-beta.ipfs.io',
     docsRepo: 'ipfs/ipfs-docs-v2',
     docsDir: 'docs',
     docsBranch: 'master',
