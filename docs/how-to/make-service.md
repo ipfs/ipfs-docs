@@ -1,5 +1,6 @@
 ---
 title: Make a service
+description: Learn how to build an easy demo service on IPFS.
 ---
 
 # Make a service

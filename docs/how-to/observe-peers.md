@@ -1,6 +1,7 @@
 ---
 title: Observe peers
 legacyUrl: https://docs.ipfs.io/guides/examples/network/
+description: Learn the built-in IPFS commands that help you observe peers on the network.
 ---
 
 # Observe peers

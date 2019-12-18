@@ -1,5 +1,6 @@
 ---
 title: The IPFS project
+description: Learn about the history, roadmap, current status and more for IPFS, the InterPlanetary File System.
 ---
 
 # The IPFS project

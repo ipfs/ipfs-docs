@@ -1,6 +1,7 @@
 ---
 title: Take a snapshot
 legacyUrl: https://docs.ipfs.io/guides/examples/snapshots/
+description: Learn about how to take and use snapshots of files in IPFS, the InterPlanetary File System.
 ---
 
 # Take a snapshot

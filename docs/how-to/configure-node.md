@@ -1,6 +1,7 @@
 ---
 title: Configure a node
 legacyUrl: https://docs.ipfs.io/guides/examples/config/
+description: Learn how to configure a node in IPFS, the InterPlanetary File System.
 ---
 
 # Configure a node

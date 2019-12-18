@@ -1,6 +1,7 @@
 ---
 title: DNSLink
 legacyUrl: https://docs.ipfs.io/guides/concepts/dnslink/
+description: Learn how DNSLink works in conjunction with IPFS to map domain names to IPFS content.
 ---
 
 # DNSLink

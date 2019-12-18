@@ -1,6 +1,7 @@
 ---
 title: Merkle DAGs
 legacyUrl: https://docs.ipfs.io/guides/concepts/merkle-dag/
+description: Learn about Merkle Distributed Acyclic Graphs (DAGs) and why they're important to IPFS.
 ---
 
 # Merkle Distributed Acyclic Graphs (DAGs)

@@ -1,5 +1,6 @@
 ---
 title: Related projects
+description: Learn about the modular projects that help make up IPFS, the InterPlanetary File System.
 ---
 
 # Related projects

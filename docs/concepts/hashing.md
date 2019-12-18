@@ -1,6 +1,7 @@
 ---
 title: Hashing
 legacyUrl: https://docs.ipfs.io/guides/concepts/hashes/
+description: Learn about cryptographic hashes and why they're critical to how IPFS, the InterPlanetary File System, works.
 ---
 
 # Hashing

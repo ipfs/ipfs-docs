@@ -1,6 +1,7 @@
 ---
 title: Distributed Hash Tables (DHTs)
 legacyUrl: https://docs.ipfs.io/guides/concepts/dht/
+description: Learn about how distributed hash tables (DHTs) play a part in the overall lifecycle of IPFS, the InterPlanetary File System.
 ---
 
 # Distributed Hash Tables (DHTs)

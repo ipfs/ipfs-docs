@@ -1,6 +1,7 @@
 ---
 title: Content addressing
 legacyUrl: https://docs.ipfs.io/guides/concepts/cid/
+description: Learn about how content addressing works and how content identifiers, or CIDs, play a crucial role in IPFS.
 ---
 
 # Content addressing and CIDs
