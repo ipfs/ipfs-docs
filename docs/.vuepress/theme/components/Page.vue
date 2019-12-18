@@ -67,7 +67,7 @@ export default {
   padding: 0 2rem;
 }
 
-@media (min-width: $MQNarrow) {
+@media (min-width: $MQMobile) {
   .content-footer {
     padding: 0 2.5rem;
     padding-top: 0;
