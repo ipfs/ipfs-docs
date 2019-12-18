@@ -346,24 +346,7 @@ module.exports = {
           $page.frontmatter.date && new Date($page.frontmatter.date),
         modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
         customMeta: (add, context) => {
-          const {
-            $site, // Site configs provided by Vuepress
-            $page, // Page configs provided by Vuepress
-
-            // All the computed options from above:
-            siteTitle,
-            title,
-            description,
-            author,
-            tags,
-            twitterCard,
-            type,
-            url,
-            image,
-            publishedAt,
-            modifiedAt
-          } = context
-
+          const { $site, image } = context
           add(
             'twitter:site',
             ($site.themeConfig.author && $site.themeConfig.author.twitter) || ''
