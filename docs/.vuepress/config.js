@@ -344,7 +344,32 @@ module.exports = {
             : ($site.themeConfig.domain || '') + $site.themeConfig.defaultImage,
         publishedAt: $page =>
           $page.frontmatter.date && new Date($page.frontmatter.date),
-        modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated)
+        modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
+        customMeta: (add, context) => {
+          const {
+            $site, // Site configs provided by Vuepress
+            $page, // Page configs provided by Vuepress
+
+            // All the computed options from above:
+            siteTitle,
+            title,
+            description,
+            author,
+            tags,
+            twitterCard,
+            type,
+            url,
+            image,
+            publishedAt,
+            modifiedAt
+          } = context
+
+          add(
+            'twitter:site',
+            ($site.themeConfig.author && $site.themeConfig.author.twitter) || ''
+          )
+          add('image', image)
+        }
       }
     ]
   ],
