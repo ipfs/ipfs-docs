@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: npm run build:docs:ipfs
+          command: npm run docs:build:ipfs
       - persist_to_workspace:
           root: .
           paths:
