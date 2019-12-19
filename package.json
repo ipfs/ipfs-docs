@@ -10,6 +10,7 @@
     "@vuepress/plugin-back-to-top": "^1.2.0",
     "@vuepress/plugin-google-analytics": "^1.2.0",
     "@vuepress/plugin-last-updated": "^1.2.0",
+    "all-relative": "^1.0.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "markdown-it-deflist": "^2.0.3",
@@ -55,6 +56,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format:styles": "stylus-supremacy format ./docs/.vuepress/**/*.styl --replace",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "docs:all-relative": "cd ./docs/.vuepress/dist && all-relative",
+    "docs:build:ipfs": "npm run docs:build && npm run docs:all-relative"
   }
 }
