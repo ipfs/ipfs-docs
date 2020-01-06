@@ -1,20 +1,26 @@
-<img src='./docs/.vuepress/public/android-chrome-192x192.png' width='128' height='128' />
-
 # IPFS Docs 2.x
+
+![Vuepress logo](docs/.vuepress/public/android-chrome-192x192.png)
 
 IPFS next gen documentation platform, built on top of [VuePress](https://github.com/vuejs/vuepress).
 
 ## Developing this application
 
-```sh
-# first install the dependencies
-npm i
-# then boot up the app in dev mode
-npm start
-# open http://localhost:8080/ in your browser
-```
+1. Install the NPM dependencies:
 
-#### With thanks, from your Docs WG core members:
+    ```bash
+    npm install
+    ```
+
+2. Boot up the application in _dev mode_:
+
+    ```bash
+    npm start
+    ```
+
+3. Open [localhost:8080](http://localhost:8080) in your browser.
+
+### Designed, built, and maintain by these lovely people
 
 - [@cwaring](https://github.com/cwaring)
 - [@ericronne](https://github.com/ericronne)
