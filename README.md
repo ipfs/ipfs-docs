@@ -28,3 +28,4 @@ IPFS next gen documentation platform, built on top of [VuePress](https://github.
 - [@jessicaschilling](https://github.com/jessicaschilling)
 - [@terichadbourne](https://github.com/terichadbourne)
 - [@johnnymatthews](https://github.com/johnnymatthews)
+- [@zebateira](https://github.com/zebateira)
