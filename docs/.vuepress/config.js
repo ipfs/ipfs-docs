@@ -358,6 +358,14 @@ module.exports = {
           add('keywords', $site.themeConfig.keywords)
         }
       }
+    ],
+    [
+      'vuepress-plugin-canonical',
+      {
+        // add <link rel="canonical" header (https://tools.ietf.org/html/rfc6596)
+        // to deduplicate SEO across all copies loaded from various public gateways
+        baseURL: 'https://docs-beta.ipfs.io'
+      }
     ]
   ],
   extraWatchFiles: ['.vuepress/nav/en.js'],
