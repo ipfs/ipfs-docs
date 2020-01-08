@@ -30,7 +30,7 @@ As noted above, if you'd like to contribute to the IPFS docs effort as a whole, 
 
 3. Open [localhost:8080](http://localhost:8080) in your browser.
 
-### Designed, built, and maintained by these lovely people
+## Designed, built, and maintained by these lovely people
 
 - [@cwaring](https://github.com/cwaring)
 - [@ericronne](https://github.com/ericronne)
@@ -39,3 +39,9 @@ As noted above, if you'd like to contribute to the IPFS docs effort as a whole, 
 - [@terichadbourne](https://github.com/terichadbourne)
 - [@johnnymatthews](https://github.com/johnnymatthews)
 - [@zebateira](https://github.com/zebateira)
+
+## License
+
+All software code is copyright (c) Protocol Labs, Inc. under the **MIT license**. Other written documentation and content is copyright (c) Protocol Labs, Inc. under the [**Creative Commons Attribution-Share-Alike License**](https://creativecommons.org/licenses/by/4.0/). See [LICENSE file](https://github.com/ipfs/docs/blob/master/LICENSE) for details.
+
+
