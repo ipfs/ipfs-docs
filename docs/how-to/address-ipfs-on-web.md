@@ -30,9 +30,7 @@ HTTP gateways have worked well since 2015, but they come with a significant set 
 
 Tools and browser extensions should detect IPFS content paths and resolve them directly over IPFS protocol. They should use HTTP gateway only as a fallback when no native implementation is available in order to ensure a smooth, backward-compatible transition.
 
-### Gateway types
-
-#### Path gateway
+### Path gateway
 
 In the most basic scheme, a URL path used for content addressing is effectively a resource name without a canonical location. The HTTP server provides the location part, which makes it possible for browsers to interpret an IPFS content path as relative to the current server and just work without a need for any conversion:
 
@@ -41,9 +39,11 @@ https://<gateway-host>.tld/ipfs/<cid>/path/to/resource
 https://<gateway-host>.tld/ipns/<ipnsid_or_dnslink>/path/to/resource
 ```
 
-<aside class="alert alert-info">
-  In this scheme, all pages share a <a href="https://en.wikipedia.org/wiki/Same-origin_policy" target="_blank">single Origin&nbsp;<i class="fas fa-external-link-square-alt fa-sm"></i></a>, which means this type of gateway should be used when site isolation does not matter.
-</aside>
+::: danger
+In this scheme, all pages share a <a href="https://en.wikipedia.org/wiki/Same-origin_policy" target="_blank">single Origin&nbsp;<i class="fas fa-external-link-square-alt fa-sm"></i></a>, which means this type of gateway should be used only when site isolation does not matter (static content without cookies, local storage or Web APIs that require user permission).
+
+When in doubt, use subdomain gateway instead (see below).
+:::
 
 Examples:
 
@@ -53,7 +53,7 @@ https://ipfs.io/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.ht
 https://ipfs.io/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
 ```
 
-#### Subdomain gateway
+### Subdomain gateway
 
 When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) perimeter is needed, [CIDv1](https://github.com/ipld/cid#cidv1) in Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) should be used in the subdomain:
 
@@ -64,11 +64,22 @@ Example:
     https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.dweb.link/wiki/
     https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.cf-ipfs.com/wiki/Vincent_van_Gogh.html
 
-<aside class="alert alert-info">
-  Right now, this type of gateway requires additional configuration (<a href="https://github.com/ipfs/infra/issues/81#issuecomment-461045160" target="_blank">example for Nginx&nbsp;<i class="fas fa-external-link-square-alt fa-sm"></i></a>); however, there is ongoing work to <a href="https://github.com/ipfs/go-ipfs/issues/5982" target="_blank">add native support in the IPFS daemon&nbsp;<i class="fas fa-external-link-square-alt fa-sm"></i></a>.
-</aside>
+::: tip
 
-#### DNSLink gateway
+For now, this type of gateway requires additional reverse proxy configuration.
+As a reference, Nginx config for subdomain gateway at <code>dweb.link</code> is:
+
+```nginx
+if ($http_host ~ ^(.+)\.(ipfs|ipns)\.dweb\.link$) {
+  set $ipfspath /$2/$1;
+  rewrite "^(.*)$" $ipfspath$1 last;
+}
+```
+
+There is ongoing work to <a href="https://github.com/ipfs/go-ipfs/issues/6498" target="_blank">add native subdomain support to the IPFS daemon&nbsp;<i class="fas fa-external-link-square-alt fa-sm"></i></a> which will simplify setup and remove the need for path translation at reverse proxy.
+:::
+
+### DNSLink gateway
 
 The gateway provided by the IPFS daemon understands the `Host` header present in HTTP requests, and will check if [DNSLink](/guides/concepts/dnslink) exists for a specified [domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name).
 If DNSLink is present, the gateway will return content from a path resolved via DNS TXT record.
@@ -76,7 +87,9 @@ This type of gateway provides full [origin isolation](https://en.wikipedia.org/w
 
 Example: [https://docs.ipfs.io](https://docs.ipfs.io) (this website)
 
+::: tip
 For a more complete DNSLink guide, including tutorials, usage examples and FAQs, check out [dnslink.io](https://dnslink.io).
+:::
 
 ## Native URLs
 
@@ -99,9 +112,9 @@ Example:
 ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
 ```
 
-<aside class="alert alert-info">
-  Support for case-insensitive IPNS roots  is a <a href="https://github.com/ipfs/go-ipfs/issues/5287" target="_blank">work in progress&nbsp;<i class="fas fa-external-link-square-alt fa-sm"></i></a>.
-</aside>
+::: tip
+Support for case-insensitive IPNS roots is a <a href="https://github.com/ipfs/go-ipfs/issues/5287" target="_blank">work in progress&nbsp;<i class="fas fa-external-link-square-alt fa-sm"></i></a>.
+:::
 
 ## Further resources
 
