@@ -1,6 +1,6 @@
 ![IPFS Documentation](https://raw.githubusercontent.com/ipfs/docs/master/ipfs-docs-header.png "IPFS Documentation")
 
-[![build status](https://img.shields.io/circleci/project/github/ipfs/docs/master.svg?style=flat-square)](https://circleci.com/gh/ipfs/docs)
+[![build status](https://img.shields.io/circleci/project/github/ipfs/ipfs-docs-v2/master.svg?style=flat-square)](https://circleci.com/gh/ipfs/ipfs-docs-v2)
 [![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](https://protocol.ai/)
 [![](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.io/)
 
