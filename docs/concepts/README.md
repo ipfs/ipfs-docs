@@ -13,7 +13,6 @@ New to IPFS or the distributed web? Here's where to get started on understanding
 Want the basics, in theater mode? Check out these Core Courses from IPFS Camp 2019 for an overview of how IPFS works with files and the overall data lifecycle in dweb.
 
 @[youtube](Z5zNPwMDYGg)
-
 @[youtube](fLUq0RkiTBA)
 
 
