@@ -30,15 +30,12 @@ As noted above, if you'd like to contribute to the IPFS docs effort as a whole, 
 
 3. Open [localhost:8080](http://localhost:8080) in your browser.
 
-## Designed, built, and maintained by these lovely people
+## Maintainers
 
-- [@cwaring](https://github.com/cwaring)
-- [@ericronne](https://github.com/ericronne)
-- [@dominguesgm](https://github.com/dominguesgm)
-- [@jessicaschilling](https://github.com/jessicaschilling)
-- [@terichadbourne](https://github.com/terichadbourne)
 - [@johnnymatthews](https://github.com/johnnymatthews)
-- [@zebateira](https://github.com/zebateira)
+- [@cwaring](https://github.com/cwaring)
+
+... with thanks to the original build team: [@ericronne](https://github.com/ericronne), [@dominguesgm](https://github.com/dominguesgm), [@jessicaschilling](https://github.com/jessicaschilling), [@terichadbourne](https://github.com/terichadbourne), and [@zebateira](https://github.com/zebateira)
 
 ## License
 
