@@ -74,7 +74,7 @@ DNSLink is a protocol to link content and services directly from DNS. A DNSLink 
 <br><br>
 
 <b>DWeb</b><br>
-The Decentralized Web (DWeb) looks like today's World Wide Web, but it is built with new underlying technologies that support decentralization. It is much harder for any one entity to take down any single webpage, website, or service, either by accident or on purpose.
+The Decentralized Web (DWeb) looks like today's World Wide Web, but it is built with new underlying technologies that support decentralization. It is much harder for anyone entity to take down any single webpage, website, or service, either by accident or on purpose.
 <br>
 
 <h2 id="E">E</h2>
