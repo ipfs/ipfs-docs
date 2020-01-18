@@ -1,5 +1,5 @@
 ---
-title: IPFS glossary
+title: Glossary
 sidebarDepth: 0
 issueUrl: https://github.com/ipfs/docs/issues/56
 description: A glossary guide to key terminology for IPFS, the InterPlanetary File System.
@@ -191,4 +191,3 @@ The Unix File System (UnixFS) is the data format used to represent files and all
 ## Y
 
 ## Z
-
