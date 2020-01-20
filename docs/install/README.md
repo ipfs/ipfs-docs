@@ -31,7 +31,7 @@ Want to go a step further than the IPFS browser extension? Try the IPFS desktop 
 
 ### Install IPFS Desktop
 
-IPFS Desktop enables you to host and share files directly from your computer with an easy-to-use interface — no programming required. And when you're ready to dig deeper, it also includes the same tool set you get if you'd installed directly from the commnand line. [Learn more about IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop), or just download it for your OS and give it a spin:
+IPFS Desktop enables you to host and share files directly from your computer with an easy-to-use interface — no programming required. And when you're ready to dig deeper, it also includes the same tool set you get if you'd installed directly from the command line. [Learn more about IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop), or just download it for your OS and give it a spin:
 
 - [macOS](https://github.com/ipfs-shipyard/ipfs-desktop/releases/download/v0.9.7/ipfs-desktop-0.9.7.dmg)
 - [Windows](https://github.com/ipfs-shipyard/ipfs-desktop/releases/download/v0.9.7/ipfs-desktop-setup-0.9.7.exe)
