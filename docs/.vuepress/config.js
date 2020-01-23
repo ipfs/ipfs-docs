@@ -19,6 +19,10 @@ module.exports = {
     }
   },
   themeConfig: {
+    algolia: {
+      apiKey: 'e6dcd48beb5db629bf77c892d38fa091',
+      indexName: 'ipfs'
+    },
     betaTestFormUrl:
       'https://docs.google.com/forms/d/1LVaD1B2uyW6Ff0jfU_iQ5mCeyQcHfyQO6BDD99XAgK0/viewform',
     defaultImage: '/images/social-card.png',
