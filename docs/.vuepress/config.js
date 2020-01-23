@@ -40,7 +40,6 @@ module.exports = {
     prevLinks: false,
     // ui/ux
     logo: '/images/ipfs-logo.svg',
-    smoothScroll: true,
     locales: {
       '/': {
         label: 'English',
@@ -301,14 +300,6 @@ module.exports = {
   },
   plugins: [
     ['@vuepress/plugin-back-to-top', true],
-    [
-      '@vuepress/active-header-links',
-      {
-        sidebarLinkSelector: '.sidebar-link',
-        headerAnchorSelector: '.header-anchor',
-        headerTopOffset: 120
-      }
-    ],
     '@vuepress/plugin-last-updated',
     [
       'vuepress-plugin-clean-urls',
