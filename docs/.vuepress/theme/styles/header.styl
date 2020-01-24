@@ -2,12 +2,6 @@
 	header.navbar .links {
 		display: flex;
 		flex-direction: row-reverse;
-	}
-
-	div.search-box {
-		margin-right: 0;
-		padding-left: 1.5rem;
-		border-radius: 2rem;
 
 		input, .suggestions {
 			width: 10em;
@@ -20,7 +14,7 @@
 }
 
 @media (max-width: $MQMobile) {
-	div.search-box {
+	header.navbar .links {
 		input {
 			// prevent zooming on iOS
 			box-sizing: border-box;
@@ -38,9 +32,5 @@
 		position: absolute;
 		width: 45px;
 		left: calc(50% - 45px / 2);
-	}
-
-	.search-box input:focus {
-		width: 95vw;
 	}
 }
