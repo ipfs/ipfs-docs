@@ -12,9 +12,12 @@ export default {
     // track outbound clicks
     document.addEventListener('click', this.trackOutbound)
 
-    let searchBox = document.querySelector('.search-box input')
+    let searchBox = document.querySelector('.navbar .links input')
     if (searchBox) {
       searchBox.addEventListener('keyup', this.captureSearch)
+      // default algolia search does not clear the input query val
+      // this patch ensures it is reset upon losing focus
+      searchBox.addEventListener('focusout', evt => (evt.target.value = ''))
       this.searchBox = searchBox
     }
   },
@@ -30,6 +33,12 @@ export default {
     '$route.path': function(path) {
       if (this.queryVal) {
         this.trackQuery(path)
+      }
+    },
+    $route: function(path) {
+      if (this.queryVal) {
+        // remove focus from the searchBox upon router action
+        this.searchBox.blur()
       }
     }
   },
