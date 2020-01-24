@@ -5,6 +5,17 @@
 @import 'sidebar';
 @import 'video';
 
+// apply scrolling by default excluding firefox due to trigger issues
+html {
+	scroll-behavior: smooth;
+}
+
+@supports (-moz-appearance: none) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
 #app {
 	.navbar {
 		position: sticky;

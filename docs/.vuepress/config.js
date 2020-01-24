@@ -44,7 +44,6 @@ module.exports = {
     prevLinks: false,
     // ui/ux
     logo: '/images/ipfs-logo.svg',
-    smoothScroll: true,
     locales: {
       '/': {
         label: 'English',
