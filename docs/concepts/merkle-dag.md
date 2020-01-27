@@ -26,4 +26,4 @@ Merkle DAGs are _self-verified_ structures. The CID of a node is univocally link
 
 ## Further resources
 
-For more information, you may want to read the full [draft Merkle-CRDTs paper](https://hector.link/presentations/merkle-crdts/merkle-crdts.pdf) by [@hsanjuan](https://www.github.com/hsanjuan), [@haadcode](https://www.github.com/haadcode), and [@pgte](https://www.github.com/pgte).
+For more information, you may want to read the full [draft Merkle-CRDTs paper](https://hector.link/presentations/merkle-crdts/merkle-crdts.pdf) by [@hsanjuan](https://www.github.com/hsanjuan), [@haadcode](https://www.github.com/haadcode), and [@pgte](https://www.github.com/pgte).  
