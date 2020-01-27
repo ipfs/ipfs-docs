@@ -28,7 +28,7 @@ Use the following goals when writing walkthroughs:
 
 #### Function or process
 
-The end goal of a walkthrough is for the reader to achieve a very particular function. _Installing the IFPS Desktop Application_ is an example. Following this walkthrough isn't going to teach the reader much about working with the decentralized web or what IFPS is. Still, by the end, they'll have the IPFS Desktop application installed on their computer.
+The end goal of a walkthrough is for the reader to achieve a very particular function. _Installing the IPFS Desktop Application_ is an example. Following this walkthrough isn't going to teach the reader much about working with the decentralized web or what IPFS is. Still, by the end, they'll have the IPFS Desktop application installed on their computer.
 
 #### Short length
 
