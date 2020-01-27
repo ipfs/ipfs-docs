@@ -2,12 +2,6 @@
 
 This guide explains how to write an article. While the [Style fo Formatting Guide](style-and-formatting-guide.md) lets you know the rules and regulations you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
 
-There are three different types of written content in the IPFS Docs project:
-
-1. [Walkthroughs](#walthroughs)
-2. [Conceptual articles](conceptual-articles)
-3. [Tutorials](#tutorials)
-
 ## Walkthroughs
 
 The purpose of a walkthrough is to tell the user _how_ to do something. They do not need to convince the reader of something or explain a concept. Walkthroughs are a list of steps the reader must follow to achieve a process or function.
@@ -46,9 +40,9 @@ Walkthroughs are split into three major sections:
 
 ## Conceptual articles
 
-Conceptual articles are written with the intent to inform and explain something. These articles don't contain any steps or actions that the reader has to perform.
+Articles are written with the intent to inform and explain something. These articles don't contain any steps or actions that the reader has to perform _right now_.
 
-These articles are vastly different in tone when compared to walkthroughs. Some topics and concepts can be challenging to understand, so creating writing and diagrams are highly sought-after for these articles. Whatever writers can do to make a subject more interesting and understandable, the better.
+These articles are vastly different in tone when compared to walkthroughs. Some topics and concepts can be challenging to understand, so creative writing and interesting diagrams are highly sought-after for these articles. Whatever writers can do to make a subject more understandable, the better.
 
 ### Article goals
 
