@@ -4,7 +4,7 @@ This page details the syntax and formatting rules for writing IPFS documentation
 
 ## Grammar and spelling
 
-Most of the rules for spelling and grammar are turned on by default in Grammarly.
+Here are some language specific rules that the IPFS documentation follows. Most of these rules are turned on by default in Grammarly.
 
 ### American English
 

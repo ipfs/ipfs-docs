@@ -271,7 +271,7 @@ module.exports = {
                 collapsable: false,
                 children: [
                   '/community/contribute/ways-to-contribute',
-                  '/community/contribute/style-formatting-and-grammar',
+                  '/community/contribute/grammar-formatting-and-style',
                   '/community/contribute/writing-guide',
                   '/community/contribute/code-persona',
                   '/community/contribute/contribution-tutorial'

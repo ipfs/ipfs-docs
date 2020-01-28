@@ -32,7 +32,7 @@ IPFS is a huge project and undertaking, and with lots of code comes the need for
 
 There are three guides you should read through before contributing to the IPFS Docs project:
 
-1. [Style and formatting guide](/community/contribute/style-formatting-and-grammar.md).
+1. [Style and formatting guide](/community/contribute/grammar-formatting-and-style.md).
 2. [Writing guide](/community/contribute/writing-guide.md).
 3. [Code persona](/community/contribute/code-persona.md).
 
