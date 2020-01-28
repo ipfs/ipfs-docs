@@ -16,7 +16,7 @@ While IPFS is a global project, the fact is that American English is the most co
 
 ### The Oxford comma
 
-Follow each list of three or more items with a comma:
+Follow each list of three or more items with a comma `,`:
 
 | Use                           | Don't Use                    |
 | ----------------------------- | ---------------------------- |
