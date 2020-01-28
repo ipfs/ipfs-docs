@@ -1,6 +1,6 @@
 # Writing guide
 
-This guide explains how to write an article. While the [Style fo Formatting Guide](style-and-formatting-guide.md) lets you know the rules and regulations you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
+This guide explains how to write an article. While the [Style fo Formatting Guide](style-formatting-and-grammar.md) lets you know the rules and regulations you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
 
 ## Walkthroughs
 

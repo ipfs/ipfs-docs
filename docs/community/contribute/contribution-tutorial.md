@@ -1,6 +1,6 @@
 # Contribution tutorial
 
-While the [style & formatting guide](style-and-formatting-guide.md) and the [writing guide](writing-guide.md) can both help you write excellent content for the IPFS Docs project, they don't delve into how you can actually submit you content changes. This guide will walk you through finding an issue, fixing it, and then submitting your fix to the `ipfs/docs` project.
+While the [style & formatting guide](style-formatting-and-grammar.md) and the [writing guide](writing-guide.md) can both help you write excellent content for the IPFS Docs project, they don't delve into how you can actually submit you content changes. This guide will walk you through finding an issue, fixing it, and then submitting your fix to the `ipfs/docs` project.
 
 There are plenty of small-sized issues around the documentation that we need help with. Here we'll walkthrough:
 

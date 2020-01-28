@@ -1,6 +1,33 @@
-# Style and formatting guide
+# Grammar, style, and formatting
 
 This page details the syntax and formatting rules for writing IPFS documentation. For more conceptual ideas of writing, check out the [Writing Guide](writing-guide.md).
+
+## Grammar and spelling
+
+Most of the rules for spelling and grammar are turned on by default in Grammarly.
+
+### American English
+
+While IPFS is a global project, the fact is that American English is the most commonly used _style_ of English used today. With that in mind, when writing content from the IPFS project, use American English spelling. The basic rules are:
+
+1. Swap the `s` for a `z` in words like _categorize_ and _pluralize_.
+2. Remove the `u` from words like _color_ and _honor_.
+3. Swap `tre` for `ter` in words like _center_.
+
+### The Oxford comma
+
+Follow each list of three or more items with a comma:
+
+| Use                           | Don't Use                    |
+| ----------------------------- | ---------------------------- |
+| One, two, three, and four.    | One, two, three and four.    |
+| Henry, Elizabeth, and George. | Henry, Elizabeth and George. |
+
+### Acronyms
+
+If you have to use acronyms, spell full phrase first and include the acronym in parentheses `()` the first time they are used in each document. This generally isn't necessary for terms like _IPFS_, unless writing for a stand-alone article that may not be presented alongside [docs.ipfs.io](https://docs.ipfs.io).
+
+> Virtual Machine (VM), Decentralized Web (DWeb).
 
 ## Formatting
 
