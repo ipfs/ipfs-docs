@@ -30,6 +30,10 @@ As noted above, if you'd like to contribute to the IPFS docs effort as a whole, 
 
 3. Open [localhost:8080](http://localhost:8080) in your browser.
 
+## Issues
+
+Any issues found within this repo should be listed in the [`ipfs/docs` issues tracker](https://github.com/ipfs/docs/issues). This repository will be merged into the `ipfs/docs` repository in quarter 2 of 2020. Having all the issues in one place will help to keep things organized. It also enables us to retain the commit history of `ipfs/docs`. Once the merge is complete, this repository will be archived.
+
 ## Maintainers
 
 - [@johnnymatthews](https://github.com/johnnymatthews)
