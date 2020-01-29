@@ -1,7 +1,6 @@
 ---
 title: Bitswap
 sidebarDepth: 0
-issueUrl: https://github.com/ipfs/docs/issues/85
 description: Learn about Bitswap and how it plays into the overall architecture of IPFS, the InterPlanetary File System.
 related:
   'Article: Swapping bits and distributing hashes on the decentralized web (Textile)': https://medium.com/textileio/swapping-bits-and-distributing-hashes-on-the-decentralized-web-5da98a3507
@@ -11,11 +10,11 @@ related:
 
 # Bitswap
 
-Bitswap is a core module of IPFS for exchanging blocks of data. It directs the requesting and sending of blocks to and from other peers in the network. It is a message based protocol, wherein all messages contain wantlists or blocks. Bitswap has a [Go implementation](https://github.com/ipfs/go-bitswap) and a [JavaScript implementation](https://github.com/ipfs/js-ipfs-bitswap).
+Bitswap is a core module of IPFS for exchanging blocks of data. It directs the requesting and sending of blocks to and from other peers in the network. Bitswap is a _message-based protocol_ where all messages contain [wantlists](#wantlist) or blocks. Bitswap has a [Go implementation](https://github.com/ipfs/go-bitswap) and a [JavaScript implementation](https://github.com/ipfs/js-ipfs-bitswap).
 
 Bitswap has two main jobs:
-- to acquire blocks requested by the client from the network
-- to send blocks in its possession to other peers who want them
+- to acquire blocks requested by the client from the network.
+- to send blocks in its possession to other peers who want them.
 
 ### Wantlist
 
@@ -30,7 +29,7 @@ A single Bitswap message may contain any of the following content:
 
 ### Session
 
-IPFS content blocks are often connected to each other through a [Merkle DAG](https://docs-beta.ipfs.io/concepts/merkle-dag/). If a sender's block requests *are* related, a mechanism called a Bitswap session can optimize block requests sent to other peers. This can increase transfer speed and reduce the number of duplicate blocks on the network. Active peers are favored, as they are tracked relative to them having the requested blocks and how quickly they respond.
+IPFS content blocks are often connected to each other through a [Merkle DAG](https://docs-beta.ipfs.io/concepts/merkle-dag/). If a sender's block requests are related, a mechanism called a _Bitswap session_ can optimize block requests sent to other peers. This mechanism can increase transfer speed and reduce the number of duplicate blocks on the network. Active peers are favored, as they are tracked relative to them having the requested blocks and how quickly they respond.
 
 ### Provider/Providing
 
@@ -38,13 +37,13 @@ The provider system is responsible for announcing and reannouncing to the IPFS n
 
 ### Deeper Examination
 
-A diagram showing the major tasks of Bitswap and underlying components:
+A diagram showing the primary tasks of Bitswap and underlying components:
 
 ![Bitswap task and component diagram](https://github.com/ipfs/go-bitswap/blob/master/docs/go-bitswap.png "Go-Bitswap")
 
 #### Message Queue
 
-An IPFS node has a message queue for each active peer. The message queue has the next message to be sent to that peer. Updates to a message queue come from either the wantlist manager or the decision engine. Task workers watch the message queues and send waiting messages to the associated peers.
+An IPFS node has a message queue for each active peer. The message queue has the next message to be sent to that peer. Updates to a message queue come from either the wantlist manager or the decision engine. Task workers watch the message queues and send queued messages to the associated peers.
 
 #### Want-Manager
 
@@ -52,7 +51,7 @@ The want-manager handles our requests for blocks. When CIDs are added or removed
 
 #### Decision Engine
 
-The decision engine processes incoming messages that contain a wantlist. It checks the CID for each block in the wantlist against the local blockstore and creates a task in the peer request queue for each block it finds. Task workers pull the tasks off the queue, retrieve the block requested, and send it off.
+The decision engine processes incoming messages that contain a wantlist. It checks the CID for each block in the wantlist against the local block-store and creates a task in the peer request queue for each block it finds. Task workers pull the tasks off the queue, retrieve the block requested, and send it off.
 
 The decision engine makes use of a ledger as a record of the aggregate data exchanged between two peers. An IPFS node maintains one ledger for each connected peer.
 
@@ -62,4 +61,3 @@ The decision engine makes use of a ledger as a record of the aggregate data exch
 
 "About Bitswap" poster from the IPFS developer summit in Berlin in July 2018:
 !['About Bitswap' poster](https://user-images.githubusercontent.com/74178/43230914-f818dab2-901e-11e8-876b-73ba6a084f76.jpg "Bitswap-Poster_Berlin-July-2018")
-
