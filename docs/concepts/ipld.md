@@ -101,4 +101,4 @@ Congratulations! We successfuly linked a node with CID `bafyreifsnd...` to `z8mW
 
 ## IPLD and "The Merkle Forrest"
 
-The heart of IPLD is to unify data models. Links can be traversed across protocols, opening endless possibilities. Imagine having an Ethereum contract referencing data on IPFS. Or having a torrent file link to Zcash. Instead of having one large Merkle tree like bitcoin and Ethereum, IPFS uses IPLD to unite the many Merkle trees to what is coined as the Merkle Forrest. 🌳🌲🌴
+The heart of IPLD is to unify data models. Links can be traversed across protocols, opening endless possibilities. Imagine having an Ethereum contract referencing data on IPFS. Or having a torrent file link to Zcash. Instead of having one large Merkle tree, as with Bitcoin and Ethereum, IPFS uses IPLD to unite the many Merkle trees into what is coined as the Merkle Forest. 🌳🌲🌴
