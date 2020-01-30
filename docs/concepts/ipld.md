@@ -99,6 +99,6 @@ $ ipfs dag get bafyreifsnd635mi5ratse2mzg3wget4afcwf2tsop4lymbxtj27tfgizia/files
 
 Congratulations! We successfuly linked a node with CID `bafyreifsnd...` to `z8mWaJHXieA...`.
 
-## IPLD and "The Merkle Forrest"
+## IPLD and "The Merkle Forest"
 
 The heart of IPLD is to unify data models. Links can be traversed across protocols, opening endless possibilities. Imagine having an Ethereum contract referencing data on IPFS. Or having a torrent file link to Zcash. Instead of having one large Merkle tree, as with Bitcoin and Ethereum, IPFS uses IPLD to unite the many Merkle trees into what is coined as the Merkle Forest. 🌳🌲🌴
