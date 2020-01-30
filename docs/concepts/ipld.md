@@ -29,7 +29,7 @@ The IPLD specifications are divided into [layers](https://github.com/ipld/specs#
 
 0. **Block layer:** The block layer contains the content identifier (CID), which is used to self-describe the multibase-prefix, version, content type and content address. This takes the guessing out of encoding/decoding.
 1. **Data model layer:** This layer describes what is representable in IPLD (lists, booleans, maps, etc). Here are all of the [kinds](https://github.com/ipld/specs/blob/master/data-model-layer/data-model.md#kinds).
-1. Schema Layer: The schema layer uses the data model layer to build more complex layouts.
+2. **Schema layer:** The schema layer uses the data model layer to build more complex layouts.
 
 Below is the simplified hierarchy:
 
