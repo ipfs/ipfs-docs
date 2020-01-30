@@ -23,7 +23,7 @@ IPLD acts as a layer between networking protocols and higher-level applications.
 
 ![](https://gateway.ipfs.io/ipfs/QmXgrfpCcSFfXnXqSz6G3V9E21pTZdBmVdsBQCkr86kHXP)
 
-## IPLD Layer Model
+## The IPLD layer model
 
 The IPLD specifications are divided into [layers](https://github.com/ipld/specs#ipld-layer-model):
 
