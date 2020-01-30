@@ -68,7 +68,7 @@ z8mWaJHXieAVxxLagBpdaNWFEBKVWmMiE
 $ ipfs daemon
 ```
 
-2. Create some data. Notice how this data stores the git CID.
+2. Create some data. Notice how this data stores the Git CID.
 
 ```bash
 $ echo '{ "message": "linking to git commit", "files": [{ "/": "z8mWaJHXieAVxxLagBpdaNWFEBKVWmMiE" }] }' > test.json
