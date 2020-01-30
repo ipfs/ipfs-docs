@@ -19,7 +19,7 @@ IPLD concerns itself with the data layer of the distributed web. It beings with 
 
 ## Where does IPLD fit in?
 
-IPLD acts as a layer between networking protocols and higher level applications. This enables developers to build decentralized applications without having to worry about lower level changes.
+IPLD acts as a layer between networking protocols and higher-level applications. This enables developers to build decentralized applications without having to worry about lower-level changes.
 
 ![](https://gateway.ipfs.io/ipfs/QmXgrfpCcSFfXnXqSz6G3V9E21pTZdBmVdsBQCkr86kHXP)
 
