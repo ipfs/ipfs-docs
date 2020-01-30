@@ -83,7 +83,7 @@ $ ipfs dag put test.json
 bafyreifsnd635mi5ratse2mzg3wget4afcwf2tsop4lymbxtj27tfgizia
 ```
 
-4. From here, use the CID provided to get an IPLD format node.
+4. From here, use the CID provided to get an IPLD-format node.
 
 ```bash
 $ ipfs dag get bafyreifsnd635mi5ratse2mzg3wget4afcwf2tsop4lymbxtj27tfgizia
