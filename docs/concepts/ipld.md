@@ -17,7 +17,7 @@ IPFS, Bitcoin and other applications use hash-linked data structures ([Merkle tr
 
 IPLD concerns itself with the data layer of the distributed web. It beings with how data is encoded and decoded. IPLD's [Data Model](https://github.com/ipld/specs) includes standard types such as booleans, integers, lists etc. which are easily representable by common programming languages.
 
-## Where Does IPLD Fit In?
+## Where does IPLD fit in?
 
 IPLD acts as a layer between networking protocols and higher level applications. This enables developers to build decentralized applications without having to worry about lower level changes.
 
