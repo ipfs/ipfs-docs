@@ -47,7 +47,7 @@ Below is the simplified hierarchy:
 ├──────────────────────────────────────────────────┤
 │                                                  │
 │                   0. Block layer                 │
-│               (cid, data, codec)                 │
+│               (CID, data, codec)                 │
 │                                                  │
 └──────────────────────────────────────────────────┘
 ```
