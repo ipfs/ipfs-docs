@@ -90,7 +90,7 @@ $ ipfs dag get bafyreifsnd635mi5ratse2mzg3wget4afcwf2tsop4lymbxtj27tfgizia
 {"files":[{"/":"baf4bcfg4ep767tjp5lxyanx5urpjjgx5q2volvy"}],"message":"linking to git commit"}
 ```
 
-5. Finally, traverse through to access the git commit.
+5. Finally, traverse through to access the Git commit.
 
 ```bash
 $ ipfs dag get bafyreifsnd635mi5ratse2mzg3wget4afcwf2tsop4lymbxtj27tfgizia/files/0/
