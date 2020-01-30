@@ -41,7 +41,7 @@ Below is the simplified hierarchy:
 │                                                  │
 ├──────────────────────────────────────────────────┤
 │                                                  │
-│                 1. Data Model Layer              │
+│                 1. Data model layer              │
 │  (basic types for single-block data structures)  │
 │                                                  │
 ├──────────────────────────────────────────────────┤
