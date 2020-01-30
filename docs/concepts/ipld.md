@@ -52,7 +52,7 @@ Below is the simplified hierarchy:
 └──────────────────────────────────────────────────┘
 ```
 
-## Path Traversal Example
+## Example: Path traversal
 
 This example will create a simple link from a node to a git commit. The example will use the cli, but this can be done in many ways ([javascript](https://github.com/ipfs/js-ipfs-http-client)).
 
