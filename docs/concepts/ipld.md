@@ -56,7 +56,7 @@ Below is the simplified hierarchy:
 
 This example will create a simple link from a node to a Git commit. The example will use the CLI, but this can be done in many other ways (for example, using [JavaScript](https://github.com/ipfs/js-ipfs-http-client)).
 
-1. Pick a git CID. This example will use [explorer.ipld.io](https://explore.ipld.io/#/explore/z8mWaJHXieAVxxLagBpdaNWFEBKVWmMiE). The goal is to create a node that links to this CID:
+1. Pick a Git CID. This example will use [explorer.ipld.io](https://explore.ipld.io/#/explore/z8mWaJHXieAVxxLagBpdaNWFEBKVWmMiE). The goal is to create a node that links to this CID:
 
 ```
 z8mWaJHXieAVxxLagBpdaNWFEBKVWmMiE
