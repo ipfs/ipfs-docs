@@ -62,7 +62,7 @@ This example will create a simple link from a node to a Git commit. The example 
 z8mWaJHXieAVxxLagBpdaNWFEBKVWmMiE
 ```
 
-2. Start the ipfs daemon
+2. Start the IPFS daemon.
 
 ```bash
 $ ipfs daemon
