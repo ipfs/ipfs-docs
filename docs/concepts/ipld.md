@@ -29,7 +29,7 @@ The IPLD specifications are divided into [layers](https://github.com/ipld/specs#
 
 0. **Block layer:** The block layer contains the content identifier (CID), which is used to self-describe the multibase-prefix, version, content type and content address. This takes the guessing out of encoding/decoding.
 1. **Data model layer:** This layer describes what is representable in IPLD (lists, booleans, maps, etc). Here are all of the [kinds](https://github.com/ipld/specs/blob/master/data-model-layer/data-model.md#kinds).
-2. **Schema layer:** The schema layer uses the data model layer to build more complex layouts.
+1. **Schema layer:** The schema layer uses the data model layer to build more complex layouts.
 
 Below is the simplified hierarchy:
 
@@ -102,3 +102,7 @@ Congratulations! We successfuly linked a node with CID `bafyreifsnd...` to `z8mW
 ## IPLD and "The Merkle Forest"
 
 The heart of IPLD is to unify data models. Links can be traversed across protocols, opening endless possibilities. Imagine having an Ethereum contract referencing data on IPFS. Or having a torrent file link to Zcash. Instead of having one large Merkle tree, as with Bitcoin and Ethereum, IPFS uses IPLD to unite the many Merkle trees into what is coined as the Merkle Forest. 🌳🌲🌴
+
+## Further resources
+
+For more information, you may want to check out the [IPLD explorer](https://explore.ipld.io/) and Juan Benet's [Enter the Merkle Forest](https://www.youtube.com/watch?v=Bqs_LzBjQyk&t=2s).
