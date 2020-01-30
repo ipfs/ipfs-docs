@@ -15,7 +15,7 @@ The Interplanetary Linked Data (IPLD) model is a set of [specifications](https:/
 
 IPFS, Bitcoin and other applications use hash-linked data structures ([Merkle trees](https://docs-beta.ipfs.io/concepts/merkle-dag/)) to verify data integrity. However, each protocol has a slightly different format. IPLD's goal is to provide a hash-chain format for distributed data structures.
 
-IPLD concerns itself with the data layer of the distributed web. It beings with how data is encoded and decoded. IPLD's [Data Model](https://github.com/ipld/specs) includes standard types such as booleans, integers, lists etc. which are easily representable by common programming languages.
+IPLD concerns itself with the data layer of the distributed web. It beings with how data is encoded and decoded. IPLD's [Data Model](https://github.com/ipld/specs) includes standard types such as booleans, integers, lists, etc., which are easily representable by common programming languages.
 
 ## Where does IPLD fit in?
 
