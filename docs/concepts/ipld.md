@@ -36,7 +36,7 @@ Below is the simplified hierarchy:
 ```
 ┌──────────────────────────────────────────────────┐
 │                                                  │
-│                   2. Schema Layer                │
+│                   2. Schema layer                │
 │ (advanced types for multi-block data structures) │
 │                                                  │
 ├──────────────────────────────────────────────────┤
