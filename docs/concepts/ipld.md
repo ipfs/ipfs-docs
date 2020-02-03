@@ -11,11 +11,11 @@ related:
 
 # The InterPlanetary Linked Data (IPLD) model
 
-The Interplanetary Linked Data (IPLD) model is a set of [specifications](https://github.com/ipld/specs) that unifies all data models that link data with hashes. This allows for interoperable protocols. For example, you can reference a GitHub commit to a Bitcoin transaction.
+The Interplanetary Linked Data (IPLD) model is a single namespace for all hash-inspired protocols. This allows for interoperable data formats. For example, you can reference a Git commit to a Bitcoin transaction.
 
-IPFS, Bitcoin and other applications use hash-linked data structures ([Merkle trees](https://docs-beta.ipfs.io/concepts/merkle-dag/)) to verify data integrity. However, each protocol has a slightly different format. IPLD's goal is to provide a hash-chain format for distributed data structures.
+As mentioned in the [specifications](https://github.com/ipld/specs), the goal of IPLD is to enable decentralized data-structures that are universally addressable and linkable which in turn will enable more decentralized applications. These data-structures allow us to do for data what URLs and links did for HTML web pages.
 
-IPLD concerns itself with the data layer of the distributed web. It beings with how data is encoded and decoded. IPLD's [Data Model](https://github.com/ipld/specs) includes standard types such as booleans, integers, lists, etc., which are easily representable by common programming languages.
+IPFS, Bitcoin and other applications use hash-linked data structures ([Merkle trees](https://docs-beta.ipfs.io/concepts/merkle-dag/)) to verify data integrity. However, each protocol has a very different format. IPLD's goal is to provide a data layer definition that allows linking different content-addressed data types.
 
 ## Where does IPLD fit in?
 
@@ -101,7 +101,7 @@ Congratulations! We successfuly linked a node with CID `bafyreifsnd...` to `z8mW
 
 ## IPLD and "The Merkle Forest"
 
-The heart of IPLD is to unify data models. Links can be traversed across protocols, opening endless possibilities. Imagine having an Ethereum contract referencing data on IPFS. Or having a torrent file link to Zcash. Instead of having one large Merkle tree, as with Bitcoin and Ethereum, IPFS uses IPLD to unite the many Merkle trees into what is coined as the Merkle Forest. 🌳🌲🌴
+The heart of IPLD is to unify data models. Links can be traversed across data formats, opening endless possibilities. Imagine having an Ethereum contract referencing data on IPFS. Or having a torrent file link to Zcash. Instead of having one large Merkle tree, as with Bitcoin and Ethereum, IPFS uses IPLD to unite the many Merkle trees into what is coined as the Merkle Forest. 🌳🌲🌴
 
 ## Further resources
 
