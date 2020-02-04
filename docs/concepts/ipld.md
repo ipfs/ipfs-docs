@@ -58,6 +58,6 @@ The heart of IPLD is to unify data models. Links can be traversed across data fo
 
 ## Further resources
 
-For some examples, you many want to check out an interactive tutorial [P2P Data Links with Content Addressing](https://proto.school/#/basics/) or learn how to [resolve through IPLD graphs with the dag API](https://github.com/ipfs/js-ipfs/tree/master/examples/traverse-ipld-graphs).
+For some examples, you many want to check out the interactive ProtoSchool tutorial [P2P Data Links with Content Addressing](https://proto.school/#/basics/) or learn how to [resolve through IPLD graphs with the dag API](https://github.com/ipfs/js-ipfs/tree/master/examples/traverse-ipld-graphs).
 
 For more information, you may want to check out the [IPLD explorer](https://explore.ipld.io/) and Juan Benet's [Enter the Merkle Forest](https://www.youtube.com/watch?v=Bqs_LzBjQyk&t=2s).
