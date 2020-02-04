@@ -52,57 +52,12 @@ Below is the simplified hierarchy:
 └──────────────────────────────────────────────────┘
 ```
 
-## Example: Path traversal
-
-This example will create a simple link from a node to a Git commit. The example will use the CLI, but this can be done in many other ways (for example, using [JavaScript](https://github.com/ipfs/js-ipfs-http-client)).
-
-1. Pick a Git CID. This example will use [explorer.ipld.io](https://explore.ipld.io/#/explore/z8mWaJHXieAVxxLagBpdaNWFEBKVWmMiE). The goal is to create a node that links to this CID:
-
-```
-z8mWaJHXieAVxxLagBpdaNWFEBKVWmMiE
-```
-
-2. Start the IPFS daemon.
-
-```bash
-$ ipfs daemon
-```
-
-2. Create some data. Notice how this data stores the Git CID.
-
-```bash
-$ echo '{ "message": "linking to git commit", "files": [{ "/": "z8mWaJHXieAVxxLagBpdaNWFEBKVWmMiE" }] }' > test.json
-$ cat test.json
-{ "message": "linking to git commit", "files": [{ "/": "z8mWaJHXieAVxxLagBpdaNWFEBKVWmMiE" }] }}
-```
-
-3. Store an IPLD format node using the [put](https://docs.ipfs.io/reference/api/cli/#ipfs-dag-put) command.
-
-```bash
-$ ipfs dag put test.json
-bafyreifsnd635mi5ratse2mzg3wget4afcwf2tsop4lymbxtj27tfgizia
-```
-
-4. From here, use the CID provided to get an IPLD-format node.
-
-```bash
-$ ipfs dag get bafyreifsnd635mi5ratse2mzg3wget4afcwf2tsop4lymbxtj27tfgizia
-{"files":[{"/":"baf4bcfg4ep767tjp5lxyanx5urpjjgx5q2volvy"}],"message":"linking to git commit"}
-```
-
-5. Finally, traverse through to access the Git commit.
-
-```bash
-$ ipfs dag get bafyreifsnd635mi5ratse2mzg3wget4afcwf2tsop4lymbxtj27tfgizia/files/0/
-{"author":{"date":"1524708555 +0200","email":"magik6k@users.noreply.github.com","name":"Łukasz Magiera"},"committer":{"date":"1524708555 +0200","email":"noreply@github.com","name":"GitHub"},"message":"Merge pull request #31 from ipfs-shipyard/feat/zip-button\n\nDownload Zip button","other":[" "],"parents":[{"/":"baf4bcfcjvhadrgzmwjflz25kyyc3tolmqaobvfy"},{"/":"baf4bcfcfa2xemiceossebsosuxsi77m5ztatwci"}],"signature":{"Text":" \n wsBcBAABCAAQBQJa4TTLCRBK7hj4Ov3rIwAAdHIIAFIOYsbNvoXO+N7d1pnhR6Ue\n qE2qLrldXeGI+04k3i0rmL8/YAi3zavCA1F1VfjSxX8nYsdYWmjljURiDL07y+5K\n RDxsdHPvf8GUN04rO3mVbCISAme3okGMdrn+hfEdZVdwGdUFva0vtegMWDvnADnY\n si6kURUTONywkNLLHsUD6kPUk2YEZuruaSWblGQwS1ejGzfPo7n4z/ScotC/XxFP\n SCj93XLLlh6HBhh4huJgr2HA/13Tg4XLW5+DnE1mIs3FA0cCQ2WGZCbXEugX/+xv\n u0UWyVv7o8xWt0SJeAFpOLDy7MhCpETJsQ0sFe6Mte6plzsa4vM8/Rq+nI5TzoU=\n =RYjo\n"},"tree":{"/":"baf4bcfcqex3wt5ajfg3lynpufxpiivqt5nxlmxy"}}"
-```
-
-Congratulations! We successfuly linked a node with CID `bafyreifsnd...` to `z8mWaJHXieA...`.
-
 ## IPLD and "The Merkle Forest"
 
 The heart of IPLD is to unify data models. Links can be traversed across data formats, opening endless possibilities. Imagine having an Ethereum contract referencing data on IPFS. Or having a torrent file link to Zcash. Instead of having one large Merkle tree, as with Bitcoin and Ethereum, IPFS uses IPLD to unite the many Merkle trees into what is coined as the Merkle Forest. 🌳🌲🌴
 
 ## Further resources
+
+For some examples, you many want to check out an interactive tutorial [P2P Data Links with Content Addressing](https://proto.school/#/basics/) or learn how to [resolve through IPLD graphs with the dag API](https://github.com/ipfs/js-ipfs/tree/master/examples/traverse-ipld-graphs).
 
 For more information, you may want to check out the [IPLD explorer](https://explore.ipld.io/) and Juan Benet's [Enter the Merkle Forest](https://www.youtube.com/watch?v=Bqs_LzBjQyk&t=2s).
