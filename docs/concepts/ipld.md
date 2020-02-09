@@ -19,7 +19,7 @@ IPFS, Bitcoin and other applications use hash-linked data structures ([Merkle tr
 
 ## Where does IPLD fit in?
 
-IPLD acts as a layer between networking protocols and higher-level applications. This enables developers to build decentralized applications without having to worry about lower-level changes.
+IPLD acts as a layer between networking protocols and higher-level applications. This enables developers to build decentralized applications without having to worry about lower-level changes. Both upper and lower layer technologies can grow independently while IPLD acts as middle layer that resolves the two. This is known as "thin/narrow waist" protocol.
 
 ![](https://gateway.ipfs.io/ipfs/QmXgrfpCcSFfXnXqSz6G3V9E21pTZdBmVdsBQCkr86kHXP)
 
