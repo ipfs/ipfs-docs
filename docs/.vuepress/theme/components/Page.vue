@@ -46,6 +46,21 @@ export default {
     isContentStatus: function() {
       return !!(this.$frontmatter && this.$frontmatter.issueUrl)
     }
+  },
+  methods: {
+    smoothScroll: function() {
+      var root = document.getElementsByTagName('html')[0]
+      // only enable smooth-scrolling on pages shorter that 15000 px
+      return root.scrollHeight < 15000
+        ? root.classList.add('smooth-scroll')
+        : root.classList.remove('smooth-scroll')
+    }
+  },
+  mounted: function() {
+    this.smoothScroll()
+  },
+  updated: function() {
+    this.smoothScroll()
   }
 }
 </script>
