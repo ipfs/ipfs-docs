@@ -3,6 +3,8 @@ title: Writing guide
 description: Learn the specifics of how to write documentation for the IPFS project.
 ---
 
+# Writing guide
+
 This guide explains how to write an article. While the [grammar, formatting, and style guide](/community/contribute/grammar-formatting-and-style/) lets you know the rules you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
 
 ## Walkthroughs
