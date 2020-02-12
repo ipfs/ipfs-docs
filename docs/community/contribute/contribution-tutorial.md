@@ -96,6 +96,6 @@ The `ipfs/ipfs-docs-v2` project doesn't currently have any automatic tests, so a
 
 Once your pull request has been approved, it's ready to be merged into the project! Only project members with the correct rights can merge changes into the project, but you'll be notified as soon as the merge is complete.
 
-## Finishing Up
+## Finishing up
 
 So there you have it! You've successfully completed your first contribution to the IPFS documentation. We're always on the lookout for great writers and educators to help us improve the IPFS docs and make the internet better for everyone, so keep up the good work!
