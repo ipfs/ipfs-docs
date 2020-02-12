@@ -3,6 +3,8 @@ title: Grammar, formatting, and style
 description: Learn the syntax and formatting rules for writing documentation for the IPFS project.
 ---
 
+# Grammar, formatting, and style
+
 This page details the syntax and formatting rules for writing IPFS documentation. For more conceptual ideas of writing, check out the [Writing Guide](writing-guide.md).
 
 ## Grammar and spelling
