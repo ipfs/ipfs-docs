@@ -5,7 +5,7 @@ description: Learn the syntax and formatting rules for writing documentation for
 
 # Grammar, formatting, and style
 
-This page details the syntax and formatting rules for writing IPFS documentation. For more conceptual ideas of writing, check out the [Writing Guide](writing-guide.md).
+This page details the syntax and formatting rules for writing IPFS documentation. For more conceptual ideas of writing, check out the [writing guide](/community/contribute/writing-guide/).
 
 ## Grammar and spelling
 
