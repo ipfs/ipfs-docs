@@ -36,7 +36,7 @@ There are three guides you should read through before contributing to the IPFS D
 2. [Writing guide](/community/contribute/writing-guide.md).
 3. [Code persona](/community/contribute/code-persona.md).
 
-If you have never contributed to an open-source project before, or just need a refresher on what to do , take a look at the [Contribution Walkthrough](/community/contribute/contribution-tutorial).
+If you have never contributed to an open-source project before, or just need a refresher on what to do , take a look at the [Contribution tutorial](/community/contribute/contribution-tutorial).
 
 ## Support
 

@@ -265,12 +265,12 @@ module.exports = {
             path: '/community/',
 
             children: [
+              '/community/contribute/ways-to-contribute',
               {
-                title: 'Contribute to IPFS',
+                title: 'Write the docs',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/community/contribute/ways-to-contribute',
                   '/community/contribute/grammar-formatting-and-style',
                   '/community/contribute/writing-guide',
                   '/community/contribute/code-persona',
