@@ -1,6 +1,9 @@
-# Contribution tutorial
+---
+title: Contribution tutorial
+description: Learn how to contribute to IPFS documentation through finding issues, fixing them, and submitting them to the project.
+---
 
-While the [grammar, style, and formatting guide](/community/contribute/grammar-formatting-and-style/) and the [writing guide](/community/contribute/writing-guide/) can both help you write excellent content for the IPFS Docs project, they don't delve into how you can actually submit you content changes. This guide will walk you through finding an issue, fixing it, and then submitting your fix to the `ipfs/docs` project.
+While the [grammar, formatting, and style](/community/contribute/grammar-formatting-and-style/) and the [writing guide](/community/contribute/writing-guide/) can both help you write excellent content for the IPFS Docs project, they don't delve into how you can actually submit you content changes. This guide will walk you through finding an issue, fixing it, and then submitting your fix to the `ipfs/docs` project.
 
 There are plenty of small-sized issues around IPFS documentation that make for easy, helpful contributions to the IPFS project. Here, we'll walk through:
 
