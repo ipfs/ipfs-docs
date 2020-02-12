@@ -4,11 +4,11 @@ This page details the syntax and formatting rules for writing IPFS documentation
 
 ## Grammar and spelling
 
-Here are some language specific rules that the IPFS documentation follows. Most of these rules are turned on by default in Grammarly.
+Here are some language-specific rules that the IPFS documentation follows. If you use a writing service like [Grammarly](https://www.grammarly.com/), most of these rules are turned on by default.
 
 ### American English
 
-While IPFS is a global project, the fact is that American English is the most commonly used _style_ of English used today. With that in mind, when writing content from the IPFS project, use American English spelling. The basic rules are:
+While IPFS is a global project, the fact is that American English is the most commonly used _style_ of English used today. With that in mind, when writing content for the IPFS project, use American English spelling. The basic rules for converting other styles of English into American English are:
 
 1. Swap the `s` for a `z` in words like _categorize_ and _pluralize_.
 2. Remove the `u` from words like _color_ and _honor_.
@@ -18,14 +18,14 @@ While IPFS is a global project, the fact is that American English is the most co
 
 Follow each list of three or more items with a comma `,`:
 
-| Use                           | Don't Use                    |
+| Use                           | Don't use                    |
 | ----------------------------- | ---------------------------- |
 | One, two, three, and four.    | One, two, three and four.    |
 | Henry, Elizabeth, and George. | Henry, Elizabeth and George. |
 
 ### Acronyms
 
-If you have to use acronyms, spell full phrase first and include the acronym in parentheses `()` the first time they are used in each document. This generally isn't necessary for terms like _IPFS_, unless writing for a stand-alone article that may not be presented alongside [docs.ipfs.io](https://docs.ipfs.io).
+If you have to use an acronym, spell the full phrase first and include the acronym in parentheses `()` the first time it is used in each document. Exception: This generally isn't necessary for commonly-encountered acronyms like _IPFS_, unless writing for a stand-alone article that may not be presented alongside [docs.ipfs.io](https://docs.ipfs.io).
 
 > Virtual Machine (VM), Decentralized Web (DWeb).
 
@@ -35,7 +35,7 @@ How the Markdown syntax looks, and code formatting rules to follow.
 
 ### Syntax
 
-The IPFS Docs project follows the _GitHub Flavoured Markdown_ syntax for markdown. This way, all articles display properly within GitHub itself. This gives readers the option to view articles on [docs.ipfs.io](https://docs.ipfs.io) or [github.com/ipfs/docs](https://github.com/ipfs/docs).
+The IPFS Docs project follows the _GitHub Flavoured Markdown_ syntax for markdown. This way, all articles display properly within GitHub itself. This gives readers the option to view articles on [the docs website](https://docs-beta.ipfs.io) or [its GitHub repo](https://github.com/ipfs/ipfs-docs-v2).
 
 ### Rules
 
@@ -43,11 +43,11 @@ We use the rules set out in the [VSCode Markdownlint](https://github.com/DavidAn
 
 We highly recommend installing [VSCode](https://code.visualstudio.com/) with the [Markdownlint](https://github.com/DavidAnson/vscode-markdownlint) extension to help with your writing. The extension shows warnings within your markdown whenever your copy doesn't conform to a rule.
 
-![Screenshot of some Markdown in VSCode showing an error.](images/grammar-formatting-and-style/no-empty-links-error.png)
+![Screenshot of some Markdown in VSCode showing an error.](https://raw.githubusercontent.com/ipfs/ipfs-docs-v2/master/docs/community/contribute/images/grammar-formatting-and-style/no-empty-links-error.png)
 
 The extension summarizes all the warnings within the open file at the bottom of the editor:
 
-![Screenshow of VSCode with a summary of markdown errors.](images/grammar-formatting-and-style/markdown-error-summary.png)
+![Screenshot of VSCode with a summary of markdown errors.](https://raw.githubusercontent.com/ipfs/ipfs-docs-v2/master/docs/community/contribute/images/grammar-formatting-and-style/markdown-error-summary.png)
 
 ## Style
 
@@ -55,7 +55,7 @@ The following rules explain how we organize and structure our writing. The rules
 
 ### Text
 
-The following rules editing and styling text.
+The following rules apply to editing and styling text.
 
 #### Titles
 
@@ -97,7 +97,7 @@ The following rules editing and styling text.
 
 #### Bold text
 
-Double asterisks `**` are used to define bolded text. Use bold text when the reader must interact with something displayed as text: buttons, hyperlinks, images with text in them, window names, and icons.
+Double asterisks `**` are used to define **boldface** text. Use bold text when the reader must interact with something displayed as text: buttons, hyperlinks, images with text in them, window names, and icons.
 
 ```markdown
 In the **Login** window, enter your email into the **Username** field and click **Sign in**.
@@ -105,7 +105,7 @@ In the **Login** window, enter your email into the **Username** field and click 
 
 #### Italics
 
-Underscores `_` are used to define italic text. Style the names of things in italics, except input fields or buttons:
+Underscores `_` are used to define _italic_ text. Style the names of things in italics, except input fields or buttons:
 
 ```markdown
 Here are some American things:
@@ -125,7 +125,7 @@ In the wise words of Winnie the Pooh _"People say nothing is impossible, but I d
 
 #### Code blocks
 
-Tag codeblocks with the syntax of the core they are presenting:
+Tag code blocks with the syntax of the core they are presenting:
 
 ````markdown
     ```javascript
@@ -133,7 +133,7 @@ Tag codeblocks with the syntax of the core they are presenting:
     ```
 ````
 
-##### Command line examples
+##### Command-line examples
 
 Write command-line inputs without any other characters. Precede outputs from the command line with a greater-than sign `>`. Include an empty line between the input and output of a command-line example:
 
@@ -166,7 +166,7 @@ Command-line examples can be truncated with three periods `...` to remove extran
 
 #### Inline code tags
 
-Surround directories, file names, and version numbers between inline code tags `.
+Surround directories, file names, and version numbers between inline code tags `` ` ``.
 
 ```markdown
 Version `1.2.0` of the program is stored in `~/code/examples`. Open `exporter.exe` to run the program.
@@ -174,7 +174,7 @@ Version `1.2.0` of the program is stored in `~/code/examples`. Open `exporter.ex
 
 #### List items
 
-All list items follow sentence structure. Only _names_ and _places_ are capitalized, along with the first letter of the list item. All other letters are lower-case:
+All list items follow sentence structure. Only _names_ and _places_ are capitalized, along with the first letter of the list item. All other letters are lowercase:
 
 1. Never leave Nottingham without a sandwich.
 2. Brian May played guitar for Queen.
