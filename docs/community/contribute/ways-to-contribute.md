@@ -30,13 +30,13 @@ If you want to start contributing to the core of IPFS, those repositories are a 
 
 IPFS is a huge project and undertaking, and with lots of code comes the need for lots of good documentation! However, we need a lot more help to write the awesome docs the project needs. If writing technical documentation is your area, we’d absolutely love your help!
 
-There are three guides you should read through before contributing to the IPFS Docs project:
+Before contributing to the IPFS docs, please read these quick guides; they'll save you time and help keep the docs accurate and consistent!
 
-1. [Style and formatting guide](/community/contribute/grammar-formatting-and-style.md).
-2. [Writing guide](/community/contribute/writing-guide.md).
-3. [Code persona](/community/contribute/code-persona.md).
+1. [Style and formatting guide](/community/contribute/grammar-formatting-and-style/)
+2. [Writing guide](/community/contribute/writing-guide/)
+3. [Code persona](/community/contribute/code-persona/)
 
-If you have never contributed to an open-source project before, or just need a refresher on what to do , take a look at the [Contribution tutorial](/community/contribute/contribution-tutorial).
+If you have never contributed to an open-source project before, or just need a refresher, take a look at the [contribution tutorial](/community/contribute/contribution-tutorial/).
 
 ## Support
 
