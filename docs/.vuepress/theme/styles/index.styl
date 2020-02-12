@@ -6,12 +6,12 @@
 @import 'video';
 
 // apply scrolling by default excluding firefox due to trigger issues
-html {
+html.smooth-scroll {
 	scroll-behavior: smooth;
 }
 
 @supports (-moz-appearance: none) {
-	html {
+	html.smooth-scroll {
 		scroll-behavior: auto;
 	}
 }
