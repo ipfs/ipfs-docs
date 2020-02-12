@@ -11,7 +11,9 @@ module.exports = {
   },
   markdown: {
     extendMarkdown: md => {
-      md.set({ breaks: true })
+      md.set({
+        breaks: true
+      })
       md.use(require('markdown-it-video'))
       md.use(require('markdown-it-footnote'))
       md.use(require('markdown-it-task-lists'))
@@ -26,7 +28,10 @@ module.exports = {
     betaTestFormUrl:
       'https://docs.google.com/forms/d/1LVaD1B2uyW6Ff0jfU_iQ5mCeyQcHfyQO6BDD99XAgK0/viewform',
     defaultImage: '/images/social-card.png',
-    author: { name: 'IPFS Team', twitter: '@ipfsbot' },
+    author: {
+      name: 'IPFS Team',
+      twitter: '@ipfsbot'
+    },
     keywords:
       'IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
     // edit links
@@ -261,17 +266,34 @@ module.exports = {
           {
             title: 'Community',
             path: '/community/',
+
             children: [
-              ['https://discuss.ipfs.io/', 'IPFS forums'],
-              '/community/irc',
-              [
-                'https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com',
-                'Community video calls'
-              ],
-              ['https://proto.school/#/chapters', 'ProtoSchool chapters'],
-              ['https://www.meetup.com/members/249142444/', 'Meetups'],
-              '/community/social-media',
-              ['https://awesome.ipfs.io', 'Awesome IPFS']
+              '/community/contribute/ways-to-contribute',
+              {
+                title: 'Write the docs',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/community/contribute/grammar-formatting-and-style',
+                  '/community/contribute/writing-guide',
+                  '/community/contribute/code-persona',
+                  '/community/contribute/contribution-tutorial'
+                ]
+              },
+              {
+                title: 'External links',
+                sidebarDepth: 2,
+                collapsable: false,
+                children: [
+                  [
+                    'https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com',
+                    'Community video calls'
+                  ],
+                  ['https://proto.school/#/chapters', 'ProtoSchool chapters'],
+                  ['https://www.meetup.com/members/249142444/', 'Meetups'],
+                  ['https://awesome.ipfs.io', 'Awesome IPFS']
+                ]
+              }
             ]
           },
           {
@@ -291,7 +313,6 @@ module.exports = {
               ['https://github.com/ipfs/research', 'Research'],
               ['https://github.com/ipfs/team-mgmt', 'Team org planning'],
               '/project/related-projects',
-              '/project/contribute',
               [
                 'https://github.com/ipfs/community/blob/master/code-of-conduct.md',
                 'Code of conduct'
