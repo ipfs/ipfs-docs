@@ -268,7 +268,24 @@ module.exports = {
             path: '/community/',
 
             children: [
-              '/community/contribute/ways-to-contribute',
+              {
+                title: 'Join the community',
+                sidebarDepth: 2,
+                collapsable: false,
+                children: [
+                  '/community/contribute/ways-to-contribute',
+                  ['https://discuss.ipfs.io/', 'IPFS forums'],
+                  '/community/irc',
+                  [
+                    'https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com',
+                    'Community video calls'
+                  ],
+                  ['https://proto.school/#/chapters', 'ProtoSchool chapters'],
+                  ['https://www.meetup.com/members/249142444/', 'Meetups'],
+                  '/community/social-media',
+                  ['https://awesome.ipfs.io', 'Awesome IPFS']
+                ]
+              },
               {
                 title: 'Write the docs',
                 sidebarDepth: 1,
@@ -278,20 +295,6 @@ module.exports = {
                   '/community/contribute/writing-guide',
                   '/community/contribute/code-persona',
                   '/community/contribute/contribution-tutorial'
-                ]
-              },
-              {
-                title: 'External links',
-                sidebarDepth: 2,
-                collapsable: false,
-                children: [
-                  [
-                    'https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com',
-                    'Community video calls'
-                  ],
-                  ['https://proto.school/#/chapters', 'ProtoSchool chapters'],
-                  ['https://www.meetup.com/members/249142444/', 'Meetups'],
-                  ['https://awesome.ipfs.io', 'Awesome IPFS']
                 ]
               }
             ]
