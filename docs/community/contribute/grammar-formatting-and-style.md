@@ -1,4 +1,9 @@
-# Grammar, style, and formatting
+---
+title: Grammar, formatting, and style
+description: Learn the syntax and formatting rules for writing documentation for the IPFS project.
+---
+
+# Grammar, formatting, and style
 
 This page details the syntax and formatting rules for writing IPFS documentation. For more conceptual ideas of writing, check out the [Writing Guide](writing-guide.md).
 
@@ -69,11 +74,12 @@ The following rules apply to editing and styling text.
    #### The capital city of France is Paris
    ```
 
-2. Every article starts with a _front-matter_ title:
+2. Every article starts with a _front-matter_ title and description:
 
    ```markdown
    ---
    title: Example article
+   description: This is a brief description that shows up in link teasers in services like Twitter and Slack.
    ---
 
    ## This is a subtitle
