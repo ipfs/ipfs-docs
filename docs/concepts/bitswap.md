@@ -27,7 +27,8 @@ Want-list {
   QmTudJSaoKxtbEnTddJ9vh8hbN84ZLVvD5pNpUaSbxwGoa, WANT,
   ...
   QmPvaEQFVvuiaYzkSVUp23iHTQeEUpDaJnP8U7C3PqE57w, CANCEL
-}```
+}
+```
 
 A deeper dive into the [Go source code for want-list](https://github.com/ipfs/go-bitswap/blob/master/wantlist/wantlist.go).
 
