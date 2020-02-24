@@ -8,6 +8,14 @@ description: The home page for developer documentation for IPFS, the InterPlanet
 
 <p style="font-size:1.65rem; font-weight: 200; line-height: 2rem; margin-top: -15px;">No matter who you are or what you're creating, you can be part of the movement to create the next generation of the internet. This documentation site contains everything you need to start building using the InterPlanetary File System (IPFS) and pave the way for the future Web. Check out some of the most popular content in these docs below — or explore the main site menu to learn about key <a href="/concepts/">IPFS concepts</a>, try out <a href="/how-to/">how-to guides</a>, see <a href="/reference/">API and CLI references</a>, and more. Just want to <a href="/install/">install IPFS? We've got you covered.</a></p>
 
+## Download IPFS tools
+
+These tools can help you use and build on IPFS more quickly and efficiently — give them a try today!
+
+| [Browser Companion](https://github.com/ipfs-shipyard/ipfs-companion)   | [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop)| [IPLD Explorer](https://explore.ipld.io/) |
+| --- | --- | --- |
+| ![The IFPS browser companion in Firefox.](./images/ipfs-companion.png) | ![The IPFS desktop app running on MacOS with the status tab open.](./images/ipfs-desktop.png) | ![The IPLD Explorer homepage.](./images/ipld-explorer.png) |
+
 ## Host your website on IPFS
 
 Protect yourself from single-point-of-failure risks and benefit from decentralized infrastructure by hosting your static website using IPFS. If you're new to IPFS, this is an excellent place to start learning how to build on the decentralized web. 
@@ -21,14 +29,6 @@ Are you looking for inspiration? You can find a huge collection of awesome commu
 [Check out Awesome IPFS now →](https://awesome.ipfs.io/)
 
 ![The Awesome IPFS homepage.](./images/awesome-ipfs.png)
-
-## Download IPFS tools
-
-These tools can help you use and build on IPFS more quickly and efficiently — give them a try today!
-
-| [Browser Companion](https://github.com/ipfs-shipyard/ipfs-companion)   | [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop)| [IPLD Explorer](https://explore.ipld.io/) |
-| --- | --- | --- |
-| ![The IFPS browser companion in Firefox.](./images/ipfs-companion.png) | ![The IPFS desktop app running on MacOS with the status tab open.](./images/ipfs-desktop.png) | ![The IPLD Explorer homepage.](./images/ipld-explorer.png) |
 
 ## Learn about the decentralized web
 
