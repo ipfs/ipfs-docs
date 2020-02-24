@@ -12,7 +12,7 @@ description: The home page for developer documentation for IPFS, the InterPlanet
 
 Protect your site from a single point of failure by importing it to the IPFS network, and benefit from decentralized infrastructure. If you're new to IPFS, this is an excellent place to start learning how to build on the decentralized web. [Start the tutorial →](/how-to/host-single-page-site/)
 
-## Community projects
+## See what others are building
 
 Are you looking for inspiration? You can find a huge collection of awesome community projects over at Awesome IPFS. [Go there now →](https://awesome.ipfs.io/)
 
