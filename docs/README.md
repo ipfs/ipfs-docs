@@ -10,7 +10,9 @@ description: The home page for developer documentation for IPFS, the InterPlanet
 
 ## Host a static website on IPFS
 
-Protect your site from a single point of failure by importing it to the IPFS network, and benefit from decentralized infrastructure. If you're new to IPFS, this is an excellent place to start learning how to build on the decentralized web. [Start the tutorial →](/how-to/host-single-page-site/)
+Protect yourself from single-point-of-failure risks and benefit from decentralized infrastructure by hosting your static website using IPFS. If you're new to IPFS, this is an excellent place to start learning how to build on the decentralized web. 
+
+[Start the tutorial →](/how-to/host-single-page-site/)
 
 ## See what others are building
 
