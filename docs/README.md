@@ -32,7 +32,7 @@ These tools can help you use and build on IPFS more quickly and efficiently — 
 
 ## Learn about the decentralized web
 
-Want to know more about the decentralized web (Dweb) and how it's changing the internet? These resources will give you a clearer understanding of the Web movement, and how it's improving the world:
+Want to know more about the decentralized web (Dweb) and how it's changing the internet? These resources will give you a clearer understanding of the Dweb movement, and how it's improving the world:
 
 - [What is IPFS](/concepts/what-is-ipfs/)
 - [Peer-to-peer sharing](/concepts/dht/)
