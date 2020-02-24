@@ -10,7 +10,7 @@ description: The home page for developer documentation for IPFS, the InterPlanet
 
 <p style="font-size:1.65rem; font-weight: 200; line-height: 2rem; margin-top: -15px;">Check out some of the most popular content in these docs below — or explore the main site menu to learn about key IPFS [concepts], try out [how-to guides](/how-to/), see [API and CLI references](/reference/), and more. Just want to [install IPFS? We've got you covered.](/install/)</p>
 
-## Host a static website on IPFS
+## Host your website on IPFS
 
 Protect yourself from single-point-of-failure risks and benefit from decentralized infrastructure by hosting your static website using IPFS. If you're new to IPFS, this is an excellent place to start learning how to build on the decentralized web. 
 
