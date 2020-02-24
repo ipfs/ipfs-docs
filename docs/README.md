@@ -22,7 +22,7 @@ Are you looking for inspiration? You can find a huge collection of awesome commu
 
 ![The Awesome IPFS homepage.](./images/awesome-ipfs.png)
 
-## Useful tools
+## Download IPFS tools
 
 Build your apps and services quicker with some help from these tools built for IPFS.
 
