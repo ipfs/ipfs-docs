@@ -4,7 +4,7 @@ legacyUrl: https://docs.ipfs.io/
 description: The home page for developer documentation for IPFS, the InterPlanetary File System.
 ---
 
-# Educate yourself
+# Learn how to build the future of the internet
 
 <p style="font-size:1.65rem; font-weight: 100; line-height: 2rem; margin-top: -15px;">Whether you're a tiny startup or a huge multinational company, you need to learn how to protect yourself and your users from the dangers of a centralized internet. This website contains everything you need to start using the InterPlanetary File System and help future-proof yourself.</p>
 
