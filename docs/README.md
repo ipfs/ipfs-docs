@@ -6,9 +6,7 @@ description: The home page for developer documentation for IPFS, the InterPlanet
 
 # Learn how to build the future of the internet
 
-<p style="font-size:1.65rem; font-weight: 200; line-height: 2rem; margin-top: -15px;">No matter who you are or what you're creating, you can be part of the movement to create the next generation of the internet. This documentation site contains everything you need to start building using the InterPlanetary File System (IPFS) and pave the way for the future Web.</p>
-
-<p style="font-size:1.65rem; font-weight: 200; line-height: 2rem; margin-top: -15px;">Check out some of the most popular content in these docs below — or explore the main site menu to learn about key IPFS [concepts], try out [how-to guides](/how-to/), see [API and CLI references](/reference/), and more. Just want to [install IPFS? We've got you covered.](/install/)</p>
+<p style="font-size:1.65rem; font-weight: 200; line-height: 2rem; margin-top: -15px;">No matter who you are or what you're creating, you can be part of the movement to create the next generation of the internet. This documentation site contains everything you need to start building using the InterPlanetary File System (IPFS) and pave the way for the future Web. Check out some of the most popular content in these docs below — or explore the main site menu to learn about key <a href="/concepts/">IPFS concepts</a>, try out <a href="/how-to/">how-to guides</a>, see <a href="/reference/">API and CLI references</a>, and more. Just want to <a href="/install/">install IPFS? We've got you covered.</a></p>
 
 ## Host your website on IPFS
 
