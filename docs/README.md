@@ -24,7 +24,7 @@ Are you looking for inspiration? You can find a huge collection of awesome commu
 
 ## Download IPFS tools
 
-Build your apps and services quicker with some help from these tools built for IPFS.
+These tools can help you use and build on IPFS more quickly and efficiently — give them a try today!
 
 | [Browser Companion](https://github.com/ipfs-shipyard/ipfs-companion)   | [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop)| [IPLD Explorer](https://explore.ipld.io/) |
 | --- | --- | --- |
