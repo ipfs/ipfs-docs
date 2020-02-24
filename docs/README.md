@@ -26,7 +26,7 @@ Build your apps and services quicker with some help from these tools built for I
 | --- | --- | --- |
 | ![The IFPS browser companion in Firefox.](./images/ipfs-companion.png) | ![The IPFS desktop app running on MacOS with the status tab open.](./images/ipfs-desktop.png) | ![The IPLD Explorer homepage.](./images/ipld-explorer.png) |
 
-## Decentralized web
+## Learn about the decentralized web
 
 Want to know more about the decentralized web (Dweb) and how it's changing the internet? These resources will give you a clearer understanding of the Web movement, and how it's improving the world:
 
