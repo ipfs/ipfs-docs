@@ -16,7 +16,9 @@ Protect yourself from single-point-of-failure risks and benefit from decentraliz
 
 ## See what others are building
 
-Are you looking for inspiration? You can find a huge collection of awesome community projects over at Awesome IPFS. [Go there now →](https://awesome.ipfs.io/)
+Are you looking for inspiration? You can find a huge collection of awesome community projects over at Awesome IPFS. 
+
+[Check out Awesome IPFS now →](https://awesome.ipfs.io/)
 
 ![The Awesome IPFS homepage.](./images/awesome-ipfs.png)
 
