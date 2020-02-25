@@ -9,24 +9,24 @@ Want to learn how to use IPFS in combination with your favorite framework or bro
 
 ## Browserify
 
-[Example and boilerplate](https://github.com/ipfs/js-ipfs/blob/master/examples/browser-browserify) you can use to guide yourself into bundling js-ipfs with browserify, so that you can use it in your own web app.
+[Example and boilerplate](https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/browser-browserify) you can use to guide yourself into bundling js-ipfs with browserify, so that you can use it in your own web app.
 
 ## Parcel.js
 
-[Example and boilerplate application](https://github.com/ipfs/js-ipfs/blob/master/examples/browser-parceljs) that connects to IPFS using JS-IPFS and is bundled with Parcel.js, so that you can follow it for creating Parcel.js bundled js-ipfs dapps.
+[Example and boilerplate application](https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/browser-parceljs) that connects to IPFS using JS-IPFS and is bundled with Parcel.js, so that you can follow it for creating Parcel.js bundled js-ipfs dapps.
 
 ## Vue
 
-[Minimal demonstration](https://github.com/ipfs/js-ipfs/blob/master/examples/browser-vue) of how to use js-ipfs with Vue.
+[Minimal demonstration](https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/browser-vue) of how to use js-ipfs with Vue.
 
 ## Webpack
 
-[Example and boilerplate](https://github.com/ipfs/js-ipfs/blob/master/examples/browser-webpack) you can use to guide yourself into bundling js-ipfs with webpack, so that you can use it in your own web app.
+[Example and boilerplate](https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/browser-webpack) you can use to guide yourself into bundling js-ipfs with webpack, so that you can use it in your own web app.
 
 ## With a `<script>` tag
 
-[Minimal example](https://github.com/ipfs/js-ipfs/blob/master/examples/browser-script-tag) of how to use IPFS in your in-browser JavaScript code with just a `<script>` tag.
+[Minimal example](https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/browser-script-tag) of how to use IPFS in your in-browser JavaScript code with just a `<script>` tag.
 
 ## Electron
 
-[Minimal example](https://github.com/ipfs/js-ipfs/blob/master/examples/run-in-electron) of how to use js-ipfs in your Electron app.
+[Minimal example](https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/run-in-electron) of how to use js-ipfs in your Electron app.
