@@ -36,7 +36,7 @@ Many distributed systems make use of content addressing through hashes as a mean
 
 This is where the [Interplanetary Linked Data (IPLD) project](https://ipld.io/) comes in. IPLD translates between hash-linked data structures allowing for the unification of the data across distributed systems. IPLD provides libraries for combining pluggable modules (parsers for each possible type of IPLD node) to resolve a path, selector, or query across many linked nodes (allowing you explore data regardless of the underlying protocol). IPLD provides a way to translate between content-addressable data structures: _"Oh, you use Git-style, no worries, I can follow those links. Oh, you use Ethereum, I got you, I can follow those links too!"_
 
-IPFS follows particular data-structure preferences and conventions. The IPFS protocol uses those conventions and ILPD to get from raw content to an IPFS address that uniquely identifies content on the IPFS network. The next section explores how links between content are embedded within that content address through a DAG data structure. 
+IPFS follows particular data-structure preferences and conventions. The IPFS protocol uses those conventions and IPLD to get from raw content to an IPFS address that uniquely identifies content on the IPFS network. The next section explores how links between content are embedded within that content address through a DAG data structure. 
 
 ## Directed acyclic graphs (DAGs)
 
