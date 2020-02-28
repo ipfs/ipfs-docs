@@ -36,7 +36,7 @@ The easiest way to backup, migrate, or copy your IFPS repository is to grab the 
 
     ![The Hidden Items option in Windows File Explorer checked.](copy-ipfs-to-computer/images/hidden-items-checkbox.png)
 
-1. Find the `.ipfs` within your user's _home_ folder.
+1. Find the `.ipfs` within your user's _home_ folder. This is usually `C:\Users\Your Username\.ipfs`.
 1. Copy this folder to somewhere convenient like the `Desktop`.
 
 ## Restore a backup of IPFS
@@ -91,7 +91,7 @@ Once you have a backup of your IPFS repository in `ipfs-backup`, you can move it
 
     ![The Hidden Items option in Windows File Explorer checked.](copy-ipfs-to-computer/images/hidden-items-checkbox.png)
 
-1. Find the `.ipfs` within your user's _home_ folder.
+1. Find the `.ipfs` within your user's _home_ folder. This is usually `C:\Users\Your Username\.ipfs`.
 1. Rename the `.ipfs` folder to `ipfs-old`. We can restore from `ipfs-old` if anything goes wrong.
 1. Copy your backup IPFS repository into your user's _home_ folder and rename it to `.ipfs`.
 1. Open the IPFS Desktop application or run `ipfs daemon` with Powershell. Everything should start, and your IPFS repository should restore properly.
