@@ -3,16 +3,14 @@ title: Copy IPFS to another computer
 description: How to migrate the IPFS repository to a different computer. This process is cross-platform, meaning you can copy IPFS from Windows to Unix and back.
 ---
 
-<!-- This page was created in response to an issue: https://github.com/ipfs/docs/issues/442 -->
-
 ## Create a copy of your IPFS repository
 
 The easiest way to backup, migrate, or copy your IFPS repository is to grab the `.ipfs` folder, and move it to another destination.
 
-### Linux and MacOS
+### Linux and macOS
 
 1. Stop any IPFS daemons, services, or applications from running.
-1. In a terminal move to where your IPFS repository is stored. This is likely your _home_ folder:
+1. In a terminal move to where your IPFS repository is stored, likely your _home_ folder:
 
     ```bash
     cd ~/
@@ -38,23 +36,23 @@ The easiest way to backup, migrate, or copy your IFPS repository is to grab the 
 
     ![The Hidden Items option in Windows File Explorer checked.](images/hidden-items-checkbox.png)
 
-1. Find the `.ipfs` within your users _home_ folder.
+1. Find the `.ipfs` within your user's _home_ folder.
 1. Copy this folder to somewhere convenient like the `Desktop`.
 
 ## Restore a backup of IPFS
 
-Once you have a backup of your IPFS repository in `ipfs-backup`, you can move it to the computer you want to restore to. Once there you can restore your IPFS repository.
+Once you have a backup of your IPFS repository in `ipfs-backup`, you can move it to the computer you want to restore to. Once there, you can restore your IPFS repository.
 
-### Linux and MacOS
+### Linux and macOS
 
 1. Stop any IPFS daemons, services, or applications from running.
-1. In a terminal move to where your IPFS repository is stored. This is likely your _home_ folder:
+1. In a terminal move to where your IPFS repository is stored, likely your _home_ folder:
 
     ```bash
     cd ~/
     ```
 
-1. Move your current IPFS repository to another folder. If something goes wrong you can revert back to this later:
+1. Move your current IPFS repository to another folder. If something goes wrong you can revert to this later:
 
     ```bash
     mv .ipfs ipfs-old
@@ -93,18 +91,18 @@ Once you have a backup of your IPFS repository in `ipfs-backup`, you can move it
 
     ![The Hidden Items option in Windows File Explorer checked.](images/hidden-items-checkbox.png)
 
-1. Find the `.ipfs` within your users _home_ folder.
+1. Find the `.ipfs` within your user's _home_ folder.
 1. Rename the `.ipfs` folder to `ipfs-old`. We can restore from `ipfs-old` if anything goes wrong.
-1. Copy your backup IPFS repository into your users _home_ folder and rename it to `.ipfs`.
-1. Open the IPFS Desktop application or run `ipfs daemon` with Powershell. Everything should start normally and your IPFS repository should be restored.
+1. Copy your backup IPFS repository into your user's _home_ folder and rename it to `.ipfs`.
+1. Open the IPFS Desktop application or run `ipfs daemon` with Powershell. Everything should start, and your IPFS repository should restore properly.
 
 ## Windows Subsystem for Linux
 
-If you have IPFS installed in the Windows Subsystem for Linux you can migrate your IPFS repository from Linux into your Windows environment. These steps will overwrite Windows IPFS repository.
+If you have IPFS installed in the Windows Subsystem for Linux, you can migrate your IPFS repository from Linux into your Windows environment. This process overwrites the IPFS repository in Windows.
 
-1. On Windows, open the IPFS Desktop application or run an `ipfs daemon`. This needs to be done at least once.
+1. On Windows, open the IPFS Desktop application or run an `ipfs daemon`. Do this at least once.
 1. Stop any IPFS daemons, services, or applications from running in your Linux and Windows environments.
-1. Copy your Linux IPFS repository to Windows. This will overwrite your Windows IPFS repository:
+1. Copy your Linux IPFS repository to Windows. This process overwrites the IPFS repository in Windows:
 
     ```bash
     cp --recursive --verbose ~/.ipfs /mnt/c/Users/Your Username/
@@ -114,7 +112,7 @@ If you have IPFS installed in the Windows Subsystem for Linux you can migrate yo
 
 ## Troubleshooting
 
-### Linux and MacOS
+### Linux and macOS
 
 #### IPFS daemon doesn't run successfully
 
@@ -125,7 +123,7 @@ mv .ipfs ipfs-backup-broken
 mv .ipfs-old .ipfs
 ```
 
-Running `ipfs daemon` now will load your old IPFS repository. Try repeating the backup and restore steps again. Make sure to stop any IPFS services, daemons, or applications when backing up and restoring an IPFS repository.
+Running `ipfs daemon` now loads your old IPFS repository. Try repeating the backup and restore steps. Make sure to stop any IPFS services, daemons, or applications when backing up and restoring an IPFS repository.
 
 ### Windows
 
@@ -135,4 +133,4 @@ Make sure to open the IPFS Desktop application at least once before attempting t
 
 #### IPFS Desktop won't open
 
-In your users _home_ folder, delete `.ipfs` and `.ipfs-desktop`. Open the IPFS Desktop application. It will have a completely fresh repository.
+In your user's _home_ folder, delete `.ipfs` and `.ipfs-desktop`. Open the IPFS Desktop application.
