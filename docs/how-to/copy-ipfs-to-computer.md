@@ -1,16 +1,19 @@
 ---
-title: Copy IPFS to another computer
-description: How to migrate the IPFS repository to a different computer. This process is cross-platform, meaning you can copy IPFS from Windows to Unix and back.
+title: Moving an IPFS installation
 ---
 
-## Create a copy of your IPFS repository
+This page walks through how to move your IPFS installation from one system to another. This process is cross-platform compatible and is especially useful for readers who are changing operating systems. The process is to grab the `.ipfs` folder from the _home_ directory of the _doner_ system, and copy it over to _home_ directory on the receiving system.
 
-The easiest way to backup, migrate, or copy your IFPS repository is to grab the `.ipfs` folder, and move it to another destination.
+This process is not a backup procedure; do not treat it as such. Many things can go wrong with this process, most of which relate to _peer IDs_. Since we are duplicating an `.ipfs` installation folder, both folders will have the same peer ID. This is fine as long as you delete the old _doner_ installation once the copy is complete. Having two IPFS installations with the same peer ID causes substantial problems and could result in loss of data. 
+
+## Move your IPFS installation
+
+The easiest way to move your IFPS installation is to grab the `.ipfs` folder, and move it to another destination.
 
 ### Linux and macOS
 
 1. Stop any IPFS daemons, services, or applications from running.
-1. In a terminal move to where your IPFS repository is stored, likely your _home_ folder:
+1. In a terminal, move to where your IPFS repository is stored, likely your _home_ folder:
 
     ```bash
     cd ~/
@@ -39,14 +42,14 @@ The easiest way to backup, migrate, or copy your IFPS repository is to grab the 
 1. Find the `.ipfs` within your user's _home_ folder. This is usually `C:\Users\Your Username\.ipfs`.
 1. Copy this folder to somewhere convenient like the `Desktop`.
 
-## Restore a backup of IPFS
+## Restore your IPFS installation
 
 Once you have a backup of your IPFS repository in `ipfs-backup`, you can move it to the computer you want to restore to. Once there, you can restore your IPFS repository.
 
 ### Linux and macOS
 
 1. Stop any IPFS daemons, services, or applications from running.
-1. In a terminal move to where your IPFS repository is stored, likely your _home_ folder:
+1. In a terminal, move to where your IPFS repository is stored, likely your _home_ folder:
 
     ```bash
     cd ~/
