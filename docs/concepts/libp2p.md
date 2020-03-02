@@ -2,12 +2,12 @@
 title: Libp2p
 sidebarDepth: 0
 issueUrl: https://github.com/ipfs/docs/issues/388
-description: Learn about the libp2p protocol and why it's an important ingredient in how IPFS works.
+description: Learn about the Libp2p protocol and why it's an important ingredient in how IPFS works.
 related:
   'What is libp2p?': https://docs.libp2p.io/introduction/what-is-libp2p/
-  'Foundational libp2p concepts': https://docs.libp2p.io/concepts/
+  'Foundational Libp2p concepts': https://docs.libp2p.io/concepts/
   'Getting started with libp2p': https://docs.libp2p.io/tutorials/getting-started/
-  'Examples of libp2p key features': https://docs.libp2p.io/examples/
+  'Examples of Libp2p key features': https://docs.libp2p.io/examples/
 ---
 
 # Libp2p
@@ -36,23 +36,23 @@ Libp2p supports upgrading a transport connection into a securely encrypted chann
 
 #### [Peer identity](https://docs.libp2p.io/concepts/peer-id/)
 
-A Peer Identity ([often written _PeerId_](https://docs.libp2p.io/reference/glossary/#peerid)) is a unique reference to a specific peer on the peer-to-peer network. Each libp2p peer has a private key which it keeps secret from all other peers and a corresponding public key, which is shared with other peers. The PeerId is a [cryptographic hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function) of a peer's public key. PeerIds are encoded using the [multihash](https://docs.libp2p.io/reference/glossary/#multihash) format.
+A Peer Identity ([often written _PeerId_](https://docs.libp2p.io/reference/glossary/#peerid)) is a unique reference to a specific peer on the peer-to-peer network. Each Libp2p peer has a private key which it keeps secret from all other peers and a corresponding public key, which is shared with other peers. The PeerId is a [cryptographic hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function) of a peer's public key. PeerIds are encoded using the [multihash](https://docs.libp2p.io/reference/glossary/#multihash) format.
 
 #### [Peer routing](https://docs.libp2p.io/introduction/what-is-libp2p/#peer-routing)
 
-Peer Routing is the process of discovering peer addresses by using the knowledge of other peers. In a peer routing system, a peer can either give us the address we need if they have it or else send our inquiry to another peer who's more likely to have the answer. Peer Routing in libp2p uses a [distributed hash table](https://docs.libp2p.io/reference/glossary/#dht) to iteratively route requests closer to the desired PeerId using the [Kademlia](https://en.wikipedia.org/wiki/Kademlia) routing algorithm.
+Peer Routing is the process of discovering peer addresses by using the knowledge of other peers. In a peer routing system, a peer can either give us the address we need if they have it or else send our inquiry to another peer who's more likely to have the answer. Peer Routing in Libp2p uses a [distributed hash table](https://docs.libp2p.io/reference/glossary/#dht) to iteratively route requests closer to the desired PeerId using the [Kademlia](https://en.wikipedia.org/wiki/Kademlia) routing algorithm.
 
 #### [Content discovery](https://docs.libp2p.io/introduction/what-is-libp2p/#content-discovery)
 
-In Content discovery, you ask for some specific piece of data, but you don't care who sends it since you're able to verify its integrity. libp2p provides a [content routing interface](https://github.com/libp2p/interface-content-routing) for this purpose, with the primary stable implementation using the same [Kademlia](https://en.wikipedia.org/wiki/Kademlia)-based DHT as used in peer routing.
+In Content discovery, you ask for some specific piece of data, but you don't care who sends it since you're able to verify its integrity. Libp2p provides a [content routing interface](https://github.com/libp2p/interface-content-routing) for this purpose, with the primary stable implementation using the same [Kademlia](https://en.wikipedia.org/wiki/Kademlia)-based DHT as used in peer routing.
 
 #### [NAT traversal](https://docs.libp2p.io/concepts/nat/)
 
-Network Address Translation (NAT) allows you to move traffic seamlessly between network boundaries. NAT maps an address from one address space to another. While NAT is usually transparent for outgoing connections, listening for incoming connections requires some configuration. libp2p has the following main approaches to NAT traversal available: [Automatic router configuration](https://docs.libp2p.io/concepts/nat/#automatic-router-configuration), [Hole punching (STUN)](https://docs.libp2p.io/concepts/nat/#hole-punching-stun), [AutoNAT](https://docs.libp2p.io/concepts/nat/#autonat), and [Circuit Relay (TURN)](https://docs.libp2p.io/concepts/nat/#circuit-relay-turn).
+Network Address Translation (NAT) allows you to move traffic seamlessly between network boundaries. NAT maps an address from one address space to another. While NAT is usually transparent for outgoing connections, listening for incoming connections requires some configuration. Libp2p has the following main approaches to NAT traversal available: [Automatic router configuration](https://docs.libp2p.io/concepts/nat/#automatic-router-configuration), [Hole punching (STUN)](https://docs.libp2p.io/concepts/nat/#hole-punching-stun), [AutoNAT](https://docs.libp2p.io/concepts/nat/#autonat), and [Circuit Relay (TURN)](https://docs.libp2p.io/concepts/nat/#circuit-relay-turn).
 
 #### [Protocol](https://docs.libp2p.io/concepts/protocols/)
 
-These are the protocols built with libp2p itself, using core libp2p abstractions like [transport](https://docs.libp2p.io/concepts/transport/), [peer identity](https://docs.libp2p.io/concepts/peer-id/), and [addressing](https://docs.libp2p.io/concepts/addressing/). Each libp2p protocol has a unique string identifier used in the [protocol negotiation](https://docs.libp2p.io/concepts/protocols/#protocol-negotiation) process when connections are first opened. The core libp2p protocols are [Ping](https://docs.libp2p.io/concepts/protocols/#ping), [Identify](https://docs.libp2p.io/concepts/protocols/#identify), [secio](https://docs.libp2p.io/concepts/protocols/#secio), [kad-dht](https://docs.libp2p.io/concepts/protocols/#kad-dht), and [Circuit Relay](https://docs.libp2p.io/concepts/protocols/#circuit-relay).
+These are the protocols built with Libp2p itself, using core Libp2p abstractions like [transport](https://docs.libp2p.io/concepts/transport/), [peer identity](https://docs.libp2p.io/concepts/peer-id/), and [addressing](https://docs.libp2p.io/concepts/addressing/). Each Libp2p protocol has a unique string identifier used in the [protocol negotiation](https://docs.libp2p.io/concepts/protocols/#protocol-negotiation) process when connections are first opened. The core Libp2p protocols are [Ping](https://docs.libp2p.io/concepts/protocols/#ping), [Identify](https://docs.libp2p.io/concepts/protocols/#identify), [secio](https://docs.libp2p.io/concepts/protocols/#secio), [kad-dht](https://docs.libp2p.io/concepts/protocols/#kad-dht), and [Circuit Relay](https://docs.libp2p.io/concepts/protocols/#circuit-relay).
 
 #### [Stream multiplexing](https://docs.libp2p.io/concepts/stream-multiplexing/)
 
@@ -67,5 +67,5 @@ Often abbreviated as _pub-sub_, this is a system where peers congregate around t
 - [What is libp2p?](https://docs.libp2p.io/introduction/what-is-libp2p/)
 - [Introduction to libp2p](https://www.youtube.com/embed/CRe_oDtfRLw)
 - [Getting started with libp2p](https://docs.libp2p.io/tutorials/getting-started/)
-- [The libp2p Glossary](https://docs.libp2p.io/reference/glossary/)
-- [The libp2p Specification](https://github.com/libp2p/specs)
+- [The Libp2p glossary](https://docs.libp2p.io/reference/glossary/)
+- [The Libp2p specification](https://github.com/libp2p/specs)
