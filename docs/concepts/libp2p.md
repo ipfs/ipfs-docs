@@ -4,9 +4,9 @@ sidebarDepth: 0
 issueUrl: https://github.com/ipfs/docs/issues/388
 description: Learn about the Libp2p protocol and why it's an important ingredient in how IPFS works.
 related:
-  'What is libp2p?': https://docs.libp2p.io/introduction/what-is-libp2p/
+  'What is Libp2p?': https://docs.libp2p.io/introduction/what-is-libp2p/
   'Foundational Libp2p concepts': https://docs.libp2p.io/concepts/
-  'Getting started with libp2p': https://docs.libp2p.io/tutorials/getting-started/
+  'Getting started with Libp2p': https://docs.libp2p.io/tutorials/getting-started/
   'Examples of Libp2p key features': https://docs.libp2p.io/examples/
 ---
 
@@ -28,7 +28,7 @@ Libp2p works with a lot of different addressing schemes in a consistent way. A m
 
 #### [Transport](https://docs.libp2p.io/concepts/transport/)
 
-The technology used to move your data from one machine to another. Transports are defined in terms of two core operations, _listening_ and _dialing_. Listening means that you can accept incoming connections from other peers. _Dialing_ is the process of opening an outgoing connection to a listening peer. One of libp2p's core requirements is to be _transport agnostic_, meaning the decision of what transport protocol to use is up to an application's developer (who may decide to support many different _transports_ at the same time).
+The technology used to move your data from one machine to another. Transports are defined in terms of two core operations, _listening_ and _dialing_. Listening means that you can accept incoming connections from other peers. _Dialing_ is the process of opening an outgoing connection to a listening peer. One of Libp2p's core requirements is to be _transport agnostic_, meaning the decision of what transport protocol to use is up to an application's developer (who may decide to support many different _transports_ at the same time).
 
 #### [Security](https://docs.libp2p.io/introduction/what-is-libp2p/#security)
 
@@ -56,7 +56,7 @@ These are the protocols built with Libp2p itself, using core Libp2p abstractions
 
 #### [Stream multiplexing](https://docs.libp2p.io/concepts/stream-multiplexing/)
 
-Often abbreviated as _stream muxing_, this allows multiple independent logical streams to all share a common underlying transport medium. libp2p's stream multiplexer sits "above" the transport stack and allows many streams to flow over a single TCP port or other raw transport connection. The current stream multiplexing implementations are [mplex](https://docs.libp2p.io/concepts/stream-multiplexing/#mplex), [yamux](https://docs.libp2p.io/concepts/stream-multiplexing/#yamux), [quic](https://docs.libp2p.io/concepts/stream-multiplexing/#quic), [spdy](https://docs.libp2p.io/concepts/stream-multiplexing/#spdy), and [muxado](https://docs.libp2p.io/concepts/stream-multiplexing/#muxado).
+Often abbreviated as _stream muxing_, this allows multiple independent logical streams to all share a common underlying transport medium. Libp2p's stream multiplexer sits "above" the transport stack and allows many streams to flow over a single TCP port or other raw transport connection. The current stream multiplexing implementations are [mplex](https://docs.libp2p.io/concepts/stream-multiplexing/#mplex), [yamux](https://docs.libp2p.io/concepts/stream-multiplexing/#yamux), [quic](https://docs.libp2p.io/concepts/stream-multiplexing/#quic), [spdy](https://docs.libp2p.io/concepts/stream-multiplexing/#spdy), and [muxado](https://docs.libp2p.io/concepts/stream-multiplexing/#muxado).
 
 #### [Publish and subscribe](https://docs.libp2p.io/concepts/publish-subscribe/)
 
@@ -64,8 +64,8 @@ Often abbreviated as _pub-sub_, this is a system where peers congregate around t
 
 ## Additional resources
 
-- [What is libp2p?](https://docs.libp2p.io/introduction/what-is-libp2p/)
-- [Introduction to libp2p](https://www.youtube.com/embed/CRe_oDtfRLw)
-- [Getting started with libp2p](https://docs.libp2p.io/tutorials/getting-started/)
+- [What is Libp2p?](https://docs.libp2p.io/introduction/what-is-libp2p/)
+- [Introduction to Libp2p](https://www.youtube.com/embed/CRe_oDtfRLw)
+- [Getting started with Libp2p](https://docs.libp2p.io/tutorials/getting-started/)
 - [The Libp2p glossary](https://docs.libp2p.io/reference/glossary/)
 - [The Libp2p specification](https://github.com/libp2p/specs)
