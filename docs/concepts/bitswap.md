@@ -13,14 +13,15 @@ related:
 Bitswap is a core module of IPFS for exchanging blocks of data. It directs the requesting and sending of blocks to and from other peers in the network. Bitswap is a _message-based protocol_ where all messages contain [want-lists](#want-list) or blocks. Bitswap has a [Go implementation](https://github.com/ipfs/go-bitswap) and a [JavaScript implementation](https://github.com/ipfs/js-ipfs-bitswap).
 
 Bitswap has two main jobs:
-- acquire blocks requested by the client from the network.
-- send blocks in its possession to other peers who want them.
+- Acquire blocks requested by the client from the network.
+- Send blocks in its possession to other peers who want them.
 
 ### Want-list
 
 A _want-list_ is a data structure that an IPFS node sends to the network to tell peers which blocks it wants. It's a list of data that the IPFS node wants. The want-list contains [CIDs](/concepts/content-addressing/) (content-addressed identifiers that refer to particular blocks desired) along with priority and cancellation information.
 
-A simplified example of a want-list:
+Here is a simplified example of a want-list:
+
 ```sh
 Want-list {
   QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy, WANT,
@@ -30,26 +31,22 @@ Want-list {
 }
 ```
 
-A deeper dive into the [Go source code for want-list](https://github.com/ipfs/go-bitswap/blob/master/wantlist/wantlist.go).
+Take a look at the [Go source code](https://github.com/ipfs/go-bitswap/blob/master/wantlist/wantlist.go) for a deeper dive into how want-lists are structured..
 
 ### Message
 
 A single Bitswap message may contain any of the following content:
 
--  **The sender's want-list.** This want-list may either be the sender's complete want-list or just the changes to the sender's want-list that the receiver needs to know.
--  **Data blocks.** These are blocks that have been requested (i.e., blocks in the sender's want-list, as far as the receiver is aware at the time of message receipt).
+-  **The sender's want-list:** This want-list may either be the sender's complete want-list or just the changes to the sender's want-list that the receiver needs to know.
+-  **Data blocks:** These are blocks that have been requested (i.e., blocks in the sender's want-list, as far as the receiver is aware at the time of message receipt).
 
 ### Session
 
 IPFS content blocks are often connected through a [Merkle DAG](/concepts/merkle-dag/). If a sender's block requests are related, a mechanism called a _Bitswap session_ in the Go implementation can optimize block requests sent to other peers. This mechanism can increase transfer speed and reduce the number of duplicate blocks on the network. Active peers are favored, as they are tracked relative to them having the requested blocks and how quickly they respond.
 
-Another way to look at this is:
-- If a remote peer(s) has one block,
-- Then it is likely to have other blocks from the same DAG,
-- So new blocks are preferentially requested from that/those peers,
-- Thus skipping more expensive paths to content discovery.
+If a remote peer has one block then it is likely that they have other blocks from the same DAG. So any new block requests are sent to that peer directly. This skips the need to send losts of requsts to multiple servers, saving the user time and power.
 
-### Provider/Providing
+### Provider system
 
 The provider system is responsible for announcing and reannouncing to the IPFS network that a node has content. If a node cannot find content with connected peers, it will query a content routing system (usually a form of [DHT](/concepts/dht/)) to locate a peer with the content.
 
@@ -63,4 +60,3 @@ The provider system is responsible for announcing and reannouncing to the IPFS n
 
 "About Bitswap" Go implementation poster from the IPFS developer summit in Berlin in July 2018:
 !['About Bitswap' poster](https://user-images.githubusercontent.com/74178/43230914-f818dab2-901e-11e8-876b-73ba6a084f76.jpg "Bitswap-Poster_Berlin-July-2018")
-
