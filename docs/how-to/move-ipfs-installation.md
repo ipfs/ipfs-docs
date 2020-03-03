@@ -1,12 +1,14 @@
 ---
-title: Moving an IPFS installation
+title: Move an IPFS installation
 ---
+
+# Move an IPFS installation
 
 This page walks through how to move your IPFS installation from one system to another. This process is cross-platform compatible and is especially useful for readers who are changing operating systems. The process is to grab the `.ipfs` folder from the _home_ directory of the _doner_ system, and copy it over to _home_ directory on the receiving system.
 
 This process is not a backup procedure; do not treat it as such. Many things can go wrong with this process, most of which relate to _peer IDs_. Since we are duplicating an `.ipfs` installation folder, both IPFS clients have the same peer ID. This issue is ok as long as you delete the old _doner_ installation once the copy is complete. Having two IPFS installations with the same peer ID causes substantial problems and could result in loss of data.
 
-## Move your IPFS installation
+## Move installation
 
 The easiest way to move your IFPS installation is to grab the `.ipfs` folder, and move it to another destination.
 
@@ -36,13 +38,10 @@ The easiest way to move your IFPS installation is to grab the `.ipfs` folder, an
 1. Stop any IPFS daemons, services, or applications from running.
 1. Open the file explorer and go to **C:** → **Users** → **Your Username**.
 1. Select the **View** tab at the top of the file explorer window, and check the **Hidden items** checkbox.
-
-    ![The Hidden Items option in Windows File Explorer checked.](copy-ipfs-to-computer/images/hidden-items-checkbox.png)
-
 1. Find the `.ipfs` within your user's _home_ folder. This is usually `C:\Users\Your Username\.ipfs`.
 1. Copy this folder to somewhere convenient like the `Desktop`.
 
-## Restore your IPFS installation
+## Restore installation
 
 Once you have a backup of your IPFS repository in `ipfs-backup`, you can move it to the computer you want to restore to. Once there, you can restore your IPFS repository.
 
@@ -91,9 +90,6 @@ Once you have a backup of your IPFS repository in `ipfs-backup`, you can move it
 1. Stop any IPFS daemons, services, or applications from running.
 1. Open the file explorer and go to `C:\Users\Your Username`.
 1. Select the **View** tab at the top of the file explorer window, and check the **Hidden items** checkbox.
-
-    ![The Hidden Items option in Windows File Explorer checked.](copy-ipfs-to-computer/images/hidden-items-checkbox.png)
-
 1. Find the `.ipfs` within your user's _home_ folder. The full address is usually something like `C:\Users\Your Username\.ipfs`.
 1. Rename the `.ipfs` folder to `ipfs-old`. We can restore from `ipfs-old` if anything goes wrong.
 1. Copy your backup IPFS repository into your user's _home_ folder and rename it to `.ipfs`.
@@ -101,7 +97,7 @@ Once you have a backup of your IPFS repository in `ipfs-backup`, you can move it
 
 ## Windows Subsystem for Linux
 
-If you have IPFS installed in the Windows Subsystem for Linux, you can migrate your IPFS repository from Linux into your Windows environment. This process overwrites the IPFS repository in Windows.
+If you have IPFS installed in the Windows Subsystem for Linux, you can move your IPFS repository from Linux into your Windows environment. This process overwrites the IPFS repository in Windows.
 
 1. On Windows, open the IPFS Desktop application or run an `ipfs daemon`. Do this at least once.
 1. Stop any IPFS daemons, services, or applications from running in your Linux and Windows environments.
@@ -134,7 +130,7 @@ Running `ipfs daemon` now loads your old IPFS repository. Try repeating the back
 
 #### IPFS Desktop has an error
 
-Make sure to open the IPFS Desktop application at least once before attempting to migrate any IPFS repositories. The IPFS Desktop relies upon another directory called `.ipfs-desktop`. The migration sometimes fails if this folder does not exist.
+Make sure to open the IPFS Desktop application at least once before attempting to move any IPFS repositories. The IPFS Desktop relies upon another directory called `.ipfs-desktop`. The migration sometimes fails if this folder does not exist.
 
 #### IPFS Desktop won't open
 

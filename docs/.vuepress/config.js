@@ -166,7 +166,8 @@ module.exports = {
                   [
                     'https://github.com/ipfs/archives/tree/master/tutorials/replicating-large-datasets',
                     'Replicate large datasets'
-                  ]
+                  ],
+                  '/how-to/move-ipfs-installation',
                 ]
               },
               {
