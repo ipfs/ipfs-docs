@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Hobbit Name Generator</title>
+    <meta name="description" content="A Hobbit name generator, based of J.R.R Tolkien's 'Middle Earth'.">
+    <meta name="author" content="IPFS">
+    <style>body{margin:15px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0}</style>
+</head>
+<body onload="main()">
+    <h1>Hobbit Name Generator</h1>
+    <hr>
+    <p>Your Hobbit name is: <b id="output_p"></b></p>
+    <script>const first_names=["Abbo","Balbo","Caradas","Dado","Ebbo","Falco","Gararic","Humbert","Isumbras","Jolly","Kalimac","Lotho","Moro","Nordbert","Otto","Ponto","Rothad","Suger","Tassilo","Uffo","Vigor","Wulfram","Zwentibold","Achilla","Begona","Cosma","Dora","Estella","Forsythia","Goldilocks","Hyacynth","Iris","Jasmina","Kalmia","Lalia","Myrtle","Nigella","Opal","Primula","Ruellia","Silene","Tulip","Viola","Zinnia"];const last_names=["Boffin","Chubb","Diggle","Fairbairn","Galbasi","Harfoot","Lightfoot","Mugwort","Noaks","Oldbuck","Proudfoot","Roper","Sackville","Took","Underhill","Whitfoot","Zaragamba"];function main(){let name=first_names[Math.floor(Math.random()*first_names.length)]+" "+last_names[Math.floor(Math.random()*last_names.length)];document.querySelector('#output_p').innerHTML=name}
+    </script>
+</body>
+</html>
