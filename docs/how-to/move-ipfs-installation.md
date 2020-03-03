@@ -4,9 +4,9 @@ title: Move an IPFS installation
 
 # Move an IPFS installation
 
-This page walks through how to move your IPFS installation from one system to another. This process is cross-platform compatible and is especially useful for readers who are changing operating systems. The process is to grab the `.ipfs` folder from the _home_ directory of the _doner_ system, and copy it over to _home_ directory on the receiving system.
+This page walks through how to move your IPFS installation from one system to another. This process is cross-platform compatible and is especially useful for readers who are changing operating systems. The process is to grab the `.ipfs` folder from the _home_ directory of the _donor_ system, and copy it over to _home_ directory on the receiving system.
 
-This process is not a backup procedure; do not treat it as such. Many things can go wrong with this process, most of which relate to _peer IDs_. Since we are duplicating an `.ipfs` installation folder, both IPFS clients have the same peer ID. This issue is ok as long as you delete the old _doner_ installation once the copy is complete. Having two IPFS installations with the same peer ID causes substantial problems and could result in loss of data.
+This process is not a backup procedure; do not treat it as such. Many things can go wrong with this process, most of which relate to _peer IDs_. Since we are duplicating an `.ipfs` installation folder, both IPFS clients have the same peer ID. This issue is ok as long as you delete the old _donor_ installation once the copy is complete. Having two IPFS installations with the same peer ID causes substantial problems and could result in loss of data.
 
 ## Move installation
 
