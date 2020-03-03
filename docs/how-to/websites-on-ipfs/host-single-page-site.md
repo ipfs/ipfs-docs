@@ -4,11 +4,13 @@ legacyUrl: https://docs.ipfs.io/guides/examples/websites/
 description: Learn how to host a static website on the decentralized web using IPFS.
 ---
 
+# THIS TUTORIAL IS A WORK IN PROGRESS. DO NOT USE.
+
 In this tutorial you'll import a simple one-page website to IPFS, have it use the CloudFlare Content Delivery Network (CDN), and link up a domain name so people can find your site easily.
 
 ## Install IPFS desktop
 
-Installation of the IPFS desktop differs between operating systems. Follow the instructions for your system.
+IPFS desktop is the simple to use and easy to install. Installation of the IPFS desktop differs between operating systems. Follow the instructions for your system.
 
 ### Windows
 
@@ -43,6 +45,26 @@ The IPFS desktop application is now installed. You can now start to [add your si
 ### MacOS
 
 ### Linux
+
+1. Download the `.deb` package
+1. Open the `.deb` package in **Software Installer**.
+
+	![Right-click context menu of the IPFS deb package.](images/install-ubuntu-software-install.png)
+
+1. Click **Install** and wait for the installation to finish.
+
+	![Install screen within the Ubuntu software installation window.](images/install-ubuntu-install.png)
+
+1. Click **Applications** or press the Windows key on your keyboard.
+1. Search for `IPFS` and select **IPFS Desktop**.
+
+	![Ubuntu search screen with IPFS desktop showing.](images/install-ubuntu-search-window.png)
+
+1. The IPFS desktop application should now be running in your status bar.
+
+	![IPFS icon shown in the Ubuntu status bar.](images/install-ubuntu-ipfs-running-status-bar.png)
+
+1. The installation is complete.
 
 ## Add your site
 
