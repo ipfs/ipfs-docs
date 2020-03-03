@@ -4,7 +4,7 @@ title: Moving an IPFS installation
 
 This page walks through how to move your IPFS installation from one system to another. This process is cross-platform compatible and is especially useful for readers who are changing operating systems. The process is to grab the `.ipfs` folder from the _home_ directory of the _doner_ system, and copy it over to _home_ directory on the receiving system.
 
-This process is not a backup procedure; do not treat it as such. Many things can go wrong with this process, most of which relate to _peer IDs_. Since we are duplicating an `.ipfs` installation folder, both folders will have the same peer ID. This is fine as long as you delete the old _doner_ installation once the copy is complete. Having two IPFS installations with the same peer ID causes substantial problems and could result in loss of data. 
+This process is not a backup procedure; do not treat it as such. Many things can go wrong with this process, most of which relate to _peer IDs_. Since we are duplicating an `.ipfs` installation folder, both IPFS clients have the same peer ID. This issue is ok as long as you delete the old _doner_ installation once the copy is complete. Having two IPFS installations with the same peer ID causes substantial problems and could result in loss of data.
 
 ## Move your IPFS installation
 
@@ -55,7 +55,7 @@ Once you have a backup of your IPFS repository in `ipfs-backup`, you can move it
     cd ~/
     ```
 
-1. Move your current IPFS repository to another folder. If something goes wrong you can revert to this later:
+1. Move your current IPFS repository to another folder. If something goes wrong you can restore your installation from here:
 
     ```bash
     mv .ipfs ipfs-old
@@ -67,7 +67,7 @@ Once you have a backup of your IPFS repository in `ipfs-backup`, you can move it
     mv ipfs-backup .ipfs
     ```
 
-1. Start an IPFS daemon. Everything should properly load from the newly restored `.ipfs` folder:
+1. Start an IPFS daemon:
 
     ```bash
     ipfs daemon
@@ -89,15 +89,15 @@ Once you have a backup of your IPFS repository in `ipfs-backup`, you can move it
 
 1. If restoring to the IPFS Desktop application, open the application at least once before attempting to restore anything.
 1. Stop any IPFS daemons, services, or applications from running.
-1. Open the file explorer and go to **C:** → **Users** → **Your Username**.
+1. Open the file explorer and go to `C:\Users\Your Username`.
 1. Select the **View** tab at the top of the file explorer window, and check the **Hidden items** checkbox.
 
     ![The Hidden Items option in Windows File Explorer checked.](copy-ipfs-to-computer/images/hidden-items-checkbox.png)
 
-1. Find the `.ipfs` within your user's _home_ folder. This is usually `C:\Users\Your Username\.ipfs`.
+1. Find the `.ipfs` within your user's _home_ folder. The full address is usually something like `C:\Users\Your Username\.ipfs`.
 1. Rename the `.ipfs` folder to `ipfs-old`. We can restore from `ipfs-old` if anything goes wrong.
 1. Copy your backup IPFS repository into your user's _home_ folder and rename it to `.ipfs`.
-1. Open the IPFS Desktop application or run `ipfs daemon` with Powershell. Everything should start, and your IPFS repository should restore properly.
+1. Open the IPFS Desktop application or run `ipfs daemon` with Powershell. Everything should start, and your IPFS repository should restore normally.
 
 ## Windows Subsystem for Linux
 
@@ -114,6 +114,8 @@ If you have IPFS installed in the Windows Subsystem for Linux, you can migrate y
 1. On Windows, open the IPFS Desktop application or run an `ipfs daemon`. Everything should open successfully.
 
 ## Troubleshooting
+
+Here are some common issues you might run into when moving your IPFS installation.
 
 ### Linux and macOS
 
@@ -136,4 +138,4 @@ Make sure to open the IPFS Desktop application at least once before attempting t
 
 #### IPFS Desktop won't open
 
-In your user's _home_ folder, delete `.ipfs` and `.ipfs-desktop`. Open the IPFS Desktop application.
+In your user's _home_ folder, rename `.ipfs` and `.ipfs-desktop` to `ipfs-broken` and `ipfs-desktop-broken` respectively. Open the IPFS Desktop application; this creates new `.ipfs` and `.ipfs-desktop` folders. Close the IPFS desktop application and replace `.ipfs` with `ipfs-broken`. If the IPFS desktop application opens, then you now know that the original `.ipfs-desktop` folder was the issue. If the IPFS desktop application doesn't open, then the original `.ipfs` folder may be the issue. If both original folders are causing issues, you may have a corrupted database. If this is the case, post your issue on the [IPFS forums](https://discuss.ipfs.io/).
