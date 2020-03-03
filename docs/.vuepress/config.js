@@ -189,7 +189,7 @@ module.exports = {
                 title: 'Host websites',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/how-to/host-single-page-site']
+                children: ['/how-to/websites-on-ipfs/host-simple-page-website']
               },
               {
                 title: 'Work with blockchains',
