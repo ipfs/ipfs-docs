@@ -15,56 +15,81 @@ IPFS desktop is the simple to use and easy to install. Installation of the IPFS 
 ### Windows
 
 1. Go to the [IPFS desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases).
-2. Find the link ending in `.exe` for the latest version of IPFS desktop.
+2. Find the link ending in `.exe` for the latest version of IPFS desktop:
 
     ![The IPFS desktop download page.](/images/download-exe-page.png)
 
 3. Run the `.exe` file to start the installation.
-4. Select whether you want to install the application for just yourself, or all users on the computer. Click **Next**.
+4. Select whether you want to install the application for just yourself, or all users on the computer. Click **Next**:
 
     ![The IPFS desktop install options window.](/images/install-options.png)
 
-5. Select the install location for the application. The default location is usually fine. Click **Next**.
+5. Select the install location for the application. The default location is usually fine. Click **Next**:
 
     ![The IPFS desktop installation location window.](/images/install-location.png)
 
-6. Wait for the installation to finish and click **Finish**.
+6. Wait for the installation to finish and click **Finish**:
 
     ![The IPFS desktop installation finished window.](/images/install-finish.png)
 
-7. You can now find an IPFS icon in the status bar. Click the IPFS icon and select **Status**
+7. You can now find an IPFS icon in the status bar:
 
     ![The IPFS desktop status bar menu in the Windows status bar.](/images/ipfs-desktop-status-bar.png)
 
-8. The IPFS desktop application should now be showing the status page.
-
-    ![IPFS desktop status page.](/images/ipfs-desktop-status-page.png)
-
-The IPFS desktop application is now installed. You can now start to [add your site](#add-your-site).
+The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
 
 ### MacOS
 
+1. Download the latest available `.dmg` file from the `ipfs-shipyard/ipfs-desktop` GitHub repository:
+
+    ![List of available download links in GitHub.](images/install-macos-dmg-file-link.png)
+
+2. Open the `ipfs-desktop.dmg` file.
+3. Drag the IPFS icon into the **Applications** folder:
+
+    ![Drag-to-install window in MacOS.](images/install-macos-drag-ipfs-drag.png)
+
+4. Open your **Applications** folder and open the IPFS desktop application.
+5. You may get a warning saying _IPFS Desktop.app can't be opened_. Click **Show in Finder**:
+
+    ![Application cannot be installed error.](images/install-macos-ipfs-cannot-be-opened.png)
+
+6. Find **IPFS Desktop.app** in your **Applications** folder.
+7. Hold down the `control` key, click **IPFS Desktop.app**, and click **Open**:
+
+    ![Right click context menu of IPFS Desktop.app.](images/install-macos-force-open.png)
+
+8. Click **Open** in the new window:
+
+    ![Open confirmation window.](images/install-macos-open-confirmation.png)
+
+9. You can now find an IPFS icon in the status bar:
+
+    ![The IPFS desktop status bar menu in the MacOS status bar.](images/install-macos-ipfs-desktop-status-bar.png)
+
+The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
+
 ### Linux
 
-1. Download the `.deb` package
-1. Open the `.deb` package in **Software Installer**.
+1. Download the `.deb` package:
+1. Open the `.deb` package in **Software Installer**:
 
-	![Right-click context menu of the IPFS deb package.](images/install-ubuntu-software-install.png)
+    ![Right-click context menu of the IPFS deb package.](images/install-ubuntu-software-install.png)
 
-1. Click **Install** and wait for the installation to finish.
+1. Click **Install** and wait for the installation to finish:
 
-	![Install screen within the Ubuntu software installation window.](images/install-ubuntu-install.png)
+    ![Install screen within the Ubuntu software installation window.](images/install-ubuntu-install.png)
 
 1. Click **Applications** or press the Windows key on your keyboard.
-1. Search for `IPFS` and select **IPFS Desktop**.
+1. Search for `IPFS` and select **IPFS Desktop**:
 
-	![Ubuntu search screen with IPFS desktop showing.](images/install-ubuntu-search-window.png)
+    ![Ubuntu search screen with IPFS desktop showing.](images/install-ubuntu-search-window.png)
 
-1. The IPFS desktop application should now be running in your status bar.
+1. You can now find an IPFS icon in the status bar:
 
-	![IPFS icon shown in the Ubuntu status bar.](images/install-ubuntu-ipfs-running-status-bar.png)
+    ![IPFS icon shown in the Ubuntu status bar.](images/install-ubuntu-ipfs-running-status-bar.png)
 
-1. The installation is complete.
+The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
 
 ## Add your site
 
