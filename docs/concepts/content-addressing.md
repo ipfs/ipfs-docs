@@ -7,7 +7,7 @@ description: Learn about how content addressing works and how content identifier
 # Content addressing and CIDs
 
 ::: tip
-For a deep dive into content addressing and how it works, take a look at the ProtoSchools course on the [Anatomy of a CID](https://proto.school/#/anatomy-of-a-cid).
+For a deep dive into how Content Identifiers (CIDs) are constructed, take a look at ProtoSchool's tutorial on the [Anatomy of a CID](https://proto.school/#/anatomy-of-a-cid).
 :::
 
 A _content identifier_, or CID, is a label used to point to material in IPFS. It doesn't indicate _where_ the content is stored, but it forms a kind of address based on the content itself. CIDs are short, regardless of the size of their underlying content.
