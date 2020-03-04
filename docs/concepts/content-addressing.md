@@ -7,7 +7,7 @@ description: Learn about how content addressing works and how content identifier
 # Content addressing and CIDs
 
 ::: tip
-If you're interested in how content addressing fits into how IPFS works with files in general, check out this video from IPFS Camp 2019! [Core Course: How IPFS Deals With Files](https://www.youtube.com/watch?v=Z5zNPwMDYGg)
+For a deep dive into content addressing and how it works, take a look at the ProtoSchools course on the [Anatomy of a CID](https://proto.school/#/anatomy-of-a-cid).
 :::
 
 A _content identifier_, or CID, is a label used to point to material in IPFS. It doesn't indicate _where_ the content is stored, but it forms a kind of address based on the content itself. CIDs are short, regardless of the size of their underlying content.
@@ -44,3 +44,10 @@ You can use the first few bytes of the CID to interpret the remainder of the con
 ## CID Inspector
 
 It's easy to explore a CID for yourself. Want to pull apart a specific CID's multibase, multicodec, or multihash info? You can use the [CID Inspector](https://cid.ipfs.io/#QmY7Yh4UquoXHLPFo2XbhXkhBvFoPwmQUSa92pxnxjQuPU) or the [CID Info panel in IPLD Explorer](https://explore.ipld.io/#/explore/QmY7Yh4UquoXHLPFo2XbhXkhBvFoPwmQUSa92pxnxjQuPU) (both links launch using a sample CID) for an interactive breakdown of differently-formatted CIDs.
+
+## Further resources
+
+Check out these links for more information on CIDs and how they work:
+
+- [Core Course: How IPFS Deals With Files](https://www.youtube.com/watch?v=Z5zNPwMDYGg)
+- [Files and IPFS Companion](https://www.youtube.com/watch?v=OCv5PvLnk-Y)
