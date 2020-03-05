@@ -6,7 +6,7 @@ title: Move an IPFS installation
 
 This page walks through how to move your IPFS installation from one system to another. This process is cross-platform compatible and is especially useful for readers who are changing operating systems. The process is to grab the `.ipfs` folder from the _home_ directory of the _donor_ system, and copy it over to _home_ directory on the receiving system.
 
-This process is not a backup procedure; do not treat it as such. Many things can go wrong with this process, most of which relate to _peer IDs_. Since we are duplicating an `.ipfs` installation folder, both IPFS clients have the same peer ID. This issue is ok as long as you delete the old _donor_ installation once the copy is complete. Having two IPFS installations with the same peer ID causes substantial problems and could result in loss of data.
+This process is not a backup procedure; do not treat it as such. Many things can go wrong with this process, most of which relate to _peer IDs_. Since we are duplicating an `.ipfs` installation folder, both IPFS peers have the same peer ID. This issue is ok as long as you delete the old _donor_ installation once the copy is complete. Never start two peers with the same peer IDs on different places, as they will misbehave.
 
 ## Move installation
 
@@ -24,14 +24,14 @@ The easiest way to move your IFPS installation is to grab the `.ipfs` folder, an
 1. Make a copy of the `.ipfs` directory:
 
     ```bash
-    cp --recursive --verbose .ipfs ipfs-from-linux
+    cp --recursive --verbose .ipfs ipfs-backup
 
-    > '.ipfs' -> 'ipfs-from-linux'
+    > '.ipfs' -> 'ipfs-backup'
     > '.ipfs/datastore_spec' -> 'ipfs-backup/data'
     > ...
     ```
 
-1. You now have a copy of your IPFS repository within the `ipfs-backup`.
+1. You now have a copy of your IPFS repository within the `ipfs-backup` folder.
 
 ### Windows
 
@@ -39,7 +39,7 @@ The easiest way to move your IFPS installation is to grab the `.ipfs` folder, an
 1. Open the file explorer and go to **C:** → **Users** → **Your Username**.
 1. Select the **View** tab at the top of the file explorer window, and check the **Hidden items** checkbox.
 1. Find the `.ipfs` within your user's _home_ folder. This is usually `C:\Users\Your Username\.ipfs`.
-1. Copy this folder to somewhere convenient like the `Desktop`.
+1. Copy this folder to somewhere convenient like the `Desktop` and rename it to `ipfs-backup`.
 
 ## Restore installation
 
@@ -92,7 +92,7 @@ Once you have a backup of your IPFS repository in `ipfs-backup`, you can move it
 1. Select the **View** tab at the top of the file explorer window, and check the **Hidden items** checkbox.
 1. Find the `.ipfs` within your user's _home_ folder. The full address is usually something like `C:\Users\Your Username\.ipfs`.
 1. Rename the `.ipfs` folder to `ipfs-old`. We can restore from `ipfs-old` if anything goes wrong.
-1. Copy your backup IPFS repository into your user's _home_ folder and rename it to `.ipfs`.
+1. Copy your `ipfs-backup` IPFS repository into your user's _home_ folder and rename it to `.ipfs`.
 1. Open the IPFS Desktop application or run `ipfs daemon` with Powershell. Everything should start, and your IPFS repository should restore normally.
 
 ## Windows Subsystem for Linux
