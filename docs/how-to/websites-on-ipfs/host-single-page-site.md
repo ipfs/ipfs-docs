@@ -102,18 +102,22 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
     <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Hobbit Name Generator</title>
-        <meta name="description" content="A Hobbit name generator, based of J.R.R Tolkien's 'Middle Earth'.">
-        <meta name="author" content="IPFS">
-        <style>body{margin:15px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0}</style>
+        <title>Random Planet Facts</title>
+        <meta name="description" content="A Get a random fact about a planet in our solar system.">
+        <meta name="author" content="The IPFS Docs team.">
+        <style>body{margin:15px auto;max-width:650px;line-height:1.2;font-family:sans-serif;font-size:2.0em;color:#fff;background:#444}</style>
     </head>
     <body onload="main()">
-        <h1>Hobbit Name Generator</h1>
-        <hr>
-        <p>Your Hobbit name is: <b id="output_p"></b></p>
-        <script>const first_names=["Abbo","Balbo","Caradas","Dado","Ebbo","Falco","Gararic","Humbert","Isumbras","Jolly","Kalimac","Lotho","Moro","Nordbert","Otto","Ponto","Rothad","Suger","Tassilo","Uffo","Vigor","Wulfram","Zwentibold","Achilla","Begona","Cosma","Dora","Estella","Forsythia","Goldilocks","Hyacynth","Iris","Jasmina","Kalmia","Lalia","Myrtle","Nigella","Opal","Primula","Ruellia","Silene","Tulip","Viola","Zinnia"];const last_names=["Boffin","Chubb","Diggle","Fairbairn","Galbasi","Harfoot","Lightfoot","Mugwort","Noaks","Oldbuck","Proudfoot","Roper","Sackville","Took","Underhill","Whitfoot","Zaragamba"];function main(){let name=first_names[Math.floor(Math.random()*first_names.length)]+" "+last_names[Math.floor(Math.random()*last_names.length)];document.querySelector('#output_p').innerHTML=name}
+        <h1>Random Planet Facts</h1>
+        <p id="output_p"></p>
+        <script>
+            function main() {
+                const facts=["Mars is home to the tallest mountain in our solar system.","Only 18 out of 40 missions to Mars have been successful.","Pieces of Mars have fallen to Earth.","One year on Mars is 687 Earth days.","The temperature on Mars ranges from -153 to 20 °C.","One year on Mercury is about 88 Earth days.","The surface temperature of Mercury ranges from -173 to 427°C.","Mercury was first discovered in 14th century by Assyrian astronomers.","Your weight on Mercury would be 38% of your weight on Earth.","A day on the surface of Mercury lasts 176 Earth days.","The surface temperature of Venus is about 462 °C.","It takes Venus 225 days to orbit the sun.","Venus was first discovered by 17th century Babylonian astronomers.","Venus is nearly as big as the Earth with a diameter of 12,104 km.","The Earth’s rotation is gradually slowing.","There is only one natural satellite of the planet Earth, the moon.","Earth is the only planet in our solar system not named after a god.","The Earth is the densest planet in the solar system.","A year on Jupiter lasts around 4333 earth days.","The surface temperature of Jupiter is around -108°C.","Jupiter was first discovered by 7th or 8th century Babylonian astronomers.","Jupiter has 4 ring.","A day on Jupiter lasts 9 hours and 55 minutes.","Saturn was first discovered by 8th century Assyrians.","Saturn takes 10756 days to orbit the Sun.","Saturn can be seen with the naked eye.","Saturn is the flattest planet.","Saturn is made mostly of hydrogen.","Four spacecraft have visited Saturn.","Uranus was discovered by William Herschel in 1781.","A year on Uranus takes 30687 earth days.","Uranus turns on its axis once every 17 hours, 14 minutes.","With minimum atmospheric temperature of -224°C Uranus is nearly coldest planet in the solar system.","Only one spacecraft has flown by Uranus, the Voyager 2.","Neptune was discovered in 1846 by Urbain Le Verrier and Johann Galle.","Neptune has 14 moons.","The average temperatue of Neptune is about -201 °C.","There is a 1:20 million scale model of the solar system in Sweden.", "The gap between the Earth and our moon is bigger than the diameters of all the planets combined.", "The first accurate calculation of the speed of light was using Jupiter’s moons", "Jupiter’s magnetic field is believed to be a result of rapidly spinning metallic hydrogen at the core, and is ~10x stronger than the Earth’s.", "Venus spins backwards.", "Uranus spins sideways, relative to the ecliptic plane of the solar system.", "It is easier to reach Pluto or escape the solar system from Earth than being able to <i>land</i> on the Sun."];
+                document.querySelector('#output_p').innerHTML = facts[Math.floor(Math.random() * facts.length)]
+            }
         </script>
     </body>
+
     </html>
     ```
 
@@ -135,12 +139,57 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
 
 After a few moments your browser will load the website! This can take up to a few minutes the first time. You can move onto the next section while the site is loading.
 
-## Set up a DNS
-
-### CloudFlare
-
 ## Pinning files
+
+IPFS nodes treat the data they store like a cache, meaning that there is no guarantee that the data will continue to be stored. _Pinning_ a file tells an IPFS server that the data is important and shouldn't be thrown away.
+
+You should _pin_ any content you consider important in order to ensure that content is retained over the long term. Since data important to someone else may not be important to you, pinning enables you to have control over the disk space and data retention you need.
 
 ### Using Pinata
 
-## Next Steps
+To ensure that your important data is retained, you may want to use a pinning service. Such a service normally trades money for the service of guaranteeing they'll keep your data pinned. [Pinata](https://pinata.cloud/) is one such service that offers pinning for free!
+
+1. Go to [Pinata.cloud](https://pinata.cloud/) and sign up or log in.
+2. Click [**Pinata Upload**](https://pinata.cloud/pinataupload).
+3. Select **Upload File** and click **Browse**.
+4. Navigate to your `index.html` file and click **Open**.
+5. Click **Upload**.
+6. Once the file has finished uploading, click **Pin Explorer** to view any files you have pinned.
+7. You should be able to see your `index.html` file pinned:
+
+    ![The Pinata Pin Explorer screen showing the index.html pinnded.](images/pinned-index-file-in-pinata.png)
+
+8. Click the **IPFS Hash** of your `index.html` file to open your website through the Pinata gateway.
+
+    ![Random planet fact website pinned using Pinata and displayed in Firefox](images/pinned-random-planet-fact-website.png)
+
+## Set up a domain
+
+This section is completely optional. 
+
+If you have access to a domain name service like Namecheap, Google Domains, GoDaddy, or any other domain service then you can follow along with these steps. If you don't have a domain name to assign then you can just read along through this section. We're going to dive into using services like DNSLink and the Ethereum Naming Service (ENS) in later sections.
+
+We used Namecheap, but the process is very similar across all domain name services.
+
+1. Log into your domain name provider.
+2. Go to your domain management window and find the domain you want to assign to your website.
+3. Find where to change the **Redirection Settings**.
+4. In a new tab, go to the [Pinata Pin Explorer](https://pinata.cloud/pinexplorer) screen.
+5. Copy the **IPFS Hash** link.
+6. In your domain name providers **Redirection Settings** section, paste in the **IPFS Hash** link you just copied.
+
+    ![Redirecting a source URL to an IPFS Hash link within Namecheap.](images/namecheap-source-url-redirect.png)
+
+7. Save your changes.
+
+Domain name services are fairly slow to update, but in a few hours you should be able to go to your domain and see the website you pinned using Pinata!
+
+![Random planet facts site with the randomplanetfacts.xyz url](images/random-planets-with-correct-url.png)
+
+## Further improvements
+
+This project was designed to get you up and running quickly, but there are many improvements we can make here.
+
+You may have noticed that when visiting [randomplanetfacts.xyz](https://randomplanetfacts.xyz), your browser redirects to [gateway.pinata.cloud/ipfs/QmW7S5HR...](https://gateway.pinata.cloud/ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA).
+
+Another issue is that the website is incredibly simple. There are no images, stylesheets, or javascript files. If you're interested in building a more complex site using IPFS, [carry on with this tutorial series 🡒](#)
