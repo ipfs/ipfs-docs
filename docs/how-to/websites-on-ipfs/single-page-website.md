@@ -1,10 +1,10 @@
 ---
-title: Host a static website on IPFS
+title: Host a single-page website on IPFS
 legacyUrl: https://docs.ipfs.io/guides/examples/websites/
 description: Learn how to host a static website on the decentralized web using IPFS.
 ---
 
-# THIS TUTORIAL IS A WORK IN PROGRESS. DO NOT USE.
+# Host a single-page website on IPFS
 
 In this tutorial, you'll import a simple one-page website to IPFS, have it use the Cloudflare Content Delivery Network (CDN), and link up a domain name so people can find your site easily.
 
