@@ -6,11 +6,11 @@ description: Learn how to host a static website on the decentralized web using I
 
 # THIS TUTORIAL IS A WORK IN PROGRESS. DO NOT USE.
 
-In this tutorial you'll import a simple one-page website to IPFS, have it use the CloudFlare Content Delivery Network (CDN), and link up a domain name so people can find your site easily.
+In this tutorial, you'll import a simple one-page website to IPFS, have it use the Cloudflare Content Delivery Network (CDN), and link up a domain name so people can find your site easily.
 
 ## Install IPFS desktop
 
-IPFS desktop is the simple to use and easy to install. Installation of the IPFS desktop differs between operating systems. Follow the instructions for your system.
+IPFS desktop application is the easiest way to get up and running quickly with IPFS. The installation steps for IPFS desktop differ between operating systems. Follow the instructions for your system.
 
 ### Windows
 
@@ -65,7 +65,7 @@ The IPFS desktop application has finished installing. You can now start to [add 
 
 9. You can now find an IPFS icon in the status bar:
 
-    ![The IPFS desktop status bar menu in the MacOS status bar.](images/install-macos-ipfs-desktop-status-bar.png)
+    ![The IPFS desktop status bar menu in the macOS status bar.](images/install-macos-ipfs-desktop-status-bar.png)
 
 The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
 
@@ -93,7 +93,7 @@ The IPFS desktop application has finished installing. You can now start to [add 
 
 ## Add your site
 
-The next step is to import your site into IPFS using the IPFS desktop app you just installed. The website we'll be using is incredibly simple. The purpose of it is to generate a random Hobbit-like name and display it to the visitor. Each time the page is refreshed a new name is displayed. The website is creativly called _Hobbit name generator_.
+The next step is to import your site into IPFS using the IPFS desktop app you just installed. The website we'll be using is incredibly simple. The purpose of it is to generate a random Hobbit-like name and display it to the visitor. Each time the page is refreshed, a new name is displayed. The website is creatively called _Hobbit name generator_.
 
 1. Create a file called `index.html` and paste in the following code:
 
@@ -112,7 +112,7 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
         <p id="output_p"></p>
         <script>
             function main() {
-                const facts=["Mars is home to the tallest mountain in our solar system.","Only 18 out of 40 missions to Mars have been successful.","Pieces of Mars have fallen to Earth.","One year on Mars is 687 Earth days.","The temperature on Mars ranges from -153 to 20 °C.","One year on Mercury is about 88 Earth days.","The surface temperature of Mercury ranges from -173 to 427°C.","Mercury was first discovered in 14th century by Assyrian astronomers.","Your weight on Mercury would be 38% of your weight on Earth.","A day on the surface of Mercury lasts 176 Earth days.","The surface temperature of Venus is about 462 °C.","It takes Venus 225 days to orbit the sun.","Venus was first discovered by 17th century Babylonian astronomers.","Venus is nearly as big as the Earth with a diameter of 12,104 km.","The Earth’s rotation is gradually slowing.","There is only one natural satellite of the planet Earth, the moon.","Earth is the only planet in our solar system not named after a god.","The Earth is the densest planet in the solar system.","A year on Jupiter lasts around 4333 earth days.","The surface temperature of Jupiter is around -108°C.","Jupiter was first discovered by 7th or 8th century Babylonian astronomers.","Jupiter has 4 ring.","A day on Jupiter lasts 9 hours and 55 minutes.","Saturn was first discovered by 8th century Assyrians.","Saturn takes 10756 days to orbit the Sun.","Saturn can be seen with the naked eye.","Saturn is the flattest planet.","Saturn is made mostly of hydrogen.","Four spacecraft have visited Saturn.","Uranus was discovered by William Herschel in 1781.","A year on Uranus takes 30687 earth days.","Uranus turns on its axis once every 17 hours, 14 minutes.","With minimum atmospheric temperature of -224°C Uranus is nearly coldest planet in the solar system.","Only one spacecraft has flown by Uranus, the Voyager 2.","Neptune was discovered in 1846 by Urbain Le Verrier and Johann Galle.","Neptune has 14 moons.","The average temperatue of Neptune is about -201 °C.","There is a 1:20 million scale model of the solar system in Sweden.", "The gap between the Earth and our moon is bigger than the diameters of all the planets combined.", "The first accurate calculation of the speed of light was using Jupiter’s moons", "Jupiter’s magnetic field is believed to be a result of rapidly spinning metallic hydrogen at the core, and is ~10x stronger than the Earth’s.", "Venus spins backwards.", "Uranus spins sideways, relative to the ecliptic plane of the solar system.", "It is easier to reach Pluto or escape the solar system from Earth than being able to <i>land</i> on the Sun."];
+                const facts=["Mars is home to the tallest mountain in our solar system.","Only 18 out of 40 missions to Mars have been successful.","Pieces of Mars have fallen to Earth.","One year on Mars is 687 Earth days.","The temperature on Mars ranges from -153 to 20 °C.","One year on Mercury is about 88 Earth days.","The surface temperature of Mercury ranges from -173 to 427°C.","Mercury was first discovered in the 14th century by Assyrian astronomers.","Your weight on Mercury would be 38% of your weight on Earth.","A day on the surface of Mercury lasts 176 Earth days.","The surface temperature of Venus is about 462 °C.","It takes Venus 225 days to orbit the sun.","17th-century Babylonian astronomers first discovered Venus.","Venus is nearly as big as the Earth with a diameter of 12,104 km.","The Earth’s rotation is gradually slowing.","There is only one natural satellite of the planet Earth, the moon.","Earth is the only planet in our solar system not named after a god.","The Earth is the densest planet in the solar system.","A year on Jupiter lasts around 4333 earth days.","The surface temperature of Jupiter is around -108°C.","Babylonian astronomers first discovered Jupiter in the 7th or 8th century.","Jupiter has 4 rings.","A day on Jupiter lasts 9 hours and 55 minutes.","8th century Assyrians first discovered Saturn.","Saturn takes 10756 days to orbit the Sun.","Saturn can be seen with the naked eye.","Saturn is the flattest planet.","Saturn is made mostly of hydrogen.","Four spacecraft have visited Saturn.","William Herschel discovered Uranus in 1781.","A year on Uranus takes 30687 earth days.","Uranus turns on its axis once every 17 hours, 14 minutes.","With a minimum atmospheric temperature of -224°, C Uranus is nearly the coldest planet in the solar system.","Only one spacecraft has flown by Uranus, the Voyager 2.","Neptune was discovered in 1846 by Urbain Le Verrier and Johann Galle.","Neptune has 14 moons.","The average temperature of Neptune is about -201 °C.","There is a 1:20 million scale model of the solar system in Sweden.", "The gap between the Earth and our moon is bigger than the diameters of all the planets combined.", "The first accurate calculation of the speed of light was using Jupiter’s moons", "Jupiter’s magnetic field is believed to be a result of rapidly spinning metallic hydrogen at the core, and is ~10x stronger than the Earth’s.", "Venus spins backward.", "Uranus spins sideways, relative to the ecliptic plane of the solar system.", "It is easier to reach Pluto or escape the solar system from Earth than being able to <i>land</i> on the Sun."];
                 document.querySelector('#output_p').innerHTML = facts[Math.floor(Math.random() * facts.length)]
             }
         </script>
@@ -130,24 +130,24 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
 
     ![Choose a file window open in IPFS desktop.](/images/ipfs-desktop-open-file.png)
 
-5. Click the tripple dot menu on `index.html` and select **Share link**.
+5. Click the triple dot menu on `index.html` and select **Share link**.
 6. Click **Copy** to copy the file's URL to your clipboard.
 
     ![Share files window in IPFS desktop.](/images/ipfs-desktop-share-files.png)
 
 7. Open a browser and paste in the URL you just copied.
 
-After a few moments your browser will load the website! This can take up to a few minutes the first time. You can move onto the next section while the site is loading.
+Your browser should load the website in a few moments! This can take up to a few minutes the first time. You can move onto the next section while the site is loading.
 
 ## Pinning files
 
-IPFS nodes treat the data they store like a cache, meaning that there is no guarantee that the data will continue to be stored. _Pinning_ a file tells an IPFS server that the data is important and shouldn't be thrown away.
+IPFS nodes treat the data they store like a cache, meaning that there is no guarantee that the data will continue to be stored. _Pinning_ a file tells an IPFS server that the data is essential and shouldn't be thrown away.
 
-You should _pin_ any content you consider important in order to ensure that content is retained over the long term. Since data important to someone else may not be important to you, pinning enables you to have control over the disk space and data retention you need.
+You should _pin_ any content you consider important to ensure that content is retained over the long term. Since data relevant to someone else may not be important to you, pinning enables you to have control over the disk space and data retention you need.
 
 ### Using Pinata
 
-To ensure that your important data is retained, you may want to use a pinning service. Such a service normally trades money for the service of guaranteeing they'll keep your data pinned. [Pinata](https://pinata.cloud/) is one such service that offers pinning for free!
+To ensure that your important data is retained, you may want to use a pinning service. [Pinata](https://pinata.cloud/) is one such service that offers pinning for free!
 
 1. Go to [Pinata.cloud](https://pinata.cloud/) and sign up or log in.
 2. Click [**Pinata Upload**](https://pinata.cloud/pinataupload).
@@ -167,7 +167,7 @@ To ensure that your important data is retained, you may want to use a pinning se
 
 This section is completely optional. 
 
-If you have access to a domain name service like Namecheap, Google Domains, GoDaddy, or any other domain service then you can follow along with these steps. If you don't have a domain name to assign then you can just read along through this section. We're going to dive into using services like DNSLink and the Ethereum Naming Service (ENS) in later sections.
+If you have access to a domain name service like Namecheap, Google Domains, GoDaddy, or any other domain service, then you can follow along with these steps. If you don't have a domain name to assign, then you can just read along through this section. We're going to dive into using services like DNSLink and the Ethereum Naming Service (ENS) in later sections.
 
 We used Namecheap, but the process is very similar across all domain name services.
 
@@ -182,7 +182,7 @@ We used Namecheap, but the process is very similar across all domain name servic
 
 7. Save your changes.
 
-Domain name services are fairly slow to update, but in a few hours you should be able to go to your domain and see the website you pinned using Pinata!
+Domain name services are fairly slow to update, but in a few hours, you should be able to go to your domain and see the website you pinned using Pinata!
 
 ![Random planet facts site with the randomplanetfacts.xyz url](images/random-planets-with-correct-url.png)
 
