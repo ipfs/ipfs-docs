@@ -17,24 +17,24 @@ IPFS desktop application is the easiest way to get up and running quickly with I
 1. Go to the [IPFS desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases).
 2. Find the link ending in `.exe` for the latest version of IPFS desktop:
 
-    ![The IPFS desktop download page.](images/install-windows-download-exe-page.png)
+    ![The IPFS desktop download page.](images/single-page-website/install-windows-download-exe-page.png)
 
 3. Run the `.exe` file to start the installation.
 4. Select whether you want to install the application for just yourself, or all users on the computer. Click **Next**:
 
-    ![The IPFS desktop install options window.](images/install-windows-install-options.png)
+    ![The IPFS desktop install options window.](images/single-page-website/install-windows-install-options.png)
 
 5. Select the install location for the application. The default location is usually fine. Click **Next**:
 
-    ![The IPFS desktop installation location window.](images/install-windows-install-location.png)
+    ![The IPFS desktop installation location window.](images/single-page-website/install-windows-install-location.png)
 
 6. Wait for the installation to finish and click **Finish**:
 
-    ![The IPFS desktop installation finished window.](images/install-windows-install-finish.png)
+    ![The IPFS desktop installation finished window.](images/single-page-website/install-windows-install-finish.png)
 
 7. You can now find an IPFS icon in the status bar:
 
-    ![The IPFS desktop status bar menu in the Windows status bar.](images/install-windows-ipfs-desktop-status-bar.png)
+    ![The IPFS desktop status bar menu in the Windows status bar.](images/single-page-website/install-windows-ipfs-desktop-status-bar.png)
 
 The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
 
@@ -42,30 +42,30 @@ The IPFS desktop application has finished installing. You can now start to [add 
 
 1. Download the latest available `.dmg` file from the `ipfs-shipyard/ipfs-desktop` GitHub repository:
 
-    ![List of available download links in GitHub.](images/install-macos-dmg-file-link.png)
+    ![List of available download links in GitHub.](images/single-page-website/install-macos-dmg-file-link.png)
 
 2. Open the `ipfs-desktop.dmg` file.
 3. Drag the IPFS icon into the **Applications** folder:
 
-    ![Drag-to-install window in MacOS.](images/install-macos-drag-ipfs-drag.png)
+    ![Drag-to-install window in MacOS.](images/single-page-website/install-macos-drag-ipfs-drag.png)
 
 4. Open your **Applications** folder and open the IPFS desktop application.
 5. You may get a warning saying _IPFS Desktop.app can't be opened_. Click **Show in Finder**:
 
-    ![Application cannot be installed error.](images/install-macos-ipfs-cannot-be-opened.png)
+    ![Application cannot be installed error.](images/single-page-website/install-macos-ipfs-cannot-be-opened.png)
 
 6. Find **IPFS Desktop.app** in your **Applications** folder.
 7. Hold down the `control` key, click **IPFS Desktop.app**, and click **Open**:
 
-    ![Right click context menu of IPFS Desktop.app.](images/install-macos-force-open.png)
+    ![Right click context menu of IPFS Desktop.app.](images/single-page-website/install-macos-force-open.png)
 
 8. Click **Open** in the new window:
 
-    ![Open confirmation window.](images/install-macos-open-confirmation.png)
+    ![Open confirmation window.](images/single-page-website/install-macos-open-confirmation.png)
 
 9. You can now find an IPFS icon in the status bar:
 
-    ![The IPFS desktop status bar menu in the macOS status bar.](images/install-macos-ipfs-desktop-status-bar.png)
+    ![The IPFS desktop status bar menu in the macOS status bar.](images/single-page-website/install-macos-ipfs-desktop-status-bar.png)
 
 The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
 
@@ -74,20 +74,20 @@ The IPFS desktop application has finished installing. You can now start to [add 
 1. Download the `.deb` package:
 1. Open the `.deb` package in **Software Installer**:
 
-    ![Right-click context menu of the IPFS deb package.](images/install-ubuntu-software-install.png)
+    ![Right-click context menu of the IPFS deb package.](images/single-page-website/install-ubuntu-software-install.png)
 
 1. Click **Install** and wait for the installation to finish:
 
-    ![Install screen within the Ubuntu software installation window.](images/install-ubuntu-install.png)
+    ![Install screen within the Ubuntu software installation window.](images/single-page-website/install-ubuntu-install.png)
 
 1. Click **Applications** or press the Windows key on your keyboard.
 1. Search for `IPFS` and select **IPFS Desktop**:
 
-    ![Ubuntu search screen with IPFS desktop showing.](images/install-ubuntu-search-window.png)
+    ![Ubuntu search screen with IPFS desktop showing.](images/single-page-website/install-ubuntu-search-window.png)
 
 1. You can now find an IPFS icon in the status bar:
 
-    ![IPFS icon shown in the Ubuntu status bar.](images/install-ubuntu-ipfs-running-status-bar.png)
+    ![IPFS icon shown in the Ubuntu status bar.](images/single-page-website/install-ubuntu-ipfs-running-status-bar.png)
 
 The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
 
@@ -123,17 +123,14 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
 
 2. Open IPFS desktop and go to the **Files** page.
 3. Click **Add** → **File**.
-
-    ![Add file menu in IPFS desktop.](/images/ipfs-desktop-add-file.png)
-
 4. Navigate to your `index.html` file and select **Open**.
 
-    ![Choose a file window open in IPFS desktop.](/images/ipfs-desktop-open-file.png)
+    ![Choose a file window open in IPFS desktop.](images/single-page-website/add-ipfs-desktop-open-file.png)
 
 5. Click the triple dot menu on `index.html` and select **Share link**.
 6. Click **Copy** to copy the file's URL to your clipboard.
 
-    ![Share files window in IPFS desktop.](/images/ipfs-desktop-share-files.png)
+    ![Share files window in IPFS desktop.](images/single-page-website/add-ipfs-desktop-share-files.png)
 
 7. Open a browser and paste in the URL you just copied.
 
@@ -157,11 +154,11 @@ To ensure that your important data is retained, you may want to use a pinning se
 6. Once the file has finished uploading, click **Pin Explorer** to view any files you have pinned.
 7. You should be able to see your `index.html` file pinned:
 
-    ![The Pinata Pin Explorer screen showing the index.html pinnded.](images/pinned-index-file-in-pinata.png)
+    ![The Pinata Pin Explorer screen showing the index.html pinnded.](images/single-page-website/pinned-index-file-in-pinata.png)
 
 8. Click the **IPFS Hash** of your `index.html` file to open your website through the Pinata gateway.
 
-    ![Random planet fact website pinned using Pinata and displayed in Firefox](images/pinned-random-planet-fact-website.png)
+    ![Random planet fact website pinned using Pinata and displayed in Firefox](images/single-page-website/pinned-random-planet-fact-website.png)
 
 ## Set up a domain
 
@@ -178,18 +175,18 @@ We used Namecheap, but the process is very similar across all domain name servic
 5. Copy the **IPFS Hash** link.
 6. In your domain name providers **Redirection Settings** section, paste in the **IPFS Hash** link you just copied.
 
-    ![Redirecting a source URL to an IPFS Hash link within Namecheap.](images/namecheap-source-url-redirect.png)
+    ![Redirecting a source URL to an IPFS Hash link within Namecheap.](images/single-page-website/namecheap-source-url-redirect.png)
 
 7. Save your changes.
 
 Domain name services are fairly slow to update, but in a few hours, you should be able to go to your domain and see the website you pinned using Pinata!
 
-![Random planet facts site with the randomplanetfacts.xyz url](images/random-planets-with-correct-url.png)
+![Random planet facts site with the randomplanetfacts.xyz url](images/single-page-website/random-planets-with-correct-url.png)
 
 ## Further improvements
 
 This project was designed to get you up and running quickly, but there are many improvements we can make here.
 
-You may have noticed that when visiting [randomplanetfacts.xyz](https://randomplanetfacts.xyz), your browser redirects to [gateway.pinata.cloud/ipfs/QmW7S5HR...](https://gateway.pinata.cloud/ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA).
+You may have noticed that when visiting [randomplanetfacts.xyz](https://randomplanetfacts.xyz), your browser redirects to [gateway.pinata.cloud/ipfs/QmW7S5HR...](https://gateway.pinata.cloud/ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA). This isn't great for the user's experience, and it can cause issues with security certificates and other website validation methods.
 
 Another issue is that the website is incredibly simple. There are no images, stylesheets, or javascript files. If you're interested in building a more complex site using IPFS, [carry on with this tutorial series 🡒](#)
