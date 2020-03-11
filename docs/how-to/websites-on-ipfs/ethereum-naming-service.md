@@ -39,6 +39,10 @@ You must have an account within MetaMask with a balance of around `0.05 ETH`.
 
     ![Waiting for the 2nd transaction to be confirmed.](images/ethereum-naming-service/ens-complete-registration.png)
 
+You should now be able to see all the settings for your `.eth` domain:
+
+![All the domain settings within ENS](images/ethereum-naming-service/ens-domain-settings-page.png)
+
 ## Link your IPFS content identifier (CID)
 
 11. Click the plus `+` icon next to **Records**.
