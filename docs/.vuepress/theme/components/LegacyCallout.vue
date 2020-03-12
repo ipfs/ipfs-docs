@@ -1,39 +1,39 @@
 <template>
   <div class="legacy-callout">
     <p>
-      <b>This site is in beta. Help us improve it!</b>
+      <b>This docs site is new. Help us improve it!</b>
     </p>
     <section>
       <div class="block">
         <ul>
           <li>
             <a
-              href="https://github.com/ipfs/docs/issues/new?assignees=&labels=OKR+3%3A+Content+Improvement%2C+docs-ipfs&template=content-request.md&title=%5BCONTENT+REQUEST%5D+%28add+your+title+here%21%29"
+              href="https://github.com/filecoin-project/filecoin-docs/issues/new?assignees=&labels=Content+Improvement&template=content-request.md&title=%5BCONTENT+REQUEST%5D+%28add+your+title+here%21%29"
               target="_blank"
               >Suggest new content</a
             >
           </li>
-          <li>
+          <!-- <li>
             <a href="https://ipfs.canny.io/docs-features" target="_blank"
               >Request features</a
             >
-          </li>
+          </li> -->
         </ul>
       </div>
       <div class="block">
         <ul>
           <li>
             <a
-              href="https://github.com/ipfs/docs/issues/new?assignees=&labels=OKR+3%3A+Content+Improvement%2C+docs-ipfs&template=documentation-issue.md&title=%5BDOCS+ISSUE%5D+%28add+your+title+here%21%29"
+              href="https://github.com/filecoin-project/filecoin-docs/issues/new?assignees=&labels=Content+Improvement&template=documentation-issue.md&title=%5BDOCS+ISSUE%5D+%28add+your+title+here%21%29"
               target="_blank"
               >Give general feedback</a
             >
           </li>
-          <li v-if="$site.themeConfig.betaTestFormUrl">
+          <!-- <li v-if="$site.themeConfig.betaTestFormUrl">
             <a :href="$site.themeConfig.betaTestFormUrl" target="_blank"
               >Become a tester</a
             >
-          </li>
+          </li> -->
         </ul>
       </div>
     </section>

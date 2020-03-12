@@ -5,8 +5,8 @@ module.exports = {
   locales: {
     '/': {
       lang: 'en-US',
-      title: 'IPFS Docs',
-      description: 'IPFS Documentation'
+      title: 'Filecoin Docs',
+      description: 'Filecoin Documentation'
     }
   },
   markdown: {
@@ -22,33 +22,33 @@ module.exports = {
   },
   themeConfig: {
     algolia: {
-      apiKey: 'e6dcd48beb5db629bf77c892d38fa091',
-      indexName: 'ipfs'
+      apiKey: 'e6dcd48beb5db629bf77c892d38fa091', //TODO: replace
+      indexName: 'ipfs' // TODO: replace
     },
     betaTestFormUrl:
       'https://docs.google.com/forms/d/1LVaD1B2uyW6Ff0jfU_iQ5mCeyQcHfyQO6BDD99XAgK0/viewform',
     defaultImage: '/images/social-card.png',
     author: {
-      name: 'IPFS Team',
-      twitter: '@ipfsbot'
+      name: 'Filecoin Team',
+      twitter: '@filecoin'
     },
     keywords:
-      'IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
+      'Filecoin, crypto, mining, blockchain, IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
     // edit links
-    // repo: 'ipfs/ipfs-docs-v2',
-    domain: 'https://docs-beta.ipfs.io',
-    docsRepo: 'ipfs/ipfs-docs-v2',
+    // repo: 'filecoin-project/filecoin-docs',
+    domain: 'https://docs-beta.ipfs.io', // TODO: replace
+    docsRepo: 'filecoin-project/filecoin-docs',
     docsDir: 'docs',
     docsBranch: 'master',
     feedbackWidget: {
-      docsRepoIssue: 'ipfs/docs'
+      docsRepoIssue: 'filecoin-project/filecoin-docs'
     },
     editLinks: false,
     // page nav
     nextLinks: false,
     prevLinks: false,
     // ui/ux
-    logo: '/images/ipfs-logo.svg',
+    logo: '/images/filecoin-symbol-color.png', // TODO: Find an SVG to use here
     locales: {
       '/': {
         label: 'English',
@@ -281,7 +281,7 @@ module.exports = {
                     'https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com',
                     'Community video calls'
                   ],
-                  ['https://proto.school/#/chapters', 'ProtoSchool chapters'],
+                  ['https://proto.school/#/events', 'ProtoSchool workshops'],
                   ['https://www.meetup.com/members/249142444/', 'Meetups'],
                   '/community/social-media',
                   ['https://awesome.ipfs.io', 'Awesome IPFS']
@@ -349,7 +349,7 @@ module.exports = {
     [
       '@vuepress/google-analytics',
       {
-        ga: 'UA-96910779-15'
+        ga: '' // TODO: replace w/ correct Google Analytics ID
       }
     ],
     [
@@ -392,7 +392,7 @@ module.exports = {
       {
         // add <link rel="canonical" header (https://tools.ietf.org/html/rfc6596)
         // to deduplicate SEO across all copies loaded from various public gateways
-        baseURL: 'https://docs-beta.ipfs.io'
+        baseURL: 'https://docs-beta.ipfs.io' // TODO: replace
       }
     ]
   ],
