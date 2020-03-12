@@ -1,9 +1,9 @@
 ---
 title: Social media
 sidebarDepth: 0
-legacyUrl: https://docs.ipfs.io/community/
-description: Learn where to find IPFS on your favorite social media platform.
+description: Learn where to find Filecoin on your favorite social media platform.
 ---
+# TODO: UPDATE/REPLACE/REMOVE THIS ARTICLE (no edits made yet)
 
 # Social media
 

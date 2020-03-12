@@ -1,8 +1,8 @@
 ---
 title: IRC
-legacyUrl: https://docs.ipfs.io/community/irc/
 description: How to connect with the IPFS community using Internet Relay Chat (IRC).
 ---
+# TODO: UPDATE/REPLACE/REMOVE THIS ARTICLE (no edits made yet)
 
 # Internet Relay Chat (IRC)
 

@@ -1,8 +1,8 @@
 ---
 title: Community
-legacyUrl: https://docs.ipfs.io/community/
-description: Become part of the IPFS community! Learn how here.
+description: Become part of the Filecoin community! Learn how here.
 ---
+# TODO: UPDATE/REPLACE/REMOVE THIS ARTICLE (only ProtoSchool section has been updated)
 
 # Community
 
@@ -26,7 +26,7 @@ As an open-source project, most IPFS planning and synchronous discussion happens
 
 ## ProtoSchool chapters
 
-ProtoSchool isn't just home to interactive tutorials on dweb topics — it's also a vibrant community of makers and do-ers around the globe! [ProtoSchool chapters](https://proto.school/#/chapters) worldwide host events regularly, offering you the opportunity to complete our interactive tutorials with the support of local mentors.
+ProtoSchool isn't just home to interactive tutorials on dweb topics — it's also a vibrant community of makers and do-ers around the globe! Community groups worldwide host [ProtoSchool workshops](https://proto.school/#/events) regularly, offering you the opportunity to complete our interactive tutorials with the support of local mentors.
 
 ## Meetups
 

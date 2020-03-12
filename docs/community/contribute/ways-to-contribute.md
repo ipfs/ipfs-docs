@@ -1,11 +1,11 @@
 ---
 title: Ways to contribute
-legacyUrl: https://docs.ipfs.io/community/contribute/how-to-help/
-description: Learn about how to contribute to IPFS, the InterPlanetary File System.
+description: Learn about how to contribute to Filecoin
 ---
 
-# Ways to contribute
+# TODO: UPDATE OR REPLACE THIS ARTICLE (no updates made yet)
 
+# Ways to contribute
 So you want to contribute to IPFS and the ecosystem? Here is a quick listing of things we need help with and how you can get started. Even if what you want to do is not listed here, we probably accept contributions for it! If you're unsure, please open a issue.
 
 ## Code

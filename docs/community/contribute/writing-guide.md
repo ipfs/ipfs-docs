@@ -1,7 +1,9 @@
 ---
 title: Writing guide
-description: Learn the specifics of how to write documentation for the IPFS project.
+description: Learn the specifics of how to write documentation for the Filecoin project.
 ---
+
+# TODO: UPDATE OR REPLACE THIS ARTICLE (updated some IPFS references to Filecoin but examples can be improved)
 
 # Writing guide
 
@@ -11,7 +13,7 @@ This guide explains how to write an article. While the [grammar, formatting, and
 
 The purpose of a walkthrough is to tell the user _how_ to do something. They do not need to convince the reader of something or explain a concept. Walkthroughs are a list of steps the reader must follow to achieve a process or function.
 
-The vast majority of documentation within the IPFS Docs project falls under the _Walkthrough_ category. Walkthroughs are generally quite short, have a neutral tone, and teach the reader how to achieve a particular process or function. They present the reader with concrete steps on where to go, what to type, and things they should click on. There is little to no _conceptual_ information within walkthroughs.
+The vast majority of documentation within the Filecoin Docs project falls under the _Walkthrough_ category. Walkthroughs are generally quite short, have a neutral tone, and teach the reader how to achieve a particular process or function. They present the reader with concrete steps on where to go, what to type, and things they should click on. There is little to no _conceptual_ information within walkthroughs.
 
 ### Goals
 
@@ -27,7 +29,7 @@ Use the following goals when writing walkthroughs:
 
 #### Function or process
 
-The end goal of a walkthrough is for the reader to achieve a very particular function. _Installing the IPFS Desktop application_ is an example. Following this walkthrough isn't going to teach the reader much about working with the decentralized web or what IPFS is. Still, by the end, they'll have the IPFS Desktop application installed on their computer.
+The end goal of a walkthrough is for the reader to achieve a very particular function. _Installing the Filecoin Desktop application_ is an example. Following this walkthrough isn't going to teach the reader much about working with the decentralized web or what Filecoin is. Still, by the end, they'll have the Filecoin Desktop application installed on their computer.
 
 #### Short length
 
@@ -75,15 +77,15 @@ Articles are separated into five major sections:
 
 When writing a tutorial, you're teaching a reader how to achieve a complex end-goal. Tutorials are a mix of walkthroughs and conceptual articles. Most tutorials will span several pages, and contain multiple walkthroughs within them.
 
-Take the hypothetical tutorial _Get up and running with IPFS_, for example. This tutorial will likely have the following pages:
+Take the hypothetical tutorial _Get up and running with Filecoin_, for example. This tutorial will likely have the following pages:
 
-1. A brief introduction to what IPFS is.
-2. Install the IPFS Desktop application.
-3. Upload and serve a file through the IPFS Desktop application.
-4. Install the IPFS daemon through the command line.
-5. Upload and serve a file through the IPFS daemon.
+1. A brief introduction to what Filecoin is.
+2. Install the Filecoin Desktop application.
+3. Upload and serve a file through the Filecoin Desktop application.
+4. Install the Filecoin daemon through the command line.
+5. Upload and serve a file through the Filecoin daemon.
 6. Pinning and why it's useful.
-7. How to pin a file on IPFS.
+7. How to pin a file on Filecoin.
 
 Pages `1` and `6` are conceptual articles, describing particular design patterns and ideas to the reader. All the other pages are walkthroughs instructing the user how to perform one specific action.
 

@@ -1,19 +1,20 @@
 ---
 title: Grammar, formatting, and style
-description: Learn the syntax and formatting rules for writing documentation for the IPFS project.
+description: Learn the syntax and formatting rules for writing documentation for the Filecoin project.
 ---
+# TODO: UPDATE OR REPLACE THIS ARTICLE (useful but some examples still reference IPFS)
 
 # Grammar, formatting, and style
 
-This page details the syntax and formatting rules for writing IPFS documentation. For more conceptual ideas of writing, check out the [writing guide](/community/contribute/writing-guide/).
+This page details the syntax and formatting rules for writing Filecoin documentation. For more conceptual ideas of writing, check out the [writing guide](/community/contribute/writing-guide/).
 
 ## Grammar and spelling
 
-Here are some language-specific rules that the IPFS documentation follows. If you use a writing service like [Grammarly](https://www.grammarly.com/), most of these rules are turned on by default.
+Here are some language-specific rules that the Filecoin documentation follows. If you use a writing service like [Grammarly](https://www.grammarly.com/), most of these rules are turned on by default.
 
 ### American English
 
-While IPFS is a global project, the fact is that American English is the most commonly used _style_ of English used today. With that in mind, when writing content for the IPFS project, use American English spelling. The basic rules for converting other styles of English into American English are:
+While Filecoin is a global project, the fact is that American English is the most commonly used _style_ of English used today. With that in mind, when writing content for the Filecoin project, use American English spelling. The basic rules for converting other styles of English into American English are:
 
 1. Swap the `s` for a `z` in words like _categorize_ and _pluralize_.
 2. Remove the `u` from words like _color_ and _honor_.
@@ -40,7 +41,7 @@ How the Markdown syntax looks, and code formatting rules to follow.
 
 ### Syntax
 
-The IPFS Docs project follows the _GitHub Flavoured Markdown_ syntax for markdown. This way, all articles display properly within GitHub itself. This gives readers the option to view articles on [the docs website](https://docs-beta.ipfs.io) or [its GitHub repo](https://github.com/ipfs/ipfs-docs-v2).
+The IPFS Docs project follows the _GitHub Flavoured Markdown_ syntax for markdown. This way, all articles display properly within GitHub itself. This gives readers the option to view articles on [the docs website](https://docs-beta.Filecoin.io) or [its GitHub repo](https://github.com/filecoin-project/filecoin-docs).
 
 ### Rules
 
@@ -94,11 +95,11 @@ The following rules apply to editing and styling text.
    ```markdown
    <!-- This title is wrong. -->
 
-   ## What is IPFS?
+   ## What is Filecoin?
 
    <!-- This title is better. -->
 
-   ## IPFS explained
+   ## Filecoin explained
    ```
 
 #### Bold text
