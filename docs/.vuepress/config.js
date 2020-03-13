@@ -281,7 +281,7 @@ module.exports = {
                     'https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com',
                     'Community video calls'
                   ],
-                  ['https://proto.school/#/chapters', 'ProtoSchool chapters'],
+                  ['https://proto.school/#/events', 'ProtoSchool workshops'],
                   ['https://www.meetup.com/members/249142444/', 'Meetups'],
                   '/community/social-media',
                   ['https://awesome.ipfs.io', 'Awesome IPFS']
