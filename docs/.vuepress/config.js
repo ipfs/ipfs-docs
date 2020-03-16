@@ -48,7 +48,7 @@ module.exports = {
     nextLinks: false,
     prevLinks: false,
     // ui/ux
-    logo: '/images/filecoin-symbol-color.png', // TODO: Find an SVG to use here
+    logo: '/images/filecoin-symbol-color.svg',
     locales: {
       '/': {
         label: 'English',
@@ -349,7 +349,7 @@ module.exports = {
     [
       '@vuepress/google-analytics',
       {
-        ga: '' // TODO: replace w/ correct Google Analytics ID
+        ga: 'UA-148766289-2'
       }
     ],
     [
@@ -392,7 +392,7 @@ module.exports = {
       {
         // add <link rel="canonical" header (https://tools.ietf.org/html/rfc6596)
         // to deduplicate SEO across all copies loaded from various public gateways
-        baseURL: 'https://docs-beta.ipfs.io' // TODO: replace
+        baseURL: 'https://filecoin-docs.netlify.com/'
       }
     ]
   ],

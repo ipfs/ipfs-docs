@@ -4,7 +4,7 @@ legacyUrl: https://docs.ipfs.io/
 description: The home page for developer documentation for IPFS, the InterPlanetary File System.
 ---
 
-# Learn how to build the future of the internet
+# Look, it's some fake Filecoin docs!!!
 
 <p style="font-size:1.65rem; font-weight: 200; line-height: 2rem; margin-top: -15px;">No matter who you are or what you're creating, you can be part of the movement to create the next generation of the internet. This site contains everything you need to start building using the InterPlanetary File System (IPFS) and pave the way for the future Web.</p>
 
@@ -20,13 +20,13 @@ These tools can help you use and build on IPFS more quickly and efficiently — 
 
 ## Host your website on IPFS
 
-Protect yourself from single-point-of-failure risks and benefit from decentralized infrastructure by hosting your static website using IPFS. If you're new to IPFS, this is an excellent place to start learning how to build on the decentralized web. 
+Protect yourself from single-point-of-failure risks and benefit from decentralized infrastructure by hosting your static website using IPFS. If you're new to IPFS, this is an excellent place to start learning how to build on the decentralized web.
 
 [Start the tutorial →](/how-to/host-single-page-site/)
 
 ## See what others are building
 
-Are you looking for inspiration? You can find a huge collection of awesome community projects over at Awesome IPFS. 
+Are you looking for inspiration? You can find a huge collection of awesome community projects over at Awesome IPFS.
 
 [Check out Awesome IPFS now →](https://awesome.ipfs.io/)
 

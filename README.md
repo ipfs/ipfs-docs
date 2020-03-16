@@ -4,6 +4,7 @@ This repo is a **work in progress** by the Filecoin Storage & Dev Tools team, bu
 
 **Please visit [docs.filecoin.io](https://docs.filecoin.io/) to reference current documentation.**
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b3586cdd-c0e3-404c-b451-875025e0e990/deploy-status)](https://app.netlify.com/sites/filecoin-docs/deploys)
 
 ## Working on this beta platform
 
