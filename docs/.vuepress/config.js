@@ -100,6 +100,24 @@ module.exports = {
             ]
           },
           {
+            title: 'Updates',
+            path: '/updates/',
+            children: [
+              {
+                title: 'Go-IPFS 0.5',
+                sidebarDepth: 2,
+                collapsable: false,
+                children: [
+                  '/updates/go-ipfs-0-5/',
+                  '/updates/go-ipfs-0-5/update-procedure',
+                  '/updates/go-ipfs-0-5/features',
+                  '/updates/go-ipfs-0-5/fixes',
+                  '/updates/go-ipfs-0-5/troubleshooting'
+                ]
+              }
+            ]
+          },
+          {
             title: 'Concepts',
             path: '/concepts/',
             children: [
