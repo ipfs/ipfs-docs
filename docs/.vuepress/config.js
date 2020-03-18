@@ -64,7 +64,41 @@ module.exports = {
         },
         nav: require('./nav/en'),
         sidebar: [
-          '/install/',
+          {
+            title: 'Install',
+            path: '/install/',
+            children: [
+              {
+                title: 'Desktop',
+                sidebarDepth: 2,
+                collapsable: false,
+                children: [
+                  '/install/desktop/windows',
+                  '/install/desktop/macos',
+                  '/install/desktop/linux'
+                ]
+              },
+              {
+                title: 'Browser',
+                sidebarDepth: 2,
+                collapsable: false,
+                children: [
+                  '/install/browser/chrome',
+                  '/install/browser/firefox'
+                ]
+              },
+              {
+                title: 'Terminal',
+                sidebarDepth: 2,
+                collapsable: false,
+                children: [
+                  '/install/terminal/windows',
+                  '/install/terminal/macos',
+                  '/install/terminal/linux'
+                ]
+              }
+            ]
+          },
           {
             title: 'Concepts',
             path: '/concepts/',
@@ -167,7 +201,7 @@ module.exports = {
                     'https://github.com/ipfs/archives/tree/master/tutorials/replicating-large-datasets',
                     'Replicate large datasets'
                   ],
-                  '/how-to/move-ipfs-installation',
+                  '/how-to/move-ipfs-installation'
                 ]
               },
               {
