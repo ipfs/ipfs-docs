@@ -1,6 +1,6 @@
 ---
 title: Features
-issueUrl: https://github.com/ipfs/docs/issues/470
+issueUrl: https://github.com/ipfs/docs/issues/471
 ---
 
 # Features
