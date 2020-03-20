@@ -5,4 +5,6 @@ issueUrl: https://github.com/ipfs/docs/issues/470
 
 # Recent releases
 
-<ContentStatus />
+This section contains information about recent IPFS releases. You can find installation instructions, update information, and release notes here.
+
+## [Go-IPFS 0.5](/recent-releases/go-ipfs-0-5/)
