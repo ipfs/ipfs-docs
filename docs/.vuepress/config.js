@@ -105,7 +105,7 @@ module.exports = {
             children: [
               {
                 title: 'Go-IPFS 0.5',
-                sidebarDepth: 2,
+                sidebarDepth: 1,
                 collapsable: false,
                 children: [
                   '/updates/go-ipfs-0-5/',
