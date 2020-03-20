@@ -9,7 +9,11 @@ The distrubuted hash table (DHT) is how IPFS nodes keep track of who has what da
 
 ## Faster IPNS
 
-Needs expanding.
+<!-- This update makes IPNS faster. -->
+
+<!-- What is IPNS, why was it slow? -->
+
+<!-- How has this update made if faster? -->
 
 ## Refactored Bitswap
 
@@ -24,7 +28,19 @@ However, go-ipfs 0.5 may perform slightly _worse_ in some edge-cases when downlo
 
 ## TLS by default
 
-## .eth link support
+<!-- What TLS is. -->
+
+<!-- Why is was selected as a default option. -->
+
+<!-- What this means for end-users. -->
+
+## `.eth` link support
+
+<!-- What `.eth` is. -->
+
+<!-- Why it's important. -->
+
+<!-- How end-users can use is. -->
 
 ## Subdomain support in HTTP gateway
 
@@ -37,8 +53,28 @@ However, this also means we'll be introducing a redirect from the path-based gat
 
 ## Faster file and pins listing
 
+<!-- This one's pretty obvious. Make it faster to post files and pin then to nodes. -->
+
+<!-- What had to be changed to make this process faster -->
+
 ## Systemd support
+
+<!-- What is Systemd? -->
+
+<!-- Why is it imporant/what other process rely on it? -->
+
+<!-- How does this support improve the lives of end-users -->
 
 ## Badger FS integration
 
+<!-- What was wrong with the old file-system -->
+
+<!-- What is Badger? -->
+
+<!-- How is this going to change how end-users interact with Go-IPFS? -->
+
 ## Testground added
+
+<!-- What is testground? -->
+
+<!-- How does it impact end-users? -->
