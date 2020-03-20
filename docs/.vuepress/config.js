@@ -100,7 +100,7 @@ module.exports = {
             ]
           },
           {
-            title: 'Updates',
+            title: 'Recent releases',
             path: '/updates/',
             children: [
               {
