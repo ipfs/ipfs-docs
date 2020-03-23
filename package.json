@@ -17,7 +17,7 @@
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-task-lists": "^2.1.1",
     "markdown-it-video": "^0.6.3",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.1",
     "stylus-supremacy": "^2.14.0",
     "vuepress": "^1.4.0",
     "vuepress-plugin-canonical": "^1.0.0",
