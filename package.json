@@ -12,7 +12,7 @@
     "@vuepress/plugin-last-updated": "^1.4.0",
     "all-relative": "^1.0.1",
     "husky": "^4.2.3",
-    "lint-staged": "^10.0.8",
+    "lint-staged": "^10.0.9",
     "markdown-it-deflist": "^2.0.3",
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-task-lists": "^2.1.1",
