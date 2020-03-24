@@ -5,44 +5,9 @@ issueUrl: https://github.com/ipfs/docs/issues/471
 
 ## Improved DHT and content rounting
 
-The distrubuted hash table (DHT) is how IPFS nodes keep track of who has what data. The DHS has implementation has been almost completely rewritten in this release, with a new protocol version. Providing, finding content, and resolving IPNS records are now all much faster. However there are certain risks involved with this update, due to the significant amount of changes that have go into this feature.
+The distrubuted hash table (DHT) is how IPFS nodes keep track of who has what data. The DHS has implementation has been almost completely rewritten in this release, with a new protocol version. Providing, finding content, and resolving IPNS records are now all much faster. However there are risks involved with this update due to the significant amount of changes that have go into this feature.
 
-<!-- Explain what happens when you're behind a NAT. -->
-
-## Faster IPNS
-
-<!-- This update makes IPNS faster. -->
-
-<!-- What is IPNS, why was it slow? -->
-
-<!-- How has this update made if faster? -->
-
-## Refactored Bitswap
-
-This release includes a major Bitswap refactor, running a new and backwards compatible Bitswap protocol. We expect these changes to improve performance significantly.
-
-With the refactored Bitswap, we expect:
-
-- Few to no duplicate blocks when fetching data.
-- Better parallelism when fetching from multiple peers.
-
-However, go-ipfs 0.5 may perform slightly _worse_ in some edge-cases when downloading older go-ipfs versions (where it has less information about who has what). Our tests have shown that this isn't actually an issue in practice, but it's still theoretically possible.
-
-## TLS by default
-
-<!-- What TLS is. -->
-
-<!-- Why is was selected as a default option. -->
-
-<!-- What this means for end-users. -->
-
-## `.eth` link support
-
-<!-- What `.eth` is. -->
-
-<!-- Why it's important. -->
-
-<!-- How end-users can use is. -->
+> TODO: Explain what happens when you're behind a NAT.
 
 ## Subdomain support in HTTP gateway
 
@@ -58,19 +23,16 @@ Conforming to this policy was an issue before this release. There was a signific
 
 This update to subdomain support means we'll be introducing a redirect from the path-based gateway to the correct subdomain, and doing so could cause issues with [cURL](https://en.wikipedia.org/wiki/CURL), which doesn't follow redirects by default. To mitigate this issue, either change your cURL invocations to call `curl -L`, or reconfigure your IPFS node to not use the subdomain gateway on the affected domain.
 
-## Faster file and pins listing
+## Refactored Bitswap
 
-<!-- This one's pretty obvious. Make it faster to post files and pin then to nodes. -->
+This release includes a major Bitswap refactor, running a new and backwards compatible Bitswap protocol. We expect these changes to improve performance significantly.
 
-<!-- What had to be changed to make this process faster -->
+With the refactored Bitswap, we expect:
 
-## Systemd support
+- Few to no duplicate blocks when fetching data.
+- Better parallelism when fetching from multiple peers.
 
-<!-- What is Systemd? -->
-
-<!-- Why is it imporant/what other process rely on it? -->
-
-<!-- How does this support improve the lives of end-users -->
+However, go-ipfs 0.5 may perform slightly _worse_ in some edge-cases when downloading older go-ipfs versions (where it has less information about who has what). Our tests have shown that this isn't actually an issue in practice, but it's still theoretically possible.
 
 ## Badger integration
 
@@ -82,8 +44,37 @@ The current and default file system used by Go-IPFS is [FlatFS](https://github.c
 
 In this release, we've made some changes to our datastore interfaces that allowed us to take advantage of some features in Badger and other databases. In particular we now use asynchronous writes by default. Using Badger's asynchronous write feature increased our write performance by up to 300%.
 
+## Faster IPNS
+
+> TODO: What is IPNS, why is it slow?
+> TODO: This update makes IPNS faster.
+> TODO: How has this update made if faster?
+
+## TLS by default
+
+> TODO: What is TLS.
+> TODO: What has it been selected as the default option.
+> TODO: What other options exist still.
+> TODO: What does this mean for users?
+
+## `.eth` link support
+
+> TODO: What `.eth` link is.
+> TODO: Why it's important (I'm assuming it links into the subdomains work in this release).
+> TODO: How can users use it?
+
+## Faster file and pins listing
+
+> TODO: This one's pretty obvious. Make it faster to post files and pin then to nodes.
+> TODO: What had to be changed to make this process faster
+
+## Systemd support
+
+> TODO: What is SystemD?
+> TODO: WHy is it important.what other processes rely on it?
+> TODO: How does SystemD support improve the lives of users?
+
 ## Testground added
 
-<!-- What is testground? -->
-
-<!-- How does it impact end-users? -->
+> TODO: What is Testground?
+> TODO: How does it impact users?
