@@ -47,34 +47,45 @@ In this release, we've made some changes to our datastore interfaces that allowe
 ## Faster IPNS
 
 > TODO: What is IPNS, why is it slow?
+
 > TODO: This update makes IPNS faster.
+
 > TODO: How has this update made if faster?
 
 ## TLS by default
 
 > TODO: What is TLS.
+
 > TODO: What has it been selected as the default option.
+
 > TODO: What other options exist still.
+
 > TODO: What does this mean for users?
 
 ## `.eth` link support
 
 > TODO: What `.eth` link is.
+
 > TODO: Why it's important (I'm assuming it links into the subdomains work in this release).
+
 > TODO: How can users use it?
 
 ## Faster file and pins listing
 
 > TODO: This one's pretty obvious. Make it faster to post files and pin then to nodes.
+
 > TODO: What had to be changed to make this process faster
 
 ## Systemd support
 
 > TODO: What is SystemD?
+
 > TODO: WHy is it important.what other processes rely on it?
+
 > TODO: How does SystemD support improve the lives of users?
 
 ## Testground added
 
 > TODO: What is Testground?
+
 > TODO: How does it impact users?
