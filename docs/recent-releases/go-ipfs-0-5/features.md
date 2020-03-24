@@ -44,6 +44,8 @@ However, go-ipfs 0.5 may perform slightly _worse_ in some edge-cases when downlo
 
 ## Subdomain support in HTTP gateway
 
+<!-- Speak to Lidel. -->
+
 The gateway will switch from `http://domain/ipfs/CID/...` to `http://cid.ipfs.domain/...` by default this will:
 
 - Ensure that every dapp gets its own browser origin.
@@ -66,6 +68,8 @@ However, this also means we'll be introducing a redirect from the path-based gat
 <!-- How does this support improve the lives of end-users -->
 
 ## Badger FS integration
+
+<!-- Speak to Adin about this. -->
 
 <!-- What was wrong with the old file-system -->
 
