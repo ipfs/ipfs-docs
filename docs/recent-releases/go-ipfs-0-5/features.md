@@ -46,14 +46,17 @@ However, go-ipfs 0.5 may perform slightly _worse_ in some edge-cases when downlo
 
 ## Subdomain support in HTTP gateway
 
-<!-- Speak to Lidel. -->
+There are three _gateways_ for HTTP within IPFS:
 
-The gateway will switch from `http://domain/ipfs/CID/...` to `http://cid.ipfs.domain/...` by default this will:
+1. Path-based
+1. Subdomain-based
+1. Through DNS Link
 
-- Ensure that every dapp gets its own browser origin.
-- Make it easier to write websites that "just work" with IPFS because absolute paths will now work.
+Path-based gateway management is simple to implement but comes with a host of security and compatibility issues - most of these issues linked to _same-origin policies_. Under the policy, a web browser permits scripts contained in a first web page to access data in a second web page, but only if both web pages have the same _origin_.
 
-However, this also means we'll be introducing a redirect from the path-based gateway to the correct subdomain. Unfortunately, this could cause issues with cURL, which doesn't follow redirects by default. If you run into this issue, you'll either need to change your cURL invocations to call `curl -L`, or you'll need to reconfigure your IPFS node to not use the subdomain gateway on the affected domain.
+Conforming to this policy was an issue before this release. There was a significant amount of _hackery_ needed to get subdomains working. With Go-IPFS 0.5, subdomains are supported straight out of the box. Users are also able to configure the gateway behavior per hostname. This implementation ensures that every application gets an individual browser origin. In summary, this update makes it easier to write websites that _just work_.
+
+This update to subdomain support means we'll be introducing a redirect from the path-based gateway to the correct subdomain, and doing so could cause issues with [cURL](https://en.wikipedia.org/wiki/CURL), which doesn't follow redirects by default. To mitigate this issue, either change your cURL invocations to call `curl -L`, or reconfigure your IPFS node to not use the subdomain gateway on the affected domain.
 
 ## Faster file and pins listing
 
