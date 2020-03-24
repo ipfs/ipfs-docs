@@ -3,9 +3,11 @@ title: Features
 issueUrl: https://github.com/ipfs/docs/issues/471
 ---
 
-## Improved DHT
+## Improved DHT and content rounting
 
 The distrubuted hash table (DHT) is how IPFS nodes keep track of who has what data. The DHS has implementation has been almost completely rewritten in this release, with a new protocol version. Providing, finding content, and resolving IPNS records are now all much faster. However there are certain risks involved with this update, due to the significant amount of changes that have go into this feature.
+
+<!-- Explain what happens when you're behind a NAT. -->
 
 ## Faster IPNS
 
@@ -67,15 +69,23 @@ However, this also means we'll be introducing a redirect from the path-based gat
 
 <!-- How does this support improve the lives of end-users -->
 
-## Badger FS integration
+## Badger integration
+
+Badger has been in go-ipfs for over a year as an experimental feature, and we're still leaving as experimental for now. However, for this release, we've done some interface changes that have allowed us to take advantage of features in Badger to increase the performance of adding data to Go-IPFS.
 
 <!-- Speak to Adin about this. -->
 
-<!-- What was wrong with the old file-system -->
+<!-- What was wrong with the old file system -->
+
+The current and default file system used by Go-IPFS is [FlatFS](https://github.com/ipfs/go-ds-flatfs). FlatFS essentially stores blocks of data as files on your file system. However, there are lots of optimizations a specialized database can do that a standard file system can not. On a standard hard drive, reading from a contiguous array of bytes is much faster than randomly reading bytes, so having a database that operates as one single file has lots of room for optimization.
 
 <!-- What is Badger? -->
 
+[BadgerDB](https://blog.dgraph.io/post/badger/) is a key-value database written in Go. Version 1 came out in November 2017, and the project has since received praise for being more efficient and performant than other non-Go-based key-value stores. You can find out more about [BadgerDB on GitHub](https://github.com/dgraph-io/badger#badgerdb------).
+
 <!-- How is this going to change how end-users interact with Go-IPFS? -->
+
+In this release, we've made some changes to our datastore interfaces that allowed us to take advantage of some features in Badger and other databases. In particular we now use asynchronous writes by default. Using Badger's asynchronous write feature increased our write performance by up to 300%.
 
 ## Testground added
 
