@@ -13,3 +13,71 @@ related:
 # Usage ideas and examples
 
 <ContentStatus />
+
+
+IPFS is a versatile technology.
+
+## Social Networks
+
+## CDN
+
+## Offline-first use
+
+## Decentralized databases (orbit-db)
+
+## Decentralized websites
+
+## Distributed apps
+
+## Archive large datasets
+
+### Decentralized Internet Archive
+https://github.com/oduwsdl/ipwb
+
+### QRI: Versioning datasets
+
+## Package managers
+https://youtu.be/Yck2LimWcAY
+
+### The Protocol Labs effort
+
+### Container distribution (netflix)
+
+## Filesharing
+enzypt.io...
+
+## Decentralized ID (simpleid.xyz)
+
+## Deduplication
+
+## Uncensorable services
+Killcord.io
+
+## File hosting marketplace (Filecoin)
+
+## IPFS as a filesystem
+
+## E-commerce
+
+## Blockchain
+### Smart contracts
+### Offchain data storage (data, dataset, website, etc)
+
+## Document collaboration
+https://github.com/ipfs/ipfs/issues/238
+https://github.com/ipfs/camp/blob/master/DEEP_DIVES/39-using-crdts-to-build-real-time-collaborative-dapps.md
+
+## Decentralize Big Data processing
+https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf 
+https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf
+
+## Industry 4.0
+https://robonomics.network/en/
+
+IPFS clusters
+IPFS collabrative clusters
+diffuse.sh
+dtube / https://simpleaswater.com/youtube-on-ipfs/
+qri https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/ELECTIVE_COURSE_G
+textiles
+simpleaswater.io
