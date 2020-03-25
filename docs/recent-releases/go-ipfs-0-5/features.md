@@ -5,9 +5,9 @@ issueUrl: https://github.com/ipfs/docs/issues/471
 
 ## Improved DHT and content rounting
 
-The distrubuted hash table (DHT) is how IPFS nodes keep track of who has what data. The DHS has implementation has been almost completely rewritten in this release, with a new protocol version. Providing, finding content, and resolving IPNS records are now all much faster. However there are risks involved with this update due to the significant amount of changes that have go into this feature.
+The distrubuted hash table (DHT) is how IPFS nodes keep track of who has what data. The DHS implementation has been almost completely rewritten in this release, with a new protocol version. Providing, finding content, and resolving IPNS records are now all much faster. However there are risks involved with this update due to the significant amount of changes that have gone into this feature.
 
-> TODO: Explain what happens when you're behind a NAT.
+IPFS now automatically detects if you are on a home network behind a NAT, or if other nodes can reach you directly. Only nodes which find they are externally reachable will participate in storing records in the DHT. Lookups and storage in the table has also been optimized to more closely match the current best practices.
 
 ## Subdomain support in HTTP gateway
 
@@ -54,7 +54,7 @@ In this release, we've made some changes to our datastore interfaces that allowe
 
 ## TLS by default
 
-> TODO: What is TLS.
+TLS, or Transport Layer Security, is a set of technologies which already is used for link layer encryption for most of the web browsing you do every day. Using TLS by default provides a robust and standard set of encryption and authentication primitives, which improve the stability, security, and performance of IPFS.
 
 > TODO: What has it been selected as the default option.
 
@@ -78,14 +78,8 @@ In this release, we've made some changes to our datastore interfaces that allowe
 
 ## Systemd support
 
-> TODO: What is SystemD?
-
-> TODO: WHy is it important.what other processes rely on it?
-
-> TODO: How does SystemD support improve the lives of users?
+Systemd has become a ubiquitous initialization system for linux distributions. Among is many functions, it provides a common mechanism for managing background processes; the various servers and tasks that run on your machine. IPFS for linux now plugs into the Systemd world, allowing it to be configured to automatically start with the computer, and to be controlled through the same interface as the other programs running on your computer.
 
 ## Testground added
 
-> TODO: What is Testground?
-
-> TODO: How does it impact users?
+Testground is a new testing framework that IPFS is using to validate the changes to the distributed aspects of the system. Complex changes, like the DHT, are difficult to understand through unit tests, or with a small number of mchines. Testground provides the ability to spin up thousands of virtual IPFS nodes in complex network topologies in order to gain confidence that changes will work when they're rolled out. With testground, expect more stability and regularity in upcoming IPFS releases.
