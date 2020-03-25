@@ -83,7 +83,7 @@ Actyx
 Actyx guy? 
 
 
-Radicle
+Radicle https://github.com/ipfs/camp/blob/master/DEEP_DIVES/45-building-dynamic-p2p-applications.md
 IPFS clusters
 IPFS collabrative clusters
 diffuse.sh
