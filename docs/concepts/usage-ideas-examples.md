@@ -36,6 +36,8 @@ Secure Scuttlebutt https://github.com/ipfs/camp/blob/master/UNCONF/ipfscamp2019-
 https://github.com/oduwsdl/ipwb
 
 ### QRI: Versioning datasets
+### Collaborative clusters
+https://collab.ipfscluster.io/
 
 ## Package managers
 https://youtu.be/Yck2LimWcAY
@@ -47,6 +49,7 @@ Netflix https://youtu.be/wNfk05D887M
 
 ## Filesharing
 enzypt.io...
+https://discuss.ipfs.io/t/dropbox-like-application-on-ipfs/7379/7
 
 ## Decentralized ID (simpleid.xyz)
 
@@ -54,6 +57,8 @@ enzypt.io...
 
 ## Uncensorable services
 Killcord.io
+
+## Decentralized ID
 
 ## File hosting marketplace (Filecoin)
 
@@ -70,18 +75,37 @@ Killcord.io
 ## Document collaboration
 https://github.com/ipfs/ipfs/issues/238
 https://github.com/ipfs/camp/blob/master/DEEP_DIVES/39-using-crdts-to-build-real-time-collaborative-dapps.md
+Code collaboration : https://radicle.xyz/
 
 ## Decentralize Big Data processing
 https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf 
 https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf
+https://discuss.ipfs.io/t/minerva-build-the-hadoop-hive-on-ipfs/5832
 
 ## Industry 4.0
 https://robonomics.network/en/
 Actyx
 
 ## Compress redundant data
-Actyx guy? 
+https://discuss.ipfs.io/t/interplanetary-telemetry-compression/3171/4
 
+## Decentralized maps
+https://discuss.ipfs.io/t/open-street-map-on-ipfs/6689/6
+
+## Distributed cards for spaced learning
+https://discuss.ipfs.io/t/check-out-my-flashcard-app-that-uses-the-ipfs/6543/2
+
+## Livestreaming
+https://discuss.ipfs.io/t/ipfs-for-live-streaming/6313/6
+
+## Serverless computing
+https://discuss.ipfs.io/t/ipfs-serverless-compute/5349
+
+## Uncensorable websites
+https://discuss.ipfs.io/t/news-torrent-paradise-use-ipfs/4725
+
+## Healthcare data 
+https://github.com/ipfs/notes/issues/292
 
 Radicle https://github.com/ipfs/camp/blob/master/DEEP_DIVES/45-building-dynamic-p2p-applications.md
 IPFS clusters
