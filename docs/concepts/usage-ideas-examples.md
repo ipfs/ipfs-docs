@@ -18,6 +18,7 @@ related:
 IPFS is a versatile technology.
 
 ## Social Networks
+Secure Scuttlebutt https://github.com/ipfs/camp/blob/master/UNCONF/ipfscamp2019-unconf-secure-scuttlebutt.md 
 
 ## CDN
 
@@ -42,6 +43,7 @@ https://youtu.be/Yck2LimWcAY
 ### The Protocol Labs effort
 
 ### Container distribution (netflix)
+Netflix https://youtu.be/wNfk05D887M 
 
 ## Filesharing
 enzypt.io...
@@ -63,6 +65,8 @@ Killcord.io
 ### Smart contracts
 ### Offchain data storage (data, dataset, website, etc)
 
+## Decouple data origin and security : Chrome signed exchanges https://github.com/ipfs/camp/blob/master/DEEP_DIVES/39-using-crdts-to-build-real-time-collaborative-dapps.md 
+
 ## Document collaboration
 https://github.com/ipfs/ipfs/issues/238
 https://github.com/ipfs/camp/blob/master/DEEP_DIVES/39-using-crdts-to-build-real-time-collaborative-dapps.md
@@ -73,11 +77,17 @@ https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf
 
 ## Industry 4.0
 https://robonomics.network/en/
+Actyx
 
+## Compress redundant data
+Actyx guy? 
+
+
+Radicle
 IPFS clusters
 IPFS collabrative clusters
 diffuse.sh
 dtube / https://simpleaswater.com/youtube-on-ipfs/
 qri https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/ELECTIVE_COURSE_G
-textiles
+Textile.io
 simpleaswater.io
