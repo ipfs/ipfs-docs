@@ -56,13 +56,33 @@ In this release, we've made some changes to our datastore interfaces that allowe
 
 [Transport layer security](https://en.wikipedia.org/wiki/Transport_Layer_Security) (TLS), is a set of technologies used for link-layer encryption. It's a commonly used technology; most of the web browsing you do every day uses TLS. Using TLS by default provides a robust set of encryption and authentication standards. These standards help to improve the stability, security, and performance of IPFS.
 
-## `.eth` link support
+## EthDNS support for `.eth`
 
-> TODO: What `.eth` link is.
+[Ethereum Name Service(ENS)](https://ens.domains/) offers a secure & decentralised way to address resources both on and off the blockchain using simple, human-readable names.
 
-> TODO: Why it's essential (I'm assuming it links into the subdomains work in this release).
+In IPFS context users can leverage [EIP 1577](https://eips.ethereum.org/EIPS/eip-1577) and use ENS to map names such as `aardvark.eth` to content paths like `/ipfs/bafy...`
 
-> TODO: How can users use it?
+EthDNS is a way to access information in the ENS from DNS, without running a local Ethereum client.
+
+[EthLink](https://eth.link) is a public EthDNS instance created for resolving ENS records behind `.eth` domains. Because `.eth` is not a registered DNS top-level domain it is normally inaccessible from DNS, but by appending `.link` to the domain the relevant information cam be obtained. For example, a DNS A record request for `mydomain.eth.link` would look up the A records in ENS for `mydomain.eth`.
+
+go-ipfs now supports resolution of DNSLink for `.eth` names via EthDNS instance at [eth.link](https://eth.link) transparently, which means one can use `/ipns/mydomain.eth` and it will work, without the need for adding `.link` suffix or changing DNS server.
+
+### Examples
+
+#### `.eth` in `ipfs resolve`
+
+Command line resolution from ENS name to IPFS content path:
+
+```console
+$ ipfs resolve -r /ipns/almonit.eth
+/ipfs/QmeXGvLAsLwuq4uDLqsH3XECWZYiJrAszRvkDuyR91ERQX
+```
+
+#### `.eth` loaded from local HTTP gateway
+
+When ENS website is opened from local subdomain gateway, the URL looks like this:
+[http://almonit.eth.ipns.localhost:8080](http://almonit.eth.ipns.localhost:8080) (requires go-ipfs >= 0.5)
 
 ## Faster file and pins listing
 
