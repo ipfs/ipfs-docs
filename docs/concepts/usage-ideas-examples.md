@@ -15,10 +15,11 @@ related:
 <ContentStatus />
 
 
-IPFS is a versatile technology.
+IPFS is a versatile technology. It can unlock usecases needing better compression, availability, partition tolerance, etc.
 
 ## Social Networks
 Secure Scuttlebutt https://github.com/ipfs/camp/blob/master/UNCONF/ipfscamp2019-unconf-secure-scuttlebutt.md 
+Peergos
 
 ## CDN
 
@@ -27,13 +28,42 @@ Secure Scuttlebutt https://github.com/ipfs/camp/blob/master/UNCONF/ipfscamp2019-
 ## Decentralized databases (orbit-db)
 
 ## Decentralized websites
+### Cohosting website: https://github.com/ipfs-shipyard/cohosting
 
 ## Distributed apps
 
+## Distributed storage
+https://awesomeopensource.com/project/RTradeLtd/Temporal
+
+## Creating Distributed Apps
+https://awesomeopensource.com/project/Ideea-inc/vipfs
+
 ## Archive large datasets
 
+## Offline first https://medium.com/offline-camp
+http://offlinefirst.org/casestudies/
+(goldmine) https://docs.google.com/document/d/1Mol6epw0sbj5FqS6akD-X5KJkGF0MwsOZQ5t1ehOGiM/edit
+### Ensure service on off-grid networks
+### Ensure service on unreliable networks
+### Ensure service during disaster recovery https://medium.com/offline-camp/passion-talk-offline-first-for-disaster-response-ffe4ef07a2c0?source=collection_category---4------0-----------------------
+
+## Protect activism
+
+## Interactive app in a classroom
+
+## Store your music on IPFS, access it from anywhere, listen to it offline
+
+## JOurnalism? Secure drop? 
+
+## Lower ingress/egress cost for your business
+
+### Mesh networking
+
+### A P2P browser
+Beaker
+
 ### Decentralized Internet Archive
-https://github.com/oduwsdl/ipwb
+https://github.com/oduwsdl/ipwb  ;   https://awesomeopensource.com/project/oduwsdl/ipwb
 
 ### QRI: Versioning datasets
 ### Collaborative clusters
@@ -50,6 +80,10 @@ Netflix https://youtu.be/wNfk05D887M
 ## Filesharing
 enzypt.io...
 https://discuss.ipfs.io/t/dropbox-like-application-on-ipfs/7379/7
+https://awesomeopensource.com/project/MichaelMure/Arbore
+http://datahop.network
+https://www.dropbox.com/s/wodmbi6ico3inya/Offline%20Presentation.pdf?dl=0
+### Pair with your friend via bluetooth or QR codes or Sound (https://github.com/ggerganov/wave-share#wave-share)
 
 ## Decentralized ID (simpleid.xyz)
 
@@ -58,13 +92,17 @@ https://discuss.ipfs.io/t/dropbox-like-application-on-ipfs/7379/7
 ## Uncensorable services
 Killcord.io
 
+## Extend HTTP for client to cache data  ? https://braid.news/ 
+
+## Enhance an event https://www.dropbox.com/s/wodmbi6ico3inya/Offline%20Presentation.pdf?dl=0
+
 ## Decentralized ID
 
 ## File hosting marketplace (Filecoin)
 
 ## IPFS as a filesystem
 
-## E-commerce
+## E-commerce (OpenBazaar)
 
 ## Blockchain
 ### Smart contracts
@@ -107,6 +145,12 @@ https://discuss.ipfs.io/t/news-torrent-paradise-use-ipfs/4725
 ## Healthcare data 
 https://github.com/ipfs/notes/issues/292
 
+## Serverless online gaming
+
+## Geodata 
+https://media.ccc.de/v/bucharest-401-geodata-on-ipfs
+https://github.com/opengeospatial/ogcapi-features/issues/354
+
 Radicle https://github.com/ipfs/camp/blob/master/DEEP_DIVES/45-building-dynamic-p2p-applications.md
 IPFS clusters
 IPFS collabrative clusters
@@ -115,3 +159,4 @@ dtube / https://simpleaswater.com/youtube-on-ipfs/
 qri https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/ELECTIVE_COURSE_G
 Textile.io
 simpleaswater.io
+https://awesomeopensource.com/projects/ipfs
