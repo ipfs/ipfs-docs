@@ -58,31 +58,16 @@ In this release, we've made some changes to our datastore interfaces that allowe
 
 ## EthDNS support for `.eth`
 
-[Ethereum Name Service(ENS)](https://ens.domains/) offers a secure & decentralised way to address resources both on and off the blockchain using simple, human-readable names.
+[Ethereum Name Service](https://ens.domains/) (ENS) offers a secure and decentralized way to address resources both on and off the blockchain using simple, human-readable domain names. This means you can use ENS to map domain names like `RandomPlanetFacts.eth` to IPFS content paths, for example `/ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA`.
 
-In IPFS context users can leverage [EIP 1577](https://eips.ethereum.org/EIPS/eip-1577) and use ENS to map names such as `aardvark.eth` to content paths like `/ipfs/bafy...`
+EthDNS is a way to access information in the ENS from DNS, without running a local Ethereum client. [EthLink](https://eth.link) is a public EthDNS instance created to resolve ENS records behind `.eth` domains. Because `.eth` is not a registered DNS top-level domain, it is normally inaccessible through regular browsers. But you can get to the website by adding `.link` to the end of the URL. A DNS `A` record request for `RandomPlanetFacts.eth.link` looks up the `A` records in ENS for `RandomPlanetFacts.eth`.
 
-EthDNS is a way to access information in the ENS from DNS, without running a local Ethereum client.
+Go-IPFS 0.5 supports the resolution of DNSLink for `.eth` names through the EthDNS instance at [eth.link](https://eth.link) transparently, which means you can use `/ipns/RandomPlanetFacts.eth` within IPFS without having to add `.link` to the end of the URL:
 
-[EthLink](https://eth.link) is a public EthDNS instance created for resolving ENS records behind `.eth` domains. Because `.eth` is not a registered DNS top-level domain it is normally inaccessible from DNS, but by appending `.link` to the domain the relevant information cam be obtained. For example, a DNS A record request for `mydomain.eth.link` would look up the A records in ENS for `mydomain.eth`.
-
-go-ipfs now supports resolution of DNSLink for `.eth` names via EthDNS instance at [eth.link](https://eth.link) transparently, which means one can use `/ipns/mydomain.eth` and it will work, without the need for adding `.link` suffix or changing DNS server.
-
-### Examples
-
-#### `.eth` in `ipfs resolve`
-
-Command line resolution from ENS name to IPFS content path:
-
-```console
-$ ipfs resolve -r /ipns/almonit.eth
-/ipfs/QmeXGvLAsLwuq4uDLqsH3XECWZYiJrAszRvkDuyR91ERQX
+```bash
+ipfs resolve -r /ipns/RandomPlanetFacts.eth
+> /ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA
 ```
-
-#### `.eth` loaded from local HTTP gateway
-
-When ENS website is opened from local subdomain gateway, the URL looks like this:
-[http://almonit.eth.ipns.localhost:8080](http://almonit.eth.ipns.localhost:8080) (requires go-ipfs >= 0.5)
 
 ## Faster file and pins listing
 
