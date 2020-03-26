@@ -76,6 +76,10 @@ module.exports = {
                 children: [
                   '/concepts/what-is-ipfs',
                   '/concepts/how-ipfs-works',
+                   [
+                    'https://dweb-primer.ipfs.io/',
+                    'IPFS primer'
+                  ]
                   '/concepts/usage-ideas-examples',
                   '/concepts/glossary',
                   '/concepts/faq'
