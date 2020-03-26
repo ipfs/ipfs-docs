@@ -23,6 +23,7 @@ Get the basic concepts of IPFS in one place, including:
 
 - [What is IPFS?](/concepts/what-is-ipfs/)
 - [How IPFS works](/concepts/how-ipfs-works/)
+- [IPFS primer](https://dweb-primer.ipfs.io/)
 - [Usage ideas & examples](/concepts/usage-ideas-examples/)
 - [Glossary](/concepts/glossary/)
 - [FAQ](/concepts/faq/)
