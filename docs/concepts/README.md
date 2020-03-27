@@ -16,7 +16,6 @@ Want the basics, in theater mode? Check out these Core Courses from IPFS Camp 20
 
 @[youtube](fLUq0RkiTBA)
 
-
 ## IPFS 101
 
 Get the basic concepts of IPFS in one place, including:
@@ -55,6 +54,10 @@ IPFS aims to be the future of the internet, but it still needs to play well with
 
 - [IPFS Gateway](/concepts/ipfs-gateway/)
 - [DNSLink](/concepts/dnslink/)
+
+## Further reading
+
+Want a more in-depth look into the decentralized web? Here are a few papers that are useful for understanding IPFS, whether it be understanding the IPFS spec itself, or the background for the web, protocols, hashing, and so on. [Read the papers →](/concepts/further-reading/academic-papers)
 
 ## Don't see what you're looking for?
 

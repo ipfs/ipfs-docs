@@ -112,6 +112,12 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: ['/concepts/ipfs-gateway', '/concepts/dnslink']
+              },
+              {
+                title: 'Further reading',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: ['/concepts/further-reading/academic-papers']
               }
             ]
           },
@@ -168,7 +174,7 @@ module.exports = {
                     'https://github.com/ipfs/archives/tree/master/tutorials/replicating-large-datasets',
                     'Replicate large datasets'
                   ],
-                  '/how-to/move-ipfs-installation',
+                  '/how-to/move-ipfs-installation'
                 ]
               },
               {
