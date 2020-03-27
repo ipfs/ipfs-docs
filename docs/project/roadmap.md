@@ -738,7 +738,7 @@ In order to ease the adoption and deployment of IPFS, we have HTTP-to-IPFS gatew
   - [x] HTTP gateway self-hosting: blog.ipfs.io
   - [x] HTTP gateway self-hosting: refs.ipfs.io
 
-### IPFS distributions
+## IPFS distributions
 
 "IPFS distributions" means the distribution model for IPFS project programs. This means a repository of pages, source, binaries, and links for all programs officially distributed by the project.
 
