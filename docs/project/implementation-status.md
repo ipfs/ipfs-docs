@@ -39,7 +39,6 @@ description: See the current status of various aspects of the core IPFS implemen
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
---------------------------------------------------------------------------------
 
 ## Block `ipfs block`
 
@@ -81,8 +80,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
---------------------------------------------------------------------------------
-
 ## Bootstrap
 
 ### CLI
@@ -115,7 +112,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
---------------------------------------------------------------------------------
 
 ## Config
 
@@ -161,7 +157,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
---------------------------------------------------------------------------------
 
 ## DAG
 
@@ -176,8 +171,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 ### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
---------------------------------------------------------------------------------
 
 ## Stats and diagnostics
 
@@ -220,8 +213,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 ### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
---------------------------------------------------------------------------------
 
 ## DHT
 
@@ -281,7 +272,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
---------------------------------------------------------------------------------
 
 ## Files
 
@@ -447,8 +437,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
---------------------------------------------------------------------------------
-
 ## File store (IPFS pack)
 
 > **Note:** Implementation in js-ipfs is not planned for now.
@@ -461,7 +449,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
---------------------------------------------------------------------------------
 
 ## Key management
 
@@ -505,7 +492,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
---------------------------------------------------------------------------------
 
 ## Miscellaneous
 
@@ -551,7 +537,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
---------------------------------------------------------------------------------
 
 ## Naming
 
@@ -603,7 +588,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
---------------------------------------------------------------------------------
 
 ## Object `ipfs object`
 
@@ -687,7 +671,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
---------------------------------------------------------------------------------
 
 ## p2p (libp2p exposed API)
 
@@ -701,7 +684,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
---------------------------------------------------------------------------------
 
 ## Pinning
 
@@ -762,7 +744,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
---------------------------------------------------------------------------------
 
 ## PubSub
 
@@ -798,7 +779,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
---------------------------------------------------------------------------------
 
 ## Repo
 
@@ -826,7 +806,6 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
---------------------------------------------------------------------------------
 
 ## Swarm
 
@@ -877,5 +856,3 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 ### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
---------------------------------------------------------------------------------
