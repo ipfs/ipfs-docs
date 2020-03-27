@@ -306,14 +306,8 @@ module.exports = {
             path: '/project/',
             children: [
               'project/history',
-              [
-                'https://github.com/ipfs/ipfs/blob/master/REQUIREMENTS.md',
-                'Roadmap'
-              ],
-              [
-                'https://github.com/ipfs/ipfs/blob/master/IMPLEMENTATION_STATUS.md',
-                'Implementation status'
-              ],
+              'project/roadmap,
+              'project/implementation-status',
               ['https://github.com/ipfs/specs', 'Specifications'],
               ['https://github.com/ipfs/research', 'Research'],
               ['https://github.com/ipfs/team-mgmt', 'Team org planning'],
