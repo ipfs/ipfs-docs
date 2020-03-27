@@ -15,7 +15,7 @@ related:
 <ContentStatus />
 
 
-IPFS is a versatile technology. It can unlock usecases needing better compression, availability, partition tolerance, etc.
+IPFS is a versatile technology. It can unlock usecases needing better compression, availability, partition tolerance, smarter caching, etc.
 
 ## Social Networks
 Secure Scuttlebutt https://github.com/ipfs/camp/blob/master/UNCONF/ipfscamp2019-unconf-secure-scuttlebutt.md 
@@ -51,6 +51,12 @@ http://offlinefirst.org/casestudies/
 
 ## Interactive app in a classroom
 
+## Operating system on IPFS
+https://github.com/ipfs/ipfs/issues/247
+
+## VR assets on IPFS
+https://decentraland.org/
+
 ## Store your music on IPFS, access it from anywhere, listen to it offline
 
 ## JOurnalism? Secure drop? 
@@ -71,11 +77,31 @@ https://collab.ipfscluster.io/
 
 ## Package managers
 https://youtu.be/Yck2LimWcAY
-
 ### The Protocol Labs effort
-
 ### Container distribution (netflix)
 Netflix https://youtu.be/wNfk05D887M 
+
+## Deaddrop
+https://github.com/c-base/ipfs-deaddrop
+
+## Track statistics about a pandemic
+https://github.com/RTradeLtd/ipcoronafs
+
+## Make any S3-compatible storage interplanetary
+https://github.com/RTradeLtd/s3x
+
+## Bring IPFS to mobile
+https://github.com/textileio/android-ipfs-lite
+https://github.com/textileio/ios-ipfs-lite
+
+## Crawl the network
+https://github.com/scriptkitty/ipfs-crawler
+
+## Decentralize the DNS
+https://www.npmjs.com/package/orbitdns
+
+## Manage data from Ethereum
+https://www.npmjs.com/package/3box
 
 ## Filesharing
 enzypt.io...
@@ -83,7 +109,9 @@ https://discuss.ipfs.io/t/dropbox-like-application-on-ipfs/7379/7
 https://awesomeopensource.com/project/MichaelMure/Arbore
 http://datahop.network
 https://www.dropbox.com/s/wodmbi6ico3inya/Offline%20Presentation.pdf?dl=0
-### Pair with your friend via bluetooth or QR codes or Sound (https://github.com/ggerganov/wave-share#wave-share)
+### Pair with your friend via bluetooth or QR codes or Sound or NFC
+(https://github.com/ggerganov/wave-share#wave-share)
+https://github.com/RTradeLtd/libp2p-lora-transport
 
 ## Decentralized ID (simpleid.xyz)
 
@@ -97,6 +125,9 @@ Killcord.io
 ## Enhance an event https://www.dropbox.com/s/wodmbi6ico3inya/Offline%20Presentation.pdf?dl=0
 
 ## Decentralized ID
+
+## Collaboration platform
+https://github.com/RTradeLtd/cells
 
 ## File hosting marketplace (Filecoin)
 
