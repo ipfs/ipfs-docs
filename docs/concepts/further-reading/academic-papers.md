@@ -7,13 +7,13 @@ issueUrl: https://github.com/ipfs/docs/issues/479
 
 Here are a few papers that are useful for understanding IPFS, whether it be understanding the IPFS spec itself, or the background for the decentralized web, protocols, hashing, and so on.
 
-## [A practicable approach towards secure key-based routing](https://web.archive.org/web/20170809130252id_/http://www.tm.uka.de/doc/SKademlia_2007.pdf)
-
-**Baumgart, Ingmar and Mies, Sebastian**: _Security is a common problem in completely decentralized peer-to-peer systems. Although several suggestions ex-ist on how to create a secure key-based routing protocol, a practicable approach is still unattended. In this paper we introduce a secure key-based routing protocol based on Kademlia that has a high resilience against common attacks by using parallel lookups over multiple disjoint paths, limiting free nodeId generation with crypto puzzles and intro-ducing a reliable sibling broadcast. The latter is needed tostore data in a safe replicated way. We evaluate the securityof our proposed extensions to the Kademlia protocol ana-lytically and simulate the effects of multiple disjoint pathson lookup success under the influence of adversarial nodes_
-
 ## [IPFS - Content Addressed, Versioned, P2P File System](https://github.com/ipfs/papers/raw/master/ipfs-cap2pfs/ipfs-p2p-file-system.pdf)
 
 **Benet, Juan**: _The InterPlanetary File System (IPFS) is a peer-to-peer distributed ﬁle system that seeks to connect all computing devices with the same system of ﬁles. In some ways, IPFS is similar to the Web, but IPFS could be seen as a single BitTorrent swarm, exchanging objects within one Git repository. In other words, IPFS provides a high throughput content-addressed block storage model, with contentaddressed hyper links. This forms a generalized Merkle DAG, a data structure upon which one can build versioned ﬁle systems, blockchains, and even a Permanent Web. IPFS combines a distributed hashtable, an incentivized block exchange, and a self-certifying namespace. IPFS has no single point of failure, and nodes do not need to trust each other._
+
+## [A practicable approach towards secure key-based routing](https://web.archive.org/web/20170809130252id_/http://www.tm.uka.de/doc/SKademlia_2007.pdf)
+
+**Baumgart, Ingmar and Mies, Sebastian**: _Security is a common problem in completely decentralized peer-to-peer systems. Although several suggestions ex-ist on how to create a secure key-based routing protocol, a practicable approach is still unattended. In this paper we introduce a secure key-based routing protocol based on Kademlia that has a high resilience against common attacks by using parallel lookups over multiple disjoint paths, limiting free nodeId generation with crypto puzzles and intro-ducing a reliable sibling broadcast. The latter is needed tostore data in a safe replicated way. We evaluate the securityof our proposed extensions to the Kademlia protocol ana-lytically and simulate the effects of multiple disjoint pathson lookup success under the influence of adversarial nodes_
 
 ## [Democratizing Content Publication with Coral](https://web.archive.org/web/20181117012712/http://www.coralcdn.org/docs/coral-nsdi04.pdf)
 
