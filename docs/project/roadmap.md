@@ -1,11 +1,11 @@
 ---
-title: IPFS project requirements to 1.0.0
+title: Roadmap
 description: Learn about the milestones in the IPFS project in order to reach version 1.0.0.
 ---
 
-# IPFS Project Requirements to 1.0.0
+# Roadmap: IPFS project requirements to 1.0.0
 
-## Description
+## Summary
 
 In order for IPFS to reach its maturity state, going from Alpha, to Beta and to v1.0.0, the project will need:
 
@@ -15,20 +15,18 @@ In order for IPFS to reach its maturity state, going from Alpha, to Beta and to 
 - A third party implementation of IPFS, fully interoperable with the go and JavaScript versions.
 - A release plan and cycle, including a strategy to support specific key releases for longer periods of time (i.e LTS releases vs stable)
 
-## Milestones
+Here you will find a comprehensive list of the various challenges and milestones in the IPFS project to reach version 1.0.0. They are not ordered in any way at the moment, merely grouped.
 
-Here you will find a comprehensive list of the various challenges and milestones in the IPFS Project to reach version 1.0.0. They are not ordered in any way at the moment, merely grouped.
-
-### Sustainability and Governance
+## Sustainability and governance
 
 These are some of the milestones to hit to create a active, sustainable, inclusive and participatory governance model for IPFS.
 
-- [x] Organize IPFS All Hands.
-- [ ] Have IPFS lead by a Steering Working Group.
-- [ ] Define several Working Groups focused on different parts of the project (e.g Community Engagement, Documentation and Education, IPFS in Web Browsers).
-- [ ] Define a release plan and long term support plan.
+- [x] Organize IPFS all-hands.
+- [ ] Have IPFS lead by a steering working group.
+- [x] Define several working groups focused on different parts of the project (e.g community engagement, documentation and education, IPFS in web browsers).
+- [ ] Define a release plan and long-term support plan.
 
-### IPFS Use Cases
+## IPFS use cases
 
 These are some use case milestones to drive development.
 
@@ -62,9 +60,9 @@ These are some use case milestones to drive development.
   - [x] Support for HTTP API usage
   - [ ] Support for unix sockets RPC API usage
   - [x] Support for embedded, programmatic API usage
-  - [x] Support for HTTP Gateway
+  - [x] Support for HTTP gateway
 
-### Performance Milestones
+## Performance milestones
 
 These are some basic performance milestones to hit.
 
@@ -97,7 +95,7 @@ These are some basic performance milestones to hit.
   - [ ] Good enough for the entire web - EB
   - [ ] Good enough for top10 websites - EB
 
-### Developer Libraries
+## Developer libraries
 
 These are some libraries that must exist to make developers' lives easy. It is critical that making fully dynamic apps on IPFS should be just as easy or easier than traditional systems.
 
@@ -139,7 +137,7 @@ These are some libraries that must exist to make developers' lives easy. It is c
   - [ ] POST datastructure
   - [ ] decentralized identity
 
-### Security Milestones
+## Security milestones
 
 - [ ] Network security
   - [x] upgradable transport encryption (multistream)
@@ -172,7 +170,7 @@ These are some libraries that must exist to make developers' lives easy. It is c
   - [ ] Audit: 3x independent professional security audits of full protocol
   - [ ] Audit: 3x independent professional security audits of implementations
 
-### Network Scalability
+## Network scalability
 
 The scalability of the IPFS protocol depends on careful design of algorithms and models, careful optimization of our implementations, and careful attention to the security properties of the protocols. Reaching high scalability for self-organizing peer-to-peer protocols is HARD, though definitely achievable. We measure scalability in orders of magnitude, as larger thresholds will require revisiting various parts of our codebase.
 
@@ -199,9 +197,9 @@ Our scalability observations are divided into simulations, real network tests, a
   - [ ] Scalability to 1,000,000s of nodes
   - [ ] Scalability to 1,000,000,000s of nodes
 
-### Polish level
+## Polish level
 
-The polish level achieved defined how much effort has gone into polishing all the corners of the tools, APIs, documentation, and so on. Early on, things will be much more rough as we need to focus on implementation speed over final polish. As we reach completion of the implementations, we turn our focus towards scalability, stability, and security. After that, we focus on end user polish.
+The polish level achieved defines how much effort has gone into polishing all the corners of the tools, APIs, documentation, and so on. Early on, things will be much more rough as we need to focus on implementation speed over final polish. As we reach completion of the implementations, we turn our focus towards scalability, stability, and security. After that, we focus on end-user polish.
 
 - [x] Polish level: alpha - individuals innovators
 - [x] Polish level: alpha - production for early adopters
@@ -210,9 +208,9 @@ The polish level achieved defined how much effort has gone into polishing all th
 - [ ] Polish level: 1.0 - production for all
 
 
-### Multiformats
+## Multiformats
 
-The multiformats are a set of self-describing protocols/formats for future-proofed or "upgradable systems" (systems that make no silly assumptions that are likely to break over time).
+Multiformats are a set of self-describing protocols/formats for future-proofed or "upgradable systems" (systems that make no assumptions that are likely to break over time).
 
 - [x] multiaddr: protocol design
   - [x] multiaddr: impl in Go
@@ -244,13 +242,13 @@ The multiformats are a set of self-describing protocols/formats for future-proof
   - [x] multibase / baseN: impl in JS
 
 
-### libp2p Protocols
+## libp2p protocols
 
 The libp2p protocols are the protocol stack for the modular p2p protocols library spun out of IPFS. These form a p2p-first network stack, with no assumptions, self description, and modular interfaces. More at https://github.com/ipfs/specs/tree/master/libp2p
 
-Consult [libp2p Requirements here](https://github.com/libp2p/libp2p/blob/master/REQUIREMENTS.md)
+Consult [libp2p requirements here](https://github.com/libp2p/libp2p/blob/master/REQUIREMENTS.md)
 
-### Bitswap
+## Bitswap
 
 Bitswap is the exchange protocol of IPFS. It simulates a data market.
 
@@ -297,9 +295,9 @@ Bitswap is the exchange protocol of IPFS. It simulates a data market.
   - [x] Bitswap: bssim: pluggable strategies
   - [ ] Bitswap: bssim: strategies config
 
-### IPFS DHT
+## IPFS DHT
 
-The IPFS DHT is (today) a Kademlia based DHT implementing several libp2p protocols: Peer Discovery, Peer Routing, Content Routing, and some NAT Traversal assistance.
+The IPFS DHT is (today) a Kademlia based DHT implementing several libp2p protocols: peer discovery, peer routing, content routing, and some NAT traversal assistance.
 
 - [x] IPFS DHT: Protocol and architecture design
   - [x] IPFS DHT: protocol spec / messages
@@ -330,7 +328,7 @@ The IPFS DHT is (today) a Kademlia based DHT implementing several libp2p protoco
   - [ ] IPFS DHT: dhtHell 1,000,000 nodes
 
 
-### IPFS pub/sub
+## IPFS pub/sub
 
 The IPFS pub/sub service will provide fast delivery and routing for subnets of ipfs nodes. This is critical for dynamic applications. pub/sub (or multicast) will implement: Peer Discovery, Peer Routing, Content Routing, and some NAT Traversal assistance. It fulfills similar roles as the IPFS DHT, but with drastically different performance, security, and scalability guarantees. IPFS Pub/Sub is currently in development.
 
@@ -360,7 +358,7 @@ The IPFS pub/sub service will provide fast delivery and routing for subnets of i
   - [ ] IPFS pub/sub: pssim 100,000 nodes
   - [ ] IPFS pub/sub: pssim 1,000,000 nodes
 
-### IPLD
+## IPLD
 
 IPLD is the core format for data on IPFS. More at https://github.com/ipfs/specs/tree/master/ipld
 
@@ -402,7 +400,7 @@ IPLD is the core format for data on IPFS. More at https://github.com/ipfs/specs/
     - [ ] ipld: website: playground spec
     - [ ] ipld: website: playground impl
 
-### IPLD Data Structures and Importers
+## IPLD data structures and importers
 
 IPLD data structures and importers are various data structures and programs that covert data or files from other native representations to and from IPLD graphs. Think of these as both the graph representation datastructs, and conversion codecs.
 
@@ -438,7 +436,7 @@ IPLD data structures and importers are various data structures and programs that
   - [ ] keychain: caps
   - [ ] keychain: proofs
 
-### IPFS Repo
+## IPFS repo
 
 More at https://github.com/ipfs/specs and  https://github.com/ipfs/fs-repo-migrations
 
@@ -467,7 +465,7 @@ More at https://github.com/ipfs/specs and  https://github.com/ipfs/fs-repo-migra
     - [x] IPFS fs-repo-migrations 1-to-2
     - [x] IPFS fs-repo-migrations 2-to-3
 
-### IPFS Protocol and Architecture
+## IPFS protocol and architecture
 
 - [x] IPFS architecture: macro protocol architecture
 - [x] IPFS architecture: futureproofing and self-description (multis)
@@ -495,12 +493,12 @@ More at https://github.com/ipfs/specs and  https://github.com/ipfs/fs-repo-migra
   - [x] IPFS architecture: program model
   - [x] IPFS architecture: service design
   - [x] IPFS architecture: tool design
-  - [x] IPFS architecture: core api design
-    - [x] IPFS architecture: cli api design
-    - [x] IPFS architecture: http api design
-    - [ ] IPFS architecture: RPC api design
+  - [x] IPFS architecture: core API design
+    - [x] IPFS architecture: CLI API design
+    - [x] IPFS architecture: HTTP API design
+    - [ ] IPFS architecture: RPC API design
 - [x] IPFS architecture: distribution of programs
-- [x] IPFS architecture: webui design
+- [x] IPFS architecture: WebUI design
 - [x] IPFS architecture: app designs
 - [ ] IPFS architecture: programmable policy hooks
   - [ ] IPFS architecture: bitswap strategies and trading
@@ -514,10 +512,9 @@ More at https://github.com/ipfs/specs and  https://github.com/ipfs/fs-repo-migra
   - [ ] IPFS architecture: cluster RAID/RAIN modes
   - [ ] IPFS architecture: cluster consensus
 
-### Go implementation of IPFS
+## Go implementation of IPFS
 
-The go-ipfs effort is the Go implementation of IPFS. It is meant to run as a commandline tool, as a background service, as a programmatic embedded node, through an RPC API, and to be used as part of other tools. go-ipfs is the reference implementation of IPFS. It includes the HTTP-to-IPFS Gateway implementation. More at https://github.com/ipfs/go-ipfs
-
+The go-ipfs effort is the Go implementation of IPFS. It is meant to run as a command-line tool, as a background service, as a programmatic embedded node, through an RPC API, and to be used as part of other tools. go-ipfs is the reference implementation of IPFS. It includes the HTTP-to-IPFS gateway implementation. More at https://github.com/ipfs/go-ipfs
 
 - [x] go-ipfs ipfs node components
   - [x] go-ipfs multi protocols
@@ -570,23 +567,23 @@ The go-ipfs effort is the Go implementation of IPFS. It is meant to run as a com
   - [x] go-ipfs http api: streaming
   - [x] go-ipfs http api: multipart
 
-### Javascript implementation of IPFS
+## JavaScript implementation of IPFS
 
-The js-ipfs effort is the javascript implementation of IPFS. It is meant to run on both node.js and today's regular web browsers. It is close, but not yet ready. More at https://github.com/ipfs/js-ipfs
+The js-ipfs effort is the JavaScript implementation of IPFS. It is meant to run on both node.js and today's regular web browsers. More at https://github.com/ipfs/js-ipfs
 
 - [x] js-ipfs ipfs node components
   - [x] js-ipfs multi protocols
   - [x] js-ipfs component: repo
   - [x] js-ipfs component: networking (libp2p)
   - [x] js-ipfs component: bitswap
-  - [x] js-ipfs component: dag / ipld
+  - [x] js-ipfs component: dag/IPLD
   - [x] js-ipfs component: pinning
-  - [x] js-ipfs component: block api
-  - [x] js-ipfs component: object api
-  - [x] js-ipfs component: files api
+  - [x] js-ipfs component: block API
+  - [x] js-ipfs component: object API
+  - [x] js-ipfs component: files API
   - [x] js-ipfs component: daemon
   - [x] js-ipfs component: data importing
-  - [x] js-ipfs component: http api
+  - [x] js-ipfs component: http API
 - [ ] js-ipfs ipfs node api
   - [x] js-ipfs core api impl
     - [x] js-ipfs core api: version
@@ -622,22 +619,22 @@ The js-ipfs effort is the javascript implementation of IPFS. It is meant to run 
   - [x] js-ipfs http api: streaming
   - [x] js-ipfs http api: multipart
 
-### IPFS directly on the Browsers
+## IPFS directly in browsers
 
-As a protocol for the web, the ultimate goal of IPFS is to run directly in the browsers. We are achieving this through a four-step plan:
+As a protocol for the web, the ultimate goal of IPFS is to run directly in browsers. We are achieving this through a four-step plan:
 
 - (1) Implement IPFS in any language, and use a js-ipfs-api library to delegate commands to an IPFS API (e.g. go-ipfs running on localhost). This already works today, and many applications already exist leveraging IPFS in the browser this way.
 - (2) Implement IPFS in javascript, and use js-ipfs directly in the browser tab. This is in progress today.
 - (3) Build browser extensions that use IPFS to serve IPFS URIs and expose ipfs to the browser tab. This can be done using go-ipfs (API on localhost) or ideally a bundled js-ipfs. This is in progress today. The firefox extension already has 400+ daily users.
 - (4) Finally, submit patches to the major browsers adding IPFS support.
 
-We have finished step (1). We are currently working on steps (2) and (3). Step (4) is likely a 2017 endeavor.
+We have finished step (1). We are currently working on steps (2) and (3). 
 
 - [x] IPFS API used in a browser tab
   - [x] go-ipfs implementation
   - [x] js-ipfs-api client library
   - [x] use background go-ipfs node (localhost or elsewhere)
-- [x] IPFS protocol running in a browser tab, in js
+- [x] IPFS protocol running in a browser tab, in JS
   - [x] js-libp2p implementation
   - [x] js-ipfs implementation
   - [x] libp2p.js browser library
@@ -645,16 +642,16 @@ We have finished step (1). We are currently working on steps (2) and (3). Step (
 - [x] IPFS running with a browser extension
   - [x] go-ipfs implementation
   - [x] js-ipfs implementation
-  - [x] firefox extension
+  - [x] Firefox extension
     - [x] use background go-ipfs node
     - [ ] easy install of go-ipfs node
     - [x] bundling of js-ipfs node
-    - [x] url rewriting
+    - [x] URL rewriting
     - [x] node management
-    - [x] api configuration
+    - [x] API configuration
     - [ ] simple UX for users
-    - [ ] expose ipfs and p2p in the browser window
-  - [x] chrome extension
+    - [ ] expose IPFS and p2p in the browser window
+  - [x] Chrome extension
     - [x] use background go-ipfs node
     - [ ] easy install of go-ipfs node
     - [x] bundling of js-ipfs node
@@ -662,21 +659,21 @@ We have finished step (1). We are currently working on steps (2) and (3). Step (
     - [ ] node management
     - [ ] api configuration
     - [ ] simple UX for users
-    - [x] expose ipfs and p2p in the browser window
+    - [x] expose IPFS and p2p in the browser window
 - [ ] IPFS running natively in a browser
-  - [x] go-ipfs implementation (for chrome or firefox)
-    - [ ] go-ipfs static lib (for chrome or firefox)
-  - [x] js-ipfs implementation (for chrome or firefox)
-  - [ ] rust-ipfs implementation (for servo)
-  - [ ] chromium patches adding IPFS support
-  - [ ] firefox patches adding IPFS support
-  - [ ] servo patches adding IPFS support
-  - [ ] safari patches adding IPFS support
+  - [x] go-ipfs implementation (for Chrome or Firefox)
+    - [ ] go-ipfs static lib (for Chrome or Firefox)
+  - [x] js-ipfs implementation (for Chrome or Firefox)
+  - [ ] rust-ipfs implementation (for Servo)
+  - [ ] Chromium patches adding IPFS support
+  - [ ] Firefox patches adding IPFS support
+  - [ ] Servo patches adding IPFS support
+  - [ ] Safari patches adding IPFS support
 
 
-### IPFS Node Management Console (webui)
+## IPFS node management Console (WebUI)
 
-We have an ipfs node "management console" GUI, delivered as a distributed webapp (dapp). This shows information about an ipfs node, and allows issuing some commands. The webui is entirely hosted and distributed through IPFS itself, demonstrating dynamic web applications on IPFS. More at https://github.com/ipfs/webui
+We have an IPFS node "management console" GUI, delivered as a distributed webapp (dapp). This shows information about an IPFS node, and allows issuing some commands. The WebUI is entirely hosted and distributed through IPFS itself, demonstrating dynamic web applications on IPFS. More at https://github.com/ipfs/webui
 
 - [x] webui console architecture
   - [x] R/W privileged API route (:5001)
@@ -705,76 +702,76 @@ We have an ipfs node "management console" GUI, delivered as a distributed webapp
     - [x] file previews
 
 
-### HTTP to IPFS Gateway
+## HTTP-to-IPFS gateway
 
-In order to ease the adoption and deployment of IPFS, we have HTTP-to-IPFS Gateways. This means two related things: (a) implementation of an HTTP-to-IPFS gateway server (currently part of go-ipfs), and (b) a globally accessible service Protocol Labs runs for the community. All of the official IPFS websites are now self-hosted directly on IPFS.
+In order to ease the adoption and deployment of IPFS, we have HTTP-to-IPFS gateways. This means two related things: (a) implementation of an HTTP-to-IPFS gateway server (currently part of go-ipfs), and (b) a globally accessible service Protocol Labs runs for the community. All of the official IPFS websites are now self-hosted directly on IPFS.
 
-- [x] HTTP Gateway implementation (in go-ipfs)
-  - [x] HTTP Gateway file listing
-  - [x] HTTP Gateway /ipfs route for files
-  - [x] HTTP Gateway /ipns route for names
-  - [ ] HTTP Gateway /ipfs POST writes
-  - [ ] HTTP Gateway /ipns PUT/POST writes
-  - [x] HTTP Gateway CORS and Headers support
-- [x] HTTP Gateway Service (ipfs.io)
-  - [x] HTTP Gateway Service: solarnet vps infrastructure
-  - [x] HTTP Gateway Service: DNS architecture
-    - [x] HTTP Gateway Service DNS: deployed at ipfs.io
-    - [x] HTTP Gateway Service DNS: dnslink, CNAME, A support
-    - [ ] HTTP Gateway Service DNS: zone automation
-    - [ ] HTTP Gateway Service DNS: TLD redundancy
-  - [x] HTTP Gateway Service: nginx frontend
-    - [x] HTTP Gateway Service: backend fallbacks
-    - [x] HTTP Gateway Service: nginx blocklists (dmca)
-    - [ ] HTTP Gateway Service: rate limiting
-  - [x] HTTP Gateway Service Devops
-    - [x] HTTP Gateway Service Devops: containers
-    - [x] HTTP Gateway Service Devops: automated deployments
-    - [x] HTTP Gateway Service Devops: logging
-    - [x] HTTP Gateway Service Devops: event monitoring
-    - [x] HTTP Gateway Service Devops: status alerts
-    - [ ] HTTP Gateway Service Devops: status webpage (status.ipfs.io)
-    - [ ] HTTP Gateway Service Devops: chaos monkey
-- [x] HTTP Gateway Self-hosting
-  - [x] HTTP Gateway Self-hosting: ipfs.io project website
-  - [x] HTTP Gateway Self-hosting: dist.ipfs.io
-  - [x] HTTP Gateway Self-hosting: blog.ipfs.io
-  - [x] HTTP Gateway Self-hosting: refs.ipfs.io
+- [x] HTTP gateway implementation (in go-ipfs)
+  - [x] HTTP gateway file listing
+  - [x] HTTP gateway /ipfs route for files
+  - [x] HTTP gateway /ipns route for names
+  - [ ] HTTP gateway /ipfs POST writes
+  - [ ] HTTP gateway /ipns PUT/POST writes
+  - [x] HTTP gateway CORS and headers support
+- [x] HTTP gateway service (ipfs.io)
+  - [x] HTTP gateway service: solarnet vps infrastructure
+  - [x] HTTP gateway service: DNS architecture
+    - [x] HTTP gateway service DNS: deployed at ipfs.io
+    - [x] HTTP gateway service DNS: dnslink, CNAME, A support
+    - [ ] HTTP gateway service DNS: zone automation
+    - [ ] HTTP gateway service DNS: TLD redundancy
+  - [x] HTTP gateway service: nginx frontend
+    - [x] HTTP gateway service: backend fallbacks
+    - [x] HTTP gateway service: nginx blocklists (dmca)
+    - [ ] HTTP gateway service: rate limiting
+  - [x] HTTP gateway service devops
+    - [x] HTTP gateway service Devops: containers
+    - [x] HTTP gateway service Devops: automated deployments
+    - [x] HTTP gateway service Devops: logging
+    - [x] HTTP gateway service Devops: event monitoring
+    - [x] HTTP gateway service Devops: status alerts
+    - [ ] HTTP gateway service Devops: status webpage (status.ipfs.io)
+    - [ ] HTTP gateway service Devops: chaos monkey
+- [x] HTTP gateway self-hosting
+  - [x] HTTP gateway self-hosting: ipfs.io project website
+  - [x] HTTP gateway self-hosting: dist.ipfs.io
+  - [x] HTTP gateway self-hosting: blog.ipfs.io
+  - [x] HTTP gateway self-hosting: refs.ipfs.io
 
-### IPFS Distributions
+### IPFS distributions
 
-IPFS Distributions is the distribution model for IPFS Project programs. This means a repository of pages, source, binaries, and links for all programs officially distributed by the project.
+"IPFS distributions" means the distribution model for IPFS project programs. This means a repository of pages, source, binaries, and links for all programs officially distributed by the project.
 
-- [x] IPFS Distributions: architecture
-- [ ] IPFS Distributions: security
-  - [x] IPFS Distributions: TLS cert for HTTP site
-  - [ ] IPFS Distributions: code signing
-    - [x] IPFS Distributions: code signing source
-    - [x] IPFS Distributions: code signing protocol
-    - [x] IPFS Distributions: code signing team yubikeys
-- [x] IPFS Distributions: website
-  - [x] IPFS Distributions: website design
-  - [x] IPFS Distributions: website landing page
-  - [x] IPFS Distributions: website program listings
-  - [x] IPFS Distributions: website domain (dist.ipfs.io)
-  - [ ] IPFS Distributions: website localization
-- [x] IPFS Distributions: tools
-  - [x] IPFS Distributions: go-ipfs
-  - [x] IPFS Distributions: ipfs-update
-  - [x] IPFS Distributions: ipget
-  - [x] IPFS Distributions: fs-repo-migrations
-  - [x] IPFS Distributions: gx, gx-go
-  - [ ] IPFS Distributions: station
-  - [ ] IPFS Distributions: webui
+- [x] IPFS distributions: architecture
+- [ ] IPFS distributions: security
+  - [x] IPFS distributions: TLS cert for HTTP site
+  - [ ] IPFS distributions: code signing
+    - [x] IPFS distributions: code signing source
+    - [x] IPFS distributions: code signing protocol
+    - [x] IPFS distributions: code signing team yubikeys
+- [x] IPFS distributions: website
+  - [x] IPFS distributions: website design
+  - [x] IPFS distributions: website landing page
+  - [x] IPFS distributions: website program listings
+  - [x] IPFS distributions: website domain (dist.ipfs.io)
+  - [ ] IPFS distributions: website localization
+- [x] IPFS distributions: tools
+  - [x] IPFS distributions: go-ipfs
+  - [x] IPFS distributions: ipfs-update
+  - [x] IPFS distributions: ipget
+  - [x] IPFS distributions: fs-repo-migrations
+  - [x] IPFS distributions: gx, gx-go
+  - [ ] IPFS distributions: station
+  - [ ] IPFS distributions: webui
 
-### Security
+## Security
 
 - [ ] Create a bug bounty program for IPFS
 - [ ] Have IPFS go and js implementations be fully Audited
 - [ ] Create a Security Working Group
 - [ ] Create a responsible disclosure program
 
-### IPFS Blog and Newsletter
+## IPFS blog and newsletter
 
 In order to keep the community updated, we run a blog. This blog is distributed through IPFS itself, and through an email newsletter.
 
