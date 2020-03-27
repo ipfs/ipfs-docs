@@ -1,19 +1,15 @@
 ---
-title: IPFS implementation status
+title: Implementation status
 description: See the current status of various aspects of the core IPFS implementations.
 ---
 
 # IPFS implementation status
 
-Legend: :green_apple: Done &nbsp; :lemon: In Progress &nbsp; :tomato: Missing &nbsp; :chestnut: Not planned
-
-# Table of Contents
-
-# API
+### Legend: :green_apple: Done &nbsp; :lemon: In Progress &nbsp; :tomato: Missing &nbsp; :chestnut: Not planned
 
 ## Bitswap
 
-#### CLI
+### CLI
 
 | Command                                      | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -26,7 +22,7 @@ Legend: :green_apple: Done &nbsp; :lemon: In Progress &nbsp; :tomato: Missing &n
 | **`ipfs bitswap wantlist`**                  | :green_apple: | :green_apple: |
 |     `peer`                                   | :green_apple: | :green_apple: |
 
-#### HTTP
+### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -39,7 +35,7 @@ Legend: :green_apple: Done &nbsp; :lemon: In Progress &nbsp; :tomato: Missing &n
 | **`GET /api/v0/bitswap/wantlist`**           | :green_apple: | :green_apple: |
 |     `peer=`                                  | :green_apple: | :green_apple: |
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
@@ -47,7 +43,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ## Block `ipfs block`
 
-#### CLI
+### CLI
 
 | Command                                      | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -64,7 +60,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 | **`ipfs block stat`**                        | :green_apple: | :green_apple: |
 |     `key`                                    | :green_apple: | :green_apple: |
 
-#### HTTP
+### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -81,7 +77,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 | **`GET /api/v0/block/stat`**                 | :green_apple: | :green_apple: |
 |     `arg=`                                   | :green_apple: | :green_apple: |
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
@@ -89,7 +85,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ## Bootstrap
 
-#### CLI
+### CLI
 
 | Command                                      | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -101,7 +97,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `arg=`                                   | :green_apple: | :green_apple: |
 |     `all=`                                   | :green_apple: | :green_apple: |
 
-#### HTTP
+### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -115,7 +111,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `all=`                                   | :green_apple: | :green_apple: |
 | **`GET /api/v0/bootstrap/rm/all`**           | :green_apple: | :tomato:      |
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
@@ -123,7 +119,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ## Config
 
-#### CLI
+### CLI
 
 | Command                                      | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -142,7 +138,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 | **`ipfs log ls`**                            | :green_apple: | :chestnut:    |
 | **`ipfs log tail`**                          | :green_apple: | :chestnut:    |
 
-#### HTTP
+### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -161,7 +157,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 | **`GET /api/v0/log/ls`**                     | :green_apple: | :chestnut:    |
 | **`GET /api/v0/log/tail`**                   | :green_apple: | :chestnut:    |
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
@@ -173,19 +169,19 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 - https://github.com/ipfs/js-ipfs-api/pull/534
 - https://github.com/ipfs/go-ipfs/issues/3771#issue-213068794
 
-#### CLI
+### CLI
 
-#### HTTP
+### HTTP
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 --------------------------------------------------------------------------------
 
-## Stats and Diagnostics
+## Stats and diagnostics
 
-#### CLI
+### CLI
 
 | Command                                      | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -202,7 +198,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `time`                                   | :green_apple: | :chestnut:    |
 | **`ipfs diag sys`**                          | :green_apple: | :chestnut:    |
 
-#### HTTP
+### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -221,7 +217,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `vis`                                    | :green_apple: | :chestnut:    |
 | **`GET /api/v0/sys`**                        | :green_apple: | :chestnut:    |
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
@@ -229,7 +225,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ## DHT
 
-#### CLI
+### CLI
 
 | Command                                      | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -255,7 +251,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `peer ID`                                | :green_apple: | :green_apple: |
 |     `verbose=`                               | :green_apple: | :tomato:      |
 
-#### HTTP
+### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -281,7 +277,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `arg=`                                   | :green_apple: | :green_apple: |
 |     `verbose=`                               | :green_apple: | :tomato:      |
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
@@ -289,7 +285,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ## Files
 
-#### CLI
+### CLI
 
 | Command                                      | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -363,7 +359,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `compress`                               | :green_apple: | :tomato:      |
 |     `compression-level`                      | :green_apple: | :tomato:      |
 
-#### HTTP
+### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -447,29 +443,29 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `compression-level=8`                    | :green_apple: | :tomato:      |
 |     `compression-level=9`                    | :green_apple: | :tomato:      |
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 --------------------------------------------------------------------------------
 
-## File Store (IPFS Pack)
+## File store (IPFS pack)
 
 > **Note:** Implementation in js-ipfs is not planned for now.
 
-#### CLI
+### CLI
 
-#### HTTP
+### HTTP
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 --------------------------------------------------------------------------------
 
-## Key Management
+## Key management
 
-#### CLI
+### CLI
 
 | Command                                      | Go Impl       | JS Impl        |
 | -------------------------------------------- | :-----------: | :-----------:  |
@@ -487,7 +483,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `name`                                   | :green_apple: | :chestnut:     |
 |     `l=`                                     | :green_apple: | :chestnut:     |
 
-#### HTTP
+### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl        |
 | -------------------------------------------- | :-----------: | :-----------:  |
@@ -505,7 +501,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `arg=`                                   | :green_apple: | :chestnut:     |
 |     `l=`                                     | :green_apple: | :chestnut:     |
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
@@ -513,7 +509,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ## Miscellaneous
 
-#### CLI
+### CLI
 
 | Command                                      | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -534,7 +530,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `ipns-path=`                             | :green_apple: | :chestnut:    |
 | **`ipfs mount`**                             | :green_apple: | :chestnut:    |
 
-#### HTTP
+### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -551,7 +547,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `ipns-path=`                             | :green_apple: | :chestnut:    |
 | **`GET /api/v0/mount`**                      | :green_apple: | :chestnut:    |
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
@@ -561,7 +557,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 > **Note:** Implementation in js-ipfs is blocked until DHT is finished.
 
-#### CLI
+### CLI
 
 | Command                                      | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -582,7 +578,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `domain`                                 | :green_apple: | :tomato:      |
 |     `recursive=`                             | :green_apple: | :tomato:      |
 
-#### HTTP
+### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -603,7 +599,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `arg=`                                   | :green_apple: | :tomato:      |
 |     `recursive=`                             | :green_apple: | :tomato:      |
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
@@ -611,7 +607,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ## Object `ipfs object`
 
-#### CLI
+### CLI
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -649,7 +645,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 | **`GET /api/v0/object/stat`**                | :green_apple: | :green_apple: |
 |     `root`                                   | :green_apple: | :green_apple: |
 
-#### HTTP
+### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -687,7 +683,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 | **`GET /api/v0/object/stat`**                | :green_apple: | :green_apple: |
 |     `arg=`                                   | :green_apple: | :green_apple: |
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
@@ -697,19 +693,19 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 > **This is blocked until there is a formalized `interface-libp2p`**. Currently, js-ipfs exposes libp2p directly while go-ipfs exposes a subset of commands that use libp2p.
 
-#### CLI
+### CLI
 
-#### HTTP
+### HTTP
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 --------------------------------------------------------------------------------
 
-## Pining
+## Pinning
 
-#### CLI
+### CLI
 
 | Command                                      | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -736,7 +732,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `recursive`                              | :green_apple: | :tomato:      |
 | **`ipfs refs local`**                        | :green_apple: | :tomato:      |
 
-#### HTTP
+### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -762,7 +758,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `recursive=`                             | :green_apple: | :tomato:      |
 | **`GET /api/v0//refs/local`**                | :green_apple: | :tomato:      |
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
@@ -770,7 +766,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ## PubSub
 
-#### CLI
+### CLI
 
 | Command                                      | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -784,7 +780,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `topic`                                  | :green_apple: | :green_apple: |
 |     `discover`                               | :green_apple: | :tomato:      |
 
-#### HTTP
+### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -798,7 +794,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `arg=`                                   | :green_apple: | :green_apple: |
 |     `discover=`                              | :green_apple: | :green_apple: |
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
@@ -806,7 +802,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ## Repo
 
-#### CLI
+### CLI
 
 | Command                                      | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -816,7 +812,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 | **`ipfs repo verify`**                       | :green_apple: | :chestnut:    |
 | **`ipfs repo version`**                      | :green_apple: | :green_apple: |
 
-#### HTTP
+### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -826,7 +822,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 | **`GET /api/v0/repo/verify`**                | :green_apple: | :chestnut:    |
 | **`GET /api/v0/repo/version`**               | :green_apple: | :green_apple: |
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
@@ -834,7 +830,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ## Swarm
 
-#### CLI
+### CLI
 
 | Command                                      | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -856,7 +852,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `latency=`                               | :green_apple: | :tomato:      |
 |     `streams=`                               | :green_apple: | :tomato:      |
 
-#### HTTP
+### HTTP
 
 | Endpoint                                     | Go Impl       | JS Impl       |
 | -------------------------------------------- | :-----------: | :-----------: |
@@ -878,7 +874,7 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 |     `latency=`                               | :green_apple: | :tomato:      |
 |     `streams=`                               | :green_apple: | :tomato:      |
 
-#### Core
+### Core
 
 See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
