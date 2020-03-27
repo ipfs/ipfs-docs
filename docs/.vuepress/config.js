@@ -117,10 +117,7 @@ module.exports = {
                 title: 'Further reading',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: [
-                  '/concepts/further-reading/academic-papers',
-                  '/concepts/further-reading/external-tutorials'
-                ]
+                children: ['/concepts/further-reading/academic-papers']
               }
             ]
           },
