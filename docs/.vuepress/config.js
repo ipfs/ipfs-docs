@@ -306,7 +306,7 @@ module.exports = {
             path: '/project/',
             children: [
               'project/history',
-              'project/roadmap,
+              'project/roadmap',
               'project/implementation-status',
               ['https://github.com/ipfs/specs', 'Specifications'],
               ['https://github.com/ipfs/research', 'Research'],
