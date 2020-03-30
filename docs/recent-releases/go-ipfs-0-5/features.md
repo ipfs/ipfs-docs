@@ -11,7 +11,7 @@ This release is the biggest Go-IPFS release since mid-September 2019. Here are s
 
 The distributed hash table (DHT) is how IPFS nodes keep track of who has what data. The DHT implementation has been almost completely rewritten in this release, with a new protocol version. Providing, finding content, and resolving IPNS records are now all much faster. However, there are risks involved with this update due to the significant amount of changes that have gone into this feature.
 
-IPFS now automatically detects if you are on a home network behind a network address translator (NAT), or if other nodes can reach you directly. Only nodes that find they are externally reachable participate in storing records in the DHT, known as _DHT servers_. Lookups and storage in the table have also been optimized to more closely match the current best practices. You may need to reconfigure your network's router to allow your IPFS node access to the internet. [Find out how to disable NAT for your network →](#)
+IPFS now automatically detects if you are on a home network behind a network address translator (NAT), or if other nodes can reach you directly. Only nodes that find they are externally reachable participate in storing records in the DHT, known as _DHT servers_. Lookups and storage in the table have also been optimized to more closely match the current best practices. You may need to reconfigure your network's router to allow your IPFS node access to the internet. [Find out how to disable NAT for your network →](/how-to/troubleshoot-file-transfers#)
 
 ## Subdomain support in HTTP gateway
 
