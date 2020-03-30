@@ -88,6 +88,8 @@ https://github.com/RTradeLtd/cells
 #### E-commerce (OpenBazaar)
 #### Video hosting
 dtube / https://simpleaswater.com/youtube-on-ipfs/
+#### Decentralzed music streaming service 
+https://audius.org/developers.html
 
 
 ## YOU WANT TO SHARE THE BURDEN ON HOSTING BIG CONTENT
@@ -150,6 +152,7 @@ NY Mesh network
 ## YOU WANT TO CONVERT A SOFTWARE STACK LAYER TO WEB3
 #### Distributed apps
 https://awesomeopensource.com/project/Ideea-inc/vipfs
+3box.io
 Textile.io
 #### P2P browser
 Beaker
