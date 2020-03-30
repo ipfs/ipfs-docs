@@ -172,3 +172,6 @@ https://github.com/textileio/ios-ipfs-lite
 https://github.com/RTradeLtd/ipcoronafs
 #### Healthcare data 
 https://github.com/ipfs/notes/issues/292
+
+## Some companies using IPFS
+https://user-images.githubusercontent.com/618519/74373908-3819cb80-4d92-11ea-816a-1b6f04002b4c.png
