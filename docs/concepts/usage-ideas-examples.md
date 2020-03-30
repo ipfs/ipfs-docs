@@ -175,3 +175,4 @@ https://github.com/ipfs/notes/issues/292
 
 ## Some companies using IPFS
 https://user-images.githubusercontent.com/618519/74373908-3819cb80-4d92-11ea-816a-1b6f04002b4c.png
+(from https://ipfs.eternum.io/ipfs/QmeVcDW9pALmkgkuYcLV6jVeuVF4haD58NTdBc91tozUAP/)
