@@ -3,6 +3,10 @@ title: Features
 issueUrl: https://github.com/ipfs/docs/issues/471
 ---
 
+# Features
+
+This release is the biggest Go-IPFS release since mid-September 2019. Here are some of the incredible features we've packed in:
+
 ## Improved DHT and content routing
 
 The distributed hash table (DHT) is how IPFS nodes keep track of who has what data. The DHT implementation has been almost completely rewritten in this release, with a new protocol version. Providing, finding content, and resolving IPNS records are now all much faster. However, there are risks involved with this update due to the significant amount of changes that have gone into this feature.
