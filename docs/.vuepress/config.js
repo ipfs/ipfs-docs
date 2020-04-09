@@ -312,7 +312,7 @@ module.exports = {
             path: '/project/',
             children: [
               'project/history',
-              'project/roadmap',
+              ['https://github.com/ipfs/roadmap', 'Roadmap'],
               'project/implementation-status',
               ['https://github.com/ipfs/specs', 'Specifications'],
               ['https://github.com/ipfs/research', 'Research'],
