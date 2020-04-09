@@ -9,7 +9,7 @@ description: HTTP API reference for IPFS, the InterPlanetary File System.
 <!-- TODO: Describe how to change ports and configure the API server -->
 <!-- TODO: Structure this around command groups (dag, object, files, etc.) -->
 
-_Generated on 2020-04-09, from go-ipfs v0.4.22._
+_Generated on 2020-04-09, from go-ipfs v0.4.23._
 
 When an IPFS node is running as a daemon, it exposes an HTTP API that allows you to control the node and run the same commands you can from the command line.
 
