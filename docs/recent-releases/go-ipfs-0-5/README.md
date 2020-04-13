@@ -5,9 +5,7 @@ issueUrl: https://github.com/ipfs/docs/issues/470
 
 # Overview
 
-It's been a while since the last Go-IPFS release, and with good reason. We've packed an incredible amount of bug fixes, improvements, and features into this build; it's the biggest Go-IPFS release since the project first started!
-
-This release features:
+It's been a while since the last Go-IPFS release, and with good reason. We've packed an incredible amount of bug fixes, improvements, and features into this build; it's the biggest Go-IPFS release since the project first started! This release features:
 
 - a vastly improved DHT implementation
 - a major bitswap refactor
@@ -23,8 +21,10 @@ This release features:
 
 [Take a closer look at all new features in this release →](features)
 
-## Notable fixes
-
 On top of all the features that have been added into this release, we've plugged a few holes along the way. Some notable fixes are:
+
+- abc
+- def
+- ghi
 
 [Check out all the fixes added into this release →](fixes)
