@@ -62,7 +62,7 @@ Path-based gateway management is simple to implement but comes with a host of se
 
 Conforming to this policy was an issue before this release. There was a significant amount of _hackery_ needed to get subdomains working. With Go-IPFS 0.5, subdomains are supported straight out of the box. Users are also able to configure the gateway behavior per hostname. This implementation ensures that every application gets an individual browser origin. In summary, this update makes it easier to write websites that _just work_.
 
-The gateway will redirect from `localhost:5001/ipfs/CID/...` to `CID.ipfs.localhost:5001/...` by default. This ensures that every dapp gets its own browser origin, and makes it easier to write websites because absolute paths now work. Paths addressing the gateway by IP address `127.0.0.1:5001/ipfs/CID` will not be altered as IP addresses can't have subdomains.
+The gateway will redirect from `localhost:5001/ipfs/CID/...` to `CID.ipfs.localhost:5001/...` by default. This ensures that every Dapp gets its own browser origin, and makes it easier to write websites because absolute paths now work. Paths addressing the gateway by IP address `127.0.0.1:5001/ipfs/CID` will not be altered as IP addresses can't have subdomains.
 
 This update to subdomain support means we'll be introducing a redirect from the path-based gateway to the correct subdomain, and doing so could cause issues with [cURL](https://en.wikipedia.org/wiki/CURL), which doesn't follow redirects by default. To mitigate this issue, either change your cURL invocations to call `curl -L`, or reconfigure your IPFS node to not use the subdomain gateway on the affected domain.
 
@@ -83,7 +83,7 @@ Badger has been in Go-IPFS for over a year as an experimental feature, and we're
 
 The current and default file system used by Go-IPFS is [FlatFS](https://github.com/ipfs/go-ds-flatfs). FlatFS essentially stores blocks of data as files on your file system. However, there are lots of optimizations a specialized database can do that a standard file system can not. On a standard hard drive, reading from a contiguous array of bytes is much faster than randomly reading bytes, so having a database that operates as one single file has lots of room for optimization.
 
-The benefit of badger is that adding/fetching data to/from badger is significantly faster than adding/fetching data to/from the default datastore, flatfs. In some tests, adding data to badger is 32x faster than flatfs (in this release).
+The benefit of Badger is that adding/fetching data to/from Badger is significantly faster than adding/fetching data to/from the default datastore, FlatFS. In some tests, adding data to Badger is 32x faster than FlatFS (in this release).
 
 ### Enable Badger
 
@@ -93,9 +93,9 @@ In this release, we're calling the badger datastore as stable. However, we're no
 
 While Badger is a great solution, there are some issues you should consider before enabling it.
 
-Badger is complicated. FlatFS pushes all the complexity down into the filesystem itself. That means that FlatFS is only likely to lose your data if your underlying filesystem gets corrupted while there are more opportunities for badger itself to get corrupted.
+Badger is complicated. FlatFS pushes all the complexity down into the filesystem itself. That means that FlatFS is only likely to lose your data if your underlying filesystem gets corrupted while there are more opportunities for Badger itself to get corrupted.
 
-Badger can use a lot of memory. In this release, we've tuned badger to use `~20MB` of memory by default. However, it can still produce spikes as large as `1GB` in memory usage when garbage collecting. Badger isn't very aggressive when it comes to garbage collection and we're still investigating ways to get it to more aggressively clean up after itself.
+Badger can use a lot of memory. In this release, we've tuned Badger to use `~20MB` of memory by default. However, it can still produce spikes as large as `1GB` in memory usage when garbage collecting. Badger isn't very aggressive when it comes to garbage collection, and we're still investigating ways to get it to more aggressively clean up after itself.
 
 We suggest you use Badger if:
 
@@ -124,7 +124,7 @@ ipfs resolve -r /ipns/RandomPlanetFacts.eth
 
 [Systemd](https://en.wikipedia.org/wiki/Systemd) has become a ubiquitous initialization system for Linux distributions. Among its many functions, it provides a standard mechanism for managing background processes - the various servers and tasks that run on your machine. IPFS for Linux now plugs into the Systemd world, allowing it to start automatically with the computer. This support also allows IPFS to be controlled through the same interface as the other programs running on your computer. This makes it possible to:
 
-- Start IPFS on demand on first use.
+- Start IPFS on-demand on first use.
 - Wait for IPFS to finish starting before starting services that depend on it.
 
 You can find the new systemd units in the [`ipfs/go-ipfs` repository](https://github.com/ipfs/go-ipfs) under [`misc/systemd`](https://github.com/ipfs/go-ipfs/tree/master/misc/systemd).
