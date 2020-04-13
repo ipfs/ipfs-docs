@@ -109,6 +109,7 @@ module.exports = {
                 collapsable: false,
                 children: [
                   '/recent-releases/go-ipfs-0-5/',
+                  ['/recent-releases/go-ipfs-0-5/install', 'Install'],
                   '/recent-releases/go-ipfs-0-5/update-procedure',
                   '/recent-releases/go-ipfs-0-5/features',
                   '/recent-releases/go-ipfs-0-5/fixes',
