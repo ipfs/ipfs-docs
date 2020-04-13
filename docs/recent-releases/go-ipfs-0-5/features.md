@@ -120,7 +120,7 @@ ipfs resolve -r /ipns/RandomPlanetFacts.eth
 > /ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA
 ```
 
-## Systemd support
+## Systemd
 
 [Systemd](https://en.wikipedia.org/wiki/Systemd) has become a ubiquitous initialization system for Linux distributions. Among its many functions, it provides a standard mechanism for managing background processes - the various servers and tasks that run on your machine. IPFS for Linux now plugs into the Systemd world, allowing it to start automatically with the computer. This support also allows IPFS to be controlled through the same interface as the other programs running on your computer. This makes it possible to:
 
@@ -129,6 +129,6 @@ ipfs resolve -r /ipns/RandomPlanetFacts.eth
 
 You can find the new systemd units in the [`ipfs/go-ipfs` repository](https://github.com/ipfs/go-ipfs) under [`misc/systemd`](https://github.com/ipfs/go-ipfs/tree/master/misc/systemd).
 
-## Testground implemented
+## Testground
 
 Testground is a new testing framework that IPFS is using to validate the changes to the distributed aspects of the system. Complex changes, like the DHT, are challenging to understand through unit tests or with a small number of machines. Testground provides the ability to spin up thousands of virtual IPFS nodes in complex network topologies to gain confidence that changes will work when they're rolled out. With Testground, expect more stability and regularity in upcoming IPFS releases.
