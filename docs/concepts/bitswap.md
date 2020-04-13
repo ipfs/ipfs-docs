@@ -44,7 +44,7 @@ A single Bitswap message may contain any of the following content:
 
 IPFS content blocks are often connected through a [Merkle DAG](/concepts/merkle-dag/). If a sender's block requests are related, a mechanism called a _Bitswap session_ in the Go implementation can optimize block requests sent to other peers. This mechanism can increase transfer speed and reduce the number of duplicate blocks on the network. Active peers are favored, as they are tracked relative to them having the requested blocks and how quickly they respond.
 
-If a remote peer has one block then it is likely that they have other blocks from the same DAG. So any new block requests are sent to that peer directly. This skips the need to send losts of requsts to multiple servers, saving the user time and power.
+If a remote peer has one block then it is likely that they have other blocks from the same DAG. So any new block requests are sent to that peer directly. This skips the need to send lots of requests to multiple servers, saving the user time and power.
 
 ### Provider system
 
