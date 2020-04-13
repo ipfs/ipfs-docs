@@ -122,7 +122,12 @@ ipfs resolve -r /ipns/RandomPlanetFacts.eth
 
 ## Systemd support
 
-[Systemd](https://en.wikipedia.org/wiki/Systemd) has become a ubiquitous initialization system for Linux distributions. Among its many functions, it provides a standard mechanism for managing background processes - the various servers and tasks that run on your machine. IPFS for Linux now plugs into the Systemd world, allowing it to start automatically with the computer. This support also allows IPFS to be controlled through the same interface as the other programs running on your computer.
+[Systemd](https://en.wikipedia.org/wiki/Systemd) has become a ubiquitous initialization system for Linux distributions. Among its many functions, it provides a standard mechanism for managing background processes - the various servers and tasks that run on your machine. IPFS for Linux now plugs into the Systemd world, allowing it to start automatically with the computer. This support also allows IPFS to be controlled through the same interface as the other programs running on your computer. This makes it possible to:
+
+- Start IPFS on demand on first use.
+- Wait for IPFS to finish starting before starting services that depend on it.
+
+You can find the new systemd units in the [`ipfs/go-ipfs` repository](https://github.com/ipfs/go-ipfs) under [`misc/systemd`](https://github.com/ipfs/go-ipfs/tree/master/misc/systemd).
 
 ## Testground implemented
 
