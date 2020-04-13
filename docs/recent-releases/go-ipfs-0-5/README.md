@@ -11,9 +11,7 @@ It's been a while since the last Go-IPFS release, and with good reason. We've pa
 
 ## Features
 
-There are plenty of features packed into this release.
-
-The DHS implementation is vastly improved, we refactored Bitswap to improve speed and reliability, the subdomain gateway is much easier to use, Badger has gained more support and is sufficiently stable enough for daily use, and the RSA minimum key size is now 2048. These are just some of the features available in this release. [Take a closer look →](features)
+There are plenty of features packed into this release. The DHS implementation is vastly improved, we refactored Bitswap to improve speed and reliability, the subdomain gateway is much easier to use, Badger has gained more support and is sufficiently stable enough for daily use, and the RSA minimum key size is now 2048. These are just some of the features available in this release. [Take a closer look →](features)
 
 ## Fixes
 
