@@ -5,12 +5,26 @@ issueUrl: https://github.com/ipfs/docs/issues/470
 
 # Overview
 
-It's been a while since the last Go-IPFS release, and with good reason. We've packed an incredible amount of bug fixes, improvements, and features into this build; it's the biggest Go-IPFS release since we first started the project.
+It's been a while since the last Go-IPFS release, and with good reason. We've packed an incredible amount of bug fixes, improvements, and features into this build; it's the biggest Go-IPFS release since the project first started!
 
-<!-- There's lots of stuff here. List off all the new features. -->
+This release features:
 
-<!-- It's going to make things much easier. Show some quality-of-life improvements we've added. -->
+- a vastly improved DHT implementation
+- a major bitswap refactor
+- a new way to announce what data your node is looking for
+- an improved IFPS and Libp2p address format
+- a more secure RSA minimum key size
+- an easier to use subdomain gateway
+- TLS enabled by default
+- a beta version of the Badger datastore available for opt-in testing
+- Systemd support for Linux users
+- automatic repo migrations
+- updated bootstrap peers
 
-<!-- A bunch of issues that previous plauged IPFS are now gone with this release. Talk about some important bugs that got squashed. -->
+[Take a closer look at all new features in this release →](features)
 
-<!-- Everything is more stable now. Point out the approx release schedule, and what our next goals are. -->
+## Notable fixes
+
+On top of all the features that have been added into this release, we've plugged a few holes along the way. Some notable fixes are:
+
+[Check out all the fixes added into this release →](fixes)
