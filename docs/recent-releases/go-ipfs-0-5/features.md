@@ -105,7 +105,7 @@ We suggest you use Badger if:
 
 ## TLS by default
 
-[Transport layer security](https://en.wikipedia.org/wiki/Transport_Layer_Security) (TLS), is a set of technologies used for link-layer encryption. It's a commonly used technology; most of the web browsing you do every day uses TLS. Using TLS by default provides a robust set of encryption and authentication standards. These standards help to improve the stability, security, and performance of IPFS.
+[Transport layer security](https://en.wikipedia.org/wiki/Transport_Layer_Security) (TLS), is a set of technologies used for link-layer encryption. It's a commonly used technology; most of the web browsing you do every day uses TLS. Using TLS by default provides a robust set of encryption and authentication standards. In this release, we're switching TLS to be the default transport. This means we'll try to encrypt the connection with TLS before re-trying with SECIO. SECIO will be deprecated in an upcoming next release.
 
 ## EthDNS support for `.eth`
 
@@ -119,12 +119,6 @@ Go-IPFS 0.5 supports the resolution of DNSLink for `.eth` names through the EthD
 ipfs resolve -r /ipns/RandomPlanetFacts.eth
 > /ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA
 ```
-
-## Faster file and pins listing
-
-> TODO: This one's pretty obvious. Make it faster to post files and pin then to nodes.
-
-> TODO: What had to be changed to make this process faster
 
 ## Systemd support
 
