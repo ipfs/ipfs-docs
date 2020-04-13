@@ -7,7 +7,7 @@ issueUrl: https://github.com/ipfs/docs/issues/471
 
 This release is the biggest Go-IPFS release since mid-September 2019. Here are some of the incredible features we've packed in:
 
-## Improved DHT and content routing
+## Improved DHT
 
 The distributed hash table (DHT) is how IPFS nodes keep track of who has what data. The DHT implementation has been almost completely rewritten in this release. Providing, finding content, and resolving IPNS records are now all much faster. However, there are risks involved with this update due to the significant amount of changes that have gone into this feature.
 
@@ -62,18 +62,20 @@ Path-based gateway management is simple to implement but comes with a host of se
 
 Conforming to this policy was an issue before this release. There was a significant amount of _hackery_ needed to get subdomains working. With Go-IPFS 0.5, subdomains are supported straight out of the box. Users are also able to configure the gateway behavior per hostname. This implementation ensures that every application gets an individual browser origin. In summary, this update makes it easier to write websites that _just work_.
 
+The gateway will redirect from `localhost:5001/ipfs/CID/...` to `CID.ipfs.localhost:5001/...` by default. This ensures that every dapp gets its own browser origin, and makes it easier to write websites because absolute paths now work. Paths addressing the gateway by IP address `127.0.0.1:5001/ipfs/CID` will not be altered as IP addresses can't have subdomains.
+
 This update to subdomain support means we'll be introducing a redirect from the path-based gateway to the correct subdomain, and doing so could cause issues with [cURL](https://en.wikipedia.org/wiki/CURL), which doesn't follow redirects by default. To mitigate this issue, either change your cURL invocations to call `curl -L`, or reconfigure your IPFS node to not use the subdomain gateway on the affected domain.
 
 ## Refactored Bitswap
 
-This release includes a major Bitswap refactor, running a new and backward compatible Bitswap protocol. We expect these changes to improve performance significantly.
+This release includes a major [Bitswap refactor](https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/), running a new and backward compatible Bitswap protocol. We expect these changes to improve performance significantly.
 
 With the refactored Bitswap, we expect:
 
-- Few to no duplicate blocks when fetching data.
+- Few to no duplicate blocks when fetching data from other nodes speaking the _new_ protocol.
 - Better parallelism when fetching from multiple peers.
 
-However, go-ipfs 0.5 may perform slightly _worse_ in some edge-cases when downloading older go-ipfs versions (where it has less information about who has what). Our tests have shown that this isn't an issue in practice, but it's still theoretically possible.
+The new Bitswap won't magically make downloading content any faster until both seeds and leaches have updated. If you're one of the first to upgrade to `0.5.0` and try downloading from peers that haven't upgraded, you're unlikely to see much of a performance improvement.
 
 ## Badger integration
 
