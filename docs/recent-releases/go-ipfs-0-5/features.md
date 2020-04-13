@@ -103,14 +103,6 @@ We suggest you use Badger if:
 - You rarely delete anything.
 - You have some memory to spare.
 
-## Faster IPNS
-
-> TODO: What is IPNS, why is it slow?
-
-> TODO: This update makes IPNS faster.
-
-> TODO: How has this update made it faster?
-
 ## TLS by default
 
 [Transport layer security](https://en.wikipedia.org/wiki/Transport_Layer_Security) (TLS), is a set of technologies used for link-layer encryption. It's a commonly used technology; most of the web browsing you do every day uses TLS. Using TLS by default provides a robust set of encryption and authentication standards. These standards help to improve the stability, security, and performance of IPFS.
