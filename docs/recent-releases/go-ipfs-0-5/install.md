@@ -8,7 +8,7 @@ The install process for this release is the same as previous versions of Go-IPFS
 
 ## Windows
 
-1. Download [`go-ipfs_v0.5.0_windows-386.zip` from GitHub](https://github.com/ipfs/go-ipfs/releases/download/v0.5.0/go-ipfs-v0.5.0_windows-386.zip).
+1. Download [`go-ipfs_v0.5.0_windows-386.zip` from GitHub](https://github.com/ipfs/go-ipfs/releases/download/v0.5.0/).
 
    ```powershell
    cd ~\
@@ -59,4 +59,74 @@ The install process for this release is the same as previous versions of Go-IPFS
 
 ## macOS
 
+1. Download [`go-ipfs_v0.5.0-rc1_darwin-386.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.5.0-rc1).
+
+   ```bash
+   wget https://github.com/ipfs/go-ipfs/releases/download/v0.5.0-rc1/go-ipfs_v0.5.0-rc1_darwin-amd64.tar.gz
+   ```
+
+1. Unzip the file:
+
+   ```bash
+   tar -xvzf go-ipfs_v0.5.0-rc1_darwin-amd64.tar.gz
+
+   > x go-ipfs/install.sh
+   > x go-ipfs/ipfs
+   > x go-ipfs/LICENSE
+   > x go-ipfs/LICENSE-APACHE
+   > x go-ipfs/LICENSE-MIT
+   > x go-ipfs/README.md
+   ```
+
+1. Move into the `go-ipfs` folder and run the install script:
+
+   ```bash
+   bash install.sh
+
+   > Moved ./ipfs to /usr/local/bin
+   ```
+
+1. Check that IPFS install properly:
+
+   ```bash
+   ipfs --version
+
+   > ipfs version 0.5.0-rc1
+   ```
+
 ## Linux
+
+1. Download [`go-ipfs_v0.5.0-rc1_linux-amd64.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.5.0-rc1):
+
+   ```bash
+   wget https://github.com/ipfs/go-ipfs/releases/download/v0.5.0-rc1/go-ipfs_v0.5.0-rc1_linux-amd64.tar.gz
+   ```
+
+1. Unzip the file:
+
+   ```bash
+   tar -xvzf go-ipfs_v0.5.0-rc1_linux-amd64.tar.gz
+
+   > x go-ipfs/install.sh
+   > x go-ipfs/ipfs
+   > x go-ipfs/LICENSE
+   > x go-ipfs/LICENSE-APACHE
+   > x go-ipfs/LICENSE-MIT
+   > x go-ipfs/README.md
+   ```
+
+1. Move into the `go-ipfs` folder and run the install script:
+
+   ```bash
+   sudo bash install.sh
+
+   > Moved ./ipfs to /usr/local/bin
+   ```
+
+1. Test that IPFS has installed correctly:
+
+   ```bash
+   ipfs --version
+
+   > ipfs version 0.5.0-rc1
+   ```
