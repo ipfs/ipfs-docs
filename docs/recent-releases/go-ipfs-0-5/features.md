@@ -9,9 +9,46 @@ This release is the biggest Go-IPFS release since mid-September 2019. Here are s
 
 ## Improved DHT and content routing
 
-The distributed hash table (DHT) is how IPFS nodes keep track of who has what data. The DHT implementation has been almost completely rewritten in this release, with a new protocol version. Providing, finding content, and resolving IPNS records are now all much faster. However, there are risks involved with this update due to the significant amount of changes that have gone into this feature.
+The distributed hash table (DHT) is how IPFS nodes keep track of who has what data. The DHT implementation has been almost completely rewritten in this release. Providing, finding content, and resolving IPNS records are now all much faster. However, there are risks involved with this update due to the significant amount of changes that have gone into this feature.
 
-IPFS now automatically detects if you are on a home network behind a network address translator (NAT), or if other nodes can reach you directly. Only nodes that find they are externally reachable participate in storing records in the DHT, known as _DHT servers_. Lookups and storage in the table have also been optimized to more closely match the current best practices. You may need to reconfigure your network's router to allow your IPFS node access to the internet. [Find out how to disable NAT for your network →](/how-to/troubleshoot-file-transfers#)
+### Old and new
+
+The current DHT suffers from three core issues addressed in this release:
+
+- Most peers in the DHT cannot be dialed (e.g., due to firewalls and NATs). Much of a DHT query time is wasted trying to connect to peers that cannot be reached.
+- The DHT query logic doesn't properly terminate when it hits the end of the query and, instead, aggressively keeps on searching.
+- The routing tables are poorly maintained. This can cause a search that should be logarithmic in the size of the network to be linear.
+
+#### Reachable
+
+We have addressed the problem of undialable nodes by having nodes wait to join the DHT as _server_ nodes until they've confirmed that they are reachable from the public internet. Additionally, we've introduced:
+
+- A new Libp2p protocol to push updates to our peers when we start/stop listening on protocols.
+- A Libp2p event bus for processing updates like these.
+- A new DHT protocol version. New DHT nodes will not admit old DHT nodes into their routing tables. Old DHT nodes will still be able to issue queries against the new DHT, but they won't be queried or referred by new DHT nodes. This way, old, potentially unreachable nodes with bad routing tables won't pollute the new DHT.
+
+There is a significant downside to this approach, however. Nodes behind VPNs, offline LANs, etc. are not publicly reachable. To address this issue, Go-IPFS 0.5.0 will run two DHTs: one for private networks and one for the public internet. Every node will participate in a LAN DHT and a public WAN DHT.
+
+#### Query Logic
+
+We've fixed the DHT query logic by correctly implementing Kademlia. This should significantly speed up:
+
+- Publishing IPNS & provider records. We previously continued searching for closer and closer peers to the "target" until we timed out, then we put to the closest peers we found.
+- Resolving IPNS addresses. We previously continued IPNS record searches until we ran out of peers to query, timed out, or found 16 records.
+
+In both cases, nodes continue searching until they find the closest peers and then stop.
+
+#### Routing Tables
+
+Finally, we've addressed the poorly maintained routing tables by:
+
+- Reducing the likelihood that the connection manager will kill connections to peers in the routing table.
+- Keeping peers in the routing table, even if we get disconnected from them.
+- Actively and frequently querying the DHT to keep our routing table full.
+
+### Testing
+
+The DHT rewrite was made possible by [Testground](https://github.com/ipfs/testground/), our new testing framework. Testground allows us to spin up multi-thousand node tests with simulated real-world network conditions. By combining Testground and some custom analysis tools, we were able to gain confidence that the new DHT implementation behaves correctly.
 
 ## Subdomain support in HTTP gateway
 
