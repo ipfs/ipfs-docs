@@ -118,6 +118,7 @@ The install process for this release is the same as previous versions of Go-IPFS
 1. Move into the `go-ipfs` folder and run the install script:
 
    ```bash
+   cd go-ipfs
    sudo bash install.sh
 
    > Moved ./ipfs to /usr/local/bin
