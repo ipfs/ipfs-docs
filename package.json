@@ -9,7 +9,7 @@
     "@vuepress/plugin-active-header-links": "^1.4.1",
     "@vuepress/plugin-back-to-top": "^1.4.1",
     "@vuepress/plugin-google-analytics": "^1.4.0",
-    "@vuepress/plugin-last-updated": "^1.4.0",
+    "@vuepress/plugin-last-updated": "^1.4.1",
     "all-relative": "^1.0.1",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.3",
