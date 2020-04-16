@@ -13,7 +13,7 @@ Want to know how it all began? Learn the [history of the IPFS project](/project/
 
 ## Roadmap
 
-See the overall roadmap of [IPFS project requirements](/project/roadmap) from current state to maturity.
+See the overall roadmap of [IPFS project requirements](https://github.com/ipfs/roadmap) from current state to maturity.
 
 ## Implementation status
 

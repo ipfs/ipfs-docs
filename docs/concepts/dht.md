@@ -35,7 +35,7 @@ Each peer has a `peerID`, which is a hash with the same length _n_ as the DHT ke
 A subset of the DHT maintained by a peer is called a 'bucket'.
 A bucket maps to hashes with the same prefix as the `peerID`, up to _m_ bits. There are 2^m buckets. Each bucket maps for 2^(n-m) hashes.
 
-For example, if _m_=2^16 and we use hexadecimal encoding (four bits per displayed character), the peer with `peerID` 'ABCDEF12345' maintains mapping for hashes starting with 'ABCD'.
+For example, if _m_=16 and we use hexadecimal encoding (four bits per displayed character), the peer with `peerID` 'ABCDEF12345' maintains mapping for hashes starting with 'ABCD'.
 Some hashes falling into this bucket would be *ABCD*38E56, *ABCD*09CBA or *ABCD*17ABB, just as examples.
 
 The size of a bucket is related to the size of the prefix. The longer the prefix, the fewer hashes each peer has to manage, and the more peers are needed.
