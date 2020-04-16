@@ -27,7 +27,16 @@ We have addressed the problem of undialable nodes by having nodes wait to join t
 - A Libp2p event bus for processing updates like these.
 - A new DHT protocol version. New DHT nodes will not admit old DHT nodes into their routing tables. Old DHT nodes will still be able to issue queries against the new DHT, but they won't be queried or referred by new DHT nodes. This way, old, potentially unreachable nodes with bad routing tables won't pollute the new DHT.
 
-There is a significant downside to this approach, however. Nodes behind VPNs, offline LANs, etc. are not publicly reachable. To address this issue, Go-IPFS 0.5.0 will run two DHTs: one for private networks and one for the public internet. Every node will participate in a LAN DHT and a public WAN DHT.
+There is a significant downside to this approach, however. Nodes behind VPNs, offline LANs, etc. are not publicly reachable. To address this issue, Go-IPFS 0.5.0 will run two DHTs: one for private networks and one for the public internet. Every node will participate in a LAN DHT and a public WAN DHT. See [Dual DHT](dual-dht) for more details.
+
+#### Dual DHT
+
+All IPFS nodes will now run two DHTs: one for the public internet WAN, and one for their local network LAN.
+
+1. When connected to the public internet, IPFS will use both DHTs for finding peers, content, and IPNS records. Nodes only publish provider and IPNS records to the WAN DHT to avoid flooding the local network.
+2. When not connected to the public internet, nodes publish provider and IPNS records to the LAN DHT.
+
+This feature should not have any noticeable impact on Go-IPFS, performance, or otherwise. Everything should continue to work in all the currently supported network configurations: VPNs, disconnected LANs, public internet, etc.
 
 #### Query Logic
 
@@ -49,6 +58,21 @@ Finally, we've addressed the poorly maintained routing tables by:
 ### Testing
 
 The DHT rewrite was made possible by [Testground](https://github.com/ipfs/testground/), our new testing framework. Testground allows us to spin up multi-thousand node tests with simulated real-world network conditions. By combining Testground and some custom analysis tools, we were able to gain confidence that the new DHT implementation behaves correctly.
+
+## AutoNAT
+
+This release includes a protocol called AutoNAT for detecting whether or not a node is _reachable_ from the public internet. In short:
+
+1. An AutoNAT client asks a node running an AutoNAT service if it can be reached at one of a set of guessed addresses.
+2. The AutoNAT service attempts to _dial back_ those addresses, with some restrictions. We won't dial back to a different IP address, for example.
+3. If the AutoNAT service succeeds, it reports back the address it successfully dialed, and the AutoNAT client knows that it is reachable from the public internet.
+
+All nodes act as AutoNAT clients to determine if they should switch into DHT server mode. As of this release, all nodes also run a rate-limited AutoNAT service by default. This service should have minimal overhead. Nodes initialized with the `lowpower` configuration profile do not run the AutoNAT service.
+
+In addition to enabling the AutoNAT service by default, this release changes the AutoNAT config options:
+
+1. The `Swarm.EnableAutoNATService` option has been removed.
+2. A new AutoNAT section has been added to the config. This section is empty by default.
 
 ## Subdomain support in HTTP gateway
 
