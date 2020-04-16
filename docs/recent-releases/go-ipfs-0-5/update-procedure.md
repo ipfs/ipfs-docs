@@ -1,14 +1,12 @@
 ---
 title: Update procedure
-issueUrl: https://github.com/ipfs/docs/issues/470
 ---
 
 # Update procedure
 
-## Linux
-
 1. Download the new build and run it.
-2. Run `ipfs daemon`. 3. The daemon will ask if you want to run the migrations:
+2. Run `ipfs daemon`.
+3. The daemon will ask if you want to run the migrations:
 
    ```bash
    ipfs daemon
@@ -22,7 +20,7 @@ issueUrl: https://github.com/ipfs/docs/issues/470
    > Run migrations now? [y/N]
    ```
 
-3. Enter `y` and press enter. Once the migrations have finished, the daemon will start:
+4. Enter `y` and press enter. Once the migrations have finished, the daemon will start:
 
    ```bash
    y
@@ -38,11 +36,13 @@ issueUrl: https://github.com/ipfs/docs/issues/470
    > Daemon is ready
    ```
 
-4. Press `CTRL` + `c` to close the daemon.
-5. Check that the latest version of IPFS installed properly:
+5. Press `CTRL` + `c` to close the daemon.
+6. Check that the latest version of IPFS installed properly:
 
    ```bash
    ipfs --version
 
    > ipfs version 0.5.0-rc1
    ```
+
+7. That's it!
