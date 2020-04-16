@@ -1,6 +1,5 @@
 ---
 title: Troubleshooting
-issueUrl: https://github.com/ipfs/docs/issues/470
 ---
 
 # Troubleshooting
@@ -20,5 +19,3 @@ The gateway will redirect from `http://localhost:5001/ipfs/CID/...` to `http://C
 ## Minimum RSA key size
 
 IPFS now enforces a minimum key size of 2048. IPFS generates 2048 bit RSA keys by default so this shouldn't be an issue for most people. However, users who explicitly chose a smaller key size will not be able to communicate with new nodes.
-
-<ContentStatus />

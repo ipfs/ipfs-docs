@@ -1,6 +1,5 @@
 ---
 title: Overview
-issueUrl: https://github.com/ipfs/docs/issues/470
 ---
 
 # Go-IPFS 0.5
