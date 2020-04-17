@@ -106,10 +106,14 @@ If the app must employ an extenal gateway, such apps should use ipfs.io or a tru
 
 ## 6. Limitations
 
-### 6.1 Centralization and trust
-Using a gateway employs location-based addressing.
+### 6.1 Centralization
+Use of a gateway requires location-based addressing: `https://{gatewayURL}/ipfs/{contentID}/{etc}`
+All to easily the gateway URL becomes the handle by which users identify the content; i.e., the uniform reference locator (URL) equates (improperly) to the uniform reference identifier (URI).
+Now imagine that gateway becomes unreachable; e.g., goes offline or cannot be reached from a different user's location because of firewalls.
+At this moment content improperly identified by that gateway-based URL also appears (incorrectly) unreachable, defeating an key benefit of IPFS: decentralization.
+
+### 6.2 Trust
 Trusting a specific addressed gateway in turn requires trust of the gateway's issuing Certificate Authorities and the security of public key infrastructure.
-Therefore, the gateway represents an undesirable point of centralization for an otherwise decentralized service.
 
 ### 6.2 Gateway man-in-the-middle (MIM) vulnerability
 Employing a public or private HTTP(S) gateway sacrifices end-to-end cryptographic validation of delivery of the correct content.
