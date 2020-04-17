@@ -112,10 +112,27 @@ All to easily the gateway URL becomes the handle by which users identify the con
 Now imagine that gateway becomes unreachable; e.g., goes offline or cannot be reached from a different user's location because of firewalls.
 At this moment content improperly identified by that gateway-based URL also appears (incorrectly) unreachable, defeating an key benefit of IPFS: decentralization.
 
-### 6.2 Trust
-Trusting a specific addressed gateway in turn requires trust of the gateway's issuing Certificate Authorities and the security of public key infrastructure.
+### 6.2 Misplaced trust
+Trusting a specific gateway in turn requires trust of the gateway's issuing Certificate Authorities (CAs) and the security of the public key infrastructure (PKI) employed by that gateway.
+Compromised CAs or PKI implementations may undermine the trustworthiness of the gateway.
 
-### 6.2 Gateway man-in-the-middle (MIM) vulnerability
+### 6.3 Violation of same-origin policy
+To prevent one website from improperly accessing HTTP session data associated with a different website, the [same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy) permits script access only to pages that share a common domain name and port.
+Consider two web pages stored in IPFS: `ipfs://{contentID A}/{webpage A}` and `ipfs://{contentID B}/{webpage B}`.
+Code on webpage A should not access data from webpage B, as they do not share the same content ID (origin).
+
+A browser employing one gateway to access both sites, however, might not enforce that security policy.
+From that browser's perspective, both webpages share a common origin: the gateway as identified in the URL `https://{gatewayURL}/…`.
+
+_Note:_ The use of subdomain gateways avoids violations of the same-origin policy.
+In this situation the gateway's reference to the two webpages becomes:
+```
+https://{contentID A}.ipfs.{gatewayURL}/{webpage A}
+https://{contendID B}.ipfs.{gatewayURL}/{webpage B}
+```
+and thereby do not share the same origin.
+
+### 6.4 Gateway man-in-the-middle (MIM) vulnerability
 Employing a public or private HTTP(S) gateway sacrifices end-to-end cryptographic validation of delivery of the correct content.
 Consider the case of a browser fetching content with the URL `https://anipfsgateway.org/ipfs/{cid}`.
 A compromised `anipfsgateway.org` provides man-in-the-middle vulnerabilities, including:
