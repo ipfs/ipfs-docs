@@ -108,7 +108,7 @@ Note: The ipfs.io gateway IP addresses won't change, so you can set them and for
 
 Visitors' browsers will send `your.domain` in the Host header of their requests. The ipfs gateway will recognize `your.domain`, look up the value of the DNS TXT for your domain, then serve the files in `/ipns/your.domain/` instead of `/`.
 
-If you point `your.domain`'s A and AAAA record to the IP addreses of `gateway.ipfs.io`, and then wait for the DNS to propagate, then anyone should be able to access your ipfs-hosted site without any extra configuration at `http://your.domain`.
+If you point `your.domain`'s A and AAAA record to the IP addresses of `gateway.ipfs.io`, and then wait for the DNS to propagate, then anyone should be able to access your ipfs-hosted site without any extra configuration at `http://your.domain`.
 
 ## Use CNAMEs
 

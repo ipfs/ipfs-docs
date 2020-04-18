@@ -34,7 +34,7 @@ Referring to files by their content, not their location, is one of the most powe
 - [Content addressing](/concepts/content-addressing/)
 - [Cryptographic hashing](/concepts/hashing/)
 - [Immutability](/concepts/immutability/)
-- [Persistence, permancence and pinning](/concepts/persistence/)
+- [Persistence, permanence and pinning](/concepts/persistence/)
 
 ## Peer-to-peer file sharing
 

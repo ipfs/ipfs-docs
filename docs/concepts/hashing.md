@@ -32,7 +32,7 @@ However, the exact same input generates the following output using **SHA-256**:
 
 Notice that the second hash is longer than the first one. This is because SHA-1 creates a 160 bit hash, while SHA-256 creates a 256 bit hash. Also, the prepended `0x` is just an indicator that tells us that the following hash is represented as a base 16 (or hexadecimal) number.
 
-Hashes can be represented in different bases (`base2`, `base16`, `base32`, etc.). In fact, IPFS makes use of that as part of its [content identifiers](/concepts/content-addressing/) and supports mulitiple base representations at the same time, using the [Multibase](https://github.com/multiformats/multibase) protocol.
+Hashes can be represented in different bases (`base2`, `base16`, `base32`, etc.). In fact, IPFS makes use of that as part of its [content identifiers](/concepts/content-addressing/) and supports multiple base representations at the same time, using the [Multibase](https://github.com/multiformats/multibase) protocol.
 
 For example, the SHA-256 hash of "Hello world" from above can be represented as base 32 as:
 

@@ -672,7 +672,7 @@ SYNOPSIS
 
 OPTIONS
 
-  --prefix   bool - also include the single leter prefixes in addition to the
+  --prefix   bool - also include the single letter prefixes in addition to the
                     code.
   --numeric  bool - also include numeric codes.
 
@@ -1193,7 +1193,7 @@ ARGUMENTS
 
 DESCRIPTION
 
-  'ipfs dag resolve' fetches a dag node from ipfs, prints it's address and remaining path.
+  'ipfs dag resolve' fetches a dag node from ipfs, prints its address and remaining path.
 
 
 ```
@@ -1950,7 +1950,7 @@ DESCRIPTION
   written.
 
   If the '--create' option is specified, the file will be created if it does not
-  exist. Nonexistant intermediate directories will not be created.
+  exist. Nonexistent intermediate directories will not be created.
 
   Newly created files will have the same CID version and hash function of the
   parent directory unless the --cid-version and --hash options are used.
@@ -1959,7 +1959,7 @@ DESCRIPTION
   CID version is 0, or raw is the CID version is non-zero.  Use of the
   --raw-leaves option will override this behavior.
 
-  If the '--flush' option is set to false, changes will not be propogated to the
+  If the '--flush' option is set to false, changes will not be propagated to the
   merkledag root. This can make operations much faster when doing a large number
   of writes to a deeper directory structure.
 
@@ -2415,7 +2415,7 @@ OPTIONS
                          Default: true.
   --size          bool - Resolve linked objects to find out their file size.
                          Default: true.
-  -s, --stream    bool - Enable exprimental streaming of directory entries as
+  -s, --stream    bool - Enable experimental streaming of directory entries as
                          they are traversed.
 
 DESCRIPTION
@@ -2447,7 +2447,7 @@ OPTIONS
 DESCRIPTION
 
   Mount IPFS at a read-only mountpoint on the OS. The default, /ipfs and /ipns,
-  are set in the configuration file, but can be overriden by the options.
+  are set in the configuration file, but can be overridden by the options.
   All IPFS objects will be accessible under this directory. Note that the
   root will not be listable, as it is virtual. Access known paths directly.
 
@@ -2571,7 +2571,7 @@ OPTIONS
                             "300s", "1.5h" or "2h45m". Valid time units are
 
                             "ns", "us" (or "µs"), "ms", "s", "m", "h".
-  --allow-offline  bool   - When offline, save the IPNS record to the the local
+  --allow-offline  bool   - When offline, save the IPNS record to the local
                             datastore without broadcasting to the network
                             instead of simply failing.
   --ttl            string - Time duration this record should be cached for.
@@ -2864,7 +2864,7 @@ DESCRIPTION
     * "xml"
   (Specified by the "--encoding" or "--enc" flag)
 
-  The encoding of the object's data field can be specifed by using the
+  The encoding of the object's data field can be specified by using the
   --data-encoding flag
 
   Supported values are:

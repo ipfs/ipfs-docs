@@ -6,7 +6,7 @@ description: Learn about how to contribute to IPFS, the InterPlanetary File Syst
 
 # Ways to contribute
 
-So you want to contribute to IPFS and the ecosystem? Here is a quick listing of things we need help with and how you can get started. Even if what you want to do is not listed here, we probably accept contributions for it! If you're unsure, please open a issue.
+So you want to contribute to IPFS and the ecosystem? Here is a quick listing of things we need help with and how you can get started. Even if what you want to do is not listed here, we probably accept contributions for it! If you're unsure, please open an issue.
 
 ## Code
 
