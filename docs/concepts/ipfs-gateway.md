@@ -94,10 +94,10 @@ IPFS gateway servers located inside the private network and running a trusted co
 ### 5.1 Delay-sensitive applications
 Any gateway introduces delay in completing desired actions.
 Faster execution occurs when using methods close to the top of the following list instead of those toward the bottom:
-*   native IPFS node embedded within the app.
+*   native IPFS node local to the app.
 *   IPFS extension to app.
 *   gateway installed as a local daemon, with redirection of requests
-from app to the local service.
+from app to the local service. _Note:_ If an IPFS node exists locally on the same machine, it runs such a gateway at `http://127.0.0.1:8080`.
 *   public/private gateways.
 
 ### 5.2 End-to-end cyptographic validation required
