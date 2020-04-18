@@ -155,11 +155,23 @@ Bob fetches the content with this CID and cryptographically validates `balance: 
 
 To partially address this exposure you may wish to use the public gateway cf-ipfs.com as an independent, trusted reference with both same-origin policy and CORS support.
 
+### 6.6 Assuming filenames when downloading files
+When downloading files, browsers will usually guess a file's filename by looking at the last component of the path; e.g., `https://{domainName}/{path}/userManual.pdf` downloads a file stored locally with the name `userManual.pdf`.
+Unfortunately, when linking directly to a file with no containing directory in IPFS, the content ID becomes the final component.
+Storing the downloaded file with the filename set to the content ID fails the human-friendly design test.
+
+To work around this issue, you can add a filename=some_filename parameter to your query string to explicitly specify the filename:
+
+| style | query |
+| ----: | :---- |
+| path | `https://{gatewayURL}/ipfs/{contentID}?filename={filename.ext}` |
+| subdomain | `https://{contentID}.ipfs.{gatewayURL}/?filename={filename.ext}`  |
+| DNSLink | TBD |
+
+
 ## 7. Implementation status
 
-## 8. Use cases
-
-## 9. Further details
+## 8. Further details
 
 
 <ContentStatus />
