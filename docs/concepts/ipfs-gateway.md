@@ -124,13 +124,15 @@ Code on webpage A should not access data from webpage B, as they do not share th
 A browser employing one gateway to access both sites, however, might not enforce that security policy.
 From that browser's perspective, both webpages share a common origin: the gateway as identified in the URL `https://{gatewayURL}/…`.
 
-_Note:_ The use of subdomain gateways avoids violations of the same-origin policy.
+The use of subdomain gateways avoids violating the same-origin policy.
 In this situation the gateway's reference to the two webpages becomes:
 ```
 https://{contentID A}.ipfs.{gatewayURL}/{webpage A}
 https://{contendID B}.ipfs.{gatewayURL}/{webpage B}
 ```
 and thereby do not share the same origin.
+
+Similarly, the use of DNSLink gateway avoids violating the same-origin policy.
 
 ### 6.4 Gateway man-in-the-middle (MIM) vulnerability
 Employing a public or private HTTP(S) gateway sacrifices end-to-end cryptographic validation of delivery of the correct content.
