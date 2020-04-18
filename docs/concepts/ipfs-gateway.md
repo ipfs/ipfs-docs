@@ -134,7 +134,14 @@ and thereby do not share the same origin.
 
 Similarly, the use of DNSLink gateway avoids violating the same-origin policy.
 
-### 6.4 Gateway man-in-the-middle (MIM) vulnerability
+The [IPFS public gateway checker](https://ipfs.github.io/public-gateway-checker/) identifies those public gateways that avoid violating the same-origin policy.
+
+### 6.4 Cross-origin resource sharing
+[CORS](https://web.archive.org/web/20200418003728/https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#The_HTTP_response_headers) allows a webpage to permit access to specified data by pages with a different origin.
+
+he [IPFS public gateway checker](https://ipfs.github.io/public-gateway-checker/) identifies those public gateways that support CORS.
+
+### 6.5 Gateway man-in-the-middle (MIM) vulnerability
 Employing a public or private HTTP(S) gateway sacrifices end-to-end cryptographic validation of delivery of the correct content.
 Consider the case of a browser fetching content with the URL `https://anipfsgateway.org/ipfs/{cid}`.
 A compromised `anipfsgateway.org` provides man-in-the-middle vulnerabilities, including:
@@ -146,7 +153,7 @@ For example, a compromised writeable gateway user Alice POSTs `balance: 123.45`,
 Alice gives Bob this CID.
 Bob fetches the content with this CID and cryptographically validates `balance: 0.00`.
 
-To partially address this exposure you may wish to use the public gateway ipfs.io as an independent, trusted reference.
+To partially address this exposure you may wish to use the public gateway cf-ipfs.com as an independent, trusted reference with both same-origin policy and CORS support.
 
 ## 7. Implementation status
 
