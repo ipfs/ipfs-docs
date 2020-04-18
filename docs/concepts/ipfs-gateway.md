@@ -173,5 +173,7 @@ To work around this issue, you can add a filename=some_filename parameter to you
 
 ## 8. Further details
 
+*   [gateway configuration options](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway).
+
 
 <ContentStatus />
