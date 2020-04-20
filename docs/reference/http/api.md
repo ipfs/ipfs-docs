@@ -599,7 +599,7 @@ List available multibase encodings.
 
 ### Arguments
 
-- `prefix` [bool]: also include the single leter prefixes in addition to the code. Required: no.
+- `prefix` [bool]: also include the single letter prefixes in addition to the code. Required: no.
 - `numeric` [bool]: also include numeric codes. Required: no.
 
 ### Response
@@ -1934,7 +1934,7 @@ List directory contents for Unix filesystem objects.
 - `headers` [bool]: Print table headers (Hash, Size, Name). Required: no.
 - `resolve-type` [bool]: Resolve linked objects to find out their types. Default: `true`. Required: no.
 - `size` [bool]: Resolve linked objects to find out their file size. Default: `true`. Required: no.
-- `stream` [bool]: Enable exprimental streaming of directory entries as they are traversed. Required: no.
+- `stream` [bool]: Enable experimental streaming of directory entries as they are traversed. Required: no.
 
 ### Response
 
@@ -2003,7 +2003,7 @@ Publish IPNS names.
 - `lifetime` [string]: Time duration that the record will be valid for.
   This accepts durations such as &#34;300s&#34;, &#34;1.5h&#34; or &#34;2h45m&#34;. Valid time units are
   &#34;ns&#34;, &#34;us&#34; (or &#34;µs&#34;), &#34;ms&#34;, &#34;s&#34;, &#34;m&#34;, &#34;h&#34;. Default: `24h`. Required: no.
-- `allow-offline` [bool]: When offline, save the IPNS record to the the local datastore without broadcasting to the network instead of simply failing. Required: no.
+- `allow-offline` [bool]: When offline, save the IPNS record to the local datastore without broadcasting to the network instead of simply failing. Required: no.
 - `ttl` [string]: Time duration this record should be cached for. Uses the same syntax as the lifetime option. (caution: experimental). Required: no.
 - `key` [string]: Name of the key to be used or a valid PeerID, as listed by &#39;ipfs key list -l&#39;. Default: `self`. Required: no.
 - `quieter` [bool]: Write only final hash. Required: no.

@@ -94,7 +94,7 @@ If you want, you can also build IPFS from source. For more detailed instructions
 
 #### Update/upgrade IPFS
 
-You can upate IPFS using the [built-in tool](#ipfs-update), or by editing the files [manually](#upgrade-manually).
+You can update IPFS using the [built-in tool](#ipfs-update), or by editing the files [manually](#upgrade-manually).
 
 #### IPFS-Update
 
