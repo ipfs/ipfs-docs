@@ -41,4 +41,4 @@ The node sends out a `want` for each CID to several peers in the session in para
 - [Technical overview of the Go implementation of Bitswap](https://docs.google.com/presentation/d/1mbFFGIIKNvboHyLn-k26egOSWkt9nXjlNbxpmCEQfqQ/edit#slide=id.p)
 - [Article: Swapping bits and distributing hashes on the decentralized web (Textile)](https://medium.com/textileio/swapping-bits-and-distributing-hashes-on-the-decentralized-web-5da98a3507)
 - "About Bitswap" Go implementation poster from the IPFS developer summit in Berlin in July 2018:
-    !['About Bitswap' poster](https://user-images.githubusercontent.com/74178/43230914-f818dab2-901e-11e8-876b-73ba6a084f76.jpg "Bitswap-Poster_Berlin-July-2018")
+  !['About Bitswap' poster](https://user-images.githubusercontent.com/74178/43230914-f818dab2-901e-11e8-876b-73ba6a084f76.jpg 'Bitswap-Poster_Berlin-July-2018')
