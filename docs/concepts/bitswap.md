@@ -35,6 +35,12 @@ To find out which peers have the blocks that make up a file, a node running the 
 
 The node sends out a `want` for each CID to several peers in the session in parallel, because not all peers will have all blocks. If the node starts receiving a lot of duplicate blocks, it sends a `want` for each CID to fewer peers. If the node gets timeouts waiting for blocks, it sends a `want` for each CID to more peers. In this way the node tries to maintain a high download speed without too many duplicate blocks.
 
+Initially a node wants to know peers have the root-block, but the node doesn’t want to receive the block itself. This discovery _want_ is sent to many peers, and if they all responded with the block then the node would end up with lots of duplicate blocks, wasting energy and bandwidth. Instead, when Bitswap sends a _want-request_ it can ask for a _have-response_.
+
+![Diagram of the _want-have/want-block_ process.](./images/bitswap/diagram-of-the-want-have-want-block-process.png)
+
+
+
 ### Additional references
 
 - [February 2020: New improvements to IPFS Bitswap](https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/)
