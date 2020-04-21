@@ -13,42 +13,27 @@ related:
 Bitswap is a core module of IPFS for exchanging blocks of data. It directs the requesting and sending of blocks to and from other peers in the network. Bitswap is a _message-based protocol_ where all messages contain [want-lists](#want-list) or blocks. Bitswap has a [Go implementation](https://github.com/ipfs/go-bitswap) and a [JavaScript implementation](https://github.com/ipfs/js-ipfs-bitswap).
 
 Bitswap has two main jobs:
+
 - Acquire blocks requested by the client from the network.
 - Send blocks in its possession to other peers who want them.
 
-### Want-list
+## How Bitswap works
 
-A _want-list_ is a data structure that an IPFS node sends to the network to tell peers which blocks it wants. It's a list of data that the IPFS node wants. The want-list contains [CIDs](/concepts/content-addressing/) (content-addressed identifiers that refer to particular blocks desired) along with priority and cancellation information.
+IPFS breaks up files into chunks of data called _blocks_. These blocks are identified by a [content identifier (CID)](/content/content-addressing). When nodes running the Bitswap protocol want to fetch a file, they send out `want-lists` to other peers. A `want-list` is a list of CIDs for blocks a peer wants to receive. Each node remembers which blocks its peers want. Each time a node receives a block it checks if any of its peers want the block, and sends it to them if they do.
 
-Here is a simplified example of a want-list:
+Here is a simplifed version of a `want-list`:
 
-```sh
+```javascript
 Want-list {
   QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy, WANT,
   QmTudJSaoKxtbEnTddJ9vh8hbN84ZLVvD5pNpUaSbxwGoa, WANT,
   ...
-  QmPvaEQFVvuiaYzkSVUp23iHTQeEUpDaJnP8U7C3PqE57w, CANCEL
 }
 ```
 
-Take a look at the [Go source code](https://github.com/ipfs/go-bitswap/blob/master/wantlist/wantlist.go) for a deeper dive into how want-lists are structured..
+To find out which peers have the blocks that make up a file, a node running the Bitswap protocol first sends a request called a `want` to all the peers it is connected to. This _want-request_ contains CID of the root-block of data that makes up the larger chunk of data that makes up a file. If the peers don’t have the block, the node queries the Distributed Hash Table (DHT) to ask who has the root-block. Any peers that respond with the root-block are added to a session. So that the network isn't flooded with _want-requests_, Bitswap only sends `wants` to peers in the session.
 
-### Message
-
-A single Bitswap message may contain any of the following content:
-
--  **The sender's want-list:** This want-list may either be the sender's complete want-list or just the changes to the sender's want-list that the receiver needs to know.
--  **Data blocks:** These are blocks that have been requested (i.e., blocks in the sender's want-list, as far as the receiver is aware at the time of message receipt).
-
-### Session
-
-IPFS content blocks are often connected through a [Merkle DAG](/concepts/merkle-dag/). If a sender's block requests are related, a mechanism called a _Bitswap session_ in the Go implementation can optimize block requests sent to other peers. This mechanism can increase transfer speed and reduce the number of duplicate blocks on the network. Active peers are favored, as they are tracked relative to them having the requested blocks and how quickly they respond.
-
-If a remote peer has one block then it is likely that they have other blocks from the same DAG. So any new block requests are sent to that peer directly. This skips the need to send lots of requests to multiple servers, saving the user time and power.
-
-### Provider system
-
-The provider system is responsible for announcing and reannouncing to the IPFS network that a node has content. If a node cannot find content with connected peers, it will query a content routing system (usually a form of [DHT](/concepts/dht/)) to locate a peer with the content.
+The node sends out a `want` for each CID to several peers in the session in parallel, because not all peers will have all blocks. If the node starts receiving a lot of duplicate blocks, it sends a `want` for each CID to fewer peers. If the node gets timeouts waiting for blocks, it sends a `want` for each CID to more peers. In this way the node tries to maintain a high download speed without too many duplicate blocks.
 
 ### Additional references
 
