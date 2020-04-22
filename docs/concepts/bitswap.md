@@ -19,7 +19,7 @@ Bitswap has two main jobs:
 
 ## How Bitswap works
 
-IPFS breaks up files into chunks of data called _blocks_. These blocks are identified by a [content identifier (CID)](/content/content-addressing). When nodes running the Bitswap protocol want to fetch a file, they send out `want-lists` to other peers. A `want-list` is a list of CIDs for blocks a peer wants to receive. Each node remembers which blocks its peers want. Each time a node receives a block it checks if any of its peers want the block, and sends it to them if they do.
+IPFS breaks up files into chunks of data called _blocks_. These blocks are identified by a [content identifier (CID)](/content/content-addressing). When nodes running the Bitswap protocol want to fetch a file, they send out `want-lists` to other peers. A `want-list` is a list of CIDs for blocks a peer wants to receive. Each node remembers which blocks its peers want. Each time a node receives a block, it checks if any of its peers want the block, and sends it to them if they do.
 
 Here is a simplifed version of a `want-list`:
 
@@ -31,17 +31,17 @@ Want-list {
 }
 ```
 
-To find out which peers have the blocks that make up a file, a node running the Bitswap protocol first sends a request called a `want` to all the peers it is connected to. This _want-request_ contains CID of the root-block of data that makes up the larger chunk of data that makes up a file. If the peers don’t have the block, the node queries the Distributed Hash Table (DHT) to ask who has the root-block. Any peers that respond with the root-block are added to a session. So that the network isn't flooded with _want-requests_, Bitswap only sends `wants` to peers in the session.
+To find out which peers have the blocks that make up a file, a node running the Bitswap protocol first sends a request called a `want` to all the peers it is connected to. This _want-request_ contains CID of the root-block of data that makes up the larger chunk of data that makes up a file. If the peers don't have the block, the node queries the Distributed Hash Table (DHT) to ask who has the root-block. Any peers that respond with the root-block are added to a session. So that the network isn't flooded with _want-requests_, Bitswap only sends `wants` to peers in the session.
 
-The node sends out a `want` for each CID to several peers in the session in parallel, because not all peers will have all blocks. If the node starts receiving a lot of duplicate blocks, it sends a `want` for each CID to fewer peers. If the node gets timeouts waiting for blocks, it sends a `want` for each CID to more peers. In this way the node tries to maintain a high download speed without too many duplicate blocks.
+The node sends out a `want` for each CID to several peers in the session in parallel, because not all peers have all blocks. If the node starts receiving many duplicate blocks, it sends a `want` for each CID to fewer peers. If the node gets timeouts waiting for blocks, it sends a `want` for each CID to more peers. In this way, the node tries to maintain a high download speed without too many duplicate blocks.
 
-Initially a node wants to know peers have the root-block, but the node doesn’t want to receive the block itself. This discovery _want_ is sent to many peers, and if they all responded with the block then the node would end up with lots of duplicate blocks, wasting energy and bandwidth. Instead, when Bitswap sends a _want-request_ it can ask for a _have-response_.
+Initially, a node wants to know peers have the root-block, but the node doesn't want to receive the block itself. This discovery _want_ is sent to many peers, and if they all responded with the block, then the node would end up with lots of duplicate blocks, wasting energy and bandwidth. Instead, when Bitswap sends a _want-request_, it can ask for a _have-response_.
 
 ![Diagram of the _want-have/want-block_ process.](./images/bitswap/diagram-of-the-want-have-want-block-process.png)
 
-Once a node has added peers to the session, it can also use these _have-response_ messages to figure out which of the session peers have the rest of the blocks it needs. This process is relativly cheap because we don't have to worry about duplicate blocks. At this stage the node also wants the peer to say if it doesn’t have the block, so a _dont-have-response_ is available.
+Once a node has added peers to the session, it can also use these _have-response_ messages to figure out which of the session peers have the rest of the blocks it needs. This process is relatively cheap because we don't have to worry about duplicate blocks. At this stage, the node also wants the peer to say if it doesn't have the block, so a _dont-have-response_ is available.
 
-With these changes a node can cheaply work out how blocks are distributed amongst its peers and can direct the requests for blocks more accurately, increasing overall download speed and reducing the number of duplicate blocks. The node can also quickly recognize when all the peers in a session don’t have a block it needs, and go out to the DHT to find out who has the block.
+With these changes, a node can cheaply work out how blocks are distributed amongst its peers and can direct the requests for blocks more accurately, increasing overall download speed and reducing the number of duplicate blocks. The node can also quickly recognize when all the peers in a session don't have a block it needs and go out to the DHT to find out who has the block.
 
 ### Additional references
 
