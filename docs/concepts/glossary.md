@@ -63,7 +63,7 @@ The Datastore is the on-disk storage system used by an IPFS node. Configuration 
 A Distributed Hash Table (DHT) is a distributed key-value store where keys are cryptographic hashes. In IPFS, each peer is responsible for a subset of the IPFS DHT. [More about DHT](https://docs-beta.ipfs.io/concepts/dht/)
 
 ### Dialing
-Diaing is a function of the IPFS networking layer in [libp2p](#libp2p), wherein a connection is opened to another peer. Together, an implementation of dialing and [listening](#listening) forms a [transport](#transport").
+Dialing is a function of the IPFS networking layer in [libp2p](#libp2p), wherein a connection is opened to another peer. Together, an implementation of dialing and [listening](#listening) forms a [transport](#transport").
 
 ### DNSLink
 DNSLink is a protocol to link content and services directly from DNS. A DNSLink address looks like an IPNS address, but it uses a domain name in place of a hashed public key, like /ipns/mydomain.org. [More about DNSLink](https://dnslink.io/)
