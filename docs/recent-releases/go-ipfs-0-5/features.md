@@ -36,6 +36,8 @@ All IPFS nodes will now run two DHTs: one for the public internet WAN, and one f
 1. When connected to the public internet, IPFS will use both DHTs for finding peers, content, and IPNS records. Nodes only publish provider and IPNS records to the WAN DHT to avoid flooding the local network.
 2. When not connected to the public internet, nodes publish provider and IPNS records to the LAN DHT.
 
+The WAN DHT includes all peers with at least one public IP address. This release will only consider an IPv6 address public if it is in the [public internet range `2000::/3`](https://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xhtml).
+
 This feature should not have any noticeable impact on Go-IPFS, performance, or otherwise. Everything should continue to work in all the currently supported network configurations: VPNs, disconnected LANs, public internet, etc.
 
 #### Query Logic
