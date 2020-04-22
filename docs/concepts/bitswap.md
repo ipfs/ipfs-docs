@@ -39,8 +39,6 @@ Initially a node wants to know peers have the root-block, but the node doesn’t
 
 ![Diagram of the _want-have/want-block_ process.](./images/bitswap/diagram-of-the-want-have-want-block-process.png)
 
-
-
 ### Additional references
 
 - [February 2020: New improvements to IPFS Bitswap](https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/)
