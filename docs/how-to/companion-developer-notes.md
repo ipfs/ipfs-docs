@@ -51,7 +51,7 @@ Then open up `chrome://extensions` in your Chromium-based browser, enable "Devel
 
 | Chrome "unpacked extension" | Firefox "temporary add on" |
 |-----------------------------|----------------------------|
-| ![installing ipfs-companion as an unpacked extension in chrome](./images/ipfs-companion-install-chrome-dev.gif) | ![installing ipfs-companion as a temporary add on in firefox](./images/ipfs-companion-install-firefox-dev.gif) |
+| ![installing ipfs-companion as an unpacked extension in chrome](../images/ipfs-companion-install-chrome-dev.gif) | ![installing ipfs-companion as a temporary add on in firefox](../images/ipfs-companion-install-firefox-dev.gif) |
 
 
 ### Firefox for Android
