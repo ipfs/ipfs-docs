@@ -265,7 +265,7 @@ module.exports = {
                 collapsable: false,
                 children: [
                   'how-to/companion-firefox-android',
-                  'how-to/companion-developer-notes',
+                  'how-to/build-companion-from-source',
                   'how-to/companion-node-types',
                   'how-to/dnslink-companion',
                   'how-to/companion-localization',
