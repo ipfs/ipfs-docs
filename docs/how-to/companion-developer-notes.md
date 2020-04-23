@@ -4,7 +4,7 @@ legacyUrl:
 description: Developer notes for IPFS Companion, including building and running from source in Firefox, Chromium, and Android.
 ---
 
-# Developer notes for IPFS Companion
+# IPFS Companion developer notes
 
 If you're looking to develop on IPFS Companion, you'll want to build from source. See the details below
 
@@ -49,7 +49,7 @@ npm run build bundle:chromium # last part is important: it overwrites manifest
 
 Then open up `chrome://extensions` in your Chromium-based browser, enable "Developer mode", click "Load unpacked extension..." and point it at `add-on`.
 
-| Chrome "unpacked extension" | Firefox "temporary add on" |
+| Chrome "unpacked extension" | Firefox "temporary add-on" |
 |-----------------------------|----------------------------|
 | ![installing ipfs-companion as an unpacked extension in chrome](../images/ipfs-companion-install-chrome-dev.gif) | ![installing ipfs-companion as a temporary add on in firefox](../images/ipfs-companion-install-firefox-dev.gif) |
 
