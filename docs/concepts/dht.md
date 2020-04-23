@@ -8,12 +8,12 @@ description: Learn what distributed hash tables (DHTs) are, and how they play a 
 
 A regular [hash table](https://en.wikipedia.org/wiki/Hash_table) is a key-value store where the _keys_ are [hashes](/concepts/hashing). In the case of IPFS, the _values_ can be any block of data, and the _keys_ are the CIDs of those blocks. IPFS uses hash tables to store who has what data.
 
-| Key | Value |
-| --- | ----- |
-| `QmVenus` | `UserAlex` |
-| `QmVenus` | `UserBrian` |
-| `QmMars` | `UserCharlotte` |
-| `QmMars` | `UserAlex` |
+| Key         | Value           |
+| ----------- | --------------- |
+| `QmVenus`   | `UserAlex`      |
+| `QmVenus`   | `UserBrian`     |
+| `QmMars`    | `UserCharlotte` |
+| `QmMars`    | `UserAlex`      |
 | `QmJupiter` | `UserCharlotte` |
 
 In a regular key-value store, all the data within the table is stored in one place. Databases like SQL work this way; all the data you need can be found in a single place. However, the _distributed_ part of _DHT_ means that the entire table is spread across different locations. Each computer running IPFS, also known as a _node_, holds a piece of the larger table. Nodes do not store information on what every other node is storing, since that wouldn't scale very well. Instead, IPFS uses a piece of software called [Kademlia](https://en.wikipedia.org/wiki/Kademlia) that teach IPFS how to distribute the table.
@@ -46,7 +46,8 @@ If a node announces to the network that it can provide a particular CID, the sta
 
 To avoid problem nodes must re-announce which CIDs they can provide. This happens at least every 12 hours. If `Node B` doesn't get a re-announcement from `Node A` that they can still provide `CID X` within a 12 hour period, `Node B` will remove `Node A` from the provider list.
 
-<!-- Similarity -->
+## Similarity
+
 How similar a PeerID is to a CID is defined as the [exclusive-or (XOR) distance](https://en.wikipedia.org/wiki/Exclusive_or) between the bytes that make up the PeerID, and the bytes that make up the CID.
 
 ## Managing data
