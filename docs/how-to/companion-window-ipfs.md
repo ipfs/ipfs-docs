@@ -6,13 +6,13 @@ description: Learn about exposing IPFS API in IPFS Companion via "window.ipfs".
 
 # Using `window.ipfs` in IPFS Companion
 
-## **⚠️ IMPORTANT! `window.ipfs` is currently disabled
+## **⚠️ IMPORTANT! `window.ipfs` is currently disabled**
 
-IPFS Companion 2.11 stopped injecting  `window.ipfs`. It will be restored after the [move to JS API with async await and async iterables](https://github.com/ipfs-shipyard/ipfs-companion/issues/843), with a likely ETA of Q3 2020. This page is provided for reference only.**
+**IPFS Companion 2.11 stopped injecting  `window.ipfs`. It will be restored after the [move to JS API with async await and async iterables](https://github.com/ipfs-shipyard/ipfs-companion/issues/843), with a likely ETA of Q3 2020. This page is provided for reference only.**
 
-> ### Disclaimer:
+> #### Disclaimer:
 > - [Ongoing work on v2 of this interface](https://github.com/ipfs-shipyard/ipfs-companion/issues/589)
->   - Want to help with shaping it? See [#589](https://github.com/ipfs-shipyard/ipfs-companion/issues/589) and [issues with `window.ipfs` label](https://github.com/ipfs-shipyard/ipfs-companion/labels/window.ipfs).
+>   - Want to help with shaping it? See [#589](https://github.com/ipfs-shipyard/ipfs-companion/issues/589) and [issues with the `area/window-ipfs` label](https://github.com/ipfs-shipyard/ipfs-companion/labels/area%2Fwindow-ipfs).
 > - The interface is experimental and might change
 >   - **TL;DR:** Use [window.ipfs-fallback](https://www.npmjs.com/package/window.ipfs-fallback) to ensure your app follows any future changes
 
@@ -22,7 +22,7 @@ IPFS Companion exposes a subset of IPFS APIs as `window.ipfs` on every webpage. 
 
 For more context, see:
 - First iteration: [window.ipfs v1](https://github.com/ipfs-shipyard/ipfs-companion/issues/330)
-- Second iteration (now): [window.ipfs v2](https://github.com/ipfs-shipyard/ipfs-companion/issues/589)
+- Second iteration (currently under development): [window.ipfs v2](https://github.com/ipfs-shipyard/ipfs-companion/issues/589)
 
 ## Creating applications using `window.ipfs`
 
@@ -77,7 +77,7 @@ Optional `scope` and `permissions` attributes provide detailed information:
 
 It is an IPFS proxy endpoint that enables you to obtain an IPFS API instance. Depending how IPFS Companion is configured, you may be talking directly to a `js-ipfs` node running in Companion, a `go-ipfs` daemon over `js-ipfs-http-client`, or a `js-ipfs` daemon over `js-ipfs-http-client` ... and potentially others in the future. Note that object returned by `window.ipfs.enable` is _not_ an instance of `js-ipfs` or `js-ipfs-http-client`, but is a proxy to one of them, so don't expect to be able to detect either of them or be able to use any undocumented or instance-specific functions.
 
-For information on available functions, see the [js-ipfs](https://github.com/ipfs/js-ipfs#api) and [js-ipfs-http-client](https://github.com/ipfs/js-ipfs-http-client#api) docs for available functions. If you find that some new functions are missing, the proxy might be out of date. Please check the [current status](https://github.com/tableflip/ipfs-postmsg-proxy#current-status) and submit a PR.
+For information on available functions, see the [js-ipfs](https://github.com/ipfs/js-ipfs) and [js-ipfs-http-client](https://github.com/ipfs/js-ipfs-http-client) docs for available functions. If you find that some new functions are missing, the proxy might be out of date. Please check the [current status](https://github.com/tableflip/ipfs-postmsg-proxy#current-status) and submit a PR.
 
 ### How do I fall back if `window.ipfs` is not available?
 

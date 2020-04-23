@@ -61,6 +61,6 @@ You can connect to this Android device on TCP port <debug PORT>
 
 The fastest way to connect is to open `chrome://devtools/content/framework/connect/connect.xhtml` in Firefox on the same machine you run `web-ext` from.
 
-## Additional resources
+## Further resources
 
 - [MDN: Developing extensions for Firefox for Android](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Developing_WebExtensions_for_Firefox_for_Android)

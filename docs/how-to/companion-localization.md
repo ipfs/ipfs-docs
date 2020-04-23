@@ -14,7 +14,7 @@ Chrome comes with locales out of the box, so it is enough to set the proper env:
 
     LANGUAGE=pl chromium --user-data-dir=`mktemp -d`
 
-### Further information
+### Further resources
 - [Language Codes in Chromium Project](https://src.chromium.org/viewvc/chrome/trunk/src/third_party/cld/languages/internal/languages.cc)
 
 ## Running Firefox with a specific locale
@@ -28,9 +28,9 @@ Unless you've installed a locale-specific build, Firefox will have English only.
 2. Install your language pack from https://addons.mozilla.org/firefox/language-tools/
 3. Reload the browser extension; it should detect your new locale
 
-### Further information
+### Further resources
  - [Mozilla: Use Firefox in another language](https://support.mozilla.org/en-US/kb/use-firefox-interface-other-languages-language-pack#w_how-to-change-the-language-of-the-user-interface)
- - [Mozilla: Locale Codes](http://l10n.mozilla-community.org/webdashboard/)
+ - [Mozilla: Locale Codes](https://wiki.mozilla.org/L10n:Locale_Codes)
 
 ## Contributing translations
 

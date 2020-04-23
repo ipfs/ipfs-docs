@@ -10,7 +10,7 @@ description: Details of DNSLink support in IPFS Companion.
 
 ## What is DNSLink?
 
-DNSLink maps a domain name to an IPFS address by means of DNS TXT record. Read the [DNSLink guide](./concepts/dnslink.md) for full details, including how to set it up on your own website.
+DNSLink maps a domain name to an IPFS address by means of DNS TXT record. Read the [DNSLink guide](../concepts/dnslink.md) for full details, including how to set it up on your own website.
 
 ## Lookup cache
 
@@ -30,7 +30,7 @@ This is the most efficient lookup strategy, but in rare cases it may yield false
 
 DNSLink redirect is enabled and happens before the HTTP request if DNSLink is already in cache. If not in cache, DNS TXT lookup is executed and cached in the background without blocking the page load.
 
-Blocking lookups are executed only for domains that return an HTTP response with [x-ipfs-path header](x-ipfs-path-header.md)) or return a connection error.
+Blocking lookups are executed only for domains that return an HTTP response with [x-ipfs-path header](companion-x-ipfs-path-header.md)) or return a connection error.
 
 ### Check before HTTP request (enabled)
 
@@ -43,4 +43,4 @@ There is room for improvement in this approach: Web browsers do not expose effic
 ## Further resources
 
 - [`x-ipfs-path` header support in IPFS Companion](companion-x-ipfs-path-header.md)
-- [Bug 1449171: Add DNS TXT resolution to dns.resolve WebExtensions API](https://bugzilla.mozilla.org/show_bug.cgi?id=1449171)
+- [Bugzilla bug 1449171: Add DNS TXT resolution to dns.resolve WebExtensions API](https://bugzilla.mozilla.org/show_bug.cgi?id=1449171)
