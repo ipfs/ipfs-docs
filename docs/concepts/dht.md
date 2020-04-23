@@ -1,87 +1,79 @@
 ---
 title: Distributed Hash Tables (DHTs)
 legacyUrl: https://docs.ipfs.io/guides/concepts/dht/
-description: Learn about how distributed hash tables (DHTs) play a part in the overall lifecycle of IPFS.
+description: Learn what distributed hash tables (DHTs) are, and how they play a part in the overall lifecycle of IPFS.
 ---
-
-<!-- What a DHT is. -->
-<!-- Why/how IPFS uses them. -->
-<!-- How to interact with the DHT. -->
-<!-- Further reading. -->
 
 # Distributed Hash Tables (DHTs)
 
-[Distributed Hash Tables](https://en.wikipedia.org/wiki/Distributed_hash_table) (DHTs) are distributed key-value stores where keys are [cryptographic hashes](/concepts/hashing). DHTs are not unique to IPFS, and have been used in a wide variety of applications
+A regular [hash table](https://en.wikipedia.org/wiki/Hash_table) is a key-value store where the _keys_ are [hashes](/concepts/hashing). In the case of IPFS, the _values_ can be any block of data, and the _keys_ are the CIDs of those blocks. IPFS uses hash tables to store who has what data.
 
-DHTs are distributed. Each _node_ is responsible for a subset of the DHT. When a node receives a request, it either answers it, or the request is passed to another node until a node that can answer the request is found. There are three common methods available to get an answer to a request:
+| Key | Value |
+| --- | ----- |
+| `QmVenus` | `UserAlex` |
+| `QmVenus` | `UserBrian` |
+| `QmMars` | `UserCharlotte` |
+| `QmMars` | `UserAlex` |
+| `QmJupiter` | `UserCharlotte` |
 
-| Method description | Diagram |
-| ------------------ | ------- |
-| The request can be forwarded from node to node, with the last node contacting the original requesting-node. | ![Diagram of the direct with address DHT rounting method.](./images/dht/address-dht-method.png) |
-| The request can be forwarded from node to node, with the answer following the same path backwards. | ![Diagram of the bounce DHT routing method](./images/dht/bounce-dht-method.png) |
-| The request can be forwarded with the contact information of a node that has better chances to be able to answer. **This is the method that IPFS uses**. | ![Diagram of the suggestion DHT method](./images/dht/suggestion-dht-method.png) |
+In a regular key-value store, all the data within the table is stored in one place. Databases like SQL work this way; all the data you need can be found in a single place. However, the _distributed_ part of _DHT_ means that the entire table is spread across different locations. Each computer running IPFS, also known as a _node_, holds a piece of the larger table. Nodes do not store information on what every other node is storing, since that wouldn't scale very well. Instead, IPFS uses a piece of software called [Kademlia](https://en.wikipedia.org/wiki/Kademlia) that teach IPFS how to distribute the table.
 
-DHTs' decentralization provides advantages compared to a traditional key-value store:
+DHTs are not unique to IPFS, and have been used in a wide variety of applications, [from decentralized search engines to censorship-resistant networks](https://en.wikipedia.org/wiki/Distributed_hash_table#Implementations).
 
-- *Scalability*: since a request for a hash of length _n_ takes at most _log2(n)_ steps to resolve.
-- *Fault tolerance*: via redundancy, so that lookups are possible even if peers unexpectedly leave or join the DHT. Additionally, requests can be addressed to any peer if another peer is slow or unavailable.
-- *Load balancing*: since requests are made to different nodes, and no unique peers process all the requests.
+## Peers
 
-## Peer IDs
+To see this in action you can run `ipfs dht findprovs <CID>` to find the providers of a particular CID:
 
-Each peer has a `peerID`, which is a hash with the same length _n_ as the DHT keys.
+```bash
+ipfs dht findprovs QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG
 
-## Buckets
+> QmNgDsms4K3jomZpr1yuC8JYWstvzFLCjEGY7aoHrnxX7r
+> QmQzustKyCbyy3BbpetySYk88D8mtS9No8xEJP7B5tV324
+> QmR6oSKYSfgsqa1wjfJ8hUPYAS8wjuLxW1Fxu911v3ajwc
+```
 
-A subset of the DHT maintained by a peer is called a 'bucket'. A bucket maps to hashes with the same prefix as the `peerID`, up to _m_ bits. There are 2^m buckets. Each bucket maps for 2^(n-m) hashes.
+### Reproviding
 
-For example, if _m_=16 and we use hexadecimal encoding (four bits per displayed character), the peer with `peerID` 'ABCDEF12345' maintains mapping for hashes starting with 'ABCD'. Some hashes falling into this bucket would be *ABCD*38E56, *ABCD*09CBA, or *ABCD*17ABB, just as examples.
+If a node announces to the network that it can provide a particular CID, the state of that information is now outside the control of the node. If the node were to drop off the network, there's no way to announce that the CID is no longer available. Take this scenario:
 
-The size of a bucket is related to the size of the prefix. The longer the prefix, the fewer hashes each peer has to manage, and the more peers are needed. Several peers can be in charge of the same bucket if they have the same prefix.
+1. `Node A` announces to the network that it can provide `CID X`.
+1. `Node B` makes a record that `Node A` can provide `CID X`.
+1. `Node A` loses its internet connect and can no longer provide anything.
+1. `Node B` isn't aware that `Node A` can no longer provide `CID X`.
+1. `Node C` asks for `CID X`.
+1. `Node B` sends `Node C` to `Node A`.
+1. `Node C` waits for `Node A` to respone, until the heat-death of the universe happens and energy no longer exists.
 
-In most DHTs, including [IPFS's Kademlia implementation](https://github.com/libp2p/specs/blob/8b89dc2521b48bf6edab7c93e8129156a7f5f02c/kad-dht/README.md), the size of the buckets (and the size of the prefix), are dynamic.
+To avoid problem nodes must re-announce which CIDs they can provide. This happens at least every 12 hours. If `Node B` doesn't get a re-announcement from `Node A` that they can still provide `CID X` within a 12 hour period, `Node B` will remove `Node A` from the provider list.
 
-## Peer lists
+<!-- Similarity -->
+How similar a PeerID is to a CID is defined as the [exclusive-or (XOR) distance](https://en.wikipedia.org/wiki/Exclusive_or) between the bytes that make up the PeerID, and the bytes that make up the CID.
 
-Peers also keep a connection to other peers in order to forward requests if the requested hash is not in their own bucket.
+## Managing data
 
-If hashes are of length _n_, a peer will keep n-1 lists of peers:
+When you add a file to IPFS it gets stored as blocks of data. Each of these blocks has a CID, which is the [content-address](/concepts/content-addressing) of that block of data. This means that every unique block has a unique CID.
 
-- the first list contains peers whose IDs have a different first bit.
-- the second list contains peers whose IDs have first bits identical to its own, but a different second bit
-- ...
-- the _m_th list contains peers whose IDs have their first m-1 bits identical, but a different _m_th bit
-- ...
+### Have
 
-The higher m is, the harder it is to find peers that have the same ID up to m bits. The lists of "closest" peers typically remain empty.
-"Close" here is defined as the XOR distance, so the longer the prefix they share, the closer they are.
-Lists also have a maximum of entries (k) — otherwise, the first lists would contain half the network, then a fourth of the network, and so on.
+### Want
 
-## How to use DHTs
+### Don't want
 
-When a peer receives a lookup request, it will either answer with a value if it falls into its own bucket, or answer with the contacting information (IP+port, `peerID`, etc.) of a closer peer. The requesting peer can then send its request to this closer peer. The process goes on until a peer is able to answer it.
-A request for a hash of length n will take at maximum log2(n) steps, or even log2m(n).
+## Benefits of the DHT
 
-### Keys and Hashes
+### Scalability
 
-In IPFS's Kademlia DHT, keys are SHA256 hashes. [PeerIDs](https://docs.libp2p.io/concepts/peer-id/) are those of [libp2p](https://libp2p.io/), the networking library used by IPFS.
+Since a request for a hash of length _n_ takes at most _log2(n)_ steps to resolve, the scalability of the DHT is impressive, especially when compared to regular storage mechanisms.
 
-We use the DHT to look up two types of objects, both represented by SHA256 hashes:
+### Fault teolerance
 
-- [Content IDs](/concepts/content-addressing) of the data added to IPFS. A lookup of this value will give the `peerID's of the peers having this immutable content.
-- [IPNS records](/concepts/ipns). A lookup will give the last Content ID associated with this IPNS address, enabling the routing of mutable content.
+Lookups are possible even if peers unexpectedly leave or join the DHT. Additionally, requests can be addressed to any peer if another peer is slow or unavailable.
 
-Consequently, IPFS's DHT is one of the ways to achieve mutable and immutable [content routing](https://docs.libp2p.io/concepts/content-routing/). It's currently the only one [implemented](https://libp2p.io/implementations/#peer-routing).
+### Load balancing
 
-You can learn more in the [libp2p Kademlia DHT specification](https://github.com/libp2p/specs/blob/8b89dc2521b48bf6edab7c93e8129156a7f5f02c/kad-dht/README.md).
+Requests are made to different nodes and no unique peers process all the requests.
 
-### Add an Entry
-
-Adding a blob of data to IPFS is the equivalent of advertising that you have it. Since DHT is the only content routing implemented, you can just use:
-`ipfs add myData`
-IPFS will automatically chunk your data and add a mapping on the DHT between the CID and your `peerID`. Note that there can be other `peerID's already mapped to that value, so you will be added to the list. Also note that if the provided data is bigger than 124KB, it will be chunked into "blocks", and both those blocks and the overall data will be mapped.
-
-You can publish an IPNS record using [`ipfs.name.publish`](/concepts/ipns).
+---
 
 ::: tip
 If you are interested in how DHTs fit into the overall lifecycle of data in IPFS, check out this video from IPFS Camp 2019! [Core Course: The Lifecycle of Data in Dweb](https://www.youtube.com/watch?v=fLUq0RkiTBA)
