@@ -1,5 +1,5 @@
 ---
-title: x-ipfs-path header support in IPFS Companion
+title: Use x-ipfs-path headers in Companion
 legacyUrl:
 description: Learn more about how to use "x-ipfs-path" headers in IPFS Companion.
 ---

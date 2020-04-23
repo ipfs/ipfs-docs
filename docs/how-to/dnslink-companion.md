@@ -1,5 +1,5 @@
 ---
-title: Using DNSLink in IPFS Companion
+title: Use DNSLink in Companion
 legacyUrl:
 description: Details of DNSLink support in IPFS Companion.
 ---

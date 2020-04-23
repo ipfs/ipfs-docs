@@ -1,5 +1,5 @@
 ---
-title: Using window.ipfs in IPFS Companion
+title: Companion and window.ipfs
 legacyUrl:
 description: Learn about exposing IPFS API in IPFS Companion via "window.ipfs".
 ---
