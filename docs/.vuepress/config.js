@@ -264,8 +264,13 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  'how-to/address-ipfs-on-web',
-                  '/how-to/browser-tools-frameworks'
+                  'how-to/companion-developer-notes',
+                  'how-to/companion-dnslink-support',
+                  'how-to/companion-firefox-android',
+                  'how-to/companion-localization',
+                  'how-to/companion-node-types',
+                  'how-to/companion-window-ipfs',
+                  '/how-to/companion-x-ipfs-path-header'
                 ]
               }
             ]
