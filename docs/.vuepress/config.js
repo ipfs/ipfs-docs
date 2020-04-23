@@ -258,6 +258,15 @@ module.exports = {
                   ],
                   '/how-to/browser-tools-frameworks'
                 ]
+              },
+              {
+                title: 'IPFS Companion',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  'how-to/address-ipfs-on-web',
+                  '/how-to/browser-tools-frameworks'
+                ]
               }
             ]
           },
