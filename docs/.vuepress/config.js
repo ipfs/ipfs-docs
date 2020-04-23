@@ -264,8 +264,8 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  'how-to/companion-firefox-android',
-                  'how-to/build-companion-from-source',
+                  'how-to/companion-android-firefox',
+                  'how-to/companion-developer-notes',
                   'how-to/companion-node-types',
                   'how-to/dnslink-companion',
                   'how-to/companion-localization',
