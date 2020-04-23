@@ -6,7 +6,7 @@ description: Developer notes for IPFS Companion, including building and running 
 
 # IPFS Companion developer notes
 
-If you're looking to develop on IPFS Companion, you'll want to build from source. See the details below
+If you're looking to develop on IPFS Companion, you'll want to build from source. See the details below to get started.
 
 ## Building from source
 
