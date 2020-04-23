@@ -1,5 +1,5 @@
 ---
-title: IPFS Companion for developers
+title: Build Companion from source
 legacyUrl:
 description: Developer notes for IPFS Companion, including building and running from source in Firefox, Chromium, and Android.
 ---

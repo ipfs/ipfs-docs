@@ -1,5 +1,5 @@
 ---
-title: Locale support in IPFS Companion
+title: Use localization in Companion
 legacyUrl:
 description: Guide to running IPFS Companion with specific locales, including how to contribute translations.
 ---

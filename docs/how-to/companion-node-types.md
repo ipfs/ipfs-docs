@@ -1,5 +1,5 @@
 ---
-title: Understanding node types in IPFS Companion
+title: Understand Companion node types
 legacyUrl:
 description: Learn about the available node types in IPFS Companion.
 ---
