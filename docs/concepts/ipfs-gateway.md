@@ -92,10 +92,12 @@ IPFS gateway servers located inside the private network and running a trusted co
 ## 5. When not to employ a gateway
 
 ### 5.1 Delay-sensitive applications
-Any gateway introduces delay in completing desired actions.
-Faster execution occurs when using methods close to the top of the following list instead of those toward the bottom:
-*   native IPFS node local to the app.
-*   IPFS extension to app.
+Any gateway introduces delay in completing desired actions, because the gateway acts as an intermediary between the source of the request and the IPFS node(s) capable of returning the desired content.
+If the serving gateway cached the requested content earlier (e.g., due to previous requests), then the cache eliminates this delay.
+Overuse of a gateway also introduces delays due to  queuing of requests.
+
+In general, faster execution occurs when using methods close to the top of the following list instead of those toward the bottom:
+*   native IPFS node within the app; e.g., through an extension to the browser.
 *   gateway installed as a local daemon, with redirection of requests
 from app to the local service. _Note:_ If an IPFS node exists locally on the same machine, it runs such a gateway at `http://127.0.0.1:8080`.
 *   public/private gateways.
