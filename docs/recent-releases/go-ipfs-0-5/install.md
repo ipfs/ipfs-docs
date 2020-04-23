@@ -12,7 +12,7 @@ The install process for this release is the same as previous versions of Go-IPFS
 
    ```powershell
    cd ~\
-   wget https://github.com/ipfs/go-ipfs/releases/download/v0.5.0-rc1/go-ipfs-v0.5.0_windows-386.zip -Outfile go-ipfs-v0.5.0.zip
+   wget https://github.com/ipfs/go-ipfs/releases/download/v0.5.0/go-ipfs-v0.5.0_windows-386.zip -Outfile go-ipfs-v0.5.0.zip
    ```
 
 1. Unzip the file and move it somewhere handy.
@@ -59,16 +59,16 @@ The install process for this release is the same as previous versions of Go-IPFS
 
 ## macOS
 
-1. Download [`go-ipfs_v0.5.0-rc1_darwin-386.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.5.0-rc1).
+1. Download [`go-ipfs_v0.5.0_darwin-386.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.5.0).
 
    ```bash
-   wget https://github.com/ipfs/go-ipfs/releases/download/v0.5.0-rc1/go-ipfs_v0.5.0-rc1_darwin-amd64.tar.gz
+   wget https://github.com/ipfs/go-ipfs/releases/download/v0.5.0/go-ipfs_v0.5.0_darwin-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.5.0-rc1_darwin-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.5.0_darwin-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
@@ -91,21 +91,21 @@ The install process for this release is the same as previous versions of Go-IPFS
    ```bash
    ipfs --version
 
-   > ipfs version 0.5.0-rc1
+   > ipfs version 0.5.0
    ```
 
 ## Linux
 
-1. Download [`go-ipfs_v0.5.0-rc1_linux-amd64.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.5.0-rc1):
+1. Download [`go-ipfs_v0.5.0_linux-amd64.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.5.0):
 
    ```bash
-   wget https://github.com/ipfs/go-ipfs/releases/download/v0.5.0-rc1/go-ipfs_v0.5.0-rc1_linux-amd64.tar.gz
+   wget https://github.com/ipfs/go-ipfs/releases/download/v0.5.0/go-ipfs_v0.5.0_linux-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.5.0-rc1_linux-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.5.0_linux-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
@@ -129,5 +129,5 @@ The install process for this release is the same as previous versions of Go-IPFS
    ```bash
    ipfs --version
 
-   > ipfs version 0.5.0-rc1
+   > ipfs version 0.5.0
    ```
