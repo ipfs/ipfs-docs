@@ -25,13 +25,14 @@ You should read this document if you want to:
 *   decide whether and what type of gateways to employ for your use case;
 *   understand, at a conceptual level, how to deploy gateways for your use case.
 
-**contents**
+## Contents
+
  1. What is an IPFS gateway?
  2. Who provides IPFS gateways?
  3. What types of gateways exist?
-  3.1 Read-only and writeable gateways
-  3.2 Resolution styles
-  3.3 Gateway services
+    1. Read-only and writeable gateways
+    2. Resolution styles
+    1. Gateway services
  4. When not to employ a gateway
  5. Limitations
  6. Recommended form of gateway usage
