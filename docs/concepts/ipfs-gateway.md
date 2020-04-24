@@ -126,6 +126,9 @@ Hence the browser's request to `https://{domainName.tld}/{optional path to resou
 The gateway employs DNSLink resolution to return the current content version from IPFS.
 The browser does not perceive the gateway as the origin of the content and therefore enforces the single-origin policy to protect `domainName.tld`.
 
+When employing DNSLinks and aliases, shorten the time-to-live (TTL) for the DNS record from the default 1 hour to e.g., 1 minute.
+This reduces the validity time for cached DNSLinks, resulting in faster availability of newly-updated content.
+
 ### 3.3 Gateway services
 
 In addition to IPFS content, HTTP(S) gateway access may reach other related services:
@@ -135,22 +138,21 @@ In addition to IPFS content, HTTP(S) gateway access may reach other related serv
 | IPFS | path | `https://{gateway URL}/ipfs/{content ID}/{optional path to resource}` |
 |   | subdomain  | `https://{contentID}.ipfs.{gatewayURL}/{optional path to resource}` |
 |   | DNSLink | `https://{domainName.tld}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{domainName.tld}/{optional path to resource}` |
-| IPLD |  |  |
 | IPNS  | path | `https://{gateway URL}/ipns/{ipnsName}/{optional path to resource}` |
 |   | subdomain  | `https://{ipnsName}.ipns.{gatewayURL}/{optional path to resource}` |
 | | DNSLink | Useful when `ipnsName` is a domain: <br>`https://{domainName.tld}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{domainName.tld}/{optional path to resource}` |
-|   |   |   |
+| IPLD |  |  |
 | DWEB   |   | Read/write dweb:// content  |
 
 ### 3.4 Which type to use
 
 A table at the end of this section summarizes functional, performance, and security implications for the different forms of gateway usage.
 
-| implication  | gateway type | preferred form of access <br> features |
+| target  | gateway type | preferred form of access <br> features |
 | :----------  | :----------- | :----------------------- |
 | mutable root | IPNS subdomain | `https://{ipnsName}.ipns.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing |
 |   | IPFS DNSLink  | `https://{domainName.tld}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> – requires DNS update to propagate change to root content |
-| immutable root  | IPFS subdomain  | `https://{contentID}.ipfs.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing |
+| immutable root or <br> content | IPFS subdomain  | `https://{contentID}.ipfs.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing |
 
 ## 4. When should a gateway be provided, where, and which type of gateway?
 
