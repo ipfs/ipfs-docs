@@ -6,7 +6,7 @@ description: Quick-start guide for installing and getting started with IPFS from
 
 # Command-line quick start
 
-If you're command-line savvy and, just want to get up and running with IPFS right away, follow this quick-start guide. Please note that this guide assumes that you'll be installing go-ipfs, the reference implementation written in Go.
+If you're command-line savvy and just want to get up and running with IPFS right away, follow this quick-start guide. Please note that this guide assumes that you'll be installing go-ipfs, the reference implementation written in Go.
 
 ::: tip
 Don’t want to use the command line right now? Give the desktop-app implementation of IPFS a try. It also does all the steps listed on this page automatically, so you can run IPFS from the terminal later whenever you want. [Download IPFS Desktop now](https://github.com/ipfs-shipyard/ipfs-desktop)
@@ -87,7 +87,7 @@ Note that the latest available version may not be stable (release candidates in 
 
 ### Building from source
 
-If you want, you can also build IPFS from source. For more detailed instructions, please see the install instructions for [Linux/macOS](https://github.com/ipfs/go-ipfs#build-from-source) or [Windows](https://github.com/ipfs/go-ipfs/blob/master/docs/windows.md).
+You can also build IPFS from source. For more detailed instructions, please see the install instructions for [Linux/macOS](https://github.com/ipfs/go-ipfs#build-from-source) or [Windows](https://github.com/ipfs/go-ipfs/blob/master/docs/windows.md).
 
 ::: tip
 **Already have IPFS installed, but need to upgrade?** Note that upgrades (and downgrades) may involve a repository upgrade process performed by the [fs-repo-migrations](https://dist.ipfs.io/#fs-repo-migrations) tool.
@@ -152,7 +152,7 @@ Hello and Welcome to IPFS!
 ██║██║     ██║     ███████║
 ╚═╝╚═╝     ╚═╝     ╚══════╝
 
-If you're seeing this, you have successfully installed
+If you see this, you have successfully installed
 IPFS and are now interfacing with the ipfs merkledag!
 
  -------------------------------------------------------
