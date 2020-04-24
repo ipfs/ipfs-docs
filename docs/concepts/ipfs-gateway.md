@@ -32,10 +32,9 @@ You should read this document if you want to:
   3.1 Read-only and writeable gateways
   3.2 Resolution styles
   3.3 Gateway services
-  3.4 Which type to use
- 4. When should a gateway be provided?
- 5. When not to employ a gateway
- 6. Limitations
+ 4. When not to employ a gateway
+ 5. Limitations
+ 6. Recommended form of gateway usage
  7. Implementation status
  8. Learning more
 
@@ -74,9 +73,13 @@ Regardless of who deploys it and where, any IPFS gateway resolves access to any 
 
 ## 3. What types of gateways exist?
 Categorizing gateways involves several dimensions:
-*   read/write support
-*   resolution style
-*   service
+*   read/write support; see §3.1.
+*   resolution style; see §3.2.
+*   service; see §3.3.
+
+Choosing the form of gateway usage has security, peformance and other functional implications.
+The remainder of this section §3 and the following secions §4 and §5 discuss these implications in more detail.
+Feel free to jump directly to §6 for recommended forms of gateway usage.
 
 ### 3.1 Read-only and writeable gateways
 The examples discussed in the earlier sections above illustrated the use of read-only HTTP(S) gateways to fetch content from IPFS via an HTTP(S) GET method.
@@ -135,6 +138,16 @@ In addition to IPFS content, HTTP(S) gateway access may reach other related serv
 | | DNSLink | Useful when `ipnsName` is a domain: <br>`https://{domainName.tld}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{domainName.tld}/{optional path to resource}` |
 |   |   |   |
 | DWEB   |   | Read/write dweb:// content  |
+
+### 3.4 Which type to use
+
+A table at the end of this section summarizes functional, performance, and security implications for the different forms of gateway usage.
+
+| implication  | gateway type | preferred form of access <br> features |
+| :----------  | :----------- | :----------------------- |
+| mutable root | IPNS subdomain | `https://{ipnsName}.ipns.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing |
+|   | IPFS DNSLink  | `https://{domainName.tld}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> – requires DNS update to propagate change to root content |
+| immutable root  | IPFS subdomain  | `https://{contentID}.ipfs.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing |
 
 ## 4. When should a gateway be provided, where, and which type of gateway?
 
