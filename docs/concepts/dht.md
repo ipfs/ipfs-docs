@@ -40,8 +40,8 @@ ipfs dht findprovs QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG
 
 When you add a file to IPFS, it gets stored as blocks of data. Each of these blocks has a CID, which is the [content-address](/concepts/content-addressing) of that block of data. This means that every unique block has a unique CID. IPFS nodes use the DHT to advertise which blocks they _have_, which blocks they _want_, and which blocks they _don't want_.
 
-| Have                      | Want                         | Don't Want                                                                           |
-| ------------------------- | ---------------------------- | ------------------------------------------------------------------------------------ |
+| Have | Want | Don't Want |
+| --- | --- | --- |
 | I can provide this block. | I am looking for this block. | I am not looking for this block. If I am provided this block, I will just discard it. |
 
 ## Re-providing
