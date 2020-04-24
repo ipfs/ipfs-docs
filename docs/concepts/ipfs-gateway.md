@@ -59,7 +59,7 @@ Regardless of who deploys it and where, any IPFS gateway resolves access to any 
 ## 3. What types of gateways exist?
 Categorizing gateways involves several dimension:
 *   read/write support
-*   recolution style
+*   resolution style
 *   service
 
 ### 3.1 Read-only and writeable gateways
