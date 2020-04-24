@@ -29,10 +29,14 @@ You should read this document if you want to:
 
  1. What is an IPFS gateway?
  2. Who provides IPFS gateways?
+    1. Your local gateway
+    2. Private gateways
+    3. Public gateways
  3. What types of gateways exist?
     1. Read-only and writeable gateways
     2. Resolution styles
     1. Gateway services
+    2. Which type of gateway to use
  4. When not to employ a gateway
  5. Limitations
  6. Recommended form of gateway usage
@@ -67,6 +71,10 @@ You will have a local gateway service if you installed [IPFS Desktop](https://gi
 Running [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node triggers connection attempts to other IPFS peers.
 Private network administrators may treat such connection attempts as potential security vulnerabilities.
 Private IPFS gateway servers located inside the private network and running a trusted code base provide an alternative architecture for read/write access to externally-hosted IPFS content.
+
+A gateway behind a firewall represents just one potential location for a private gateway.
+More generally, one may consider any gateway as a "private gateway" when configured to limit access to requests from specific domains or parts of the Internet.
+A [tutorial configuring an IPFS gateway on a Google Cloud platform](https://blog.stacktical.com/ipfs/gateway/dapp/2019/09/21/ipfs-server-google-cloud-platform.html) includes a description of constraining access.
 
 ### 2.3 Public gateways
 Public gateway operators include:
