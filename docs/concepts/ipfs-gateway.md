@@ -39,37 +39,40 @@ You should read this document if you want to:
  8. Learning more
 
 ## 1. What is an IPFS gateway?
-Gateways provide workarounds for applications that do not support IPFS natively.
+IPFS deployment seeks to include native support of IPFS in all popular browsers and tools.
+Gateways provide workarounds for applications that do not yet support IPFS natively.
 
 For example, errors occur when a browser that does not support IPFS attempts access to IPFS content in the canonical form of
-```
-ipfs://{contentID}/{optional path to resource}
-```
+`ipfs://{contentID}/{optional path to resource}`.
 Other tools that rely solely on HTTP(S) (e.g., `curl`) encounter similar errors in accessing IPFS content in canonical form.
 
-The goals of IPFS deployment includes native support of IPFS in all popular browsers and tools.
-In the interim, upgrading the browser/tool to support IPFS (e.g., through a browser extension such as [IPFS Companion for Firefox](https://addons.mozilla.org/en-US/firefox/addon/ipfs-companion/) or [IPFS Companion for Chrome](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch)) would resolve IPFS content access errors.
+IPFS upgrades to browsers/tools (e.g., extensions such as [IPFS Companion for Firefox](https://addons.mozilla.org/en-US/firefox/addon/ipfs-companion/) or [IPFS Companion for Chrome](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch)) resolve IPFS content access errors.
 
 However, not every user may be permitted to alter — or be capable of altering — their browser/tool configuration.
-IPFS gateways provide an HTTP(S)-based service for such browsers and tools to access IPFS content.
+IPFS gateways provide an HTTP(S)-based service that allows IPFS-ignorant browsers/tools to access IPFS content.
 
-<-- INSERT PREFERRED SOLUTION
-
-The canonical form of access to such HTTP(S) IPFS gateways is:
-```
-https://{gatewayURL}/ipfs/{contentID}/{optional path to resource}
-```
+The canonical form of access to an IPFS gateway is `https://{gatewayURL}/ipfs/{contentID}/{optional path to resource}`
 
 ## 2. Who provides IPFS gateways?
 
-Protocol Labs maintains the [current IPFS gateway software release](missing link).
+Regardless of who deploys a gateway and where, any IPFS gateway resolves access to any requested IPFS `contentID`.
+Therefore, for best performance, when you need the service of a gateway, you should use the one(s) closest to you.
 
-IPFS gateway operators include:
+### 2.1 Your local gateway
+Your machine may host a gateway as a local service; e.g., at `localhost:8080`.
+You will have a local gateway service if you installed [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node.
+
+### 2.2 Private gateways
+Running [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node triggers connection attempts to other IPFS peers.
+Private network administrators may treat such connection attempts as potential security vulnerabilities.
+Private IPFS gateway servers located inside the private network and running a trusted code base provide an alternative architecture for read/write access to externally-hosted IPFS content.
+
+### 2.3 Public gateways
+Public gateway operators include:
 *   Protocol Labs, which deploys the public gateway `https://ipfs.io`;
-*   Third-party private or public gateways; e.g., `https://cf-ipfs.com`;
-*   You, with a gateway installed as a local service on your machine e.g., `localhost:8080`.
+*   Third-party public gateways; e.g., `https://cf-ipfs.com`.
 
-Regardless of who deploys it and where, any IPFS gateway resolves access to any IPFS `contentID` requested via the canonical HTTP form described above.
+Protocol Labs maintains a [list of public gateways](https://ipfs.github.io/public-gateway-checker/) and their status.
 
 ## 3. What types of gateways exist?
 Categorizing gateways involves several dimensions:
@@ -151,10 +154,6 @@ A table at the end of this section summarizes functional, performance, and secur
 
 ## 4. When should a gateway be provided, where, and which type of gateway?
 
-### 4.1 Firewalled networks
-Running [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or a standalone IPFS node within a browser/tool triggers connection attempts to other IPFS peers.
-Private network administrators may treat such connection attempts as potential security vulnerabilities.
-IPFS gateway servers located inside the private network and running a trusted code base provide an alternative architecture for read/write access to externally-hosted IPFS content.
 
 ## 5. When not to employ a gateway
 
