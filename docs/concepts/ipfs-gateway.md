@@ -15,7 +15,7 @@ related:
 
 This document discusses:
 *   the several types of gateways;
-*   their roles in use of IPFS;
+*   gateway role in the use of IPFS;
 *   appropriate situations for use of gateways;
 *   situations when you should avoid use of gateways;
 *   implementation guidelines.
@@ -25,6 +25,19 @@ You should read this document if you want to:
 *   decide whether and what type of gateways to employ for your use case;
 *   understand, at a conceptual level, how to deploy gateways for your use case.
 
+**contents**
+ 1. What is an IPFS gateway?
+ 2. Who provides IPFS gateways?
+ 3. What types of gateways exist?
+  3.1 Read-only and writeable gateways
+  3.2 Resolution styles
+  3.3 Gateway services
+ 4. When should a gateway be provided?
+ 5. When not to employ a gateway
+ 6. Limitations
+ 7. Implementation status
+ 8. Learning more
+
 ## 1. What is an IPFS gateway?
 Gateways provide workarounds for applications that do not support IPFS natively.
 
@@ -32,13 +45,15 @@ For example, errors occur when a browser that does not support IPFS attempts acc
 ```
 ipfs://{contentID}/{optional path to resource}
 ```
-Other tools that rely solely on HTTP(S) (e.g., curl) encounter similar errors in accessing IPFS content in canonical form.
+Other tools that rely solely on HTTP(S) (e.g., `curl`) encounter similar errors in accessing IPFS content in canonical form.
 
-The end stage of IPFS deployment includes native support of IPFS in all popular browsers and tools.
+The goals of IPFS deployment includes native support of IPFS in all popular browsers and tools.
 In the interim, upgrading the browser/tool to support IPFS (e.g., through a browser extension such as [IPFS Companion for Firefox](https://addons.mozilla.org/en-US/firefox/addon/ipfs-companion/) or [IPFS Companion for Chrome](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch)) would resolve IPFS content access errors.
 
 However, not every user may be permitted to alter — or be capable of altering — their browser/tool configuration.
 IPFS gateways provide an HTTP(S)-based service for such browsers and tools to access IPFS content.
+
+<-- INSERT PREFERRED SOLUTION
 
 The canonical form of access to such HTTP(S) IPFS gateways is:
 ```
@@ -50,17 +65,26 @@ https://{gatewayURL}/ipfs/{contentID}/{optional path to resource}
 Protocol Labs maintains the [current IPFS gateway software release](missing link).
 
 IPFS gateway operators include:
-*   Protocol Labs, which deploys the public gateway ipfs.io;
-*   Third-party private or public gateways; e.g., `https://cloudfare.com/ipfs`;
+*   Protocol Labs, which deploys the public gateway `https://ipfs.io`;
+*   Third-party private or public gateways; e.g., `https://cf-ipfs.com`;
 *   You, with a gateway installed as a local service on your machine e.g., `localhost:8080`.
 
-Regardless of who deploys it and where, any IPFS gateway resolves access to any IPFS content ID requested via the canonical HTTP form described above.
+Regardless of who deploys it and where, any IPFS gateway resolves access to any IPFS `contentID` requested via the canonical HTTP form described above.
 
 ## 3. What types of gateways exist?
-Categorizing gateways involves several dimension:
+Categorizing gateways involves several dimensions:
 *   read/write support
 *   resolution style
 *   service
+
+A table at the end of this section summarizes functional, performance, and security implications for the different forms of gateway usage.
+
+| implication  | gateway type | preferred form of access <br> features |
+| :----------  | :----------- | :----------------------- |
+| mutable root | IPNS subdomain | `https://{ipnsName}.ipns.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing |
+|   | IPFS DNSLink  | `https://{domainName.tld}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> – requires DNS update to propagate change to root content |
+| immutable root  | IPFS subdomain  | `https://{contentID}.ipfs.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing |
+
 
 ### 3.1 Read-only and writeable gateways
 The examples discussed in the earlier sections above illustrated the use of read-only HTTP(S) gateways to fetch content from IPFS via an HTTP(S) GET method.
@@ -69,7 +93,7 @@ _Writeable_ HTTP(S) gateways also support POST, PUT and DELETE methods; e.g., to
 
 ### 3.2 Resolution style
 
-Three resolution styles exist: path, DNSLink, and subdomain.
+Three resolution styles exist: path, subdomain, and DNSLink.
 
 #### Path
 The examples discussed above employed path resolution:
@@ -78,6 +102,9 @@ https://{gateway URL}/ipfs/{content ID}/{optional path to resource}
 ```
 Path-resolving gateways, however, violate the same-origin policy that protects one website from improperly accessing session data of another website.
 See §6.3 below for more details.
+
+#### Subdomain
+_Subdomain_ gateway support began with go-ipfs release 0.5.0.7109.
 
 #### DNSlink
 Whenever a change to content within IPFS occurs, IPFS creates a new `contentID`.
@@ -100,9 +127,6 @@ The  `Alias` record redirects any access to that `domainName.tld` to the specifi
 Hence the browser's request to `https://{domainName.tld}/{optional path to resource}` redirects to the gateway specified in the `Alias`.
 The gateway employs DNSLink resolution to return the current content version from IPFS.
 The browser does not perceive the gateway as the origin of the content and therefore enforces the single-origin policy to protect `domainName.tld`.
-
-#### Subdomain
-_Subdomain_ gateway support began with go-ipfs release 0.5.0.7109.
 
 ### 3.3 Gateway services
 
@@ -148,7 +172,7 @@ If the app must employ an extenal gateway, such apps should use ipfs.io or a tru
 
 ### 6.1 Centralization
 Use of a gateway requires location-based addressing: `https://{gatewayURL}/ipfs/{contentID}/{etc}`
-All to easily the gateway URL becomes the handle by which users identify the content; i.e., the uniform reference locator (URL) equates (improperly) to the uniform reference identifier (URI).
+All too easily the gateway URL becomes the handle by which users identify the content; i.e., the uniform reference locator (URL) equates (improperly) to the uniform reference identifier (URI).
 Now imagine that gateway becomes unreachable; e.g., goes offline or cannot be reached from a different user's location because of firewalls.
 At this moment content improperly identified by that gateway-based URL also appears (incorrectly) unreachable, defeating an key benefit of IPFS: decentralization.
 
@@ -211,7 +235,7 @@ To work around this issue, you can add a filename=some_filename parameter to you
 
 ## 7. Implementation status
 
-## 8. Further details
+## 8. Learning more
 
 *   [gateway configuration options](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway).
 
