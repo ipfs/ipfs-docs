@@ -57,7 +57,7 @@ Regardless of who deploys it and where, any IPFS gateway resolves access to any 
 ## 3. What types of gateways exist?
 Categorizing gateways involves several dimension:
 *   read/write support
-*   <needs a descriptor>
+*   recolution style
 *   service
 
 ### 3.1 Read-only and writeable gateways
@@ -65,9 +65,36 @@ The examples discussed in the earlier sections above illustrated the use of read
 
 _Writeable_ HTTP(S) gateways also support POST, PUT and DELETE methods; e.g., to create and manage content in IPFS.
 
-### 3.2
+### 3.2 Resolution style
 
-Subdomain gateway support began with go-ipfs release 0.5.0.7109.
+Three resolution styles exist: path, DNSLink, and subdomain.
+
+#### Path
+The examples discussed above employed path resolution:
+```
+https://{gateway URL}/ipfs/{content ID}/{optional path to resource}
+```
+Path-resolving gateways, however, violate the same-origin policy that protects one website from improperly accessing session data of another website.
+See §6.3 below for more details.
+
+#### DNSlink
+Whenever a change to content within IPFS occurs, IPFS creates a new `contentID`.
+Many applications require access to the latest version of content.
+The InterPlanetary Name Service (IPNS) allows a version-independent name (e.g., human-readable name) to resolve into the current version's IPFS `contentID`.
+For example, the latest version of a more detailed description of DNSLink,
+A gateway employing DNSLink resolution first checks the DNS TXT record of the requested domain.
+DNSLink resolution occurs when the gateway receives a request in the form:
+```
+https://{gateway URL}/ipns/{domainName.tld}/{optional path}
+```
+If the TXT record contains an item of the form `dnslink={value}`, the gateway interprets `value` as the current content ID.
+The gateway resolves the request as `ipfs/{contentID}/{optional path}`.
+
+If no `dnslink={value}` exists in the TXT record, the gateway
+
+
+#### Subdomain
+_Subdomain_ gateway support began with go-ipfs release 0.5.0.7109.
 
 ### 3.3 Gateway services
 
@@ -76,7 +103,7 @@ In addition to IPFS content, HTTP(S) gateway access may reach other related serv
 | service  | style | canonical form of access |
 | ------:  | :---- | :----------------------- |
 | IPFS | path | `https://{gateway URL}/ipfs/{content ID}/{optional path to resource}` |
-|   | DNSLink | `<something>` |
+|   | DNSLink | `https://{domainName.tld}/{optional path to resource}` |
 |   | subdomain  | `https://{contentID}.ipfs.{gatewayURL}/{optional path to resource}` |
 | IPLD |  |  |
 | IPNS  | path | `https://{gateway URL}/ipns/{IPNS ID}/{optional path to resource}` |
