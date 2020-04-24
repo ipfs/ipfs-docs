@@ -32,6 +32,7 @@ You should read this document if you want to:
   3.1 Read-only and writeable gateways
   3.2 Resolution styles
   3.3 Gateway services
+  3.4 Which type to use
  4. When should a gateway be provided?
  5. When not to employ a gateway
  6. Limitations
@@ -76,15 +77,6 @@ Categorizing gateways involves several dimensions:
 *   read/write support
 *   resolution style
 *   service
-
-A table at the end of this section summarizes functional, performance, and security implications for the different forms of gateway usage.
-
-| implication  | gateway type | preferred form of access <br> features |
-| :----------  | :----------- | :----------------------- |
-| mutable root | IPNS subdomain | `https://{ipnsName}.ipns.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing |
-|   | IPFS DNSLink  | `https://{domainName.tld}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> – requires DNS update to propagate change to root content |
-| immutable root  | IPFS subdomain  | `https://{contentID}.ipfs.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing |
-
 
 ### 3.1 Read-only and writeable gateways
 The examples discussed in the earlier sections above illustrated the use of read-only HTTP(S) gateways to fetch content from IPFS via an HTTP(S) GET method.
@@ -222,9 +214,9 @@ To partially address this exposure you may wish to use the public gateway cf-ipf
 ### 6.6 Assuming filenames when downloading files
 When downloading files, browsers will usually guess a file's filename by looking at the last component of the path; e.g., `https://{domainName}/{path}/userManual.pdf` downloads a file stored locally with the name `userManual.pdf`.
 Unfortunately, when linking directly to a file with no containing directory in IPFS, the content ID becomes the final component.
-Storing the downloaded file with the filename set to the content ID fails the human-friendly design test.
+Storing the downloaded file with the filename set to the `contentID` fails the human-friendly design test.
 
-To work around this issue, you can add a filename=some_filename parameter to your query string to explicitly specify the filename:
+To work around this issue, you can add a `?filename={filename.ext}` parameter to your query string to preëmptively specify a name for the locally-stored downloaded file:
 
 | style | query |
 | ----: | :---- |
