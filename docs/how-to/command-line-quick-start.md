@@ -146,10 +146,9 @@ Installing IPFS is simple, but varies between operating system:
    > ipfs version 0.5.0
    ```
 
-
 ## Initialize the repository
 
-`ipfs` stores all its settings and internal data in a directory called the _repository._ Before using IPFS for the first time, you’ll need to initialize the repository with the `ipfs init` command:
+`ipfs` stores all its settings and internal data in a directory called _the repository._ Before using IPFS for the first time, you’ll need to initialize the repository with the `ipfs init` command:
 
 ```bash
 ipfs init
@@ -167,7 +166,7 @@ If you are running on a server in a data center, you should initialize IPFS with
 ipfs init --profile server
 ```
 
-There are a whole host of other configuration options you may want to set — check [the full reference](https://github.com/ipfs/go-ipfs/blob/v0.4.15/docs/config.md) for more.
+There are a whole host of other configuration options you may want to set — check [the full reference](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md) for more.
 
 The hash after `peer identity:` is your node’s ID and will be different from the one shown in the above output. Other nodes on the network use it to find and connect to you. You can run `ipfs id` at any time to get it again if you need it.
 
@@ -286,10 +285,11 @@ It runs in Firefox (desktop and Android) and various Chromium-based browsers suc
 
 ### Check your Go version
 
-IPFS works with Go 1.12.0 or later. To check what go version you have installed, type `go version`. Here's an example with 1.12.2 installed:
+IPFS works with Go 1.12.0 or later. To check what go version you have installed, type `go version`:
 
 ```bash
 go version
+
 > go version go1.12.2 linux/amd64
 ```
 
