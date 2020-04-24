@@ -81,19 +81,25 @@ See §6.3 below for more details.
 
 #### DNSlink
 Whenever a change to content within IPFS occurs, IPFS creates a new `contentID`.
-Many applications require access to the latest version of content.
+Many applications require access to the latest version of a file or website, but will not know the exact `contentID` for that latest version.
 The InterPlanetary Name Service (IPNS) allows a version-independent name (e.g., human-readable name) to resolve into the current version's IPFS `contentID`.
-For example, the latest version of a more detailed description of DNSLink,
-A gateway employing DNSLink resolution first checks the DNS TXT record of the requested domain.
-DNSLink resolution occurs when the gateway receives a request in the form:
+
+DNSLink resolution occurs when the `ipnsName` corresponds to a domain; i.e., of form `domainName.tld`.
+For example, the URL `https://libp2p.io` returns the current version of that website — a site stored in IPFS.
+The gateway receives a request in the form:
 ```
 https://{gateway URL}/ipns/{domainName.tld}/{optional path}
 ```
-If the TXT record contains an item of the form `dnslink={value}`, the gateway interprets `value` as the current content ID.
-The gateway resolves the request as `ipfs/{contentID}/{optional path}`.
+The gateway searches the DNS TXT records of the requested domain `{domainName.tld}` for a string of the form  `dnslink=/ipfs/{contentID}` or `_dnslink=/ipfs/{contentID}`.
+If found, the gateway uses the specified `contentID` to serve up `ipfs://{contentID}/{optional path}`.
 
-If no `dnslink={value}` exists in the TXT record, the gateway
+As with path resolution, this form of DNSLink resolution violates the single-origin policy.
 
+But the domain operator may ensure single-origin policy compliance — and the delivery of the current version of content — by adding an `Alias` record in the DNS that refers to a suitable IPFS gateway; e.g., `gateway.ipfs.io`.
+The  `Alias` record redirects any access to that `domainName.tld` to the specified gateway.
+Hence the browser's request to `https://{domainName.tld}/{optional path to resource}` redirects to the gateway specified in the `Alias`.
+The gateway employs DNSLink resolution to return the current content version from IPFS.
+The browser does not perceive the gateway as the origin of the content and therefore enforces the single-origin policy to protect `domainName.tld`.
 
 #### Subdomain
 _Subdomain_ gateway support began with go-ipfs release 0.5.0.7109.
@@ -105,10 +111,13 @@ In addition to IPFS content, HTTP(S) gateway access may reach other related serv
 | service  | style | canonical form of access |
 | ------:  | :---- | :----------------------- |
 | IPFS | path | `https://{gateway URL}/ipfs/{content ID}/{optional path to resource}` |
-|   | DNSLink | `https://{domainName.tld}/{optional path to resource}` |
 |   | subdomain  | `https://{contentID}.ipfs.{gatewayURL}/{optional path to resource}` |
+|   | DNSLink | `https://{domainName.tld}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{domainName.tld}/{optional path to resource}` |
 | IPLD |  |  |
-| IPNS  | path | `https://{gateway URL}/ipns/{IPNS ID}/{optional path to resource}` |
+| IPNS  | path | `https://{gateway URL}/ipns/{ipnsName}/{optional path to resource}` |
+|   | subdomain  | `https://{ipnsName}.ipns.{gatewayURL}/{optional path to resource}` |
+| | DNSLink | Useful when `ipnsName` is a domain: <br>`https://{domainName.tld}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{domainName.tld}/{optional path to resource}` |
+|   |   |   |
 | DWEB   |   | Read/write dweb:// content  |
 
 ## 4. When should a gateway be provided, where, and which type of gateway?
