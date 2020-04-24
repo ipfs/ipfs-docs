@@ -47,7 +47,9 @@ https://{gatewayURL}/ipfs/{contentID}/{optional path to resource}
 
 ## 2. Who provides IPFS gateways?
 
-IPFS gateway providers include:
+Protocol Labs maintains the [current IPFS gateway software release](missing link).
+
+IPFS gateway operators include:
 *   Protocol Labs, which deploys the public gateway ipfs.io;
 *   Third-party private or public gateways; e.g., `https://cloudfare.com/ipfs`;
 *   You, with a gateway installed as a local service on your machine e.g., `localhost:8080`.
