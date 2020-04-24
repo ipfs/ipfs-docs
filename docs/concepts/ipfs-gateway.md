@@ -142,7 +142,6 @@ In addition to IPFS content, HTTP(S) gateway access may reach other related serv
 |   | subdomain  | `https://{ipnsName}.ipns.{gatewayURL}/{optional path to resource}` |
 | | DNSLink | Useful when `ipnsName` is a domain: <br>`https://{domainName.tld}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{domainName.tld}/{optional path to resource}` |
 | IPLD |  |  |
-| DWEB   |   | Read/write dweb:// content  |
 
 ### 3.4 Which type to use
 
