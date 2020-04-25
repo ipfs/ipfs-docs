@@ -153,23 +153,23 @@ In addition to IPFS content, HTTP(S) gateway access may reach other related serv
 
 ### 3.4 Which type to use
 
-A table at the end of this section summarizes functional, performance, and security implications for the different forms of gateway usage.
+The preferred form of gateway access varies depending on the nature of the targeted content.
 
-| target  | gateway type | preferred form of access <br> features |
+| target  | preferred gateway type | canonical form of access <br> features & considerations |
 | :----------  | :----------- | :----------------------- |
-| mutable root | IPNS subdomain | `https://{ipnsName}.ipns.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing |
-|   | IPFS DNSLink  | `https://{domainName.tld}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> – requires DNS update to propagate change to root content |
+| potentially mutable root | IPNS subdomain | `https://{ipnsName}.ipns.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing |
+|   | IPFS DNSLink  | `https://{domainName.tld}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> – requires DNS update to propagate change to root content <br> • DNSLink, not user/app, specifies the gateway to use, opening up potential gateway trust and congestion issues |
 | immutable root or <br> content | IPFS subdomain  | `https://{contentID}.ipfs.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing |
 
-## 4. When should a gateway be provided, where, and which type of gateway?
+_Reminder:_ Any form of gateway provides a bridge for apps without native support of IPFS. §§5 and 6 below discuss limitations inherent in gateway usage. Better performance and security results from native IPFS implementation within an app.
 
+## 4. When not to employ a gateway
 
-## 5. When not to employ a gateway
-
-### 5.1 Delay-sensitive applications
+### 4.1 Delay-sensitive applications
 Any gateway introduces delay in completing desired actions, because the gateway acts as an intermediary between the source of the request and the IPFS node(s) capable of returning the desired content.
 If the serving gateway cached the requested content earlier (e.g., due to previous requests), then the cache eliminates this delay.
-Overuse of a gateway also introduces delays due to  queuing of requests.
+
+Overuse of a gateway also introduces delays due to queuing of requests.
 
 In general, faster execution occurs when using methods close to the top of the following list instead of those toward the bottom:
 *   native IPFS node within the app; e.g., through an extension to the browser.
@@ -177,23 +177,23 @@ In general, faster execution occurs when using methods close to the top of the f
 from app to the local service. _Note:_ If an IPFS node exists locally on the same machine, it runs such a gateway at `http://127.0.0.1:8080`.
 *   public/private gateways.
 
-### 5.2 End-to-end cyptographic validation required
+### 4.2 End-to-end cyptographic validation required
 Because of third-party gateway vulnerabilities outlined in §6.1 below, apps requiring end-to-end validation of content read/write should avoid gateways when possible.
 If the app must employ an extenal gateway, such apps should use ipfs.io or a trusted third-party.
 
-## 6. Limitations
+## 5. Limitations
 
-### 6.1 Centralization
+### 5.1 Centralization
 Use of a gateway requires location-based addressing: `https://{gatewayURL}/ipfs/{contentID}/{etc}`
 All too easily the gateway URL becomes the handle by which users identify the content; i.e., the uniform reference locator (URL) equates (improperly) to the uniform reference identifier (URI).
 Now imagine that gateway becomes unreachable; e.g., goes offline or cannot be reached from a different user's location because of firewalls.
 At this moment content improperly identified by that gateway-based URL also appears (incorrectly) unreachable, defeating an key benefit of IPFS: decentralization.
 
-### 6.2 Misplaced trust
+### 5.2 Misplaced trust
 Trusting a specific gateway in turn requires trust of the gateway's issuing Certificate Authorities (CAs) and the security of the public key infrastructure (PKI) employed by that gateway.
 Compromised CAs or PKI implementations may undermine the trustworthiness of the gateway.
 
-### 6.3 Violation of same-origin policy
+### 5.3 Violation of same-origin policy
 To prevent one website from improperly accessing HTTP session data associated with a different website, the [same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy) permits script access only to pages that share a common domain name and port.
 Consider two web pages stored in IPFS: `ipfs://{contentID A}/{webpage A}` and `ipfs://{contentID B}/{webpage B}`.
 Code on webpage A should not access data from webpage B, as they do not share the same content ID (origin).
@@ -218,7 +218,7 @@ The [IPFS public gateway checker](https://ipfs.github.io/public-gateway-checker/
 
 he [IPFS public gateway checker](https://ipfs.github.io/public-gateway-checker/) identifies those public gateways that support CORS.
 
-### 6.5 Gateway man-in-the-middle (MIM) vulnerability
+### 5.5 Gateway man-in-the-middle (MIM) vulnerability
 Employing a public or private HTTP(S) gateway sacrifices end-to-end cryptographic validation of delivery of the correct content.
 Consider the case of a browser fetching content with the URL `https://anipfsgateway.org/ipfs/{cid}`.
 A compromised `anipfsgateway.org` provides man-in-the-middle vulnerabilities, including:
@@ -232,7 +232,7 @@ Bob fetches the content with this CID and cryptographically validates `balance: 
 
 To partially address this exposure you may wish to use the public gateway cf-ipfs.com as an independent, trusted reference with both same-origin policy and CORS support.
 
-### 6.6 Assuming filenames when downloading files
+### 5.6 Assuming filenames when downloading files
 When downloading files, browsers will usually guess a file's filename by looking at the last component of the path; e.g., `https://{domainName}/{path}/userManual.pdf` downloads a file stored locally with the name `userManual.pdf`.
 Unfortunately, when linking directly to a file with no containing directory in IPFS, the content ID becomes the final component.
 Storing the downloaded file with the filename set to the `contentID` fails the human-friendly design test.
@@ -246,9 +246,9 @@ To work around this issue, you can add a `?filename={filename.ext}` parameter to
 | DNSLink | TBD |
 
 
-## 7. Implementation status
+## 6. Implementation status
 
-## 8. Learning more
+## 7. Learning more
 
 *   [gateway configuration options](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway).
 
