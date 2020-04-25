@@ -38,10 +38,18 @@ You should read this document if you want to:
     1. Gateway services
     2. Which type of gateway to use
  4. When not to employ a gateway
- 5. Limitations
- 6. Recommended form of gateway usage
- 7. Implementation status
- 8. Learning more
+    1. Delay-sensitive applications
+    2. End-to-end cryptographic validation required
+ 5. Limitations and potential workarounds
+    1. Centralization
+    2. Misplaced trust
+    3. Violation of same-origin policy
+    4. Cross-origin resource sharing
+    5. Gateway man-in-the-middle vulnerability
+    6. Assumed filenames when downloading files
+    7. Stale caches
+ 6. Implementation status
+ 7. Learning more
 
 ## 1. What is an IPFS gateway?
 IPFS deployment seeks to include native support of IPFS in all popular browsers and tools.
@@ -172,8 +180,8 @@ If the serving gateway cached the requested content earlier (e.g., due to previo
 Overuse of a gateway also introduces delays due to queuing of requests.
 
 In general, faster execution occurs when using methods close to the top of the following list instead of those toward the bottom:
-*   native IPFS node within the app; e.g., through an extension to the browser.
-*   gateway installed as a local daemon, with redirection of requests
+*   native IPFS node within the app or as a local service daemon
+*   gateway installed as a local service
 from app to the local service. _Note:_ If an IPFS node exists locally on the same machine, it runs such a gateway at `http://127.0.0.1:8080`.
 *   public/private gateways.
 
@@ -181,13 +189,16 @@ from app to the local service. _Note:_ If an IPFS node exists locally on the sam
 Because of third-party gateway vulnerabilities outlined in §6.1 below, apps requiring end-to-end validation of content read/write should avoid gateways when possible.
 If the app must employ an extenal gateway, such apps should use ipfs.io or a trusted third-party.
 
-## 5. Limitations
+## 5. Limitations and potential workarounds
 
 ### 5.1 Centralization
 Use of a gateway requires location-based addressing: `https://{gatewayURL}/ipfs/{contentID}/{etc}`
-All too easily the gateway URL becomes the handle by which users identify the content; i.e., the uniform reference locator (URL) equates (improperly) to the uniform reference identifier (URI).
+All too easily the gateway URL can become the handle by which users identify the content; i.e., the uniform reference locator (URL) equates (improperly) to the uniform reference identifier (URI).
 Now imagine that gateway becomes unreachable; e.g., goes offline or cannot be reached from a different user's location because of firewalls.
 At this moment content improperly identified by that gateway-based URL also appears (incorrectly) unreachable, defeating an key benefit of IPFS: decentralization.
+
+Similarly, use of DNSLink resolution with `Alias` (see §3.2) forces requests through the domain's chosen gateway, as specified in the `dnslink={value}` string within the DNS TXT record.
+If the specified gateway becomes overloaded, goes offline, or becomes compromised, all traffic with that content becomes delated, disabled, or suspect.
 
 ### 5.2 Misplaced trust
 Trusting a specific gateway in turn requires trust of the gateway's issuing Certificate Authorities (CAs) and the security of the public key infrastructure (PKI) employed by that gateway.
@@ -213,12 +224,12 @@ Similarly, the use of DNSLink gateway avoids violating the same-origin policy.
 
 The [IPFS public gateway checker](https://ipfs.github.io/public-gateway-checker/) identifies those public gateways that avoid violating the same-origin policy.
 
-### 6.4 Cross-origin resource sharing
+### 5.4 Cross-origin resource sharing
 [CORS](https://web.archive.org/web/20200418003728/https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#The_HTTP_response_headers) allows a webpage to permit access to specified data by pages with a different origin.
 
 he [IPFS public gateway checker](https://ipfs.github.io/public-gateway-checker/) identifies those public gateways that support CORS.
 
-### 5.5 Gateway man-in-the-middle (MIM) vulnerability
+### 5.5 Gateway man-in-the-middle vulnerability
 Employing a public or private HTTP(S) gateway sacrifices end-to-end cryptographic validation of delivery of the correct content.
 Consider the case of a browser fetching content with the URL `https://anipfsgateway.org/ipfs/{cid}`.
 A compromised `anipfsgateway.org` provides man-in-the-middle vulnerabilities, including:
@@ -232,7 +243,7 @@ Bob fetches the content with this CID and cryptographically validates `balance: 
 
 To partially address this exposure you may wish to use the public gateway cf-ipfs.com as an independent, trusted reference with both same-origin policy and CORS support.
 
-### 5.6 Assuming filenames when downloading files
+### 5.6 Assumed filenames when downloading files
 When downloading files, browsers will usually guess a file's filename by looking at the last component of the path; e.g., `https://{domainName}/{path}/userManual.pdf` downloads a file stored locally with the name `userManual.pdf`.
 Unfortunately, when linking directly to a file with no containing directory in IPFS, the content ID becomes the final component.
 Storing the downloaded file with the filename set to the `contentID` fails the human-friendly design test.
@@ -245,6 +256,11 @@ To work around this issue, you can add a `?filename={filename.ext}` parameter to
 | subdomain | `https://{contentID}.ipfs.{gatewayURL}/?filename={filename.ext}`  |
 | DNSLink | TBD |
 
+### 5.7 Stale caches
+A gateway may cache DNSLinks from DNS TXT records, which default to a one-hour lifetime.
+After content changes, cached DNSLinks continue to refer to the now-obsolete `contentID`.
+
+To limit delivery of obsolete cached content, the domain operator should change the DNS record's time-to-live parameter to a much shorter value; e.g., one minute.
 
 ## 6. Implementation status
 
