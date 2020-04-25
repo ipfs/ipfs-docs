@@ -149,11 +149,11 @@ The browser does not perceive the gateway as the origin of the content and there
 
 ### 3.3 Gateway services
 
-In addition to IPFS content, HTTP(S) gateway access may reach other related services:
+Currently HTTP(S) gateways may access both IPFS and IPNS services:
 
 | service  | style | canonical form of access |
 | ------:  | :---- | :----------------------- |
-| IPFS | path | `https://{gateway URL}/ipfs/{content ID}/{optional path to resource}` |
+| IPFS | path | `https://{gateway URL}/ipfs/{contentID}/{optional path to resource}` |
 |   | subdomain  | `https://{contentID}.ipfs.{gatewayURL}/{optional path to resource}` |
 |   | DNSLink | `https://{domainName.tld}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{domainName.tld}/{optional path to resource}` |
 | IPNS  | path | `https://{gateway URL}/ipns/{ipnsName}/{optional path to resource}` |
@@ -166,7 +166,7 @@ The preferred form of gateway access varies depending on the nature of the targe
 
 | target  | preferred gateway type | canonical form of access <br> features & considerations |
 | :----------  | :----------- | :----------------------- |
-| potentially mutable root | IPNS subdomain | `https://{ipnsName}.ipns.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing |
+| current version of <br>potentially mutable root | IPNS subdomain | `https://{ipnsName}.ipns.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> + suitable for both domain IPNS names (`{domain.tld}`) and hash IPNS names |
 |   | IPFS DNSLink  | `https://{domainName.tld}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> – requires DNS update to propagate change to root content <br> • DNSLink, not user/app, specifies the gateway to use, opening up potential gateway trust and congestion issues |
 | immutable root or <br> content | IPFS subdomain  | `https://{contentID}.ipfs.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing |
 
