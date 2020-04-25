@@ -124,10 +124,14 @@ _Subdomain_ gateway support began with go-ipfs release 0.5.0.7109.
 #### DNSlink
 Whenever a change to content within IPFS occurs, IPFS creates a new `contentID`.
 Many applications require access to the latest version of a file or website, but will not know the exact `contentID` for that latest version.
-The InterPlanetary Name Service (IPNS) allows a version-independent name (e.g., human-readable name) to resolve into the current version's IPFS `contentID`.
+The InterPlanetary Name Service (IPNS) allows a version-independent IPNS name (`ipnsName`) to resolve into the current version's IPFS `contentID`.
+Generally the version-independent `ipsnName` contains a human-unfriendly hash.
+When a gateway processes a request in the form `https://{gatewayURL}/ipns/{ipnsName}/{optional path}`, the gateway employs IPNS to obtain the current version `contentID` and then fetches (for a HTTP(S) GET request) the corresponding content.
 
-DNSLink resolution occurs when the `ipnsName` corresponds to a domain; i.e., of form `domainName.tld`.
-For example, the URL `https://libp2p.io` returns the current version of that website — a site stored in IPFS.
+But the `ipnsName` may instead refer to a domain in the usual form of `domainName.tld`.
+
+DNSLink resolution occurs when the gateway recognizes an `ipnsName` contains `domainName.tld`.
+For example, the URL `https://libp2p.io` returns the current version of that website — a site stored in IPFS — as follows.
 The gateway receives a request in the form:
 ```
 https://{gateway URL}/ipns/{domainName.tld}/{optional path}
@@ -142,9 +146,6 @@ The  `Alias` record redirects any access to that `domainName.tld` to the specifi
 Hence the browser's request to `https://{domainName.tld}/{optional path to resource}` redirects to the gateway specified in the `Alias`.
 The gateway employs DNSLink resolution to return the current content version from IPFS.
 The browser does not perceive the gateway as the origin of the content and therefore enforces the single-origin policy to protect `domainName.tld`.
-
-When employing DNSLinks and aliases, shorten the time-to-live (TTL) for the DNS record from the default 1 hour to e.g., 1 minute.
-This reduces the validity time for cached DNSLinks, resulting in faster availability of newly-updated content.
 
 ### 3.3 Gateway services
 
