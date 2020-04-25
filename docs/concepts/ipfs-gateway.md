@@ -127,14 +127,15 @@ Subdomain resolution support began with go-ipfs release 0.5.0.7109.
 #### DNSlink
 Whenever a change to content within IPFS occurs, IPFS creates a new `contentID`.
 Many applications require access to the latest version of a file or website, but will not know the exact `contentID` for that latest version.
-The InterPlanetary Name Service (IPNS) allows a version-independent IPNS name (`ipnsName`) to resolve into the current version's IPFS `contentID`.
-Generally the version-independent `ipsnName` contains a human-unfriendly hash.
-When a gateway processes a request in the form `https://{gatewayURL}/ipns/{ipnsName}/{optional path}`, the gateway employs IPNS to obtain the current version `contentID` and then fetches (for a HTTP(S) GET request) the corresponding content.
+The InterPlanetary Name Service (IPNS) allows a version-independent IPNS name (`ipnsID`) to resolve into the current version's IPFS `contentID`.
+Generally the version-independent `ipnsID` contains a human-unfriendly hash (technically, a hashed libp2p public key).
+When a gateway processes a request in the form `https://{gatewayURL}/ipns/{ipnsID}/{optional path}`, the gateway employs IPNS to resolve the `ipsnID` into the current version's `contentID`… and then fetches (for a HTTP(S) GET request) the corresponding content.
 
-But the `ipnsName` may instead refer to a domain in the usual form of `domainName.tld`.
+But the `ipnsID` may instead refer to a fully-qualified domain name in the usual form of `domainName.tld`.
 
-DNSLink resolution occurs when the gateway recognizes an `ipnsName` contains `domainName.tld`.
+DNSLink resolution occurs when the gateway recognizes an `ipnsID` contains `domainName.tld`.
 For example, the URL `https://libp2p.io` returns the current version of that website — a site stored in IPFS — as follows.
+
 The gateway receives a request in the form:
 ```
 https://{gateway URL}/ipns/{domainName.tld}/{optional path}
@@ -159,9 +160,9 @@ Currently HTTP(S) gateways may access both IPFS and IPNS services:
 | IPFS | path | `https://{gateway URL}/ipfs/{contentID}/{optional path to resource}` |
 |   | subdomain  | `https://{contentID}.ipfs.{gatewayURL}/{optional path to resource}` |
 |   | DNSLink | `https://{domainName.tld}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{domainName.tld}/{optional path to resource}` |
-| IPNS  | path | `https://{gateway URL}/ipns/{ipnsName}/{optional path to resource}` |
-|   | subdomain  | `https://{ipnsName}.ipns.{gatewayURL}/{optional path to resource}` |
-| | DNSLink | Useful when `ipnsName` is a domain: <br>`https://{domainName.tld}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{domainName.tld}/{optional path to resource}` |
+| IPNS  | path | `https://{gateway URL}/ipns/{ipnsID}/{optional path to resource}` |
+|   | subdomain  | `https://{ipnsID}.ipns.{gatewayURL}/{optional path to resource}` |
+| | DNSLink | Useful when `ipnsID` is a domain: <br>`https://{domainName.tld}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{domainName.tld}/{optional path to resource}` |
 
 ### 3.4 Which type to use
 
@@ -169,7 +170,7 @@ The preferred form of gateway access varies depending on the nature of the targe
 
 | target  | preferred gateway type | canonical form of access <br> features & considerations |
 | :----------  | :----------- | :----------------------- |
-| current version of <br>potentially mutable root | IPNS subdomain | `https://{ipnsName}.ipns.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> + suitable for both domain IPNS names (`{domain.tld}`) and hash IPNS names |
+| current version of <br>potentially mutable root | IPNS subdomain | `https://{ipnsID}.ipns.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> + suitable for both domain IPNS names (`{domain.tld}`) and hash IPNS names |
 |   | IPFS DNSLink  | `https://{domainName.tld}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> – requires DNS update to propagate change to root content <br> • DNSLink, not user/app, specifies the gateway to use, opening up potential gateway trust and congestion issues |
 | immutable root or <br> content | IPFS subdomain  | `https://{contentID}.ipfs.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing |
 
