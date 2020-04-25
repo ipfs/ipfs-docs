@@ -270,11 +270,12 @@ To limit delivery of obsolete cached content, the domain operator should change 
 ## 6. Implementation
 
 --> Need link to instructions for setting up a gateway
+--> Is there a roadmap for the gateway service?
 
 ## 7. Learning more
 
 *   [gateway configuration options](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway)
-*    other documents?
+*   --> other documents?
 
 
 <ContentStatus />
