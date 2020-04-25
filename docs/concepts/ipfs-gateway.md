@@ -119,7 +119,10 @@ Path-resolving gateways, however, violate the same-origin policy that protects o
 See §6.3 below for more details.
 
 #### Subdomain
-_Subdomain_ gateway support began with go-ipfs release 0.5.0.7109.
+Subdomain resolution style maintains compliance with the single-origin policy.
+The canonical form of access, `https://{contentID}.ipfs.{gatewayURL}/{optional path to resource}`, causes the browser to interpret each returned file as from a different origin.
+
+Subdomain resolution support began with go-ipfs release 0.5.0.7109.
 
 #### DNSlink
 Whenever a change to content within IPFS occurs, IPFS creates a new `contentID`.
@@ -245,7 +248,7 @@ Bob fetches the content with this CID and cryptographically validates `balance: 
 To partially address this exposure you may wish to use the public gateway cf-ipfs.com as an independent, trusted reference with both same-origin policy and CORS support.
 
 ### 5.6 Assumed filenames when downloading files
-When downloading files, browsers will usually guess a file's filename by looking at the last component of the path; e.g., `https://{domainName}/{path}/userManual.pdf` downloads a file stored locally with the name `userManual.pdf`.
+When downloading files, browsers will usually guess a file's filename by looking at the last component of the path; e.g., `https://{domainName/tld}/{path}/userManual.pdf` downloads a file stored locally with the name `userManual.pdf`.
 Unfortunately, when linking directly to a file with no containing directory in IPFS, the content ID becomes the final component.
 Storing the downloaded file with the filename set to the `contentID` fails the human-friendly design test.
 
@@ -253,9 +256,9 @@ To work around this issue, you can add a `?filename={filename.ext}` parameter to
 
 | style | query |
 | ----: | :---- |
-| path | `https://{gatewayURL}/ipfs/{contentID}?filename={filename.ext}` |
-| subdomain | `https://{contentID}.ipfs.{gatewayURL}/?filename={filename.ext}`  |
-| DNSLink | TBD |
+| path | `https://{gatewayURL}/ipfs/{contentID}/{optional path to resource}?filename={filename.ext}` |
+| subdomain | `https://{contentID}.ipfs.{gatewayURL}/{optional path to resource}?filename={filename.ext}`  |
+| DNSLink | `https://{domainName.tld}/{optional path to resource}` or <br> `https://{gatewayURL}/ipns/{domainName.tld}/{optional path to resource}?filename={filename.ext}` |
 
 ### 5.7 Stale caches
 A gateway may cache DNSLinks from DNS TXT records, which default to a one-hour lifetime.
@@ -263,11 +266,14 @@ After content changes, cached DNSLinks continue to refer to the now-obsolete `co
 
 To limit delivery of obsolete cached content, the domain operator should change the DNS record's time-to-live parameter to a much shorter value; e.g., one minute.
 
-## 6. Implementation status
+## 6. Implementation
+
+--> Need link to instructions for setting up a gateway
 
 ## 7. Learning more
 
-*   [gateway configuration options](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway).
+*   [gateway configuration options](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway)
+*    other documents?
 
 
 <ContentStatus />
