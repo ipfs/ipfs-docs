@@ -258,6 +258,20 @@ module.exports = {
                   ],
                   '/how-to/browser-tools-frameworks'
                 ]
+              },
+              {
+                title: 'IPFS Companion',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  'how-to/companion-android-firefox',
+                  'how-to/companion-developer-notes',
+                  'how-to/companion-node-types',
+                  'how-to/dnslink-companion',
+                  'how-to/companion-localization',
+                  'how-to/companion-window-ipfs',
+                  '/how-to/companion-x-ipfs-path-header'
+                ]
               }
             ]
           },
