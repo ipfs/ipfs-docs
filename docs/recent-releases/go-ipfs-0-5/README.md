@@ -34,7 +34,7 @@ Ipfs-Lite still needs to be updated to the latest 0.5 features.
 
 ### New QUIC protocol
 
-If you have enabled the QUIC experiment and are trying to connect to new nodes, it won't work. This is the final breaking change before QUIC is stabilized and becomes the default.
+If you have enabled the QUIC experiment and are trying to connect to new nodes, it won't work until you upgrade as well. This is the final breaking change before QUIC is stabilized and becomes the default.
 
 ### HTTP API will disallow `GET` requests
 
