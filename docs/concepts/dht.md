@@ -60,10 +60,12 @@ To avoid these sorts of problems, nodes must regularly re-announce which CIDs th
 
 ## Dual DHT
 
-IPFS nodes run two DHTs: one for the public internet WAN, and one for their local network LAN.
+IPFS nodes participate in two DHTs: one for the public internet WAN, and one for their local network LAN.
 
 1. When connected to the public internet, IPFS will use both DHTs for finding peers, content, and IPNS records. Nodes only publish provider and IPNS records to the WAN DHT to avoid flooding the local network.
 2. When not connected to the public internet, nodes publish provider and IPNS records to the LAN DHT.
+
+Nodes will participate in the DHT from their LAN and will store some of that generated metadata, but only expect the DHT to be used when the LAN is disconnected. Nodes will only store part of the public DHT when they are externally reachable, and not behind a Network Address Translation (NAT). A feature called [AutoNAT was introduced in Go-IPFS 0.5](/recent-releases/go-ipfs-0-5/features#autonat) to detect whether or not a node is _reachable_ from the public internet.
 
 The WAN DHT includes all peers with at least one public IP address. IPFS will only consider an IPv6 address public if it is in the [public internet range `2000::/3`](https://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xhtml).
 
