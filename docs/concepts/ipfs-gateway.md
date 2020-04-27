@@ -33,8 +33,6 @@ IPFS deployment seeks to include native support of IPFS in all popular browsers 
 
 Tools like [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) resolve these content access errors. However, not every user has permission to alter — or be capable of altering — their computer configuration. IPFS gateways provide an HTTP-based service that allows IPFS-ignorant browsers and tools to access IPFS content.
 
-<!-- The canonical form of access to an IPFS gateway is `https://{gatewayURL}/ipfs/{CID}/{optional path to resource}` -->
-
 ## Gateway providers
 
 Regardless of who deploys a gateway and where any IPFS gateway resolves access to any requested IPFS [content identifier](/content/concepts/content-addressing). Therefore, for best performance, when you need the service of a gateway, you should use the one closest to you.
