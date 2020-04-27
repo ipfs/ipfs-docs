@@ -67,37 +67,6 @@ module.exports = {
           {
             title: 'Install',
             path: '/install/',
-            children: [
-              {
-                title: 'Desktop',
-                sidebarDepth: 2,
-                collapsable: false,
-                children: [
-                  '/install/desktop/windows',
-                  '/install/desktop/macos',
-                  '/install/desktop/linux'
-                ]
-              },
-              {
-                title: 'Browser',
-                sidebarDepth: 2,
-                collapsable: false,
-                children: [
-                  '/install/browser/chrome',
-                  '/install/browser/firefox'
-                ]
-              },
-              {
-                title: 'Terminal',
-                sidebarDepth: 2,
-                collapsable: false,
-                children: [
-                  '/install/terminal/windows',
-                  '/install/terminal/macos',
-                  '/install/terminal/linux'
-                ]
-              }
-            ]
           },
           {
             title: 'Recent releases',
