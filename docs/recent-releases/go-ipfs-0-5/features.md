@@ -105,7 +105,7 @@ The new Bitswap won't magically make downloading content any faster until both s
 
 ## Badger integration
 
-Badger has been in Go-IPFS for over a year as an experimental feature, and we're still leaving as experimental for now. However, for this release, we've done some interface changes that have allowed us to take advantage of features in Badger to increase the performance of adding data to Go-IPFS.
+Badger has been in Go-IPFS for over a year as an experimental feature, and we're promoting it to stable. For this release, we've done some interface changes that have allowed us to take advantage of features in Badger to increase the performance of adding data to Go-IPFS. However, Badger is still not the default file system for Go-IPFS.
 
 The current and default file system used by Go-IPFS is [FlatFS](https://github.com/ipfs/go-ds-flatfs). FlatFS essentially stores blocks of data as files on your file system. However, there are lots of optimizations a specialized database can do that a standard file system can not. On a standard hard drive, reading from a contiguous array of bytes is much faster than randomly reading bytes, so having a database that operates as one single file has lots of room for optimization.
 
