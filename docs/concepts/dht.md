@@ -14,7 +14,7 @@ So IPFS uses lots of small tables instead of one big table, but that brings anot
 
 ## Providing
 
-IPFS nodes can _provide_ blocks of data. This doesn't necessarily mean that the node actually _has_ the data, but it knows where to get it. Using Kademlia, IPFS tells the peers with PeerIds that are most similar to the CID of the block that you can provide. These peers will not store the data for you, but they will store a record saying that you can provide the block. How similar a PeerID is to a CID is defined as the [exclusive-or (XOR) distance](https://en.wikipedia.org/wiki/Exclusive_or) between the bytes that make up the PeerID, and the bytes that make up the CID.
+IPFS nodes can _provide_ blocks of data. This doesn't necessarily mean that the node actually _has_ the data, but it knows where to get it. When trying to provide a block, your node will look for peers with PeerIDs most _similar_ to the CID of the block. These peers will not store the data for you, but they will store a record saying that you can provide the block. How similar a PeerID is to a CID is defined as the [exclusive-or (XOR) distance](https://en.wikipedia.org/wiki/Exclusive_or) between the bytes that make up the PeerID, and the bytes that make up the CID.
 
 Using the table below, we can see that `QmAlex` and `QmBrian` can provide `QmVYD...`. `QmAlex` and `QmCharlotte` can provide `QmZij...`. Only `QmCharlotte` and provide `QmXPg...`.
 
