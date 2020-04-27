@@ -63,13 +63,13 @@ The DHT rewrite was made possible by [Testground](https://github.com/ipfs/testgr
 
 ## AutoNAT
 
-This release includes a protocol called AutoNAT for detecting whether or not a node is _reachable_ from the public internet. In short:
+This release uses Automatic NAT Detection (AutoNAT) - determining if the node is _reachable_ from the public internet - to make decisions about how to participate in IPFS. This subsystem is used to determine if the node should store some of the public DHT, and if it needs to use relays to be reached by others. In short:
 
 1. An AutoNAT client asks a node running an AutoNAT service if it can be reached at one of a set of guessed addresses.
 2. The AutoNAT service attempts to _dial back_ those addresses, with some restrictions. We won't dial back to a different IP address, for example.
 3. If the AutoNAT service succeeds, it reports back the address it successfully dialed, and the AutoNAT client knows that it is reachable from the public internet.
 
-All nodes act as AutoNAT clients to determine if they should switch into DHT server mode. As of this release, all nodes also run a rate-limited AutoNAT service by default. This service should have minimal overhead. Nodes initialized with the `lowpower` configuration profile do not run the AutoNAT service.
+All nodes act as AutoNAT clients to determine if they should switch into DHT server mode. As of this release, nodes will by default run the service side of AutoNAT - verifying connectivity - for up to 30 peers every minute. This service should have minimal overhead, and will be disabled for nodes in the `lowpower` configuration profile, and those which believe they are not publicly reachable.
 
 In addition to enabling the AutoNAT service by default, this release changes the AutoNAT config options:
 
