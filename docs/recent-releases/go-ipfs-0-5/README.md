@@ -20,17 +20,13 @@ On top of all the features that have been added into this release, we've plugged
 
 IPFS 0.5 is a substantial step forward in terms of performance and reliability. Inevitably, such a large release will cause some breakages:
 
-### Using IPFS as a Library
+### Using IPFS as a library
 
-You will need to upgrade to the new interfaces for IPFS to connect to your various APIs.
+You will need to upgrade to the new interfaces for IPFS to connect to your various APIs. JS-IPFS nodes will no longer be able to read Go-IPFS datastores. Avoid pointing two nodes at the same datastore. If your Go-IPFS node reads a JS-IPFS datastore, it will upgrade it and no longer be compatible with JS-IPFS.
 
 ### Small key test set up
 
 If you have a testing setup using small RSA keys (less than 2048 bits), you need to either start using large keys or set an environment variable.
-
-### JS-IPFS node datastore incompatibility
-
-JS-IPFS nodes will no longer be able to read Go-IPFS datastores. Avoid pointing two nodes at the same datastore. If your Go-IPFS node reads a JS-IPFS datastore, it will upgrade it and no longer be compatible with JS-IPFS.
 
 ### IPFS-Lite
 
