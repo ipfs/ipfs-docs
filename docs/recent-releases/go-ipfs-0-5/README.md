@@ -14,13 +14,7 @@ There are plenty of features packed into this release. The DHS implementation is
 
 ## Fixes
 
-On top of all the features that have been added into this release, we've plugged a few holes along the way. Some notable fixes are:
-
-- abc
-- def
-- ghi
-
-[Check out all the fixes added into this release →](fixes)
+On top of all the features that have been added into this release, we've plugged a few holes along the way. [Check out all the fixes added into this release →](https://github.com/ipfs/go-ipfs/issues/7109)
 
 ## Known issues
 
