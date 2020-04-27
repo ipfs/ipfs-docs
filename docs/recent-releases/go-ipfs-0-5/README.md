@@ -34,7 +34,7 @@ You will need to upgrade to the new interfaces for IPFS to connect to your vario
 
 If you have a testing setup using small RSA keys (less than 2048 bits), you need to either start using large keys or set an environment variable.
 
-### JS-IPFS node incompatibility
+### JS-IPFS node datastore incompatibility
 
 JS-IPFS nodes will no longer be able to read Go-IPFS datastores. Avoid pointing two nodes at the same datastore. If your Go-IPFS node reads a JS-IPFS datastore, it will upgrade it and no longer be compatible with JS-IPFS.
 
