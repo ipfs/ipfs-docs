@@ -56,7 +56,7 @@ If a node announces to the network that it can provide a particular CID, the sta
 1. `Node B` sends `Node C` to `Node A`.
 1. `Node C` waits for `Node A` to respond until the heat-death of the universe happens. Or until the timeout is reached, whichever comes first.
 
-To avoid problem nodes must re-announce which CIDs they can provide. This happens at least every 12 hours. If `Node B` doesn't get a re-announcement from `Node A` that they can still provide `CID X` within a 12 hour period, `Node B` will remove `Node A` from the provider list.
+To avoid these sorts of problems, nodes must regularly re-announce which CIDs they can provide. This happens at least every 12 hours. If `Node B` doesn't get a re-announcement from `Node A` that they can still provide `CID X` within a 12 hour period, `Node B` will remove `Node A` from the provider list.
 
 ## Dual DHT
 
