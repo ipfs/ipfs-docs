@@ -109,7 +109,7 @@ DNSLink resolution occurs when the gateway recognizes an IPNS identifier contain
 
     ```bash
     https://{gateway URL}/ipns/{example.com}/{optional path}
-    `"
+    ```
 
 2. The gateway searches the DNS TXT records of the requested domain `{example.com}` for a string of the form  `dnslink=/ipfs/{CID}` or `_dnslink=/ipfs/{CID}`. If found, the gateway uses the specified CID to serve up `ipfs://{CID}/{optional path}`. As with path resolution, this form of DNSLink resolution violates the single-origin policy. The domain operator may ensure single-origin policy compliance — and the delivery of the current version of content — by adding an `Alias` record in the DNS that refers to a suitable IPFS gateway; e.g., `gateway.ipfs.io`.
 3. The  `Alias` record redirects any access to that `example.com` to the specified gateway. Hence the browser's request to `https://{example.com}/{optional path to resource}` redirects to the gateway specified in the `Alias`.
