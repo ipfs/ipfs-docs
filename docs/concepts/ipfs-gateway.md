@@ -14,16 +14,18 @@ related:
 # IPFS Gateway
 
 This document discusses:
-*   the several types of gateways;
-*   gateway role in the use of IPFS;
-*   appropriate situations for use of gateways;
-*   situations when you should avoid use of gateways;
-*   implementation guidelines.
+
+- the several types of gateways;
+- gateway role in the use of IPFS;
+- appropriate situations for use of gateways;
+- situations when you should avoid use of gateways;
+- implementation guidelines.
 
 You should read this document if you want to:
-*   understand, at a conceptual level, how gateways fit into the overall use of IPFS;
-*   decide whether and what type of gateways to employ for your use case;
-*   understand, at a conceptual level, how to deploy gateways for your use case.
+
+- understand, at a conceptual level, how gateways fit into the overall use of IPFS;
+- decide whether and what type of gateways to employ for your use case;
+- understand, at a conceptual level, how to deploy gateways for your use case.
 
 ## Contents
 
@@ -52,6 +54,7 @@ You should read this document if you want to:
  7. Learning more
 
 ## 1. What is an IPFS gateway?
+
 IPFS deployment seeks to include native support of IPFS in all popular browsers and tools.
 Gateways provide workarounds for applications that do not yet support IPFS natively.
 
@@ -72,10 +75,12 @@ Regardless of who deploys a gateway and where, any IPFS gateway resolves access 
 Therefore, for best performance, when you need the service of a gateway, you should use the one(s) closest to you.
 
 ### 2.1 Your local gateway
+
 Your machine may host a gateway as a local service; e.g., at `localhost:8080`.
 You will have a local gateway service if you installed [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node.
 
 ### 2.2 Private gateways
+
 Running [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node triggers connection attempts to other IPFS peers.
 Private network administrators may treat such connection attempts as potential security vulnerabilities.
 Private IPFS gateway servers located inside the private network and running a trusted code base provide an alternative architecture for read/write access to externally-hosted IPFS content.
@@ -85,23 +90,28 @@ More generally, one may consider any gateway as a "private gateway" when configu
 A [tutorial configuring an IPFS gateway on a Google Cloud platform](https://blog.stacktical.com/ipfs/gateway/dapp/2019/09/21/ipfs-server-google-cloud-platform.html) includes a description of constraining access.
 
 ### 2.3 Public gateways
+
 Public gateway operators include:
-*   Protocol Labs, which deploys the public gateway `https://ipfs.io`;
-*   Third-party public gateways; e.g., `https://cf-ipfs.com`.
+
+- Protocol Labs, which deploys the public gateway `https://ipfs.io`;
+- Third-party public gateways; e.g., `https://cf-ipfs.com`.
 
 Protocol Labs maintains a [list of public gateways](https://ipfs.github.io/public-gateway-checker/) and their status.
 
 ## 3. What types of gateways exist?
+
 Categorizing gateways involves several dimensions:
-*   read/write support; see §3.1.
-*   resolution style; see §3.2.
-*   service; see §3.3.
+
+- read/write support; see §3.1.
+- resolution style; see §3.2.
+- service; see §3.3.
 
 Choosing the form of gateway usage has security, peformance and other functional implications.
 The remainder of this section §3 and the following secions §4 and §5 discuss these implications in more detail.
 Feel free to jump directly to §6 for recommended forms of gateway usage.
 
 ### 3.1 Read-only and writeable gateways
+
 The examples discussed in the earlier sections above illustrated the use of read-only HTTP(S) gateways to fetch content from IPFS via an HTTP(S) GET method.
 
 _Writeable_ HTTP(S) gateways also support POST, PUT and DELETE methods; e.g., to create and manage content in IPFS.
@@ -111,20 +121,25 @@ _Writeable_ HTTP(S) gateways also support POST, PUT and DELETE methods; e.g., to
 Three resolution styles exist: path, subdomain, and DNSLink.
 
 #### Path
+
 The examples discussed above employed path resolution:
-```
+
+```bash
 https://{gateway URL}/ipfs/{content ID}/{optional path to resource}
 ```
+
 Path-resolving gateways, however, violate the same-origin policy that protects one website from improperly accessing session data of another website.
 See §6.3 below for more details.
 
 #### Subdomain
+
 Subdomain resolution style maintains compliance with the single-origin policy.
 The canonical form of access, `https://{contentID}.ipfs.{gatewayURL}/{optional path to resource}`, causes the browser to interpret each returned file as from a different origin.
 
 Subdomain resolution support began with go-ipfs release 0.5.0.7109.
 
 #### DNSlink
+
 Whenever a change to content within IPFS occurs, IPFS creates a new `contentID`.
 Many applications require access to the latest version of a file or website, but will not know the exact `contentID` for that latest version.
 The InterPlanetary Name Service (IPNS) allows a version-independent IPNS name (`ipnsID`) to resolve into the current version's IPFS `contentID`.
@@ -137,9 +152,11 @@ DNSLink resolution occurs when the gateway recognizes an `ipnsID` contains `doma
 For example, the URL `https://libp2p.io` returns the current version of that website — a site stored in IPFS — as follows.
 
 The gateway receives a request in the form:
-```
+
+```bash
 https://{gateway URL}/ipns/{domainName.tld}/{optional path}
 ```
+
 The gateway searches the DNS TXT records of the requested domain `{domainName.tld}` for a string of the form  `dnslink=/ipfs/{contentID}` or `_dnslink=/ipfs/{contentID}`.
 If found, the gateway uses the specified `contentID` to serve up `ipfs://{contentID}/{optional path}`.
 
@@ -179,24 +196,27 @@ _Reminder:_ Any form of gateway provides a bridge for apps without native suppor
 ## 4. When not to employ a gateway
 
 ### 4.1 Delay-sensitive applications
+
 Any gateway introduces delay in completing desired actions, because the gateway acts as an intermediary between the source of the request and the IPFS node(s) capable of returning the desired content.
 If the serving gateway cached the requested content earlier (e.g., due to previous requests), then the cache eliminates this delay.
 
 Overuse of a gateway also introduces delays due to queuing of requests.
 
 In general, faster execution occurs when using methods close to the top of the following list instead of those toward the bottom:
-*   native IPFS node within the app or as a local service daemon
-*   gateway installed as a local service
-from app to the local service. _Note:_ If an IPFS node exists locally on the same machine, it runs such a gateway at `http://127.0.0.1:8080`.
-*   public/private gateways.
+
+- native IPFS node within the app or as a local service daemon
+- gateway installed as a local service from app to the local service. _Note:_ If an IPFS node exists locally on the same machine, it runs such a gateway at `http://127.0.0.1:8080`.
+- public/private gateways.
 
 ### 4.2 End-to-end cyptographic validation required
+
 Because of third-party gateway vulnerabilities outlined in §6.1 below, apps requiring end-to-end validation of content read/write should avoid gateways when possible.
 If the app must employ an extenal gateway, such apps should use ipfs.io or a trusted third-party.
 
 ## 5. Limitations and potential workarounds
 
 ### 5.1 Centralization
+
 Use of a gateway requires location-based addressing: `https://{gatewayURL}/ipfs/{contentID}/{etc}`
 All too easily the gateway URL can become the handle by which users identify the content; i.e., the uniform reference locator (URL) equates (improperly) to the uniform reference identifier (URI).
 Now imagine that gateway becomes unreachable; e.g., goes offline or cannot be reached from a different user's location because of firewalls.
@@ -206,10 +226,12 @@ Similarly, use of DNSLink resolution with `Alias` (see §3.2) forces requests th
 If the specified gateway becomes overloaded, goes offline, or becomes compromised, all traffic with that content becomes delated, disabled, or suspect.
 
 ### 5.2 Misplaced trust
+
 Trusting a specific gateway in turn requires trust of the gateway's issuing Certificate Authorities (CAs) and the security of the public key infrastructure (PKI) employed by that gateway.
 Compromised CAs or PKI implementations may undermine the trustworthiness of the gateway.
 
 ### 5.3 Violation of same-origin policy
+
 To prevent one website from improperly accessing HTTP session data associated with a different website, the [same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy) permits script access only to pages that share a common domain name and port.
 Consider two web pages stored in IPFS: `ipfs://{contentID A}/{webpage A}` and `ipfs://{contentID B}/{webpage B}`.
 Code on webpage A should not access data from webpage B, as they do not share the same content ID (origin).
@@ -219,10 +241,12 @@ From that browser's perspective, both webpages share a common origin: the gatewa
 
 The use of subdomain gateways avoids violating the same-origin policy.
 In this situation the gateway's reference to the two webpages becomes:
-```
+
+```bash
 https://{contentID A}.ipfs.{gatewayURL}/{webpage A}
 https://{contendID B}.ipfs.{gatewayURL}/{webpage B}
 ```
+
 and thereby do not share the same origin.
 
 Similarly, the use of DNSLink gateway avoids violating the same-origin policy.
@@ -230,16 +254,19 @@ Similarly, the use of DNSLink gateway avoids violating the same-origin policy.
 The [IPFS public gateway checker](https://ipfs.github.io/public-gateway-checker/) identifies those public gateways that avoid violating the same-origin policy.
 
 ### 5.4 Cross-origin resource sharing
+
 [CORS](https://web.archive.org/web/20200418003728/https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#The_HTTP_response_headers) allows a webpage to permit access to specified data by pages with a different origin.
 
 he [IPFS public gateway checker](https://ipfs.github.io/public-gateway-checker/) identifies those public gateways that support CORS.
 
 ### 5.5 Gateway man-in-the-middle vulnerability
+
 Employing a public or private HTTP(S) gateway sacrifices end-to-end cryptographic validation of delivery of the correct content.
 Consider the case of a browser fetching content with the URL `https://anipfsgateway.org/ipfs/{cid}`.
 A compromised `anipfsgateway.org` provides man-in-the-middle vulnerabilities, including:
-*   Substituting false content in place of the actual content retrieved via the CID;
-*   Diverting a copy of the query and response, as well as the IP address of the querying browser, to a third party.
+
+- Substituting false content in place of the actual content retrieved via the CID;
+- Diverting a copy of the query and response, as well as the IP address of the querying browser, to a third party.
 
 Similarly, a compromised writeable gateway may inject falsified content into the IPFS network, returning a CID which the user believes (incorrectly) to refer to the true content.
 For example, a compromised writeable gateway user Alice POSTs `balance: 123.45`, but the gateway stores `balance: 0.00` and returns to Alice a CID for the falsified content.
@@ -249,6 +276,7 @@ Bob fetches the content with this CID and cryptographically validates `balance: 
 To partially address this exposure you may wish to use the public gateway cf-ipfs.com as an independent, trusted reference with both same-origin policy and CORS support.
 
 ### 5.6 Assumed filenames when downloading files
+
 When downloading files, browsers will usually guess a file's filename by looking at the last component of the path; e.g., `https://{domainName/tld}/{path}/userManual.pdf` downloads a file stored locally with the name `userManual.pdf`.
 Unfortunately, when linking directly to a file with no containing directory in IPFS, the content ID becomes the final component.
 Storing the downloaded file with the filename set to the `contentID` fails the human-friendly design test.
@@ -262,6 +290,7 @@ To work around this issue, you can add a `?filename={filename.ext}` parameter to
 | DNSLink | `https://{domainName.tld}/{optional path to resource}` or <br> `https://{gatewayURL}/ipns/{domainName.tld}/{optional path to resource}?filename={filename.ext}` |
 
 ### 5.7 Stale caches
+
 A gateway may cache DNSLinks from DNS TXT records, which default to a one-hour lifetime.
 After content changes, cached DNSLinks continue to refer to the now-obsolete `contentID`.
 
@@ -274,8 +303,6 @@ To limit delivery of obsolete cached content, the domain operator should change 
 
 ## 7. Learning more
 
-*   [gateway configuration options](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway)
-*   --> other documents?
-
+- [gateway configuration options](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway)
 
 <ContentStatus />
