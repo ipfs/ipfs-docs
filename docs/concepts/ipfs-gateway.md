@@ -149,7 +149,9 @@ Any gateway introduces a delay in completing desired actions because the gateway
 
 Overuse of a gateway also introduces delays due to queuing of requests.
 
-When dealing with delay-sensitive processes, you should aim to have a native IPFS node within the app, or as a local service daemon. Failing that, have a gateway installed as a local service from app to the local service. If an IPFS node exists locally on the same machine, it runs such a gateway at `http://127.0.0.1:8080`. All time-insensitive processes can be routed through public/private gateways.
+When dealing with delay-sensitive processes, you should aim to use a native IPFS node within the app (fastest), or as a local service daemon (almost as fast). Failing that, use a gateway installed as a local service. Note that when an IPFS node runs locally, it includes a gateway at `http://127.0.0.1:8080`.
+
+All time-insensitive processes can be routed through public/private gateways.
 
 ### End-to-end cyptographic validation required
 
