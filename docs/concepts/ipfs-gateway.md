@@ -27,32 +27,6 @@ You should read this document if you want to:
 - decide whether and what type of gateways to employ for your use case;
 - understand, at a conceptual level, how to deploy gateways for your use case.
 
-## Contents
-
- 1. What is an IPFS gateway?
- 2. Who provides IPFS gateways?
-    1. Your local gateway
-    2. Private gateways
-    3. Public gateways
- 3. What types of gateways exist?
-    1. Read-only and writeable gateways
-    2. Resolution styles
-    1. Gateway services
-    2. Which type of gateway to use
- 4. When not to employ a gateway
-    1. Delay-sensitive applications
-    2. End-to-end cryptographic validation required
- 5. Limitations and potential workarounds
-    1. Centralization
-    2. Misplaced trust
-    3. Violation of same-origin policy
-    4. Cross-origin resource sharing
-    5. Gateway man-in-the-middle vulnerability
-    6. Assumed filenames when downloading files
-    7. Stale caches
- 6. Implementation status
- 7. Learning more
-
 ## 1. What is an IPFS gateway?
 
 IPFS deployment seeks to include native support of IPFS in all popular browsers and tools.
