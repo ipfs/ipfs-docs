@@ -40,8 +40,8 @@ ipfs dht findprovs QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG
 
 When you add a file to IPFS, it gets stored as blocks of data. Each of these blocks has a CID, which is the [content-address](/concepts/content-addressing) of that block of data. This means that every unique block has a unique CID. IPFS nodes use the DHT to advertise which blocks they _have_, which blocks they _want_, and which blocks they _don't want_.
 
-| Have | Want | Don't Want |
-| --- | --- | --- |
+| Have                      | Want                         | Don't Want                                                                            |
+| ------------------------- | ---------------------------- | ------------------------------------------------------------------------------------- |
 | I can provide this block. | I am looking for this block. | I am not looking for this block. If I am provided this block, I will just discard it. |
 
 ## Re-providing
@@ -54,7 +54,7 @@ If a node announces to the network that it can provide a particular CID, the sta
 1. `Node B` isn't aware that `Node A` can no longer provide `CID X`.
 1. `Node C` asks for `CID X`.
 1. `Node B` sends `Node C` to `Node A`.
-1. `Node C` waits for `Node A` to respond until the heat-death of the universe happens, and energy no longer exists.
+1. `Node C` waits for `Node A` to respond until the heat-death of the universe happens. Or until the timeout is reached, whichever comes first.
 
 To avoid problem nodes must re-announce which CIDs they can provide. This happens at least every 12 hours. If `Node B` doesn't get a re-announcement from `Node A` that they can still provide `CID X` within a 12 hour period, `Node B` will remove `Node A` from the provider list.
 
