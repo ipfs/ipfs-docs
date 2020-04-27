@@ -41,7 +41,7 @@ Initially, a node wants to know peers have the root-block, but the node doesn't 
 
 Once a node has added peers to the session, it can also use these _have-response_ messages to figure out which of the session peers have the rest of the blocks it needs. This process is relatively cheap because we don't have to worry about duplicate blocks. At this stage, the node also wants the peer to say if it doesn't have the block, so a _dont-have-response_ is available.
 
-With these changes, a node can cheaply work out how blocks are distributed amongst its peers and can direct the requests for blocks more accurately, increasing overall download speed and reducing the number of duplicate blocks. The node can also quickly recognize when all the peers in a session don't have a block it needs and go out to the DHT to find out who has the block.
+With these changes, a node can cheaply work out how blocks are distributed amongst its peers and can direct the requests for blocks more accurately, increasing overall download speed and reducing the number of duplicate blocks. The node can also quickly recognize when all the peers in a session don't have a block it needs and go out to the DHT to find out who has the desired block.
 
 ### Additional references
 
