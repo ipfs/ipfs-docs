@@ -63,4 +63,4 @@ Otherwise, if you want more control over the repo migration process, you can man
 
 ## Changelog
 
-The changelog is available in the [`ipfs/go-ipfs` repository on GitHub](https://github.com/ipfs/go-ipfs/blob/master/CHANGELOG.md).
+The changelog is available in the [`ipfs/go-ipfs` repository on GitHub](https://github.com/ipfs/go-ipfs/blob/master/CHANGELOG.md#050-2020-04-28).
