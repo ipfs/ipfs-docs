@@ -6,7 +6,7 @@ title: Troubleshooting
 
 ## Dropped connections
 
-If you are running an IPFS node prior to version `0.4.20` you need to upgrade. These nodes will be unstable and cause performance issues for the network. They may drop connections, be unreliable, and frequently crash.
+If you are running an IPFS node prior to version `0.4.20` you need to upgrade. These nodes will be unstable and cause performance issues for the network. Please [update to IPFS 0.5](update-procedure) as soon as possible!
 
 ## IPFS/Libp2p address format changes
 

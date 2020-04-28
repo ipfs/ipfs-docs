@@ -4,7 +4,7 @@ title: Install Go-IPFS
 
 # Install Go-IPFS
 
-The install process for this release is the same as previous versions of Go-IPFS. If you already have IPFS installed and want to keep all your files and configuration, take a look at the [Update Process](update-process) for this release.
+The install process for this release is the same as previous versions of Go-IPFS. If you already have IPFS installed and want to keep all your files and configuration, take a look at the [Update Process](update-procedure) for this release.
 
 ## Windows
 
@@ -86,7 +86,7 @@ The install process for this release is the same as previous versions of Go-IPFS
    > Moved ./ipfs to /usr/local/bin
    ```
 
-1. Check that IPFS install properly:
+1. Check that IPFS installed properly:
 
    ```bash
    ipfs --version
