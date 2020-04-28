@@ -4,9 +4,36 @@ title: Update procedure
 
 # Update procedure
 
-1. Download the new build and run it.
-2. Run `ipfs daemon`.
-3. The daemon will ask if you want to run the migrations:
+Updating to the latest version of Go-IPFS is simple. Just follow these steps:
+
+1. Download [`go-ipfs_v0.5.0_darwin-386.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.5.0).
+
+   ```bash
+   wget https://github.com/ipfs/go-ipfs/releases/download/v0.5.0/go-ipfs_v0.5.0_darwin-amd64.tar.gz
+   ```
+
+1. Unzip the file:
+
+   ```bash
+   tar -xvzf go-ipfs_v0.5.0_darwin-amd64.tar.gz
+
+   > x go-ipfs/install.sh
+   > x go-ipfs/ipfs
+   > x go-ipfs/LICENSE
+   > x go-ipfs/LICENSE-APACHE
+   > x go-ipfs/LICENSE-MIT
+   > x go-ipfs/README.md
+   ```
+
+1. Move into the `go-ipfs` folder and run the install script:
+
+   ```bash
+   bash install.sh
+
+   > Moved ./ipfs to /usr/local/bin
+   ```
+
+1. Run the IPFS daemon. It will ask you to run the migrations:
 
    ```bash
    ipfs daemon
@@ -20,7 +47,7 @@ title: Update procedure
    > Run migrations now? [y/N]
    ```
 
-4. Enter `y` and press enter. Once the migrations have finished, the daemon will start:
+1. Enter `y` and press enter. Once the migrations have finished, the daemon will start:
 
    ```bash
    y
@@ -36,8 +63,8 @@ title: Update procedure
    > Daemon is ready
    ```
 
-5. Press `CTRL` + `c` to close the daemon.
-6. Check that the latest version of IPFS installed properly:
+1. Press `CTRL` + `c` to close the daemon.
+1. Check that the latest version of IPFS installed properly:
 
    ```bash
    ipfs --version
@@ -45,4 +72,4 @@ title: Update procedure
    > ipfs version 0.5.0-rc1
    ```
 
-7. That's it!
+1. That's it!
