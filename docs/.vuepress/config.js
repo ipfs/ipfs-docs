@@ -66,7 +66,10 @@ module.exports = {
         sidebar: [
           {
             title: 'Install',
-            path: '/install/'
+            path: '/install/',
+            children: [
+                '/install/command-line-quick-start'
+            ]
           },
           {
             title: 'Recent releases',
