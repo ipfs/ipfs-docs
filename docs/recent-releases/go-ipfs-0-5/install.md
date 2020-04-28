@@ -4,11 +4,11 @@ title: Install Go-IPFS
 
 # Install Go-IPFS
 
-The install process for this release is the same as previous versions of Go-IPFS. If you already have IPFS installed and want to keep all your files and configuration, take a look at the [Update Process](update-procedure) for this release.
+The install process for this release is the same as previous versions of Go-IPFS. If you already have IPFS installed and want to keep all your files and configuration, take a look at the [Update Process](/recent-releases/go-ipfs-0-5/update-procedure) for this release.
 
 ## Windows
 
-1. Download [`go-ipfs_v0.5.0_windows-386.zip` from GitHub](https://github.com/ipfs/go-ipfs/releases/download/v0.5.0/).
+1. Download [`go-ipfs_v0.5.0_windows-386.zip` from GitHub](https://github.com/ipfs/go-ipfs/releases).
 
    ```powershell
    cd ~\
@@ -59,7 +59,7 @@ The install process for this release is the same as previous versions of Go-IPFS
 
 ## macOS
 
-1. Download [`go-ipfs_v0.5.0_darwin-386.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.5.0).
+1. Download [`go-ipfs_v0.5.0_darwin-386.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases).
 
    ```bash
    wget https://github.com/ipfs/go-ipfs/releases/download/v0.5.0/go-ipfs_v0.5.0_darwin-amd64.tar.gz
@@ -96,7 +96,7 @@ The install process for this release is the same as previous versions of Go-IPFS
 
 ## Linux
 
-1. Download [`go-ipfs_v0.5.0_linux-amd64.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.5.0):
+1. Download [`go-ipfs_v0.5.0_linux-amd64.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases):
 
    ```bash
    wget https://github.com/ipfs/go-ipfs/releases/download/v0.5.0/go-ipfs_v0.5.0_linux-amd64.tar.gz
