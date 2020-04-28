@@ -63,20 +63,43 @@ Example:
 
     https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.dweb.link/wiki/
     https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.cf-ipfs.com/wiki/Vincent_van_Gogh.html
+    https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.localhost:8080/wiki/
 
 ::: tip
 
-For now, this type of gateway requires additional reverse proxy configuration.
-As a reference, Nginx config for subdomain gateway at <code>dweb.link</code> is:
+go-ipfs provides native support for subdomain gateways on hostnames defined in [`Gateway.PublicGateways`](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) configuration map.
 
-```nginx
-if ($http_host ~ ^(.+)\.(ipfs|ipns)\.dweb\.link$) {
-  set $ipfspath /$2/$1;
-  rewrite "^(.*)$" $ipfspath$1 last;
-}
+Learn more about daemon configuration for hosting a public gateway:
+
+- [`Gateway.PublicGateways` docs](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) for defining gateway behavior on specified hostnames
+- [`Gateway` recipes](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) with ready to use one-liners for most common use cases
+
+:::
+
+::: danger
+
+Some browsers and other user agents force lowercase for the authority part of URLs, breaking case-sensitive CIDs before HTTP Gateway has a chance to read them.
+
+To avoid this, use of case-insensitive CIDv1 in Base32 in subdomain context is suggested as the safe default.
+
+:::
+
+::: tip
+
+To convert CID to Base32 use [cid.ipfs.io](https://cid.ipfs.io) or a command line:
+
+```shell
+> ipfs cid base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
+bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 ```
 
-There is ongoing work to <a href="https://github.com/ipfs/go-ipfs/issues/6498" target="_blank">add native subdomain support to the IPFS daemon&nbsp;<i class="fas fa-external-link-square-alt fa-sm"></i></a> which will simplify setup and remove the need for path translation at reverse proxy.
+[PeerIDs can be represented as CID with `libp2p-key` multicodec](https://github.com/libp2p/specs/blob/master/RFC/0001-text-peerid-cid.md):
+
+```shell
+> ipfs cid format -v 1 -b base32 --codec libp2p-key QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN
+bafzbeiagwnqiviaae5aet2zivwhhsorg75x2wka2pu55o7grr23ulx5kxm
+```
+
 :::
 
 ### DNSLink gateway
@@ -113,7 +136,9 @@ ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_
 ```
 
 ::: tip
-Support for case-insensitive IPNS roots is a <a href="https://github.com/ipfs/go-ipfs/issues/5287" target="_blank">work in progress&nbsp;<i class="fas fa-external-link-square-alt fa-sm"></i></a>.
+
+Native URI require CID to be case-insensitive. Use of CIDv1 in Base32 is advised.
+
 :::
 
 ## Further resources
