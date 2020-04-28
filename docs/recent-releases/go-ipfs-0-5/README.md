@@ -24,9 +24,9 @@ Unfortunately, `/ipfs/Qm...` is _also_ the same path format we use for files. Th
 
 What this means for users:
 
-* Old-style multiaddrs will still be accepted as inputs to IPFS.
-* If you were using a multiaddr library (go, js, etc.) to name _files_ because `/ipfs/QmSomePeerID` looks like `/ipfs/QmSomeFile`, your tool may break if you upgrade this library.
-* If you're manually parsing multiaddrs and are searching for the string `/ipfs/`..., you'll need to search for `/p2p/...`.
+- Old-style multiaddrs will still be accepted as inputs to IPFS.
+- If you were using a multiaddr library (go, js, etc.) to name _files_ because `/ipfs/QmSomePeerID` looks like `/ipfs/QmSomeFile`, your tool may break if you upgrade this library.
+- If you're manually parsing multiaddrs and are searching for the string `/ipfs/`..., you'll need to search for `/p2p/...`.
 
 ### Using IPFS as a library
 
@@ -56,8 +56,8 @@ This release includes two very simple repo migrations: a config migration to ens
 
 In general, migrations should not require significant manual intervention. However, you should be aware of migrations and plan for them.
 
-* If you update go-ipfs with `ipfs update`, `ipfs update` will run the migration for you. Note: `ipfs update` will refuse to run the migrations while ipfs itself is running.
-* If you start the ipfs daemon with `ipfs daemon --migrate`, ipfs will migrate your repo for you on start.
+- If you update go-ipfs with `ipfs update`, `ipfs update` will run the migration for you. Note: `ipfs update` will refuse to run the migrations while ipfs itself is running.
+- If you start the ipfs daemon with `ipfs daemon --migrate`, ipfs will migrate your repo for you on start.
 
 Otherwise, if you want more control over the repo migration process, you can manually install and run the [repo migration tool](http://dist.ipfs.io/#fs-repo-migrations).
 
