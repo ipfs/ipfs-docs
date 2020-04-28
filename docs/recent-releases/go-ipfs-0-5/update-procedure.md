@@ -4,7 +4,31 @@ title: Update procedure
 
 # Update procedure
 
-Updating to the latest version of Go-IPFS is simple. Just follow these steps:
+There are two ways to update your IPFS installation. [Using `ipfs-update`](#use-ipfs-update) is generally the best and easiest option. You can also [update manually](#manual-process).
+
+## Use `ipfs-update`
+
+`ipfs-update` is a CLI tool to help update and install IPFS easily. You can [download it from dist.ipfs.io](https://dist.ipfs.io/#ipfs-update).
+
+1. Make sure you have `ipfs-update` installed:
+
+    ```bash
+    ipfs-update --version
+
+    > ipfs-update version 1.6.0
+    ```
+
+1. Tell `ipfs-update` to update to `Go-IPFS 0.5`:
+
+    ```bash
+    ipfs-update install 0.5.0
+
+    > Installation complete!
+    ```
+
+1. That's it!
+
+## Manual process
 
 1. Download [`go-ipfs_v0.5.0_darwin-386.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.5.0).
 
@@ -12,7 +36,7 @@ Updating to the latest version of Go-IPFS is simple. Just follow these steps:
    wget https://github.com/ipfs/go-ipfs/releases/download/v0.5.0/go-ipfs_v0.5.0_darwin-amd64.tar.gz
    ```
 
-1. Unzip the file:
+2. Unzip the file:
 
    ```bash
    tar -xvzf go-ipfs_v0.5.0_darwin-amd64.tar.gz
@@ -25,7 +49,7 @@ Updating to the latest version of Go-IPFS is simple. Just follow these steps:
    > x go-ipfs/README.md
    ```
 
-1. Move into the `go-ipfs` folder and run the install script:
+3. Move into the `go-ipfs` folder and run the install script:
 
    ```bash
    bash install.sh
@@ -33,7 +57,7 @@ Updating to the latest version of Go-IPFS is simple. Just follow these steps:
    > Moved ./ipfs to /usr/local/bin
    ```
 
-1. Run the IPFS daemon. It will ask you to run the migrations:
+4. Run the IPFS daemon. It will ask you to run the migrations:
 
    ```bash
    ipfs daemon
@@ -47,7 +71,7 @@ Updating to the latest version of Go-IPFS is simple. Just follow these steps:
    > Run migrations now? [y/N]
    ```
 
-1. Enter `y` and press enter. Once the migrations have finished, the daemon will start:
+5. Enter `y` and press enter. Once the migrations have finished, the daemon will start:
 
    ```bash
    y
@@ -63,8 +87,8 @@ Updating to the latest version of Go-IPFS is simple. Just follow these steps:
    > Daemon is ready
    ```
 
-1. Press `CTRL` + `c` to close the daemon.
-1. Check that the latest version of IPFS installed properly:
+6. Press `CTRL` + `c` to close the daemon.
+7. Check that the latest version of IPFS installed properly:
 
    ```bash
    ipfs --version
@@ -72,4 +96,4 @@ Updating to the latest version of Go-IPFS is simple. Just follow these steps:
    > ipfs version 0.5.0-rc1
    ```
 
-1. That's it!
+8. That's it!
