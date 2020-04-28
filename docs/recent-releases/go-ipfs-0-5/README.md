@@ -42,4 +42,4 @@ Go-IPFS-cmds and the commands HTTP API Handler will now only allow `POST`/`OPTIO
 
 ## Changelog
 
-The changelog is available in the [`ipfs/go-ipfs` repository on GitHub](https://github.com/ipfs/go-ipfs/issues/7109).
+The changelog is available in the [`ipfs/go-ipfs` repository on GitHub](https://github.com/ipfs/go-ipfs/blob/master/CHANGELOG.md).
