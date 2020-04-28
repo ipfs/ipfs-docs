@@ -10,7 +10,7 @@ This process is not a backup procedure; do not treat it as such. Many things can
 
 ## Move installation
 
-The easiest way to move your IFPS installation is to grab the `.ipfs` folder, and move it to another destination.
+The easiest way to move your IPFS installation is to grab the `.ipfs` folder, and move it to another destination.
 
 ### Linux and macOS
 

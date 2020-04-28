@@ -16,7 +16,7 @@ These tools can help you use and build on IPFS more quickly and efficiently — 
 
 | [Browser Companion](https://github.com/ipfs-shipyard/ipfs-companion)   | [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop)| [IPLD Explorer](https://explore.ipld.io/) |
 | --- | --- | --- |
-| ![The IFPS browser companion in Firefox.](./images/ipfs-companion.png) | ![The IPFS desktop app running on MacOS with the status tab open.](./images/ipfs-desktop.png) | ![The IPLD Explorer homepage.](./images/ipld-explorer.png) |
+| ![The IPFS browser companion in Firefox.](./images/ipfs-companion.png) | ![The IPFS desktop app running on MacOS with the status tab open.](./images/ipfs-desktop.png) | ![The IPLD Explorer homepage.](./images/ipld-explorer.png) |
 
 ## Host your website on IPFS
 
