@@ -6,7 +6,7 @@ title: Overview
 
 ![The Go-IPFS logo.](./images/go-ipfs-logo.png)
 
-It's been a while since the last Go-IPFS release, and with good reason. We've packed an incredible amount of bug fixes, improvements, and features into this build; it's the biggest Go-IPFS release since the project first started!
+It's been a while since the last Go-IPFS release. We've packed an incredible amount of bug fixes, improvements, and features into this build; it's the biggest Go-IPFS release since the project first started!
 
 ## Features
 
