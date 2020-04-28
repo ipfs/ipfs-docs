@@ -67,9 +67,7 @@ module.exports = {
           {
             title: 'Install',
             path: '/install/',
-            children: [
-                '/install/command-line-quick-start'
-            ]
+            children: ['/install/command-line-quick-start']
           },
           {
             title: 'Recent releases',
