@@ -12,19 +12,19 @@ There are two ways to update your IPFS installation. [Using `ipfs-update`](#use-
 
 1. Make sure you have `ipfs-update` installed:
 
-    ```bash
-    ipfs-update --version
+   ```bash
+   ipfs-update --version
 
-    > ipfs-update version 1.6.0
-    ```
+   > ipfs-update version 1.6.0
+   ```
 
 1. Tell `ipfs-update` to update to `Go-IPFS 0.5`:
 
-    ```bash
-    ipfs-update install 0.5.0
+   ```bash
+   ipfs-update install 0.5.0
 
-    > Installation complete!
-    ```
+   > Installation complete!
+   ```
 
 1. That's it!
 
@@ -63,7 +63,7 @@ There are two ways to update your IPFS installation. [Using `ipfs-update`](#use-
    ipfs daemon
 
    > Initializing daemon...
-   > go-ipfs version: 0.5.0-rc1
+   > go-ipfs version: 0.5.0
    > Repo version: 9
    > System version: amd64/linux
    > Golang version: go1.13.8
@@ -93,7 +93,7 @@ There are two ways to update your IPFS installation. [Using `ipfs-update`](#use-
    ```bash
    ipfs --version
 
-   > ipfs version 0.5.0-rc1
+   > ipfs version 0.5.0
    ```
 
 8. That's it!
