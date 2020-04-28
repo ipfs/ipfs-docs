@@ -21,12 +21,9 @@ Through our research and analysis, we found the old DHT suffers from three core 
 
 #### Reachability
 
-We have addressed the problem of undialable nodes by having nodes wait to join the DHT as _server_ nodes until they've confirmed that they are reachable from the public internet. Additionally, we've introduced:
+We have addressed the problem of undialable nodes by having nodes wait to join the DHT as _server_ nodes until they've confirmed that they are reachable from the public internet.
 
-- A new Libp2p protocol to push updates to our peers when we start/stop listening on protocols.
-- A Libp2p event bus for processing updates like these.
-
-To ensure that nodes which are not publicly reachable (ex behind VPNs, offline LANs, etc.) can still coordinate and share data, Go-IPFS 0.5 will run two DHTs: one for private networks and one for the public internet. Every node will participate in a LAN DHT and a public WAN DHT. See [Dual DHT](dual-dht) for more details.
+To ensure that nodes which are not publicly reachable (ex behind VPNs, offline LANs, etc.) can still coordinate and share data, Go-IPFS 0.5 will run two DHTs: one for private networks and one for the public internet. Every node will participate in a LAN DHT and a public WAN DHT. See [Dual DHT](#dual-dht) for more details.
 
 #### Dual DHT
 
@@ -43,10 +40,10 @@ This feature should not have any noticeable impact on Go-IPFS, performance, or o
 
 We've improved the DHT query logic to more closely follow Kademlia. This should significantly speed up:
 
-- Publishing IPNS & provider records. We previously continued searching for closer and closer peers to the "target" until we timed out, then we put to the closest peers we found.
-- Resolving IPNS addresses. We previously continued IPNS record searches until we ran out of peers to query, timed out, or found 16 records.
+- Publishing IPNS & provider records.
+- Resolving IPNS addresses.
 
-In both cases, nodes will now continue searching until they find the closest peers and then stop (putting or returning data found).
+Previously, nodes would continue searching till they timed out or ran out of peers before stopping (putting or returning data found). Now, nodes will now stop as soon as they find the closest peers.
 
 #### Routing Tables
 
@@ -55,6 +52,7 @@ Finally, we've addressed the poorly maintained routing tables by:
 - Reducing the likelihood that the connection manager will kill connections to peers in the routing table.
 - Keeping useful peers in the routing table, even if we get disconnected from them.
 - Actively and frequently querying the DHT to keep our routing table full.
+- Prioritizing useful peers that respond to queries quickly.
 
 ### Testing
 
@@ -102,17 +100,17 @@ With the refactored Bitswap, we expect:
 
 The new Bitswap won't magically make downloading content any faster until **both** seeds and leaches have updated. If you're one of the first to upgrade to `0.5.0`, make sure your peers upgrade as well in order to see the performance improvement.
 
-## Badger integration
+## Badger Integration
 
-Badger has been in Go-IPFS for over a year as an experimental feature, and we're promoting it to stable. For this release, we've done some interface changes that have allowed us to take advantage of features in Badger to increase the performance of adding data to Go-IPFS. However, Badger is still not the default file system for Go-IPFS.
+Badger has been in Go-IPFS for over a year as an experimental feature, and we're promoting it to stable (but not default). For this release, we've switched from writing to disk synchronously to explicitly syncing where appropriate, significantly increasing write throughput.
 
-The current and default file system used by Go-IPFS is [FlatFS](https://github.com/ipfs/go-ds-flatfs). FlatFS essentially stores blocks of data as files on your file system. However, there are lots of optimizations a specialized database can do that a standard file system can not. On a standard hard drive, reading from a contiguous array of bytes is much faster than randomly reading bytes, so having a database that operates as one single file has lots of room for optimization.
+The current and default datastore used by Go-IPFS is [FlatFS](https://github.com/ipfs/go-ds-flatfs). FlatFS essentially stores blocks of data as individual files on your file system. However, there are lots of optimizations a specialized database can do that a standard file system can not.
 
 The benefit of Badger is that adding/fetching data to/from Badger is significantly faster than adding/fetching data to/from the default datastore, FlatFS. In some tests, adding data to Badger is 32x faster than FlatFS (in this release).
 
 ### Enable Badger
 
-In this release, we're calling the badger datastore as stable. However, we're not yet enabling it by default. You can enable it at startup by running: `ipfs init --profile=badgerds`
+In this release, we're marking the badger datastore as stable. However, we're not yet enabling it by default. You can enable it at initialization by running: `ipfs init --profile=badgerds`
 
 ### When to use Badger
 
@@ -120,7 +118,9 @@ While Badger is a great solution, there are some issues you should consider befo
 
 Badger is complicated. FlatFS pushes all the complexity down into the filesystem itself, so it's only likely to lose your data if your underlying filesystem gets corrupted. There are more opportunities for Badger itself to get corrupted.
 
-Badger can use a lot of memory. In this release, we've tuned Badger to use `~20MB` of memory by default. However, it can still produce spikes as large as `1GB` in memory usage when garbage collecting. Badger isn't very aggressive when it comes to garbage collection, and we're still investigating ways to get it to more aggressively clean up after itself.
+Badger can use a lot of memory. In this release, we've tuned Badger to use `~20MB` of memory by default. However, it can still produce spikes as large as [`1GiB` of data](https://github.com/dgraph-io/badger/issues/1292) in memory usage when garbage collecting.
+
+Finally, badger isn't very aggressive when it comes to garbage collection, and we're still investigating ways to get it to more aggressively clean up after itself.
 
 We suggest you use Badger if:
 
