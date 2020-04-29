@@ -1,5 +1,5 @@
 ---
-title: Notes for developers
+title: Developer notes
 legacyUrl:
 description: Developer notes for IPFS Companion, including building and running from source in Firefox, Chromium, and Android.
 ---
@@ -31,6 +31,7 @@ npm start        # all-in-one
 ```
 
 Or, if you prefer to do each step manually:
+
 ```bash
 npm run build    # build runs bundle:firefox at the end, so manifest will be OK
 npm run test     # test suite
@@ -49,10 +50,9 @@ npm run build bundle:chromium # last part is important: it overwrites manifest
 
 Then open up `chrome://extensions` in your Chromium-based browser, enable "Developer mode", click "Load unpacked extension..." and point it at `add-on`.
 
-| Chrome "unpacked extension" | Firefox "temporary add-on" |
-|-----------------------------|----------------------------|
-| ![installing ipfs-companion as an unpacked extension in chrome](../images/ipfs-companion-install-chrome-dev.gif) | ![installing ipfs-companion as a temporary add on in firefox](../images/ipfs-companion-install-firefox-dev.gif) |
-
+| Chrome "unpacked extension"                                                                                     | Firefox "temporary add-on"                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| ![installing ipfs-companion as an unpacked extension in chrome](./images/ipfs-companion-install-chrome-dev.gif) | ![installing ipfs-companion as a temporary add on in firefox](./images/ipfs-companion-install-firefox-dev.gif) |
 
 ### Firefox for Android
 
@@ -80,6 +80,7 @@ Each `npm` task can be run separately, but most of the time, `dev-build`, `test`
 - `npm run firefox:beta:add -- --update-link "https://host/path/to/file.xpi" file.xpi`: Add a manifest entry for new self-hosted beta for Firefox
 
 Release build shortcuts:
+
 - `npm run dev-build`: All-in-one: fast dependency install, build with yarn (updates yarn.lock if needed)
 - `npm run beta-build`: Reproducible beta build in docker with frozen `yarn.lock`
 - `npm run release-build`: Reproducible release build in docker with frozen `yarn.lock`
@@ -91,5 +92,6 @@ Release build shortcuts:
   ```bash
   export PATH="/path/to/alternative/version/of/firefox/:${PATH}"
   ```
+
 - [Using localization in IPFS Companion](companion-localization.md) (running browsers with specific locale, etc.)
 - [Testing persistent and restart features (Mozilla)](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Testing_persistent_and_restart_features)

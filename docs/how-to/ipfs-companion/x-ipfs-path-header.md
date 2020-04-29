@@ -1,5 +1,5 @@
 ---
-title: Companion and x-ipfs-path
+title: Using x-ipfs-path
 legacyUrl:
 description: Learn more about how to use "x-ipfs-path" headers in IPFS Companion.
 ---
