@@ -6,61 +6,77 @@ description: Developer notes for IPFS Companion, including building and running 
 
 # IPFS Companion developer notes
 
-If you're looking to develop on IPFS Companion, you'll want to build from source. See the details below to get started.
+If you're looking to develop on IPFS Companion, you should build the project from source.
 
-## Building from source
+## Build from source
 
-You will need [NodeJS](https://nodejs.org/) and [Firefox](https://www.mozilla.org/en-US/firefox/developer/). Make sure `npm` and `firefox` are in your `PATH`.
+You will need [NodeJS](https://nodejs.org/) and [Firefox](https://www.mozilla.org/en-US/firefox/developer/). Make sure `npm` and `firefox` are in your `PATH`. You can use `yarn` instead of `npm`. We provide `yarn.lock` if you choose to do so. This guide assumes you are using NPM.
 
-It may be a good idea to use `yarn` instead of `npm`. We provide `yarn.lock` if you choose to do so.
+1. Clone the [`ipfs-shipyard/ipfs-companion` repository](https://github.com/ipfs-shipyard/ipfs-companion):
 
-### Installing dependencies
+   ```bash
+   git clone https://github.com/ipfs-shipyard/ipfs-companion.git
+   ```
 
-To install all dependencies into your `node_modules` directory, execute:
+2. Install all the project dependencies. This may take a few minutes:
 
-```bash
-npm install
-```
+   ```bash
+   npm install
 
-### Build and run in Firefox
+   > ...
+   > added 4831 packages from 3074 contributors and audited 34257 packages in 265.081s
+   ```
 
-You can build, test and deploy the add-on to Firefox in a single command:
+3. Build, test, and run the project in Firefox:
 
-```bash
-npm start        # all-in-one
-```
+   ```bash
+   npm start
 
-Or, if you prefer to do each step manually:
+   > ipfs-companion@ start /Users/oli/Desktop/ipfs-companion
+   > run-s clean build test firefox
+   > ...
+   >
+   ```
 
-```bash
-npm run build    # build runs bundle:firefox at the end, so manifest will be OK
-npm run test     # test suite
-npm run firefox  # spawn new Firefox
-```
+   If you run into issues, you can run each step manually to pinpoint where the process is failing:
 
-It is also possible to load the extension manually. Enter `about:debugging` in the URL bar, and then click "Load Temporary Add-on" and point it at `add-on/manifest.json`.
+   ```bash
+   npm run build
+   npm run test
+   npm run firefox
+   ```
+
+   It is also possible to load the extension manually. Enter `about:debugging` in the URL bar, and then click "Load Temporary Add-on" and point it at `add-on/manifest.json`.
 
 ### Build and manual install in Chromium
 
-First, build it manually:
+1. Clone the repository:
 
-```bash
-npm run build bundle:chromium # last part is important: it overwrites manifest
-```
+   ```bash
+   git clone https://github.com/ipfs-shipyard/ipfs-companion.git
+   ```
 
-Then open up `chrome://extensions` in your Chromium-based browser, enable "Developer mode", click "Load unpacked extension..." and point it at `add-on`.
+2. Build the project:
+
+   ```bash
+   npm run build bundle:chromium
+
+   > ipfs-companion@ build /Users/oli/Desktop/ipfs-companion
+   > run-s clean build:* "bundle:chromium"
+   > ...
+   ```
+
+3. Open [`chrome://extensions`](chrome://extensions) in your browser.
+4. Enable **Developer mode**.
+5. Click **Load unpacked extension...** and select the **add-on** folder within your project folder.
 
 | Chrome "unpacked extension"                                                                                     | Firefox "temporary add-on"                                                                                     |
 | --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | ![installing ipfs-companion as an unpacked extension in chrome](./images/ipfs-companion-install-chrome-dev.gif) | ![installing ipfs-companion as a temporary add on in firefox](./images/ipfs-companion-install-firefox-dev.gif) |
 
-### Firefox for Android
-
-For complete details on running Companion in Firefox for Android, see [these instructions](companion-android-firefox.md).
-
 ## Useful tasks
 
-Each `npm` task can be run separately, but most of the time, `dev-build`, `test`, and `fix:lint` are all you need.
+Each `npm` task can run separately, but most of the time, `dev-build`, `test`, and `fix:lint` are all you need.
 
 - `npm install`: Install all NPM dependencies
 - `npm run build`: Build the add-on (copy external libraries, create `.zip` bundles for Chrome and Firefox)
@@ -69,7 +85,7 @@ Each `npm` task can be run separately, but most of the time, `dev-build`, `test`
 - `npm run bundle:firefox`: Overwrite manifest and package a Firefox-compatible version
 - `npm run build:rename-artifacts`: Rename artifacts to include runtimes in filenames
 - `npm run ci`: Run tests and build (with frozen `yarn.lock`)
-- `npm test`: Run entire test suite
+- `npm test`: Run the entire test suite
 - `npm run lint`: Read-only check for potential syntax problems (run all linters)
 - `npm run fix:lint`: Try to fix simple syntax problems (run `standard` with `--fix`, etc.)
 - `npm run lint:standard`: Run [Standard](http://standardjs.com) linter ([IPFS JavaScript projects default to standard code style](https://github.com/ipfs/community/blob/master/CONTRIBUTING_JS.md))
