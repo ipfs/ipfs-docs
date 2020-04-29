@@ -31,17 +31,15 @@ Want-list {
 }
 ```
 
-To find out which peers have the blocks that make up a file, a node running the Bitswap protocol first sends a request called a `want-have` to all the peers it is connected to. This _want-have-request_ contains CID of the root-block of data that makes up the larger chunk of data that makes up a file. If the peers don't have the block, the node queries the Distributed Hash Table (DHT) to ask who has can provide root-block. Any peers that have that root-block send a _have_ response, and are added to a session. Peers do not sent the root-block yet, they just indicate that they have it. Once peers have been added into a session, the origial requesting node sends a _want_ request. Peers with the block will now send the root-block. So that the network isn't flooded with _want-requests_, Bitswap only sends `want-requests` to peers in the session.
+#### Discovery
 
-The node sends out a `want` for each CID to several peers in the session in parallel, because not all peers have all blocks. If the node starts receiving many duplicate blocks, it sends a `want` for each CID to fewer peers. If the node gets timeouts waiting for blocks, it sends a `want` for each CID to more peers. In this way, the node tries to maintain a high download speed without too many duplicate blocks.
-
-Initially, a node wants to know peers have the root-block, but the node doesn't want to receive the block itself. This discovery _want_ is sent to many peers, and if they all responded with the block, then the node would end up with lots of duplicate blocks, wasting energy and bandwidth. Instead, when Bitswap sends a _want-request_, it can ask for a _have-response_.
+To find peers that have a file, a node running the Bitswap protocol first sends a request called a _want-have_ to all the peers it is connected to. This _want-have_ request contains the CID of the root block of the file (the root block is at the top of the DAG of blocks that make up the file). Peers that have the root block send a _have_ response, and are added to a session. Peers that don't have the block send a _dont-have_ response. If none of the peers have the root block, Bitswap queries the Distributed Hash Table (DHT) to ask who can provide the root block.
 
 ![Diagram of the _want-have/want-block_ process.](./images/bitswap/diagram-of-the-want-have-want-block-process.png)
 
-Once a node has added peers to the session, it can also use these _have-response_ messages to figure out which of the session peers have the rest of the blocks it needs. This process is relatively cheap because we don't have to worry about duplicate blocks. At this stage, the node also wants the peer to say if it doesn't have the block, so a _dont-have-response_ is available.
+#### Transfer
 
-With these changes, a node can cheaply work out how blocks are distributed amongst its peers and can direct the requests for blocks more accurately, increasing overall download speed and reducing the number of duplicate blocks. The node can also quickly recognize when all the peers in a session don't have a block it needs and go out to the DHT to find out who has the desired block.
+Once peers have been added to a session, for each block that the client wants, Bitswap sends _want-have_ to each session peer to find out which peers have the block. Peers respond with _have_ or _dont_have_. Bitswap builds up a map of which nodes have and don't have each block. Bitswap sends _want-block_ to peers that have the block and they respond with the block itself. If no peers have the block Bitswap queries the DHT to find providers who have the block.
 
 ### Additional references
 
