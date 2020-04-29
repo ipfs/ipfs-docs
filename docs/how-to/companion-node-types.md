@@ -38,7 +38,7 @@ Don't know where to start? See the [command line quick-start guide](command-line
 
 An _embedded_ node is a js-ipfs instance running in the browser (in-memory), without the need for any external software. It is a work in progress, but can be used for development and experimentation (e.g. for testing a dApp that uses `window.ipfs` without having to install and start up your own IPFS daemon).
 
-Power users can provide [custom config](https://github.com/ipfs/js-ipfs#faq) (e.g. to enable experimental pubsub) via the IPFS Companion [Preferences](https://user-images.githubusercontent.com/157609/38084660-0b97c0cc-334e-11e8-9368-823345ced67f.png)
+Power users can provide [custom config](https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/docs/FAQ.md) (e.g. to enable experimental pubsub) via the IPFS Companion [Preferences](https://user-images.githubusercontent.com/157609/38084660-0b97c0cc-334e-11e8-9368-823345ced67f.png)
 
 **Note:** At present, embedded js-ipfs running within webextension (browser context) comes with some limitations:
 
