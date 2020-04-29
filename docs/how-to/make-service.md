@@ -139,19 +139,19 @@ func main() {
 }
 ```
 
-This client will set up their IPFS node (note: this is moderately expensive and you normally wont just spin up an instance for a single connection) and dial the service we just created.
+This client will set up their IPFS node (note: this is moderately expensive and you normally won't just spin up an instance for a single connection) and dial the service we just created.
 
 To try it out, run the following on one computer:
 
 ```bash
-ipfs init # if you havent already
+ipfs init # if you haven't already
 go run host.go
 ```
 
 That should print out that peer's ID, copy it and use it on a second machine:
 
 ```bash
-ipfs init # if you havent already
+ipfs init # if you haven't already
 go run client.go <peerID>
 ```
 

@@ -2870,7 +2870,7 @@ OPTIONS
                             "300s", "1.5h" or "2h45m". Valid time units are
      
                             "ns", "us" (or "µs"), "ms", "s", "m", "h".
-  --allow-offline  bool   - When offline, save the IPNS record to the the local
+  --allow-offline  bool   - When offline, save the IPNS record to the local
                             datastore without broadcasting to the network
                             instead of simply failing.
   --ttl            string - Time duration this record should be cached for.

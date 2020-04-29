@@ -64,7 +64,30 @@ module.exports = {
         },
         nav: require('./nav/en'),
         sidebar: [
-          '/install/',
+          {
+            title: 'Install',
+            path: '/install/',
+            children: ['/install/command-line-quick-start']
+          },
+          {
+            title: 'Recent releases',
+            path: '/recent-releases/',
+            children: [
+              {
+                title: 'Go-IPFS 0.5',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/recent-releases/go-ipfs-0-5/',
+                  ['/recent-releases/go-ipfs-0-5/install', 'Install'],
+                  '/recent-releases/go-ipfs-0-5/update-procedure',
+                  '/recent-releases/go-ipfs-0-5/features',
+                  '/recent-releases/go-ipfs-0-5/fixes',
+                  '/recent-releases/go-ipfs-0-5/troubleshooting'
+                ]
+              }
+            ]
+          },
           {
             title: 'Concepts',
             path: '/concepts/',
@@ -139,7 +162,7 @@ module.exports = {
                   '/how-to/configure-node',
                   '/how-to/modify-bootstrap-list',
                   [
-                    'https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs/examples/custom-ipfs-repo',
+                    'https://github.com/ipfs/js-ipfs/tree/master/examples/custom-ipfs-repo',
                     'Customize an IPFS repo'
                   ]
                 ]
@@ -150,7 +173,7 @@ module.exports = {
                 collapsable: false,
                 children: [
                   [
-                    'https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs/examples/ipfs-101',
+                    'https://github.com/ipfs/js-ipfs/tree/master/examples/ipfs-101',
                     'Use js-ipfs as a library'
                   ],
                   [
@@ -164,7 +187,7 @@ module.exports = {
                     'Troubleshoot file transfers'
                   ],
                   [
-                    'https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/traverse-ipld-graphs',
+                    'https://github.com/ipfs/js-ipfs/tree/master/examples/traverse-ipld-graphs',
                     'Traverse IPLD graphs'
                   ],
                   '/how-to/take-snapshot',
@@ -184,11 +207,11 @@ module.exports = {
                 children: [
                   '/how-to/observe-peers',
                   [
-                    'https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/custom-libp2p',
+                    'https://github.com/ipfs/js-ipfs/tree/master/examples/custom-libp2p',
                     'Customize libp2p bundles'
                   ],
                   [
-                    'https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/circuit-relaying',
+                    'https://github.com/ipfs/js-ipfs/tree/master/examples/circuit-relaying',
                     'Use circuit relay'
                   ]
                 ]
@@ -205,7 +228,7 @@ module.exports = {
                 collapsable: false,
                 children: [
                   [
-                    'https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/explore-ethereum-blockchain',
+                    'https://github.com/ipfs/js-ipfs/tree/master/examples/explore-ethereum-blockchain',
                     'Explore the Ethereum chain'
                   ]
                 ]
@@ -233,15 +256,15 @@ module.exports = {
                 children: [
                   'how-to/address-ipfs-on-web',
                   [
-                    'https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/exchange-files-in-browser',
+                    'https://github.com/ipfs/js-ipfs/tree/master/examples/exchange-files-in-browser',
                     'Exchange files between nodes'
                   ],
                   [
-                    'https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs/examples/browser-mfs',
+                    'https://github.com/ipfs/js-ipfs/tree/master/examples/browser-mfs',
                     'Use MFS in the browser'
                   ],
                   [
-                    'https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/browser-add-readable-stream',
+                    'https://github.com/ipfs/js-ipfs/tree/master/examples/browser-add-readable-stream',
                     'Add directories using streams'
                   ],
                   [
@@ -253,10 +276,24 @@ module.exports = {
                     'Edit collaboratively with CRDT'
                   ],
                   [
-                    'https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs/examples/browser-readablestream',
+                    'https://github.com/ipfs/js-ipfs/tree/master/examples/browser-readablestream',
                     'Stream video'
                   ],
                   '/how-to/browser-tools-frameworks'
+                ]
+              },
+              {
+                title: 'IPFS Companion',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  'how-to/companion-android-firefox',
+                  'how-to/companion-developer-notes',
+                  'how-to/companion-node-types',
+                  'how-to/dnslink-companion',
+                  'how-to/companion-localization',
+                  'how-to/companion-window-ipfs',
+                  '/how-to/companion-x-ipfs-path-header'
                 ]
               }
             ]
@@ -312,7 +349,7 @@ module.exports = {
             path: '/project/',
             children: [
               'project/history',
-              'project/roadmap',
+              ['https://github.com/ipfs/roadmap', 'Roadmap'],
               'project/implementation-status',
               ['https://github.com/ipfs/specs', 'Specifications'],
               ['https://github.com/ipfs/research', 'Research'],

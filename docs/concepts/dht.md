@@ -1,86 +1,76 @@
 ---
 title: Distributed Hash Tables (DHTs)
 legacyUrl: https://docs.ipfs.io/guides/concepts/dht/
-description: Learn about how distributed hash tables (DHTs) play a part in the overall lifecycle of IPFS, the InterPlanetary File System.
+description: Learn what distributed hash tables (DHTs) are, and how they play a part in the overall lifecycle of IPFS.
 ---
 
 # Distributed Hash Tables (DHTs)
 
+The DHT is how IPFS nodes keep track of who has what data. A regular hash table is a key-value store where the _keys_ are [hashes](/concepts/hashing). In the case of IPFS, the _values_ can be any block of data, and the _keys_ are the CIDs of those blocks. IPFS uses hash tables to store who has what data.
+
+In a regular key-value store, all the data within the table is stored in one place. Databases like SQL work this way; all the data you need can be found in a single place. However, the _distributed_ part of _DHT_ means that the entire table is spread across different locations. Each computer running IPFS, also known as a _node_, holds a piece of the larger table. Nodes do not store information on what every other node is storing since that wouldn't scale very well.
+
+So IPFS uses lots of small tables instead of one big table, but that brings another set of problems. If the data is spread across lots of different tables, how does IPFS know where the data is? To solve this, IPFS uses a piece of software called [Kademlia](https://en.wikipedia.org/wiki/Kademlia) to learn which nodes have what data. This is called _providing_.
+
+## Providing
+
+IPFS nodes can _provide_ blocks of data. This doesn't necessarily mean that the node actually _has_ the data, but it knows where to get it. When trying to provide a block, your node will look for peers with PeerIDs most _similar_ to the CID of the block. These peers will not store the data for you, but they will store a record saying that you can provide the block. How similar a PeerID is to a CID is defined as the [exclusive-or (XOR) distance](https://en.wikipedia.org/wiki/Exclusive_or) between the bytes that make up the PeerID, and the bytes that make up the CID.
+
+Using the table below, we can see that `QmAlex` and `QmBrian` can provide `QmVYD...`. `QmAlex` and `QmCharlotte` can provide `QmZij...`. Only `QmCharlotte` and provide `QmXPg...`.
+
+| Key                                              | Value         |
+| ------------------------------------------------ | ------------- |
+| `QmVYDW8wjWPe851DS3gGCUyPymNk4fnPaKmQSg9H8dSSa2` | `QmAlex`      |
+| `QmVYDW8wjWPe851DS3gGCUyPymNk4fnPaKmQSg9H8dSSa2` | `QmBrian`     |
+| `QmZijpFzuUFF4LwBr9PxsSTdVvfF6E6Fueiz5wLTA6MTrM` | `QmCharlotte` |
+| `QmZijpFzuUFF4LwBr9PxsSTdVvfF6E6Fueiz5wLTA6MTrM` | `QmAlex`      |
+| `QmXPgotVGXrng5UETiF9qTUEaJanjRWPwcwwNQCKANJpCM` | `QmCharlotte` |
+
+To see this in action, you can run `ipfs dht findprovs <CID>` to find the providers of a particular CID:
+
+```bash
+ipfs dht findprovs QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG
+
+> QmNgDsms4K3jomZpr1yuC8JYWstvzFLCjEGY7aoHrnxX7r
+> QmQzustKyCbyy3BbpetySYk88D8mtS9No8xEJP7B5tV324
+> QmR6oSKYSfgsqa1wjfJ8hUPYAS8wjuLxW1Fxu911v3ajwc
+```
+
+## Managing data
+
+When you add a file to IPFS, it gets stored as blocks of data. Each of these blocks has a CID, which is the [content-address](/concepts/content-addressing) of that block of data. This means that every unique block has a unique CID. IPFS nodes use the DHT to advertise which blocks they _have_, which blocks they _want_, and which blocks they _don't want_.
+
+| Have                      | Want                         | Don't Want                                                                            |
+| ------------------------- | ---------------------------- | ------------------------------------------------------------------------------------- |
+| I can provide this block. | I am looking for this block. | I am not looking for this block. If I am provided this block, I will just discard it. |
+
+## Re-providing
+
+If a node announces to the network that it can provide a particular CID, the state of that information is now outside the control of the node. If the node were to drop off the network, there's no way to announce that the CID is no longer available. Take this scenario:
+
+1. `Node A` announces to the network that it can provide `CID X`.
+1. `Node B` makes a record that `Node A` can provide `CID X`.
+1. `Node A` loses its internet connection and can no longer provide anything.
+1. `Node B` isn't aware that `Node A` can no longer provide `CID X`.
+1. `Node C` asks for `CID X`.
+1. `Node B` sends `Node C` to `Node A`.
+1. `Node C` waits for `Node A` to respond until the heat-death of the universe happens. Or until the timeout is reached, whichever comes first.
+
+To avoid these sorts of problems, nodes must regularly re-announce which CIDs they can provide. This happens at least every 12 hours. If `Node B` doesn't get a re-announcement from `Node A` that they can still provide `CID X` within a 12 hour period, `Node B` will remove `Node A` from the provider list.
+
+## Dual DHT
+
+IPFS nodes participate in two DHTs: one for the public internet WAN, and one for their local network LAN.
+
+1. When connected to the public internet, IPFS will use both DHTs for finding peers, content, and IPNS records. Nodes only publish provider and IPNS records to the WAN DHT to avoid flooding the local network.
+2. When not connected to the public internet, nodes publish provider and IPNS records to the LAN DHT.
+
+Nodes will participate in the DHT from their LAN and will store some of that generated metadata, but only expect the DHT to be used when the LAN is disconnected. Nodes will only store part of the public DHT when they are externally reachable, and not behind a Network Address Translation (NAT). A feature called [AutoNAT was introduced in Go-IPFS 0.5](/recent-releases/go-ipfs-0-5/features#autonat) to detect whether or not a node is _reachable_ from the public internet.
+
+The WAN DHT includes all peers with at least one public IP address. IPFS will only consider an IPv6 address public if it is in the [public internet range `2000::/3`](https://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xhtml).
+
+---
+
 ::: tip
-If you're interested in how DHTs fit into the overall lifecycle of data in IPFS, check out this video from IPFS Camp 2019! [Core Course: The Lifecycle of Data in Dweb](https://www.youtube.com/watch?v=fLUq0RkiTBA)
+If you are interested in how DHTs fit into the overall lifecycle of data in IPFS, check out this video from IPFS Camp 2019! [Core Course: The Lifecycle of Data in Dweb](https://www.youtube.com/watch?v=fLUq0RkiTBA)
 :::
-
-[Distributed Hash Tables](https://en.wikipedia.org/wiki/Distributed_hash_table) (DHTs) are distributed key-value stores where keys are [cryptographic hashes](/concepts/hashing).
-
-DHTs are, by definition, distributed. Each "peer" (or "node") is responsible for a subset of the DHT.
-When a peer receives a request, it either answers it, or the request is passed to another peer until a peer that can answer it is found.
-Depending on the implementation, a request not answered by the first node contacted can be:
-
-- forwarded from peer to peer, with the last peer contacting the requesting peer
-- forwarded from peer to peer, with the answer forwarded following the same path
-- answered with the contact information of a node that has better chances to be able to answer. **IPFS uses this strategy.**
-
-DHTs' decentralization provides advantages compared to a traditional key-value store, including:
-
-- _scalability_, since a request for a hash of length _n_ takes at most _log2(n)_ steps to resolve.
-- _fault tolerance_ via redundancy, so that lookups are possible even if peers unexpectedly leave or join the DHT. Additionally, requests can be addressed to any peer if another peer is slow or unavailable.
-- _load balancing_, since requests are made to different nodes and no unique peers process all the requests.
-
-## Peer IDs
-
-Each peer has a `peerID`, which is a hash with the same length _n_ as the DHT keys.
-
-## Buckets
-
-A subset of the DHT maintained by a peer is called a 'bucket'.
-A bucket maps to hashes with the same prefix as the `peerID`, up to _m_ bits. There are 2^m buckets. Each bucket maps for 2^(n-m) hashes.
-
-For example, if _m_=2^16 and we use hexadecimal encoding (four bits per displayed character), the peer with `peerID` 'ABCDEF12345' maintains mapping for hashes starting with 'ABCD'.
-Some hashes falling into this bucket would be *ABCD*38E56, *ABCD*09CBA or *ABCD*17ABB, just as examples.
-
-The size of a bucket is related to the size of the prefix. The longer the prefix, the fewer hashes each peer has to manage, and the more peers are needed.
-Several peers can be in charge of the same bucket if they have the same prefix.
-
-In most DHTs, including [IPFS's Kademlia implementation](https://github.com/libp2p/specs/blob/8b89dc2521b48bf6edab7c93e8129156a7f5f02c/kad-dht/README.md), the size of the buckets (and the size of the prefix), are dynamic.
-
-## Peer lists
-
-Peers also keep a connection to other peers in order to forward requests if the requested hash is not in their own bucket.
-
-If hashes are of length n, a peer will keep n-1 lists of peers:
-
-- the first list contains peers whose IDs have a different first bit.
-- the second list contains peers whose IDs have first bits identical to its own, but a different second bit
-- ...
-- the m-th list contains peers whose IDs have their first m-1 bits identical, but a different m-th bit
-- ...
-
-The higher m is, the harder it is to find peers that have the same ID up to m bits. The lists of "closest" peers typically remains empty.
-"Close" here is defined as the XOR distance, so the longer the prefix they share, the closer they are.
-Lists also have a maximum of entries (k) — otherwise the first lists would contain half the network, then a fourth of the network, and so on.
-
-## How to use DHTs
-
-When a peer receives a lookup request, it will either answer with a value if it falls into its own bucket, or answer with the contacting information (IP+port, `peerID`, etc.) of a closer peer. The requesting peer can then send its request to this closer peer. The process goes on until a peer is able to answer it.
-A request for a hash of length n will take at maximum log2(n) steps, or even log2m(n).
-
-### Keys and Hashes
-
-In IPFS's Kademlia DHT, keys are SHA256 hashes. [PeerIDs](https://docs.libp2p.io/concepts/peer-id/) are those of [libp2p](https://libp2p.io/), the networking library used by IPFS.
-
-We use the DHT to look up two types of objects, both represented by SHA256 hashes:
-
-- [Content IDs](/concepts/content-addressing) of the data added to IPFS. A lookup of this value will give the `peerID`s of the peers having this immutable content.
-- [IPNS records](/concepts/ipns). A lookup will give the last Content ID associated with this IPNS address, enabling the routing of mutable content.
-
-Consequently, IPFS's DHT is one of the ways to achieve mutable and immutable [content routing](https://docs.libp2p.io/concepts/content-routing/). It's currently the only one [implemented](https://libp2p.io/implementations/#peer-routing).
-
-You can learn more in the [libp2p Kademlia DHT specification](https://github.com/libp2p/specs/blob/8b89dc2521b48bf6edab7c93e8129156a7f5f02c/kad-dht/README.md).
-
-### Add an Entry
-
-Adding a blob of data to IPFS is the equivalent of advertising that you have it. Since DHT is the only content routing implemented, you can just use:
-`ipfs add myData`
-IPFS will automatically chunk your data and add a mapping on the DHT between the Content ID and your `peerID`. Note that there can be other `peerID`s already mapped to that value, so you will be added to the list. Also note that if the provided data is bigger than 124KB, it will be chunked into "blocks", and both those blocks and the overall data will be mapped.
-
-You can publish an IPNS record using [`ipfs.name.publish`](/concepts/ipns).

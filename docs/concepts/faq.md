@@ -40,7 +40,7 @@ Filecoin and IPFS are two separate, complementary protocols, both created by Pro
 
 In short: IPFS addresses and moves content; while Filecoin is an incentive layer to persist data.
 
-These components are separable - you can use one without the other, and IPFS already supports more self-organized or altruistic forms of data persistance via tools like [IPFS Cluster](https://cluster.ipfs.io/). Compatibility between IPFS and Filecoin is intended to be as seamless as possible, but we expect it to evolve over time. You can view the [draft spec for IPFS-Filecoin Interoperability](https://github.com/filecoin-project/specs/issues/143) and [ideas for future improvements](https://github.com/filecoin-project/specs/issues/144) to learn more.
+These components are separable - you can use one without the other, and IPFS already supports more self-organized or altruistic forms of data persistence via tools like [IPFS Cluster](https://cluster.ipfs.io/). Compatibility between IPFS and Filecoin is intended to be as seamless as possible, but we expect it to evolve over time. You can view the [draft spec for IPFS-Filecoin Interoperability](https://github.com/filecoin-project/specs/issues/143) and [ideas for future improvements](https://github.com/filecoin-project/specs/issues/144) to learn more.
 
 ## IPFS and Protocol Labs
 

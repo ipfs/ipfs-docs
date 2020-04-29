@@ -13,42 +13,33 @@ related:
 Bitswap is a core module of IPFS for exchanging blocks of data. It directs the requesting and sending of blocks to and from other peers in the network. Bitswap is a _message-based protocol_ where all messages contain [want-lists](#want-list) or blocks. Bitswap has a [Go implementation](https://github.com/ipfs/go-bitswap) and a [JavaScript implementation](https://github.com/ipfs/js-ipfs-bitswap).
 
 Bitswap has two main jobs:
+
 - Acquire blocks requested by the client from the network.
 - Send blocks in its possession to other peers who want them.
 
-### Want-list
+## How Bitswap works
 
-A _want-list_ is a data structure that an IPFS node sends to the network to tell peers which blocks it wants. It's a list of data that the IPFS node wants. The want-list contains [CIDs](/concepts/content-addressing/) (content-addressed identifiers that refer to particular blocks desired) along with priority and cancellation information.
+IPFS breaks up files into chunks of data called _blocks_. These blocks are identified by a [content identifier (CID)](/content/content-addressing). When nodes running the Bitswap protocol want to fetch a file, they send out `want-lists` to other peers. A `want-list` is a list of CIDs for blocks a peer wants to receive. Each node remembers which blocks its peers want. Each time a node receives a block, it checks if any of its peers want the block, and sends it to them if they do.
 
-Here is a simplified example of a want-list:
+Here is a simplifed version of a `want-list`:
 
-```sh
+```javascript
 Want-list {
   QmZtmD2qt6fJot32nabSP3CUjicnypEBz7bHVDhPQt9aAy, WANT,
   QmTudJSaoKxtbEnTddJ9vh8hbN84ZLVvD5pNpUaSbxwGoa, WANT,
   ...
-  QmPvaEQFVvuiaYzkSVUp23iHTQeEUpDaJnP8U7C3PqE57w, CANCEL
 }
 ```
 
-Take a look at the [Go source code](https://github.com/ipfs/go-bitswap/blob/master/wantlist/wantlist.go) for a deeper dive into how want-lists are structured..
+#### Discovery
 
-### Message
+To find peers that have a file, a node running the Bitswap protocol first sends a request called a _want-have_ to all the peers it is connected to. This _want-have_ request contains the CID of the root block of the file (the root block is at the top of the DAG of blocks that make up the file). Peers that have the root block send a _have_ response, and are added to a session. Peers that don't have the block send a _dont-have_ response. If none of the peers have the root block, Bitswap queries the Distributed Hash Table (DHT) to ask who can provide the root block.
 
-A single Bitswap message may contain any of the following content:
+![Diagram of the _want-have/want-block_ process.](./images/bitswap/diagram-of-the-want-have-want-block-process.png)
 
--  **The sender's want-list:** This want-list may either be the sender's complete want-list or just the changes to the sender's want-list that the receiver needs to know.
--  **Data blocks:** These are blocks that have been requested (i.e., blocks in the sender's want-list, as far as the receiver is aware at the time of message receipt).
+#### Transfer
 
-### Session
-
-IPFS content blocks are often connected through a [Merkle DAG](/concepts/merkle-dag/). If a sender's block requests are related, a mechanism called a _Bitswap session_ in the Go implementation can optimize block requests sent to other peers. This mechanism can increase transfer speed and reduce the number of duplicate blocks on the network. Active peers are favored, as they are tracked relative to them having the requested blocks and how quickly they respond.
-
-If a remote peer has one block then it is likely that they have other blocks from the same DAG. So any new block requests are sent to that peer directly. This skips the need to send lots of requests to multiple servers, saving the user time and power.
-
-### Provider system
-
-The provider system is responsible for announcing and reannouncing to the IPFS network that a node has content. If a node cannot find content with connected peers, it will query a content routing system (usually a form of [DHT](/concepts/dht/)) to locate a peer with the content.
+Once peers have been added to a session, for each block that the client wants, Bitswap sends _want-have_ to each session peer to find out which peers have the block. Peers respond with _have_ or _dont_have_. Bitswap builds up a map of which nodes have and don't have each block. Bitswap sends _want-block_ to peers that have the block and they respond with the block itself. If no peers have the block Bitswap queries the DHT to find providers who have the block.
 
 ### Additional references
 
@@ -56,4 +47,4 @@ The provider system is responsible for announcing and reannouncing to the IPFS n
 - [Technical overview of the Go implementation of Bitswap](https://docs.google.com/presentation/d/1mbFFGIIKNvboHyLn-k26egOSWkt9nXjlNbxpmCEQfqQ/edit#slide=id.p)
 - [Article: Swapping bits and distributing hashes on the decentralized web (Textile)](https://medium.com/textileio/swapping-bits-and-distributing-hashes-on-the-decentralized-web-5da98a3507)
 - "About Bitswap" Go implementation poster from the IPFS developer summit in Berlin in July 2018:
-    !['About Bitswap' poster](https://user-images.githubusercontent.com/74178/43230914-f818dab2-901e-11e8-876b-73ba6a084f76.jpg "Bitswap-Poster_Berlin-July-2018")
+  !['About Bitswap' poster](https://user-images.githubusercontent.com/74178/43230914-f818dab2-901e-11e8-876b-73ba6a084f76.jpg 'Bitswap-Poster_Berlin-July-2018')
