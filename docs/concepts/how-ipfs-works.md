@@ -46,6 +46,10 @@ IPFS uses a Merkle DAG that is optimized for representing directories and files,
 
 To build a Merkle DAG representation of your content, IPFS often first splits it into _blocks_. Splitting it into blocks means that different parts of the file can come from different sources and be authenticated quickly. (If you've ever used BitTorrent, you may have noticed that when you download a file, BitTorrent can fetch it from multiple peers at once; this is the same idea.)
 
+::: tip
+It's easy to see a Merkle DAG representation of a file of your choice using the [DAG Builder visualizer](https://dag.ipfs.io/).
+:::
+
 Merkle DAGs are a bit of a ["turtles all the way down"](https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Turtles_all_the_way_down.html) scenario; that is, _everything_ has a CID. Let's say you have a file, and its CID identifies it. What if that file is in a folder with several other files? Those files will have CIDs too. What about that folder's CID? It would be a hash of the CIDs from the files underneath (ie, the folder's content). In turn, those files are made up of blocks, and each of those blocks has a CID. You can see how a file system on your computer could be represented as a DAG. You can also see, hopefully, how Merkle DAG graphs start to form. For a visual exploration of this concept, take a look at the [IPLD Explorer](https://explore.ipld.io/#/explore/QmSnuWmxptJZdLJpKRarxBMS2Ju2oANVrgbr2xWbie9b2D).
 
 Another useful feature of Merkle DAGs and breaking content into blocks is that if you have two similar files, they can share parts of the Merkle DAG, i.e., parts of different Merkle DAGs can reference the same subset of data. For example, if you update a website, only updated files receive new content addresses. Your old version and your new version can refer to the same blocks for everything else. This can make transferring versions of large datasets (such as genomics research or weather data) more efficient because you only need to transfer the parts that are new or have changed instead of creating entirely new files each time.
