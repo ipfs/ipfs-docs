@@ -24,7 +24,7 @@ Unless you've installed a locale-specific build, Firefox will have English only.
    ```bash
    web-ext run --pref intl.locale.requested=pl
    ```
-
+   
 2. Install your language pack from https://addons.mozilla.org/firefox/language-tools/
 3. Reload the browser extension; it should detect your new locale
 

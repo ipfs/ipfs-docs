@@ -1,6 +1,5 @@
 ---
 title: Node types
-legacyUrl:
 description: Learn about the available node types in IPFS Companion.
 ---
 

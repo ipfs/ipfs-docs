@@ -1,6 +1,5 @@
 ---
 title: Developer notes
-legacyUrl:
 description: Developer notes for IPFS Companion, including building and running from source in Firefox, Chromium, and Android.
 ---
 
