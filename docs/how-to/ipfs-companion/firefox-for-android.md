@@ -5,7 +5,7 @@ description: Instructions for installing and using IPFS Companion on Firefox for
 
 # Using IPFS Companion on Firefox for Android
 
-Firefox for Android is capable of running the same extensions as the desktop version. This makes it very useful for experimenting with IPFS!
+Firefox for Android is capable of running the same extensions as the desktop version. This makes it very useful for experimenting with IPFS.
 
 ## Install Firefox for Android
 
