@@ -1,7 +1,6 @@
 ---
 title: IPFS Gateway
 sidebarDepth: 0
-issueUrl: https://github.com/ipfs/docs/issues/93
 description: Learn why gateways are an important part of using IPFS in conjunction with the legacy web.
 related:
   'IPFS Docs: Address IPFS on the Web': /how-to/address-ipfs-on-web/
