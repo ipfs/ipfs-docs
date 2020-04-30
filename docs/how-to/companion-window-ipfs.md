@@ -1,26 +1,28 @@
 ---
-title: Companion and window.ipfs
-legacyUrl:
+title: Using Window.IFPS
 description: Learn about exposing IPFS API in IPFS Companion via "window.ipfs".
 ---
 
 # Using `window.ipfs` in IPFS Companion
 
-## **⚠️ IMPORTANT! `window.ipfs` is currently disabled**
+Learn about exposing IPFS API in IPFS Companion via "window.ipfs".
 
-**IPFS Companion 2.11 stopped injecting  `window.ipfs`. It will be restored after the [move to JS API with async await and async iterables](https://github.com/ipfs-shipyard/ipfs-companion/issues/843), with a likely ETA of Q3 2020. This page is provided for reference only.**
+## `window.ipfs` is currently disabled
 
-> #### Disclaimer:
-> - [Ongoing work on v2 of this interface](https://github.com/ipfs-shipyard/ipfs-companion/issues/589)
->   - Want to help with shaping it? See [#589](https://github.com/ipfs-shipyard/ipfs-companion/issues/589) and [issues with the `area/window-ipfs` label](https://github.com/ipfs-shipyard/ipfs-companion/labels/area%2Fwindow-ipfs).
-> - The interface is experimental and might change
->   - **TL;DR:** Use [window.ipfs-fallback](https://www.npmjs.com/package/window.ipfs-fallback) to ensure your app follows any future changes
+IPFS Companion 2.11 stopped injecting `window.ipfs`. It will be restored after the [move to JS API with async await and async iterables](https://github.com/ipfs-shipyard/ipfs-companion/issues/843), with a likely ETA of Q3 2020. This page is provided for reference only.
+
+### Disclaimer
+
+There is a substantial amount of [ongoing work for this interface](https://github.com/ipfs-shipyard/ipfs-companion/issues/589). Want to help with shaping it? See [#589](https://github.com/ipfs-shipyard/ipfs-companion/issues/589) and [issues with the `area/window-ipfs` label](https://github.com/ipfs-shipyard/ipfs-companion/labels/area%2Fwindow-ipfs).
+
+The interface is experimental and might change. Use [window.ipfs-fallback](https://www.npmjs.com/package/window.ipfs-fallback) to ensure your app follows any future changes
 
 ## Background
 
 IPFS Companion exposes a subset of IPFS APIs as `window.ipfs` on every webpage. This means websites can detect that `window.ipfs` already exists and use it instead of spawning their own `js-ipfs` node, which saves resources, battery, etc.
 
 For more context, see:
+
 - First iteration: [window.ipfs v1](https://github.com/ipfs-shipyard/ipfs-companion/issues/330)
 - Second iteration (currently under development): [window.ipfs v2](https://github.com/ipfs-shipyard/ipfs-companion/issues/589)
 
@@ -30,7 +32,7 @@ If a user has installed IPFS Companion, `window.ipfs` will be available as soon 
 
 ```js
 if (window.ipfs && window.ipfs.enable) {
-  const ipfs = await window.ipfs.enable({commands: ['id','dag','version']})
+  const ipfs = await window.ipfs.enable({ commands: ['id', 'dag', 'version'] })
   console.log(await ipfs.id())
 } else {
   // Fallback
@@ -42,7 +44,7 @@ To add and get content, you could update the above example to do something like 
 ```js
 if (window.ipfs && window.ipfs.enable) {
   try {
-    const ipfs = await window.ipfs.enable({commands: ['add','cat']})
+    const ipfs = await window.ipfs.enable({ commands: ['add', 'cat'] })
     const [{ hash }] = await ipfs.add(Buffer.from('=^.^='))
     const data = await ipfs.cat(hash)
     console.log(data.toString()) // =^.^=
@@ -68,12 +70,13 @@ Errors returned by IPFS proxy can be identified by the value of the `code` attri
 `ERR_IPFS_PROXY_ACCESS_DENIED` is thrown when the current scope has no access rights to requested commands.
 
 Optional `scope` and `permissions` attributes provide detailed information:
- - If access was denied for a specific command, then the `permissions` list is present and includes names of blocked commands
- - If the entire IPFS proxy was disabled by the user, then the `permissions` list is missing entirely
+
+- If access was denied for a specific command, then the `permissions` list is present and includes names of blocked commands
+- If the entire IPFS proxy was disabled by the user, then the `permissions` list is missing entirely
 
 ## Q&A
 
-### What _is_ a `window.ipfs`?
+### What is a `window.ipfs`?
 
 It is an IPFS proxy endpoint that enables you to obtain an IPFS API instance. Depending how IPFS Companion is configured, you may be talking directly to a `js-ipfs` node running in Companion, a `go-ipfs` daemon over `js-ipfs-http-client`, or a `js-ipfs` daemon over `js-ipfs-http-client` ... and potentially others in the future. Note that object returned by `window.ipfs.enable` is _not_ an instance of `js-ipfs` or `js-ipfs-http-client`, but is a proxy to one of them, so don't expect to be able to detect either of them or be able to use any undocumented or instance-specific functions.
 
@@ -119,43 +122,43 @@ Scoped permissions in `window.ipfs` work similarly to how they work for [service
 
 Scope-based permissions allow applications running on an IPFS gateway to be granted different permissions. Consider the following two websites running on the ipfs.io gateway:
 
-* https://ipfs.io/ipfs/QmQxeMcbqW9npq5h5kyE2iPECR9jxJF4j5x4bSRQ2phLY4/
-* https://ipfs.io/ipfs/QmTegrragyzfFq6DSuUaPYoKzm4eRBj2tgQaDHC72dLLaV/
+- [QmQxeMcbqW9npq5h5kyE2iPECR9jxJF4j5x4bSRQ2phLY4](https://ipfs.io/ipfs/QmQxeMcbqW9npq5h5kyE2iPECR9jxJF4j5x4bSRQ2phLY4/)
+- [QmTegrragyzfFq6DSuUaPYoKzm4eRBj2tgQaDHC72dLLaV](https://ipfs.io/ipfs/QmTegrragyzfFq6DSuUaPYoKzm4eRBj2tgQaDHC72dLLaV/)
 
 With [same-origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy), these two applications would be granted the same permissions. With scoped permissions, these applications will be given a different set of permissions. For example:
 
-* Allow `files.add` to `https://domain.com/`
-    * ...will allow `files.add` to:
-        * `https://domain.com/file`
-        * `https://domain.com/file2.html`
-        * `https://domain.com/sub/paths`
-        * `https://domain.com/sub/paths/files`
-        * etc.
-* Allow `files.add` to `https://domain.com/feature`
-    * ...will allow `files.add` to:
-        * `https://domain.com/feature/file`
-        * `https://domain.com/feature/file2.html`
-        * `https://domain.com/feature/sub/paths`
-        * `https://domain.com/feature/sub/paths/files`
-        * `https://domain.com/featuresearch/sub/paths/files` (note substring)
-        * `https://domain.com/features.html` (note substring)
-        * etc.
-    * ...will cause additional prompt for `files.add` to:
-        * `https://domain.com/`
-        * `https://domain.com/files`
-        * etc.
+- Allow `files.add` to `https://domain.com/`
+  - ...will allow `files.add` to:
+    - `https://domain.com/file`
+    - `https://domain.com/file2.html`
+    - `https://domain.com/sub/paths`
+    - `https://domain.com/sub/paths/files`
+    - etc.
+- Allow `files.add` to `https://domain.com/feature`
+  - ...will allow `files.add` to:
+    - `https://domain.com/feature/file`
+    - `https://domain.com/feature/file2.html`
+    - `https://domain.com/feature/sub/paths`
+    - `https://domain.com/feature/sub/paths/files`
+    - `https://domain.com/featuresearch/sub/paths/files` (note substring)
+    - `https://domain.com/features.html` (note substring)
+    - etc.
+  - ...will cause additional prompt for `files.add` to:
+    - `https://domain.com/`
+    - `https://domain.com/files`
+    - etc.
 
 ### Are Mutable File System (MFS) files sandboxed to a directory?
 
 Yes. To avoid conflicts, each app gets its own MFS directory where it can store files. When using MFS commands ([more info](https://github.com/ipfs/interface-ipfs-core/blob/master/SPEC/FILES.md#mutable-file-system)), this directory will be automatically added to paths you pass. Your app's MFS directory is based on the **origin and path** where your application is running. For example:
 
-* `files.write` to `/myfile.txt` on `https://domain.com/`
-    * writes to `/dapps/https/domain.com/myfile.txt`
-* `files.write` to `/path/to/myfile.txt` on `https://domain.com/feature`
-    * writes to `/dapps/https/domain.com/feature/path/to/myfile.txt`
-* `files.read` from `/feature/path/to/myfile.txt` on `https://domain.com/`
-    * reads from `/dapps/https/domain.com/feature/path/to/myfile.txt`
-* `files.stat` to `/` on `https://domain.com/feature`
-    * stats `/dapps/https/domain.com/feature`
-* `files.read` from `/../myfile.txt` on `https://domain.com/feature`
-    * reads from `/dapps/https/domain.com/feature/myfile.txt` (no traverse above your app's root)
+- `files.write` to `/myfile.txt` on `https://domain.com/`
+  - writes to `/dapps/https/domain.com/myfile.txt`
+- `files.write` to `/path/to/myfile.txt` on `https://domain.com/feature`
+  - writes to `/dapps/https/domain.com/feature/path/to/myfile.txt`
+- `files.read` from `/feature/path/to/myfile.txt` on `https://domain.com/`
+  - reads from `/dapps/https/domain.com/feature/path/to/myfile.txt`
+- `files.stat` to `/` on `https://domain.com/feature`
+  - stats `/dapps/https/domain.com/feature`
+- `files.read` from `/../myfile.txt` on `https://domain.com/feature`
+  - reads from `/dapps/https/domain.com/feature/myfile.txt` (no traverse above your app's root)
