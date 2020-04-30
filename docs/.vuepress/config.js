@@ -264,13 +264,13 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  'how-to/ipfs-companion/firefox-for-android',
-                  'how-to/ipfs-companion/developer-notes',
-                  'how-to/ipfs-companion/node-types',
-                  'how-to/ipfs-companion/dnslink-support',
-                  'how-to/ipfs-companion/localization',
-                  'how-to/ipfs-companion/window-ipfs',
-                  'how-to/ipfs-companion/x-ipfs-path-header'
+                  'how-to/companion-android-firefox',
+                  'how-to/companion-developer-notes',
+                  'how-to/companion-node-types',
+                  'how-to/dnslink-companion',
+                  'how-to/companion-localization',
+                  'how-to/companion-window-ipfs',
+                  '/how-to/companion-x-ipfs-path-header'
                 ]
               }
             ]

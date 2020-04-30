@@ -72,7 +72,7 @@ You will need [NodeJS](https://nodejs.org/) and [Firefox](https://www.mozilla.or
 
 | Chrome "unpacked extension"                                                                                     | Firefox "temporary add-on"                                                                                     |
 | --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| ![installing ipfs-companion as an unpacked extension in chrome](./images/ipfs-companion-install-chrome-dev.gif) | ![installing ipfs-companion as a temporary add on in firefox](./images/ipfs-companion-install-firefox-dev.gif) |
+| ![Installing ipfs-companion as an unpacked extension in chrome](./images/ipfs-companion-install-chrome-dev.gif) | ![Installing ipfs-companion as a temporary add on in firefox](./images/ipfs-companion-install-firefox-dev.gif) |
 
 ## Useful tasks
 
