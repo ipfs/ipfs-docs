@@ -1,6 +1,5 @@
 ---
 title: Firefox on Android
-legacyUrl:
 description: Instructions for installing and using IPFS Companion on Firefox for Android.
 ---
 
