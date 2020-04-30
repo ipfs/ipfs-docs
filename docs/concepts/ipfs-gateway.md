@@ -1,7 +1,5 @@
 ---
 title: IPFS Gateway
-sidebarDepth: 0
-issueUrl: https://github.com/ipfs/docs/issues/93
 description: Learn why gateways are an important part of using IPFS in conjunction with the legacy web.
 related:
   'IPFS Docs: Address IPFS on the Web': /how-to/address-ipfs-on-web/
@@ -107,12 +105,12 @@ DNSLink resolution occurs when the gateway recognizes an IPNS identifier contain
 
 1. The gateway receives a request in the form:
 
-    ```bash
-    https://{gateway URL}/ipns/{example.com}/{optional path}
-    ```
+   ```bash
+   https://{gateway URL}/ipns/{example.com}/{optional path}
+   ```
 
-2. The gateway searches the DNS TXT records of the requested domain `{example.com}` for a string of the form  `dnslink=/ipfs/{CID}` or `_dnslink=/ipfs/{CID}`. If found, the gateway uses the specified CID to serve up `ipfs://{CID}/{optional path}`. As with path resolution, this form of DNSLink resolution violates the single-origin policy. The domain operator may ensure single-origin policy compliance — and the delivery of the current version of content — by adding an `Alias` record in the DNS that refers to a suitable IPFS gateway; e.g., `gateway.ipfs.io`.
-3. The  `Alias` record redirects any access to that `example.com` to the specified gateway. Hence the browser's request to `https://{example.com}/{optional path to resource}` redirects to the gateway specified in the `Alias`.
+2. The gateway searches the DNS TXT records of the requested domain `{example.com}` for a string of the form `dnslink=/ipfs/{CID}` or `_dnslink=/ipfs/{CID}`. If found, the gateway uses the specified CID to serve up `ipfs://{CID}/{optional path}`. As with path resolution, this form of DNSLink resolution violates the single-origin policy. The domain operator may ensure single-origin policy compliance — and the delivery of the current version of content — by adding an `Alias` record in the DNS that refers to a suitable IPFS gateway; e.g., `gateway.ipfs.io`.
+3. The `Alias` record redirects any access to that `example.com` to the specified gateway. Hence the browser's request to `https://{example.com}/{optional path to resource}` redirects to the gateway specified in the `Alias`.
 4. The gateway employs DNSLink resolution to return the current content version from IPFS.
 5. The browser does not perceive the gateway as the origin of the content and therefore enforces the single-origin policy to protect `example.com`.
 
@@ -120,28 +118,28 @@ DNSLink resolution occurs when the gateway recognizes an IPNS identifier contain
 
 Currently HTTP gateways may access both IPFS and IPNS services:
 
-| Service  | Style | Canonical form of access |
-| -------  | ----- | ------------------------ |
-| IPFS | path | `https://{gateway URL}/ipfs/{CID}/{optional path to resource}` |
-| IPFS | subdomain  | `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}` |
-| IPFS | DNSLink | `https://{example.com}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{example.com}/{optional path to resource}` |
-| IPNS | path | `https://{gateway URL}/ipns/{IPNS identifier}/{optional path to resource}` |
-| IPNS | subdomain  | `https://{IPNS identifier}.ipns.{gatewayURL}/{optional path to resource}` |
-| IPNS | DNSLink | Useful when IPNS identifier is a domain: <br>`https://{example.com}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{example.com}/{optional path to resource}` |
+| Service | Style     | Canonical form of access                                                                                                                                                                      |
+| ------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| IPFS    | path      | `https://{gateway URL}/ipfs/{CID}/{optional path to resource}`                                                                                                                                |
+| IPFS    | subdomain | `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}`                                                                                                                                 |
+| IPFS    | DNSLink   | `https://{example.com}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{example.com}/{optional path to resource}`                                              |
+| IPNS    | path      | `https://{gateway URL}/ipns/{IPNS identifier}/{optional path to resource}`                                                                                                                    |
+| IPNS    | subdomain | `https://{IPNS identifier}.ipns.{gatewayURL}/{optional path to resource}`                                                                                                                     |
+| IPNS    | DNSLink   | Useful when IPNS identifier is a domain: <br>`https://{example.com}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{example.com}/{optional path to resource}` |
 
 ### Which type to use
 
 The preferred form of gateway access varies depending on the nature of the targeted content.
 
-| Target  | Preferred gateway type | Canonical form of access <br> features & considerations |
-| -----------  | ------------ | ------------------------ |
-| Current version of <br>potentially mutable root | IPNS subdomain | `https://{IPNS identifier}.ipns.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> + suitable for both domain IPNS names (`{domain.tld}`) and hash IPNS names |
-|   | IPFS DNSLink  | `https://{example.com}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> – requires DNS update to propagate change to root content <br> • DNSLink, not user/app, specifies the gateway to use, opening up potential gateway trust and congestion issues |
-| Immutable root or <br> content | IPFS subdomain  | `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing |
+| Target                                          | Preferred gateway type | Canonical form of access <br> features & considerations                                                                                                                                                                                                                                                                     |
+| ----------------------------------------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Current version of <br>potentially mutable root | IPNS subdomain         | `https://{IPNS identifier}.ipns.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> + suitable for both domain IPNS names (`{domain.tld}`) and hash IPNS names                                                                               |
+|                                                 | IPFS DNSLink           | `https://{example.com}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> – requires DNS update to propagate change to root content <br> • DNSLink, not user/app, specifies the gateway to use, opening up potential gateway trust and congestion issues |
+| Immutable root or <br> content                  | IPFS subdomain         | `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing                                                                                                                                                                           |
 
 Any form of gateway provides a bridge for apps without native support of IPFS. Better performance and security results from native IPFS implementation within an app.
 
-## 4. When not to employ a gateway
+## When not to use a gateway
 
 ### Delay-sensitive applications
 
@@ -212,21 +210,16 @@ When downloading files, browsers will usually guess a file's filename by looking
 
 To work around this issue, you can add a `?filename={filename.ext}` parameter to your query string to premptively specify a name for the locally-stored downloaded file:
 
-| Style | Query |
-| ----- | ----- |
-| Path | `https://{gatewayURL}/ipfs/{CID}/{optional path to resource}?filename={filename.ext}` |
-| Subdomain | `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}?filename={filename.ext}`  |
-| DNSLink | `https://{example.com}/{optional path to resource}` or <br> `https://{gatewayURL}/ipns/{example.com}/{optional path to resource}?filename={filename.ext}` |
+| Style     | Query                                                                                                                                                     |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Path      | `https://{gatewayURL}/ipfs/{CID}/{optional path to resource}?filename={filename.ext}`                                                                     |
+| Subdomain | `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}?filename={filename.ext}`                                                                     |
+| DNSLink   | `https://{example.com}/{optional path to resource}` or <br> `https://{gatewayURL}/ipns/{example.com}/{optional path to resource}?filename={filename.ext}` |
 
 ### Stale caches
 
 A gateway may cache DNSLinks from DNS TXT records, which default to a one-hour lifetime. After content changes, cached DNSLinks continue to refer to the now-obsolete CID. To limit the delivery of obsolete cached content, the domain operator should change the DNS record's time-to-live parameter to a minute `60`.
 
-## 6. Implementation
-
-<!-- Need link to instructions for setting up a gateway -->
-<!-- Is there a roadmap for the gateway service? -->
-
-## 7. Learning more
+## Learning more
 
 - [Gateway configuration options](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway)
