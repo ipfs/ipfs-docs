@@ -6,15 +6,20 @@ description: Learn about the available node types in IPFS Companion.
 
 # Understand node types in IPFS Companion
 
-![screenshot of node type switch](https://user-images.githubusercontent.com/157609/42382479-b4d98768-8134-11e8-979c-69b758846bf0.png)<br/>
+There are four available node types in IPFS Companion:
 
-There are four available node types in IPFS Companion: external, embedded, Embedded + `chrome.sockets`, and public.
+1. External
+2. Embedded
+3. Embedded + `chrome.sockets`
+4. Public
 
-**When in doubt, use the _External_ node type running on your localhost.** Some options for doing so:
+![Screenshot of node type switch](./images/node-type-switch.png)
+
+When in doubt, use the _External_ node type running on your localhost. Some options for doing so:
 
 - Use the [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) GUI app (for Windows/Linux/Mac), which installs and manages a local IPFS node for you
-- If you prefer a more hands-on approach, you can ...
-  - install IPFS by following the [command line quick-start guide](command-line-quick-start.md)
+- If you prefer a more hands-on approach:
+  - Install IPFS by following the [command line quick-start guide](command-line-quick-start.md)
   - Or run it in [Docker](https://github.com/ipfs/go-ipfs#running-ipfs-inside-docker)
 - If you are using [Brave](https://brave.com/), feel you may want to experiment with _mbedded + `chrome.sockets`_ (see below); you can always switch back to _External_ with local IPFS Desktop
 

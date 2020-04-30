@@ -1,21 +1,21 @@
 ---
 title: Using Window.IFPS
-legacyUrl:
 description: Learn about exposing IPFS API in IPFS Companion via "window.ipfs".
 ---
 
 # Using `window.ipfs` in IPFS Companion
 
-## **⚠️ IMPORTANT! `window.ipfs` is currently disabled**
+Learn about exposing IPFS API in IPFS Companion via "window.ipfs".
 
-**IPFS Companion 2.11 stopped injecting `window.ipfs`. It will be restored after the [move to JS API with async await and async iterables](https://github.com/ipfs-shipyard/ipfs-companion/issues/843), with a likely ETA of Q3 2020. This page is provided for reference only.**
+## `window.ipfs` is currently disabled
 
-> #### Disclaimer:
->
-> - [Ongoing work on v2 of this interface](https://github.com/ipfs-shipyard/ipfs-companion/issues/589)
->   - Want to help with shaping it? See [#589](https://github.com/ipfs-shipyard/ipfs-companion/issues/589) and [issues with the `area/window-ipfs` label](https://github.com/ipfs-shipyard/ipfs-companion/labels/area%2Fwindow-ipfs).
-> - The interface is experimental and might change
->   - **TL;DR:** Use [window.ipfs-fallback](https://www.npmjs.com/package/window.ipfs-fallback) to ensure your app follows any future changes
+IPFS Companion 2.11 stopped injecting `window.ipfs`. It will be restored after the [move to JS API with async await and async iterables](https://github.com/ipfs-shipyard/ipfs-companion/issues/843), with a likely ETA of Q3 2020. This page is provided for reference only.
+
+### Disclaimer
+
+There is a substantial amount of [ongoing work for this interface](https://github.com/ipfs-shipyard/ipfs-companion/issues/589). Want to help with shaping it? See [#589](https://github.com/ipfs-shipyard/ipfs-companion/issues/589) and [issues with the `area/window-ipfs` label](https://github.com/ipfs-shipyard/ipfs-companion/labels/area%2Fwindow-ipfs).
+
+The interface is experimental and might change. Use [window.ipfs-fallback](https://www.npmjs.com/package/window.ipfs-fallback) to ensure your app follows any future changes
 
 ## Background
 
@@ -76,7 +76,7 @@ Optional `scope` and `permissions` attributes provide detailed information:
 
 ## Q&A
 
-### What _is_ a `window.ipfs`?
+### What is a `window.ipfs`?
 
 It is an IPFS proxy endpoint that enables you to obtain an IPFS API instance. Depending how IPFS Companion is configured, you may be talking directly to a `js-ipfs` node running in Companion, a `go-ipfs` daemon over `js-ipfs-http-client`, or a `js-ipfs` daemon over `js-ipfs-http-client` ... and potentially others in the future. Note that object returned by `window.ipfs.enable` is _not_ an instance of `js-ipfs` or `js-ipfs-http-client`, but is a proxy to one of them, so don't expect to be able to detect either of them or be able to use any undocumented or instance-specific functions.
 
@@ -122,8 +122,8 @@ Scoped permissions in `window.ipfs` work similarly to how they work for [service
 
 Scope-based permissions allow applications running on an IPFS gateway to be granted different permissions. Consider the following two websites running on the ipfs.io gateway:
 
-- https://ipfs.io/ipfs/QmQxeMcbqW9npq5h5kyE2iPECR9jxJF4j5x4bSRQ2phLY4/
-- https://ipfs.io/ipfs/QmTegrragyzfFq6DSuUaPYoKzm4eRBj2tgQaDHC72dLLaV/
+- [QmQxeMcbqW9npq5h5kyE2iPECR9jxJF4j5x4bSRQ2phLY4](https://ipfs.io/ipfs/QmQxeMcbqW9npq5h5kyE2iPECR9jxJF4j5x4bSRQ2phLY4/)
+- [QmTegrragyzfFq6DSuUaPYoKzm4eRBj2tgQaDHC72dLLaV](https://ipfs.io/ipfs/QmTegrragyzfFq6DSuUaPYoKzm4eRBj2tgQaDHC72dLLaV/)
 
 With [same-origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy), these two applications would be granted the same permissions. With scoped permissions, these applications will be given a different set of permissions. For example:
 
