@@ -30,14 +30,14 @@ To run your extension in [Firefox for Android](https://www.mozilla.org/en-US/fir
 
 Build everything, and switch `add-on/manifest.json` to the Fennec profile:
 
-```
+```bash
 npm run dev-build
 npm run bundle:fennec
 ```
 
 Then, with your device connected to your development computer, run:
 
-```
+```bash
 web-ext run -s add-on --target=firefox-android
 ```
 
@@ -45,7 +45,7 @@ It will list all connected devices with their IDs. If the list is empty, go back
 
 Next, deploy your extension to the specific device:
 
-```
+```bash
 web-ext run -s add-on --target=firefox-android --android-device=<device ID>
 ```
 
@@ -55,7 +55,7 @@ The first time you run this command, there may be a popup on your Android device
 
 The remote debug port will be printed to the console right after successful deployment:
 
-```
+```bash
 You can connect to this Android device on TCP port <debug PORT>
 ```
 
