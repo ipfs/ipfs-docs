@@ -33,6 +33,7 @@ jobs:
         environment:
           DOMAIN: docs-beta.ipfs.io
           BUILD_DIR: ./docs/.vuepress/dist
+          CLUSTER_HOST: /dnsaddr/ipfs-websites.collab.ipfscluster.io
     steps:
       - attach_workspace:
           at: /tmp/workspace
