@@ -2,6 +2,8 @@
   <main class="page">
     <slot name="top" />
 
+    <DeprecationNotice />
+
     <Content class="theme-default-content" />
 
     <div class="content-footer" v-if="!isContentStatus">
@@ -27,6 +29,7 @@ import PageEdit from '@parent-theme/components/PageEdit.vue'
 import PageNav from '@parent-theme/components/PageNav.vue'
 
 import Feedback from './Feedback.vue'
+import DeprecationNotice from './DeprecationNotice.vue'
 import LegacyCallout from './LegacyCallout.vue'
 import Analytics from './Analytics.vue'
 import ScrollPatch from './ScrollPatch.vue'
@@ -37,18 +40,19 @@ export default {
     PageEdit,
     PageNav,
     Feedback,
+    DeprecationNotice,
     LegacyCallout,
     Analytics,
     ScrollPatch
   },
   props: ['sidebarItems'],
   computed: {
-    isContentStatus: function() {
+    isContentStatus: function () {
       return !!(this.$frontmatter && this.$frontmatter.issueUrl)
     }
   },
   methods: {
-    smoothScroll: function() {
+    smoothScroll: function () {
       var root = document.getElementsByTagName('html')[0]
       // only enable smooth-scrolling on pages shorter that 15000 px
       return root.scrollHeight < 15000
@@ -56,10 +60,10 @@ export default {
         : root.classList.remove('smooth-scroll')
     }
   },
-  mounted: function() {
+  mounted: function () {
     this.smoothScroll()
   },
-  updated: function() {
+  updated: function () {
     this.smoothScroll()
   }
 }
