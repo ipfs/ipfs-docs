@@ -436,7 +436,7 @@ module.exports = {
     [
       'sitemap',
       {
-        hostname: 'https://docs-beta.ipfs.io'
+        hostname: 'https://docs.ipfs.io'
       }
     ]
   ],
