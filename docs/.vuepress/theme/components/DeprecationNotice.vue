@@ -1,15 +1,23 @@
 <template>
-  <div
-    class="warning custom-block"
-    style="margin: 2rem 2rem 0 2rem; max-width: calc(740px - 2.5rem);"
-  >
-    <p class="custom-block-title">THIS SITE LEAVES BETA MAY 15!</p>
-    <p>
-      On May 15, this site's content will permanently replace the
-      <a target="_blank" href="//docs.ipfs.io">old IPFS docs</a>. Pages on
-      <code>docs-beta.ipfs.io</code> will automatically redirect to
-      <code>docs.ipfs.io</code>, but you may want to update your own bookmarks
-      or links.
-    </p>
+  <div class="theme-default-content">
+    <div id="notice" class="warning custom-block">
+      <p class="custom-block-title">🚀 Beta -> Launch</p>
+      <p>
+        <strong>On May 15</strong>, this site's content will replace the
+        <a target="_blank" href="//docs.ipfs.io">old IPFS docs</a>. Pages on
+        <code>docs-beta.ipfs.io</code> will automatically redirect to
+        <code>docs.ipfs.io</code>, but you may want to update your own bookmarks
+        or links.
+      </p>
+    </div>
   </div>
 </template>
+
+<style scoped>
+.theme-default-content {
+  padding-bottom: 0;
+}
+#notice {
+  margin: 0;
+}
+</style>
