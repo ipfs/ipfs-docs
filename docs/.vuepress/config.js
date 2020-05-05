@@ -432,6 +432,12 @@ module.exports = {
         // to deduplicate SEO across all copies loaded from various public gateways
         baseURL: 'https://docs-beta.ipfs.io'
       }
+    ],
+    [
+      'sitemap',
+      {
+        hostname: 'https://docs-beta.ipfs.io'
+      }
     ]
   ],
   extraWatchFiles: ['.vuepress/nav/en.js'],

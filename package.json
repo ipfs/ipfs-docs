@@ -58,5 +58,8 @@
     "docs:build": "vuepress build docs",
     "docs:all-relative": "cd ./docs/.vuepress/dist && all-relative",
     "docs:build:ipfs": "npm run docs:build && npm run docs:all-relative"
+  },
+  "dependencies": {
+    "vuepress-plugin-sitemap": "^2.3.1"
   }
 }
