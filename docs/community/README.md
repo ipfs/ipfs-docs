@@ -8,6 +8,10 @@ description: Become part of the IPFS community! Learn how here.
 
 IPFS is home to a vibrant, diverse community of thousands of contributors and participants from all over the globe! Here's how to get help, support, or just hang out with other folks who are helping to build the distributed web.
 
+## IPFS newsletter
+
+Sign up for the IPFS Weekly newsletter to get project updates, community news, event details, and more. In your inbox, each Tuesday. [Subscribe now!](https://ipfs.us4.list-manage.com/subscribe?u=25473244c7d18b897f5a1ff6b&id=cad54b2230)
+
 ## Ways to contribute
 
 No matter your area of specialty or level of expertise, there are many [ways to contribute](/community/contribute/ways-to-contribute/) to IPFS and make a real difference in the IPFS community at large.
