@@ -318,6 +318,10 @@ module.exports = {
                 sidebarDepth: 2,
                 collapsable: false,
                 children: [
+                  [
+                    'https://ipfs.us4.list-manage.com/subscribe?u=25473244c7d18b897f5a1ff6b&id=cad54b2230',
+                    'IPFS newsletter'
+                  ],
                   '/community/contribute/ways-to-contribute',
                   ['https://discuss.ipfs.io/', 'IPFS forums'],
                   '/community/irc',
