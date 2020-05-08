@@ -1,5 +1,5 @@
 ---
-title: Using Window.IFPS
+title: Using `window.ipfs`
 description: Learn about exposing IPFS API in IPFS Companion via "window.ipfs".
 ---
 
@@ -7,9 +7,13 @@ description: Learn about exposing IPFS API in IPFS Companion via "window.ipfs".
 
 Learn about exposing IPFS API in IPFS Companion via "window.ipfs".
 
+::: danger
+
 ## `window.ipfs` is currently disabled
 
 IPFS Companion 2.11 stopped injecting `window.ipfs`. It will be restored after the [move to JS API with async await and async iterables](https://github.com/ipfs-shipyard/ipfs-companion/issues/843), with a likely ETA of Q3 2020. This page is provided for reference only.
+
+:::
 
 ### Disclaimer
 
