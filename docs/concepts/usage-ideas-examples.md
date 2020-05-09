@@ -15,7 +15,25 @@ related:
 <ContentStatus />
 
 
-IPFS is a versatile technology. It can unlock usecases needing better compression, availability, partition tolerance, smarter caching, etc.
+IPFS is a versatile technology. It can unlock use cases needing either better compression, availability, partition tolerance, caching, etc.
+
+## Store assets on IPFS
+By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits.
+If you users doesn't use an IPFS client, you will still have content deduplication out of the box.
+If they use it, your users will seed the content they use, decreasing the workload on your infrastructure, increase uptime of the service in case you go offline. Your users also won't contact your servers for the content they already have. 
+
+### Examples of projects
+#### Decentraland.org 
+Decentraland is a virtual world you can explore with a VR set, your computer or your smartphone. They store all the assets on IPFS, so these heavy files can be fetched from several other users at the same time, for faster loading and synching. 
+
+#### Distributed package managers
+The npm javascript package manager is now mirrored on IPFS. By using the dedicated client packages are fetched from IPFS, and then distributed to other clients which need them. For example, a team working in the same building will fetch packages from each others, meaning less network traffic cost for the company, or no interuption of the workflow if they lost their Internet connexion, as packages are available on their local network. 
+
+#### Speed software containers distribution in your infrastructure
+Netflix is on its way to use IPFS to synchronize its Docker containers worldwide. Since each node fetch them from the fastest peers they know, the whole synchronisation is even faster than with specialised solution. You can read more about Netflix use case here: https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/
+
+
+
 
 ## YOU WANT TO REDUCE LOAD ON YOUR INFRASTRUCTURE
 #### Lower ingress/egress cost for your business
