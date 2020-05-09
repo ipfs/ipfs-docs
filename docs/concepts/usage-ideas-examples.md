@@ -22,7 +22,7 @@ Ressources (this line is to delete): https://docs.google.com/spreadsheets/d/1zhY
 IPFS is a versatile technology. It can unlock use cases needing either better compression, availability, partition tolerance, caching, integrity garantees, etc.
 
 ## Share documents and pictures with firends
-TODO
+TODO 
 
 ### Examples of projects
 
