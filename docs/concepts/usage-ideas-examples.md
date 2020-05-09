@@ -15,7 +15,7 @@ related:
 <ContentStatus />
 
 
-IPFS is a versatile technology. It can unlock use cases needing either better compression, availability, partition tolerance, caching, etc.
+IPFS is a versatile technology. It can unlock use cases needing either better compression, availability, partition tolerance, caching, integrity garantees, etc.
 
 ## Store assets on IPFS
 By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits.
@@ -31,6 +31,48 @@ The npm javascript package manager is now mirrored on IPFS. By using the dedicat
 
 #### Speed software containers distribution in your infrastructure
 Netflix is on its way to use IPFS to synchronize its Docker containers worldwide. Since each node fetch them from the fastest peers they know, the whole synchronisation is even faster than with specialised solution. You can read more about Netflix use case here: https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/
+
+#### Video hosting platform
+
+DTube is hosting their videos on IPFS to reduce stress on their infrastructure. The website itself is not decentralized, but it mainly manage coordination between users and discoverability of content. When browsers ship with IPFS natively, the benefits will only be greater.
+
+#### Cohost large datasets and colaborate on them
+qri.io is an open-source tool for the management of large datasets. Its users enjoy reduced hosting costs, traceability of changes in the data, rollback to previous versions, easier collaboration when updating data, etc. Deduplication accross datasets also help them keep their hard drive small as small as their sync time.
+
+
+#### Deadman switch
+Killcord.io is an open project to automatically publicly publish data if the user doesn't check in after a period of time. This can ensure the ongoing investigation of a journalist carries on if they are unable to do it themselves, as the information gathered will now be public. It can also protect their life by detering their enemies to make a move on them and accelerate the disclosure. 
+
+#### Maps on IPFS
+An ungoing work is aiming to store OpenStreetMaps assets on IPFS. On the long run, this could mean faster synchronisation for apps using this scheme, and lower bandwith requirements for servers. Since integrity of data is built-in thanks to content addressing, anyone could also help hosting the data without needing the users to trust them to serve the data. 
+
+#### Legal P2P video streaming platform featuring copirighted movies
+Blust.tv wants to use IPFS to distributes movies when requested by its users. By adding their proprietary secret sauce, they will reconciliate legal video streaming and P2P networks.
+
+#### Help host important data
+Thanks to recent improvement with IPFS Cluster, you can call fo help to store your data without having to trust other nodes won't alter the data. With this "follower" mode, you can replicate Pacman packages or COVID-19-related papers without knowing anything about IPFS internal wizardry. 
+
+
+
+## Decentralize your data, website or app
+By doing so, you increase availability in case your server run into an issue, your ISP is unhappy with what you publish, or a hostile government forces it to take it down. You will also decrease load time for your swarm-connected users, and natively enable you app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native deduplication and caching. If hosted on the Ethereum Name System, users of the IPFS Companion or Metamask browser extensions will find it no matter what. 
+
+### Examples of projects
+
+#### Decentralized database
+OrbitDB is the go-to database on IPFS. You rip the benefits of decentralization, and of traditional databases. Several participants can work on the data offline, and it's synchronized when they come back online thanks to CRDT. THere is a Go and a Javascript flavour.
+If you are using MongoDB, you might be more confortable with AvionDB, which is the unstructured database built on top of IPFS.
+
+#### Make your own tiny decentralized website for free
+Neocities.org let you host a dead simple website for free, accessible without IPFS extention. You need to keep you memory requirements under control, but it can introduce you to the world of decentralized web.
+
+#### Deploy your GitHub website on IPFS
+With Fleek.co (ex-Temporal), you write your website on Github, then deploy it on IPFS in a few clics. Upon updating it on GitHub, it's updated online too.
+
+#### Build your app on IPFS, and publish it on Ethereum
+Embark is a framework for Javascript and Solidity application. The logic is on Ethereum thanks to smart contracts, and assets and data are stored on IPFs thank to OrbitDB.  
+https://github.com/embarklabs/embark
+
 
 
 
