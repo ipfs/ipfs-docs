@@ -10,6 +10,10 @@ related:
   "IPFS GitHub repo: Issues labeled 'applications of IPFS'": https://github.com/ipfs/ipfs/labels/applications%20of%20ipfs
 ---
 
+
+Ressources (this line is to delete): https://docs.google.com/spreadsheets/d/1zhYenLnQAPE7s7mVL0f5A0IMYULw9hF9et3vwvAARkI/edit?usp=sharing
+
+
 # Usage ideas and examples
 
 <ContentStatus />
@@ -17,7 +21,31 @@ related:
 
 IPFS is a versatile technology. It can unlock use cases needing either better compression, availability, partition tolerance, caching, integrity garantees, etc.
 
-## Store assets on IPFS
+## Share documents and pictures with firends
+TODO
+
+### Examples of projects
+
+#### Desktop application
+Arbore is a desktop app letting your share files and sync up your collection with your friends.
+https://arbo.re/
+
+#### Share your files or sell copies of it
+Enzypt.io let you sell files or simply get a link to share.
+https://github.com/FileNation/FileNation is an alternative if you only want to share.  
+
+#### 
+
+## Collaborate on IPFS
+Let IPFS coordinate the flow of data between you and your colleagues, even when working offline or on a local network.
+
+### Examples of projects
+
+#### Collaborate on written documents
+Peerpad is letting you collaborate in real time on an online document thanks to a node running in your browser. The difference with Google Docs? No server sees your sensitive file but your collaborators, and you can work offline and catch up when your connection is back. 
+
+
+## Store assets on IPFS to let your user exchange data and content
 By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits.
 If you users doesn't use an IPFS client, you will still have content deduplication out of the box.
 If they use it, your users will seed the content they use, decreasing the workload on your infrastructure, increase uptime of the service in case you go offline. Your users also won't contact your servers for the content they already have. 
@@ -25,12 +53,6 @@ If they use it, your users will seed the content they use, decreasing the worklo
 ### Examples of projects
 #### Decentraland.org 
 Decentraland is a virtual world you can explore with a VR set, your computer or your smartphone. They store all the assets on IPFS, so these heavy files can be fetched from several other users at the same time, for faster loading and synching. 
-
-#### Distributed package managers
-The npm javascript package manager is now mirrored on IPFS. By using the dedicated client packages are fetched from IPFS, and then distributed to other clients which need them. For example, a team working in the same building will fetch packages from each others, meaning less network traffic cost for the company, or no interuption of the workflow if they lost their Internet connexion, as packages are available on their local network. 
-
-#### Speed software containers distribution in your infrastructure
-Netflix is on its way to use IPFS to synchronize its Docker containers worldwide. Since each node fetch them from the fastest peers they know, the whole synchronisation is even faster than with specialised solution. You can read more about Netflix use case here: https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/
 
 #### Video hosting platform
 DTube is hosting their videos on IPFS to reduce stress on their infrastructure. The website itself is not decentralized, but it mainly manage coordination between users and discoverability of content. When browsers ship with IPFS natively, the benefits will only be greater.
@@ -50,9 +72,35 @@ Blust.tv wants to use IPFS to distributes movies when requested by its users. By
 #### Help host important data
 Thanks to recent improvement with IPFS Cluster, you can call fo help to store your data without having to trust other nodes won't alter the data. With this "follower" mode, you can replicate Pacman packages or COVID-19-related papers without knowing anything about IPFS internal wizardry. 
 
+#### Video livestreaming
+Let your users stream from each other to remove the need for a server without overloading a popular streamer. You can get inspired by this working prototype: https://github.com/tomeshnet/ipfs-live-streaming , or by the experimentations of fission.codes, a heavy player of the IPFS ecosystem: https://blog.fission.codes/experimenting-with-hls-video-streaming-and-ipfs/
+
+
+
+## Use IPFS in your infrastructure
+You can use IPFS to manage your data accross your nodes thanks to either a private network of IPFS Cluster, the preffered tool to manage it. Find out more here: https://cluster.ipfs.io/
+
+### Examples of to synchronize data
+
 #### Build a CDN
 A Content Delivery Network is a network of nodes storing content next to the users to ensure low latency. The IPFS network is a de fact CDN by design, but you can tailor it to your need by building your infrastructure on top of it. 
 
+#### Distributed package managers
+The npm javascript package manager is now mirrored on IPFS. By using the dedicated client packages are fetched from IPFS, and then distributed to other clients which need them. For example, a team working in the same building will fetch packages from each others, meaning less network traffic cost for the company, or no interuption of the workflow if they lost their Internet connexion, as packages are available on their local network. 
+
+#### Speed software containers distribution in your infrastructure
+Netflix is on its way to use IPFS to synchronize its Docker containers worldwide. Since each node fetch them from the fastest peers they know, the whole synchronisation is even faster than with specialised solution. You can read more about Netflix use case here: https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/
+
+### Examples of projects to distribute computation
+
+#### Heavily parallelize Big Data processing
+On some heavy analysis, you can benefit from parallelizing calculations on several nodes. But sometime, fetching the relevant dataset for each node to compute is longer than the analysis itself. Scott Brisbane proposed a design to speed up this step.
+You can find some relevant ressources here: 
+https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf , https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf
+
+#### Serverless computation
+Make your AWS instance compute on IPFS files thanks to AWS Lambdas.
+https://github.com/abhiyerra/ipswarm
 
 
 ## Lower your storage usage
@@ -67,14 +115,14 @@ http://blog.klaehn.org/2018/06/10/efficient-telemetry-storage-on-ipfs/
 ## Decentralize your data, website or app
 By doing so, you increase availability in case your server run into an issue, your ISP is unhappy with what you publish, or a hostile government forces it to take it down. You will also decrease load time for your swarm-connected users, and natively enable you app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native deduplication and caching. If hosted on the Ethereum Name System, users of the IPFS Companion or Metamask browser extensions will find it no matter what. 
 
-### Examples of projects
+### Ressources to do so 
 
 #### Decentralized database
 OrbitDB is the go-to database on IPFS. You rip the benefits of decentralization, and of traditional databases. Several participants can work on the data offline, and it's synchronized when they come back online thanks to CRDT. THere is a Go and a Javascript flavour.
 If you are using MongoDB, you might be more confortable with AvionDB, which is the unstructured database built on top of IPFS.
 
-#### Make your own tiny decentralized website for free
-Neocities.org let you host a dead simple website for free, accessible without IPFS extention. You need to keep you memory requirements under control, but it can introduce you to the world of decentralized web.
+#### Amazon S3 integration
+If you are using AWS S3 connection for your cloud, you can use the following storage server to replicate it to IPFS with a minimal disruption of your workflow. It is forked from the popular object storage server MinIO by the long standing IPFS company RTrade, and should be eventually reintegrated into MinIO natively. 
 
 #### Deploy your GitHub website on IPFS
 With Fleek.co (ex-Temporal), you write your website on Github, then deploy it on IPFS in a few clics. Upon updating it on GitHub, it's updated online too.
@@ -92,25 +140,34 @@ https://github.com/moxystudio/gatsby-plugin-ipfs
 #### Register your domain on a blockchain, and your website on IPFS
 Unstoppable Domains let you easily deploy your website on IPFS.
 
+### Examples of projects doing so 
 
+#### Share photos with friends, comment them, and interact
+Textile.io is one of the oldest company building with IPFS. It developped the concept of Threads to transform IPFS into a social network featuring feeds and events. They built a first app on top of it letting you privately share photos with your friends: Textile.photos
 
-## Parallelize and distribute your business logic
+#### Make your own tiny decentralized website for free
+Neocities.org let you host a dead simple website for free, accessible without IPFS extention. You need to keep you memory requirements under control, but it can introduce you to the world of decentralized web.
 
-### Examples of projects
-
-#### Heavily parallelize Big Data processing
-On some heavy analysis, you can benefit from parallelizing calculations on several nodes. But sometime, fetching the relevant dataset for each node to compute is longer than the analysis itself. Scott Brisbane proposed a design to speed up this step.
-You can find some relevant ressources here: 
-https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf , https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf
-
-#### Compute AWS lambdas on IPFS data
-Make your AWS instance compute on IPFS files thanks to AWS Lambdas.
-https://github.com/abhiyerra/ipswarm
+### A tool for government/citizens communication
+This working prototype was hacked in two days during the DenverETH hackaton. It lets citizens manage state-owned data about themselves, such as their driving licence status.
 
 
 ## Blockchain use-cases
 IPFS is a natural fit for blockchain use cases. Common state of the chain is distributed onchain among participants, and specific data is stored on IPFS. Thanks to content addressing, the blockchain only needs to store the IPFS multihash, and users are sure to fetch correct data from any of their peer. 
 
+### Examples of projects
+
+#### Send cryptos to a human-readable address
+This project let you have a human-readable Ethereum address, so people don't have to send it to a long, error prone address. 
+You can check it here: https://devfolio.co/submissions/humanize-pay
+
+
+
+## Non-implemented usecases
+
+Here is a non-exhaustive list of use cases that were not implemented yet. Pick up the challenge yourself or make your own solution. 
+
+- Coordinate activists groups without fear from censorship : https://discuss.ipfs.io/t/building-a-secure-activist-membership-management-tool-on-ipfs/5702/3
 
 
 ## YOU WANT TO REDUCE LOAD ON YOUR INFRASTRUCTURE
