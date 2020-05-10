@@ -13,13 +13,13 @@ Learn about exposing IPFS API in IPFS Companion via "window.ipfs".
 
 IPFS Companion 2.11 stopped injecting `window.ipfs`. It will be restored after the [move to JS API with async await and async iterables](https://github.com/ipfs-shipyard/ipfs-companion/issues/843), with a likely ETA of Q3 2020. This page is provided for reference only.
 
-:::
-
+<!-- below disclaimer will be restored  when window.ipfs injection resumes
 ### Disclaimer
 
-There is a substantial amount of [ongoing work for this interface](https://github.com/ipfs-shipyard/ipfs-companion/issues/589). Want to help with shaping it? See [#589](https://github.com/ipfs-shipyard/ipfs-companion/issues/589) and [issues with the `area/window-ipfs` label](https://github.com/ipfs-shipyard/ipfs-companion/labels/area%2Fwindow-ipfs).
+The interface is experimental and might change: there is a substantial amount of [ongoing work](https://github.com/ipfs-shipyard/ipfs-companion/issues/589). Want to help with shaping it? See [#589](https://github.com/ipfs-shipyard/ipfs-companion/issues/589) and [issues with the `area/window-ipfs` label](https://github.com/ipfs-shipyard/ipfs-companion/labels/area%2Fwindow-ipfs).
+-->
 
-The interface is experimental and might change. Use [window.ipfs-fallback](https://www.npmjs.com/package/window.ipfs-fallback) to ensure your app follows any future changes
+:::
 
 ## Background
 
@@ -45,6 +45,10 @@ if (window.ipfs && window.ipfs.enable) {
 
 To add and get content, you could update the above example to do something like this:
 
+<!-- TODO: update below example to use async iterators:
+https://blog.ipfs.io/2020-02-01-async-await-refactor/
+-->
+
 ```js
 if (window.ipfs && window.ipfs.enable) {
   try {
@@ -66,6 +70,12 @@ if (window.ipfs && window.ipfs.enable) {
   // (fallback to js-ipfs or js-ipfs-http-client goes here)
 }
 ```
+
+::: tip
+
+Use [ipfs-provider](https://github.com/ipfs-shipyard/ipfs-provider) to ensure your app follows any future changes of this interface. It reduces amount of code needed to implement a robust fallback to HTTP API or embedded js-ipfs when `window.ipfs` is not available.
+
+:::
 
 ### Error codes
 
