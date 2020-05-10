@@ -21,6 +21,9 @@ Ressources (this line is to delete): https://docs.google.com/spreadsheets/d/1zhY
 
 IPFS is a versatile technology. It can unlock use cases needing either better compression, availability, partition tolerance, caching, integrity garantees, etc.
 
+
+
+
 ## Share files with firends
 TODO
 
@@ -37,7 +40,9 @@ https://github.com/FileNation/FileNation is an alternative if you only want to s
 #### Privacy-focused P2P sharing platform
 
 
-## Collaborate on IPFS
+
+
+## Collaborate
 Let IPFS coordinate the flow of data between you and your colleagues, even when working offline or on a local network.
 
 ### Examples of projects
@@ -51,12 +56,21 @@ IPFS internally have a dedicated data format for Git data. Hence, there are seve
 #### Connect attendants of an event
 Gthr.io was a simple demo app to connect participants of an event by letting them scan each others QR code. It was made for IPFS Camp 2019. You can look at their presentation (https://www.dropbox.com/s/wodmbi6ico3inya/Offline%20Presentation.pdf?dl=0 ). The code of this simple app is still in their GitHub repository: https://github.com/JustMaier/gathering
 
+#### Exchange messages on mobile
+Berty.tech will be an IPFS-based messaging app that will ensure connections are made directly between devices, without the need for servers, and will work on a local network if there is no internet connection . It will also work over bluetooth or other proximity transport. Its code is now open source: https://github.com/berty/berty
+More generally, they lead an effort to bring IPFS to mobile here: https://github.com/ipfs-shipyard/gomobile-ipfs
+There is also some guidelines made by profesionals for the rise of IPFS on mobile: https://jkosem.gitbook.io/ipfs-mobile-guidelines/
+
+
+
+
 ## Store assets on IPFS to let your user exchange data and content
 By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits.
 If you users doesn't use an IPFS client, you will still have content deduplication out of the box.
 If they use it, your users will seed the content they use, decreasing the workload on your infrastructure, increase uptime of the service in case you go offline. Your users also won't contact your servers for the content they already have. 
 
 ### Examples of projects
+
 #### Decentraland.org 
 Decentraland is a virtual world you can explore with a VR set, your computer or your smartphone. They store all the assets on IPFS, so these heavy files can be fetched from several other users at the same time, for faster loading and synching. 
 
@@ -86,7 +100,7 @@ Let your users stream from each other to remove the need for a server without ov
 ## Use IPFS in your infrastructure
 You can use IPFS to manage your data accross your nodes thanks to either a private network of IPFS Cluster, the preffered tool to manage it. Find out more here: https://cluster.ipfs.io/
 
-### Examples of to synchronize data
+### Examples of usages for data synchronization
 
 #### Build a CDN
 A Content Delivery Network is a network of nodes storing content next to the users to ensure low latency. The IPFS network is a de fact CDN by design, but you can tailor it to your need by building your infrastructure on top of it. 
@@ -96,6 +110,7 @@ The npm javascript package manager is now mirrored on IPFS. By using the dedicat
 
 #### Speed software containers distribution in your infrastructure
 Netflix is on its way to use IPFS to synchronize its Docker containers worldwide. Since each node fetch them from the fastest peers they know, the whole synchronisation is even faster than with specialised solution. You can read more about Netflix use case here: https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/
+If you use K3S, you can take a look at https://github.com/Duske/k3s-ipfs
 
 ### Examples of projects to distribute computation
 
@@ -109,14 +124,19 @@ Make your AWS instance compute on IPFS files thanks to AWS Lambdas.
 https://github.com/abhiyerra/ipswarm
 
 
+
+
 ## Lower your storage usage
 By storing identical data only once on your node, archive projects are yet another natural fit for IPFS. 
 
 ### Examples of projects
 
-### Compress telemetry data
+#### Compress telemetry data
 Sensor data are typically structured, and sometime repeat themselves. This allow IPFS to reduce disk usage even more than simple compression thanks to deduplication. Here is user story of an engineer explaining how:
 http://blog.klaehn.org/2018/06/10/efficient-telemetry-storage-on-ipfs/
+
+
+
 
 ## Decentralize your data, website or app
 By doing so, you increase availability in case your server run into an issue, your ISP is unhappy with what you publish, or a hostile government forces it to take it down. You will also decrease load time for your swarm-connected users, and natively enable you app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native deduplication and caching. If hosted on the Ethereum Name System, users of the IPFS Companion or Metamask browser extensions will find it no matter what. 
@@ -154,8 +174,24 @@ Textile.io is one of the oldest company building with IPFS. It developped the co
 #### Make your own tiny decentralized website for free
 Neocities.org let you host a dead simple website for free, accessible without IPFS extention. You need to keep you memory requirements under control, but it can introduce you to the world of decentralized web.
 
-### A tool for government/citizens communication
-This working prototype was hacked in two days during the DenverETH hackaton. It lets citizens manage state-owned data about themselves, such as their driving licence status.
+#### SecureMyState
+This award-winning working prototype of an app for government/citizens communication was built in two days during the DenverETH hackaton. It lets Colorado citizens manage state-owned data about themselves, such as their driving licence status or business registration.
+You can see its code here: https://github.com/twos-complement/eth-denver-2020
+and a slides presentation here: https://www.figma.com/proto/usEzmsRYQCe3MP8qp4ur5H/Advance-Colorado?node-id=76%3A5625&viewport=143%2C-89%2C0.049727652221918106&scaling=scale-down
+
+#### Marketplace
+Haven (https://gethaven.app/) is a privacy-focused mobile app for shopping. Haven doesn't know its users' buying history, let them pey in cryptos, and doesn't take a cut on the sales. 
+
+#### Torrent tracker hub
+Torrents are a powerful P2P file-sharing technology, but they work better with the help of centralized "trackers" helping users know who has what. Some people tried with some success to decentralize them. You can find their working prototype here: https://github.com/urbanguacamole/torrent-paradise
+
+
+
+## Decentralize the Web
+
+### Decentralize the DNS
+The Domain Name System is one of the most centralized piece of the Web. By having to ask a central place to know where to find  "google.com" or "facebook.com", it is a central point of failure, be it a technical incident, malicious hack or voluntary censorship. Backing the DNS on IPFS could improve its availability. A first prototype for Javascript have been published on NPM: https://www.npmjs.com/package/orbitdns
+
 
 
 ## Blockchain use-cases
@@ -166,6 +202,15 @@ IPFS is a natural fit for blockchain use cases. Common state of the chain is dis
 #### Send cryptos to a human-readable address
 This project let you have a human-readable Ethereum address, so people don't have to send it to a long, error prone address. 
 You can check it here: https://devfolio.co/submissions/humanize-pay
+
+#### Make AI an online service
+MindSync.ai wants to build a blockchain hosting AI competitions and let AI skills offer and demand meet. Consumers can hire specialists per task, and they are paid in cryptos. 
+
+#### Create a decentralized exchange for Ethereum ERC20 tokens
+This project is still in a very early phase, but may inspire some of you: https://github.com/5daytech/udex-app-android
+
+
+
 
 ## Decentralized Identity (DID)
 A decentralized identity is a concept of storing all your personal data on your devices rather than let every service you use store a partial copy of it as it is now. You having control of your data means that you decide which app has access to what, that you only fill you information once, that you can revoke access, etc. DID is a hot topic for Web3.0, and IPFS is one of the core technology a lot of engineers build DID around. 
@@ -178,11 +223,17 @@ Element is an open source project combines the content addressing and the intera
 #### 3ID Connect
 3ID Connect is developped by 3Box, a personal data manager for apps leveraging IPFS. 3Box wants to make using DID as simple as clicking on "Connect with Google" or "Connect with Facebook". You can read their article explaining how to bring it to you app: https://medium.com/3box/introducing-3id-connect-531af4f84d3f
 
+#### Microsoft ION
+Microsoft started an experimentation by pinning some DID information to IPFS and publishing the hash to the Bitcoin blockchain. This design is well known for blockchain-based apps, and is here use for DID. Find more details here: https://techcommunity.microsoft.com/t5/azure-active-directory-identity/toward-scalable-decentralized-identifier-systems/ba-p/560168
+
+
+
 ## Non-implemented usecases
 
 Here is a non-exhaustive list of use cases that were not implemented yet. Pick up the challenge yourself or make your own solution. 
 
 - Coordinate activists groups without fear from censorship : https://discuss.ipfs.io/t/building-a-secure-activist-membership-management-tool-on-ipfs/5702/3
+- Manage the knowledge of the whole world:  https://www.underlay.org/
 
 
 ## YOU WANT TO REDUCE LOAD ON YOUR INFRASTRUCTURE
