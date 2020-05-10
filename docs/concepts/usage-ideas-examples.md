@@ -21,7 +21,7 @@ Ressources (this line is to delete): https://docs.google.com/spreadsheets/d/1zhY
 
 IPFS is a versatile technology. It can unlock use cases needing either better compression, availability, partition tolerance, caching, integrity garantees, etc.
 
-## Share documents and pictures with firends
+## Share files with firends
 TODO
 
 ### Examples of projects
@@ -34,7 +34,8 @@ https://arbo.re/
 Enzypt.io let you sell files or simply get a link to share.
 https://github.com/FileNation/FileNation is an alternative if you only want to share.  
 
-#### 
+#### Privacy-focused P2P sharing platform
+
 
 ## Collaborate on IPFS
 Let IPFS coordinate the flow of data between you and your colleagues, even when working offline or on a local network.
@@ -44,6 +45,11 @@ Let IPFS coordinate the flow of data between you and your colleagues, even when 
 #### Collaborate on written documents
 Peerpad is letting you collaborate in real time on an online document thanks to a node running in your browser. The difference with Google Docs? No server sees your sensitive file but your collaborators, and you can work offline and catch up when your connection is back. 
 
+#### Version Control
+IPFS internally have a dedicated data format for Git data. Hence, there are several projects to put Git on IPFS. Check out the following: https://github.com/martindbp/ipvc 
+
+#### Connect attendants of an event
+Gthr.io was a simple demo app to connect participants of an event by letting them scan each others QR code. It was made for IPFS Camp 2019. You can look at their presentation (https://www.dropbox.com/s/wodmbi6ico3inya/Offline%20Presentation.pdf?dl=0 ). The code of this simple app is still in their GitHub repository: https://github.com/JustMaier/gathering
 
 ## Store assets on IPFS to let your user exchange data and content
 By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits.
@@ -115,7 +121,7 @@ http://blog.klaehn.org/2018/06/10/efficient-telemetry-storage-on-ipfs/
 ## Decentralize your data, website or app
 By doing so, you increase availability in case your server run into an issue, your ISP is unhappy with what you publish, or a hostile government forces it to take it down. You will also decrease load time for your swarm-connected users, and natively enable you app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native deduplication and caching. If hosted on the Ethereum Name System, users of the IPFS Companion or Metamask browser extensions will find it no matter what. 
 
-### Ressources to do so 
+### Resources to do so 
 
 #### Decentralized database
 OrbitDB is the go-to database on IPFS. You rip the benefits of decentralization, and of traditional databases. Several participants can work on the data offline, and it's synchronized when they come back online thanks to CRDT. THere is a Go and a Javascript flavour.
@@ -161,7 +167,16 @@ IPFS is a natural fit for blockchain use cases. Common state of the chain is dis
 This project let you have a human-readable Ethereum address, so people don't have to send it to a long, error prone address. 
 You can check it here: https://devfolio.co/submissions/humanize-pay
 
+## Decentralized Identity (DID)
+A decentralized identity is a concept of storing all your personal data on your devices rather than let every service you use store a partial copy of it as it is now. You having control of your data means that you decide which app has access to what, that you only fill you information once, that you can revoke access, etc. DID is a hot topic for Web3.0, and IPFS is one of the core technology a lot of engineers build DID around. 
 
+### Examples of projects
+
+#### Element DID
+Element is an open source project combines the content addressing and the interactiveness of Ethereum smart contracts to provide a tool for managing identity. You can check the project out at element-did.com. 
+
+#### 3ID Connect
+3ID Connect is developped by 3Box, a personal data manager for apps leveraging IPFS. 3Box wants to make using DID as simple as clicking on "Connect with Google" or "Connect with Facebook". You can read their article explaining how to bring it to you app: https://medium.com/3box/introducing-3id-connect-531af4f84d3f
 
 ## Non-implemented usecases
 
