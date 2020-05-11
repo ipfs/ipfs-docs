@@ -122,6 +122,9 @@ The npm javascript package manager is now mirrored on IPFS. By using the dedicat
 Netflix is on its way to use IPFS to synchronize its Docker containers worldwide. Since each node fetch them from the fastest peers they know, the whole synchronisation is even faster than with specialised solution. You can read more about Netflix use case here: https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/
 If you use K3S, you can take a look at https://github.com/Duske/k3s-ipfs
 
+#### Make an unstoppable factory 4.0
+Actyx.com is helping the manufacturers to fast forward to Industry 4.0: the industry of connected machines. Actyx built a custom OS on top of IPFS which ensure all machines and monitors receive the orders, information and parameters they need to function properly. This Edge Computing also means that machines can work independently if the network break for some time. You can yield all the benefits of a high performance factory, without the risk of total dependance to the network.
+
 ### Examples of projects to distribute computation
 
 #### Heavily parallelize Big Data processing
@@ -151,7 +154,7 @@ http://blog.klaehn.org/2018/06/10/efficient-telemetry-storage-on-ipfs/
 
 
 ## Decentralize your data, website or app
-By doing so, you increase availability in case your server run into an issue, your ISP is unhappy with what you publish, or a hostile government forces it to take it down. You will also decrease load time for your swarm-connected users, and natively enable you app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native deduplication and caching. If hosted on the Ethereum Name System, users of the IPFS Companion or Metamask browser extensions will find it no matter what. 
+By doing so, you increase availability in case your server run into an issue, your ISP is unhappy with what you publish, or a hostile government forces it to take it down. You will also decrease load time for your swarm-connected users, and natively enable you app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native deduplication and caching. If hosted on the Ethereum Name System, users of the IPFS Companion or Metamask browser extensions will find it no matter what. Remember that your user will always be able to use the gateways such as IPFS website's or CloudFlare's (https://www.cloudflare.com/distributed-web-gateway/) to access your app with unmodified browser if needed. 
 
 ### Resources to do so 
 
@@ -182,10 +185,16 @@ And here is one for Gatsby:
 https://github.com/moxystudio/gatsby-plugin-ipfs
 
 #### Register your domain on a blockchain, and your website on IPFS
-Unstoppable Domains let you easily deploy your website on IPFS.
+The Ethereum Name Service is now the standard for decentralizing domain names (meaning the address of your website) without needing the centralised DNS. You can see a (technical) demo of the concept here: https://www.youtube.com/watch?v=3AS2BD22DZg
+and a presentation here: https://github.com/ipfs/camp/blob/master/LIGHTNING_TALKS/ipfscamp2019-lightningtalk-ensipfs.pdf
+IPFS-upgraded browsers like Brave or Opera can resolve them natively, and any browser with the IPFS Companion extention can as well. 
+
+Unstoppable Domains is another solution that let you easily deploy your website on IPFS. You will also need a browser extention to access the website. 
+
 
 #### Build a dApp
 There are many available framework to build decentralized apps on IPFS.See for example dappkit.io, fission.codes, fleek.co or textile.io .
+
 
 
 
@@ -248,7 +257,8 @@ IPFS is a natural fit for blockchain use cases. Common state of the chain is dis
 ### Examples of projects
 
 #### Create a global market place for data storage
-Filecoin.io is not only a blockchain on IPFS. It is the blockchain *of* IPFS. Filecoin lets any storage owner host data for users who need additional space. It is one of the reason IPFS exists in the first place, and will be a great accelerator of the IPFS growth once fully online. THe project is developped by Protocol Labs, which are stewarding the development of IPFS. You can check the project website here: filecoin.io 
+Filecoin.io is not only a blockchain on IPFS. It is the blockchain *of* IPFS. Filecoin lets any storage owner host data for users who need additional space. It is one of the reason IPFS exists in the first place, and will be a great accelerator of the IPFS growth once fully online. The project is developped by Protocol Labs, which are stewarding the development of IPFS. You can check the project website here: filecoin.io 
+Textile.io is building the Powergate tool for your app to interact with Filecoin, if needed: https://blog.textile.io/filecoin-developer-tools-concepts/
 
 #### Send cryptos to a human-readable address
 This project let you have a human-readable Ethereum address, so people don't have to send it to a long, error prone address. 
@@ -280,11 +290,11 @@ Augur.net is a blockchain and decentralised market where you can bet on anything
 
 
 ## Decentralized Identity (DID)
-A decentralized identity is a concept of storing all your personal data on your devices rather than let every service you use store a partial copy of it as it is now. You having control of your data means that you decide which app has access to what, that you only fill you information once, that you can revoke access, etc. DID is a hot topic for Web3.0, and IPFS is one of the core technology a lot of engineers build DID around. 
+A decentralized identity is a concept of storing all your personal data on your devices rather than let every service you use store a partial copy of it as it is now. You having control of your data means that you decide which app has access to what, that you only fill you information once, that you can revoke access, etc. DID is a hot topic for Web3.0, and IPFS is one of the core technology a lot of engineers build DID around. Nomios.io shared some thought about DID in general during the IPFS Camp 2019 event : https://docs.google.com/presentation/d/1HbydOI0w-T_FY23zCACAyHmzDq1ZvyG2tklpPSm6OQQ/edit#slide=id.g5c88e8f60d_0_11
 
 ### Examples of projects
 
-#### Element DID
+#### Element 
 Element is an open source project combines the content addressing and the interactiveness of Ethereum smart contracts to provide a tool for managing identity. You can check the project out at element-did.com. 
 
 #### 3ID Connect
@@ -296,6 +306,8 @@ Microsoft started an experimentation by pinning some DID information to IPFS and
 #### Ceramic Protocol
 Ceramic.network is another proposition for DID on IPFS, along with a complete protocol for data and document exchanges.
 
+#### Nomios
+Nomios.io is another promising solution that started to work with IPFS from the start. Check out their website for more informations.
 
 
 ## Non-implemented usecases
