@@ -333,6 +333,13 @@ https://github.com/RTradeLtd/libp2p-lora-transport
 - Improve information sharing during disaster recovery
 - Get a grant for your help or propose an open grand: https://github.com/ipfs/devgrants
 - Make an interactive app for your classroom
+- Build a distributed social media : https://discuss.ipfs.io/t/social-media-architecture-with-ipfs/4625/58
+- Decentralize peer reviewing of scholar papers: https://discuss.ipfs.io/t/ipfs-implementation-for-publication-of-decentralized-peer-review/7692
+- Help hosting NASA databases: https://discuss.ipfs.io/t/nasas-earthdata-cloud/7528
+- Help hosting LibGen materials: https://discuss.ipfs.io/t/torrent-site-of-scientific-papers-needs-help/6815
+- Make a manga reader: https://discuss.ipfs.io/t/manga-reader-over-ipfs/4832
+- Make a Gif-sharing platform: https://discuss.ipfs.io/t/a-vine-clone-built-using-ipfs/3337
+- An interactive P2P application working in crowded events such as festivals
 
 - Your project here
 
