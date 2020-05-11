@@ -165,6 +165,9 @@ Textile.io is a hosting company on IPFS developping the layers on top of IPFS. A
 #### Amazon S3 integration
 If you are using AWS S3 connection for your cloud, you can use the following storage server to replicate it to IPFS with a minimal disruption of your workflow. It is forked from the popular object storage server MinIO by the long standing IPFS company RTrade, and should be eventually reintegrated into MinIO natively. 
 
+#### Make IPFS an alternative storage in your NextCloud app
+This is made possible by the following open source project: https://github.com/justicenode/files_external_ipfs
+
 #### Deploy your GitHub website on IPFS
 With Fleek.co (ex-Temporal), you write your website on Github, then deploy it on IPFS in a few clics. Upon updating it on GitHub, it's updated online too.
 
@@ -180,6 +183,11 @@ https://github.com/moxystudio/gatsby-plugin-ipfs
 
 #### Register your domain on a blockchain, and your website on IPFS
 Unstoppable Domains let you easily deploy your website on IPFS.
+
+#### Build a dApp
+There are many available framework to build decentralized apps on IPFS.See for example dappkit.io, fission.codes, fleek.co or textile.io .
+
+
 
 ### Examples of projects doing so 
 
@@ -206,6 +214,14 @@ This dead simple tracker API let any IPFS node request latest data about the COV
 #### Make your software distribution more... distributed
 This simple GitHub Action let you upload your GitHub Realeases on IPFS automatically. https://github.com/marketplace/actions/upload-to-ipfs
 
+#### Backup you Wolfram data
+In a recent update, Wolram let users store their computation or assets on IPFS. Check out the version notes to know how: https://writings.stephenwolfram.com/2020/03/in-less-than-a-year-so-much-new-launching-version-12-1-of-wolfram-language-mathematica/
+
+#### Music streaming platform
+Audius.co is a music streaming platform built on IPFS, where artists are in control, where no fees are taken by the platform, and where listeners can enjoy their music while offline. 
+
+
+
 
 
 ## Decentralize the Web itself
@@ -221,12 +237,18 @@ Thanks to deduplication, IPFS is a powerful tool for archiving the Web. The Inte
 #### Fight censorship
 Wikipedia is not accessible in Turkey for a few years, but the Protocol Labs is hosting a mirror of several languages on IPFS. See the original blog post https://blog.ipfs.io/24-uncensorable-wikipedia/ and the project itself: https://github.com/ipfs/distributed-wikipedia-mirror
 
+#### Build an alternative ISP
+Althea.net is building an alternative Internet Service Provider in the US as the low level of competition brings quality of service down and prices up. Althea especially targets rural areas, where the coverage by traditional ISP is low. 
+
 
 
 ## Blockchain use-cases
-IPFS is a natural fit for blockchain use cases. Common state of the chain is distributed onchain among participants, and specific data is stored on IPFS. Thanks to content addressing, the blockchain only needs to store the IPFS multihash, and users are sure to fetch correct data from any of their peer. 
+IPFS is a natural fit for blockchain use cases. Common state of the chain is distributed onchain among participants, and specific data is stored on IPFS. Thanks to content addressing, the blockchain only needs to store the IPFS multihash, and users are sure to fetch correct data from any of their peer. THis architechture is becoming a de facto standard for blockchain apps, especially for Ethereum.
 
 ### Examples of projects
+
+#### Create a global market place for data storage
+Filecoin.io is not only a blockchain on IPFS. It is the blockchain *of* IPFS. Filecoin lets any storage owner host data for users who need additional space. It is one of the reason IPFS exists in the first place, and will be a great accelerator of the IPFS growth once fully online. THe project is developped by Protocol Labs, which are stewarding the development of IPFS. You can check the project website here: filecoin.io 
 
 #### Send cryptos to a human-readable address
 This project let you have a human-readable Ethereum address, so people don't have to send it to a long, error prone address. 
@@ -250,7 +272,11 @@ TheGraph.com want to enable users to look for information on any blockchain or d
 #### Proof of ownership
 With IPFS, and a blockchain, you can prove ownership of a file at a certain time without disclosing it. See here an example of implementation: https://github.com/mustafarefaey/PrivateStamp
 
+#### Build Smart City apps
+Robonomics.network is building a framework on top of Ethereum and IPFS for Smart City apps to easily exchange data (from sensors or computation for example).
 
+#### Make a decentralised prediction market
+Augur.net is a blockchain and decentralised market where you can bet on anything, or request prediction from the crowd wisdom. Like so many blockchain-based apps, the data is hosted on IPFS. 
 
 
 ## Decentralized Identity (DID)
@@ -267,6 +293,9 @@ Element is an open source project combines the content addressing and the intera
 #### Microsoft ION
 Microsoft started an experimentation by pinning some DID information to IPFS and publishing the hash to the Bitcoin blockchain. This design is well known for blockchain-based apps, and is here use for DID. Find more details here: https://techcommunity.microsoft.com/t5/azure-active-directory-identity/toward-scalable-decentralized-identifier-systems/ba-p/560168
 
+#### Ceramic Protocol
+Ceramic.network is another proposition for DID on IPFS, along with a complete protocol for data and document exchanges.
+
 
 
 ## Non-implemented usecases
@@ -275,6 +304,9 @@ Here is a non-exhaustive list of use cases that were not implemented yet. Pick u
 
 - Coordinate activists groups without fear from censorship : https://discuss.ipfs.io/t/building-a-secure-activist-membership-management-tool-on-ipfs/5702/3
 - Manage the knowledge of the whole world:  https://www.underlay.org/
+- Build a giant database for genetic data: https://discuss.ipfs.io/t/addressing-petabytes-of-genetic-data-with-ipfs/1471/10
+- Create a mesh network on IPFS: https://discuss.ipfs.io/t/mozilla-nsf-a-2-million-prize-to-decentralize-the-web/654
+- Bring additional services to your existing mesh network: www.nycmesh.net
 
 
 ## YOU WANT TO REDUCE LOAD ON YOUR INFRASTRUCTURE
