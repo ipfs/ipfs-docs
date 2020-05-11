@@ -29,16 +29,23 @@ TODO
 
 ### Examples of projects
 
-#### Desktop application
+#### Desktop applications
+IPFS Desktop is the official desktop client for IPFS. It comes with its built-in node or can work with your custom version of IPFS, and let you pin files, get a link to share them, activate experiments like npm-on-ipfs, etc. 
+
 Arbore is a desktop app letting your share files and sync up your collection with your friends.
 https://arbo.re/
+
+Another alternative is Orion, by Siderius.io. You can find it at : https://orion.siderus.io
 
 #### Share your files or sell copies of it
 Enzypt.io let you sell files or simply get a link to share.
 https://github.com/FileNation/FileNation is an alternative if you only want to share.  
 
 #### Privacy-focused P2P sharing platform
+Peergos.net will be another platform to exchange file with friends, but with a key difference. It is design for privacy, and they are putting a lot of effort into it. 
 
+#### Dead drop
+A dead drop is a drive or other storage device wich is physically immobilized in a public location for people to pick-up and deposit files on it. There is now an IPFS version of it thanks to this open source project: https://github.com/c-base/ipfs-deaddrop
 
 
 
@@ -48,7 +55,7 @@ Let IPFS coordinate the flow of data between you and your colleagues, even when 
 ### Examples of projects
 
 #### Collaborate on written documents
-Peerpad is letting you collaborate in real time on an online document thanks to a node running in your browser. The difference with Google Docs? No server sees your sensitive file but your collaborators, and you can work offline and catch up when your connection is back. 
+Peerpad.org is letting you collaborate in real time on an online document thanks to a node running in your browser. The difference with Google Docs? No server sees your sensitive file but your collaborators, and you can work offline and catch up when your connection is back. 
 
 #### Version Control
 IPFS internally have a dedicated data format for Git data. Hence, there are several projects to put Git on IPFS. Check out the following: https://github.com/martindbp/ipvc 
@@ -60,6 +67,9 @@ Gthr.io was a simple demo app to connect participants of an event by letting the
 Berty.tech will be an IPFS-based messaging app that will ensure connections are made directly between devices, without the need for servers, and will work on a local network if there is no internet connection . It will also work over bluetooth or other proximity transport. Its code is now open source: https://github.com/berty/berty
 More generally, they lead an effort to bring IPFS to mobile here: https://github.com/ipfs-shipyard/gomobile-ipfs
 There is also some guidelines made by profesionals for the rise of IPFS on mobile: https://jkosem.gitbook.io/ipfs-mobile-guidelines/
+
+#### Programming collaboration
+Radicle.xyz is a code collaboration platform on top of IPFS. 
 
 
 
@@ -93,7 +103,7 @@ Blust.tv wants to use IPFS to distributes movies when requested by its users. By
 Thanks to recent improvement with IPFS Cluster, you can call fo help to store your data without having to trust other nodes won't alter the data. With this "follower" mode, you can replicate Pacman packages or COVID-19-related papers without knowing anything about IPFS internal wizardry. 
 
 #### Video livestreaming
-Let your users stream from each other to remove the need for a server without overloading a popular streamer. You can get inspired by this working prototype: https://github.com/tomeshnet/ipfs-live-streaming , or by the experimentations of fission.codes, a heavy player of the IPFS ecosystem: https://blog.fission.codes/experimenting-with-hls-video-streaming-and-ipfs/
+Let your users stream from each other to remove the need for a server without overloading a popular streamer. You can get inspired by this working prototype: https://github.com/tomeshnet/ipfs-live-streaming , or by the experimentations of fission.codes, a heavy player of the IPFS ecosystem: https://blog.fission.codes/experimenting-with-hls-video-streaming-and-ipfs/. Fleek.co (previously knkown as Temporal) also did some experimentation using their Amazon S3/IPFS compatibility tool : https://medium.com/temporal-cloud/introducing-s3x-endless-ipfs-dynamic-possibilities-stream-videos-host-dynamic-websites-f0072127070f
 
 
 
@@ -123,13 +133,15 @@ https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big
 Make your AWS instance compute on IPFS files thanks to AWS Lambdas.
 https://github.com/abhiyerra/ipswarm
 
+#### Distribute computation
+This can be made using the "butckets" of the Textile.io company. A first library was build during a 2 day hackaton for the computation of the rendering of videos(https://github.com/ericr6/iexec-textile). More info on buckets can be found on Textile website.
 
 
 
 ## Lower your storage usage
 By storing identical data only once on your node, archive projects are yet another natural fit for IPFS. 
 
-### Examples of projects
+### Example of project
 
 #### Compress telemetry data
 Sensor data are typically structured, and sometime repeat themselves. This allow IPFS to reduce disk usage even more than simple compression thanks to deduplication. Here is user story of an engineer explaining how:
@@ -146,6 +158,9 @@ By doing so, you increase availability in case your server run into an issue, yo
 #### Decentralized database
 OrbitDB is the go-to database on IPFS. You rip the benefits of decentralization, and of traditional databases. Several participants can work on the data offline, and it's synchronized when they come back online thanks to CRDT. THere is a Go and a Javascript flavour.
 If you are using MongoDB, you might be more confortable with AvionDB, which is the unstructured database built on top of IPFS.
+
+#### IPFS hosting with Textile
+Textile.io is a hosting company on IPFS developping the layers on top of IPFS. Among other things, they came up with "buckets", which are separated "cloud" environment. You can find more informations on their website: https://docs.textile.io/hub/buckets/
 
 #### Amazon S3 integration
 If you are using AWS S3 connection for your cloud, you can use the following storage server to replicate it to IPFS with a minimal disruption of your workflow. It is forked from the popular object storage server MinIO by the long standing IPFS company RTrade, and should be eventually reintegrated into MinIO natively. 
@@ -185,12 +200,26 @@ Haven (https://gethaven.app/) is a privacy-focused mobile app for shopping. Have
 #### Torrent tracker hub
 Torrents are a powerful P2P file-sharing technology, but they work better with the help of centralized "trackers" helping users know who has what. Some people tried with some success to decentralize them. You can find their working prototype here: https://github.com/urbanguacamole/torrent-paradise
 
+#### COVID-19 tracker
+This dead simple tracker API let any IPFS node request latest data about the COVID-19 pandemics. https://github.com/RTradeLtd/ipcoronafs
+
+#### Make your software distribution more... distributed
+This simple GitHub Action let you upload your GitHub Realeases on IPFS automatically. https://github.com/marketplace/actions/upload-to-ipfs
 
 
-## Decentralize the Web
 
-### Decentralize the DNS
+## Decentralize the Web itself
+
+### Examples of projects
+
+#### Decentralize the DNS
 The Domain Name System is one of the most centralized piece of the Web. By having to ask a central place to know where to find  "google.com" or "facebook.com", it is a central point of failure, be it a technical incident, malicious hack or voluntary censorship. Backing the DNS on IPFS could improve its availability. A first prototype for Javascript have been published on NPM: https://www.npmjs.com/package/orbitdns
+
+#### Archive the web
+Thanks to deduplication, IPFS is a powerful tool for archiving the Web. The InterPlanetary Wayback is tackling this endeavor. https://github.com/oduwsdl/ipwb
+
+#### Fight censorship
+Wikipedia is not accessible in Turkey for a few years, but the Protocol Labs is hosting a mirror of several languages on IPFS. See the original blog post https://blog.ipfs.io/24-uncensorable-wikipedia/ and the project itself: https://github.com/ipfs/distributed-wikipedia-mirror
 
 
 
@@ -208,6 +237,18 @@ MindSync.ai wants to build a blockchain hosting AI competitions and let AI skill
 
 #### Create a decentralized exchange for Ethereum ERC20 tokens
 This project is still in a very early phase, but may inspire some of you: https://github.com/5daytech/udex-app-android
+
+#### A platform for exchanging notes, courses and more for education.
+RocketShoes.io is an education platform where students produce and tag learning materials, assignments, notes, and digital assets. These are stored on IPFS, and the blockchain ensure the timestamping, proof of ownership and incentivisation layer.
+
+#### Distribute IoT data
+The Tangle (the distributed ledger of the IOTA network) support hosting IoT data on IPFS, again for better availability, deduplication, etc. You can find out more here: https://github.com/iotaledger/poc-ipfs
+
+#### Query the DWeb accross blockchains
+TheGraph.com want to enable users to look for information on any blockchain or distributed service thanks to their query language GraphQL and the indexations of the chains thanks to IPFS. 
+
+#### Proof of ownership
+With IPFS, and a blockchain, you can prove ownership of a file at a certain time without disclosing it. See here an example of implementation: https://github.com/mustafarefaey/PrivateStamp
 
 
 
