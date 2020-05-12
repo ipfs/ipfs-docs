@@ -47,7 +47,8 @@ Peergos.net will be another platform to exchange file with friends, but with a k
 #### Dead drop
 A dead drop is a drive or other storage device wich is physically immobilized in a public location for people to pick-up and deposit files on it. There is now an IPFS version of it thanks to this open source project: https://github.com/c-base/ipfs-deaddrop
 
-
+#### Share files on a map
+Filemap.xyz is an unmaintained but still working open source project waiting to be continued. You can upload a file and create a link to it being an address of a physical location, that you can click on the map. Hence, you can avoid making your grandpa remember another short link as they can have all you share at his address. You can also make a treasure map and leave clues about where to find it, maybe? A creative project calls for more creative project. (https://github.com/fiatjaf/filemap.xyz)
 
 ## Collaborate
 Let IPFS coordinate the flow of data between you and your colleagues, even when working offline or on a local network.
@@ -340,6 +341,8 @@ https://github.com/RTradeLtd/libp2p-lora-transport
 - Make a manga reader: https://discuss.ipfs.io/t/manga-reader-over-ipfs/4832
 - Make a Gif-sharing platform: https://discuss.ipfs.io/t/a-vine-clone-built-using-ipfs/3337
 - An interactive P2P application working in crowded events such as festivals
+- Ethereum/Solidity Smart Contract CI Toolchain on IPFS https://discuss.ipfs.io/t/ethereum-solidity-smart-contract-ci-toolchain-on-ipfs-wip/1780
+
 
 - Your project here
 
