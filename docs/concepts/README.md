@@ -15,7 +15,7 @@ Want the basics, in theater mode? Check out these Core Courses from IPFS Camp 20
 @[youtube](Z5zNPwMDYGg)
 - [Understanding how IPFS deals with files](https://youtu.be/Z5zNPwMDYGg)
 
-- @[youtube](fLUq0RkiTBA)
+@[youtube](fLUq0RkiTBA)
 - [The lifecycle of data in the DWeb](https://youtu.be/fLUq0RkiTBA)
 
 ## IPFS 101
