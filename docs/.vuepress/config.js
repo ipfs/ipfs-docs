@@ -36,7 +36,7 @@ module.exports = {
       'IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
     // edit links
     // repo: 'ipfs/ipfs-docs-v2',
-    domain: 'https://docs-beta.ipfs.io',
+    domain: 'https://docs.ipfs.io',
     docsRepo: 'ipfs/ipfs-docs-v2',
     docsDir: 'docs',
     docsBranch: 'master',
