@@ -40,7 +40,7 @@ How the Markdown syntax looks, and code formatting rules to follow.
 
 ### Syntax
 
-The IPFS Docs project follows the _GitHub Flavoured Markdown_ syntax for markdown. This way, all articles display properly within GitHub itself. This gives readers the option to view articles on [the docs website](https://docs-beta.ipfs.io) or [its GitHub repo](https://github.com/ipfs/ipfs-docs-v2).
+The IPFS Docs project follows the _GitHub Flavoured Markdown_ syntax for markdown. This way, all articles display properly within GitHub itself. This gives readers the option to view articles on [the docs website](https://docs.ipfs.io) or [its GitHub repo](https://github.com/ipfs/ipfs-docs-v2).
 
 ### Rules
 
