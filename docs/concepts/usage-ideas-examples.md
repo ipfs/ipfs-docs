@@ -287,6 +287,9 @@ TheGraph.com wants to enable users to look for information on any blockchain or 
 #### Proof of ownership
 With IPFS and a blockchain, you can prove ownership of a file at a certain time without disclosing it. See here an example of implementation: https://github.com/mustafarefaey/PrivateStamp
 
+#### Proof of "humanness"
+Idena.io is a blockchain to prove that you are human (which is distinct from DID). It uses IPFS under the hood. 
+
 #### Build Smart City apps
 Robonomics.network is building a framework on top of Ethereum and IPFS for Smart City apps to easily exchange data (from sensors or computation for example).
 
