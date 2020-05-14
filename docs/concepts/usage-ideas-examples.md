@@ -3,11 +3,6 @@ title: Usage ideas & examples
 sidebarDepth: 0
 issueUrl: https://github.com/ipfs/docs/issues/387
 description: Explore some helpful use cases, ideas, and examples for IPFS, the InterPlanetary File System.
-related:
-  'Awesome IPFS: Showcase of projects and tools built on IPFS': https://awesome.ipfs.io/
-  'IPFS Forums: Use cases and applications': https://discuss.ipfs.io/c/ecosystem/applications-of-ipfs
-  'Visualization: IPFS developer use cases and goals': https://app.mural.co/t/protocollabs6957/m/protocollabs6957/1564779785852/cf7669f3c1773508a811a3fa0eadfb99efb310bf
-  "IPFS GitHub repo: Issues labeled 'applications of IPFS'": https://github.com/ipfs/ipfs/labels/applications%20of%20ipfs
 ---
 
 
@@ -353,21 +348,6 @@ https://github.com/RTradeLtd/libp2p-lora-transport
 - Ethereum/Solidity Smart Contract CI Toolchain on IPFS https://discuss.ipfs.io/t/ethereum-solidity-smart-contract-ci-toolchain-on-ipfs-wip/1780
 - Various ideas from GitHub: https://github.com/ipfs/ipfs/labels/applications%20of%20ipfs
 - Your project here ...
-
-
-
-#### Decentralize Big Data processing
-https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf 
-https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf
-https://discuss.ipfs.io/t/minerva-build-the-hadoop-hive-on-ipfs/5832
-
-
-
-
-
-#### Ensure service during disaster recovery https://medium.com/offline-camp/passion-talk-offline-first-for-disaster-response-ffe4ef07a2c0?source=collection_category---4------0-----------------------
-
-
 
 
 ## Some companies using IPFS
