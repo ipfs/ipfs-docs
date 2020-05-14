@@ -5,22 +5,16 @@ issueUrl: https://github.com/ipfs/docs/issues/387
 description: Explore some helpful use cases, ideas, and examples for IPFS, the InterPlanetary File System.
 ---
 
-
-Ressources (this line is to delete): https://docs.google.com/spreadsheets/d/1zhYenLnQAPE7s7mVL0f5A0IMYULw9hF9et3vwvAARkI/edit?usp=sharing
-
-
 # Usage ideas and examples
 
-<ContentStatus />
 
 
 IPFS is a versatile technology. It can unlock use cases needing either better compression, availability, partition tolerance, caching, integrity guarantees, etc.
 
 
-
-
 ## Share files with friends
 The easiest use case to grasp is the sharing of files between peers. Check out some of the projects below. 
+
 
 ### Examples of projects
 
