@@ -25,7 +25,7 @@ IPFS is a versatile technology. It can unlock use cases needing either better co
 
 
 ## Share files with friends
-TODO
+The easiest use case to grasp is the sharing of files between peers. Check out some of the projects below. 
 
 ### Examples of projects
 
@@ -96,7 +96,7 @@ qri.io is an open-source tool for the management of large datasets. Its users en
 Killcord.io is an open project to automatically publicly publish data if the user doesn't check in after some time. This can ensure the ongoing investigation of a journalist carries on if they are unable to do it themselves, as the information gathered will now be public. It can also protect their life by discouraging their enemies to make a move on them and accelerate the disclosure. 
 
 #### Maps on IPFS
-Ongoing work is aiming to store OpenStreetMaps assets on IPFS. In the long run, this could mean faster synchronization for apps using this scheme and lower bandwidth requirements for servers. Since the integrity of data is built-in thanks to content addressing, anyone could also help to host the data without needing the users to trust them to serve the data. 
+Ongoing work is aiming to store OpenStreetMaps assets on IPFS (see here: https://github.com/ipfs/devgrants/blob/8233f7df4a219122bcf31eaea289d654406e4443/targeted-grants/open-street-map-ipfs.md) . In the long run, this could mean faster synchronization for apps using this scheme and lower bandwidth requirements for servers. Since the integrity of data is built-in thanks to content addressing, anyone could also help to host the data without needing the users to trust them to serve the data. 
 
 #### Legal P2P video streaming platform featuring copyrighted movies
 Blust.tv wants to use IPFS to distributes movies when requested by its users. By adding their proprietary secret sauce, they will reconcile legal video streaming and P2P networks.
@@ -134,12 +134,11 @@ Actyx.com is helping the manufacturers to fast forward to Industry 4.0: the indu
 
 #### Heavily parallelize Big Data processing
 On some heavy analysis, you can benefit from parallelizing calculations on several nodes. But sometimes, fetching the relevant dataset for each node to compute is longer than the analysis itself. Scott Brisbane proposed a design to speed up this step.
-You can find some relevant resources here: 
-https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf, https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf
+You can find a relevant thesis about an implementation an its performances: https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf ,
+https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf
 
 #### Serverless computation
-Make your AWS instance compute on IPFS files thanks to AWS Lambdas.
-https://github.com/abhiyerra/ipswarm
+Make your AWS instance compute on IPFS files thanks to AWS Lambdas. Be careful, this is just the skeleton of a full implementation: https://github.com/abhiyerra/ipswarm
 
 #### Distribute computation
 This can be made using the "buckets" of the Textile.io company. A first library was build during a 2-day hackathon for the computation of the rendering of videos(https://github.com/ericr6/iexec-textile). More info on buckets can be found on Textile's website.
@@ -168,7 +167,7 @@ OrbitDB is the go-to database on IPFS. You rip the benefits of decentralization 
 If you are using MongoDB, you might be more comfortable with AvionDB, which is the unstructured database built on top of IPFS.
 
 #### IPFS hosting with Textile
-Textile.io is a hosting company on IPFS developing the layers on top of IPFS. Among other things, they came up with "buckets", which are separated "cloud" environment. You can find more information on their website: https://docs.textile.io/hub/buckets/
+Textile.io is a hosting company on IPFS developing the layers on top of IPFS. Among other things, they came up with "buckets", which are separated "cloud" environment. You can find more information on their website: https://docs.textile.io/hub/buckets/ . More generally, Textile has built an impressive tool set for dApp building and integration: https://blog.textile.io/announcing-the-textile-protocol-hub/
 
 #### Amazon S3 integration
 If you are using AWS S3 connections for your cloud, you can use the following storage server to replicate it to IPFS with minimal disruption of your workflow. It is forked from the popular object storage server MinIO by the long-standing IPFS company RTrade and should be eventually reintegrated into MinIO natively. 
@@ -263,6 +262,9 @@ IPFS is a natural fit for blockchain use cases. The common state of the chain is
 Filecoin.io is not only a blockchain on IPFS. It is the blockchain *of* IPFS. Filecoin lets any storage owner host data for users who need additional space. It is one of the reasons IPFS exists in the first place and will be a great accelerator of the IPFS growth once fully online. The project is developed by Protocol Labs, which are stewarding the development of IPFS. You can check the project website here: filecoin.io 
 Textile.io is building the Powergate tool for your app to interact with Filecoin, if needed: https://blog.textile.io/filecoin-developer-tools-concepts/
 
+#### Reconcile IoT and privacy
+Iotex.io wants to build an ecosystem where IoT data are owned by their respective owners. Data of their devices can be stored on local hardware, backed up to cloud, or to IPFS. Future integration with Filecoin will further reinforce the ownership of data. 
+
 #### Send cryptos to a human-readable address
 This project lets you have a human-readable Ethereum address, so people don't have to send it to a long, error-prone address. 
 You can check it here: https://devfolio.co/submissions/humanize-pay
@@ -355,13 +357,8 @@ https://github.com/RTradeLtd/libp2p-lora-transport
 https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf 
 https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf
 https://discuss.ipfs.io/t/minerva-build-the-hadoop-hive-on-ipfs/5832
-#### Serverless computing
-https://discuss.ipfs.io/t/ipfs-serverless-compute/5349
 
 
-
-#### Decentralized maps
-https://discuss.ipfs.io/t/open-street-map-on-ipfs/6689/6
 
 
 
