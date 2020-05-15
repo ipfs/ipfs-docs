@@ -18,11 +18,8 @@ The easiest use case to grasp is the sharing of files between peers. Check out s
 
 #### Desktop applications
 [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) is the official desktop client for IPFS. It comes with its built-in node or can work with your custom version of IPFS, and let you pin files, get a link to share them, activate experiments like npm-on-ipfs, etc. 
-
 [Arbore](https://arbo.re) is a desktop app letting your share files and syncing up your collection with your friends.
-
-
-Another alternative is [Orion](https://orion.siderus.io), by Siderius.io. You can find it at 
+Another alternative is [Orion](https://orion.siderus.io) made by Siderius.io.
 
 #### Share your files or sell copies of it
 [Enzypt.io] lets you sell files or simply get a link to share.
@@ -49,12 +46,12 @@ Peerpad.org is letting you collaborate in real-time on an online document thanks
 IPFS internally has a dedicated data format for Git data. Hence, there are several projects to put Git on IPFS. Here is an [example](https://github.com/martindbp/ipvc) 
 
 #### Connect attendants of an event
-Gthr.io was a simple demo app to connect participants of an event by letting them scan each other's QR code. It was made for IPFS Camp 2019. You can look at their [presentation](https://www.dropbox.com/s/wodmbi6ico3inya/Offline%20Presentation.pdf?dl=0 ). The code of this simple app is still in their [GitHub repository](https://github.com/JustMaier/gathering)
+Gthr.io was a simple demo app to connect participants of an event by letting them scan each other's QR code. It was made for IPFS Camp 2019. You can look at their [presentation](https://www.dropbox.com/s/wodmbi6ico3inya/Offline%20Presentation.pdf?dl=0). The code of this simple app is still in their [GitHub repository](https://github.com/JustMaier/gathering).
 
 #### Exchange messages on mobile
 [Berty.tech](https://berty.tech/) will be an IPFS-based messaging app that will ensure connections are made directly between devices, without the need for servers, and will work on a local network if there is no internet connection. It will also work over Bluetooth or other proximity transport. Its [code](https://github.com/berty/berty) is now open source.
 More generally, they lead an effort to bring [IPFS to mobile](https://github.com/ipfs-shipyard/gomobile-ipfs). 
-There is also some [guidelines](https://jkosem.gitbook.io/ipfs-mobile-guidelines/) made by professionals for the rise of IPFS on mobile.
+There are also some [guidelines](https://jkosem.gitbook.io/ipfs-mobile-guidelines/) made by professionals for the rise of IPFS on mobile.
 
 #### Programming collaboration
 [Radicle](https://radicle.xyz/) is a code collaboration platform on top of IPFS. 
@@ -96,7 +93,7 @@ Let your users stream from each other to remove the need for a server without ov
 
 
 ## Use IPFS in your infrastructure
-Using IPFS abstracts away a lot of the complexity of coordination between machines. Server-Clients, P2P, Cloud based, on premise. No matter you architecture, IPFS handles load balancing, deduplication, caching and high availability out of the box. Its highly modular design also means you can easily customize it to your need. 
+Using IPFS abstracts away a lot of the complexity of coordination between machines. Server-Clients, P2P, Cloud-based, on-premise. No matter your architecture, IPFS handles load balancing, deduplication, caching, and high availability out of the box. Its highly modular design also means you can easily customize it to your need. 
 
 ### Examples of usages for data synchronization
 
@@ -104,10 +101,10 @@ Using IPFS abstracts away a lot of the complexity of coordination between machin
 [IPFS Cluster](https://cluster.ipfs.io/) is the official tool to manage a cluster of nodes to replicate data. Like any distributed cluster, you will have the benefits of redundancy, load balancing, write permission management, etc. You will also have IPFS's deduplication of content. You can choose to connect your cluster to the rest of the IPFS network or run it privately. You can also invite outsiders to help replicate your data without them having write access thanks to the [collaborative mode](https://cluster.ipfs.io/documentation/collaborative/). 
 
 #### Build a Content Delivery Network
-A [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_network) (CDN) is a network of nodes storing content next to the users to ensure low latency, balance load and scale availability of content with its popularity. The IPFS network is a CDN by design, because each node will cache what they consume and serve them to its peers. You can tailor it to your need by building your infrastructure on top of it, or run you [private IPFS network]( link here)
+A [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_network) (CDN) is a network of nodes storing content next to the users to ensure low latency, balance load, and scale availability of content with its popularity. The IPFS network is a CDN by design because each node will cache what they consume and serve them to its peers. You can tailor it to your need by building your infrastructure on top of it, or run you [private IPFS network]( link here)
 
 #### Distributed package managers
-The [npm](https://www.npmjs.com/) package manager for Javascript is now mirrored on IPFS. By using the dedicated client [npm-on-ipfs](https://github.com/ipfs-shipyard/npm-on-ipfs) packages are fetched from IPFS and then distributed to other clients needing them. For example, a team working in the same building will fetch packages from each other, meaning less network traffic cost for the company. They no interruption of the workflow if they lost their Internet connexion (or if [a package is sudently unavailable on npm](https://qz.com/646467/how-one-programmer-broke-the-internet-by-deleting-a-tiny-piece-of-code/) ), as the packages are available on their local network. They will also experience faster synchronisation thanks to fetching from local network and parallel downloads. 
+The [npm](https://www.npmjs.com/) package manager for Javascript is now mirrored on IPFS. By using the dedicated client [npm-on-ipfs](https://github.com/ipfs-shipyard/npm-on-ipfs) packages are fetched from IPFS and then distributed to other clients needing them. For example, a team working in the same building will fetch packages from each other, meaning less network traffic costs for the company. They no interruption of the workflow if they lost their Internet connexion (or if [a package is suddenly unavailable on npm](https://qz.com/646467/how-one-programmer-broke-the-internet-by-deleting-a-tiny-piece-of-code/) ), as the packages are available on their local network. They will also experience faster synchronization thanks to fetching from the local network and parallel downloads. 
 
 #### Speed software containers distribution in your infrastructure
 [Netflix](https://www.netflix.com/) is on its way to use IPFS to synchronize its Docker containers worldwide. Since each node fetches them from the fastest peers they know, the whole synchronization is even faster than with a specialized solution. You can read more about Netflix use case [here](https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/).
@@ -120,17 +117,17 @@ If you use K3S, you can take a look at this [open-source project](https://github
 
 #### Heavily parallelize Big Data processing
 On some heavy analysis, you can benefit from parallelizing calculations on several nodes. But sometimes, fetching the relevant dataset for each node to compute is longer than the analysis itself. Scott Brisbane proposed a design to speed up this step.
-You can find a relevant [thesis](https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf) about an implementation an its performances. Here is a [one-page](https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf) summary of the concept. 
+You can find a relevant [thesis](https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf) about an implementation and its performances. Here is a [one-page](https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf) summary of the concept. 
 
 #### Serverless computation
-Make your AWS instance compute [AWS Lambdas on IPFS](https://github.com/abhiyerra/ipswarm) files. Be careful, this is just the skeleton of a full implementation.
+Make your AWS instance compute [AWS Lambdas on IPFS](https://github.com/abhiyerra/ipswarm) files. Be careful, this is just the skeleton of full implementation.
 
 #### Distribute computation
-This can be achieved using the "[buckets](https://docs.textile.io/hub/buckets/)" of the Textile.io company. A [first library](https://github.com/ericr6/iexec-textile) was build during a 2-day hackathon for the computation of the rendering of videos. 
+This can be achieved using the "[buckets](https://docs.textile.io/hub/buckets/)" of the Textile.io company. A [first library](https://github.com/ericr6/iexec-textile) was built during a 2-day hackathon for the computation of the rendering of videos. 
 
 
 ## Lower your storage usage
-By storing identical data only once on your node, storage-onstrained projects are another natural fit for IPFS. 
+By storing identical data only once on your node, storage-constrained projects are another natural fit for IPFS. 
 
 ### Example of project
 
@@ -148,10 +145,10 @@ By doing so, you increase availability in case your server runs into an issue, y
 If you are using MongoDB, you might be more comfortable with [ThreadDB](https://docs.textile.io/threads/introduction/) or [AvionDB](https://github.com/dappkit/aviondb-onboard), which are unstructured databases built on top of IPFS.
 
 #### IPFS hosting with Textile
-[Textile](https://Textile.io) is a hosting company on IPFS developing the layers on top of IPFS. Among other things, they came up with [buckets](https://docs.textile.io/hub/buckets/), which are separated "cloud" environment. More generally, Textile has built an impressive tool set for dApp building and integration. See their [blog post](https://blog.textile.io/announcing-the-textile-protocol-hub/) for more information on this tool set.
+[Textile](https://Textile.io) is a hosting company on IPFS developing the layers on top of IPFS. Among other things, they came up with [buckets](https://docs.textile.io/hub/buckets/), which are separated "cloud" environment. More generally, Textile has built an impressive toolset for dApp building and integration. See their [blog post](https://blog.textile.io/announcing-the-textile-protocol-hub/) for more information on this toolset.
 
 #### Amazon S3 integration
-If you are using AWS S3 connections for your cloud, you can use [this storage server](https://github.com/RTradeLtd/s3x) to replicate it to IPFS with minimal disruption of your workflow. It is forked from the popular object storage server MinIO by the long-standing IPFS company RTrade and should be eventually reintegrated into MinIO natively. THe default pinning service is [Temporal](https://temporal.cloud/), but you can chose your own. 
+If you are using AWS S3 connections for your cloud, you can use [this storage server](https://github.com/RTradeLtd/s3x) to replicate it to IPFS with minimal disruption of your workflow. It is forked from the popular object storage server MinIO by the long-standing IPFS company RTrade and should be eventually reintegrated into MinIO natively. The default pinning service is [Temporal](https://temporal.cloud/), but you can choose your own. 
 
 #### Make IPFS alternative storage in your NextCloud app
 This is made possible by [this open-source project](https://github.com/justicenode/files_external_ipfs).
@@ -187,7 +184,7 @@ You can see its [code](https://github.com/twos-complement/eth-denver-2020), or a
 [Haven](https://gethaven.app/) is a privacy-focused mobile app for shopping. Haven doesn't know its users' buying history, let them pay in cryptos, and doesn't take cut on the sales. 
 
 #### Torrent tracker hub
-[BitTorrent](https://en.wikipedia.org/wiki/Bittorrent) is a powerful P2P file-sharing technology, but it work better with the help of centralized "trackers" helping users know who has what. Some people tried with some success to decentralize them. You can find their working prototype [here](https://github.com/urbanguacamole/torrent-paradise).
+[BitTorrent](https://en.wikipedia.org/wiki/Bittorrent) is a powerful P2P file-sharing technology, but it works better with the help of centralized "trackers" helping users know who has what. Some people tried with some success to decentralize them. You can find their working prototype [here](https://github.com/urbanguacamole/torrent-paradise).
 
 #### COVID-19 tracker
 This dead-simple tracker API lets any IPFS node request the latest data about the COVID-19 pandemics. See the code on [GitHub](https://github.com/RTradeLtd/ipcoronafs).
@@ -229,8 +226,8 @@ IPFS is a natural fit for [blockchain](https://en.wikipedia.org/wiki/Blockchain)
 ### Examples of projects
 
 #### Create a global market place for data storage
-[Filecoin](https://filecoin.io/) is not only a blockchain on IPFS. It is the blockchain *of* IPFS. Filecoin lets any storage owner host data for users who need additional space. It is one of the reasons IPFS exists in the first place and will be a great accelerator of the IPFS growth once fully online latter this year. The project is developed by [Protocol Labs](https://protocol.ai/), which are stewarding the development of IPFS.
-Textile.io is building the [Powergate](https://blog.textile.io/filecoin-developer-tools-concepts/) tool for your app to interact with Filecoin once the mainnet is launched. 
+[Filecoin](https://filecoin.io/) is not only a blockchain on IPFS. It is the blockchain *of* IPFS. Filecoin lets any storage owner host data for users who need additional space. It is one of the reasons IPFS exists in the first place and will be a great accelerator of the IPFS growth once fully online later this year. The project is developed by [Protocol Labs](https://protocol.ai/), which are stewarding the development of IPFS.
+Textile.io is building the [Powergate](https://blog.textile.io/filecoin-developer-tools-concepts/) tool for your app to interact with Filecoin once the main net is launched. 
 
 #### Reconcile IoT and privacy
 The [Iotex](https://www.iotex.io/) blockchain wants to build an ecosystem where IoT data are owned by their respective owners. Data of their hardware devices such as cameras can be stored on local hardware, backed up to cloud, or to IPFS. Future integration with Filecoin will further reinforce the ownership of data by the users. 
@@ -323,7 +320,6 @@ If you want to discuss your idea or have some problems, head to [the IPFS forum]
 - [Ethereum/Solidity Smart Contract CI Toolchain on IPFS](https://discuss.ipfs.io/t/ethereum-solidity-smart-contract-ci-toolchain-on-ipfs-wip/1780)
 - [Various ideas from GitHub](https://github.com/ipfs/ipfs/labels/applications%20of%20ipfs)
 - Your project here ...
-
 
 
 https://user-images.githubusercontent.com/618519/74373908-3819cb80-4d92-11ea-816a-1b6f04002b4c.png
