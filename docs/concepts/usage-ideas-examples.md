@@ -7,12 +7,11 @@ description: Explore some helpful use cases, ideas, and examples for IPFS, the I
 
 # Usage ideas and examples
 
-IPFS is a versatile technology. It can unlock use cases needing either better compression, availability, partition tolerance, caching, integrity guarantees, etc.
+**IPFS is a versatile technology. It can unlock use cases needing either better compression, availability, partition tolerance, caching, integrity guarantees, etc. Below is a long yet far from exhaustive list of projects. Some are minimalistic prototypes, some are complete projects backed by mature companies. Either way, they should make you discover the diversity of use-cases covered by IPFS.**
 
 
 ## Share files with friends
-The easiest use case to grasp is the sharing of files between peers. Check out some of the projects below. 
-
+*The easiest use-case to grasp is the sharing of files between peers. Check out some of the projects below. *
 
 ### Examples of projects
 
@@ -22,7 +21,7 @@ The easiest use case to grasp is the sharing of files between peers. Check out s
 Another alternative is [Orion](https://orion.siderus.io) made by Siderius.io.
 
 #### Share your files or sell copies of it
-[Enzypt.io] lets you sell files or simply get a link to share.
+[Enzypt.io](https://enzypt.io) lets you sell files or simply get a link to share.
 [FileNation](https://github.com/FileNation/FileNation ) is an alternative if you only want to share.  
 
 #### Privacy-focused P2P sharing platform
@@ -60,9 +59,9 @@ There are also some [guidelines](https://jkosem.gitbook.io/ipfs-mobile-guideline
 
 
 ## Store assets on IPFS to let your user exchange data and content
-By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits.
+*By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits.
 If your users don't use an IPFS client, you will still have content deduplication out of the box.
-If they use it, your users will seed the content they use, decreasing the workload on your infrastructure, increase uptime of the service in case you go offline. Your users also won't contact your servers for the content they already have. 
+If they use it, your users will seed the content they use, decreasing the workload on your infrastructure, increase uptime of the service in case you go offline. Your users also won't contact your servers for the content they already have. *
 
 ### Examples of projects
 
@@ -127,7 +126,7 @@ This can be achieved using the "[buckets](https://docs.textile.io/hub/buckets/)"
 
 
 ## Lower your storage usage
-By storing identical data only once on your node, storage-constrained projects are another natural fit for IPFS. 
+*By storing identical data only once on your node, storage-constrained projects are another natural fit for IPFS. *
 
 ### Example of project
 
@@ -136,7 +135,7 @@ Sensor data are typically structured and sometimes repeat themselves. This allow
 
 
 ## Decentralize your data, website or app
-By doing so, you increase availability in case your server runs into an issue, your ISP is unhappy with what you publish, or a hostile government forces it to take it down. You will also decrease the load time for your swarm-connected users, and natively enable your app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native deduplication and caching. If hosted on the Ethereum Name System, users of the IPFS Companion or Metamask browser extensions will find it no matter what. Remember that your user will always be able to use the gateways such as IPFS website's or CloudFlare's (https://www.cloudflare.com/distributed-web-gateway/) to access your app with unmodified browser if needed. 
+*By doing so, you increase availability in case your server runs into an issue, your ISP is unhappy with what you publish, or a hostile government forces it to take it down. You will also decrease the load time for your swarm-connected users, and natively enable your app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native deduplication and caching. If hosted on the Ethereum Name System, users of the IPFS Companion or Metamask browser extensions will find it no matter what. Remember that your user will always be able to use the gateways such as IPFS website's or [CloudFlare's](https://www.cloudflare.com/distributed-web-gateway/) to access your app with unmodified browser if needed. *
 
 ### Resources to do so 
 
@@ -203,6 +202,7 @@ In a recent update, Wolfram let users store their computation or assets on IPFS.
 
 
 ## Decentralize the Web itself
+*Some core pieces of the Web are still centralized, making it more prone to break or being censored. IPFS can help and make the Web more resilient.*
 
 ### Examples of projects
 
@@ -221,7 +221,7 @@ Wikipedia is not accessible in Turkey for a few years, but the Protocol Labs is 
 
 
 ## Blockchain use-cases
-IPFS is a natural fit for [blockchain](https://en.wikipedia.org/wiki/Blockchain) use cases. The common state of the chain is distributed on-chain among participants, and specific data is stored on IPFS. Thanks to content addressing, the blockchain only needs to store the IPFS multihash, and users are sure to fetch correct data from any of their peers. This architecture is becoming a de facto standard for blockchain apps based on Ethereum.
+*IPFS is a natural fit for [blockchain](https://en.wikipedia.org/wiki/Blockchain) use cases. The common state of the chain is distributed on-chain among participants, and specific data is stored on IPFS. Thanks to content addressing, the blockchain only needs to store the IPFS multihash, and users are sure to fetch correct data from any of their peers. This architecture is becoming a de facto standard for blockchain apps based on Ethereum.*
 
 ### Examples of projects
 
@@ -265,7 +265,7 @@ With IPFS and a blockchain, you can prove ownership of a file at a certain time 
 
 
 ## Decentralized Identity (DID)
-A decentralized identity (https://en.wikipedia.org/wiki/Decentralized_Identifiers) is a concept of storing all your personal data on your devices rather than let every service you use store a partial copy of it as it is now. You having control of your data means that you decide which app has access to what, that you only fill your information once, that you can revoke access, etc. DID is a hot topic for Web3.0, and IPFS is one of the core technology a lot of engineers build DID around. The identity wallet [Nomios](https://nomios.io/) shared [some thought](https://docs.google.com/presentation/d/1HbydOI0w-T_FY23zCACAyHmzDq1ZvyG2tklpPSm6OQQ/edit#slide=id.g5c88e8f60d_0_11) about DID in general during the [IPFS Camp 2019](https://github.com/ipfs/camp).
+*A decentralized identity (https://en.wikipedia.org/wiki/Decentralized_Identifiers) is a concept of storing all your personal data on your devices rather than let every service you use store a partial copy of it as it is now. You having control of your data means that you decide which app has access to what, that you only fill your information once, that you can revoke access, etc. DID is a hot topic for Web3.0, and IPFS is one of the core technology a lot of engineers build DID around. The identity wallet [Nomios](https://nomios.io/) shared [some thought](https://docs.google.com/presentation/d/1HbydOI0w-T_FY23zCACAyHmzDq1ZvyG2tklpPSm6OQQ/edit#slide=id.g5c88e8f60d_0_11) about DID in general during the [IPFS Camp 2019](https://github.com/ipfs/camp).*
 
 ### Examples of projects
 
@@ -286,13 +286,13 @@ The [Ceramic Protocol](https://www.ceramic.network/) is another proposition for 
 
 
 ## Some additional resources and ideas
-More implemented ideas can be found on [Awesome IPFS](https://awesome.ipfs.io/).
+*More implemented ideas can be found on [Awesome IPFS](https://awesome.ipfs.io/).*
 
 
 ## Non-implemented use cases
 
-Here is a non-exhaustive list of use cases that were not implemented yet. Pick up the challenge yourself or follow your own idea! 
-If you want to discuss your idea or have some problems, head to [the IPFS forum](https://discuss.ipfs.io) or https://ipfs.io/help/ .
+*Here is a non-exhaustive list of use cases that were not implemented yet. Pick up the challenge yourself or follow your own idea! 
+If you want to discuss your idea or have some problems, head to [the IPFS forum](https://discuss.ipfs.io) or [the IPFS help page](https://ipfs.io/help/) .*
 
 - [Coordinate activists groups without fear from censorship](https://discuss.ipfs.io/t/building-a-secure-activist-membership-management-tool-on-ipfs/5702/3)
 - [Manage the knowledge of the whole world](https://www.underlay.org/)
