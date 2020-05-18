@@ -31,7 +31,7 @@ jobs:
     docker:
       - image: olizilla/ipfs-dns-deploy:latest
         environment:
-          DOMAIN: docs-beta.ipfs.io
+          DOMAIN: docs.ipfs.io
           BUILD_DIR: ./docs/.vuepress/dist
     steps:
       - attach_workspace:
