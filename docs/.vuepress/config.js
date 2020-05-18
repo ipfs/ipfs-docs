@@ -1,4 +1,7 @@
 // .vuepress/config.js
+
+const DEPLOY_DOMAIN = 'https://docs.ipfs.io'
+
 module.exports = {
   base: '/',
   head: require('./head'),
@@ -36,8 +39,8 @@ module.exports = {
       'IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
     // edit links
     // repo: 'ipfs/ipfs-docs-v2',
-    domain: 'https://docs-beta.ipfs.io',
-    docsRepo: 'ipfs/ipfs-docs-v2',
+    domain: DEPLOY_DOMAIN,
+    docsRepo: 'ipfs/ipfs-docs',
     docsDir: 'docs',
     docsBranch: 'master',
     feedbackWidget: {
@@ -431,7 +434,7 @@ module.exports = {
       {
         // add <link rel="canonical" header (https://tools.ietf.org/html/rfc6596)
         // to deduplicate SEO across all copies loaded from various public gateways
-        baseURL: 'https://docs-beta.ipfs.io'
+        baseURL: DEPLOY_DOMAIN
       }
     ]
   ],
