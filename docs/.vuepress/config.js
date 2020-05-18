@@ -436,6 +436,14 @@ module.exports = {
         // to deduplicate SEO across all copies loaded from various public gateways
         baseURL: DEPLOY_DOMAIN
       }
+    ],
+    [
+      'vuepress-plugin-sitemap',
+      DEPLOY_DOMAIN
+        ? {
+            hostname: DEPLOY_DOMAIN
+          }
+        : false
     ]
   ],
   extraWatchFiles: ['.vuepress/nav/en.js'],
