@@ -1,5 +1,4 @@
 module.exports = [
-  ['meta', { robots: 'noindex' }], // deny search indexing for now
   [
     'link',
     {
