@@ -2,162 +2,128 @@
 title: Usage ideas & examples
 sidebarDepth: 0
 issueUrl: https://github.com/ipfs/docs/issues/387
-description: Explore some helpful use cases, ideas, and examples for IPFS, the InterPlanetary File System.
+description: Explore some helpful use cases, ideas, and examples for the InterPlanetary File System (IPFS).
 ---
 
 # Usage ideas and examples
 
-IPFS is a versatile technology. It can unlock use cases needing either better compression, availability, partition tolerance, caching, integrity guarantees, etc. Below is a long yet far from exhaustive list of projects. Some are minimalistic prototypes, some are complete projects backed by mature companies. Either way, they should make you discover the diversity of use-cases covered by IPFS.
+IPFS is a versatile technology and can be used in a huge array of use-cases. Below is a long, yet far from exhaustive, list of projects built on IPFS. Some are minimalistic prototypes, and other are complete projects backed by mature companies.
 
-## Share files with friends
+## Share files
 
-The easiest use-case to grasp is the sharing of files between peers. Check out some of the projects below.
+One of the simplest use-cases to grasp is the sharing of files between peers.
 
-### Examples of projects
+### Desktop applications
 
-#### Desktop applications
+[IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) is the official desktop client for IPFS. It comes with a built-in IPFS node that lets you pin files and gives you a link to share them. This is generally seen as the easiest point-of-entry into the IPFS ecosystem.
 
-[IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) is the official desktop client for IPFS. It comes with its built-in node or can work with your custom version of IPFS, and let you pin files, get a link to share them, activate experiments like npm-on-ipfs, etc.
+[Arbore](https://arbo.re) Arbore is a free and open-source file sharing application that enables you to send your pictures, documents, files to your contacts privately and without limits.
 
-[Arbore](https://arbo.re) is a desktop app letting your share files and syncing up your collection with your friends.
-Another alternative is [Orion](https://orion.siderus.io) made by Siderius.io.
+Another alternative is [Orion](https://orion.siderus.io). Orion is an easy to use IPFS Desktop client. It helps sharing content on the public peer to peer network without any command line or technical knowledge. The app includes everything needed to start your own personal IPFS node.
 
-#### Share your files or sell copies of it
+### Share your files or sell copies of it
 
 [Enzypt.io](https://enzypt.io) lets you sell files or simply get a link to share.
+
 [FileNation](https://github.com/FileNation/FileNation ) is an alternative if you only want to share.  
 
-#### Privacy-focused P2P sharing platform
+### Dead drop
 
-[Peergos](https://peergos.org/) will be another platform to exchange file with friends, but with a key difference. It is designed for privacy, and they are putting a lot of effort into it.
-
-#### Dead drop
-
-A [dead drop](https://deaddrops.com/) is a drive or another storage device that is physically immobilized in a public location for people to pick-up and deposit files on it. There is now an IPFS version of it thanks to this [open-source project](https://github.com/c-base/ipfs-deaddrop).
-
-#### Share files on a map
-
-[Filemap.xyz](https://github.com/fiatjaf/filemap.xyz) is an unmaintained but still working open-source project waiting to be continued. You can upload a file and create a link to it being an address of a physical location, that you can click on the map. Hence, you can avoid making your grandpa remember another short link as they can have all you share at his address. You can also make a treasure map and leave clues about where to find it, maybe? A creative project calls for more creative projects.
+A [dead drop](https://deaddrops.com/) is a drive or another storage device that is physically immobilized in a public location for people to pick-up and deposit files. There is now an IPFS version thanks to the [IPFS Dead Drop project](https://github.com/c-base/ipfs-deaddrop).
 
 ## Collaborate
 
 Let IPFS coordinate the flow of data between you and your colleagues, even when working offline or on a local network.
 
-### Examples of projects
+### Collaborate on written documents
 
-#### Collaborate on written documents
+[PeerPad.org](https://peerpad.net) is a service allows you to write, collaborate and export markdown documents directly in your browser, similar to how Google Docs works.
 
-Peerpad.org is letting you collaborate in real-time on an online document thanks to a node running in your browser. The difference with Google Docs? No server sees your sensitive file but your collaborators, and you can work offline and catch up when your connection is back.
+### Version control
 
-#### Version Control
+The Inter-Planetary Version Control system (IPVC) is a distributed version control system similar to [git](https://git-scm.com/), but built on IPFS. It is suitable for any kind of data, not only human readable content. It is also particularly suitable for versioning large files. The underlying concepts are heavily influenced by [git](https://git-scm.com/) and [gitless](https://gitless.com/).
 
-IPFS internally has a dedicated data format for Git data. Hence, there are several projects to put Git on IPFS. Here is an [example](https://github.com/martindbp/ipvc).
+### Connect event attendants
 
-#### Connect attendants of an event
+[Gthr.io](https://gthr.io) was a simple demo app to connect participants of an event by letting them scan each other's QR code. It was made for IPFS Camp 2019. You can look at their [presentation](https://www.dropbox.com/s/wodmbi6ico3inya/Offline%20Presentation.pdf?dl=0). The code of this simple app is still in their [GitHub repository](https://github.com/JustMaier/gathering).
 
-Gthr.io was a simple demo app to connect participants of an event by letting them scan each other's QR code. It was made for IPFS Camp 2019. You can look at their [presentation](https://www.dropbox.com/s/wodmbi6ico3inya/Offline%20Presentation.pdf?dl=0). The code of this simple app is still in their [GitHub repository](https://github.com/JustMaier/gathering).
+### Exchange messages
 
-#### Exchange messages on mobile
+[Berty.tech](https://berty.tech/) will be an IPFS-based messaging app that will ensure connections are made directly between devices, without the need for servers, and will work on a local network if there is no internet connection. It will also work over bluetooth or other proximity transport.
 
-[Berty.tech](https://berty.tech/) will be an IPFS-based messaging app that will ensure connections are made directly between devices, without the need for servers, and will work on a local network if there is no internet connection. It will also work over Bluetooth or other proximity transport. Its [code](https://github.com/berty/berty) is now open source.
+Berty are leading an effort to bring [IPFS to mobile](https://github.com/ipfs-shipyard/gomobile-ipfs). There are also some [guidelines](https://jkosem.gitbook.io/ipfs-mobile-guidelines/) made by professionals for the rise of IPFS on mobile.
 
-More generally, they lead an effort to bring [IPFS to mobile](https://github.com/ipfs-shipyard/gomobile-ipfs).
-There are also some [guidelines](https://jkosem.gitbook.io/ipfs-mobile-guidelines/) made by professionals for the rise of IPFS on mobile.
-
-#### Programming collaboration
+### Programming collaboration
 
 [Radicle](https://radicle.xyz/) is a code collaboration platform on top of IPFS.
 
-## Store assets on IPFS to let your user exchange data and content
+## Store assets
 
-By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits.
-If your users don't use an IPFS client, you will still have content deduplication out of the box. If they use it, your users will seed the content they use, decreasing the workload on your infrastructure, increase uptime of the service in case you go offline. Your users also won't contact your servers for the content they already have.
+By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits. If your users don't use an IPFS client, you will still have content deduplication out of the box. If they use it, your users will seed the content they use, decreasing the workload on your infrastructure, increase uptime of the service in case you go offline. Your users also won't contact your servers for the content they already have.
 
-### Examples of projects
-
-#### Decentralized virtual reality
+### Decentralized virtual reality
 
 [Decentraland](https://decentraland.org/) is a virtual world you can explore with a VR set, your computer, or your smartphone. They store all the assets on IPFS, so these heavy files can be fetched from several other users at the same time, for faster loading and synching.
 
-#### Video hosting platform
+### Video hosting platform
 
-[DTube](https://d.tube) is hosting their videos on IPFS to reduce stress on their infrastructure. The website itself is not decentralized, but it mainly manages coordination between users and discoverability of content. When browsers ship with IPFS natively, the benefits will only be greater. You can also learn how to replicate [Youtube on IPFS](https://simpleaswater.com/youtube-on-ipfs/)
+[DTube](https://d.tube) is hosting videos on IPFS to reduce stress on their infrastructure. The website itself is not decentralized, but it mainly manages coordination between users and discoverability of content. You can also learn how to replicate [Youtube on IPFS](https://simpleaswater.com/youtube-on-ipfs/)
 
-#### Co-host large datasets and collaborate on them
+### Co-host large datasets
 
-[Qri](https://qri.io/) is an open-source tool for the management of large datasets. Its users enjoy reduced hosting costs, traceability of changes in the data, rollback to previous versions, easier collaboration when updating data, etc. Deduplication across datasets also helps them keep their hard drive as small as their sync time.
+[Qri](https://qri.io/) is an open-source tool for the management of large datasets. Qri users enjoy reduced hosting costs, traceability of changes in the data, rollback to previous versions, and easier collaboration when updating data. De-duplication across datasets also helps to keep physical storage usage as small as possible, along with reducing sync times.
 
-#### Deadman switch
+### Deadman switch
 
-[Killcord](https://killcord.io/) is an open project to automatically publicly publish data if the user doesn't check in after some time. This can ensure the ongoing investigation of a journalist carries on if they are unable to do it themselves, as the information gathered will now be public. It can also protect their life by discouraging their enemies to make a move on them and accelerate the disclosure.
+[Killcord](https://killcord.io/) is an open project to automatically publicly publish data if the user doesn't check in after some time. This can ensure the ongoing investigation of a journalist carries on if they are unable to do it themselves, as the information gathered will now be public.
 
-#### Maps on IPFS
+### Maps on IPFS
 
-Ongoing work is aiming to store [OpenStreetMaps assets on IPFS](https://github.com/ipfs/devgrants/blob/8233f7df4a219122bcf31eaea289d654406e4443/targeted-grants/open-street-map-ipfs.md). In the long run, this could mean faster synchronization for apps using this scheme and lower bandwidth requirements for servers. Since the integrity of data is built-in thanks to content addressing, anyone could also help to host the data without needing the users to trust them to serve the data.
+There is an existing [IPFS devgrant](https://github.com/ipfs/devgrants) to host [OpenStreetMaps assets on IPFS](https://github.com/ipfs/devgrants/blob/8233f7df4a219122bcf31eaea289d654406e4443/targeted-grants/open-street-map-ipfs.md). In the long run, this could mean faster synchronization for apps using this scheme and lower bandwidth requirements for servers.
 
-#### Legal P2P video streaming platform featuring copyrighted movies
+### P2P video streaming platform
 
-[Blust.tv](http://www.blust.tv/) wants to use IPFS to distributes movies when requested by its users. By adding their proprietary secret sauce, they will reconcile legal video streaming and P2P networks.
+[Blust.tv](http://www.blust.tv/) wants to use IPFS to distribute movies when requested by its users. By adding their proprietary _secret-sauce_, they will facilitate the legal streaming of videos over P2P networks.
 
-#### Help host important data
+### Help host important data
 
-Thanks to recent improvement with IPFS Cluster, you can call for help to store your data without having to trust other nodes won't alter the data. With this "follower" mode([documentation](https://cluster.ipfs.io/documentation/collaborative/)), you can [replicate Pacman packages or COVID-19-related papers](https://collab.ipfscluster.io/) without knowing anything about IPFS internal wizardry.
+Thanks to recent improvement with IPFS Cluster, you can call for help to store your data without having to trust other nodes won't alter the data. With [collaborative mode](https://cluster.ipfs.io/documentation/collaborative) you can [replicate Pacman packages or COVID-19-related papers](https://collab.ipfscluster.io/) without needing to know the intricacies of IPFS.
 
-#### Video live streaming
+### Video live streaming
 
 Let your users stream from each other to remove the need for a server without overloading a popular streamer. You can get inspired by the [working prototype](https://github.com/tomeshnet/ipfs-live-streaming) of Toronto Mesh, or by the [experimentations](https://blog.fission.codes/experimenting-with-hls-video-streaming-and-ipfs/) of [Fission](https://fission.codes), a heavy player of the IPFS ecosystem. [Fleek](https://fleek.co) (previously known as Temporal) also did some [experimentation](https://medium.com/temporal-cloud/introducing-s3x-endless-ipfs-dynamic-possibilities-stream-videos-host-dynamic-websites-f0072127070f) using their Amazon S3/IPFS compatibility tool.
 
-## Use IPFS in your infrastructure
+## IPFS as infrastructure
 
-Using IPFS abstracts away a lot of the complexity of coordination between machines. Server-Clients, P2P, Cloud-based, on-premise. No matter your architecture, IPFS handles load balancing, deduplication, caching, and high availability out of the box. Its highly modular design also means you can easily customize it to your need.
+Using IPFS abstracts away a lot of the complexity of co-ordination between machines. No matter your architecture IPFS handles load balancing, deduplication, caching, and high availability out-of-the-box. It's highly modular design also means you can easily customize it to your need.
 
-### Examples of usages for data synchronization
+### Decentralized clusters
 
-#### Build a decentralize cluster for your data
+[IPFS Cluster](https://cluster.ipfs.io/) is the official tool to manage a cluster of nodes to replicate data. Like any distributed cluster, you will have the benefits of redundancy, load balancing, and write permission management. You can choose to connect your cluster to the rest of the IPFS network, or run it privately. You can also invite outsiders to help replicate your data without them having write access, thanks to the [collaborative mode](https://cluster.ipfs.io/documentation/collaborative/).
 
-[IPFS Cluster](https://cluster.ipfs.io/) is the official tool to manage a cluster of nodes to replicate data. Like any distributed cluster, you will have the benefits of redundancy, load balancing, write permission management, etc. You will also have IPFS's deduplication of content. You can choose to connect your cluster to the rest of the IPFS network or run it privately. You can also invite outsiders to help replicate your data without them having write access thanks to the [collaborative mode](https://cluster.ipfs.io/documentation/collaborative/).
+### Content delivery networks
 
-#### Build a Content Delivery Network
+A [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_network) (CDN) is a network of nodes storing content in places physically close to the users. Having servers physically closer to the users ensures lower latency, enabling load-balancing, and allows you to scale the availability of content with demand. The IPFS network is a CDN by design because each node will cache what they consume and serve that data to it's peers.
 
-A [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_network) (CDN) is a network of nodes storing content next to the users to ensure low latency, balance load, and scale availability of content with its popularity. The IPFS network is a CDN by design because each node will cache what they consume and serve them to its peers. You can tailor it to your need by building your infrastructure on top of it, or run you [private IPFS network]( link here).
+### Distributed package managers
 
-#### Distributed package managers
+The [Node package manager (NPM)](https://www.npmjs.com/) is mirrored on IPFS. By using the dedicated client [npm-on-ipfs](https://github.com/ipfs-shipyard/npm-on-ipfs) packages are fetched from IPFS and distributed to other clients needing them. For example, a team working in the same building will fetch packages from each other, meaning less network traffic costs for the company.
 
-The [npm](https://www.npmjs.com/) package manager for Javascript is now mirrored on IPFS. By using the dedicated client [npm-on-ipfs](https://github.com/ipfs-shipyard/npm-on-ipfs) packages are fetched from IPFS and then distributed to other clients needing them. For example, a team working in the same building will fetch packages from each other, meaning less network traffic costs for the company. They no interruption of the workflow if they lost their Internet connexion (or if [a package is suddenly unavailable on npm](https://qz.com/646467/how-one-programmer-broke-the-internet-by-deleting-a-tiny-piece-of-code/) ), as the packages are available on their local network. They will also experience faster synchronization thanks to fetching from the local network and parallel downloads.
+### Hosting software containers
 
-#### Speed software containers distribution in your infrastructure
+Netflix is on its way to use IPFS to [synchronize their Docker containers worldwide](https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/). Since each node fetches them from the fastest peers they know, synchronization is substantially faster than regular sync methods.
 
-[Netflix](https://www.netflix.com/) is on its way to use IPFS to synchronize its Docker containers worldwide. Since each node fetches them from the fastest peers they know, the whole synchronization is even faster than with a specialized solution. You can read more about Netflix use case [here](https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/).
-If you use K3S, you can take a look at this [open-source project](https://github.com/Duske/k3s-ipfs).
+### Efficently network factories
 
-#### Make an unstoppable factory 4.0
-
-[Actyx](https://www.actyx.com/) is helping the manufacturers to fast forward to Industry 4.0: the industry of connected machines. Actyx built a custom OS on top of IPFS which ensures all machines and monitors receive the orders, information, and parameters they need to function properly. This Edge Computing also means that machines can work independently if the network break for some time. You can yield all the benefits of a high-performance factory, without the risk of total dependence on the network.
-
-### Examples of projects to distribute computation
-
-#### Heavily parallelize Big Data processing
-
-On some heavy analysis, you can benefit from parallelizing calculations on several nodes. But sometimes, fetching the relevant dataset for each node to compute is longer than the analysis itself. Scott Brisbane proposed a design to speed up this step.
-You can find a relevant [thesis](https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf) about an implementation and its performances. Here is a [one-page](https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf) summary of the concept.
-
-#### Serverless computation
-
-Make your AWS instance compute [AWS Lambdas on IPFS](https://github.com/abhiyerra/ipswarm) files. Be careful, this is just the skeleton of full implementation.
-
-#### Distribute computation
-
-This can be achieved using the "[buckets](https://docs.textile.io/hub/buckets/)" of the Textile.io company. A [first library](https://github.com/ericr6/iexec-textile) was built during a 2-day hackathon for the computation of the rendering of videos.
+[Actyx](https://www.actyx.com/) is helping the manufacturers to fast forward to what they're calling _Industry 4.0_: the industry of connected machines. Actyx built a custom operating system on top of IPFS to ensures all machines and monitors receive the orders, information, and parameters they need to function properly.
 
 ## Lower your storage usage
 
 By storing identical data only once on your node, storage-constrained projects are another natural fit for IPFS.
 
-### Example of project
+### Compress telemetry data
 
-#### Compress telemetry data
-
-Sensor data are typically structured and sometimes repeat themselves. This allows IPFS to reduce disk usage even more than simple compression thanks to deduplication. [Here](http://blog.klaehn.org/2018/06/10/efficient-telemetry-storage-on-ipfs/) is a user story of an engineer explaining how
+Sensor data is typically-structured and often contains duplciated blocks of data. In cases where a lot of sensor data is recorded, IPFS can reduce disk usage even more than simple compression [thanks to it's de-duplication techniques](http://blog.klaehn.org/2018/06/10/efficient-telemetry-storage-on-ipfs/).
 
 ## Decentralize your data, website or app
 
