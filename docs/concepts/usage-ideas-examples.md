@@ -163,39 +163,33 @@ Several plugins exist to decentralize your website built with popular static-sit
 
 There are many available frameworks to build decentralized apps on IPFS. See for example [Dappkit](https://dappkit.io/), [Fission](https://fission.codes/), [Fleek](https://fleek.co/), or [Textile](https://textile.io/).
 
-### Share photos with friends, comment them and interact
-
-[Textile](https://textile.io/) is one of the oldest company building with IPFS. It developed the concept of Threads to transform IPFS into a social network featuring feeds and events. They built the [first app](https://github.com/textileio/photos) on top of it, letting you privately share photos with your friends: Textile Photos.
-
 ### SecureMyState
 
-This award-winning working prototype of an app for government/citizens communication was built in two days during the [DenverETH 2020](https://ethdenver.com/) hackathon. It lets Colorado citizens manage state-owned data about themselves, such as their driving license status or business registration.
-
-You can see its [code](https://github.com/twos-complement/eth-denver-2020), or a [slide presentation](https://www.figma.com/proto/usEzmsRYQCe3MP8qp4ur5H/Advance-Colorado?node-id=76%3A5625&viewport=143%2C-89%2C0.049727652221918106&scaling=scale-down).
+This app for government-citizen communication was built in two days during the [DenverETH 2020](https://ethdenver.com/) hackathon. It lets Colorado citizens manage state-owned data about themselves, such as their driving license status or business registration. You can see its [code](https://github.com/twos-complement/eth-denver-2020), or a [slide presentation](https://www.figma.com/proto/usEzmsRYQCe3MP8qp4ur5H/Advance-Colorado?node-id=76%3A5625&viewport=143%2C-89%2C0.049727652221918106&scaling=scale-down).
 
 ### Marketplace
 
-[Haven](https://gethaven.app/) is a privacy-focused mobile app for shopping. Haven doesn't know its users' buying history, let them pay in cryptos, and doesn't take cut on the sales.
+[Haven](https://gethaven.app/) is a privacy-focused mobile app for shopping. Haven doesn't know its users' buying history, lets them pay with crypto, and doesn't take a cut on.
 
 ### Torrent tracker hub
 
-[BitTorrent](https://en.wikipedia.org/wiki/Bittorrent) is a powerful P2P file-sharing technology, but it works better with the help of centralized "trackers" helping users know who has what. Some people tried with some success to decentralize them. You can find their working prototype [here](https://github.com/urbanguacamole/torrent-paradise).
+[BitTorrent](https://en.wikipedia.org/wiki/Bittorrent) is a powerful P2P file-sharing technology, but it works better with the help of centralized _trackers_ helping users know who has what. Some people tried with some success to decentralize them. You can find their working prototype [here](https://github.com/urbanguacamole/torrent-paradise).
 
 ### COVID-19 tracker
 
-This dead-simple tracker API lets any IPFS node request the latest data about the COVID-19 pandemics. See the code on [GitHub](https://github.com/RTradeLtd/ipcoronafs).
+This simple tracker API lets any IPFS node request the latest data about the COVID-19 pandemics. See the code on [GitHub](https://github.com/RTradeLtd/ipcoronafs).
 
-### Make your software distribution more distributed
+### GitHub integration
 
 This simple [GitHub Action](https://github.com/marketplace/actions/upload-to-ipfs) lets you upload your GitHub Releases on IPFS automatically.
 
 ### Backup you Wolfram data
 
-In a recent update, Wolfram let users store their computation or assets on IPFS. Check out the [version notes](https://writings.stephenwolfram.com/2020/03/in-less-than-a-year-so-much-new-launching-version-12-1-of-wolfram-language-mathematica/) to know how.
+In a recent update, Wolfram let users store their computation or assets on IPFS. Check out the [version notes](https://writings.stephenwolfram.com/2020/03/in-less-than-a-year-so-much-new-launching-version-12-1-of-wolfram-language-mathematica/) for more information.
 
 ### Music streaming platform
 
-[Audius](https://audius.co/) is a music streaming platform built on IPFS, where artists are in control, where no fees are taken by the platform, and where listeners can enjoy their music while offline.
+[Audius](https://audius.co/) is a music streaming platform built on IPFS. Artists are in control, no fees are taken by the platform, and listeners can enjoy their music while offline.
 
 ### Music player
 
@@ -205,11 +199,9 @@ In a recent update, Wolfram let users store their computation or assets on IPFS.
 
 Some core pieces of the web are still centralized, making it more prone to break or being censored. IPFS can help and make the web more resilient.
 
-### Examples of projects
+### Decentralized DNS
 
-### Decentralize the DNS
-
-The [Domain Name System](https://en.wikipedia.org/wiki/Domain_Name_System) (DNS) is one of the most centralized pieces of the web. By having to ask a central place to know where to find  `google.com` or `facebook.com`, it is a central point of failure, be it a technical incident, malicious hack, or voluntary censorship. Backing the DNS on IPFS could improve its availability. A [prototype](https://www.npmjs.com/package/orbitdns) for Javascript has been published on npm.
+The [Domain Name System](https://en.wikipedia.org/wiki/Domain_Name_System) (DNS) is one of the most centralized pieces of the web. By having to ask a central place to know where to find  `google.com` or `facebook.com`, it is a central point of failure. Backing up the DNS on IPFS could improve its availability. A prototype for Javascript has been [published on NPM](https://www.npmjs.com/package/orbitdns).
 
 ### Archive the web
 
@@ -217,45 +209,39 @@ Thanks to de-duplication, IPFS is a powerful tool for archiving the web. The [In
 
 ### Fight censorship
 
-Wikipedia is not accessible in Turkey for a few years, but the Protocol Labs is hosting a mirror of several languages on IPFS. See the original [blog post](https://blog.ipfs.io/24-uncensorable-wikipedia/) and the [project code](https://github.com/ipfs/distributed-wikipedia-mirror).
+Wikipedia has not been accessible in Turkey for a few years. The company behind IPFS, Protocol Labs, is hosting a mirror of Wikipedia on IPFS. See the original [blog post](https://blog.ipfs.io/24-uncensorable-wikipedia/) and the [project code](https://github.com/ipfs/distributed-wikipedia-mirror) for more information.
 
-### Build an alternative ISP
+### Alternative ISP
 
 [Althea](https://althea.net/about) is building an alternative [Internet Service Provider](https://en.wikipedia.org/wiki/Internet_service_provider) (ISP) in the US as the low level of competition brings the quality of service down and prices up. Althea especially targets rural areas, where the coverage by traditional ISP is low.
 
 ## Blockchain use-cases
 
-IPFS is a natural fit for [blockchain](https://en.wikipedia.org/wiki/Blockchain) use cases. The common state of the chain is distributed on-chain among participants, and specific data is stored on IPFS. Thanks to content addressing, the blockchain only needs to store the IPFS multi-hash, and users are sure to fetch correct data from any of their peers. This architecture is becoming a de facto standard for blockchain apps based on Ethereum.
+IPFS is a natural fit for [blockchain](https://en.wikipedia.org/wiki/Blockchain) use cases. The common state of the chain is distributed on-chain among participants, and specific data is stored on IPFS. Thanks to content addressing, the blockchain only needs to store the IPFS multi-hash, and users are sure to fetch correct data from any of their peers. This architecture is becoming the de-facto standard for blockchain applications.
 
-### Create a global market place for data storage
+### Global market place for data storage
 
-[Filecoin](https://filecoin.io/) is not only a blockchain on IPFS. It is the blockchain *of* IPFS. Filecoin lets any storage owner host data for users who need additional space. It is one of the reasons IPFS exists in the first place and will be a great accelerator of the IPFS growth once fully online later this year. The project is developed by [Protocol Labs](https://protocol.ai/), which are stewarding the development of IPFS.
+[Filecoin](https://filecoin.io/) lets any storage owner host data for users who need additional space. It is one of the reasons IPFS exists in the first place and will be a great accelerator of the IPFS growth once fully online later this year. The project is developed by [Protocol Labs](https://protocol.ai/).
+
 Textile.io is building the [Powergate](https://blog.textile.io/filecoin-developer-tools-concepts/) tool for your app to interact with Filecoin once the main net is launched.
 
 ### Reconcile IoT and privacy
 
-The [Iotex](https://www.iotex.io/) blockchain wants to build an ecosystem where IoT data are owned by their respective owners. Data of their hardware devices such as cameras can be stored on local hardware, backed up to cloud, or to IPFS. Future integration with Filecoin will further reinforce the ownership of data by the users.
+The [Iotex](https://www.iotex.io/) blockchain wants to build an ecosystem where Internet-of-Things (IoT) data is owned by the owners of those devices. Data from hardware devices such as cameras can be stored on local hardware, backed up to cloud, or to IPFS. Future integration with Filecoin will further reinforce the ownership of data by the users.
 
-### Send cryptos to a human-readable address
+Tangle is a distributed ledger of the [IOTA](https://www.iota.org/) network, and it supports hosting IoT data on IPFS. You can find out more [on GitHub](https://github.com/iotaledger/poc-ipfs).
 
-This project lets you have a human-readable Ethereum address, so people don't have to send it to a long, error-prone address.
-You can check it [here](https://devfolio.co/submissions/humanize-pay).
+### Send crypto to human-readable addresses
 
-### Make AI an online service
+The [Humanize Pay project](https://devfolio.co/submissions/humanize-pay) lets you have a human-readable Ethereum address, so users don't have to deal with long and un-memorable addresses.
 
-[MindSync](https://mindsync.ai/) wants to build a blockchain hosting AI competitions and let AI skills offer and demand meet. Consumers can hire specialists per task, and they are paid in cryptos.
+### AI as a service
 
-### Create a decentralized exchange for Ethereum ERC20 tokens
+[MindSync](https://mindsync.ai/) wants to build a blockchain hosting AI competitions and let AI skills offer and demand meet.
 
-This [project](https://github.com/5daytech/udex-app-android) is still in a very early phase but may inspire some of you.
-
-### A platform for exchanging notes, courses, and more for education
+### Education platform
 
 [RocketShoes](https://www.rocketshoes.io/) is an education platform where students produce and tag learning materials, assignments, notes, and digital assets. These are stored on IPFS, and the blockchain ensures the timestamping, proof of ownership, and incentivization layer.
-
-### Distribute IoT data
-
-The Tangle (the distributed ledger of the [IOTA](https://www.iota.org/) network) supports hosting IoT data on IPFS, again for better availability, de-duplication, etc. You can find out more [here](https://github.com/iotaledger/poc-ipfs).
 
 ### Query the DWeb across blockchains
 
@@ -273,13 +259,13 @@ With IPFS and a blockchain, you can prove ownership of a file at a certain time 
 
 [Robonomics](https://robonomics.network/) is building a framework on top of Ethereum and IPFS for [smart cities](https://en.wikipedia.org/wiki/Smart_city) apps to easily exchange data (from sensors or computation, for example).
 
-### Make a decentralized prediction market
+### Decentralized prediction markets
 
 [Augur](https://www.augur.net/) is a blockchain and decentralized market where you can bet on anything or request prediction from the crowd wisdom. Like so many blockchain-based apps, the data is hosted on IPFS.
 
-## Decentralized Identity (DID)
+## Decentralized Identity
 
-A [Decentralized Identity](https://en.wikipedia.org/wiki/Decentralized_Identifiers) is a concept of storing all your personal data on your devices rather than let every service you use store a partial copy of it as it is now. You having control of your data means that you decide which app has access to what, that you only fill your information once, that you can revoke access, etc. DID is a hot topic for Web3.0, and IPFS is one of the core technology a lot of engineers build DID around. The identity wallet [Nomios](https://nomios.io/) shared [some thoughts](https://docs.google.com/presentation/d/1HbydOI0w-T_FY23zCACAyHmzDq1ZvyG2tklpPSm6OQQ/edit#slide=id.g5c88e8f60d_0_11) about DID in general during the [IPFS Camp 2019](https://github.com/ipfs/camp).
+[Decentralized Identity](https://en.wikipedia.org/wiki/Decentralized_Identifiers) is the concept of storing all your personal data on your devices rather than let every service you use store a partial copy of it. You having control of your data means that you decide which app has access to what, that you only fill your information once, and that you can revoke access. Decentralized identity is a hot topic, and IPFS is one of the core technologies a lot of engineers build around. The identity wallet [Nomios](https://nomios.io/) shared [some thoughts](https://docs.google.com/presentation/d/1HbydOI0w-T_FY23zCACAyHmzDq1ZvyG2tklpPSm6OQQ/edit#slide=id.g5c88e8f60d_0_11) about decentralized identity general during the [IPFS Camp 2019](https://github.com/ipfs/camp).
 
 ### Element
 
@@ -287,23 +273,19 @@ A [Decentralized Identity](https://en.wikipedia.org/wiki/Decentralized_Identifie
 
 ### 3ID Connect
 
-3ID Connect is developed by [3Box](https://3box.io/), a personal data manager for apps leveraging IPFS. 3Box wants to make using DID as simple as clicking on "Connect with Google" or "Connect with Facebook". You can read their [article](https://medium.com/3box/introducing-3id-connect-531af4f84d3f) explaining how to bring it to your app.
+3ID Connect is developed by [3Box](https://3box.io/), a personal data manager for apps leveraging IPFS. 3Box wants to make using decentralized identity as simple as clicking on _Connect with Google_ or _Connect with Facebook_. You can read their [article](https://medium.com/3box/introducing-3id-connect-531af4f84d3f) explaining how to bring it to your app.
 
 ### Microsoft ION
 
-[Microsoft](https://www.microsoft.com/) started experimentation by pinning some DID information to IPFS and publishing the hash to the Bitcoin blockchain. This design is well known for blockchain-based apps and is here use for DID. Find more details [here](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/toward-scalable-decentralized-identifier-systems/ba-p/560168).
+[Microsoft](https://www.microsoft.com/) started experimentation by pinning some decentralized identity information to IPFS and publishing the hash to the Bitcoin blockchain. Microsoft wrote a [blog post about their findings](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/toward-scalable-decentralized-identifier-systems/ba-p/560168).
 
 ### Ceramic Protocol
 
-The [Ceramic Protocol](https://www.ceramic.network/) is another proposition for DID on IPFS, along with a complete protocol for data and document exchanges.
+The [Ceramic Protocol](https://www.ceramic.network/) is another proposition for decentralized identity on IPFS, along with a complete protocol for data and document exchanges.
 
 ### Nomios
 
 [Nomios](https://nomios.io/) is another promising solution that started to work with IPFS from the start. Check out their website for more information.
-
-## Some additional resources and ideas
-
-More implemented ideas can be found on [Awesome IPFS](https://awesome.ipfs.io/).
 
 ## Non-implemented use cases
 
