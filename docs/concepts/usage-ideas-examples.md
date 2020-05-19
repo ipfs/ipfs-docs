@@ -7,7 +7,7 @@ description: Explore some helpful use cases, ideas, and examples for the InterPl
 
 # Usage ideas and examples
 
-IPFS is a versatile technology and can be used in a huge array of use-cases. Below is a long, yet far from exhaustive, list of projects built on IPFS. Some are minimalistic prototypes, and other are complete projects backed by mature companies.
+IPFS is a versatile technology and can be used in a huge array of use-cases. Below is a long, yet far from exhaustive, list of projects built on IPFS. Some are minimalistic prototypes, and others are complete projects backed by mature companies.
 
 ## Share files
 
@@ -17,9 +17,9 @@ One of the simplest use-cases to grasp is the sharing of files between peers.
 
 [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) is the official desktop client for IPFS. It comes with a built-in IPFS node that lets you pin files and gives you a link to share them. This is generally seen as the easiest point-of-entry into the IPFS ecosystem.
 
-[Arbore](https://arbo.re) Arbore is a free and open-source file sharing application that enables you to send your pictures, documents, files to your contacts privately and without limits.
+[Arbore](https://arbo.re) Arbore is a free and open-source file-sharing application that enables you to send your pictures, documents, files to your contacts privately and without limits.
 
-Another alternative is [Orion](https://orion.siderus.io). Orion is an easy to use IPFS Desktop client. It helps sharing content on the public peer to peer network without any command line or technical knowledge. The app includes everything needed to start your own personal IPFS node.
+Another alternative is [Orion](https://orion.siderus.io). Orion is an easy to use IPFS Desktop client. It helps to share content on the public peer to peer network without any command line or technical knowledge. The app includes everything needed to start your own personal IPFS node.
 
 ### Share your files or sell copies of it
 
@@ -29,7 +29,7 @@ Another alternative is [Orion](https://orion.siderus.io). Orion is an easy to us
 
 ### Dead drop
 
-A [dead drop](https://deaddrops.com/) is a drive or another storage device that is physically immobilized in a public location for people to pick-up and deposit files. There is now an IPFS version thanks to the [IPFS Dead Drop project](https://github.com/c-base/ipfs-deaddrop).
+A [dead drop](https://deaddrops.com/) is a drive or another storage device that is physically immobilized in a public location for people to pick-up and deposit files. There is now an IPFS version, thanks to the [IPFS Dead Drop project](https://github.com/c-base/ipfs-deaddrop).
 
 ## Collaborate
 
@@ -37,11 +37,11 @@ Let IPFS coordinate the flow of data between you and your colleagues, even when 
 
 ### Collaborate on written documents
 
-[PeerPad.org](https://peerpad.net) is a service allows you to write, collaborate and export markdown documents directly in your browser, similar to how Google Docs works.
+[PeerPad.org](https://peerpad.net) is a service that allows you to write, collaborate, and export Markdown documents directly in your browser, similar to how Google Docs works.
 
 ### Version control
 
-The Inter-Planetary Version Control system (IPVC) is a distributed version control system similar to [git](https://git-scm.com/), but built on IPFS. It is suitable for any kind of data, not only human readable content. It is also particularly suitable for versioning large files. The underlying concepts are heavily influenced by [git](https://git-scm.com/) and [gitless](https://gitless.com/).
+The Inter-Planetary Version Control system (IPVC) is a distributed version control system similar to [git](https://git-scm.com/) but built on IPFS. It is suitable for any kind of data, not only human-readable content. It is also particularly suitable for versioning large files. The underlying concepts are heavily influenced by [git](https://git-scm.com/) and [gitless](https://gitless.com/).
 
 ### Connect event attendants
 
@@ -49,9 +49,9 @@ The Inter-Planetary Version Control system (IPVC) is a distributed version contr
 
 ### Exchange messages
 
-[Berty.tech](https://berty.tech/) will be an IPFS-based messaging app that will ensure connections are made directly between devices, without the need for servers, and will work on a local network if there is no internet connection. It will also work over bluetooth or other proximity transport.
+[Berty.tech](https://berty.tech/) will be an IPFS-based messaging app that will ensure connections are made directly between devices, without the need for servers, and will work on a local network if there is no internet connection. It will also work over Bluetooth or other proximity transport.
 
-Berty are leading an effort to bring [IPFS to mobile](https://github.com/ipfs-shipyard/gomobile-ipfs). There are also some [guidelines](https://jkosem.gitbook.io/ipfs-mobile-guidelines/) made by professionals for the rise of IPFS on mobile.
+Berty is leading the effort to bring [IPFS to mobile](https://github.com/ipfs-shipyard/gomobile-ipfs). There are also some [guidelines](https://jkosem.gitbook.io/ipfs-mobile-guidelines/) made by professionals for the rise of IPFS on mobile.
 
 ### Programming collaboration
 
@@ -59,7 +59,7 @@ Berty are leading an effort to bring [IPFS to mobile](https://github.com/ipfs-sh
 
 ## Store assets
 
-By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits. If your users don't use an IPFS client, you will still have content deduplication out of the box. If they use it, your users will seed the content they use, decreasing the workload on your infrastructure, increase uptime of the service in case you go offline. Your users also won't contact your servers for the content they already have.
+By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits. If your users don't use an IPFS client, you will still have content de-duplication out of the box. If they use it, your users will seed the content they use, decreasing the workload on your infrastructure, increase uptime of the service in case you go offline. Your users also won't contact your servers for the content they already have.
 
 ### Decentralized virtual reality
 
@@ -87,33 +87,33 @@ There is an existing [IPFS devgrant](https://github.com/ipfs/devgrants) to host 
 
 ### Help host important data
 
-Thanks to recent improvement with IPFS Cluster, you can call for help to store your data without having to trust other nodes won't alter the data. With [collaborative mode](https://cluster.ipfs.io/documentation/collaborative) you can [replicate Pacman packages or COVID-19-related papers](https://collab.ipfscluster.io/) without needing to know the intricacies of IPFS.
+Thanks to recent improvement with IPFS Cluster, you can call for help to store your data without having to trust other nodes won't alter the data. With [collaborative mode](https://cluster.ipfs.io/documentation/collaborative), you can [replicate Pacman packages or COVID-19-related papers](https://collab.ipfscluster.io/) without needing to know the intricacies of IPFS.
 
-### Video live streaming
+### Video live-streaming
 
 Let your users stream from each other to remove the need for a server without overloading a popular streamer. You can get inspired by the [working prototype](https://github.com/tomeshnet/ipfs-live-streaming) of Toronto Mesh, or by the [experimentations](https://blog.fission.codes/experimenting-with-hls-video-streaming-and-ipfs/) of [Fission](https://fission.codes), a heavy player of the IPFS ecosystem. [Fleek](https://fleek.co) (previously known as Temporal) also did some [experimentation](https://medium.com/temporal-cloud/introducing-s3x-endless-ipfs-dynamic-possibilities-stream-videos-host-dynamic-websites-f0072127070f) using their Amazon S3/IPFS compatibility tool.
 
 ## IPFS as infrastructure
 
-Using IPFS abstracts away a lot of the complexity of co-ordination between machines. No matter your architecture IPFS handles load balancing, deduplication, caching, and high availability out-of-the-box. It's highly modular design also means you can easily customize it to your need.
+Using IPFS allows you to abstract away a lot of the complexity of coordination between machines. No matter your architecture IPFS handles load balancing, de-duplication, caching, and high availability out-of-the-box. It's highly modular design also means you can easily customize it to your need.
 
 ### Decentralized clusters
 
-[IPFS Cluster](https://cluster.ipfs.io/) is the official tool to manage a cluster of nodes to replicate data. Like any distributed cluster, you will have the benefits of redundancy, load balancing, and write permission management. You can choose to connect your cluster to the rest of the IPFS network, or run it privately. You can also invite outsiders to help replicate your data without them having write access, thanks to the [collaborative mode](https://cluster.ipfs.io/documentation/collaborative/).
+[IPFS Cluster](https://cluster.ipfs.io/) is the official tool to manage a cluster of nodes to replicate data. Like any distributed cluster, you will have the benefits of redundancy, load balancing, and write permission management. You can choose to connect your cluster to the rest of the IPFS network or run it privately. You can also invite outsiders to help replicate your data without them having write-access, thanks to the [collaborative mode](https://cluster.ipfs.io/documentation/collaborative/).
 
 ### Content delivery networks
 
-A [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_network) (CDN) is a network of nodes storing content in places physically close to the users. Having servers physically closer to the users ensures lower latency, enabling load-balancing, and allows you to scale the availability of content with demand. The IPFS network is a CDN by design because each node will cache what they consume and serve that data to it's peers.
+A [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_network) (CDN) is a network of nodes storing content in places physically close to the users. Having servers physically closer to the users ensures lower latency, enabling load-balancing, and allows you to scale the availability of content with demand. The IPFS network is a CDN by design because each node will cache what they consume and serve that data to its peers.
 
 ### Distributed package managers
 
-The [Node package manager (NPM)](https://www.npmjs.com/) is mirrored on IPFS. By using the dedicated client [npm-on-ipfs](https://github.com/ipfs-shipyard/npm-on-ipfs) packages are fetched from IPFS and distributed to other clients needing them. For example, a team working in the same building will fetch packages from each other, meaning less network traffic costs for the company.
+The [Node package manager (NPM)](https://www.npmjs.com/) is mirrored on IPFS. By using the dedicated client [npm-on-ipfs](https://github.com/ipfs-shipyard/npm-on-ipfs), packages are fetched from IPFS and distributed to other clients needing them. For example, a team working in the same building will fetch packages from each other, meaning less network traffic costs for the company.
 
 ### Hosting software containers
 
 Netflix is on its way to use IPFS to [synchronize their Docker containers worldwide](https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/). Since each node fetches them from the fastest peers they know, synchronization is substantially faster than regular sync methods.
 
-### Efficently network factories
+### Efficient network factories
 
 [Actyx](https://www.actyx.com/) is helping the manufacturers to fast forward to what they're calling _Industry 4.0_: the industry of connected machines. Actyx built a custom operating system on top of IPFS to ensures all machines and monitors receive the orders, information, and parameters they need to function properly.
 
@@ -123,167 +123,157 @@ By storing identical data only once on your node, storage-constrained projects a
 
 ### Compress telemetry data
 
-Sensor data is typically-structured and often contains duplciated blocks of data. In cases where a lot of sensor data is recorded, IPFS can reduce disk usage even more than simple compression [thanks to it's de-duplication techniques](http://blog.klaehn.org/2018/06/10/efficient-telemetry-storage-on-ipfs/).
+Sensor data is typically-structured and often contains duplicated blocks of data. In cases where a lot of sensor data is recorded, IPFS can reduce disk usage even more than simple compression [thanks to its de-duplication techniques](http://blog.klaehn.org/2018/06/10/efficient-telemetry-storage-on-ipfs/).
 
-## Decentralize your data, website or app
+## Decentralize your data
 
-By doing so, you increase availability in case your server runs into an issue, your ISP is unhappy with what you publish, or a hostile government forces it to take it down. You will also decrease the load time for your swarm-connected users, and natively enable your app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native deduplication and caching. If hosted on the Ethereum Name System, users of the IPFS Companion or Metamask browser extensions will find it no matter what. Remember that your user will always be able to use the gateways such as IPFS website's or [CloudFlare's](https://www.cloudflare.com/distributed-web-gateway/) to access your app with unmodified browser if needed.
+By decentralizing your data, you increase availability in case your server runs into an issue, your ISP is unhappy with what you publish, or a hostile government issues a take-down-order. You will also decrease the load time for your swarm-connected users, and natively enable your app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native de-duplication and caching.
 
-### Resources to do so
+### Decentralized database
 
-#### Decentralized database
+[OrbitDB](https://github.com/orbitdb/orbit-db) is a serverless, distributed, peer-to-peer database. OrbitDB uses IPFS as its data storage and IPFS Pubsub to automatically sync databases with peers. It's an eventually consistent database that uses CRDTs for conflict-free database merges, making OrbitDB an excellent choice for decentralized apps (dApps), blockchain applications, and offline-first web applications. There are Go and Javascript implementations available.
 
-[OrbitDB](https://github.com/orbitdb/orbit-db) is the go-to database on IPFS. You rip the benefits of decentralization and traditional databases. Several participants can work on the data offline, and it's synchronized when they come back online thanks to CRDT. There are a [Go](https://github.com/orbitdb/orbit-db) and a Javascript flavor. If you are using MongoDB, you might be more comfortable with [ThreadDB](https://docs.textile.io/threads/introduction/) or [AvionDB](https://github.com/dappkit/aviondb-onboard), which are unstructured databases built on top of IPFS.
+If you are currently using MongoDB, you might be more comfortable with [ThreadDB](https://docs.textile.io/threads/introduction/) or [AvionDB](https://github.com/dappkit/aviondb-onboard), which are unstructured databases built on top of IPFS.
 
-#### IPFS hosting with Textile
+### IPFS hosting with Textile
 
-[Textile](https://Textile.io) is a hosting company on IPFS developing the layers on top of IPFS. Among other things, they came up with [buckets](https://docs.textile.io/hub/buckets/), which are separated "cloud" environment. More generally, Textile has built an impressive toolset for dApp building and integration. See their [blog post](https://blog.textile.io/announcing-the-textile-protocol-hub/) for more information on this toolset.
+[Textile](https://Textile.io) is a hosting company on IPFS developing the layers on top of IPFS. Among other things, they came up with separated _cloud_ environments called [buckets](https://docs.textile.io/hub/buckets/). Textile has also built an impressive toolset for [building decentralized applications and integrations](https://blog.textile.io/announcing-the-textile-protocol-hub/).
 
-#### Amazon S3 integration
+### AWS S3 integration
 
-If you are using AWS S3 connections for your cloud, you can use [this storage server](https://github.com/RTradeLtd/s3x) to replicate it to IPFS with minimal disruption of your workflow. It is forked from the popular object storage server MinIO by the long-standing IPFS company RTrade and should be eventually reintegrated into MinIO natively. The default pinning service is [Temporal](https://temporal.cloud/), but you can choose your own.
+If you are using Amazon Web Service's S3 connections for your cloud, you can use [RTrade's storage server](https://github.com/RTradeLtd/s3x) to replicate it on IPFS with minimal disruption to your workflow. It is forked from the popular object storage server [MinIO](https://min.io/) and will be re-integrated into MinIO natively sometime soon.
 
-#### Make IPFS alternative storage in your NextCloud app
+### NextCloud integration
 
-This is made possible by [this open-source project](https://github.com/justicenode/files_external_ipfs).
+JusticeNode has created [an extention](https://github.com/justicenode/files_external_ipfs) for the popular self-hosted cloud service NextCloud. This integration allows users to use IPFS as external storage.
 
-#### Deploy your GitHub website on IPFS
+### Deploy your GitHub website on IPFS
 
-With [Fleek](https://fleek.co/) (owned by Temporal.cloud), you write your website on Github, then deploy it on IPFS in a few clicks. Upon updating it on GitHub, it's updated online too.
+[Fleek.co](https://fleek.co/) allows you to effortlessly build sites & apps on IPFS. The workflow is similar to that of Netlify: developers can link their GitHub project to Fleek and have it automatically built and deployed on IPFS whenever a change is made to a specific branch. Fleek also comes with ENS and domain name integration.
 
-#### Build your app on IPFS and publish it on Ethereum
+### Ethereum and Solidity specific applications
 
-[Embark](https://github.com/embarklabs/embark) is a framework for Javascript and Solidity application. The logic is on Ethereum thanks to smart contracts, and assets and data are stored on IPFS thanks to OrbitDB.  
+[Embark](https://framework.embarklabs.io/) is an all-in-one developer platform for building and deploying decentralized applications. It currently integrates with Ethereum blockchains, decentralized storage like IPFS, and decentralized communication platforms like Whisper and Orbit.
 
-#### Move your Vue or Gatsby website to IPFS
+### Static-site generators
 
-Several plugins exist to decentralize your website built with a popular framework. [Here](https://github.com/cwaring/vuepress-plugin-ipfs) is one for Vue and [here](https://github.com/moxystudio/gatsby-plugin-ipfs) is one for Gatsby.
+Several plugins exist to decentralize your website built with popular static-site generators like [VuePress](https://github.com/cwaring/vuepress-plugin-ipfs) or [Gatsby](https://github.com/moxystudio/gatsby-plugin-ipfs).
 
-#### Register your domain on a blockchain, and your website on IPFS
-
-The Ethereum Name Service is now the standard for decentralizing domain names (meaning the address of your website) without needing the centralized DNS. You can see a (technical) demo of the concept [here](https://www.youtube.com/watch?v=3AS2BD22DZg), and a presentation [here](https://github.com/ipfs/camp/blob/master/LIGHTNING_TALKS/ipfscamp2019-lightningtalk-ensipfs.pdf). IPFS-upgraded browsers like [Brave](https://brave.com) or [Opera](https://www.opera.com) can resolve them natively, and any browser with the [IPFS Companion extension](https://github.com/ipfs-shipyard/ipfs-companion) can as well.
-
-[Unstoppable Domains](https://unstoppabledomains.com/) is another solution letting you easily deploy your website on IPFS. You will also need a browser extension to access the website.
-
-#### Build a dApp
+## Build a dApp
 
 There are many available frameworks to build decentralized apps on IPFS. See for example [Dappkit](https://dappkit.io/), [Fission](https://fission.codes/), [Fleek](https://fleek.co/), or [Textile](https://textile.io/).
 
-### Examples of projects doing so
+### Share photos with friends, comment them and interact
 
-#### Share photos with friends, comment them and interact
+[Textile](https://textile.io/) is one of the oldest company building with IPFS. It developed the concept of Threads to transform IPFS into a social network featuring feeds and events. They built the [first app](https://github.com/textileio/photos) on top of it, letting you privately share photos with your friends: Textile Photos.
 
-[Textile](https://textile.io/) is one of the oldest company building with IPFS. It developed the concept of Threads to transform IPFS into a social network featuring feeds and events. They built the [first app](https://github.com/textileio/photos) on top of it letting you privately share photos with your friends: Textile Photos.
-
-#### SecureMyState
+### SecureMyState
 
 This award-winning working prototype of an app for government/citizens communication was built in two days during the [DenverETH 2020](https://ethdenver.com/) hackathon. It lets Colorado citizens manage state-owned data about themselves, such as their driving license status or business registration.
 
 You can see its [code](https://github.com/twos-complement/eth-denver-2020), or a [slide presentation](https://www.figma.com/proto/usEzmsRYQCe3MP8qp4ur5H/Advance-Colorado?node-id=76%3A5625&viewport=143%2C-89%2C0.049727652221918106&scaling=scale-down).
 
-#### Marketplace
+### Marketplace
 
 [Haven](https://gethaven.app/) is a privacy-focused mobile app for shopping. Haven doesn't know its users' buying history, let them pay in cryptos, and doesn't take cut on the sales.
 
-#### Torrent tracker hub
+### Torrent tracker hub
 
 [BitTorrent](https://en.wikipedia.org/wiki/Bittorrent) is a powerful P2P file-sharing technology, but it works better with the help of centralized "trackers" helping users know who has what. Some people tried with some success to decentralize them. You can find their working prototype [here](https://github.com/urbanguacamole/torrent-paradise).
 
-#### COVID-19 tracker
+### COVID-19 tracker
 
 This dead-simple tracker API lets any IPFS node request the latest data about the COVID-19 pandemics. See the code on [GitHub](https://github.com/RTradeLtd/ipcoronafs).
 
-#### Make your software distribution more distributed
+### Make your software distribution more distributed
 
 This simple [GitHub Action](https://github.com/marketplace/actions/upload-to-ipfs) lets you upload your GitHub Releases on IPFS automatically.
 
-#### Backup you Wolfram data
+### Backup you Wolfram data
 
 In a recent update, Wolfram let users store their computation or assets on IPFS. Check out the [version notes](https://writings.stephenwolfram.com/2020/03/in-less-than-a-year-so-much-new-launching-version-12-1-of-wolfram-language-mathematica/) to know how.
 
-#### Music streaming platform
+### Music streaming platform
 
 [Audius](https://audius.co/) is a music streaming platform built on IPFS, where artists are in control, where no fees are taken by the platform, and where listeners can enjoy their music while offline.
 
-#### Music player
+### Music player
 
 [Diffuse.sh](https://diffuse.sh/) is an online music player that you can connect to your music repositories to listen to it from anywhere. You can now connect it to IPFS repositories.
 
 ## Decentralize the Web itself
 
-Some core pieces of the Web are still centralized, making it more prone to break or being censored. IPFS can help and make the Web more resilient.
+Some core pieces of the web are still centralized, making it more prone to break or being censored. IPFS can help and make the web more resilient.
 
 ### Examples of projects
 
-#### Decentralize the DNS
+### Decentralize the DNS
 
-The [Domain Name System](https://en.wikipedia.org/wiki/Domain_Name_System) (DNS) is one of the most centralized pieces of the Web. By having to ask a central place to know where to find  "google.com" or "facebook.com", it is a central point of failure, be it a technical incident, malicious hack, or voluntary censorship. Backing the DNS on IPFS could improve its availability. A [prototype](https://www.npmjs.com/package/orbitdns) for Javascript has been published on npm.
+The [Domain Name System](https://en.wikipedia.org/wiki/Domain_Name_System) (DNS) is one of the most centralized pieces of the web. By having to ask a central place to know where to find  `google.com` or `facebook.com`, it is a central point of failure, be it a technical incident, malicious hack, or voluntary censorship. Backing the DNS on IPFS could improve its availability. A [prototype](https://www.npmjs.com/package/orbitdns) for Javascript has been published on npm.
 
-#### Archive the web
+### Archive the web
 
-Thanks to deduplication, IPFS is a powerful tool for archiving the Web. The [InterPlanetary Wayback](https://github.com/oduwsdl/ipwb) is tackling this endeavor.
+Thanks to de-duplication, IPFS is a powerful tool for archiving the web. The [InterPlanetary Wayback](https://github.com/oduwsdl/ipwb) is tackling this endeavor.
 
-#### Fight censorship
+### Fight censorship
 
 Wikipedia is not accessible in Turkey for a few years, but the Protocol Labs is hosting a mirror of several languages on IPFS. See the original [blog post](https://blog.ipfs.io/24-uncensorable-wikipedia/) and the [project code](https://github.com/ipfs/distributed-wikipedia-mirror).
 
-#### Build an alternative ISP
+### Build an alternative ISP
 
 [Althea](https://althea.net/about) is building an alternative [Internet Service Provider](https://en.wikipedia.org/wiki/Internet_service_provider) (ISP) in the US as the low level of competition brings the quality of service down and prices up. Althea especially targets rural areas, where the coverage by traditional ISP is low.
 
 ## Blockchain use-cases
 
-IPFS is a natural fit for [blockchain](https://en.wikipedia.org/wiki/Blockchain) use cases. The common state of the chain is distributed on-chain among participants, and specific data is stored on IPFS. Thanks to content addressing, the blockchain only needs to store the IPFS multihash, and users are sure to fetch correct data from any of their peers. This architecture is becoming a de facto standard for blockchain apps based on Ethereum.
+IPFS is a natural fit for [blockchain](https://en.wikipedia.org/wiki/Blockchain) use cases. The common state of the chain is distributed on-chain among participants, and specific data is stored on IPFS. Thanks to content addressing, the blockchain only needs to store the IPFS multi-hash, and users are sure to fetch correct data from any of their peers. This architecture is becoming a de facto standard for blockchain apps based on Ethereum.
 
-### Examples of projects
-
-#### Create a global market place for data storage
+### Create a global market place for data storage
 
 [Filecoin](https://filecoin.io/) is not only a blockchain on IPFS. It is the blockchain *of* IPFS. Filecoin lets any storage owner host data for users who need additional space. It is one of the reasons IPFS exists in the first place and will be a great accelerator of the IPFS growth once fully online later this year. The project is developed by [Protocol Labs](https://protocol.ai/), which are stewarding the development of IPFS.
 Textile.io is building the [Powergate](https://blog.textile.io/filecoin-developer-tools-concepts/) tool for your app to interact with Filecoin once the main net is launched.
 
-#### Reconcile IoT and privacy
+### Reconcile IoT and privacy
 
 The [Iotex](https://www.iotex.io/) blockchain wants to build an ecosystem where IoT data are owned by their respective owners. Data of their hardware devices such as cameras can be stored on local hardware, backed up to cloud, or to IPFS. Future integration with Filecoin will further reinforce the ownership of data by the users.
 
-#### Send cryptos to a human-readable address
+### Send cryptos to a human-readable address
 
 This project lets you have a human-readable Ethereum address, so people don't have to send it to a long, error-prone address.
 You can check it [here](https://devfolio.co/submissions/humanize-pay).
 
-#### Make AI an online service
+### Make AI an online service
 
 [MindSync](https://mindsync.ai/) wants to build a blockchain hosting AI competitions and let AI skills offer and demand meet. Consumers can hire specialists per task, and they are paid in cryptos.
 
-#### Create a decentralized exchange for Ethereum ERC20 tokens
+### Create a decentralized exchange for Ethereum ERC20 tokens
 
 This [project](https://github.com/5daytech/udex-app-android) is still in a very early phase but may inspire some of you.
 
-#### A platform for exchanging notes, courses, and more for education
+### A platform for exchanging notes, courses, and more for education
 
 [RocketShoes](https://www.rocketshoes.io/) is an education platform where students produce and tag learning materials, assignments, notes, and digital assets. These are stored on IPFS, and the blockchain ensures the timestamping, proof of ownership, and incentivization layer.
 
-#### Distribute IoT data
+### Distribute IoT data
 
-The Tangle (the distributed ledger of the [IOTA](https://www.iota.org/) network) supports hosting IoT data on IPFS, again for better availability, deduplication, etc. You can find out more [here](https://github.com/iotaledger/poc-ipfs).
+The Tangle (the distributed ledger of the [IOTA](https://www.iota.org/) network) supports hosting IoT data on IPFS, again for better availability, de-duplication, etc. You can find out more [here](https://github.com/iotaledger/poc-ipfs).
 
-#### Query the DWeb across blockchains
+### Query the DWeb across blockchains
 
 [TheGraph](https://thegraph.com/) wants to enable users to look for information on any blockchain or distributed service thanks to their query language GraphQL and the indexations of the chains thanks to IPFS.
 
-#### Proof of ownership
+### Proof of ownership
 
 With IPFS and a blockchain, you can prove ownership of a file at a certain time without disclosing it. See here an [example of implementation](https://github.com/mustafarefaey/PrivateStamp).
 
-#### Proof of "humanness"
+### Proof of _humanness_
 
 [Idena](https://idena.io/) is a blockchain to prove that you are human (which is distinct from DID). It uses IPFS under the hood.
 
-#### Build Smart City apps
+### Build Smart City apps
 
-[Robonomics](https://robonomics.network/) is building a framework on top of Ethereum and IPFS for [smart cities](https://en.wikipedia.org/wiki/Smart_city) apps to easily exchange data (from sensors or computation for example).
+[Robonomics](https://robonomics.network/) is building a framework on top of Ethereum and IPFS for [smart cities](https://en.wikipedia.org/wiki/Smart_city) apps to easily exchange data (from sensors or computation, for example).
 
-#### Make a decentralized prediction market
+### Make a decentralized prediction market
 
 [Augur](https://www.augur.net/) is a blockchain and decentralized market where you can bet on anything or request prediction from the crowd wisdom. Like so many blockchain-based apps, the data is hosted on IPFS.
 
@@ -291,25 +281,23 @@ With IPFS and a blockchain, you can prove ownership of a file at a certain time 
 
 A [Decentralized Identity](https://en.wikipedia.org/wiki/Decentralized_Identifiers) is a concept of storing all your personal data on your devices rather than let every service you use store a partial copy of it as it is now. You having control of your data means that you decide which app has access to what, that you only fill your information once, that you can revoke access, etc. DID is a hot topic for Web3.0, and IPFS is one of the core technology a lot of engineers build DID around. The identity wallet [Nomios](https://nomios.io/) shared [some thoughts](https://docs.google.com/presentation/d/1HbydOI0w-T_FY23zCACAyHmzDq1ZvyG2tklpPSm6OQQ/edit#slide=id.g5c88e8f60d_0_11) about DID in general during the [IPFS Camp 2019](https://github.com/ipfs/camp).
 
-### Examples of projects
+### Element
 
-#### Element
+[Element](element-did.com) is an open-source project that combines the content addressing and the interactiveness of Ethereum smart contracts to provide a tool for managing identity.
 
-[Element](element-did.com) is an open-source project combines the content addressing and the interactiveness of Ethereum smart contracts to provide a tool for managing identity.
-
-#### 3ID Connect
+### 3ID Connect
 
 3ID Connect is developed by [3Box](https://3box.io/), a personal data manager for apps leveraging IPFS. 3Box wants to make using DID as simple as clicking on "Connect with Google" or "Connect with Facebook". You can read their [article](https://medium.com/3box/introducing-3id-connect-531af4f84d3f) explaining how to bring it to your app.
 
-#### Microsoft ION
+### Microsoft ION
 
 [Microsoft](https://www.microsoft.com/) started experimentation by pinning some DID information to IPFS and publishing the hash to the Bitcoin blockchain. This design is well known for blockchain-based apps and is here use for DID. Find more details [here](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/toward-scalable-decentralized-identifier-systems/ba-p/560168).
 
-#### Ceramic Protocol
+### Ceramic Protocol
 
 The [Ceramic Protocol](https://www.ceramic.network/) is another proposition for DID on IPFS, along with a complete protocol for data and document exchanges.
 
-#### Nomios
+### Nomios
 
 [Nomios](https://nomios.io/) is another promising solution that started to work with IPFS from the start. Check out their website for more information.
 
