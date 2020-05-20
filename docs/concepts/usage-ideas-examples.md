@@ -41,7 +41,7 @@ Let IPFS coordinate the flow of data between you and your colleagues, even when 
 
 ### Version control
 
-The Inter-Planetary Version Control system (IPVC) is a distributed version control system similar to [git](https://git-scm.com/) but built on IPFS. It is suitable for any kind of data, not only human-readable content. It is also particularly suitable for versioning large files. The underlying concepts are heavily influenced by [git](https://git-scm.com/) and [gitless](https://gitless.com/).
+The [Inter-Planetary Version Control system (IPVC)](https://github.com/martindbp/ipvc) is a distributed version control system similar to [git](https://git-scm.com/) but built on IPFS. It is suitable for any kind of data, not only human-readable content. It is also particularly suitable for versioning large files. The underlying concepts are heavily influenced by [git](https://git-scm.com/) and [gitless](https://gitless.com/).
 
 ### Connect event attendants
 
