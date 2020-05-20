@@ -115,7 +115,7 @@ Netflix is on its way to use IPFS to [synchronize their Docker containers worldw
 
 ### Efficient network factories
 
-[Actyx](https://www.actyx.com/) is helping the manufacturers to fast forward to what they're calling _Industry 4.0_: the industry of connected machines. Actyx built a custom operating system on top of IPFS to ensures all machines and monitors receive the orders, information, and parameters they need to function properly.
+[Actyx](https://www.actyx.com/) is helping the manufacturers to upgrade their plants to the [_Industry 4.0_](https://en.wikipedia.org/wiki/Industry_4.0) era, meaning connecting the machines together for better performance, tolerance to failure and flexibility. Actyx built a custom operating system on top of IPFS they deploy on all machines so they emit metrics, receive orders, sync up information, and compute their next move locally. 
 
 ## Lower your storage usage
 
