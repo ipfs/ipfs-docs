@@ -73,6 +73,9 @@ By storing small scripts or big databases of your project on IPFS, and depending
 
 [Qri](https://qri.io/) is an open-source tool for the management of large datasets. Qri users enjoy reduced hosting costs, traceability of changes in the data, rollback to previous versions, and easier collaboration when updating data. De-duplication across datasets also helps to keep physical storage usage as small as possible, along with reducing sync times.
 
+### Parallelize Big Data analysis
+On some heavy analysis, you can benefit from parallelizing calculations on several nodes. But on very large datasets, fetching the relevant subset for each node to compute is longer than the actual computation. Scott Brisbane proposed a design in a [thesis](https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf) to drastically reduce the fetching time using IPFS and divided the overall analysis time by four. Here is a [one-page summary](https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf) of the concept. 
+
 ### Deadman switch
 
 [Killcord](https://killcord.io/) is an open project to automatically publicly publish data if the user doesn't check in after some time. This can ensure the ongoing investigation of a journalist carries on if they are unable to do it themselves, as the information gathered will now be public.
@@ -116,6 +119,8 @@ Netflix is on its way to use IPFS to [synchronize their Docker containers worldw
 ### Efficient network factories
 
 [Actyx](https://www.actyx.com/) is helping the manufacturers to upgrade their plants to the [_Industry 4.0_](https://en.wikipedia.org/wiki/Industry_4.0) era, meaning connecting the machines together for better performance, tolerance to failure and flexibility. Actyx built a custom operating system on top of IPFS they deploy on all machines so they emit metrics, receive orders, sync up information, and compute their next move locally. 
+
+
 
 ## Lower your storage usage
 
