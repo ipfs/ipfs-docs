@@ -217,7 +217,7 @@ Wikipedia has not been accessible in Turkey for a few years. The company behind 
 
 ## Blockchain use-cases
 
-IPFS is a natural fit for [blockchain](https://en.wikipedia.org/wiki/Blockchain) use cases. The common state of the chain is distributed on-chain among participants, and specific data is stored on IPFS. Thanks to content addressing, the blockchain only needs to store the IPFS multi-hash, and users are sure to fetch correct data from any of their peers. This architecture is becoming the de-facto standard for blockchain applications.
+IPFS is a natural fit for [blockchain](https://en.wikipedia.org/wiki/Blockchain) use cases. The common state of the chain is distributed on-chain among participants, and specific data is stored on IPFS. Thanks to content addressing, the blockchain only needs to store the IPFS multihash, and users are sure to fetch correct data from any of their peers. This architecture is becoming the de facto standard for blockchain applications.
 
 ### Global market place for data storage
 
