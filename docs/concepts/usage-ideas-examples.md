@@ -74,7 +74,7 @@ By storing small scripts or big databases of your project on IPFS, and depending
 [Qri](https://qri.io/) is an open-source tool for the management of large datasets. Qri users enjoy reduced hosting costs, traceability of changes in the data, rollback to previous versions, and easier collaboration when updating data. De-duplication across datasets also helps to keep physical storage usage as small as possible, along with reducing sync times.
 
 ### Parallelize Big Data analysis
-On some heavy analysis, you can benefit from parallelizing calculations on several nodes. But on very large datasets, fetching the relevant subset for each node to compute is longer than the actual computation. Scott Brisbane proposed a design in a [thesis](https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf) to drastically reduce the fetching time using IPFS and divided the overall analysis time by four. Here is a [one-page summary](https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf) of the concept. 
+On some heavy analysis, you can benefit from parallelizing calculations on several nodes using Hadoop for example. But on very large datasets, fetching the relevant subset for each node to compute is longer than the actual computation. Scott Brisbane proposed a design in a [thesis](https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf) to drastically reduce the fetching time using IPFS and divided the overall analysis time by four. Here is a [one-page summary](https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf) of the concept. 
 
 ### Deadman switch
 
@@ -120,8 +120,6 @@ Netflix is on its way to use IPFS to [synchronize their Docker containers worldw
 
 [Actyx](https://www.actyx.com/) is helping the manufacturers to upgrade their plants to the [_Industry 4.0_](https://en.wikipedia.org/wiki/Industry_4.0) era, meaning connecting the machines together for better performance, tolerance to failure and flexibility. Actyx built a custom operating system on top of IPFS they deploy on all machines so they emit metrics, receive orders, sync up information, and compute their next move locally. 
 
-
-
 ## Lower your storage usage
 
 By storing identical data only once on your node, storage-constrained projects are another natural fit for IPFS.
@@ -152,9 +150,9 @@ If you are using Amazon Web Service's S3 connections for your cloud, you can use
 
 JusticeNode has created [an extention](https://github.com/justicenode/files_external_ipfs) for the popular self-hosted cloud service NextCloud. This integration allows users to use IPFS as external storage.
 
-### Deploy your GitHub website on IPFS
+### Deploy your website on IPFS
 
-[Fleek.co](https://fleek.co/) allows you to effortlessly build sites & apps on IPFS. The workflow is similar to that of Netlify: developers can link their GitHub project to Fleek and have it automatically built and deployed on IPFS whenever a change is made to a specific branch. Fleek also comes with ENS and domain name integration.
+[Fleek.co](https://fleek.co/) allows you to effortlessly build sites & apps on IPFS. The workflow is similar to that of Netlify: developers can link their website or webapp hosted on GitHub to Fleek and have it automatically built and deployed on IPFS whenever a change is made to a specific branch. Fleek also comes with Ethereum Name Service (ENS) and domain name integration, and plan to enable many more way to deploy soon: more Git providers, deploy via command line interface, drag & drop a folder, via API, etc.
 
 ### Ethereum and Solidity specific applications
 
