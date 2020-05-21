@@ -444,6 +444,12 @@ module.exports = {
             hostname: DEPLOY_DOMAIN
           }
         : false
+    ],
+    [
+      'robots',
+      {
+        host: DEPLOY_DOMAIN
+      }
     ]
   ],
   extraWatchFiles: ['.vuepress/nav/en.js'],
