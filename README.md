@@ -12,6 +12,17 @@ This repo is home to the beta version of the IPFS next-gen documentation platfor
 
 **We'd love your contributions! Right now, all open documentation issues and help-wanted items (including bounty items!) can be found in the [main IPFS Documentation repo](https://github.com/ipfs/docs).** As the beta site being iterated upon in this `ipfs-docs-v2` repo comes out of beta, we'll migrate it into the main IPFS docs repo.
 
+## Join our monthly sync
+
+Every month the team gets together to discuss plans for the coming four-ish weeks. This meeting usually happens on the last Tuesday of each month. Feel free to [join us](https://protocol.zoom.us/j/614386160) using `614386160` as the Zoom meeting ID! Here are the details for the next meeting:
+
+| Date | Time | Zoom ID | Link | Notes |
+| ---- | ---- | ------- | ---- | ----- |
+| Tuesday 28th May 2020 | UTC: 16:00 - 16:30<br>EST: 11:00 - 11:30<br>PST 08:00-08:30<br>Unix: 1590508800 | `92681067428` | [protocol.zoom.us/j/92681067428](https://protocol.zoom.us/j/92681067428) | [Meeting notes](https://www.google.com/url?q=https://docs.google.com/document/d/1EOD-pJi4GvRmGi9HHocgVV8uVHMFIZlyVgJDkvC3DQ4/edit&sa=D&ust=1563045367944000&usg=AOvVaw1PXuFUmNdcfz8M0oJjv1dP) |
+
+If you can't make the meeting, don't worry. We post a recording of each meeting in our [YouTube playlist](https://www.youtube.com/playlist?list=PLuhRWgmPaHtRnfsVYI2LbVS03BRX7TcXq). Notes from current and past calls can be found [here](https://www.google.com/url?q=https://docs.google.com/document/d/1EOD-pJi4GvRmGi9HHocgVV8uVHMFIZlyVgJDkvC3DQ4/edit&sa=D&ust=1563045367944000&usg=AOvVaw1PXuFUmNdcfz8M0oJjv1dP).
+
+
 ## Working on this beta platform
 
 As noted above, if you'd like to contribute to the IPFS docs effort as a whole, please have a look at the issues and other notes (including bounty items!) in the [main IPFS Documentation repo](https://github.com/ipfs/docs). If you just want to spin up a local instance of this beta VuePress site, see below:
