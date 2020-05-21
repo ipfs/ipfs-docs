@@ -14,7 +14,7 @@ This repo is home to the beta version of the IPFS next-gen documentation platfor
 
 ## Join our monthly sync
 
-Every month the team gets together to discuss plans for the coming four-ish weeks. This meeting usually happens on the last Tuesday of each month. Feel free to [join us](https://protocol.zoom.us/j/614386160) using `614386160` as the Zoom meeting ID! Here are the details for the next meeting:
+Every month the team gets together to discuss plans for the coming four-ish weeks. This meeting usually happens on the last Tuesday of each month. Here are the details for the next meeting:
 
 | Date | Time | Zoom ID | Link | Notes |
 | ---- | ---- | ------- | ---- | ----- |
