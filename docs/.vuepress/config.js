@@ -370,28 +370,19 @@ module.exports = {
     }
   },
   plugins: [
-    ['@vuepress/plugin-back-to-top', true],
+    '@vuepress/plugin-back-to-top',
     [
-      '@vuepress/active-header-links',
+      '@vuepress/google-analytics',
       {
-        sidebarLinkSelector: '.sidebar-link',
-        headerAnchorSelector: '.header-anchor',
-        headerTopOffset: 120
+        ga: 'UA-96910779-15'
       }
     ],
-    '@vuepress/plugin-last-updated',
     [
       'vuepress-plugin-clean-urls',
       {
         normalSuffix: '/',
         indexSuffix: '/',
         notFoundPath: '/404/'
-      }
-    ],
-    [
-      '@vuepress/google-analytics',
-      {
-        ga: 'UA-96910779-15'
       }
     ],
     [
@@ -439,16 +430,21 @@ module.exports = {
     ],
     [
       'vuepress-plugin-sitemap',
-      DEPLOY_DOMAIN
-        ? {
-            hostname: DEPLOY_DOMAIN
-          }
-        : false
+      {
+        hostname: DEPLOY_DOMAIN
+      }
     ],
     [
-      'robots',
+      'vuepress-plugin-robots',
       {
         host: DEPLOY_DOMAIN
+      }
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'callout',
+        defaultTitle: ''
       }
     ]
   ],
