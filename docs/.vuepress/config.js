@@ -446,14 +446,8 @@ module.exports = {
         type: 'callout',
         defaultTitle: ''
       }
-    ]
+    ],
+    'vuepress-plugin-ipfs'
   ],
-  extraWatchFiles: ['.vuepress/nav/en.js'],
-  configureWebpack: (config, isServer) => {
-    if (!isServer) {
-      config.entry = {
-        app: ['./docs/.vuepress/public-path.js', config.entry.app[0]]
-      }
-    }
-  }
+  extraWatchFiles: ['.vuepress/nav/en.js']
 }
