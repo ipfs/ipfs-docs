@@ -370,7 +370,7 @@ module.exports = {
     }
   },
   plugins: [
-    '@vuepress/back-to-top',
+    '@vuepress/plugin-back-to-top',
     [
       '@vuepress/google-analytics',
       {
