@@ -35,16 +35,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  computed: {
-    legacyUrl: function () {
-      return this.$frontmatter && this.$frontmatter.legacyUrl
-    }
-  }
-}
-</script>
-
 <style lang="stylus" scoped>
 .legacy-callout {
   background-color: lighten($badgeTipColor, 95%);
