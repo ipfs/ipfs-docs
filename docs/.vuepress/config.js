@@ -446,7 +446,8 @@ module.exports = {
         type: 'callout',
         defaultTitle: ''
       }
-    ]
+    ],
+    'vuepress-plugin-ipfs'
   ],
   extraWatchFiles: ['.vuepress/nav/en.js']
 }
