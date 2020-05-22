@@ -5,437 +5,358 @@ description: See the current status of various aspects of the core IPFS implemen
 
 # IPFS implementation status
 
-### Legend: :white_check_mark: Done &nbsp; :construction: In Progress &nbsp; :x: Missing &nbsp; :heavy_minus_sign: Not planned
+### Legend: :green_heart: Done &nbsp; :yellow_heart: In Progress &nbsp; :broken_heart: Missing &nbsp; :heavy_minus_sign: Not planned
 
 ## Bitswap
 
 ### CLI
 
-| Command                                      | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`ipfs ledger`**                            | :white_check_mark: | :construction:       |
-|     `peer`                                   | :white_check_mark: | :construction:       |
-| **`ipfs reprovide`**                         | :white_check_mark: | :x:      |
-| **`ipfs bitswap stat`**                      | :white_check_mark: | :white_check_mark: |
-| **`ipfs bitswap unwant`**                    | :white_check_mark: | :white_check_mark: |
-|     `key`                                    | :white_check_mark: | :white_check_mark: |
-| **`ipfs bitswap wantlist`**                  | :white_check_mark: | :white_check_mark: |
-|     `peer`                                   | :white_check_mark: | :white_check_mark: |
+| Command                     |      Go       |       JS       |
+| --------------------------- | :-----------: | :------------: |
+| **`ipfs ledger`**           | :green_heart: | :yellow_heart: |
+| **`ipfs reprovide`**        | :green_heart: | :broken_heart: |
+| **`ipfs bitswap stat`**     | :green_heart: | :green_heart:  |
+| **`ipfs bitswap unwant`**   | :green_heart: | :green_heart:  |
+| **`ipfs bitswap wantlist`** | :green_heart: | :green_heart:  |
 
 ### HTTP
 
-| Endpoint                                     | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`GET /api/v0/bitswap/ledger`**             | :white_check_mark: | :construction:       |
-|     `arg=`                                   | :white_check_mark: | :construction:       |
-| **`GET /api/v0/bitswap/reprovide`**          | :white_check_mark: | :x:      |
-| **`GET /api/v0/bitswap/stat`**               | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/bitswap/unwant`**             | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/bitswap/wantlist`**           | :white_check_mark: | :white_check_mark: |
-|     `peer=`                                  | :white_check_mark: | :white_check_mark: |
+| Endpoint                        |      Go       |       JS       |
+| ------------------------------- | :-----------: | :------------: |
+| **`/api/v0/bitswap/ledger`**    | :green_heart: | :yellow_heart: |
+| **`/api/v0/bitswap/reprovide`** | :green_heart: | :broken_heart: |
+| **`/api/v0/bitswap/stat`**      | :green_heart: | :green_heart:  |
+| **`/api/v0/bitswap/unwant`**    | :green_heart: | :green_heart:  |
+| **`/api/v0/bitswap/wantlist`**  | :green_heart: | :green_heart:  |
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
+See [bitswap](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/BITSWAP.md).
 
-
-## Block `ipfs block`
+## Block
 
 ### CLI
 
-| Command                                      | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`ipfs block get`**                         | :white_check_mark: | :white_check_mark: |
-|     `key`                                    | :white_check_mark: | :white_check_mark: |
-| **`ipfs block put`**                         | :white_check_mark: | :white_check_mark: |
-|     `data`                                   | :white_check_mark: | :white_check_mark: |
-|     `format`                                 | :white_check_mark: | :white_check_mark: |
-|     `mhtype`                                 | :white_check_mark: | :white_check_mark: |
-|     `mhlen`                                  | :white_check_mark: | :white_check_mark: |
-| **`ipfs block rm`**                          | :white_check_mark: | :construction:       |
-|     `hash`                                   | :white_check_mark: | :construction:       |
-|     `force`                                  | :white_check_mark: | :construction:       |
-| **`ipfs block stat`**                        | :white_check_mark: | :white_check_mark: |
-|     `key`                                    | :white_check_mark: | :white_check_mark: |
+| Command               |      Go       |      JS       |
+| --------------------- | :-----------: | :-----------: |
+| **`ipfs block get`**  | :green_heart: | :green_heart: |
+| `key`                 | :green_heart: | :green_heart: |
+| **`ipfs block put`**  | :green_heart: | :green_heart: |
+| `data`                | :green_heart: | :green_heart: |
+| `format`              | :green_heart: | :green_heart: |
+| `mhtype`              | :green_heart: | :green_heart: |
+| `mhlen`               | :green_heart: | :green_heart: |
+| **`ipfs block rm`**   | :green_heart: | :green_heart: |
+| `hash`                | :green_heart: | :green_heart: |
+| `force`               | :green_heart: | :green_heart: |
+| **`ipfs block stat`** | :green_heart: | :green_heart: |
+| `key`                 | :green_heart: | :green_heart: |
 
 ### HTTP
 
-| Endpoint                                     | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`GET /api/v0/block/get`**                  | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-| **`POST /api/v0/block/put`**                 | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-|     `format=`                                | :white_check_mark: | :white_check_mark: |
-|     `mhtype=`                                | :white_check_mark: | :white_check_mark: |
-|     `mhlen=`                                 | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/block/rm`**                   | :white_check_mark: | :construction:       |
-|     `arg=`                                   | :white_check_mark: | :construction:       |
-|     `force=`                                 | :white_check_mark: | :construction:       |
-| **`GET /api/v0/block/stat`**                 | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
+| Endpoint                 |      Go       |      JS       |
+| ------------------------ | :-----------: | :-----------: |
+| **`/api/v0/block/get`**  | :green_heart: | :green_heart: |
+| **`/api/v0/block/put`**  | :green_heart: | :green_heart: |
+| `format=`                | :green_heart: | :green_heart: |
+| `mhtype=`                | :green_heart: | :green_heart: |
+| `mhlen=`                 | :green_heart: | :green_heart: |
+| **`/api/v0/block/rm`**   | :green_heart: | :green_heart: |
+| `force=`                 | :green_heart: | :green_heart: |
+| **`/api/v0/block/stat`** | :green_heart: | :green_heart: |
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
+See [block](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/BLOCK.md).
 
 ## Bootstrap
 
 ### CLI
 
-| Command                                      | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`ipfs bootstrap add`**                     | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-|     `default=`                               | :white_check_mark: | :white_check_mark: |
-| **`ipfs bootstrap list`**                    | :white_check_mark: | :white_check_mark: |
-| **`ipfs bootstrap rm`**                      | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-|     `all=`                                   | :white_check_mark: | :white_check_mark: |
+| Command                   |      Go       |      JS       |
+| ------------------------- | :-----------: | :-----------: |
+| **`ipfs bootstrap add`**  | :green_heart: | :green_heart: |
+| `default=`                | :green_heart: | :green_heart: |
+| **`ipfs bootstrap list`** | :green_heart: | :green_heart: |
+| **`ipfs bootstrap rm`**   | :green_heart: | :green_heart: |
+| `all=`                    | :green_heart: | :green_heart: |
 
 ### HTTP
 
-| Endpoint                                     | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`GET /api/v0/bootstrap/add`**              | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-|     `default=`                               | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/bootstrap/add/default`**      | :white_check_mark: | :x:      |
-| **`GET /api/v0/bootstrap/list`**             | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/bootstrap/rm`**               | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-|     `all=`                                   | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/bootstrap/rm/all`**           | :white_check_mark: | :x:      |
+| Endpoint                            |      Go       |      JS       |
+| ----------------------------------- | :-----------: | :-----------: |
+| **`/api/v0/bootstrap/add`**         | :green_heart: | :green_heart: |
+| `default=`                          | :green_heart: | :green_heart: |
+| **`/api/v0/bootstrap/add/default`** | :green_heart: | :green_heart: |
+| **`/api/v0/bootstrap/list`**        | :green_heart: | :green_heart: |
+| **`/api/v0/bootstrap/rm`**          | :green_heart: | :green_heart: |
+| `all=`                              | :green_heart: | :green_heart: |
+| **`/api/v0/bootstrap/rm/all`**      | :green_heart: | :green_heart: |
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
+See [bootstrap](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/BOOTSTRAP.md).
 
 ## Config
 
 ### CLI
 
-| Command                                      | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`ipfs config edit`**                       | :white_check_mark: | :heavy_minus_sign:    |
-| **`ipfs config`**                            | :white_check_mark: | :heavy_minus_sign:    |
-|     `key`                                    | :white_check_mark: | :white_check_mark: |
-|     `value`                                  | :white_check_mark: | :white_check_mark: |
-|     `bool=`                                  | :white_check_mark: | :white_check_mark: |
-|     `json=`                                  | :white_check_mark: | :white_check_mark: |
-| **`ipfs config replace`**                    | :white_check_mark: | :white_check_mark: |
-|     `file`                                   | :white_check_mark: | :white_check_mark: |
-| **`ipfs config show`**                       | :white_check_mark: | :white_check_mark: |
-| **`ipfs log level`**                         | :white_check_mark: | :heavy_minus_sign:    |
-|     `subsystem`                              | :white_check_mark: | :heavy_minus_sign:    |
-|     `level`                                  | :white_check_mark: | :heavy_minus_sign:    |
-| **`ipfs log ls`**                            | :white_check_mark: | :heavy_minus_sign:    |
-| **`ipfs log tail`**                          | :white_check_mark: | :heavy_minus_sign:    |
+| Command                   |      Go       |         JS         |
+| ------------------------- | :-----------: | :----------------: |
+| **`ipfs config edit`**    | :green_heart: |   :green_heart:    |
+| **`ipfs config`**         | :green_heart: |   :green_heart:    |
+| `bool=`                   | :green_heart: |   :green_heart:    |
+| `json=`                   | :green_heart: |   :green_heart:    |
+| **`ipfs config replace`** | :green_heart: |   :green_heart:    |
+| **`ipfs config show`**    | :green_heart: |   :green_heart:    |
+| **`ipfs log level`**      | :green_heart: | :heavy_minus_sign: |
+| **`ipfs log ls`**         | :green_heart: | :heavy_minus_sign: |
+| **`ipfs log tail`**       | :green_heart: | :heavy_minus_sign: |
 
 ### HTTP
 
-| Endpoint                                     | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`GET /api/v0/config/edit`**                | :white_check_mark: | :heavy_minus_sign:    |
-| **`POST /api/v0/config`**                    | :white_check_mark: | :heavy_minus_sign:    |
-|     `arg1=`                                  | :white_check_mark: | :white_check_mark: |
-|     `arg2=`                                  | :white_check_mark: | :white_check_mark: |
-|     `bool=`                                  | :white_check_mark: | :white_check_mark: |
-|     `json=`                                  | :white_check_mark: | :white_check_mark: |
-| **`POST /api/v0/config/replace`**            | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/config/show`**                | :white_check_mark: | :white_check_mark: |
-| **`POST /api/v0/log/level`**                 | :white_check_mark: | :heavy_minus_sign:    |
-|     `arg1=`                                  | :white_check_mark: | :heavy_minus_sign:    |
-|     `arg2=`                                  | :white_check_mark: | :heavy_minus_sign:    |
-| **`GET /api/v0/log/ls`**                     | :white_check_mark: | :heavy_minus_sign:    |
-| **`GET /api/v0/log/tail`**                   | :white_check_mark: | :heavy_minus_sign:    |
+| Endpoint                     |      Go       |         JS         |
+| ---------------------------- | :-----------: | :----------------: |
+| **`/api/v0/config/edit`**    | :green_heart: | :heavy_minus_sign: |
+| **`/api/v0/config`**         | :green_heart: |   :green_heart:    |
+| `bool=`                      | :green_heart: |   :green_heart:    |
+| `json=`                      | :green_heart: |   :green_heart:    |
+| **`/api/v0/config/replace`** | :green_heart: |   :green_heart:    |
+| **`/api/v0/config/show`**    | :green_heart: |   :green_heart:    |
+| **`/api/v0/log/level`**      | :green_heart: | :heavy_minus_sign: |
+| **`/api/v0/log/ls`**         | :green_heart: | :heavy_minus_sign: |
+| **`/api/v0/log/tail`**       | :green_heart: | :heavy_minus_sign: |
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
+See [config](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/CONFIG.md).
 
 ## DAG
 
-> **Blocked until the following are resolved:**
-- https://github.com/ipfs/js-ipfs-api/pull/534
-- https://github.com/ipfs/go-ipfs/issues/3771#issue-213068794
-
 ### CLI
+
+| Command                |      Go       |       JS       |
+| ---------------------- | :-----------: | :------------: |
+| **`ipfs dag export`**  | :green_heart: | :broken_heart: |
+| **`ipfs dag get`**     | :green_heart: | :green_heart:  |
+| **`ipfs dag import`**  | :green_heart: | :broken_heart: |
+| **`ipfs dag put`**     | :green_heart: | :green_heart:  |
+| **`ipfs dag resolve`** | :green_heart: | :green_heart:  |
 
 ### HTTP
 
+| Command                   |      Go       |       JS       |
+| ------------------------- | :-----------: | :------------: |
+| **`/api/v0/dag/export`**  | :green_heart: | :broken_heart: |
+| **`/api/v0/dag/get`**     | :green_heart: | :green_heart:  |
+| **`/api/v0/dag/import`**  | :green_heart: | :broken_heart: |
+| **`/api/v0/dag/put`**     | :green_heart: | :green_heart:  |
+| **`/api/v0/dag/resolve`** | :green_heart: | :green_heart:  |
+
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
+See [dag](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/DAG.md).
 
 ## Stats and diagnostics
 
 ### CLI
 
-| Command                                      | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`ipfs stats bitswap`**                     | :white_check_mark: | :x:      |
-| **`ipfs stats bw`**                          | :white_check_mark: | :x:      |
-|     `peer`                                   | :white_check_mark: | :x:      |
-|     `proto`                                  | :white_check_mark: | :x:      |
-|     `poll`                                   | :white_check_mark: | :x:      |
-|     `interval `                              | :white_check_mark: | :x:      |
-| **`ipfs stats repo`**                        | :white_check_mark: | :x:      |
-| **`ipfs diag cmds`**                         | :white_check_mark: | :heavy_minus_sign:    |
-| **`ipfs diag cmds clear`**                   | :white_check_mark: | :heavy_minus_sign:    |
-| **`ipfs diag cmds set-time`**                | :white_check_mark: | :heavy_minus_sign:    |
-|     `time`                                   | :white_check_mark: | :heavy_minus_sign:    |
-| **`ipfs diag sys`**                          | :white_check_mark: | :heavy_minus_sign:    |
+| Command                       |      Go       |         JS         |
+| ----------------------------- | :-----------: | :----------------: |
+| **`ipfs stats bitswap`**      | :green_heart: |   :green_heart:    |
+| **`ipfs stats bw`**           | :green_heart: |   :green_heart:    |
+| `peer`                        | :green_heart: |   :green_heart:    |
+| `proto`                       | :green_heart: |   :green_heart:    |
+| `poll`                        | :green_heart: |   :green_heart:    |
+| `interval`                    | :green_heart: |   :green_heart:    |
+| **`ipfs stats repo`**         | :green_heart: |   :green_heart:    |
+| **`ipfs diag cmds`**          | :green_heart: | :heavy_minus_sign: |
+| **`ipfs diag cmds clear`**    | :green_heart: | :heavy_minus_sign: |
+| **`ipfs diag cmds set-time`** | :green_heart: | :heavy_minus_sign: |
+| `time`                        | :green_heart: | :heavy_minus_sign: |
+| **`ipfs diag sys`**           | :green_heart: | :heavy_minus_sign: |
 
 ### HTTP
 
-| Endpoint                                     | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`GET /api/v0/stats/bitswap`**              | :white_check_mark: | :x:      |
-| **`POST /api/v0/stats/bw`**                  | :white_check_mark: | :x:      |
-|     `peer=`                                  | :white_check_mark: | :x:      |
-|     `proto=`                                 | :white_check_mark: | :x:      |
-|     `poll=`                                  | :white_check_mark: | :x:      |
-|     `interval=`                              | :white_check_mark: | :x:      |
-| **`GET /api/v0/stats/repo`**                 | :white_check_mark: | :x:      |
-| **`GET /api/v0/diag/cmds`**                  | :white_check_mark: | :heavy_minus_sign:    |
-| **`GET /api/v0/diag/cmds/clear`**            | :white_check_mark: | :heavy_minus_sign:    |
-| **`GET /api/v0/diag/cmds/set-time`**         | :white_check_mark: | :heavy_minus_sign:    |
-|     `arg=`                                   | :white_check_mark: | :heavy_minus_sign:    |
-| **`GET /api/v0/net`**                        | :white_check_mark: | :heavy_minus_sign:    |
-|     `vis`                                    | :white_check_mark: | :heavy_minus_sign:    |
-| **`GET /api/v0/sys`**                        | :white_check_mark: | :heavy_minus_sign:    |
+| Endpoint                         |      Go       |         JS         |
+| -------------------------------- | :-----------: | :----------------: |
+| **`/api/v0/stats/bitswap`**      | :green_heart: |   :green_heart:    |
+| **`/api/v0/stats/bw`**           | :green_heart: |   :green_heart:    |
+| `peer=`                          | :green_heart: |   :green_heart:    |
+| `proto=`                         | :green_heart: |   :green_heart:    |
+| `poll=`                          | :green_heart: |   :green_heart:    |
+| `interval=`                      | :green_heart: |   :green_heart:    |
+| **`/api/v0/stats/repo`**         | :green_heart: |   :green_heart:    |
+| **`/api/v0/diag/cmds`**          | :green_heart: | :heavy_minus_sign: |
+| **`/api/v0/diag/cmds/clear`**    | :green_heart: | :heavy_minus_sign: |
+| **`/api/v0/diag/cmds/set-time`** | :green_heart: | :heavy_minus_sign: |
+| `arg=`                           | :green_heart: | :heavy_minus_sign: |
+| **`/api/v0/net`**                | :green_heart: | :heavy_minus_sign: |
+| `vis`                            | :green_heart: | :heavy_minus_sign: |
+| **`/api/v0/sys`**                | :green_heart: | :heavy_minus_sign: |
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
+See [stats](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/STATS.md).
 
 ## DHT
 
 ### CLI
 
-| Command                                      | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`ipfs dht findpeer`**                      | :white_check_mark: | :white_check_mark: |
-|     `peer ID`                                | :white_check_mark: | :white_check_mark: |
-|     `verbose=`                               | :white_check_mark: | :x:      |
-| **`ipfs dht findprovs`**                     | :white_check_mark: | :white_check_mark: |
-|     `key`                                    | :white_check_mark: | :white_check_mark: |
-|     `verbose=`                               | :white_check_mark: | :x:      |
-|     `num-providers=`                         | :white_check_mark: | :white_check_mark: |
-| **`ipfs dht get`**                           | :white_check_mark: | :white_check_mark: |
-|     `key`                                    | :white_check_mark: | :white_check_mark: |
-|     `verbose=`                               | :white_check_mark: | :x:      |
-| **`ipfs dht provide`**                       | :white_check_mark: | :white_check_mark: |
-|     `key`                                    | :white_check_mark: | :white_check_mark: |
-|     `verbose=`                               | :white_check_mark: | :x:      |
-|     `recursive=`                             | :white_check_mark: | :x:      |
-| **`ipfs dht put`**                           | :white_check_mark: | :white_check_mark: |
-|     `key`                                    | :white_check_mark: | :white_check_mark: |
-|     `value`                                  | :white_check_mark: | :white_check_mark: |
-|     `verbose=`                               | :white_check_mark: | :x:      |
-| **`ipfs dht query`**                         | :white_check_mark: | :x:      |
-|     `peer ID`                                | :white_check_mark: | :white_check_mark: |
-|     `verbose=`                               | :white_check_mark: | :x:      |
+| Command                  |      Go       |       JS       |
+| ------------------------ | :-----------: | :------------: |
+| **`ipfs dht findpeer`**  | :green_heart: | :green_heart:  |
+| `verbose=`               | :green_heart: | :broken_heart: |
+| **`ipfs dht findprovs`** | :green_heart: | :green_heart:  |
+| `verbose=`               | :green_heart: | :broken_heart: |
+| `num-providers=`         | :green_heart: | :green_heart:  |
+| **`ipfs dht get`**       | :green_heart: | :green_heart:  |
+| `verbose=`               | :green_heart: | :broken_heart: |
+| **`ipfs dht provide`**   | :green_heart: | :green_heart:  |
+| `verbose=`               | :green_heart: | :broken_heart: |
+| `recursive=`             | :green_heart: | :broken_heart: |
+| **`ipfs dht put`**       | :green_heart: | :green_heart:  |
+| `verbose=`               | :green_heart: | :broken_heart: |
+| **`ipfs dht query`**     | :green_heart: | :broken_heart: |
+| `verbose=`               | :green_heart: | :broken_heart: |
 
 ### HTTP
 
-| Endpoint                                     | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`GET /api/v0/dht/findpeer`**               | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-|     `verbose=`                               | :white_check_mark: | :x:      |
-| **`GET /api/v0/dht/findprovs`**              | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-|     `verbose=`                               | :white_check_mark: | :x:      |
-|     `num-providers=`                         | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/dht/get`**                    | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-|     `verbose=`                               | :white_check_mark: | :x:      |
-| **`GET /api/v0/dht/provide`**                | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-|     `verbose=`                               | :white_check_mark: | :x:      |
-|     `recursive=`                             | :white_check_mark: | :x:      |
-| **`GET /api/v0/dht/put`**                    | :white_check_mark: | :white_check_mark: |
-|     `arg1=`                                  | :white_check_mark: | :white_check_mark: |
-|     `arg2=`                                  | :white_check_mark: | :white_check_mark: |
-|     `verbose=`                               | :white_check_mark: | :x:      |
-| **`GET /api/v0/dht/query`**                  | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-|     `verbose=`                               | :white_check_mark: | :x:      |
+| Endpoint                    |      Go       |       JS       |
+| --------------------------- | :-----------: | :------------: |
+| **`/api/v0/dht/findpeer`**  | :green_heart: | :green_heart:  |
+| `verbose=`                  | :green_heart: | :broken_heart: |
+| **`/api/v0/dht/findprovs`** | :green_heart: | :green_heart:  |
+| `verbose=`                  | :green_heart: | :broken_heart: |
+| `num-providers=`            | :green_heart: | :green_heart:  |
+| **`/api/v0/dht/get`**       | :green_heart: | :green_heart:  |
+| `verbose=`                  | :green_heart: | :broken_heart: |
+| **`/api/v0/dht/provide`**   | :green_heart: | :green_heart:  |
+| `verbose=`                  | :green_heart: | :broken_heart: |
+| `recursive=`                | :green_heart: | :broken_heart: |
+| **`/api/v0/dht/put`**       | :green_heart: | :green_heart:  |
+| `verbose=`                  | :green_heart: | :broken_heart: |
+| **`/api/v0/dht/query`**     | :green_heart: | :green_heart:  |
+| `verbose=`                  | :green_heart: | :broken_heart: |
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
+See [dht](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/DHT.md).
 
 ## Files
 
 ### CLI
 
-| Command                                      | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`ipfs add`**                               | :white_check_mark: | :construction:       |
-|     `file`                                   | :white_check_mark: | :white_check_mark: |
-|     `recursive`                              | :white_check_mark: | :white_check_mark: |
-|     `quiet`                                  | :white_check_mark: | :white_check_mark: |
-|     `quieter`                                | :white_check_mark: | :white_check_mark: |
-|     `silent`                                 | :white_check_mark: | :white_check_mark: |
-|     `progress`                               | :white_check_mark: | :white_check_mark: |
-|     `trickle`                                | :white_check_mark: | :white_check_mark: |
-|     `only-hash`                              | :white_check_mark: | :white_check_mark: |
-|     `wrap-with-directory`                    | :white_check_mark: | :white_check_mark: |
-|     `hidden`                                 | :white_check_mark: | :x:      |
-|     `chunker`                                | :white_check_mark: | :x:      |
-|     `pin`                                    | :white_check_mark: | :construction:       |
-|     `raw-leaves`                             | :white_check_mark: | :x:      |
-|     `nocopy`                                 | :white_check_mark: | :x:      |
-|     `fscache`                                | :white_check_mark: | :x:      |
-|     `cid-version`                            | :white_check_mark: | :x:      |
-|     `hash`                                   | :white_check_mark: | :x:      |
-| **`ipfs cat`**                               | :white_check_mark: | :white_check_mark: |
-|     `arg`                                    | :white_check_mark: | :white_check_mark: |
-| **`ipfs ls`**                                | :white_check_mark: | :construction:       |
-|     `arg`                                    | :white_check_mark: | :construction:       |
-|     `headers`                                | :white_check_mark: | :construction:       |
-|     `resolve-type`                           | :white_check_mark: | :construction:       |
-| **`ipfs file ls`**                           | :white_check_mark: | :heavy_minus_sign:    |
-|     `path`                                   | :white_check_mark: | :heavy_minus_sign:    |
-| **`ipfs files cp`**                          | :white_check_mark: | :x:      |
-|     `src`                                    | :white_check_mark: | :x:      |
-|     `dst`                                    | :white_check_mark: | :x:      |
-|     `flush`                                  | :white_check_mark: | :x:      |
-| **`ipfs files flush`**                       | :white_check_mark: | :x:      |
-|     `path`                                   | :white_check_mark: | :x:      |
-| **`ipfs files ls`**                          | :white_check_mark: | :x:      |
-|     `path`                                   | :white_check_mark: | :x:      |
-|     `level`                                  | :white_check_mark: | :x:      |
-|     `flush`                                  | :white_check_mark: | :x:      |
-| **`ipfs files mkdir`**                       | :white_check_mark: | :x:      |
-|     `path`                                   | :white_check_mark: | :x:      |
-|     `parents`                                | :white_check_mark: | :x:      |
-|     `flush`                                  | :white_check_mark: | :x:      |
-| **`ipfs files mv`**                          | :white_check_mark: | :x:      |
-|     `src`                                    | :white_check_mark: | :x:      |
-|     `dst`                                    | :white_check_mark: | :x:      |
-|     `flush`                                  | :white_check_mark: | :x:      |
-| **`ipfs files read`**                        | :white_check_mark: | :x:      |
-|     `path`                                   | :white_check_mark: | :x:      |
-|     `offset`                                 | :white_check_mark: | :x:      |
-|     `count`                                  | :white_check_mark: | :x:      |
-|     `flush`                                  | :white_check_mark: | :x:      |
-| **`ipfs files rm`**                          | :white_check_mark: | :x:      |
-|     `path`                                   | :white_check_mark: | :x:      |
-|     `recursive`                              | :white_check_mark: | :x:      |
-|     `flush`                                  | :white_check_mark: | :x:      |
-| **`ipfs files stat`**                        | :white_check_mark: | :x:      |
-|     `path`                                   | :white_check_mark: | :x:      |
-|     `flush`                                  | :white_check_mark: | :x:      |
-| **`ipfs files write`**                       | :white_check_mark: | :x:      |
-|     `path`                                   | :white_check_mark: | :x:      |
-|     `data`                                   | :white_check_mark: | :x:      |
-|     `offset`                                 | :white_check_mark: | :x:      |
-|     `create`                                 | :white_check_mark: | :x:      |
-|     `truncate`                               | :white_check_mark: | :x:      |
-|     `count`                                  | :white_check_mark: | :x:      |
-|     `flush`                                  | :white_check_mark: | :x:      |
-| **`ipfs get`**                               | :white_check_mark: | :white_check_mark: |
-|     `path`                                   | :white_check_mark: | :white_check_mark: |
-|     `archive`                                | :white_check_mark: | :x:      |
-|     `compress`                               | :white_check_mark: | :x:      |
-|     `compression-level`                      | :white_check_mark: | :x:      |
+| Command                |      Go       |       JS       |
+| ---------------------- | :-----------: | :------------: |
+| **`ipfs add`**         | :green_heart: | :green_heart:  |
+| `file`                 | :green_heart: | :green_heart:  |
+| `recursive`            | :green_heart: | :green_heart:  |
+| `quiet`                | :green_heart: | :green_heart:  |
+| `quieter`              | :green_heart: | :green_heart:  |
+| `silent`               | :green_heart: | :green_heart:  |
+| `progress`             | :green_heart: | :green_heart:  |
+| `trickle`              | :green_heart: | :green_heart:  |
+| `only-hash`            | :green_heart: | :green_heart:  |
+| `wrap-with-directory`  | :green_heart: | :green_heart:  |
+| `hidden`               | :green_heart: | :broken_heart: |
+| `chunker`              | :green_heart: | :green_heart:  |
+| `pin`                  | :green_heart: | :green_heart:  |
+| `raw-leaves`           | :green_heart: | :green_heart:  |
+| `nocopy`               | :green_heart: | :broken_heart: |
+| `fscache`              | :green_heart: | :broken_heart: |
+| `cid-version`          | :green_heart: | :green_heart:  |
+| `hash`                 | :green_heart: | :green_heart:  |
+| **`ipfs cat`**         | :green_heart: | :green_heart:  |
+| **`ipfs ls`**          | :green_heart: | :green_heart:  |
+| `headers`              | :green_heart: | :yellow_heart: |
+| `resolve-type`         | :green_heart: | :yellow_heart: |
+| **`ipfs file ls`**     | :green_heart: | :green_heart:  |
+| **`ipfs files cp`**    | :green_heart: | :green_heart:  |
+| `flush`                | :green_heart: | :green_heart:  |
+| **`ipfs files flush`** | :green_heart: | :green_heart:  |
+| **`ipfs files ls`**    | :green_heart: | :green_heart:  |
+| **`ipfs files mkdir`** | :green_heart: | :green_heart:  |
+| `parents`              | :green_heart: | :green_heart:  |
+| `flush`                | :green_heart: | :green_heart:  |
+| **`ipfs files mv`**    | :green_heart: | :green_heart:  |
+| `flush`                | :green_heart: | :green_heart:  |
+| **`ipfs files read`**  | :green_heart: | :green_heart:  |
+| `offset`               | :green_heart: | :green_heart:  |
+| `count`                | :green_heart: | :green_heart:  |
+| **`ipfs files rm`**    | :green_heart: | :green_heart:  |
+| `recursive`            | :green_heart: | :green_heart:  |
+| **`ipfs files stat`**  | :green_heart: | :green_heart:  |
+| `format`               | :green_heart: | :broken_heart: |
+| `hash`                 | :green_heart: | :green_heart:  |
+| `size`                 | :green_heart: | :green_heart:  |
+| `with-local`           | :green_heart: | :green_heart:  |
+| **`ipfs files write`** | :green_heart: | :green_heart:  |
+| `offset`               | :green_heart: | :green_heart:  |
+| `create`               | :green_heart: | :green_heart:  |
+| `parents`              | :green_heart: | :green_heart:  |
+| `truncate`             | :green_heart: | :green_heart:  |
+| `count`                | :green_heart: | :green_heart:  |
+| `raw-leaves`           | :green_heart: | :green_heart:  |
+| `cid-version`          | :green_heart: | :green_heart:  |
+| `hash`                 | :green_heart: | :green_heart:  |
 
 ### HTTP
 
-| Endpoint                                     | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`POST /api/v0/add`**                       | :white_check_mark: | :construction:       |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-|     `recursive=`                             | :white_check_mark: | :white_check_mark: |
-|     `quiet=`                                 | :white_check_mark: | :x:      |
-|     `quieter=`                               | :white_check_mark: | :x:      |
-|     `silent=`                                | :white_check_mark: | :x:      |
-|     `progress=`                              | :white_check_mark: | :white_check_mark: |
-|     `trickle=`                               | :white_check_mark: | :white_check_mark: |
-|     `only-hash=`                             | :white_check_mark: | :white_check_mark: |
-|     `wrap-with-directory`                    | :white_check_mark: | :white_check_mark: |
-|     `hidden`                                 | :white_check_mark: | :x:      |
-|     `chunker`                                | :white_check_mark: | :x:      |
-|     `pin`                                    | :white_check_mark: | :construction:       |
-|     `raw-leaves`                             | :white_check_mark: | :x:      |
-|     `nocopy`                                 | :white_check_mark: | :x:      |
-|     `fscache`                                | :white_check_mark: | :x:      |
-|     `cid-version`                            | :white_check_mark: | :x:      |
-|     `hash`                                   | :white_check_mark: | :x:      |
-| **`GET /api/v0/cat`**                        | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/ls`**                         | :white_check_mark: | :construction:       |
-|     `arg=`                                   | :white_check_mark: | :construction:       |
-|     `headers=`                               | :white_check_mark: | :construction:       |
-|     `resolve-type=`                          | :white_check_mark: | :construction:       |
-| **`GET /api/v0/file/ls`**                    | :white_check_mark: | :heavy_minus_sign:    |
-|     `arg=`                                   | :white_check_mark: | :heavy_minus_sign:    |
-| **`GET /api/v0/files/cp`**                   | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-|     `arg2=`                                  | :white_check_mark: | :x:      |
-|     `flush=,f=`                              | :white_check_mark: | :x:      |
-| **`GET /api/v0/files/flush`**                | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-| **`GET /api/v0/files/ls`**                   | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-|     `l=`                                     | :white_check_mark: | :x:      |
-|     `flush=,f=`                              | :white_check_mark: | :x:      |
-| **`GET /api/v0/files/mkdir`**                | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-|     `parents=,p=`                            | :white_check_mark: | :x:      |
-|     `flush=,f=`                              | :white_check_mark: | :x:      |
-| **`GET /api/v0/files/mv`**                   | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-|     `arg2=`                                  | :white_check_mark: | :x:      |
-|     `flush=,f=`                              | :white_check_mark: | :x:      |
-| **`GET /api/v0/files/read`**                 | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-|     `offset=,o=`                             | :white_check_mark: | :x:      |
-|     `count=,n=`                              | :white_check_mark: | :x:      |
-|     `flush=,f=`                              | :white_check_mark: | :x:      |
-| **`POST /api/v0/files/rm`**                  | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-|     `recursive=,r=`                          | :white_check_mark: | :x:      |
-|     `flush=,f=`                              | :white_check_mark: | :x:      |
-| **`GET /api/v0/files/stat`**                 | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-|     `flush=,f=`                              | :white_check_mark: | :x:      |
-| **`POST /api/v0/files/write`**               | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-|     `arg2=`                                  | :white_check_mark: | :x:      |
-|     `offset=,o=`                             | :white_check_mark: | :x:      |
-|     `create=,e=`                             | :white_check_mark: | :x:      |
-|     `truncate=,t=`                           | :white_check_mark: | :x:      |
-|     `count=,n=`                              | :white_check_mark: | :x:      |
-|     `flush=,f=`                              | :white_check_mark: | :x:      |
-| **`POST /api/v0/get`**                       | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-|     `archive=`                               | :white_check_mark: | :x:      |
-|     `compress=`                              | :white_check_mark: | :x:      |
-|     `compression-level=-1`                   | :white_check_mark: | :x:      |
-|     `compression-level=0`                    | :white_check_mark: | :x:      |
-|     `compression-level=1`                    | :white_check_mark: | :x:      |
-|     `compression-level=2`                    | :white_check_mark: | :x:      |
-|     `compression-level=3`                    | :white_check_mark: | :x:      |
-|     `compression-level=4`                    | :white_check_mark: | :x:      |
-|     `compression-level=5`                    | :white_check_mark: | :x:      |
-|     `compression-level=6`                    | :white_check_mark: | :x:      |
-|     `compression-level=7`                    | :white_check_mark: | :x:      |
-|     `compression-level=8`                    | :white_check_mark: | :x:      |
-|     `compression-level=9`                    | :white_check_mark: | :x:      |
+| Endpoint                  |      Go       |       JS       |
+| ------------------------- | :-----------: | :------------: |
+| **`/api/v0/add`**         | :green_heart: | :green_heart:  |
+| `recursive=`              | :green_heart: | :green_heart:  |
+| `quiet=`                  | :green_heart: | :green_heart:  |
+| `quieter=`                | :green_heart: | :green_heart:  |
+| `silent=`                 | :green_heart: | :green_heart:  |
+| `progress=`               | :green_heart: | :green_heart:  |
+| `trickle=`                | :green_heart: | :green_heart:  |
+| `only-hash=`              | :green_heart: | :green_heart:  |
+| `wrap-with-directory`     | :green_heart: | :green_heart:  |
+| `hidden`                  | :green_heart: | :broken_heart: |
+| `chunker`                 | :green_heart: | :green_heart:  |
+| `pin`                     | :green_heart: | :green_heart:  |
+| `raw-leaves`              | :green_heart: | :green_heart:  |
+| `nocopy`                  | :green_heart: | :broken_heart: |
+| `fscache`                 | :green_heart: | :broken_heart: |
+| `cid-version`             | :green_heart: | :green_heart:  |
+| `hash`                    | :green_heart: | :green_heart:  |
+| **`/api/v0/cat`**         | :green_heart: | :green_heart:  |
+| **`/api/v0/ls`**          | :green_heart: | :green_heart:  |
+| `headers=`                | :green_heart: | :yellow_heart: |
+| `resolve-type=`           | :green_heart: | :yellow_heart: |
+| **`/api/v0/file/ls`**     | :green_heart: | :green_heart:  |
+| **`/api/v0/files/cp`**    | :green_heart: | :green_heart:  |
+| `flush=,f=`               | :green_heart: | :green_heart:  |
+| **`/api/v0/files/flush`** | :green_heart: | :green_heart:  |
+| **`/api/v0/files/ls`**    | :green_heart: | :green_heart:  |
+| `l=`                      | :green_heart: | :green_heart:  |
+| `flush=,f=`               | :green_heart: | :green_heart:  |
+| **`/api/v0/files/mkdir`** | :green_heart: | :green_heart:  |
+| `parents=,p=`             | :green_heart: | :green_heart:  |
+| `flush=,f=`               | :green_heart: | :green_heart:  |
+| **`/api/v0/files/mv`**    | :green_heart: | :green_heart:  |
+| `flush=,f=`               | :green_heart: | :green_heart:  |
+| **`/api/v0/files/read`**  | :green_heart: | :green_heart:  |
+| `offset=,o=`              | :green_heart: | :green_heart:  |
+| `count=,n=`               | :green_heart: | :green_heart:  |
+| `flush=,f=`               | :green_heart: | :green_heart:  |
+| **`/api/v0/files/rm`**    | :green_heart: | :green_heart:  |
+| `recursive=,r=`           | :green_heart: | :green_heart:  |
+| `flush=,f=`               | :green_heart: | :green_heart:  |
+| **`/api/v0/files/stat`**  | :green_heart: | :green_heart:  |
+| `flush=,f=`               | :green_heart: | :green_heart:  |
+| **`/api/v0/files/write`** | :green_heart: | :green_heart:  |
+| `offset=,o=`              | :green_heart: | :green_heart:  |
+| `create=,e=`              | :green_heart: | :green_heart:  |
+| `truncate=,t=`            | :green_heart: | :green_heart:  |
+| `count=,n=`               | :green_heart: | :green_heart:  |
+| `flush=,f=`               | :green_heart: | :green_heart:  |
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
+See [files](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/FILES.md).
 
 ## File store (IPFS pack)
 
@@ -447,96 +368,80 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
-
 ## Key management
 
 ### CLI
 
-| Command                                      | Go Impl       | JS Impl        |
-| -------------------------------------------- | :-----------: | :-----------:  |
-| **`ipfs key gen`**                           | :white_check_mark: | :heavy_minus_sign:     |
-|     `name`                                   | :white_check_mark: | :heavy_minus_sign:     |
-|     `type=`                                  | :white_check_mark: | :heavy_minus_sign:     |
-|     `size=`                                  | :white_check_mark: | :heavy_minus_sign:     |
-| **`ipfs key list`**                          | :white_check_mark: | :heavy_minus_sign:     |
-|     `l=`                                     | :white_check_mark: | :heavy_minus_sign:     |
-| **`ipfs key rename`**                        | :white_check_mark: | :heavy_minus_sign:     |
-|     `name`                                   | :white_check_mark: | :heavy_minus_sign:     |
-|     `newName`                                | :white_check_mark: | :heavy_minus_sign:     |
-|     `force=`                                 | :white_check_mark: | :heavy_minus_sign:     |
-| **`ipfs key rm`**                            | :white_check_mark: | :heavy_minus_sign:     |
-|     `name`                                   | :white_check_mark: | :heavy_minus_sign:     |
-|     `l=`                                     | :white_check_mark: | :heavy_minus_sign:     |
+| Command               |       Go       |      JS       |
+| --------------------- | :------------: | :-----------: |
+| **`ipfs key gen`**    | :green_heart:  | :green_heart: |
+| `type=`               | :green_heart:  | :green_heart: |
+| `size=`               | :green_heart:  | :green_heart: |
+| **`ipfs key list`**   | :green_heart:  | :green_heart: |
+| `l=`                  | :green_heart:  | :green_heart: |
+| **`ipfs key rename`** | :green_heart:  | :green_heart: |
+| `force=`              | :green_heart:  | :green_heart: |
+| **`ipfs key rm`**     | :green_heart:  | :green_heart: |
+| `l=`                  | :green_heart:  | :green_heart: |
+| **`ipfs key rm`**     | :green_heart:  | :green_heart: |
+| **`ipfs key export`** | :broken_heart: | :green_heart: |
+| **`ipfs key import`** | :broken_heart: | :green_heart: |
 
 ### HTTP
 
-| Endpoint                                     | Go Impl       | JS Impl        |
-| -------------------------------------------- | :-----------: | :-----------:  |
-| **`GET /api/v0/key/gen`**                    | :white_check_mark: | :heavy_minus_sign:     |
-|     `arg=`                                   | :white_check_mark: | :heavy_minus_sign:     |
-|     `type=`                                  | :white_check_mark: | :heavy_minus_sign:     |
-|     `size=`                                  | :white_check_mark: | :heavy_minus_sign:     |
-| **`GET /api/v0/key/list`**                   | :white_check_mark: | :heavy_minus_sign:     |
-|     `l=`                                     | :white_check_mark: | :heavy_minus_sign:     |
-| **`GET /api/v0/key/rename`**                 | :white_check_mark: | :heavy_minus_sign:     |
-|     `arg=`                                   | :white_check_mark: | :heavy_minus_sign:     |
-|     `arg=`                                   | :white_check_mark: | :heavy_minus_sign:     |
-|     `force=`                                 | :white_check_mark: | :heavy_minus_sign:     |
-| **`GET /api/v0/key/rm`**                     | :white_check_mark: | :heavy_minus_sign:     |
-|     `arg=`                                   | :white_check_mark: | :heavy_minus_sign:     |
-|     `l=`                                     | :white_check_mark: | :heavy_minus_sign:     |
+| Endpoint                 |       Go       |      JS       |
+| ------------------------ | :------------: | :-----------: |
+| **`/api/v0/key/gen`**    | :green_heart:  | :green_heart: |
+| `type=`                  | :green_heart:  | :green_heart: |
+| `size=`                  | :green_heart:  | :green_heart: |
+| **`/api/v0/key/list`**   | :green_heart:  | :green_heart: |
+| `l=`                     | :green_heart:  | :green_heart: |
+| **`/api/v0/key/rename`** | :green_heart:  | :green_heart: |
+| `force=`                 | :green_heart:  | :green_heart: |
+| **`/api/v0/key/rm`**     | :green_heart:  | :green_heart: |
+| `l=`                     | :green_heart:  | :green_heart: |
+| **`/api/v0/key/export`** | :broken_heart: | :green_heart: |
+| **`/api/v0/key/import`** | :broken_heart: | :green_heart: |
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
+See [key](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/KEY.md).
 
 ## Miscellaneous
 
 ### CLI
 
-| Command                                      | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`ipfs ping`**                              | :white_check_mark: | :construction:       |
-|     `peer ID`                                | :white_check_mark: | :x:      |
-|     `count`                                  | :white_check_mark: | :x:      |
-| **`ipfs update`**                            | :heavy_minus_sign:    | :heavy_minus_sign:    |
-| **`ipfs version`**                           | :white_check_mark: | :white_check_mark: |
-| **`ipfs commands`**                          | :white_check_mark: | :white_check_mark: |
-| **`ipfs id`**                                | :white_check_mark: | :white_check_mark: |
-|     `peerid`                                 | :white_check_mark: | :x:      |
-|     `aver`                                   | :white_check_mark: | :x:      |
-|     `pver`                                   | :white_check_mark: | :x:      |
-|     `pubkey`                                 | :white_check_mark: | :x:      |
-|     `addrs`                                  | :white_check_mark: | :x:      |
-| **`ipfs mount`**                             | :white_check_mark: | :heavy_minus_sign:    |
-|     `ipfs-path=`                             | :white_check_mark: | :heavy_minus_sign:    |
-|     `ipns-path=`                             | :white_check_mark: | :heavy_minus_sign:    |
-| **`ipfs mount`**                             | :white_check_mark: | :heavy_minus_sign:    |
+| Command             |         Go         |         JS         |
+| ------------------- | :----------------: | :----------------: |
+| **`ipfs ping`**     |   :green_heart:    |   :green_heart:    |
+| `count`             |   :green_heart:    |   :green_heart:    |
+| **`ipfs update`**   | :heavy_minus_sign: | :heavy_minus_sign: |
+| **`ipfs version`**  |   :green_heart:    |   :green_heart:    |
+| **`ipfs commands`** |   :green_heart:    |   :green_heart:    |
+| **`ipfs id`**       |   :green_heart:    |   :green_heart:    |
+| `format`            |   :green_heart:    |   :green_heart:    |
+| **`ipfs mount`**    |   :green_heart:    | :heavy_minus_sign: |
+| `ipfs-path=`        |   :green_heart:    | :heavy_minus_sign: |
+| `ipns-path=`        |   :green_heart:    | :heavy_minus_sign: |
 
 ### HTTP
 
-| Endpoint                                     | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`GET /api/v0/ping`**                       | :white_check_mark: | :construction:       |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-|     `count=`                                 | :white_check_mark: | :x:      |
-| **`GET /api/v0/update`**                     | :heavy_minus_sign:    | :heavy_minus_sign:    |
-| **`GET /api/v0/version`**                    | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/commands`**                   | :white_check_mark: | :white_check_mark: |
-| **`POST /api/v0/id`**                        | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/mount`**                      | :white_check_mark: | :heavy_minus_sign:    |
-|     `ipfs-path=`                             | :white_check_mark: | :heavy_minus_sign:    |
-|     `ipns-path=`                             | :white_check_mark: | :heavy_minus_sign:    |
-| **`GET /api/v0/mount`**                      | :white_check_mark: | :heavy_minus_sign:    |
+| Endpoint               |         Go         |         JS         |
+| ---------------------- | :----------------: | :----------------: |
+| **`/api/v0/ping`**     |   :green_heart:    |   :green_heart:    |
+| `count=`               |   :green_heart:    |   :green_heart:    |
+| **`/api/v0/update`**   | :heavy_minus_sign: | :heavy_minus_sign: |
+| **`/api/v0/version`**  |   :green_heart:    |   :green_heart:    |
+| **`/api/v0/commands`** |   :green_heart:    |   :green_heart:    |
+| **`/api/v0/id`**       |   :green_heart:    |   :green_heart:    |
+| `format=`              |   :green_heart:    |   :green_heart:    |
+| **`/api/v0/mount`**    |   :green_heart:    | :heavy_minus_sign: |
+| `ipfs-path=`           |   :green_heart:    | :heavy_minus_sign: |
+| `ipns-path=`           |   :green_heart:    | :heavy_minus_sign: |
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
+See [misc](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/MISCELLANEOUS.md).
 
 ## Naming
 
@@ -544,133 +449,92 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ### CLI
 
-| Command                                      | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`ipfs name publish`**                      | :white_check_mark: | :x:      |
-|     `ipfs-path`                              | :white_check_mark: | :x:      |
-|     `resolve=`                               | :white_check_mark: | :x:      |
-|     `lifetime=`                              | :white_check_mark: | :x:      |
-|     `ttl=`                                   | :white_check_mark: | :x:      |
-|     `key=`                                   | :white_check_mark: | :x:      |
-| **`ipfs name resolve`**                      | :white_check_mark: | :x:      |
-|     `name`                                   | :white_check_mark: | :x:      |
-|     `recursive=`                             | :white_check_mark: | :x:      |
-|     `nocache=`                               | :white_check_mark: | :x:      |
-| **`ipfs resolve`**                           | :white_check_mark: | :x:      |
-|     `name`                                   | :white_check_mark: | :x:      |
-|     `recursive=`                             | :white_check_mark: | :x:      |
-| **`ipfs dns`**                               | :white_check_mark: | :x:      |
-|     `domain`                                 | :white_check_mark: | :x:      |
-|     `recursive=`                             | :white_check_mark: | :x:      |
+| Command                 |      Go       |      JS       |
+| ----------------------- | :-----------: | :-----------: |
+| **`ipfs name publish`** | :green_heart: | :green_heart: |
+| `resolve=`              | :green_heart: | :green_heart: |
+| `lifetime=`             | :green_heart: | :green_heart: |
+| `ttl=`                  | :green_heart: | :green_heart: |
+| `key=`                  | :green_heart: | :green_heart: |
+| **`ipfs name resolve`** | :green_heart: | :green_heart: |
+| `recursive=`            | :green_heart: | :green_heart: |
+| `nocache=`              | :green_heart: | :green_heart: |
+| **`ipfs name pubsub`**  | :green_heart: | :green_heart: |
+| **`ipfs name resolve`** | :green_heart: | :green_heart: |
+| **`ipfs resolve`**      | :green_heart: | :green_heart: |
+| `recursive=`            | :green_heart: | :green_heart: |
+| **`ipfs dns`**          | :green_heart: | :green_heart: |
+| `recursive=`            | :green_heart: | :green_heart: |
 
 ### HTTP
 
-| Endpoint                                     | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`POST /api/v0/name/publish`**              | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-|     `resolve=`                               | :white_check_mark: | :x:      |
-|     `lifetime=`                              | :white_check_mark: | :x:      |
-|     `ttl=`                                   | :white_check_mark: | :x:      |
-|     `key=`                                   | :white_check_mark: | :x:      |
-| **`GET /api/v0/name/resolve`**               | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-|     `recursive=`                             | :white_check_mark: | :x:      |
-|     `nocache=`                               | :white_check_mark: | :x:      |
-| **`GET /api/v0/resolve`**                    | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-|     `recursive=`                             | :white_check_mark: | :x:      |
-| **`GET /api/v0/dns`**                        | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-|     `recursive=`                             | :white_check_mark: | :x:      |
+| Endpoint                   |      Go       |      JS       |
+| -------------------------- | :-----------: | :-----------: |
+| **`/api/v0/name/publish`** | :green_heart: | :green_heart: |
+| `resolve=`                 | :green_heart: | :green_heart: |
+| `lifetime=`                | :green_heart: | :green_heart: |
+| `ttl=`                     | :green_heart: | :green_heart: |
+| `key=`                     | :green_heart: | :green_heart: |
+| **`/api/v0/name/resolve`** | :green_heart: | :green_heart: |
+| `recursive=`               | :green_heart: | :green_heart: |
+| `nocache=`                 | :green_heart: | :green_heart: |
+| **`/api/v0/name/pubsub`**  | :green_heart: | :green_heart: |
+| **`/api/v0/resolve`**      | :green_heart: | :green_heart: |
+| `recursive=`               | :green_heart: | :green_heart: |
+| **`/api/v0/dns`**          | :green_heart: | :green_heart: |
+| `recursive=`               | :green_heart: | :green_heart: |
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
+See [name](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/NAME.md) and [misc](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/MISCELLANEOUS.md).
 
-
-## Object `ipfs object`
+## Object
 
 ### CLI
 
-| Endpoint                                     | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`ipfs object data`**                       | :white_check_mark: | :white_check_mark: |
-|     `key`                                    | :white_check_mark: | :white_check_mark: |
-| **`ipfs object diff`**                       | :white_check_mark: | :x:      |
-|     `key1`                                   | :white_check_mark: | :x:      |
-|     `key2`                                   | :white_check_mark: | :x:      |
-| **`ipfs object/get`**                        | :white_check_mark: | :white_check_mark: |
-|     `key`                                    | :white_check_mark: | :white_check_mark: |
-|     `encoding`                               | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/object/links`**               | :white_check_mark: | :white_check_mark: |
-|     `key`                                    | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/object/new`**                 | :white_check_mark: | :white_check_mark: |
-|     `template`                               | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/object/patch/append-data`**   | :white_check_mark: | :white_check_mark: |
-|     `root`                                   | :white_check_mark: | :white_check_mark: |
-|     `data`                                   | :white_check_mark: | :white_check_mark: |
-| **`POST /api/v0/object/patch/add-link`**     | :white_check_mark: | :white_check_mark: |
-|     `root`                                   | :white_check_mark: | :white_check_mark: |
-|     `name`                                   | :white_check_mark: | :white_check_mark: |
-|     `ref`                                    | :white_check_mark: | :construction:       |
-|     `create`                                 | :white_check_mark: | :x:      |
-| **`POST /api/v0/object/patch/rm-link`**      | :white_check_mark: | :white_check_mark: |
-|     `root`                                   | :white_check_mark: | :white_check_mark: |
-|     `link`                                   | :white_check_mark: | :white_check_mark: |
-| **`POST /api/v0/object/patch/set-data`**     | :white_check_mark: | :white_check_mark: |
-|     `root`                                   | :white_check_mark: | :white_check_mark: |
-|     `data`                                   | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/object/put`**                 | :white_check_mark: | :white_check_mark: |
-|     `data`                                   | :white_check_mark: | :white_check_mark: |
-|     `inputenc`                               | :white_check_mark: | :white_check_mark: |
-|     `datafieldenc`                           | :white_check_mark: | :x:      |
-|     `pin`                                    | :white_check_mark: | :x:      |
-| **`GET /api/v0/object/stat`**                | :white_check_mark: | :white_check_mark: |
-|     `root`                                   | :white_check_mark: | :white_check_mark: |
+| Endpoint                            |      Go       |       JS       |
+| ----------------------------------- | :-----------: | :------------: |
+| **`ipfs object data`**              | :green_heart: | :green_heart:  |
+| **`ipfs object diff`**              | :green_heart: | :broken_heart: |
+| **`ipfs object get`**               | :green_heart: | :green_heart:  |
+| `encoding`                          | :green_heart: | :green_heart:  |
+| **`ipfs object links`**             | :green_heart: | :green_heart:  |
+| **`ipfs object new`**               | :green_heart: | :green_heart:  |
+| **`ipfs object patch append-data`** | :green_heart: | :green_heart:  |
+| **`ipfs object patch add-link`**    | :green_heart: | :green_heart:  |
+| `create`                            | :green_heart: | :broken_heart: |
+| **`ipfs object patch rm-link`**     | :green_heart: | :green_heart:  |
+| **`ipfs object patch set-data`**    | :green_heart: | :green_heart:  |
+| **`ipfs object put`**               | :green_heart: | :green_heart:  |
+| `inputenc`                          | :green_heart: | :green_heart:  |
+| `datafieldenc`                      | :green_heart: | :broken_heart: |
+| `pin`                               | :green_heart: | :broken_heart: |
+| **`ipfs object stat`**              | :green_heart: | :green_heart:  |
 
 ### HTTP
 
-| Endpoint                                     | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`GET /api/v0/object/data`**                | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/object/diff`**                | :white_check_mark: | :x:      |
-|     `arg1=`                                  | :white_check_mark: | :x:      |
-|     `arg2=`                                  | :white_check_mark: | :x:      |
-| **`POST /api/v0/object/get`**                | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-|     `encoding=json,enc=json`                 | :white_check_mark: | :white_check_mark: |
-|     `encoding=protobuf,enc=protobuf`         | :white_check_mark: | :white_check_mark: |
-|     `encoding=xml,enc=xml`                   | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/object/links`**               | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/object/new`**                 | :white_check_mark: | :white_check_mark: |
-|     `arg=unixfs-dir`                         | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/object/patch/append-data`**   | :white_check_mark: | :white_check_mark: |
-|     `arg1=`                                  | :white_check_mark: | :white_check_mark: |
-|     `arg2=`                                  | :white_check_mark: | :white_check_mark: |
-| **`POST /api/v0/object/patch/add-link`**     | :white_check_mark: | :white_check_mark: |
-|     `arg1=`                                  | :white_check_mark: | :white_check_mark: |
-|     `arg2=`                                  | :white_check_mark: | :white_check_mark: |
-|     `arg3=`                                  | :white_check_mark: | :white_check_mark: |
-|     `create=`                                | :white_check_mark: | :white_check_mark: |
-| **`POST /api/v0/object/patch/rm-link`**      | :white_check_mark: | :white_check_mark: |
-|     `arg1=`                                  | :white_check_mark: | :white_check_mark: |
-|     `arg2=`                                  | :white_check_mark: | :white_check_mark: |
-| **`POST /api/v0/object/patch/set-data`**     | :white_check_mark: | :white_check_mark: |
-|     `arg1=`                                  | :white_check_mark: | :white_check_mark: |
-|     `arg2=`                                  | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/object/put`**                 | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-|     `inputenc`                               | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/object/stat`**                | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
+| Endpoint                               |      Go       |       JS       |
+| -------------------------------------- | :-----------: | :------------: |
+| **`/api/v0/object/data`**              | :green_heart: | :green_heart:  |
+| **`/api/v0/object/diff`**              | :green_heart: | :broken_heart: |
+| **`/api/v0/object/get`**               | :green_heart: | :green_heart:  |
+| `encoding=json,enc=json`               | :green_heart: | :green_heart:  |
+| `encoding=protobuf,enc=protobuf`       | :green_heart: | :green_heart:  |
+| `encoding=xml,enc=xml`                 | :green_heart: | :green_heart:  |
+| **`/api/v0/object/links`**             | :green_heart: | :green_heart:  |
+| **`/api/v0/object/new`**               | :green_heart: | :green_heart:  |
+| **`/api/v0/object/patch/append-data`** | :green_heart: | :green_heart:  |
+| **`/api/v0/object/patch/add-link`**    | :green_heart: | :green_heart:  |
+| `create=`                              | :green_heart: | :green_heart:  |
+| **`/api/v0/object/patch/rm-link`**     | :green_heart: | :green_heart:  |
+| **`/api/v0/object/patch/set-data`**    | :green_heart: | :green_heart:  |
+| **`/api/v0/object/put`**               | :green_heart: | :green_heart:  |
+| `inputenc`                             | :green_heart: | :green_heart:  |
+| **`/api/v0/object/stat`**              | :green_heart: | :green_heart:  |
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
+See [object](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/OBJECT.md).
 
 ## p2p (libp2p exposed API)
 
@@ -682,177 +546,146 @@ See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
+See [core](https://github.com/ipfs/js-ipfs/blob/master/docs/README.md).
 
 ## Pinning
 
 ### CLI
 
-| Command                                      | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`ipfs pin add`**                           | :white_check_mark: | :construction:       |
-|     `hash`                                   | :white_check_mark: | :construction:       |
-|     `recursive`                              | :white_check_mark: | :construction:       |
-|     `progress`                               | :white_check_mark: | :x:      |
-| **`ipfs pin ls`**                            | :white_check_mark: | :construction:       |
-|     `type`                                   | :white_check_mark: | :construction:       |
-|     `quiet`                                  | :white_check_mark: | :construction:       |
-| **`ipfs pin rm`**                            | :white_check_mark: | :construction:       |
-|     `hash`                                   | :white_check_mark: | :construction:       |
-|     `recursive`                              | :white_check_mark: | :construction:       |
-| **`ipfs pin update`**                        | :white_check_mark: | :x:      |
-|     `hash`                                   | :white_check_mark: | :x:      |
-|     `unpin`                                  | :white_check_mark: | :x:      |
-| **`ipfs pin verify`**                        | :white_check_mark: | :x:      |
-|     `verbose`                                | :white_check_mark: | :x:      |
-| **`ipfs refs`**                              | :white_check_mark: | :x:      |
-|     `hash`                                   | :white_check_mark: | :x:      |
-|     `format`                                 | :white_check_mark: | :x:      |
-|     `edges`                                  | :white_check_mark: | :x:      |
-|     `unique`                                 | :white_check_mark: | :x:      |
-|     `recursive`                              | :white_check_mark: | :x:      |
-| **`ipfs refs local`**                        | :white_check_mark: | :x:      |
+| Command               |      Go       |       JS       |
+| --------------------- | :-----------: | :------------: |
+| **`ipfs pin add`**    | :green_heart: | :green_heart:  |
+| `recursive`           | :green_heart: | :green_heart:  |
+| `progress`            | :green_heart: | :broken_heart: |
+| **`ipfs pin ls`**     | :green_heart: | :green_heart:  |
+| `type`                | :green_heart: | :green_heart:  |
+| `quiet`               | :green_heart: | :green_heart:  |
+| **`ipfs pin rm`**     | :green_heart: | :green_heart:  |
+| `recursive`           | :green_heart: | :green_heart:  |
+| **`ipfs pin update`** | :green_heart: | :broken_heart: |
+| **`ipfs pin verify`** | :green_heart: | :broken_heart: |
+| `verbose`             | :green_heart: | :broken_heart: |
+| **`ipfs refs`**       | :green_heart: | :green_heart:  |
+| `format`              | :green_heart: | :green_heart:  |
+| `edges`               | :green_heart: | :green_heart:  |
+| `unique`              | :green_heart: | :green_heart:  |
+| `recursive`           | :green_heart: | :green_heart:  |
+| **`ipfs refs local`** | :green_heart: | :green_heart:  |
 
 ### HTTP
 
-| Endpoint                                     | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`GET /api/v0/pin/add`**                    | :white_check_mark: | :construction:       |
-|     `arg=`                                   | :white_check_mark: | :construction:       |
-|     `recursive=`                             | :white_check_mark: | :construction:       |
-| **`POST /api/v0/pin/ls`**                    | :white_check_mark: | :construction:       |
-|     `type=`                                  | :white_check_mark: | :x:      |
-|     `quiet=`                                 | :white_check_mark: | :x:      |
-| **`GET /api/v0/pin/rm`**                     | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-|     `recursive=`                             | :white_check_mark: | :x:      |
-| **`GET /api/v0/pin/update`**                 | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-|     `unpin=`                                 | :white_check_mark: | :x:      |
-| **`GET /api/v0/pin/verify`**                 | :white_check_mark: | :x:      |
-|     `verbose=`                               | :white_check_mark: | :x:      |
-| **`GET /api/v0/refs`**                       | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-|     `format=`                                | :white_check_mark: | :x:      |
-|     `edges=`                                 | :white_check_mark: | :x:      |
-|     `unique=`                                | :white_check_mark: | :x:      |
-|     `recursive=`                             | :white_check_mark: | :x:      |
-| **`GET /api/v0//refs/local`**                | :white_check_mark: | :x:      |
+| Endpoint                  |      Go       |       JS       |
+| ------------------------- | :-----------: | :------------: |
+| **`/api/v0/pin/add`**     | :green_heart: | :green_heart:  |
+| `recursive=`              | :green_heart: | :green_heart:  |
+| **`/api/v0/pin/ls`**      | :green_heart: | :green_heart:  |
+| `type=`                   | :green_heart: | :green_heart:  |
+| `quiet=`                  | :green_heart: | :green_heart:  |
+| **`/api/v0/pin/rm`**      | :green_heart: | :green_heart:  |
+| `recursive=`              | :green_heart: | :green_heart:  |
+| **`/api/v0/pin/update`**  | :green_heart: | :broken_heart: |
+| `unpin=`                  | :green_heart: | :broken_heart: |
+| **`/api/v0/pin/verify`**  | :green_heart: | :broken_heart: |
+| `verbose=`                | :green_heart: | :broken_heart: |
+| **`/api/v0/refs`**        | :green_heart: | :green_heart:  |
+| `format=`                 | :green_heart: | :green_heart:  |
+| `edges=`                  | :green_heart: | :green_heart:  |
+| `unique=`                 | :green_heart: | :green_heart:  |
+| `recursive=`              | :green_heart: | :green_heart:  |
+| **`/api/v0//refs/local`** | :green_heart: | :green_heart:  |
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
+See [pin](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/PIN.md) and [refs](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/REFS.md).
 
 ## PubSub
 
 ### CLI
 
-| Command                                      | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`ipfs pubsub ls`**                         | :white_check_mark: | :white_check_mark: |
-| **`ipfs pubsub peers`**                      | :white_check_mark: | :white_check_mark: |
-|     `topic`                                  | :white_check_mark: | :white_check_mark: |
-| **`ipfs pubsub pub`**                        | :white_check_mark: | :white_check_mark: |
-|     `topic`                                  | :white_check_mark: | :white_check_mark: |
-|     `data`                                   | :white_check_mark: | :white_check_mark: |
-| **`ipfs pubsub sub`**                        | :white_check_mark: | :white_check_mark: |
-|     `topic`                                  | :white_check_mark: | :white_check_mark: |
-|     `discover`                               | :white_check_mark: | :x:      |
+| Command                 |      Go       |       JS       |
+| ----------------------- | :-----------: | :------------: |
+| **`ipfs pubsub ls`**    | :green_heart: | :green_heart:  |
+| **`ipfs pubsub peers`** | :green_heart: | :green_heart:  |
+| **`ipfs pubsub pub`**   | :green_heart: | :green_heart:  |
+| **`ipfs pubsub sub`**   | :green_heart: | :green_heart:  |
+| `discover`              | :green_heart: | :broken_heart: |
 
 ### HTTP
 
-| Endpoint                                     | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`GET /api/v0/pubsub/ls`**                  | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/pubsub/peers`**               | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/pubsub/pub`**                 | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/pubsub/sub`**                 | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-|     `discover=`                              | :white_check_mark: | :white_check_mark: |
+| Endpoint                   |      Go       |       JS       |
+| -------------------------- | :-----------: | :------------: |
+| **`/api/v0/pubsub/ls`**    | :green_heart: | :green_heart:  |
+| **`/api/v0/pubsub/peers`** | :green_heart: | :green_heart:  |
+| **`/api/v0/pubsub/pub`**   | :green_heart: | :green_heart:  |
+| **`/api/v0/pubsub/sub`**   | :green_heart: | :green_heart:  |
+| `discover=`                | :green_heart: | :broken_heart: |
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
+See [pubsub](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/PUBSUB.md).
 
 ## Repo
 
 ### CLI
 
-| Command                                      | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`ipfs repo fsck`**                         | :white_check_mark: | :heavy_minus_sign:    |
-| **`ipfs repo gc`**                           | :white_check_mark: | :x:      |
-| **`ipfs repo stat`**                         | :white_check_mark: | :x:      |
-| **`ipfs repo verify`**                       | :white_check_mark: | :heavy_minus_sign:    |
-| **`ipfs repo version`**                      | :white_check_mark: | :white_check_mark: |
+| Command                 |      Go       |         JS         |
+| ----------------------- | :-----------: | :----------------: |
+| **`ipfs repo fsck`**    | :green_heart: | :heavy_minus_sign: |
+| **`ipfs repo gc`**      | :green_heart: |   :green_heart:    |
+| **`ipfs repo stat`**    | :green_heart: |   :green_heart:    |
+| **`ipfs repo verify`**  | :green_heart: | :heavy_minus_sign: |
+| **`ipfs repo version`** | :green_heart: |   :green_heart:    |
 
 ### HTTP
 
-| Endpoint                                     | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`GET /api/v0/repo/fsck`**                  | :white_check_mark: | :heavy_minus_sign:    |
-| **`GET /api/v0/repo/gc`**                    | :white_check_mark: | :x:      |
-| **`GET /api/v0/repo/stat`**                  | :white_check_mark: | :x:      |
-| **`GET /api/v0/repo/verify`**                | :white_check_mark: | :heavy_minus_sign:    |
-| **`GET /api/v0/repo/version`**               | :white_check_mark: | :white_check_mark: |
+| Endpoint                   |      Go       |         JS         |
+| -------------------------- | :-----------: | :----------------: |
+| **`/api/v0/repo/fsck`**    | :green_heart: | :heavy_minus_sign: |
+| **`/api/v0/repo/gc`**      | :green_heart: |   :green_heart:    |
+| **`/api/v0/repo/stat`**    | :green_heart: |   :green_heart:    |
+| **`/api/v0/repo/verify`**  | :green_heart: | :heavy_minus_sign: |
+| **`/api/v0/repo/version`** | :green_heart: |   :green_heart:    |
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
-
+See [repo](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/REPO.md).
 
 ## Swarm
 
 ### CLI
 
-| Command                                      | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`ipfs swarm addrs`**                       | :white_check_mark: | :white_check_mark: |
-| **`ipfs swarm addrs listen`**                | :white_check_mark: | :x:      |
-| **`ipfs swarm addrs local`**                 | :white_check_mark: | :white_check_mark: |
-|     `id=`                                    | :white_check_mark: | :x:      |
-| **`ipfs swarm connect`**                     | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-| **`ipfs swarm disconnect`**                  | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-| **`ipfs swarm filters`**                     | :white_check_mark: | :x:      |
-| **`ipfs swarm filters add`**                 | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-| **`ipfs swarm filters rm`**                  | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-| **`ipfs swarm peers`**                       | :white_check_mark: | :white_check_mark: |
-|     `verbose=`                               | :white_check_mark: | :x:      |
-|     `latency=`                               | :white_check_mark: | :x:      |
-|     `streams=`                               | :white_check_mark: | :x:      |
+| Command                       |      Go       |       JS       |
+| ----------------------------- | :-----------: | :------------: |
+| **`ipfs swarm addrs`**        | :green_heart: | :green_heart:  |
+| **`ipfs swarm addrs listen`** | :green_heart: | :broken_heart: |
+| **`ipfs swarm addrs local`**  | :green_heart: | :green_heart:  |
+| **`ipfs swarm connect`**      | :green_heart: | :green_heart:  |
+| **`ipfs swarm disconnect`**   | :green_heart: | :green_heart:  |
+| **`ipfs swarm filters`**      | :green_heart: | :broken_heart: |
+| **`ipfs swarm filters add`**  | :green_heart: | :broken_heart: |
+| **`ipfs swarm filters rm`**   | :green_heart: | :broken_heart: |
+| **`ipfs swarm peers`**        | :green_heart: | :green_heart:  |
+| `verbose=`                    | :green_heart: | :green_heart:  |
+| `latency=`                    | :green_heart: | :green_heart:  |
+| `streams=`                    | :green_heart: | :green_heart:  |
 
 ### HTTP
 
-| Endpoint                                     | Go Impl       | JS Impl       |
-| -------------------------------------------- | :-----------: | :-----------: |
-| **`GET /api/v0/swarm/addrs`**                | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/swarm/addrs/listen`**         | :white_check_mark: | :x:      |
-| **`GET /api/v0/swarm/addrs/local`**          | :white_check_mark: | :white_check_mark: |
-|     `id=`                                    | :white_check_mark: | :x:      |
-| **`GET /api/v0/swarm/connect`**              | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/swarm/disconnect`**           | :white_check_mark: | :white_check_mark: |
-|     `arg=`                                   | :white_check_mark: | :white_check_mark: |
-| **`GET /api/v0/swarm/filters`**              | :white_check_mark: | :x:      |
-| **`GET /api/v0/swarm/filters/add`**          | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-| **`GET /api/v0/swarm/filters/rm`**           | :white_check_mark: | :x:      |
-|     `arg=`                                   | :white_check_mark: | :x:      |
-| **`GET /api/v0/swarm/peers`**                | :white_check_mark: | :white_check_mark: |
-|     `verbose=`                               | :white_check_mark: | :x:      |
-|     `latency=`                               | :white_check_mark: | :x:      |
-|     `streams=`                               | :white_check_mark: | :x:      |
+| Endpoint                         |      Go       |       JS       |
+| -------------------------------- | :-----------: | :------------: |
+| **`/api/v0/swarm/addrs`**        | :green_heart: | :green_heart:  |
+| **`/api/v0/swarm/addrs/listen`** | :green_heart: | :broken_heart: |
+| **`/api/v0/swarm/addrs/local`**  | :green_heart: | :green_heart:  |
+| **`/api/v0/swarm/connect`**      | :green_heart: | :green_heart:  |
+| **`/api/v0/swarm/disconnect`**   | :green_heart: | :green_heart:  |
+| **`/api/v0/swarm/filters`**      | :green_heart: | :broken_heart: |
+| **`/api/v0/swarm/filters/add`**  | :green_heart: | :broken_heart: |
+| **`/api/v0/swarm/filters/rm`**   | :green_heart: | :broken_heart: |
+| **`/api/v0/swarm/peers`**        | :green_heart: | :green_heart:  |
+| `verbose=`                       | :green_heart: | :green_heart:  |
+| `latency=`                       | :green_heart: | :green_heart:  |
+| `streams=`                       | :green_heart: | :green_heart:  |
 
 ### Core
 
-See [interface-ipfs-core](https://github.com/ipfs/interface-ipfs-core).
+See [swarm](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/SWARM.md).
