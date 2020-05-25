@@ -151,7 +151,7 @@ When dealing with delay-sensitive processes, you should aim to use a native IPFS
 
 All time-insensitive processes can be routed through public/private gateways.
 
-### End-to-end cyptographic validation required
+### End-to-end cryptographic validation required
 
 Because of third-party gateway vulnerabilities, apps requiring end-to-end validation of content read/write should avoid gateways when possible. If the app must employ an external gateway, such apps should use `ipfs.io` or a trusted third-party.
 
@@ -208,7 +208,7 @@ To partially address this exposure, you may wish to use the public gateway [cf-i
 
 When downloading files, browsers will usually guess a file's filename by looking at the last component of the path, e.g., `https://{domainName/tld}/{path}/userManual.pdf` downloads a file stored locally with the name `userManual.pdf`. Unfortunately, when linking directly to a file with no containing directory in IPFS, the CID becomes the final component. Storing the downloaded file with the filename set to the CID fails the human-friendly design test.
 
-To work around this issue, you can add a `?filename={filename.ext}` parameter to your query string to premptively specify a name for the locally-stored downloaded file:
+To work around this issue, you can add a `?filename={filename.ext}` parameter to your query string to preemptively specify a name for the locally-stored downloaded file:
 
 | Style     | Query                                                                                                                                                     |
 | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
