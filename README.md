@@ -18,9 +18,13 @@ Every month the team gets together to discuss plans for the coming four-ish week
 
 | Date | Time | Zoom ID | Link | Notes |
 | ---- | ---- | ------- | ---- | ----- |
-| Tuesday 26th May 2020 | UTC: 16:00 - 16:30<br>EST: 11:00 - 11:30<br>PST 08:00-08:30<br>Unix: 1590508800 | `92681067428` | [protocol.zoom.us/j/92681067428](https://protocol.zoom.us/j/92681067428) | [Meeting notes](https://www.google.com/url?q=https://docs.google.com/document/d/1EOD-pJi4GvRmGi9HHocgVV8uVHMFIZlyVgJDkvC3DQ4/edit&sa=D&ust=1563045367944000&usg=AOvVaw1PXuFUmNdcfz8M0oJjv1dP) |
+| Tuesday 26th May 2020 | UTC: 16:00 - 16:30<br>EST: 11:00 - 11:30<br>PST 08:00-08:30<br>Unix: 1590508800 | `92681067428` | [protocol.zoom.us/j/92681067428](https://protocol.zoom.us/j/92681067428) | [Meeting notes](https://cryptpad.fr/code/#/2/code/view/4xRbtK8Xt40a4FjhPiNcFVUeT6sum5YMuO-02+0Sn7s/) |
 
-If you can't make the meeting, don't worry. We post a recording of each meeting in our [YouTube playlist](https://www.youtube.com/playlist?list=PLuhRWgmPaHtRnfsVYI2LbVS03BRX7TcXq). Notes from current and past calls can be found [here](https://www.google.com/url?q=https://docs.google.com/document/d/1EOD-pJi4GvRmGi9HHocgVV8uVHMFIZlyVgJDkvC3DQ4/edit&sa=D&ust=1563045367944000&usg=AOvVaw1PXuFUmNdcfz8M0oJjv1dP).
+If you can't make the meeting, don't worry. A recording of each meeting is available on IPFS using the following CIDs:
+
+| Date | Recording | Notes | Discussion |
+| ---- | --------- | ----- | ---------- |
+| Tuesday 26th May 2020 | [`QmS6TTMt2y3auLnjGmKUZL7thJRkXgyXr5sTL1RvUyp57n`](https://gateway.pinata.cloud/ipfs/QmS6TTMt2y3auLnjGmKUZL7thJRkXgyXr5sTL1RvUyp57n) | [Link](https://cryptpad.fr/code/#/2/code/view/4xRbtK8Xt40a4FjhPiNcFVUeT6sum5YMuO-02+0Sn7s/) | [#311](https://github.com/ipfs/ipfs-docs/issues/311) |
 
 
 ## Working on this beta platform
