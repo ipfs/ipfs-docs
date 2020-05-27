@@ -9,8 +9,8 @@ This repository organizes overall documentation issues across the IPFS project.
 
 Every month the team gets together to discuss plans for the coming four-ish weeks. This meeting usually happens on the last Tuesday of each month. Feel free to [join us](https://protocol.zoom.us/j/92681067428) using `92681067428` as the Zoom meeting ID! Here are the details for the next meeting:
 
-| Date | Time | Zoom ID | Link  | Notes |
-| ---- | ---- | ------- | ----- | ----- |
+| Date                  | Time                                                                            | Zoom ID       | Link                                                                     | Notes                                                                                                                                                                                         |
+| --------------------- | ------------------------------------------------------------------------------- | ------------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Tuesday 26th May 2020 | UTC: 16:00 - 16:30<br>EST: 11:00 - 11:30<br>PST 08:00-08:30<br>Unix: 1590508800 | `92681067428` | [protocol.zoom.us/j/92681067428](https://protocol.zoom.us/j/92681067428) | [Meeting notes](https://www.google.com/url?q=https://docs.google.com/document/d/1EOD-pJi4GvRmGi9HHocgVV8uVHMFIZlyVgJDkvC3DQ4/edit&sa=D&ust=1563045367944000&usg=AOvVaw1PXuFUmNdcfz8M0oJjv1dP) |
 
 If you can't make the meeting, don't worry. We post a recording of each meeting in our [YouTube playlist](https://www.youtube.com/playlist?list=PLuhRWgmPaHtRnfsVYI2LbVS03BRX7TcXq). Notes from current and past calls can be found [here](https://www.google.com/url?q=https://docs.google.com/document/d/1EOD-pJi4GvRmGi9HHocgVV8uVHMFIZlyVgJDkvC3DQ4/edit&sa=D&ust=1563045367944000&usg=AOvVaw1PXuFUmNdcfz8M0oJjv1dP).
@@ -19,12 +19,15 @@ If you can't make the meeting, don't worry. We post a recording of each meeting 
 
 We would **love ❤️ your help** to improve existing items or make new ones even better! [We also have bounties available!](https://github.com/ipfs/devgrants/projects/1) Here are some ideas to get you started:
 
-1. Join us on our monthly call!
-2. Claim an [issue labeled `help wanted`](https://github.com/ipfs/docs/labels/help%20wanted)! Leave your thoughts and questions in issue comments, and we'll get back to you as soon as possible.
-3. Create or improve an example, tutorial, or guide! At present, we have a variety of how-tos and guides available at [docs.ipfs.io](https://docs.ipfs.io). However, every new item we can offer makes it easier for the world's community to use and build on IPFS. If you'd like to write a new tutorial or guide, [take a look in our open issues](https://github.com/ipfs/docs/issues?q=is%3Aissue+is%3Aopen+label%3A%22Category%3A+Content%22) and see if any already-identified needs appeal to you. [Some issues have bounties](https://github.com/ipfs/docs/labels/bounty)! If you'd like to write something entirely new, feel free — PRs are welcome! Or, if you'd just like to improve existing docs content, feel free to fork it and add your suggestions.
-4. Help us improve how we present reference and API documentation. In Q2 2020, we're investigating the best way to improve how we present reference materials like API documentation and command-line dictionaries. Got thoughts? [Please discuss them!](https://github.com/ipfs/docs/issues/393)
+| Date                  | Time                                                                            | Zoom ID       | Link                                                                     | Notes                                                                                                |
+| --------------------- | ------------------------------------------------------------------------------- | ------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
+| Tuesday 26th May 2020 | UTC: 16:00 - 16:30<br>EST: 11:00 - 11:30<br>PST 08:00-08:30<br>Unix: 1590508800 | `92681067428` | [protocol.zoom.us/j/92681067428](https://protocol.zoom.us/j/92681067428) | [Meeting notes](https://cryptpad.fr/code/#/2/code/view/4xRbtK8Xt40a4FjhPiNcFVUeT6sum5YMuO-02+0Sn7s/) |
 
-If you're able to contribute to any of the categories above, we thank you in advance! Your work directly improves the future of IPFS for the global community! Before posting a PR with your changes, please be sure to check [our documentation style guide](https://github.com/ipfs/community/blob/master/DOCS_STYLEGUIDE.md) and the overall [IPFS contributor guidelines](https://github.com/ipfs/community/blob/master/CONTRIBUTING.md) so we can ensure that docs are clear, consistent, and simple to read. Finally, please make sure to follow the [IPFS code of conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md).
+If you can't make the meeting, don't worry. A recording of each meeting is available on IPFS using the following CIDs:
+
+| Date                  | Recording                                                                                                                            | Notes                                                                                       | Discussion                                           |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| Tuesday 26th May 2020 | [`QmS6TTMt2y3auLnjGmKUZL7thJRkXgyXr5sTL1RvUyp57n`](https://gateway.pinata.cloud/ipfs/QmS6TTMt2y3auLnjGmKUZL7thJRkXgyXr5sTL1RvUyp57n) | [Link](https://cryptpad.fr/code/#/2/code/view/4xRbtK8Xt40a4FjhPiNcFVUeT6sum5YMuO-02+0Sn7s/) | [#311](https://github.com/ipfs/ipfs-docs/issues/311) |
 
 ### Issues
 
