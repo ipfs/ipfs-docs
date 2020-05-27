@@ -25,7 +25,7 @@ Another alternative is [Orion](https://orion.siderus.io). Orion is an easy to us
 
 [Enzypt.io](https://enzypt.io) lets you sell files or simply get a link to share.
 
-[FileNation](https://github.com/FileNation/FileNation ) is an alternative if you only want to share.  
+[FileNation](https://github.com/FileNation/FileNation) is an alternative if you only want to share.
 
 ### Dead drop
 
@@ -74,7 +74,8 @@ By storing small scripts or big databases of your project on IPFS, and depending
 [Qri](https://qri.io/) is an open-source tool for the management of large datasets. Qri users enjoy reduced hosting costs, traceability of changes in the data, rollback to previous versions, and easier collaboration when updating data. De-duplication across datasets also helps to keep physical storage usage as small as possible, along with reducing sync times.
 
 ### Parallelize Big Data analysis
-On some heavy analysis, you can benefit from parallelizing calculations on several nodes using Hadoop, for example. But on very large datasets, fetching the relevant subset for each node to compute is longer than the actual computation. Scott Brisbane proposed design in a [thesis](https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf) to drastically reduce the fetching time using IPFS and divided the overall analysis time by four. Here is a [one-page summary](https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf) of the concept. 
+
+On some heavy analysis, you can benefit from parallelizing calculations on several nodes using Hadoop, for example. But on very large datasets, fetching the relevant subset for each node to compute is longer than the actual computation. Scott Brisbane proposed design in a [thesis](https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf) to drastically reduce the fetching time using IPFS and divided the overall analysis time by four. Here is a [one-page summary](https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf) of the concept.
 
 ### Deadman switch
 
@@ -118,7 +119,7 @@ Netflix is on its way to use IPFS to [synchronize their Docker containers worldw
 
 ### Efficient network factories
 
-[Actyx](https://www.actyx.com/) is helping the manufacturers to upgrade their plants to the [_Industry 4.0_](https://en.wikipedia.org/wiki/Industry_4.0) era, meaning connecting the machines together for better performance, tolerance to failure and flexibility. Actyx built a custom operating system on top of IPFS they deploy on all machines, so they emit metrics, receive orders, sync up information, and compute their next move locally. 
+[Actyx](https://www.actyx.com/) is helping the manufacturers to upgrade their plants to the [_Industry 4.0_](https://en.wikipedia.org/wiki/Industry_4.0) era, meaning connecting the machines together for better performance, tolerance to failure and flexibility. Actyx built a custom operating system on top of IPFS they deploy on all machines, so they emit metrics, receive orders, sync up information, and compute their next move locally.
 
 ## Lower your storage usage
 
@@ -204,7 +205,7 @@ Some core pieces of the web are still centralized, making it more prone to break
 
 ### Decentralized DNS
 
-The [Domain Name System](https://en.wikipedia.org/wiki/Domain_Name_System) (DNS) is one of the most centralized pieces of the web. By having to ask a central place to know where to find  `google.com` or `facebook.com`, it is a central point of failure. Backing up the DNS on IPFS could improve its availability. A prototype for Javascript has been [published on NPM](https://www.npmjs.com/package/orbitdns).
+The [Domain Name System](https://en.wikipedia.org/wiki/Domain_Name_System) (DNS) is one of the most centralized pieces of the web. By having to ask a central place to know where to find `google.com` or `facebook.com`, it is a central point of failure. Backing up the DNS on IPFS could improve its availability. A prototype for Javascript has been [published on NPM](https://www.npmjs.com/package/orbitdns).
 
 ### Archive the web
 
@@ -234,7 +235,7 @@ Textile.io is building the [Powergate](https://blog.textile.io/filecoin-develope
 
 ### Exchange Internet-of-Things data
 
-[IOTA](https://www.iota.org/) is a foundation maintaining _the Tangle_, a blockchain-like network with zero fees. Their vision is to automate the exchange of data between sensors, machines, and other devices, for free or sold by the provider. IOTA [announced](https://docs.iota.org/docs/blueprints/0.1/tangle-data-storage/overview) that data can now be hosted on IPFS, [as shown in this demo](https://ipfs.iota.org/). 
+[IOTA](https://www.iota.org/) is a foundation maintaining _the Tangle_, a blockchain-like network with zero fees. Their vision is to automate the exchange of data between sensors, machines, and other devices, for free or sold by the provider. IOTA [announced](https://docs.iota.org/docs/blueprints/0.1/tangle-data-storage/overview) that data can now be hosted on IPFS, [as shown in this demo](https://ipfs.iota.org/).
 
 ### Send crypto to human-readable addresses
 

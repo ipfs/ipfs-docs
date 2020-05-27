@@ -1,7 +1,7 @@
 <template>
   <div class="legacy-callout">
     <p>
-      <b>This site is in beta. Help us improve it!</b>
+      <b>Help us improve this site!</b>
     </p>
     <section>
       <div class="block">
@@ -29,29 +29,11 @@
               >Give general feedback</a
             >
           </li>
-          <li v-if="$site.themeConfig.betaTestFormUrl">
-            <a :href="$site.themeConfig.betaTestFormUrl" target="_blank"
-              >Become a tester</a
-            >
-          </li>
         </ul>
       </div>
     </section>
-    <section v-if="legacyUrl" class="legacy-links">
-      <a target="_blank" :href="legacyUrl">View this page on legacy site</a>
-    </section>
   </div>
 </template>
-
-<script>
-export default {
-  computed: {
-    legacyUrl: function() {
-      return this.$frontmatter && this.$frontmatter.legacyUrl
-    }
-  }
-}
-</script>
 
 <style lang="stylus" scoped>
 .legacy-callout {

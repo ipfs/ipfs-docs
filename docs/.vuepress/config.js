@@ -1,4 +1,7 @@
 // .vuepress/config.js
+
+const DEPLOY_DOMAIN = 'https://docs.ipfs.io'
+
 module.exports = {
   base: '/',
   head: require('./head'),
@@ -36,8 +39,8 @@ module.exports = {
       'IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
     // edit links
     // repo: 'ipfs/ipfs-docs-v2',
-    domain: 'https://docs-beta.ipfs.io',
-    docsRepo: 'ipfs/ipfs-docs-v2',
+    domain: DEPLOY_DOMAIN,
+    docsRepo: 'ipfs/ipfs-docs',
     docsDir: 'docs',
     docsBranch: 'master',
     feedbackWidget: {
@@ -367,28 +370,19 @@ module.exports = {
     }
   },
   plugins: [
-    ['@vuepress/plugin-back-to-top', true],
+    '@vuepress/plugin-back-to-top',
     [
-      '@vuepress/active-header-links',
+      '@vuepress/google-analytics',
       {
-        sidebarLinkSelector: '.sidebar-link',
-        headerAnchorSelector: '.header-anchor',
-        headerTopOffset: 120
+        ga: 'UA-96910779-15'
       }
     ],
-    '@vuepress/plugin-last-updated',
     [
       'vuepress-plugin-clean-urls',
       {
         normalSuffix: '/',
         indexSuffix: '/',
         notFoundPath: '/404/'
-      }
-    ],
-    [
-      '@vuepress/google-analytics',
-      {
-        ga: 'UA-96910779-15'
       }
     ],
     [
@@ -431,16 +425,29 @@ module.exports = {
       {
         // add <link rel="canonical" header (https://tools.ietf.org/html/rfc6596)
         // to deduplicate SEO across all copies loaded from various public gateways
-        baseURL: 'https://docs-beta.ipfs.io'
+        baseURL: DEPLOY_DOMAIN
       }
-    ]
+    ],
+    [
+      'vuepress-plugin-sitemap',
+      {
+        hostname: DEPLOY_DOMAIN
+      }
+    ],
+    [
+      'vuepress-plugin-robots',
+      {
+        host: DEPLOY_DOMAIN
+      }
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'callout',
+        defaultTitle: ''
+      }
+    ],
+    'vuepress-plugin-ipfs'
   ],
-  extraWatchFiles: ['.vuepress/nav/en.js'],
-  configureWebpack: (config, isServer) => {
-    if (!isServer) {
-      config.entry = {
-        app: ['./docs/.vuepress/public-path.js', config.entry.app[0]]
-      }
-    }
-  }
+  extraWatchFiles: ['.vuepress/nav/en.js']
 }
