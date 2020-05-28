@@ -266,7 +266,7 @@ By default, your gateway is not exposed to the world. It only works locally.
 
 You can view the web console on your local node by going to [`localhost:5001/webui`](http://localhost:5001/webui). This should bring up a console like this:
 
-![Web console connection view](https://docs.ipfs.io/introduction/assets/webui-connection.png)
+![Web console connection view](./images/command-line-quick-start/webui-connection.png)
 
 ## IPFS Companion
 
