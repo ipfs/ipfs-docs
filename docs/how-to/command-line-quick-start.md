@@ -6,7 +6,7 @@ description: Quick-start guide for installing and getting started with IPFS from
 
 # Command-line quick start
 
-If you're command-line savvy and, just want to get up and running with IPFS right away, follow this quick-start guide. Please note that this guide assumes that you'll be installing go-ipfs, the reference implementation written in Go.
+If you're command-line savvy and just want to get up and running with IPFS right away, follow this quick-start guide. Please note that this guide assumes that you'll be installing go-ipfs, the reference implementation written in Go.
 
 ::: tip
 Don’t want to use the command line right now? Give the desktop-app implementation of IPFS a try. It also does all the steps listed on this page automatically, so you can run IPFS from the terminal later whenever you want. [Download IPFS Desktop now](https://github.com/ipfs-shipyard/ipfs-desktop)
@@ -14,109 +14,141 @@ Don’t want to use the command line right now? Give the desktop-app implementat
 
 ## Install IPFS
 
-You can install IPFS via a variety of methods — it's simplest to install from a [prebuilt package](#prebuilt-package), but you can also install it through the [command-line](#command-line), or by [building everything from source](#building-from-source)
+Installing IPFS is simple, but varies between operating system:
 
-### Prebuilt package
+| [Windows](#windows) | [macOS](#macos) | [Linux](#linux) |
+| --- | --- | --- |
+| [![Windows icon](./images/command-line-quick-start/windows-icon.png)](#windows) | [![macOS icon](./images/command-line-quick-start/apple-icon.png)](#macos) | [![Linux icon](./images/command-line-quick-start/linux-icon.png)](#linux) |
 
-First, [download IPFS for your platform](https://dist.ipfs.io/#go-ipfs).
+### Windows
 
-**If you're on Linux or macOS**, then untar the archive and move the `ipfs` binary somewhere in your executables `$PATH` using the `install.sh` script:
+1. Download [`go-ipfs_v0.5.0_windows-386.zip` from GitHub](https://github.com/ipfs/go-ipfs/releases/download/v0.5.0/).
 
-```bash
-tar xvfz go-ipfs.tar.gz
-cd go-ipfs
-./install.sh
-```
+   ```powershell
+   cd ~\
+   wget https://github.com/ipfs/go-ipfs/releases/download/v0.5.0/go-ipfs-v0.5.0_windows-386.zip -Outfile go-ipfs-v0.5.0.zip
+   ```
 
-**If you're on Windows**, then unzip the archive and move `ipfs.exe` somewhere in your `%PATH%`.
+1. Unzip the file and move it somewhere handy.
 
-**Afterwards, for either operating system**, it's time to test it out. If you see the response below, you're good to go!
+   ```powershell
+   Expand-Archive -Path go-ipfs-v0.5.0.zip -DestinationPath ~\Apps\go-ipfs_v0.5.0
+   ```
 
-```bash
-ipfs help
-> USAGE:
->
->     ipfs - Global p2p merkle-dag filesystem.
-> ...
-```
+1. Move into the `go-ipfs_v0.5.0` folder and check that the `ipfs.exe` works:
 
-### Command line
+   ```powershell
+   cd ~\Apps\go-ipfs_v0.5.0\go-ipfs
+   .\ipfs.exe --version
 
-If you want to install from the command line, use `ipfs-update`. That way, you can install the IPFS binary now and upgrade it whenever you wish.
+   > ipfs version 0.5.0
+   ```
 
-If you have a working Go environment (>=1.12), install `ipfs-update` as follows:
+   While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH.` by using the following steps.
 
-```bash
-# You need to CD to a directory _outside_ of your GOPATH.
-cd /
+1. Print the current working directory and copy it to your clipboard:
 
-# Install with go modules enabled
-GO111MODULE=on go get github.com/ipfs/ipfs-update
-```
+   ```powershell
+   pwd
 
-Please note that `ipfs-update` uses Go modules, and your `$GOPATH/bin` should be within `$PATH` for the result `ipfs-update` binary to be found.
+   > Path
+   > ----
+   > C:\Users\Johnny\Apps\go-ipfs_v0.5.0\go-ipfs
+   ```
 
-If you don't have Go installed, you can also download `ipfs-update` for your platform [here](https://dist.ipfs.io/#ipfs-update). No matter how you get it, make sure that you keep it up to date itself!
+1. Add the address you just copied to PowerShell's `PATH` by adding it to the end of the `profile.ps1` file stored in `Documents\WindowsPowerShell`:
 
-`ipfs-update versions` lists all the versions of IPFS that are available for download:
+   ```powershell
+   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\Johnny\Apps\go-ipfs_v0.5.0\go-ipfs')"
+   ```
 
-```bash
-ipfs-update versions
-> v0.3.2
-> [...]
-> v0.4.20
-> v0.4.21
-```
+1. Close and reopen your PowerShell window. Test that your IPFS path is set correctly by going to your home folder and asking IPFS for the version:
 
-`ipfs-update install latest` will install the latest available version:
+   ```powershell
+   cd ~
+   ipfs --version
 
-```bash
-ipfs-update install latest
-> fetching go-ipfs version v0.4.21
-> binary downloaded, verifying...
-> success!
-> stashing old binary
-> installing new binary to /home/hector/go/bin/ipfs
-> checking if repo migration is needed...
-> Installation complete!
-```
+   > ipfs version 0.5.0
+   ```
 
-::: tip
-Note that the latest available version may not be stable (release candidates in the form `vX.X.X-rcX`), so you may wish to specify the version you want to install. For example: `ipfs-update install v0.4.21`.
-:::
+### macOS
 
-### Building from source
+1. Download [`go-ipfs_v0.5.0_darwin-386.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.5.0).
 
-If you want, you can also build IPFS from source. For more detailed instructions, please see the install instructions for [Linux/macOS](https://github.com/ipfs/go-ipfs#build-from-source) or [Windows](https://github.com/ipfs/go-ipfs/blob/master/docs/windows.md).
+   ```bash
+   wget https://github.com/ipfs/go-ipfs/releases/download/v0.5.0/go-ipfs_v0.5.0_darwin-amd64.tar.gz
+   ```
 
-::: tip
-**Already have IPFS installed, but need to upgrade?** Note that upgrades (and downgrades) may involve a repository upgrade process performed by the [fs-repo-migrations](https://dist.ipfs.io/#fs-repo-migrations) tool.
+1. Unzip the file:
 
-#### Update/upgrade IPFS
+   ```bash
+   tar -xvzf go-ipfs_v0.5.0_darwin-amd64.tar.gz
 
-You can upate IPFS using the [built-in tool](#ipfs-update), or by editing the files [manually](#upgrade-manually).
+   > x go-ipfs/install.sh
+   > x go-ipfs/ipfs
+   > x go-ipfs/LICENSE
+   > x go-ipfs/LICENSE-APACHE
+   > x go-ipfs/LICENSE-MIT
+   > x go-ipfs/README.md
+   ```
 
-#### IPFS-Update
+1. Move into the `go-ipfs` folder and run the install script:
 
-`ipfs-update install` will download and run `fs-repo-migrations` when needed, during the installation of a newer or older `ipfs` version (as explained above). This method is the easiest way of upgrading, but it's essential to make sure that the IPFS daemon is not running during an upgrade.
+   ```bash
+   bash install.sh
 
-#### Upgrade manually
+   > Moved ./ipfs to /usr/local/bin
+   ```
 
-To upgrade manually, you will also need to run any repository migrations manually:
+1. Check that IPFS install properly:
 
-- Stop the IPFS daemon if it's running
-- Back up your IPFS data folder using a command like `cp -aL ~/.ipfs ~/.ipfs.bk`
-- [Download and install](https://dist.ipfs.io/#go-ipfs) the latest version of IPFS
-- Run `ipfs daemon`
+   ```bash
+   ipfs --version
 
-If migration is necessary, IPFS will inform the user, download and install `fs-repo-migrations`, and perform the upgrade. If you want this to happen unattended, launch the daemon with the `--migrate` flag.
+   > ipfs version 0.5.0
+   ```
 
-Migrations can be also run manually by [downloading the latest version](https://dist.ipfs.io/#fs-repo-migrations) of `fs-repo-migrations` and [following these instructions](https://github.com/ipfs/fs-repo-migrations/blob/master/run.md).
-:::
+### Linux
+
+1. Download [`go-ipfs_v0.5.0_linux-amd64.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.5.0):
+
+   ```bash
+   wget https://github.com/ipfs/go-ipfs/releases/download/v0.5.0/go-ipfs_v0.5.0_linux-amd64.tar.gz
+   ```
+
+1. Unzip the file:
+
+   ```bash
+   tar -xvzf go-ipfs_v0.5.0_linux-amd64.tar.gz
+
+   > x go-ipfs/install.sh
+   > x go-ipfs/ipfs
+   > x go-ipfs/LICENSE
+   > x go-ipfs/LICENSE-APACHE
+   > x go-ipfs/LICENSE-MIT
+   > x go-ipfs/README.md
+   ```
+
+1. Move into the `go-ipfs` folder and run the install script:
+
+   ```bash
+   cd go-ipfs
+   sudo bash install.sh
+
+   > Moved ./ipfs to /usr/local/bin
+   ```
+
+1. Test that IPFS has installed correctly:
+
+   ```bash
+   ipfs --version
+
+   > ipfs version 0.5.0
+   ```
 
 ## Initialize the repository
 
-`ipfs` stores all its settings and internal data in a directory called the _repository._ Before using IPFS for the first time, you’ll need to initialize the repository with the `ipfs init` command:
+`ipfs` stores all its settings and internal data in a directory called _the repository._ Before using IPFS for the first time, you’ll need to initialize the repository with the `ipfs init` command:
 
 ```bash
 ipfs init
@@ -134,7 +166,7 @@ If you are running on a server in a data center, you should initialize IPFS with
 ipfs init --profile server
 ```
 
-There are a whole host of other configuration options you may want to set — check [the full reference](https://github.com/ipfs/go-ipfs/blob/v0.4.15/docs/config.md) for more.
+There are a whole host of other configuration options you may want to set — check [the full reference](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md) for more.
 
 The hash after `peer identity:` is your node’s ID and will be different from the one shown in the above output. Other nodes on the network use it to find and connect to you. You can run `ipfs id` at any time to get it again if you need it.
 
@@ -152,7 +184,7 @@ Hello and Welcome to IPFS!
 ██║██║     ██║     ███████║
 ╚═╝╚═╝     ╚═╝     ╚══════╝
 
-If you're seeing this, you have successfully installed
+If you see this, you have successfully installed
 IPFS and are now interfacing with the ipfs merkledag!
 
  -------------------------------------------------------
@@ -253,10 +285,11 @@ It runs in Firefox (desktop and Android) and various Chromium-based browsers suc
 
 ### Check your Go version
 
-IPFS works with Go 1.12.0 or later. To check what go version you have installed, type `go version`. Here's an example with 1.12.2 installed:
+IPFS works with Go 1.12.0 or later. To check what go version you have installed, type `go version`:
 
 ```bash
 go version
+
 > go version go1.12.2 linux/amd64
 ```
 

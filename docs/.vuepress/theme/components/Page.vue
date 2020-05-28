@@ -43,12 +43,12 @@ export default {
   },
   props: ['sidebarItems'],
   computed: {
-    isContentStatus: function() {
+    isContentStatus: function () {
       return !!(this.$frontmatter && this.$frontmatter.issueUrl)
     }
   },
   methods: {
-    smoothScroll: function() {
+    smoothScroll: function () {
       var root = document.getElementsByTagName('html')[0]
       // only enable smooth-scrolling on pages shorter that 15000 px
       return root.scrollHeight < 15000
@@ -56,10 +56,10 @@ export default {
         : root.classList.remove('smooth-scroll')
     }
   },
-  mounted: function() {
+  mounted: function () {
     this.smoothScroll()
   },
-  updated: function() {
+  updated: function () {
     this.smoothScroll()
   }
 }

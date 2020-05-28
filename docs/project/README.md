@@ -13,11 +13,11 @@ Want to know how it all began? Learn the [history of the IPFS project](/project/
 
 ## Roadmap
 
-See the overall roadmap of [IPFS project requirements](https://github.com/ipfs/ipfs/blob/master/REQUIREMENTS.md) from current state to maturity.
+See the overall roadmap of [IPFS project requirements](https://github.com/ipfs/roadmap) from current state to maturity.
 
 ## Implementation status
 
-Want to know the current state of your favorite IPFS feature? See the [current implementation status](https://github.com/ipfs/ipfs/blob/master/IMPLEMENTATION_STATUS.md) for go-ipfs and js-ipfs, listed by commands and endpoints.
+Want to know the current state of your favorite IPFS feature? See the [current implementation status](/project/implementation-status) for go-ipfs and js-ipfs, listed by commands and endpoints.
 
 ## IPFS specifications
 

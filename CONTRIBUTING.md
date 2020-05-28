@@ -78,7 +78,7 @@ The IPFS project can only really work when the community steps up and helps out,
 
 #### Fixes
 
-Sometimes small mistakes fall through through the cracks. So if you see an error in the documentation, the best way to fix it is to edit the file on GitHub and create a pull request.
+Sometimes small mistakes fall through the cracks. So if you see an error in the documentation, the best way to fix it is to edit the file on GitHub and create a pull request.
 
 #### New articles or pages
 

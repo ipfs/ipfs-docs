@@ -20,8 +20,8 @@ jobs:
           paths:
             - ./node_modules
       - run:
-          name: build-docs-ipfs
-          command: npm run docs:build:ipfs
+          name: build-docs
+          command: npm run docs:build
       - persist_to_workspace:
           root: .
           paths:
@@ -31,7 +31,7 @@ jobs:
     docker:
       - image: olizilla/ipfs-dns-deploy:latest
         environment:
-          DOMAIN: docs-beta.ipfs.io
+          DOMAIN: docs.ipfs.io
           BUILD_DIR: ./docs/.vuepress/dist
     steps:
       - attach_workspace:

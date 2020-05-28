@@ -13,9 +13,10 @@ New to IPFS or the distributed web? Here's where to get started on understanding
 Want the basics, in theater mode? Check out these Core Courses from IPFS Camp 2019 for an overview of how IPFS works with files and the overall data lifecycle in dweb.
 
 @[youtube](Z5zNPwMDYGg)
+- [Understanding how IPFS deals with files](https://youtu.be/Z5zNPwMDYGg)
 
 @[youtube](fLUq0RkiTBA)
-
+- [The lifecycle of data in the DWeb](https://youtu.be/fLUq0RkiTBA)
 
 ## IPFS 101
 
@@ -23,6 +24,7 @@ Get the basic concepts of IPFS in one place, including:
 
 - [What is IPFS?](/concepts/what-is-ipfs/)
 - [How IPFS works](/concepts/how-ipfs-works/)
+- [IPFS primer](https://dweb-primer.ipfs.io/)
 - [Usage ideas & examples](/concepts/usage-ideas-examples/)
 - [Glossary](/concepts/glossary/)
 - [FAQ](/concepts/faq/)
@@ -34,7 +36,7 @@ Referring to files by their content, not their location, is one of the most powe
 - [Content addressing](/concepts/content-addressing/)
 - [Cryptographic hashing](/concepts/hashing/)
 - [Immutability](/concepts/immutability/)
-- [Persistence, permancence and pinning](/concepts/persistence/)
+- [Persistence, permanence and pinning](/concepts/persistence/)
 
 ## Peer-to-peer file sharing
 
@@ -54,6 +56,10 @@ IPFS aims to be the future of the internet, but it still needs to play well with
 
 - [IPFS Gateway](/concepts/ipfs-gateway/)
 - [DNSLink](/concepts/dnslink/)
+
+## Further reading
+
+Want a more in-depth look into the decentralized web? Here are a few papers that are useful for understanding IPFS, whether it be understanding the IPFS spec itself, or the background for the web, protocols, hashing, and so on. [Read the papers →](/concepts/further-reading/academic-papers)
 
 ## Don't see what you're looking for?
 
