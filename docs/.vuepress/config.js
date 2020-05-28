@@ -359,6 +359,7 @@ module.exports = {
               ['https://github.com/ipfs/research', 'Research'],
               ['https://github.com/ipfs/team-mgmt', 'Team org planning'],
               '/project/related-projects',
+              '/project/contribute',
               [
                 'https://github.com/ipfs/community/blob/master/code-of-conduct.md',
                 'Code of conduct'
