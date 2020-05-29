@@ -1,5 +1,10 @@
 module.exports = [
   [
+    'meta',
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+  ],
+  ['link', { rel: 'preconnect', href: 'https://www.google-analytics.com' }],
+  [
     'link',
     {
       rel: 'apple-touch-icon',

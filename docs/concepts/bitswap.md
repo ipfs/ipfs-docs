@@ -35,7 +35,7 @@ Want-list {
 
 To find peers that have a file, a node running the Bitswap protocol first sends a request called a _want-have_ to all the peers it is connected to. This _want-have_ request contains the CID of the root block of the file (the root block is at the top of the DAG of blocks that make up the file). Peers that have the root block send a _have_ response, and are added to a session. Peers that don't have the block send a _dont-have_ response. If none of the peers have the root block, Bitswap queries the Distributed Hash Table (DHT) to ask who can provide the root block.
 
-![Diagram of the _want-have/want-block_ process.](./images/bitswap/diagram-of-the-want-have-want-block-process.png)
+![Diagram of the _want-have/want-block_ process.](./images/bitswap/diagram-of-the-want-have-want-block-process.png =740x537)
 
 #### Transfer
 

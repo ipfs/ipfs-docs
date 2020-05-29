@@ -48,11 +48,11 @@ We use the rules set out in the [VSCode Markdownlint](https://github.com/DavidAn
 
 We highly recommend installing [VSCode](https://code.visualstudio.com/) with the [Markdownlint](https://github.com/DavidAnson/vscode-markdownlint) extension to help with your writing. The extension shows warnings within your markdown whenever your copy doesn't conform to a rule.
 
-![Screenshot of some Markdown in VSCode showing an error.](./images/grammar-formatting-and-style/no-empty-links-error.png)
+![Screenshot of some Markdown in VSCode showing an error.](./images/grammar-formatting-and-style/no-empty-links-error.png =740x155)
 
 The extension summarizes all the warnings within the open file at the bottom of the editor:
 
-![Screenshot of VSCode with a summary of markdown errors.](./images/grammar-formatting-and-style/markdown-error-summary.png)
+![Screenshot of VSCode with a summary of markdown errors.](./images/grammar-formatting-and-style/markdown-error-summary.png =740x210)
 
 ## Style
 
