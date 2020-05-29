@@ -20,7 +20,9 @@ module.exports = {
       md.use(require('markdown-it-video'))
       md.use(require('markdown-it-footnote'))
       md.use(require('markdown-it-task-lists'))
-      md.use(require('markdown-it-deflist'))
+      md.use(require('markdown-it-deflist')),
+      md.use(require('markdown-it-imsize')),
+      md.use(require('markdown-it-image-lazy-loading'))
     }
   },
   themeConfig: {

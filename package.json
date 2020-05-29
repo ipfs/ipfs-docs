@@ -15,6 +15,8 @@
     "lint-staged": "^10.2.7",
     "markdown-it-deflist": "^2.0.3",
     "markdown-it-footnote": "^3.0.2",
+    "markdown-it-image-lazy-loading": "^1.0.2",
+    "markdown-it-imsize": "^2.0.1",
     "markdown-it-task-lists": "^2.1.1",
     "markdown-it-video": "^0.6.3",
     "prettier": "^2.0.5",

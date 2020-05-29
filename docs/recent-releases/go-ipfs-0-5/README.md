@@ -4,7 +4,7 @@ title: Overview
 
 # Go-IPFS 0.5
 
-![The Go-IPFS logo.](./images/go-ipfs-logo.png)
+![The Go-IPFS logo.](./images/go-ipfs-logo.png =740x210)
 
 It's been a while since the last Go-IPFS release. We've packed an incredible amount of bug fixes, improvements, and features into this build; it's the biggest Go-IPFS release since the project first started!
 
@@ -47,7 +47,6 @@ The minimum RSA key size is now 2048 bits. Unless you explicitly generated small
 ### Custom configurations of IPFS
 
 If you are using IPFS as a library, or relying on alternate packages like ipfs-lite, you'll need to upgrade to the new 0.5 interfaces.
-
 
 ### Migrations
 
