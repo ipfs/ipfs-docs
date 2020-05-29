@@ -1,5 +1,5 @@
 module.exports = [
-  ['meta', { robots: 'noindex' }], // deny search indexing for now
+  ['link', { rel: 'preconnect', href: 'https://www.google-analytics.com' }],
   [
     'link',
     {

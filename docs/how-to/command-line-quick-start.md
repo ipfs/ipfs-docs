@@ -16,9 +16,9 @@ Don’t want to use the command line right now? Give the desktop-app implementat
 
 Installing IPFS is simple, but varies between operating system:
 
-| [Windows](#windows) | [macOS](#macos) | [Linux](#linux) |
-| --- | --- | --- |
-| [![Windows icon](./images/command-line-quick-start/windows-icon.png)](#windows) | [![macOS icon](./images/command-line-quick-start/apple-icon.png)](#macos) | [![Linux icon](./images/command-line-quick-start/linux-icon.png)](#linux) |
+| [Windows](#windows)                                                                                 | [macOS](#macos)                                                                               | [Linux](#linux)                                                                               |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| [![Windows icon](./../install/images/command-line-quick-start/windows-icon.png =250x200)](#windows) | [![macOS icon](./../install/images/command-line-quick-start/apple-icon.png =250x200)](#macos) | [![Linux icon](./../install/images/command-line-quick-start/linux-icon.png =250x200)](#linux) |
 
 ### Windows
 
@@ -226,13 +226,13 @@ Now, switch back to your original terminal. If you’re connected to the network
 
 ```bash
 ipfs swarm peers
-> /ip4/104.131.131.82/tcp/4001/ipfs/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
-> /ip4/104.236.151.122/tcp/4001/ipfs/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx
-> /ip4/134.121.64.93/tcp/1035/ipfs/QmWHyrPWQnsz1wxHR219ooJDYTvxJPyZuDUPSDpdsAovN5
-> /ip4/178.62.8.190/tcp/4002/ipfs/QmdXzZ25cyzSF99csCQmmPZ1NTbWTe8qtKFaZKpZQPdTFB
+> /ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
+> /ip4/104.236.151.122/tcp/4001/p2p/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx
+> /ip4/134.121.64.93/tcp/1035/p2p/QmWHyrPWQnsz1wxHR219ooJDYTvxJPyZuDUPSDpdsAovN5
+> /ip4/178.62.8.190/tcp/4002/p2p/QmdXzZ25cyzSF99csCQmmPZ1NTbWTe8qtKFaZKpZQPdTFB
 ```
 
-These are a combination of `<transport address>/ipfs/<hash-of-public-key>`.
+These are a combination of `<transport address>/p2p/<hash-of-public-key>`.
 
 Now, you should be able to get objects from the network. Try:
 
@@ -266,7 +266,7 @@ By default, your gateway is not exposed to the world. It only works locally.
 
 You can view the web console on your local node by going to [`localhost:5001/webui`](http://localhost:5001/webui). This should bring up a console like this:
 
-![Web console connection view](https://docs.ipfs.io/introduction/assets/webui-connection.png)
+![Web console connection view](./../install/images/command-line-quick-start/webui-connection.png =740x417)
 
 ## IPFS Companion
 

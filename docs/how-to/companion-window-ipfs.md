@@ -1,5 +1,5 @@
 ---
-title: Using Window.IFPS
+title: Using `window.ipfs`
 description: Learn about exposing IPFS API in IPFS Companion via "window.ipfs".
 ---
 
@@ -7,15 +7,19 @@ description: Learn about exposing IPFS API in IPFS Companion via "window.ipfs".
 
 Learn about exposing IPFS API in IPFS Companion via "window.ipfs".
 
+::: danger
+
 ## `window.ipfs` is currently disabled
 
 IPFS Companion 2.11 stopped injecting `window.ipfs`. It will be restored after the [move to JS API with async await and async iterables](https://github.com/ipfs-shipyard/ipfs-companion/issues/843), with a likely ETA of Q3 2020. This page is provided for reference only.
 
+<!-- below disclaimer will be restored  when window.ipfs injection resumes
 ### Disclaimer
 
-There is a substantial amount of [ongoing work for this interface](https://github.com/ipfs-shipyard/ipfs-companion/issues/589). Want to help with shaping it? See [#589](https://github.com/ipfs-shipyard/ipfs-companion/issues/589) and [issues with the `area/window-ipfs` label](https://github.com/ipfs-shipyard/ipfs-companion/labels/area%2Fwindow-ipfs).
+The interface is experimental and might change: there is a substantial amount of [ongoing work](https://github.com/ipfs-shipyard/ipfs-companion/issues/589). Want to help with shaping it? See [#589](https://github.com/ipfs-shipyard/ipfs-companion/issues/589) and [issues with the `area/window-ipfs` label](https://github.com/ipfs-shipyard/ipfs-companion/labels/area%2Fwindow-ipfs).
+-->
 
-The interface is experimental and might change. Use [window.ipfs-fallback](https://www.npmjs.com/package/window.ipfs-fallback) to ensure your app follows any future changes
+:::
 
 ## Background
 
@@ -41,6 +45,10 @@ if (window.ipfs && window.ipfs.enable) {
 
 To add and get content, you could update the above example to do something like this:
 
+<!-- TODO: update below example to use async iterators:
+https://blog.ipfs.io/2020-02-01-async-await-refactor/
+-->
+
 ```js
 if (window.ipfs && window.ipfs.enable) {
   try {
@@ -62,6 +70,12 @@ if (window.ipfs && window.ipfs.enable) {
   // (fallback to js-ipfs or js-ipfs-http-client goes here)
 }
 ```
+
+::: tip
+
+Use [ipfs-provider](https://github.com/ipfs-shipyard/ipfs-provider) to ensure your app follows any future changes of this interface. It reduces amount of code needed to implement a robust fallback to HTTP API or embedded js-ipfs when `window.ipfs` is not available.
+
+:::
 
 ### Error codes
 
@@ -98,13 +112,13 @@ Spawn a dedicated js-ipfs instance if you need non-standard configuration or any
 
 Yes. IPFS Companion users are able to selectively control access to proxied commands, so calls may reject (or callback) with [an error](#error-codes) if a user decides to deny access. The first time you call a proxied function, the user will be prompted to allow or deny the call, and the decision will be remembered for subsequent calls. Here's what it looks like:
 
-> ![single permission dialog in Firefox](https://user-images.githubusercontent.com/152863/36159691-3cf44eea-10d7-11e8-81d1-988dfd70a2f7.png)
+![single permission dialog in Firefox](./images/companion-permissions.png =740x463)
 
 ### Do I need to confirm every API call?
 
 Command access needs to be confirmed only once [per scope](#how-are-permissions-scoped). If you provide a list of commands when requesting an API instance via `window.ipfs.enable({commands})`, then a single permission dialog will be displayed to the user:
 
-> ![bulk permission dialog in Firefox](https://user-images.githubusercontent.com/157609/49878977-3d475780-fe29-11e8-9da9-2540bb2c8d9f.png)
+![bulk permission dialog in Firefox](./images/companion-permissions-bulk.png =740x460)
 
 For everything else, only the first call requires a decision from the user. You will be able to call previously whitelisted IPFS commands and users will _not_ be prompted to allow/deny access the second time.
 

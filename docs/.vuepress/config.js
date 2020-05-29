@@ -1,4 +1,7 @@
 // .vuepress/config.js
+
+const DEPLOY_DOMAIN = 'https://docs.ipfs.io'
+
 module.exports = {
   base: '/',
   head: require('./head'),
@@ -17,7 +20,9 @@ module.exports = {
       md.use(require('markdown-it-video'))
       md.use(require('markdown-it-footnote'))
       md.use(require('markdown-it-task-lists'))
-      md.use(require('markdown-it-deflist'))
+      md.use(require('markdown-it-deflist')),
+      md.use(require('markdown-it-imsize')),
+      md.use(require('markdown-it-image-lazy-loading'))
     }
   },
   themeConfig: {
@@ -36,8 +41,8 @@ module.exports = {
       'IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
     // edit links
     // repo: 'ipfs/ipfs-docs-v2',
-    domain: 'https://docs-beta.ipfs.io',
-    docsRepo: 'ipfs/ipfs-docs-v2',
+    domain: DEPLOY_DOMAIN,
+    docsRepo: 'ipfs/ipfs-docs',
     docsDir: 'docs',
     docsBranch: 'master',
     feedbackWidget: {
@@ -287,11 +292,8 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  'how-to/companion-android-firefox',
-                  'how-to/companion-developer-notes',
                   'how-to/companion-node-types',
                   'how-to/dnslink-companion',
-                  'how-to/companion-localization',
                   'how-to/companion-window-ipfs',
                   '/how-to/companion-x-ipfs-path-header'
                 ]
@@ -318,6 +320,10 @@ module.exports = {
                 sidebarDepth: 2,
                 collapsable: false,
                 children: [
+                  [
+                    'https://ipfs.us4.list-manage.com/subscribe?u=25473244c7d18b897f5a1ff6b&id=cad54b2230',
+                    'IPFS newsletter'
+                  ],
                   '/community/contribute/ways-to-contribute',
                   ['https://discuss.ipfs.io/', 'IPFS forums'],
                   '/community/irc',
@@ -355,6 +361,7 @@ module.exports = {
               ['https://github.com/ipfs/research', 'Research'],
               ['https://github.com/ipfs/team-mgmt', 'Team org planning'],
               '/project/related-projects',
+              '/project/contribute',
               [
                 'https://github.com/ipfs/community/blob/master/code-of-conduct.md',
                 'Code of conduct'
@@ -366,28 +373,19 @@ module.exports = {
     }
   },
   plugins: [
-    ['@vuepress/plugin-back-to-top', true],
+    '@vuepress/plugin-back-to-top',
     [
-      '@vuepress/active-header-links',
+      '@vuepress/google-analytics',
       {
-        sidebarLinkSelector: '.sidebar-link',
-        headerAnchorSelector: '.header-anchor',
-        headerTopOffset: 120
+        ga: 'UA-96910779-15'
       }
     ],
-    '@vuepress/plugin-last-updated',
     [
       'vuepress-plugin-clean-urls',
       {
         normalSuffix: '/',
         indexSuffix: '/',
         notFoundPath: '/404/'
-      }
-    ],
-    [
-      '@vuepress/google-analytics',
-      {
-        ga: 'UA-96910779-15'
       }
     ],
     [
@@ -430,16 +428,35 @@ module.exports = {
       {
         // add <link rel="canonical" header (https://tools.ietf.org/html/rfc6596)
         // to deduplicate SEO across all copies loaded from various public gateways
-        baseURL: 'https://docs-beta.ipfs.io'
+        baseURL: DEPLOY_DOMAIN
       }
-    ]
+    ],
+    [
+      'vuepress-plugin-sitemap',
+      {
+        hostname: DEPLOY_DOMAIN
+      }
+    ],
+    [
+      'vuepress-plugin-robots',
+      {
+        host: DEPLOY_DOMAIN
+      }
+    ],
+    [
+      '@vuepress/html-redirect',
+      {
+        duration: 0
+      }
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'callout',
+        defaultTitle: ''
+      }
+    ],
+    'vuepress-plugin-ipfs'
   ],
-  extraWatchFiles: ['.vuepress/nav/en.js'],
-  configureWebpack: (config, isServer) => {
-    if (!isServer) {
-      config.entry = {
-        app: ['./docs/.vuepress/public-path.js', config.entry.app[0]]
-      }
-    }
-  }
+  extraWatchFiles: ['.vuepress/nav/en.js']
 }

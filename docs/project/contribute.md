@@ -1,6 +1,5 @@
 ---
 title: Contribute to IPFS
-legacyUrl: https://docs.ipfs.io/community/contribute/how-to-help/
 description: Learn about how to contribute to IPFS, the InterPlanetary File System.
 ---
 

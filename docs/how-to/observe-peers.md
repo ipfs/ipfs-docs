@@ -17,7 +17,7 @@ ipfs swarm peers
 Manually connect to a specific peer. If the peer below doesn't work, choose one from the output of `ipfs swarm peers`.
 
 ```sh
-> ipfs swarm connect /dnsaddr/bootstrap.libp2p.io/ipfs/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN
+> ipfs swarm connect /dnsaddr/bootstrap.libp2p.io/p2p/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN
 ```
 
 Search for a given peer on the network:
