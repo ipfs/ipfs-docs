@@ -442,6 +442,12 @@ module.exports = {
       }
     ],
     [
+      '@vuepress/html-redirect',
+      {
+        duration: 0
+      }
+    ],
+    [
       'vuepress-plugin-container',
       {
         type: 'callout',
