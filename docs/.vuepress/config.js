@@ -375,14 +375,6 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     [
-      '@vuepress/pwa',
-      {
-        serviceWorker: true,
-        updatePopup: true,
-        popupComponent: 'DocsSWUpdatePopup'
-      }
-    ],
-    [
       '@vuepress/google-analytics',
       {
         ga: 'UA-96910779-15'
@@ -468,7 +460,8 @@ module.exports = {
       '@vuepress/pwa',
       {
         serviceWorker: true,
-        updatePopup: true
+        updatePopup: true,
+        popupComponent: 'DocsSWUpdatePopup'
       }
     ],
     'vuepress-plugin-ipfs'
