@@ -17,24 +17,24 @@ IPFS desktop application is the easiest way to get up and running quickly with I
 1. Go to the [IPFS desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases).
 2. Find the link ending in `.exe` for the latest version of IPFS desktop:
 
-    ![The IPFS desktop download page.](images/single-page-website/install-windows-download-exe-page.png)
+   ![The IPFS desktop download page.](images/single-page-website/install-windows-download-exe-page.png)
 
 3. Run the `.exe` file to start the installation.
 4. Select whether you want to install the application for just yourself, or all users on the computer. Click **Next**:
 
-    ![The IPFS desktop install options window.](images/single-page-website/install-windows-install-options.png)
+   ![The IPFS desktop install options window.](images/single-page-website/install-windows-install-options.png)
 
 5. Select the install location for the application. The default location is usually fine. Click **Next**:
 
-    ![The IPFS desktop installation location window.](images/single-page-website/install-windows-install-location.png)
+   ![The IPFS desktop installation location window.](images/single-page-website/install-windows-install-location.png)
 
 6. Wait for the installation to finish and click **Finish**:
 
-    ![The IPFS desktop installation finished window.](images/single-page-website/install-windows-install-finish.png)
+   ![The IPFS desktop installation finished window.](images/single-page-website/install-windows-install-finish.png)
 
 7. You can now find an IPFS icon in the status bar:
 
-    ![The IPFS desktop status bar menu in the Windows status bar.](images/single-page-website/install-windows-ipfs-desktop-status-bar.png)
+   ![The IPFS desktop status bar menu in the Windows status bar.](images/single-page-website/install-windows-ipfs-desktop-status-bar.png)
 
 The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
 
@@ -42,30 +42,30 @@ The IPFS desktop application has finished installing. You can now start to [add 
 
 1. Download the latest available `.dmg` file from the `ipfs-shipyard/ipfs-desktop` GitHub repository:
 
-    ![List of available download links in GitHub.](images/single-page-website/install-macos-dmg-file-link.png)
+   ![List of available download links in GitHub.](images/single-page-website/install-macos-dmg-file-link.png)
 
 2. Open the `ipfs-desktop.dmg` file.
 3. Drag the IPFS icon into the **Applications** folder:
 
-    ![Drag-to-install window in MacOS.](images/single-page-website/install-macos-drag-ipfs-drag.png)
+   ![Drag-to-install window in MacOS.](images/single-page-website/install-macos-drag-ipfs-drag.png)
 
 4. Open your **Applications** folder and open the IPFS desktop application.
 5. You may get a warning saying _IPFS Desktop.app can't be opened_. Click **Show in Finder**:
 
-    ![Application cannot be installed error.](images/single-page-website/install-macos-ipfs-cannot-be-opened.png)
+   ![Application cannot be installed error.](images/single-page-website/install-macos-ipfs-cannot-be-opened.png)
 
 6. Find **IPFS Desktop.app** in your **Applications** folder.
 7. Hold down the `control` key, click **IPFS Desktop.app**, and click **Open**:
 
-    ![Right click context menu of IPFS Desktop.app.](images/single-page-website/install-macos-force-open.png)
+   ![Right click context menu of IPFS Desktop.app.](images/single-page-website/install-macos-force-open.png)
 
 8. Click **Open** in the new window:
 
-    ![Open confirmation window.](images/single-page-website/install-macos-open-confirmation.png)
+   ![Open confirmation window.](images/single-page-website/install-macos-open-confirmation.png)
 
 9. You can now find an IPFS icon in the status bar:
 
-    ![The IPFS desktop status bar menu in the macOS status bar.](images/single-page-website/install-macos-ipfs-desktop-status-bar.png)
+   ![The IPFS desktop status bar menu in the macOS status bar.](images/single-page-website/install-macos-ipfs-desktop-status-bar.png)
 
 The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
 
@@ -74,20 +74,20 @@ The IPFS desktop application has finished installing. You can now start to [add 
 1. Download the `.deb` package:
 1. Open the `.deb` package in **Software Installer**:
 
-    ![Right-click context menu of the IPFS deb package.](images/single-page-website/install-ubuntu-software-install.png)
+   ![Right-click context menu of the IPFS deb package.](images/single-page-website/install-ubuntu-software-install.png)
 
 1. Click **Install** and wait for the installation to finish:
 
-    ![Install screen within the Ubuntu software installation window.](images/single-page-website/install-ubuntu-install.png)
+   ![Install screen within the Ubuntu software installation window.](images/single-page-website/install-ubuntu-install.png)
 
 1. Click **Applications** or press the Windows key on your keyboard.
 1. Search for `IPFS` and select **IPFS Desktop**:
 
-    ![Ubuntu search screen with IPFS desktop showing.](images/single-page-website/install-ubuntu-search-window.png)
+   ![Ubuntu search screen with IPFS desktop showing.](images/single-page-website/install-ubuntu-search-window.png)
 
 1. You can now find an IPFS icon in the status bar:
 
-    ![IPFS icon shown in the Ubuntu status bar.](images/single-page-website/install-ubuntu-ipfs-running-status-bar.png)
+   ![IPFS icon shown in the Ubuntu status bar.](images/single-page-website/install-ubuntu-ipfs-running-status-bar.png)
 
 The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
 
@@ -97,40 +97,98 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
 
 1. Create a file called `index.html` and paste in the following code:
 
-    ```html
-    <!doctype html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Random Planet Facts</title>
-        <meta name="description" content="A Get a random fact about a planet in our solar system.">
-        <meta name="author" content="The IPFS Docs team.">
-        <style>body{margin:15px auto;max-width:650px;line-height:1.2;font-family:sans-serif;font-size:2.0em;color:#fff;background:#444}</style>
-    </head>
-    <body onload="main()">
-        <h1>Random Planet Facts</h1>
-        <p id="output_p"></p>
-        <script>
-            function main() {
-                const facts=["Mars is home to the tallest mountain in our solar system.","Only 18 out of 40 missions to Mars have been successful.","Pieces of Mars have fallen to Earth.","One year on Mars is 687 Earth days.","The temperature on Mars ranges from -153 to 20 °C.","One year on Mercury is about 88 Earth days.","The surface temperature of Mercury ranges from -173 to 427°C.","Mercury was first discovered in the 14th century by Assyrian astronomers.","Your weight on Mercury would be 38% of your weight on Earth.","A day on the surface of Mercury lasts 176 Earth days.","The surface temperature of Venus is about 462 °C.","It takes Venus 225 days to orbit the sun.","17th-century Babylonian astronomers first discovered Venus.","Venus is nearly as big as the Earth with a diameter of 12,104 km.","The Earth’s rotation is gradually slowing.","There is only one natural satellite of the planet Earth, the moon.","Earth is the only planet in our solar system not named after a god.","The Earth is the densest planet in the solar system.","A year on Jupiter lasts around 4333 earth days.","The surface temperature of Jupiter is around -108°C.","Babylonian astronomers first discovered Jupiter in the 7th or 8th century.","Jupiter has 4 rings.","A day on Jupiter lasts 9 hours and 55 minutes.","8th century Assyrians first discovered Saturn.","Saturn takes 10756 days to orbit the Sun.","Saturn can be seen with the naked eye.","Saturn is the flattest planet.","Saturn is made mostly of hydrogen.","Four spacecraft have visited Saturn.","William Herschel discovered Uranus in 1781.","A year on Uranus takes 30687 earth days.","Uranus turns on its axis once every 17 hours, 14 minutes.","With a minimum atmospheric temperature of -224°, C Uranus is nearly the coldest planet in the solar system.","Only one spacecraft has flown by Uranus, the Voyager 2.","Neptune was discovered in 1846 by Urbain Le Verrier and Johann Galle.","Neptune has 14 moons.","The average temperature of Neptune is about -201 °C.","There is a 1:20 million scale model of the solar system in Sweden.", "The gap between the Earth and our moon is bigger than the diameters of all the planets combined.", "The first accurate calculation of the speed of light was using Jupiter’s moons", "Jupiter’s magnetic field is believed to be a result of rapidly spinning metallic hydrogen at the core, and is ~10x stronger than the Earth’s.", "Venus spins backward.", "Uranus spins sideways, relative to the ecliptic plane of the solar system.", "It is easier to reach Pluto or escape the solar system from Earth than being able to <i>land</i> on the Sun."];
-                document.querySelector('#output_p').innerHTML = facts[Math.floor(Math.random() * facts.length)]
-            }
-        </script>
-    </body>
-
-    </html>
-    ```
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+     <head>
+       <meta charset="utf-8" />
+       <title>Random Planet Facts</title>
+       <meta
+         name="description"
+         content="A Get a random fact about a planet in our solar system."
+       />
+       <meta name="author" content="The IPFS Docs team." />
+       <style>
+         body {
+           margin: 15px auto;
+           max-width: 650px;
+           line-height: 1.2;
+           font-family: sans-serif;
+           font-size: 2em;
+           color: #fff;
+           background: #444;
+         }
+       </style>
+     </head>
+     <body onload="main()">
+       <h1>Random Planet Facts</h1>
+       <p id="output_p"></p>
+       <script>
+         function main() {
+           const facts = [
+             'Mars is home to the tallest mountain in our solar system.',
+             'Only 18 out of 40 missions to Mars have been successful.',
+             'Pieces of Mars have fallen to Earth.',
+             'One year on Mars is 687 Earth days.',
+             'The temperature on Mars ranges from -153 to 20 °C.',
+             'One year on Mercury is about 88 Earth days.',
+             'The surface temperature of Mercury ranges from -173 to 427°C.',
+             'Mercury was first discovered in the 14th century by Assyrian astronomers.',
+             'Your weight on Mercury would be 38% of your weight on Earth.',
+             'A day on the surface of Mercury lasts 176 Earth days.',
+             'The surface temperature of Venus is about 462 °C.',
+             'It takes Venus 225 days to orbit the sun.',
+             '17th-century Babylonian astronomers first discovered Venus.',
+             'Venus is nearly as big as the Earth with a diameter of 12,104 km.',
+             'The Earth’s rotation is gradually slowing.',
+             'There is only one natural satellite of the planet Earth, the moon.',
+             'Earth is the only planet in our solar system not named after a god.',
+             'The Earth is the densest planet in the solar system.',
+             'A year on Jupiter lasts around 4333 earth days.',
+             'The surface temperature of Jupiter is around -108°C.',
+             'Babylonian astronomers first discovered Jupiter in the 7th or 8th century.',
+             'Jupiter has 4 rings.',
+             'A day on Jupiter lasts 9 hours and 55 minutes.',
+             '8th century Assyrians first discovered Saturn.',
+             'Saturn takes 10756 days to orbit the Sun.',
+             'Saturn can be seen with the naked eye.',
+             'Saturn is the flattest planet.',
+             'Saturn is made mostly of hydrogen.',
+             'Four spacecraft have visited Saturn.',
+             'William Herschel discovered Uranus in 1781.',
+             'A year on Uranus takes 30687 earth days.',
+             'Uranus turns on its axis once every 17 hours, 14 minutes.',
+             'With a minimum atmospheric temperature of -224°, C Uranus is nearly the coldest planet in the solar system.',
+             'Only one spacecraft has flown by Uranus, the Voyager 2.',
+             'Neptune was discovered in 1846 by Urbain Le Verrier and Johann Galle.',
+             'Neptune has 14 moons.',
+             'The average temperature of Neptune is about -201 °C.',
+             'There is a 1:20 million scale model of the solar system in Sweden.',
+             'The gap between the Earth and our moon is bigger than the diameters of all the planets combined.',
+             'The first accurate calculation of the speed of light was using Jupiter’s moons',
+             'Jupiter’s magnetic field is believed to be a result of rapidly spinning metallic hydrogen at the core, and is ~10x stronger than the Earth’s.',
+             'Venus spins backward.',
+             'Uranus spins sideways, relative to the ecliptic plane of the solar system.',
+             'It is easier to reach Pluto or escape the solar system from Earth than being able to <i>land</i> on the Sun.'
+           ]
+           document.querySelector('#output_p').innerHTML =
+             facts[Math.floor(Math.random() * facts.length)]
+         }
+       </script>
+     </body>
+   </html>
+   ```
 
 2. Open IPFS desktop and go to the **Files** page.
 3. Click **Add** → **File**.
 4. Navigate to your `index.html` file and select **Open**.
 
-    ![Choose a file window open in IPFS desktop.](images/single-page-website/add-ipfs-desktop-open-file.png)
+   ![Choose a file window open in IPFS desktop.](images/single-page-website/add-ipfs-desktop-open-file.png)
 
 5. Click the triple dot menu on `index.html` and select **Share link**.
 6. Click **Copy** to copy the file's URL to your clipboard.
 
-    ![Share files window in IPFS desktop.](images/single-page-website/add-ipfs-desktop-share-files.png)
+   ![Share files window in IPFS desktop.](images/single-page-website/add-ipfs-desktop-share-files.png)
 
 7. Open a browser and paste in the URL you just copied.
 
@@ -147,22 +205,22 @@ You should _pin_ any content you consider important to ensure that content is re
 To ensure that your important data is retained, you may want to use a pinning service. [Pinata](https://pinata.cloud/) is one such service that offers pinning for free!
 
 1. Go to [Pinata.cloud](https://pinata.cloud/) and sign up or log in.
-2. Click [**Pinata Upload**](https://pinata.cloud/pinataupload).
+2. Click **Pinata Upload**.
 3. Select **Upload File** and click **Browse**.
 4. Navigate to your `index.html` file and click **Open**.
 5. Click **Upload**.
 6. Once the file has finished uploading, click **Pin Explorer** to view any files you have pinned.
 7. You should be able to see your `index.html` file pinned:
 
-    ![The Pinata Pin Explorer screen showing the index.html pinnded.](images/single-page-website/pinned-index-file-in-pinata.png)
+   ![The Pinata Pin Explorer screen showing the index.html pinnded.](./images/single-page-website/pinned-index-file-in-pinata.png)
 
 8. Click the **IPFS Hash** of your `index.html` file to open your website through the Pinata gateway.
 
-    ![Random planet fact website pinned using Pinata and displayed in Firefox](images/single-page-website/pinned-random-planet-fact-website.png)
+   ![Random planet fact website pinned using Pinata and displayed in Firefox](./images/single-page-website/pinned-random-planet-fact-website.png)
 
 ## Set up a domain
 
-This section is completely optional. 
+This section is completely optional.
 
 If you have access to a domain name service like Namecheap, Google Domains, GoDaddy, or any other domain service, then you can follow along with these steps. If you don't have a domain name to assign, then you can just read along through this section. We're going to dive into using services like DNSLink and the Ethereum Naming Service (ENS) in later sections.
 
@@ -175,7 +233,7 @@ We used Namecheap, but the process is very similar across all domain name servic
 5. Copy the **IPFS Hash** link.
 6. In your domain name providers **Redirection Settings** section, paste in the **IPFS Hash** link you just copied.
 
-    ![Redirecting a source URL to an IPFS Hash link within Namecheap.](images/single-page-website/namecheap-source-url-redirect.png)
+   ![Redirecting a source URL to an IPFS Hash link within Namecheap.](images/single-page-website/namecheap-source-url-redirect.png)
 
 7. Save your changes.
 
