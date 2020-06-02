@@ -1,7 +1,7 @@
 <template>
   <div class="legacy-callout">
     <p>
-      <b>This site is in beta. Help us improve it!</b>
+      <b>Help us improve this site!</b>
     </p>
     <section>
       <div class="block">
@@ -10,11 +10,15 @@
             <a
               href="https://github.com/ipfs/docs/issues/new?assignees=&labels=OKR+3%3A+Content+Improvement%2C+docs-ipfs&template=content-request.md&title=%5BCONTENT+REQUEST%5D+%28add+your+title+here%21%29"
               target="_blank"
+              rel="noopener noreferrer"
               >Suggest new content</a
             >
           </li>
           <li>
-            <a href="https://ipfs.canny.io/docs-features" target="_blank"
+            <a
+              href="https://ipfs.canny.io/docs-features"
+              target="_blank"
+              rel="noopener noreferrer"
               >Request features</a
             >
           </li>
@@ -26,32 +30,15 @@
             <a
               href="https://github.com/ipfs/docs/issues/new?assignees=&labels=OKR+3%3A+Content+Improvement%2C+docs-ipfs&template=documentation-issue.md&title=%5BDOCS+ISSUE%5D+%28add+your+title+here%21%29"
               target="_blank"
+              rel="noopener noreferrer"
               >Give general feedback</a
-            >
-          </li>
-          <li v-if="$site.themeConfig.betaTestFormUrl">
-            <a :href="$site.themeConfig.betaTestFormUrl" target="_blank"
-              >Become a tester</a
             >
           </li>
         </ul>
       </div>
     </section>
-    <section v-if="legacyUrl" class="legacy-links">
-      <a target="_blank" :href="legacyUrl">View this page on legacy site</a>
-    </section>
   </div>
 </template>
-
-<script>
-export default {
-  computed: {
-    legacyUrl: function() {
-      return this.$frontmatter && this.$frontmatter.legacyUrl
-    }
-  }
-}
-</script>
 
 <style lang="stylus" scoped>
 .legacy-callout {

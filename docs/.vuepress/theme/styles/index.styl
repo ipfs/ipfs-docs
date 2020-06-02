@@ -16,6 +16,10 @@ html.smooth-scroll {
 	}
 }
 
+img[loading] {
+	height: auto;
+}
+
 #app {
 	.navbar {
 		position: sticky;
@@ -36,7 +40,16 @@ html.smooth-scroll {
 		text-indent: -99999px;
 		min-width: 180px;
 		min-height: 47px;
+		background-size: contain;
 	}
+}
+
+.custom-block.callout {
+	background-color: lighten($accentColor, 80%);
+	padding: 0.1rem 1.5rem;
+	border-color: $accentColor;
+	border-left-width: 0.5rem;
+	border-left-style: solid;
 }
 
 :root {

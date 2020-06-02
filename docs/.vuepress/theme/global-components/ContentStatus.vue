@@ -4,6 +4,7 @@
       <div class="illustration">
         <img src="../assets/pencil-rocket.svg" />
       </div>
+
       <h2>{{ title }}</h2>
       <div v-if="issueUrl" class="content-status-status">
         <a target="_blank" :href="issueUrl">Check the status</a>
@@ -34,7 +35,7 @@
       </div>
     </div>
 
-    <div class="content-status-info" style="clear: both">
+    <div class="content-status-info" style="clear: both;">
       <div v-if="related" class="section content-other-resources">
         <h3>Other resources to try</h3>
         <ul>
@@ -57,15 +58,15 @@ import Feedback from '../components/Feedback.vue'
 
 export default {
   computed: {
-    issueUrl: function() {
+    issueUrl: function () {
       return this.$frontmatter && this.$frontmatter.issueUrl
     },
-    repo: function() {
+    repo: function () {
       return (
         this.$site && this.$site.themeConfig && this.$site.themeConfig.docsRepo
       )
     },
-    related: function() {
+    related: function () {
       return this.$frontmatter.related
     }
   },
