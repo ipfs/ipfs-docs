@@ -21,7 +21,7 @@ To get started you'll need:
 
 You'll also need some amount of `ETH`. Due to how the Ethereum domain name system works, the amount you need changes with time.
 
-## Purchase an Ethereum domain name
+### Purchase an Ethereum domain name
 
 1. Go to [app.ens.domains](https://app.ens.domains/).
 2. Log into MetaMask.
@@ -58,7 +58,7 @@ You'll also need some amount of `ETH`. Due to how the Ethereum domain name syste
 
     ![All the domain settings within ENS](./images/link-a-domain/ens-domain-settings-page.png)
 
-## Link your IPFS content identifier (CID)
+### Link your IPFS content identifier (CID)
 
 11. Click the plus `+` icon next to **Records**.
 
