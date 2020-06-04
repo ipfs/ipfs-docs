@@ -12,6 +12,10 @@ In this tutorial, you'll import a simple one-page website to IPFS, have it use t
 
 IPFS desktop application is the easiest way to get up and running quickly with IPFS. The installation steps for IPFS desktop differ between operating systems. Follow the instructions for your system.
 
+| [Windows](#windows)                                                        | [macOS](#macos)                                                      | [Linux](#linux)                                                      |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| [![Windows icon](./images/single-page-website/windows-icon.png)](#windows) | [![macOS icon](./images/single-page-website/apple-icon.png)](#macos) | [![Linux icon](./images/single-page-website/linux-icon.png)](#linux) |
+
 ### Windows
 
 1. Go to the [IPFS desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases).
@@ -93,7 +97,7 @@ The IPFS desktop application has finished installing. You can now start to [add 
 
 ## Add your site
 
-The next step is to import your site into IPFS using the IPFS desktop app you just installed. The website we'll be using is incredibly simple. The purpose of it is to generate a random Hobbit-like name and display it to the visitor. Each time the page is refreshed, a new name is displayed. The website is creatively called _Hobbit name generator_.
+The next step is to import your site into IPFS using the IPFS desktop app you just installed. The website we'll be using is incredibly simple. The purpose of it is to display random space-related facts. Each time the page is refreshed, a new fact is displayed. The website is creatively called _Random Planet Facts_.
 
 1. Create a file called `index.html` and paste in the following code:
 
@@ -105,7 +109,7 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
        <title>Random Planet Facts</title>
        <meta
          name="description"
-         content="A Get a random fact about a planet in our solar system."
+         content="Get a random fact about a planet in our solar system."
        />
        <meta name="author" content="The IPFS Docs team." />
        <style>
@@ -133,12 +137,12 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
              'The temperature on Mars ranges from -153 to 20 °C.',
              'One year on Mercury is about 88 Earth days.',
              'The surface temperature of Mercury ranges from -173 to 427°C.',
-             'Mercury was first discovered in the 14th century by Assyrian astronomers.',
+             'Mercury was first discovered in 14th century by Assyrian astronomers.',
              'Your weight on Mercury would be 38% of your weight on Earth.',
              'A day on the surface of Mercury lasts 176 Earth days.',
              'The surface temperature of Venus is about 462 °C.',
              'It takes Venus 225 days to orbit the sun.',
-             '17th-century Babylonian astronomers first discovered Venus.',
+             'Venus was first discovered by 17th century Babylonian astronomers.',
              'Venus is nearly as big as the Earth with a diameter of 12,104 km.',
              'The Earth’s rotation is gradually slowing.',
              'There is only one natural satellite of the planet Earth, the moon.',
@@ -146,28 +150,28 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
              'The Earth is the densest planet in the solar system.',
              'A year on Jupiter lasts around 4333 earth days.',
              'The surface temperature of Jupiter is around -108°C.',
-             'Babylonian astronomers first discovered Jupiter in the 7th or 8th century.',
-             'Jupiter has 4 rings.',
+             'Jupiter was first discovered by 7th or 8th century Babylonian astronomers.',
+             'Jupiter has 4 ring.',
              'A day on Jupiter lasts 9 hours and 55 minutes.',
-             '8th century Assyrians first discovered Saturn.',
+             'Saturn was first discovered by 8th century Assyrians.',
              'Saturn takes 10756 days to orbit the Sun.',
              'Saturn can be seen with the naked eye.',
              'Saturn is the flattest planet.',
              'Saturn is made mostly of hydrogen.',
              'Four spacecraft have visited Saturn.',
-             'William Herschel discovered Uranus in 1781.',
+             'Uranus was discovered by William Herschel in 1781.',
              'A year on Uranus takes 30687 earth days.',
              'Uranus turns on its axis once every 17 hours, 14 minutes.',
-             'With a minimum atmospheric temperature of -224°, C Uranus is nearly the coldest planet in the solar system.',
+             'With minimum atmospheric temperature of -224°C Uranus is nearly coldest planet in the solar system.',
              'Only one spacecraft has flown by Uranus, the Voyager 2.',
              'Neptune was discovered in 1846 by Urbain Le Verrier and Johann Galle.',
              'Neptune has 14 moons.',
-             'The average temperature of Neptune is about -201 °C.',
+             'The average temperatue of Neptune is about -201 °C.',
              'There is a 1:20 million scale model of the solar system in Sweden.',
              'The gap between the Earth and our moon is bigger than the diameters of all the planets combined.',
              'The first accurate calculation of the speed of light was using Jupiter’s moons',
              'Jupiter’s magnetic field is believed to be a result of rapidly spinning metallic hydrogen at the core, and is ~10x stronger than the Earth’s.',
-             'Venus spins backward.',
+             'Venus spins backwards.',
              'Uranus spins sideways, relative to the ecliptic plane of the solar system.',
              'It is easier to reach Pluto or escape the solar system from Earth than being able to <i>land</i> on the Sun.'
            ]
@@ -196,13 +200,11 @@ Your browser should load the website in a few moments! This can take up to a few
 
 ## Pinning files
 
-IPFS nodes treat the data they store like a cache, meaning that there is no guarantee that the data will continue to be stored. _Pinning_ a file tells an IPFS server that the data is essential and shouldn't be thrown away.
-
-You should _pin_ any content you consider important to ensure that content is retained over the long term. Since data relevant to someone else may not be important to you, pinning enables you to have control over the disk space and data retention you need.
+IPFS nodes treat the data they store like a cache, meaning that there is no guarantee the data will continue to be stored. _Pinning_ a file tells an IPFS node to treat the data as essential and to not throw it away. You should _pin_ any content you consider important to ensure that data is retained over the long term.
 
 ### Using Pinata
 
-To ensure that your important data is retained, you may want to use a pinning service. [Pinata](https://pinata.cloud/) is one such service that offers pinning for free!
+An easy way to make sure important data is retained is to use a pinning service. These services run a bunch of IPFS nodes, and will _pin_ your data for you! This way you don't have to run and maintain your own IPFS node. [Pinata](https://pinata.cloud/) is a pinning service that allows you to pin up to 1GB of data for free.
 
 1. Go to [Pinata.cloud](https://pinata.cloud/) and sign up or log in.
 2. Click **Pinata Upload**.
@@ -237,14 +239,12 @@ We used Namecheap, but the process is very similar across all domain name servic
 
 7. Save your changes.
 
-Domain name services are fairly slow to update, but in a few hours, you should be able to go to your domain and see the website you pinned using Pinata!
+Domain name services are fairly slow to update. You should be able to go to your domain and see the website you pinned in a few hours.
 
-![Random planet facts site with the randomplanetfacts.xyz url](./images/single-page-website/random-planets-with-correct-url.png)
+![Random planet facts site with the randomplanetfacts.xyz URL.](./images/single-page-website/random-planets-with-correct-url.png)
 
 ## Further improvements
 
 This project was designed to get you up and running quickly, but there are many improvements we can make here.
 
-You may have noticed that when visiting [randomplanetfacts.xyz](https://randomplanetfacts.xyz), your browser redirects to [gateway.pinata.cloud/ipfs/QmW7S5HR...](https://gateway.pinata.cloud/ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA). This isn't great for the user's experience, and it can cause issues with security certificates and other website validation methods.
-
-Another issue is that the website is incredibly simple. There are no images, stylesheets, or javascript files. If you're interested in building a more complex site using IPFS, [carry on with this tutorial series 🡒](#)
+You may have noticed that when visiting [randomplanetfacts.xyz](https://randomplanetfacts.xyz), your browser redirects to [gateway.pinata.cloud/ipfs/QmW7S5HR...](https://gateway.pinata.cloud/ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA). This isn't great for the user's experience, and it can cause issues with security certificates and other website validation methods. Also, this website is incredibly simple. There are no images, external stylesheets, or javascript files. If you're interested in building a more complex site using IPFS and securing it properly, [carry on with this tutorial series 🡒](#)
