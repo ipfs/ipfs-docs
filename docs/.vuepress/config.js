@@ -27,8 +27,8 @@ module.exports = {
   },
   themeConfig: {
     algolia: {
-      apiKey: 'e6dcd48beb5db629bf77c892d38fa091',
-      indexName: 'ipfs'
+      apiKey: 'e56fc7c611806522df45191e22ed15ac',
+      indexName: 'ipfs-docs'
     },
     defaultImage: '/images/social-card.png',
     author: {
