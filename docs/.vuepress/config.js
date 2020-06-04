@@ -21,8 +21,8 @@ module.exports = {
       md.use(require('markdown-it-footnote'))
       md.use(require('markdown-it-task-lists'))
       md.use(require('markdown-it-deflist')),
-      md.use(require('markdown-it-imsize')),
-      md.use(require('markdown-it-image-lazy-loading'))
+        md.use(require('markdown-it-imsize')),
+        md.use(require('markdown-it-image-lazy-loading'))
     }
   },
   themeConfig: {
@@ -30,8 +30,6 @@ module.exports = {
       apiKey: 'e6dcd48beb5db629bf77c892d38fa091',
       indexName: 'ipfs'
     },
-    betaTestFormUrl:
-      'https://docs.google.com/forms/d/1LVaD1B2uyW6Ff0jfU_iQ5mCeyQcHfyQO6BDD99XAgK0/viewform',
     defaultImage: '/images/social-card.png',
     author: {
       name: 'IPFS Team',
