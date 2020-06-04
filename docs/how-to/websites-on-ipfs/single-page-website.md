@@ -17,24 +17,24 @@ IPFS desktop application is the easiest way to get up and running quickly with I
 1. Go to the [IPFS desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases).
 2. Find the link ending in `.exe` for the latest version of IPFS desktop:
 
-   ![The IPFS desktop download page.](images/single-page-website/install-windows-download-exe-page.png)
+   ![The IPFS desktop download page.](./images/single-page-website/install-windows-download-exe-page.png)
 
 3. Run the `.exe` file to start the installation.
 4. Select whether you want to install the application for just yourself, or all users on the computer. Click **Next**:
 
-   ![The IPFS desktop install options window.](images/single-page-website/install-windows-install-options.png)
+   ![The IPFS desktop install options window.](./images/single-page-website/install-windows-install-options.png)
 
 5. Select the install location for the application. The default location is usually fine. Click **Next**:
 
-   ![The IPFS desktop installation location window.](images/single-page-website/install-windows-install-location.png)
+   ![The IPFS desktop installation location window.](./images/single-page-website/install-windows-install-location.png)
 
 6. Wait for the installation to finish and click **Finish**:
 
-   ![The IPFS desktop installation finished window.](images/single-page-website/install-windows-install-finish.png)
+   ![The IPFS desktop installation finished window.](./images/single-page-website/install-windows-install-finish.png)
 
 7. You can now find an IPFS icon in the status bar:
 
-   ![The IPFS desktop status bar menu in the Windows status bar.](images/single-page-website/install-windows-ipfs-desktop-status-bar.png)
+   ![The IPFS desktop status bar menu in the Windows status bar.](./images/single-page-website/install-windows-ipfs-desktop-status-bar.png)
 
 The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
 
@@ -42,30 +42,30 @@ The IPFS desktop application has finished installing. You can now start to [add 
 
 1. Download the latest available `.dmg` file from the `ipfs-shipyard/ipfs-desktop` GitHub repository:
 
-   ![List of available download links in GitHub.](images/single-page-website/install-macos-dmg-file-link.png)
+   ![List of available download links in GitHub.](./images/single-page-website/install-macos-dmg-file-link.png)
 
 2. Open the `ipfs-desktop.dmg` file.
 3. Drag the IPFS icon into the **Applications** folder:
 
-   ![Drag-to-install window in MacOS.](images/single-page-website/install-macos-drag-ipfs-drag.png)
+   ![Drag-to-install window in MacOS.](./images/single-page-website/install-macos-drag-ipfs-drag.png)
 
 4. Open your **Applications** folder and open the IPFS desktop application.
 5. You may get a warning saying _IPFS Desktop.app can't be opened_. Click **Show in Finder**:
 
-   ![Application cannot be installed error.](images/single-page-website/install-macos-ipfs-cannot-be-opened.png)
+   ![Application cannot be installed error.](./images/single-page-website/install-macos-ipfs-cannot-be-opened.png)
 
 6. Find **IPFS Desktop.app** in your **Applications** folder.
 7. Hold down the `control` key, click **IPFS Desktop.app**, and click **Open**:
 
-   ![Right click context menu of IPFS Desktop.app.](images/single-page-website/install-macos-force-open.png)
+   ![Right click context menu of IPFS Desktop.app.](./images/single-page-website/install-macos-force-open.png)
 
 8. Click **Open** in the new window:
 
-   ![Open confirmation window.](images/single-page-website/install-macos-open-confirmation.png)
+   ![Open confirmation window.](./images/single-page-website/install-macos-open-confirmation.png)
 
 9. You can now find an IPFS icon in the status bar:
 
-   ![The IPFS desktop status bar menu in the macOS status bar.](images/single-page-website/install-macos-ipfs-desktop-status-bar.png)
+   ![The IPFS desktop status bar menu in the macOS status bar.](./images/single-page-website/install-macos-ipfs-desktop-status-bar.png)
 
 The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
 
@@ -74,20 +74,20 @@ The IPFS desktop application has finished installing. You can now start to [add 
 1. Download the `.deb` package:
 1. Open the `.deb` package in **Software Installer**:
 
-   ![Right-click context menu of the IPFS deb package.](images/single-page-website/install-ubuntu-software-install.png)
+   ![Right-click context menu of the IPFS deb package.](./images/single-page-website/install-ubuntu-software-install.png)
 
 1. Click **Install** and wait for the installation to finish:
 
-   ![Install screen within the Ubuntu software installation window.](images/single-page-website/install-ubuntu-install.png)
+   ![Install screen within the Ubuntu software installation window.](./images/single-page-website/install-ubuntu-install.png)
 
 1. Click **Applications** or press the Windows key on your keyboard.
 1. Search for `IPFS` and select **IPFS Desktop**:
 
-   ![Ubuntu search screen with IPFS desktop showing.](images/single-page-website/install-ubuntu-search-window.png)
+   ![Ubuntu search screen with IPFS desktop showing.](./images/single-page-website/install-ubuntu-search-window.png)
 
 1. You can now find an IPFS icon in the status bar:
 
-   ![IPFS icon shown in the Ubuntu status bar.](images/single-page-website/install-ubuntu-ipfs-running-status-bar.png)
+   ![IPFS icon shown in the Ubuntu status bar.](./images/single-page-website/install-ubuntu-ipfs-running-status-bar.png)
 
 The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
 
@@ -183,12 +183,12 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
 3. Click **Add** → **File**.
 4. Navigate to your `index.html` file and select **Open**.
 
-   ![Choose a file window open in IPFS desktop.](images/single-page-website/add-ipfs-desktop-open-file.png)
+   ![Choose a file window open in IPFS desktop.](./images/single-page-website/add-ipfs-desktop-open-file.png)
 
 5. Click the triple dot menu on `index.html` and select **Share link**.
 6. Click **Copy** to copy the file's URL to your clipboard.
 
-   ![Share files window in IPFS desktop.](images/single-page-website/add-ipfs-desktop-share-files.png)
+   ![Share files window in IPFS desktop.](./images/single-page-website/add-ipfs-desktop-share-files.png)
 
 7. Open a browser and paste in the URL you just copied.
 
@@ -233,13 +233,13 @@ We used Namecheap, but the process is very similar across all domain name servic
 5. Copy the **IPFS Hash** link.
 6. In your domain name providers **Redirection Settings** section, paste in the **IPFS Hash** link you just copied.
 
-   ![Redirecting a source URL to an IPFS Hash link within Namecheap.](images/single-page-website/namecheap-source-url-redirect.png)
+   ![Redirecting a source URL to an IPFS Hash link within Namecheap.](./images/single-page-website/namecheap-source-url-redirect.png)
 
 7. Save your changes.
 
 Domain name services are fairly slow to update, but in a few hours, you should be able to go to your domain and see the website you pinned using Pinata!
 
-![Random planet facts site with the randomplanetfacts.xyz url](images/single-page-website/random-planets-with-correct-url.png)
+![Random planet facts site with the randomplanetfacts.xyz url](./images/single-page-website/random-planets-with-correct-url.png)
 
 ## Further improvements
 
