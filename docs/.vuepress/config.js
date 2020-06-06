@@ -44,7 +44,7 @@ module.exports = {
     docsDir: 'docs',
     docsBranch: 'master',
     feedbackWidget: {
-      docsRepoIssue: 'ipfs/docs'
+      docsRepoIssue: 'ipfs/ipfs-docs'
     },
     editLinks: false,
     // page nav

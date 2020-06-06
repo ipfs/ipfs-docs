@@ -36,9 +36,9 @@ export default {
 
     openIssueLink() {
       const { docsRepoIssue } = this.$site.themeConfig.feedbackWidget
-      return `https://github.com/${docsRepoIssue}/issues/new?assignees=&labels=OKR+3%3A+Content+Improvement%2C+docs-ipfs&template=documentation-issue.md&title=%5BDOCS+ISSUE%5D+Page:+${this.$page.title}`
+      return `https://github.com/${docsRepoIssue}/issues/new?assignees=&labels=need%2Ftriage&template=open_an_issue.md&title=${this.$page.title}`
     },
-
+    
     editLink() {
       const {
         repo,
