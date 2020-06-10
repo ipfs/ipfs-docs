@@ -8,10 +8,29 @@ In this guide you will learn how to link up an existing domain name to the CID o
 
 ## DNS
 
+To get started you'll need:
+
+- A domain name registrar
+- A website.
+- An idea for a domain name.
+
+Access your registrar's control panel to manage the CNAME record and TXT record.
+
+CNAME: `www.gateway.ipfs.io.`
+
+TXT: `dnslink=/ipfs/$SITE_CID`
+
+![](./images/link-a-domain/dns-add-content-record.png)
+
 ## ENS
 
 <!-- What the ENS is. What it's used for. -->
+
+ENS is a decentralized way to address resources. Similar to DNS, where it converts human readable names to IP, ENS converts human readable names such as `randomplanetfacts.eth.link` to Ethereum addresses.
+
 <!-- How it compares to other DNS systems. -->
+
+ENS is built on smart contracts on the Ethereum blockchain. This means ENS is decentralized with no central point of failure and allows anyone to register for an domain.
 
 To get started you'll need:
 
