@@ -30,7 +30,7 @@ ENS is a decentralized way to address resources. Similar to DNS, where it conver
 
 <!-- How it compares to other DNS systems. -->
 
-ENS is built on smart contracts on the Ethereum blockchain. This means ENS is decentralized with no central point of failure and allows anyone to register for an domain.
+ENS is built on smart contracts on the Ethereum blockchain. This means ENS is decentralized with no central point of failure and allows anyone to register for a domain.
 
 To get started you'll need:
 
