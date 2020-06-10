@@ -54,6 +54,8 @@ There are a few ways of creating multiple pages.
 </html>
 ```
 
+Notice how the `href` is an absolute path.
+
 5. Open IPFS desktop and upload `about.html`
 
 ![](./images/multipage-website/upload-about.gif)
@@ -64,11 +66,11 @@ There are a few ways of creating multiple pages.
 
 ## Upload a directory with relative paths
 
-Instead of individually upload each file, you can upload a whole directory. This method is more practical for larger projects.
+Instead of individually uploading each file, you can upload a whole directory. This method is more practical for larger projects.
 
 1. Create a directory called `Random Planet Facts`
 
-2. Inside the directory, create file structure
+2. Inside the directory, create the file structure
 
 ```
 Random Planet Facts
@@ -134,7 +136,7 @@ Create a file called `about.html` and paste in the following code.
 </html>
 ```
 
-Use an image for `logo.png`.
+Use any image for `logo.png`.
 
 Notice how the `href` and `src` use relative paths instead of a CID.
 
