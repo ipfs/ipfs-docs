@@ -18,10 +18,10 @@ There are two ways to update your IPFS installation. [Using `ipfs-update`](#use-
    > ipfs-update version 1.6.0
    ```
 
-1. Tell `ipfs-update` to update to `Go-IPFS 0.5.1`:
+1. Tell `ipfs-update` to update to `Go-IPFS 0.6.0`:
 
    ```bash
-   ipfs-update install 0.5.1
+   ipfs-update install 0.6.0
 
    > Installation complete!
    ```
@@ -30,16 +30,16 @@ There are two ways to update your IPFS installation. [Using `ipfs-update`](#use-
 
 ## Manual process
 
-1. Download [`go-ipfs_v0.5.0_darwin-386.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.5.1).
+1. Download [`go-ipfs_v0.5.0_darwin-386.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.6.0).
 
    ```bash
-   wget https://github.com/ipfs/go-ipfs/releases/download/v0.5.1/go-ipfs_v0.5.1_darwin-amd64.tar.gz
+   wget https://github.com/ipfs/go-ipfs/releases/download/v0.6.0/go-ipfs_v0.6.0_darwin-amd64.tar.gz
    ```
 
 2. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.5.1_darwin-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.6.0_darwin-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
@@ -63,7 +63,7 @@ There are two ways to update your IPFS installation. [Using `ipfs-update`](#use-
    ipfs daemon
 
    > Initializing daemon...
-   > go-ipfs version: 0.5.1
+   > go-ipfs version: 0.6.0
    > Repo version: 9
    > System version: amd64/linux
    > Golang version: go1.13.8
@@ -93,7 +93,7 @@ There are two ways to update your IPFS installation. [Using `ipfs-update`](#use-
    ```bash
    ipfs --version
 
-   > ipfs version 0.5.1
+   > ipfs version 0.6.0
    ```
 
 8. That's it!

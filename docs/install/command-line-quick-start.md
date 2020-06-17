@@ -26,22 +26,22 @@ Installing IPFS is simple, but varies between operating system:
 
    ```powershell
    cd ~\
-   wget https://dist.ipfs.io/go-ipfs/v0.5.1/go-ipfs_v0.5.1_windows-amd64.zip -Outfile go-ipfs_v0.5.1.zip
+   wget https://dist.ipfs.io/go-ipfs/v0.6.0/go-ipfs_v0.6.0_windows-amd64.zip -Outfile go-ipfs_v0.6.0.zip
    ```
 
 2. Unzip the file and move it somewhere handy.
 
    ```powershell
-   Expand-Archive -Path go-ipfs_v0.5.1.zip -DestinationPath ~\Apps\go-ipfs_v0.5.1
+   Expand-Archive -Path go-ipfs_v0.6.0.zip -DestinationPath ~\Apps\go-ipfs_v0.6.0
    ```
 
-3. Move into the `go-ipfs_v0.5.1` folder and check that the `ipfs.exe` works:
+3. Move into the `go-ipfs_v0.6.0` folder and check that the `ipfs.exe` works:
 
    ```powershell
-   cd ~\Apps\go-ipfs_v0.5.1\go-ipfs
+   cd ~\Apps\go-ipfs_v0.6.0\go-ipfs
    .\ipfs.exe --version
 
-   > ipfs version 0.5.1
+   > ipfs version 0.6.0
    ```
 
    While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH.` by using the following steps.
@@ -53,13 +53,13 @@ Installing IPFS is simple, but varies between operating system:
 
    > Path
    > ----
-   > C:\Users\Johnny\Apps\go-ipfs_v0.5.1\go-ipfs
+   > C:\Users\Johnny\Apps\go-ipfs_v0.6.0\go-ipfs
    ```
 
 5. Add the address you just copied to PowerShell's `PATH` by adding it to the end of the `profile.ps1` file stored in `Documents\WindowsPowerShell`:
 
    ```powershell
-   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\Johnny\Apps\go-ipfs_v0.5.1\go-ipfs')"
+   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\Johnny\Apps\go-ipfs_v0.6.0\go-ipfs')"
    ```
 
 6. Close and reopen your PowerShell window. Test that your IPFS path is set correctly by going to your home folder and asking IPFS for the version:
@@ -68,7 +68,7 @@ Installing IPFS is simple, but varies between operating system:
    cd ~
    ipfs --version
 
-   > ipfs version 0.5.1
+   > ipfs version 0.6.0
    ```
 
 ### macOS
@@ -76,13 +76,13 @@ Installing IPFS is simple, but varies between operating system:
 1. Download the macOS binary from [`dist.ipfs.io`](https://dist.ipfs.io/#go-ipfs).
 
    ```bash
-   wget https://dist.ipfs.io/go-ipfs/v0.5.1/go-ipfs_v0.5.1_darwin-amd64.tar.gz
+   wget https://dist.ipfs.io/go-ipfs/v0.6.0/go-ipfs_v0.6.0_darwin-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.5.1_darwin-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.6.0_darwin-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
@@ -105,7 +105,7 @@ Installing IPFS is simple, but varies between operating system:
    ```bash
    ipfs --version
 
-   > ipfs version 0.5.1
+   > ipfs version 0.6.0
    ```
 
 ### Linux
@@ -113,13 +113,13 @@ Installing IPFS is simple, but varies between operating system:
 1. Download the Linux binary from [`dist.ipfs.io`](https://dist.ipfs.io/#go-ipfs).
 
    ```bash
-   wget https://dist.ipfs.io/go-ipfs/v0.5.1/go-ipfs_v0.5.1_linux-amd64.tar.gz
+   wget https://dist.ipfs.io/go-ipfs/v0.6.0/go-ipfs_v0.6.0_linux-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.5.1_linux-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.6.0_linux-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
@@ -143,7 +143,7 @@ Installing IPFS is simple, but varies between operating system:
    ```bash
    ipfs --version
 
-   > ipfs version 0.5.1
+   > ipfs version 0.6.0
    ```
 
 ## Initialize the repository
