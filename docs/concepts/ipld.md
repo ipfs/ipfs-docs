@@ -1,7 +1,7 @@
 ---
 title: IPLD
 sidebarDepth: 0
-issueUrl: https://github.com/ipfs/ipfs-docs/issues/86
+issueUrl: https://github.com/ipfs/ipfs-docs/issues/242
 description: Learn about the InterPlanetary Linked Data (IPLD) model and how it forms an important ingredient in IPFS.
 related:
   'IPLD home page': https://ipld.io/

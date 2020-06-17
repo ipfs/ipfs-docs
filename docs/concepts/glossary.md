@@ -1,7 +1,6 @@
 ---
 title: Glossary
 sidebarDepth: 0
-issueUrl: https://github.com/ipfs/ipfs-docs/issues/56
 description: A glossary guide to key terminology for IPFS, the InterPlanetary File System.
 related:
   'Guide to libp2p terminology': https://docs.libp2p.io/reference/glossary/
