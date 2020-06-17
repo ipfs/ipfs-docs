@@ -1,6 +1,6 @@
 ---
 title: Academic papers
-issueUrl: https://github.com/ipfs/docs/issues/479
+issueUrl: https://github.com/ipfs/ipfs-docs/issues/479
 ---
 
 # Academic papers

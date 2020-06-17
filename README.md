@@ -1,5 +1,5 @@
-![IPFS Documentation](https://raw.githubusercontent.com/ipfs/docs/master/ipfs-docs-header.png 'IPFS Documentation')
-[![Build status icon.](https://img.shields.io/circleci/project/github/ipfs/docs/master.svg?style=flat-square)](https://circleci.com/gh/ipfs/ipfs-docs)
+![IPFS Documentation](https://raw.githubusercontent.com/ipfs/ipfs-docs/master/ipfs-docs-header.png 'IPFS Documentation')
+[![Build status icon.](https://img.shields.io/circleci/project/github/ipfs/ipfs-docs/master.svg?style=flat-square)](https://circleci.com/gh/ipfs/ipfs-docs)
 [![Made by icon.](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](https://protocol.ai/)
 [![Project icon.](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.io/)
 
@@ -31,7 +31,7 @@ If you can't make the meeting, don't worry. A recording of each meeting is avail
 
 ### Issues
 
-If you find something wrong within this repository, please raise an [issue here](https://github.com/ipfs/docs/issues).
+If you find something wrong within this repository, please raise an [issue here](https://github.com/ipfs/ipfs-docs/issues).
 
 ## Project organization
 
@@ -39,11 +39,11 @@ If you find something wrong within this repository, please raise an [issue here]
 
 Here's a summary of this our objectives for the first three months of 2020:
 
-1. Deprecate the legacy site. ipfs/docs#475
-2. A web developer's introduction: create a series of tutorials aimed at giving web developers a hands-on introduction to IPFS and get them building cool stuff quickly. [Issue #464](https://github.com/ipfs/docs/issues/464)
+1. Deprecate the legacy site. ipfs/ipfs-docs#475
+2. A web developer's introduction: create a series of tutorials aimed at giving web developers a hands-on introduction to IPFS and get them building cool stuff quickly. [Issue #464](https://github.com/ipfs/ipfs-docs/issues/464)
 3. Replace the outdated material at dweb-primer.ipfs.io with the material updated and granted to ipfs-shipyard in January 2020, and point to it in docs as such.
-4. Automate the docs: install/create automation tools to _automagically_ test the docs for spelling mistakes, grammar mistakes, and broken links. [Issue #463](https://github.com/ipfs/docs/issues/463)
-5. Single-source documentation: bring in all the documentation that currently lives in several different repos into the ipfs/docs repo. [Issue #462](https://github.com/ipfs/docs/issues/462)
+4. Automate the docs: install/create automation tools to _automagically_ test the docs for spelling mistakes, grammar mistakes, and broken links. [Issue #463](https://github.com/ipfs/ipfs-docs/issues/463)
+5. Single-source documentation: bring in all the documentation that currently lives in several different repos into the ipfs/ipfs-docs repo. [Issue #462](https://github.com/ipfs/ipfs-docs/issues/462)
 
 For more information regarding these objectives, check out the [IPFS-wide Objectives and Key Results (OKRs) tracking document](https://docs.google.com/spreadsheets/d/1YTnvQ75v0jCuumOM9CPhx0BZHhJzZGy2u2ydU-rPh2w/edit#gid=2033312819).
 
@@ -58,7 +58,7 @@ Do you have suggestions on future improvements to IPFS docs? You can [vote](http
 
 ## Bounties
 
-You can earn the undying love of the IPFS community _and_ make some money by closing an issue with the [`bounty` tag](https://github.com/ipfs/docs/issues?q=is%3Aopen+is%3Aissue+label%3Abounty)! Submissions must be production-ready and meet all the specifications listed on the issue page. Check out the [current list of open bounties →](https://github.com/ipfs/devgrants/projects/1)
+You can earn the undying love of the IPFS community _and_ make some money by closing an issue with the [`bounty` tag](https://github.com/ipfs/ipfs-docs/issues?q=is%3Aopen+is%3Aissue+label%3Abounty)! Submissions must be production-ready and meet all the specifications listed on the issue page. Check out the [current list of open bounties →](https://github.com/ipfs/devgrants/projects/1)
 
 ## Project set up
 

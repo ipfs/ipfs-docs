@@ -8,7 +8,7 @@ description: API and CLI reference materials for IPFS, the InterPlanetary File S
 
 Looking for developer references for IPFS? Find them here.
 
-We're currently investigating improved ways to present our API and CLI reference materials. Have ideas you'd like to share with us? Please [leave a comment](https://github.com/ipfs/docs/issues/339) to let us know!
+We're currently investigating improved ways to present our API and CLI reference materials. Have ideas you'd like to share with us? Please [leave a comment](https://github.com/ipfs/ipfs-docs/issues/339) to let us know!
 
 ## Go (go-ipfs)
 

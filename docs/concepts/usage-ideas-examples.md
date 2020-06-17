@@ -1,7 +1,7 @@
 ---
 title: Usage ideas & examples
 sidebarDepth: 0
-issueUrl: https://github.com/ipfs/docs/issues/387
+issueUrl: https://github.com/ipfs/ipfs-docs/issues/387
 description: Explore some helpful use cases, ideas, and examples for the InterPlanetary File System (IPFS).
 ---
 
