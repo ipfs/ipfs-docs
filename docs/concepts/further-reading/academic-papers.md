@@ -1,6 +1,6 @@
 ---
 title: Academic papers
-issueUrl: https://github.com/ipfs/ipfs-docs/issues/479
+description: Here are a few papers that are useful for understanding IPFS, whether it be understanding the IPFS spec itself, or the background for the decentralized web, protocols, hashing, and so on.
 ---
 
 # Academic papers
