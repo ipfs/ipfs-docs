@@ -9,7 +9,7 @@ description: HTTP API reference for IPFS, the InterPlanetary File System.
 <!-- TODO: Describe how to change ports and configure the API server -->
 <!-- TODO: Structure this around command groups (dag, object, files, etc.) -->
 
-_Generated on 2020-04-28, from go-ipfs v0.5.0._
+_Generated on 2020-06-17, from go-ipfs v0.6.0._
 
 When an IPFS node is running as a daemon, it exposes an HTTP API that allows you to control the node and run the same commands you can from the command line.
 
@@ -3670,6 +3670,47 @@ On success, the call to this endpoint will return with 200 and the following bod
 ### cURL Example
 
 `curl -X POST "http://127.0.0.1:5001/api/v0/stats/bw?peer=<value>&proto=<value>&poll=<value>&interval=1s"`
+
+---
+
+## /api/v0/stats/dht
+
+Returns statistics about the node&#39;s DHT(s)
+
+
+### Arguments
+
+- `arg` [string]: The DHT whose table should be listed (wan or lan). Defaults to both. Required: no.
+
+
+### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```json
+{
+  "Buckets": [
+    {
+      "LastRefresh": "<string>",
+      "Peers": [
+        {
+          "AgentVersion": "<string>",
+          "Connected": "<bool>",
+          "ID": "<string>",
+          "LastQueriedAt": "<string>",
+          "LastUsefulAt": "<string>"
+        }
+      ]
+    }
+  ],
+  "Name": "<string>"
+}
+
+```
+
+### cURL Example
+
+`curl -X POST "http://127.0.0.1:5001/api/v0/stats/dht?arg=<dht>"`
 
 ---
 
