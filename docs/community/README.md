@@ -24,10 +24,6 @@ The official [IPFS forums](https://discuss.ipfs.io/) are the primary home of IPF
 
 IRC fan? Here are [all our channels](irc). New to IRC? There's getting-started advice for you here, too.
 
-## Community video calls
-
-As an open-source project, most IPFS planning and synchronous discussion happens in open community video calls. Check the [IPFS community calendar](https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com) for all recurring and one-off public calls, and join in the conversation!
-
 ## ProtoSchool workshops
 
 ProtoSchool isn't just home to interactive tutorials on dweb topics — it's also a vibrant community of makers and do-ers around the globe! Community groups worldwide host [ProtoSchool workshops](https://proto.school/#/events) regularly, offering you the opportunity to complete our interactive tutorials with the support of local mentors.

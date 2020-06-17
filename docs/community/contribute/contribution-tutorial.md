@@ -5,7 +5,7 @@ description: Learn how to contribute to IPFS documentation through finding issue
 
 # Contribution tutorial
 
-While the [grammar, formatting, and style](/community/contribute/grammar-formatting-and-style/) and the [writing guide](/community/contribute/writing-guide/) can both help you write excellent content for the IPFS Docs project, they don't delve into how you can actually submit you content changes. This guide will walk you through finding an issue, fixing it, and then submitting your fix to the `ipfs/docs` project.
+While the [grammar, formatting, and style](/community/contribute/grammar-formatting-and-style/) and the [writing guide](/community/contribute/writing-guide/) can both help you write excellent content for the IPFS Docs project, they don't delve into how you can actually submit you content changes. This guide will walk you through finding an issue, fixing it, and then submitting your fix to the `ipfs/ipfs-docs` project.
 
 There are plenty of small-sized issues around IPFS documentation that make for easy, helpful contributions to the IPFS project. Here, we'll walk through:
 
@@ -22,11 +22,11 @@ This may look like a lot of steps for a small issue fix, but they're all necessa
 
 The IPFS project is hosted in GitHub. There's a bunch of reasons for this, one of them being that GitHub comes with an issue tracker, which enables the core IPFS team to field problems from the community. All community issues can read the docs, find issues, and raise issues in the docs repository (called a _repo_ for short).
 
-All issues involving the IPFS docs themselves can be found in the [`ipfs/docs` repo](https://github.com/ipfs/docs/) under the [**Issues** tab](https://github.com/ipfs/docs/issues/). Here you can see all the issues that are currently open. We try to tag each issue with relevant descriptive tags. Tags like _difficulty_ and _size_ can give a sense of the amount of effort a task will take to complete.
+All issues involving the IPFS docs themselves can be found in the [`ipfs/ipfs-docs` repo](https://github.com/ipfs/ipfs-docs/) under the [**Issues** tab](https://github.com/ipfs/ipfs-docs/issues/). Here you can see all the issues that are currently open. We try to tag each issue with relevant descriptive tags. Tags like _difficulty_ and _size_ can give a sense of the amount of effort a task will take to complete.
 
 Let's jump into finding an issue.
 
-1. Go to the IPFS repository at [github.com/ipfs/docs](https://github.com/ipfs/docs).
+1. Go to the IPFS repository at [github.com/ipfs/ipfs-docs](https://github.com/ipfs/ipfs-docs).
 2. Select the **Issues** tab.
 3. Click the **Label** dropdown and select the **help wanted** tag.
 4. Select an issue that interests you.
@@ -59,7 +59,7 @@ If you're not familiar with Git and GitHub, then the phrase _fork_ might not mea
 
 The process for creating a fork of an existing piece of IPFS documentation is incredibly simple:
 
-1. Go to the `ipfs/ipfs-docs-v2` repository in [GitHub](https://github.com/ipfs/docs). (Note that this is a different repo than the one in which the issues themselves live; our issues live in `ipfs/docs`, but the code for the documentation website lives at `ipfs/ipfs-docs-v2`.)
+1. Go to the `ipfs/ipfs-docs-v2` repository in [GitHub](https://github.com/ipfs/ipfs-docs). (Note that this is a different repo than the one in which the issues themselves live; our issues live in `ipfs/ipfs-docs`, but the code for the documentation website lives at `ipfs/ipfs-docs-v2`.)
 2. Select **Fork** to create a copy of the project.
 3. Clone your copy of the project down to your local machine:
 

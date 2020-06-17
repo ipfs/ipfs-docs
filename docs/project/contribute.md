@@ -26,7 +26,7 @@ If you want to start contributing to the core of IPFS, those repositories are a 
 
 Again, IPFS is a huge project and undertaking. With lots of code comes the need for lots of good documentation! However, we need a lot more help to write the awesome docs the project needs. If writing technical documentation is your area, we’d absolutely love your help!
 
-The best place to get started is by looking through the GitHub readme and issues at [https://github.com/ipfs/docs](https://github.com/ipfs/docs). If you'd like to jump straight in, check the docs repo for [issues labeled `Help Wanted`](https://github.com/ipfs/docs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22).
+The best place to get started is by looking through the GitHub readme and issues at [https://github.com/ipfs/ipfs-docs](https://github.com/ipfs/ipfs-docs). If you'd like to jump straight in, check the docs repo for [issues labeled `Help Wanted`](https://github.com/ipfs/ipfs-docs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22).
 
 ## Support
 
