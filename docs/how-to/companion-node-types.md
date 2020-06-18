@@ -20,11 +20,11 @@ When in doubt, use the _External_ node type running on your localhost. Some opti
 - If you prefer a more hands-on approach:
   - Install IPFS by following the [command line quick-start guide](command-line-quick-start.md)
   - Or run it in [Docker](https://github.com/ipfs/go-ipfs#running-ipfs-inside-docker)
-- If you are using [Brave](https://brave.com/), feel you may want to experiment with _mbedded + `chrome.sockets`_ (see below); you can always switch back to _External_ with local IPFS Desktop
+- If you are using [Brave](https://brave.com/), feel you may want to experiment with _embedded + `chrome.sockets`_ (see below); you can always switch back to _External_ with local IPFS Desktop
 
 ## External
 
-An _external_ node can be any instance of and IPFS daemon that runs outside of a web browser process and exposes _Gateway_ and writable _API_ over HTTP at TCP ports.
+An _external_ node can be any instance of an IPFS daemon that runs outside of a web browser process and exposes _Gateway_ and writable _API_ over HTTP at TCP ports.
 
 At this time, the [go-ipfs](https://github.com/ipfs/go-ipfs) daemon is the preferred implementation. It is easier on CPU, and provides `dhtclient` mode, which
 decreases ambient bandwidth use and smaller battery drain (key characteristics of something that is expected to run in the background all the time).
