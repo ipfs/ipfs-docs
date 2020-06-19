@@ -47,7 +47,7 @@ Upload the `dist` folder to IPFS.
 
 ## Jekyll
 
-Refer the Jekyll's [Installation](https://jekyllrb.com/docs/installation/) guide to to install ruby and Jekyll.
+Refer the Jekyll's [Installation](https://jekyllrb.com/docs/installation/) guide to to install Ruby and Jekyll.
 
 Refer to Jekyll's [Quickstart](https://jekyllrb.com/docs/) to set up your project.
 
