@@ -8,7 +8,7 @@ In this guide you will learn how to host a website with multiple pages and exter
 
 There are a few ways of creating multiple pages.
 
-- Individually upload files and link through CID.
+- [Individually upload files and link through CID](#individually-upload-files).
 - [Upload a directory with relative paths.](upload-a-directory-with-relative-paths)
 
 ## Indivudally upload files
