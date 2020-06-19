@@ -80,7 +80,7 @@ Random Planet Facts
 └── index.html
 ```
 
-Create a file called `index.html` and paste in the following code.
+3. Create a file called `index.html` and paste in the following code.
 
 ```html
 <!DOCTYPE html>
