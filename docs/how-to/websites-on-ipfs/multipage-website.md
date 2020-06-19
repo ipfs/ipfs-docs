@@ -60,7 +60,7 @@ Notice how the `href` is an absolute path.
 
 ![](./images/multipage-website/upload-about.gif)
 
-6. Once uploaded, verify that the link works.
+6. Once uploaded, verify that the link works:
 
 ![](./images/multipage-website/link-file.gif)
 
