@@ -6,7 +6,7 @@ title: Multipage website
 
 In this guide you will learn how to host a website with multiple pages and external assets on IPFS. This is a follow on from the [single page website guide](single-page-website). You don't have to have completed that guide to understand what's going on here, but it will give you a solid foundation to work off.
 
-There are a few ways of creating multiple pages.
+There are two ways to host a multi-page website on IPFS:
 
 - [Individually upload files and link through CID](#individually-upload-files).
 - [Upload a directory with relative paths.](upload-a-directory-with-relative-paths)
