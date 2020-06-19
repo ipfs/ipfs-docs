@@ -108,7 +108,7 @@ Random Planet Facts
 </html>
 ```
 
-Create a file called `about.html` and paste in the following code.
+4. Create a file called `about.html` and paste in the following code.
 
 ```html
 <!DOCTYPE html>
