@@ -87,7 +87,7 @@ There are two ways to host a multi-page website on IPFS:
 
 6. Once uploaded, verify that the link works. The link in `about.html` should point to `index.html`.
 
-![](./images/multipage-website/link-file.gif)
+![Verify that the link works.](./images/multipage-website/link-file.gif)
 
 ## Upload a directory with relative paths
 
@@ -167,8 +167,8 @@ Notice how the `href` and `src` use relative paths instead of a CID.
 
 5. Open IPFS desktop and upload the directory `Random Planet Facts`.
 
-![](./images/multipage-website/upload-folder.gif)
+![Open IPFS desktop and upload the directory](./images/multipage-website/upload-folder.gif)
 
 6. Use the link to verify.
 
-![](./images/multipage-website/link-folder.gif)
+![Use the link to verify.](./images/multipage-website/link-folder.gif)
