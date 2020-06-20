@@ -44,7 +44,7 @@ There are two ways to host a multi-page website on IPFS:
 
 ![Adding a file to IPFS using the IPFS Desktop application](./images/multipage-website/upload-file.gif)
 
-3. Copy the link. We'll use this to link for the `about` page.
+3. Copy or make a note of this link, we'll use it later.
 
 4. Create a file called `about.html` and paste in the following code.
 
