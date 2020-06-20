@@ -41,7 +41,7 @@ Installing IPFS is simple, but varies between operating system:
    cd ~\Apps\go-ipfs_v0.6.0\go-ipfs
    .\ipfs.exe --version
 
-   > ipfs version 0.5.0
+   > ipfs version 0.6.0
    ```
 
    While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH.` by using the following steps.
@@ -68,7 +68,7 @@ Installing IPFS is simple, but varies between operating system:
    cd ~
    ipfs --version
 
-   > ipfs version 0.5.0
+   > ipfs version 0.6.0
    ```
 
 ### macOS
@@ -105,7 +105,7 @@ Installing IPFS is simple, but varies between operating system:
    ```bash
    ipfs --version
 
-   > ipfs version 0.5.0
+   > ipfs version 0.6.0
    ```
 
 ### Linux
@@ -143,7 +143,7 @@ Installing IPFS is simple, but varies between operating system:
    ```bash
    ipfs --version
 
-   > ipfs version 0.5.0
+   > ipfs version 0.6.0
    ```
 
 ## Initialize the repository
