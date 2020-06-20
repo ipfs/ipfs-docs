@@ -79,7 +79,7 @@ There are two ways to host a multi-page website on IPFS:
 </html>
 ```
 
-Notice how the `href` is an absolute path.
+    Notice how the `href` is an absolute path.
 
 5. Open IPFS desktop and upload `about.html`
 
