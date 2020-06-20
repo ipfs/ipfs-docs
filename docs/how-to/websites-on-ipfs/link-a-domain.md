@@ -22,6 +22,8 @@ TXT: `dnslink=/ipfs/$SITE_CID`
 
 ![](./images/link-a-domain/dns-add-content-record.png)
 
+Save and in a few hours, you'll be able to go to www.YourDomainName.com and view your website.
+
 ## ENS
 
 <!-- What the ENS is. What it's used for. -->
@@ -97,4 +99,6 @@ You'll also need some amount of `ETH`. Due to how the Ethereum domain name syste
 
     This transaction can take a couple of minutes to complete.
 
-In a few minutes, you'll be able to go to `Your_Domain.eth.link` and view your website.
+In a few minutes, you'll be able to go to `Your_Domain.eth/` and view your website (note the tailing slash). Because `.eth` is not a registered DNS top-level domain, it is normally inaccessible through regular browsers.
+
+[Eth.link](https://eth.link/) provides a way for any browser to access your website. Simply append `.link` to your domain `Your_Domain.eth.link`. There are no additional steps for this. Simply give it time to propagate.

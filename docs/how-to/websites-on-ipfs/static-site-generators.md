@@ -66,4 +66,4 @@ cd _site/
 npx all-relative
 ```
 
-Upload the `~_next` folder to IPFS.
+Upload the `_site` folder to IPFS.

@@ -13,9 +13,34 @@ There are two ways to host a multi-page website on IPFS:
 
 ## Indivudally upload files
 
-1. Create a file called `index.html` and paste the following code. We'll continue using the code from the [single page website](how-to/websites-on-ipfs/single-page-website/#add-your-site).
+1. Create a file called `index.html` and paste the following code. We'll continue using a simplified version from the [single page website](how-to/websites-on-ipfs/single-page-website/#add-your-site). Our goal is to create another page that will link to `index.html`.
 
-2. Open IPFS desktop and upload `index.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Random Planet Fact</title>
+    <style>
+      body {
+        margin: 15px auto;
+        max-width: 650px;
+        line-height: 1.2;
+        font-family: sans-serif;
+        font-size: 2em;
+        color: #fff;
+        background: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Random Planet Fact</h1>
+    <p>Saturn takes 10756 days to orbit the Sun.</p>
+  </body>
+</html>
+```
+
+2. Open IPFS desktop and upload `index.html`. Either click `+Add` or drag and drop the file in.
 
 ![](./images/multipage-website/upload-file.gif)
 
@@ -60,7 +85,7 @@ Notice how the `href` is an absolute path.
 
 ![](./images/multipage-website/upload-about.gif)
 
-6. Once uploaded, verify that the link works:
+6. Once uploaded, verify that the link works. The link in `about.html` should point to `index.html`.
 
 ![](./images/multipage-website/link-file.gif)
 
