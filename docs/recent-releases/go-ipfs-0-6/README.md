@@ -20,4 +20,4 @@ There are plenty of features packed into this release:
 
 ## Breaking changes
 
-There are no breaking changes in this release.
+There are no breaking changes in this release. However, there is a migration will run, and the QUIC transport has changed protocol versions.
