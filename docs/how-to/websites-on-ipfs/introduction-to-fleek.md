@@ -13,5 +13,4 @@ Fleek offers a simple workflow: push your changes to Git, and Fleek will handle 
 If you're looking to host a fast website on IPFS, Fleek is a great option!
 
 For more information check out [Fleek.co](https://fleek.co) and [their documentation](https://docs.fleek.co/).
-Website: [https://fleek.co](https://fleek.co/)
 Documentation: [https://docs.fleek.co](https://docs.fleek.co/)
