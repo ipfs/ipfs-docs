@@ -10,7 +10,7 @@ In this guide you will learn how to link up an existing domain name to the CID o
 
 To get started you'll need:
 
-- A domain name registrar
+- A domain name registrar.
 - A website.
 - An idea for a domain name.
 
