@@ -84,8 +84,7 @@ module.exports = {
                   '/recent-releases/go-ipfs-0-6/',
                   ['/recent-releases/go-ipfs-0-6/install', 'Install'],
                   '/recent-releases/go-ipfs-0-6/update-procedure',
-                  '/recent-releases/go-ipfs-0-6/features',
-                  '/recent-releases/go-ipfs-0-6/changelog'
+                  '/recent-releases/go-ipfs-0-6/features'
                 ]
               },
               {

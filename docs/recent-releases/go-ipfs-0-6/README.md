@@ -18,6 +18,11 @@ There are plenty of features packed into this release:
 - Gossipsub upgrade.
 - New peering subsystem.
 
+
 ## Breaking changes
 
-There are no breaking changes in this release. However, there is a migration will run, and the QUIC transport has changed protocol versions.
+There are no breaking changes in this release. However, there is a migration that will run, and the QUIC transport has changed protocol versions.
+
+## Changelog
+
+You can find the changelog on the [Go-IPFS 0.6 GitHub release page](https://github.com/ipfs/go-ipfs/releases/tag/v0.6.0).
