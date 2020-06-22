@@ -16,7 +16,7 @@ There are plenty of features packed into this release:
 - Libp2p Noise as a new security transport.
 - Custom 404 pages and base36 support.
 - Gossipsub upgrade.
-- New peering subsystem.
+- New peering command for persistent connections between libp2p nodes.
 
 ## Breaking changes
 
