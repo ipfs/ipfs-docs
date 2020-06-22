@@ -10,7 +10,7 @@ Static-site generators like Hugo, VuePress, Nextjs, and Jekyll are all incredibl
 
 Refer the Hugo's [Quick Start](https://gohugo.io/getting-started/quick-start/) to install and set up your project.
 
-In `config.toml` add relativeURLS.
+In `config.toml` add `relativeURLS` and set it to `true`.
 
 ```
 relativeURLS=true
