@@ -19,7 +19,7 @@ You can earn the undying love of the IPFS community _and_ make some money by clo
 
 ### Suggestions
 
-Everyone has an opinion when it comes to docs, and **that's a good thing**! Having folks from different backgrounds add to a discussion empowers everyone within that discussion. So if you've got something to add or would like to bring up a topic for discussion about the IPFS Docs project, please do so! [Just create an issue using the `kind/question` tag!](https://github.com/ipfs/ipfs-docs/issues?q=is%3Aopen+is%3Aissue+label%3Akind%2Fquestion). We also have a [monthly discussion issue](#monthly-discussions) you can take part it.
+Everyone has an opinion when it comes to docs, and **that's a good thing**! Having folks from different backgrounds add to a discussion empowers everyone within that discussion. So if you've got something to add or would like to bring up a topic for discussion about the IPFS Docs project, please do so! [Just create an issue using the `kind/question` tag!](https://github.com/ipfs/ipfs-docs/issues?q=is%3Aopen+is%3Aissue+label%3Akind%2Fquestion). We also have a [monthly discussion issue](#monthly-discussions) you can take part in.
 
 ## Project set up
 
