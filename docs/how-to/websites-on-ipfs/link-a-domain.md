@@ -22,7 +22,7 @@ TXT: `dnslink=/ipfs/$SITE_CID`
 
 ![](./images/link-a-domain/dns-add-content-record.png)
 
-Save and in a few hours, you'll be able to go to www.YourDomainName.com and view your website.
+Save your changes. Traditional domain names can take some time to propagate through the internet, so it may take a few hours for your domain to point to your site hosted on IPFS.
 
 ## ENS
 
