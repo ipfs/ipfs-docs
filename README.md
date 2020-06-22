@@ -58,7 +58,7 @@ This project has switched to using GitHub issues as a way to track monthly updat
 
 ### Objectives for 2020 Q2
 
-Here's a summary of this our objectives for the first three months of 2020:
+Here's a summary of this our objectives for the second quarter of 2020:
 
 1. ~~Deprecate the legacy site. [Milestone](https://github.com/ipfs/ipfs-docs/milestone/1)~~
 2. A web developer's introduction: create a series of tutorials aimed at giving web developers a hands-on introduction to IPFS and get them building cool stuff quickly.
