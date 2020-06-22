@@ -14,7 +14,7 @@ To get started you'll need:
 - A website.
 - An idea for a domain name.
 
-Access your registrar's control panel to manage the CNAME record and TXT record.
+Access your registrar's control panel to manage the `CNAME` record and `TXT` records for your domain.
 
 CNAME: `www.gateway.ipfs.io.`
 
