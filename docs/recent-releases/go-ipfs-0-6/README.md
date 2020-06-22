@@ -18,7 +18,6 @@ There are plenty of features packed into this release:
 - Gossipsub upgrade.
 - New peering subsystem.
 
-
 ## Breaking changes
 
 There are no breaking changes in this release. However, there is a migration that will run, and the QUIC transport has changed protocol versions.
