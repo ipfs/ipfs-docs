@@ -4,7 +4,7 @@ title: Install Go-IPFS
 
 # Install Go-IPFS
 
-The install process for this release is the same as previous versions of Go-IPFS. If you already have IPFS installed and want to keep all your files and configuration, take a look at the [Update Process](/recent-releases/go-ipfs-0-5/update-procedure) for this release.
+The install process for this release is the same as previous versions of Go-IPFS. If you already have IPFS installed and want to keep all your files and configuration, take a look at the [Update Process](/recent-releases/go-ipfs-0-6/update-procedure) for this release.
 
 ## Windows
 
@@ -12,22 +12,22 @@ The install process for this release is the same as previous versions of Go-IPFS
 
    ```powershell
    cd ~\
-   wget https://dist.ipfs.io/go-ipfs/v0.5.0/go-ipfs_v0.5.0_windows-amd64.zip -Outfile go-ipfs_v0.5.0.zip
+   wget https://dist.ipfs.io/go-ipfs/v0.6.0/go-ipfs_v0.6.0_windows-amd64.zip -Outfile go-ipfs_v0.6.0.zip
    ```
 
 2. Unzip the file and move it somewhere handy.
 
    ```powershell
-   Expand-Archive -Path go-ipfs_v0.5.0.zip -DestinationPath ~\Apps\go-ipfs_v0.5.0
+   Expand-Archive -Path go-ipfs_v0.6.0.zip -DestinationPath ~\Apps\go-ipfs_v0.6.0
    ```
 
-3. Move into the `go-ipfs_v0.5.0` folder and check that the `ipfs.exe` works:
+3. Move into the `go-ipfs_v0.6.0` folder and check that the `ipfs.exe` works:
 
    ```powershell
-   cd ~\Apps\go-ipfs_v0.5.0\go-ipfs
+   cd ~\Apps\go-ipfs_v0.6.0\go-ipfs
    .\ipfs.exe --version
 
-   > ipfs version 0.5.0
+   > ipfs version 0.6.0
    ```
 
    While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH.` by using the following steps.
@@ -39,13 +39,13 @@ The install process for this release is the same as previous versions of Go-IPFS
 
    > Path
    > ----
-   > C:\Users\Johnny\Apps\go-ipfs_v0.5.0\go-ipfs
+   > C:\Users\Johnny\Apps\go-ipfs_v0.6.0\go-ipfs
    ```
 
 5. Add the address you just copied to PowerShell's `PATH` by adding it to the end of the `profile.ps1` file stored in `Documents\WindowsPowerShell`:
 
    ```powershell
-   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\Johnny\Apps\go-ipfs_v0.5.0\go-ipfs')"
+   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\Johnny\Apps\go-ipfs_v0.6.0\go-ipfs')"
    ```
 
 6. Close and reopen your PowerShell window. Test that your IPFS path is set correctly by going to your home folder and asking IPFS for the version:
@@ -54,7 +54,7 @@ The install process for this release is the same as previous versions of Go-IPFS
    cd ~
    ipfs --version
 
-   > ipfs version 0.5.0
+   > ipfs version 0.6.0
    ```
 
 ## macOS
@@ -62,13 +62,13 @@ The install process for this release is the same as previous versions of Go-IPFS
 1. Download the macOS binary from [`dist.ipfs.io`](https://dist.ipfs.io/#go-ipfs).
 
    ```bash
-   wget https://dist.ipfs.io/go-ipfs/v0.5.0/go-ipfs_v0.5.0_darwin-amd64.tar.gz
+   wget https://dist.ipfs.io/go-ipfs/v0.6.0/go-ipfs_v0.6.0_darwin-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.5.0_darwin-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.6.0_darwin-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
@@ -91,7 +91,7 @@ The install process for this release is the same as previous versions of Go-IPFS
    ```bash
    ipfs --version
 
-   > ipfs version 0.5.0
+   > ipfs version 0.6.0
    ```
 
 ## Linux
@@ -99,13 +99,13 @@ The install process for this release is the same as previous versions of Go-IPFS
 1. Download the Linux binary from [`dist.ipfs.io`](https://dist.ipfs.io/#go-ipfs).
 
    ```bash
-   wget https://dist.ipfs.io/go-ipfs/v0.5.0/go-ipfs_v0.5.0_linux-amd64.tar.gz
+   wget https://dist.ipfs.io/go-ipfs/v0.6.0/go-ipfs_v0.6.0_linux-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.5.0_linux-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.6.0_linux-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
@@ -129,5 +129,5 @@ The install process for this release is the same as previous versions of Go-IPFS
    ```bash
    ipfs --version
 
-   > ipfs version 0.5.0
+   > ipfs version 0.6.0
    ```

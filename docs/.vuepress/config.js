@@ -77,6 +77,17 @@ module.exports = {
             path: '/recent-releases/',
             children: [
               {
+                title: 'Go-IPFS 0.6',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/recent-releases/go-ipfs-0-6/',
+                  ['/recent-releases/go-ipfs-0-6/install', 'Install'],
+                  '/recent-releases/go-ipfs-0-6/update-procedure',
+                  '/recent-releases/go-ipfs-0-6/features'
+                ]
+              },
+              {
                 title: 'Go-IPFS 0.5',
                 sidebarDepth: 1,
                 collapsable: false,
