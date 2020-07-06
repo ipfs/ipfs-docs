@@ -13,9 +13,11 @@ New to IPFS or the distributed web? Here's where to get started on understanding
 Want the basics, in theater mode? Check out these Core Courses from IPFS Camp 2019 for an overview of how IPFS works with files and the overall data lifecycle in dweb.
 
 @[youtube](Z5zNPwMDYGg)
+
 - [Understanding how IPFS deals with files](https://youtu.be/Z5zNPwMDYGg)
 
 @[youtube](fLUq0RkiTBA)
+
 - [The lifecycle of data in the DWeb](https://youtu.be/fLUq0RkiTBA)
 
 ## IPFS 101
@@ -25,9 +27,15 @@ Get the basic concepts of IPFS in one place, including:
 - [What is IPFS?](/concepts/what-is-ipfs/)
 - [How IPFS works](/concepts/how-ipfs-works/)
 - [IPFS primer](https://dweb-primer.ipfs.io/)
-- [Usage ideas & examples](/concepts/usage-ideas-examples/)
 - [Glossary](/concepts/glossary/)
 - [FAQ](/concepts/faq/)
+
+## Examples and case studies
+
+Get inspired by usage ideas, explore examples of IPFS implemented in the wild, and dig deeper with case studies on applications and projects in which IPFS plays a crucial role.
+
+- [Usage ideas & examples](/concepts/usage-ideas-examples/)
+- [Case study: Audius](/concepts/case-study-audius/)
 
 ## Content-addressed storage
 

@@ -13,6 +13,24 @@
 	}
 }
 
+.image-floatright {
+	float: right;
+	padding: 1em 0 1em 1em;
+}
+
+.number-block-item {
+	background-color: lighten($accentColor, 80%);
+	margin-top: 1em;
+	padding: 1em;
+	text-align: center;
+}
+
+.number-block-number {
+	color: $accentColor;
+	font-size: 3em;
+	font-weight: 700;
+}
+
 @media (min-width: $MQNarrow) {
 	.sidebar {
 		position: fixed;
@@ -22,6 +40,21 @@
 
 	footer.page-edit {
 		margin: inherit;
+	}
+
+	.number-block {
+		display: flex;
+		margin-top: 1em;
+	}
+
+	.number-block-item {
+		flex-wrap: none;
+		margin-right: 1em;
+		width: 25%;
+	}
+
+	.number-block-item:last-of-type {
+		margin-right: 0;
 	}
 }
 
