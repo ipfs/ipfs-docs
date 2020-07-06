@@ -8,11 +8,11 @@ description: Explore some helpful use cases, ideas, and examples for the InterPl
 ::: callout
 **"IPFS and blockchain can be combined to store large blobs of data in a decentralized, immutable way. By utilizing the storage network and content addressability of IPFS, plus the immutability of the blockchain, you get the tools necessary to build decentralized systems."**
 
-<div style="text-align:right;"><em>&mdash; Dheeraj Manjunath, Head of Engineering, Audius</em></div><br/>
+_&mdash; Dheeraj Manjunath, Head of Engineering, Audius_
 
 **"I don’t know if Audius would have been proposed if IPFS hadn’t been in existence."**
 
-<div style="text-align:right;"><em>&mdash; Hareesh Nagaraj, Senior Engineer, Audius</em></div>
+_&mdash; Hareesh Nagaraj, Senior Engineer, Audius_
 :::
 
 ## Overview
@@ -57,7 +57,7 @@ Nagaraj notes that the learning curve for building on IPFS was accessible: "In t
 ::: callout
 "IPFS and the Protocol Labs team have been great in terms of supporting us and giving us the resources we need. Choosing a dependency on such a novel tech isn’t necessarily the standard way of doing things, but I’m really glad we did. The extensibility that it gives us is huge. Overall, it’s been a game changer for us."
 
-<div style="text-align:right;"><em>&mdash; Hareesh Nagaraj, Senior Engineer, Audius</em></div>
+_&mdash; Hareesh Nagaraj, Senior Engineer, Audius_
 :::
 
 Regarding Audius' use of the blockchain, the network uses two main contracts for driving the content in the network. Every user can add to the blockchain. For example, users can add content, metadata, another user, or a social interaction. Any changes are recorded on the blockchain, and if there are any uploads too large for storage on the blockchain, the Audius system implements a pointer to the blockchain instead. Users control their own private cryptographic keys, meaning that they are the sole owner of the login information, and that their data can be accessed only according to the owner’s permissions. Under this scheme, Audius doesn’t own the music of the content producers. Audius provides the means for streaming, and the interface, but they don’t have command over the content themselves. The technology behind the control of one's own keys restores ownership to the artists while also allowing consumers of the streams to be in charge of their own personal data. In other words, the system prevents tracking of user behavior without the permission of the users themselves.
