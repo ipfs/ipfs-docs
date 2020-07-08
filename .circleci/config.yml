@@ -32,6 +32,7 @@ jobs:
       - image: olizilla/ipfs-dns-deploy:latest
         environment:
           DOMAIN: docs.ipfs.io
+          DOMAIN_BETA: docs-beta.ipfs.io
           BUILD_DIR: ./docs/.vuepress/dist
           CLUSTER_HOST: /dnsaddr/ipfs-websites.collab.ipfscluster.io
     steps:
@@ -43,9 +44,10 @@ jobs:
             pin_name="$DOMAIN build $CIRCLE_BUILD_NUMBER"
             hash=$(pin-to-cluster.sh "$pin_name" /tmp/workspace/$BUILD_DIR)
             echo "Website added to IPFS: https://ipfs.io/ipfs/$hash"
-            # Update DNSlink for prod or dev domain
+            # Update DNSlink for prod and legacy beta domains
             if [ "$CIRCLE_BRANCH" == "master" ] ; then
               dnslink-dnsimple -d $DOMAIN -r _dnslink -l /ipfs/$hash
+              dnslink-dnsimple -d $DOMAIN_BETA -r _dnslink -l /ipfs/$hash
             fi
 workflows:
   version: 2
