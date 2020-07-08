@@ -25,24 +25,12 @@ In 2018, when Audius was looking into decentralized storage, they needed a syste
 
 ### Audius by the numbers
 
-<div class="number-block">
-  <div class="number-block-item">
-    <div class="number-block-number">5M</div>
-    <div>content identifiers</div>
-  </div>
-  <div class="number-block-item">
-    <div class="number-block-number">3.5</div>
-    <div>terabytes of data</div>
-  </div>
-  <div class="number-block-item">
-    <div class="number-block-number">12</div>
-    <div>independent discovery and creator node providers</div>
-  </div>
-  <div class="number-block-item">
-    <div class="number-block-number">40k</div>
-    <div>registered users</div>
-  </div>
-</div>
+<NumberBlock :items="[
+  {value: '5m', text:'content identifiers'},
+  {value: 3.5, text: 'terabytes of data'},
+  {value: '12', text: 'independent discovery and creator node providers'},
+  {value: '40k', text: 'registered users'}
+]" />
 
 ## The story
 
