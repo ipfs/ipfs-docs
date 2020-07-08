@@ -114,9 +114,17 @@ module.exports = {
                   '/concepts/what-is-ipfs',
                   '/concepts/how-ipfs-works',
                   ['https://dweb-primer.ipfs.io/', 'IPFS primer'],
-                  '/concepts/usage-ideas-examples',
                   '/concepts/glossary',
                   '/concepts/faq'
+                ]
+              },
+              {
+                title: 'Examples & case studies',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/concepts/usage-ideas-examples',
+                  '/concepts/case-study-audius'
                 ]
               },
               {
@@ -458,6 +466,20 @@ module.exports = {
       'vuepress-plugin-container',
       {
         type: 'callout',
+        defaultTitle: ''
+      }
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'right',
+        defaultTitle: ''
+      }
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'left',
         defaultTitle: ''
       }
     ],
