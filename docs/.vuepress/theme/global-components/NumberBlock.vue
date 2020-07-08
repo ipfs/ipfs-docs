@@ -40,7 +40,7 @@ export default {
 	}
 
 	.number-block-item {
-    flex: 1 1 0
+    flex: 1 1 0;
 		margin-right: 1em;
 	}
 
