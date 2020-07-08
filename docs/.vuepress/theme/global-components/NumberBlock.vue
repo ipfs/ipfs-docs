@@ -21,31 +21,31 @@ export default {
 
 <style lang="stylus">
 .number-block-item {
-	background-color: lighten($accentColor, 80%);
-	margin-top: 1em;
-	padding: 1em;
-	text-align: center;
+  background-color: lighten($accentColor, 80%);
+  margin-top: 1em;
+  padding: 1em;
+  text-align: center;
 }
 
 .number-block-number {
-	color: $accentColor;
-	font-size: 3em;
-	font-weight: 700;
+  color: $accentColor;
+  font-size: 3em;
+  font-weight: 700;
 }
 
 @media (min-width: $MQNarrow) {
-	.number-block {
-		display: flex;
-		margin-top: 1em;
-	}
+  .number-block {
+    display: flex;
+    margin-top: 1em;
+  }
 
-	.number-block-item {
+  .number-block-item {
     flex: 1 1 0;
-		margin-right: 1em;
-	}
+    margin-right: 1em;
+  }
 
-	.number-block-item:last-child {
-		margin-right: 0;
-	}
+  .number-block-item:last-child {
+    margin-right: 0;
+  }
 }
 </style>
