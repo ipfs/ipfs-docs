@@ -17,7 +17,9 @@ _&mdash; Hareesh Nagaraj, Senior Engineer, Audius_
 
 ## Overview
 
-<div class="image-floatright"><img src="./images/case-studies/logo-audius.png" alt="Audius logo" width="100"></div>
+::: right
+<img src="./images/case-studies/logo-audius.png" alt="Audius logo" width="100">
+:::
 
 **[Audius](https://audius.co/)** is a music and audio sharing platform designed to provide artists a direct link with their listeners. Using decentralized technology, Audius is able to ensure artists’ rights to and control of their own music, and provide a censorship-resistant platform for expression and distribution of artistic works and compositions. To create a user-owned and operated platform, it was key to have a distributed cloud storage network as the basis for the system. Audius uses IPFS as the core decentralized storage component in their mission to give everyone the freedom to share, monetize and listen to any audio.
 
