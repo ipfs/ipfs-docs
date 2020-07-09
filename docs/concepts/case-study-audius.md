@@ -23,15 +23,15 @@ _&mdash; Hareesh Nagaraj, Senior Engineer, Audius_
 
 **[Audius](https://audius.co/)** is a music and audio sharing platform designed to provide artists a direct link with their listeners. Using decentralized technology, Audius is able to ensure artists’ rights to and control of their own music, and provide a censorship-resistant platform for expression and distribution of artistic works and compositions. To create a user-owned and operated platform, it was key to have a distributed cloud storage network as the basis for the system. Audius uses IPFS as the core decentralized storage component in their mission to give everyone the freedom to share, monetize and listen to any audio.
 
-In 2018, when Audius was looking into decentralized storage, they needed a system that would enable routing and addressing of large amounts of content in a decentralized way for their content streaming network. At the time, IPFS had the only system that fit their needs for decentralization, with no immediate lock-in or payment up front. Now, after two years on the network, Audius has found that IPFS has consistently performed and provided the flexibility and resilience needed for their network. "The lack of surprises is an advantage," says Hareesh Nagaraj, senior engineer at Audius. It’s been reliable the whole time."
+In 2018, when Audius was looking into decentralized storage, they needed a system that would enable routing and addressing of large amounts of content in a decentralized way for their content streaming network. At the time, IPFS had the only system that fit their needs for decentralization, with no immediate lock-in or payment up front. Now, after two years on the network, Audius has found that IPFS has consistently performed and provided the flexibility and resilience needed for their network. "The lack of surprises is an advantage," says Hareesh Nagaraj, senior engineer at Audius. "It’s been reliable the whole time."
 
 ### Audius by the numbers
 
 <NumberBlock :items="[
-  {value: '5m', text:'content identifiers'},
+  {value: '5M', text:'content identifiers'},
   {value: 3.5, text: 'terabytes of data'},
   {value: '12', text: 'independent discovery and creator node providers'},
-  {value: '40k', text: 'registered users'}
+  {value: '40K', text: 'registered users'}
 ]" />
 
 ## The story
@@ -56,9 +56,9 @@ Users control their own Ethereum private keys, which permission control of their
 
 One other key ingredient in Audius' decision to initially adopt IPFS was its separation from Filecoin. The Audius team was able to get started using IPFS and hosting on a network of community-operated nodes, without concern for hosting costs. Over time, they are looking forward to having Filecoin-supported nodes so that they can separate their core content business from the hosting aspects of the business. Meanwhile, their current storage network of community-operated creator nodes does offer a high level of flexibility in terms of customization. "The node itself is very customizable," Nagaraj says. "We’ve taken advantage of that. I think we’ve used the node in every way possible."
 
-As a large user of the IPFS network, Audius has taken advantage of the [official IPFS forums](https://discuss.ipfs.io), as well as support provided directly from the core Protocol Labs team. They are particularly impressed with the level of support and third-party tools that are available on IPFS.
+As a large user of the IPFS network, Audius has taken advantage of the [official IPFS forums](https://discuss.ipfs.io), as well as support provided directly from the core IPFS development team. They are particularly impressed with the level of support and third-party tools that are available on IPFS.
 
-"We think about the IPFS and Filecoin community as a great role model for what we are doing with the community around Audius, in terms of activity and robustness," says Nagaraj. "There are a lot of developers who are constantly contributing to IPFS. A few post on websites like [simpleaswater.com](http://www.simpleaswater.com) with tons of examples of what you can do with IPFS, how to actually implement it, breaking down all the details. We would aim for something like that. It would be incredible for us if we could reach that level of community participation." Nagaraj also calls out as particularly helpful blog posts and other content created by third-party contributors to the codebase, as well as the ecosystem that is developing around IPFS collaborators such as Textile and Pinata. Having such an active community around an open-source project adds to the momentum and progress of IPFS as a whole.
+"We think about the IPFS and Filecoin community as a great role model for what we are doing with the community around Audius, in terms of activity and robustness," says Nagaraj. "There are a lot of developers who are constantly contributing to IPFS. A few post on websites like [simpleaswater.com](http://www.simpleaswater.com) with tons of examples of what you can do with IPFS, how to actually implement it, breaking down all the details. We would aim for something like that. It would be incredible for us if we could reach that level of community participation." Nagaraj also calls out as particularly helpful blog posts and other content created by third-party contributors to the codebase, as well as the ecosystem that is developing around IPFS collaborators such as [Textile](http://textile.io/) and [Pinata](https://pinata.cloud/). Having such an active community around an open-source project adds to the momentum and progress of IPFS as a whole.
 
 ## IPFS benefits
 
@@ -68,15 +68,15 @@ In terms of concrete benefits, the Audius team cites the following as key wins o
 - Content-based addressing system
 - Tech stack fit with blockchain
 - Easy-to-understand implementation
-- Multiple implementations (JavaScript, Go, Python)
+- Multiple implementations (JavaScript, Go, Python HTTP API)
 - Separation of hosting costs and tech stack use
 - Large, active, supportive community
 - Node flexibility and customizability
-- Support from Protocol Labs
+- Support from IPFS core developers
 - Extensive documentation
 - Third-party extensions and support
 
-In particular, IPFS' strengths and capabilities in content addressing and easy-to-implement decentralized storage were game-changers for the Audius team.
+In particular, IPFS's strengths and capabilities in content addressing and easy-to-implement decentralized storage were game-changers for the Audius team.
 
 ### Content addressing
 
@@ -119,4 +119,4 @@ Audius is looking forward to an upcoming version release with additional metrics
 
 Other longer-term plans include creating multiple storage locations for faster streaming of content, as well as decreasing latency. Content encryption is also on the roadmap.
 
-_Note: Metrics and other details in this case study are current as of July 2019. Details may change in the interim._
+_Note: Metrics and other details in this case study are current as of July 2020. Details may change in the interim._
