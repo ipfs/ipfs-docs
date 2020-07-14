@@ -12,26 +12,16 @@ related:
 
 # Immutability
 
-This is my take on this subject, my main motivation for writing this is to have someone from IPFS polish it and include it with the rest of the docs, to be able to link it from Lotus. These are rough notes, not a coherent narrative but the salient concepts I'm particularly interested in.
+An immutable object is an object whose state cannot be altered or modified once created. Once a file is added to the IPFS network, the content of that file cannot be changed without altering the [content identifier (CID)](/concepts/content-addressing) of the file. This feature is excellent for storing data that does not need to change. However, when it comes to content that needs to be altered or updated, immutability becomes a problem. This page discusses how to keep a mutable _state_ built from immutable building blocks.
 
-I'm drawing from the following, especially because of the importance of having diagrams that help visualize information (change) flow:
+A CID is an _absolute_ pointer to content. No matter when we request a CID, the CIDs value will always be the same. This is part of the content's architecture and cannot be changed. To manage _immutable_ files in a _mutable_ system, we need to add another layer that sits on top of CIDs.
 
-- https://docs-beta.ipfs.io/concepts/merkle-dag/
+As a basic example, let's have two blocks of content with the strings `hello` and `world` hashed into two leaf nodes with the CIDs `A` and `B`. If we concatenate these two nodes, then we are given CID `C`. On top of this root CID we assign a pointer `P`.
 
-- https://media.consensys.net/ever-wonder-how-merkle-trees-work-c2f8b7100ed3 (cited in the first)
-
-This issue is actually about mutability, immutability itself is implied in the [content-addressed](https://docs-beta.ipfs.io/concepts/content-addressing/) system of CIDs. What we need to deal with is how to keep a mutable (relative) _state_ built from immutable (absolute) building blocks. This is for example what MFS does, but I would like to highlight the core mechanism which permeates any stack built on top of IPFS, be it a file system or the Filecoin VM.
-
-As said a CID is an absolute pointer to content, absolute with respect to _time_, no matter when do we query it the value it reflects will always be the same. This is part of its architecture and cannot be changed, we will always need to add another layer of indirection of _relative_ pointers to sit on top of CIDs.
-
-The example needed is the same as usual, a merkle DAG with any raw input that represents the state, what I need added is this relative pointer that will always sit on top of this hierarchy and, in contrast with CIDs, will never be replaced, we will only mutate its value: the CID it points to.
-
-Please don't use this crappy diagram, the basic setup would be two blocks of content, strings `"hello"` and `"world"`, hashed into two leaf nodes with CIDs A and B, and its root node, CID C. On top of the root node we will have the relative pointer, which confusingly is many times also called the root but it needs a different name, for now let's call it the _state_ (S) pointer:
-
-```
-      +-----+
-      |  S  |
-      +-----+
+```text
+   +-----------+
+   |  Pointer  |
+   +-----------+
          ↓
       +-----+
    +--|  C  |-+
@@ -43,23 +33,60 @@ Please don't use this crappy diagram, the basic setup would be two blocks of con
 "hello"    "world"
 ```
 
-When we change the content of, say, the string `"world"` of node B, by definition all the upstream path will change as well, in this case just the root C. This is already clearly explained in other topics of the documentation so it doesn't need much emphasis here, the important part is that there is actually _no_ change happening, because as said, the node with CID B will always refer to the same content, `"world"`, that will _never_ change. What we do really is to construct a _new_ DAG, it just so happens that if we only change the content of `"world"` for, say, `"IPFS"`, but leave the original `"hello"`, the node A will appear also in the new DAG. But this is not because we are "keeping" it, that would imply the location-addressed paradigm. In the content-addressed system, any time someone writes a block with `"hello"` it will _always_ need to use CID A, there is no choice implied, whereas with the location-addressed system if I need a new string that is very close to the old one, I might as well reuse the original buffer and just edit the small substring that represents the difference (the buffer is the location and in that case I chose to keep the original content, but could just as well have allocated a new buffer copying the string and actually having two places with the `"hello"` content).
+If we change the content of `B` to `IPFS!`, all the upstream paths will change as well. In this simple example, the only upstream path is `C`. If we requested content using the pointer, then we would receive different content, but it's important to note that there is no change happening. Node `B` is not being updated. Instead, we are creating a new DAG where the pointer points to CID `E` that points to the concatenation of node `A` and another node `D`.
 
-Feel free to cut short the above explanation, the gist of it, and what is seen in the code, is that when the content changes we _flush_ the modifications, meaning each node tells the parent it has changed, all the way up to the root, generating a new CID for each new node. The state pointer will hold the new root CID that in itself has implied all the child CIDs with their new values.
-
-```
-                  +-----+
-         +--------|  S  |
-         |        +-----+
-         ↓
-      +-----+                 +-----+
-   +--|  E  |-+            +--|  C  |-+
-   |  +-----+ |            |  +-----+ |
-   |          |            |          |
-+-----+    +-----+      +-----+    +-----+
-|  A  |    |  D  |      |  A  |    |  B  |
-+-----+    +-----+      +-----+    +-----+
-"hello"    "IPFS"       "hello"    "world"
+```text
+   +-----------+
+   |  Pointer  | --------------+
+   +-----------+               |
+                               ↓
+      +-----+               +-----+   
+   +--|  C  |-+         +-- |  E  | --+
+   |  +-----+ |         |   +-----+   |
+   |          |         |             |
++-----+    +-----+     +-----+    +-----+  
+|  A  |    |  B  |     |  A  |    |  D  |
++-----+    +-----+     +-----+    +-----+ 
+"hello"    "world"     "hello"    "IPFS!"  
 ```
 
-The old `"hello world"` content still exists in the block store, the C node will always point to the A/B nodes, what changed is that the state now points to the new root node E, in which are implied the nodes A and D, with the updated content.
+Again, node `B` does not change. It will always refer to the same content, `world`. Node `A` also appears in the new DAG. This is not because we are _keeping_ it, that would imply the location-addressed paradigm. In the content-addressed system, any time someone writes a block with `"hello"` it will _always_ have CID `A`. This is different to location-addressed systems where we could reuse the original buffer and edit the small substring that represents the difference.
+
+## Website explanation
+
+Here we have a website that displays two headers called `header_1` and `header_2`. The content of the headers is supplied from the variables `string_1` and `string_2`.
+
+```html
+<body>
+    <h1 id="header_1"></h1>
+    <h1 id="header_2"></h1>
+</body>
+<script>
+    let string_1 = "hello";
+    let string_2 = "world";
+    document.getElementById('header_1').textContent=string_1;
+    document.getElementById('header_2').textContent=string_2;
+</script>
+```
+
+The CID of this website is `QmWLdyFMUugMtKZs1xeJCSUKerWd9M627gxjAtp6TLrAgP`. Users can go to [`example.com/QmWLdyFMUugMtKZs1xeJCSUKerWd9M627gxjAtp6TLrAgP`](https://gateway.pinata.cloud/ipfs/QmWLdyFMUugMtKZs1xeJCSUKerWd9M627gxjAtp6TLrAgP) to view the site. If we change `string_2` to `IPFS` then the CID of the website changes to `Qme1A6ofTweQ1JSfLLdkoehHhpbAAk4Z2hWjyNC7YJF9m5`. Now users can go to [`example.com/Qme1A6ofTweQ1JSfLLdkoehHhpbAAk4Z2hWjyNC7YJF9m5`](https://gateway.pinata.cloud/ipfs/Qme1A6ofTweQ1JSfLLdkoehHhpbAAk4Z2hWjyNC7YJF9m5).
+
+Having a user visit the site using the CID is cumbersome since the CID will change every time a variable is updated. So instead, we can use a _pointer_ that maintains the CID of the page with the latest update. This way, users can go to `example.com`, and always be directed to the latest content. This pointer is _mutable_; it can be updated to reflect the changes downstream.
+
+```text
++--------+      +---------+      +----------+
+|  User  | ---> | Pointer | ---> | QmWLd... |
++--------+      +---------+      +----------+
+```
+
+In the website example, when we change a variable, the CID of the webpage is different. The pointer must be updated to redirect users to the latest webpage. What's important is that the _old_ CID still exists. Nothing is overwritten. The original CID `QmWLdyFMUugMtKZs1xeJCSUKerWd9M627gxjAtp6TLrAgP` will always refer to a webpage with the headers `hello` and `world`. What we're doing is constructing a new [DAG](/concepts/merkle-dag).
+
+```text
++--------+      +---------+      +----------+
+|  User  | ---> | Pointer |      | QmWLd... |
++--------+      +---------+      +----------+
+                     |
+                     |           +----------+
+                     + --------> | Qme1A... |
+                                 +----------+
+```
