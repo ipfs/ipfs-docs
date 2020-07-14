@@ -204,6 +204,7 @@ module.exports = {
                   ],
                   '/how-to/work-with-blocks',
                   '/how-to/pin-files',
+                  '/how-to/work-with-pinning-services',
                   [
                     'https://github.com/ipfs/go-ipfs/blob/master/docs/file-transfer.md',
                     'Troubleshoot file transfers'
