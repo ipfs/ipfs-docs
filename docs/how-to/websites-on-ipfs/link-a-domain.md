@@ -8,10 +8,31 @@ In this guide you will learn how to link up an existing domain name to the CID o
 
 ## DNS
 
+To get started you'll need:
+
+- A domain name registrar.
+- A website.
+- An idea for a domain name.
+
+Access your registrar's control panel to manage the `CNAME` record and `TXT` records for your domain.
+
+CNAME: `www.gateway.ipfs.io.`
+
+TXT: `dnslink=/ipfs/$SITE_CID`
+
+![](./images/link-a-domain/dns-add-content-record.png)
+
+Save your changes. Traditional domain names can take some time to propagate through the internet, so it may take a few hours for your domain to point to your site hosted on IPFS.
+
 ## ENS
 
 <!-- What the ENS is. What it's used for. -->
+
+ENS is a decentralized way to address resources. Similar to DNS, where it converts human readable names to IP, ENS converts human readable names such as `randomplanetfacts.eth.link` to Ethereum addresses.
+
 <!-- How it compares to other DNS systems. -->
+
+ENS is built on smart contracts on the Ethereum blockchain. This means ENS is decentralized with no central point of failure and allows anyone to register for a domain.
 
 To get started you'll need:
 
@@ -78,4 +99,6 @@ You'll also need some amount of `ETH`. Due to how the Ethereum domain name syste
 
     This transaction can take a couple of minutes to complete.
 
-In a few minutes, you'll be able to go to `Your_Domain.eth.link` and view your website.
+In a few minutes, you'll be able to go to `Your_Domain.eth/` and view your website (note the tailing slash). Because `.eth` is not a registered DNS top-level domain, it is normally inaccessible through regular browsers.
+
+[Eth.link](https://eth.link/) provides a way for any browser to access your website. Simply append `.link` to your domain `Your_Domain.eth.link`. There are no additional steps for this. Simply give it time to propagate.
