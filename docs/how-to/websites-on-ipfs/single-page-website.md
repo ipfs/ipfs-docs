@@ -1,19 +1,19 @@
 ---
 title: Host a single-page website on IPFS
 legacyUrl: https://docs.ipfs.io/guides/examples/websites/
-description: Learn how to host a static website on the decentralized web using IPFS.
+description: Learn how to host a simple one-page website on IPFS, and link up a domain name.
 ---
 
 # Host a single-page website on IPFS
 
-In this tutorial, you'll import a simple one-page website to IPFS, have it use the Cloudflare Content Delivery Network (CDN), and link up a domain name so people can find your site easily.
+In this tutorial, we're going to host a simple one-page website on IPFS and link up a domain name. This is the first step is a series of tutorials aimed at teaching web developers how to build websites and applications using IPFS.
 
 ## Install IPFS desktop
 
 IPFS desktop application is the easiest way to get up and running quickly with IPFS. The installation steps for IPFS desktop differ between operating systems. Follow the instructions for your system.
 
-| [Windows](#windows)                                                        | [macOS](#macos)                                                      | [Linux](#linux)                                                      |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| [Windows](#windows) | [macOS](#macos) | [Linux](#linux) |
+| --- | --- | --- |
 | [![Windows icon](./images/single-page-website/windows-icon.png)](#windows) | [![macOS icon](./images/single-page-website/apple-icon.png)](#macos) | [![Linux icon](./images/single-page-website/linux-icon.png)](#linux) |
 
 ### Windows
@@ -97,7 +97,7 @@ The IPFS desktop application has finished installing. You can now start to [add 
 
 ## Add your site
 
-The next step is to import your site into IPFS using the IPFS desktop app you just installed. The website we'll be using is incredibly simple. The purpose of it is to display random space-related facts. Each time the page is refreshed, a new fact is displayed. The website is creatively called _Random Planet Facts_.
+The next step is to import your site into IPFS using the IPFS desktop app you just installed. The website we'll be using is incredibly simple. The purpose of it is to display random planet-related facts. Each time the page is refreshed, a new fact is displayed. The website is creatively called _Random Planet Facts_.
 
 1. Create a file called `index.html` and paste in the following code:
 
@@ -204,7 +204,7 @@ IPFS nodes treat the data they store like a cache, meaning that there is no guar
 
 ### Using Pinata
 
-An easy way to make sure important data is retained is to use a pinning service. These services run a bunch of IPFS nodes, and will _pin_ your data for you! This way you don't have to run and maintain your own IPFS node. [Pinata](https://pinata.cloud/) is a pinning service that allows you to pin up to 1GB of data for free.
+An easy way to make sure important data is retained is to use a pinning service. These services run a bunch of IPFS nodes, and will _pin_ your data for you! This way you don't have to run and maintain your own IPFS node. [Pinata](https://pinata.cloud/) is a pinning service that allows you to pin up to 1GB of data for free, and fits our purposes perfectly:
 
 1. Go to [Pinata.cloud](https://pinata.cloud/) and sign up or log in.
 2. Click **Pinata Upload**.
@@ -224,7 +224,7 @@ An easy way to make sure important data is retained is to use a pinning service.
 
 This section is completely optional.
 
-If you have access to a domain name service like Namecheap, Google Domains, GoDaddy, or any other domain service, then you can follow along with these steps. If you don't have a domain name to assign, then you can just read along through this section. We're going to dive into using services like DNSLink and the Ethereum Naming Service (ENS) in later sections.
+If you have access to a domain name service like Namecheap, Google Domains, GoDaddy, or any other domain service, then you can follow along with these steps. If you don't have a domain name to assign, then you can just read along through this section. We're going to dive into using decentralized naming services like Ethereum Naming Service (ENS) in a later section.
 
 We used Namecheap, but the process is very similar across all domain name services.
 
@@ -247,4 +247,4 @@ Domain name services are fairly slow to update. You should be able to go to your
 
 This project was designed to get you up and running quickly, but there are many improvements we can make here.
 
-You may have noticed that when visiting [randomplanetfacts.xyz](https://randomplanetfacts.xyz), your browser redirects to [gateway.pinata.cloud/ipfs/QmW7S5HR...](https://gateway.pinata.cloud/ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA). This isn't great for the user's experience, and it can cause issues with security certificates and other website validation methods. Also, this website is incredibly simple. There are no images, external stylesheets, or javascript files. If you're interested in building a more complex site using IPFS and securing it properly, [carry on with this tutorial series 🡒](#)
+You may have noticed that when visiting [randomplanetfacts.xyz](https://randomplanetfacts.xyz), your browser redirects to [gateway.pinata.cloud/ipfs/QmW7S5HR...](https://gateway.pinata.cloud/ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA). This isn't great for the user's experience, and it can cause issues with security certificates and other website validation methods. Also, this website is incredibly simple. There are no images, external stylesheets, or javascript files. If you're interested in building a more complex site using IPFS and securing it properly, [carry on with this tutorial series by hosting a multipage website on IPFS 🡒](/how-to/websites-on-ipfs/multipage-website)
