@@ -1,7 +1,7 @@
 ---
 title: Immutability
 sidebarDepth: 0
-issueUrl: https://github.com/ipfs/ipfs-docs/issues/264
+issueUrl: https://github.com/ipfs/docs/issues/386
 description: Learn about the concept of data immutability and how it's critical to how IPFS works.
 related:
   'IPFS Docs: Content addressing and CIDs': /concepts/content-addressing/
@@ -16,7 +16,7 @@ An immutable object is an object whose state cannot be altered or modified once 
 
 A CID is an _absolute_ pointer to content. No matter when we request a CID, the CIDs value will always be the same. This is part of the content's architecture and cannot be changed. To manage _immutable_ files in a _mutable_ system, we need to add another layer that sits on top of CIDs.
 
-As a basic example, let's have two blocks of content with the strings `hello` and `world` hashed into two leaf nodes with the CIDs `A` and `B`. If we concatenate these two nodes, then we are given CID `C`. On top of this root CID we assign a pointer `P`.
+As a basic example, let's have two blocks of content with the strings `hello` and `world` hashed into two leaf nodes with the CIDs `A` and `B`. If we concatenate these two nodes, then we are given CID `C`. On top of this root CID we assign a pointer `Pointer`.
 
 ```text
    +-----------+
@@ -33,7 +33,7 @@ As a basic example, let's have two blocks of content with the strings `hello` an
 "hello"    "world"
 ```
 
-If we change the content of `B` to `IPFS!`, all the upstream paths will change as well. In this simple example, the only upstream path is `C`. If we requested content using the pointer, then we would receive different content, but it's important to note that there is no change happening. Node `B` is not being updated. Instead, we are creating a new DAG where the pointer points to CID `E` that points to the concatenation of node `A` and another node `D`.
+If we change the content of `B` to `IPFS!`, all the upstream paths will change as well. In this simple example, the only upstream path is `C`. If we request content from the pointer we get back new content since the pointer is now _pointing_ at a completely different node. Node `B` is not being edited, updated, or otherwise changed. Instead, we are creating a new DAG where the pointer points to CID `E` that joins node `A` and a new node, node `D`.
 
 ```text
    +-----------+
@@ -50,7 +50,10 @@ If we change the content of `B` to `IPFS!`, all the upstream paths will change a
 "hello"    "world"     "hello"    "IPFS!"  
 ```
 
-Again, node `B` does not change. It will always refer to the same content, `world`. Node `A` also appears in the new DAG. This is not because we are _keeping_ it, that would imply the location-addressed paradigm. In the content-addressed system, any time someone writes a block with `"hello"` it will _always_ have CID `A`. This is different to location-addressed systems where we could reuse the original buffer and edit the small substring that represents the difference.
+Again, node `B` does not change. It will always refer to the same content, `world`. Node `A` also appears in the new DAG. This is not because we are _keeping_ it, that would imply the location-addressed paradigm. In the content-addressed system, any time someone writes a block with `"hello"` it will _always_ have CID `A`. 
+This is different to location-addressed systems where we could reuse the original buffer and edit the small substring that represents the difference.
+
+Again, node `B` does not change. It will always refer to the same content, `world`. Node `A` also appears in the new DAG. This does not necessarily mean we copied the memory/buffer that contained the `hello` string into our new message, that would imply the location-addressed paradigm that focuses on the _where_ and not the _what_. In a content-addressed system any time someone writes the string `hello` it will always have CID `A`, regardless of whether we copied the string from a previous location or we wrote it from scratch.
 
 ## Website explanation
 
@@ -89,4 +92,12 @@ In the website example, when we change a variable, the CID of the webpage is dif
                      |           +----------+
                      + --------> | Qme1A... |
                                  +----------+
+```
+
+This process is essentially what the [InterPlantery Naming Service (IPNS)](/concepts/ipns) does! CIDs can be difficult to deal with and hard to remember, so IPNS saves users from the cumbersome task of dealing with CIDs directly. More importantly, CIDs change with the content because they are the content. Whereas the inbound reference of URLs/pointers stay the same, and the outbound referral changes:
+
+```text
++--------+      +--------------+      +-------------------------------------------------------------+
+|  User  | ---> | docs.ipfs.io | ---> | bafybeigsddxhokzs3swgx6mss5i3gm6jqzv5b45e2xybqg7dr3jmsykrku |
++--------+      +--------------+      +-------------------------------------------------------------+
 ```
