@@ -12,8 +12,8 @@ In this tutorial, we're going to host a simple one-page website on IPFS and link
 
 IPFS desktop application is the easiest way to get up and running quickly with IPFS. The installation steps for IPFS desktop differ between operating systems. Follow the instructions for your system.
 
-| [Windows](#windows) | [macOS](#macos) | [Linux](#linux) |
-| --- | --- | --- |
+| [Windows](#windows)                                                        | [macOS](#macos)                                                      | [Linux](#linux)                                                      |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | [![Windows icon](./images/single-page-website/windows-icon.png)](#windows) | [![macOS icon](./images/single-page-website/apple-icon.png)](#macos) | [![Linux icon](./images/single-page-website/linux-icon.png)](#linux) |
 
 ### Windows
@@ -243,7 +243,7 @@ Domain name services are fairly slow to update. You should be able to go to your
 
 ![Random planet facts site with the randomplanetfacts.xyz URL.](./images/single-page-website/random-planets-with-correct-url.png)
 
-## Further improvements
+## Up next
 
 This project was designed to get you up and running quickly, but there are many improvements we can make here.
 

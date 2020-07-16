@@ -1,51 +1,51 @@
 ---
 title: Link a domain
+description: Allow users to access your IPFS hosted site by linking up a domain name.
 ---
 
 # Link a domain
 
-In this guide you will learn how to link up an existing domain name to the CID of your site on IPFS. You'll be able to visit `www.YourDomainName.com` and view your website's content hosted on IPFS. We'll show you how to do this is a general Domain Name System (DNS), along with one purchased through the Ethereum Naming System (ENS).
+Users can view your website by entering the CID into their address bar, but much like IP addresses, CIDs aren't particularly user-friendly or nice to look at. To fix this, we can map a domain name to your CID, so when users visit `www.YourDomain.com` they'll be forwarded to your site hosted on IPFS. In this guide we'll show you how map a regular domain name, along with a decentralized domain through the Ethereum naming service.
 
-## DNS
+This section is completely optional, but following it through will give you solid grasp on how to manage domain names with IPFS.
 
-To get started you'll need:
+## Domain name service (DNS)
 
-- A domain name registrar.
-- A website.
-- An idea for a domain name.
+Computers, smartphones, and anything with an internet connection all have no idea what website addresses actually say. They're just looking for an IP address to download content from. But most humans get scared when they're faced with a bunch of numbers. Enter DNS. Domain name services map easy-to-read website addresses to IP addresses so humans can go to `RandomPlanetFacts.xyz` and computers can download random planet facts.
 
-Access your registrar's control panel to manage the `CNAME` record and `TXT` records for your domain.
+In this section we're going to walk through mapping a domain name to a CID on IPFS. We're using Namecheap in this guide, but you can use any domain name registrar. All the steps are the same, but the links and settings will be in different places. We're not covering actually buying a domain name in this section; if you're looking for information on how to buy a domain name check the FAQs of your chosen domain name registrar.
 
-CNAME: `www.gateway.ipfs.io.`
+### Things you'll need
 
-TXT: `dnslink=/ipfs/$SITE_CID`
+Before we get started, you will need:
 
-![](./images/link-a-domain/dns-add-content-record.png)
+- A domain name, preferably not already registed to a website.
+- A website hosted on IPFS. If you've been following this tutorial series through, you should already have a website and CID ready.
 
-Save your changes. Traditional domain names can take some time to propagate through the internet, so it may take a few hours for your domain to point to your site hosted on IPFS.
+1. Access your registrar's control panel to manage the `CNAME` record and `TXT` records for your domain.
+1. Add a `CNAME` record and set the value to `www.gateway.ipfs.io.`
+1. Add a `TXT` record and set the value to `dnslink=/ipfs/SITE_CID` replacing `SITE_CID` with the CID of your website.
+1. Save your changes. Traditional domain names can take some time to propagate through the internet, so it may take a few hours for your domain to point to your IPFS-hosted site.
 
-## ENS
+And there we have it! You've just linked a domain name up to your site hosted on IPFS. Why not try doing the same thing with the [Ethereum naming service](#ethereum-naming-service) too?
 
-<!-- What the ENS is. What it's used for. -->
+## Ethereum naming service (ENS)
 
-ENS is a decentralized way to address resources. Similar to DNS, where it converts human readable names to IP, ENS converts human readable names such as `randomplanetfacts.eth.link` to Ethereum addresses.
+The Ethereum naming service (ENS) is a decentralized way to address resources. Similar to DNS, which converts human readable names to IP addresses, ENS converts human readable names such as `randomplanetfacts.eth.link` to Ethereum addresses. These addresses can then be used to point to CIDs on IPFS. Without going into to much detail, ENS aims to fix some of the problems that DNS has, mainly man-in-the-middle attacks and scalability. For more information on why DNS is broken, [check out Cynthia Taylor's post on recompilermag.com](https://recompilermag.com/issues/issue-1/the-web-is-broken-how-dns-breaks-almost-every-design-principle-of-the-internet/).
 
-<!-- How it compares to other DNS systems. -->
+### Before we get started
 
-ENS is built on smart contracts on the Ethereum blockchain. This means ENS is decentralized with no central point of failure and allows anyone to register for a domain.
+You need these things to get a domain name through ENS:
 
-To get started you'll need:
-
-- Metamask installed.
-- A website.
-- An idea for a domain name.
-
-You'll also need some amount of `ETH`. Due to how the Ethereum domain name system works, the amount you need changes with time.
+- The [Metamask](https://metamask.io/) browser extension installed.
+- An Ethereum account with some `ETH` in it. The amount you need will depend on the domain name you end up buying, but a balance of around \$10 USD is probably enough.
+- A website hosted on IPFS. If you've been following this tutorial series through, you should already have a website and CID ready.
+- An cool idea for a domain name!
 
 ### Purchase an Ethereum domain name
 
 1. Go to [app.ens.domains](https://app.ens.domains/).
-2. Log into MetaMask.
+2. Log into MetaMask:
 
    ![Metamask pop-up showing a login screen.](./images/link-a-domain/ens-metamask-log-into-key.png)
 
@@ -63,11 +63,11 @@ You'll also need some amount of `ETH`. Due to how the Ethereum domain name syste
 
    ![Registration screen within ENS.](./images/link-a-domain/ens-registration-transaction-pending.png)
 
-8. Once the transaction has completed, ENS requires that you wait for around a minute. This delay is to make sure there is no-one else attempting to purchase the same domain at the same time as you.
+8. Once the transaction has completed, ENS requires that you wait for around a minute. This delay is to make sure there is no-one else attempting to purchase the same domain at the same time as you:
 
    ![Waiting for registration confirmation screen in ENS.](./images/link-a-domain/ens-wait-a-minute.png)
 
-9. Click **Register**. Then click **Confirm** in the MetaMask window that pops up.
+9. Click **Register**. Then click **Confirm** in the MetaMask window that pops up:
 
    ![2nd transaction confirmation within MetaMask.](./images/link-a-domain/ens-metamask-complete-registration-transaction.png)
 
@@ -81,19 +81,19 @@ You'll also need some amount of `ETH`. Due to how the Ethereum domain name syste
 
 ### Link your IPFS content identifier (CID)
 
-11. Click the plus `+` icon next to **Records**.
+11. Click the plus `+` icon next to **Records**:
 
     ![The "add new records" icon in ENS.](./images/link-a-domain/ens-add-records-icon.png)
 
-12. Select **Content** from the dropdown.
+12. Select **Content** from the dropdown:
 
     ![Records dropdown menu in ENS.](./images/link-a-domain/ens-add-content-record.png)
 
-13. Set the **Content** text box as the CID of your website, prefixed with `ipfs://`.
+13. Set the **Content** text box as the CID of your website, prefixed with `ipfs://`:
 
     ![Setting the content record as an IPFS CID.](./images/link-a-domain/ens-set-content-record-as-ipfs-cid.png)
 
-14. Confirm this change by clicking **Confirm** in the MetaMask pop-up.
+14. Confirm this change by clicking **Confirm** in the MetaMask pop-up:
 
     ![MetaMask confirmation pop-up for changing a content record.](./images/link-a-domain/ens-metamask-content-record-transaction.png)
 
