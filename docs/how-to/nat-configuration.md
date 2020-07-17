@@ -1,6 +1,6 @@
 ---
 title: NAT configuration
-description: Fix common connection issues by managing your routers NAT and forwarding ports so other IPFS node can interact with your node.
+description: Fix common connection issues by managing your routers NAT and forwarding ports so other IPFS nodes can interact with your node.
 ---
 
 ### NAT configuration
@@ -17,7 +17,7 @@ While NAT is usually transparent for outgoing connections, listening for incomin
 
 ## IPv6
 
-If your router and internet service provider (ISP) support IPv6, enabling it will mitiate some connection issues. Most modern routers have a single option to enable IPv6. We are unable to give detailed information about each router's settings and preferences here. Search your router manufactuer's website for _IPv6_ for information on how to enable it.
+If your router and internet service provider (ISP) support IPv6, enabling it will mitigate some connection issues. Most modern routers have a single option to enable IPv6. We are unable to give detailed information about each router's settings and preferences here. Search your router manufactuer's website for _IPv6_ for information on how to enable it.
 
 ## UPnP
 
@@ -25,12 +25,12 @@ If your router supports UPnP, IPFS will attempt to automatically allow inbound t
 
 ## Port forwarding
 
-Each router has different options and solutions for port forwarding. Most router manufactuers have guides for setting up port forwarding on their devices. In general, the steps are something like this:
+Each router has different options and solutions for port forwarding. Most router manufacturers have guides for setting up port forwarding on their devices. In general, the steps are something like this:
 
 1. Log into your router.
 1. Locate your routers port forwarding section.
 1. Enter the IP address of your IPFS node.
 1. Set traffic to go through port `4001`.
-1. Reboot your IPFS node for the changes to take effect. Make sure the reboot the entire machine, not just the IPFS daemon.
+1. Reboot your IPFS node for the changes to take effect. Make sure to reboot the entire machine, not just the IPFS daemon.
 
-Assuming you’re not trying to expose your daemon’s API to the public internet, opening port `4001`/`tcp` should be sufficient.
+Assuming you're not trying to expose your daemon's API to the public internet, opening port `4001`/`tcp` should be sufficient.
