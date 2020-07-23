@@ -45,7 +45,7 @@ ipfs repo gc
 ipfs cat <foo hash>
 ```
 
-## Local vs. remote pinning
+## Local versus remote pinning
 
 All the information above assumes that you're pinning items locally — that is, to your local IPFS node. That's the default behavior for IPFS, but it's also possible to pin your files to a _remote pinning service_. These third-party services offer the opportunity for you to pin files not to your own local node, but to nodes that they operate, meaning that you don't need to worry about your own node's available disk space or uptime when it comes to availability.
 
