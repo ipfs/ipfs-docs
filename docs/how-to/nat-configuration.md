@@ -5,11 +5,11 @@ description: Fix common connection issues by managing your routers NAT and forwa
 
 # NAT configuration
 
-A common issue for new users running IPFS, especially on home networks, is that their IPFS node is _sitting_ behind a NAT (network address translation). It's common for people who run an IPFS node on their home network to have very long wait times or a high rate of request failure. This is because the rest of the nodes in the IPFS network have difficulty connecting to them through their NAT. NAT allows many machines to share a single public address, and it is essential for the continued functioning of the IPv4 protocol, which would otherwise be unable to serve the needs of the modern networked population with its 32-bit address space.
+A common issue for new users running IPFS, especially on home networks, is that their IPFS node is _sitting_ behind a NAT (network address translation). It's common for people who run an IPFS node on their home network to have very long wait times or a high rate of request failure. This is because the rest of the nodes on the IPFS network have difficulty connecting to them through their NAT. The NAT allows many machines to share a single public address, and it is essential for the continued functioning of the IPv4 protocol, which would otherwise be unable to serve the needs of the modern networked population with its 32-bit address space.
 
 When you connect to your home wifi, your computer gets an IPv4 address of something like `10.0.1.15`. This is part of a range of IP addresses reserved for internal use by private networks. When you make an outgoing connection to a public IP address, the router replaces your internal IP with its own public IP address. When data comes back from the other side, the router will translate back to the internal address.
 
-While NAT is usually transparent for outgoing connections, listening for incoming connections requires some configuration. The router listens on a single public IP address, but any number of machines on the internal network could handle the request. To serve requests, your router must be configured to send certain traffic to a specific machine. You can configure your router to allow these connections by either of the following sections.
+While the NAT is usually transparent for outgoing connections, listening for incoming connections requires some configuration. The router listens on a single public IP address, but any number of machines on the internal network could handle the request. To serve requests, your router must be configured to send certain traffic to a specific machine. You can configure your router to allow these connections by either of the following sections.
 
 ## IPv6
 
