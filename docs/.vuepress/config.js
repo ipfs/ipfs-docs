@@ -183,6 +183,7 @@ module.exports = {
                 children: [
                   '/how-to/configure-node',
                   '/how-to/modify-bootstrap-list',
+                  '/how-to/nat-configuration',
                   [
                     'https://github.com/ipfs/js-ipfs/tree/master/examples/custom-ipfs-repo',
                     'Customize an IPFS repo'

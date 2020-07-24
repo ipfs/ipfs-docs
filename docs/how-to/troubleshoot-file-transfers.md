@@ -78,4 +78,4 @@ In this case, we can see a localhost `127.0.0.1` address, a LAN address `192.168
 
 On node `B` run `ipfs id` and take one of the multiaddrs that contains its public IP address, and then on node `A` run `ipfs swarm connect <multiaddr>`. You can also try using a relayed connection. For more information [read this doc](./experimental-features.md#circuit-relay).
 
-If this manual step worked, then you likely have an issue with NAT traversal, and IPFS cannot figure out how to make it through.
+If this manual step worked, then you likely have an issue with your [NAT configuration](/how-to-/nat-configuration), and IPFS cannot figure out how to make it through.
