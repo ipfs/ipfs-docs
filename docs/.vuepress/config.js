@@ -21,17 +21,15 @@ module.exports = {
       md.use(require('markdown-it-footnote'))
       md.use(require('markdown-it-task-lists'))
       md.use(require('markdown-it-deflist')),
-      md.use(require('markdown-it-imsize')),
-      md.use(require('markdown-it-image-lazy-loading'))
+        md.use(require('markdown-it-imsize')),
+        md.use(require('markdown-it-image-lazy-loading'))
     }
   },
   themeConfig: {
     algolia: {
-      apiKey: 'e6dcd48beb5db629bf77c892d38fa091',
-      indexName: 'ipfs'
+      apiKey: 'e56fc7c611806522df45191e22ed15ac',
+      indexName: 'ipfs-docs'
     },
-    betaTestFormUrl:
-      'https://docs.google.com/forms/d/1LVaD1B2uyW6Ff0jfU_iQ5mCeyQcHfyQO6BDD99XAgK0/viewform',
     defaultImage: '/images/social-card.png',
     author: {
       name: 'IPFS Team',
@@ -46,7 +44,7 @@ module.exports = {
     docsDir: 'docs',
     docsBranch: 'master',
     feedbackWidget: {
-      docsRepoIssue: 'ipfs/docs'
+      docsRepoIssue: 'ipfs/ipfs-docs'
     },
     editLinks: false,
     // page nav
@@ -79,6 +77,17 @@ module.exports = {
             path: '/recent-releases/',
             children: [
               {
+                title: 'Go-IPFS 0.6',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/recent-releases/go-ipfs-0-6/',
+                  ['/recent-releases/go-ipfs-0-6/install', 'Install'],
+                  '/recent-releases/go-ipfs-0-6/update-procedure',
+                  '/recent-releases/go-ipfs-0-6/features'
+                ]
+              },
+              {
                 title: 'Go-IPFS 0.5',
                 sidebarDepth: 1,
                 collapsable: false,
@@ -105,9 +114,17 @@ module.exports = {
                   '/concepts/what-is-ipfs',
                   '/concepts/how-ipfs-works',
                   ['https://dweb-primer.ipfs.io/', 'IPFS primer'],
-                  '/concepts/usage-ideas-examples',
                   '/concepts/glossary',
                   '/concepts/faq'
+                ]
+              },
+              {
+                title: 'Examples & case studies',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/concepts/usage-ideas-examples',
+                  '/concepts/case-study-audius'
                 ]
               },
               {
@@ -327,10 +344,6 @@ module.exports = {
                   '/community/contribute/ways-to-contribute',
                   ['https://discuss.ipfs.io/', 'IPFS forums'],
                   '/community/irc',
-                  [
-                    'https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com',
-                    'Community video calls'
-                  ],
                   ['https://proto.school/#/events', 'ProtoSchool workshops'],
                   ['https://www.meetup.com/members/249142444/', 'Meetups'],
                   '/community/social-media',
@@ -453,6 +466,20 @@ module.exports = {
       'vuepress-plugin-container',
       {
         type: 'callout',
+        defaultTitle: ''
+      }
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'right',
+        defaultTitle: ''
+      }
+    ],
+    [
+      'vuepress-plugin-container',
+      {
+        type: 'left',
         defaultTitle: ''
       }
     ],

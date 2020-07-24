@@ -30,7 +30,9 @@ There are two ways to update your IPFS installation. [Using `ipfs-update`](#use-
 
 ## Manual process
 
-1. Download [`go-ipfs_v0.5.0_darwin-386.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.6.0).
+If you don't have IPFS Update installed, you can follow these steps. This section assumes you are updating on a 64-bit macOS machine.
+
+1. Download `go-ipfs_v0.6.0_darwin-386.tar.gz` from GitHub from the [Go-IPFS releases page](https://github.com/ipfs/go-ipfs/releases/tag/v0.6.0).
 
    ```bash
    wget https://github.com/ipfs/go-ipfs/releases/download/v0.6.0/go-ipfs_v0.6.0_darwin-amd64.tar.gz

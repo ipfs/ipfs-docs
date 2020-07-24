@@ -13,9 +13,11 @@ New to IPFS or the distributed web? Here's where to get started on understanding
 Want the basics, in theater mode? Check out these Core Courses from IPFS Camp 2019 for an overview of how IPFS works with files and the overall data lifecycle in dweb.
 
 @[youtube](Z5zNPwMDYGg)
+
 - [Understanding how IPFS deals with files](https://youtu.be/Z5zNPwMDYGg)
 
 @[youtube](fLUq0RkiTBA)
+
 - [The lifecycle of data in the DWeb](https://youtu.be/fLUq0RkiTBA)
 
 ## IPFS 101
@@ -25,9 +27,15 @@ Get the basic concepts of IPFS in one place, including:
 - [What is IPFS?](/concepts/what-is-ipfs/)
 - [How IPFS works](/concepts/how-ipfs-works/)
 - [IPFS primer](https://dweb-primer.ipfs.io/)
-- [Usage ideas & examples](/concepts/usage-ideas-examples/)
 - [Glossary](/concepts/glossary/)
 - [FAQ](/concepts/faq/)
+
+## Examples and case studies
+
+Get inspired by usage ideas, explore examples of IPFS implemented in the wild, and dig deeper with case studies on applications and projects in which IPFS plays a crucial role.
+
+- [Usage ideas & examples](/concepts/usage-ideas-examples/)
+- [Case study: Audius](/concepts/case-study-audius/)
 
 ## Content-addressed storage
 
@@ -63,4 +71,4 @@ Want a more in-depth look into the decentralized web? Here are a few papers that
 
 ## Don't see what you're looking for?
 
-We're adding more documentation all the time and making ongoing revisions to existing docs, but if you don't see what you need, please [file an issue](https://github.com/ipfs/docs/issues/new?assignees=&labels=OKR+3%3A+Content+Improvement%2C+docs-ipfs&template=content-request.md&title=%5BCONTENT+REQUEST%5D+%28add+your+title+here%21%29) to let us know! We also recommend visiting the [IPFS forums](https://discuss.ipfs.io/) for support and discussion with IPFS enthusiasts and experts worldwide.
+We're adding more documentation all the time and making ongoing revisions to existing docs, but if you don't see what you need, please [file an issue](https://github.com/ipfs/ipfs-docs/issues/new?assignees=&labels=OKR+3%3A+Content+Improvement%2C+docs-ipfs&template=content-request.md&title=%5BCONTENT+REQUEST%5D+%28add+your+title+here%21%29) to let us know! We also recommend visiting the [IPFS forums](https://discuss.ipfs.io/) for support and discussion with IPFS enthusiasts and experts worldwide.

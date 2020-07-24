@@ -5,7 +5,7 @@ description: Learn how to build an easy demo service on IPFS.
 
 # Make a service
 
-IPFS has a few default services that it runs by default, such as the dht, bitswap, and the diagnostics service. Each of these simply registers a handler on the IPFS PeerHost, and listens on it for new connections. The `corenet` package has a very clean interface to this functionality. So let's try building an easy demo service to try this out!
+IPFS has a few default services that it runs by default, such as [the DHT](/concepts/dht/), [Bitswap](/concepts/bitswap/), and the diagnostics service. Each of these simply registers a handler on the IPFS PeerHost, and listens on it for new connections. The `corenet` package has a very clean interface to this functionality. So let's try building an easy demo service to try this out!
 
 Let's start by building the service host:
 

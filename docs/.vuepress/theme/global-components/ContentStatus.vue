@@ -26,11 +26,6 @@
           <li v-if="issueUrl">
             <a target="_blank" :href="issueUrl">Help write this page</a>
           </li>
-          <li v-if="$site.themeConfig.betaTestFormUrl">
-            <a :href="$site.themeConfig.betaTestFormUrl" target="_blank"
-              >Sign up to be a beta tester</a
-            >
-          </li>
         </ul>
       </div>
     </div>
