@@ -3,120 +3,109 @@ title: 'Case study: OpenBazaar'
 description: Explore some helpful use cases, ideas, and examples for the InterPlanetary File System (IPFS).
 ---
 
-# Case study: OpenBazaar/Haven
+# Case study: OpenBazaar
 
 ::: callout
-**"IPFS and blockchains like Ethereum can be combined to form consensus around large blobs of data in a decentralized, immutable way. Combining the content addressability of IPFS, the immutability of a blockchain, and a network of nodes pinning content to IPFS like the Audius creator nodes, you get the tools necessary to build decentralized systems."**
+**“There is no inherent token as part of the whole network. You can just use it. ... Part of our philosophy is that we don’t want anyone to have to pay anything initially just to get started on the network.”**
 
-_&mdash; Dheeraj Manjunath, Head of Engineering, Audius_
-
-**"I don’t know if Audius would exist without IPFS."**
-
-_&mdash; Hareesh Nagaraj, Senior Engineer, Audius_
+_&mdash; Brian Hoffman, CEO of OB1_
 :::
 
 ## Overview
 
 ::: right
-<img src="./images/case-studies/logo-audius.png" alt="Audius logo" width="100">
+<img src="./images/case-studies/logo-openbazaar.png" alt="OpenBazaar logo" width="120">
 :::
 
-**[Audius](https://audius.co/)** is a music and audio sharing platform designed to provide artists a direct link with their listeners. Using decentralized technology, Audius is able to ensure artists’ rights to and control of their own music, and provide a censorship-resistant platform for expression and distribution of artistic works and compositions. To create a user-owned and operated platform, it was key to have a distributed cloud storage network as the basis for the system. Audius uses IPFS as the core decentralized storage component in their mission to give everyone the freedom to share, monetize and listen to any audio.
+[OpenBazaar](https://openbazaar.org/) is a peer-to-peer ecommerce platform where buyers and sellers can trade anonymously and privately, without data collection by vendors. The OpenBazaar platform is developed by the OB1 team, which also develops [Haven](https://gethaven.app/), the mobile version of OpenBazaar. The code base is similar, but due to the requirements of some mobile app stores, the team needed to create a separate brand for Haven along with some code tweaks.
 
-In 2018, when Audius was looking into decentralized storage, they needed a system that would enable routing and addressing of large amounts of content in a decentralized way for their content streaming network. At the time, IPFS had the only system that fit their needs for decentralization, with no immediate lock-in or payment up front. Now, after two years on the network, Audius has found that IPFS has consistently performed and provided the flexibility and resilience needed for their network. "The lack of surprises is an advantage," says Hareesh Nagaraj, senior engineer at Audius. "It’s been reliable the whole time."
+IPFS provides the content storage network for OpenBazaar and Haven. On the network, merchants and buyers can each run a storage node, so that there is no central server involved. By creating a collaborative network using IPFS, the OpenBazaar network enables buyers and sellers to trade without centralized data collection or hacking of their personal information.
 
-### Audius by the numbers
+OpenBazaar has been working with IPFS successfully since 2015. Having a peer-to-peer network allows OpenBazaar to provide a platform where individuals freely trade goods, with no interference from a middleman. Furthermore, OB1 (the company behind OpenBazaar) can be a technology provider that allows buyers and sellers to operate freely, without being the seller of products, owner of the network, or interfering in the business affairs between peers.
+
+Although OpenBazaar is not yet as mainstream as a shopping site, it is particularly helpful in cases where certain products are difficult to come by in the market. For example, there have been periods of time when Bitcoin mining equipment was freely available on OpenBazaar, but difficult to get elsewhere. During the COVID-19 pandemic, OpenBazaar was able to get personal protective gear into people’s hands when other platforms couldn't; N95 masks were at times more widely available on OpenBazaar than via other platforms, and at prices that self-equalized due to the platform's lack of centralized control. In addition, this lack of centralization meant supply and demand dictated availability, not an overseeing party determining price or enforcing geographical restrictions.
+
+### OpenBazaar by the numbers
 
 <NumberBlock :items="[
-  {value: '5M', text:'content identifiers'},
-  {value: 3.5, text: 'terabytes of data'},
-  {value: '12', text: 'independent discovery and creator node providers'},
-  {value: '40K', text: 'registered users'}
+  {value: '100K', text:'total nodes'},
+  {value: '250K', text: 'desktop app installs'},
+  {value: '150K', text: 'mobile app installs'},
+  {value: '&gt;20K', text: 'daily listings'}
 ]" />
 
 ## The story
 
-When Audius set out to make a blockchain-based, decentralized alternative to SoundCloud and similar services, their most important consideration was to choose a tech stack that allowed them to maintain their commitment to decentralization as a means to maintain the resilience, variety, and peer-to-peer nature of the network. "We had evaluated some other options and they were not sufficiently decentralized for us," says Nagaraj. "IPFS, even when we started looking, was very far along, in terms of support for multiple environments."
+OpenBazaar started in 2014 with the goal of creating a peer-to-peer marketplace for people to freely buy and sell from one another online, without subjecting themselves to corporate tracking of their purchasing behavior. More than a year into the project, one of the developers stumbled upon IPFS.
 
-The Audius network and protocol are open-source frameworks that allow anyone to run a service and gain rewards in the network. Most of the people using the network today are artists and listeners who use the Audius client. Musicians and other audio content creators can upload their work, and subscribers can listen according to the terms set by the content creators. As a streaming network, the network latency for read and write is another major area where IPFS has provided the basic infrastructure.
+“Back then, none of this tech actually existed. We spent about a year creating our own backend and peer-to-peer network and then the encryption and all the messaging and all the modules that we needed to build a marketplace,” says Brian Hoffman, CEO of OB1. “We wanted to follow the classic rule of: don’t do something yourself if somebody else does it better.” Using IPFS allowed the OB1 team to focus on the marketplace aspects and leave the infrastructure to IPFS. More than 30% of the codebase they had built was no longer necessary, because the functionality was built into IPFS.
 
-Over the course of Audius' work with IPFS, issues that have come up were always resolved together with the Protocol Labs team, or by supplementing with other technologies. As a distributed platform, Audius uses a stack that has failovers for every layer, including the content servers, and working with IPFS has made integration with multiple solutions simple. "Part of being decentralized is having appropriate failovers for all layers. We try to use IPFS as heavily as we can, but in certain cases we do also have backups," says Manjunath.
+“We really liked it and it worked really well, and we’ve been using IPFS ever since,” says Hoffman.
 
-Nagaraj notes that the learning curve for building on IPFS was accessible: "In terms of development, it was very easy to grasp everything. We actually got that very quickly, which is definitely a value-add, and since then it’s only gotten easier," he says, citing development tools that have come online over the course of their experience with IPFS. As their usage of IPFS has grown, he adds, "we’re one of the bigger hot-read operators on IPFS" &mdash; explaining that the "hot read" requirements relate to the need for streaming services to get real-time or near-real-time reading operations. Unlike file download services, the listeners to the Audius network would notice if there were any gaps in the streaming of the music.
+The OB1 team had also looked at other open source projects such as Bittorrent and some of the early cryptocurrency-based storage protocols. Using Bittorrent would have required too much development effort, alternatives like the Storj and Sia networks required using dedicated tokens for the storage use. Even as the market evolved, IPFS continued to be the clear best choice. The OpenBazaar model relies on the participants (merchants and buyers) in the network to support one another by running nodes and hosting data in the network, which means they don’t have to pay for storage—just work together as a community to support one another by running nodes.
+
+“We have a very altruistic business model where merchants and buyers are incentivized to keep storage on the network because merchants want their storefronts to be available and buyers want to be able to retrieve their orders and messages on the network. It’s a community approach to storage of the data. If we asked buyers to immediately start paying a fee or merchants to pay to list something, that would be an impediment to our growth. Part of our philosophy is that we don’t want anyone to have to pay anything initially just to get started on the network,” says Hoffman.
+
+By having the participants in the network host their own data as well as their neighbor’s data via IPFS, OpenBazaar creates a truly decentralized storage network that doesn’t depend on the OB1 team or any particular hosting provider. The system is resilient—meaning there is no central server to attack or take down. Furthermore, the system preserves privacy because user data is not stored in a central database. One of the persistently nagging problems of ecommerce is that the databases often get hacked and private user data is stolen. With no central database, there simply is no such vulnerability in the OpenBazaar network.
 
 ::: callout
-"IPFS and the Protocol Labs team have been great in terms of supporting us and giving us the resources we need. Choosing a dependency on such a novel tech isn’t necessarily the standard way of doing things, but I’m really glad we did. The extensibility that it gives us is huge. Overall, it’s been a game changer for us."
+Protocol Labs is always there when we need them, but we don’t need them very often.
 
-_&mdash; Hareesh Nagaraj, Senior Engineer, Audius_
+_&mdash; Brian Hoffman, CEO of OB1_
 :::
 
-Regarding Audius' use of the blockchain, the network uses two sets of smart contracts on Ethereum and POA Network to manage content. Audius' L1 layer is used for coordinating and forming consensus on IPFS blocks &mdash; e.g., who uploaded what and when. Pointers to the "what" &mdash; all content and metadata &mdash; go from the blockchain layer to IPFS, where the data lives off-chain and is addressed via IPFS. No content is ever uploaded to any blockchain.
-
-Users control their own Ethereum private keys, which permission control of their content on-chain. Under this scheme, Audius doesn’t own the music of the content producers; Audius provides the means for streaming, and the interface, but they don’t have command over the content itself. The technology behind the control of one's own keys restores ownership to the artists while also allowing consumers of the streams to be in charge of their own personal data.
-
-One other key ingredient in Audius' decision to initially adopt IPFS was its separation from Filecoin. The Audius team was able to get started using IPFS and hosting on a network of community-operated nodes, without concern for hosting costs. Over time, they are looking forward to having Filecoin-supported nodes so that they can separate their core content business from the hosting aspects of the business. Meanwhile, their current storage network of community-operated creator nodes does offer a high level of flexibility in terms of customization. "The node itself is very customizable," Nagaraj says. "We’ve taken advantage of that. I think we’ve used the node in every way possible."
-
-As a large user of the IPFS network, Audius has taken advantage of the [official IPFS forums](https://discuss.ipfs.io), as well as support provided directly from the core IPFS development team. They are particularly impressed with the level of support and third-party tools that are available on IPFS.
-
-"We think about the IPFS and Filecoin community as a great role model for what we are doing with the community around Audius, in terms of activity and robustness," says Nagaraj. "There are a lot of developers who are constantly contributing to IPFS. A few post on websites like [simpleaswater.com](http://www.simpleaswater.com) with tons of examples of what you can do with IPFS, how to actually implement it, breaking down all the details. We would aim for something like that. It would be incredible for us if we could reach that level of community participation." Nagaraj also calls out as particularly helpful blog posts and other content created by third-party contributors to the codebase, as well as the ecosystem that is developing around IPFS collaborators such as [Textile](http://textile.io/) and [Pinata](https://pinata.cloud/). Having such an active community around an open-source project adds to the momentum and progress of IPFS as a whole.
+The migration to IPFS was in late 2015, so OB1 was one of the first projects to successfully run as a fully Web3 project. “We went through struggles at the start, but working with Protocol Labs was a collaborative effort,” says Hoffman. “We worked pretty closely with the core team. The first year or two were challenging, but now things have solidified and we really don’t need much from them.” At one point, an upgrade to the IPFS protocol was incompatible with how OB1 had implemented it, and the IPFS team was able to roll back the change to allow the team to work together on a solution. Having a team that is willing to work with them, and even roll back an update, is one of the key reasons the team has confidence that IPFS is a great choice. The community engagement gives certainty that the system will continue to support the OpenBazaar technology.
 
 ## IPFS benefits
 
-In terms of concrete benefits, the Audius team cites the following as key wins of using IPFS:
+In terms of concrete benefits, the OpenBazaar team cites the following as key wins of using IPFS:
 
+- Anonymity enabled storage
+- Allowed team to focus on marketplace aspects, freeing them of the need to handle infrastructure development
 - Fully decentralized storage
-- Content-based addressing system
-- Tech stack fit with blockchain
-- Easy-to-understand implementation
-- Multiple implementations (JavaScript, Go, Python HTTP API)
-- Separation of hosting costs and tech stack use
-- Large, active, supportive community
+- Truly scalable: network gets faster as more people join
+- Extensible: enables asynchronous messaging among buyers and sellers
+- Extensible code base
+- Provides ability to store encrypted information on top of base IPFS network
+- Free to use: no token or up-front payment involved
+- Combined with Filecoin provides payment for incentivizing storage providers for long-term storage
+- Anonymity for end users with TOR and users behind firewalls
+- Compatible with model of allowing merchants to host their own nodes and contribute to the resilience of the network as a whole (“altruistic” framework)
 - Node flexibility and customizability
-- Support from IPFS core developers
-- Extensive documentation
-- Third-party extensions and support
+- Support from Protocol Labs
 
-In particular, IPFS's strengths and capabilities in content addressing and easy-to-implement decentralized storage were game-changers for the Audius team.
+## How OpenBazaar uses IPFS
 
-### Content addressing
+OpenBazaar's implementation is built upon a fork of the go-ipfs reference implementation customized specifically for the following needs:
 
-Content addressing in decentralized systems can be a major challenge, and the Audius team cites IPFS content addressing as providing a number of benefits. The content addressing system not only allows identification of content and blobs, but also includes a unique identification fingerprint that eliminates unnecessary duplication and saves storage space.
+- Persistent storage of at least a week to allow for remembering buyers' shopping carts and merchants who may not be online 24/7
+- LibP2P: original addressing scheme.
+- Go-IPFS without IPNS to optimize for a large number of product images.
+- Go-IPFS support for the Bitcoin Wallet and front-end.
+- Customized search engine that crawls the IPFS network to update shop content. The crawler maintains the inventory for the front-end of the shopping app.
+- Circuit relaying for working around firewalls and mobile iOS networks
 
-Native addressing of every piece of content makes the storage easy to use. Under the IPFS schema, every segment of content is guaranteed to be unique.
+### The architecture
 
-"The benefits of content addressing are much more than initially meets the eye," explains Manjunath. "Let’s say you upload a track to Audius that you have uploaded previously. Since IPFS is content-addressed, it doesn’t take twice the storage capacity to store the two tracks. We save on storage, since all we have to do is associate the underlying content ID with the newly uploaded track. Same with retrieval. Since any changes to the track in the form of a remix would cause the content address to change, this makes it a complete unique fingerprint that allows full transparency around the state of a track at a given point in time." This fingerprinting mechanism ensures that users can’t change content later on, or make false claims about what happened to any records on the system.
+OpenBazaar's high-level architecture can be summed up in this diagram:
 
-"If we didn’t have IPFS content addressing, we would have to sync our content metadata," Nagaraj says. "To sync a given file and what it’s called in a decentralized way consistently is really difficult. That’s something we didn’t have to even think about with IPFS. When we spin up a new node, it just knows, given these multihashes and content addressing, that it corresponds to a specific file."
+**DIAGRAM TO GO HERE from [this design-shop issue](https://github.com/protocol/design-shop/issues/343&sa=D&ust=1595884969218000&usg=AFQjCNEeMPUuhiAoI1MtgQD1XlX3zbUPYQ)**
 
-### Unique fit for decentralized storage
+In this image, we see a network of lots of nodes (desktop/laptop and mobile). On top is a zoom-in of several individual nodes to act as examples. Every node represents either a merchant or seller (although there are a few exceptions: OB1 also runs some gateway nodes and caching nodes). Every node has either the OpenBazaar (if it’s desktop) or Haven (if it’s mobile) app installed; inside THAT app is a complete IPFS node, which includes the items on the bullet lists: go-ipfs, the DHT and the custom Persistent Messaging implementation that they created.
 
-IPFS has provided Audius the full benefits of decentralized storage with no hassle. The addressing capabilities have made it simple for Audius to manage millions of unique pieces of content with the ease of established commercial solutions.
+### Customizing &amp; extending
 
-## How Audius uses IPFS
+One of the extensions that the team built was an asynchronous messaging layer. By creating an additional storage layer with IPFS, the OB1 team created a system in which messages could be retained when people are offline and sent later.
+The team created a TOR Router for IPFS. The code is available to any users of IPFS and has been submitted as a code contribution for review and integration to the core code.
 
-All files and metadata on Audius are _shared_ using IPFS by creator node services, _registered_ on Audius smart contracts, _indexed_ by discovery services, and _served_ through the client to end users. Audius runs nodes internally to test new changes, and there are a dozen public hosts running nodes for specific services and geographies. However, content creators and listeners don’t need to know anything about the back end; they use the Audius client and client libraries to upload and stream audio. Each IPFS node within the Audius network is currently a [`go-ipfs`](https://github.com/ipfs/go-ipfs) container co-located with service logic. Audius implements the services interface with `go-ipfs` using [`py-ipfs-api`](https://github.com/ipfs-shipyard/py-ipfs-http-client) or [`ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) (JavaScript) to perform read and write operations.
+Another customization that OpenBazaar needed was the ability to crawl the network for new content. As merchants add new merchandise, the network needs to display that to the buyers. The team built a crawler that searches the network for new content and keeps track of new items in the system.
+For the mobile Haven platform on iOS, it was necessary to create a circuit relaying workaround for firewalls. The ability to provide that kind of modular add-in made the system flexible.
 
-### The tooling
+## Audius + OpenBazaar: the future
 
-Audius uses the following IPFS implementations with no modification:
-
-- **IPFS core**
-- [`go-ipfs`](https://github.com/ipfs/go-ipfs)
-  - _All individual nodes are `go-ipfs` containers_
-- [`py-ipfs-api`](https://github.com/ipfs-shipyard/py-ipfs-http-client)
-  - _Discovery provider is a Python application_
-  - _Python application uses a Flask server + Celery worker queue + PostgreSQL database_
-- [`ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client)
-  - _Creator node is a Node.js-based service and heavily uses this client to interact with dedicated IPFS nodes_
-
-For streaming, the Audius team uses HTTP Livestreaming (HLS) on top of the IPFS core implementation. The client pre-fetches the segments as the listener streams them using HLS.
-
-## Audius + IPFS: the future
-
-Audius is looking forward to an upcoming version release with additional metrics, as well as increasing scalability overall. Most importantly, however, the Audius team is excited about the potential for third parties to leverage Filecoin with the IPFS network to create independent hosting networks.
-
-"If we get to a point where we don’t have to store content ourselves, that would be incredible," says Nagaraj. "Our business model is to serve people audio. We aren’t in the business of storage, so we look forward to that."
-
-Other longer-term plans include creating multiple storage locations for faster streaming of content, as well as decreasing latency. Content encryption is also on the roadmap.
+IPFS serves the short-term storage needs for the OpenBazaar marketplace, but when it comes to longer-term storage, the team is looking forward to utilizing Filecoin in order to allow nodes to be compensated for long-term storage. For customers with large storefronts or large customer bases, and who aren’t online all the time, having the potential for a third-party storage layer builds another aspect of the marketplace into the business model.
+“We wanted to create OpenBazaar in parallel with where IPFS and Filecoin are moving and take advantage of that as well,” says Hoffman.
+Because of the open source nature of the project, Hoffman can foresee a future where additional services could be enabled though Filecoin. For example, third parties could offer nodes for redundancy, resilience, backups and recovery.
+In addition to improvements in some of the existing features, OB1 is looking at serverless, distributed peer-to-peer database OrbitDB as a potential integration. Currently the system uses flat files in a directory, which is a bit unusual for a marketplace. Building a social network on top of flat files isn’t ideal, so the OrbitDB implementation may make that more applicable to their network.
 
 _Note: Metrics and other details in this case study are current as of July 2020. Details may change in the interim._
