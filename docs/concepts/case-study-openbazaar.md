@@ -107,4 +107,4 @@ Because of the open source-nature of the project, Hoffman can foresee a future w
 
 "We wanted to create OpenBazaar in parallel with where IPFS and Filecoin are moving, and take advantage of that as it evolves," says Hoffman.
 
-_Note: Metrics and other details in this case study are current as of July 2020. Details may change in the interim._
+_Note: Metrics and other details in this case study are current as of August 2020. Details may change in the interim._
