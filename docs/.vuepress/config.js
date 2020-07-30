@@ -193,7 +193,7 @@ module.exports = {
                   '/how-to/websites-on-ipfs/single-page-website',
                   '/how-to/websites-on-ipfs/multipage-website',
                   '/how-to/websites-on-ipfs/link-a-domain',
-                  '/how-to/websites-on-ipfs/introduction-to-fleek',
+                  '/how-to/websites-on-ipfs/introducing-fleek',
                   '/how-to/websites-on-ipfs/static-site-generators'
                 ]
               },
