@@ -83,11 +83,9 @@ OpenBazaar's implementation is built upon a fork of the [`go-ipfs`](https://gith
 
 ### The architecture
 
-OpenBazaar's high-level architecture can be summed up in this diagram:
+At its highest level, the OpenBazaar network is made out of many nodes, whether desktop/laptop or mobile. Each node is either a merchant or a seller, with a few exceptions; OB1 does run some gateway nodes and caching nodes themselves. Every node has either the OpenBazaar or Haven app installed, and "inside" the respective app is a complete `go-ipfs` node.
 
-**{{DIAGRAM TO GO HERE from [this design-shop issue](https://github.com/protocol/design-shop/issues/343&sa=D&ust=1595884969218000&usg=AFQjCNEeMPUuhiAoI1MtgQD1XlX3zbUPYQ)}}**
-
-The network is made out of many nodes &mdash; desktop, laptop, and mobile. Each node is either a merchant or a seller, with a few exceptions; OB1 does run some gateway nodes and caching nodes themselves. Every node has either the OpenBazaar or Haven app installed, and "inside" is a complete IPFS node.
+<img src="./images/case-studies/img-openbazaar-nodes.png" alt="OpenBazaar high-level architecture">
 
 ### Customizing &amp; extending
 
