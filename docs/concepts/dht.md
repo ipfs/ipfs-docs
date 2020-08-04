@@ -6,11 +6,39 @@ description: Learn what distributed hash tables (DHTs) are, and how they play a 
 
 # Distributed Hash Tables (DHTs)
 
-The DHT is how IPFS nodes keep track of who has what data. A regular hash table is a key-value store where the _keys_ are [hashes](/concepts/hashing). In the case of IPFS, the _values_ can be any block of data, and the _keys_ are the CIDs of those blocks. IPFS uses hash tables to store who has what data.
+A distributed hash table (DHT) is a distributed system for mapping keys to values. In IPFS, the DHT is used as the fundamental component of the content routing system, and acts like a cross between a catalog and a navigation system. It maps what the user is looking for (a CID) to the peer that is storing the matching content. There are 3 types of key-value pairings that are mapped using the DHT:
+
+| Type             | Purpose                                                                                                                                    | Used by                                                                                                                                    |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Provider records | Map a data identifier (i.e., a multihash) to a peer that has advertised that they have, and are willing, to provide you with that content. | - IPFS to find content<br> - IPNS over PubSub to find other members of the pubsub _topic_.                                                 |
+| IPNS records     | Map an IPNS key (i.e., hash of a public key) to an IPNS record (i.e., a signed and versioned pointer to a path like `/ipfs/bafyxyz...`)    | - IPNS                                                                                                                                     |
+| Peer records     | Map a peerID to a set of multiaddresses at which the peer may be reached                                                                   | IPFS when we know of a peer with content, but do not know its address.<br> - Manual connections (e.g., `ipfs swarm connect /p2p/Qmxyz...`) |
+
+Each of these record types have slightly different semantics, but they are all updated and found using the same DHT protocol, IPFS’s take on Kademlia.
+
+## Kademlia
+
+The Kademlia algorithm has been around for a while and there are some great resources already [available for it online](https://en.wikipedia.org/wiki/Kademlia), including the [paper itself](https://ipfs.io/ipfs/QmaVrnwZrnoG4YramcN75mbE5AUfCymiEErrHGXoQR968V) and Wikipedia. Kademlia's purpose is to build a DHT on top of three system parameters:
+
+1. An _address space_ as a way that all of the peers in the network can be uniquely identified. In IPFS this is all the numbers from `0` to `2^256-1`.
+1. A _metric_ to order the peers in the address space and therefore visualize all the peers along a line ordered from smallest to largest. IPFS takes `SHA256(PeerID)` and interprets it as an integer between `0` and `2^256-1`.
+1. A _projection_ that will take a `record key` and calculate a position in the address space where the peer or peers most ideally suited to store the record should be near. IPFS uses `SHA256(Record Key)`.
+
+Having this address space and a peer ordering metric allows us to search the network as though it was a sorted list. In particular, we can turn the system into something like a skip list where a peer knows peers that are distances of around `1,2,4,8...` away from it. This will allow us to search the list in time that is logarithmic in the size of the network, `O(log(N))` lookup time.
+
+Unlike a skip list, Kademlia is somewhat unstable since peers can join, leave, and rejoin the network at any time. To deal with the unstable nature of the system, a Kademlia peer does not just keep links to the peers with distance `1,2,4,8...` away from it. Instead, for each multiple of 2 away it keeps up to `K` links. In IPFS `K = 20`. For example, instead of a peer keeping a single link 128 away it would keep 20 links that are between 65 and 128 away.
+
+Selection of network wide parameters like `K` is not arbitrary, but is instead determined based on the observed average churn in the network, and the frequency with which the network will republish information. System parameters, like `K`, are computed to maximize the probability that the network stays connected, and no data is lost, while maintaining a desired latency for queries, and assuming the observations of average churn stay constant. These system and network parameters drive the decisions made in Kademlia’s two main components: the routing table which tracks all those links in the network, and the lookup algorithm which determines how to traverse those links to store and retrieve data.
+
+### Undialable peers
+
+A major property of Kademlia is that all peers can be arranged from smallest to largest. This is useful because as peer `0` _walks_ down the line to find peer `55` it can know it's getting progressively closer. However, this requires that everyone on the line can talk to each other, otherwise peer `33` might send peer `0` down a dead end by telling them the content they want is on a node they can’t communicate with. This can result in the network being slow, and more importantly, _fragmented_; with data being accessible by some peers and not others.
+
+<!-- The DHT is how IPFS nodes keep track of who has what data. A regular hash table is a key-value store where the _keys_ are [hashes](/concepts/hashing). In the case of IPFS, the _values_ can be any block of data, and the _keys_ are the CIDs of those blocks. IPFS uses hash tables to store who has what data.
 
 In a regular key-value store, all the data within the table is stored in one place. Databases like SQL work this way; all the data you need can be found in a single place. However, the _distributed_ part of _DHT_ means that the entire table is spread across different locations. Each computer running IPFS, also known as a _node_, holds a piece of the larger table. Nodes do not store information on what every other node is storing since that wouldn't scale very well.
 
-So IPFS uses lots of small tables instead of one big table, but that brings another set of problems. If the data is spread across lots of different tables, how does IPFS know where the data is? To solve this, IPFS uses a piece of software called [Kademlia](https://en.wikipedia.org/wiki/Kademlia) to learn which nodes have what data. This is called _providing_.
+IPFS uses lots of small tables instead of one big table, but that brings another set of problems. If the data is spread across lots of different tables, how does IPFS know where the data is? To solve this, IPFS uses a piece of software called [Kademlia](https://en.wikipedia.org/wiki/Kademlia) to learn which nodes have what data. This is called _providing_.
 
 ## Providing
 
@@ -26,7 +54,7 @@ Using the table below, we can see that `QmAlex` and `QmBrian` can provide `QmVYD
 | `QmZijpFzuUFF4LwBr9PxsSTdVvfF6E6Fueiz5wLTA6MTrM` | `QmAlex`      |
 | `QmXPgotVGXrng5UETiF9qTUEaJanjRWPwcwwNQCKANJpCM` | `QmCharlotte` |
 
-To see this in action, you can run `ipfs dht findprovs <CID>` to find the providers of a particular CID:
+To see this in action, you can run `ipfs dht findprovs <CID>` to find the providers of a particular CID: -->
 
 ```bash
 ipfs dht findprovs QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG
@@ -37,12 +65,6 @@ ipfs dht findprovs QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG
 ```
 
 ## Managing data
-
-When you add a file to IPFS, it gets stored as blocks of data. Each of these blocks has a CID, which is the [content-address](/concepts/content-addressing) of that block of data. This means that every unique block has a unique CID. IPFS nodes use the DHT to advertise which blocks they _have_, which blocks they _want_, and which blocks they _don't want_.
-
-| Have                      | Want                         | Don't Want                                                                            |
-| ------------------------- | ---------------------------- | ------------------------------------------------------------------------------------- |
-| I can provide this block. | I am looking for this block. | I am not looking for this block. If I am provided this block, I will just discard it. |
 
 ## Re-providing
 
