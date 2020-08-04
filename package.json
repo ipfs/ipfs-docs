@@ -43,7 +43,7 @@
     "useTabs": false
   },
   "lint-staged": {
-    "*.{js,json,css,less,scss,html,md,vue}": [
+    "*.{js,json,css,less,scss,html,vue}": [
       "prettier --write"
     ],
     "*.styl": [
