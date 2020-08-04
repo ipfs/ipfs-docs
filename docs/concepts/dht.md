@@ -8,8 +8,6 @@ description: Learn what distributed hash tables (DHTs) are, and how they play a 
 
 A distributed hash table (DHT) is a distributed system for mapping keys to values. In IPFS, the DHT is used as the fundamental component of the content routing system, and acts like a cross between a catalog and a navigation system. It maps what the user is looking for (a CID) to the peer that is storing the matching content. There are 3 types of key-value pairings that are mapped using the DHT:
 
-<!-- prettier-ignore -->
-
 | Type             | Purpose                                                                                                                                    | Used by                                                                                                                                    |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | Provider records | Map a data identifier (i.e., a multihash) to a peer that has advertised that they have, and are willing, to provide you with that content. | - IPFS to find content<br> - IPNS over PubSub to find other members of the pubsub _topic_.                                                 |
