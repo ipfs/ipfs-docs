@@ -8,11 +8,11 @@ description: Learn what distributed hash tables (DHTs) are, and how they play a 
 
 A distributed hash table (DHT) is a distributed system for mapping keys to values. In IPFS, the DHT is used as the fundamental component of the content routing system, and acts like a cross between a catalog and a navigation system. It maps what the user is looking for (a CID) to the peer that is storing the matching content. There are 3 types of key-value pairings that are mapped using the DHT:
 
-| Type             | Purpose                                                                                                                                    | Used by                                                                                                                                    |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Provider records | Map a data identifier (i.e., a multihash) to a peer that has advertised that they have, and are willing, to provide you with that content. | - IPFS to find content<br> - IPNS over PubSub to find other members of the pubsub _topic_.                                                 |
-| IPNS records     | Map an IPNS key (i.e., hash of a public key) to an IPNS record (i.e., a signed and versioned pointer to a path like `/ipfs/bafyxyz...`)    | - IPNS                                                                                                                                     |
-| Peer records     | Map a peerID to a set of multiaddresses at which the peer may be reached                                                                   | IPFS when we know of a peer with content, but do not know its address.<br> - Manual connections (e.g., `ipfs swarm connect /p2p/Qmxyz...`) |
+| Type | Purpose | Used by |
+| --- | --- | --- |
+| Provider records | Map a data identifier (i.e., a multihash) to a peer that has advertised that they have, and are willing, to provide you with that content. | - IPFS to find content<br> - IPNS over PubSub to find other members of the pubsub _topic_. |
+| IPNS records | Map an IPNS key (i.e., hash of a public key) to an IPNS record (i.e., a signed and versioned pointer to a path like `/ipfs/bafyxyz...`) | - IPNS |
+| Peer records | Map a peerID to a set of multiaddresses at which the peer may be reached | IPFS when we know of a peer with content, but do not know its address.<br> - Manual connections (e.g., `ipfs swarm connect /p2p/Qmxyz...`) |
 
 Each of these record types have slightly different semantics, but they are all updated and found using the same DHT protocol, IPFS’s take on Kademlia.
 
@@ -46,9 +46,9 @@ Many IPFS nodes utilize the publicly shared DHT to discover and advertise conten
 
 A seperate DHT is available to nodes that are not part of the public network called _LAN DHT_. This is completely separate from the public _WAN DHT_. These two DHTs are separated by utilizing different DHT protocol names:
 
-| DHT | Path                  |
-| --- | --------------------- |
-| WAN | `/ipfs/kad/1.0.0`     |
+| DHT | Path |
+| --- | ---- |
+| WAN | `/ipfs/kad/1.0.0` |
 | LAN | `/ipfs/lan/kad/1.0.0` |
 
 The main difference between the WAN and LAN DHTs are the acceptance criteria for peers: which peers are eligible to be part of a routing table or query, and which are not. The WAN DHT’s criteria is _do you look like a public address_ and the LAN DHT’s criteria is _do you look like a non-public address_. While WAN DHT nodes switch from client to server mode based on whether they are publicly dialable, LAN DHT nodes are always servers unless the `dhtclient` option has been set.
