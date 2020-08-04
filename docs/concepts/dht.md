@@ -8,6 +8,8 @@ description: Learn what distributed hash tables (DHTs) are, and how they play a 
 
 A distributed hash table (DHT) is a distributed system for mapping keys to values. In IPFS, the DHT is used as the fundamental component of the content routing system, and acts like a cross between a catalog and a navigation system. It maps what the user is looking for (a CID) to the peer that is storing the matching content. There are 3 types of key-value pairings that are mapped using the DHT:
 
+<!-- prettier-ignore -->
+
 | Type             | Purpose                                                                                                                                    | Used by                                                                                                                                    |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | Provider records | Map a data identifier (i.e., a multihash) to a peer that has advertised that they have, and are willing, to provide you with that content. | - IPFS to find content<br> - IPNS over PubSub to find other members of the pubsub _topic_.                                                 |
@@ -34,6 +36,27 @@ Selection of network wide parameters like `K` is not arbitrary, but is instead d
 
 A major property of Kademlia is that all peers can be arranged from smallest to largest. This is useful because as peer `0` _walks_ down the line to find peer `55` it can know it's getting progressively closer. However, this requires that everyone on the line can talk to each other, otherwise peer `33` might send peer `0` down a dead end by telling them the content they want is on a node they can’t communicate with. This can result in the network being slow, and more importantly, _fragmented_; with data being accessible by some peers and not others.
 
+While having peers that cannot talk to each other may sound like an oddity, two common causes of peers being unreachable by other peers are network address translators (NATs) and firewalls. Having asymmetrical networks where peers `X`, `Y`, and `Z` can connect to each other and to `A`, but `A` cannot connect to them is fairly common. Similarly, it is _extremely_ common that peers `A` and `B`, which are both behind NATs, cannot talk to each other. To deal with this problem, IPFS nodes ignore other nodes assumed to be unreachable by the general public. Nodes also filter themselves out of the network if they suspect they are not reachable.
+
+To do this, we use [libp2p’s AutoNAT](https://github.com/libp2p/go-libp2p-autonat), which acts as a distributed session traversal utilities for NAT (STUN) layer, informing peers of their observed addresses and whether or not they appear to be publicly dialable. Only when peers detect that they are publicly dialable do they switch from client mode (where they can query the DHT, but not respond to queries) to server mode (where they can both query and respond to queries). Similarly, if a server discovers that it is no longer publicly dialable it will switch back into client mode.
+
+IPFS exposes a _rate-limited_ AutoNAT service on all IPFS nodes that have discovered that they are publicly dialable. These requests are infrequent and do not have a noticeable overhead.
+
+## Dual DHT
+
+Many IPFS nodes utilize the publicly shared DHT to discover and advertise content. However, some nodes operate in segregated networks such as local networks, or isolated VPNs. For these users, having a DHT where all non-publicly dialable nodes are clients is very problematic since none of the nodes are publicly dialable.
+
+A seperate DHT is available to nodes that are not part of the public network called _LAN DHT_. This is completely separate from the public _WAN DHT_. These two DHTs are separated by utilizing different DHT protocol names:
+
+| DHT | Path                  |
+| --- | --------------------- |
+| WAN | `/ipfs/kad/1.0.0`     |
+| LAN | `/ipfs/lan/kad/1.0.0` |
+
+The main difference between the WAN and LAN DHTs are the acceptance criteria for peers: which peers are eligible to be part of a routing table or query, and which are not. The WAN DHT’s criteria is _do you look like a public address_ and the LAN DHT’s criteria is _do you look like a non-public address_. While WAN DHT nodes switch from client to server mode based on whether they are publicly dialable, LAN DHT nodes are always servers unless the `dhtclient` option has been set.
+
+## Routing Tables
+
 <!-- The DHT is how IPFS nodes keep track of who has what data. A regular hash table is a key-value store where the _keys_ are [hashes](/concepts/hashing). In the case of IPFS, the _values_ can be any block of data, and the _keys_ are the CIDs of those blocks. IPFS uses hash tables to store who has what data.
 
 In a regular key-value store, all the data within the table is stored in one place. Databases like SQL work this way; all the data you need can be found in a single place. However, the _distributed_ part of _DHT_ means that the entire table is spread across different locations. Each computer running IPFS, also known as a _node_, holds a piece of the larger table. Nodes do not store information on what every other node is storing since that wouldn't scale very well.
@@ -54,7 +77,7 @@ Using the table below, we can see that `QmAlex` and `QmBrian` can provide `QmVYD
 | `QmZijpFzuUFF4LwBr9PxsSTdVvfF6E6Fueiz5wLTA6MTrM` | `QmAlex`      |
 | `QmXPgotVGXrng5UETiF9qTUEaJanjRWPwcwwNQCKANJpCM` | `QmCharlotte` |
 
-To see this in action, you can run `ipfs dht findprovs <CID>` to find the providers of a particular CID: -->
+To see this in action, you can run `ipfs dht findprovs <CID>` to find the providers of a particular CID:
 
 ```bash
 ipfs dht findprovs QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG
@@ -96,3 +119,5 @@ The WAN DHT includes all peers with at least one public IP address. IPFS will on
 ::: tip
 If you are interested in how DHTs fit into the overall lifecycle of data in IPFS, check out this video from IPFS Camp 2019! [Core Course: The Lifecycle of Data in Dweb](https://www.youtube.com/watch?v=fLUq0RkiTBA)
 :::
+
+-->
