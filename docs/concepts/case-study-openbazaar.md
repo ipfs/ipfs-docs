@@ -23,7 +23,7 @@ IPFS serves as the content storage network for both OpenBazaar and Haven. On the
 
 OB1 has been building successfully on IPFS since 2015. The peer-to-peer network that IPFS enables allows the team to provide a platform where individuals freely trade goods with no interference from a middleman &mdash; as well as enabling OB1 to be a technology provider only, not a seller of products, the "owner" of the network, or a party in business affairs between peers.
 
-Even though OpenBazaar is not yet a mainstream shopping platform, it has already proven to be particularly helpful in cases where some products are difficult to come by in the global market. For example, at times Bitcoin mining equipment has been freely available on OpenBazaar when it was difficult to obtain elsewhere. During the COVID-19 pandemic, OpenBazaar was able to get personal protective equipment into people’s hands when other platforms couldn't; N95 masks were at times more widely available on OpenBazaar than via other platforms, and at prices that self-equalized due to the platform's lack of centralized control. Furthermore, this decentralization meant supply and demand dictated price and availability, rather than being subject to an overseeing party determining price or enforcing geographical distribution.
+Even though OpenBazaar is not yet a mainstream shopping platform, it has already proven to be particularly helpful in cases where some products are difficult to come by in the global market. For example, at times Bitcoin mining equipment has been easy to acquire on OpenBazaar when it was difficult to obtain elsewhere. During the COVID-19 pandemic, OpenBazaar was able to get personal protective equipment into people’s hands when other platforms couldn't; N95 masks were at times more widely available on OpenBazaar than via other platforms, and at prices that self-equalized due to the platform's lack of centralized control. Furthermore, this decentralization meant supply and demand dictated price and availability, rather than being subject to an overseeing party determining price or enforcing geographical distribution.
 
 ### OpenBazaar by the numbers
 
@@ -54,7 +54,7 @@ By having participants in the network host their own data as well as their neigh
 _&mdash; Brian Hoffman, CEO of OB1_
 :::
 
-Building such a radically new e-commerce model didn't happen without its hiccups, but the OB1 team felt supported all the way. With their migration to IPFS in late 2015, OB1 was one of the first companies to successfully launch a large-scale, fully Web3 platform. "We went through struggles at the start, but working with Protocol Labs was a collaborative effort," says Hoffman. "We worked pretty closely with the core team. The first year or two were challenging, but now things have solidified and we really don’t need much from them." As both IPFS and OpenBazaar have evolved, the consideration remains mutual: At one point, an upgrade to the IPFS protocol was incompatible with OB1's implementation, and the IPFS team rolled back the change in order to allow the two teams to work together on a solution. This willingness to collaborate for the greater good of everyone involved is one of the key reasons OB1 continues to be confident that IPFS is a great choice for OpenBazaar's continued success.
+Building such a radically new e-commerce model didn't happen without hiccups, but the OB1 team felt supported all the way. With their migration to IPFS in late 2015, OB1 was one of the first companies to successfully launch a large-scale, fully Web3 platform. "We went through struggles at the start, but working with Protocol Labs was a collaborative effort," says Hoffman. "We worked pretty closely with the core team. The first year or two were challenging, but now things have solidified and we really don’t need much from them." As both IPFS and OpenBazaar have evolved, the consideration remains mutual: At one point, an upgrade to the IPFS protocol was incompatible with OB1's implementation, and the IPFS team rolled back the change in order to allow the two teams to work together on a solution. This willingness to collaborate for the greater good of everyone involved is one of the key reasons OB1 continues to be confident that IPFS is a great choice for OpenBazaar's continued success.
 
 ## IPFS benefits
 
@@ -83,7 +83,7 @@ OpenBazaar's implementation is built upon a fork of the [`go-ipfs`](https://gith
 
 ### The architecture
 
-At its highest level, the OpenBazaar network is made out of many nodes, whether desktop/laptop (OpenBazaar) or mobile (Haven). Each node is either a merchant or a seller, with a few exceptions; OB1 does run some gateway nodes and caching nodes themselves. Every node has either the OpenBazaar or Haven app installed, and "inside" the respective app is a complete `go-ipfs` node.
+At its highest level, the OpenBazaar network is made up of many nodes, whether desktop/laptop (OpenBazaar) or mobile (Haven). Each node is either a merchant or a seller, with a few exceptions; OB1 does run some gateway nodes and caching nodes themselves. Every node has either the OpenBazaar or Haven app installed, and "inside" the respective app is a complete `go-ipfs` node.
 
 <img src="./images/case-studies/img-openbazaar-nodes.png" alt="OpenBazaar high-level architecture">
 
@@ -97,7 +97,7 @@ Additionally, OB1 created a TOR router for IPFS, as well as a circuit-relay work
 
 ## OpenBazaar + IPFS: the future
 
-As OpenBazaar and Haven continue to grow, OB1 is looking at potentially integrating serverless, distributed peer-to-peer database OrbitDB in its IPFS implementation. OpenBazaar and Haven currently use flat files in a directory, which is a bit unusual for a marketplace. Building an e-commerce network on top of flat files isn’t ideal, so an OrbitDB implementation may be a near-term boost.
+As OpenBazaar and Haven continue to grow, OB1 is looking at potentially integrating the serverless, distributed peer-to-peer database OrbitDB in its IPFS implementation. OpenBazaar and Haven currently use flat files in a directory, which is a bit unusual for a marketplace. Building an e-commerce network on top of flat files isn’t ideal, so an OrbitDB implementation may be a near-term boost.
 
 IPFS serves the present-day, short-term storage needs for the OpenBazaar marketplace, but when it comes to longer-term storage, the team is looking forward to also utilizing Filecoin to allow nodes to be compensated for long-term storage. For customers with large storefronts or big customer bases, but who aren’t online all the time, having the potential to offer a third-party storage layer builds a new advantage of the OpenBazaar marketplace into OB1's business model.
 
