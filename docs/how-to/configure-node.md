@@ -6,7 +6,7 @@ description: Learn how to configure a node in IPFS, the InterPlanetary File Syst
 
 # Configure a node
 
-IPFS is configured through a json formatted text file, located by default at `~/.ipfs/config`. Implementation-specific information can be found within the [go-ipfs](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md) and [js-ipfs](https://github.com/ipfs/js-ipfs/blob/master/docs/config.md) repositories.
+IPFS is configured through a json formatted text file, located by default at `~/.ipfs/config`. Implementation-specific information can be found within the [go-ipfs](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md) and [js-ipfs](https://github.com/ipfs/js-ipfs/blob/master/docs/CONFIG.md) repositories.
 
 ## Addresses
 
