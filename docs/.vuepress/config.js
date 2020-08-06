@@ -379,7 +379,8 @@ module.exports = {
               [
                 'https://github.com/ipfs/community/blob/master/code-of-conduct.md',
                 'Code of conduct'
-              ]
+              ],
+              'project/gateway-faq'
             ]
           }
         ]
