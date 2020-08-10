@@ -8,7 +8,7 @@ description: Explore some helpful use cases, ideas, and examples for the InterPl
 ::: callout
 **"There is no inherent token as part of the whole network. You can just use it ... Part of our philosophy is that we don’t want anyone to have to pay anything initially just to get started on the network."**
 
-_&mdash; Brian Hoffman, CEO of OB1_
+_&mdash; Brian Hoffman, CEO, OB1_
 :::
 
 ## Overview
@@ -51,7 +51,7 @@ By having participants in the network host their own data as well as their neigh
 ::: callout
 **Protocol Labs is always there when we need them, but we don’t need them very often.**
 
-_&mdash; Brian Hoffman, CEO of OB1_
+_&mdash; Brian Hoffman, CEO, OB1_
 :::
 
 Building such a radically new e-commerce model didn't happen without hiccups, but the OB1 team felt supported all the way. With their migration to IPFS in late 2015, OB1 was one of the first companies to successfully launch a large-scale, fully Web3 platform. "We went through struggles at the start, but working with Protocol Labs was a collaborative effort," says Hoffman. "We worked pretty closely with the core team. The first year or two were challenging, but now things have solidified and we really don’t need much from them." As both IPFS and OpenBazaar have evolved, the consideration remains mutual: At one point, an upgrade to the IPFS protocol was incompatible with OB1's implementation, and the IPFS team rolled back the change in order to allow the two teams to work together on a solution. This willingness to collaborate for the greater good of everyone involved is one of the key reasons OB1 continues to be confident that IPFS is a great choice for OpenBazaar's continued success.
