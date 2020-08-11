@@ -241,6 +241,18 @@ module.exports = {
                 ]
               },
               {
+                title: 'Websites on IPFS',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/how-to/websites-on-ipfs/single-page-website',
+                  '/how-to/websites-on-ipfs/multipage-website',
+                  '/how-to/websites-on-ipfs/link-a-domain',
+                  '/how-to/websites-on-ipfs/introducing-fleek',
+                  '/how-to/websites-on-ipfs/static-site-generators'
+                ]
+              },
+              {
                 title: 'Host websites',
                 sidebarDepth: 1,
                 collapsable: false,
