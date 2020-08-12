@@ -125,6 +125,7 @@ module.exports = {
                 children: [
                   '/concepts/usage-ideas-examples',
                   '/concepts/case-study-audius',
+                  '/concepts/case-study-iotex',
                   '/concepts/case-study-openbazaar'
                 ]
               },
