@@ -6,9 +6,9 @@ description: Learn about the InterPlanetary Name System (IPNS) and how it can be
 
 # InterPlanetary Name System (IPNS)
 
-IPFS uses [content-based addressing](/concepts/content-addressing/); it creates an address of a file based on data contained within the file. Unfortunately, having a long string of seamingly random letters and numbers isn't great if you're trying to host a website or share a link. If you were to share the IPFS addresses `/ipfs/QmbezGequPwcsWo8UL4wDF6a8hYwM1hmbzYv2mnKkEWaUp` with someone, not only is it hard to read, but you need to give the person a new link everytime you update the content.
+IPFS uses [content-based addressing](/concepts/content-addressing/); it creates an address of a file based on data contained within the file. If you were to share an IPFS address such as `/ipfs/QmbezGequPwcsWo8UL4wDF6a8hYwM1hmbzYv2mnKkEWaUp` with someone you would need to give the person a new link everytime you update the content.
 
-The InterPlanetary Name System (IPNS) solves these issues by creating human-readable addresses that can be updated.
+The InterPlanetary Name System (IPNS) solves this issue by creating an address that can be updated.
 
 A _name_ in IPNS is the [hash](/concepts/hashing) of a public key. It is associated with a record containing information about the hash it links to that is signed by the corresponding private key. New records can be signed and published at any time.
 
@@ -40,4 +40,4 @@ In the same way, you can republish a new version of your website under the same 
 
 ## Alternatives to IPNS
 
-IPNS is not the only way to create mutable addresses on IPFS. You can also use [DNSLink](/concepts/dnslink/), which is currently much faster than IPNS and also uses more readable names. Other community members are exploring ways to use blockchains to store common name records.
+IPNS is not the only way to create mutable addresses on IPFS. You can also use [DNSLink](/concepts/dnslink/), which is currently much faster than IPNS and also uses human-readable names. Other community members are exploring ways to use blockchains to store common name records.
