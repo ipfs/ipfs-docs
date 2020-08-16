@@ -253,12 +253,6 @@ module.exports = {
                 ]
               },
               {
-                title: 'Host websites',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: ['/how-to/host-single-page-site']
-              },
-              {
                 title: 'Work with blockchains',
                 sidebarDepth: 1,
                 collapsable: false,

@@ -9,9 +9,7 @@ description: Learn how to host a simple single-page website on the decentralized
 A great way to get to know IPFS is to use it to host a simple, single-page website. Here's a step-by-step guide to doing just that.
 
 ::: tip
-You may also wish to look through these contributor-written guides to hosting your site on IPFS:
-- [Make an Immortal Website using Ethereum Name Service and IPFS](https://medium.com/@kirpy/make-an-immortal-website-using-ethereum-name-service-and-ipfs-simple-939e66c893df) by [Richard Potter](https://medium.com/@kirpy). This tutorial uses the IPFS Desktop application and is more suitable for readers who aren't comfortable with the command-line.
-- [Complete Beginner's Guide to Deploying Your First Static Website to IPFS](https://interplanetarygatsby.com/ipfs-deploy/) by [@agentofuser](https://twitter.com/agentofuser). This tutorial uses the command-line and the author's [GitHub repo](https://github.com/agentofuser/ipfs-deploy).
+We've put together a series of tutorials to walk you through hosting a full website on IPFS. [Take a look!](/how-to/websites-on-ipfs/single-page-website)
 :::
 
 ## Create your site
