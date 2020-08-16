@@ -27,6 +27,7 @@
 /guides/examples/network/ /how-to/observe-peers/
 /guides/examples/snapshots/ /how-to/take-snapshot/
 /guides/examples/api/service/readme/ /how-to/make-service/
+/how-to/host-single-page-site /how-to/websites-on-ipfs/single-page-website
 /reference/api/ /reference/
 /reference/api/cli/ /reference/cli/
 /reference/api/http/ /reference/http/api/
