@@ -102,3 +102,5 @@ You need these things to get a domain name through ENS:
 In a few minutes, you'll be able to go to `Your_Domain.eth/` and view your website (note the tailing slash). Because `.eth` is not a registered DNS top-level domain, it is normally inaccessible through regular browsers.
 
 [Eth.link](https://eth.link/) provides a way for any browser to access your website. Simply append `.link` to your domain `Your_Domain.eth.link`. There are no additional steps for this. Simply give it time to propagate.
+
+Next up, we'll take a look at a tool that will help make this whole process easier: [Fleek](./introducing-fleek)
