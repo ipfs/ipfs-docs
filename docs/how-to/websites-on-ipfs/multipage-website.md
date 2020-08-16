@@ -181,4 +181,4 @@ Now that you've got the project ready, we can add things to IPFS using the IPFS 
 
 ## Up next
 
-In the next tutorial we'll look at [linking a domain name to your site 🡒](/how-to/websites-on-ipfs/link-a-domain)
+In the next tutorial we'll look at [linking a domain name to your site!](/how-to/websites-on-ipfs/link-a-domain)
