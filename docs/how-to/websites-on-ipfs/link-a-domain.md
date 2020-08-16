@@ -103,4 +103,6 @@ In a few minutes, you'll be able to go to `Your_Domain.eth/` and view your websi
 
 [Eth.link](https://eth.link/) provides a way for any browser to access your website. Simply append `.link` to your domain `Your_Domain.eth.link`. There are no additional steps for this. Simply give it time to propagate.
 
-Next up, we'll take a look at a tool that will help make this whole process easier: [Fleek](./introducing-fleek)
+## Up next
+
+In the next tutorial in this series, we'll take a look at a tool that will help make this whole process easier: [Fleek](./introducing-fleek)
