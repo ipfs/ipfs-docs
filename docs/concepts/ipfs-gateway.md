@@ -55,6 +55,8 @@ Public gateway operators include:
 
 Protocol Labs maintains a [list of public gateways](https://ipfs.github.io/public-gateway-checker/) and their status.
 
+![A list of public gateways and their status, available on IPFS](./images/ipfs-gateways/public-gateway-checker.png)
+
 ## Gateway types
 
 Categorizing gateways involves several dimensions:
