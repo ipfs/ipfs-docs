@@ -1,6 +1,5 @@
 ---
 title: Distributed Hash Tables (DHTs)
-legacyUrl: https://docs.ipfs.io/guides/concepts/dht/
 description: Learn what distributed hash tables (DHTs) are, how they store who has what data, and how they play a part in the overall lifecycle of IPFS.
 ---
 
