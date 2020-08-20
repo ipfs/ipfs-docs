@@ -1,6 +1,6 @@
 ---
 title: IPFS desktop
-description: Lorem ipsum.
+description: For a simple, straight-forward way to interact with the IPFS network, install the IPFS desktop application. There's no need to touch the command-line; everything you need it contained within one handy package!
 ---
 
 # IPFS desktop
