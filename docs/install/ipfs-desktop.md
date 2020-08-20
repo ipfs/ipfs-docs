@@ -9,11 +9,11 @@ The IPFS desktop application is the easiest way to get up and running quickly wi
 
 The installation steps differ between operating systems, so follow the instructions for your system.
 
-| [Windows](#windows)                                                 | [macOS](#macos)                                               | [Linux](#linux)                                               |
-| ------------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| [![Windows icon](./images/ipfs-desktop/windows-icon.png)](#windows) | [![macOS icon](./images/ipfs-desktop/apple-icon.png)](#macos) | [![Linux icon](./images/ipfs-desktop/linux-icon.png)](#linux) |
+| [Windows](#windows)                                                 | [macOS](#macos)                                               | [Ubuntu](#Ubuntu)                                                |
+| ------------------------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------- |
+| [![Windows icon](./images/ipfs-desktop/windows-icon.png)](#windows) | [![macOS icon](./images/ipfs-desktop/apple-icon.png)](#macos) | [![Ubuntu icon](./images/ipfs-desktop/ubuntu-icon.png)](#ubuntu) |
 
-### Windows
+## Windows
 
 1. Go to the [IPFS desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases).
 2. Find the link ending in `.exe` for the latest version of IPFS desktop:
@@ -39,7 +39,7 @@ The installation steps differ between operating systems, so follow the instructi
 
 The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
 
-### MacOS
+## MacOS
 
 1. Download the latest available `.dmg` file from the `ipfs-shipyard/ipfs-desktop` GitHub repository:
 
@@ -70,7 +70,7 @@ The IPFS desktop application has finished installing. You can now start to [add 
 
 The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
 
-### Linux
+## Ubuntu
 
 1. Download the `.deb` package:
 1. Open the `.deb` package in **Software Installer**:
