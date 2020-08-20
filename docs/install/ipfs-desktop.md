@@ -5,7 +5,7 @@ description: Lorem ipsum.
 
 # IPFS desktop
 
-The IPFS desktop application is the easiest way to get up and running quickly with IPFS. It allows you to run an IPFS Node on your machine _without_ having to bother with command-line tools or package management. It gives you the power of the [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui), plus a handful of shortcuts you can find on settings.
+The IPFS desktop application is the easiest way to get up and running quickly with IPFS. It allows you to run an IPFS Node on your machine _without_ having to bother with command-line tools or package management. It gives you the power of the [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui), plus a handful of useful shortcuts and settings.
 
 The installation steps differ between operating systems, so follow the instructions for your system.
 
