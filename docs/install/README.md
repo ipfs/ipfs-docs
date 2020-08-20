@@ -9,12 +9,16 @@ IPFS itself is a peer-to-peer network that relies on a set of protocols to creat
 
 ## Decentralized storage
 
-IPFS can be used by anyone wanting to store data in a decentralized way. The easiest way to get up and running is by installing the IPFS Desktop application. This app has Go-IPFS built-in and lets you interact with the network through a simple interface. [Check it out →](/install/desktop-application)
+IPFS can be used by anyone wanting to store data in a decentralized way. The easiest way to get up and running is by installing the IPFS Desktop application. This app has Go-IPFS built-in and lets you interact with the network through a simple interface. [Check it out →](/install/ipfs-desktop)
 
 ## Development and IPFS
 
-Want to build decentralized applications and store your application data on IPFS? You'll likely want to install the command-line version of IPFS. There's no GUI to deal with, just raw input and output through your terminal. [Find out more →](/install/command-line-installation)
+Want to build decentralized applications and store your application data on IPFS? You'll likely want to install the command-line version of IPFS. There's no GUI to deal with, just raw input and output through your terminal. [Find out more →](/install/command-line)
 
 ## IPFS as infrastructure
 
-Planning to set up several IPFS nodes within one network? You'll want to take a look at installing [IPFS Cluster →](/install/server-installation)
+Planning to set up several IPFS nodes within one network? You'll want to take a look at installing [IPFS Cluster →](/install/server-infrastructure)
+
+## Surf the decentralized web
+
+Not many browsers come with IPFS built-in, unfortunately. But, you can install an IPFS companion extension that will let you view decentralized web content! [Learn more →](/install/ipfs-companion)

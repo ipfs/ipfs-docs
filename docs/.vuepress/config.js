@@ -70,7 +70,12 @@ module.exports = {
           {
             title: 'Install',
             path: '/install/',
-            children: ['/install/command-line-quick-start']
+            children: [
+              'install/ipfs-desktop',
+              'install/command-line',
+              'install/server-infrastructure',
+              'install/ipfs-companion'
+            ]
           },
           {
             title: 'Recent releases',
