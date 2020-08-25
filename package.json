@@ -7,7 +7,7 @@
   "devDependencies": {
     "@centerforopenscience/markdown-it-video": "^1.0.0",
     "@vuepress/plugin-active-header-links": "^1.5.3",
-    "@vuepress/plugin-back-to-top": "^1.5.3",
+    "@vuepress/plugin-back-to-top": "^1.5.4",
     "@vuepress/plugin-google-analytics": "^1.5.3",
     "@vuepress/plugin-html-redirect": "^0.1.2",
     "@vuepress/plugin-last-updated": "^1.5.4",
