@@ -65,51 +65,50 @@ Example:
     https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.cf-ipfs.com/wiki/Vincent_van_Gogh.html
     https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.localhost:8080/wiki/
 
-::: tip Native support in go-ipfs 0.5+
+#### Native support in go-ipfs 0.5+
 
-[go-ipfs](https://dist.ipfs.io/#go-ipfs) provides native support for subdomain gateways on hostnames defined in [`Gateway.PublicGateways`](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) configuration map.
+[go-ipfs](https://dist.ipfs.io/#go-ipfs) provides native support for subdomain gateways on hostnames defined in the [`Gateway.PublicGateways`](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) configuration map.
 
 Learn more about daemon configuration for hosting a public gateway:
 
 - [`Gateway.PublicGateways` docs](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) for defining gateway behavior on specified hostnames
 - [`Gateway` recipes](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway-recipes) with ready to use one-liners for most common use cases
 
-:::
 
 ::: warning Known issues
 
-- Some browsers and other user agents force lowercase for the authority part of URLs, breaking case-sensitive CIDs before HTTP Gateway has a chance to read them.
+- Some browsers and other user agents force lowercase for the authority part of URLs, breaking case-sensitive CIDs before the HTTP gateway has a chance to read them
 - DNS label length is limited to 63 characters ([RFC 1034](https://tools.ietf.org/html/rfc1034#page-7))
 
-Due to these limitaitons, use of short, case-insensitive CIDv1 in subdomain context is advised.
-Base32 is the safe default. Less popular Base36 can be used for longer ED25519 libp2p keys.
+Due to these limitations, the use of short, case-insensitive CIDv1 in a subdomain context is advised.
+Base32 is the safe default; the less-popular Base36 can be used for longer ED25519 libp2p keys.
 
-See the next section to learn how to convert existing CID v0 to a DNS-safe representation.
+See the next section to learn how to convert an existing CIDv0 to a DNS-safe representation.
 
 :::
 
-::: tip CID conversion for subdomains
+#### CID conversion for subdomains
 
-If you have content identified by an older CID v0, there are easy ways to safely represent it as CID v1 for use in subdomains and other case-insensitive contexts.
+If you have content identified by an older CIDv0, there are easy ways to safely represent it as CIDv1 for use in subdomains and other case-insensitive contexts.
 
-#### Automatic – leverage the gateway in go-ipfs
+#### Automatic — leverage the gateway in go-ipfs
 
-**TL;DR:** using subdomain gateway as a drop-in replacement for a path one removes the need for manual CID conversion.
+**TL;DR:** Using a subdomain gateway as a drop-in replacement for a path one removes the need for manual CID conversion.
 
-Request for a content path sent to the gateway domain will return HTTP 301 redirect to a correct subdomain version, taking care of any necessary encoding conversion, if needed:
+Request for a content path sent to the gateway domain will return an HTTP 301 redirect to a correct subdomain version, taking care of any necessary encoding conversion if needed:
 
     https://<gateway-host>.tld/ipfs/<cid> -> https://<cidv1>.ipfs.<gateway-host>.tld/
 
-To illustrate, opening the CID v0 resource at [`https://dweb.link/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html`](https://dweb.link/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html)
-returns a redirect to a CID v1 representation at [`https://bafybeicgmdpvw4duutrmdxl4a7gc52sxyuk7nz5gby77afwdteh3jc5bqa.ipfs.dweb.link/wiki/Mars.html`](https://bafybeicgmdpvw4duutrmdxl4a7gc52sxyuk7nz5gby77afwdteh3jc5bqa.ipfs.dweb.link/wiki/Mars.html).
+To illustrate, opening the CIDv0 resource at [`https://dweb.link/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html`](https://dweb.link/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html)
+returns a redirect to a CIDv1 representation at [`https://bafybeicgmdpvw4duutrmdxl4a7gc52sxyuk7nz5gby77afwdteh3jc5bqa.ipfs.dweb.link/wiki/Mars.html`](https://bafybeicgmdpvw4duutrmdxl4a7gc52sxyuk7nz5gby77afwdteh3jc5bqa.ipfs.dweb.link/wiki/Mars.html).
 
-Gateway takes care of converting CID to case-insensitive encoding.
-The multihash in CID v1 is the same as in original CID v0.
+The gateway takes care of converting the CID to case-insensitive encoding.
+The multihash in CIDv1 is the same as in the original CIDv0.
 
-#### Manual – use CID website or commandline
+#### Manual — use cid.ipfs.io or the command line
 
 One can also do the conversion manually.
-To convert CID to Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) use [cid.ipfs.io](https://cid.ipfs.io) or a command line:
+To convert a CID to Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) use [cid.ipfs.io](https://cid.ipfs.io) or the command line:
 
 ```shell
 > ipfs cid base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
@@ -124,7 +123,6 @@ Base36 is suggested as a safer default for longer keys:
 k2k4r8jl0yz8qjgqbmc2cdu5hkqek5rj6flgnlkyywynci20j0iuyfuj
 ```
 
-:::
 
 ### DNSLink gateway
 
