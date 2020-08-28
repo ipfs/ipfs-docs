@@ -52,10 +52,6 @@ The [Inter-Planetary Version Control system (IPVC)](https://github.com/martindbp
 
 Berty is leading the effort to bring [IPFS to mobile](https://github.com/ipfs-shipyard/gomobile-ipfs). There are also some [guidelines](https://jkosem.gitbook.io/ipfs-mobile-guidelines/) made by professionals for the rise of IPFS on mobile.
 
-### Programming collaboration
-
-[Radicle](https://radicle.xyz/) is a code collaboration platform on top of IPFS.
-
 ## Store assets
 
 By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits. If your users don't use an IPFS client, you will still have content de-duplication out of the box. If they use it, your users will seed the content they use, decreasing the workload on your infrastructure, increase uptime of the service in case you go offline. Your users also won't contact your servers for the content they already have.
@@ -94,7 +90,11 @@ Thanks to recent improvement with IPFS Cluster, you can call for help to store y
 
 ### Video live-streaming
 
-Let your users stream from each other to remove the need for a server without overloading a popular streamer. You can get inspired by the [working prototype](https://github.com/tomeshnet/ipfs-live-streaming) of Toronto Mesh, or by the [experimentations](https://blog.fission.codes/experimenting-with-hls-video-streaming-and-ipfs/) of [Fission](https://fission.codes), a heavy player of the IPFS ecosystem. [Fleek](https://fleek.co) (previously known as Temporal) also did some [experimentation](https://medium.com/temporal-cloud/introducing-s3x-endless-ipfs-dynamic-possibilities-stream-videos-host-dynamic-websites-f0072127070f) using their Amazon S3/IPFS compatibility tool.
+Let your users stream from each other to remove the need for a server without overloading a popular streamer. You can get inspired by the working prototype of [Toronto Mesh](https://github.com/tomeshnet/ipfs-live-streaming), or by the [experimentations](https://blog.fission.codes/experimenting-with-hls-video-streaming-and-ipfs/) of [Fission](https://fission.codes). [Fleek](https://fleek.co) also did some [experimentation](https://medium.com/temporal-cloud/introducing-s3x-endless-ipfs-dynamic-possibilities-stream-videos-host-dynamic-websites-f0072127070f) using their Amazon S3/IPFS compatibility tool.
+
+### Decentralized robots
+
+The robotics company [KODA](https://www.koda9.com/) is developing the world's first decentralized robot dog called [Koda-9](https://www.whipsaw.com/thinking/new-era-of-household-robots/). It uses IPFS to store user data such as security footage.
 
 ## IPFS as infrastructure
 
@@ -111,6 +111,8 @@ A [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_netw
 ### Distributed package managers
 
 The [Node package manager (NPM)](https://www.npmjs.com/) is mirrored on IPFS. By using the dedicated client [npm-on-ipfs](https://github.com/ipfs-shipyard/npm-on-ipfs), packages are fetched from IPFS and distributed to other clients needing them. For example, a team working in the same building will fetch packages from each other, meaning less network traffic costs for the company.
+
+The developers of the [Nix package manager](https://nixos.org/) are working on integrating IPFS for distribution of binary packages and sources.
 
 ### Hosting software containers
 
@@ -148,7 +150,7 @@ If you are using Amazon Web Service's S3 connections for your cloud, you can use
 
 ### NextCloud integration
 
-JusticeNode has created [an extention](https://github.com/justicenode/files_external_ipfs) for the popular self-hosted cloud service NextCloud. This integration allows users to use IPFS as external storage.
+[JusticeNode has created an extension](https://github.com/justicenode/files_external_ipfs) for the popular self-hosted cloud service NextCloud. This integration allows users to use IPFS as external storage.
 
 ### Deploy your website on IPFS
 
@@ -174,6 +176,8 @@ This app for government-citizen communication was built in two days during the [
 
 [Haven](https://gethaven.app/) is a privacy-focused mobile app for shopping. Haven doesn't know its users' buying history, lets them pay with crypto, and doesn't take a cut on.
 
+[Origin](https://www.originprotocol.com/) is a blockchain-powered online commerce platform that stores data on IPFS. The [Brave](https://brave.com/) web browser has their own store on it to sell their swag.
+
 ### Torrent tracker hub
 
 [BitTorrent](https://en.wikipedia.org/wiki/Bittorrent) is a powerful P2P file-sharing technology, but it works better with the help of centralized _trackers_ helping users know who has what. Some people tried with some success to decentralize them. You can find their working prototype [here](https://github.com/urbanguacamole/torrent-paradise).
@@ -198,6 +202,10 @@ In a recent update, Wolfram let users store their computation or assets on IPFS.
 
 [Diffuse.sh](https://diffuse.sh/) is an online music player that you can connect to your music repositories to listen to it from anywhere. You can now connect it to IPFS repositories.
 
+### Decentralized autonomized organization (DAO)
+
+[Aragon](https://aragon.org/), a service for creating DAOs, uses IPFS to store its data.
+
 ## Decentralize the Web itself
 
 Some core pieces of the web are still centralized, making it more prone to break or being censored. IPFS can help and make the web more resilient.
@@ -213,10 +221,6 @@ Thanks to de-duplication, IPFS is a powerful tool for archiving the web. The [In
 ### Fight censorship
 
 Wikipedia has not been accessible in Turkey for a few years. The company behind IPFS, Protocol Labs, is hosting a mirror of Wikipedia on IPFS. See the original [blog post](https://blog.ipfs.io/24-uncensorable-wikipedia/) and the [project code](https://github.com/ipfs/distributed-wikipedia-mirror) for more information.
-
-### Alternative ISP
-
-[Althea](https://althea.net/about) is building an alternative [Internet Service Provider](https://en.wikipedia.org/wiki/Internet_service_provider) (ISP) in the US as the low level of competition brings the quality of service down and prices up. Althea especially targets rural areas, where the coverage by traditional ISP is low.
 
 ## Blockchain use-cases
 
@@ -268,6 +272,10 @@ With IPFS and a blockchain, you can prove ownership of a file at a certain time 
 
 [Augur](https://www.augur.net/) is a blockchain and decentralized market where you can bet on anything or request prediction from the crowd wisdom. Like so many blockchain-based apps, the data is hosted on IPFS.
 
+### Decentralized weather data
+
+The weather risk marketplace [Arbol](https://www.arbolmarket.com/) relies on blockchain technology to track and validate weather data. [Arbol uses IPFS](https://www.arbolmarket.com/maintaining-data-integrity-at-arbol/) to store multiple terabytes of verified weather data without fear of tampering.
+
 ## Decentralized Identity
 
 [Decentralized Identity](https://en.wikipedia.org/wiki/Decentralized_Identifiers) is the concept of storing all your personal data on your devices rather than let every service you use store a partial copy of it. You having control of your data means that you decide which app has access to what, that you only fill your information once, and that you can revoke access. Decentralized identity is a hot topic, and IPFS is one of the core technologies a lot of engineers build around. The identity wallet [Nomios](https://nomios.io/) shared [some thoughts](https://docs.google.com/presentation/d/1HbydOI0w-T_FY23zCACAyHmzDq1ZvyG2tklpPSm6OQQ/edit#slide=id.g5c88e8f60d_0_11) about decentralized identity general during the [IPFS Camp 2019](https://github.com/ipfs/camp).
@@ -287,10 +295,6 @@ With IPFS and a blockchain, you can prove ownership of a file at a certain time 
 ### Ceramic Protocol
 
 The [Ceramic Protocol](https://www.ceramic.network/) is another proposition for decentralized identity on IPFS, along with a complete protocol for data and document exchanges.
-
-### Nomios
-
-[Nomios](https://nomios.io/) is another promising solution that started to work with IPFS from the start. Check out their website for more information.
 
 ## Non-implemented use cases
 
