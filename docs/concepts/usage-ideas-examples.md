@@ -150,7 +150,7 @@ If you are using Amazon Web Service's S3 connections for your cloud, you can use
 
 ### NextCloud integration
 
-JusticeNode has created [an Extension](https://github.com/justicenode/files_external_ipfs) for the popular self-hosted cloud service NextCloud. This integration allows users to use IPFS as external storage.
+[JusticeNode has created an extension](https://github.com/justicenode/files_external_ipfs) for the popular self-hosted cloud service NextCloud. This integration allows users to use IPFS as external storage.
 
 ### Deploy your website on IPFS
 
