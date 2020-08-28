@@ -90,7 +90,7 @@ Thanks to recent improvement with IPFS Cluster, you can call for help to store y
 
 ### Video live-streaming
 
-Let your users stream from each other to remove the need for a server without overloading a popular streamer. You can get inspired by the [working prototype](https://github.com/tomeshnet/ipfs-live-streaming) of Toronto Mesh, or by the [experimentations](https://blog.fission.codes/experimenting-with-hls-video-streaming-and-ipfs/) of [Fission](https://fission.codes), a heavy player of the IPFS ecosystem. [Fleek](https://fleek.co) (previously known as Terminal.co) also did some [experimentation](https://medium.com/temporal-cloud/introducing-s3x-endless-ipfs-dynamic-possibilities-stream-videos-host-dynamic-websites-f0072127070f) using their Amazon S3/IPFS compatibility tool.
+Let your users stream from each other to remove the need for a server without overloading a popular streamer. You can get inspired by the working prototype of [Toronto Mesh](https://github.com/tomeshnet/ipfs-live-streaming), or by the [experimentations](https://blog.fission.codes/experimenting-with-hls-video-streaming-and-ipfs/) of [Fission](https://fission.codes). [Fleek](https://fleek.co) also did some [experimentation](https://medium.com/temporal-cloud/introducing-s3x-endless-ipfs-dynamic-possibilities-stream-videos-host-dynamic-websites-f0072127070f) using their Amazon S3/IPFS compatibility tool.
 
 ### Decentralized robots
 
