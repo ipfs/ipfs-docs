@@ -6,26 +6,24 @@ description: Explore some helpful use cases, ideas, and examples for the InterPl
 # Case study: Arbol
 
 ::: callout
-**"Working with IPFS to bridge our visions for a decentralized future has been incredibly rewarding. As IoTeX looks to further decentralize our tech stack and products, IPFS has been an amazing partner to expand the capabilities and security of IoTeX devices like Ucam. Our work on decentralized IoT firmware updates via IPFS is just a start &mdash; from storage to identity to data marketplaces, we look forward to working with IPFS and Filecoin to build full-stack decentralized solutions for IoT."**
+**"When it comes to data security versus ease of access, it’s usually a trade-off. The fact that IPFS doesn’t compromise on either is awesome – and it feels great to ditch Amazon S3 buckets for open source."**
 
-_&mdash; Raullen Chai, CEO, IoTeX_
+_&mdash; Ben Andre, CTO, Arbol_
 :::
 
 ## Overview
 
 ::: right
-<img src="./images/case-studies/logo-iotex.png" alt="IoTeX logo" width="220">
+<img src="./images/case-studies/logo-arbol.svg" alt="Arbol logo" width="220">
 :::
 
-[IoTeX](https://iotex.io/), a privacy-centric blockchain platform for the Internet of Things (IoT), uses IPFS to deliver firmware updates for [Ucam](https://ucam.iotex.io/), a privacy-protecting surveillance camera for the consumer market. Ucam is using IPFS' decentralized storage network over HTTP by means of third-party pinning service [Pinata](https://pinata.cloud/). This enables IoTeX to provide a hybrid approach that's on the vanguard of IoT technology &mdash; integrating consumer electronics, a blockchain-based identity, and smart contracts along with IPFS-based distributed storage and the option to use conventional cloud storage if needed.
+[Arbol](https://www.arbolmarket.com/) is a software platform that connects agricultural entities and other weather-exposed interests with capital providers to insure and protect against weather-related risks. Arbol’s platform sells contracts for parametric weather protection agreements. Arbol’s parametric marketplace is an innovative, data-driven approach to risk management that cuts out the usual insurance claims process of making loss assessments on the ground. Instead, it relies on data indexes to determine payouts and doesn’t require a defined loss to be indemnified. Arbol’s platform combines parametric weather protection with blockchain-based smart contracts to provide cost-efficient, automated, and user-defined weather-related risk hedging. As with traditional crop insurance and similar legacy products, end users purchase assurance that they’ll be financially protected in the case of adverse weather — but with Arbol, end users are paid automatically if those conditions occur, as defined by the contract and measured by local meteorological observations tracked by Arbol’s data sources.
 
-Why use IPFS specifically for delivering firmware? Unlike software updates, firmware updates have more power to modify critical hardware functions and keep malicious code hidden from virus scans. The IoTeX firmware validation process for Ucam addresses one of the major risks of today's IoT devices: the potential for malware to hijack the hardware itself. IoTeX's solution for firmware delivery uses a smart contract to enable devices to validate that firmware comes only from the authorized manufacturer or another authorized account.
+To build the data indexes that Arbol uses to handle its contracts, Arbol aggregates and standardizes billions of data files compromising decades of weather data from a variety of sources. Arbol stores all of that data on IPFS. Arbol uses IPFS because it offers the transparent, immutable data storage that is essential to a heavily data-driven service like Arbol.
 
-Security vulnerabilities have long been a major hurdle for IoT devices. For consumers, this is particularly worrying with in-home cameras, given their glimpse into individuals' and families' personal space. IoTeX's IPFS-based firmware delivery system offers a major differentiation point versus other IoT cameras on the market. IoTeX Head of Business Development Larry Pang explains: "The hardware manufacturer of Ucam, Tenvis, identified privacy and user-centricity as a major trend when it comes to devices in people's homes. [Tenvis] came to us to enhance their cameras with the next big feature for security cameras: Privacy."
+Arbol is a global platform with programs spanning countries. The US is Arbol’s core initial area of focus with expansion underway to new regions and industries around the world. Arbol currently provides contracts for managing the risks of weather exposure in the energy and agriculture sectors, and features both bespoke and pre-designed protection agreements for clients across industries and sizes. Their clients range from small coffee farms to major agribusinesses and power producers.
 
-Like any IoT device, the Ucam surveillance camera employs a complex tech stack, which means that to create a fully privacy-preserving solution, several different layers of technology need to be addressed. However, firmware delivery is one of the most impactful &mdash; particularly because firmware delivery via conventional cloud storage leaves a lot to be desired. The biggest concern with using opaque, centralized cloud services is that there is no visibility into what happens at the storage nodes. If conventional cloud storage is tampered with or hacked, there is no way to track or discover the changes.
-
-Combine this innovative firmware delivery mechanism with IoTeX's use of blockchain, and there's a lot happening in a small package. While IoT has long been touted as an important use case for blockchain, IoTeX is one of the first companies to actually combine a blockchain-based, decentralized (self-sovereign) identity, smart contracts, and distributed storage successfully in a mass-market consumer device. And while IoTeX's use of IPFS is currently for firmware delivery, this system is designed to be extended in the future for other sensitive data to be stored, retrieved, or delivered by a Ucam device. Using IPFS for firmware is a first step toward offering Ucam users the option of storing all of their data using IPFS.
+To sum up, Arbol’s platform is a risk marketplace where end-users can get competitively priced risk management solutions, and where capital providers can benefit from access to a lucrative and underdeveloped weather risk market. And because Arbol uses IPFS for all of its data storage needs, Arbol’s clients and underwriting partners can trust that the data Arbol uses to determine price and payouts for its contracts is untamperable and secure.
 
 ::: callout
 **"IPFS has a great team of people with ambition and a strong desire to change the world! IPFS and Filecoin perfectly fit into IoTeX's stack for continuously storing and processing billions of IoT devices around the world in a privacy-preserving and trustworthy way. In addition, we found the transparency level of IPFS high &mdash; the open code and docs are really helpful. Love it."**
@@ -33,84 +31,95 @@ Combine this innovative firmware delivery mechanism with IoTeX's use of blockcha
 _&mdash; Raullen Chai, CEO, IoTeX_
 :::
 
-### IoTeX by the numbers
+### Arbol by the numbers
 
 <NumberBlock :items="[
-  {value: '~5s', text:'global firmware download time (6.2MB file)'},
-  {value: '1.5x', text: 'faster download time than Amazon S3'},
-  {value: '&gt;500', text: 'pre-launch Ucam owners updating firmware weekly'}
+  {value: '1T', text:'weather-related data points hosted on IPFS'},
+  {value: '1M', text: 'hashes generated on Arbol data every day'},
+  {value: '40', text: 'years of high-resolution climate data'},
+  {value: '200GB', text: 'average Arbol dataset size'}
 ]" />
 
 ## The story
 
-Security cameras, sensors, and other in-home devices are quickly becoming ubiquitous in consumer settings, vastly increasing the potential surface area for hacks of people's home networks. "This is a very sensitive topic," says IoTeX Head of Business Development Larry Pang. "This device is for indoor use. It's going to be in your living room."
+Arbol Inc. began on Wall Street, where founder and CEO Siddhartha Jha worked as a commodity trader. What Jha saw there was a problem without a solution. He encountered a huge and ever-growing market demand for managing weather-related risks to supply chains, farming industries, and the energy sector. But there wasn’t a viable, efficient, and cost-effective weather risk market to meet that demand. Traditional crop insurance was plagued by inefficiencies and high cost ceilings, with insurance providers forced to charge high premiums that only large corporations could afford. And while many more efficient parametric insurance solutions were available on the market, these insurance solutions themselves were often saddled with high overhead and bureaucratic waste. As a result, most small businesses and local farmers were stuck without access to ways to offset their weather-related risks.
 
-At the same time, manufacturers of IoT security products are looking for ways to differentiate. "This industry is hyper-saturated," says Pang. "If you look up 'security camera' on Amazon, there are more than 10,000 products. What we've decided to do is to take Tenvis' multi-generational camera hardware and power it with our decentralized technology. The purpose of this camera is that it's going to be private, which means everything is going to be owned by the user." To that end, IoTeX plans in the longer term to use IPFS for storage of rolling data for security cameras &mdash; firmware is just the start.
+Arbol aims to change that by bringing newfound transparency, efficiency, and data-driven objectivity to the weather risk market, ensuring that any business of any size can get the appropriate protection they need to manage their level of weather-related risk.
 
-When it comes to delivering firmware, IoTex's IPFS-based solution provides three layers of protection:
+Arbol’s platform achieves this by providing a novel mechanism for weather-exposed businesses to connect with capital providers. The key to Arbol’s approach is flexible financial derivatives that leverage the power of big data and machine learning to provide parametric risk protection at low-cost. Parametric structures determine payouts based on data-driven metrics strongly correlated with financial loss.
 
-- Only the operator with a valid IoTeX decentralized identity (DID) key can update the rollout policies for firmware
-- Firmware files' validity is proven through a combination of hashed IPFS [content identifiers](https://docs.ipfs.io/concepts/content-addressing/#content-addressing-and-cids) (CIDs), an IoTeX DID, and [IPNS](https://docs.ipfs.io/concepts/ipns/)
-- The Ucam device itself locally verifies that the firmware codesign is valid
+With Arbol’s parametric approach, a client pays to hedge against a specific weather-related event, such as yearly deviation in rainfall amounts or temperature. After deciding on a premium and selecting a payout amount, the client then relies on Arbol’s software to handle the rest. Because parametric structures are objective and data-driven, they can achieve a level of precision, reliability and cost-effectiveness that traditional insurance cannot. In fact, one of Arbol’s key benefits is that it allows for hyper-local weather protection for managing user-specific levels of risk.
 
-Tenvis, Ucam's manufacturer, makes firmware available on IPFS using the Pinata pinning service. The firmware query and retrieval process works as follows:
+Arbol’s approach also improves upon standard parametric insurance by combining the precision and flexibility of parametric insurance with the security, transparency, and efficiency of blockchain technology. Many of Arbol’s protection agreement contracts are executed as smart contracts on the Ethereum blockchain. These smart contracts automatically deliver payouts to end-users as soon as the relevant weather-related event occurs.
 
-- Each Ucam device queries a smart contract on a daily basis during its idle time
-- The device checks the latest version on IPFS and compares it to the firmware that is running on the camera
-- If the camera detects a more recent upgrade to the firmware, it checks the codesign, validates the DID of the uploading entity, and compares it to the valid manufacturer DID
-- If the firmware is confirmed from a trusted source, the camera installs the new update
+Delivering weather risk management solutions through blockchain-based contracts like this eliminates fraud, corruption, bureaucratic overhead, and costly payout delay. It also brings the benefits of decentralization and peer-to-peer transactions. Arbol users don’t need to rely on Arbol as a financial middleman; with Arbol’s smart contracts, funds are locked between the two parties of end-users and capital providers and Arbol doesn’t control the transfer of funds.
 
-IoTeX is using a sophisticated implementation of the [DID specification](https://www.w3.org/TR/did-core/) that includes every agent in the system — not only does every individual human have a self-sovereign identity with a cryptographic signature, but all devices, vendors, and other entities also each have their own identity. This DID is a unique identifier that can be validated on the IoTeX blockchain as belonging to the verified device, individual, or company that has the key to that unique identifier. For firmware updates, this means that IoTeX facilitates manufacturers to codesign legitimate firmware based on the DID and ensures devices can only download legitimate ones. The firmware updates themselves are stored using IPFS. Each firmware update includes a DID of the entity that uploaded the firmware, so the device can confirm that the update comes from a verifiable and recognizable source based on the DID issued by IoTeX. When a Ucam device inspects an available firmware update, they refer to the IoTeX blockchain to validate that these files were stored on IPFS by a trusted source based on the DID. By creating a validation system that guarantees the validity of a particular firmware update, IoTeX can prevent hackers from taking over cameras with rogue firmware updates.
+Smart contracts, however, suffer from the "oracle problem." Smart contracts automatically and trustlessly execute contracts. But they need good data, delivered by a data "oracle," to function well. It doesn’t matter how secure, transparent, and publicly verifiable a blockchain is. Without accurate, reliable and immutable datasets, blockchain-based smart contracts are easily biased, compromised, or otherwise manipulated. For Arbol, that’s where IPFS comes into play.
 
-The fact that IPFS provides unique, hashed CIDs in conjunction with updateable human-readable [InterPlanetary Name System](https://docs.ipfs.io/concepts/ipns/) (IPNS) addresses also provides unique advantages for ensuring provenance and file integrity. The IPNS addressing system prevents tampering with the URL, meaning that the Ucam is always correctly routed to valid firmware.
-
-"Deploying a maliciously modified version of the firmware to devices to exploit or control them is a real threat in IoT space," says IoTeX CEO Raullen Chai. "Provenance protection proves who originally issues the firmware, while integrity protection makes sure the firmware itself is not tampered by anyone sitting in the middle. IPFS's content hash provides natural integrity protection, while IPNS's resolution capability provides the guarantee for the provenance of firmware."
-
-In addition to these security benefits, the IoTeX team also discovered that the way that IPFS propagates files over the network offers a unique way to control the rollout pace of new firmware. Firmware updates tend to have a pattern of being picked up slowly at first, with an increase in downloads building slowly towards a peak of demand two to three weeks after the initial firmware release, and then a slowdown after the peak. When a new firmware update is released, almost nobody wants an earlier version. IPFS naturally provides elasticity for this pattern of buildup and scale-down of demand. More nodes provide content in times of high demand, and garbage collection on IPFS nodes discards content that hasn't been used for a while &mdash; meaning that IPFS automatically provides storage space scaling based on utilization.
-
-For releasing and shipping new firmware updates, IoTeX describes their approach as defining a rollout geo-fence to "warm up the IPFS cache". The initial rollout goes to a set of trusted canary devices in a specific geolocation, and then IPFS nodes in other locations pick up the latest firmware and make it available for other Ucam units to upgrade. When a Ucam camera initiates a firmware update, Pinata facilitates delivery from nearby IPFS nodes, resulting in rapid response and download times that are even faster than a traditional CDN-style configuration; in fact, IoTex estimates an average 1.5x faster download time than that provided by Amazon S3.
-
-Other than the use of the cryptographic key, the manufacturer has the same experience using IPFS than they would serving official firmware from a centralized cloud service &mdash; but with the benefit of end-to-end transparency that the IoTex team believes is essential over the long run. "We consider maintaining end-to-end trust throughout the entire data lifecycle as you perform different activities on [data]," says Pang. "Putting it into a centralized system chops that end-to-end trust right there, because you have no way to prove that behind the scenes it wasn't manipulated."
+With IPFS, Arbol can ensure the integrity and public verifiability of its datasets. IPFS’s content-addressing protocol protects Arbol’s datasets from the potential threat of manipulation or tampering from malicious agents looking to defraud the system, something that traditional location addressing using centralized server architecture cannot guarantee. Smart contracts pointing to specific, immutable IPFS content hashes, rather than to data locations that could be tampered with, can be relied upon for their use of unmanipulated data.
 
 ::: callout
-**"If you think about all these software hacks of today, they are not immediately apparent. These are like sleeper cells that live inside of your computer for months on end. And by that time, they've collected all of your keystrokes, all of your activity, all this information. Who knows what access that your computer has to other services? Just imagine that being put into your home network — an entryway to the home system through a sleeper cell in your camera or any other device in your home. There are many layers of technology that need to be secured, and firmware protection is just a start."**
+**"IPFS is very much at the heart of everything we do at Arbol. IPFS serves as our independently verifiable data store for all of the weather data associated with the contracts we sell. It imbues Arbol’s platform with the essential principles of decentralization, data security, and public verifiability." **
 
-_&mdash; Larry Pang, Head of Business Development, IoTeX_
+_&mdash; Ben Andre, CTO, Arbol_
 :::
 
-In an age when software or firmware updates can mean risking loss of control for hardware running from the smallest IoT device to something as large a self-driving car, firmware plays an absolutely critical role for security — which is why the IoTeX team is beginning with protecting firmware updates, not just for cameras, but for any IoT device. To that end, the team has created a generalized library that is applicable to firmware updates for connected devices of any variety.
-
-Additionally, because IoTeX's sophisticated use of DID means every entity has its own unique identifier, every device and individual in the system develops its own reputation. Over time, it will be possible for devices to understand and make decisions about the most reputable service providers for any type of file acquisition or file storage.
-
-Pang points out that hackers don't need to use sophisticated methods to get malware installed on people's systems. It's fairly simple to get people to click on a malicious link, or to find devices without the latest security updates. "Going to the right sources for what you need is going to be a trend," says Pang. "It's no longer trust by association, but trust by doing your own research."
+Arbol builds its data indexes on IPFS by drawing on large weather-related datasets from a variety of private and public sources, including prominent U.S. government institutions like NASA and the National Oceanic and Atmospheric Administration (NOAA). These sources track weather data like yearly rainfall amounts, temperature fluctuations, wind speeds, and more. While a lot of the data Arbol uses is already publicly available, it isn’t easily accessible; much of the data is stored in outdated formats and very little of it is organized into an easily readable structure. Arbol’s data indexes process, correlate, and package this data so that it is readily available for use in the weather risk market. And by putting that data onto IPFS, Arbol also ensures that it always has a permanent and decentralized home.
 
 ## IPFS benefits
 
-In terms of concrete benefits, the IoTeX team cites the following as key wins of using IPFS:
+Arbol’s business model hinges upon the benefits afforded by IPFS — without its immutable addressing and inherent data verifiability, the benefits Arbol provides would be impossible to achieve in a cost-effective and efficient way. As a whole, IPFS is critical to Arbol’s service model by providing the following:
 
-- **Security:** Prevents man-in-the-middle risks and rogue firmware attacks that can be used to steal data and credentials
-- **Trust:** Verifies and validates distributors of firmware, enabling hardware owners to update with full confidence
-- **Performance:** 1.5 times faster than comparable AWS S3 times for firmware downloads
-- **Reliability:** Distributed storage brings firmware updates closer to the cameras themselves, boosting speed and reliability of over-the-air (OTA) updates with no increase in infrastructure costs
-- **Version control:** Automatic availability scaling for high-demand files, plus automatic discarding of old versions that are no longer in demand
-- **Cost-effectiveness:** Projected lowered costs and competitive pricing compared to cloud services such as AWS, particularly after future integration with Filecoin
-- **Multi-functionality:** Future ability to use Filecoin alongside IPFS to store camera data, resulting both in enhanced user privacy and competitive pricing
-- **Interoperability and flexibility:** The open nature of IPFS allows for multiple service providers and creates the future potential for different service level agreements, add-ons, or pricing models
+- **Immutable addressing:** Because all data stored via IPFS is referenced and accessed via unique content identifiers (CIDs), any change to a data item means it receives a new CID exclusive to that revision. It’s impossible to change data without changing a CID.
 
-## How IoTeX uses IPFS
+- **Data verifiability:** Because contracts on Arbol’s network are linked to content-addressed data, contracts are locked to a specific, verifiably unchanged, version of that data. Parametric weather risk management, especially in the use case of Arbol’s smart-contract facilitated protection agreements, absolutely depends upon user agreement about and trust in the data Arbol uses.
 
-For delivery of firmware, IoTeX relies upon the Pinata pinning service for content-addressed data persistence and delivery. In addition, the team has built a generalized library for pushing firmware updates to connected devices.
+- **Decentralized data delivery:** Arbol works with massive datasets comprising billions of files and terabytes of information. IPFS accommodates Arbol’s methodology for publishing and adding to large datasets while still enabling Arbol to release and synchronize these datasets via a decentralized storage network.
 
-As IoTeX's use of and integration with IPFS expands over time beyond firmware delivery, the Ucam devices themselves (or any other IoTeX IoT device) will act as individual IPFS nodes, facilitating storage and delivery of the data an individual device collects, stores, or delivers.
+## How Arbol uses IPFS
 
-## IoTeX + IPFS: the future
+Once it has been decided that a dataset meets the criteria for Arbol’s purposes, it is time to add it to Arbol’s IPFS pipeline. This pipeline consists of a multi-stage process outlined below.
 
-The IoTeX team is planning to expand its use of IPFS and Filecoin both with the Ucam and other devices. In addition to their future plans with Ucam, the team is in discussions with out-of-home surveillance camera manufacturers and have also been working with a supplier of "trusted tracker" devices that can measure everything from geolocation to temperature, light, motion, and vibrational shock. Combining such multifunctional devices with big-data processing creates tremendous potential for data stores that are useful in a variety of applications &mdash; as well as a significant opportunity for IoT device owners to monetize their data while still preserving their personal privacy. IoTeX sees IPFS, particularly in tandem with Filecoin, as having the potential to give people sovereignty over their data while also benefiting from its use.
+**NEED DIAGRAM HERE -- TK**
 
-For Ucam users specifically, IoTeX currently offers an AWS-based that allows users to store data for a few days or weeks at a nominal fee, but many users are already asking for storage that better aligns with their privacy goals. To achieve this, IoTeX plans to use IPFS in combination with Filecoin. Furthermore, an IPFS/Filecoin combo has the potential to unlock competitive pricing for long-term storage of video data &mdash; a known need for individuals and companies alike who want to retain video footage for months or years for uses such as evidence for liability and insurance. Traditional cloud storage of such large amounts of video data can be cost-prohibitive, but Filecoin storage has the potential to make long-term storage much more affordable.
+- **Query/release:** This stage is dependent on whether the dataset is being added via a "push" or "pull" method. If a dataset is being uploaded to Arbol’s network directly, the dataset maintainer initiates this stage themself as part of their data release procedure. If Arbol or some other entity is uploading to the network independently of the dataset maintainer, then the dataset needs to be continuously queried to determine when new data has come out. Many data providers follow a regular schedule so querying can be configured accordingly.
 
-The IoTeX team also sees the possibilities provided by IPFS as part of a larger framework of privacy- and security-oriented solutions. As IoT devices become ubiquitous, IoTeX stands at the forefront of implementing solutions that can provide verifiable privacy and higher levels of security than centralized services, regardless of the use case of an individual IoT device.
+- **Parsing:** Arbol parses through weather data providers’ large data files, reindexes them on geolocation rather than time, and condenses the format, which allows for easier and faster querying of the data for Arbol’s main use case of creating location-specific weather contracts.
 
-"It's always been top of mind for us to connect reputable service providers to the IoTeX network," explains Pang. "IPFS provides a very horizontal service that all the blockchains need."
+- **Interpretation:** Certain datasets, like weather station data, include holes or apparent errors in certain stations, so Arbol interprets the data when needed by running a statistical "clean and fill" process.
 
-_Note: Metrics and other details in this case study are current as of August 2020. Details may change in the interim._
+- **Compression:** This is the final step before the data is posted to IPFS. Arbol compresses each file to save on disk space and reduce sync time.
+
+- **Hashing:** Arbol uses the stock ‘ipfs recursive add’ operation for hashing, as well as the experimental `no-copy` IPFS feature. This feature cuts down on the disk space used by the hashing node, especially on the initial build of the dataset. Without it, the entire 100GB+ dataset would be copied into the local IPFS datastore directory. This can create problems, since ‘flatfs’, the default system datastore, can start to run out of index nodes (the software representation of disk locations) after a few million files, leading to hashing failure. Arbol is also experimenting with Badger (`badgerds`), an alternative to flat file storage (`flatfs`), in collaboration with the IPFS core team as the core team considers incorporating this change into IPFS itself. Both parsing and hashing nodes are created and destroyed as needed.
+
+- **Verification:** To ensure that no errors were introduced to the files during the parsing stage, queries are made to the source data files and compared against the results of an identical query made to the parsed, hashed data.
+
+- **Publishing:** Once a hash has been verified, it is published to the Arbol network and available for use in contracts.
+
+- **Pinning and syncing:** After a new hash has been added, Arbol’s network of IPFS nodes runs the standard `ipfs recursive pin` command on it. Arbol currently maintains only several nodes: A single gateway node that bootstraps with all the parsing/hashing nodes, and a few big nodes that serve as the main data backup. However, data is also regularly synced with "cold nodes" that are kept offline for the most part, as well as on individual IPFS nodes on Arbol’s developers’ and agronomists’ personal computers.
+
+- **Garbage collection:** Some older Arbol datasets require garbage collection whenever new data is added, due to a legacy method of overwriting old hashes by new hashes. However, all of Arbol's newer datasets use an architecture where old hashes are preserved so that new posts reference the previous post. In this way a linked list of hashes is created, with each hash containing a reference to the previous hash. As the length of the list becomes computationally burdensome, the system consolidates intermediate nodes and adds a new route to the head, creating a DAG structure. Heads are always stored in a master heads.json reference file.
+
+### The tooling
+
+In addition to out-of-the-box `go-ipfs`, Arbol relies heavily on custom written libraries and a number of weather-specialized libraries such as netCDF4 and rasterio. Additionally, Docker and Digital Ocean are important tools in Arbol’s toolbox when it comes to continuous integration and deployment.
+
+Arbol uses a command server to query dataset release pages for new content. When content is released for new datasets, the command server spins up a Digital Ocean Droplet (a Linux-based virtual machine) and deploys a parsing/interpretation/compression/hashing/verification Docker container to it. This is done using a custom-built library that Arbol describes as "homebrew Lambda."
+
+A conventional cloud service like AWS Lambda has a variety of disk storage, CPU, and RAM limitations that make it unable to handle the scale and complexity of Arbol’s pipeline. For this reason, Arbol has created their own tool. Arbol’s custom library is designed to pass in the Docker image, entry point, and manifest (RAM, CPU, etc.) to create an appropriate-spec droplet, put the Docker image on it, kick off the entry point (in this case, the parsing stage), and return the result. This custom Docker container then builds the new content. While it is being built, the command server polls the container to get the job status. When it is complete, the command server syncs the result via `ipfs pin` and destroys the droplet — meaning that resource-heavy droplets only need to be online during the initial add/pin process. Once the result has been pinned to the command server, the new ipfs hash is written to heads.json. A daemon that monitors heads.json for changes triggers propagation to the wider network. However, a client can also access the data as soon as the relevant hashes are written to heads.json.
+
+Data is accessed by custom client libraries currently implemented in JavaScript (using js-ipfs) and Python. The client libraries make querying easy by accepting human readable queries and converting them to hashes by first accessing the metadata file for the relevant dataset and then getting the head hash from heads.json before returning the result in an appropriate data structure for the given language. There are also useful utilities like a "snap to grid" function for finding the closest valid latitude/longitude for a given dataset, as well as functions for averaging, computing things for leap years, and more.
+
+All of these packages, along with the Docker libraries for building hashes from data and the posted IPFS content itself, constitute a suite of tools that Arbol plans to open source soon under the moniker "dWeather" (decentralized Weather). With dWeather, Arbol plans to make its detailed internal methodology publicly auditable, shareable, and distributable. By doing so, Arbol will empower anyone in the world to learn from and utilize otherwise esoteric and hard-to-access weather data. Ultimately, Arbol thinks that incorporating the values of open source into its platform will benefit both their customers, the scientific projects around weather data, and the wider world, as well as the broader IPFS ecosystem.
+
+## Arbol + IPFS: the future
+
+dWeather is an important upcoming initiative for Arbol. Its suite of open source tools for standardizing and building content addressable data from a variety of weather data authorities will be aimed primarily at scientists, academics, government agencies, and smaller weather data collectors. dWeather will include a robust set of packages and repositories — code for the entire ingestion pipeline, as well as the various client libraries for accessing data using IPFS.
+
+"We see dWeather as an exciting way to cut down on the extremely esoteric weather data hosting schema and architectures that well-meaning government and scientific entities have basically been using unchanged since the nineties," adds Andre. "Widespread adoption of dWeather will not only aid Arbol by making data more secure, it will also make these rich datasets (the earliest of which go back to the late 1800s!) both more available to the wider public and more resilient against errors, loss, attacks, and service interruption."
+
+Arbol also has plans to integrate dWeather with a soon-to-be announced service that will allow participants to monetize their data collection and weather forecasts if they wish, opening up a new, accuracy-rated market for independent data providers to offer specialized, reputable weather data and forecasts.
+
+Another exciting initiative is the open sourcing and expansion of the interpretation stage of the pipeline. Private companies currently charge very high fees to access data that has been interpreted using blackboxed algorithms — in contrast, Arbol intends to open up that interpretation stage, running its methods in a publicly auditable execution environment with the results posted to the dWeather network (powered by IPFS, of course!), making this information free and available to all. Auditable interpretation is a powerful concept that will cut down on work for underwriters and lower prices for contract participants.
+
+_Note: Metrics and other details in this case study are current as of September 2020. Details may change in the interim._
