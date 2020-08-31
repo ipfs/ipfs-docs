@@ -6,7 +6,7 @@ description: Explore some helpful use cases, ideas, and examples for the InterPl
 # Case study: Arbol
 
 ::: callout
-**"When it comes to data security versus ease of access, it's usually a trade-off. The fact that IPFS doesn't compromise on either is awesome – and it feels great to ditch Amazon S3 buckets for open source."**
+**"When it comes to data security versus ease of access, it's usually a trade-off. The fact that IPFS doesn't compromise on either is awesome — and it feels great to ditch Amazon S3 buckets for open source."**
 
 _&mdash; Ben Andre, CTO, Arbol_
 :::
@@ -17,19 +17,13 @@ _&mdash; Ben Andre, CTO, Arbol_
 <img src="./images/case-studies/logo-arbol.svg" alt="Arbol logo" width="220">
 :::
 
-[Arbol](https://www.arbolmarket.com/) is a software platform that connects agricultural entities and other weather-exposed interests with capital providers to insure and protect against weather-related risks. Arbol's platform sells contracts for parametric weather protection agreements. Arbol's parametric marketplace is an innovative, data-driven approach to risk management that cuts out the usual insurance claims process of making loss assessments on the ground. Instead, it relies on data indexes to determine payouts and doesn't require a defined loss to be indemnified. Arbol's platform combines parametric weather protection with blockchain-based smart contracts to provide cost-efficient, automated, and user-defined weather-related risk hedging. As with traditional crop insurance and similar legacy products, end users purchase assurance that they'll be financially protected in the case of adverse weather — but with Arbol, end users are paid automatically if those conditions occur, as defined by the contract and measured by local meteorological observations tracked by Arbol's data sources.
+[Arbol](https://www.arbolmarket.com/) is a software platform that connects agricultural entities and other weather-dependent parties with capital providers to insure and protect against weather-related risks. Arbol's platform sells contracts for parametric weather protection agreements in a marketplace that's an innovative, data-driven approach to risk management, cutting out the usual legacy insurance claims process of making loss assessments on the ground. Instead, Arbol relies on tamper-proof data indexes to determine payouts, and doesn't require a defined loss to be indemnified. Arbol's platform combines parametric weather protection with blockchain-based smart contracts to provide cost-efficient, automated, and user-defined weather-related risk hedging. As with traditional crop insurance and similar legacy products, end users purchase assurance that they'll be financially protected in the case of adverse weather — but with Arbol, these end users are paid automatically if adverse conditions occur, as defined by the contract and measured by local meteorological observations tracked by Arbol's data sources.
 
-To build the data indexes that Arbol uses to handle its contracts, Arbol aggregates and standardizes billions of data files compromising decades of weather data from a variety of sources. Arbol stores all of that data on IPFS. Arbol uses IPFS because it offers the transparent, immutable data storage that is essential to a heavily data-driven service like Arbol.
+To build the data indexes that Arbol uses to handle its contracts, the team aggregates and standardizes billions of data files comprising decades of weather information from a wide range of reputable sources — all of which is stored on IPFS. IPFS is critical to Arbol's service model due to the inherent verifiability provided by its content-addressed architecture, as well as a decentralized data delivery model that facilitates Arbol's day-to-day aggregation, synchronization, and distribution of massive amounts of data.
 
-Arbol is a global platform with programs spanning countries. The US is Arbol's core initial area of focus with expansion underway to new regions and industries around the world. Arbol currently provides contracts for managing the risks of weather exposure in the energy and agriculture sectors, and features both bespoke and pre-designed protection agreements for clients across industries and sizes. Their clients range from small coffee farms to major agribusinesses and power producers.
+While United States agribusiness has been Arbol's initial area of focus, the team has built a globally capable platform, with expansion underway to new regions and industries around the world. Arbol currently provides contracts for managing the risks of weather exposure in the energy and agriculture sectors, and features both custom and pre-designed protection agreements for clients across industries and scale. Their current end-user base ranges from small coffee farms to major agribusinesses and power producers.
 
-To sum up, Arbol's platform is a risk marketplace where end-users can get competitively priced risk management solutions, and where capital providers can benefit from access to a lucrative and underdeveloped weather risk market. And because Arbol uses IPFS for all of its data storage needs, Arbol's clients and underwriting partners can trust that the data Arbol uses to determine price and payouts for its contracts is untamperable and secure.
-
-::: callout
-**"IPFS has a great team of people with ambition and a strong desire to change the world! IPFS and Filecoin perfectly fit into IoTeX's stack for continuously storing and processing billions of IoT devices around the world in a privacy-preserving and trustworthy way. In addition, we found the transparency level of IPFS high &mdash; the open code and docs are really helpful. Love it."**
-
-_&mdash; Raullen Chai, CEO, IoTeX_
-:::
+In short, Arbol's platform is a risk marketplace where end users can get competitively priced risk management solutions and capital providers can benefit from access to a lucrative, but underdeveloped, weather risk market. And because Arbol uses IPFS for its data storage and delivery needs, end users and underwriting partners can be certain that the data Arbol uses to determine price and payouts for contracts is tamper-proof and trustworthy.
 
 ### Arbol by the numbers
 
