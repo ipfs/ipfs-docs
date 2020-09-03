@@ -124,7 +124,7 @@ Additionally, Fleek relies upon building blocks from [Textile](https://textile.i
 Fleek already helps bridge the legacy web and the DWeb through easy-to-use tools for IPFS-based hosting, file storage, and development. But as IPFS continues to evolve, Fleek intends to evolve alongside it; for example, while Fleek Hosting currently augments IPFS storage with a traditional CDN, the team looks forward to going IPFS-only as soon as solutions for optimizing fetch time exist within the ecosystem.
 
 ::: callout
-**"The future of Fleek is very closely tied to the future of IPFS. Fleek products are already delivering cutting-edge performance on IPFS. Every step forward on the IPFS development roadmap will give us more tools to improve on that performance further. **
+**"The future of Fleek is very closely tied to the future of IPFS. Fleek products are already delivering cutting-edge performance on IPFS. Every step forward on the IPFS development roadmap will give us more tools to improve on that performance further.**
 
 _&mdash; Brett Shear, COO, Fleek_
 :::
