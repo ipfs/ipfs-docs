@@ -92,7 +92,7 @@ Arbol's end users enjoy the "it just works" benefits of parametric protection, b
 
 ### The tooling
 
-**NEED DIAGRAM HERE -- TK**
+![Arbol high-level architecture](./images/case-studies/img-arbol-arch.svg)
 
 In addition to out-of-the-box [`go-ipfs`](https://github.com/ipfs/go-ipfs), Arbol relies heavily on custom written libraries and a number of weather-specialized Python libraries such as [netCDF4](https://pypi.org/project/netCDF4/) (an interface to netCDF, a self-describing format for array-oriented data) and [rasterio](https://pypi.org/project/rasterio) (for geospatial raster data). Additionally, Docker and Digital Ocean are important tools in Arbol's box for continuous integration and deployment.
 
@@ -114,6 +114,10 @@ Arbol also has plans to integrate dWeather with a soon-to-be announced service t
 
 Another exciting future initiative is the open sourcing and expansion of the interpretation stage of Arbol's data pipeline. Private companies currently charge high fees to access data that has been interpreted using black-boxed algorithms. In contrast, Arbol intends to open up that interpretation stage — running its methods in a publicly auditable execution environment with the results posted to the IPFS-powered dWeather network, making this information free and available to all. What's good for weather's scientific community is good for Arbol's customers, too: This auditable interpretation can potentially cut down on work for underwriters and lower prices for Arbol contract participants.
 
-**END QUOTE FROM BEN TK**
+::: callout
+**"We think of IPFS as Git for big data. That's an extremely powerful concept when it comes to a distributed, collaborative effort like weather — where you have thousands of research teams producing data from all over the world, and countless groups making use of it for any purpose imaginable."**
+
+_&mdash; Ben Andre, CTO, Arbol_
+:::
 
 _Note: Metrics and other details in this case study are current as of September 2020. Details may change in the interim._
