@@ -136,3 +136,7 @@ Installing IPFS through the command-line is handy if you plan on building applic
 
    > ipfs version 0.6.0
    ```
+
+## Next steps
+
+Now that you've got an IPFS node installed, you can start building applications and services on top of the network! Check out the Command-line- quicks start guide and jump straight to the [Initialize the repository section](http://localhost:8080/how-to/command-line-quick-start/#initialize-the-repository).
