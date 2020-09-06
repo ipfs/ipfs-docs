@@ -1,11 +1,11 @@
 ---
 title: IPFS desktop
-description: For a simple, straight-forward way to interact with the IPFS network, install the IPFS desktop application. There's no need to touch the command-line; everything you need it contained within one handy package!
+description: For a simple, straight-forward way to interact with the IPFS network, install the IPFS desktop application. There's no need to touch the command-line; everything you need is contained within one handy package!
 ---
 
 # IPFS desktop
 
-The IPFS desktop application is the easiest way to get up and running quickly with IPFS. It allows you to run an IPFS Node on your machine _without_ having to bother with command-line tools or package management. It gives you the power of the [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui), plus a handful of useful shortcuts and settings.
+The IPFS desktop application is the easiest way to get up and running quickly with IPFS. It allows you to run an IPFS node on your machine _without_ having to bother with command-line tools or package management. It gives you the power of the [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui), plus a handful of useful shortcuts and settings.
 
 The installation steps differ between operating systems, so follow the instructions for your system.
 
@@ -21,7 +21,7 @@ The installation steps differ between operating systems, so follow the instructi
    ![The IPFS desktop download page.](./images/ipfs-desktop/install-windows-download-exe-page.png)
 
 3. Run the `.exe` file to start the installation.
-4. Select whether you want to install the application for just yourself, or all users on the computer. Click **Next**:
+4. Select whether you want to install the application for just yourself or all users on the computer. Click **Next**:
 
    ![The IPFS desktop install options window.](./images/ipfs-desktop/install-windows-install-options.png)
 
@@ -39,7 +39,7 @@ The installation steps differ between operating systems, so follow the instructi
 
 The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
 
-## MacOS
+## macOS
 
 1. Download the latest available `.dmg` file from the `ipfs-shipyard/ipfs-desktop` GitHub repository:
 
