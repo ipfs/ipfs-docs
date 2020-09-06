@@ -5,13 +5,13 @@ description: There are several different ways you can install and interact with 
 
 # Install IPFS
 
-IPFS itself is a peer-to-peer network that relies on a set of protocols to create a distirbuted file-system. As such, there are several different ways you can install and interact with IPFS! Pick the one that best suits what you're here to do:
+IPFS is a collection of protocols, packages, and specifications that allow computers to send and receive data. Because of this, users can pick and choose which packages to install when using IPFS. And like shoe sizes, there is no _one-size-fits-all_ solution. A developer building network applications will install a different set of tools to someone who just wants to store files on IPFS. Pick the one that best suits what you're here to do:
 
-## Decentralized storage
+## File storage
 
-IPFS can be used by anyone wanting to store data in a decentralized way. The easiest way to get up and running is by installing the IPFS Desktop application. This app has Go-IPFS built-in and lets you interact with the network through a simple interface. [Check it out →](/install/ipfs-desktop)
+Anyone can use IPFS to store files in a _decentralized_ way. The easiest way to get up and running is by installing the IPFS Desktop application. This app has Go-IPFS built-in and lets you interact with the network through a simple user-interface. [Check it out →](/install/ipfs-desktop)
 
-## Development and IPFS
+## Application development
 
 Want to build decentralized applications and store your application data on IPFS? You'll likely want to install the command-line version of IPFS. There's no GUI to deal with, just raw input and output through your terminal. [Find out more →](/install/command-line)
 
