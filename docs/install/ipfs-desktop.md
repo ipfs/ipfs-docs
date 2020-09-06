@@ -91,3 +91,7 @@ The IPFS desktop application has finished installing. You can now start to [add 
    ![IPFS icon shown in the Ubuntu status bar.](./images/ipfs-desktop/install-ubuntu-ipfs-running-status-bar.png)
 
 The IPFS desktop application has finished installing. You can now start to [add your site](#add-your-site).
+
+## Next steps
+
+Now that you've got IPFS Desktop installed you can start sharing files and interacting with other nodes on the network! Check out how to [host a website using IPFS →](/how-to/websites-on-ipfs/single-page-website/)
