@@ -165,7 +165,7 @@ The IPFS team run the [`dist.ipfs.io` website](https://dist.ipfs.io/) to help us
 
 ## Compile manually
 
-If you'd prefer to install Go-IPFS by compiling the package manually, follow these instructions:
+If you'd like to manually compile Go-IPFS, see the [`ipfs/go-ipfs` GitHub repository for details →](https://github.com/ipfs/go-ipfs).
 
 ## Next steps
 
