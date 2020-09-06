@@ -1,4 +1,3 @@
-# Legacy > New site.
 /introduction/ /concepts/
 /introduction/overview/ /concepts/what-is-ipfs/
 /introduction/how-ipfs-works/ /concepts/how-ipfs-works/
@@ -37,5 +36,4 @@
 /community/contribute/ /project/contribute/
 /community/contribute/how-to-help/ /project/contribute/
 
-# Breaking changes from New site updates.
 /install/command-line-quick-start/ /how-to/command-line-quick-start/
