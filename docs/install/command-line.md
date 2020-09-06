@@ -5,7 +5,7 @@ description: Lorem ipsum.
 
 # Command-line
 
-Lorem ipsum.
+Installing IPFS through the command-line is handy if you plan on building applications and services on top of an IPFS node. This method is also useful if you're setting up a node without a user interface, usually the case with remote servers or virtual machines. Using IPFS through the command-line allows you to do everything that IPFS Desktop can do, but at a more granular level since you can specify which commands want to run.
 
 | [Windows](#windows)                                                                      | [macOS](#macos)                                                                    | [Linux](#linux)                                                                    |
 | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
