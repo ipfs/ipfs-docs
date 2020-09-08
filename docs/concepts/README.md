@@ -36,6 +36,7 @@ Get inspired by usage ideas, explore examples of IPFS implemented in the wild, a
 
 - [Usage ideas & examples](/concepts/usage-ideas-examples/)
 - [Case study: Audius](/concepts/case-study-audius/)
+- [Case study: Fleek](/concepts/case-study-fleek/)
 - [Case study: IoTeX](/concepts/case-study-iotex/)
 - [Case study: OpenBazaar](/concepts/case-study-openbazaar/)
 
