@@ -124,6 +124,7 @@ module.exports = {
                 collapsable: false,
                 children: [
                   '/concepts/usage-ideas-examples',
+                  '/concepts/case-study-arbol',
                   '/concepts/case-study-audius',
                   '/concepts/case-study-fleek',
                   '/concepts/case-study-iotex',
