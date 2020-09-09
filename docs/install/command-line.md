@@ -7,11 +7,11 @@ description: Lorem ipsum.
 
 Installing IPFS through the command-line is handy if you plan on building applications and services on top of an IPFS node. This method is also useful if you're setting up a node without a user interface, usually the case with remote servers or virtual machines. Using IPFS through the command-line allows you to do everything that IPFS Desktop can do, but at a more granular level since you can specify which commands want to run.
 
-There are several different ways to install IPFS using the command-line. The easiest method is by using a [package manager](#package-managers). If you don't have one installed, or would like a more up-to-date version of IPFS then you can use [dist.ipfs.io](#official-distributions) to grab the latest package and install it. Lastly, if your the kind of person that likes to bake a cake themselves rather than buying a premade one, there are manual [complilation instructions](#compile-manually) available.
+There are several different ways to install IPFS using the command-line. The easiest method is by using a [package manager](#package-managers). If you don't have one installed, or would like a more up-to-date version of IPFS, you can use [dist.ipfs.io](#official-distributions) to grab the latest package and install it. Lastly, if your the kind of person that likes to bake a cake themselves rather than buying a premade one, there are manual [complilation instructions](#compile-manually) available.
 
 ## Package managers
 
-Most operating systems have a package manager, although they may not come pre-installed. Both Windows and macOS have open-source package managers that must be installed by the user. Ubuntu comes with the Snap package manager pre-installed. Package managers download, install, and keep everything up-to-date. They're the easiest way to install IPFS from the command-line.
+Most operating systems have a package manager, although they may not come pre-installed. Both Windows and macOS have open-source package managers that must be installed by the user. Ubuntu comes with the Snap package manager pre-installed. Package managers download packages, install applications, and keep everything up-to-date. They're the easiest way to install IPFS from the command-line.
 
 | Operating system | Package manager                                    | Install command      |
 | ---------------- | -------------------------------------------------- | -------------------- |
@@ -23,7 +23,7 @@ Although we try our best to keep the package manager releases up to date, they s
 
 ## Official distributions
 
-The IPFS team run the [dist.ipfs.io website](https://dist.ipfs.io/) to help users easily find the latest version of every IPFS package. As soon as a new release of an IPFS package comes out, it is automatically shown on `dist.ipfs.io`, so you can be sure you're getting the latest software. These steps detail how to download and install Go-IPFS 0.6.0 from `dist.ipfs.io` using the command-line.
+The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help users quickly find the latest version of every IPFS package. As soon as a new release of an IPFS package comes out, it is automatically shown on `dist.ipfs.io`, so you can be sure you're getting the latest software. These steps detail how to download and install Go-IPFS 0.6.0 from `dist.ipfs.io` using the command-line.
 
 | [Windows](#windows)                                                          | [macOS](#macos)                                                        | [Linux](#linux)                                                        |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -157,7 +157,7 @@ The IPFS team run the [dist.ipfs.io website](https://dist.ipfs.io/) to help user
 
 ## Compile manually
 
-Compiling IPFS manually is a fairly involved process that changes frequently. It can be handy if you'd like to build a specific branch, or want to use the _bleeding-edge_ version of IPFS. See the [`ipfs/go-ipfs` GitHub repository for details →](https://github.com/ipfs/go-ipfs)
+Manually compiling IPFS is a fairly involved process that changes frequently. It can be handy if you'd like to build a specific branch or use the _bleeding-edge_ version of IPFS. See the [`ipfs/go-ipfs` GitHub repository for details →](https://github.com/ipfs/go-ipfs)
 
 ## Next steps
 
