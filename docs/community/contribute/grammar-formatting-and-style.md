@@ -248,7 +248,7 @@ Store images in a folder called `images` within the same directory as the articl
 
 The directory structure of this article looks like this:
 
-```text
+```
 ipfs-desktop/
 ├── download-the-config.md
 ├── images
@@ -263,7 +263,7 @@ There are no images within the `download-the-config.md` article, so there is no 
 
 All file names are lower-case with dashes `-` between words, including image files:
 
-```text
+```
 ipfs-desktop/
 ├── add-a-user.md
 ├── enable-debug-mode.md

@@ -174,7 +174,7 @@ Now, try running the command suggested to you in the output of `ipfs init`. The 
 
 You should see something like this:
 
-```text
+```
 Hello and Welcome to IPFS!
 
 ██╗██████╗ ███████╗███████╗
