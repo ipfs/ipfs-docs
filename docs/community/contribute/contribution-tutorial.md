@@ -59,12 +59,12 @@ If you're not familiar with Git and GitHub, then the phrase _fork_ might not mea
 
 The process for creating a fork of an existing piece of IPFS documentation is incredibly simple:
 
-1. Go to the `ipfs/ipfs-docs-v2` repository in [GitHub](https://github.com/ipfs/ipfs-docs). (Note that this is a different repo than the one in which the issues themselves live; our issues live in `ipfs/ipfs-docs`, but the code for the documentation website lives at `ipfs/ipfs-docs-v2`.)
+1. Go to the `ipfs/ipfs-docs` repository in [GitHub](https://github.com/ipfs/ipfs-docs).
 2. Select **Fork** to create a copy of the project.
 3. Clone your copy of the project down to your local machine:
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/ipfs-docs-v2.git
+   git clone https://github.com/YOUR_USERNAME/ipfs-docs.git
    ```
 
 4. Make your changes locally.
@@ -82,7 +82,7 @@ When adding a commit comment that actively fixes an issue within the project, tr
 
 Once you're done making commits, and are ready to get a core team member's review of your work, it's time to create a pull request.
 
-1. Go to the `ipfs/ipfs-docs-v2` repository on [GitHub](https://github.com/ipfs/ipfs-docs-v2).
+1. Go to the `ipfs/ipfs-docs` repository on [GitHub](https://github.com/ipfs/ipfs-docs).
 2. Select the **Pull requests** tab.
 3. Click **New pull request**.
 4. Click **compare across forks** and select your repository from the **head repository** dropdown.
@@ -95,7 +95,7 @@ GitHub will check if your changes create any merge conflicts with the branch you
 
 Before your changes can be merged into the project, they have to pass a review. Some other IPFS repose, like `ipfs/ipfs-js` and `ipfs/ipfs-go`, have automatic tests that run against a pull request. These tests must pass _before_ the changes can be merged into the project.
 
-The `ipfs/ipfs-docs-v2` project doesn't currently have any automatic tests, so all pull requests from the community must be reviewed by at least one project member before they are merged in. Depending on the size of the pull request, this could take anywhere from a few minutes to a few days to review everything. Depending on the complexity of the pull request, there may be further discussion regarding your changes. Keep returning to GitHub and checking your [notifications page](https://github.com/notifications) to make sure you don't miss anything.
+The `ipfs/ipfs-docs-` project doesn't currently have any automatic tests, so all pull requests from the community must be reviewed by at least one project member before they are merged in. Depending on the size of the pull request, this could take anywhere from a few minutes to a few days to review everything. Depending on the complexity of the pull request, there may be further discussion regarding your changes. Keep returning to GitHub and checking your [notifications page](https://github.com/notifications) to make sure you don't miss anything.
 
 ## Merge your fix
 

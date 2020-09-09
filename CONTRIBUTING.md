@@ -1,6 +1,6 @@
 # Contribution guidelines
 
-This article serves as the guideline for contributing to the [IPFS Docs V2](https://github.com/ipfs/ipfs-docs-v2) repository. This guide is only concerned with documentation within this repository and does not contain any information regarding changes to VuePress or the HTML of the site. It also includes some general tips, tools, and workflows for creating helpful docs.
+This article serves as the guideline for contributing to the [IPFS Docs](https://github.com/ipfs/ipfs-docs) repository. This guide is only concerned with documentation within this repository and does not contain any information regarding changes to VuePress or the HTML of the site. It also includes some general tips, tools, and workflows for creating helpful docs.
 
 ## Writing content
 
