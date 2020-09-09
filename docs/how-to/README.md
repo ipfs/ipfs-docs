@@ -20,7 +20,7 @@ See the site navigation menu for all our how-tos, organized by topic area, inclu
 - **Understand website hosting** by starting with how to [host a simple single-page site](/how-to/websites-on-ipfs/single-page-website/)
 - **Work with blockchains** like the [Ethereum](https://github.com/ipfs/js-ipfs/tree/master/examples/explore-ethereum-blockchain) chain
 - **Learn how to build apps** on IPFS, starting with [exploring the IPFS API](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_C) and [making a basic libp2p app](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_B)
-- **Understand how IPFS works in the browser** by learning how to [address IPFS on the Web](/how-to/address-ipfs-on-web/), seeing how to [exchange files between nodes](https://github.com/ipfs/js-ipfs/tree/master/examples/exchange-files-in-browser), seeing [how IPFS can be used in your favorite browser tools and frameworks](/how-to/browser-tools-frameworks/), and more
+- **Understand how IPFS works in the browser** by learning how to [address IPFS on the Web](/how-to/address-ipfs-on-web/), seeing how to [exchange files between nodes](https://github.com/ipfs/js-ipfs/tree/master/examples/browser-exchange-files), seeing [how IPFS can be used in your favorite browser tools and frameworks](/how-to/browser-tools-frameworks/), and more
 
 ## Don't see what you're looking for?
 
