@@ -129,7 +129,9 @@ module.exports = {
                 collapsable: false,
                 children: [
                   '/concepts/usage-ideas-examples',
+                  '/concepts/case-study-arbol',
                   '/concepts/case-study-audius',
+                  '/concepts/case-study-fleek',
                   '/concepts/case-study-iotex',
                   '/concepts/case-study-openbazaar'
                 ]
@@ -292,7 +294,7 @@ module.exports = {
                 children: [
                   'how-to/address-ipfs-on-web',
                   [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/exchange-files-in-browser',
+                    'https://github.com/ipfs/js-ipfs/tree/master/examples/browser-exchange-files',
                     'Exchange files between nodes'
                   ],
                   [

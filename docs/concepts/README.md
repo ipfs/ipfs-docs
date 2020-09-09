@@ -35,7 +35,9 @@ Get the basic concepts of IPFS in one place, including:
 Get inspired by usage ideas, explore examples of IPFS implemented in the wild, and dig deeper with case studies on applications and projects in which IPFS plays a crucial role.
 
 - [Usage ideas & examples](/concepts/usage-ideas-examples/)
+- [Case study: Arbol](/concepts/case-study-arbol/)
 - [Case study: Audius](/concepts/case-study-audius/)
+- [Case study: Fleek](/concepts/case-study-fleek/)
 - [Case study: IoTeX](/concepts/case-study-iotex/)
 - [Case study: OpenBazaar](/concepts/case-study-openbazaar/)
 
