@@ -18,7 +18,7 @@ A CID is an _absolute_ pointer to content. No matter when we request a CID, the 
 
 As a basic example, let's have two blocks of content with the strings `hello` and `world` hashed into two leaf nodes with the CIDs `A` and `B`. If we concatenate these two nodes, then we are given CID `C`. On top of this root CID we assign a pointer `Pointer`.
 
-```text
+```
    +-----------+
    |  Pointer  |
    +-----------+
@@ -35,22 +35,22 @@ As a basic example, let's have two blocks of content with the strings `hello` an
 
 If we change the content of `B` to `IPFS!`, all the upstream paths will change as well. In this simple example, the only upstream path is `C`. If we request content from the pointer we get back new content since the pointer is now _pointing_ at a completely different node. Node `B` is not being edited, updated, or otherwise changed. Instead, we are creating a new DAG where the pointer points to CID `E` that joins node `A` and a new node, node `D`.
 
-```text
+```
    +-----------+
    |  Pointer  | --------------+
    +-----------+               |
                                ↓
-      +-----+               +-----+   
+      +-----+               +-----+
    +--|  C  |-+         +-- |  E  | --+
    |  +-----+ |         |   +-----+   |
    |          |         |             |
-+-----+    +-----+     +-----+    +-----+  
++-----+    +-----+     +-----+    +-----+
 |  A  |    |  B  |     |  A  |    |  D  |
-+-----+    +-----+     +-----+    +-----+ 
-"hello"    "world"     "hello"    "IPFS!"  
++-----+    +-----+     +-----+    +-----+
+"hello"    "world"     "hello"    "IPFS!"
 ```
 
-Again, node `B` does not change. It will always refer to the same content, `world`. Node `A` also appears in the new DAG. This is not because we are _keeping_ it, that would imply the location-addressed paradigm. In the content-addressed system, any time someone writes a block with `"hello"` it will _always_ have CID `A`. 
+Again, node `B` does not change. It will always refer to the same content, `world`. Node `A` also appears in the new DAG. This is not because we are _keeping_ it, that would imply the location-addressed paradigm. In the content-addressed system, any time someone writes a block with `"hello"` it will _always_ have CID `A`.
 This is different to location-addressed systems where we could reuse the original buffer and edit the small substring that represents the difference.
 
 Again, node `B` does not change. It will always refer to the same content, `world`. Node `A` also appears in the new DAG. This does not necessarily mean we copied the memory/buffer that contained the `hello` string into our new message, that would imply the location-addressed paradigm that focuses on the _where_ and not the _what_. In a content-addressed system any time someone writes the string `hello` it will always have CID `A`, regardless of whether we copied the string from a previous location or we wrote it from scratch.
@@ -61,14 +61,14 @@ Here we have a website that displays two headers called `header_1` and `header_2
 
 ```html
 <body>
-    <h1 id="header_1"></h1>
-    <h1 id="header_2"></h1>
+  <h1 id="header_1"></h1>
+  <h1 id="header_2"></h1>
 </body>
 <script>
-    let string_1 = "hello";
-    let string_2 = "world";
-    document.getElementById('header_1').textContent=string_1;
-    document.getElementById('header_2').textContent=string_2;
+  let string_1 = 'hello'
+  let string_2 = 'world'
+  document.getElementById('header_1').textContent = string_1
+  document.getElementById('header_2').textContent = string_2
 </script>
 ```
 
@@ -76,7 +76,7 @@ The CID of this website is `QmWLdyFMUugMtKZs1xeJCSUKerWd9M627gxjAtp6TLrAgP`. Use
 
 Having a user visit the site using the CID is cumbersome since the CID will change every time a variable is updated. So instead, we can use a _pointer_ that maintains the CID of the page with the latest update. This way, users can go to `example.com`, and always be directed to the latest content. This pointer is _mutable_; it can be updated to reflect the changes downstream.
 
-```text
+```
 +--------+      +---------+      +----------+
 |  User  | ---> | Pointer | ---> | QmWLd... |
 +--------+      +---------+      +----------+
@@ -84,7 +84,7 @@ Having a user visit the site using the CID is cumbersome since the CID will chan
 
 In the website example, when we change a variable, the CID of the webpage is different. The pointer must be updated to redirect users to the latest webpage. What's important is that the _old_ CID still exists. Nothing is overwritten. The original CID `QmWLdyFMUugMtKZs1xeJCSUKerWd9M627gxjAtp6TLrAgP` will always refer to a webpage with the headers `hello` and `world`. What we're doing is constructing a new [DAG](/concepts/merkle-dag).
 
-```text
+```
 +--------+      +---------+      +----------+
 |  User  | ---> | Pointer |      | QmWLd... |
 +--------+      +---------+      +----------+
@@ -96,7 +96,7 @@ In the website example, when we change a variable, the CID of the webpage is dif
 
 This process is essentially what the [InterPlantery Naming Service (IPNS)](/concepts/ipns) does! CIDs can be difficult to deal with and hard to remember, so IPNS saves users from the cumbersome task of dealing with CIDs directly. More importantly, CIDs change with the content because they are the content. Whereas the inbound reference of URLs/pointers stay the same, and the outbound referral changes:
 
-```text
+```
 +--------+      +--------------+      +-------------------------------------------------------------+
 |  User  | ---> | docs.ipfs.io | ---> | bafybeigsddxhokzs3swgx6mss5i3gm6jqzv5b45e2xybqg7dr3jmsykrku |
 +--------+      +--------------+      +-------------------------------------------------------------+

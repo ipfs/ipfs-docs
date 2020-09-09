@@ -154,7 +154,7 @@ Before we dig into IPFS, let's first create the files we'll need for this mini-p
 
 You should now have a folder that looks something like this:
 
-    ```text
+    ```
     multi-page-first-step/
     ├── about.html
     ├── index.html
