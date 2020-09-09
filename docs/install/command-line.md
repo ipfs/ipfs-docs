@@ -7,31 +7,23 @@ description: Lorem ipsum.
 
 Installing IPFS through the command-line is handy if you plan on building applications and services on top of an IPFS node. This method is also useful if you're setting up a node without a user interface, usually the case with remote servers or virtual machines. Using IPFS through the command-line allows you to do everything that IPFS Desktop can do, but at a more granular level since you can specify which commands want to run.
 
-There are several different ways to install IPFS using the command-line. The easiest method is by using a [package manager](#package-managers). If you don't have one installed, or would like a more up-to-date version of IPFS then you can use [`dist.ipfs.io` to grab the latest package](#distributions-website) and install it. Lastly, if your the kind of person that likes to bake a cake themselves rather than buying a premade one, there are manual [complilation instructions](#compile-manually) available.
+There are several different ways to install IPFS using the command-line. The easiest method is by using a [package manager](#package-managers). If you don't have one installed, or would like a more up-to-date version of IPFS then you can use [dist.ipfs.io](#official-distributions) to grab the latest package and install it. Lastly, if your the kind of person that likes to bake a cake themselves rather than buying a premade one, there are manual [complilation instructions](#compile-manually) available.
 
 ## Package managers
 
-<!-- Todo: Describe what package managers are and how they attempt to make installing things easier. Point out that they're sometimes out of date and usually take a few days to catch up to official sources after a release. Also point out that some operating systems don't come with a package manager pre-installed, so the user will have to install it themselves. -->
+Most operating systems have a package manager, although they may not come pre-installed. Both Windows and macOS have open-source package managers that must be installed by the user. Ubuntu comes with the Snap package manager pre-installed. Package managers download, install, and keep everything up-to-date. They're the easiest way to install IPFS from the command-line.
 
-| [Choco for Windows](#choco)                                                | [Homebrew for macOS](#brew)                                               | [Snap for Ubuntu](#snap)                                              |
-| -------------------------------------------------------------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| [![Windows icon](./images/command-line/windows-icon.png =250x200)](#choco) | [![macOS icon](./images/command-line/apple-icon.png =250x200)](#homebrew) | [![Linux icon](./images/command-line/linux-icon.png =250x200)](#snap) |
+| Operating system | Package manager                                    | Install command      |
+| ---------------- | -------------------------------------------------- | -------------------- |
+| Windows          | [Chocolatey](https://chocolatey.org/packages/ipfs) | `choco install ipfs` |
+| macOS            | [Homebrew](https://formulae.brew.sh/formula/ipfs)  | `brew install ipfs`  |
+| Ubuntu           | [Snap](https://snapcraft.io/ipfs)                  | `snap install ipfs`  |
 
-### Chocolatey for Windows
+Although we try our best to keep the package manager releases up to date, they sometimes lag behind the Go-IPFS GitHub releases page by a few days. If you'd like to install a release the very same day it comes out, use the [official distributions](#official-distributions) from [dist.ipfs.io](dist.ipfs.io).
 
-<!-- Todo: Explain that Choco does not come pre-installed on Windows, so the user will have to install it themselves. -->
+## Official distributions
 
-### Homebrew for macOS
-
-<!-- Todo: Explain that Homebrew does not come pre-installed on macOS, so the user will have to install it themselves. -->
-
-### Snap for Ubuntu
-
-<!-- Todo: Explain that Snap is a different package manager to APT, and it generally kept more up-to-date. It also stores packages and applications is a different way to APT. -->
-
-## Distributions website
-
-The IPFS team run the [`dist.ipfs.io` website](https://dist.ipfs.io/) to help users easily find the latest version of every IPFS package. As soon as a new release of an IPFS package comes out, it is automatically shown on `dist.ipfs.io`, so you can be sure you're getting the latest software. These steps detail how to download and install Go-IPFS 0.6.0 from `dist.ipfs.io` using the command-line.
+The IPFS team run the [dist.ipfs.io website](https://dist.ipfs.io/) to help users easily find the latest version of every IPFS package. As soon as a new release of an IPFS package comes out, it is automatically shown on `dist.ipfs.io`, so you can be sure you're getting the latest software. These steps detail how to download and install Go-IPFS 0.6.0 from `dist.ipfs.io` using the command-line.
 
 | [Windows](#windows)                                                          | [macOS](#macos)                                                        | [Linux](#linux)                                                        |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -165,7 +157,7 @@ The IPFS team run the [`dist.ipfs.io` website](https://dist.ipfs.io/) to help us
 
 ## Compile manually
 
-If you'd like to manually compile Go-IPFS, see the [`ipfs/go-ipfs` GitHub repository for details →](https://github.com/ipfs/go-ipfs).
+Compiling IPFS manually is a fairly involved process that changes frequently. It can be handy if you'd like to build a specific branch, or want to use the _bleeding-edge_ version of IPFS. See the [`ipfs/go-ipfs` GitHub repository for details →](https://github.com/ipfs/go-ipfs)
 
 ## Next steps
 
