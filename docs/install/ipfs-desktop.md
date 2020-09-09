@@ -72,6 +72,8 @@ The IPFS desktop application has finished installing. You can now start to [add 
 
 ## Ubuntu
 
+While these instructions are specific to Ubuntu, they will likely work with most Ubuntu-related Linux distributions. For non-Ubuntu Linux distributions, check out the [IPFS Desktop GitHub repository](https://github.com/ipfs-shipyard/ipfs-desktop#install) for install instructions.
+
 1. Download the `.deb` package:
 1. Open the `.deb` package in **Software Installer**:
 
