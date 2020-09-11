@@ -16,9 +16,9 @@ Don’t want to use the command line right now? Give the desktop-app implementat
 
 Installing IPFS is simple, but varies between operating system:
 
-| [Windows](#windows)                                                                                 | [macOS](#macos)                                                                               | [Linux](#linux)                                                                               |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [![Windows icon](./../install/images/command-line-quick-start/windows-icon.png =250x200)](#windows) | [![macOS icon](./../install/images/command-line-quick-start/apple-icon.png =250x200)](#macos) | [![Linux icon](./../install/images/command-line-quick-start/linux-icon.png =250x200)](#linux) |
+| [Windows](#windows)                                                             | [macOS](#macos)                                                           | [Linux](#linux)                                                           |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [![Windows icon](./images/command-line-quick-start/windows-icon.png)](#windows) | [![macOS icon](./images/command-line-quick-start/apple-icon.png)](#macos) | [![Linux icon](./images/command-line-quick-start/linux-icon.png)](#linux) |
 
 ### Windows
 
@@ -266,7 +266,7 @@ By default, your gateway is not exposed to the world. It only works locally.
 
 You can view the web console on your local node by going to [`localhost:5001/webui`](http://localhost:5001/webui). This should bring up a console like this:
 
-![Web console connection view](./../install/images/command-line-quick-start/webui-connection.png =740x417)
+![Web console connection view](./images/command-line-quick-start/webui-connection.png)
 
 ## IPFS Companion
 
