@@ -39,6 +39,7 @@ Get inspired by usage ideas, explore examples of IPFS implemented in the wild, a
 - [Case study: Audius](/concepts/case-study-audius/)
 - [Case study: Fleek](/concepts/case-study-fleek/)
 - [Case study: IoTeX](/concepts/case-study-iotex/)
+- [Case study: Morpheus.Network](/concepts/case-study-morpheus/)
 - [Case study: OpenBazaar](/concepts/case-study-openbazaar/)
 
 ## Content-addressed storage
