@@ -6,7 +6,7 @@ description: Explore some helpful use cases, ideas, and examples for the InterPl
 # Case study: Morpheus.Network
 
 ::: callout
-**"It's a simple, elegant use case. Everyone accessing a document has total assurance they are viewing the official version, so you don't need any additional verification."**
+**"It's a simple, elegant use case. Everyone accessing a document has complete assurance they are viewing the official version, so you don't need any additional verification."**
 
 _&mdash; Noam Eppel, COO and co-founder, Morpheus.Network_
 :::
@@ -24,10 +24,10 @@ Morpheus.Network uses a private network of IPFS document storage nodes, combined
 ### Morpheus.Network by the numbers
 
 <NumberBlock :items="[
-  {value: '6+', text: 'month successful launch pilot phase'},
-  {value: '&gt;1K', text:'successful cross-border shipments in pilot phase'},
-  {value: '90%', text: 'potential reduction in pilot client email volume'},
-  {value: '&gt;90%', text: 'potential reduction in pilot client manual errors'}
+  {value: '12+', text: 'months using IPFS in platform'},
+  {value: '&gt;1K', text:'successful cross-border shipments using IPFS'},
+  {value: '&gt;90%', text: 'potential reduction in client email volume'},
+  {value: '&gt;95%', text: 'potential reduction in client manual errors'}
 ]" />
 
 ## The story
