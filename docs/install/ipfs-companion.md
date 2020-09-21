@@ -1,31 +1,31 @@
 ---
-title: IPFS companion
-description: "The IPFS companion allows you to interact with your IPFS node and the extended IPFS network through your browser! The add-on is available for Brave, Chrome, Edge, Firefox, and Opera! It enables support for `ipfs://` addresses, automatically loads websites and file paths from an IPFS gateway, allows you to easily import and share a file with IPFS, and a bunch of other cool stuff!"
+title: IPFS Companion
+description: 'Learn about IPFS Companion, the browser extension that allows you to interact with your IPFS node and the extended IPFS network through your browser.'
 ---
 
-# IPFS companion
+# IPFS Companion
 
-The IPFS companion allows you to interact with your IPFS node and the extended IPFS network through your browser! The add-on is available for Brave, Chrome, Edge, Firefox, and Opera! It enables support for `ipfs://` addresses, automatically loads websites and file paths from an IPFS gateway, allows you to easily import and share a file with IPFS, and a bunch of other cool stuff!
+IPFS Companion allows you to interact with your IPFS node and the extended IPFS network through your browser. The add-on is available for Brave, Chrome, Edge, Firefox, and Opera. It enables support for `ipfs://` addresses, automatically loads websites and file paths from an IPFS gateway, allows you to easily import and share a file with IPFS, and more.
 
-The IPFS companion works in tandem with an IPFS node running on your local machine, so make sure you have a [node installed](./ipfs-desktop) before installing this add-on.
+IPFS Companion works in tandem with an IPFS node running on your local machine, so make sure you have a [node installed](./ipfs-desktop) before installing this add-on.
 
 ## Install
 
-The easiest way to install the IPFS companion is through your browser's add-on store:
+The easiest way to install IPFS Companion is through your browser's add-on store:
 
 | <img src="https://unpkg.com/@browser-logos/firefox/firefox_16x16.png" width="16" height="16"> [Firefox](https://www.mozilla.org/firefox/new/) \| [Firefox for Android](https://play.google.com/store/apps/details?id=org.mozilla.firefox)   | <img src="https://unpkg.com/@browser-logos/chrome/chrome_16x16.png" width="16" height="16"> [Chrome](https://www.google.com/chrome/) \| <img src="https://unpkg.com/@browser-logos/brave/brave_16x16.png" width="16" height="16"> [Brave](https://brave.com/) \| <img src="https://unpkg.com/@browser-logos/opera/opera_16x16.png" width="16" height="16"> [Opera](https://www.opera.com/) \| <img src="https://unpkg.com/@browser-logos/edge/edge_16x16.png" width="16" height="16"> [Edge](https://www.microsoftedgeinsider.com/) |
-| --- | --- |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [![Install From AMO](https://ipfs.io/ipfs/QmWNa64XjA78QvK3zG2593bSMizkDXXcubDHjnRDYUivqt)<br>![](https://img.shields.io/amo/users/ipfs-companion?label=AMO%20users&style=social)](https://addons.mozilla.org/firefox/addon/ipfs-companion/) | [![Install from Chrome Store](https://ipfs.io/ipfs/QmU4Qm5YEKy5yHmdAgU2fD7PjZLgrYTUUbxTydqG2QK3TT)<br>![](https://img.shields.io/chrome-web-store/users/nibjojkomfdiaoajekhjakgkdhaomnch?label=Chrome%20Web%20Store%20users&style=social)](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch)                                                                                                                                                                                               |
 
 Make sure you have [IPFS installed](https://ipfs.io/#install) on your computer as well. Because IPFS Companion (in its standard configuration) talks to your computer's local IPFS node to work its browser magic, you'll need to have IPFS running on your computer, too.
 
 ### Beta and development channels
 
-If you're looking for a more current or bleeding-edge version of the IPFS companion, check out how to use the beta or development channels in the [project's GitHub repository](https://github.com/ipfs-shipyard/ipfs-companion)!
+If you're looking for a more current or bleeding-edge version of IPFS Companion, check out how to use the beta or development channels in the [project's GitHub repository](https://github.com/ipfs-shipyard/ipfs-companion)!
 
 ## Features
 
-There is a bunch of stuff that the IPFS companion let you do:
+IPFS Companion supercharges your browser for the DWeb with features including the following:
 
 ### Detect URLs with IPFS paths
 
@@ -69,4 +69,4 @@ IPFS Companion enables you to quickly and easily access common actions from your
 
 ## Further documentation
 
-If you want to delve deeper into IPFS companion, check out the project's documentation at [github.com/ipfs-shipyard/ipfs-companion →](https://github.com/ipfs-shipyard/ipfs-companion)
+If you want to delve deeper into IPFS Companion, check out the project's documentation at [github.com/ipfs-shipyard/ipfs-companion →](https://github.com/ipfs-shipyard/ipfs-companion)
