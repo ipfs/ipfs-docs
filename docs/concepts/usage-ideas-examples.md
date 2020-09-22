@@ -190,7 +190,7 @@ This simple tracker API lets any IPFS node request the latest data about the COV
 
 This simple [GitHub Action](https://github.com/marketplace/actions/upload-to-ipfs) lets you upload your GitHub Releases on IPFS automatically.
 
-### Backup you Wolfram data
+### Backup your Wolfram data
 
 In a recent update, Wolfram let users store their computation or assets on IPFS. Check out the [version notes](https://writings.stephenwolfram.com/2020/03/in-less-than-a-year-so-much-new-launching-version-12-1-of-wolfram-language-mathematica/) for more information.
 
