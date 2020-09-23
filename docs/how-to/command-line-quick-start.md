@@ -12,36 +12,36 @@ If you're command-line savvy and just want to get up and running with IPFS right
 Don’t want to use the command line right now? Give the desktop-app implementation of IPFS a try. It also does all the steps listed on this page automatically, so you can run IPFS from the terminal later whenever you want. [Download IPFS Desktop now](https://github.com/ipfs-shipyard/ipfs-desktop)
 :::
 
-## Install IPFS
+## Prerequisites
+If you have not yet isntalled go-ipfs already please follow the instructions below to install it.
 
-Installing IPFS is simple, but varies between operating system:
-
+The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help users quickly find the latest version of every IPFS package. As soon as a new release of an IPFS package comes out, it is automatically shown on `dist.ipfs.io`, so you can be sure you're getting the latest software. These steps detail how to download and install Go-IPFS 0.7.0 from `dist.ipfs.io` using the command-line. 
 | [Windows](#windows)                                                             | [macOS](#macos)                                                           | [Linux](#linux)                                                           |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | [![Windows icon](./images/command-line-quick-start/windows-icon.png)](#windows) | [![macOS icon](./images/command-line-quick-start/apple-icon.png)](#macos) | [![Linux icon](./images/command-line-quick-start/linux-icon.png)](#linux) |
 
 ### Windows
 
-1. Download [`go-ipfs_v0.6.0_windows-386.zip` from GitHub](https://github.com/ipfs/go-ipfs/releases/download/v0.6.0/).
+1. Download [`go-ipfs_v0.7.0_windows-386.zip` from GitHub](https://github.com/ipfs/go-ipfs/releases/download/v0.7.0/).
 
    ```powershell
    cd ~\
-   wget https://github.com/ipfs/go-ipfs/releases/download/v0.6.0/go-ipfs-v0.6.0_windows-386.zip -Outfile go-ipfs-v0.6.0.zip
+   wget https://github.com/ipfs/go-ipfs/releases/download/v0.7.0/go-ipfs-v0.7.0_windows-386.zip -Outfile go-ipfs-v0.7.0.zip
    ```
 
 1. Unzip the file and move it somewhere handy.
 
    ```powershell
-   Expand-Archive -Path go-ipfs-v0.6.0.zip -DestinationPath ~\Apps\go-ipfs_v0.6.0
+   Expand-Archive -Path go-ipfs-v0.7.0.zip -DestinationPath ~\Apps\go-ipfs_v0.7.0
    ```
 
-1. Move into the `go-ipfs_v0.6.0` folder and check that the `ipfs.exe` works:
+1. Move into the `go-ipfs_v0.7.0` folder and check that the `ipfs.exe` works:
 
    ```powershell
-   cd ~\Apps\go-ipfs_v0.6.0\go-ipfs
+   cd ~\Apps\go-ipfs_v0.7.0\go-ipfs
    .\ipfs.exe --version
 
-   > ipfs version 0.6.0
+   > ipfs version 0.7.0
    ```
 
    While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH.` by using the following steps.
@@ -53,13 +53,13 @@ Installing IPFS is simple, but varies between operating system:
 
    > Path
    > ----
-   > C:\Users\Johnny\Apps\go-ipfs_v0.6.0\go-ipfs
+   > C:\Users\Johnny\Apps\go-ipfs_v0.7.0\go-ipfs
    ```
 
 1. Add the address you just copied to PowerShell's `PATH` by adding it to the end of the `profile.ps1` file stored in `Documents\WindowsPowerShell`:
 
    ```powershell
-   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\Johnny\Apps\go-ipfs_v0.6.0\go-ipfs')"
+   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\Johnny\Apps\go-ipfs_v0.7.0\go-ipfs')"
    ```
 
 1. Close and reopen your PowerShell window. Test that your IPFS path is set correctly by going to your home folder and asking IPFS for the version:
@@ -68,21 +68,21 @@ Installing IPFS is simple, but varies between operating system:
    cd ~
    ipfs --version
 
-   > ipfs version 0.6.0
+   > ipfs version 0.7.0
    ```
 
 ### macOS
 
-1. Download [`go-ipfs_v0.6.0_darwin-386.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.6.0).
+1. Download [`go-ipfs_v0.7.0_darwin-386.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.7.0).
 
    ```bash
-   wget https://github.com/ipfs/go-ipfs/releases/download/v0.6.0/go-ipfs_v0.6.0_darwin-amd64.tar.gz
+   wget https://github.com/ipfs/go-ipfs/releases/download/v0.7.0/go-ipfs_v0.7.0_darwin-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.6.0_darwin-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.7.0_darwin-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
@@ -105,21 +105,21 @@ Installing IPFS is simple, but varies between operating system:
    ```bash
    ipfs --version
 
-   > ipfs version 0.6.0
+   > ipfs version 0.7.0
    ```
 
 ### Linux
 
-1. Download [`go-ipfs_v0.6.0_linux-amd64.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.6.0):
+1. Download [`go-ipfs_v0.7.0_linux-amd64.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.7.0):
 
    ```bash
-   wget https://github.com/ipfs/go-ipfs/releases/download/v0.6.0/go-ipfs_v0.6.0_linux-amd64.tar.gz
+   wget https://github.com/ipfs/go-ipfs/releases/download/v0.7.0/go-ipfs_v0.7.0_linux-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.6.0_linux-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.7.0_linux-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
@@ -143,8 +143,10 @@ Installing IPFS is simple, but varies between operating system:
    ```bash
    ipfs --version
 
-   > ipfs version 0.6.0
-   ```
+   > ipfs version 0.7.0
+   ``` 
+
+
 
 ## Initialize the repository
 
