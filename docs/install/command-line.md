@@ -1,6 +1,6 @@
 ---
 title: Command-line
-description: Lorem ipsum.
+description: Using IPFS through the command-line allows you to do everything that IPFS Desktop can do, but at a more granular level since you can specify which commands want to run. Learn how to install it here.
 ---
 
 # Command-line
