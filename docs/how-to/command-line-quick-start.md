@@ -14,7 +14,7 @@ Don’t want to use the command line right now? Give the desktop-app implementat
 
 ## Prerequisites
 
-If you have not yet installed go-ipfs already, please follow the instructions below to install it.
+If you have not yet installed go-ipfs follow the instructions below to install it.
 
 The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help users quickly find the latest version of every IPFS package. As soon as a new release of an IPFS package comes out, it is automatically shown on `dist.ipfs.io`, so you can be sure you're getting the latest software. These steps detail how to download and install Go-IPFS 0.7.0 from `dist.ipfs.io` using the command-line.
 | [Windows](#windows) | [macOS](#macos) | [Linux](#linux) |
