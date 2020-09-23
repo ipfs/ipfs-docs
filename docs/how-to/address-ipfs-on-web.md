@@ -74,7 +74,6 @@ Learn more about daemon configuration for hosting a public gateway:
 - [`Gateway.PublicGateways` docs](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) for defining gateway behavior on specified hostnames
 - [`Gateway` recipes](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway-recipes) with ready to use one-liners for most common use cases
 
-
 ::: warning Known issues
 
 - Some browsers and other user agents force lowercase for the authority part of URLs, breaking case-sensitive CIDs before the HTTP gateway has a chance to read them
@@ -110,19 +109,21 @@ The multihash in CIDv1 is the same as in the original CIDv0.
 One can also do the conversion manually.
 To convert a CID to Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) use [cid.ipfs.io](https://cid.ipfs.io) or the command line:
 
-```shell
-> ipfs cid base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
+```shell-session
+$ ipfs cid base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 ```
 
 PeerIDs can be represented as [CID with `libp2p-key` multicodec](https://github.com/libp2p/specs/blob/master/RFC/0001-text-peerid-cid.md).
 Base36 is suggested as a safer default for longer keys:
 
-```shell
-> ipfs cid format -v 1 -b base36 --codec libp2p-key QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN
+```shell-session
+$ ipfs key list -l --ipns-base base36
+k51qzi5uqu5dh9ihj4p2v5sl3hxvv27ryx2w0xrsv6jmmqi91t9xp8p9kaipc2 self
+
+$ ipfs cid format -v 1 -b base36 --codec libp2p-key QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN
 k2k4r8jl0yz8qjgqbmc2cdu5hkqek5rj6flgnlkyywynci20j0iuyfuj
 ```
-
 
 ### DNSLink gateway
 
