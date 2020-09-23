@@ -55,7 +55,7 @@ https://ipfs.io/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
 
 ### Subdomain gateway
 
-When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) perimeter is needed, [CIDv1](/concepts/content-addressing/#identifier-formats) in case-insensitive encoding such as Base32 or Base36 should be used in the subdomain:
+When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) is needed, [CIDv1](/concepts/content-addressing/#identifier-formats) in case-insensitive encoding such as Base32 or Base36 should be used in the subdomain:
 
     https://<cidv1b32>.ipfs.<gateway-host>.tld/path/to/resource
 
