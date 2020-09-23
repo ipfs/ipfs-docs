@@ -1,6 +1,6 @@
 ---
 title: Server infrastructure
-description: Lorem ipsum.
+description: IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating and tracking a global pinset distributed among multiple peers. Learn how to install it here.
 ---
 
 # Server infrastructure
