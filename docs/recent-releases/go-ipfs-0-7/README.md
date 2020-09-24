@@ -6,7 +6,7 @@ title: Overview
 
 ![The Go-IPFS logo.](./images/go-ipfs-logo.png)
 
-In August, we announced the [deprecation of the SECIO security transport](https://blog.ipfs.io/2020-08-07-deprecating-secio/). In this release, we have disabled SECIO by default, which will have an impact on older nodes on the network. The best way to mitigate the impact of this change is to [upgrade your IPFS nodes](https://docs.ipfs.io/recent-releases/go-ipfs-0-7/update-procedure) as soon as possible! Not only will upgrading ensure you're using the latest security transports, you'll get access to all of the [performance improvements](https://blog.ipfs.io/2020-07-20-dht-deep-dive/) we've made this year to content routing.
+In August, we announced the [deprecation of the SECIO security transport](https://blog.ipfs.io/2020-08-07-deprecating-secio/). In this release, we have disabled SECIO by default, which will have an impact on older nodes on the network. The best way to mitigate the impact of this change is to [upgrade your IPFS nodes](https://docs.ipfs.io/recent-releases/go-ipfs-0-7/update-procedure) as soon as possible! Not only will upgrading ensure you're using the latest security transports, but you'll also get access to all of the [performance improvements](https://blog.ipfs.io/2020-07-20-dht-deep-dive/) we've made this year to content routing.
 
 With this release, you will also start seeing more Peer IDs on the network that start with `1` instead of the typical `Qm`. This is due to a switch to ed25519 keys being used by default over RSA keys, which you can read more about in the highlights below.
 
