@@ -40,7 +40,7 @@ Many commands will accept a `--ipns-base` option that allows changing command ou
 
 ## Multiaddresses now accept PeerIDs encoded as CIDv1
 
-In preparation for eventually changing the default PeerID representation multiaddresses can now contain strings like `/p2p/k51xyz...` in addition to the default `/p2p/Qmabc...`. There is a corresponding `--peerid-base` option to many functions that output peerIDs.
+In preparation for eventually changing the default PeerID representation, multiaddresses can now contain strings like `/p2p/k51xyz...` in addition to the default `/p2p/Qmabc...`. There is a corresponding `--peerid-base` option to many functions that output peerIDs.
 
 ## Dag stat
 
