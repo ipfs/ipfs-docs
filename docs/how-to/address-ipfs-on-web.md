@@ -55,9 +55,9 @@ https://ipfs.io/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
 
 ### Subdomain gateway
 
-When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) perimeter is needed, [CIDv1](https://github.com/ipld/cid#cidv1) in Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) should be used in the subdomain:
+When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) is needed, [CIDv1](/concepts/content-addressing/#identifier-formats) in case-insensitive encoding such as Base32 or Base36 should be used in the subdomain:
 
-    https://<cidv1-base32>.ipfs.<gateway-host>.tld/path/to/resource
+    https://<cidv1b32>.ipfs.<gateway-host>.tld/path/to/resource
 
 Example:
 
@@ -65,42 +65,65 @@ Example:
     https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.cf-ipfs.com/wiki/Vincent_van_Gogh.html
     https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.localhost:8080/wiki/
 
-::: tip
+#### Native support in go-ipfs 0.5+
 
-go-ipfs provides native support for subdomain gateways on hostnames defined in [`Gateway.PublicGateways`](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) configuration map.
+[go-ipfs](https://dist.ipfs.io/#go-ipfs) provides native support for subdomain gateways on hostnames defined in the [`Gateway.PublicGateways`](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) configuration map.
 
 Learn more about daemon configuration for hosting a public gateway:
 
 - [`Gateway.PublicGateways` docs](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) for defining gateway behavior on specified hostnames
-- [`Gateway` recipes](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) with ready to use one-liners for most common use cases
+- [`Gateway` recipes](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway-recipes) with ready to use one-liners for most common use cases
+
+::: warning Known issues
+
+- Some browsers and other user agents force lowercase for the authority part of URLs, breaking case-sensitive CIDs before the HTTP gateway has a chance to read them
+- DNS label length is limited to 63 characters ([RFC 1034](https://tools.ietf.org/html/rfc1034#page-7))
+
+Due to these limitations, the use of short, case-insensitive CIDv1 in a subdomain context is advised.
+Base32 is the safe default; the less-popular Base36 can be used for longer ED25519 libp2p keys.
+
+See the next section to learn how to convert an existing CIDv0 to a DNS-safe representation.
 
 :::
 
-::: danger
+#### CID conversion for subdomains
 
-Some browsers and other user agents force lowercase for the authority part of URLs, breaking case-sensitive CIDs before HTTP Gateway has a chance to read them.
+If you have content identified by an older CIDv0, there are easy ways to safely represent it as CIDv1 for use in subdomains and other case-insensitive contexts.
 
-To avoid this, use of case-insensitive CIDv1 in Base32 in subdomain context is suggested as the safe default.
+#### Automatic — leverage the gateway in go-ipfs
 
-:::
+**TL;DR:** Using a subdomain gateway as a drop-in replacement for a path one removes the need for manual CID conversion.
 
-::: tip
+Request for a content path sent to the gateway domain will return an HTTP 301 redirect to a correct subdomain version, taking care of any necessary encoding conversion if needed:
 
-To convert CID to Base32 use [cid.ipfs.io](https://cid.ipfs.io) or a command line:
+    https://<gateway-host>.tld/ipfs/<cid> -> https://<cidv1>.ipfs.<gateway-host>.tld/
 
-```shell
-> ipfs cid base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
+To illustrate, opening the CIDv0 resource at [`https://dweb.link/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html`](https://dweb.link/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html)
+returns a redirect to a CIDv1 representation at [`https://bafybeicgmdpvw4duutrmdxl4a7gc52sxyuk7nz5gby77afwdteh3jc5bqa.ipfs.dweb.link/wiki/Mars.html`](https://bafybeicgmdpvw4duutrmdxl4a7gc52sxyuk7nz5gby77afwdteh3jc5bqa.ipfs.dweb.link/wiki/Mars.html).
+
+The gateway takes care of converting the CID to case-insensitive encoding.
+The multihash in CIDv1 is the same as in the original CIDv0.
+
+#### Manual — use cid.ipfs.io or the command line
+
+One can also do the conversion manually.
+To convert a CID to Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) use [cid.ipfs.io](https://cid.ipfs.io) or the command line:
+
+```shell-session
+$ ipfs cid base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 ```
 
-[PeerIDs can be represented as CID with `libp2p-key` multicodec](https://github.com/libp2p/specs/blob/master/RFC/0001-text-peerid-cid.md):
+PeerIDs can be represented as [CID with `libp2p-key` multicodec](https://github.com/libp2p/specs/blob/master/RFC/0001-text-peerid-cid.md).
+Base36 is suggested as a safer default for longer keys:
 
-```shell
-> ipfs cid format -v 1 -b base32 --codec libp2p-key QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN
-bafzbeiagwnqiviaae5aet2zivwhhsorg75x2wka2pu55o7grr23ulx5kxm
+```shell-session
+$ ipfs key list -l --ipns-base base36
+k51qzi5uqu5dh9ihj4p2v5sl3hxvv27ryx2w0xrsv6jmmqi91t9xp8p9kaipc2 self
+
+$ ipfs cid format -v 1 -b base36 --codec libp2p-key QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN
+k2k4r8jl0yz8qjgqbmc2cdu5hkqek5rj6flgnlkyywynci20j0iuyfuj
 ```
-
-:::
 
 ### DNSLink gateway
 
