@@ -1,6 +1,6 @@
 ---
 title: IPFS Companion
-description: 'Learn about IPFS Companion, the browser extension that allows you to interact with your IPFS node and the extended IPFS network through your browser.'
+description: The IPFS Companion browser extension allows you to interact with your IPFS node and the extended IPFS network through your browser. Learn how to install it here.
 ---
 
 # IPFS Companion

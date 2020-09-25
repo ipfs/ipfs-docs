@@ -9,7 +9,7 @@ description: HTTP API reference for IPFS, the InterPlanetary File System.
 <!-- TODO: Describe how to change ports and configure the API server -->
 <!-- TODO: Structure this around command groups (dag, object, files, etc.) -->
 
-_Generated on 2020-06-17, from go-ipfs v0.6.0._
+_Generated on 2020-09-22, from go-ipfs v0.7.0._
 
 When an IPFS node is running as a daemon, it exposes an HTTP API that allows you to control the node and run the same commands you can from the command line.
 
@@ -1134,6 +1134,35 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ---
 
+## /api/v0/dag/stat
+
+Gets stats for a DAG
+
+
+### Arguments
+
+- `arg` [string]: CID of a DAG root to get statistics for Required: **yes**.
+- `progress` [bool]: Return progressive data while reading through the DAG. Default: `true`. Required: no.
+
+
+### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```json
+{
+  "NumBlocks": "<int64>",
+  "Size": "<uint64>"
+}
+
+```
+
+### cURL Example
+
+`curl -X POST "http://127.0.0.1:5001/api/v0/dag/stat?arg=<root>&progress=true"`
+
+---
+
 ## /api/v0/dht/findpeer
 
 Find the multiaddresses associated with a Peer ID.
@@ -1991,6 +2020,7 @@ Show ipfs node id info.
 
 - `arg` [string]: Peer.ID of node to look up. Required: no.
 - `format` [string]: Optional output format. Required: no.
+- `peerid-base` [string]: Encoding used for peer IDs: Can either be a multibase encoded CID or a base58btc encoded multihash. Takes {b58mh|base36|k|base32|b...}. Default: `b58mh`. Required: no.
 
 
 ### Response
@@ -2005,6 +2035,9 @@ On success, the call to this endpoint will return with 200 and the following bod
   "AgentVersion": "<string>",
   "ID": "<string>",
   "ProtocolVersion": "<string>",
+  "Protocols": [
+    "<string>"
+  ],
   "PublicKey": "<string>"
 }
 
@@ -2012,7 +2045,32 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### cURL Example
 
-`curl -X POST "http://127.0.0.1:5001/api/v0/id?arg=<peerid>&format=<value>"`
+`curl -X POST "http://127.0.0.1:5001/api/v0/id?arg=<peerid>&format=<value>&peerid-base=b58mh"`
+
+---
+
+## /api/v0/key/export
+
+Export a keypair
+
+
+### Arguments
+
+- `arg` [string]: name of key to export Required: **yes**.
+- `output` [string]: The path where the output should be stored. Required: no.
+
+
+### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```json
+This endpoint returns a `text/plain` response body.
+```
+
+### cURL Example
+
+`curl -X POST "http://127.0.0.1:5001/api/v0/key/export?arg=<name>&output=<value>"`
 
 ---
 
@@ -2024,8 +2082,9 @@ Create a new keypair
 ### Arguments
 
 - `arg` [string]: name of key to create Required: **yes**.
-- `type` [string]: type of the key to create: rsa, ed25519. Default: `rsa`. Required: no.
+- `type` [string]: type of the key to create: rsa, ed25519. Default: `ed25519`. Required: no.
 - `size` [int]: size of the key to generate. Required: no.
+- `ipns-base` [string]: Encoding used for keys: Can either be a multibase encoded CID or a base58btc encoded multihash. Takes {b58mh|base36|k|base32|b...}. Default: `base36`. Required: no.
 
 
 ### Response
@@ -2042,7 +2101,42 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### cURL Example
 
-`curl -X POST "http://127.0.0.1:5001/api/v0/key/gen?arg=<name>&type=rsa&size=<value>"`
+`curl -X POST "http://127.0.0.1:5001/api/v0/key/gen?arg=<name>&type=ed25519&size=<value>&ipns-base=base36"`
+
+---
+
+## /api/v0/key/import
+
+Import a key and prints imported key id
+
+
+### Arguments
+
+- `arg` [string]: name to associate with key in keychain Required: **yes**.
+
+- `ipns-base` [string]: Encoding used for keys: Can either be a multibase encoded CID or a base58btc encoded multihash. Takes {b58mh|base36|k|base32|b...}. Default: `base36`. Required: no.
+
+
+### Request Body
+
+Argument `key` is of file type. This endpoint expects one or several files (depending on the command) in the body of the request as 'multipart/form-data'.
+
+
+### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```json
+{
+  "Id": "<string>",
+  "Name": "<string>"
+}
+
+```
+
+### cURL Example
+
+`curl -X POST -F file=@myfile "http://127.0.0.1:5001/api/v0/key/import?arg=<name>&ipns-base=base36"`
 
 ---
 
@@ -2054,6 +2148,7 @@ List all local keypairs
 ### Arguments
 
 - `l` [bool]: Show extra information about keys. Required: no.
+- `ipns-base` [string]: Encoding used for keys: Can either be a multibase encoded CID or a base58btc encoded multihash. Takes {b58mh|base36|k|base32|b...}. Default: `base36`. Required: no.
 
 
 ### Response
@@ -2074,7 +2169,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### cURL Example
 
-`curl -X POST "http://127.0.0.1:5001/api/v0/key/list?l=<value>"`
+`curl -X POST "http://127.0.0.1:5001/api/v0/key/list?l=<value>&ipns-base=base36"`
 
 ---
 
@@ -2088,6 +2183,7 @@ Rename a keypair
 - `arg` [string]: name of key to rename Required: **yes**.
 - `arg` [string]: new name of the key Required: **yes**.
 - `force` [bool]: Allow to overwrite an existing key. Required: no.
+- `ipns-base` [string]: Encoding used for keys: Can either be a multibase encoded CID or a base58btc encoded multihash. Takes {b58mh|base36|k|base32|b...}. Default: `base36`. Required: no.
 
 
 ### Response
@@ -2106,7 +2202,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### cURL Example
 
-`curl -X POST "http://127.0.0.1:5001/api/v0/key/rename?arg=<name>&arg=<newName>&force=<value>"`
+`curl -X POST "http://127.0.0.1:5001/api/v0/key/rename?arg=<name>&arg=<newName>&force=<value>&ipns-base=base36"`
 
 ---
 
@@ -2119,6 +2215,7 @@ Remove a keypair
 
 - `arg` [string]: names of keys to remove Required: **yes**.
 - `l` [bool]: Show extra information about keys. Required: no.
+- `ipns-base` [string]: Encoding used for keys: Can either be a multibase encoded CID or a base58btc encoded multihash. Takes {b58mh|base36|k|base32|b...}. Default: `base36`. Required: no.
 
 
 ### Response
@@ -2139,7 +2236,33 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### cURL Example
 
-`curl -X POST "http://127.0.0.1:5001/api/v0/key/rm?arg=<name>&l=<value>"`
+`curl -X POST "http://127.0.0.1:5001/api/v0/key/rm?arg=<name>&l=<value>&ipns-base=base36"`
+
+---
+
+## /api/v0/key/rotate
+
+Rotates the ipfs identity.
+
+
+### Arguments
+
+- `oldkey` [string]: Keystore name to use for backing up your existing identity. Required: no.
+- `type` [string]: type of the key to create: rsa, ed25519. Default: `ed25519`. Required: no.
+- `size` [int]: size of the key to generate. Required: no.
+
+
+### Response
+
+On success, the call to this endpoint will return with 200 and the following body:
+
+```json
+This endpoint returns a `text/plain` response body.
+```
+
+### cURL Example
+
+`curl -X POST "http://127.0.0.1:5001/api/v0/key/rotate?oldkey=<value>&type=ed25519&size=<value>"`
 
 ---
 
@@ -2316,6 +2439,7 @@ Publish IPNS names.
 - `ttl` [string]: Time duration this record should be cached for. Uses the same syntax as the lifetime option. (caution: experimental). Required: no.
 - `key` [string]: Name of the key to be used or a valid PeerID, as listed by &#39;ipfs key list -l&#39;. Default: `self`. Required: no.
 - `quieter` [bool]: Write only final hash. Required: no.
+- `ipns-base` [string]: Encoding used for keys: Can either be a multibase encoded CID or a base58btc encoded multihash. Takes {b58mh|base36|k|base32|b...}. Default: `base36`. Required: no.
 
 
 ### Response
@@ -2332,7 +2456,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### cURL Example
 
-`curl -X POST "http://127.0.0.1:5001/api/v0/name/publish?arg=<ipfs-path>&resolve=true&lifetime=24h&allow-offline=<value>&ttl=<value>&key=self&quieter=<value>"`
+`curl -X POST "http://127.0.0.1:5001/api/v0/name/publish?arg=<ipfs-path>&resolve=true&lifetime=24h&allow-offline=<value>&ttl=<value>&key=self&quieter=<value>&ipns-base=base36"`
 
 ---
 
@@ -2397,7 +2521,7 @@ Show current name subscriptions
 
 ### Arguments
 
-This endpoint takes no arguments.
+- `ipns-base` [string]: Encoding used for keys: Can either be a multibase encoded CID or a base58btc encoded multihash. Takes {b58mh|base36|k|base32|b...}. Default: `base36`. Required: no.
 
 
 ### Response
@@ -2415,7 +2539,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### cURL Example
 
-`curl -X POST "http://127.0.0.1:5001/api/v0/name/pubsub/subs"`
+`curl -X POST "http://127.0.0.1:5001/api/v0/name/pubsub/subs?ipns-base=base36"`
 
 ---
 
@@ -3309,7 +3433,7 @@ Subscribe to messages on a given topic.
 ### Arguments
 
 - `arg` [string]: String name of topic to subscribe to. Required: **yes**.
-- `discover` [bool]: try to discover other peers subscribed to the same topic. Required: no.
+- `discover` [bool]: Deprecated option to instruct pubsub to discovery peers for the topic. Discovery is now built into pubsub. Required: no.
 
 
 ### Response

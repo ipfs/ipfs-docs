@@ -1,11 +1,11 @@
 ---
 title: Command-line
-description: Lorem ipsum.
+description: Using IPFS through the command-line allows you to do everything that IPFS Desktop can do, but at a more granular level since you can specify which commands to run. Learn how to install it here.
 ---
 
 # Command-line
 
-Installing IPFS through the command-line is handy if you plan on building applications and services on top of an IPFS node. This method is also useful if you're setting up a node without a user interface, usually the case with remote servers or virtual machines. Using IPFS through the command-line allows you to do everything that IPFS Desktop can do, but at a more granular level since you can specify which commands want to run.
+Installing IPFS through the command-line is handy if you plan on building applications and services on top of an IPFS node. This method is also useful if you're setting up a node without a user interface, usually the case with remote servers or virtual machines. Using IPFS through the command-line allows you to do everything that IPFS Desktop can do, but at a more granular level since you can specify which commands to run.
 
 There are several different ways to install IPFS using the command-line. The easiest method is by using a package manager. If you don't have one installed, or would like a more up-to-date version of IPFS, you can use [dist.ipfs.io](dist.ipfs.io) to grab the latest package and install it. Lastly, if your the kind of person that likes to bake a cake themselves rather than buying a premade one, there are manual complilation instructions available.
 
@@ -23,7 +23,7 @@ Although we try our best to keep the package manager releases up to date, they s
 
 ## Official distributions
 
-The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help users quickly find the latest version of every IPFS package. As soon as a new release of an IPFS package comes out, it is automatically shown on `dist.ipfs.io`, so you can be sure you're getting the latest software. These steps detail how to download and install Go-IPFS 0.6.0 from `dist.ipfs.io` using the command-line.
+The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help users quickly find the latest version of every IPFS package. As soon as a new release of an IPFS package comes out, it is automatically shown on `dist.ipfs.io`, so you can be sure you're getting the latest software. These steps detail how to download and install Go-IPFS 0.7.0 from `dist.ipfs.io` using the command-line.
 
 | [Windows](#windows)                                                          | [macOS](#macos)                                                        | [Linux](#linux)                                                        |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -35,22 +35,22 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
 
    ```powershell
    cd ~\
-   wget https://dist.ipfs.io/go-ipfs/v0.6.0/go-ipfs_v0.6.0_windows-amd64.zip -Outfile go-ipfs_v0.6.0.zip
+   wget https://dist.ipfs.io/go-ipfs/v0.7.0/go-ipfs_v0.7.0_windows-amd64.zip -Outfile go-ipfs_v0.7.0.zip
    ```
 
 2. Unzip the file and move it somewhere handy.
 
    ```powershell
-   Expand-Archive -Path go-ipfs_v0.6.0.zip -DestinationPath ~\Apps\go-ipfs_v0.6.0
+   Expand-Archive -Path go-ipfs_v0.7.0.zip -DestinationPath ~\Apps\go-ipfs_v0.7.0
    ```
 
-3. Move into the `go-ipfs_v0.6.0` folder and check that the `ipfs.exe` works:
+3. Move into the `go-ipfs_v0.7.0` folder and check that the `ipfs.exe` works:
 
    ```powershell
-   cd ~\Apps\go-ipfs_v0.6.0\go-ipfs
+   cd ~\Apps\go-ipfs_v0.7.0\go-ipfs
    .\ipfs.exe --version
 
-   > ipfs version 0.6.0
+   > ipfs version 0.7.0
    ```
 
    While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH.` by using the following steps.
@@ -62,13 +62,13 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
 
    > Path
    > ----
-   > C:\Users\Johnny\Apps\go-ipfs_v0.6.0\go-ipfs
+   > C:\Users\Johnny\Apps\go-ipfs_v0.7.0\go-ipfs
    ```
 
 5. Add the address you just copied to PowerShell's `PATH` by adding it to the end of the `profile.ps1` file stored in `Documents\WindowsPowerShell`:
 
    ```powershell
-   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\Johnny\Apps\go-ipfs_v0.6.0\go-ipfs')"
+   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\Johnny\Apps\go-ipfs_v0.7.0\go-ipfs')"
    ```
 
 6. Close and reopen your PowerShell window. Test that your IPFS path is set correctly by going to your home folder and asking IPFS for the version:
@@ -77,7 +77,7 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
    cd ~
    ipfs --version
 
-   > ipfs version 0.6.0
+   > ipfs version 0.7.0
    ```
 
 ### macOS
@@ -85,13 +85,13 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
 1. Download the macOS binary from [`dist.ipfs.io`](https://dist.ipfs.io/#go-ipfs).
 
    ```bash
-   wget https://dist.ipfs.io/go-ipfs/v0.6.0/go-ipfs_v0.6.0_darwin-amd64.tar.gz
+   wget https://dist.ipfs.io/go-ipfs/v0.7.0/go-ipfs_v0.7.0_darwin-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.6.0_darwin-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.7.0_darwin-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
@@ -114,7 +114,7 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
    ```bash
    ipfs --version
 
-   > ipfs version 0.6.0
+   > ipfs version 0.7.0
    ```
 
 ### Linux
@@ -122,13 +122,13 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
 1. Download the Linux binary from [`dist.ipfs.io`](https://dist.ipfs.io/#go-ipfs).
 
    ```bash
-   wget https://dist.ipfs.io/go-ipfs/v0.6.0/go-ipfs_v0.6.0_linux-amd64.tar.gz
+   wget https://dist.ipfs.io/go-ipfs/v0.7.0/go-ipfs_v0.7.0_linux-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.6.0_linux-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.7.0_linux-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
@@ -152,7 +152,7 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
    ```bash
    ipfs --version
 
-   > ipfs version 0.6.0
+   > ipfs version 0.7.0
    ```
 
 ## Compile manually
