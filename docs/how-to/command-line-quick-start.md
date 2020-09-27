@@ -14,7 +14,7 @@ Don’t want to use the command line right now? Give the desktop-app implementat
 
 ## Prerequisites
 
-If you have not yet installed Go-IPFS, follow the [install instructions](https://github.com/ipfs/go-ipfs/blob/master/install/command-line.md).
+If you have not yet installed Go-IPFS, follow the [install instructions](https://docs.ipfs.io/install/command-line/).
 
 ## Initialize the repository
 
