@@ -10,7 +10,7 @@
     "@vuepress/plugin-back-to-top": "^1.5.4",
     "@vuepress/plugin-google-analytics": "^1.6.0",
     "@vuepress/plugin-html-redirect": "^0.1.2",
-    "@vuepress/plugin-last-updated": "^1.5.4",
+    "@vuepress/plugin-last-updated": "^1.6.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.4.0",
     "markdown-it-deflist": "^2.1.0",
