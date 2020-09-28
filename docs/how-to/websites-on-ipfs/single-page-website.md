@@ -200,23 +200,19 @@ Your browser should load the website in a few moments! This can take up to a few
 
 ## Pinning files
 
-IPFS nodes treat the data they store like a cache, meaning that there is no guarantee the data will continue to be stored. _Pinning_ a file tells an IPFS node to treat the data as essential and to not throw it away. You should _pin_ any content you consider important to ensure that data is retained over the long term.
+IPFS nodes treat the data they store like a cache, meaning that there is no guarantee the data will continue to be stored. _Pinning_ a file tells an IPFS node to treat the data as essential and to not throw it away. You should _pin_ any content you consider important to ensure that data is retained over the long term. IPFS Desktop allows you to pin files straight from the _Files_ tab.
 
-### Pinning in IPFS Desktop
+![IPFS Desktop application showing the pinning option.](ipfs-desktop-showing-pinning.png)
 
-IPFS Desktop (via IPFS WebUI) allows uploading and pinning files - however if you want your IPFS data to remain accessible when your local node goes offline, you might want to additionally use another option like Collaborative Clusters or a Pinning Service.
+However, if you want your IPFS data to remain accessible when your local IPFS node goes offline, you might want to use another option like _collaborative clusters_ or a _pinning service_.
 
-![Screen Shot 2020-09-24 at 12 33 47 PM](https://user-images.githubusercontent.com/618519/94191399-4d93bf80-fe62-11ea-9966-a01f3d2a5684.png)
+### Collaborative clusters
 
-### Pinning through Collaborative Clusters
+IPFS collaborative clusters are groups of IPFS nodes that collaboratively pin all content added to the IPFS Cluster by one or many trusted peers. You can learn more about collaborative clusters, including how to set up a cluster yourself, from [cluster.ipfs.io](https://cluster.ipfs.io/documentation/collaborative/setup/)
 
-IPFS Collaborative Clusters are groups of IPFS nodes that collaboratively pin all content added to the IPFS Cluster by one or many trusted peers. You can see more instructions about how to [create a Collaborative Cluster in the docs](https://cluster.ipfs.io/documentation/collaborative/setup/).
+### Pinning services
 
-![Screen Shot 2020-09-24 at 12 31 57 PM](https://user-images.githubusercontent.com/618519/94191217-0d344180-fe62-11ea-8fa1-31bf830e910d.png)
-
-### Using IPFS Pinning Services (ex Pinata)
-
-An easy way to make sure important data is retained is to use a pinning service. These services run a bunch of IPFS nodes, and will _pin_ your data for you! This way you don't have to run and maintain your own IPFS node. [Pinata](https://pinata.cloud/) is a pinning service that allows you to pin up to 1GB of data for free, and fits our purposes perfectly:
+An easy way to make sure important data is retained is to use a pinning service. These services run lots of IPFS nodes and will _pin_ your data for you! This way you don't have to run and maintain your own IPFS node. Check out the [Persistence page](../../concepts/persistence) for more information on pinning services. In this tutorial we're going to use [Pinata](https://pinata.cloud/) since it gives new users 1GB of storage for free, and has a very simple interface:
 
 1. Go to [Pinata.cloud](https://pinata.cloud/) and sign up or log in.
 2. Click **Pinata Upload**.
