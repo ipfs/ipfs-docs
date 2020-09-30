@@ -79,7 +79,7 @@ While these instructions are specific to Ubuntu, they will likely work with most
 If you with to use the [`snap` package manager](https://snapcraft.io/) - all maintained Ubuntu versions have this by default - open up a terminal and install via:
 
 ```bash
-$ snap install ipfs-desktop
+$ sudo snap install ipfs-desktop
 ```
 
 ### Install Option 2: `.deb` Package
