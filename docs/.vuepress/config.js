@@ -134,17 +134,16 @@ module.exports = {
                 ]
               },
               {
-                title: 'Examples & case studies',
+                title: 'Case studies',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/concepts/usage-ideas-examples',
-                  '/concepts/case-study-arbol',
-                  '/concepts/case-study-audius',
-                  '/concepts/case-study-fleek',
-                  '/concepts/case-study-iotex',
-                  '/concepts/case-study-morpheus',
-                  '/concepts/case-study-openbazaar'
+                  ['/concepts/case-study-arbol', 'Arbol'],
+                  ['/concepts/case-study-audius', 'Audius'],
+                  ['/concepts/case-study-fleek', 'Fleek'],
+                  ['/concepts/case-study-iotex', 'Iotex'],
+                  ['/concepts/case-study-morpheus', 'Morpheus'],
+                  ['/concepts/case-study-openbazaar', 'Open Bazaar']
                 ]
               },
               {
@@ -182,7 +181,10 @@ module.exports = {
                 title: 'Further reading',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/concepts/further-reading/academic-papers']
+                children: [
+                  '/concepts/usage-ideas-examples',
+                  '/concepts/further-reading/academic-papers'
+                ]
               }
             ]
           },
