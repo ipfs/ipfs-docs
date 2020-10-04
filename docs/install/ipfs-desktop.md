@@ -83,8 +83,6 @@ While these instructions are specific to Ubuntu, they will likely work with most
 
    ![Install screen within the Ubuntu software installation window.](./images/ipfs-desktop/install-ubuntu-install.png)
 
-### Open IPFS Desktop
-
 1. Click **Applications** or press the Windows key on your keyboard.
 1. Search for `IPFS` and select **IPFS Desktop**:
 
