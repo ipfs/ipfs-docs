@@ -74,7 +74,7 @@ The IPFS Desktop application has finished installing. You can now start to [add 
 
 While these instructions are specific to Ubuntu, they will likely work with most Ubuntu-related Linux distributions. For non-Ubuntu Linux distributions, check out the [IPFS Desktop GitHub repository](https://github.com/ipfs-shipyard/ipfs-desktop#install) for install instructions.
 
-1. Download the `.deb` package:
+1. Download the latest `.deb` package from the [IPFS Desktop GitHub repository](https://github.com/ipfs-shipyard/ipfs-desktop#install).
 1. Open the `.deb` package in **Software Installer**:
 
    ![Right-click context menu of the IPFS deb package.](./images/ipfs-desktop/install-ubuntu-software-install.png)
@@ -91,8 +91,6 @@ While these instructions are specific to Ubuntu, they will likely work with most
 1. You can now find an IPFS icon in the status bar:
 
    ![IPFS icon shown in the Ubuntu status bar.](./images/ipfs-desktop/install-ubuntu-ipfs-running-status-bar.png)
-
-The IPFS Desktop application has finished installing. You can now start to [add your site](#add-your-site).
 
 ## Next steps
 
