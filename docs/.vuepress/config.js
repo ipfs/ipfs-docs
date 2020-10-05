@@ -130,6 +130,7 @@ module.exports = {
                   '/concepts/how-ipfs-works',
                   ['https://dweb-primer.ipfs.io/', 'IPFS primer'],
                   '/concepts/glossary',
+                  '/concepts/usage-ideas-examples',
                   '/concepts/faq'
                 ]
               },
@@ -183,7 +184,6 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/concepts/usage-ideas-examples',
                   '/concepts/further-reading/academic-papers'
                 ]
               }
