@@ -144,7 +144,7 @@ module.exports = {
                   ['/concepts/case-study-iotex', 'Iotex'],
                   ['/concepts/case-study-likecoin', 'LikeCoin'],
                   ['/concepts/case-study-morpheus', 'Morpheus'],
-                  ['/concepts/case-study-openbazaar', 'Open Bazaar']
+                  ['/concepts/case-study-openbazaar', 'OpenBazaar']
                 ]
               },
               {
