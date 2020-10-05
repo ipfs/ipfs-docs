@@ -130,22 +130,22 @@ module.exports = {
                   '/concepts/how-ipfs-works',
                   ['https://dweb-primer.ipfs.io/', 'IPFS primer'],
                   '/concepts/glossary',
+                  '/concepts/usage-ideas-examples',
                   '/concepts/faq'
                 ]
               },
               {
-                title: 'Examples & case studies',
+                title: 'Case studies',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/concepts/usage-ideas-examples',
-                  '/concepts/case-study-arbol',
-                  '/concepts/case-study-audius',
-                  '/concepts/case-study-fleek',
-                  '/concepts/case-study-iotex',
-                  '/concepts/case-study-likecoin',
-                  '/concepts/case-study-morpheus',
-                  '/concepts/case-study-openbazaar'
+                  ['/concepts/case-study-arbol', 'Arbol'],
+                  ['/concepts/case-study-audius', 'Audius'],
+                  ['/concepts/case-study-fleek', 'Fleek'],
+                  ['/concepts/case-study-iotex', 'Iotex'],
+                  ['/concepts/case-study-likecoin', 'LikeCoin'],
+                  ['/concepts/case-study-morpheus', 'Morpheus.Network'],
+                  ['/concepts/case-study-openbazaar', 'OpenBazaar']
                 ]
               },
               {
@@ -183,7 +183,9 @@ module.exports = {
                 title: 'Further reading',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/concepts/further-reading/academic-papers']
+                children: [
+                  '/concepts/further-reading/academic-papers'
+                ]
               }
             ]
           },
