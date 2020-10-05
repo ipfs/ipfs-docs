@@ -143,6 +143,7 @@ module.exports = {
                   '/concepts/case-study-audius',
                   '/concepts/case-study-fleek',
                   '/concepts/case-study-iotex',
+                  '/concepts/case-study-likecoin',
                   '/concepts/case-study-morpheus',
                   '/concepts/case-study-openbazaar'
                 ]
