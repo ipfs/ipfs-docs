@@ -142,6 +142,7 @@ module.exports = {
                   ['/concepts/case-study-audius', 'Audius'],
                   ['/concepts/case-study-fleek', 'Fleek'],
                   ['/concepts/case-study-iotex', 'Iotex'],
+                  ['/concepts/case-study-likecoin', 'LikeCoin'],
                   ['/concepts/case-study-morpheus', 'Morpheus'],
                   ['/concepts/case-study-openbazaar', 'Open Bazaar']
                 ]
