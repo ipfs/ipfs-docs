@@ -104,6 +104,7 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
 1. Move into the `go-ipfs` folder and run the install script:
 
    ```bash
+   cd go-ipfs
    bash install.sh
 
    > Moved ./ipfs to /usr/local/bin
