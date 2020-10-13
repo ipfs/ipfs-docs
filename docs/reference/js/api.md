@@ -7,7 +7,7 @@ description: Developer resources for working in JavaScript with IPFS, the InterP
 # API resources for js-ipfs
 
 ::: callout
-[Explore js-ipfs through interactive coding challenges at ProtoSchool](https://proto.school/#/tutorials?course=ipfs)
+[Explore js-ipfs through interactive coding challenges at ProtoSchool](https://proto.school/tutorials?course=ipfs)
 :::
 
 ## Working with IPFS in JS

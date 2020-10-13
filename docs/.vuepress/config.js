@@ -372,7 +372,7 @@ module.exports = {
                   '/community/contribute/ways-to-contribute',
                   ['https://discuss.ipfs.io/', 'IPFS forums'],
                   '/community/irc',
-                  ['https://proto.school/#/events', 'ProtoSchool workshops'],
+                  ['https://proto.school/events', 'ProtoSchool workshops'],
                   ['https://www.meetup.com/members/249142444/', 'Meetups'],
                   '/community/social-media',
                   ['https://awesome.ipfs.io', 'Awesome IPFS']

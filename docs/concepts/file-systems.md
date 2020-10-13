@@ -307,7 +307,7 @@ To export or read the file data out of the UnixFS graph, perform an in-order tra
 
 You can find additional resources to familiarize with these file systems at: 
 
-- [Protoschool MFS course](https://proto.school/#/mutable-file-system)
+- [Protoschool MFS course](https://proto.school/mutable-file-system)
 - [Understanding how the InterPlanetary File System deals with Files](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_A), from IPFS Camp 2019
 - [Jeromy Coffee Talks - Files API](https://www.youtube.com/watch?v=FX_AXNDsZ9k)
 - [UnixFS Specification](https://github.com/ipfs/specs/blob/master/UNIXFS.md)

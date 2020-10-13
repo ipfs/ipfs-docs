@@ -26,7 +26,7 @@ IRC fan? Here are [all our channels](irc). New to IRC? There's getting-started a
 
 ## ProtoSchool workshops
 
-ProtoSchool isn't just home to interactive tutorials on dweb topics — it's also a vibrant community of makers and do-ers around the globe! Community groups worldwide host [ProtoSchool workshops](https://proto.school/#/events) regularly, offering you the opportunity to complete our interactive tutorials with the support of local mentors.
+ProtoSchool isn't just home to interactive tutorials on dweb topics — it's also a vibrant community of makers and do-ers around the globe! Community groups worldwide host [ProtoSchool workshops](https://proto.school/events) regularly, offering you the opportunity to complete our interactive tutorials with the support of local mentors.
 
 ## Meetups
 
