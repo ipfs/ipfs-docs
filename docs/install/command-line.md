@@ -285,20 +285,6 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
    > ipfs-update version 1.6.0
    ```
 
-#### From Source
-
-`ipfs-update` uses go modules and requires Go version 1.12 or higher:
-
-```bash
-# You need to CD to a directory _outside_ of your GOPATH.
-$ cd /
-# Install with go modules enabled
-$ GO111MODULE=on go get github.com/ipfs/ipfs-update
-```
-
-Note: Your $GOPATH/bin should be within $PATH for the result ipfs-update binary
-to be found.
-
 ### Use `ipfs-update` to install & update Go-IPFS
 
 ```bash
