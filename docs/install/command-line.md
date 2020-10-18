@@ -300,7 +300,7 @@ ipfs-update install latest
 ```
 
 
-Downloads, tests, and installs the specified version (or "latest" for latest version) of Go-IPFS. The existing version is stashed in case a revert is needed.
+`ipfs-update install` downloads, tests, and installs the specified version of Go-IPFS. If a version of IPFS is already installed, that version is _stashed_ and can be reverted to later.
 
 Note: In order to update Go-IPFS just install the new version. Check See the [`ipfs/ipfs-update` GitHub repository for details →](https://github.com/ipfs/ipfs-update)
 
