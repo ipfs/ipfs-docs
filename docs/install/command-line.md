@@ -285,7 +285,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
    > ipfs-update version 1.6.0
    ```
 
-### Use `ipfs-update` to install & update Go-IPFS
+### Install using IPFS Update
 
 ```bash
 $ ipfs-update install <version>
