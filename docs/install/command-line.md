@@ -251,7 +251,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
    > ipfs-update version 1.6.0
    ```
 
-##### Linux
+#### Linux
 
 1. Download the Linux binary from [`dist.ipfs.io`](https://dist.ipfs.io/#ipfs-update).
 
