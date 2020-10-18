@@ -155,7 +155,7 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
    > ipfs version 0.7.0
    ```
 
-## The `ipfs-update` tool
+## IPFS Update
 
 `ipfs-update` is a command-line tool to help update and install Go-IPFS easily.
 
