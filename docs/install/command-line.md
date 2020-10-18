@@ -157,7 +157,7 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
 
 ## IPFS Update
 
-`ipfs-update` is a command-line tool to help update and install Go-IPFS easily.
+IPFS Update is a command-line tool originally used to help users update their IPFS version. It has since been upgraded to allow users to _install_ Go-IPFS as well. The easiest way to install IPFS Update is by using the pre-built binaries, detailed below. See the [project repository](https://github.com/ipfs/ipfs-update#from-source) if you'd prefer to build it from source.
 
 ### Install
 
