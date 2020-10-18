@@ -319,7 +319,7 @@ ipfs-update revert
 
 ### Uninstall `ipfs-update`
 
-Uninstalling `ipfs-update` involves removing the binary and adjusting the `PATH` variable on Windows systems.
+To uninstall IPFS Update, delete the binary and `ipfs-update` from your `PATH` variable.
 
 #### Windows
 
