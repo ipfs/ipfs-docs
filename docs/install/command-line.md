@@ -309,7 +309,7 @@ Downloads, tests, and installs the specified version (or "latest" for latest ver
 
 Note: In order to update Go-IPFS just install the new version. Check See the [`ipfs/ipfs-update` GitHub repository for details →](https://github.com/ipfs/ipfs-update)
 
-### Use `ipfs-update` to downgrade Go-IPFS
+### Downgrade using IPFS Update
 Use the `revert` function to roll-back to a previous version of Go-IPFS.
 
 ```bash
