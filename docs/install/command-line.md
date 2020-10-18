@@ -287,9 +287,18 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 
 ### Install using IPFS Update
 
+Run `ipfs-update install` followed by the version of Go-IPFS you want to install:
+
 ```bash
-$ ipfs-update install <version>
+ipfs-update install 0.5.0
 ```
+
+To install the latest release of Go-IPFS use the `latest` tag:
+
+```bash
+ipfs-update install latest
+```
+
 
 Downloads, tests, and installs the specified version (or "latest" for latest version) of Go-IPFS. The existing version is stashed in case a revert is needed.
 
