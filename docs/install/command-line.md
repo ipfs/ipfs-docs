@@ -167,7 +167,7 @@ You can either install a pre-built binary or build `ipfs-update` from source.
 
 You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#ipfs-update). Binaries are also available from the [IPFS Update GitHub release page](https://github.com/ipfs/ipfs-update/releases).
 
-##### Windows
+#### Windows
 
 1. Download the Windows binary from [`dist.ipfs.io`](https://dist.ipfs.io/#ipfs-update).
 
