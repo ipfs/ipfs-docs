@@ -312,7 +312,7 @@ Note: In order to update Go-IPFS just install the new version. Check See the [`i
 ### Use `ipfs-update` to downgrade Go-IPFS
 
 ```bash
-$ ipfs-update revert
+ipfs-update revert
 ```
 
 Reverts to the previously installed version of Go-IPFS. This is useful if the newly installed version has issues and you would like to switch back to your older stable installation.
