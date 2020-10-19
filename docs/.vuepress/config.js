@@ -83,7 +83,6 @@ module.exports = {
               {
                 title: 'Go-IPFS 0.7',
                 sidebarDepth: 1,
-                collapsable: false,
                 children: [
                   '/recent-releases/go-ipfs-0-7/',
                   ['/recent-releases/go-ipfs-0-7/install', 'Install'],
@@ -94,7 +93,6 @@ module.exports = {
               {
                 title: 'Go-IPFS 0.6',
                 sidebarDepth: 1,
-                collapsable: false,
                 children: [
                   '/recent-releases/go-ipfs-0-6/',
                   ['/recent-releases/go-ipfs-0-6/install', 'Install'],
@@ -105,7 +103,6 @@ module.exports = {
               {
                 title: 'Go-IPFS 0.5',
                 sidebarDepth: 1,
-                collapsable: false,
                 children: [
                   '/recent-releases/go-ipfs-0-5/',
                   ['/recent-releases/go-ipfs-0-5/install', 'Install'],
