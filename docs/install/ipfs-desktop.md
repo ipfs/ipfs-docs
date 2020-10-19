@@ -96,11 +96,13 @@ While these instructions are specific to Ubuntu, they will likely work with most
 
 ## Package Managers
 
-- **Homebrew** - `brew cask install ipfs`
-- **Chocolatey** - `choco install ipfs-desktop`
-- **Scoop** - `scoop install ipfs-desktop`
-- **Snap** - `snap install ipfs-desktop`
-- **AUR** - [`ipfs-desktop` package](https://aur.archlinux.org/packages/ipfs-desktop/) maintained by [@alexhenrie](https://github.com/alexhenrie)
+| Package Manager                                                                                                    | Command                      |
+| ------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
+| [Homebrew](https://formulae.brew.sh/cask/ipfs/)                                                                    | `brew cask install ipfs`     |
+| [Chocolatey](https://chocolatey.org/packages/ipfs-desktop)                                                         | `choco install ipfs-desktop` |
+| [Scoop](https://github.com/lukesampson/scoop-extras/blob/master/bucket/ipfs-desktop.json)                          | `scoop install ipfs-desktop` |
+| [Snap](https://snapcraft.io/ipfs-desktop)                                                                          | `snap install ipfs-desktop`  |
+| [AUR](https://aur.archlinux.org/packages/ipfs-desktop/) maintained by [@alexhenrie](https://github.com/alexhenrie) | `ipfs-desktop`               |
 
 ## Next steps
 
