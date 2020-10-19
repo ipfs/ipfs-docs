@@ -1,5 +1,5 @@
 #!/bin/bash
-# Updates `content/reference/api/cli.md` from the locally installed go-ipfs
+# Updates /docs/reference/cli.md from the locally installed go-ipfs.
 # TODO: Structure this around command groups (dag, object, files, etc.) 
 
 exec &> ./cli.md
