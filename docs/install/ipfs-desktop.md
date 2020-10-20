@@ -13,6 +13,8 @@ The installation steps differ between operating systems, so follow the instructi
 | ------------------------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------- |
 | [![Windows icon](./images/ipfs-desktop/windows-icon.png)](#windows) | [![macOS icon](./images/ipfs-desktop/apple-icon.png)](#macos) | [![Ubuntu icon](./images/ipfs-desktop/ubuntu-icon.png)](#ubuntu) |
 
+[Or you can use your favorite package manager and a third-party package maintained by the community](#package-managers)
+
 ## Windows
 
 1. Go to the [IPFS Desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases).
@@ -91,6 +93,16 @@ While these instructions are specific to Ubuntu, they will likely work with most
 1. You can now find an IPFS icon in the status bar:
 
    ![IPFS icon shown in the Ubuntu status bar.](./images/ipfs-desktop/install-ubuntu-ipfs-running-status-bar.png)
+
+## Package Managers
+
+| Package Manager                                                                                                    | Command                      |
+| ------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
+| [Homebrew](https://formulae.brew.sh/cask/ipfs/)                                                                    | `brew cask install ipfs`     |
+| [Chocolatey](https://chocolatey.org/packages/ipfs-desktop)                                                         | `choco install ipfs-desktop` |
+| [Scoop](https://github.com/lukesampson/scoop-extras/blob/master/bucket/ipfs-desktop.json)                          | `scoop install ipfs-desktop` |
+| [Snap](https://snapcraft.io/ipfs-desktop)                                                                          | `snap install ipfs-desktop`  |
+| [AUR](https://aur.archlinux.org/packages/ipfs-desktop/) maintained by [@alexhenrie](https://github.com/alexhenrie) | `ipfs-desktop`               |
 
 ## Next steps
 
