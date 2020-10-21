@@ -42,7 +42,6 @@
 
 <style lang="stylus" scoped>
 .legacy-callout {
-  background-color: lighten($badgeTipColor, 95%);
   color: lighten($textColor, 20%);
   border-color: $badgeTipColor;
   padding: 1rem 2rem;
