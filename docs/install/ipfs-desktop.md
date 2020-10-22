@@ -11,11 +11,11 @@ Use IPFS Desktop to get acquainted with IPFS without needing to touch the termin
 
 If you already have an IPFS node on your computer, IPFS Desktop will act as a control panel and file browser for that node. If you don't have a node, it'll install one for you. And either way, IPFS Desktop will automatically check for updates.
 
-[![Status screen of IPFS Desktop](https://gateway.ipfs.io/ipfs/QmYHuXitXMf5xTjiQXmXdqszvMTADvrM5zA7EqoDj3d3RH)](https://gateway.ipfs.io/ipfs/QmYHuXitXMf5xTjiQXmXdqszvMTADvrM5zA7EqoDj3d3RH)
+[![Status screen of IPFS Desktop](./images/ipfs-desktop/desktop-status.png)](./images/ipfs-desktop/desktop-status.png)
 
 | Files screen | Explore screen | Peers screen | Settings screen | Menubar/taskbar |
 |-------|---------|-------|----------|------|
-| [![Screenshot of the Files screen](https://gateway.ipfs.io/ipfs/QmRN82RPWHKuSuBadijTQuaCjFKAGaymt3aFBoG6Du9Vi3)](https://gateway.ipfs.io/ipfs/QmRN82RPWHKuSuBadijTQuaCjFKAGaymt3aFBoG6Du9Vi3) | [![Screenshot of the Explore screen](https://gateway.ipfs.io/ipfs/Qmaerxh9UKf9F3YPKnV2cBEnPQoJdVmkswFdz7kNQGncKt)](https://gateway.ipfs.io/ipfs/Qmaerxh9UKf9F3YPKnV2cBEnPQoJdVmkswFdz7kNQGncKt) | [![Screenshot of the Peers screen](https://gateway.ipfs.io/ipfs/QmaVbBYsEBb34HMP1YWeErrS7X3TB6Y9t1iQ4sBRnTvSwa)](https://gateway.ipfs.io/ipfs/QmaVbBYsEBb34HMP1YWeErrS7X3TB6Y9t1iQ4sBRnTvSwa) | [![Screenshot of the Settings screen](https://gateway.ipfs.io/ipfs/Qmby5RuN7K9s5W9RVLdrQSE8gRKQ66EX8c39iC31DLAxN6)](https://gateway.ipfs.io/ipfs/Qmby5RuN7K9s5W9RVLdrQSE8gRKQ66EX8c39iC31DLAxN6) | [![Screenshot of Mac/Windows menus](https://gateway.ipfs.io/ipfs/QmbT2YtuNo17Qaq31FJWRZgRMY4E6N9cdfBwzZTFSHUoBP)](https://gateway.ipfs.io/ipfs/QmbT2YtuNo17Qaq31FJWRZgRMY4E6N9cdfBwzZTFSHUoBP) |
+| [![Screenshot of the Files screen](./images/ipfs-desktop/desktop-files.png)](./images/ipfs-desktop/desktop-files.png) | [![Screenshot of the Explore screen](./images/ipfs-desktop/desktop-explore.png)](./images/ipfs-desktop/desktop-explore.png) | [![Screenshot of the Peers screen](./images/ipfs-desktop/desktop-peers.png)](./images/ipfs-desktop/desktop-peers.png) | [![Screenshot of the Settings screen](./images/ipfs-desktop/desktop-settings.png)](./images/ipfs-desktop/desktop-settings.png) | [![Screenshot of Mac/Windows menus](./images/ipfs-desktop/desktop-menubar-taskbar.png)](./images/ipfs-desktop/desktop-menubar-taskbar.png) |
 
 ### Feature highlights
 - **Start your node at system startup (Mac/Windows) and control it from your OS** using the convenient menubar/system tray menu
