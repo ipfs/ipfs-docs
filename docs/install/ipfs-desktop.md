@@ -11,11 +11,11 @@ Use IPFS Desktop to get acquainted with IPFS without needing to touch the termin
 
 If you already have an IPFS node on your computer, IPFS Desktop will act as a control panel and file browser for that node. If you don't have a node, it'll install one for you. And either way, IPFS Desktop will automatically check for updates.
 
-[![Status screen of IPFS Desktop](./images/ipfs-desktop/desktop-status.png)](./images/ipfs-desktop/desktop-status.png)
+![Status screen of IPFS Desktop](./images/ipfs-desktop/desktop-status.png)
 
 | Files screen | Explore screen | Peers screen | Settings screen | Menubar/taskbar |
 |-------|---------|-------|----------|------|
-| [![Screenshot of the Files screen](./images/ipfs-desktop/desktop-files.png)](./images/ipfs-desktop/desktop-files.png) | [![Screenshot of the Explore screen](./images/ipfs-desktop/desktop-explore.png)](./images/ipfs-desktop/desktop-explore.png) | [![Screenshot of the Peers screen](./images/ipfs-desktop/desktop-peers.png)](./images/ipfs-desktop/desktop-peers.png) | [![Screenshot of the Settings screen](./images/ipfs-desktop/desktop-settings.png)](./images/ipfs-desktop/desktop-settings.png) | [![Screenshot of Mac/Windows menus](./images/ipfs-desktop/desktop-menubar-taskbar.png)](./images/ipfs-desktop/desktop-menubar-taskbar.png) |
+| ![Screenshot of the Files screen](./images/ipfs-desktop/desktop-files.png) | ![Screenshot of the Explore screen](./images/ipfs-desktop/desktop-explore.png) | ![Screenshot of the Peers screen](./images/ipfs-desktop/desktop-peers.png) | ![Screenshot of the Settings screen](./images/ipfs-desktop/desktop-settings.png) | ![Screenshot of Mac/Windows menus](./images/ipfs-desktop/desktop-menubar-taskbar.png) |
 
 ### Feature highlights
 - **Start your node at system startup (Mac/Windows) and control it from your OS** using the convenient menubar/system tray menu
