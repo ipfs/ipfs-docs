@@ -19,7 +19,7 @@ Bitswap has two main jobs:
 
 ## How Bitswap works
 
-IPFS breaks up files into chunks of data called _blocks_. These blocks are identified by a [content identifier (CID)](/content/content-addressing). When nodes running the Bitswap protocol want to fetch a file, they send out `want-lists` to other peers. A `want-list` is a list of CIDs for blocks a peer wants to receive. Each node remembers which blocks its peers want. Each time a node receives a block, it checks if any of its peers want the block, and sends it to them if they do.
+IPFS breaks up files into chunks of data called _blocks_. These blocks are identified by a [content identifier (CID)](/concepts/content-addressing). When nodes running the Bitswap protocol want to fetch a file, they send out `want-lists` to other peers. A `want-list` is a list of CIDs for blocks a peer wants to receive. Each node remembers which blocks its peers want. Each time a node receives a block, it checks if any of its peers want the block, and sends it to them if they do.
 
 Here is a simplifed version of a `want-list`:
 
