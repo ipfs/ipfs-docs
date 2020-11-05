@@ -350,7 +350,7 @@ To uninstall IPFS Update, delete the binary and `ipfs-update` from your `PATH` v
    Remove-Item -Recurse -Force C:\Users\Johnny\Apps\ipfs-update_v1.6.0
    ```
 
-3. Update the `PATH` variable as described in the [Microsoft documentation on how to update/edit/delete your PATH](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=msvc-160)
+3. Delete the `ipfs-update` directory from the `PATH` variable by following the instructions in the [Microsoft documentation](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=msvc-160)
 
 #### Linux & macOS
 
