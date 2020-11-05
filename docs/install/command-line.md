@@ -207,7 +207,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
    > false
    ```
 
-   Note: If a profile file exists already, just skip the next step and proceed with step 7.
+   If a profile already file exists, skip the next step and proceed with step 7.
 
 6. Create a new PowerShell profile file:
 
