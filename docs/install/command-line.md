@@ -53,7 +53,7 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
    > ipfs version 0.7.0
    ```
 
-   While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH.` by using the following steps.
+   While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH` by using the following steps.
 
 4. Print the current working directory and copy it to your clipboard:
 
@@ -172,7 +172,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
    wget https://dist.ipfs.io/ipfs-update/v1.6.0/ipfs-update_v1.6.0_windows-amd64.zip -Outfile ipfs-update_v1.6.0_windows-amd64.zip
    ```
 
-2. Unzip the file and move it somewhere handy.
+2. Unzip the file and move it somewhere handy:
 
    ```powershell
    Expand-Archive -Path ipfs-update_v1.6.0_windows-amd64.zip -DestinationPath ~\Apps\ipfs-update_v1.6.0
@@ -187,7 +187,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
    > ipfs-update version 1.6.0
    ```
 
-   While you can use `ipfs-update`right now, it's better to add `ipfs-update.exe` to your `PATH.` by using the following steps.
+   While you can use `ipfs-update`right now, it's better to add `ipfs-update.exe` to your `PATH` by using the following steps.
 
 4. Print the current working directory and copy it to your clipboard:
 
@@ -211,13 +211,13 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 
 6. Create a new PowerShell profile file:
 
-```powershell
-New-Item -path $profile -type file –force
+   ```powershell
+   New-Item -path $profile -type file –force
 
-> Mode                LastWriteTime         Length Name
-> ----                -------------         ------ ----
-> -a----        11/5/2020   6:38 PM              0 Microsoft.PowerShell_profile.ps1
-```
+   > Mode                LastWriteTime         Length Name
+   > ----                -------------         ------ ----
+   > -a----        11/5/2020   6:38 PM              0 Microsoft.PowerShell_profile.ps1
+   ```
 
 7. Add the address you just copied to PowerShell's `PATH` by adding it to the end of the `profile.ps1` file stored in `Documents\WindowsPowerShell`:
 
@@ -322,7 +322,7 @@ ipfs-update install latest
 
 ### Downgrade using IPFS Update
 
-Use the `revert` function to roll-back to a previous version of Go-IPFS.
+Use the `revert` function to roll-back to a previous version of Go-IPFS:
 
 ```bash
 ipfs-update revert
@@ -336,7 +336,7 @@ To uninstall IPFS Update, delete the binary and `ipfs-update` from your `PATH` v
 
 #### Windows
 
-1. Find the location of the `ipfs-update.exe` file.
+1. Find the location of the `ipfs-update.exe` file:
 
    ```powershell
    gci -recurse -filter ipfs-update.exe -File -ErrorAction SilentlyContinue
@@ -344,7 +344,7 @@ To uninstall IPFS Update, delete the binary and `ipfs-update` from your `PATH` v
    > Directory: C:\Users\Johnny\Apps\ipfs-update_v1.6.0\ipfs-update
    ```
 
-2. Remove the `ipfs-update` directory.
+2. Remove the `ipfs-update` directory:
 
    ```powershell
    Remove-Item -Recurse -Force C:\Users\Johnny\Apps\ipfs-update_v1.6.0
@@ -354,7 +354,7 @@ To uninstall IPFS Update, delete the binary and `ipfs-update` from your `PATH` v
 
 #### Linux & macOS
 
-1. Find the location of the `ipfs-update` file.
+1. Find the location of the `ipfs-update` file:
 
    ```bash
    sudo find / -name ipfs-update
