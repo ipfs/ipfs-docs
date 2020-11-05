@@ -161,10 +161,6 @@ IPFS Update is a command-line tool originally used to help users update their IP
 
 ### Install
 
-You can either install a pre-built binary or build `ipfs-update` from source.
-
-#### Pre-built Binaries
-
 You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#ipfs-update). Binaries are also available from the [IPFS Update GitHub release page](https://github.com/ipfs/ipfs-update/releases).
 
 #### Windows
@@ -172,7 +168,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 1. Download the Windows binary from [`dist.ipfs.io`](https://dist.ipfs.io/#ipfs-update).
 
    ```powershell
-   cd ~\
+   cd ~
    wget https://dist.ipfs.io/ipfs-update/v1.6.0/ipfs-update_v1.6.0_windows-amd64.zip -Outfile ipfs-update_v1.6.0_windows-amd64.zip
    ```
 
@@ -185,7 +181,8 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 3. Move into the `ipfs-update_v1.6.0` folder and check that the `ipfs-update.exe` works:
 
    ```powershell
-   cd ~\Apps\ipfs-update_v1.6.0\ipfs-update\ipfs-update.exe --version
+   cd Apps\ipfs-update_v1.6.0\ipfs-update\
+   .\ipfs-update.exe --version
 
    > ipfs-update version 1.6.0
    ```
@@ -202,13 +199,33 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
    > C:\Users\Johnny\Apps\ipfs-update_v1.6.0\ipfs-update
    ```
 
-5. Add the address you just copied to PowerShell's `PATH` by adding it to the end of the `profile.ps1` file stored in `Documents\WindowsPowerShell`:
+5. Check if a profile file for PowerShell exists
 
    ```powershell
-   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\Johnny\Apps\ipfs-update_v1.6.0\ipfs-update')"
+   Test-Path $profile
+
+   > false
    ```
 
-6. Close and reopen your PowerShell window. Test that your `PATH` is set correctly by going to your home folder and asking `ipfs-update` for the version:
+   Note: If a profile file exists already, just skip the next step and proceed with step 7.
+
+6. Create a new PowerShell profile file.
+
+```powershell
+New-Item -path $profile -type file –force
+
+> Mode                LastWriteTime         Length Name
+> ----                -------------         ------ ----
+> -a----        11/5/2020   6:38 PM              0 Microsoft.PowerShell_profile.ps1
+```
+
+7. Add the address you just copied to PowerShell's `PATH` by adding it to the end of the `profile.ps1` file stored in `Documents\WindowsPowerShell`:
+
+   ```powershell
+   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\Johnny\Apps\ipfs-update_v1.6.0\ipfs-update')"
+   ```
+
+8. Close and reopen your PowerShell window. Test that your `PATH` is set correctly by going to your home folder and asking `ipfs-update` for the version:
 
    ```powershell
    cd ~
@@ -216,6 +233,8 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 
    > ipfs-update version 1.6.0
    ```
+
+   If you get an error during the next start of PowerShell while loading the profile file you need to change `ExecutionPolicy` of PowerShell to `Unrestricted` as described in the [Microsoft PowerShell documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7)
 
 #### macOS
 
@@ -299,11 +318,10 @@ To install the latest release of Go-IPFS use the `latest` tag:
 ipfs-update install latest
 ```
 
-
 `ipfs-update install` downloads, tests, and installs the specified version of Go-IPFS. If a version of IPFS is already installed, that version is _stashed_ and can be reverted to later.
 
-
 ### Downgrade using IPFS Update
+
 Use the `revert` function to roll-back to a previous version of Go-IPFS.
 
 ```bash
@@ -321,20 +339,18 @@ To uninstall IPFS Update, delete the binary and `ipfs-update` from your `PATH` v
 1. Find the location of the `ipfs-update.exe` file.
 
    ```powershell
+   gci -recurse -filter ipfs-update.exe -File -ErrorAction SilentlyContinue
 
+   > Directory: C:\Users\Johnny\Apps\ipfs-update_v1.6.0\ipfs-update
    ```
 
-2. Remove the file:
+2. Remove the `ipfs-update` directory.
 
    ```powershell
-
+   Remove-Item -Recurse -Force C:\Users\Johnny\Apps\ipfs-update_v1.6.0
    ```
 
-3. Update the `PATH` variable
-
-   ```powershell
-
-   ```
+3. Update the `PATH` variable as described in the [Microsoft documentation on how to update/edit/delete your PATH](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=msvc-160)
 
 #### Linux & macOS
 
