@@ -199,7 +199,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
    > C:\Users\Johnny\Apps\ipfs-update_v1.6.0\ipfs-update
    ```
 
-5. Check if a profile file for PowerShell exists
+5. Check if a profile file for PowerShell already exists:
 
    ```powershell
    Test-Path $profile
@@ -209,7 +209,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 
    Note: If a profile file exists already, just skip the next step and proceed with step 7.
 
-6. Create a new PowerShell profile file.
+6. Create a new PowerShell profile file:
 
 ```powershell
 New-Item -path $profile -type file –force
