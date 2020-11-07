@@ -17,6 +17,29 @@ IPFS can run in either _online_ or _offline_ mode. Online mode is when when you 
 
 "
 
+echo "
+### Alignment with HTTP API
+
+Every command usable from the CLI is also available through the [HTTP API](/reference/http/api). For example:
+
+\`\`\`sh
+> ipfs swarm peers
+/ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
+/ip4/104.236.151.122/tcp/4001/p2p/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx
+/ip4/104.236.176.52/tcp/4001/p2p/QmSoLnSGccFuZQJzRadHn95W2CrSFmZuTdDWP8HXaHca9z
+
+> curl -X POST http://127.0.0.1:5001/api/v0/swarm/peers
+{
+  \"Strings\": [
+    \"/ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ\",
+    \"/ip4/104.236.151.122/tcp/4001/p2p/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx\",
+    \"/ip4/104.236.176.52/tcp/4001/p2p/QmSoLnSGccFuZQJzRadHn95W2CrSFmZuTdDWP8HXaHca9z\",
+  ]
+}
+\`\`\`
+
+"
+
 echo "_Generated on $(date +"%Y-%m-%d %T"), from go-ipfs $(ipfs version -n)._"
 printf "\n"
 ipfs commands | while read line ; do
