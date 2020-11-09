@@ -72,6 +72,7 @@ module.exports = {
             children: [
               'install/ipfs-desktop',
               'install/command-line',
+              'install/ipfs-updater',
               'install/server-infrastructure',
               'install/ipfs-companion'
             ]
