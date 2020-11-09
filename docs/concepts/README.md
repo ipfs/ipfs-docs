@@ -10,15 +10,19 @@ New to IPFS or the distributed web? Here's where to get started on understanding
 
 ## Video overviews
 
-Want the basics, in theater mode? Check out these Core Courses from IPFS Camp 2019 for an overview of how IPFS works with files and the overall data lifecycle in dweb.
+Want the basics, in theater mode? Check out these helpful videos for an overview of how IPFS works with files and the overall data lifecycle in dweb.
 
 @[youtube](Z5zNPwMDYGg)
 
-- [Understanding how IPFS deals with files](https://youtu.be/Z5zNPwMDYGg)
+- [Understanding how IPFS deals with files (IPFS Camp 2019)](https://youtu.be/Z5zNPwMDYGg)
 
 @[youtube](fLUq0RkiTBA)
 
-- [The lifecycle of data in the DWeb](https://youtu.be/fLUq0RkiTBA)
+- [The lifecycle of data in the DWeb (IPFS Camp 2019)](https://youtu.be/fLUq0RkiTBA)
+
+@[youtube](J-drqD2UebM)
+
+- [IPFS: A Whiteboard Overview](https://www.youtube.com/watch?v=J-drqD2UebM)
 
 ## IPFS 101
 
