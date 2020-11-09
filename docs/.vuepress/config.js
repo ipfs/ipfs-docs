@@ -70,11 +70,11 @@ module.exports = {
             title: 'Install',
             path: '/install/',
             children: [
-              ['install/ipfs-desktop', 'Desktop application'],
+              ['install/ipfs-desktop'],
+              ['install/ipfs-companion']
               ['install/command-line', 'Command-line interface'],
               ['install/ipfs-updater', 'Updater'],
               ['install/server-infrastructure', 'Server infrastructure'],
-              ['install/ipfs-companion', 'Browser add-on']
             ]
           },
           {
