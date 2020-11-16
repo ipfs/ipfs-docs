@@ -144,14 +144,14 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
              'It takes Venus 225 days to orbit the sun.',
              'Venus was first discovered by 17th century Babylonian astronomers.',
              'Venus is nearly as big as the Earth with a diameter of 12,104 km.',
-             'The Earth's rotation is gradually slowing.',
+             'The Earth\'s rotation is gradually slowing.',
              'There is only one natural satellite of the planet Earth, the moon.',
              'Earth is the only planet in our solar system not named after a god.',
              'The Earth is the densest planet in the solar system.',
              'A year on Jupiter lasts around 4333 earth days.',
              'The surface temperature of Jupiter is around -108°C.',
              'Jupiter was first discovered by 7th or 8th century Babylonian astronomers.',
-             'Jupiter has 4 ring.',
+             'Jupiter has 4 rings.',
              'A day on Jupiter lasts 9 hours and 55 minutes.',
              'Saturn was first discovered by 8th century Assyrians.',
              'Saturn takes 10756 days to orbit the Sun.',
@@ -169,8 +169,8 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
              'The average temperatue of Neptune is about -201 °C.',
              'There is a 1:20 million scale model of the solar system in Sweden.',
              'The gap between the Earth and our moon is bigger than the diameters of all the planets combined.',
-             'The first accurate calculation of the speed of light was using Jupiter's moons',
-             'Jupiter's magnetic field is believed to be a result of rapidly spinning metallic hydrogen at the core, and is ~10x stronger than the Earth's.',
+             'The first accurate calculation of the speed of light was using Jupiter\'s moons',
+             'Jupiter\'s magnetic field is believed to be a result of rapidly spinning metallic hydrogen at the core, and is ~10x stronger than the Earth\'s.',
              'Venus spins backwards.',
              'Uranus spins sideways, relative to the ecliptic plane of the solar system.',
              'It is easier to reach Pluto or escape the solar system from Earth than being able to <i>land</i> on the Sun.'
@@ -181,7 +181,6 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
        </script>
      </body>
    </html>
-   `"
    ```
 
 2. Open IPFS desktop and go to the **Files** page.

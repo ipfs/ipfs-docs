@@ -53,7 +53,7 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
    > ipfs version 0.7.0
    ```
 
-   While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH.` by using the following steps.
+   While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH` by using the following steps.
 
 4. Print the current working directory and copy it to your clipboard:
 
@@ -158,7 +158,7 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
 
 ## Compile manually
 
-Manually compiling IPFS is a fairly involved process that changes frequently. It can be handy if you'd like to build a specific branch or use the _bleeding-edge_ version of IPFS. See the [`ipfs/go-ipfs` GitHub repository for details →](https://github.com/ipfs/go-ipfs)
+Manually compiling IPFS is a fairly involved process that changes frequently. It can be handy if you'd like to build a specific branch or use the _bleeding-edge_ version of Go-IPFS. See the [`ipfs/go-ipfs` GitHub repository for details →](https://github.com/ipfs/go-ipfs)
 
 ## Next steps
 
