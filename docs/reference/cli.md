@@ -9,7 +9,27 @@ description: API documentation for the Go-IPFS command-line executable.
 
 IPFS can run in either _online_ or _offline_ mode. Online mode is when when you have IPFS running separately as a daemon process. If you do not have an IPFS daemon running, you are in offline mode. Some commands, like `ipfs swarm peers`, are only supported when online. The [command-line quickstart guide](../how-to/command-line-quick-start/#take-your-node-online) explains how to start the IPFS daemon and take your node online.
 
-_Generated on 2020-10-19 17:48:26, from go-ipfs 0.7.0._
+### Alignment with HTTP API
+
+Every command usable from the CLI is also available through the [HTTP API](/reference/http/api). For example:
+
+```sh
+> ipfs swarm peers
+/ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
+/ip4/104.236.151.122/tcp/4001/p2p/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx
+/ip4/104.236.176.52/tcp/4001/p2p/QmSoLnSGccFuZQJzRadHn95W2CrSFmZuTdDWP8HXaHca9z
+
+> curl -X POST http://127.0.0.1:5001/api/v0/swarm/peers
+{
+  "Strings": [
+    "/ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
+    "/ip4/104.236.151.122/tcp/4001/p2p/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx",
+    "/ip4/104.236.176.52/tcp/4001/p2p/QmSoLnSGccFuZQJzRadHn95W2CrSFmZuTdDWP8HXaHca9z",
+  ]
+}
+```
+
+_Generated on 2020-11-16 16:17:12, from go-ipfs 0.7.0._
 
 ## ipfs
 
@@ -867,15 +887,29 @@ SYNOPSIS
 DESCRIPTION
 
   Available profiles:
-    'server':
-      Disables local host discovery, recommended when
-      running IPFS on machines with public IPv4 addresses.
     'test':
       Reduces external interference of IPFS daemon, this
       is useful when using the daemon in test environments.
-    'default-networking':
-      Restores default network settings.
-      Inverse profile of the test profile.
+    'default-datastore':
+      Configures the node to use the default datastore (flatfs).
+
+      Read the "flatfs" profile description for more information on this datastore.
+
+      This profile may only be applied when first initializing the node.
+
+    'lowpower':
+      Reduces daemon overhead on the system. May affect node
+      functionality - performance of content discovery and data
+      fetching may be degraded.
+
+    'randomports':
+      Use a random port number for swarm.
+    'server':
+      Disables local host discovery, recommended when
+      running IPFS on machines with public IPv4 addresses.
+    'local-discovery':
+      Sets default values to fields affected by the server
+      profile, enables discovery in local networks.
     'badgerds':
       Configures the node to use the badger datastore.
 
@@ -890,18 +924,9 @@ DESCRIPTION
       * This datastore uses up to several gigabytes of memory.
 
       This profile may only be applied when first initializing the node.
-    'randomports':
-      Use a random port number for swarm.
-    'local-discovery':
-      Sets default values to fields affected by the server
-      profile, enables discovery in local networks.
-    'default-datastore':
-      Configures the node to use the default datastore (flatfs).
-
-      Read the "flatfs" profile description for more information on this datastore.
-
-      This profile may only be applied when first initializing the node.
-
+    'default-networking':
+      Restores default network settings.
+      Inverse profile of the test profile.
     'flatfs':
       Configures the node to use the flatfs datastore.
 
@@ -919,11 +944,6 @@ DESCRIPTION
         use up to several gigabytes of memory.
 
       This profile may only be applied when first initializing the node.
-
-    'lowpower':
-      Reduces daemon overhead on the system. May affect node
-      functionality - performance of content discovery and data
-      fetching may be degraded.
 
 
 SUBCOMMANDS
