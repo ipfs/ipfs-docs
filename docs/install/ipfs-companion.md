@@ -50,9 +50,9 @@ IPFS Companion also upgrades transport to IPFS if it finds the `x-ipfs-path` in 
 
 You can disable and re-enable local gateway redirects in several ways:
 
-- Suspend redirects globally in IPFS companion's preferences.
-- Suspend redirects per site using the toggle under the _current tab_ or in IPFS companion's preferences.
-- Add `x-ipfs-companion-no-redirect` to the URL itself as a hash.
+- Suspend redirects globally in IPFS Companion's preferences.
+- Suspend redirects per site using the toggle under the _current tab_ or in IPFS Companion's preferences.
+- Add `x-ipfs-companion-no-redirect` to the URL itself as a hash ([example](https://ipfs.io/ipfs/QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR#x-ipfs-companion-no-redirect)) or query parameter ([example](https://ipfs.io/ipfs/QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR?x-ipfs-companion-no-redirect)).
 
 ### Access frequently-used IPFS actions from your browser bar
 
@@ -65,7 +65,7 @@ IPFS Companion enables you to quickly and easily access common actions from your
 - Pin or unpin IPFS resources directly from the main menu.
 - Copy shareable public gateway links, IPFS content paths, or CIDs of IPFS resources directly from the main menu.
 - Launch the [IPFS Web UI dashboard](https://github.com/ipfs-shipyard/ipfs-webui) from the main menu with a single click.
-- Toggle gateway redirects or switch all IPFS companion features on or off quickly and easily from the main menu.
+- Toggle gateway redirects or switch all IPFS Companion features on or off quickly and easily from the main menu.
 
 ## Further documentation
 
