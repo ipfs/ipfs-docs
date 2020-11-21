@@ -21,8 +21,8 @@ module.exports = {
       md.use(require('markdown-it-footnote'))
       md.use(require('markdown-it-task-lists'))
       md.use(require('markdown-it-deflist')),
-        md.use(require('markdown-it-imsize')),
-        md.use(require('markdown-it-image-lazy-loading'))
+      md.use(require('markdown-it-imsize')),
+	  md.use(require('markdown-it-image-lazy-loading'))
     }
   },
   themeConfig: {
@@ -203,6 +203,7 @@ module.exports = {
                   '/how-to/configure-node',
                   '/how-to/modify-bootstrap-list',
                   '/how-to/nat-configuration',
+                  '/how-to/default-profile',
                   [
                     'https://github.com/ipfs/js-ipfs/tree/master/examples/custom-ipfs-repo',
                     'Customize an IPFS repo'
