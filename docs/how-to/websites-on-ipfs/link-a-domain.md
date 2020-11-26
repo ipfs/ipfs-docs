@@ -11,21 +11,25 @@ This section is completely optional, but following it will give you a solid gras
 
 ## Domain name service (DNS)
 
-We're going to walk through mapping a domain name to a CID. We're using Namecheap in this guide, but you can use any domain name registrar. All the steps are the same, but the links and settings will be in different places. We are not covering how to buy a domain name.
+We're going to walk through mapping a domain name to a CID. It doesn't matter which domain name registrar you use since all the steps are the same, but the links and settings will be in different places.
 
 ### Things you'll need
 
 Before we get started, you will need:
 
-- A domain name, preferably not already registered to a website.
-- A website hosted on IPFS. If you've been following this tutorial series, you should already have a website and CID ready.
+- A domain name, preferably one not already registered to a website.
+- The CID of your website hosted on IPFS. If you've been following this tutorial series, you should already have a website and CID ready.
 
 1. Access your registrar's control panel. You're looking for where you can manage the `CNAME` record and `TXT` records for your domain.
-1. Add a `CNAME` record and set the value to `gateway.ipfs.io.`
-1. Add a `TXT` record and set the value to `dnslink=/ipfs/SITE_CID`, replacing `SITE_CID` with the CID of your website.
-1. Save your changes. Traditional domain names can take some time to propagate through the internet, so it may take a few hours for your domain to point to your IPFS-hosted site.
+1. Create a `CNAME` record.
+   a. Set the **Host** to `@`.
+   b. Set the **Value** to `gateway.ipfs.io.` Notice the trailing dot `.` at the end of `gateway.ipfs.io.`.
+1. Create a `TXT` record.
+   a. Set the **Host** to `_dnslink`.
+   b. Set the value to `dnslink=/ipfs/SITE_CID`, replacing `SITE_CID` with the CID of your website.
+1. Save your changes.
 
-And there we have it! You've just linked a domain name up to your site hosted on IPFS. Why not try doing the same thing with the [Ethereum naming service](#ethereum-naming-service) too?
+DNS changes can take a while to propagate through the internet. Your domain should eventually point to your IPFS hosted site! Why not try doing the same thing with the [Ethereum naming service](#ethereum-naming-service)?
 
 ## Ethereum naming service (ENS)
 
