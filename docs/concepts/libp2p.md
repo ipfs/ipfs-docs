@@ -35,7 +35,7 @@ Libp2p supports upgrading a transport connection into a securely encrypted chann
 
 #### [Peer identity](https://docs.libp2p.io/concepts/peer-id/)
 
-A Peer Identity ([often written _PeerId_](https://docs.libp2p.io/reference/glossary/#peerid)) is a unique reference to a specific peer on the peer-to-peer network. Each Libp2p peer has a private key which it keeps secret from all other peers and a corresponding public key, which is shared with other peers. The PeerId is a [cryptographic hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function) of a peer's public key. PeerIds are encoded using the [multihash](https://docs.libp2p.io/reference/glossary/#multihash) format.
+A Peer Identity ([often written _PeerId_](https://docs.libp2p.io/reference/glossary/#peerid)) is a unique reference to a specific peer on the peer-to-peer network. Each Libp2p peer has a private key, which it keeps secret from all other peers, and a corresponding public key, which is shared with other peers. The PeerId is a [cryptographic hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function) of a peer's public key. PeerIds are encoded using the [multihash](https://docs.libp2p.io/reference/glossary/#multihash) format.
 
 #### [Peer routing](https://docs.libp2p.io/introduction/what-is-libp2p/#peer-routing)
 

@@ -22,11 +22,11 @@ Announcing is a function of the IPFS networking layer in [libp2p](#libp2p), wher
 
 ### Bitswap
 
-Bitswap is IPFS’s central block exchange protocol. Its purpose is to request blocks from and send blocks to other peers in the network. [More about Bitswap](https://github.com/ipfs/specs/blob/master/BITSWAP.md)
+Bitswap is IPFS's central block exchange protocol. Its purpose is to request blocks from and send blocks to other peers in the network. [More about Bitswap](https://github.com/ipfs/specs/blob/master/BITSWAP.md)
 
 ### BitTorrent
 
-BitTorrent is a communication protocol for peer-to-peer file sharing which is used to distribute data and electronic files over the Internet. Also the first file sharing application to use the protocol. [More about BitTorrent protocol](https://en.wikipedia.org/wiki/BitTorrent) and [BitTorrent app](https://www.bittorrent.com)
+BitTorrent is a communication protocol for peer-to-peer file sharing, which is used to distribute data and electronic files over the Internet. Also, the first file-sharing application to use the protocol. [More about BitTorrent protocol](https://en.wikipedia.org/wiki/BitTorrent) and [BitTorrent app](https://www.bittorrent.com)
 
 ### Blockchain
 
@@ -70,7 +70,7 @@ A Daemon is a computer program that typically runs in the background. The IPFS d
 
 ### DAG
 
-A Directed Acyclic Graph (DAG) is a computer science data structure, adapted for use with versioned file systems, blockchains, and for modeling many different kinds of information. [More about DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph)
+A Directed Acyclic Graph (DAG) is a computer science data structure adapted for use with versioned file systems, blockchains, and for modeling many different kinds of information. [More about DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph)
 
 ### DataStore
 
@@ -98,7 +98,7 @@ The Decentralized Web (DWeb) looks like today's World Wide Web, but it is built 
 
 ### Filestore
 
-The Filestore is a datastore that stores the [UnixFS](#unixfs) data components of blocks as files on the file system, instead of as blocks. This allows adding content to IPFS without duplicating the content in the IPFS datastore.
+The Filestore is a data store that stores the [UnixFS](#unixfs) data components of blocks as files on the file system instead of as blocks. This allows adding content to IPFS without duplicating the content in the IPFS datastore.
 
 ## G
 
@@ -132,7 +132,7 @@ Information Space is the set of concepts, and relations among them, held by an i
 
 ### IPLD
 
-The InterPlanetary Linked Data (IPLD) model is a set of specifications in support of decentralized data structures for the content-addressable web. Key features are interoperable protocols, easily upgradeable, backwards compatible. A single namespace for all hash-based protocols. [More about IPLD](https://ipld.io/)
+The InterPlanetary Linked Data (IPLD) model is a set of specifications in support of decentralized data structures for the content-addressable web. Key features are interoperable protocols, easily upgradeable, backward compatible. A single namespace for all hash-based protocols. [More about IPLD](https://ipld.io/)
 
 ### IPNS
 
@@ -160,7 +160,7 @@ Listening is a function of the IPFS networking layer in libp2p, wherein an incom
 
 ### Merkle-DAG
 
-The Merkle-DAG is a computer science data structure used at the core of IPFS files/blocks storage. Merkle-DAGs create a hash to their content, known as a [Content Identifier](#cid). [More about Merkle-DAG](https://docs.ipfs.io/concepts/merkle-dag/)
+The Merkle-DAG is a computer science data structure used at the core of IPFS files/block storage. Merkle-DAGs create a hash to their content, known as a [Content Identifier](#cid). [More about Merkle-DAG](https://docs.ipfs.io/concepts/merkle-dag/)
 
 ### Merkle Forest
 
@@ -168,7 +168,7 @@ Merkle Forest is a phrase coined to describe the distributed, authenticated, has
 
 ### Merkle Tree
 
-A Merkle Tree is a specific type of hash tree used in cryptography and computer science, allowing efficient and secure verification of the contents of large data structures. Named after Ralph Merkle who patented it in 1979. [More about Merkle Tree](https://en.wikipedia.org/wiki/Merkle_tree)
+A Merkle Tree is a specific type of hash tree used in cryptography and computer science, allowing efficient and secure verification of the contents of large data structures. Named after Ralph Merkle, who patented it in 1979. [More about Merkle Tree](https://en.wikipedia.org/wiki/Merkle_tree)
 
 ### MFS
 
@@ -176,7 +176,7 @@ The Mutable File System (MFS) is a tool built into IPFS that lets you treat file
 
 ### Multiformats
 
-The Multiformats project is a collection of protocols which aim to future-proof systems, today. A key element is enhancing format values with self-description. This allows for interoperability, protocol agility, and promotes extensibility. [More about Multiformats](https://multiformats.io/) and [Multihash](https://multiformats.io/multihash/)
+The Multiformats project is a collection of protocols that aim to future-proof systems today. A key element is enhancing format values with self-description. This allows for interoperability, protocol agility, and promotes extensibility. [More about Multiformats](https://multiformats.io/) and [Multihash](https://multiformats.io/multihash/)
 
 ## N
 
@@ -198,7 +198,7 @@ In system architecture, a Peer is an equal player in the peer-to-peer model of d
 
 ### Peer ID
 
-A Peer ID is how each unique IPFS node is identified on the network. The Peer ID is created when the IPFS node is initialized, and is essentially a cryptographic hash of the node's public key. [More about Peer ID](https://docs.ipfs.io/concepts/dht/#peer-ids)
+A Peer ID is how each unique IPFS node is identified on the network. The Peer ID is created when the IPFS node is initialized and is essentially a cryptographic hash of the node's public key. [More about Peer ID](https://docs.ipfs.io/concepts/dht/#peer-ids)
 
 ### Pinning
 
@@ -206,7 +206,7 @@ Pinning is the method of telling an IPFS node that particular data is important 
 
 ### Pubsub
 
-Publish-Subscribe (Pubsub) is an experimental feature in IPFS. Publishers send messages classified by topic or content and Subscribers receive only the messages they are interested in. [More about Pubsub](https://blog.ipfs.io/25-pubsub/)
+Publish-subscribe (Pubsub) is an experimental feature in IPFS. Publishers send messages classified by topic or content, and subscribers receive only the messages they are interested in. [More about Pubsub](https://blog.ipfs.io/25-pubsub/)
 
 ## Q
 
@@ -214,7 +214,7 @@ Publish-Subscribe (Pubsub) is an experimental feature in IPFS. Publishers send m
 
 ### Relay
 
-The Relay is a means to establish connectivity between libp2p nodes (e.g. IPFS nodes) that wouldn't otherwise be able to establish a direct connection to each other. This may be due to nodes that are behind NAT, reverse proxies, firewalls, etc. [More about Relay](https://github.com/libp2p/specs/tree/master/relay)
+The Relay is a means to establish connectivity between libp2p nodes (e.g., IPFS nodes) that wouldn't otherwise be able to establish a direct connection to each other. This may be due to nodes that are behind NAT, reverse proxies, firewalls, etc. [More about Relay](https://github.com/libp2p/specs/tree/master/relay)
 
 ### Repo
 
@@ -228,7 +228,7 @@ A Self-certifying File System (SFS) is a distributed file system that doesn't re
 
 ### Signing (Cryptographic)
 
-Signing of data cryptographically allows for trusting of data from untrusted sources. Cryptographically signed values can be passed through an untrusted channel and any tampering of the data can be detected. [More about Digital signature](https://en.wikipedia.org/wiki/Digital_signature)
+The signing of data cryptographically allows for trusting of data from untrusted sources. Cryptographically signed values can be passed through an untrusted channel, and any tampering of the data can be detected. [More about Digital signature](https://en.wikipedia.org/wiki/Digital_signature)
 
 ### Swarm
 
@@ -238,13 +238,13 @@ The Swarm is a term for the network of IPFS peers with which your local node has
 
 ### Transport
 
-In [libp2p](#libp2p), transport refers to the technology that lets us move data from one machine to another. This may be a TCP network, a websocket connection in a browser, or anything else capable of implementing the transport interface.
+In [libp2p](#libp2p), transport refers to the technology that lets us move data from one machine to another. This may be a TCP network, a WebSocket connection in a browser, or anything else capable of implementing the transport interface.
 
 ## U
 
 ### UnixFS
 
-The Unix File System (UnixFS) is the data format used to represent files and all their links and metadata in IPFS, and is loosely based on how files work in Unix. Adding a file to IPFS creates a block (or a tree of blocks) in the UnixFS format. [More about UnixFS](https://docs.ipfs.io/concepts/file-systems/#unix-file-system-unixfs)
+The Unix File System (UnixFS) is the data format used to represent files and all their links and metadata in IPFS and is loosely based on how files work in Unix. Adding a file to IPFS creates a block (or a tree of blocks) in the UnixFS format. [More about UnixFS](https://docs.ipfs.io/concepts/file-systems/#unix-file-system-unixfs)
 
 ## V
 
