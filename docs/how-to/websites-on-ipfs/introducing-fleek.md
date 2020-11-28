@@ -9,7 +9,7 @@ Most of the steps we've covered in this tutorial series have been fairly manual.
 
 ![The Fleek homepage, showing a "Build on the New Internet" slogan at the top.](./images/introducing-fleek/fleek-homepage.png)
 
-Fleek is a service that lets you host a website on IPFS without needing to install anything on your computer or run deal with the command-line.
+Fleek is a service that lets you host a website on IPFS without needing to install anything on your computer or deal with the command-line.
 
 We already know that files and folders on IPFS are content-addressed, meaning you can find them using the hash of their content. If the content changes, then the hash changes too. As we've seen in previous lessions, this can be an issue when it comes to updating a website. A single character change to an HTML file will create an entirely new hash!
 
