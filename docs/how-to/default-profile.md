@@ -24,11 +24,6 @@ cat $IPFS_PATH/config | grep "prefix"
 > "prefix": "flatfs.datastore",
 > "prefix": "leveldb.datastore",
 
-Above command would give you an output similar to this:
-```bash
-"prefix": "flatfs.datastore",
-"prefix": "leveldb.datastore",
-```
 
 IPFS by default uses `flatfs` profile, `flatfs` is implemented using leveldb, which is why you also see another line with `leveldb.datastore`, but they both refer to `flatfs` datastore.
 
