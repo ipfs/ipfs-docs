@@ -6,7 +6,6 @@ description: Your profile defines which file-system and data-store your IPFS nod
 
 # Configure a default profile and switching between profiles
 
-### What is a profile
 A profile can be used to tweak the performance of your IPFS node. If you want to have a faster, more performant datastore for your IPFS node, you can use a profile like `badgerds`, but also it requires more memory. If you're running your ipfs node on a low-power device (like a raspberry-pi), you can use a profile like `low-power`. Profiles have been developed to customize your ipfs node to perform best under given conditions.
 
 ### Default Profile
