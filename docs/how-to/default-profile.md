@@ -8,7 +8,8 @@ description: Your profile defines which file-system and data-store your IPFS nod
 
 A profile can be used to tweak the performance of your IPFS node. If you want to have a faster, more performant datastore for your IPFS node, you can use a profile like `badgerds`, but also it requires more memory. If you're running your ipfs node on a low-power device (like a raspberry-pi), you can use a profile like `low-power`. Profiles have been developed to customize your ipfs node to perform best under given conditions.
 
-### Default Profile
+## Default profile
+
 By default, IPFS uses `flatfs` profile. This is the most battle-tested and reliable datastore. You can verify this by inspecting your IPFS config file, it's usually located at `$IPFS_PATH/config`. If your `$IPFS_PATH` is not set, then it'll be located at `$HOME/.ipfs/config`.
 
 ### Find your current profile
