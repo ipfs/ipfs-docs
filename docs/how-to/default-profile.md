@@ -46,7 +46,7 @@ Here's a list of all the available profiles for your ipfs node. You can match th
 
 > If you want to understand more about these profiles, please visit [here](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md)
 
-### Reset IPFS installtion to default profile
+## Reset your profile
 
 If you want to reset your IPFS node profile to the default profile, you can do so by using the following method:
 
