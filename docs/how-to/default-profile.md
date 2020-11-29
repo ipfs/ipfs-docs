@@ -14,9 +14,16 @@ By default, IPFS uses `flatfs` profile. This is the most battle-tested and relia
 
 ## Find your current profile
 
-```bash {.line-numbers}
+Your IPFS profile is found within your node's `config` file. The default location for the `config` file is `~/.ipfs/config`. If you have set an `$IPFS_PATH` variable you can find your `config` file at `$IPFS_PATH/config`. Use `grep` to find the currently set profile:
+
+```bash
+cat ~/.ipfs/config | grep "prefix"
+# or
 cat $IPFS_PATH/config | grep "prefix"
 ```
+
+> "prefix": "flatfs.datastore",
+> "prefix": "leveldb.datastore",
 
 Above command would give you an output similar to this:
 ```bash
