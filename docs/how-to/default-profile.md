@@ -33,7 +33,7 @@ If previously you configured your IPFS node to use another profile, let's say `b
 "prefix": "badger.datastore",
 ```
 
-This output line refers to profile `badgerds`
+This output line refers to profile `badgerds`.
 
 
 ## Reset your profile
