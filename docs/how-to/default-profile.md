@@ -54,7 +54,7 @@ If you want to reset your IPFS node profile to the default profile, you can do s
 ipfs config profile apply default-datastore
 ```
 
-This command would show you the difference between your existing IPFS config and the new configuration. Also, it would overwrite your ipfs config file, so it's always better to create a backup of your existing ipfs configuration before running this command.
+This command would show you the difference between your existing IPFS config and the new configuration. Also, it would overwrite your IPFS `config` file, so it's always better to create a backup of your existing ipfs configuration before running this command.
 
 ## Converting profiles
 
