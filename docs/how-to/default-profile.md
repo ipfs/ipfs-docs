@@ -40,19 +40,6 @@ If previously you configured your IPFS node to use another profile, let's say `b
 
 This output line refers to profile `badgerds`
 
-Here's a list of all the available profiles for your ipfs node. You can match the profile with any of the following profiles to find what profile is currently being used by your node:
-
-* `server`
-* `randomports`
-* `default-datastore`
-* `local-discovery`
-* `test`
-* `default-networking`
-* `flatfs`
-* `badgerds`
-* `lowpower`
-
-> If you want to understand more about these profiles, please visit [here](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md)
 
 ## Reset your profile
 
