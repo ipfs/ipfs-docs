@@ -12,7 +12,8 @@ The profile of your IPFS node allows you to specify which file-system or data-st
 
 By default, IPFS uses `flatfs` profile. This is the most battle-tested and reliable datastore. You can verify this by inspecting your IPFS config file, it's usually located at `$IPFS_PATH/config`. If your `$IPFS_PATH` is not set, then it'll be located at `$HOME/.ipfs/config`.
 
-### Find your current profile
+## Find your current profile
+
 ```bash {.line-numbers}
 cat $IPFS_PATH/config | grep "prefix"
 ```
