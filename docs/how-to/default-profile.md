@@ -62,6 +62,7 @@ Install `ipfs-ds-convert` tool from the given link and run the following command
 ```bash
 ipfs-ds-convert convert
 ```
-> This can take a very long time to complete depending on the size of the datastore. If running this on a headless server it's recommended to use something like `screen` or `tmux` to run this command in a persistent shell.
+
+This can take a very long time to complete depending on the size of the datastore. If running this on a headless server it's recommended to use something like `screen` or `tmux` to run this command in a persistent shell.
 
 After the above command finishes, your IPFS node should be reset to the default profile.
