@@ -55,7 +55,9 @@ ipfs config profile apply default-datastore
 
 This command would show you the difference between your existing IPFS config and the new configuration. Also, it would overwrite your ipfs config file, so it's always better to create a backup of your existing ipfs configuration before running this command.
 
-However, not all profiles are compatible with each other simply because they use very different technologies for storing the data inside the datastores. For instance, if you want to convert `badgerds` to `default-datastore`, you would have to use another helper tool called [ipfs-ds-convert](https://dist.ipfs.io/#ipfs-ds-convert) to convert the datastore to the required format. 
+## Converting profiles
+
+Not all profiles are compatible with each other simply because they use very different technologies for storing the data inside the datastores. For instance, if you want to convert `badgerds` to `default-datastore`, you would have to use another helper tool called [ipfs-ds-convert](https://dist.ipfs.io/#ipfs-ds-convert) to convert the datastore to the required format. 
 
 Install `ipfs-ds-convert` tool from the given link and run the following command to finally convert the datastore:
 
