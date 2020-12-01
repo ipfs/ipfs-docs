@@ -44,7 +44,7 @@ The [Inter-Planetary Version Control system (IPVC)](https://github.com/martindbp
 
 ### Connect event attendants
 
-[Gthr.io](https://gthr.io) was a simple demo app to connect participants of an event by letting them scan each other's QR code. It was made for IPFS Camp 2019. You can look at their [presentation](https://www.dropbox.com/s/wodmbi6ico3inya/Offline%20Presentation.pdf?dl=0). The code of this simple app is still in their [GitHub repository](https://github.com/JustMaier/gathering).
+[Gthr.io](https://gthr.io) was a simple demo app to connect participants to an event by letting them scan each other's QR code. It was made for IPFS Camp 2019. You can look at their [presentation](https://www.dropbox.com/s/wodmbi6ico3inya/Offline%20Presentation.pdf?dl=0). The code of this simple app is still in its [GitHub repository](https://github.com/JustMaier/gathering).
 
 ### Exchange messages
 
@@ -54,15 +54,15 @@ Berty is leading the effort to bring [IPFS to mobile](https://github.com/ipfs-sh
 
 ## Store assets
 
-By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits. If your users don't use an IPFS client, you will still have content de-duplication out of the box. If they use it, your users will seed the content they use, decreasing the workload on your infrastructure, increase uptime of the service in case you go offline. Your users also won't contact your servers for the content they already have.
+By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits. If your users don't use an IPFS client, you will still have content de-duplication out of the box. If they use it, your users will seed the content they use, decreasing the workload on your infrastructure, increase the uptime of the service in case you go offline. Your users also won't contact your servers for the content they already have.
 
 ### Decentralized virtual reality
 
-[Decentraland](https://decentraland.org/) is a virtual world you can explore with a VR set, your computer, or your smartphone. They store all the assets on IPFS, so these heavy files can be fetched from several other users at the same time, for faster loading and synching.
+[Decentraland](https://decentraland.org/) is a virtual world you can explore with a VR set, your computer, or your smartphone. They store all the assets on IPFS, so these heavy files can be fetched from several other users at the same time for faster loading and synching.
 
 ### Video hosting platform
 
-[DTube](https://d.tube) is hosting videos on IPFS to reduce stress on their infrastructure. The website itself is not decentralized, but it mainly manages coordination between users and discoverability of content. You can also learn how to replicate [Youtube on IPFS](https://simpleaswater.com/youtube-on-ipfs/)
+[DTube](https://d.tube) is hosting videos on IPFS to reduce stress on their infrastructure. The website itself is not decentralized, but it mainly manages coordination between users and the discoverability of content. You can also learn how to replicate [Youtube on IPFS](https://simpleaswater.com/youtube-on-ipfs/)
 
 ### Co-host large datasets
 
@@ -70,7 +70,7 @@ By storing small scripts or big databases of your project on IPFS, and depending
 
 ### Parallelize Big Data analysis
 
-On some heavy analysis, you can benefit from parallelizing calculations on several nodes using Hadoop, for example. But on very large datasets, fetching the relevant subset for each node to compute is longer than the actual computation. Scott Brisbane proposed design in a [thesis](https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf) to drastically reduce the fetching time using IPFS and divided the overall analysis time by four. Here is a [one-page summary](https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf) of the concept.
+On some heavy analysis, you can benefit from parallelizing calculations on several nodes using Hadoop, for example. But on very large datasets, fetching the relevant subset for each node to compute is longer than the actual computation. Scott Brisbane proposed a design in a [thesis](https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf) to drastically reduce the fetching time using IPFS and divided the overall analysis time by four. Here is a [one-page summary](https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf) of the concept.
 
 ### Deadman switch
 
@@ -86,7 +86,7 @@ There is an existing [IPFS devgrant](https://github.com/ipfs/devgrants) to host 
 
 ### Help host important data
 
-Thanks to recent improvement with IPFS Cluster, you can call for help to store your data without having to trust other nodes won't alter the data. With [collaborative mode](https://cluster.ipfs.io/documentation/collaborative), you can [replicate Pacman packages or COVID-19-related papers](https://collab.ipfscluster.io/) without needing to know the intricacies of IPFS.
+Thanks to recent improvements with IPFS Cluster, you can call for help to store your data without having to trust other nodes won't alter the data. With [collaborative mode](https://cluster.ipfs.io/documentation/collaborative), you can [replicate Pacman packages or COVID-19-related papers](https://collab.ipfscluster.io/) without needing to know the intricacies of IPFS.
 
 ### Video live-streaming
 
@@ -94,7 +94,7 @@ Let your users stream from each other to remove the need for a server without ov
 
 ### Decentralized robots
 
-The robotics company [KODA](https://www.koda9.com/) is developing the world's first decentralized robot dog called [Koda-9](https://www.whipsaw.com/thinking/new-era-of-household-robots/). It uses IPFS to store user data such as security footage.
+The robotics company [KODA](https://www.koda9.com/) is developing the world's first decentralized robot dog called [Koda-9](https://www.whipsaw.com/thinking/new-era-of-household-robots/). It uses IPFS to store user data, such as security footage.
 
 ## IPFS as infrastructure
 
@@ -112,7 +112,7 @@ A [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_netw
 
 The [Node package manager (NPM)](https://www.npmjs.com/) is mirrored on IPFS. By using the dedicated client [npm-on-ipfs](https://github.com/ipfs-shipyard/npm-on-ipfs), packages are fetched from IPFS and distributed to other clients needing them. For example, a team working in the same building will fetch packages from each other, meaning less network traffic costs for the company.
 
-The developers of the [Nix package manager](https://nixos.org/) are working on integrating IPFS for distribution of binary packages and sources.
+The developers of the [Nix package manager](https://nixos.org/) are working on integrating IPFS for the distribution of binary packages and sources.
 
 ### Hosting software containers
 
@@ -120,7 +120,7 @@ Netflix is on its way to use IPFS to [synchronize their Docker containers worldw
 
 ### Efficient network factories
 
-[Actyx](https://www.actyx.com/) is helping the manufacturers to upgrade their plants to the [_Industry 4.0_](https://en.wikipedia.org/wiki/Industry_4.0) era, meaning connecting the machines together for better performance, tolerance to failure and flexibility. Actyx built a custom operating system on top of IPFS they deploy on all machines, so they emit metrics, receive orders, sync up information, and compute their next move locally.
+[Actyx](https://www.actyx.com/) is helping the manufacturers to upgrade their plants to the [_Industry 4.0_](https://en.wikipedia.org/wiki/Industry_4.0) era, meaning connecting the machines together for better performance, tolerance to failure, and flexibility. Actyx built a custom operating system on top of IPFS they deploy on all machines, so they emit metrics, receive orders, sync up information, and compute their next move locally.
 
 ## Lower your storage usage
 
@@ -132,7 +132,7 @@ Sensor data is typically-structured and often contains duplicated blocks of data
 
 ## Decentralize your data
 
-By decentralizing your data, you increase availability in case your server runs into an issue, your ISP is unhappy with what you publish, or a hostile government issues a take-down-order. You will also decrease the load time for your swarm-connected users, and natively enable your app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native de-duplication and caching.
+By decentralizing your data, you increase availability in case your server runs into an issue, your ISP is unhappy with what you publish, or a hostile government issues a take-down-order. You will also decrease the load time for your swarm-connected users and natively enable your app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native de-duplication and caching.
 
 ### Decentralized database
 
@@ -154,7 +154,7 @@ If you are using Amazon Web Service's S3 connections for your cloud, you can use
 
 ### Deploy your website on IPFS
 
-[Fleek.co](https://fleek.co/) allows you to effortlessly build sites & apps on IPFS. The workflow is similar to that of Netlify: developers can link their website or web app hosted on GitHub to Fleek and have it automatically built and deployed on IPFS whenever a change is made to a specific branch. Fleek also comes with Ethereum Name Service (ENS) and domain name integration and plan to enable many more ways to deploy soon: more Git providers, deploy via command-line interface, drag & drop a folder, via API, etc.
+[Fleek.co](https://fleek.co/) allows you to effortlessly build sites & apps on IPFS. The workflow is similar to that of Netlify: developers can link their website or a web app hosted on GitHub to Fleek and have it automatically built and deployed on IPFS whenever a change is made to a specific branch. Fleek also comes with Ethereum Name Service (ENS) and domain name integration and plan to enable many more ways to deploy soon: more Git providers, deploy via command-line interface, drag & drop a folder, via API, etc.
 
 ### Ethereum and Solidity specific applications
 
@@ -176,7 +176,7 @@ This app for government-citizen communication was built in two days during the [
 
 [Haven](https://gethaven.app/) is a privacy-focused mobile app for shopping. Haven doesn't know its users' buying history, lets them pay with crypto, and doesn't take a cut on.
 
-[Origin](https://www.originprotocol.com/) is a blockchain-powered online commerce platform that stores data on IPFS. The [Brave](https://brave.com/) web browser has their own store on it to sell their swag.
+[Origin](https://www.originprotocol.com/) is a blockchain-powered online commerce platform that stores data on IPFS. The [Brave](https://brave.com/) web browser has its own store on it to sell their swag.
 
 ### Torrent tracker hub
 
@@ -202,7 +202,7 @@ In a recent update, Wolfram let users store their computation or assets on IPFS.
 
 [Diffuse.sh](https://diffuse.sh/) is an online music player that you can connect to your music repositories to listen to it from anywhere. You can now connect it to IPFS repositories.
 
-### Decentralized autonomized organization (DAO)
+### Decentralized autonomous organization (DAO)
 
 [Aragon](https://aragon.org/), a service for creating DAOs, uses IPFS to store its data.
 
@@ -234,7 +234,7 @@ Textile.io is building the [Powergate](https://blog.textile.io/filecoin-develope
 
 ### Internet-of-Things and privacy
 
-[Iotex](https://www.iotex.io/) is a hardware company also providing a secure platform to host the data generated by the user, with particular attention to privacy. Owners of a [_Ucam_ security camera](https://ucam.iotex.io/) can choose to store it locally, on a cloud, or on IPFS-backed storage. Iotex provides a blockchain managing identities ensuring only the owner of the data can access them, not even Iotex.
+[Iotex](https://www.iotex.io/) is a hardware company also providing a secure platform to host the data generated by the user, with particular attention to privacy. Owners of a [_Ucam_ security camera](https://ucam.iotex.io/) can choose to store it locally, on a cloud, or on IPFS-backed storage. Iotex provides a blockchain identity management, ensuring only the owner of the data can access them, not even Iotex.
 
 ### Exchange Internet-of-Things data
 
@@ -270,7 +270,7 @@ With IPFS and a blockchain, you can prove ownership of a file at a certain time 
 
 ### Decentralized prediction markets
 
-[Augur](https://www.augur.net/) is a blockchain and decentralized market where you can bet on anything or request prediction from the crowd wisdom. Like so many blockchain-based apps, the data is hosted on IPFS.
+[Augur](https://www.augur.net/) is a blockchain and decentralized market where you can bet on anything or request prediction from the crowd's wisdom. Like so many blockchain-based apps, the data is hosted on IPFS.
 
 ### Decentralized weather data
 
@@ -278,7 +278,7 @@ The weather risk marketplace [Arbol](https://www.arbolmarket.com/) relies on blo
 
 ## Decentralized Identity
 
-[Decentralized Identity](https://en.wikipedia.org/wiki/Decentralized_Identifiers) is the concept of storing all your personal data on your devices rather than let every service you use store a partial copy of it. You having control of your data means that you decide which app has access to what, that you only fill your information once, and that you can revoke access. Decentralized identity is a hot topic, and IPFS is one of the core technologies a lot of engineers build around. The identity wallet [Nomios](https://nomios.io/) shared [some thoughts](https://docs.google.com/presentation/d/1HbydOI0w-T_FY23zCACAyHmzDq1ZvyG2tklpPSm6OQQ/edit#slide=id.g5c88e8f60d_0_11) about decentralized identity general during the [IPFS Camp 2019](https://github.com/ipfs/camp).
+[Decentralized Identity](https://en.wikipedia.org/wiki/Decentralized_Identifiers) is the concept of storing all your personal data on your devices rather than let every service you use store a partial copy of it. You having control of your data means that you decide which app has access to what, that you only fill in your information once, and that you can revoke access. Decentralized identity is a hot topic, and IPFS is one of the core technologies a lot of engineers build around. The identity wallet [Nomios](https://nomios.io/) shared [some thoughts](https://docs.google.com/presentation/d/1HbydOI0w-T_FY23zCACAyHmzDq1ZvyG2tklpPSm6OQQ/edit#slide=id.g5c88e8f60d_0_11) about decentralized identity general during the [IPFS Camp 2019](https://github.com/ipfs/camp).
 
 ### Element
 

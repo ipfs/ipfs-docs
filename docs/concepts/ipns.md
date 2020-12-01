@@ -6,7 +6,7 @@ description: Learn about the InterPlanetary Name System (IPNS) and how it can be
 
 # InterPlanetary Name System (IPNS)
 
-IPFS uses [content-based addressing](/concepts/content-addressing/); it creates an address of a file based on data contained within the file. If you were to share an IPFS address such as `/ipfs/QmbezGequPwcsWo8UL4wDF6a8hYwM1hmbzYv2mnKkEWaUp` with someone you would need to give the person a new link everytime you update the content.
+IPFS uses [content-based addressing](/concepts/content-addressing/); it creates an address of a file based on data contained within the file. If you were to share an IPFS address such as `/ipfs/QmbezGequPwcsWo8UL4wDF6a8hYwM1hmbzYv2mnKkEWaUp` with someone, you would need to give the person a new link every time you update the content.
 
 The InterPlanetary Name System (IPNS) solves this issue by creating an address that can be updated.
 
@@ -20,7 +20,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 
 ## Example IPNS Setup
 
-Imagine you want to publish your website under IPFS. You can use the [Files API](/concepts/file-systems/#mutable-file-system-mfs) to publish your static website, and then you'll get a CID you can link to. But when you need to make a change, a problem arises: you get a new CID because you now have different content. And it is not possible for you to be always giving others the new address.
+Imagine you want to publish your website under IPFS. You can use the [Files API](/concepts/file-systems/#mutable-file-system-mfs) to publish your static website, and then you'll get a CID you can link to. But when you need to make a change, a problem arises: you get a new CID because you now have different content. And it is not possible for you to be always giving others a new address.
 
 Here's where the Name API comes in handy. With it, you can create a single, stable IPNS address that points to the CID for the latest version of your website.
 
@@ -29,10 +29,10 @@ Here's where the Name API comes in handy. With it, you can create a single, stab
 const addr = '/ipfs/QmbezGequPwcsWo8UL4wDF6a8hYwM1hmbzYv2mnKkEWaUp'
 
 ipfs.name.publish(addr, function (err, res) {
-    // You now receive a res which contains two fields:
-    //   - name: the name under which the content was published.
-    //   - value: the "real" address to which Name points.
-    console.log(`https://gateway.ipfs.io/ipns/${res.name}`)
+  // You now receive a res which contains two fields:
+  //   - name: the name under which the content was published.
+  //   - value: the "real" address to which Name points.
+  console.log(`https://gateway.ipfs.io/ipns/${res.name}`)
 })
 ```
 

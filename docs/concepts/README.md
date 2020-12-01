@@ -1,7 +1,7 @@
 ---
 title: Concepts
 legacyUrl: https://docs.ipfs.io/guides/concepts/
-description: Get started on understanding the key ingredients in the decentralized web, and how IPFS works.
+description: Get started on understanding the key ingredients in the decentralized web and how IPFS works.
 ---
 
 # IPFS concepts
@@ -10,7 +10,7 @@ New to IPFS or the distributed web? Here's where to get started on understanding
 
 ## Video overviews
 
-Want the basics, in theater mode? Check out these helpful videos for an overview of how IPFS works with files and the overall data lifecycle in dweb.
+Want the basics in theater mode? Check out these helpful videos for an overview of how IPFS works with files and the overall data lifecycle in the d-web.
 
 @[youtube](Z5zNPwMDYGg)
 
@@ -77,7 +77,7 @@ IPFS aims to be the future of the internet, but it still needs to play well with
 
 ## Further reading
 
-Want a more in-depth look into the decentralized web? Here are a few papers that are useful for understanding IPFS, whether it be understanding the IPFS spec itself, or the background for the web, protocols, hashing, and so on. [Read the papers →](/concepts/further-reading/academic-papers)
+Want a more in-depth look into the decentralized web? Here are a few papers that are useful for understanding IPFS, whether it be understanding the IPFS spec itself or the background for the web, protocols, hashing, and so on. [Read the papers →](/concepts/further-reading/academic-papers)
 
 ## Don't see what you're looking for?
 
