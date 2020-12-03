@@ -38,6 +38,12 @@ While a long string of letters and numbers may not be a "Johnny Appleseed" level
 
 If there are situations in which you know you'll need to remain private but still want to use IPFS, one of the approaches outlined below may help. And don't forget, you can always discuss privacy and get others' input or ideas in the official [IPFS forums](https://discuss.ipfs.io).
 
+### Disabling reproviding
+
+By default, an IPFS node announces itself as a provider for every CID in its cache. If you'd like to disable this behavior, you can do so in the [reprovider settings](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#reprovider) of your node's config file.
+
+Disabling default reprovision still enables you to provide data that you've pinned, so it's possible for you to still provide other nodes with content that you care about and want to make sure continues to be available over IPFS.
+
 ### Using a public gateway
 
 Using a public [IPFS gateway](/how-to/address-ipfs-on-web/#http-gateways) is one way to request IPFS-hosted content without revealing any information about your local node — because you aren't using a local node! However, this method does keep you from enjoying all the benefits of being a full participant in the IPFS network.
