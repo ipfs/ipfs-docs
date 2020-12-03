@@ -12,7 +12,7 @@ As you explore IPFS and learn about its core concepts, it's important to know th
 
 By design, IPFS is a public network: Nodes participating in the network store data affiliated with globally consistent [content addresses](/concepts/content-addressing) (CIDs) and advertise that they have those CIDs available for other nodes to use through publicly viewable [distributed hash tables](/concepts/dht/) (DHTs). Indeed, this is one of IPFS's core strengths — at its most basic, it's a sort of globally distributed "server" of the network's total available data, referenceable both by the content itself (those CIDs) and by the participants who have or want the content (the nodes).
 
-What this does mean, however, is that IPFS itself isn't explicitly protecting knowledge _about_ CIDs and the nodes that provide or retrieve them. This isn't something unique to the distributed web; on both the d-web and the legacy web, traffic, and other metadata can be monitored in ways that can infer a lot about a network and its users. Some key details on this are outlined below, but in summary: IPFS traffic, including which nodes are retrieving and/or reproviding which CIDs, occurs in the clear. If you're worried about the implications of this for your own personal use case, it's worth taking additional measures such as encrypting sensitive content, accessing IPFS content [through Tor gateways](https://dweb-primer.ipfs.io/avenues-for-access/tor-gateways), or even running a private IPFS network if that's appropriate for you.
+What this does mean, however, is that IPFS itself isn't explicitly protecting knowledge _about_ CIDs and the nodes that provide or retrieve them. This isn't something unique to the distributed web; on both the d-web and the legacy web, traffic, and other metadata can be monitored in ways that can infer a lot about a network and its users. Some key details on this are outlined below, but in summary: IPFS traffic, including which nodes are retrieving and/or reproviding which CIDs, occurs in the clear. If you're worried about the implications of this for your own personal use case, it's worth taking additional measures such as disabling reproviding, encrypting sensitive content, or even running a private IPFS network if that's appropriate for you.
 
 ::: tip
 IPFS traffic, including which nodes are retrieving and/or reproviding what data, occurs in public. If you're worried about the implications of this for your personal use case, it's worth taking additional measures.
@@ -42,7 +42,7 @@ If there are situations in which you know you'll need to remain private but stil
 
 By default, an IPFS node announces itself as a provider for every CID in its cache. If you'd like to disable this behavior, you can do so in the [reprovider settings](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#reprovider) of your node's config file.
 
-Disabling default reprovision still enables you to provide data that you've pinned, so it's possible for you to still provide other nodes with content that you care about and want to make sure continues to be available over IPFS.
+Disabling default reprovision still enables you to provide data that you've pinned, so it's still possible for you to provide other nodes with content that you care about and want to make sure continues to be available over IPFS.
 
 ### Using a public gateway
 
@@ -52,7 +52,7 @@ Public IPFS gateways are primarily intended as a "bridge" between the legacy web
 
 ### Using Tor
 
-If you're familiar with [Tor](https://www.torproject.org/), using the Tor browser and an IPFS-Tor gateway is a way to retrieve content from IPFS directly over Tor protocol. You can learn more about this experimental method in the [IPFS Primer](https://dweb-primer.ipfs.io/avenues-for-access/tor-gateways). If you're more adventurous and comfortable with the command line, you may also wish to try [running IPFS over Tor transport](https://dweb-primer.ipfs.io/avenues-for-access/tor-transport) by configuring your node's settings.
+If you're familiar with [Tor](https://www.torproject.org/) and comfortable with the command line, you may wish to try [running IPFS over Tor transport](https://dweb-primer.ipfs.io/avenues-for-access/tor-transport) by configuring your node's settings.
 
 If you're a developer building on IPFS, it's worth noting that the global IPFS community continues to experiment with using Tor transport — see [this example from e-commerce organization OpenBazaar](https://github.com/OpenBazaar/go-onion-transport) — and there may already be an open-source codebase to help your own project achieve this.
 
