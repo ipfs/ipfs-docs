@@ -40,7 +40,7 @@ If there are situations in which you know you'll need to remain private but stil
 
 ### Using a public gateway
 
-Using a public [IPFS gateway](https://dweb-primer.ipfs.io/avenues-for-access/review-these-lessons-from-the-tutorial-on-interacting-with-the-classical-http-web/public-gateways) is one way to request IPFS-hosted content without revealing any information about your local node — because you aren't using a local node! However, this method does keep you from enjoying all the benefits of being a full participant in the IPFS network.
+Using a public [IPFS gateway](/how-to/address-ipfs-on-web/#http-gateways) is one way to request IPFS-hosted content without revealing any information about your local node — because you aren't using a local node! However, this method does keep you from enjoying all the benefits of being a full participant in the IPFS network.
 
 Public IPFS gateways are primarily intended as a "bridge" between the legacy web and the distributed web; they allow ordinary web clients to request IPFS-hosted content via HTTP. That's great for back-compatibility, but if you only request content through public gateways rather than directly over IPFS, you're not actually part of the IPFS network; that gateway is the network participant, acting on your behalf. It's also important to remember that gateway operators could be collecting their own private metrics, which could include tracking the IP addresses that use a gateway and correlating those with what CIDs are requested.
 
