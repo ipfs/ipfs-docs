@@ -67,6 +67,11 @@ module.exports = {
         nav: require('./nav/en'),
         sidebar: [
           {
+            title: 'Getting started',
+            path: '/getting-started/',
+            children: ['getting-started/use-ipfs', 'getting-started/next-up']
+          },
+          {
             title: 'Install',
             path: '/install/',
             children: [
