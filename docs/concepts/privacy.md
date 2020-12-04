@@ -12,10 +12,12 @@ As you explore IPFS and learn about its core concepts, it's important to know th
 
 By design, IPFS is a public network: Nodes participating in the network store data affiliated with globally consistent [content addresses](/concepts/content-addressing) (CIDs) and advertise that they have those CIDs available for other nodes to use through publicly viewable [distributed hash tables](/concepts/dht/) (DHTs). Indeed, this is one of IPFS's core strengths — at its most basic, it's a sort of globally distributed "server" of the network's total available data, referenceable both by the content itself (those CIDs) and by the participants who have or want the content (the nodes).
 
-What this does mean, however, is that IPFS itself isn't explicitly protecting knowledge _about_ CIDs and the nodes that provide or retrieve them. This isn't something unique to the distributed web; on both the d-web and the legacy web, traffic, and other metadata can be monitored in ways that can infer a lot about a network and its users. Some key details on this are outlined below, but in summary: IPFS traffic, including which nodes are retrieving and/or reproviding which CIDs, occurs in the clear. If you're worried about the implications of this for your own personal use case, it's worth taking additional measures such as disabling reproviding, encrypting sensitive content, or even running a private IPFS network if that's appropriate for you.
+What this does mean, however, is that IPFS itself isn't explicitly protecting knowledge _about_ CIDs and the nodes that provide or retrieve them. This isn't something unique to the distributed web; on both the d-web and the legacy web, traffic and other metadata can be monitored in ways that can infer a lot about a network and its users. Some key details on this are outlined below, but in short: While IPFS traffic _between nodes_ is encrypted, the metadata those nodes publish to the DHT is public. Nodes announce a variety of information essential to the DHT's function — including their unique node identifiers (PeerIDs) and the CIDs of data that they're providing — and because of this, information about which nodes are retrieving and/or reproviding which CIDs is publicly available.
+
+If you're worried about the implications of this for your own personal use case, it's worth taking additional measures such as disabling reproviding, encrypting sensitive content, or even running a private IPFS network if that's appropriate for you.
 
 ::: tip
-IPFS traffic, including which nodes are retrieving and/or reproviding what data, occurs in public. If you're worried about the implications of this for your personal use case, it's worth taking additional measures.
+While IPFS traffic _between nodes_ is encrypted, the essential metadata that nodes publish to the DHT — including their unique node identifiers (PeerIDs) and the CIDs of data that they're providing — is public. If you're worried about the implications of this for your personal use case, it's worth taking additional measures.
 :::
 
 ## What's public on IPFS
@@ -30,9 +32,9 @@ This is one of the advantages of IPFS over traditional legacy-web hosting. It me
 
 ### Node IDs and node requests
 
-The other half of the equation when considering the prospect of IPFS traffic monitoring is that nodes' unique identifiers are themselves public. Just like with CIDs, every individual IPFS node has its own public identifier, such as `QmRGgYP1P5bjgapLaShMVhGMSwGN9SfYG3CM2TfhpJ3igE`.
+The other half of the equation when considering the prospect of IPFS traffic monitoring is that nodes' unique identifiers are themselves public. Just like with CIDs, every individual IPFS node has its own public identifier (known as a PeerID), such as `QmRGgYP1P5bjgapLaShMVhGMSwGN9SfYG3CM2TfhpJ3igE`.
 
-While a long string of letters and numbers may not be a "Johnny Appleseed" level of human-readable specificity, it's still a long-lived, unique identifier for your node. Keep in mind that it's possible to do a DHT lookup on your node's identifier and, particularly if your node is regularly running from the same location (like your home), find your IP address. Additionally, longer-term monitoring of the public IPFS network could yield information about what CIDs your node is requesting and/or reproviding and when.
+While a long string of letters and numbers may not be a "Johnny Appleseed" level of human-readable specificity, your PeerID is still a long-lived, unique identifier for your node. Keep in mind that it's possible to do a DHT lookup on your PeerID and, particularly if your node is regularly running from the same location (like your home), find your IP address. Additionally, longer-term monitoring of the public IPFS network could yield information about what CIDs your node is requesting and/or reproviding and when.
 
 ## Enhancing your IPFS privacy
 
