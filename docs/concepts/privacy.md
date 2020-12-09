@@ -62,7 +62,7 @@ If you're a developer building on IPFS, it's worth noting that the global IPFS c
 
 If your privacy concerns are less about the potential for monitoring and more about the visibility of the IPFS-provided content itself, this can be mitigated simply by encrypting the content before adding it to the IPFS network. While traffic involving the encrypted content could still be tracked, the _data_ represented by encrypted content's CIDs remains unreadable by anyone without the ability to decrypt it.
 
-There's one caveat to keep in mind here: While today's encryption might seem bulletproof _today_, it's not guaranteed that it won't be broken at some point in the future. Future breakthroughs in computing might allow going back and decrypting older content that's been put on a public network such as IPFS.
+There's one caveat to keep in mind here: While today's encryption might seem bulletproof _today_, it's not guaranteed that it won't be broken at some point in the future. Future breakthroughs in computing might allow going back and decrypting older content that's been put on a public network such as IPFS. If you want to guard against this potential attack vector, using IPFS hybrid-private networks — in which IPFS nodes sit behind connection gates that check request ACLs before giving a node request — is a potential design direction. (For more details, [this article from Pinata](https://medium.com/pinata/dedicated-ipfs-networks-c692d53f938d) may be helpful.)
 
 If you're curious about implementing encryption with IPFS on a large scale, you may enjoy reading [this case study on Fleek, a fast-growing IPFS file hosting and delivery service](concepts/case-study-fleek/).
 
