@@ -27,7 +27,7 @@ While you can publish the TXT record to the exact domain if you so wish, it can 
 For example, [`docs.ipfs.io`](https://docs.ipfs.io) does not have a TXT record, but the page still loads
 because a TXT record exists for `_dnslink.docs.ipfs.io`. If you look up the DNS records for `_dnslink.docs.ipfs.io`, you'll see its DNSLink entry:
 
-"`sh
+```sh
 $ dig +noall +answer TXT \_dnslink.docs.ipfs.io
 \_dnslink.docs.ipfs.io. 34 IN TXT "dnslink=/ipfs/QmVMxjouRQCA2QykL5Rc77DvjfaX6m8NL6RyHXRTaZ9iya"
 
@@ -45,7 +45,7 @@ dnslink=/ipfs/<CID for your content here>
 
 For example, let's go back to when we looked up the DNS records for `_dnslink.docs.ipfs.io` and saw its DNSLink entry:
 
-"`sh
+```sh
 $ dig +noall +answer TXT _dnslink.docs.ipfs.io
 _dnslink.docs.ipfs.io.  34  IN  TXT "dnslink=/ipfs/QmVMxjouRQCA2QykL5Rc77DvjfaX6m8NL6RyHXRTaZ9iya"
 ```
