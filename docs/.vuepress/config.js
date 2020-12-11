@@ -210,31 +210,12 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/ipfs-101',
-                    'Use js-ipfs as a library'
-                  ],
-                  [
-                    'https://github.com/ipfs/go-ipfs/tree/master/docs/examples/go-ipfs-as-a-library/README.md',
-                    'Use go-ipfs as a library'
-                  ],
                   '/how-to/work-with-blocks',
                   '/how-to/pin-files',
-                  [
-                    'https://github.com/ipfs/go-ipfs/blob/master/docs/file-transfer.md',
-                    'Troubleshoot file transfers'
-                  ],
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/traverse-ipld-graphs',
-                    'Traverse IPLD graphs'
-                  ],
+                  '/how-to/troubleshoot-file-transfers',
                   '/how-to/take-snapshot',
                   '/how-to/store-play-videos',
                   '/how-to/host-git-style-repo',
-                  [
-                    'https://github.com/ipfs/archives/tree/master/tutorials/replicating-large-datasets',
-                    'Replicate large datasets'
-                  ],
                   '/how-to/move-ipfs-installation'
                 ]
               },
@@ -242,17 +223,7 @@ module.exports = {
                 title: 'Work with peers',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: [
-                  '/how-to/observe-peers',
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/custom-libp2p',
-                    'Customize libp2p bundles'
-                  ],
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/circuit-relaying',
-                    'Use circuit relay'
-                  ]
-                ]
+                children: ['/how-to/observe-peers']
               },
               {
                 title: 'Websites on IPFS',
@@ -264,17 +235,6 @@ module.exports = {
                   '/how-to/websites-on-ipfs/link-a-domain',
                   '/how-to/websites-on-ipfs/introducing-fleek',
                   '/how-to/websites-on-ipfs/static-site-generators'
-                ]
-              },
-              {
-                title: 'Work with blockchains',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/explore-ethereum-blockchain',
-                    'Explore the Ethereum chain'
-                  ]
                 ]
               },
               {
