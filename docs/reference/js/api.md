@@ -1,10 +1,10 @@
 ---
-title: js-ipfs API
+title: JS-IPFS API
 legacyUrl: https://docs.ipfs.io/reference/js/
 description: Developer resources for working in JavaScript with IPFS, the InterPlanetary File System.
 ---
 
-# API resources for js-ipfs
+# JS-IPFS API
 
 ::: callout
 [Explore js-ipfs through interactive coding challenges at ProtoSchool](https://proto.school/tutorials?course=ipfs)
@@ -35,3 +35,7 @@ See the [JS core API reference](https://github.com/ipfs/js-ipfs/tree/master/docs
 ## JS HTTP client library
 
 A [client library](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) for the IPFS HTTP API, implemented in JavaScript. This client library implements the interface-ipfs-core enabling applications to change between an embedded js-ipfs node and any remote IPFS node without having to change the code. In addition, this client library implements a set of utility functions.
+
+## Examples
+
+There a lots of JS-IPFS use-case examples in the `ipfs/js-ipfs` repository. They're all self-contained projects that let your spin up and test environments quickly. [Check them out →](https://github.com/ipfs/js-ipfs/tree/master/examples)
