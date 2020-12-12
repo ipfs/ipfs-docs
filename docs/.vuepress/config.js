@@ -241,17 +241,7 @@ module.exports = {
                 title: 'Build apps',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: [
-                  '/how-to/make-service',
-                  [
-                    'https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_C',
-                    'Build with the IPFS API'
-                  ],
-                  [
-                    'https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_B',
-                    'Make a basic libp2p app'
-                  ]
-                ]
+                children: ['/how-to/make-service']
               },
               {
                 title: 'IPFS in the browser',
