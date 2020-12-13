@@ -10,7 +10,13 @@ description: Learn about how IPFS treats persistence and permanence on the web, 
 If you're interested in how pinning files fits into the overall lifecycle of data in IPFS, check out this video from IPFS Camp 2019! [Core Course: The Lifecycle of Data in Dweb](https://www.youtube.com/watch?v=fLUq0RkiTBA)
 :::
 
-IPFS nodes treat the data they store like a cache, meaning that there is no guarantee that the data will continue to be stored. "Pinning" a CID tells an IPFS server that the data is important and mustn't be thrown away.
+## Persistence versus permanence
+
+One of the main goals of IPFS is to to preserve humanity's history by enabling the permanent web. But what does permanence actually mean? And why does this matter?
+
+Today [The average lifespan of a web page is 100 days](https://blogs.loc.gov/thesignal/2011/11/the-average-lifespan-of-a-webpage/) before it's gone forever. It's not good enough for the primary medium of our era to be this fragile. Therefore IPFS keeps every version of your files and makes it simple to set up resilient networks for mirroring data.
+
+Nodes on the IPFS network cache resources that are downloaded through them and make those resources available for upload to other nodes. This system depends on nodes being willing and able to cache and share resources with the network. Storage isn’t infinite, however, so nodes need to clear out some of their previously cached resources to make room for new resources. In order to ensure that data stays available on IPFS (aka is persisted) and mustn't be thrown away data can be "pinned" to one or more IPFS nodes. "Pinning" a CID tells an IPFS node that the data is important and mustn't be thrown away.
 
 You should pin any content you consider important in order to ensure that content is retained over the long term. Since data important to someone else may not be important to you, pinning enables you to have control over the disk space and data retention you need.
 
