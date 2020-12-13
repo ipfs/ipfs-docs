@@ -6,10 +6,6 @@ description: Learn about how IPFS treats persistence and permanence on the web, 
 
 # Persistence, permanence and pinning
 
-::: tip
-If you're interested in how pinning files fits into the overall lifecycle of data in IPFS, check out this video from IPFS Camp 2019! [Core Course: The Lifecycle of Data in Dweb](https://www.youtube.com/watch?v=fLUq0RkiTBA)
-:::
-
 ## Persistence versus permanence
 
 One of the main goals of IPFS is to to preserve humanity's history by enabling the permanent web. But what does permanence actually mean? And why does this matter?
@@ -21,6 +17,10 @@ Nodes on the IPFS network cache resources that are downloaded through them and m
 You should pin any content you consider important in order to ensure that content is retained over the long term. Since data important to someone else may not be important to you, pinning enables you to have control over the disk space and data retention you need.
 
 ## Pinning in context
+
+::: tip
+If you're interested in how pinning files fits into the overall lifecycle of data in IPFS, check out this video from IPFS Camp 2019! [Core Course: The Lifecycle of Data in Dweb](https://www.youtube.com/watch?v=fLUq0RkiTBA)
+:::
 
 Your IPFS node can store data based on different kinds of user events. For instance, you can add a file with `ipfs add ...`. It will also store data you request, such as by loading a web page through the gateway (`http://localhost:8080/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco`) or with `ipfs cat ...`. Your node will consult with other IPFS peers to find these requested data, and will store the results in the local cache. `ipfs add` will automatically pin the content, but other IPFS commands do not include automatic pinning.
 
