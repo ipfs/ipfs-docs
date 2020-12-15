@@ -7,7 +7,7 @@ description: Using IPFS through the command-line allows you to do everything tha
 
 Installing IPFS through the command-line is handy if you plan on building applications and services on top of an IPFS node. This method is also useful if you're setting up a node without a user interface, usually the case with remote servers or virtual machines. Using IPFS through the command-line allows you to do everything that IPFS Desktop can do, but at a more granular level since you can specify which commands to run.
 
-There are several different ways to install IPFS using the command-line. The easiest method is by using a package manager. If you don't have one installed, or would like a more up-to-date version of IPFS, you can use [dist.ipfs.io](dist.ipfs.io) to grab the latest package and install it. Lastly, if your the kind of person that likes to bake a cake themselves rather than buying a premade one, there are manual complilation instructions available.
+There are several different ways to install IPFS using the command-line. The easiest method is by using a package manager. If you don't have one installed, or would like a more up-to-date version of IPFS, you can use [dist.ipfs.io](https://dist.ipfs.io/) to grab the latest package and install it. Lastly, if your the kind of person that likes to bake a cake themselves rather than buying a premade one, there are manual complilation instructions available.
 
 ## Package managers
 
@@ -19,7 +19,7 @@ Most operating systems have a package manager, although they may not come pre-in
 | macOS            | [Homebrew](https://formulae.brew.sh/formula/ipfs)  | `brew install ipfs`  |
 | Ubuntu           | [Snap](https://snapcraft.io/ipfs)                  | `snap install ipfs`  |
 
-Although we try our best to keep the package manager releases up to date, they sometimes lag behind the Go-IPFS GitHub releases page by a few days. If you'd like to install a release the very same day it comes out, use the [official distributions](#official-distributions) from [dist.ipfs.io](dist.ipfs.io).
+Although we try our best to keep the package manager releases up to date, they sometimes lag behind the Go-IPFS GitHub releases page by a few days. If you'd like to install a release the very same day it comes out, use the [official distributions](#official-distributions) from [dist.ipfs.io](https://dist.ipfs.io).
 
 ## Official distributions
 
