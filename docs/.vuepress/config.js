@@ -238,12 +238,6 @@ module.exports = {
                 ]
               },
               {
-                title: 'Build apps',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: ['/how-to/make-service']
-              },
-              {
                 title: 'IPFS in the browser',
                 sidebarDepth: 1,
                 collapsable: false,
