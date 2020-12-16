@@ -243,30 +243,6 @@ module.exports = {
                 collapsable: false,
                 children: [
                   'how-to/address-ipfs-on-web',
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/browser-exchange-files',
-                    'Exchange files between nodes'
-                  ],
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/browser-mfs',
-                    'Use MFS in the browser'
-                  ],
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/browser-add-readable-stream',
-                    'Add directories using streams'
-                  ],
-                  [
-                    'https://www.youtube.com/watch?v=Nv_Teb--1zg',
-                    'Make a pubsub room'
-                  ],
-                  [
-                    'https://www.youtube.com/watch?v=-kdx8rJd8rQ',
-                    'Edit collaboratively with CRDT'
-                  ],
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/browser-readablestream',
-                    'Stream video'
-                  ],
                   '/how-to/browser-tools-frameworks'
                 ]
               },
