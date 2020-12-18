@@ -10,7 +10,7 @@ There are two locations in which IPFS stores private keys:
 1. In the config file (`~/.ipfs/config`), following the [config specification](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#identityprivkey) to store the default private key.
 2. In the Keystore (`~/.ipfs/keystore`), following the [fs-repo specification](https://github.com/ipfs/specs/blob/master/REPO_FS.md) to store all other private keys.
 
-Private keys are handled programmatically through code or via the CLI. Here we will show you how to use your existing private keys using both methods.
+Private keys are handled programmatically through code or through the CLI. Here we will show you how to use your existing private keys using both methods.
 
 ## CLI (`go-ipfs`)
 
