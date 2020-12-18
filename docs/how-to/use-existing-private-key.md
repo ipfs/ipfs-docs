@@ -37,7 +37,7 @@ For more information on the CLI commands, you can check the help option for the 
 ipfs COMMAND --help
 ```
 
-## CLI - JS (`js-ipfs`)
+### JS-IPFS
 
 You can provide the private key inline as a string when initializing (see `--help` for info on valid formats):
 
