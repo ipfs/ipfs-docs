@@ -31,15 +31,10 @@ ipfs key import CustomKeyName ./CustomKeyFile
 The content of the file holding the private key you want to import into the Keystore needs to be in the correct format to be valid.
 The format of Keystore files is outlined in the [fs-repo](https://github.com/ipfs/specs/blob/master/REPO_FS.md#keystore) specification.
 
-For more information on the CLI commands, you can check the help option for the specific command:
-
-```sh
-ipfs COMMAND --help
-```
 
 ### JS-IPFS
 
-You can provide the private key inline as a string when initializing (see `--help` for info on valid formats):
+You can provide the private key inline as a string when initializing:
 
 ```sh
 jsipfs init --private-key 'my-private-key'
@@ -53,19 +48,13 @@ jsipfs key import CustomKeyName --passin='your-pem-password' --input=./CustomKey
 > imported QmcasS8sQuasoFb2MDXbmBDwatWdhbkXrmx7131Rban9GG CustomKeyName
 ```
 
-For more information on the CLI commands, you can check the help option for the specific command:
-
-```sh
-jsipfs COMMAND --help
-```
-
 ## Programmatically
 
 Manage your private keys programmatically.
 
 ### JavaScript
 
-Using pre-generated private keys with JavaScript is pretty straight-forward:
+Using pre-generated private keys with JavaScript is straight-forward:
 
 1. Import the IPFS module.
 2. Create the node, passing the desired private key in the [correct format](https://github.com/ipfs/js-ipfs/blob/master/docs/MODULE.md#optionsinit) to the `IPFS.create` function parameter:
@@ -77,13 +66,13 @@ const myExistingPrivateKey = 'my-private-key'
 const ipfs = await IPFS.create({ privateKey: myExistingPrivateKey })
 ```
 
-## Go
+### Go
 
 Unfortunately, there's no clear way of initializing an IPFS node using your private keys from IPFS's Go Library at this moment.
 
 ## Troubleshooting
 
-- Key not changing
+### Key not changing
   - If you already have an initialized repo (i.e., `~/.jsipfs` is not empty), the existing key from the config file (`~/.jsipfs/config`) will be used instead of the provided one ([ipfs/js-ipfs#2261](https://github.com/ipfs/js-ipfs/issues/2261#issuecomment-637449985)).
 
 ## Use cases
@@ -93,10 +82,6 @@ Unfortunately, there's no clear way of initializing an IPFS node using your priv
 - Use in CI/CD pipelines.
 - Rotate the IPFS identity.
 - Use keys created from a third-party.
-
-## Security
-
-You'll have to take care of the handling of keys and their security. Remember that private keys are your identity and the only way of seeing encrypted content, publishing as you, among other actions. It's a protection layer between the user and the raw data.
 
 ## Learn more
 
