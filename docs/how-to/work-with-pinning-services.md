@@ -10,9 +10,9 @@ Depending on how you use IPFS, you might find it helpful to use a **remote pinni
 If you've got just one local IPFS node that's always running, local pinning may be all you need to ensure your important items are persisted and never garbage-collected. However, using a remote pinning service — or creating your own — might be useful to you if:
 
 - Your local node isn't always online, but you need items to be consistently available
-- You'd like to keep a persistent backup of your local node's files somewhere else
-- You don't have all the disk space you need on your local node
-- You run more than one IPFS node, and would like to use one of them as a "personal pinning service" as your preferred location for permanent storage
+- You'd like to keep a persistent backup of your local node's files somewhere else.
+- You don't have all the disk space you need on your local node.
+- You run more than one IPFS node, and would like to use one of them as a "personal pinning service" as your preferred location for permanent storage.
 
 There are a number of commercial pinning services that make it easy for you to purchase pinning capacity for your important files (examples of these include Pinata, Temporal, Infura, and others). Each of these third-party services has its own unique interface for pinning files and managing those pins; this could include a GUI, an API, CLI commands, or other tooling.
 
