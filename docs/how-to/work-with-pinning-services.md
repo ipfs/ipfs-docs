@@ -47,7 +47,7 @@ In the next screen, you’ll be asked for a few other details:
 
 ![Details modals for adding a new pinning service or a new custom pinning service in Desktop/Web UI](https://user-images.githubusercontent.com/1507828/102558910-ca15f300-408b-11eb-9fe3-742186c077c7.png)
 
-After you hit “Save”, you’ll see your new pinning service added to the “Pinning Services” section of your Settings screen.
+After you hit **Save**, you’ll see your new pinning service added to the **Pinning Services** section of your **Settings** screen.
 
 ![Desktop/Web UI Settings screen with a new pinning service added](https://user-images.githubusercontent.com/1507828/102558530-db123480-408a-11eb-9e3b-58bbd59b2880.png)
 
