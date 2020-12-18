@@ -106,8 +106,8 @@ ipfs pin remote --help
 As noted above, you aren't limited to adding the remote pinning services listed in the Settings screen of Desktop/Web UI. Any remote pinning service that uses the [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec) can be added as a custom pinning service — which also means that you can create your own! This might be useful in circumstances like:
 
 - Designating one of your own IPFS nodes to be a _personal pinning service_ as a preferred location for permanent storage.
-- Running a private pinning service for your friends or company
-- Starting your own commercial pinning service
+- Running a private pinning service for your friends or company.
+- Starting your own commercial pinning service.
 
 As noted above, your service must use the [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec) in order to be interoperable with IPFS Desktop/Web UI and the IPFS CLI. You may also wish to read continuing details on how the API is evolving in the [Pinning Service API Spec GitHub repo](https://github.com/ipfs/pinning-services-api-spec), and be part of the discussion on its further development!
 
