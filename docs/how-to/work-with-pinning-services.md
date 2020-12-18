@@ -53,7 +53,7 @@ After you hit **Save**, you’ll see your new pinning service added to the **Pin
 
 #### Using a pinning service
 
-Now that you’re set up, you can pin or unpin files to your new pinning service directly from the Files screen. Just right-click any file (or click the “three dots” action icon in the files list) and select “Set pinning”:
+Now that you’re set up, you can pin or unpin files to your new pinning service directly from the Files screen. Just right-click any file or click the **three dots** action icon in the files list, and select **Set pinning**:
 
 ![Desktop/Web UI Files screen with the action menu open and "Set pinning" visible](https://user-images.githubusercontent.com/1507828/102558546-e6656000-408a-11eb-97b8-5fdb060602d2.png)
 
