@@ -12,7 +12,11 @@ There are two locations in which IPFS stores private keys:
 
 Private keys are handled programmatically through code or through the CLI. Here we will show you how to use your existing private keys using both methods.
 
-## CLI (`go-ipfs`)
+## CLI
+
+Use the CLI to manage your private keys.
+
+### Go-IPFS
 
 There's no way of directly initializing an IPFS node using your private keys from the Go-IPFS CLI at this time. To learn more and look for possible workarounds, see the discussion on issue [ipfs/go-ipfs#4240](https://github.com/ipfs/go-ipfs/issues/4240).
 
