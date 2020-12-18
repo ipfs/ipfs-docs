@@ -49,4 +49,8 @@ ipfs cat <foo hash>
 
 All the information above assumes that you're pinning items locally — that is, to your local IPFS node. That's the default behavior for IPFS, but it's also possible to pin your files to a _remote pinning service_. These third-party services offer the opportunity for you to pin files not to your own local node, but to nodes that they operate, meaning that you don't need to worry about your own node's available disk space or uptime when it comes to availability.
 
-[IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) and its equivalent in-browser IPFS web interface, the [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui), both support integration with remote pinning services so you can pin either remotely or locally straight from the UI. [Learn more here.](/how-to/work-with-pinning-services/)
+While you can use a remote pinning service's own GUI, CLI, or other dev tools to manage IPFS files pinned to their service, you can also work directly with pinning services in IPFS itself — meaning that you don't need to learn a pinning service's unique API or other tooling.
+
+- The [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/) offers a specification that enables developers to integrate any pinning service that supports the spec, using simple, standardized schemas and fields.
+- If you use go-ipfs from the command line, you can add your favorite pinning service(s), pin CIDs under human-readable names, get pin statuses, and more straight from the CLI. [Learn how →](/how-to/work-with-pinning-services/)
+- [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) and its equivalent in-browser IPFS web interface, the [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui), both support remote pinning services, so you can pin to your favorite pinning service(s) straight from the UI. [Learn how →](/how-to/work-with-pinning-services/)
