@@ -59,7 +59,11 @@ For more information on the CLI commands, you can check the help option for the 
 jsipfs COMMAND --help
 ```
 
-## JavaScript
+## Programmatically
+
+Manage your private keys programmatically.
+
+### JavaScript
 
 Using pre-generated private keys with JavaScript is pretty straight-forward:
 
