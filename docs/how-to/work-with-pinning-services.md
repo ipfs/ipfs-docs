@@ -22,7 +22,7 @@ As of January 2021, [Pinata](https://pinata.cloud/) supports the IPFS Pinning Se
 
 ## Use an existing pinning service
 
-To add and use a remote pinning service directly in IPFS, you'll first need to have an account with that service (you can do this by signing up directly with the service itself). Once you're got an account, follow these steps to add and use it:
+To add and use a remote pinning service directly in IPFS, you'll first need to have an account with that service. Once you've got an account, follow these steps to add and use it:
 
 ### IPFS Desktop or IPFS Web UI
 
