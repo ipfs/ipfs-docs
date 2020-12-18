@@ -69,9 +69,9 @@ To add a new pinning service, use the following command:
 ipfs pin remote service add nickname https://api.mypinningservice.com/endpoint myAccessToken
 ```
 
-- `nickname` is a unique name for this particular instantiation of a pinning service (this can be helpful if, for example, you want to add two accounts from the same service)
-- `https://api.mypinningservice.com/endpoint` is the endpoint supplied to you by the pinning service (check its documentation for more info)
-- `myAccessToken` is the unique token provided to you by the pinning service (check its documentation for more info)
+- `nickname` is a unique name for this particular instantiation of a pinning service. TThis can be helpful if, for example, you want to add two accounts from the same service.
+- `https://api.mypinningservice.com/endpoint` is the endpoint supplied to you by the pinning service. Check the service's documentation for more info.
+- `myAccessToken` is the unique token provided to you by the pinning service. Check the service's documentation for more info.
 
 #### Using a pinning service
 
