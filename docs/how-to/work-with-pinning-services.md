@@ -40,7 +40,7 @@ Then, select your chosen pinning service from the modal that pops up. If the pin
 
 In the next screen, you’ll be asked for a few other details:
 
-- A nickname for this service (this can be helpful if, for example, you want to add two accounts from the same service)
+- A nickname for this service. This can be helpful if, for example, you want to add two accounts from the same service.
 - The URL for your service's API endpoint _(note: this field only appears if you've selected a custom pinning service!)_
 - Your secret API key (this is the unique token provided to you by the pinning service — check its documentation for more info)
 - Whether you want to automatically add all files in your local node’s Files directory to the pinning service, or choose which ones you upload.
