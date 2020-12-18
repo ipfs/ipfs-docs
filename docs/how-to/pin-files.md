@@ -23,7 +23,7 @@ ipfs pin ls --type=all
 
 ## Three kinds of pins
 
-As you may have noticed in the example above, the first `ipfs pin rm` command didn't work — it should have warned you that the given hash was "pinned recursively". What does this mean? There are three types of pins in the IPFS world:
+As you may have noticed in the example above, the first `ipfs pin rm` command didn't work — it should have warned you that the given hash was _pinned recursively_. What does this mean? There are three types of pins in the IPFS world:
 
 - **Direct pins**, which pin just a single block and no others in relation to it
 - **Recursive pins**, which pin a given block and all of its children
