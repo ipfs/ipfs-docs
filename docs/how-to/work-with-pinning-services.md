@@ -7,7 +7,7 @@ description: Learn how to use or create remote pinning services with IPFS, the I
 
 Depending on how you use IPFS, you might find it helpful to use a **remote pinning service** instead of, or in addition to, pinning files on your local IPFS node. Whether it happens remotely or locally, **pinning** an item in IPFS identifies it as something you always wish to keep available, exempting it from the routine _garbage collection_ that IPFS does on infrequently-used items in order to efficiently manage storage space. [Learn more about pinning →](/how-to/pin-files).
 
-If you've got just one local IPFS node, and it's always running, local pinning may be all you need to insure your important items are persisted and never garbage-collected. However, using a remote pinning service — or creating your own! — might be useful to you if:
+If you've got just one local IPFS node that's always running, local pinning may be all you need to ensure your important items are persisted and never garbage-collected. However, using a remote pinning service — or creating your own — might be useful to you if:
 
 - Your local node isn't always online, but you need items to be consistently available
 - You'd like to keep a persistent backup of your local node's files somewhere else
