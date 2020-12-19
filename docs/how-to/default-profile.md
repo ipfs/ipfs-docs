@@ -74,9 +74,49 @@ Above command shows the difference between your existing IPFS config and the new
 
 ## Converting profiles
 
-Not all profiles are compatible with each other. Many of them use very different technologies for storing data inside the datastores. For instance, if you want to convert `badgerds` to `default-datastore`, you would have to use another helper tool called [ipfs-ds-convert](https://dist.ipfs.io/#ipfs-ds-convert) to convert the datastore to the required format.
+Not all profiles are compatible with each other simply because they use very different technologies for storing the data inside the datastores. For instance, if you want to convert `badgerds` to `default-datastore`, you would have to use another helper tool called [ipfs-ds-convert](https://dist.ipfs.io/#ipfs-ds-convert) to convert the datastore to the required format. Please follow the instructions given below to install `ipfs-ds-convert` for your operating system.
 
-Install `ipfs-ds-convert` tool from the given link and run the following command to finally convert the datastore:
+### MacOS
+
+We will download the tarball for MacOS, extract the contents, and move the binary file to our path
+
+```bash
+wget -O /tmp/ipfs-ds-convert.tar.gz https://dist.ipfs.io/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_darwin-amd64.tar.gz
+sudo tar -xzvf /tmp/ipfs-ds-convert.tar.gz -C /usr/local/bin/ --strip-components=1
+sudo chmod +x /usr/local/bin/ipfs-ds-convert
+rm /tmp/ipfs-ds-convert.tar.gz
+```
+
+### Linux
+
+We will download the tarball for Linux, extract the contents, and move the binary file to our path
+
+```bash
+wget -O /tmp/ipfs-ds-convert.tar.gz https://dist.ipfs.io/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_linux-amd64.tar.gz
+sudo tar -xzvf /tmp/ipfs-ds-convert.tar.gz -C /usr/local/bin/ --strip-components=1
+sudo chmod +x /usr/local/bin/ipfs-ds-convert
+rm /tmp/ipfs-ds-convert.tar.gz
+```
+
+### Windows
+
+For Windows, we will download the zip file, extract it and then add the path to `ipfs-ds-convert.exe` to our environment path
+
+- Download the zip package from here: [ipfs-ds-convert](https://dist.ipfs.io/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_windows-amd64.zip) and extract it.
+- Add the full path to `ipfs-ds-convert.exe` to your environment variables path.
+
+To find more about `ipfs-ds-convert` please visit here: [ipfs-ds-convert](https://dist.ipfs.io/#ipfs-ds-convert).
+Once you are done with the installation process, you can verify if `ipfs-ds-convert` has been installed successfully by executing the following command:
+
+```bash
+ipfs-ds-convert --version
+
+> ipfs-ds-convert version 0.5.0
+```
+
+If the above command does not display a similar output, that would mean there is some issue with the installation. The most common issue is that the path to the executable binary is not in your environment path.
+
+On the other hand, if the command executes successfully, then we can proceed to convert our IPFS profile. Run the following command to begin the process of converting your existing datastore to the required format:
 
 ```bash
 ipfs-ds-convert convert
