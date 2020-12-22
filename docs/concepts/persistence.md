@@ -24,7 +24,7 @@ In simple terms, pinning gives you control over disk space and data retention. A
 If you're interested in how pinning files fits into the overall lifecycle of data in IPFS, check out this video from IPFS Camp 2019! [Core Course: The Lifecycle of Data in Dweb](https://www.youtube.com/watch?v=fLUq0RkiTBA)
 :::
 
-Your IPFS node can store data based on different kinds of user events. For instance, you can add a file with `ipfs add ...`. It will also store data you request, such as by loading a web page through the gateway (`http://localhost:8080/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco`) or with `ipfs cat ...`. Your node will consult with other IPFS peers to find these requested data, and will store the results in the local cache. `ipfs add` will automatically pin the content, but other IPFS commands do not include automatic pinning. More information on file pinning options can be found in [the pinning guide](https://docs.ipfs.io/how-to/pin-files/#three-kinds-of-pins)
+Your IPFS node can store data based on different kinds of user events. For example, you can add a file using the CLI command [`ipfs add`](https://docs.ipfs.io/reference/cli/#ipfs-add). It also automatically stores data you request (e.g., by loading a web page through the gateway) or with [`ipfs cat`](https://docs.ipfs.io/reference/cli/#ipfs-cat). Your node will check if any peers have the requested data, and if so, will store the results in the local cache.
 
 As a reminder, not every CLI command will automatically pin content, but specific ones do, as is the case of `ipfs add.`
 
