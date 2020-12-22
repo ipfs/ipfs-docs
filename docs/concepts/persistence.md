@@ -8,7 +8,7 @@ description: Learn about how IPFS treats persistence and permanence on the web, 
 
 ## Persistence versus permanence
 
-One of the main goals of IPFS is to to preserve humanities history by enabling the permanent web. But what does permanence actually mean? And why does this matter?
+One of the main goals of IPFS is to preserve humanity's history by enabling the permanent web. But what does permanence mean? And why does this matter?
 
 Today [The average lifespan of a web page is 100 days](https://blogs.loc.gov/thesignal/2011/11/the-average-lifespan-of-a-webpage/) before it's gone forever. It's not good enough for the primary medium of our era to be this fragile. Therefore IPFS keeps every version of your files and makes it simple to set up resilient networks for mirroring data.
 
