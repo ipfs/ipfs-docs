@@ -26,7 +26,7 @@ If you're interested in how pinning files fits into the overall lifecycle of dat
 
 Your IPFS node can store data based on different kinds of user events. For instance, you can add a file with `ipfs add ...`. It will also store data you request, such as by loading a web page through the gateway (`http://localhost:8080/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco`) or with `ipfs cat ...`. Your node will consult with other IPFS peers to find these requested data, and will store the results in the local cache. `ipfs add` will automatically pin the content, but other IPFS commands do not include automatic pinning. More information on file pinning options can be found in [the pinning guide](https://docs.ipfs.io/how-to/pin-files/#three-kinds-of-pins)
 
-When garbage collection is triggered on a node, any pinned content is automatically exempt from deletion. Non-pinned data may be deleted; if you request it again later, the data can be retrieved from another node.
+As a reminder, not every CLI command will automatically pin content, but specific ones do, as is the case of `ipfs add.`
 
 ## Pinning services
 
