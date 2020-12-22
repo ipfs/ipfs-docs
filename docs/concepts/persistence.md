@@ -21,7 +21,7 @@ In simple terms, pinning gives you control over disk space and data retention. A
 ## Pinning in context
 
 ::: tip
-If you're interested in how pinning files fits into the overall lifecycle of data in IPFS, check out this video from IPFS Camp 2019! [Core Course: The Lifecycle of Data in Dweb](https://www.youtube.com/watch?v=fLUq0RkiTBA)
+If you want to learn more about how pinning fits into the overall lifecycle of data in IPFS, check out the course from the IPFS Camp 2019: [Core Course: The Lifecycle of Data in DWeb](https://www.youtube.com/watch?v=fLUq0RkiTBA)
 :::
 
 Your IPFS node can store data based on different kinds of user events. For example, you can add a file using the CLI command [`ipfs add`](https://docs.ipfs.io/reference/cli/#ipfs-add). It also automatically stores data you request (e.g., by loading a web page through the gateway) or with [`ipfs cat`](https://docs.ipfs.io/reference/cli/#ipfs-cat). Your node will check if any peers have the requested data, and if so, will store the results in the local cache.
