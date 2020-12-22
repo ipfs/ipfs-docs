@@ -32,9 +32,9 @@ As a reminder, not every CLI command will automatically pin content, but specifi
 
 To ensure that your important data is retained, you may want to use a pinning service. Such a service normally trades money for the service of guaranteeing they'll keep your data pinned. Some cases where this might be important to you:
 
-- You don’t have a lot of disk space, but you want to ensure some data sticks around.
-- Your computer is a laptop, phone, or tablet that will have intermittent connectivity to the network, but you want to be able to access your data on IPFS from anywhere at any time, even when the device you added it from is offline.
-- You want a backup that ensures your data is always available from another computer on the network in case you accidentally delete or garbage-collect on your own computer.
+- You don't have a lot of disk space but want to ensure some data sticks around.
+- You have a device with poor network connectivity but still want your data on IPFS to be available anywhere, at any time.
+- You want a readily available backup for your data to protect it from accidental deletions or garbage collection.
 
 Some available pinning service providers are:
 
