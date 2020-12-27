@@ -18,7 +18,30 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 /ipns/QmSrPmbaUKA3ZodhzPWZnpFgcPMFWF4QsxXbkWfEptTBJd
 ```
 
-## Example IPNS Setup
+## Example IPNS Setup with CLI
+
+    echo "hello, world" >hello.txt
+    ipfs add hello.txt
+    ipfs cat QmXV7pL1CB7A8Tzk7jP2XE9kRyk8HZd145KDptdxzmNLfu
+    ipfs name publish /ipfs/QmXV7pL1CB7A8Tzk7jP2XE9kRyk8HZd145KDptdxzmNLfu
+    # Published to k51qzi5uqu5djxd3seehd8egk3jbyu2liy196tkabmtuh40er66rkbt8jxjla8: /ipfs/QmXV7pL1CB7A8Tzk7jP2XE9kRyk8HZd145KDptdxzmNLfu
+
+Note how the _published to_ is the (hash of?) the public key of `self` from `ipfs key list -l`.
+
+To look it back up, this gives us our `/ipfs/QmXV7pL1CB7A8Tzk7jP2XE9kRyk8HZd145KDptdxzmNLfu` back:
+
+    ipfs name resolve
+
+We can use other names by creating and using keys:
+
+    ipfs key gen test
+    # k51qzi5uqu5dm3n1brmqzmx9ckpwvtt860r66ms16qg0dotbvt7bs6c15h3t9l
+    ipfs name publish --key=test /ipfs/QmXV7pL1CB7A8Tzk7jP2XE9kRyk8HZd145KDptdxzmNLfu
+    # Published to k51qzi5uqu5dm3n1brmqzmx9ckpwvtt860r66ms16qg0dotbvt7bs6c15h3t9l: /ipfs/QmXV7pL1CB7A8Tzk7jP2XE9kRyk8HZd145KDptdxzmNLfu
+    ipfs name resolve k51qzi5uqu5dm3n1brmqzmx9ckpwvtt860r66ms16qg0dotbvt7bs6c15h3t9l
+
+
+## Example IPNS Setup with JS SDK API
 
 Imagine you want to publish your website under IPFS. You can use the [Files API](/concepts/file-systems/#mutable-file-system-mfs) to publish your static website, and then you'll get a CID you can link to. But when you need to make a change, a problem arises: you get a new CID because you now have different content. And it is not possible for you to be always giving others a new address.
 
