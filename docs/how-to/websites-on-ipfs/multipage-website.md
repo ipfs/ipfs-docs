@@ -5,7 +5,7 @@ description: Learn how to host a website with multiple pages and external assets
 
 # Multi-page website
 
-In this guide you will learn how to host a website with multiple pages and external assets on IPFS. This tutorial is the second in a series of tutorials aimed at teaching web developers how to build websites and applications using IPFS. Yzou don't need to have completed the previous tutorial to understand what's going on here, but if you're new to the IPFS ecosystem it's a good idea to follow through the [single page website guide](/how-to/websites-on-ipfs/single-page-website) before you start this one. It will give you a solid foundation to work off.
+In this guide you will learn how to host a website with multiple pages and external assets on IPFS. This tutorial is the second in a series of tutorials aimed at teaching web developers how to build websites and applications using IPFS. You don't need to have completed the previous tutorial to understand what's going on here, but if you're new to the IPFS ecosystem it's a good idea to follow through the [single page website guide](/how-to/websites-on-ipfs/single-page-website) before you start this one. It will give you a solid foundation to work off.
 
 ## Prerequisites
 

@@ -71,10 +71,10 @@ module.exports = {
             path: '/install/',
             children: [
               'install/ipfs-desktop',
+              'install/ipfs-companion',
               'install/command-line',
-              'install/ipfs-updater',
-              'install/server-infrastructure',
-              'install/ipfs-companion'
+              ['install/ipfs-updater', 'Updater'],
+              'install/server-infrastructure'
             ]
           },
           {
@@ -84,7 +84,6 @@ module.exports = {
               {
                 title: 'Go-IPFS 0.7',
                 sidebarDepth: 1,
-                collapsable: false,
                 children: [
                   '/recent-releases/go-ipfs-0-7/',
                   ['/recent-releases/go-ipfs-0-7/install', 'Install'],
@@ -95,7 +94,6 @@ module.exports = {
               {
                 title: 'Go-IPFS 0.6',
                 sidebarDepth: 1,
-                collapsable: false,
                 children: [
                   '/recent-releases/go-ipfs-0-6/',
                   ['/recent-releases/go-ipfs-0-6/install', 'Install'],
@@ -106,7 +104,6 @@ module.exports = {
               {
                 title: 'Go-IPFS 0.5',
                 sidebarDepth: 1,
-                collapsable: false,
                 children: [
                   '/recent-releases/go-ipfs-0-5/',
                   ['/recent-releases/go-ipfs-0-5/install', 'Install'],
@@ -130,22 +127,23 @@ module.exports = {
                   '/concepts/what-is-ipfs',
                   '/concepts/how-ipfs-works',
                   ['https://dweb-primer.ipfs.io/', 'IPFS primer'],
+                  '/concepts/privacy',
                   '/concepts/glossary',
+                  '/concepts/usage-ideas-examples',
                   '/concepts/faq'
                 ]
               },
               {
-                title: 'Examples & case studies',
+                title: 'Case studies',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/concepts/usage-ideas-examples',
-                  '/concepts/case-study-arbol',
-                  '/concepts/case-study-audius',
-                  '/concepts/case-study-fleek',
-                  '/concepts/case-study-iotex',
-                  '/concepts/case-study-morpheus',
-                  '/concepts/case-study-openbazaar'
+                  ['/concepts/case-study-arbol', 'Arbol'],
+                  ['/concepts/case-study-audius', 'Audius'],
+                  ['/concepts/case-study-fleek', 'Fleek'],
+                  ['/concepts/case-study-likecoin', 'LikeCoin'],
+                  ['/concepts/case-study-morpheus', 'Morpheus.Network'],
+                  ['/concepts/case-study-openbazaar', 'OpenBazaar']
                 ]
               },
               {
@@ -288,7 +286,6 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/how-to/make-service',
                   [
                     'https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_C',
                     'Build with the IPFS API'
@@ -372,7 +369,7 @@ module.exports = {
                   '/community/contribute/ways-to-contribute',
                   ['https://discuss.ipfs.io/', 'IPFS forums'],
                   '/community/irc',
-                  ['https://proto.school/#/events', 'ProtoSchool workshops'],
+                  ['https://proto.school/events', 'ProtoSchool workshops'],
                   ['https://www.meetup.com/members/249142444/', 'Meetups'],
                   '/community/social-media',
                   ['https://awesome.ipfs.io', 'Awesome IPFS']

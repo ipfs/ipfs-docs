@@ -14,9 +14,9 @@ related:
 
 An immutable object is an object whose state cannot be altered or modified once created. Once a file is added to the IPFS network, the content of that file cannot be changed without altering the [content identifier (CID)](/concepts/content-addressing) of the file. This feature is excellent for storing data that does not need to change. However, when it comes to content that needs to be altered or updated, immutability becomes a problem. This page discusses how to keep a mutable _state_ built from immutable building blocks.
 
-A CID is an _absolute_ pointer to content. No matter when we request a CID, the CIDs value will always be the same. This is part of the content's architecture and cannot be changed. To manage _immutable_ files in a _mutable_ system, we need to add another layer that sits on top of CIDs.
+A CID is an _absolute_ pointer to content. No matter when we request a CID, the CID value will always be the same. This is part of the content's architecture and cannot be changed. To manage _immutable_ files in a _mutable_ system, we need to add another layer that sits on top of CIDs.
 
-As a basic example, let's have two blocks of content with the strings `hello` and `world` hashed into two leaf nodes with the CIDs `A` and `B`. If we concatenate these two nodes, then we are given CID `C`. On top of this root CID we assign a pointer `Pointer`.
+As a basic example, let's have two blocks of content with the strings `hello` and `world` hashed into two leaf nodes with the CIDs `A` and `B`. If we concatenate these two nodes, then we are given CID `C`. On top of this root CID, we assign a pointer `Pointer`.
 
 ```
    +-----------+
@@ -50,10 +50,10 @@ If we change the content of `B` to `IPFS!`, all the upstream paths will change a
 "hello"    "world"     "hello"    "IPFS!"
 ```
 
-Again, node `B` does not change. It will always refer to the same content, `world`. Node `A` also appears in the new DAG. This is not because we are _keeping_ it, that would imply the location-addressed paradigm. In the content-addressed system, any time someone writes a block with `"hello"` it will _always_ have CID `A`.
-This is different to location-addressed systems where we could reuse the original buffer and edit the small substring that represents the difference.
+Again, node `B` does not change. It will always refer to the same content, `world`. Node `A` also appears in the new DAG. This is not because we are _keeping_ it; that would imply the location-addressed paradigm. In the content-addressed system, any time someone writes a block with `"hello"`, it will _always_ have CID `A`.
+This is different from location-addressed systems where we could reuse the original buffer and edit the small substring that represents the difference.
 
-Again, node `B` does not change. It will always refer to the same content, `world`. Node `A` also appears in the new DAG. This does not necessarily mean we copied the memory/buffer that contained the `hello` string into our new message, that would imply the location-addressed paradigm that focuses on the _where_ and not the _what_. In a content-addressed system any time someone writes the string `hello` it will always have CID `A`, regardless of whether we copied the string from a previous location or we wrote it from scratch.
+Again, node `B` does not change. It will always refer to the same content, `world`. Node `A` also appears in the new DAG. This does not necessarily mean we copied the memory/buffer that contained the `hello` string into our new message; that would imply the location-addressed paradigm that focuses on the _where_ and not the _what_. In a content-addressed system, any time someone writes the string `hello` it will always have CID `A`, regardless of whether we copied the string from a previous location or we wrote it from scratch.
 
 ## Website explanation
 

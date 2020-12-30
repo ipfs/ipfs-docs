@@ -21,7 +21,7 @@ If you're interested in how MFS and UnixFS play into how IPFS works with files i
 
 Because files in IPFS are content-addressed and immutable, they can be complicated to edit. Mutable File System (MFS) is a tool built into IPFS that lets you treat files like you would a regular name-based filesystem — you can add, remove, move, and edit MFS files and have all the work of updating links and hashes taken care of for you.
 
-### Working with files API 
+### Working with files API
 
 MFS is accessed through the files commands in the IPFS CLI and API. The commands on the files API take the format of `ipfs.files.someMethod()`. These methods are used to:
 
@@ -36,29 +36,29 @@ MFS is accessed through the files commands in the IPFS CLI and API. The commands
 
 #### Create a directory
 
-The MFS method `ipfs.files.mkdir` creates a new directory at a specified path. For example, to add a directory `example` to our root directory (`/`), run: 
+The MFS method `ipfs.files.mkdir` creates a new directory at a specified path. For example, to add a directory `example` to our root directory (`/`), run:
 
-````
+```
 await ipfs.files.mkdir('/example')
-````
+```
 
 If you want to create a new directory nested under others that don't yet exist, you need to explicitly set the value of `parents` to `true`, like so:
 
-````
+```
 await ipfs.files.mkdir('/my/directory/example', { parents: true })
-````
+```
 
 #### Check directory status
 
-The method, `ipfs.files.stat` enables you to check the status of a file or directory on your IPFS node. To check the status of a directory called `example` located within the root directory, you could call the method by running: 
+The method, `ipfs.files.stat` enables you to check the status of a file or directory on your IPFS node. To check the status of a directory called `example` located within the root directory, you could call the method by running:
 
-````
+```
 await ipfs.files.stat('/example')
-````
+```
 
 This method returns an object with a `cid`, `size`, `cumulativeSize`, `type`, `blocks`, `withLocality`, `local`, and `sizeLocal`.
 
-```` 
+```
 // {
 //   hash: CID('QmXmJBmnYqXVuicUfn9uDCC8kxCEEzQpsAbeq1iJvLAmVs'),
 //   size: 60,
@@ -66,30 +66,31 @@ This method returns an object with a `cid`, `size`, `cumulativeSize`, `type`, `b
 //   blocks: 1,
 //   type: 'directory'
 // }
-````
+```
 
-If you add, move, copy, or remove a file into a directory, the hash of that directory will change with every file modified. 
+If you add, move, copy, or remove a file into a directory, the hash of that directory will change with every file modified.
 
 #### Add a file to MFS
 
-To add a file to IPFS, use the MFS `ipfs.files.write` method using the command: 
+To add a file to IPFS, use the MFS `ipfs.files.write` method using the command:
 
-````
+```
 await ipfs.files.write(path, content, [options])
-````
+```
+
 ::: tip
 
-This method can create a brand new file, that accepts file `content` in multiple formats, in a specified `path` within the IPFS instance by providing the boolean option {` create: true` }.
+This method can create a brand new file that accepts file `content` in multiple formats, in a specified `path` within the IPFS instance by providing the boolean option {` create: true` }.
 
 :::
 
 To add a file object called `examplePic` to the root directory you could run:
 
-````
+```
 await ipfs.files.write('/example.jpg', examplePic, { create: true })
-````
+```
 
-This method does not provide a return value. 
+This method does not provide a return value.
 
 #### View contents of a directory
 
@@ -105,41 +106,41 @@ The method will default to listing the contents of your directory (`/`), or you 
 await ipfs.files.ls('/example')
 ```
 
-This method produces an array of objects for each file or directory with properties such as `name`, `type`, `size`, `cid`, `mode`, and `mtime`. If you wanted to inspect the contents of a `/example` directory, run: 
+This method produces an array of objects for each file or directory with properties such as `name`, `type`, `size`, `cid`, `mode`, and `mtime`. If you wanted to inspect the contents of a `/example` directory, run:
 
-````
+```
 await ipfs.files.ls('/example')
-````
+```
 
 #### Copy a file or directory
 
-In the Mutable File System, like traditional systems, you can copy a file or directory to a new location while also leaving it intact at its source. 
+In the Mutable File System, like traditional systems, you can copy a file or directory to a new location while also leaving it intact at its source.
 
-You can do this by using the method: 
+You can do this by using the method:
 
-````
+```
 await ipfs.files.cp(...from, to, [options])
-````
+```
 
 ::: tip
 
-This method offers two formatting options for passing the `from` key: 
+This method offers two formatting options for passing the `from` key:
 
 - an existing MFS path to a file or a directory in your node (e.g. `/my-example-dir/my-example-file.txt`)
 - an IPFS path to a file or directory hosted either by you or by a peer (e.g. `/ipfs/QmWc7U4qGeRAEgtsyVyeW2CRVbkHW31nb24jFyks7eA2mF`)
 
 :::
 
-The `to` key is the destination path in MFS, and there's an option {` create: true` } that can be used to create parent directories that don't already exist. 
+The `to` key is the destination path in MFS, and there's an option {` create: true` } that can be used to create parent directories that don't already exist.
 
 You can use this method to perform different operations including:
 
-````
+```
 // copy a single file into a directory
 await ipfs.files.cp('/example-file.txt', '/destination-directory')
 await ipfs.files.cp('/ipfs/QmWGeRAEgtsHW3ec7U4qW2CyVy7eA2mFRVbk1nb24jFyks', '/destination-directory')
 
-// copy multiple files into a directory 
+// copy multiple files into a directory
 await ipfs.files.cp('/example-file-1.txt', '/example-file-2.txt', '/destination-directory')
 await ipfs.files.cp('/ipfs/QmWGeRAEgtsHW3ec7U4qW2CyVy7eA2mFRVbk1nb24jFyks',
  '/ipfs/QmWGeRAEgtsHW3jk7U4qW2CyVy7eA2mFRVbk1nb24jFyre', '/destination-directory')
@@ -147,20 +148,21 @@ await ipfs.files.cp('/ipfs/QmWGeRAEgtsHW3ec7U4qW2CyVy7eA2mFRVbk1nb24jFyks',
 // copy a directory into another directory
 await ipfs.files.cp('/source-directory', '/destination-directory')
 await ipfs.files.cp('/ipfs/QmWGeRAEgtsHW3ec7U4qW2CyVy7eA2mFRVbk1nb24jFyks', '/destination-directory')
-````
+```
 
 #### Move a file or directory
 
-MFS allows you to move files between directories using the `ipfs.files.mv` which looks like this:
+MFS allows you to move files between directories using the `ipfs.files.mv`, which looks like this:
 
-````
+```
 await ipfs.files.mv(from, to, [options])
-````
-`from` is the source path (or paths) of the content you'd like to move while `to` is the destination path.
+```
+
+`from` is the source path (or paths) of the content you'd like to move, while `to` is the destination path.
 
 You can use this method to perform different operations including:
 
-````
+```
 // move a single file into a directory
 await ipfs.files.mv('/example-file.txt', '/destination-directory')
 
@@ -172,35 +174,35 @@ await ipfs.files.mv('/source-file.txt', '/destination-file.txt')
 
 // move multiple files into a directory
 await ipfs.files.mv('/example-file-1.txt', '/example-file-2.txt', '/example-file-3.txt', '/destination-directory')
-````
+```
 
 #### Read the contents of a file
 
 The `ipfs.files.read` method allows you to read and, or display the contents of a file in a buffer. The method takes the format:
 
-````
+```
 ipfs.files.read(path, [options])
-````
-The `path` provided is the path of the file to read, and it must point to a file rather than a directory.
+```
 
+The `path` provided is the path of the file to read, and it must point to a file rather than a directory.
 
 #### Remove a file or directory
 
 MFS allows you to remove files or directories using the method:
 
-````
+```
 await ipfs.files.rm(...paths, [options])
-````
+```
 
 `paths` are one or more paths to remove.
 
 By default, if you attempt to remove a directory that still has contents, the request will fail. To remove a directory and everything contained in it, you'll need to use the option `recursive: true`.
 
-````
+```
 // remove a file
 await ipfs.files.rm('/my/beautiful/file.txt')
 
-// remove multiple files 
+// remove multiple files
 await ipfs.files.rm('/my/beautiful/file.txt', '/my/other/file.txt')
 
 // remove a directory and its contents
@@ -208,13 +210,13 @@ await ipfs.files.rm('/my/beautiful/directory', { recursive: true })
 
 // remove a directory only if it is empty
 await ipfs.files.rm('/my/beautiful/directory')
-````
+```
 
 ## Unix File System (UnixFS)
 
-When you add a _file_ to IPFS, it might be too big to fit in a single block, so it needs metadata to link all its blocks together. UnixFS is a [protocol-buffers](https://developers.google.com/protocol-buffers/)-based format for describing files, directories, and symlinks in IPFS. This data format is used to represent files and all their links and metadata in IPFS. UnixFS creates a block (or a tree of blocks) of linked objects. 
+When you add a _file_ to IPFS, it might be too big to fit in a single block, so it needs metadata to link all its blocks together. UnixFS is a [protocol-buffers](https://developers.google.com/protocol-buffers/)-based format for describing files, directories, and symlinks in IPFS. This data format is used to represent files and all their links and metadata in IPFS. UnixFS creates a block (or a tree of blocks) of linked objects.
 
-UnixFS currently has [Javascript](https://github.com/ipfs/js-ipfs-unixfs) and [Go](https://github.com/ipfs/go-ipfs/tree/b3faaad1310bcc32dc3dd24e1919e9edf51edba8/unixfs) implementations. These implementations have modules written in to run different functions: 
+UnixFS currently has [Javascript](https://github.com/ipfs/js-ipfs-unixfs) and [Go](https://github.com/ipfs/go-ipfs/tree/b3faaad1310bcc32dc3dd24e1919e9edf51edba8/unixfs) implementations. These implementations have modules written in to run different functions:
 
 - **Data Formats**: manage the serialization/deserialization of UnixFS objects to protocol buffers
 
@@ -224,46 +226,46 @@ UnixFS currently has [Javascript](https://github.com/ipfs/js-ipfs-unixfs) and [G
 
 ### Data Formats
 
-On UnixFS-v1 the data format is represented by this protobuf: 
+On UnixFS-v1 the data format is represented by this protobuf:
 
-````
+```
 message Data {
-	enum DataType {
-		Raw = 0;
-		Directory = 1;
-		File = 2;
-		Metadata = 3;
-		Symlink = 4;
-		HAMTShard = 5;
-	}
+    enum DataType {
+        Raw = 0;
+        Directory = 1;
+        File = 2;
+        Metadata = 3;
+        Symlink = 4;
+        HAMTShard = 5;
+    }
 
-	required DataType Type = 1;
-	optional bytes Data = 2;
-	optional uint64 filesize = 3;
-	repeated uint64 blocksizes = 4;
-	optional uint64 hashType = 5;
-	optional uint64 fanout = 6;
-	optional uint32 mode = 7;
-	optional UnixTime mtime = 8;
+    required DataType Type = 1;
+    optional bytes Data = 2;
+    optional uint64 filesize = 3;
+    repeated uint64 blocksizes = 4;
+    optional uint64 hashType = 5;
+    optional uint64 fanout = 6;
+    optional uint32 mode = 7;
+    optional UnixTime mtime = 8;
 }
 
 message Metadata {
-	optional string MimeType = 1;
+    optional string MimeType = 1;
 }
 
 message UnixTime {
-	required int64 Seconds = 1;
-	optional fixed32 FractionalNanoseconds = 2;
+    required int64 Seconds = 1;
+    optional fixed32 FractionalNanoseconds = 2;
 }
-````
+```
 
 This `Data` object is used for all non-leaf nodes in Unixfs:
 
-- For files that are comprised of more than a single block, the `Type` field will be set to `File`, the `filesize` field will be set to the total number of bytes in the files, and `blocksizes` will contain a list of the filesizes of each child node. 
+- For files that are comprised of more than a single block, the `Type` field will be set to `File`, the `filesize` field will be set to the total number of bytes in the files, and `blocksizes` will contain a list of the filesizes of each child node.
 
-- For files comprised of a single block, the `Type` field will be set to `File`, `filesize` will be set to the total number of bytes in the file, and file data will be stored in the `Data` field. 
+- For files comprised of a single block, the `Type` field will be set to `File`, `filesize` will be set to the total number of bytes in the file, and file data will be stored in the `Data` field.
 
-UnixFS also supports two optional metadata format fields: 
+UnixFS also supports two optional metadata format fields:
 
 - `mode` - used for persisting the file permissions in [numeric notation](https://en.wikipedia.org/wiki/File_system_permissions#Numeric_notation). If unspecified, this field defaults to `0755` for directories/HAMT shards and `0644` for all the other types where applicable.
 
@@ -271,31 +273,31 @@ UnixFS also supports two optional metadata format fields:
 
 ### Importer
 
-Importing a file into UnixFS is split into two processes. A chunking function, and a layout function. You can test these features using the IPFS [DAG builder](https://dag.ipfs.io)
+Importing a file into UnixFS is split into two processes. A chunking function and a layout function. You can test these features using the IPFS [DAG builder](https://dag.ipfs.io)
 
 #### Chunking
 
-When an object is added to IPFS, it is chunked up into smaller parts, each part is hashed, and a CID is created for each chunk. This DAG building process has two main parameters, the leaf format, and the chunking strategy. 
+When an object is added to IPFS, it is chunked up into smaller parts, each part is hashed, and a CID is created for each chunk. This DAG building process has two main parameters, the leaf format and the chunking strategy.
 
-The leaf format takes two format options, UnixFS leaves, and raw leaves:
+The leaf format takes two format options, UnixFS leaves and raw leaves:
 
-- The Unixfs leaves format adds a data wrapper on newly added objects to produce UnixFS leaves with additional data sizes. This wrapper is used to determine whether newly added objects are files or directories. 
+- The Unixfs leaves format adds a data wrapper on newly added objects to produce UnixFS leaves with additional data sizes. This wrapper is used to determine whether newly added objects are files or directories.
 
 - The raw leaves format is the default format on IPFS where nodes output from chunking will be raw data from the file with a CID type of `'raw'`. This is mainly configured for backward compatibility with formats that used a Unixfs Data object.
 
-The chunking strategy is used to determine the size options available during the chunking process. The strategy currently has two different options, 'fixed size' and 'rabin'. 
+The chunking strategy is used to determine the size options available during the chunking process. The strategy currently has two different options, 'fixed size' and 'rabin'.
 
-- Fixed sizing will chunk the input data into pieces of a given size. This could be 512 bytes, 1024 bytes, and more—the smaller the byte size, the better the deduplication of data. 
+- Fixed sizing will chunk the input data into pieces of a given size. This could be 512 bytes, 1024 bytes, and more—the smaller the byte size, the better the deduplication of data.
 
-- Rabin chunking will chunk the input data using Rabin fingerprinting to determine the boundaries between chunks. Rabin also reduces the number of input data chunked nodes. 
+- Rabin chunking will chunk the input data using Rabin fingerprinting to determine the boundaries between chunks. Rabin also reduces the number of input data chunked nodes.
 
 #### Layout
 
 The layout defines the shape of the tree that gets built from the chunks of the input file.
 
-There are currently two options for layout, balanced, and trickle. Additionally, a `max-width` must be specified. The default max width is 174.
+There are currently two options for layout, balanced and trickle. Additionally, a `max-width` must be specified. The default max width is 174.
 
-The balanced layout creates a balanced tree of width `max-width`. The tree is formed by taking up to `max-width` chunks from the _chunk stream_ and creating a UnixFS file node that links to all of them. This is repeated until `max-width` UnixFS file nodes are created, at which point a UnixFS file node is created to hold all of those nodes, recursively. The root node of the resultant tree is returned as the handle to the newly imported file.
+The balanced layout creates a balanced tree of width `max-width`. The tree is formed by taking up to `max-width` chunks from the _chunk stream_ and creating a UnixFS file node that links to all of them. This is repeated until `max-width` UnixFS file nodes are created, at which point a UnixFS file node is created to hold all of those nodes recursively. The root node of the resultant tree is returned as the handle to the newly imported file.
 
 If there is only a single chunk, no intermediate UnixFS file nodes are created, and the single chunk is returned as the handle to the file.
 
@@ -305,10 +307,9 @@ To export or read the file data out of the UnixFS graph, perform an in-order tra
 
 ## Further resources
 
-You can find additional resources to familiarize with these file systems at: 
+You can find additional resources to familiarize with these file systems at:
 
-- [Protoschool MFS course](https://proto.school/#/mutable-file-system)
+- [Protoschool MFS course](https://proto.school/mutable-file-system)
 - [Understanding how the InterPlanetary File System deals with Files](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_A), from IPFS Camp 2019
 - [Jeromy Coffee Talks - Files API](https://www.youtube.com/watch?v=FX_AXNDsZ9k)
 - [UnixFS Specification](https://github.com/ipfs/specs/blob/master/UNIXFS.md)
-

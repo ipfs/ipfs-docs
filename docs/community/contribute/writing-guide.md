@@ -17,7 +17,7 @@ The vast majority of documentation within the IPFS Docs project falls under the 
 
 Use the following goals when writing walkthroughs:
 
-| Goal | Keyword | Explanation |
+| Goal          | Keyword     | Explanation                                                       |
 | ------------- | ----------- | ----------------------------------------------------------------- |
 | **Audience**  | _General_   | Easy for anyone to read with minimal effort.                      |
 | **Formality** | _Neutral_   | Slang is restricted, but standard casual expressions are allowed. |
@@ -41,23 +41,23 @@ Walkthroughs are split into three major sections:
 
 1. What we're about to do.
 2. The steps we need to do.
-3. Summary of what we just did, and potential next steps.
+3. Summary of what we just did and potential next steps.
 
 ## Conceptual articles
 
 Articles are written with the intent to inform and explain something. These articles don't contain any steps or actions that the reader has to perform _right now_.
 
-These articles are vastly different in tone when compared to walkthroughs. Some topics and concepts can be challenging to understand, so creative writing and interesting diagrams are highly sought-after for these articles. Whatever writers can do to make a subject more understandable, the better.
+These articles are vastly different in tone when compared to walkthroughs. Some topics and concepts can be challenging to understand, so creative writing and interesting diagrams are highly sought-after for these articles; whatever writers can do to make a subject more understandable, the better.
 
 ### Article goals
 
 Use the following goals when writing conceptual articles:
 
-| Goal | Keyword | Explanation |
+| Goal          | Keyword                  | Explanation                                                                      |
 | ------------- | ------------------------ | -------------------------------------------------------------------------------- |
 | **Audience**  | _Knowledgeable_          | Requires a certain amount of focus to understand.                                |
 | **Formality** | _Neutral_                | Slang is restricted, but standard casual expressions are allowed.                |
-| **Domain**    | _Any_                    | Usually _technical_, but depends on the article.                                 |
+| **Domain**    | _Any_                    | Usually _technical_, but it depends on the article.                              |
 | **Tone**      | _Confident and friendly_ | The reader must feel confident that the writer knows what they're talking about. |
 | **Intent**    | _Describe_               | Tell the reader _why_ something does the thing that it does, or why it exists.   |
 
@@ -73,7 +73,7 @@ Articles are separated into five major sections:
 
 ## Tutorials
 
-When writing a tutorial, you're teaching a reader how to achieve a complex end-goal. Tutorials are a mix of walkthroughs and conceptual articles. Most tutorials will span several pages, and contain multiple walkthroughs within them.
+When writing a tutorial, you're teaching a reader how to achieve a complex end-goal. Tutorials are a mix of walkthroughs and conceptual articles. Most tutorials will span several pages and contain multiple walkthroughs within them.
 
 Take the hypothetical tutorial _Get up and running with IPFS_, for example. This tutorial will likely have the following pages:
 

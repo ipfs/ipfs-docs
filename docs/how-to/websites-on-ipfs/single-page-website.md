@@ -1,12 +1,12 @@
 ---
 title: Host a single-page website on IPFS
 legacyUrl: https://docs.ipfs.io/guides/examples/websites/
-description: Learn how to host a simple one-page website on IPFS, and link up a domain name.
+description: Learn how to host a simple one-page website on IPFS and link up a domain name.
 ---
 
 # Host a single-page website on IPFS
 
-In this tutorial, we're going to host a simple one-page website on IPFS and link up a domain name. This is the first step is a series of tutorials aimed at teaching web developers how to build websites and applications using IPFS.
+In this tutorial, we will host a simple one-page website on IPFS and link up a domain name. This is the first step is a series of tutorials to teach web developers on how to build websites and applications using IPFS.
 
 ## Install IPFS desktop
 
@@ -24,7 +24,7 @@ IPFS desktop application is the easiest way to get up and running quickly with I
    ![The IPFS desktop download page.](./images/single-page-website/install-windows-download-exe-page.png)
 
 3. Run the `.exe` file to start the installation.
-4. Select whether you want to install the application for just yourself, or all users on the computer. Click **Next**:
+4. Select whether you want to install the application for just yourself or all users on the computer. Click **Next**:
 
    ![The IPFS desktop install options window.](./images/single-page-website/install-windows-install-options.png)
 
@@ -144,14 +144,14 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
              'It takes Venus 225 days to orbit the sun.',
              'Venus was first discovered by 17th century Babylonian astronomers.',
              'Venus is nearly as big as the Earth with a diameter of 12,104 km.',
-             'The Earth’s rotation is gradually slowing.',
+             'The Earth\'s rotation is gradually slowing.',
              'There is only one natural satellite of the planet Earth, the moon.',
              'Earth is the only planet in our solar system not named after a god.',
              'The Earth is the densest planet in the solar system.',
              'A year on Jupiter lasts around 4333 earth days.',
              'The surface temperature of Jupiter is around -108°C.',
              'Jupiter was first discovered by 7th or 8th century Babylonian astronomers.',
-             'Jupiter has 4 ring.',
+             'Jupiter has 4 rings.',
              'A day on Jupiter lasts 9 hours and 55 minutes.',
              'Saturn was first discovered by 8th century Assyrians.',
              'Saturn takes 10756 days to orbit the Sun.',
@@ -169,8 +169,8 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
              'The average temperatue of Neptune is about -201 °C.',
              'There is a 1:20 million scale model of the solar system in Sweden.',
              'The gap between the Earth and our moon is bigger than the diameters of all the planets combined.',
-             'The first accurate calculation of the speed of light was using Jupiter’s moons',
-             'Jupiter’s magnetic field is believed to be a result of rapidly spinning metallic hydrogen at the core, and is ~10x stronger than the Earth’s.',
+             'The first accurate calculation of the speed of light was using Jupiter\'s moons',
+             'Jupiter\'s magnetic field is believed to be a result of rapidly spinning metallic hydrogen at the core, and is ~10x stronger than the Earth\'s.',
              'Venus spins backwards.',
              'Uranus spins sideways, relative to the ecliptic plane of the solar system.',
              'It is easier to reach Pluto or escape the solar system from Earth than being able to <i>land</i> on the Sun.'
@@ -200,11 +200,19 @@ Your browser should load the website in a few moments! This can take up to a few
 
 ## Pinning files
 
-IPFS nodes treat the data they store like a cache, meaning that there is no guarantee the data will continue to be stored. _Pinning_ a file tells an IPFS node to treat the data as essential and to not throw it away. You should _pin_ any content you consider important to ensure that data is retained over the long term.
+IPFS nodes treat the data they store like a cache, meaning that there is no guarantee the data will continue to be stored. _Pinning_ a file tells an IPFS node to treat the data as essential and not throw it away. You should _pin_ any content you consider important to ensure that data is retained over the long term. IPFS Desktop allows you to pin files straight from the _Files_ tab.
 
-### Using Pinata
+![IPFS Desktop application showing the pinning option.](ipfs-desktop-showing-pinning.png)
 
-An easy way to make sure important data is retained is to use a pinning service. These services run a bunch of IPFS nodes, and will _pin_ your data for you! This way you don't have to run and maintain your own IPFS node. [Pinata](https://pinata.cloud/) is a pinning service that allows you to pin up to 1GB of data for free, and fits our purposes perfectly:
+However, if you want your IPFS data to remain accessible when your local IPFS node goes offline, you might want to use another option like _collaborative clusters_ or a _pinning service_.
+
+### Collaborative clusters
+
+IPFS collaborative clusters are groups of IPFS nodes that collaboratively pin all content added to the IPFS Cluster by one or many trusted peers. You can learn more about collaborative clusters, including how to set up a cluster yourself, from [cluster.ipfs.io](https://cluster.ipfs.io/documentation/collaborative/setup/)
+
+### Pinning services
+
+An easy way to make sure important data is retained is to use a pinning service. These services run lots of IPFS nodes and will _pin_ your data for you! This way, you don't have to run and maintain your own IPFS node. Check out the [Persistence page](../../concepts/persistence) for more information on pinning services. In this tutorial, we're going to use [Pinata](https://pinata.cloud/) since it gives new users 1GB of storage for free, and has a very simple interface:
 
 1. Go to [Pinata.cloud](https://pinata.cloud/) and sign up or log in.
 2. Click **Pinata Upload**.
@@ -214,7 +222,7 @@ An easy way to make sure important data is retained is to use a pinning service.
 6. Once the file has finished uploading, click **Pin Explorer** to view any files you have pinned.
 7. You should be able to see your `index.html` file pinned:
 
-   ![The Pinata Pin Explorer screen showing the index.html pinnded.](./images/single-page-website/pinned-index-file-in-pinata.png)
+   ![The Pinata Pin Explorer screen showing the index.html pinned.](./images/single-page-website/pinned-index-file-in-pinata.png)
 
 8. Click the **IPFS Hash** of your `index.html` file to open your website through the Pinata gateway.
 
@@ -224,7 +232,7 @@ An easy way to make sure important data is retained is to use a pinning service.
 
 This section is completely optional.
 
-If you have access to a domain name service like Namecheap, Google Domains, GoDaddy, or any other domain service, then you can follow along with these steps. If you don't have a domain name to assign, then you can just read along through this section. We're going to dive into using decentralized naming services like Ethereum Naming Service (ENS) in a later section.
+If you have access to a domain name service like Namecheap, Google Domains, GoDaddy, or any other domain service, then you can follow along with these steps. If you don't have a domain name to assign, you can just read along this section. We will dive into using decentralized naming services like Ethereum Naming Service (ENS) in a later section.
 
 We used Namecheap, but the process is very similar across all domain name services.
 

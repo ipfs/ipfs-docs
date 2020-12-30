@@ -1,7 +1,7 @@
 ---
 title: Persistence
 legacyUrl: https://docs.ipfs.io/guides/concepts/pinning/
-description: Learn about how IPFS treats persistence and permanence on the web, and how pinning can help keep data from being discarded.
+description: Learn about how IPFS treats persistence and permanence on the web and how pinning can help keep data from being discarded.
 ---
 
 # Persistence, permanence, and pinning
@@ -30,7 +30,13 @@ As a reminder, not every CLI command will automatically pin content, but specifi
 
 ## Pinning services
 
-To ensure that your important data is retained, you may want to use a pinning service. Such a service normally trades money for the service of guaranteeing they'll keep your data pinned. Some cases where this might be important to you:
+To ensure that your important data is retained, you may want to use a pinning service. These services run lots of IPFS nodes and allow users to pin data on those nodes for a fee. Some services offer free storage-allowance for new users. Pinning services are handy when:
+
+- You don't have a lot of disk space, but you want to ensure your data sticks around.
+- Your computer is a laptop, phone, or tablet that will have intermittent connectivity to the network. Still, you want to be able to access your data on IPFS from anywhere at any time, even when the device you added it from is offline.
+- You want a backup that ensures your data is always available from another computer on the network if you accidentally delete or garbage-collect your data on your own computer.
+
+Some available pinning service providers are:
 
 - You don't have a lot of disk space but want to ensure some data sticks around.
 - You have a device with poor network connectivity but still want your data on IPFS to be available anywhere, at any time.

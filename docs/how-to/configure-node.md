@@ -40,4 +40,4 @@ The mounts config values specifies the default mount points for the IPFS and ipn
 
 ## Bootstrap
 
-The Bootstrap config array specifies the list of IPFS peers that your daemon will connect to on startup. The default values for this are the 'ipfs solarnet' nodes, which are a set of VPS servers distributed around the country.
+The Bootstrap config array specifies the list of IPFS peers that your daemon will connect to on startup. The default values for this are the 'ipfs solarnet' nodes, which are a set of VPS servers distributed around the world.

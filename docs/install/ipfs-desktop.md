@@ -1,17 +1,40 @@
 ---
 title: IPFS Desktop
-description: For a simple, straight-forward way to interact with the IPFS network, install the IPFS Desktop application. There's no need to touch the command-line; everything you need is contained within one handy package!
+description: IPFS Desktop gives you all the power of IPFS in a convenient desktop app - a complete IPFS node, plus handy OS menu shortcuts and an all-in-one file manager, peer map, and content explorer.
 ---
 
 # IPFS Desktop
 
-IPFS Desktop is the easiest way to get up and running quickly with IPFS. It allows you to run an IPFS node on your machine _without_ having to bother with command-line tools or package management. It gives you the power of the [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui), plus a handful of useful shortcuts and settings.
+**IPFS Desktop gives you all the power of IPFS in a convenient desktop app: a complete IPFS node, plus handy OS menubar/taskbar shortcuts and an all-in-one file manager, peer map, and content explorer.**
 
-The installation steps differ between operating systems, so follow the instructions for your system.
+Use IPFS Desktop to get acquainted with IPFS without needing to touch the terminal — or, if you're already experienced, use the powerful menubar/taskbar shortcuts alongside the command line to make your IPFS workflow faster. 
+
+If you already have an IPFS node on your computer, IPFS Desktop will act as a control panel and file browser for that node. If you don't have a node, it'll install one for you. And either way, IPFS Desktop will automatically check for updates.
+
+![Status screen of IPFS Desktop](./images/ipfs-desktop/desktop-status.png)
+
+| Files screen | Explore screen | Peers screen | Settings screen | Menubar/taskbar |
+|-------|---------|-------|----------|------|
+| ![Screenshot of the Files screen](./images/ipfs-desktop/desktop-files.png) | ![Screenshot of the Explore screen](./images/ipfs-desktop/desktop-explore.png) | ![Screenshot of the Peers screen](./images/ipfs-desktop/desktop-peers.png) | ![Screenshot of the Settings screen](./images/ipfs-desktop/desktop-settings.png) | ![Screenshot of Mac/Windows menus](./images/ipfs-desktop/desktop-menubar-taskbar.png) |
+
+### Feature highlights
+- **Start your node at system startup (Mac/Windows) and control it from your OS** using the convenient menubar/system tray menu
+- **Quickly import files, folders, and screenshots to IPFS** in a variety of convenient ways, including drag-and-drop and (for Windows) right-clicking a file/folder's icon
+- **Easily manage the contents of your node** with a familiar file browser that offers quick shortcuts for renaming/moving/pinning files and folders, previewing many common file formats directly in IPFS Desktop, copying content IDs or shareable links to your clipboard, and more
+- **Quick download for CIDs, IPFS paths, and IPNS paths** — just choose `Download...` from your menubar/status tray, paste in a hash, and you're good to go
+- **Visualize your IPFS peers worldwide** on a map depicting what nodes you're connected to, where they are, the connections they're using, and more
+- **Explore the "Merkle Forest" of IPFS files** with a visualizer that lets you see firsthand how example datasets stored on IPFS — or your own IPFS files — are broken down into content-addressed pieces
+- **OS-wide support for IPFS files and links** (on Mac, Windows, and some Linux flavors) automatically hands off links starting with `ipfs://`, `ipns://` and `dweb:` to be opened in IPFS Desktop
+- **CLI Tutor Mode** helps you learn IPFS commands as you go
+
+### Install instructions
+To install IPFS Desktop, follow the specific instructions for your operating system:
 
 | [Windows](#windows)                                                 | [macOS](#macos)                                               | [Ubuntu](#Ubuntu)                                                |
 | ------------------------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------- |
 | [![Windows icon](./images/ipfs-desktop/windows-icon.png)](#windows) | [![macOS icon](./images/ipfs-desktop/apple-icon.png)](#macos) | [![Ubuntu icon](./images/ipfs-desktop/ubuntu-icon.png)](#ubuntu) |
+
+Or, if you'd rather use a package manager, check this [list of third-party packages](#package-managers) maintained by the IPFS community.
 
 ## Windows
 
@@ -74,7 +97,7 @@ The IPFS Desktop application has finished installing. You can now start to [add 
 
 While these instructions are specific to Ubuntu, they will likely work with most Ubuntu-related Linux distributions. For non-Ubuntu Linux distributions, check out the [IPFS Desktop GitHub repository](https://github.com/ipfs-shipyard/ipfs-desktop#install) for install instructions.
 
-1. Download the `.deb` package:
+1. Download the latest `.deb` package from the [IPFS Desktop GitHub repository](https://github.com/ipfs-shipyard/ipfs-desktop#install).
 1. Open the `.deb` package in **Software Installer**:
 
    ![Right-click context menu of the IPFS deb package.](./images/ipfs-desktop/install-ubuntu-software-install.png)
@@ -92,7 +115,15 @@ While these instructions are specific to Ubuntu, they will likely work with most
 
    ![IPFS icon shown in the Ubuntu status bar.](./images/ipfs-desktop/install-ubuntu-ipfs-running-status-bar.png)
 
-The IPFS Desktop application has finished installing. You can now start to [add your site](#add-your-site).
+## Package Managers
+
+| Package Manager                                                                                                    | Command                      |
+| ------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
+| [Homebrew](https://formulae.brew.sh/cask/ipfs/)                                                                    | `brew cask install ipfs`     |
+| [Chocolatey](https://chocolatey.org/packages/ipfs-desktop)                                                         | `choco install ipfs-desktop` |
+| [Scoop](https://github.com/lukesampson/scoop-extras/blob/master/bucket/ipfs-desktop.json)                          | `scoop install ipfs-desktop` |
+| [Snap](https://snapcraft.io/ipfs-desktop)                                                                          | `snap install ipfs-desktop`  |
+| [AUR](https://aur.archlinux.org/packages/ipfs-desktop/) maintained by [@alexhenrie](https://github.com/alexhenrie) | `ipfs-desktop`               |
 
 ## Next steps
 

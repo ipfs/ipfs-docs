@@ -1,7 +1,6 @@
 ---
 title: Social media
 sidebarDepth: 0
-legacyUrl: https://docs.ipfs.io/community/
 description: Learn where to find IPFS on your favorite social media platform.
 ---
 
@@ -15,7 +14,7 @@ The [IPFS YouTube channel](https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqq
 
 ## Blog
 
-Explore the latest news, events and other happenings in the IPFS multiverse on the official [IPFS Blog](https://ipfs.io/blog/).
+Explore the latest news, events, and other happenings in the IPFS multiverse on the official [IPFS Blog](https://ipfs.io/blog/).
 
 ## Twitter
 
