@@ -3,7 +3,7 @@ title: Getting started
 description: Start your IPFS journey here! Learn how the Interplanitery File System works, install commonly used tools, and get to grips with basic d-web concepts.
 ---
 
-The InterPlanetary File System (IPFS) is a set of protocols that allow computers to share data using peer-to-peer networks instead of relying on central servers. The project was started as a response to major issues with the internet, and is designed as a replacement for HTTP that can grow to an interplanetary scale. This section covers the issues that IPFS fixes, how it manages those solutions, and how you can build on top of the protocol.
+The InterPlanetary File System (IPFS) is a set of protocols that allow computers to share data using peer-to-peer networks instead of relying on central servers. The project started as a response to critical issues we currently face on the internet and is designed to replace HTTP and grow to an interplanetary scale. This section covers the issues that IPFS fixes, how it manages those solutions, and how you can build on top of the protocol.
 
 ## Problems with the current internet
 
