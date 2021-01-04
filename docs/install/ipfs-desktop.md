@@ -7,17 +7,18 @@ description: IPFS Desktop gives you all the power of IPFS in a convenient deskto
 
 **IPFS Desktop gives you all the power of IPFS in a convenient desktop app: a complete IPFS node, plus handy OS menubar/taskbar shortcuts and an all-in-one file manager, peer map, and content explorer.**
 
-Use IPFS Desktop to get acquainted with IPFS without needing to touch the terminal — or, if you're already experienced, use the powerful menubar/taskbar shortcuts alongside the command line to make your IPFS workflow faster. 
+Use IPFS Desktop to get acquainted with IPFS without needing to touch the terminal — or, if you're already experienced, use the powerful menubar/taskbar shortcuts alongside the command line to make your IPFS workflow faster.
 
 If you already have an IPFS node on your computer, IPFS Desktop will act as a control panel and file browser for that node. If you don't have a node, it'll install one for you. And either way, IPFS Desktop will automatically check for updates.
 
 ![Status screen of IPFS Desktop](./images/ipfs-desktop/desktop-status.png)
 
-| Files screen | Explore screen | Peers screen | Settings screen | Menubar/taskbar |
-|-------|---------|-------|----------|------|
+| Files screen                                                               | Explore screen                                                                 | Peers screen                                                               | Settings screen                                                                  | Menubar/taskbar                                                                       |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | ![Screenshot of the Files screen](./images/ipfs-desktop/desktop-files.png) | ![Screenshot of the Explore screen](./images/ipfs-desktop/desktop-explore.png) | ![Screenshot of the Peers screen](./images/ipfs-desktop/desktop-peers.png) | ![Screenshot of the Settings screen](./images/ipfs-desktop/desktop-settings.png) | ![Screenshot of Mac/Windows menus](./images/ipfs-desktop/desktop-menubar-taskbar.png) |
 
 ### Feature highlights
+
 - **Start your node at system startup (Mac/Windows) and control it from your OS** using the convenient menubar/system tray menu
 - **Quickly import files, folders, and screenshots to IPFS** in a variety of convenient ways, including drag-and-drop and (for Windows) right-clicking a file/folder's icon
 - **Easily manage the contents of your node** with a familiar file browser that offers quick shortcuts for renaming/moving/pinning files and folders, previewing many common file formats directly in IPFS Desktop, copying content IDs or shareable links to your clipboard, and more
@@ -28,6 +29,7 @@ If you already have an IPFS node on your computer, IPFS Desktop will act as a co
 - **CLI Tutor Mode** helps you learn IPFS commands as you go
 
 ### Install instructions
+
 To install IPFS Desktop, follow the specific instructions for your operating system:
 
 | [Windows](#windows)                                                 | [macOS](#macos)                                               | [Ubuntu](#Ubuntu)                                                |

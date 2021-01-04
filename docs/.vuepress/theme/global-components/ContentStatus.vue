@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <div class="content-status-info" style="clear: both;">
+    <div class="content-status-info" style="clear: both">
       <div v-if="related" class="section content-other-resources">
         <h3>Other resources to try</h3>
         <ul>
