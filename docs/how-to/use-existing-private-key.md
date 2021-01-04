@@ -7,8 +7,10 @@ description: How to start an IPFS node with a pre-generated private key.
 
 There are two locations in which IPFS stores private keys:
 
-1. In the config file (`~/.ipfs/config`), following the [config specification](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#identityprivkey) to store the default private key.
-2. In the Keystore (`~/.ipfs/keystore`), following the [fs-repo specification](https://github.com/ipfs/specs/blob/master/REPO_FS.md) to store all other private keys.
+Location | Purpose | Specification
+-------- | --------- | -------------
+Config file (`~/.ipfs/config`) | Holds a single private key; used as the default for initializing the IPFS node, IPNS publishing, etc. | [config#identityprivkey](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#identityprivkey)
+Keystore (`~/.ipfs/keystore`) | Holds additional private keys the node has access to; can be used for IPNS signing, publishing, etc. | [fs-repo#keystore](https://github.com/ipfs/specs/blob/master/REPO_FS.md#keystore)
 
 Private keys are handled programmatically through code or through the CLI. Here we will show you how to use your existing private keys using both methods.
 
