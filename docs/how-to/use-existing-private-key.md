@@ -30,8 +30,7 @@ ipfs key import CustomKeyName ./CustomKeyFile
 > k51qzi5uqu5dlli90qkt7xcnnjsd6jkn5rbdg7scuv6leozp1ecokewk5rzbeh
 ```
 
-The content of the file holding the private key you want to import into the Keystore needs to be in the correct format to be valid.
-The format of Keystore files is outlined in the [fs-repo](https://github.com/ipfs/specs/blob/master/REPO_FS.md#keystore) specification.
+The content of the file holding the private key you want to import into the IPFS keystore needs to be in the correct format to be valid. The format of keystore files is outlined in the [fs-repo](https://github.com/ipfs/specs/blob/master/REPO_FS.md#keystore) specification.
 
 
 ### JS-IPFS
