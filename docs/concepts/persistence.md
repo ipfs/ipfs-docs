@@ -14,7 +14,7 @@ One of the main goals of IPFS is to preserve humanity's history by enabling the 
 
 Today [The average lifespan of a web page is 100 days](https://blogs.loc.gov/thesignal/2011/11/the-average-lifespan-of-a-webpage/) before it's gone forever. It's not good enough for the primary medium of our era to be this fragile. Therefore IPFS keeps every version of your files and makes it simple to set up resilient networks for mirroring data.
 
-Trying to counter that, nodes on the IPFS network automatically cache the downloaded resources and keep those available for uploading to other nodes. This system depends on nodes being willing and able to cache and share resources with the network. Storage is finite, so nodes need to clear out some of their previously cached resources to make room for new resources. To ensure that data stays available on IPFS (i.e., persisted) and not be thrown away, they can be "pinned" to one or more IPFS nodes. When "pinning," a CID tells an IPFS node that the data is important and it shouldn't throw it away.
+Trying to counter that, nodes on the IPFS network automatically cache the downloaded resources and keep those available for uploading to other nodes. This system depends on nodes being willing and able to cache and share resources with the network. Storage is finite, so nodes need to clear out some of their previously cached resources to make room for new resources. To ensure that data stays _persists_ on IPFS, and is not thrown away, [data can be pinned](/how-to/pin-files/) to one or more IPFS nodes.
 
 In simple terms, pinning gives you control over disk space and data retention. As such, you should use that control to pin any content you wish to keep on IPFS indefinitely.
 
