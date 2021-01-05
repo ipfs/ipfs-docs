@@ -21,14 +21,11 @@ cat ~/.ipfs/config | grep "prefix"
 
 IPFS uses the `flatfs` profile by default, which in turn uses LevelDB internally. That's why you see `leveldb.datastore` in the command output, even though both prefixes refer to the `flatfs` datastore in this case.
 
-If you previously configured your IPFS node to use another profile, let's say `badgerds`, the above command would output the following:
+If you previously configured your IPFS node to use another profile, let's say `badgerds`, the above command output would be slightly different:
 
 ```bash
 "prefix": "badger.datastore",
 ```
-
-This output line refers to `badgerds` profile .
-
 ## Available profiles
 
 Here's a list of all the profiles available for your IPFS node:
@@ -45,7 +42,7 @@ Here's a list of all the profiles available for your IPFS node:
 
 ## Reset your profile
 
-If you want to reset your IPFS node profile to the default profile, you can do so by using the following method:
+You can reset your node's profile to the default one by running the following command:
 
 ```diff
 ipfs config profile apply default-datastore
