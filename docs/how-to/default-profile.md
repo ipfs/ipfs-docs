@@ -14,8 +14,6 @@ Your IPFS profile is found within your node's `config` file. The default locatio
 
 ```bash
 cat ~/.ipfs/config | grep "prefix"
-# or
-cat $IPFS_PATH/config | grep "prefix"
 
 > "prefix": "flatfs.datastore",
 > "prefix": "leveldb.datastore",
