@@ -19,7 +19,7 @@ cat ~/.ipfs/config | grep "prefix"
 > "prefix": "leveldb.datastore",
 ```
 
-IPFS uses the `flatfs` profile by default. `flatfs` is implemented using LevelDB, which is why you also see another line in the output with `leveldb.datastore`, but they both refer to `flatfs` datastore.
+IPFS uses the `flatfs` profile by default, which in turn uses LevelDB internally. That's why you see `leveldb.datastore` in the command output, even though both prefixes refer to the `flatfs` datastore in this case.
 
 If you previously configured your IPFS node to use another profile, let's say `badgerds`, the above command would output the following:
 
