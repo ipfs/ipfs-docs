@@ -5,11 +5,11 @@ description: Learn about the available node types in IPFS Companion.
 
 # Understand node types in IPFS Companion
 
-There are four available node types in IPFS Companion:
+There are four available types of node in IPFS Companion:
 
 1. External
 2. Embedded
-3. Embedded + `chrome.sockets`
+3. Native browser (Brave only)
 4. Public
 
 ![Screenshot of node type switch](./images/node-type-switch.png)
@@ -20,7 +20,8 @@ When in doubt, use the _External_ node type running on your localhost. Some opti
 - If you prefer a more hands-on approach:
   - Install IPFS by following the [command line quick-start guide](command-line-quick-start.md)
   - Or run it in [Docker](https://github.com/ipfs/go-ipfs#running-ipfs-inside-docker)
-- If you are using [Brave](https://brave.com/), feel you may want to experiment with _embedded + `chrome.sockets`_ (see below); you can always switch back to _External_ with local IPFS Desktop
+
+Or, if [Brave](https://brave.com/) is your browser of choice, you can use the easiest of all these options: Just enable Brave's own built-in IPFS node.
 
 ## External
 
@@ -41,6 +42,8 @@ Don't know where to start? See the [command line quick-start guide](command-line
 
 An _embedded_ node is a js-ipfs instance running in the browser (in-memory), without the need for any external software. It is a work in progress, but can be used for development and experimentation (e.g. for testing a dApp that uses `window.ipfs` without having to install and start up your own IPFS daemon).
 
+For Brave users, this option isn't available in IPFS Companion preferences because it has been superceded by Brave's own [native IPFS support](#native-browser).
+
 Power users can provide [custom config](https://github.com/ipfs/js-ipfs#faq) (e.g. to enable experimental pubsub) via the IPFS Companion [Preferences](https://user-images.githubusercontent.com/157609/38084660-0b97c0cc-334e-11e8-9368-823345ced67f.png)
 
 **Note:** At present, embedded js-ipfs running within webextension (browser context) comes with some limitations:
@@ -56,25 +59,18 @@ Power users can provide [custom config](https://github.com/ipfs/js-ipfs#faq) (e.
 
 **When in doubt, run go-ipfs as an external node instead.**
 
-## Embedded + `chrome.sockets`
+### Embedded + `chrome.sockets` (deprecated)
 
-This node type replaces the regular _embedded_ type if the browser vendor grants us access to `chrome.sockets` APIs. These powerful APIs enable embedded js-ipfs to provide a true p2p experience without the need for an external daemon:
+This node type has been deprecated and is no longer supported by Chromium browsers. While this option still appears in IPFS Companion preferences, users of this node type are strongly urged to migrate to a different node type ASAP.
 
-### HTTP gateway
+## Native browser
 
-- Access IPFS resources over HTTP without relying on a public gateway
-- Automatically pick a free localhost port
+Users of the [Brave](https://brave.com/) browser can enable native support for IPFS using a go-ipfs node built directly into the browser itself. This is a great way to experiment with IPFS without having to install or run IPFS Desktop or an IPFS daemon.
 
-### TCP transport
+As with the embedded node type described above, Brave's native node is running in-memory in the browser itself, which means your node is only running when you're running your copy of Brave. However, Brave's native node offers some benefits over an embedded js-ipfs node, including:
 
-- Embedded js-ipfs is able to connect to go-ipfs
-- go-ipfs is able to connect to embedded js-ipfs
-
-### Local discovery (mDNS/DNS-SD)
-
-- Embedded node discovers go-ipfs in the LAN and automatically connects to it
-
-**Note:** This is still a work in progress. see [Embedded JS-IPFS in Brave](https://github.com/ipfs-shipyard/ipfs-companion/issues/716) for the current status.
+- Ability to change your preferred public gateway from Brave's settings page
+- Options for default resolution of IPFS resources: via public gateway, via local node, or asking each time
 
 ## Public
 
