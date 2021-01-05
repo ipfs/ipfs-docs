@@ -6,7 +6,7 @@ description: Learn about how IPFS treats persistence and permanence on the web a
 
 # Persistence, permanence, and pinning
 
-This guide will help you understand the concepts behind IPFS pinning, along with the differences between persistence, permanence, and pinning itself. How do they differ? What do they have in common? Keep reading to have those questions answered!
+Understand the concepts behind IPFS pinning, along with the differences between persistence, permanence, and pinning itself.
 
 ## Persistence versus permanence
 
