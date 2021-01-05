@@ -70,7 +70,7 @@ Users of the [Brave](https://brave.com/) browser can enable native support for I
 As with the embedded node type described above, Brave's native node is running in-memory in the browser itself, which means your node is only running when you're running your copy of Brave. However, Brave's native node offers some benefits over an embedded js-ipfs node, including:
 
 - Ability to change your preferred public gateway from Brave's settings page
-- Options for default resolution of IPFS resources: via public gateway, via local node, or asking each time
+- Options for default resolution of IPFS resources: through a public gateway, through a local node, or asking each time
 
 ## Public
 
