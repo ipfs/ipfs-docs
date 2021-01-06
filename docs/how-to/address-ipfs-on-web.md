@@ -30,6 +30,24 @@ HTTP gateways have worked well since 2015, but they come with a significant set 
 
 Tools and browser extensions should detect IPFS content paths and resolve them directly over IPFS protocol. They should use HTTP gateway only as a fallback when no native implementation is available in order to ensure a smooth, backward-compatible transition.
 
+::: tip
+
+Use relative or absolute URLs that include content-addressed paths. This will take advantage of content-addressing today while ensuring backward-compatibility with the old web.
+
+For example, a website can load static assets from content-addressed paths:
+
+```
+<link rel="stylesheet" href="https://example.com/ipfs/QmNrgEMcUygbKzZeZgYFosdd27VE9KnWbyUD73bKZJ3bGi?filename=style.css">
+```
+
+```
+<link rel="stylesheet" href="/ipfs/QmNrgEMcUygbKzZeZgYFosdd27VE9KnWbyUD73bKZJ3bGi?filename=style.css">
+```
+
+Browsers that support IPFS will recognize content path `/ipfs/<CID>` and load asset over IPFS instead of HTTP.
+User Agents without IPFS support still get the correct data from the original HTTP server.
+:::
+
 ### Path gateway
 
 In the most basic scheme, a URL path used for content addressing is effectively a resource name without a canonical location. The HTTP server provides the location part, which makes it possible for browsers to interpret an IPFS content path as relative to the current server and just work without a need for any conversion:
