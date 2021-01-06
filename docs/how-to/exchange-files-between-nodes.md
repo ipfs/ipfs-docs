@@ -42,7 +42,7 @@ You must have the following installed:
 - [Node.js](https://nodejs.org/en/)
 - [NPM](https://www.npmjs.com/)
 - [Bundle](https://www.npmjs.com/package/bundle-js)
-- [IPFS]()
+- [IPFS](/install)
 
 ## Set up
 

@@ -223,7 +223,10 @@ module.exports = {
                 title: 'Work with peers',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/how-to/observe-peers']
+                children: [
+                  '/how-to/observe-peers',
+                  '/how-to/exchange-files-between-nodes'
+                ]
               },
               {
                 title: 'Websites on IPFS',
