@@ -5,7 +5,7 @@ description: Learn how to contribute to IPFS documentation through finding issue
 
 # Contribution tutorial
 
-While the [grammar, formatting, and style](/community/contribute/grammar-formatting-and-style/) and the [writing guide](/community/contribute/writing-guide/) can both help you write excellent content for the IPFS Docs project, they don't delve into how you can actually submit you content changes. This guide will walk you through finding an issue, fixing it, and then submitting your fix to the `ipfs/ipfs-docs` project.
+While the [grammar, formatting, and style](/community/contribute/grammar-formatting-and-style/) and the [writing guide](/community/contribute/writing-guide/) can both help you write good content for the IPFS Docs project, they don't delve into _how_ you can submit your content changes. This guide will walk you through finding an issue, fixing it, and then submitting your fix to the `ipfs/ipfs-docs` project.
 
 There are plenty of small-sized issues around IPFS documentation that make for easy, helpful contributions to the IPFS project. Here, we'll walk through:
 
@@ -41,7 +41,7 @@ When adding to a discussion, remember that it may take days or weeks to conclude
 
 Let's add to the discussion of the issue you've chosen:
 
-1. Read through all the previous posts to get up to speed about the issue.
+1. Read through all the previous posts to get up to speed on the issue.
 2. Add any comments you feel are necessary.
 3. If you still want to tackle this issue, post a message saying that you'd like to take ownership of it.
 
@@ -55,7 +55,7 @@ If you've got this far, then you should have an issue in hand and a basic idea o
 2. Make changes locally on your machine.
 3. Push your changes.
 
-If you're not familiar with Git and GitHub, then the phrase _fork_ might not mean much to you. Essentially, a _fork_ of a project is your own personal copy of that project. You can make as many changes to this copy whenever you want, because you own it. The idea is that you can modify this personal copy and send your changes to the project team, who can then review all the work you've done.
+If you're not familiar with Git and GitHub, then the phrase _fork_ might not mean much to you. Essentially, a _fork_ of a project is your own personal copy of that project. You can make as many changes to this copy whenever you want because you own it. The idea is that you can modify this personal copy and send your changes to the project team, who can then review all the work you've done.
 
 The process for creating a fork of an existing piece of IPFS documentation is incredibly simple:
 
@@ -76,11 +76,11 @@ The process for creating a fork of an existing piece of IPFS documentation is in
    git push
    ```
 
-When adding a commit comment that actively fixes an issue within the project, try to summarize the fix in a few words, and quote the issue number. Following this convention makes it easier for other people to quickly see what you've done.
+When adding a commit comment that actively fixes an issue within the project, try to summarize the fix in a few words and quote the issue number. Following this convention makes it easier for other people to quickly see what you've done.
 
 ## Create a pull request
 
-Once you're done making commits, and are ready to get a core team member's review of your work, it's time to create a pull request.
+Once you're done making commits and are ready to get a core team member's review of your work, it's time to create a pull request.
 
 1. Go to the `ipfs/ipfs-docs` repository on [GitHub](https://github.com/ipfs/ipfs-docs).
 2. Select the **Pull requests** tab.

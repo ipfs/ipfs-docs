@@ -37,7 +37,7 @@ Regardless of who deploys a gateway and where any IPFS gateway resolves access t
 
 ### Your local gateway
 
-Your machine may host a gateway as a local service; e.g., at `localhost:8080`. You will have a local gateway service if you installed [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node.
+Your machine may host a gateway as a local service; e.g., at `localhost:8080`. You have a local gateway service if you installed [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node.
 
 ### Private gateways
 
@@ -51,7 +51,7 @@ A gateway behind a firewall represents just one potential location for a private
 Public gateway operators include:
 
 - Protocol Labs, which deploys the public gateway `https://ipfs.io`;
-- Third-party public gateways; e.g., `https://cf-ipfs.com`.
+- Third-party public gateways. E.g., `https://cf-ipfs.com`.
 
 Protocol Labs maintains a [list of public gateways](https://ipfs.github.io/public-gateway-checker/) and their status.
 
@@ -97,7 +97,7 @@ Subdomain resolution support began with [Go-IPFS](https://github.com/ipfs/go-ipf
 
 #### DNSlink
 
-Whenever the content of data changes within IPFS occurs, IPFS creates a new CID based on the content of that data. Many applications require access to the latest version of a file or website, but will not know the exact CID for that latest version. The [InterPlanetary Name Service (IPNS)](/content/concepts/ipns) allows a version-independent IPNS identifier to resolve into the current version's IPFS CID.
+Whenever the content of data changes within IPFS occurs, IPFS creates a new CID based on the content of that data. Many applications require access to the latest version of a file or website but will not know the exact CID for that latest version. The [InterPlanetary Name Service (IPNS)](/content/concepts/ipns) allows a version-independent IPNS identifier to resolve into the current version's IPFS CID.
 
 The version-independent IPNS identifier contains a hash. When a gateway processes a request in the form `https://{gatewayURL}/ipns/{IPNS identifier}/{optional path}`, the gateway employs IPNS to resolve the IPNS identifier into the current version's CID and then fetches the corresponding content.
 
@@ -163,7 +163,7 @@ Because of third-party gateway vulnerabilities, apps requiring end-to-end valida
 
 Use of a gateway requires location-based addressing: `https://{gatewayURL}/ipfs/{CID}/{etc}` All too easily, the gateway URL can become the handle by which users identify the content; i.e., the uniform reference locator (URL) equates (improperly) to the uniform reference identifier (URI). Now imagine that the gateway goes offline or cannot be reached from a different user's location because of firewalls. At this moment, content improperly identified by that gateway-based URL also appears unreachable, defeating a key benefit of IPFS: decentralization.
 
-Similarly, use of DNSLink resolution with `Alias` forces requests through the domain's chosen gateway, as specified in the `dnslink={value}` string within the DNS TXT record. If the specified gateway becomes overloaded, goes offline, or becomes compromised, all traffic with that content becomes deleted, disabled, or suspect.
+Similarly, the use of DNSLink resolution with `Alias` forces requests through the domain's chosen gateway, as specified in the `dnslink={value}` string within the DNS TXT record. If the specified gateway becomes overloaded, goes offline, or becomes compromised, all traffic with that content becomes deleted, disabled, or suspect.
 
 ### Misplaced trust
 
@@ -200,7 +200,7 @@ Employing a public or private HTTP gateway sacrifices end-to-end cryptographic v
 A compromised writeable gateway may inject falsified content into the IPFS network, returning a CID which the user believes to refer to the true content. For example:
 
 1. Alice posts a balance of `123.54` to a compromised writable gateway.
-1. The gateway is currently storing a balance of `0.00`, so returns the CID of the falsified content to Alice.
+1. The gateway is currently storing a balance of `0.00`, so it returns the CID of the falsified content to Alice.
 1. Alice gives the falsified content CID to Bob.
 1. Bob fetches the content with this CID and cryptographically validates the balance of `0.00`.
 

@@ -1,7 +1,7 @@
 ---
 title: Concepts
 legacyUrl: https://docs.ipfs.io/guides/concepts/
-description: Get started on understanding the key ingredients in the decentralized web, and how IPFS works.
+description: Get started on understanding the key ingredients in the decentralized web and how IPFS works.
 ---
 
 # IPFS concepts
@@ -10,15 +10,19 @@ New to IPFS or the distributed web? Here's where to get started on understanding
 
 ## Video overviews
 
-Want the basics, in theater mode? Check out these Core Courses from IPFS Camp 2019 for an overview of how IPFS works with files and the overall data lifecycle in dweb.
+Want the basics in theater mode? Check out these helpful videos for an overview of how IPFS works with files and the overall data lifecycle in the d-web.
 
 @[youtube](Z5zNPwMDYGg)
 
-- [Understanding how IPFS deals with files](https://youtu.be/Z5zNPwMDYGg)
+- [Understanding how IPFS deals with files (IPFS Camp 2019)](https://youtu.be/Z5zNPwMDYGg)
 
 @[youtube](fLUq0RkiTBA)
 
-- [The lifecycle of data in the DWeb](https://youtu.be/fLUq0RkiTBA)
+- [The lifecycle of data in the DWeb (IPFS Camp 2019)](https://youtu.be/fLUq0RkiTBA)
+
+@[youtube](J-drqD2UebM)
+
+- [IPFS: A Whiteboard Overview](https://www.youtube.com/watch?v=J-drqD2UebM)
 
 ## IPFS 101
 
@@ -38,7 +42,6 @@ Get inspired by usage ideas, explore examples of IPFS implemented in the wild, a
 - [Case study: Arbol](/concepts/case-study-arbol/)
 - [Case study: Audius](/concepts/case-study-audius/)
 - [Case study: Fleek](/concepts/case-study-fleek/)
-- [Case study: IoTeX](/concepts/case-study-iotex/)
 - [Case study: LikeCoin](/concepts/case-study-likecoin/)
 - [Case study: Morpheus.Network](/concepts/case-study-morpheus/)
 - [Case study: OpenBazaar](/concepts/case-study-openbazaar/)
@@ -73,7 +76,7 @@ IPFS aims to be the future of the internet, but it still needs to play well with
 
 ## Further reading
 
-Want a more in-depth look into the decentralized web? Here are a few papers that are useful for understanding IPFS, whether it be understanding the IPFS spec itself, or the background for the web, protocols, hashing, and so on. [Read the papers →](/concepts/further-reading/academic-papers)
+Want a more in-depth look into the decentralized web? Here are a few papers that are useful for understanding IPFS, whether it be understanding the IPFS spec itself or the background for the web, protocols, hashing, and so on. [Read the papers →](/concepts/further-reading/academic-papers)
 
 ## Don't see what you're looking for?
 

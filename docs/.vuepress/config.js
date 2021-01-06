@@ -76,9 +76,10 @@ module.exports = {
             path: '/install/',
             children: [
               'install/ipfs-desktop',
+              'install/ipfs-companion',
               'install/command-line',
-              'install/server-infrastructure',
-              'install/ipfs-companion'
+              ['install/ipfs-updater', 'Updater'],
+              'install/server-infrastructure'
             ]
           },
           {
@@ -131,6 +132,7 @@ module.exports = {
                   '/concepts/what-is-ipfs',
                   '/concepts/how-ipfs-works',
                   ['https://dweb-primer.ipfs.io/', 'IPFS primer'],
+                  '/concepts/privacy',
                   '/concepts/glossary',
                   '/concepts/usage-ideas-examples',
                   '/concepts/faq'
@@ -144,7 +146,6 @@ module.exports = {
                   ['/concepts/case-study-arbol', 'Arbol'],
                   ['/concepts/case-study-audius', 'Audius'],
                   ['/concepts/case-study-fleek', 'Fleek'],
-                  ['/concepts/case-study-iotex', 'IoTeX'],
                   ['/concepts/case-study-likecoin', 'LikeCoin'],
                   ['/concepts/case-study-morpheus', 'Morpheus.Network'],
                   ['/concepts/case-study-openbazaar', 'OpenBazaar']
@@ -290,7 +291,6 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/how-to/make-service',
                   [
                     'https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_C',
                     'Build with the IPFS API'
