@@ -31,7 +31,7 @@ The selection of network-wide parameters like `K` is not arbitrary. It is determ
 
 ### Undialable peers
 
-A major property of Kademlia is that all peers can be arranged from smallest to largest. This is useful because as peer `0` _walks_ down the line to find peer '55`, it can know it's getting progressively closer. However, this requires that everyone on the line can talk to each other. Otherwise, peer `33`might send peer`0` down a dead-end by telling them the content they want is on a node they can't communicate with. This can result in a slow and fragmented network, with data being accessible by some peers and not others.
+A major property of Kademlia is that all peers can be arranged from smallest to largest. This is useful because as peer `0` _walks_ down the line to find peer `55`, it can know it's getting progressively closer. However, this requires that everyone on the line can talk to each other. Otherwise, peer `33`might send peer`0` down a dead-end by telling them the content they want is on a node they can't communicate with. This can result in a slow and fragmented network, with data being accessible by some peers and not others.
 
 While having peers that cannot talk to each other may sound like an oddity, two prevalent causes of unreachability are network address translators (NATs) and firewalls. Having asymmetrical networks where peers `X`, `Y`, and `Z` can connect to `A`, but `A` cannot connect to them is fairly common. Similarly, it is _extremely_ common that peers `A` and `B`, which are both behind NATs, cannot talk to each other. To deal with this, IPFS nodes ignore other nodes assumed to be unreachable by the general public. Nodes also filter themselves out of the network if they suspect they are not reachable.
 
