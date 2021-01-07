@@ -11,7 +11,7 @@ IPFS Companion's preferences screen allows you to choose from several different 
 
 ![Screenshot of node type switch](./images/node-type-switch.png)
 
-**More information on each node type is below, but when in doubt, choose the _External_ node type and run an IPFS node on your local machine.** Some options for doing so:
+If you have an IPFS node installed but don't know which Companion node type to chose, select _External_. If you do not have an IPFS node installed, [see the installation section](/install) to find out how to install one. If you'd prefer not to install an IPFS node, consider using either the [native](#native) or [embedded](#embedded) modes.
 
 - Use the [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) app (for Windows/Linux/Mac), which installs and manages a local IPFS node for you as well as offering an easy, convenient user interface for managing files, peers, and more
 - If you prefer a more hands-on approach:
