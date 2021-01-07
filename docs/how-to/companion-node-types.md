@@ -54,9 +54,9 @@ This node type offers the same benefits as an [external](#external) node, with a
   - Ability to change your preferred public gateway from Brave's settings page
   - Options for default resolution of IPFS resources: through a public gateway, through a local node, or asking each time
 - The IPFS node is managed by Brave itself:
-  - Automatic go-ipfs updates and migrations
-  - Your node is only running when you're running your copy of Brave
-  - You can start/stop your Brave-based node by clicking the power button icon in IPFS Companion's main menu
+  - Automatic go-ipfs updates and migrations.
+  - Your node is only running when Brave is open.
+  - You can start/stop your Brave-based node by clicking the power button icon in IPFS Companion's main menu.
 
 ::: tip TOOLS FOR BRAVE USERS
 
