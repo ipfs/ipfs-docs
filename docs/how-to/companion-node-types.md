@@ -5,7 +5,7 @@ description: Learn about the available node types in IPFS Companion.
 
 # Understand node types in IPFS Companion
 
-IPFS Companion's preferences screen allows you to choose from several different node types. The full list of available types you'll see in your Companion preferences depends on the browser you're using (i.e. Firefox, Chrome, Brave), but the full list is as follows:
+IPFS Companion's preferences screen allows you to choose from several different node types. The available types you'll see in your Companion preferences depends on the browser you're using (i.e. Firefox, Chrome, Brave), but the full list is as follows:
 
 [[toc]]
 
@@ -89,7 +89,7 @@ Please note that there are some limitations when running an embedded js-ipfs ins
 - Default transports limited to websockets ([js-ipfs/#1088](https://github.com/ipfs/js-ipfs/issues/1088)):
   - Lack of connection closing ([ipfs/js-ipfs#962](https://github.com/ipfs/js-ipfs/issues/962))
   - Missing relay discovery ([js-ipfs/v0.29.x/examples/circuit-relaying](https://github.com/ipfs/js-ipfs/tree/v0.29.3/examples/circuit-relaying))
-- An embedded node _does not run_ when external node is selected.; every time you switch back to the embedded node, a new instance is created on demand, and it can take a few seconds for a brand new node to find peers.
+- An embedded node _does not run_ when an external node is selected; every time you switch back to the embedded node, a new instance is created on demand, and it can take a few seconds for a newly running node to find peers.
 
 ### Embedded + `chrome.sockets` (deprecated)
 
