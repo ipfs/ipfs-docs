@@ -81,15 +81,15 @@ This node type is only for development and experimentation. Most users should us
 
 Power users can provide [custom config](https://github.com/ipfs/js-ipfs#faq) (e.g. to enable experimental pubsub) via the IPFS Companion [Preferences](https://user-images.githubusercontent.com/157609/38084660-0b97c0cc-334e-11e8-9368-823345ced67f.png)
 
-**Note:** At present, embedded js-ipfs running within webextension (browser context) comes with some limitations:
+Please note that there are some limitations when running an embedded js-ipfs instance in the browser context using Companion:
 
-- Can't act as an HTTP gateway (extension uses public one as a fallback)
-- Known to be CPU-hungry ([#450](https://github.com/ipfs-shipyard/ipfs-companion/issues/450), [ipfs/js-ipfs#1190](https://github.com/ipfs/js-ipfs/issues/1190)) over time, which may drain your battery
-- Missing DHT ([js-ipfs/#856](https://github.com/ipfs/js-ipfs/pull/856))
-- Default transports limited to websockets ([js-ipfs/#1088](https://github.com/ipfs/js-ipfs/issues/1088))
+- Embedded js-ipfs cannot act as an HTTP gateway; the extension uses a public one as a fallback.
+- Running an embedded js-ipfs instance is known to be CPU-hungry over time, which may drain your battery. See GitHub issues ([#450](https://github.com/ipfs-shipyard/ipfs-companion/issues/450) and [ipfs/js-ipfs#1190](https://github.com/ipfs/js-ipfs/issues/1190)) for further details
+- Missing DHT (see [js-ipfs/#856](https://github.com/ipfs/js-ipfs/pull/856)).
+- Default transports limited to websockets ([js-ipfs/#1088](https://github.com/ipfs/js-ipfs/issues/1088)):
   - Lack of connection closing ([ipfs/js-ipfs#962](https://github.com/ipfs/js-ipfs/issues/962))
   - Missing relay discovery ([js-ipfs/v0.29.x/examples/circuit-relaying](https://github.com/ipfs/js-ipfs/tree/v0.29.3/examples/circuit-relaying))
-- An embedded node _does not run_ when external node is selected.; every time you switch back to the embedded node, a new instance is created on-demand, and it can take a few seconds for a brand new node to find peers
+- An embedded node _does not run_ when external node is selected.; every time you switch back to the embedded node, a new instance is created on demand, and it can take a few seconds for a brand new node to find peers.
 
 ### Embedded + `chrome.sockets` (deprecated)
 
@@ -99,6 +99,4 @@ This node type has been deprecated and is no longer supported by Chromium browse
 
 ## Public
 
-A _public_ node is used as an implicit fallback for gateway functionality when an external node is offline or an embedded node is used. It does not expose the API port.
-
-Because it's a fallback, it's not included as an option in Companion's preferences.
+A _public_ node is used as a fallback for gateway functionality when an external node is offline or an embedded node is used. It does not expose the API port. This type of node is not included as an option in Companion's preferences.
