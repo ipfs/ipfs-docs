@@ -45,7 +45,7 @@ As noted above, you can get started with running a go-ipfs node on your local ma
 
 ### Provided by Brave
 
-Users of the [Brave](https://brave.com/) browser can enable native support for IPFS using a go-ipfs node built directly into the browser itself. This is a great way to experiment with IPFS without having to install or run IPFS Desktop or the command-line daemon.
+Users of the [Brave](https://brave.com/) browser (v1.19 or later) can enable native support for IPFS using a go-ipfs node built directly into the browser itself. This is a great way to experiment with IPFS without having to install or run IPFS Desktop or the command-line daemon.
 
 This node type offers the same benefits as an [external](#external) node, with additional features provided within Brave itself:
 
