@@ -44,7 +44,7 @@ For example, a website can load static assets from content-addressed paths:
 <link rel="stylesheet" href="/ipfs/QmNrgEMcUygbKzZeZgYFosdd27VE9KnWbyUD73bKZJ3bGi?filename=style.css">
 ```
 
-Browsers that support IPFS will recognize content path `/ipfs/<CID>` and load asset over IPFS instead of HTTP.
+Browsers that support IPFS will recognize the `/ipfs/<CID>` content path and load the related asset over IPFS instead of HTTP.
 User agents without IPFS support still get the correct data from the original HTTP server.
 :::
 
