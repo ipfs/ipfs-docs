@@ -32,7 +32,7 @@ Tools and browser extensions should detect IPFS content paths and resolve them d
 
 ::: tip
 
-Use relative or absolute URLs that include content-addressed paths. This will take advantage of content-addressing today while ensuring backward-compatibility with the old web.
+Use relative or absolute URLs that include content-addressed paths. This will take advantage of content addressing today while ensuring backward compatibility with the legacy web.
 
 For example, a website can load static assets from content-addressed paths:
 
