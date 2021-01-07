@@ -50,9 +50,9 @@ Users of the [Brave](https://brave.com/) browser (v1.19 or later) can enable nat
 This node type offers the same benefits as an [external](#external) node, with additional features provided within Brave itself:
 
 - Native support for `ipfs://` and `ipns://` URIs:
-  - Built-in fallback to a public gateway
-  - Ability to change your preferred public gateway from Brave's settings page
-  - Options for default resolution of IPFS resources: through a public gateway, through a local node, or asking each time
+  - Built-in fallback to a public gateway.
+  - Ability to change your preferred public gateway from Brave's settings page.
+  - Options for default resolution of IPFS resources: through a public gateway, through a local node, or asking each time.
 - The IPFS node is managed by Brave itself:
   - Automatic go-ipfs updates and migrations.
   - Your node is only running when Brave is open.
