@@ -9,16 +9,12 @@ IPFS Companion's preferences screen allows you to choose from several different 
 
 [[toc]]
 
-![Screenshot of node type switch](./images/node-type-switch.png)
+![Screenshot of node type selector in Companion preferences](./images/node-type-switch.png)
 
-If you have an IPFS node installed but don't know which Companion node type to chose, select _External_. If you do not have an IPFS node installed, [see the installation section](/install) to find out how to install one. If you'd prefer not to install an IPFS node, consider using either the [native](#native) or [embedded](#embedded) modes.
+**If you're already running a local IPFS node, choose _External_.** If not, do one of the following:
 
-- Use the [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) app (for Windows/Linux/Mac), which installs and manages a local IPFS node for you as well as offering an easy, convenient user interface for managing files, peers, and more
-- If you prefer a more hands-on approach:
-  - Install IPFS by following the [command line quick-start guide](command-line-quick-start.md)
-  - Or run it in [Docker](https://github.com/ipfs/go-ipfs#running-ipfs-inside-docker)
-
-Or, if [Brave](https://brave.com/) is your browser of choice, you can use the easiest of all these options: Just enable [Brave's own built-in IPFS node](#provided-by-brave).
+- [Install](/install) and run IPFS as an [external node](#external) (recommended).
+- Use a [native node](#native) built into your browser (Brave v1.19 or later only) or the [embedded node](#embedded) built into Companion.
 
 ## External
 
