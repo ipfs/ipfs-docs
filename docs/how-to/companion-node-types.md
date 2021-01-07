@@ -93,7 +93,9 @@ Power users can provide [custom config](https://github.com/ipfs/js-ipfs#faq) (e.
 
 ### Embedded + `chrome.sockets` (deprecated)
 
-This node type has been deprecated and is no longer supported by Chromium browsers. While this option still appears in IPFS Companion preferences, users of this node type are strongly urged to migrate to a different node type ASAP.
+::: warning
+This node type has been deprecated and is no longer supported by Chromium browsers. While this option still appears in IPFS Companion preferences, users of this node type are strongly urged to migrate to a different node type.
+:::
 
 ## Public
 
