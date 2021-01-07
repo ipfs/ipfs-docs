@@ -35,7 +35,7 @@ A good practice is to run your go-ipfs daemon on localhost (`127.0.0.1`), as it 
 - Better UX in the browser: no mixed-content warnings.
 - Improved performance: local loopback is used, so no network overhead.
 
-As noted above, you can get started with running a go-ipfs node on your local machine in several ways:
+You can get started with running a go-ipfs node on your local machine in several ways:
 
 - Download [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop), which installs and manages a local node for you as well as offering an easy, convenient user interface for managing files, peers, and more
 - If you're comfortable with the command line and don't need the convenience of the IPFS Desktop UI, follow the directions in the [command line quick-start guide](command-line-quick-start.md)
