@@ -39,7 +39,7 @@ You can get started with running a go-ipfs node on your local machine in several
 
 - Download [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop), which installs and manages a local node for you as well as offering an easy, convenient user interface for managing files, peers, and more
 - If you're comfortable with the command line and don't need the convenience of the IPFS Desktop UI, follow the directions in the [command line quick-start guide](command-line-quick-start.md)
-- Docker fans can run and use go-ipfs from [inside a Docker container](https://github.com/ipfs/go-ipfs#running-ipfs-inside-docker)
+- Docker fans can run and use go-ipfs from [inside a Docker container](https://github.com/ipfs/go-ipfs#running-ipfs-inside-docker).
 
 ## Native
 
