@@ -24,8 +24,8 @@ Or, if [Brave](https://brave.com/) is your browser of choice, you can use the ea
 
 An _external_ node can be any instance of an IPFS daemon that:
 
-- Runs outside of your web browser
-- Exposes a _gateway_ and writeable _API_ over HTTP at TCP ports
+- Runs outside of your web browser.
+- Exposes a _gateway_ and writeable _API_ over HTTP at TCP ports.
 
 At this time, the [go-ipfs](https://github.com/ipfs/go-ipfs) implementation of IPFS is the recommended choice of daemon for running an external node. It is easier on CPU than other implementations, and provides `dhtclient` mode, which decreases ambient bandwidth use and reduces battery drain (key qualities for something that is expected to run in the background all the time).
 
