@@ -33,7 +33,7 @@ A good practice is to run your go-ipfs daemon on localhost (`127.0.0.1`), as it 
 
 - Increased security: native IPFS used as end-to-end transport.
 - Better UX in the browser (no mixed-content warnings)
-- Improved performance (local loopback is used, so no network overhead)
+- Improved performance: local loopback is used, so no network overhead.
 
 As noted above, you can get started with running a go-ipfs node on your local machine in several ways:
 
