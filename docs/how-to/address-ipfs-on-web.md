@@ -45,7 +45,7 @@ For example, a website can load static assets from content-addressed paths:
 ```
 
 Browsers that support IPFS will recognize content path `/ipfs/<CID>` and load asset over IPFS instead of HTTP.
-User Agents without IPFS support still get the correct data from the original HTTP server.
+User agents without IPFS support still get the correct data from the original HTTP server.
 :::
 
 ### Path gateway
