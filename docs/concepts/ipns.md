@@ -119,7 +119,7 @@ Here's where the Name API comes in handy. With it, you can create a single, stab
 // The address of your files.
 const addr = '/ipfs/QmbezGequPwcsWo8UL4wDF6a8hYwM1hmbzYv2mnKkEWaUp'
 
-ipfs.name.publish(addr, function (err, res) {
+ipfs.name.publish(addr).then(function (res) {
   // You now receive a res which contains two fields:
   //   - name: the name under which the content was published.
   //   - value: the "real" address to which Name points.
