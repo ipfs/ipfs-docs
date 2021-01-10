@@ -14,9 +14,27 @@ One of the main goals of IPFS is to preserve humanity's history by enabling the 
 
 Today [The average lifespan of a web page is 100 days](https://blogs.loc.gov/thesignal/2011/11/the-average-lifespan-of-a-webpage/) before it's gone forever. It's not good enough for the primary medium of our era to be this fragile. IPFS keeps every version of your files and makes it simple to set up resilient networks for mirroring data.
 
-Trying to counter that, nodes on the IPFS network automatically cache the downloaded resources and keep those available for uploading to other nodes. This system depends on nodes being willing and able to cache and share resources with the network. Storage is finite, so nodes need to clear out some of their previously cached resources to make room for new resources. To ensure that data stays _persists_ on IPFS, and is not thrown away, [data can be pinned](/how-to/pin-files/) to one or more IPFS nodes.
+Trying to counter that, nodes on the IPFS network automatically cache the downloaded resources and keep those available for uploading to other nodes. This system depends on nodes being willing and able to cache and share resources with the network. Storage is finite, so nodes need to clear out some of their previously cached resources to make room for new resources. This process is called _garbage collection_.
 
-In simple terms, pinning gives you control over disk space and data retention. As such, you should use that control to pin any content you wish to keep on IPFS indefinitely.
+To ensure that data _persists_ on IPFS, and is not deleted during garbage collection, [data can be pinned](/how-to/pin-files/) to one or more IPFS nodes. In simple terms, pinning gives you control over disk space and data retention. As such, you should use that control to pin any content you wish to keep on IPFS indefinitely.
+
+## Garbage Collection
+
+[Garbage collection](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>) is a automatic form of resource management widely used in software applications. Garbage collection reliefs programmers and users from manually allocating or deallocating finite resources such as memory or disk storage. IPFS uses garbage collection to free disk space on ypur IPFS node as needed.
+
+The IPFS garbage collector (or GC for short) is configured in the `Datastore`section of [the go-ipfs config file](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md). The important settings related to the garbage colllector are:
+
+- `StorageGCWatermark` The percentage of the StorageMax value at which a garbage collection will be triggered automatically if the daemon was run with automatic gc enabled (that option defaults to false currently). Default: 90
+
+- `GCPeriod` A time duration specifying how frequently to run a garbage collection. Only used if automatic gc is enabled. Default: 1h
+
+As described in `StorageGCWatermark`, currently garbage collection does not run automatically. To run it manually run [`ipfs repo gc`(https://docs.ipfs.io/reference/cli/#ipfs-repo-gc).
+
+To enable automatic garbage collection you have to run [ìpfs daemon](https://docs.ipfs.io/reference/cli/#ipfs-daemon) command to start your IPFS node with the `--enable-gc`option.
+
+::: tip
+If you use IPFS Desktop or the IPFS Web UI the settings related to garbage collection can be found under `settings`. You can also directly run the garbage collector by clicking on the taskbar icon of the IPFS Desktop application and selecting `Àdvanced` > `Run Garbage Collector`.
+:::
 
 ## Pinning in context
 
