@@ -28,7 +28,7 @@ The IPFS garbage collector (or GC for short) is configured in the `Datastore`sec
 
 - `GCPeriod` A time duration specifying how frequently to run a garbage collection. Only used if automatic gc is enabled. Default: 1h
 
-As described in `StorageGCWatermark`, currently garbage collection does not run automatically. To run it manually run [`ipfs repo gc`(https://docs.ipfs.io/reference/cli/#ipfs-repo-gc).
+As described in `StorageGCWatermark`, currently garbage collection does not run automatically for your IPFS node. To run it manually run [`ipfs repo gc`](https://docs.ipfs.io/reference/cli/#ipfs-repo-gc).
 
 To enable automatic garbage collection you have to run [ìpfs daemon](https://docs.ipfs.io/reference/cli/#ipfs-daemon) command to start your IPFS node with the `--enable-gc`option.
 
