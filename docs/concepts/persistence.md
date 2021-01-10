@@ -30,7 +30,7 @@ The IPFS garbage collector (or GC for short) is configured in the `Datastore`sec
 
 As described in `StorageGCWatermark`, currently garbage collection does not run automatically for your IPFS node. To run it manually run [`ipfs repo gc`](https://docs.ipfs.io/reference/cli/#ipfs-repo-gc).
 
-To enable automatic garbage collection you have to run [ìpfs daemon](https://docs.ipfs.io/reference/cli/#ipfs-daemon) command to start your IPFS node with the `--enable-gc`option.
+To enable automatic garbage collection you have to run the [ìpfs daemon](https://docs.ipfs.io/reference/cli/#ipfs-daemon) command to start your IPFS node with the `--enable-gc`option.
 
 ::: tip
 If you use IPFS Desktop or the IPFS Web UI the settings related to garbage collection can be found under `settings`. You can also directly run the garbage collector by clicking on the taskbar icon of the IPFS Desktop application and selecting `Àdvanced` > `Run Garbage Collector`.
