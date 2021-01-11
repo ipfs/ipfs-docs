@@ -1,6 +1,7 @@
 // .vuepress/config.js
 
 const DEPLOY_DOMAIN = 'https://docs.ipfs.io'
+const pageSuffix = '/'
 
 module.exports = {
   base: '/',
@@ -13,6 +14,7 @@ module.exports = {
     }
   },
   markdown: {
+    pageSuffix,
     extendMarkdown: md => {
       md.set({
         breaks: true
@@ -21,8 +23,8 @@ module.exports = {
       md.use(require('markdown-it-footnote'))
       md.use(require('markdown-it-task-lists'))
       md.use(require('markdown-it-deflist')),
-      md.use(require('markdown-it-imsize')),
-	  md.use(require('markdown-it-image-lazy-loading'))
+        md.use(require('markdown-it-imsize')),
+        md.use(require('markdown-it-image-lazy-loading'))
     }
   },
   themeConfig: {
@@ -422,8 +424,8 @@ module.exports = {
     [
       'vuepress-plugin-clean-urls',
       {
-        normalSuffix: '/',
-        indexSuffix: '/',
+        normalSuffix: pageSuffix,
+        indexSuffix: pageSuffix,
         notFoundPath: '/404/'
       }
     ],
