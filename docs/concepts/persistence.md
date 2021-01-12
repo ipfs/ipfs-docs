@@ -20,7 +20,7 @@ To ensure that data _persists_ on IPFS, and is not deleted during garbage collec
 
 ## Garbage Collection
 
-[Garbage collection](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>) is a form of automatic resource management widely used in software applications. Garbage collection reliefs programmers and users from manually allocating or deallocating finite resources such as memory or disk storage. IPFS uses garbage collection to free disk space on ypur IPFS node as needed.
+[Garbage collection](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>) is a form of automatic resource management widely used in software development. The garbage collector attempts to reclaim garbage, or memory occupied by objects that are no longer in use. IPFS uses garbage collection to free disk space on your IPFS node.
 
 The IPFS garbage collector (or GC for short) is configured in the `Datastore`section of [the go-ipfs config file](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md). The important settings related to the garbage colllector are:
 
