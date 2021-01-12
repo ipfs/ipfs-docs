@@ -24,7 +24,7 @@ To ensure that data _persists_ on IPFS, and is not deleted during garbage collec
 
 The IPFS garbage collector (or GC for short) is configured in the `Datastore`section of [the go-ipfs config file](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md). The important settings related to the garbage colllector are:
 
-- `StorageGCWatermark` The percentage of the StorageMax value at which a garbage collection will be triggered automatically if the daemon was run with automatic gc enabled (that option defaults to false currently). Default: 90
+- `StorageGCWatermark`: The percentage of the `StorageMax` value at which a garbage collection will be triggered automatically, if the daemon is running with automatic garbage collection enabled. The default is 90`.
 
 - `GCPeriod` A time duration specifying how frequently to run a garbage collection. Only used if automatic gc is enabled. Default: 1h
 
