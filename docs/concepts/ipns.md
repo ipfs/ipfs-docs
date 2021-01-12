@@ -57,10 +57,9 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    ipfs name publish /ipfs/QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
 
    > Published to k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew: /ipfs/QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
+   ```
 
    `k51...` is the key of your IPFS installation.
-
-   ```
 
 1. You can view your file by going to `https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew`:
 
@@ -94,11 +93,11 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 
 You can view the `Qm` hash of the file associated with your `k5` key by using `name resolve`:
 
-    ```bash
-    ipfs name resolve
+```bash
+ipfs name resolve
 
-    > /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
-    ```
+> /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
+```
 
 To use a different `k5` key, first create one using `key gen test`, and use the `--key` flag when calling `name publish`:
 
@@ -122,7 +121,7 @@ Here's where the Name API comes in handy. With it, you can create a single, stab
 // The address of your files.
 const addr = '/ipfs/QmbezGequPwcsWo8UL4wDF6a8hYwM1hmbzYv2mnKkEWaUp'
 
-ipfs.name.publish(addr, function (err, res) {
+ipfs.name.publish(addr).then(function (res) {
   // You now receive a res which contains two fields:
   //   - name: the name under which the content was published.
   //   - value: the "real" address to which Name points.
