@@ -5,7 +5,7 @@ description: IPFS Desktop gives you all the power of IPFS in a convenient deskto
 
 # IPFS Desktop
 
-**IPFS Desktop gives you all the power of IPFS in a convenient desktop app: a complete IPFS node, plus handy OS menubar/taskbar shortcuts and an all-in-one file manager, peer map, and content explorer.**
+**IPFS Desktop bundles an IPFS node, file manager, peer man, and content explorer into a single, easy to use application.**
 
 Use IPFS Desktop to get acquainted with IPFS without needing to touch the terminal — or, if you're already experienced, use the powerful menubar/taskbar shortcuts alongside the command line to make your IPFS workflow faster.
 
@@ -22,7 +22,7 @@ If you already have an IPFS node on your computer, IPFS Desktop will act as a co
 - **Start your node at system startup (Mac/Windows) and control it from your OS** using the convenient menubar/system tray menu
 - **Quickly import files, folders, and screenshots to IPFS** in a variety of convenient ways, including drag-and-drop and (for Windows) right-clicking a file/folder's icon
 - **Easily manage the contents of your node** with a familiar file browser that offers quick shortcuts for renaming/moving/pinning files and folders, previewing many common file formats directly in IPFS Desktop, copying content IDs or shareable links to your clipboard, and more
-- **Quick download for CIDs, IPFS paths, and IPNS paths** — just choose `Download...` from your menubar/status tray, paste in a hash, and you're good to go
+- **Quick download for CIDs, IPFS paths, and IPNS paths** — choose `Download...` from your menubar/status tray, paste in a hash, and you're good to go
 - **Visualize your IPFS peers worldwide** on a map depicting what nodes you're connected to, where they are, the connections they're using, and more
 - **Explore the "Merkle Forest" of IPFS files** with a visualizer that lets you see firsthand how example datasets stored on IPFS — or your own IPFS files — are broken down into content-addressed pieces
 - **OS-wide support for IPFS files and links** (on Mac, Windows, and some Linux flavors) automatically hands off links starting with `ipfs://`, `ipns://` and `dweb:` to be opened in IPFS Desktop
@@ -78,7 +78,7 @@ The IPFS Desktop application has finished installing. You can now start to [add 
 4. Open your **Applications** folder and open the IPFS Desktop application.
 5. You may get a warning saying _IPFS Desktop.app can't be opened_. Click **Show in Finder**:
 
-   ![Application cannot be installed error.](./images/ipfs-desktop/install-macos-ipfs-cannot-be-opened.png)
+   ![An error message showing that the computer cannot install the application.](./images/ipfs-desktop/install-macos-ipfs-cannot-be-opened.png)
 
 6. Find **IPFS Desktop.app** in your **Applications** folder.
 7. Hold down the `control` key, click **IPFS Desktop.app**, and click **Open**:
