@@ -44,7 +44,7 @@ jobs:
             hash=$(pin-to-cluster.sh "$pin_name" /tmp/workspace/$BUILD_DIR)
             echo "Website added to IPFS: https://ipfs.io/ipfs/$hash"
             # Update DNSlink
-            if [ "$CIRCLE_BRANCH" == "master" ] ; then
+            if [ "$CIRCLE_BRANCH" == "main" ] ; then
               dnslink-dnsimple -d $DOMAIN -r _dnslink -l /ipfs/$hash
             fi
 workflows:

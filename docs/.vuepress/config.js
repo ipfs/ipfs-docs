@@ -1,6 +1,7 @@
 // .vuepress/config.js
 
 const DEPLOY_DOMAIN = 'https://docs.ipfs.io'
+const pageSuffix = '/'
 
 module.exports = {
   base: '/',
@@ -13,6 +14,7 @@ module.exports = {
     }
   },
   markdown: {
+    pageSuffix,
     extendMarkdown: md => {
       md.set({
         breaks: true
@@ -201,7 +203,12 @@ module.exports = {
                 children: [
                   '/how-to/configure-node',
                   '/how-to/modify-bootstrap-list',
-                  '/how-to/nat-configuration'
+                  '/how-to/nat-configuration',
+                  '/how-to/default-profile',
+                  [
+                    'https://github.com/ipfs/js-ipfs/tree/master/examples/custom-ipfs-repo',
+                    'Customize an IPFS repo'
+                  ]
                 ]
               },
               {
@@ -340,8 +347,8 @@ module.exports = {
     [
       'vuepress-plugin-clean-urls',
       {
-        normalSuffix: '/',
-        indexSuffix: '/',
+        normalSuffix: pageSuffix,
+        indexSuffix: pageSuffix,
         notFoundPath: '/404/'
       }
     ],
