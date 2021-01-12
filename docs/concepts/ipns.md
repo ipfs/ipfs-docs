@@ -22,72 +22,75 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 
 1. Start your IPFS daemon, if it isn't already running:
 
-    ```bash
-    ipfs daemon
-    ```
+   ```bash
+   ipfs daemon
+   ```
 
 1. Create the file that you want to set up with IPNS. For the tutorial, we're just going to create a simple _hello world_ file:
 
-    ```bash
-    echo "Hello, world!" > hello.txt
-    ```
+   ```bash
+   echo "Hello, world!" > hello.txt
+   ```
 
 1. Add your file to IPFS:
 
-    ```bash
-    ipfs add hello.txt
+   ```bash
+   ipfs add hello.txt
 
-    > added QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2 hello.txt
-    > 13 B / 13 B [===================================================================] 100.00%
-    ```
-    
-    Take note of the `Qm` hash output by IPFS. 
+   > added QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2 hello.txt
+   > 13 B / 13 B [===================================================================] 100.00%
+   ```
+
+   Take note of the `Qm` hash output by IPFS.
 
 1. Use `cat` and the `Qm` hash you just got from IPFS to view the file again:
 
-    ```bash
-    ipfs cat QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
+   ```bash
+   ipfs cat QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
 
-    > Hello, world!
-    ``` 
+   > Hello, world!
+   ```
 
 1. Publish your `Qm` hash to IPNS:
 
-    ```bash
-    ipfs name publish /ipfs/QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
+   ```bash
+   ipfs name publish /ipfs/QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
 
-    > Published to k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew: /ipfs/QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
+   > Published to k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew: /ipfs/QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
 
-    `k51...` is the key of your IPFS installation.
+   `k51...` is the key of your IPFS installation.
+
+   ```
 
 1. You can view your file by going to `https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew`:
 
-    ```bash
-    curl https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew
+   ```bash
+   curl https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew
 
-    > Hello, world!
-    ```
+   > Hello, world!
+   ```
 
 1. Make a change to your file, add it to IPFS, and update your IPNS:
 
-    ```bash
-    echo "Hello IPFS!" > hello.txt
-    ipfs add hello.txt
+   ```bash
+   echo "Hello IPFS!" > hello.txt
+   ipfs add hello.txt
 
-    > added QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG hello.txt
-    > 11 B / 11 B [=============================================================================================] 100.00%
+   > added QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG hello.txt
+   > 11 B / 11 B [=============================================================================================] 100.00%
 
-    ipfs name publish QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
+   ipfs name publish QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
 
-    > Published to k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew: /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
-    ```
+   > Published to k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew: /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
+   ```
+
 1. You can now go back to `https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew` to view your updated file using the same address:
 
-    ```bash
-    curl https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew
-    
-    > Hello IPFS!
-    ```
+   ```bash
+   curl https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew
+
+   > Hello IPFS!
+   ```
 
 You can view the `Qm` hash of the file associated with your `k5` key by using `name resolve`:
 
@@ -104,7 +107,7 @@ ipfs key gen SecondKey
 
 > k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl
 
-ipfs name publish --key=SecondKey /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG  
+ipfs name publish --key=SecondKey /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
 
 > Published to k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl: /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
 ```
@@ -119,7 +122,7 @@ Here's where the Name API comes in handy. With it, you can create a single, stab
 // The address of your files.
 const addr = '/ipfs/QmbezGequPwcsWo8UL4wDF6a8hYwM1hmbzYv2mnKkEWaUp'
 
-ipfs.name.publish(addr, function (err, res) {
+ipfs.name.publish(addr).then(function (res) {
   // You now receive a res which contains two fields:
   //   - name: the name under which the content was published.
   //   - value: the "real" address to which Name points.
