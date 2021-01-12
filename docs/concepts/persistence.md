@@ -22,18 +22,35 @@ To ensure that data _persists_ on IPFS, and is not deleted during garbage collec
 
 [Garbage collection](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>) is a form of automatic resource management widely used in software development. The garbage collector attempts to reclaim garbage, or memory occupied by objects that are no longer in use. IPFS uses garbage collection to free disk space on your IPFS node.
 
-The IPFS garbage collector (or GC for short) is configured in the `Datastore`section of [the go-ipfs config file](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md). The important settings related to the garbage colllector are:
+The IPFS garbage collector is configured in the `Datastore`section of [the go-ipfs config file](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md). The important settings related to the garbage colllector are:
 
 - `StorageGCWatermark`: The percentage of the `StorageMax` value at which a garbage collection will be triggered automatically, if the daemon is running with automatic garbage collection enabled. The default is 90`.
 
-- `GCPeriod` A time duration specifying how frequently to run a garbage collection. Only used if automatic gc is enabled. Default: 1h
+- `GCPeriod`: Specify how frequently garbage collection should run. Only used if automatic garbage collection is enabled. The default is 1 hour.
 
-Currently garbage collection does not run automatically for IPFS nodes by default. To run it manually run [`ipfs repo gc`](https://docs.ipfs.io/reference/cli/#ipfs-repo-gc).
+To manually start garbage collection, [run `ipfs repo gc`](https://docs.ipfs.io/reference/cli/#ipfs-repo-gc):
 
-To enable automatic garbage collection you have to run the [ìpfs daemon](https://docs.ipfs.io/reference/cli/#ipfs-daemon) command to start your IPFS node with the `--enable-gc`option.
+```bash
+ipfs repo gc
+
+> removed QmPZhyTu8D7NqR5NvgkgNYsSYD4CNjnyuFejB8i23itJvA
+> removed QmSYQFVAZgEnpa6NxiW5agyj3XU9VR4CbERShXiLhuPPPE
+> removed QmS6SJXApoi59hqD8Naktgakc6UNHK1XDhqhtMg9sBhY8g
+```
+
+To enable automatic garbage collection use `--enable-gc` when starting the IPFS daemon:
+
+```bash
+ipfs daemon --enable-gc
+
+> Initializing daemon...
+> go-ipfs version: 0.7.0
+> Repo version: 10
+> ...
+```
 
 ::: tip
-If you use IPFS Desktop or the IPFS Web UI the settings related to garbage collection can be found under `settings`. You can also directly run the garbage collector by clicking on the taskbar icon of the IPFS Desktop application and selecting `Àdvanced` > `Run Garbage Collector`.
+If you use IPFS Desktop or the IPFS Web UI the settings related to garbage collection can be found in the **Settings** tab. You can also directly run the garbage collector by clicking on the taskbar icon of the IPFS Desktop application and selecting **Advanced** → **Run Garbage Collector**.
 :::
 
 ## Pinning in context
