@@ -94,11 +94,11 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 
 You can view the `Qm` hash of the file associated with your `k5` key by using `name resolve`:
 
-    ```bash
-    ipfs name resolve
+```bash
+ipfs name resolve
 
-    > /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
-    ```
+> /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
+```
 
 To use a different `k5` key, first create one using `key gen test`, and use the `--key` flag when calling `name publish`:
 
