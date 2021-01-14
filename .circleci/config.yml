@@ -33,7 +33,6 @@ jobs:
         environment:
           DOMAIN: docs.ipfs.io
           BUILD_DIR: ./docs/.vuepress/dist
-          CLUSTER_HOST: /dnsaddr/ipfs-websites.collab.ipfscluster.io
     steps:
       - attach_workspace:
           at: /tmp/workspace
@@ -41,7 +40,6 @@ jobs:
           name: Deploy website to IPFS
           command: |
             pin_name="$DOMAIN build $CIRCLE_BUILD_NUMBER"
-            
             hash=$(pin-to-cluster.sh "$pin_name" /tmp/workspace/$BUILD_DIR)
             echo "Website added to IPFS: https://ipfs.io/ipfs/$hash"
             # Update DNSlink for prod
