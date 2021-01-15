@@ -37,7 +37,7 @@ If you're having issues here, head over to the [official Docker documentation to
 1. Download the latest `ipfs-cluster-ctl` package from [dist.ipfs.io](https://dist.ipfs.io/#ipfs-cluster-ctl):
 
     ```bash
-    wget https://dist.ipfs.io/ipfs-cluster-ctl/v0.13.0/ipfs-cluster-ctl_v0.13.0_linux-amd64.tar.gz
+    wget https://dist.ipfs.io/ipfs-cluster-ctl/v0.13.1/ipfs-cluster-ctl_v0.13.1_linux-amd64.tar.gz
     ```
 
 1. Unzip the package:
@@ -88,7 +88,7 @@ If you're having issues here, head over to the [official Docker documentation to
 1. You can now interact with your cluster. In a new terminal, navigate to the `ipfs-cluster-ctl` directory and list the peers within the cluster:
 
     ```bash
-    ./ipfs-cluster-ctl
+    ./ipfs-cluster-ctl peers ls
 
     > 12D3KooWBaQ9SGtdnJmyS2fe7uq5gXQnejCf5ma2n9cUEbwVD5gf | cluster2 | Sees 2 other peers
     > > Addresses:
