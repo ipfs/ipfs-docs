@@ -42,48 +42,48 @@ If you're having issues here, head over to the [official Docker documentation to
 
 1. Unzip the package:
 
-    ```bash
-    tar xvzf ipfs-cluster-ctl_v0.13.0_linux-amd64.tar.gz 
+   ```bash
+   tar xvzf ipfs-cluster-ctl_v0.13.0_linux-amd64.tar.gz
 
-    > ipfs-cluster-ctl/ipfs-cluster-ctl
-    > ipfs-cluster-ctl/LICENSE
-    > ipfs-cluster-ctl/LICENSE-APACHE
-    > ipfs-cluster-ctl/LICENSE-MIT
-    > ipfs-cluster-ctl/README.md
-    ```
+   > ipfs-cluster-ctl/ipfs-cluster-ctl
+   > ipfs-cluster-ctl/LICENSE
+   > ipfs-cluster-ctl/LICENSE-APACHE
+   > ipfs-cluster-ctl/LICENSE-MIT
+   > ipfs-cluster-ctl/README.md
+   ```
 
 1. Download the [`docker-composer.yml` file](https://raw.githubusercontent.com/ipfs/ipfs-cluster/master/docker-compose.yml) and place it into the `ipfs-cluster-ctl` directory:
 
-    ```bash
-    wget https://raw.githubusercontent.com/ipfs/ipfs-cluster/master/docker-compose.yml
-    ```
+   ```bash
+   wget https://raw.githubusercontent.com/ipfs/ipfs-cluster/master/docker-compose.yml
+   ```
 
 1. Start the cluster using `docker-compose`. You may have to run as root:
 
-    ```bash
-    docker-compose up
+   ```bash
+   docker-compose up
 
-    > Recreating ipfs2 ... done
-    > Recreating ipfs1    ... done
-    > Recreating ipfs0    ... done
-    > Recreating cluster2 ... done
-    > ...
-    ```
+   > Recreating ipfs2 ... done
+   > Recreating ipfs1    ... done
+   > Recreating ipfs0    ... done
+   > Recreating cluster2 ... done
+   > ...
+   ```
 
-    You may see some errors like:
+   You may see some errors like:
 
-    ```bash
-    cluster2    | 2020-10-27T15:20:15.116Z  ERROR   ipfshttp    error posting to IPFS:Post "http://172.18.0.2:5001/api/v0/pin/ls?type=recursive": dial tcp 172.18.0.2:5001: connect: connection refused
-    ```
+   ```bash
+   cluster2    | 2020-10-27T15:20:15.116Z  ERROR   ipfshttp    error posting to IPFS:Post "http://172.18.0.2:5001/api/v0/pin/ls?type=recursive": dial tcp 172.18.0.2:5001: connect: connection refused
+   ```
 
-    You can safely ignore these for now. They're showing because some of the IPFS nodes within the cluster haven't finished spinning up yet. Everything should have loaded after a couple of minutes:
+   You can safely ignore these for now. They're showing because some of the IPFS nodes within the cluster haven't finished spinning up yet. Everything should have loaded after a couple of minutes:
 
-    ```bash
-    > ipfs1       | API server listening on /ip4/0.0.0.0/tcp/5001
-    > ipfs1       | WebUI: http://0.0.0.0:5001/webui
-    > ipfs1       | Gateway (readonly) server listening on /ip4/0.0.0.0/tcp/8080
-    > ipfs1       | Daemon is ready
-    ```
+   ```bash
+   > ipfs1       | API server listening on /ip4/0.0.0.0/tcp/5001
+   > ipfs1       | WebUI: http://0.0.0.0:5001/webui
+   > ipfs1       | Gateway (readonly) server listening on /ip4/0.0.0.0/tcp/8080
+   > ipfs1       | Daemon is ready
+   ```
 
 1. You can now interact with your cluster. In a new terminal, navigate to the `ipfs-cluster-ctl` directory and list the peers within the cluster:
 
@@ -109,50 +109,50 @@ If you're having issues here, head over to the [official Docker documentation to
 
 1. Add a file into the cluster:
 
-    ```bash
-    wget https://upload.wikimedia.org/wikipedia/commons/6/63/Neptune_-_Voyager_2_%2829347980845%29_flatten_crop.jpg
-    ./ipfs-cluster-ctl add Neptune_-_Voyager_2_\(29347980845\)_flatten_crop.jpg 
-    
-    > added QmdzvHZt6QRJzySuVzURUvKCUzrgGwksvrsnqTryqxD4yn Neptune_-_Voyager_2_(29347980845)_flatten_crop.jpg
-    ```
+   ```bash
+   wget https://upload.wikimedia.org/wikipedia/commons/6/63/Neptune_-_Voyager_2_%2829347980845%29_flatten_crop.jpg
+   ./ipfs-cluster-ctl add Neptune_-_Voyager_2_\(29347980845\)_flatten_crop.jpg
+
+   > added QmdzvHZt6QRJzySuVzURUvKCUzrgGwksvrsnqTryqxD4yn Neptune_-_Voyager_2_(29347980845)_flatten_crop.jpg
+   ```
 
 1. See the status of that file across the cluster of IPFS nodes using the CID given above:
 
-    ```bash
-    ./ipfs-cluster-ctl status QmdzvHZt6QRJzySuVzURUvKCUzrgGwksvrsnqTryqxD4yn
+   ```bash
+   ./ipfs-cluster-ctl status QmdzvHZt6QRJzySuVzURUvKCUzrgGwksvrsnqTryqxD4yn
 
-    > QmdzvHZt6QRJzySuVzURUvKCUzrgGwksvrsnqTryqxD4yn:
-    > > cluster2             : PINNED | 2020-10-27T15:42:39.984850961Z
-    > > cluster0             : PINNED | 2020-10-27T15:42:39.984556496Z
-    > > cluster1             : PINNED | 2020-10-27T15:42:39.984842325Z
-    ```
+   > QmdzvHZt6QRJzySuVzURUvKCUzrgGwksvrsnqTryqxD4yn:
+   > > cluster2             : PINNED | 2020-10-27T15:42:39.984850961Z
+   > > cluster0             : PINNED | 2020-10-27T15:42:39.984556496Z
+   > > cluster1             : PINNED | 2020-10-27T15:42:39.984842325Z
+   ```
 
-    This shows us that `QmdzvHZ...` is pinned across the three IPFS nodes within our cluster.
+   This shows us that `QmdzvHZ...` is pinned across the three IPFS nodes within our cluster.
 
 1. When you're finished playing around, kill the cluster. You may have to run this as root:
 
-    ```bash
-    docker-compose kill
+   ```bash
+   docker-compose kill
 
-    > Killing cluster0 ... done
-    > Killing cluster1 ... done
-    > Killing cluster2 ... done
-    > Killing ipfs1    ... done
-    > Killing ipfs0    ... done
-    > Killing ipfs2    ... done
-    ```
+   > Killing cluster0 ... done
+   > Killing cluster1 ... done
+   > Killing cluster2 ... done
+   > Killing ipfs1    ... done
+   > Killing ipfs0    ... done
+   > Killing ipfs2    ... done
+   ```
 
-    The terminal running the `ipfs-cluster-ctl` daemon will close any open connections:
+   The terminal running the `ipfs-cluster-ctl` daemon will close any open connections:
 
-    ```bash
-    > ...
-    > ipfs0 exited with code 137
-    > ipfs1 exited with code 137
-    > cluster0 exited with code 137
-    > cluster2 exited with code 137
-    > cluster1 exited with code 137
-    > ipfs2 exited with code 137
-    ```
+   ```bash
+   > ...
+   > ipfs0 exited with code 137
+   > ipfs1 exited with code 137
+   > cluster0 exited with code 137
+   > cluster2 exited with code 137
+   > cluster1 exited with code 137
+   > ipfs2 exited with code 137
+   ```
 
 ## Next steps
 

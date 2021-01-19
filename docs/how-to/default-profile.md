@@ -26,6 +26,7 @@ If you previously configured your IPFS node to use another profile, let's say `b
 ```bash
 "prefix": "badger.datastore",
 ```
+
 ## Available profiles
 
 Here's a list of all the profiles available for your IPFS node:

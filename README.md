@@ -11,7 +11,7 @@ We would **love ❤️ your help** to improve existing items or make new ones ev
 
 ### Issues
 
-If you find something wrong within this repository, please raise an [issue here →](https://github.com/ipfs/ipfs-docs/issues). Unless the issue is urgent, updates will be batch-merged into `main` on Tuesdays or Thursdays. 
+If you find something wrong within this repository, please raise an [issue here →](https://github.com/ipfs/ipfs-docs/issues). Unless the issue is urgent, updates will be batch-merged into `main` on Tuesdays or Thursdays.
 
 ### Bounties
 

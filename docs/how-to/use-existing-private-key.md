@@ -7,10 +7,10 @@ description: How to start an IPFS node with a pre-generated private key.
 
 There are two locations in which IPFS stores private keys:
 
-Location | Purpose | Specification
--------- | --------- | -------------
-Config file (`~/.ipfs/config`) | Holds a single private key; used as the default for initializing the IPFS node, IPNS publishing, etc. | [config#identityprivkey](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#identityprivkey)
-Keystore (`~/.ipfs/keystore`) | Holds additional private keys the node has access to; can be used for IPNS signing, publishing, etc. | [fs-repo#keystore](https://github.com/ipfs/specs/blob/master/REPO_FS.md#keystore)
+| Location                       | Purpose                                                                                               | Specification                                                                                        |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Config file (`~/.ipfs/config`) | Holds a single private key; used as the default for initializing the IPFS node, IPNS publishing, etc. | [config#identityprivkey](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#identityprivkey) |
+| Keystore (`~/.ipfs/keystore`)  | Holds additional private keys the node has access to; can be used for IPNS signing, publishing, etc.  | [fs-repo#keystore](https://github.com/ipfs/specs/blob/master/REPO_FS.md#keystore)                    |
 
 Private keys are handled programmatically through code or through the CLI. Here we will show you how to use your existing private keys using both methods.
 
@@ -31,7 +31,6 @@ ipfs key import CustomKeyName ./CustomKeyFile
 ```
 
 The content of the file holding the private key you want to import into the IPFS keystore needs to be in the correct format to be valid. The format of keystore files is outlined in the [fs-repo](https://github.com/ipfs/specs/blob/master/REPO_FS.md#keystore) specification.
-
 
 ### JS-IPFS
 
@@ -74,7 +73,8 @@ Unfortunately, there's no clear way of initializing an IPFS node using your priv
 ## Troubleshooting
 
 ### Key not changing
-  - If you already have an initialized repo (i.e., `~/.jsipfs` is not empty), the existing key from the config file (`~/.jsipfs/config`) will be used instead of the provided one ([ipfs/js-ipfs#2261](https://github.com/ipfs/js-ipfs/issues/2261#issuecomment-637449985)).
+
+- If you already have an initialized repo (i.e., `~/.jsipfs` is not empty), the existing key from the config file (`~/.jsipfs/config`) will be used instead of the provided one ([ipfs/js-ipfs#2261](https://github.com/ipfs/js-ipfs/issues/2261#issuecomment-637449985)).
 
 ## Use cases
 
