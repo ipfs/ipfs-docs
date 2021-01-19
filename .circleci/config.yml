@@ -33,7 +33,6 @@ jobs:
         environment:
           DOMAIN: docs.ipfs.io
           BUILD_DIR: ./docs/.vuepress/dist
-          CLUSTER_HOST: /dnsaddr/ipfs-websites.collab.ipfscluster.io
     steps:
       - attach_workspace:
           at: /tmp/workspace
@@ -46,6 +45,9 @@ jobs:
             # Update DNSlink
             if [ "$CIRCLE_BRANCH" == "main" ] ; then
               dnslink-dnsimple -d $DOMAIN -r _dnslink -l /ipfs/$hash
+              export CLUSTER_HOST=/dnsaddr/ipfs-websites.collab.ipfscluster.io
+              pin-to-cluster.sh "$DOMAIN" /tmp/workspace/$BUILD_DIR
+              echo "Website added to collaborative cluster"
             fi
 workflows:
   version: 2
