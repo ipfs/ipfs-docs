@@ -144,10 +144,6 @@ If you are currently using MongoDB, you might be more comfortable with [ThreadDB
 
 [Textile](https://Textile.io) is a hosting company on IPFS developing the layers on top of IPFS. Among other things, they came up with separated _cloud_ environments called [buckets](https://docs.textile.io/hub/buckets/). Textile has also built an impressive toolset for [building decentralized applications and integrations](https://blog.textile.io/announcing-the-textile-protocol-hub/).
 
-### AWS S3 integration
-
-If you are using Amazon Web Service's S3 connections for your cloud, you can use [RTrade's storage server](https://github.com/RTradeLtd/s3x) to replicate it on IPFS with minimal disruption to your workflow. It is forked from the popular object storage server [MinIO](https://min.io/) and will be re-integrated into MinIO natively sometime soon.
-
 ### NextCloud integration
 
 [JusticeNode has created an extension](https://github.com/justicenode/files_external_ipfs) for the popular self-hosted cloud service NextCloud. This integration allows users to use IPFS as external storage.
