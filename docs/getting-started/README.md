@@ -13,7 +13,7 @@ HTTP is the protocol that most of internet runs on, and it has three major probl
 
 1. Finding files is hard.
 1. There is no built-in verification.
-1. Centralized servers and ineficient.
+1. Centralized servers are ineficient.
 
 ### Finding files
 
@@ -37,7 +37,7 @@ This approach comes with problems. What if Albert's computer is offline or unava
 
 These are all issues with how to find data, but there are more pressing concerns when it comes to validating the data that Laika receives. Using the protocols the majority of the internet runs off, there is no built-in way to validate that the data you are requesting is the data that you want to receive.
 
-### Validation of data
+### Data validation
 
 Laika works on the internation space station (ISS) and one of her tasks is to order food for the crew. Every week she records the stock levels within the ISS kithen and fills out a form detailing what the crew needs. She then sends this form to ground control. Once ground control receives the order, they pass it off to the robots who lilligently fulfill the order, pack it all into a rocket, and send it up to the ISS.
 
@@ -49,21 +49,10 @@ While the story of Laika and Gordo might be a bit farfetched, consider what happ
 
 While the situation with Nook is fairly entertaining, it's also a bit scary. Nook users trusted that the books they were getting were the official versions, and hadn't been manipulated in some way. Changing _kindle_ to _nook_ doesn't seem particularly naffarious, but would that be the case if a nation-state was in charge of sharing information? With no built-in way to validate files, how can users be sure that the data they've been given is correct?
 
-### Centralized control
+### Centralized inefficiencies
 
-The vast majority of the internet is controled by a few major companies. AWS is the biggest provider of web services in the western world, with Google Cloud Computing Services and Microsoft's Azure Cloud Platform not too far behind. While this is fairly conveinent for web developers, it creates a lot of issues for users.
+Albert is on a diplomatic mission to Alpha Centauri, along with a thousand other deligate from Earth. When he gets there, he is shocked to find out that the locals have never read Arthur Conan Doyle's _The Hound of the Baskervilles_! Albert is equally shocked to find that he forgot to pack his copy with him! So he grabs a computer to download a copy from The Gutenberg project.
 
-With information and access to sevices controls by a handful of companies, it's very easy for those companies to restirct access. It's also easier for government to force companies into only sharing information that the government deems suitable.
+Two things happen. First, Albert's computer performs a DNS lookup using the address `htts://gutenberg.org/ebooks/2852`, which returns `152.19.134.47`. Then, the computer is going to ask for the data `/ebooks/2852`. Unfortunately, each of these things will take many, many years. Even if Albert has DNS caching enabled, just the task of going all the way to earth, getting the data, and coming all the way back is just too long.
 
-<!--
-- Handful of companies control the vast majority of stuff.
-- It's very hard to exit the bubble once you're in it.
-- Centralization leads to unethical advertising practices:
-    - Tracking of users on every site they go to.
-    - Vast collections of personal data that companies hoard and then sell to each other.
-- Easy for companies or governments to restrict access to information.
--->
-
-## Solutions to these problems
-
-:
+A similar situation often happens here on Earth. Gordo lives on Tristan da Cunha, about 1700 miles of the cost of South Africa. Gordo wants to read $BOOK, so he visits The Gutenberg Project on his computer. Unfortunately, the Gutenberg servers are located in New York, so Gordo's request has to bounce all around the world and then all the way back again with the data. While this is nowhere near as long as Albert has to wait, it can still take a long time due to the inefficent routing and packet loss inherit in HTTP.
