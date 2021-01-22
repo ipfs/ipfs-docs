@@ -21,6 +21,8 @@ Most operating systems have a package manager, although they may not come pre-in
 
 Although we try our best to keep the package manager releases up to date, they sometimes lag behind the Go-IPFS GitHub releases page by a few days. If you'd like to install a release the very same day it comes out, use the [official distributions](#official-distributions) from [dist.ipfs.io](https://dist.ipfs.io).
 
+Note on Ubuntu Snap install: The IPFS Snap uses "strict" [confinement](https://snapcraft.io/docs/snap-confinement) by default, which may affect usability on the command line.  Consider specifying the `--classic` option when installing.
+
 ## Official distributions
 
 The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help users quickly find the latest version of every IPFS package. As soon as a new release of an IPFS package comes out, it is automatically shown on `dist.ipfs.io`, so you can be sure you're getting the latest software. These steps detail how to download and install Go-IPFS 0.7.0 from `dist.ipfs.io` using the command-line.
