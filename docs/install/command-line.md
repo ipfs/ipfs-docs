@@ -19,9 +19,11 @@ Most operating systems have a package manager, although they may not come pre-in
 | macOS            | [Homebrew](https://formulae.brew.sh/formula/ipfs)  | `brew install ipfs`  |
 | Ubuntu           | [Snap](https://snapcraft.io/ipfs)                  | `snap install ipfs`  |
 
-Although we try our best to keep the package manager releases up to date, they sometimes lag behind the Go-IPFS GitHub releases page by a few days. If you'd like to install a release the very same day it comes out, use the [official distributions](#official-distributions) from [dist.ipfs.io](https://dist.ipfs.io).
+:::warning
+The IPFS Snap uses _strict_ [confinement](https://snapcraft.io/docs/snap-confinement) by default, which may affect usability through the command-line.  Consider specifying the `--classic` option when installing.
+:::
 
-Note on Ubuntu Snap install: The IPFS Snap uses "strict" [confinement](https://snapcraft.io/docs/snap-confinement) by default, which may affect usability on the command line.  Consider specifying the `--classic` option when installing.
+Although we try our best to keep the package manager releases up to date, they sometimes lag behind the Go-IPFS GitHub releases page by a few days. If you'd like to install a release the very same day it comes out, use the [official distributions](#official-distributions) from [dist.ipfs.io](https://dist.ipfs.io).
 
 ## Official distributions
 
