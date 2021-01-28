@@ -43,7 +43,7 @@ module.exports = {
     domain: DEPLOY_DOMAIN,
     docsRepo: 'ipfs/ipfs-docs',
     docsDir: 'docs',
-    docsBranch: 'master',
+    docsBranch: 'main',
     feedbackWidget: {
       docsRepoIssue: 'ipfs/ipfs-docs'
     },
