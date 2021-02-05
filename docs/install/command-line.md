@@ -18,6 +18,7 @@ Most operating systems have a package manager, although they may not come pre-in
 | Windows          | [Chocolatey](https://chocolatey.org/packages/ipfs) | `choco install ipfs` |
 | macOS            | [Homebrew](https://formulae.brew.sh/formula/ipfs)  | `brew install ipfs`  |
 | Ubuntu           | [Snap](https://snapcraft.io/ipfs)                  | `snap install ipfs`  |
+| OpenBSD          | [packages](https://www.openbsd.org/faq/faq15.html) | `pkg_add go-ipfs`    |
 
 Although we try our best to keep the package manager releases up to date, they sometimes lag behind the Go-IPFS GitHub releases page by a few days. If you'd like to install a release the very same day it comes out, use the [official distributions](#official-distributions) from [dist.ipfs.io](https://dist.ipfs.io).
 
