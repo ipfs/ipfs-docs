@@ -13,11 +13,11 @@ There are several different ways to install IPFS using the command-line. The eas
 
 Most operating systems have a package manager, although they may not come pre-installed. Both Windows and macOS have open-source package managers that must be installed by the user. Ubuntu comes with the Snap package manager pre-installed. Package managers download packages, install applications, and keep everything up-to-date. They're the easiest way to install IPFS from the command-line.
 
-| Operating system | Package manager                                    | Install command      |
-| ---------------- | -------------------------------------------------- | -------------------- |
-| Windows          | [Chocolatey](https://chocolatey.org/packages/ipfs) | `choco install ipfs` |
-| macOS            | [Homebrew](https://formulae.brew.sh/formula/ipfs)  | `brew install ipfs`  |
-| Ubuntu           | [Snap](https://snapcraft.io/ipfs)                  | `snap install ipfs --classic` |
+| Operating system | Package manager                                    | Install command      | Notes |
+| ---------------- | -------------------------------------------------- | -------------------- | ----- |
+| Windows          | [Chocolatey](https://chocolatey.org/packages/ipfs) | `choco install ipfs` | |
+| macOS            | [Homebrew](https://formulae.brew.sh/formula/ipfs)  | `brew install ipfs`  | |
+| Ubuntu           | [Snap](https://snapcraft.io/ipfs)                  | `snap install ipfs` | The IPFS Snap uses [strict confinement](https://snapcraft.io/docs/snap-confinement) by default which may affect usability of IPFS.  Consider specifying the `--classic` option when installing. |
 
 Although we try our best to keep the package manager releases up to date, they sometimes lag behind the Go-IPFS GitHub releases page by a few days. If you'd like to install a release the very same day it comes out, use the [official distributions](#official-distributions) from [dist.ipfs.io](https://dist.ipfs.io).
 
