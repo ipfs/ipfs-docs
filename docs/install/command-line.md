@@ -22,7 +22,7 @@ Most operating systems have a package manager, although they may not come pre-in
 Although we try our best to keep the package manager releases up to date, they sometimes lag behind the Go-IPFS GitHub releases page by a few days. If you'd like to install a release the very same day it comes out, use the [official distributions](#official-distributions) from [dist.ipfs.io](https://dist.ipfs.io).
 
 :::warning
-On Ubuntu, the IPFS Snap uses [strict confinement](https://snapcraft.io/docs/snap-confinement) by default and might affect usability of IPFS. Consider specifying the `--classic` option when installing.
+On Ubuntu, the IPFS Snap uses [strict confinement](https://snapcraft.io/docs/snap-confinement) by default.  This includes some restrictions, such as not allowing `ipfs` to access files outside of `/home`. If this affects usability for you, consider [connecting](https://snapcraft.io/docs/interface-management) the [removable-media interface](https://snapcraft.io/docs/removable-media-interface) for `ipfs` snap, or specifying the `--classic` option when installing.
 :::
 
 ## Official distributions
