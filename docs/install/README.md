@@ -21,4 +21,4 @@ Planning to set up several IPFS nodes within one network? You'll want to take a 
 
 ## Surf the decentralized web
 
-Not many browsers come with IPFS built-in, unfortunately. But, you can install an IPFS companion extension that will let you view decentralized web content! [Learn more →](/install/ipfs-companion)
+Some browsers such as [Brave](https://brave.com/) and [Opera](https://www.opera.com/) come with IPFS built-in. If your browser doesn't support IPFS yet you can install an IPFS companion extension that will let you view decentralized web content! [Learn more →](/install/ipfs-companion)
