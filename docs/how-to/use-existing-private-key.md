@@ -84,6 +84,6 @@ Unfortunately, there's no clear way of initializing an IPFS node using your priv
 - Rotate the IPFS identity.
 - Use keys created from a third-party.
 
-## Learn more
+## Security
 
-We highly recommend you check the existing GitHub issues for the library you're interested in using. They can be very insightful and help you through the learning process.
+Using pre-existing keys with your IPFS installation comes with some security concerns that aren't present when using the IPFS-generated keys. You have to manage your keys and their security. Remember that private keys are your identity and the only way of seeing encrypted content, publishing as you, among other actions.
