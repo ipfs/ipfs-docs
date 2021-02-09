@@ -19,10 +19,6 @@ The easiest way to install IPFS Companion is through your browser's add-on store
 
 Make sure you have [IPFS installed](https://ipfs.io/#install) on your computer as well. Because IPFS Companion (in its standard configuration) talks to your computer's local IPFS node to work its browser magic, you'll need to have IPFS running on your computer, too.
 
-### Beta and development channels
-
-If you're looking for a more current or bleeding-edge version of IPFS Companion, check out how to use the beta or development channels in the [project's GitHub repository](https://github.com/ipfs-shipyard/ipfs-companion)!
-
 ## Features
 
 IPFS Companion supercharges your browser for the DWeb with features including the following:
