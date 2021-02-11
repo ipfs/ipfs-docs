@@ -298,7 +298,8 @@ module.exports = {
                   ['https://proto.school/events', 'ProtoSchool workshops'],
                   ['https://www.meetup.com/members/249142444/', 'Meetups'],
                   '/community/social-media',
-                  ['https://awesome.ipfs.io', 'Awesome IPFS']
+                  ['https://awesome.ipfs.io', 'Awesome IPFS'],
+                  ['https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqqsew', 'YouTube']
                 ]
               },
               {
