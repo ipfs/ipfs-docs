@@ -107,9 +107,10 @@ These are a combination of `<transport address>/p2p/<hash-of-public-key>`.
 Now, you should be able to get objects from the network. Try:
 
 ```bash
-ipfs cat /ipfs/QmW2WQi7j6c7UgJTarActp7tDNikE4B2qXtFCfLPdsgaTQ/cat.jpg > cat.jpg
-open cat.jpg
+ipfs cat /ipfs/QmSgvgwxZGaBLqkGyWemEDqikCqU52XxsYLKtdy3vGZ8uq > ~/Desktop/spaceship-launch.jpg
 ```
+
+Using the above command, IPFS searches the network for the CID `QmSgv...` and writes the data into a file called `spaceship-launch.jpg` on your Desktop.
 
 Next, try sending objects to the network, and then viewing it in your favorite browser. The example below uses `curl` as the browser, but you can open the IPFS URL in other browsers as well:
 
