@@ -68,3 +68,9 @@ npx all-relative
 ```
 
 Upload the `_site` folder to IPFS.
+
+## WordPress
+
+While WordPress is not a static site generator, it is possible to turn it into a static website and migrate it over to a static-hosting service. [Take a look at this blog post from Fleek that walks you through the whole process](https://blog.fleek.co/posts/wordpress+fleek)!
+
+Keep in mind that you will lose the ability to manage your website's content through the WordPress _back-end_, and that this process requires that you install a plugin along-side your WordPress site.
