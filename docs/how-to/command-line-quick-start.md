@@ -22,7 +22,8 @@ If you have not yet installed Go-IPFS, follow the [install instructions](../../i
 
 ```bash
 ipfs init
-> initializing ipfs node at /Users/jbenet/.go-ipfs
+
+> initializing ipfs node at /Users/jbenet/.ipfs
 > generating 2048-bit RSA keypair...done
 > peer identity: Qmcpo2iLBikrdf1d6QU6vXuNb6P7hwrbNPW9kLAH8eG67z
 > to get started, enter:
@@ -85,6 +86,7 @@ Once you're ready to join your node to the public network, run the ipfs daemon i
 
 ```bash
 ipfs daemon
+
 > Initializing daemon...
 > API server listening on /ip4/127.0.0.1/tcp/5001
 > Gateway server listening on /ip4/127.0.0.1/tcp/8080
@@ -96,6 +98,7 @@ Now, switch back to your original terminal. If you’re connected to the network
 
 ```bash
 ipfs swarm peers
+
 > /ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
 > /ip4/104.236.151.122/tcp/4001/p2p/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx
 > /ip4/134.121.64.93/tcp/1035/p2p/QmWHyrPWQnsz1wxHR219ooJDYTvxJPyZuDUPSDpdsAovN5
@@ -117,6 +120,7 @@ Next, try sending objects to the network, and then viewing it in your favorite b
 ```bash
 hash=`echo "I <3 IPFS -$(whoami)" | ipfs add -q`
 curl "https://ipfs.io/ipfs/$hash"
+
 > I <3 IPFS -<your username>
 ```
 
@@ -128,6 +132,7 @@ You can also check it out at your own local gateway:
 
 ```bash
 curl "http://127.0.0.1:8080/ipfs/$hash"
+
 > I <3 IPFS -<your username>
 ```
 
