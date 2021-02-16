@@ -22,7 +22,7 @@ If you have not yet installed Go-IPFS, follow the [install instructions](../../i
 
 ```bash
 ipfs init
-> initializing ipfs node at /Users/jbenet/.go-ipfs
+> initializing ipfs node at /Users/jbenet/.ipfs
 > generating 2048-bit RSA keypair...done
 > peer identity: Qmcpo2iLBikrdf1d6QU6vXuNb6P7hwrbNPW9kLAH8eG67z
 > to get started, enter:
