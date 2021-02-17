@@ -8,7 +8,7 @@ description: Learn how to pin files in IPFS in order to keep your files and othe
 
 Pinning is a very important concept in IPFS. IPFS semantics try to make it feel like every single object is local — there is no "retrieve this file for me from a remote server", just `ipfs cat` or `ipfs get`, which act the same way no matter where the actual object is located.
 
-While this is nice, sometimes you want to be able to control what you keep around. **Pinning** is the mechanism that allows you to tell IPFS to always keep a given object somewhere — the default being your local node, though this can be different if you use a [third-party remote pinning service](#using-a-pinning-service). IPFS has a fairly aggressive caching mechanism that will keep an object local for a short time after you perform any IPFS operation on it, but these objects may get garbage-collected regularly. To prevent that garbage collection, simply pin the hash you care about. Objects added through `ipfs add` are pinned recursively by default.
+While this is nice, sometimes you want to be able to control what you keep around. **Pinning** is the mechanism that allows you to tell IPFS to always keep a given object somewhere — the default being your local node, though this can be different if you use a [third-party remote pinning service](#using-a-pinning-service). IPFS has a fairly aggressive caching mechanism that will keep an object local for a short time after you perform any IPFS operation on it, but these objects may get garbage-collected regularly. To prevent that garbage collection, simply pin the CID you care about, or add it to [MFS](/concepts/file-systems/#mutable-file-system-mfs). Objects added through `ipfs add` are pinned recursively by default. Things in MFS are not pinned by default, but are protected from garbage-collection, so one can think about MFS as a mechanism for implicit pinning.
 
 Let's look at this example to explore pinning to your local IPFS node in a bit more depth:
 
@@ -51,6 +51,10 @@ All the information above assumes that you're pinning items locally — that is,
 
 While you can use a remote pinning service's own GUI, CLI, or other dev tools to manage IPFS files pinned to their service, you can also work directly with pinning services using your local IPFS installation — meaning that you don't need to learn a pinning service's unique API or other tooling.
 
-- The [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/) offers a specification that enables developers to integrate any pinning service that supports the spec, using simple, standardized schemas and fields.
-- If you use go-ipfs from the command line, you can add your favorite pinning service(s), pin CIDs under human-readable names, get pin statuses, and more straight from the CLI. [Learn how →](/how-to/work-with-pinning-services/)
+- The [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/) offers a specification that enables developers to integrate any pinning service that supports the spec, or create their own. Thanks to the OpenAPI spec format, both clients and servers can be [generated](https://github.com/ipfs/pinning-services-api-spec#code-generation) from the YAML spec file.
+
+- If you use go-ipfs 0.8+ from the command line, you have access to `ipfs pin remote` commands: the porcelain client for interacting with Pinning Service APIs. Add your favorite pinning service(s), pin CIDs under human-readable names, get pin statuses, and more straight from the CLI. [Learn how →](/how-to/work-with-pinning-services/)
+
+<!-- commented out for now, ok to uncomment when https://github.com/ipfs/ipfs-gui/issues/91 is closed
 - [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) and its equivalent in-browser IPFS web interface, the [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui), both support remote pinning services, so you can pin to your favorite pinning service(s) straight from the UI. [Learn how →](/how-to/work-with-pinning-services/)
+-->
