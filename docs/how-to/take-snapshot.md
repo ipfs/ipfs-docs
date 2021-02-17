@@ -30,7 +30,7 @@ echo `ipfs add -q -r ~/code/myproject | tail -n1` `date` >> snapshots
 
 Make sure to have the placeholders for the mount points:
 
-```basg
+```bash
 sudo mkdir /ipfs /ipns
 sudo chown `whoami` /ipfs /ipns
 ```

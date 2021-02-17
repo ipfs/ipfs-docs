@@ -19,7 +19,7 @@ The biggest and most active repositories we have today are:
 - [libp2p/go-libp2p](https://github.com/libp2p/go-libp2p)
 - [libp2p/js-libp2p](https://github.com/libp2p/js-libp2p)
 
-If you want to start contributing to the core of IPFS, those repositories are a great place start. But the _Help Wanted_ label exists in all of our repositories across the Github organizations:
+If you want to start contributing to the core of IPFS, those repositories are a great place to start. But the _Help Wanted_ label exists in all of our repositories across the Github organizations:
 
 - [IPFS](https://github.com/ipfs)
 - [libp2p](https://github.com/libp2p)
@@ -28,7 +28,7 @@ If you want to start contributing to the core of IPFS, those repositories are a 
 
 ## Documentation
 
-IPFS is a huge project and undertaking, and with lots of code comes the need for lots of good documentation! However, we need a lot more help to write the awesome docs the project needs. If writing technical documentation is your area, we’d absolutely love your help!
+IPFS is a huge project and undertaking, and with lots of code comes the need for lots of good documentation! However, we need a lot more help to write the awesome docs the project needs. If writing technical documentation is your area, we'd absolutely love your help!
 
 Before contributing to the IPFS docs, please read these quick guides; they'll save you time and help keep the docs accurate and consistent!
 
@@ -36,27 +36,27 @@ Before contributing to the IPFS docs, please read these quick guides; they'll sa
 2. [Writing guide](/community/contribute/writing-guide/)
 3. [Code persona](/community/contribute/code-persona/)
 
-If you have never contributed to an open-source project before, or just need a refresher, take a look at the [contribution tutorial](/community/contribute/contribution-tutorial/).
+If you have never contributed to an open-source project before or just need a refresher, take a look at the [contribution tutorial](/community/contribute/contribution-tutorial/).
 
 ## Support
 
-IPFS already has lots of users and curious people experimenting and using IPFS in their applications. These users sometimes get stuck or have questions that need answering. If you’ve contributed something with code or documentation, chances are that you can probably help a lot of people with their questions.
+IPFS already has lots of users and curious people experimenting and using IPFS in their applications. These users sometimes get stuck or have questions that need answering. If you've contributed something with code or documentation, the chances are that you can probably help a lot of people with their questions.
 
 The [IPFS forum](https://discuss.ipfs.io/) is the best place to go if you're looking for support.
 
 ## Testing
 
-We’re continuously improving IPFS every day, but mistakes can happen and we could release something that doesn’t work as well as it should — or simply doesn't work at all! If you like to dig into edge-cases or write testing scenarios, wrangling our testing infrastructure could be the job for you.
+We're continuously improving IPFS every day, but mistakes can happen, and we could release something that doesn't work as well as it should — or simply doesn't work at all! If you like to dig into edge-cases or write testing scenarios, wrangling our testing infrastructure could be the job for you.
 
 We work on [CI tools](https://github.com/ipfs/jenkins) and plan larger scale tests at [ipfs/kubernetes-ipfs](https://github.com/ipfs/kubernetes-ipfs).
 
 ## Design
 
-We have many design needs, but only a small team of visual and UX designers who divide their time between IPFS-related projects and other work here. That means there are a number of issues which could use your design contributions. As home to IPFS Desktop and Companion, the [ipfs-gui](https://github.com/ipfs/ipfs-gui) repo is a good place to look for opportunities to help move our design work forward. Simply filter by the label that best fits your skillset, such as [design-visual](https://github.com/ipfs/ipfs-gui/issues?q=is%3Aissue+is%3Aopen+label%3Adesign-visual) or [design-ux](https://github.com/ipfs/ipfs-gui/labels/design-ux).
+We have many design needs, but only a small team of visual and UX designers who divide their time between IPFS-related projects and other work here. That means there are a number of issues that could use your design contributions. As home to IPFS Desktop and Companion, the [ipfs-gui](https://github.com/ipfs/ipfs-gui) repo is a good place to look for opportunities to help move our design work forward. Simply filter by the label that best fits your skill set, such as [design-visual](https://github.com/ipfs/ipfs-gui/issues?q=is%3Aissue+is%3Aopen+label%3Adesign-visual) or [design-ux](https://github.com/ipfs/ipfs-gui/labels/design-ux).
 
 ## Issues / Triaging
 
-With lots of code come lots of Github Issues. We need YOU to help with organizing all of this in some manner. We don’t yet have any proper resources for getting started with this. Get in touch if you can contribute a sense of extreme organization!
+With lots of code come lots of Github Issues. We need YOU to help with organizing all of this in some manner. We don't yet have any proper resources for getting started with this. Get in touch if you can contribute a sense of extreme organization!
 
 We currently don't have a single place for this. If you'd like to start it, please let us know.
 
@@ -69,7 +69,7 @@ We have a [repository for organizing community events](https://github.com/ipfs/c
 
 ## Applications
 
-IPFS is designed for others to build applications around it! Building applications and services using IPFS is an excellent way to find use cases where IPFS doesn’t yet do a perfect job or uncover bugs and inefficiencies.
+IPFS is designed for others to build applications around it! Building applications and services using IPFS is an excellent way to find use cases where IPFS doesn't yet do a perfect job or uncover bugs and inefficiencies.
 
 Get started by looking at our awesome-ipfs list. Build anything you think is missing! If you're unsure about something, please create an issue to get help or feedback on your specific problem/idea.
 

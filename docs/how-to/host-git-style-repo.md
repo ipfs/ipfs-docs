@@ -51,7 +51,7 @@ Now, try cloning it:
 
 ```
 $ cd /tmp
-$ git clone http://localhost:8080/ipfs/QmX679gmfyaRkKMvPA4WGNWXj9PtpvKWGPgtXaF18etC95 myrepo
+$ git clone http://QmX679gmfyaRkKMvPA4WGNWXj9PtpvKWGPgtXaF18etC95.ipfs.localhost:8080/ myrepo
 ```
 
 Note: make sure to change out that hash for yours.

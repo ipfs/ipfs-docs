@@ -12,139 +12,9 @@ If you're command-line savvy and just want to get up and running with IPFS right
 Don’t want to use the command line right now? Give the desktop-app implementation of IPFS a try. It also does all the steps listed on this page automatically, so you can run IPFS from the terminal later whenever you want. [Download IPFS Desktop now](https://github.com/ipfs-shipyard/ipfs-desktop)
 :::
 
-## Install IPFS
+## Prerequisites
 
-Installing IPFS is simple, but varies between operating system:
-
-| [Windows](#windows)                                                                                 | [macOS](#macos)                                                                               | [Linux](#linux)                                                                               |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [![Windows icon](./../install/images/command-line-quick-start/windows-icon.png =250x200)](#windows) | [![macOS icon](./../install/images/command-line-quick-start/apple-icon.png =250x200)](#macos) | [![Linux icon](./../install/images/command-line-quick-start/linux-icon.png =250x200)](#linux) |
-
-### Windows
-
-1. Download [`go-ipfs_v0.6.0_windows-386.zip` from GitHub](https://github.com/ipfs/go-ipfs/releases/download/v0.6.0/).
-
-   ```powershell
-   cd ~\
-   wget https://github.com/ipfs/go-ipfs/releases/download/v0.6.0/go-ipfs-v0.6.0_windows-386.zip -Outfile go-ipfs-v0.6.0.zip
-   ```
-
-1. Unzip the file and move it somewhere handy.
-
-   ```powershell
-   Expand-Archive -Path go-ipfs-v0.6.0.zip -DestinationPath ~\Apps\go-ipfs_v0.6.0
-   ```
-
-1. Move into the `go-ipfs_v0.6.0` folder and check that the `ipfs.exe` works:
-
-   ```powershell
-   cd ~\Apps\go-ipfs_v0.6.0\go-ipfs
-   .\ipfs.exe --version
-
-   > ipfs version 0.6.0
-   ```
-
-   While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH.` by using the following steps.
-
-1. Print the current working directory and copy it to your clipboard:
-
-   ```powershell
-   pwd
-
-   > Path
-   > ----
-   > C:\Users\Johnny\Apps\go-ipfs_v0.6.0\go-ipfs
-   ```
-
-1. Add the address you just copied to PowerShell's `PATH` by adding it to the end of the `profile.ps1` file stored in `Documents\WindowsPowerShell`:
-
-   ```powershell
-   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\Johnny\Apps\go-ipfs_v0.6.0\go-ipfs')"
-   ```
-
-1. Close and reopen your PowerShell window. Test that your IPFS path is set correctly by going to your home folder and asking IPFS for the version:
-
-   ```powershell
-   cd ~
-   ipfs --version
-
-   > ipfs version 0.6.0
-   ```
-
-### macOS
-
-1. Download [`go-ipfs_v0.6.0_darwin-386.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.6.0).
-
-   ```bash
-   wget https://github.com/ipfs/go-ipfs/releases/download/v0.6.0/go-ipfs_v0.6.0_darwin-amd64.tar.gz
-   ```
-
-1. Unzip the file:
-
-   ```bash
-   tar -xvzf go-ipfs_v0.6.0_darwin-amd64.tar.gz
-
-   > x go-ipfs/install.sh
-   > x go-ipfs/ipfs
-   > x go-ipfs/LICENSE
-   > x go-ipfs/LICENSE-APACHE
-   > x go-ipfs/LICENSE-MIT
-   > x go-ipfs/README.md
-   ```
-
-1. Move into the `go-ipfs` folder and run the install script:
-
-   ```bash
-   bash install.sh
-
-   > Moved ./ipfs to /usr/local/bin
-   ```
-
-1. Check that IPFS install properly:
-
-   ```bash
-   ipfs --version
-
-   > ipfs version 0.6.0
-   ```
-
-### Linux
-
-1. Download [`go-ipfs_v0.6.0_linux-amd64.tar.gz` from GitHub](https://github.com/ipfs/go-ipfs/releases/tag/v0.6.0):
-
-   ```bash
-   wget https://github.com/ipfs/go-ipfs/releases/download/v0.6.0/go-ipfs_v0.6.0_linux-amd64.tar.gz
-   ```
-
-1. Unzip the file:
-
-   ```bash
-   tar -xvzf go-ipfs_v0.6.0_linux-amd64.tar.gz
-
-   > x go-ipfs/install.sh
-   > x go-ipfs/ipfs
-   > x go-ipfs/LICENSE
-   > x go-ipfs/LICENSE-APACHE
-   > x go-ipfs/LICENSE-MIT
-   > x go-ipfs/README.md
-   ```
-
-1. Move into the `go-ipfs` folder and run the install script:
-
-   ```bash
-   cd go-ipfs
-   sudo bash install.sh
-
-   > Moved ./ipfs to /usr/local/bin
-   ```
-
-1. Test that IPFS has installed correctly:
-
-   ```bash
-   ipfs --version
-
-   > ipfs version 0.6.0
-   ```
+If you have not yet installed Go-IPFS, follow the [install instructions](../../install/command-line).
 
 ## Initialize the repository
 
@@ -152,7 +22,8 @@ Installing IPFS is simple, but varies between operating system:
 
 ```bash
 ipfs init
-> initializing ipfs node at /Users/jbenet/.go-ipfs
+
+> initializing ipfs node at /Users/jbenet/.ipfs
 > generating 2048-bit RSA keypair...done
 > peer identity: Qmcpo2iLBikrdf1d6QU6vXuNb6P7hwrbNPW9kLAH8eG67z
 > to get started, enter:
@@ -174,7 +45,7 @@ Now, try running the command suggested to you in the output of `ipfs init`. The 
 
 You should see something like this:
 
-```text
+```
 Hello and Welcome to IPFS!
 
 ██╗██████╗ ███████╗███████╗
@@ -215,6 +86,7 @@ Once you're ready to join your node to the public network, run the ipfs daemon i
 
 ```bash
 ipfs daemon
+
 > Initializing daemon...
 > API server listening on /ip4/127.0.0.1/tcp/5001
 > Gateway server listening on /ip4/127.0.0.1/tcp/8080
@@ -226,6 +98,7 @@ Now, switch back to your original terminal. If you’re connected to the network
 
 ```bash
 ipfs swarm peers
+
 > /ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
 > /ip4/104.236.151.122/tcp/4001/p2p/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx
 > /ip4/134.121.64.93/tcp/1035/p2p/QmWHyrPWQnsz1wxHR219ooJDYTvxJPyZuDUPSDpdsAovN5
@@ -237,15 +110,17 @@ These are a combination of `<transport address>/p2p/<hash-of-public-key>`.
 Now, you should be able to get objects from the network. Try:
 
 ```bash
-ipfs cat /ipfs/QmW2WQi7j6c7UgJTarActp7tDNikE4B2qXtFCfLPdsgaTQ/cat.jpg > cat.jpg
-open cat.jpg
+ipfs cat /ipfs/QmSgvgwxZGaBLqkGyWemEDqikCqU52XxsYLKtdy3vGZ8uq > ~/Desktop/spaceship-launch.jpg
 ```
+
+Using the above command, IPFS searches the network for the CID `QmSgv...` and writes the data into a file called `spaceship-launch.jpg` on your Desktop.
 
 Next, try sending objects to the network, and then viewing it in your favorite browser. The example below uses `curl` as the browser, but you can open the IPFS URL in other browsers as well:
 
 ```bash
 hash=`echo "I <3 IPFS -$(whoami)" | ipfs add -q`
 curl "https://ipfs.io/ipfs/$hash"
+
 > I <3 IPFS -<your username>
 ```
 
@@ -257,6 +132,7 @@ You can also check it out at your own local gateway:
 
 ```bash
 curl "http://127.0.0.1:8080/ipfs/$hash"
+
 > I <3 IPFS -<your username>
 ```
 
@@ -266,7 +142,7 @@ By default, your gateway is not exposed to the world. It only works locally.
 
 You can view the web console on your local node by going to [`localhost:5001/webui`](http://localhost:5001/webui). This should bring up a console like this:
 
-![Web console connection view](./../install/images/command-line-quick-start/webui-connection.png =740x417)
+![Web console connection view](./images/command-line-quick-start/webui-connection.png)
 
 ## IPFS Companion
 

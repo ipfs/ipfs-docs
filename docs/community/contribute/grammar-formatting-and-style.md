@@ -64,7 +64,7 @@ The following rules apply to editing and styling text.
 
 #### Titles
 
-1. All titles follow sentence structure. Only _names_ and _places_ are capitalized, along with the first letter of the title. All other letters are lower-case:
+1. All titles follow sentence structure. Only _names_ and _places_ are capitalized, along with the first letter of the title. All other letters are lowercase:
 
    ```markdown
    ## This is a title
@@ -87,7 +87,7 @@ The following rules apply to editing and styling text.
    Example body text.
    ```
 
-   In the above example `title:` serves as a `<h1>` or `#` tag. There is only ever one title of this level in each article.
+   In the above example, `title:` serves as a `<h1>` or `#` tag. There is only ever one title of this level in each article.
 
 3. Titles do not contain punctuation. If you have a question within your title, rephrase it as a statement:
 
@@ -240,7 +240,7 @@ All images contain alt text so that screen-reading programs can describe the ima
 
 #### Storage location
 
-Store images in a folder called `images` within the same directory as the article the image is presented in. If there are several articles within the same directory, create a new folder within `images` for each article. For example the article `upload-a-photo.md` contains the following line:
+Store images in a folder called `images` within the same directory as the article the image is presented in. If there are several articles within the same directory, create a new folder within `images` for each article. For example, the article `upload-a-photo.md` contains the following line:
 
 ```markdown
 ![Screenshot of an image being uploaded through the IPFS desktop application.](images/upload-a-photo/ipfs-desktop-image-upload-screen.png)
@@ -248,12 +248,12 @@ Store images in a folder called `images` within the same directory as the articl
 
 The directory structure of this article looks like this:
 
-```text
+```
 ipfs-desktop/
 ├── download-the-config.md
 ├── images
-│   └── upload-a-photo
-│       └── ipfs-desktop-image-upload-screen.png
+│   └── upload-a-photo
+│       └── ipfs-desktop-image-upload-screen.png
 └── upload-a-photo.md
 ```
 
@@ -263,7 +263,7 @@ There are no images within the `download-the-config.md` article, so there is no 
 
 All file names are lower-case with dashes `-` between words, including image files:
 
-```text
+```
 ipfs-desktop/
 ├── add-a-user.md
 ├── enable-debug-mode.md

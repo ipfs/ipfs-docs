@@ -30,14 +30,14 @@
 import EditOrIssue from './EditOrIssue.vue'
 
 export default {
-  data: function() {
+  data: function () {
     return {
       voteSubmitted: false,
       currentPath: this.$route.path
     }
   },
   methods: {
-    sendFeedback: function(evtType) {
+    sendFeedback: function (evtType) {
       this.voteSubmitted = true
 
       // bail if ga is not enabled
@@ -51,7 +51,7 @@ export default {
     }
   },
   watch: {
-    '$route.path': function(path) {
+    '$route.path': function (path) {
       this.voteSubmitted = false
       this.currentPath = path
     }

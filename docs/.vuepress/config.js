@@ -1,6 +1,7 @@
 // .vuepress/config.js
 
 const DEPLOY_DOMAIN = 'https://docs.ipfs.io'
+const pageSuffix = '/'
 
 module.exports = {
   base: '/',
@@ -13,6 +14,7 @@ module.exports = {
     }
   },
   markdown: {
+    pageSuffix,
     extendMarkdown: md => {
       md.set({
         breaks: true
@@ -38,11 +40,10 @@ module.exports = {
     keywords:
       'IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
     // edit links
-    // repo: 'ipfs/ipfs-docs-v2',
     domain: DEPLOY_DOMAIN,
     docsRepo: 'ipfs/ipfs-docs',
     docsDir: 'docs',
-    docsBranch: 'master',
+    docsBranch: 'main',
     feedbackWidget: {
       docsRepoIssue: 'ipfs/ipfs-docs'
     },
@@ -70,16 +71,31 @@ module.exports = {
           {
             title: 'Install',
             path: '/install/',
-            children: ['/install/command-line-quick-start']
+            children: [
+              'install/ipfs-desktop',
+              'install/ipfs-companion',
+              'install/command-line',
+              ['install/ipfs-updater', 'Updater'],
+              'install/server-infrastructure'
+            ]
           },
           {
             title: 'Recent releases',
             path: '/recent-releases/',
             children: [
               {
+                title: 'Go-IPFS 0.7',
+                sidebarDepth: 1,
+                children: [
+                  '/recent-releases/go-ipfs-0-7/',
+                  ['/recent-releases/go-ipfs-0-7/install', 'Install'],
+                  '/recent-releases/go-ipfs-0-7/update-procedure',
+                  '/recent-releases/go-ipfs-0-7/features'
+                ]
+              },
+              {
                 title: 'Go-IPFS 0.6',
                 sidebarDepth: 1,
-                collapsable: false,
                 children: [
                   '/recent-releases/go-ipfs-0-6/',
                   ['/recent-releases/go-ipfs-0-6/install', 'Install'],
@@ -90,7 +106,6 @@ module.exports = {
               {
                 title: 'Go-IPFS 0.5',
                 sidebarDepth: 1,
-                collapsable: false,
                 children: [
                   '/recent-releases/go-ipfs-0-5/',
                   ['/recent-releases/go-ipfs-0-5/install', 'Install'],
@@ -113,18 +128,23 @@ module.exports = {
                 children: [
                   '/concepts/what-is-ipfs',
                   '/concepts/how-ipfs-works',
-                  ['https://dweb-primer.ipfs.io/', 'IPFS primer'],
+                  '/concepts/privacy',
                   '/concepts/glossary',
+                  '/concepts/usage-ideas-examples',
                   '/concepts/faq'
                 ]
               },
               {
-                title: 'Examples & case studies',
+                title: 'Case studies',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/concepts/usage-ideas-examples',
-                  '/concepts/case-study-audius'
+                  ['/concepts/case-study-arbol', 'Arbol'],
+                  ['/concepts/case-study-audius', 'Audius'],
+                  ['/concepts/case-study-fleek', 'Fleek'],
+                  ['/concepts/case-study-likecoin', 'LikeCoin'],
+                  ['/concepts/case-study-morpheus', 'Morpheus.Network'],
+                  ['/concepts/case-study-openbazaar', 'OpenBazaar']
                 ]
               },
               {
@@ -183,6 +203,8 @@ module.exports = {
                 children: [
                   '/how-to/configure-node',
                   '/how-to/modify-bootstrap-list',
+                  '/how-to/nat-configuration',
+                  '/how-to/default-profile',
                   [
                     'https://github.com/ipfs/js-ipfs/tree/master/examples/custom-ipfs-repo',
                     'Customize an IPFS repo'
@@ -194,32 +216,13 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/ipfs-101',
-                    'Use js-ipfs as a library'
-                  ],
-                  [
-                    'https://github.com/ipfs/go-ipfs/tree/master/docs/examples/go-ipfs-as-a-library/README.md',
-                    'Use go-ipfs as a library'
-                  ],
                   '/how-to/work-with-blocks',
                   '/how-to/pin-files',
                   '/how-to/work-with-pinning-services',
-                  [
-                    'https://github.com/ipfs/go-ipfs/blob/master/docs/file-transfer.md',
-                    'Troubleshoot file transfers'
-                  ],
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/traverse-ipld-graphs',
-                    'Traverse IPLD graphs'
-                  ],
+                  '/how-to/troubleshoot-file-transfers',
                   '/how-to/take-snapshot',
                   '/how-to/store-play-videos',
                   '/how-to/host-git-style-repo',
-                  [
-                    'https://github.com/ipfs/archives/tree/master/tutorials/replicating-large-datasets',
-                    'Replicate large datasets'
-                  ],
                   '/how-to/move-ipfs-installation'
                 ]
               },
@@ -229,47 +232,19 @@ module.exports = {
                 collapsable: false,
                 children: [
                   '/how-to/observe-peers',
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/custom-libp2p',
-                    'Customize libp2p bundles'
-                  ],
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/circuit-relaying',
-                    'Use circuit relay'
-                  ]
+                  '/how-to/exchange-files-between-nodes'
                 ]
               },
               {
-                title: 'Host websites',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: ['/how-to/host-single-page-site']
-              },
-              {
-                title: 'Work with blockchains',
+                title: 'Websites on IPFS',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/explore-ethereum-blockchain',
-                    'Explore the Ethereum chain'
-                  ]
-                ]
-              },
-              {
-                title: 'Build apps',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/how-to/make-service',
-                  [
-                    'https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_C',
-                    'Build with the IPFS API'
-                  ],
-                  [
-                    'https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_B',
-                    'Make a basic libp2p app'
-                  ]
+                  '/how-to/websites-on-ipfs/single-page-website',
+                  '/how-to/websites-on-ipfs/multipage-website',
+                  '/how-to/websites-on-ipfs/link-a-domain',
+                  '/how-to/websites-on-ipfs/introducing-fleek',
+                  '/how-to/websites-on-ipfs/static-site-generators'
                 ]
               },
               {
@@ -278,30 +253,6 @@ module.exports = {
                 collapsable: false,
                 children: [
                   'how-to/address-ipfs-on-web',
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/exchange-files-in-browser',
-                    'Exchange files between nodes'
-                  ],
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/browser-mfs',
-                    'Use MFS in the browser'
-                  ],
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/browser-add-readable-stream',
-                    'Add directories using streams'
-                  ],
-                  [
-                    'https://www.youtube.com/watch?v=Nv_Teb--1zg',
-                    'Make a pubsub room'
-                  ],
-                  [
-                    'https://www.youtube.com/watch?v=-kdx8rJd8rQ',
-                    'Edit collaboratively with CRDT'
-                  ],
-                  [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/browser-readablestream',
-                    'Stream video'
-                  ],
                   '/how-to/browser-tools-frameworks'
                 ]
               },
@@ -345,10 +296,11 @@ module.exports = {
                   '/community/contribute/ways-to-contribute',
                   ['https://discuss.ipfs.io/', 'IPFS forums'],
                   '/community/irc',
-                  ['https://proto.school/#/events', 'ProtoSchool workshops'],
+                  ['https://proto.school/events', 'ProtoSchool workshops'],
                   ['https://www.meetup.com/members/249142444/', 'Meetups'],
                   '/community/social-media',
-                  ['https://awesome.ipfs.io', 'Awesome IPFS']
+                  ['https://awesome.ipfs.io', 'Awesome IPFS'],
+                  ['https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqqsew', 'YouTube']
                 ]
               },
               {
@@ -397,8 +349,8 @@ module.exports = {
     [
       'vuepress-plugin-clean-urls',
       {
-        normalSuffix: '/',
-        indexSuffix: '/',
+        normalSuffix: pageSuffix,
+        indexSuffix: pageSuffix,
         notFoundPath: '/404/'
       }
     ],

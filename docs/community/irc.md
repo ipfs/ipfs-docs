@@ -11,9 +11,9 @@ If IRC is your go-to for discussions and help on dev topics, there are several I
 - Use [#ipfs on irc.freenode.org](irc://irc.freenode.org/%23ipfs) for general IPFS usage and community chat
 - Use [#ipfs-dev on irc.freenode.org](irc://irc.freenode.org/%23ipfs-dev) for discussing implementation details, especially if you are contributing code to IPFS
 
-## IRC vs forums
+## IRC and the forums
 
-For longer-lived discussions and for support, please use the discussion forums at [https://discuss.ipfs.io](https://discuss.ipfs.io) instead of IRC! It’s easy for complex discussions to get lost in a sea of new messages on IRC, and posting longer discussions and support requests on the forums helps future visitors, too.
+For longer-lived discussions and for support, please use the discussion forums at [https://discuss.ipfs.io](https://discuss.ipfs.io) instead of IRC! It’s easy for complex discussions to get lost in a sea of new messages on IRC, and posting longer discussions and support requests on the forums help future visitors, too.
 
 ## Getting started with IRC
 

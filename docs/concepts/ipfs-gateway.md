@@ -37,7 +37,7 @@ Regardless of who deploys a gateway and where any IPFS gateway resolves access t
 
 ### Your local gateway
 
-Your machine may host a gateway as a local service; e.g., at `localhost:8080`. You will have a local gateway service if you installed [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node.
+Your machine may host a gateway as a local service; e.g., at `localhost:8080`. You have a local gateway service if you installed [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node.
 
 ### Private gateways
 
@@ -51,9 +51,11 @@ A gateway behind a firewall represents just one potential location for a private
 Public gateway operators include:
 
 - Protocol Labs, which deploys the public gateway `https://ipfs.io`;
-- Third-party public gateways; e.g., `https://cf-ipfs.com`.
+- Third-party public gateways. E.g., `https://cf-ipfs.com`.
 
 Protocol Labs maintains a [list of public gateways](https://ipfs.github.io/public-gateway-checker/) and their status.
+
+![A list of public gateways and their status, available on IPFS](./images/ipfs-gateways/public-gateway-checker.png)
 
 ## Gateway types
 
@@ -95,7 +97,7 @@ Subdomain resolution support began with [Go-IPFS](https://github.com/ipfs/go-ipf
 
 #### DNSlink
 
-Whenever the content of data changes within IPFS occurs, IPFS creates a new CID based on the content of that data. Many applications require access to the latest version of a file or website, but will not know the exact CID for that latest version. The [InterPlanetary Name Service (IPNS)](/content/concepts/ipns) allows a version-independent IPNS identifier to resolve into the current version's IPFS CID.
+Whenever the content of data changes within IPFS occurs, IPFS creates a new CID based on the content of that data. Many applications require access to the latest version of a file or website but will not know the exact CID for that latest version. The [InterPlanetary Name Service (IPNS)](/content/concepts/ipns) allows a version-independent IPNS identifier to resolve into the current version's IPFS CID.
 
 The version-independent IPNS identifier contains a hash. When a gateway processes a request in the form `https://{gatewayURL}/ipns/{IPNS identifier}/{optional path}`, the gateway employs IPNS to resolve the IPNS identifier into the current version's CID and then fetches the corresponding content.
 
@@ -161,7 +163,7 @@ Because of third-party gateway vulnerabilities, apps requiring end-to-end valida
 
 Use of a gateway requires location-based addressing: `https://{gatewayURL}/ipfs/{CID}/{etc}` All too easily, the gateway URL can become the handle by which users identify the content; i.e., the uniform reference locator (URL) equates (improperly) to the uniform reference identifier (URI). Now imagine that the gateway goes offline or cannot be reached from a different user's location because of firewalls. At this moment, content improperly identified by that gateway-based URL also appears unreachable, defeating a key benefit of IPFS: decentralization.
 
-Similarly, use of DNSLink resolution with `Alias` forces requests through the domain's chosen gateway, as specified in the `dnslink={value}` string within the DNS TXT record. If the specified gateway becomes overloaded, goes offline, or becomes compromised, all traffic with that content becomes deleted, disabled, or suspect.
+Similarly, the use of DNSLink resolution with `Alias` forces requests through the domain's chosen gateway, as specified in the `dnslink={value}` string within the DNS TXT record. If the specified gateway becomes overloaded, goes offline, or becomes compromised, all traffic with that content becomes deleted, disabled, or suspect.
 
 ### Misplaced trust
 
@@ -198,7 +200,7 @@ Employing a public or private HTTP gateway sacrifices end-to-end cryptographic v
 A compromised writeable gateway may inject falsified content into the IPFS network, returning a CID which the user believes to refer to the true content. For example:
 
 1. Alice posts a balance of `123.54` to a compromised writable gateway.
-1. The gateway is currently storing a balance of `0.00`, so returns the CID of the falsified content to Alice.
+1. The gateway is currently storing a balance of `0.00`, so it returns the CID of the falsified content to Alice.
 1. Alice gives the falsified content CID to Bob.
 1. Bob fetches the content with this CID and cryptographically validates the balance of `0.00`.
 
@@ -219,6 +221,48 @@ To work around this issue, you can add a `?filename={filename.ext}` parameter to
 ### Stale caches
 
 A gateway may cache DNSLinks from DNS TXT records, which default to a one-hour lifetime. After content changes, cached DNSLinks continue to refer to the now-obsolete CID. To limit the delivery of obsolete cached content, the domain operator should change the DNS record's time-to-live parameter to a minute `60`.
+
+## Frequently asked questions (FAQs)
+
+### What is the ipfs.io gateway?
+
+The ipfs.io gateway makes it possible for Internet users to access and view data hosted by third parties on the IPFS network. The ipfs.io gateway is a community resource run by Protocol Labs to help developers build on IPFS.
+
+### How is the ipfs.io gateway different from other gateways?
+
+The ipfs.io gateway is a gateway run by Protocol Labs. Many other entities run their own gateways with different policies around throttling and access, which may be subject to other local laws and regulations. A [list of public gateways is available here](https://ipfs.github.io/public-gateway-checker/).
+
+Protocol Labs does not store or host the data that is viewable through the ipfs.io gateway. Rather, the ipfs.io gateway allows users to view content hosted by third parties. Protocol Labs does not have any control over the data that is viewed through the ipfs.io gateway, nor does Protocol Labs have control over other gateways.
+
+### Is the ipfs.io gateway a data storage host?
+
+No. The ipfs.io gateway is a passthrough portal to data hosted by third parties on nodes in the IPFS network. It is not a data storage host.
+
+### Can websites rely on the ipfs.io gateway for hosting?
+
+No. Websites should not rely on the ipfs.io gateway for hosting of any kind. The ipfs.io gateway is a community resource run by Protocol Labs to help developers build on IPFS. Users of the ipfs.io Gateway must use resources sparingly. Protocol Labs will throttle or ban users who overuse or misuse community resources, including relying on the ipfs.io gateway for website hosting or violating the Community Code of Conduct.
+
+### How does the ipfs.io Gateway handle global data regulations?
+
+Protocol Labs complies with the laws and regulations of relevant jurisdictions.
+
+As explained above, the ipfs.io gateway is not a website hosting provider or data storage provider, and Protocol Labs cannot remove material from the Internet that is accessible through the ipfs.io gateway.
+
+### Who is responsible for the content that is viewed through the ipfs.io gateway?
+
+Users of the ipfs.io Gateway are required to comply with all applicable laws and regulations while using the ipfs.io gateway.
+
+The ipfs.io gateway is not a data storage provider or website host. The ipfs.io gateway allows users to view content hosted by third parties over which Protocol Labs exercises no control. The fact that certain content is viewable through the ipfs.io gateway does not mean it is hosted by the ipfs.io gateway or that Protocol Labs can do anything to delete that content.
+
+As explained above, the ipfs.io gateway is not a website hosting provider or data storage provider, and Protocol Labs cannot remove material from the Internet that is accessible through the ipfs.io gateway. If you believe that material accessible through the ipfs.io gateway is illegal or violates your copyright, you are encouraged to directly notify whoever is hosting or controls that data.
+
+While the ipfs.io gateway does not serve as a host for data or websites, in appropriate circumstances, Protocol Labs can disable the ability to view certain content via the ipfs.io Gateway. This does not mean that the data itself has been taken down from the network but rather that the content is not viewable using the ipfs.io gateway. This also will not impact the availability of the data through other gateways run by other parties.
+
+You can report abuse by emailing abuse@protocol.ai. When appropriate, we will disable access through the ipfs.io gateway to the specific content set forth in your abuse report.
+
+### Can Protocol Labs take down content viewable through the ipfs.io gateway?
+
+No. The ipfs.io gateway is one of many portals used to view content stored by third parties on the Internet. Protocol Labs is not hosting that content and cannot take it down, but it can block the ability of users to view that content via the ipfs.io gateway in appropriate circumstances.
 
 ## Learning more
 
