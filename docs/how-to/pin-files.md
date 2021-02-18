@@ -53,7 +53,7 @@ While you can use a remote pinning service's own GUI, CLI, or other dev tools to
 
 - The [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/) offers a specification that enables developers to integrate any pinning service that supports the spec, or create their own. Thanks to the OpenAPI spec format, both clients and servers can be [generated](https://github.com/ipfs/pinning-services-api-spec#code-generation) from the YAML spec file.
 
-- If you use go-ipfs 0.8+ from the command line, you have access to `ipfs pin remote` commands: the porcelain client for interacting with Pinning Service APIs. Add your favorite pinning service(s), pin CIDs under human-readable names, get pin statuses, and more straight from the CLI. [Learn how →](/how-to/work-with-pinning-services/)
+- If you use go-ipfs 0.8+ from the command line, you have access to `ipfs pin remote` commands acting as a client for interacting with pinning service APIs. Add your favorite pinning service(s), pin CIDs under human-readable names, get pin statuses, and more, straight from the CLI. [Learn how →](/how-to/work-with-pinning-services/)
 
 <!-- commented out for now, ok to uncomment when https://github.com/ipfs/ipfs-gui/issues/91 is closed
 - [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) and its equivalent in-browser IPFS web interface, the [IPFS Web UI](https://github.com/ipfs-shipyard/ipfs-webui), both support remote pinning services, so you can pin to your favorite pinning service(s) straight from the UI. [Learn how →](/how-to/work-with-pinning-services/)

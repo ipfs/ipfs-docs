@@ -16,7 +16,7 @@ If you've got just one local IPFS node that's always running, local pinning may 
 
 There are a number of commercial pinning services that make it easy for you to purchase pinning capacity for your important files, some of which include Pinata, Temporal, Infura, and others. Each of these third-party services has its own unique interface for pinning files and managing those pins; this could include a GUI, an API, CLI commands, or other tooling.
 
-However, you don't need to learn new commands or tools if your pinning service of choice supports vendor-agnostic [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/) specification – those services are supported within IPFS itself through the command line: `ipfs pin remote --help`
+However, you don't need to learn new commands or tools if your pinning service of choice supports the vendor-agnostic [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/) specification. Those services are supported within IPFS itself through the command line: `ipfs pin remote --help`.
 
 As of January 2021, [Pinata](https://pinata.cloud/) supports the [IPFS Pinning Service API endpoint](https://pinata.cloud/documentation#PinningServicesAPI), with more pinning services on the way! [Learn how to create your own →](#create-your-own-pinning-service)
 
@@ -63,7 +63,7 @@ Now that you’re set up, you can pin or unpin files to your new pinning service
 
 ### IPFS CLI
 
-Command line users benefit from `ipfs pin remote` commands, which provide porcelain that simplifies remote pinning operations. Built-in Pinning Service API client executes all the necessary remote calls under the hood.
+Command-line users benefit from `ipfs pin remote` commands, which simplify remote pinning operations. The built-in pinning service API client executes all the necessary remote calls under the hood.
 
 #### Adding a new pinning service
 
