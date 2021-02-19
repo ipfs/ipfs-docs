@@ -218,6 +218,7 @@ module.exports = {
                 children: [
                   '/how-to/work-with-blocks',
                   '/how-to/pin-files',
+                  '/how-to/work-with-pinning-services',
                   '/how-to/troubleshoot-file-transfers',
                   '/how-to/take-snapshot',
                   '/how-to/store-play-videos',
