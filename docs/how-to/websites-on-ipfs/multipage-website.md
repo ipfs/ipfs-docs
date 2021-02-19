@@ -175,7 +175,7 @@ Now that you've got the project ready, we can add things to IPFS using the IPFS 
 
    ![Random space facts open in a Firefox browser window.](./images/multipage-website/website-open-in-firefox.png)
 
-   Try clicking the link to the about page. You should be able to browser between the pages no problem.
+   Try clicking the link to the about page. You should be able to browse between the pages no problem.
 
 <!-- TODO: explain what's happening in the background, and why the links have to be relative in order to work. -->
 
