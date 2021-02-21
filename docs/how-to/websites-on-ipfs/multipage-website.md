@@ -154,12 +154,12 @@ Before we dig into IPFS, let's first create the files we'll need for this mini-p
 
 You should now have a folder that looks something like this:
 
-    ```
+  ```none
     multi-page-first-step/
     ├── about.html
     ├── index.html
     └── moon-logo.png
-    ```
+  ```
 
 ## Add files to IPFS
 
@@ -170,7 +170,7 @@ Now that you've got the project ready, we can add things to IPFS using the IPFS 
 
    ![The IPFS Desktop application with the multi-page project folder showing.](./images/multipage-website/ipfs-desktop-with-multi-page-folder-showing.png)
 
-1. Click the tripple dot menu to the right and select **Share link**.
+1. Click the triple dot menu to the right and select **Share link**.
 1. Click **Copy** and paste the link in a browser. You should be able to see your website with the logo!
 
    ![Random space facts open in a Firefox browser window.](./images/multipage-website/website-open-in-firefox.png)

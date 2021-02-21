@@ -24,4 +24,4 @@ For more information, check out the [Features page](./features).
 
 ## The Changelog
 
-For a full list of updates included in this release, you can review the [changelog on GitHub.](https://github.com/ipfs/go-ipfs/blob/v0.7.0/CHANGELOG.md#v070-2020-09-22).
+For a full list of updates included in this release, you can review the [changelog on GitHub](https://github.com/ipfs/go-ipfs/blob/v0.7.0/CHANGELOG.md#v070-2020-09-22).

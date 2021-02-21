@@ -6,7 +6,7 @@ description: Your profile defines which file-system and data-store your IPFS nod
 
 # Configure a default profile and switching between profiles
 
-The profile of your IPFS node allows you to specify which file-system or data-store you want to use. Changing these options will affect the performance of your node. For example, if you want to have a faster datastore for your node, you can use the `badgerds` profile. If you're running your node on a low-power device like a Raspberry Pi, you can use the `low-power` profile. Profiles have been developed to customize your IPFS node to perform best under given conditions.
+The profile of your IPFS node allows you to specify which file-system or data-store you want to use. Changing these options will affect the performance of your node. For example, if you want to have a faster datastore for your node, you can use the `badgerds` profile. If you're running your node on a low-power device like a Raspberry Pi, you can use the `lowpower` profile. Profiles have been developed to customize your IPFS node to perform best under given conditions.
 
 ## Find your current profile
 
@@ -74,7 +74,7 @@ Not all profiles are compatible with each other simply because they use very dif
 
 ### MacOS
 
-We will download the tarball for MacOS, extract the contents, and move the binary file to our path
+You download the tarball for MacOS, extract the contents, and move the binary file to your path:
 
 ```bash
 wget -O /tmp/ipfs-ds-convert.tar.gz https://dist.ipfs.io/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_darwin-amd64.tar.gz
@@ -85,7 +85,7 @@ rm /tmp/ipfs-ds-convert.tar.gz
 
 ### Linux
 
-We will download the tarball for Linux, extract the contents, and move the binary file to our path
+You download the tarball for Linux, extract the contents, and move the binary file to your path:
 
 ```bash
 wget -O /tmp/ipfs-ds-convert.tar.gz https://dist.ipfs.io/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_linux-amd64.tar.gz
@@ -96,7 +96,7 @@ rm /tmp/ipfs-ds-convert.tar.gz
 
 ### Windows
 
-For Windows, we will download the zip file, extract it and then add the path to `ipfs-ds-convert.exe` to our environment path
+For Windows, you download the zip file, extract it and then add the path to `ipfs-ds-convert.exe` to your environment path:
 
 - Download the zip package from here: [ipfs-ds-convert](https://dist.ipfs.io/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_windows-amd64.zip) and extract it.
 - Add the full path to `ipfs-ds-convert.exe` to your environment variables path.

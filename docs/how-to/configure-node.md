@@ -36,7 +36,7 @@ The Gateway address is the address that the daemon will serve the gateway interf
 
 ## Mounts
 
-The mounts config values specifies the default mount points for the IPFS and ipns virtual file systems, if no other directories are specified by the `ipfs mount` command. These folders should exist, and have permissions for your user to be able to mount to them via fuse.
+The mounts config values specifies the default mount points for the IPFS and IPNS virtual file systems, if no other directories are specified by the `ipfs mount` command. These folders should exist, and have permissions for your user to be able to mount to them via fuse.
 
 ## Bootstrap
 

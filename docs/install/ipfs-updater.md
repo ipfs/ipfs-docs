@@ -82,7 +82,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
    > ipfs-update version 1.6.0
    ```
 
-   If you get an error during the next start of PowerShell while loading the profile file you need to change `ExecutionPolicy` of PowerShell to `Unrestricted` as described in the [Microsoft PowerShell documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7)
+   If you get an error during the next start of PowerShell while loading the profile file, you need to change `ExecutionPolicy` of PowerShell to `Unrestricted` as described in the [Microsoft PowerShell documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7).
 
 ### macOS
 
@@ -198,7 +198,7 @@ To uninstall IPFS Update, delete the binary and `ipfs-update` from your `PATH` v
    Remove-Item -Recurse -Force C:\Users\Johnny\Apps\ipfs-update_v1.6.0
    ```
 
-3. Delete the `ipfs-update` directory from the `PATH` variable. This process differs between Windows installations, so please check the [Microsoft documentation for details](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=msvc-160)
+3. Delete the `ipfs-update` directory from the `PATH` variable. This process differs between Windows installations, so please check the [Microsoft documentation for details](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=msvc-160).
 
 ### Linux & macOS
 

@@ -21,7 +21,7 @@ If you're looking to host a fast website on IPFS, Fleek is a great option! For m
 
 If you've never used a service like Fleek, or just need a refresher, this quick guide walks through adding a website to a GitHub repository and linking that repo to your Fleek account.
 
-We're going to re-use the Random Planet Facts site we create in a previous tutorial. If you've been following this tutorial series, you should already have this project ready to go! If you don't, just download the [project `.zip` here](https://github.com/johnnymatthews/random-planet-facts/archive/master.zip) or [clone this repository](https://github.com/johnnymatthews/random-planet-facts).
+We're going to re-use the Random Planet Facts site we created in a previous tutorial. If you've been following this tutorial series, you should already have this project ready to go! If you don't, just download the [project `.zip` here](https://github.com/johnnymatthews/random-planet-facts/archive/master.zip) or [clone this repository](https://github.com/johnnymatthews/random-planet-facts).
 
 ### Upload to GitHub
 
@@ -56,4 +56,4 @@ Fleek allows you to configure your domain names with your sites on IPFS! No more
 
 ## Up next
 
-For the final tutorial in this series, we're going to take a quick look at [static-site generators, and how to host them on IPFS](../static-site-generators)
+For the final tutorial in this series, we're going to take a quick look at [static-site generators, and how to host them on IPFS](../static-site-generators).

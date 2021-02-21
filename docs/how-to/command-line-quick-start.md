@@ -44,7 +44,7 @@ Now, try running the command suggested to you in the output of `ipfs init`. The 
 
 You should see something like this:
 
-```
+```none
 Hello and Welcome to IPFS!
 
 ██╗██████╗ ███████╗███████╗
@@ -143,7 +143,7 @@ You can view the web console on your local node by going to [`localhost:5001/web
 
 While we are at it, [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion) is a browser extension that simplifies access to IPFS resources and adds support for the IPFS protocol.
 
-It will automatically redirect IPFS gateway requests to your local daemon so that you are not relying on or trusting, remote gateways.
+It will automatically redirect IPFS gateway requests to your local daemon so that you are not relying on, or trusting, remote gateways.
 
 It runs in Firefox (desktop and Android) and various Chromium-based browsers such as Google Chrome or [Brave](https://brave.com).
 [Check out its features](https://github.com/ipfs-shipyard/ipfs-companion#features) and install it today!

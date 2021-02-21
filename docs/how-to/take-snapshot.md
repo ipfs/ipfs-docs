@@ -35,7 +35,7 @@ sudo mkdir /ipfs /ipns
 sudo chown `whoami` /ipfs /ipns
 ```
 
-You will need to have `FUSE` (Filesystem in Userspace) installed on your machine in order to be able to `mount` directories from the ipfs. You can find instructions for how to install `FUSE` [in the `go-ipfs` docs](https://github.com/ipfs/go-ipfs/blob/master/docs/fuse.md).
+You will need to have `FUSE` (Filesystem in Userspace) installed on your machine in order to be able to `mount` directories from the IPFS. You can find instructions for how to install `FUSE` [in the `go-ipfs` docs](https://github.com/ipfs/go-ipfs/blob/master/docs/fuse.md).
 
 View your snapshots live:
 

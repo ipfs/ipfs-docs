@@ -6,7 +6,7 @@ description: Learn how to serve a static Git repository worldwide using IPFS, th
 
 # Host a Git-style repo
 
-Have you ever said to yourself: "Man, my Git server isn't distributed enough" or "I wish I had an easy way to serve a static Git repository worldwide". Well, wish no more.
+Have you ever said to yourself: "Man, my Git server isn't distributed enough" or "I wish I had an easy way to serve a static Git repository worldwide"? Well, wish no more.
 
 In this guide, we discuss how to serve a Git repository through the IPFS network. The end result will be a `git clone`able url served through IPFS!
 
@@ -27,7 +27,7 @@ git update-server-info
 
 Optionally, you can unpack all of Git's objects:
 
-```
+```bash
 cp objects/pack/*.pack .
 git unpack-objects < ./*.pack
 rm ./*.pack
@@ -37,7 +37,7 @@ Doing this breaks up Git's large packfile into all of its individual objects. Th
 
 Once you've done that, that repository is ready to be served. All that's left to do is to add it to IPFS:
 
-```
+```bash
 $ pwd
 /code/myrepo
 $ ipfs add -r .
@@ -49,7 +49,7 @@ added QmX679gmfyaRkKMvPA4WGNWXj9PtpvKWGPgtXaF18etC95 .
 
 Now, try cloning it:
 
-```
+```bash
 $ cd /tmp
 $ git clone http://QmX679gmfyaRkKMvPA4WGNWXj9PtpvKWGPgtXaF18etC95.ipfs.localhost:8080/ myrepo
 ```

@@ -36,7 +36,7 @@ This P2P summer proved that projects could win _because of_ their P2P architectu
 
 In 2013, Juan was working on a project aimed at another passion–scientific innovation. Inspiration struck. The tools used for sharing and versioning large datasets were inefficient and error-prone. Worse, this type of human knowledge was too often centralized behind a paywall. With his background in software development and P2P systems, he knew there was a better way.
 
-[Git](https://git-scm.com/) manages software versioning and collaboration through a data-linking structure known as a [Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree). Git's data-linking structure is useful across many data types–not just code. Juan recognized that combining this concept with the P2P file-sharing structure of [BitTorrent](https://www.bittorrent.com/) would be powerful: functional, secure information sharing without centralized barriers. This could transform the world far beyond scientific datasets.
+[Git](https://git-scm.com/) manages software versioning and collaboration through a data-linking structure known as a [Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree). Git's data-linking structure is useful across many data types – not just code. Juan recognized that combining this concept with the P2P file-sharing structure of [BitTorrent](https://www.bittorrent.com/) would be powerful: functional, secure information sharing without centralized barriers. This could transform the world far beyond scientific datasets.
 
 The IPFS project was born.
 
@@ -44,7 +44,7 @@ As ambitious as IPFS was, Juan's vision didn't stop there. He founded Protocol L
 
 Protocol Labs entered the [Y Combinator Summer 2014 Class](https://www.ycombinator.com/companies/). Juan got to work writing code and the [IPFS whitepaper](https://ipfs.io/ipfs/QmR7GSQM93Cx5eAg6a6yRzNde1FQv7uL6X1o4k7zrJa3LX/ipfs.draft3.pdf).
 
-The whitepaper was published in July 2014. It caught the attention of P2P and internet enthusiasts, including Jeromy Johnson (aka [whyrusleeping](https://github.com/whyrusleeping)). "Why" and other early contributors shared Juan's vision for a distributed, uncensorable, and permissionless file system. They worked nights, weekends, and initially for free because they believed in the positive impact that open networks like IPFS could have on the world.
+The whitepaper was published in July 2014. It caught the attention of P2P and internet enthusiasts, including Jeromy Johnson (aka [whyrusleeping](https://github.com/whyrusleeping)). "Why" and other early contributors shared Juan's vision for a distributed, uncensorable, and permissionless file system. They worked nights and weekends, and initially for free, because they believed in the positive impact that open networks like IPFS could have on the world.
 
 Juan, Why, and other contributors spent many late nights in Juan's living room with takeout food and too many coffees ([Philz Mint Mojitos](https://www.philzcoffee.com/menu) FTW!) to create the alpha release of [go-ipfs](https://github.com/ipfs/go-ipfs/blob/master/CHANGELOG.md#023---2015-03-01). IPFS was ready to begin its growth journey in the open.
 
