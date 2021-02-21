@@ -13,17 +13,17 @@ related:
 
 This document discusses:
 
-- The several types of gateways
-- Gateway role in the use of IPFS
-- Appropriate situations for the use of gateways
-- Situations when you should avoid the use of gateways
-- Implementation guidelines
+- The several types of gateways.
+- Gateway role in the use of IPFS.
+- Appropriate situations for the use of gateways.
+- Situations when you should avoid the use of gateways.
+- Implementation guidelines.
 
 You should read this document if you want to:
 
-- Understand, at a conceptual level, how gateways fit into the overall use of IPFS
-- Decide whether and what type of gateways to employ for your use case
-- Understand, at a conceptual level, how to deploy gateways for your use case
+- Understand, at a conceptual level, how gateways fit into the overall use of IPFS.
+- Decide whether and what type of gateways to employ for your use case.
+- Understand, at a conceptual level, how to deploy gateways for your use case.
 
 ## Overview
 
@@ -49,8 +49,8 @@ A gateway behind a firewall represents just one potential location for a private
 
 Public gateway operators include:
 
-- Protocol Labs, which deploys the public gateway `https://ipfs.io`
-- Third-party public gateways. E.g., `https://cf-ipfs.com`
+- Protocol Labs, which deploys the public gateway `https://ipfs.io`.
+- Third-party public gateways. E.g., `https://cf-ipfs.com`.
 
 Protocol Labs maintains a [list of public gateways](https://ipfs.github.io/public-gateway-checker/) and their status.
 
@@ -193,8 +193,8 @@ These pages do not share the same origin. Similarly, the use of DNSLink gateway 
 
 Employing a public or private HTTP gateway sacrifices end-to-end cryptographic validation of the delivery of the correct content. Consider the case of a browser fetching content with the URL `https://ExampleGateway.com/ipfs/{cid}`. A compromised `ExampleGateway.com` provides man-in-the-middle vulnerabilities, including:
 
-- Substituting false content in place of the actual content retrieved via the CID
-- Diverting a copy of the query and response, as well as the IP address of the querying browser, to a third party
+- Substituting false content in place of the actual content retrieved via the CID.
+- Diverting a copy of the query and response, as well as the IP address of the querying browser, to a third party.
 
 A compromised writeable gateway may inject falsified content into the IPFS network, returning a CID which the user believes to refer to the true content. For example:
 
