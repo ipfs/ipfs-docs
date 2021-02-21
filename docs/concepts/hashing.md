@@ -55,9 +55,9 @@ That's critical for a distributed system like IPFS, where we want to be able to 
 
 ## Content Identifiers are not file hashes
 
-Hash functions are widely used as to check for file integrity. The download provider published the output of a hash function for a file next to the file download. This output is called the checksum of that file. The checksum enables downloaders of the file to verify that the file has not been altered since it was published. This check is done by performing the same hash function that was used to generate the checksum. If the local output matches the checksum, the file was not altered and can be trusted.
+Hash functions are widely used as to check for file integrity. A download provider may publish the output of a hash function for a file. This hash is called the checksum of that file. The checksum enables downloaders of the file to verify that the file has not been altered since it was published. This check is done by performing the same hash function that was used to generate the checksum. If the local output matches the checksum, the file was not altered and can be trusted.
 
-Lets look at a concrete example: When you download an image file for the Ubuntu Linux distribution you might see the following SHA-256 checksum on the website listed for verification purposes:
+Let us look at a concrete example: When you download an image file for Ubuntu Linux you might see the following `SHA-256` checksum on the Ubuntu website listed for verification purposes:
 
 ```
 0xB45165ED3CD437B9FFAD02A2AAD22A4DDC69162470E2622982889CE5826F6E3D ubuntu-20.04.1-desktop-amd64.iso
@@ -71,7 +71,7 @@ echo "b45165ed3cd437b9ffad02a2aad22a4ddc69162470e2622982889ce5826f6e3d *ubuntu-2
 ubuntu-20.04.1-desktop-amd64.iso: OK
 ```
 
-It is important though to understand that a content identifier for a specific file added to IPFS does not equal the output of the respective hash function for that file. Let's add the downloaded file to IPFS in order to compare the
+Let us compare the checksum provided with the download of our file with the hash included in the CID. We can use `ipfs add` with the `-n`switch to create the CID for a file without adding it to IPFS:
 
 ```
 ipfs add ubuntu-20.04.1-desktop-amd64.iso -n
@@ -80,8 +80,7 @@ added QmPK1s3pNYLi9ERiq3BDxKa4XosgWwFRQUydHUtz4YgpqB ubuntu-20.04.1-desktop-amd6
  2.59 GiB / 2.59 GiB [==========================================================================================] 100.00%
 ```
 
-The string returned by the `ipfs add` command is the content identifier of the file we just added to IPFS. As described in [content addressing](/concepts/content-addressing/), the content identifier is not the output of a hash function for the data we added to IPFS. The content identifier contains multiple informations in on human readable format. We can utilize the CID inspector to get insights into the different parts of the generated CID.
-We can enter the CID we just received [CID Inspector](https://cid.ipfs.io/) in order to see what it includes. The actual
+The string `QmPK1s3pNYLi9ERiq3BDxKa4XosgWwFRQUydHUtz4YgpqB` returned by the `ipfs add` command is the content identifier of the file `ubuntu-20.04.1-desktop-amd64.iso`. The content identifier contains various information in on human readable format. We can utilize the [CID Inspector](https://cid.ipfs.io/) in order to see what the CID includes. The actual hash is listed under `DIGEST (HEX)`:
 
 ```
 NAME: sha2-256
@@ -89,12 +88,18 @@ BITS: 256
 DIGEST (HEX): 0E7071C59DF3B9454D1D18A15270AA36D54F89606A576DC621757AFD44AD1D2E
 ```
 
-When we now check if the hash provided in the content identifier
+We can now check if the hash contained in the files CID actually equals the checksum for the file:
 
 ```
-echo "b45165ed3cd437b9ffad02a2aad22a4ddc69162470e2622982889ce5826f6e3d *ubuntu-20.04.1-desktop-amd64.iso" | shasum -a 256 --check
+echo "0E7071C59DF3B9454D1D18A15270AA36D54F89606A576DC621757AFD44AD1D2E *ubuntu-20.04.1-desktop-amd64.iso" | shasum -a 256 --check
 
-ubuntu-20.04.1-desktop-amd64.iso: OK
+ubuntu-20.04.1-desktop-amd64.iso: FAILED
+shasum: WARNING: 1 computed checksum did NOT match
 ```
 
-Notice that
+::: tip
+Please note that names of hash functions are not used consistently.`SHA-2`, `SHA-256` or `SHA-256 bit` are all referring to the same hash function.
+::: tip
+
+As we can see the hash included in the CID does NOT match the hash of the input file `ubuntu-20.04.1-desktop-amd64.iso`.
+IPFS stores files as a set of data chunks. A structure called the DAG - or 'Directed Acyclic Graph' keeps track of which data chunks actually make up a certain file. The hash included in the CID identifies a node within the DAG. From this node all data chunks that represent our input file are linked and can thus be retrieved by IPFS.
