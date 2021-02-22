@@ -11,25 +11,26 @@ DNSLink uses [DNS TXT](https://en.wikipedia.org/wiki/TXT_record) records to map 
 A DNSLink address looks like an [IPNS](/guides/concepts/ipns) address, but it uses a domain name in place of a hashed public key:
 
 ```
-/ipns/myexampledomain.org
+/ipns/example.org
 ```
 
 Just like normal IPFS addresses, they can include links to other files — or other types of resources that IPFS supports, like directories and symlinks:
 
 ```
-/ipns/myexampledomain.org/media/
+/ipns/example.org/media/
 ```
 
 ## Publish Using a Subdomain
 
-While you can publish the TXT record to the exact domain if you so wish, it can be more advantageous to publish DNSLink records using a special subdomain called `_dnslink`. This enables you to improve the security of an automated setup or delegate control over your DNSLink records to a third party without giving away full control over the original DNS zone.
+Publish the TXT record using a special subdomain called `_dnslink`. 
 
-For example, [`docs.ipfs.io`](https://docs.ipfs.io) does not have a TXT record, but the page still loads
-because a TXT record exists for `_dnslink.docs.ipfs.io`. If you look up the DNS records for `_dnslink.docs.ipfs.io`, you'll see its DNSLink entry:
+This not only makes DNSLink lookup more efficient by only returning relevant TXT records, but enables you to improve the security of an automated setup or delegate control over your DNSLink records to a third party without giving away full control over the original DNS zone.
 
-```sh
+For example, [`docs.ipfs.io`](https://docs.ipfs.io) loads because a TXT record exists for `_dnslink.docs.ipfs.io`. If you look up the DNS records for `_dnslink.docs.ipfs.io`, you'll see its DNSLink entry:
+
+```console
 $ dig +noall +answer TXT \_dnslink.docs.ipfs.io
-\_dnslink.docs.ipfs.io. 34 IN TXT "dnslink=/ipfs/QmVMxjouRQCA2QykL5Rc77DvjfaX6m8NL6RyHXRTaZ9iya"
+\_dnslink.docs.ipfs.io. 30 IN TXT "dnslink=/ipfs/bafybeieenxnjdjm7vbr5zdwemaun4sw4iy7h4imlvvl433q6gzjg6awdpq"
 
 ```
 
