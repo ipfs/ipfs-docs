@@ -98,7 +98,7 @@ shasum: WARNING: 1 computed checksum did NOT match
 ```
 
 ::: tip
-Please note that names of hash functions are not used consistently.`SHA-2`, `SHA-256` or `SHA-256 bit` are all referring to the same hash function.
+The names of hash functions are not used consistently.`SHA-2`, `SHA-256` or `SHA-256 bit` all refer to the same hash function.
 ::: tip
 
 As we can see the hash included in the CID does NOT match the hash of the input file `ubuntu-20.04.1-desktop-amd64.iso`. To understand what the hash included in the CID actually is, we have to understand how IPFS stores files. IPFS stores files as a set of data chunks. A data structure called the DAG - or 'Directed Acyclic Graph' keeps track of which data chunks actually make up a certain file. The hash included in the CID identifies a node within the DAG. From this node all data chunks that represent our input file are linked and can thus be retrieved by IPFS.
