@@ -53,7 +53,7 @@ It turns out these features also mean we can use a cryptographic hash to identif
 
 That's critical for a distributed system like IPFS, where we want to be able to store and retrieve data from many places. A computer running IPFS can ask all the peers it's connected to whether they have a file with a particular hash and, if one of them does, they send back the whole file. Without a short, unique identifier like a cryptographic hash, that wouldn't be possible. This technique is called [content addressing](/concepts/content-addressing/) — because the content itself is used to form an address, rather than information about the computer and disk location it's stored at.
 
-## Content Identifiers are not file hashes
+## Content identifiers are not file hashes
 
 Hash functions are widely used as to check for file integrity. A download provider may publish the output of a hash function for a file. This hash is called the checksum of that file. The checksum enables downloaders of the file to verify that the file has not been altered since it was published. This check is done by performing the same hash function that was used to generate the checksum. If the local output matches the checksum, the file was not altered and can be trusted.
 
