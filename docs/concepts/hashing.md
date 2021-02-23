@@ -90,7 +90,7 @@ DIGEST (HEX): 0E7071C59DF3B9454D1D18A15270AA36D54F89606A576DC621757AFD44AD1D2E
 
 We can now check if the hash contained in the CID equals the checksum for the file:
 
-```
+```shell
 echo "0E7071C59DF3B9454D1D18A15270AA36D54F89606A576DC621757AFD44AD1D2E *ubuntu-20.04.1-desktop-amd64.iso" | shasum -a 256 --check
 
 ubuntu-20.04.1-desktop-amd64.iso: FAILED
