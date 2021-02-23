@@ -74,7 +74,7 @@ ubuntu-20.04.1-desktop-amd64.iso: OK
 Let us compare the checksum provided with the download of our file with the hash included in the CID. We can use `ipfs add` with the `-n`switch to create the CID for a file without adding it to IPFS:
 
 ```
-ipfs add ubuntu-20.04.1-desktop-amd64.iso -n
+ipfs add ubuntu-20.04.1-desktop-amd64.iso
 
 added QmPK1s3pNYLi9ERiq3BDxKa4XosgWwFRQUydHUtz4YgpqB ubuntu-20.04.1-desktop-amd64.iso
  2.59 GiB / 2.59 GiB [==========================================================================================] 100.00%
