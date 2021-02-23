@@ -80,7 +80,7 @@ added QmPK1s3pNYLi9ERiq3BDxKa4XosgWwFRQUydHUtz4YgpqB ubuntu-20.04.1-desktop-amd6
  2.59 GiB / 2.59 GiB [==========================================================================================] 100.00%
 ```
 
-The string `QmPK1s3pNYLi9ERiq3BDxKa4XosgWwFRQUydHUtz4YgpqB` returned by the `ipfs add` command is the content identifier of the file `ubuntu-20.04.1-desktop-amd64.iso`. The content identifier contains various information in on human readable format. We can utilize the [CID Inspector](https://cid.ipfs.io/) in order to see what the CID includes. The actual hash is listed under `DIGEST (HEX)`:
+The string `QmPK1s3pNYLi9ERiq3BDxKa4XosgWwFRQUydHUtz4YgpqB` returned by the `ipfs add` command is the content identifier of the file `ubuntu-20.04.1-desktop-amd64.iso`. We can utilize the [CID Inspector](https://cid.ipfs.io/) to see what the CID includes. The actual hash is listed under `DIGEST (HEX)`:
 
 ```
 NAME: sha2-256
