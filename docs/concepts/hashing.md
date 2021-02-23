@@ -55,7 +55,7 @@ That's critical for a distributed system like IPFS, where we want to be able to 
 
 ## Content identifiers are not file hashes
 
-Hash functions are widely used as to check for file integrity. A download provider may publish the output of a hash function for a file. This hash is called the checksum of that file. The checksum enables downloaders of the file to verify that the file has not been altered since it was published. This check is done by performing the same hash function that was used to generate the checksum. If the local output matches the checksum, the file was not altered and can be trusted.
+Hash functions are widely used as to check for file integrity. A download provider may publish the output of a hash function for a file, often called a _checksum_. The checksum enables users to verify that a file has not been altered since it was published. This check is done by performing the same hash function against the downloaded file that was used to generate the checksum. If that checksum that the user receives from the downloaded file exactly matches the checksum on the website, then the user knows that the file was not altered and can be trusted.
 
 Let us look at a concrete example: When you download an image file for Ubuntu Linux you might see the following `SHA-256` checksum on the Ubuntu website listed for verification purposes:
 
