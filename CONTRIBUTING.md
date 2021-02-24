@@ -62,6 +62,12 @@ Write everything in using the [GitHub Flavored Markdown](https://github.github.c
   >
   > Dealing with the James Harden effect
 
+### Project specific titles
+
+When referring to projects by name, use proper noun capitalization: Go-IPFS and JS-IPFS.
+
+Cases inside code blocks refer to commands and are not capitalized: `go-ifps` or `js-ifps`.
+
 ### Style and tone
 
 When writing content to explain a particular workflow, function, or service, keep your tone clean and straightforward. While it doesn't have to be formal, technical writing is not creative writing. You're just explaining to the reader how to _do_ something.
