@@ -6,7 +6,7 @@ description: Your profile defines which file-system and data-store your IPFS nod
 
 # Configure a default profile and switching between profiles
 
-The profile of your IPFS node allows you to specify which file-system or data-store you want to use. Changing these options will affect the performance of your node. For example, if you want to have a faster datastore for your node, you can use the `badgerds` profile. If you're running your node on a low-power device like a Raspberry Pi, you can use the `low-power` profile. Profiles have been developed to customize your IPFS node to perform best under given conditions.
+The profile of your IPFS node allows you to specify which file-system or data-store you want to use. Changing these options will affect the performance of your node. For example, if you want to have a faster datastore for your node, you can use the `badgerds` profile. If you're running your node on a low-power device like a Raspberry Pi, you can use the `lowpower` profile. Profiles have been developed to customize your IPFS node to perform best under given conditions.
 
 ## Find your current profile
 
@@ -43,7 +43,7 @@ Here's a list of all the profiles available for your IPFS node:
 
 ## Reset your profile
 
-You can reset your node's profile to the default one by running the following command:
+To reset the profile of your node to default, run the following command:
 
 ```diff
 ipfs config profile apply default-datastore
@@ -66,15 +66,15 @@ ipfs config profile apply default-datastore
 ...
 ```
 
-Above command shows the difference between your existing IPFS config and the new configuration. Also, it would overwrite your IPFS `config` file, so it's always better to create a backup of your existing IPFS configuration before running this command.
+The above command shows the difference between your existing IPFS configuration and the new configuration. It will overwrite your IPFS `config` file, so be sure to create a backup of your existing IPFS configuration before running this command.
 
 ## Converting profiles
 
-Not all profiles are compatible with each other simply because they use very different technologies for storing the data inside the datastores. For instance, if you want to convert `badgerds` to `default-datastore`, you would have to use another helper tool called [ipfs-ds-convert](https://dist.ipfs.io/#ipfs-ds-convert) to convert the datastore to the required format. Please follow the instructions given below to install `ipfs-ds-convert` for your operating system.
+Not all profiles are compatible with each other, because they may use different technologies for storing the data inside the datastores. For instance, if you want to convert `badgerds` to `default-datastore`, you have to use another helper tool called [ipfs-ds-convert](https://dist.ipfs.io/#ipfs-ds-convert) to convert the datastore to the required format. Please follow the instructions given below to install `ipfs-ds-convert` for your operating system.
 
 ### MacOS
 
-We will download the tarball for MacOS, extract the contents, and move the binary file to our path
+Download the tarball for MacOS, extract the contents, and move the binary file to your path:
 
 ```bash
 wget -O /tmp/ipfs-ds-convert.tar.gz https://dist.ipfs.io/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_darwin-amd64.tar.gz
@@ -85,7 +85,7 @@ rm /tmp/ipfs-ds-convert.tar.gz
 
 ### Linux
 
-We will download the tarball for Linux, extract the contents, and move the binary file to our path
+Download the tarball for Linux, extract the contents, and move the binary file to your path:
 
 ```bash
 wget -O /tmp/ipfs-ds-convert.tar.gz https://dist.ipfs.io/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_linux-amd64.tar.gz
@@ -96,13 +96,13 @@ rm /tmp/ipfs-ds-convert.tar.gz
 
 ### Windows
 
-For Windows, we will download the zip file, extract it and then add the path to `ipfs-ds-convert.exe` to our environment path
+Download the zip file, extract it and then add the path to `ipfs-ds-convert.exe` to your environment path:
 
 - Download the zip package from here: [ipfs-ds-convert](https://dist.ipfs.io/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_windows-amd64.zip) and extract it.
 - Add the full path to `ipfs-ds-convert.exe` to your environment variables path.
 
 To find more about `ipfs-ds-convert` please visit here: [ipfs-ds-convert](https://dist.ipfs.io/#ipfs-ds-convert).
-Once you are done with the installation process, you can verify if `ipfs-ds-convert` has been installed successfully by executing the following command:
+Once you are done with the installation process, verify that `ipfs-ds-convert` has been installed successfully by executing the following command:
 
 ```bash
 ipfs-ds-convert --version
@@ -110,9 +110,9 @@ ipfs-ds-convert --version
 > ipfs-ds-convert version 0.5.0
 ```
 
-If the above command does not display a similar output, that would mean there is some issue with the installation. The most common issue is that the path to the executable binary is not in your environment path.
+If the above command does not display a similar output, that means there is some issue with the installation. The most common issue is that the path to the executable binary is not in your environment path.
 
-On the other hand, if the command executes successfully, then we can proceed to convert our IPFS profile. Run the following command to begin the process of converting your existing datastore to the required format:
+On the other hand, if the command executes successfully, then proceed to convert your IPFS profile. Run the following command to begin the process of converting your existing datastore to the required format:
 
 ```bash
 ipfs-ds-convert convert

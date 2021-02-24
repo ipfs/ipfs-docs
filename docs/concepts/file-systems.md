@@ -6,12 +6,12 @@ description: Learn about file systems in IPFS and why working with files in IPFS
 
 # File systems and IPFS
 
-Working with files in IPFS can be a little different than you're used to for several various reasons:
+Working with files in IPFS can be a little different than you're used to for several reasons:
 
 - Content addressing means that when files change, the content identifier (CID) of those files changes too.
 - Files may be too big to fit in a single block, so IPFS splits the data into multiple blocks and uses metadata to link it all together.
 
-MFS and UnixFS can help you address these new ways of thinking of files.
+Mutable File System (MFS) and Unix File System (UnixFS) can help you address these new ways of thinking of files.
 
 ::: tip
 If you're interested in how MFS and UnixFS play into how IPFS works with files in general, check out this video from IPFS Camp 2019! [Core Course: How IPFS Deals With Files](https://www.youtube.com/watch?v=Z5zNPwMDYGg)
@@ -259,7 +259,7 @@ message UnixTime {
 }
 ```
 
-This `Data` object is used for all non-leaf nodes in Unixfs:
+This `Data` object is used for all non-leaf nodes in UnixFS:
 
 - For files that are comprised of more than a single block, the `Type` field will be set to `File`, the `filesize` field will be set to the total number of bytes in the files, and `blocksizes` will contain a list of the filesizes of each child node.
 
@@ -273,7 +273,7 @@ UnixFS also supports two optional metadata format fields:
 
 ### Importer
 
-Importing a file into UnixFS is split into two processes. A chunking function and a layout function. You can test these features using the IPFS [DAG builder](https://dag.ipfs.io)
+Importing a file into UnixFS is split into two processes. A chunking function and a layout function. You can test these features using the IPFS [DAG builder](https://dag.ipfs.io).
 
 #### Chunking
 
@@ -281,9 +281,9 @@ When an object is added to IPFS, it is chunked up into smaller parts, each part 
 
 The leaf format takes two format options, UnixFS leaves and raw leaves:
 
-- The Unixfs leaves format adds a data wrapper on newly added objects to produce UnixFS leaves with additional data sizes. This wrapper is used to determine whether newly added objects are files or directories.
+- The UnixFS leaves format adds a data wrapper on newly added objects to produce UnixFS leaves with additional data sizes. This wrapper is used to determine whether newly added objects are files or directories.
 
-- The raw leaves format is the default format on IPFS where nodes output from chunking will be raw data from the file with a CID type of `'raw'`. This is mainly configured for backward compatibility with formats that used a Unixfs Data object.
+- The raw leaves format is the default format on IPFS where nodes output from chunking will be raw data from the file with a CID type of 'raw'. This is mainly configured for backward compatibility with formats that used a UnixFS Data object.
 
 The chunking strategy is used to determine the size options available during the chunking process. The strategy currently has two different options, 'fixed size' and 'rabin'.
 

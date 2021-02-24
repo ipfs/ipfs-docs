@@ -33,7 +33,7 @@ Here's what we are going to be doing:
 
 At the end of the tutorial you should have something that looks like this:
 
-![Web browser showing the final product of this tutorial.](images/exchange-files-between-nodes/goal.png)
+![Web browser showing the final product of this tutorial.](./images/exchange-files-between-nodes/goal.png)
 
 ## Prerequisites
 
@@ -167,11 +167,11 @@ It should look like this: `/ip4/127.0.0.1/tcp/4003/ws/ipfs/<your_peer_id>`.
 
 Copy and paste the _multiaddr_ to connect to that peer:
 
-![](img/connect-1.png)
+![Screenshot of interface for connecting to peer](./images/exchange-files-between-nodes/connect-1.png)
 
 Check that you got connected:
 
-![](img/connect-2.png)
+![Screenshot of successful peer connection](./images/exchange-files-between-nodes/connect-2.png)
 
 > It only works on localhost environments because of a restriction with WebCrypto where it will not load in a page unless that page is loaded over https, or the page is served from localhost: [libp2p/js-libp2p-crypto#105][js-libp2p-crypto#105]
 
@@ -189,7 +189,7 @@ Now you can add files through the CLI with:
 
 Copy and paste the _multihash_ and fetch the file in the browser!
 
-![](img/fetch.png)
+![Screenshot of fetch interface](./images/exchange-files-between-nodes/fetch.png)
 
 You can also open two browser tabs, drag and drop files in one of them, and fetch them in the other!
 
@@ -202,11 +202,11 @@ http://127.0.0.1:12345/#file-exchange
 
 Now every file that you upload in one tab will appear in the other! You can even open a new tab in that workspace and it will sync the files that were added before!
 
-![](img/pubsub.png)
+![Screenshot of pubsub files interface](./images/exchange-files-between-nodes/pubsub.png)
 
 ## Going to production?
 
-This example uses public webrtc-star servers. These servers should be used for experimenting and demos, they **MUST** not be used in production as there is no guarantee on availability.
+This example uses public webrtc-star servers. These servers should be used for experimenting and demos, they **MUST NOT** be used in production as there is no guarantee on availability.
 
 ### Use your own `libp2p-webrtc-star` signaling server
 

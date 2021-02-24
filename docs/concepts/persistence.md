@@ -14,7 +14,7 @@ One goal of IPFS is to preserve humanity's history by letting users store data w
 
 A 2011 study found that the [average lifespan of a web page is 100 days](https://blogs.loc.gov/thesignal/2011/11/the-average-lifespan-of-a-webpage/) before it's gone forever. It's not good enough for the primary medium of our era to be this fragile. IPFS can keep every version of your file you wish to store, and make it simple to set up resilient networks for mirroring data.
 
-Nodes on the IPFS network can automatically cache resources it downloads, and keep those resources available for other nodes. This system depends on nodes being willing and able to cache and share resources with the network. Storage is finite, so nodes need to clear out some of their previously cached resources to make room for new resources. This process is called _garbage collection_.
+Nodes on the IPFS network can automatically cache resources they download, and keep those resources available for other nodes. This system depends on nodes being willing and able to cache and share resources with the network. Storage is finite, so nodes need to clear out some of their previously cached resources to make room for new resources. This process is called _garbage collection_.
 
 To ensure that data _persists_ on IPFS, and is not deleted during garbage collection, [data can be pinned](/how-to/pin-files/) to one or more IPFS nodes. Pinning gives you control over disk space and data retention. As such, you should use that control to pin any content you wish to keep on IPFS indefinitely.
 
