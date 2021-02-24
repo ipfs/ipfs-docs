@@ -93,7 +93,7 @@ GitHub will check if your changes create any merge conflicts with the branch you
 
 ## Waiting for a review
 
-Before your changes can be merged into the project, they have to pass a review. Some other IPFS repos, like `ipfs/ipfs-js` and `ipfs/ipfs-go`, have automatic tests that run against a pull request. These tests must pass _before_ the changes can be merged into the project.
+Before your changes can be merged into the project, they have to pass a review. Some other IPFS repositories, like `ipfs/ipfs-js` and `ipfs/ipfs-go`, have automatic tests that run against a pull request. These tests must pass _before_ the changes can be merged into the project.
 
 The `ipfs/ipfs-docs` project doesn't currently have any automatic tests, so all pull requests from the community must be reviewed by at least one project member before they are merged in. Depending on the size of the pull request, this could take anywhere from a few minutes to a few days to review everything. Depending on the complexity of the pull request, there may be further discussion regarding your changes. Keep returning to GitHub and checking your [notifications page](https://github.com/notifications) to make sure you don't miss anything.
 
