@@ -7,6 +7,8 @@ description: Using IPFS through the command-line allows you to do everything tha
 
 Installing IPFS through the command-line is handy if you plan on building applications and services on top of an IPFS node. This method is also useful if you're setting up a node without a user interface, usually the case with remote servers or virtual machines. Using IPFS through the command-line allows you to do everything that IPFS Desktop can do, but at a more granular level since you can specify which commands to run.
 
+![A terminal window running IPFS daemon.](./images/terminal-showing-ipfs-daemon-ubuntu.png)
+
 ## System requirements
 
 IPFS is a light-weight application in terms of CPU and RAM usage. You can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space, and the [default maximum disk storage](/how-to/configure-a-node) is set to 10GB.
