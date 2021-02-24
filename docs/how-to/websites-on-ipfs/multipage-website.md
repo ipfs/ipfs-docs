@@ -170,7 +170,7 @@ Now that you've got the project ready, we can add things to IPFS using the IPFS 
 
    ![The IPFS Desktop application with the multi-page project folder showing.](./images/multipage-website/ipfs-desktop-with-multi-page-folder-showing.png)
 
-1. Click the tripple dot menu to the right and select **Share link**.
+1. Click the triple dot menu to the right and select **Share link**.
 1. Click **Copy** and paste the link in a browser. You should be able to see your website with the logo!
 
    ![Random space facts open in a Firefox browser window.](./images/multipage-website/website-open-in-firefox.png)
