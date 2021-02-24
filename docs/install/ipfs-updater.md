@@ -129,7 +129,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 2. Unzip the file:
 
    ```bash
-   tar -xvzf ipfs-update_v1.6.0_darwin-amd64.tar.gz
+   tar -xvzf ipfs-update_v1.6.0_linux-amd64.tar.gz
 
    > x ipfs-update/install.sh
    > x ipfs-update/ipfs-update

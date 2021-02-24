@@ -34,6 +34,12 @@ If you have to use an acronym, spell the full phrase first and include the acron
 
 > Virtual Machine (VM), Decentralized Web (DWeb).
 
+### Project specific titles
+
+When referring to projects by name, use proper noun capitalization: Go-IPFS and JS-IPFS.
+
+Cases inside code blocks refer to commands and are not capitalized: `go-ifps` or `js-ifps`.
+
 ## Formatting
 
 How the Markdown syntax looks, and code formatting rules to follow.
