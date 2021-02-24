@@ -9,7 +9,7 @@ Static-site generators like Hugo, VuePress, Next.js, and Jekyll are all incredib
 
 ## Hugo
 
-Refer the Hugo's [Quick Start](https://gohugo.io/getting-started/quick-start/) to install and set up your project.
+Refer to Hugo's [Quick Start](https://gohugo.io/getting-started/quick-start/) to install and set up your project.
 
 In `config.toml` add `relativeURLS` and set it to `true`.
 
@@ -27,7 +27,7 @@ Output will be in `./public/` directory by default. Upload the public folder to 
 
 ## VuePress
 
-Refer the VuePress' [Getting Started](https://vuepress.vuejs.org/guide/) to install and set up your project.
+Refer to VuePress' [Getting Started](https://vuepress.vuejs.org/guide/) to install and set up your project.
 
 To build a static site:
 
@@ -48,7 +48,7 @@ Upload the `dist` folder to IPFS.
 
 ## Jekyll
 
-Refer the Jekyll's [Installation](https://jekyllrb.com/docs/installation/) guide to to install Ruby and Jekyll.
+Refer to Jekyll's [Installation](https://jekyllrb.com/docs/installation/) guide to install Ruby and Jekyll.
 
 Refer to Jekyll's [Quickstart](https://jekyllrb.com/docs/) to set up your project.
 

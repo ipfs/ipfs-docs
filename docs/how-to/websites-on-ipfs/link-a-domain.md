@@ -42,7 +42,7 @@ You need these things to get a domain name through ENS:
 - The [Metamask](https://metamask.io/) browser extension installed.
 - An Ethereum account with some `ETH` in it. The amount you need will depend on the domain name you end up buying, but a balance of around \$10 is probably enough.
 - A website hosted on IPFS. If you've been following this tutorial series, you should already have a website and CID ready.
-- An cool idea for a domain name!
+- A cool idea for a domain name!
 
 ### Purchase an Ethereum domain name
 
