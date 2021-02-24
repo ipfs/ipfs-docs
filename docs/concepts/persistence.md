@@ -44,7 +44,7 @@ To enable automatic garbage collection use `--enable-gc` when starting the IPFS 
 ipfs daemon --enable-gc
 
 > Initializing daemon...
-> go-ipfs version: 0.7.0
+> go-ipfs version: 0.8.0
 > Repo version: 10
 > ...
 ```
