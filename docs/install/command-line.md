@@ -17,11 +17,12 @@ IPFS is a light-weight application in terms of CPU and RAM usage. You can run an
 
 Most operating systems have a package manager, although they may not come pre-installed. Both Windows and macOS have open-source package managers that the user must install. Ubuntu comes with the Snap package manager pre-installed. Package managers download packages, install applications and keep everything up-to-date. They're the easiest way to install IPFS from the command-line.
 
-| Operating system | Package manager                                    | Install command      |
-| ---------------- | -------------------------------------------------- | -------------------- |
-| Windows          | [Chocolatey](https://chocolatey.org/packages/ipfs) | `choco install ipfs` |
-| macOS            | [Homebrew](https://formulae.brew.sh/formula/ipfs)  | `brew install ipfs`  |
-| Ubuntu           | [Snap](https://snapcraft.io/ipfs)                  | `snap install ipfs`  |
+| Operating system | Package manager                                    | Install command             |
+| ---------------- | -------------------------------------------------- | --------------------------- |
+| Windows          | [Chocolatey](https://chocolatey.org/packages/ipfs) | `choco install ipfs`        |
+| macOS            | [Homebrew](https://formulae.brew.sh/formula/ipfs)  | `brew install ipfs`         |
+| Ubuntu           | [Snap](https://snapcraft.io/ipfs)                  | `snap install ipfs`         |
+| (any)            | [Docker](https://hub.docker.com/r/ipfs/go-ipfs/)   | `docker pull ipfs/go-ipfs`  |
 
 Although we try our best to keep the package manager releases up to date, they sometimes lag behind the Go-IPFS GitHub releases page by a few days. If you'd like to install a release the very same day it comes out, use the [official distributions](#official-distributions) from [dist.ipfs.io](https://dist.ipfs.io).
 
