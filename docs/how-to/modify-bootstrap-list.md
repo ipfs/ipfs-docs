@@ -19,7 +19,7 @@ ipfs bootstrap list
 > /ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
 ```
 
-The lines listed above are the addresses of the default IPFS bootstrap nodes -- they are run by the IPFS development team. The addresses listed are fully resolved and specified in [multiaddr](https://github.com/multiformats/multiaddr) format, which makes every protocol explicit. This way, your node knows exactly where to reach the bootstrap nodes -- the location is unambiguous.
+The lines listed above are the addresses of the default IPFS bootstrap nodes — they are run by the IPFS development team. The addresses listed are fully resolved and specified in [multiaddr](https://github.com/multiformats/multiaddr) format, which makes every protocol explicit. This way, your node knows exactly where to reach the bootstrap nodes — the location is unambiguous.
 
 Don't change this list unless you understand what it means to do so. Bootstrapping is an important security point of failure in distributed systems: malicious bootstrap peers could only introduce you to other malicious peers. It is recommended to keep the default list provided by the IPFS dev team, or — in the case of setting up private networks — a list of nodes you control. Don't add peers to this list that you don't trust.
 

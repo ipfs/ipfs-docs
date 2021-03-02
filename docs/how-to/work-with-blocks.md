@@ -6,7 +6,7 @@ description: Learn how your files are broken down into blocks in IPFS and how to
 
 # Work with blocks
 
-The `ipfs add` command will create a Merkle DAG out of the data in the files you specify. It follows the [unixfs data format](https://github.com/ipfs/go-unixfs/blob/master/pb/unixfs.proto) when doing this. This means that your files are broken down into blocks, and then arranged in a tree-like structure using 'link nodes' to tie them together. A given file's 'hash' is actually the hash of the root (uppermost) node in the DAG. For a given DAG, you can easily view the sub-blocks under it with `ipfs ls`.
+The `ipfs add` command will create a Merkle DAG out of the data in the files you specify. It follows the [UnixFS data format](https://github.com/ipfs/go-unixfs/blob/master/pb/unixfs.proto) when doing this. This means that your files are broken down into blocks, and then arranged in a tree-like structure using 'link nodes' to tie them together. A given file's 'hash' is actually the hash of the root (uppermost) node in the DAG. For a given DAG, you can easily view the sub-blocks under it with `ipfs ls`.
 
 For example:
 
@@ -51,4 +51,4 @@ ipfs block get QmfQ5QAjvg4GtA3wg3adpnDJug8ktA1BxurVqBD8rtgVjM
 > This is some data
 ```
 
-Note: When making your own block data, you won't be able to read the data with `ipfs cat`. This is because you are inputting raw data without the unixfs data format. To read raw blocks, use `ipfs block get` as shown in the example.
+Note: When making your own block data, you won't be able to read the data with `ipfs cat`. This is because you are inputting raw data without the UnixFS data format. To read raw blocks, use `ipfs block get` as shown in the example.

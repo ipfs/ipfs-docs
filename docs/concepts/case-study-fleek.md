@@ -63,7 +63,7 @@ In short, Fleek's portfolio offers wide-ranging functionality and a bridge betwe
 Fleek chose IPFS because it decentralizes two of the core aspects of the internet: file storage and data transfer. Combined with the inherent advantages of IPFS content addressing and IPFS's position as a fundamental technology in Filecoin, this opens up a host of benefits not available elsewhere:
 
 - **Data integrity in a peer-to-peer world:** Fleek uses IPFS in combination with encryption tools like Textile's, enabling them to offer a best-of-both-worlds paradigm where users get the benefits of client-side encryption (through user-owned keys) as well as the ability to share data directly without touching any third-party servers. Because the transport is encrypted by default, external watchers can't view it in transit, and IPFS's [content addressing](/concepts/content-addressing/) also ensures that the data a user receives when they make a request is cryptographically verified as the data they asked for.
-- **Censorship and disaster reslilience:** IPFS content addressing allows for multiple copies of the same content-addressed resource to exist as equivalent items in multiple locations worldwide. This can offer the potential for a degree of resilience against physical disaster or censorship unavailable on the legacy web.
+- **Censorship and disaster resilience:** IPFS content addressing allows for multiple copies of the same content-addressed resource to exist as equivalent items in multiple locations worldwide. This can offer the potential for a degree of resilience against physical disaster or censorship unavailable on the legacy web.
 - **Integrated access to future storage and retrieval markets:** Because IPFS and Filecoin are so tightly integrated, building on IPFS will facilitate the ability to offer Fleek users a seamless way to access the Filecoin marketplace for their storage needs.
 
 Additionally, IPFS's vibrant and active community of developers means that the protocol is constantly evolving to better meet the needs of its users and builders.
@@ -124,7 +124,7 @@ Additionally, Fleek relies upon building blocks from [Textile](https://textile.i
 Fleek already helps bridge the legacy web and the DWeb through easy-to-use tools for IPFS-based hosting, file storage, and development. But as IPFS continues to evolve, Fleek intends to evolve alongside it; for example, while Fleek Hosting currently augments IPFS storage with a traditional CDN, the team looks forward to going IPFS-only as soon as solutions for optimizing fetch time exist within the ecosystem.
 
 ::: callout
-**"The future of Fleek is very closely tied to the future of IPFS. Fleek products are already delivering cutting-edge performance on IPFS. Every step forward on the IPFS development roadmap will give us more tools to improve on that performance further.**
+**"The future of Fleek is very closely tied to the future of IPFS. Fleek products are already delivering cutting-edge performance on IPFS. Every step forward on the IPFS development roadmap will give us more tools to improve on that performance further."**
 
 _&mdash; Brett Shear, COO, Fleek_
 :::
