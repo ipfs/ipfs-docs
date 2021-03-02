@@ -142,12 +142,13 @@ Before we dig into IPFS, let's first create the files we'll need for this mini-p
     <h2><a href="index.html">Go back home</a></h2>
     <footer>
       <hr />
-      Created with ❤️ by the IPFS team.
+      Created with ❤️ by  __.
     </footer>
   </body>
 </html>
 ```
 
+1. Add your name to the `Created with ❤️ by  __.`  line.
 1. Finally, download [this image](./images/multipage-website/moon-logo.png) and save it in the folder as `moon-logo.png`:
 
    ![Icon of the moon with stars and circles in the background.](./images/multipage-website/moon-logo.png)
@@ -176,8 +177,6 @@ Now that you've got the project ready, we can add things to IPFS using the IPFS 
    ![Random space facts open in a Firefox browser window.](./images/multipage-website/website-open-in-firefox.png)
 
    Try clicking the link to the about page. You should be able to browse between the pages no problem.
-
-<!-- TODO: explain what's happening in the background, and why the links have to be relative in order to work. -->
 
 ## Up next
 
