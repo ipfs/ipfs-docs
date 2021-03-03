@@ -1,14 +1,14 @@
 ---
 title: DNSLink
 legacyUrl: https://docs.ipfs.io/guides/concepts/dnslink/
-description: Learn how DNSLink works in conjunction with IPFS to map domain names to IPFS content.
+description: Learn how DNSLink works in conjunction with IPFS to map DNS names to IPFS content.
 ---
 
 # DNSLink
 
-DNSLink uses [DNS TXT](https://en.wikipedia.org/wiki/TXT_record) records to map a domain name (like `ipfs.io`) to an IPFS address. Because you can edit your DNS records, you can use them to always point to the latest version of an object in IPFS (remember that an IPFS object's address changes if you modify the object). Since DNSLink uses DNS records, you can assign names/paths/(sub)domains/whatever that are easy to type, read, and remember.
+DNSLink uses [DNS TXT](https://en.wikipedia.org/wiki/TXT_record) records to map a DNS name (like `ipfs.io`) to an IPFS address. Because you can edit your DNS records, you can use them to always point to the latest version of an object in IPFS (remember that an IPFS object's address changes if you modify the object). Since DNSLink uses DNS records, you can assign names/paths/(sub)domains/whatever that are easy to type, read, and remember.
 
-A DNSLink address looks like an [IPNS](/guides/concepts/ipns) address, but it uses a domain name in place of a hashed public key:
+A DNSLink address looks like an [IPNS](/guides/concepts/ipns) address, but it uses a DNS name in place of a hashed public key:
 
 ```
 /ipns/example.org
@@ -20,9 +20,9 @@ Just like normal IPFS addresses, they can include links to other files — or ot
 /ipns/example.org/media/
 ```
 
-## Publish Using a Subdomain
+## Publish Content Path in DNSLink Record
 
-Publish the TXT record using a special subdomain called `_dnslink`. 
+Publish the mapping as DNS TXT record using your hostname prefixed with `_dnslink`. 
 
 This not only makes DNSLink lookup more efficient by only returning relevant TXT records, but enables you to improve the security of an automated setup or delegate control over your DNSLink records to a third party without giving away full control over the original DNS zone.
 
@@ -34,7 +34,7 @@ $ dig +noall +answer TXT \_dnslink.docs.ipfs.io
 
 ```
 
-## Resolve Using DNSLink
+## Resolve DNSLink Name
 
 When an IPFS client or node attempts to resolve an address, it looks for a `TXT` record that is prefixed with `dnslink=`. The rest can be an `/ipfs/` link (as in the example below), or `/ipns/`, or even a link to another DNSLink.
 
