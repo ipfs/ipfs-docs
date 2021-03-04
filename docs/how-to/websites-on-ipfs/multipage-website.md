@@ -142,13 +142,13 @@ Before we dig into IPFS, let's first create the files we'll need for this mini-p
     <h2><a href="index.html">Go back home</a></h2>
     <footer>
       <hr />
-      Created with <3 by ___.
+      Created by ___.
     </footer>
   </body>
 </html>
 ```
 
-1. Add your name to the `Created with <3 by ___.` line. If everyone reading this tutorial just copies and pastes the same code, then everyone will get the _exact same_ CID! While there's nothing wrong with this, it's more fun to use a CID that is unique to your project.
+1. Add your name to the `Created by ___.` line. If everyone reading this tutorial just copies and pastes the same code, then everyone will get the _exact same_ CID! While there's nothing wrong with this, it's more fun to use a CID that is unique to your project.
 1. Finally, download [this image](./images/multipage-website/moon-logo.png) and save it in the folder as `moon-logo.png`:
 
    ![Icon of the moon with stars and circles in the background.](./images/multipage-website/moon-logo.png)
