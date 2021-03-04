@@ -1,6 +1,6 @@
 ---
 title: Getting started
-description: Start your IPFS journey here! Learn how the Interplanitery File System works, install commonly used tools, and get to grips with basic d-web concepts.
+description: Start your IPFS journey here! Learn how the InterPlanetary File System works, install commonly used tools, and understand basic DWeb concepts.
 ---
 
 # Getting started
