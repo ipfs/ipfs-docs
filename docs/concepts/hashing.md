@@ -88,6 +88,10 @@ BITS: 256
 DIGEST (HEX): 0E7071C59DF3B9454D1D18A15270AA36D54F89606A576DC621757AFD44AD1D2E
 ```
 
+::: tip
+The names of hash functions are not used consistently.`SHA-2`, `SHA-256` or `SHA-256 bit` all refer to the same hash function.
+:::
+
 We can now check if the hash contained in the CID equals the checksum for the file:
 
 ```shell
@@ -97,12 +101,8 @@ ubuntu-20.04.1-desktop-amd64.iso: FAILED
 shasum: WARNING: 1 computed checksum did NOT match
 ```
 
-::: tip
-The names of hash functions are not used consistently.`SHA-2`, `SHA-256` or `SHA-256 bit` all refer to the same hash function.
-::: tip
-
 As we can see the hash included in the CID does NOT match the hash of the input file `ubuntu-20.04.1-desktop-amd64.iso`. To understand what the hash included in the CID actually is, we have to understand how IPFS stores files. IPFS uses a so called Distributed Acyclic Graph (DAG) to keep track of all the data stored in IPFS. A CID identifies one specific node in this graph. This identifier is the result of hashing the node's contents — any opaque payload carried by the node and the list of identifiers of its children — using a cryptographic hash function like `SHA256`. To learn more about wow the DAG is used within IPFS to address content is explained in detail in the article covering the [Merkle DAG](/concepts/merkle-dag/).
 
 ::: tip
-The [Tutorial: Merkle Trees and the IPFS DAG](https://dweb-primer.ipfs.io/ipfs-dag) inlcudes some in-depth lessonson the IPFS DAG and are a great ressource if you want to understand how IPFS uses the merkle .
-::: tip
+The [Tutorial: Merkle Trees and the IPFS DAG](https://dweb-primer.ipfs.io/ipfs-dag) inlcudes in-depth lessons coveing the IPFS DAG.
+:::
