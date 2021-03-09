@@ -101,8 +101,8 @@ shasum: WARNING: 1 computed checksum did NOT match
 The names of hash functions are not used consistently.`SHA-2`, `SHA-256` or `SHA-256 bit` all refer to the same hash function.
 ::: tip
 
-As we can see the hash included in the CID does NOT match the hash of the input file `ubuntu-20.04.1-desktop-amd64.iso`. To understand what the hash included in the CID actually is, we have to understand how IPFS stores files. IPFS uses a so called Distributed Acyclic Graph (DAG) to keep track of all the data stored in IPFS. A CID identifies one specific node in this graph. This identifier is the result of hashing the node's contents — any opaque payload carried by the node and the list of identifiers of its children — using a cryptographic hash function like SHA256. To learn more about wow the DAG is used within IPFS to address content is explained in detail in the article covering the [Merkle DAG](/concepts/merkle-dag/).
+As we can see the hash included in the CID does NOT match the hash of the input file `ubuntu-20.04.1-desktop-amd64.iso`. To understand what the hash included in the CID actually is, we have to understand how IPFS stores files. IPFS uses a so called Distributed Acyclic Graph (DAG) to keep track of all the data stored in IPFS. A CID identifies one specific node in this graph. This identifier is the result of hashing the node's contents — any opaque payload carried by the node and the list of identifiers of its children — using a cryptographic hash function like `SHA256`. To learn more about wow the DAG is used within IPFS to address content is explained in detail in the article covering the [Merkle DAG](/concepts/merkle-dag/).
 
 ::: tip
-The [Tutorial: Merkle Trees and the IPFS DAG](https://dweb-primer.ipfs.io/ipfs-dag) includes detailed lessons on how to work with the IPFS DAG.
+The [Tutorial: Merkle Trees and the IPFS DAG](https://dweb-primer.ipfs.io/ipfs-dag) inlcudes some in-depth lessonson the IPFS DAG and are a great ressource if you want to understand how IPFS uses the merkle .
 ::: tip
