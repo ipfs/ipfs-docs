@@ -13,6 +13,10 @@ related:
 
 [Libp2p](https://libp2p.io/) is a modular system of _protocols_, _specifications_, and _libraries_ that enable the development of peer-to-peer network applications. Libp2p began as part of the IPFS project and is still an essential component of IPFS. As the network layer for IPFS, Libp2p provides flexible solutions for essential peer-to-peer elements like transport, security, peer routing, and content discovery. Libp2p has implementations in [Go](https://github.com/libp2p/go-libp2p), [JavaScript](https://github.com/libp2p/js-libp2p), [Rust](https://github.com/libp2p/rust-libp2p), [Python](https://github.com/libp2p/py-libp2p), and [C++](https://github.com/soramitsu/libp2p).
 
+::: callout
+libp2p's superpower is its modularity. Learn more in ProtoSchool's [Introduction to libp2p](https://proto.school/introduction-to-libp2p) tutorial.
+:::
+
 ## Peer-to-peer network applications
 
 A [peer-to-peer network](https://docs.libp2p.io/reference/glossary/#peer-to-peer-p2p) is one in which the players, known as _"peers"_, communicate with each other directly as equal participants. This is in direct contrast to the traditional [client-server model](https://docs.libp2p.io/reference/glossary/#client-server), where a privileged central server may provide services to many client programs on the network. These client programs usually do not communicate with each other; they communicate only with the central server.

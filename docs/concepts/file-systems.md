@@ -34,6 +34,10 @@ MFS is accessed through the files commands in the IPFS CLI and API. The commands
 - [Read the contents of a file](#read-the-contents-of-a-file)
 - [Remove a file or directory](#remove-a-file-or-directory)
 
+::: callout
+Prefer hands-on learning? Explore these MFS methods in ProtoSchool's [Mutable File System](https://proto.school/mutable-file-system) tutorial, solving coding challenges right in your web browser.
+:::
+
 #### Create a directory
 
 The MFS method `ipfs.files.mkdir` creates a new directory at a specified path. For example, to add a directory `example` to our root directory (`/`), run:
@@ -80,7 +84,7 @@ await ipfs.files.write(path, content, [options])
 
 ::: tip
 
-This method can create a brand new file that accepts file `content` in multiple formats, in a specified `path` within the IPFS instance by providing the boolean option {` create: true` }.
+This method can create a brand new file that accepts file `content` in multiple formats, in a specified `path` within the IPFS instance by providing the boolean option {`create: true` }.
 
 :::
 
@@ -131,7 +135,7 @@ This method offers two formatting options for passing the `from` key:
 
 :::
 
-The `to` key is the destination path in MFS, and there's an option {` create: true` } that can be used to create parent directories that don't already exist.
+The `to` key is the destination path in MFS, and there's an option {`create: true` } that can be used to create parent directories that don't already exist.
 
 You can use this method to perform different operations including:
 
@@ -309,7 +313,7 @@ To export or read the file data out of the UnixFS graph, perform an in-order tra
 
 You can find additional resources to familiarize with these file systems at:
 
-- [Protoschool MFS course](https://proto.school/mutable-file-system)
+- [Protoschool MFS tutorial](https://proto.school/mutable-file-system)
 - [Understanding how the InterPlanetary File System deals with Files](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_A), from IPFS Camp 2019
 - [Jeromy Coffee Talks - Files API](https://www.youtube.com/watch?v=FX_AXNDsZ9k)
 - [UnixFS Specification](https://github.com/ipfs/specs/blob/master/UNIXFS.md)
