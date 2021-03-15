@@ -1,6 +1,7 @@
 ---
 title: Mint NFTs with IPFS and Ethereum
 description: Learn how to build a simple NFT minting platform with IPFS and Ethereum.
+sidebarDepth: 3
 ---
 
 # Minting NFTs with IPFS and Ethereum
