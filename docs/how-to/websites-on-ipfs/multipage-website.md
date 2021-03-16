@@ -148,7 +148,7 @@ Before we dig into IPFS, let's first create the files we'll need for this mini-p
    </html>
    ```
 
-1. Finally, download [this image](./images/multipage-website/moon-logo.png) and save it in the folder as `moon-logo.png`:
+1. Finally, download this image and save it in the folder as `moon-logo.png`:
 
    ![Icon of the moon with stars and circles in the background.](./images/multipage-website/moon-logo.png)
 
