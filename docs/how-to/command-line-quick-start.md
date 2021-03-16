@@ -22,7 +22,8 @@ If you have not yet installed Go-IPFS, follow the [install instructions](../../i
 
 ```bash
 ipfs init
-> initializing ipfs node at /Users/jbenet/.go-ipfs
+
+> initializing ipfs node at /Users/jbenet/.ipfs
 > generating 2048-bit RSA keypair...done
 > peer identity: Qmcpo2iLBikrdf1d6QU6vXuNb6P7hwrbNPW9kLAH8eG67z
 > to get started, enter:
@@ -85,6 +86,7 @@ Once you're ready to join your node to the public network, run the ipfs daemon i
 
 ```bash
 ipfs daemon
+
 > Initializing daemon...
 > API server listening on /ip4/127.0.0.1/tcp/5001
 > Gateway server listening on /ip4/127.0.0.1/tcp/8080
@@ -92,10 +94,11 @@ ipfs daemon
 
 Make a note of the TCP ports you receive. If they are different, use yours in the commands below.
 
-Now, switch back to your original terminal. If you’re connected to the network, you should be able to see the ipfs addresses of your peers when you run:
+Now, switch back to your original terminal. If you’re connected to the network, you should be able to see the IPFS addresses of your peers when you run:
 
 ```bash
 ipfs swarm peers
+
 > /ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
 > /ip4/104.236.151.122/tcp/4001/p2p/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx
 > /ip4/134.121.64.93/tcp/1035/p2p/QmWHyrPWQnsz1wxHR219ooJDYTvxJPyZuDUPSDpdsAovN5
@@ -107,15 +110,17 @@ These are a combination of `<transport address>/p2p/<hash-of-public-key>`.
 Now, you should be able to get objects from the network. Try:
 
 ```bash
-ipfs cat /ipfs/QmW2WQi7j6c7UgJTarActp7tDNikE4B2qXtFCfLPdsgaTQ/cat.jpg > cat.jpg
-open cat.jpg
+ipfs cat /ipfs/QmSgvgwxZGaBLqkGyWemEDqikCqU52XxsYLKtdy3vGZ8uq > ~/Desktop/spaceship-launch.jpg
 ```
+
+Using the above command, IPFS searches the network for the CID `QmSgv...` and writes the data into a file called `spaceship-launch.jpg` on your Desktop.
 
 Next, try sending objects to the network, and then viewing it in your favorite browser. The example below uses `curl` as the browser, but you can open the IPFS URL in other browsers as well:
 
 ```bash
 hash=`echo "I <3 IPFS -$(whoami)" | ipfs add -q`
 curl "https://ipfs.io/ipfs/$hash"
+
 > I <3 IPFS -<your username>
 ```
 
@@ -127,6 +132,7 @@ You can also check it out at your own local gateway:
 
 ```bash
 curl "http://127.0.0.1:8080/ipfs/$hash"
+
 > I <3 IPFS -<your username>
 ```
 
@@ -142,7 +148,7 @@ You can view the web console on your local node by going to [`localhost:5001/web
 
 While we are at it, [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion) is a browser extension that simplifies access to IPFS resources and adds support for the IPFS protocol.
 
-It will automatically redirect IPFS gateway requests to your local daemon so that you are not relying on or trusting, remote gateways.
+It will automatically redirect IPFS gateway requests to your local daemon so that you are not relying on or trusting remote gateways.
 
 It runs in Firefox (desktop and Android) and various Chromium-based browsers such as Google Chrome or [Brave](https://brave.com).
 [Check out its features](https://github.com/ipfs-shipyard/ipfs-companion#features) and install it today!

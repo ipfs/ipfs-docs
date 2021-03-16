@@ -11,7 +11,7 @@ Learn about exposing IPFS API in IPFS Companion via "window.ipfs".
 
 ## `window.ipfs` is currently disabled
 
-IPFS Companion 2.11 stopped injecting `window.ipfs`. It will be restored after the [move to JS API with async await and async iterables](https://github.com/ipfs-shipyard/ipfs-companion/issues/843), with a likely ETA of Q3 2020. This page is provided for reference only.
+IPFS Companion 2.11 stopped injecting `window.ipfs`. It is currently permanently disabled per comments on the [window.ifps Meta Issue](https://github.com/ipfs-shipyard/ipfs-companion/issues/589#issuecomment-712356448), as of October 19, 2020, and [Remove legacy window.ifps](https://github.com/ipfs/in-web-browsers/issues/172) as of December 14, 2020. This page is provided for reference only.
 
 <!-- below disclaimer will be restored  when window.ipfs injection resumes
 ### Disclaimer

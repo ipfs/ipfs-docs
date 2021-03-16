@@ -31,7 +31,9 @@ If you hit this performance issue on Linux, you should tune the `net.core.rmem_d
 
 If necessary, you can disable the QUIC transport by running:
 
-> ipfs config --json Swarm.Transports.Network.QUIC false
+```bash
+ipfs config --json Swarm.Transports.Network.QUIC false
+```
 
 **NOTE**: The QUIC transport included in this release is backward incompatible with the experimental QUIC transport included in previous releases. Unfortunately, the QUIC protocol underwent some significant breaking changes, and supporting multiple versions wasn't an option. In practice, this degrades gracefully as go-ipfs will simply fall back on the TCP transport when dialing nodes with incompatible QUIC versions.
 

@@ -2,7 +2,7 @@
 <script>
 export default {
   methods: {
-    scrollTop: function() {
+    scrollTop: function () {
       // FireFox has a problem setting the correct scroll postion on route change this patch will fix it for now
       if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
         window.scrollTo(0, 0)
@@ -13,7 +13,7 @@ export default {
     }
   },
   watch: {
-    '$route.path': function(path) {
+    '$route.path': function (path) {
       this.scrollTop()
     }
   }

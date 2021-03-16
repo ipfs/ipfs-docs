@@ -2,13 +2,13 @@
 
 <script>
 export default {
-  data: function() {
+  data: function () {
     return {
       searchBox: false,
       queryVal: null
     }
   },
-  mounted: function() {
+  mounted: function () {
     // track outbound clicks
     document.addEventListener('click', this.trackOutbound)
 
@@ -30,12 +30,12 @@ export default {
     }
   },
   watch: {
-    '$route.path': function(path) {
+    '$route.path': function (path) {
       if (this.queryVal) {
         this.trackQuery(path)
       }
     },
-    $route: function() {
+    $route: function () {
       if (this.searchBox) {
         // remove focus from the searchBox upon router action
         this.searchBox.blur()

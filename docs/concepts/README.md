@@ -78,6 +78,8 @@ IPFS aims to be the future of the internet, but it still needs to play well with
 
 Want a more in-depth look into the decentralized web? Here are a few papers that are useful for understanding IPFS, whether it be understanding the IPFS spec itself or the background for the web, protocols, hashing, and so on. [Read the papers →](/concepts/further-reading/academic-papers)
 
+You may also be interested in the community made [IPFS Primer →](https://dweb-primer.ipfs.io/)
+
 ## Don't see what you're looking for?
 
 We're adding more documentation all the time and making ongoing revisions to existing docs, but if you don't see what you need, please [file an issue](https://github.com/ipfs/ipfs-docs/issues/new?assignees=&labels=OKR+3%3A+Content+Improvement%2C+docs-ipfs&template=content-request.md&title=%5BCONTENT+REQUEST%5D+%28add+your+title+here%21%29) to let us know! We also recommend visiting the [IPFS forums](https://discuss.ipfs.io/) for support and discussion with IPFS enthusiasts and experts worldwide.

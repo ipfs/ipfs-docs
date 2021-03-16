@@ -17,19 +17,19 @@ The easiest way to move your IPFS installation is to grab the `.ipfs` folder, an
 1. Stop any IPFS daemons, services, or applications from running.
 1. In a terminal, move to where your IPFS repository is stored, likely your _home_ folder:
 
-    ```bash
-    cd ~/
-    ```
+   ```bash
+   cd ~/
+   ```
 
 1. Make a copy of the `.ipfs` directory:
 
-    ```bash
-    cp --recursive --verbose .ipfs ipfs-backup
+   ```bash
+   cp --recursive --verbose .ipfs ipfs-backup
 
-    > '.ipfs' -> 'ipfs-backup'
-    > '.ipfs/datastore_spec' -> 'ipfs-backup/data'
-    > ...
-    ```
+   > '.ipfs' -> 'ipfs-backup'
+   > '.ipfs/datastore_spec' -> 'ipfs-backup/data'
+   > ...
+   ```
 
 1. You now have a copy of your IPFS repository within the `ipfs-backup` folder.
 
@@ -50,39 +50,39 @@ Once you have a backup of your IPFS repository in `ipfs-backup`, you can move it
 1. Stop any IPFS daemons, services, or applications from running.
 1. In a terminal, move to where your IPFS repository is stored, likely your _home_ folder:
 
-    ```bash
-    cd ~/
-    ```
+   ```bash
+   cd ~/
+   ```
 
 1. Move your current IPFS repository to another folder. If something goes wrong you can restore your installation from here:
 
-    ```bash
-    mv .ipfs ipfs-old
-    ```
+   ```bash
+   mv .ipfs ipfs-old
+   ```
 
 1. Move your backup IPFS repository to `.ipfs`:
 
-    ```bash
-    mv ipfs-backup .ipfs
-    ```
+   ```bash
+   mv ipfs-backup .ipfs
+   ```
 
 1. Start an IPFS daemon:
 
-    ```bash
-    ipfs daemon
+   ```bash
+   ipfs daemon
 
-    > Initializing daemon...
-    > go-ipfs version: 0.5.0-dev-a22dc826c
-    > Repo version: 7
-    > ...
-    > Daemon is ready
-    ```
+   > Initializing daemon...
+   > go-ipfs version: 0.5.0-dev-a22dc826c
+   > Repo version: 7
+   > ...
+   > Daemon is ready
+   ```
 
 1. If everything is working fine, you can delete your old IPFS repository:
 
-    ```bash
-    rm -rf .ipfs-old
-    ```
+   ```bash
+   rm -rf .ipfs-old
+   ```
 
 ### Windows
 
@@ -103,9 +103,9 @@ If you have IPFS installed in the Windows Subsystem for Linux, you can move your
 1. Stop any IPFS daemons, services, or applications from running in your Linux and Windows environments.
 1. Copy your Linux IPFS repository to Windows. This process overwrites the IPFS repository in Windows:
 
-    ```bash
-    cp --recursive --verbose ~/.ipfs /mnt/c/Users/Your Username/
-    ```
+   ```bash
+   cp --recursive --verbose ~/.ipfs /mnt/c/Users/Your Username/
+   ```
 
 1. On Windows, open the IPFS Desktop application or run an `ipfs daemon`. Everything should open successfully.
 
