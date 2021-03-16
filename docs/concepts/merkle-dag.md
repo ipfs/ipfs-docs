@@ -6,8 +6,8 @@ description: Learn about Merkle Distributed Acyclic Graphs (DAGs) and why they'r
 
 # Merkle Distributed Acyclic Graphs (DAGs)
 
-::: tip
-If you're interested in how Merkle DAGs fit into how IPFS works with files in general, check out this video from IPFS Camp 2019! [Core Course: How IPFS Deals With Files](https://www.youtube.com/watch?v=Z5zNPwMDYGg)
+::: callout
+Take a deep dive into this superpowered, content-addresed data structure in ProtoSchool's tutorial, [Merkle DAGs: Structuring Data for the Distributed Web](https://proto.school/merkle-dags).
 :::
 
 A Merkle DAG is a DAG where each node has an identifier, and this is the result of hashing the node's contents — any opaque payload carried by the node and the list of identifiers of its children — using a cryptographic hash function like SHA256. This brings some important considerations:
@@ -22,7 +22,7 @@ Identifying a data object (like a Merkle DAG node) by the value of its hash is r
 
 For example, the previous linked list, assuming that the payload of each node is just the CID of its descendant, would be: _A=Hash(B)→B=Hash(C)→C=Hash(∅)_. The properties of the hash function ensure that no cycles can exist when creating Merkle DAGs. (Note: Hash functions are one-way functions. Creating a cycle should then be impossibly difficult unless some weakness is discovered and exploited.)
 
-Merkle DAGs are _self-verified_ structures. The CID of a node is univocally linked to the contents of its payload and those of all its descendants. Thus two nodes with the same CID univocally represent exactly the same DAG. This will be a key property to efficiently sync Merkle-CRDTs without having to copy the full DAG, as exploited by systems like IPFS. Merkle DAGs are very widely used. Source control systems like git and others use them to efficiently store the repository history in a way that enables de-duplicating the objects and detecting conflicts between branches.
+Merkle DAGs are _self-verified_ structures. The CID of a node is univocally linked to the contents of its payload and those of all its descendants. Thus two nodes with the same CID univocally represent exactly the same DAG. This will be a key property to efficiently sync Merkle-CRDTs (Conflict-free Replicated Data Types) without having to copy the full DAG, as exploited by systems like IPFS. Merkle DAGs are very widely used. Source control systems like git and others use them to efficiently store the repository history in a way that enables de-duplicating the objects and detecting conflicts between branches.
 
 Want to see a real-world example of Merkle DAGs in action? It's easy to see a Merkle DAG representation of a file of your choice using the [DAG Builder visualizer](https://dag.ipfs.io/).
 

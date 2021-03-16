@@ -84,7 +84,7 @@ Path-based gateway management is simple to implement but comes with a host of se
 
 Conforming to this policy was an issue before this release. There was a significant amount of _hackery_ needed to get subdomains working. With Go-IPFS 0.5, subdomains are supported straight out of the box. Users are also able to configure the gateway behavior per hostname. This implementation ensures that every application gets an individual browser origin. In summary, this update makes it easier to write websites that _just work_.
 
-The gateway will now redirect from `localhost:5001/ipfs/CID/...` to `CID.ipfs.localhost:5001/...` by default. This ensures that every Dapp gets its own browser origin, and makes it easier to write websites because absolute paths now work. Paths addressing the gateway by IP address `127.0.0.1:5001/ipfs/CID` will not be altered as IP addresses can't have subdomains.
+The gateway will now redirect from `localhost:5001/ipfs/CID/...` to `CID.ipfs.localhost:5001/...` by default. This ensures that every dapp gets its own browser origin, and makes it easier to write websites because absolute paths now work. Paths addressing the gateway by IP address `127.0.0.1:5001/ipfs/CID` will not be altered as IP addresses can't have subdomains.
 
 This update to subdomain support means we'll be introducing a redirect from the path-based gateway to the correct subdomain, and doing so could cause issues with [cURL](https://en.wikipedia.org/wiki/CURL), which doesn't follow redirects by default. To mitigate this issue, either change your cURL invocations to call `curl -L`, or reconfigure your IPFS node to not use the subdomain gateway on the affected domain.
 
@@ -97,7 +97,7 @@ With the refactored Bitswap, we expect:
 - Few to no duplicate blocks when fetching data from other nodes speaking the _new_ protocol.
 - Better parallelism when fetching from multiple peers.
 
-The new Bitswap won't magically make downloading content any faster until **both** seeds and leaches have updated. If you're one of the first to upgrade to `0.5.0`, make sure your peers upgrade as well in order to see the performance improvement.
+The new Bitswap won't magically make downloading content any faster until **both** seeds and leeches have updated. If you're one of the first to upgrade to `0.5.0`, make sure your peers upgrade as well in order to see the performance improvement.
 
 ## Badger Integration
 

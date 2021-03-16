@@ -106,7 +106,7 @@ A `405`error may mean that you are using the wrong HTTP method (i.e. GET instead
 
 ## /api/v0/add
 
-Add a file or directory to ipfs.
+Add a file or directory to IPFS.
 
 ### Arguments
 
@@ -747,7 +747,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/config
 
-Get and set ipfs config values.
+Get and set IPFS config values.
 
 ### Arguments
 
@@ -898,7 +898,7 @@ This endpoint returns a `text/plain` response body.
 
 ## /api/v0/dag/get
 
-Get a dag node from ipfs.
+Get a dag node from IPFS.
 
 ### Arguments
 
@@ -954,7 +954,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/dag/put
 
-Add a dag node to ipfs.
+Add a dag node to IPFS.
 
 ### Arguments
 
@@ -987,7 +987,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/dag/resolve
 
-Resolve ipld block
+Resolve IPLD block.
 
 ### Arguments
 
@@ -1014,7 +1014,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/dag/stat
 
-Gets stats for a DAG
+Gets stats for a DAG.
 
 ### Arguments
 
@@ -1368,7 +1368,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/file/ls
 
-List directory contents for Unix filesystem objects.
+List directory contents for UnixFS objects.
 
 ### Arguments
 
@@ -1409,13 +1409,13 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/files/chcid
 
-Change the cid version or hash function of the root node of a given path.
+Change the CID version or hash function of the root node of a given path.
 
 ### Arguments
 
 - `arg` [string]: Path to change. Default: &#39;/&#39;. Required: no.
-- `cid-version` [int]: Cid version to use. (experimental). Required: no.
-- `hash` [string]: Hash function to use. Will set Cid version to 1 if used. (experimental). Required: no.
+- `cid-version` [int]: CID version to use. (experimental). Required: no.
+- `hash` [string]: Hash function to use. Will set CID version to 1 if used. (experimental). Required: no.
 
 ### Response
 
@@ -1797,7 +1797,7 @@ This endpoint returns a `text/plain` response body.
 
 ## /api/v0/id
 
-Show ipfs node id info.
+Show IPFS node id info.
 
 ### Arguments
 
@@ -1879,7 +1879,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/key/import
 
-Import a key and prints imported key id
+Import a key and prints imported key id.
 
 ### Arguments
 
@@ -1910,7 +1910,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/key/list
 
-List all local keypairs
+List all local keypairs.
 
 ### Arguments
 
@@ -1940,7 +1940,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/key/rename
 
-Rename a keypair
+Rename a keypair.
 
 ### Arguments
 
@@ -1970,7 +1970,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/key/rm
 
-Remove a keypair
+Remove a keypair.
 
 ### Arguments
 
@@ -2001,7 +2001,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/key/rotate
 
-Rotates the ipfs identity.
+Rotates the IPFS identity.
 
 ### Arguments
 
@@ -2098,7 +2098,7 @@ This endpoint returns a `text/plain` response body.
 
 ## /api/v0/ls
 
-List directory contents for Unix filesystem objects.
+List directory contents for UnixFS objects.
 
 ### Arguments
 
@@ -2200,7 +2200,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/name/pubsub/cancel
 
-Cancel a name subscription
+Cancel a name subscription.
 
 ### Arguments
 
@@ -2224,7 +2224,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/name/pubsub/state
 
-Query the state of IPNS pubsub
+Query the state of IPNS pubsub.
 
 ### Arguments
 
@@ -2248,7 +2248,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/name/pubsub/subs
 
-Show current name subscriptions
+Show current name subscriptions.
 
 ### Arguments
 
@@ -2322,7 +2322,7 @@ This endpoint returns a `text/plain` response body.
 
 ## /api/v0/object/diff
 
-Display the diff between two ipfs objects.
+Display the diff between two IPFS objects.
 
 ### Arguments
 
@@ -2423,7 +2423,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/object/new
 
-Create a new object from an ipfs template.
+Create a new object from an IPFS template.
 
 ### Arguments
 
@@ -2488,7 +2488,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/object/patch/append-data
 
-Append data to the data segment of a dag node.
+Append data to the data segment of a DAG node.
 
 ### Arguments
 
@@ -2683,7 +2683,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/p2p/forward
 
-Forward connections to libp2p service
+Forward connections to libp2p service.
 
 ### Arguments
 
@@ -2708,7 +2708,7 @@ This endpoint returns a `text/plain` response body.
 
 ## /api/v0/p2p/listen
 
-Create libp2p service
+Create libp2p service.
 
 ### Arguments
 
@@ -2904,7 +2904,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/pin/update
 
-Update a recursive pin
+Update a recursive pin.
 
 ### Arguments
 
@@ -3302,7 +3302,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/shutdown
 
-Shut down the ipfs daemon
+Shut down the IPFS daemon.
 
 ### Arguments
 
@@ -3362,7 +3362,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/stats/bw
 
-Print ipfs bandwidth information.
+Print IPFS bandwidth information.
 
 ### Arguments
 
@@ -3395,7 +3395,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/stats/dht
 
-Returns statistics about the node&#39;s DHT(s)
+Returns statistics about the node&#39;s DHT(s).
 
 ### Arguments
 
@@ -3698,7 +3698,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/tar/add
 
-Import a tar file into ipfs.
+Import a tar file into IPFS.
 
 ### Arguments
 
@@ -3796,7 +3796,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/version
 
-Show ipfs version information.
+Show IPFS version information.
 
 ### Arguments
 
@@ -3827,7 +3827,7 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ## /api/v0/version/deps
 
-Shows information about dependencies used for build
+Shows information about dependencies used for build.
 
 ### Arguments
 

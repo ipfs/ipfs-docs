@@ -20,7 +20,7 @@ This document is a guide to how to address IPFS content paths on the web.
 
 ## HTTP gateways
 
-Gateways are provided strictly for convenience: in other words, they help tools that speak HTTP but do not speak distributed protocols such as IPFS. They are the first stage of the upgrade path for the web.
+Gateways are provided strictly for convenience: in other words, they help tools that speak HTTP but do not speak distributed protocols (such as IPFS) to communicate. They are the first stage of the upgrade path for the web. [More information about IPFS Gateways](/concepts/ipfs-gateway/).
 
 ### Centralization
 
@@ -190,7 +190,7 @@ The best and most up-to-date source of truth about IPFS addressing can be found 
 
 ### Background on address scheme discussions
 
-Discussions around IPFS addressing have been going on since @jbenet published the [IPFS whitepaper](https://ipfs.io/ipfs/QmR7GSQM93Cx5eAg6a6yRzNde1FQv7uL6X1o4k7zrJa3LX/ipfs.draft3.pdf), with a number of other approaches being proposed. This long-standing design discussion includes many lengthy GitHub issue threads, but a good summary can be found in [this PR&nbsp;<i class="fas fa-external-link-square-alt fa-sm"></i></a>](https://github.com/ipfs/specs/pull/152).
+Discussions around IPFS addressing have been going on since [@jbenet](https://github.com/jbenet) published the [IPFS whitepaper](https://ipfs.io/ipfs/QmR7GSQM93Cx5eAg6a6yRzNde1FQv7uL6X1o4k7zrJa3LX/ipfs.draft3.pdf), with a number of other approaches being proposed. This long-standing design discussion includes many lengthy GitHub issue threads, but a good summary can be found in [this PR&nbsp;<i class="fas fa-external-link-square-alt fa-sm"></i></a>](https://github.com/ipfs/specs/pull/152).
 
 ### IPFS Companion
 

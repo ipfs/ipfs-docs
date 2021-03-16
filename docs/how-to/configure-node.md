@@ -1283,14 +1283,7 @@ Type: `priority`
 Mplex is the default multiplexer used when communicating between go-ipfs and all
 other IPFS and libp2p implementations. Unlike Yamux:
 
-- Mplex is a simpler protocol.
-- Mplex is more efficient.
-- Mplex does not have built-in keepalives.
-- Mplex does not support backpressure. Unfortunately, this means that, if a
-  single stream to a peer gets backed up for a period of time, the mplex
-  transport will kill the stream to allow the others to proceed. On the other
-  hand, the lack of backpressure means mplex can be significantly faster on some
-  high-latency connections.
+The mounts config values specifies the default mount points for the IPFS and IPNS virtual file systems, if no other directories are specified by the `ipfs mount` command. These folders should exist, and have permissions for your user to be able to mount to them via fuse.
 
 Default: `200`
 

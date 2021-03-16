@@ -54,7 +54,7 @@ The main difference between the WAN and LAN DHTs are the acceptance criteria for
 
 ## Routing Tables
 
-A routing table is a set of rules used to decide where data traveling over a network should go. All IP-enabled devices, including routers and switches, use routing tables. Every IPFS peer maintains a routing table with links to other peers in the network. IPFS relies on Kademila to define what should and should not go into the routing table:
+A routing table is a set of rules used to decide where data traveling over a network should go. All IP-enabled devices, including routers and switches, use routing tables. Every IPFS peer maintains a routing table with links to other peers in the network. IPFS relies on Kademlia to define what should and should not go into the routing table:
 
 1. When we connect to a peer, check if it qualifies to be added to our routing table.
 1. If it qualifies, determine how close the new peer is to us to figure out which _bucket_ it should go into.
@@ -88,8 +88,8 @@ Peers can be dropped from the routing table for several reasons, usually because
 
 The lookup algorithm answers the question _What are the `K` closest peers to `X`?_. The IPFS implementation of the Kademlia lookup algorithm uses the following workflow:
 
-1. Load the `K` closest peers to `X` from our routing table into the query-queue
-1. Allowing up to 10 concurrent queries, grab the peer closest to `X` and ask them _who are the `K` closest peers to `X`?_.
+1. Load the `K` closest peers to `X` from our routing table into the query-queue.
+1. Allowing up to 10 concurrent queries, grab the peer closest to `X` and ask them _who are the `K` closest peers to `X`?_
 1. When a query to a peer finishes, add those results to the query-queue.
 1. Pull the next-closest peer off the queue and query them.
 1. The query terminates whenever the closest known three peers to `X` have been successfully queried without any timeouts or errors.
@@ -123,13 +123,13 @@ For an IPNS key where the multihash of the public key is `H`:
 
 #### IPNS `PUT`
 
-1. Do a standard lookup for the `K` closest peers to `SHA256(/ipns/H)`
+1. Do a standard lookup for the `K` closest peers to `SHA256(/ipns/H)`.
 1. Put the IPNS record at those `K` closest peers and store it ourselves.
 
 #### IPNS `GET`
 
 1. Do a lookup for the `K` closest peers to `X=SHA256(/ipns/H)`.
-1. Ask each peer _who are the `K` closest peers to `X` you know about?_.
+1. Ask each peer _who are the `K` closest peers to `X` you know about?_
 1. Also, ask _send me the record corresponding to `X` if you have it_.
 1. If we receive a record with a higher IPNS sequence number, update the existing one, and continue until the lookup terminates.
 
@@ -148,7 +148,7 @@ When libp2p peers connect, they exchange peer information automatically. Being p
 #### Peer records `GET`
 
 1. Do a lookup for the `K` closest peers to `X=SHA256(H)`.
-1. Ask each peer _who are the `K` closest peers to `X` you know about?_.
+1. Ask each peer _who are the `K` closest peers to `X` you know about?_
 1. Also, ask _send me the peer record for `H` if you have it_.
 
 IPFS tries to connect to the peer with ID `H` as soon as we learn addresses about it. The lookup can terminate early if we end up connecting to the peer.

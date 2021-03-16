@@ -8,8 +8,8 @@ description: How to connect with the IPFS community using Internet Relay Chat (I
 
 If IRC is your go-to for discussions and help on dev topics, there are several IRC channels on Freenode dedicated to IPFS, and it’s a great place for live chat:
 
-- Use [#ipfs on irc.freenode.org](irc://irc.freenode.org/%23ipfs) for general IPFS usage and community chat
-- Use [#ipfs-dev on irc.freenode.org](irc://irc.freenode.org/%23ipfs-dev) for discussing implementation details, especially if you are contributing code to IPFS
+- Use [#ipfs on irc.freenode.org](irc://irc.freenode.org/%23ipfs) for general IPFS usage and community chat.
+- Use [#ipfs-dev on irc.freenode.org](irc://irc.freenode.org/%23ipfs-dev) for discussing implementation details, especially if you are contributing code to IPFS.
 
 ## IRC and the forums
 

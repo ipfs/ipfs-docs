@@ -22,7 +22,7 @@ IPFS now enforces a minimum key size of 2048. IPFS generates 2048 bit RSA keys b
 
 ## Unable to read datastore from JS-IPFS
 
-JS-IPFS nodes will no longer be able to read Go-ipfs datastores. Avoid pointing two nodes at the same datastore. If your Go-IPFS node reads a JS-IPFS datastore it will upgrade it and no longer be compatible with JS-IPFS.
+JS-IPFS nodes will no longer be able to read Go-IPFS datastores. Avoid pointing two nodes at the same datastore. If your Go-IPFS node reads a JS-IPFS datastore it will upgrade it and no longer be compatible with JS-IPFS.
 
 ## Using IPFS as a library
 
