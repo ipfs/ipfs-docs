@@ -29,13 +29,9 @@ Describe the key features of an NFT:
 
 To find out how to use IPFS to mint new NFTs, we'll explore [Minty][minty-repo], an example app that was written to accompany this guide.
 
-A production NFT platform is a fairly complex thing. As with any modern web application, there are lots of decisions to make about tech stacks,
-UI conventions, API design and so on. Blockchain-enabled dApps also need to interact with user wallets, for example using [MetaMask](https://metamask.io)
-to sign transactions inside the browser.
+A production NFT platform is a fairly complex thing. As with any modern web application, there are lots of decisions to make about tech stacks, UI conventions, API design and so on. Blockchain-enabled dApps also need to interact with user wallets, for example using [MetaMask](https://metamask.io) to sign transactions inside the browser.
 
-Since Minty was written to demonstrate the concepts and process of minting IPFS-backed NFTs, we don't need to get caught up in all the details of
-modern dApp development. Instead, Minty is a simple command line app, written in Javascript and running on node.js. See the [Next Steps section](#next-steps)
-to explore how to use the techniques shown in this guide to build a full NFT platform.
+Since Minty was written to demonstrate the concepts and process of minting IPFS-backed NFTs, we don't need to get caught up in all the details of modern dApp development. Instead, Minty is a simple command line app, written in Javascript and running on node.js. See the [Next Steps section](#next-steps) to explore how to use the techniques shown in this guide to build a full NFT platform.
 
 Here's how to create a new token from an image file using the `minty` command:
 
@@ -58,18 +54,13 @@ Minted new NFT:  {
 }
 ```
 
-The `minty mint` command returns the id of the new token, some metadata containing the `name` and `description` we provided,
-and an IPFS URI to the image file we used for our NFT "asset".
+The `minty mint` command returns the id of the new token, some metadata containing the `name` and `description` we provided, and an IPFS URI to the image file we used for our NFT "asset".
 
 The `metadataURI` in the output above is the IPFS URI for the `metadata` that's been converted to a JSON string and saved to IPFS.
 
-If you have an IPFS-enabled browser like [Brave](https://brave.com) installed, you can paste the `assetURI` or `metadataURI` into
-the address bar directly and see the content served up by your local IPFS node. If your browser doesn't support IPFS natively,
-you can use the `assetGatewayURL` or `metadataGatewayURL` instead, which will serve the data from a local HTTP gateway.
+If you have an IPFS-enabled browser like [Brave](https://brave.com) installed, you can paste the `assetURI` or `metadataURI` into the address bar directly and see the content served up by your local IPFS node. If your browser doesn't support IPFS natively, you can use the `assetGatewayURL` or `metadataGatewayURL` instead, which will serve the data from a local HTTP gateway.
 
-Check out the [Minty README][minty-repo] to see how to install the `minty` command and get started running a local
-Ethereum development chain. Once you've installed `minty`, you can run `minty --help` to get details about the available
-commands. Try minting a few NFTs and viewing their details with `minty show <token-id>`!
+Check out the [Minty README][minty-repo] to see how to install the `minty` command and get started running a local Ethereum development chain. Once you've installed `minty`, you can run `minty --help` to get details about the available commands. Try minting a few NFTs and viewing their details with `minty show <token-id>`!
 
 Next, lets look at how things work.
 
@@ -77,11 +68,9 @@ First, we'll [check out the smart contract](#the-minty-smart-contract), which de
 
 Then we'll see [how to get the data into IPFS in the first place](#storing-nft-data-on-ipfs), so we can get the metadata URI that our contract needs.
 
-Once the data has been stored an a token has been minted, we can [fetch the data from IPFS](#retrieving-nft-data) using the metadata URI returned from the contract.
+Once the data has been stored and a token has been minted, we can [fetch the data from IPFS](#retrieving-nft-data) using the metadata URI returned from the contract.
 
-Finally, we'll see [how to "pin" our IPFS data to a remote IPFS Pinning Service](#pinning-nft-data-to-a-remote-service), so that it stays available even if our
-local IPFS node goes offline.
-
+Finally, we'll see [how to "pin" our IPFS data to a remote IPFS Pinning Service](#pinning-nft-data-to-a-remote-service), so that it stays available even if our local IPFS node goes offline.
 
 
 ### The Minty Smart Contract
