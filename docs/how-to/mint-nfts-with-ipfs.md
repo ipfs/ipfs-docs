@@ -27,15 +27,62 @@ Describe the key features of an NFT:
 
 ## Let's Mint Some NFTs!
 
-Introduce Minty, the command line NFT minting platform.
+To find out how to use IPFS to mint new NFTs, we'll explore [Minty][minty-repo], an example app that was written to accompany this guide.
 
-Show a few examples of using the cli to create a token and view the data.
+A production NFT platform is a fairly complex thing. As with any modern web application, there are lots of decisions to make about tech stacks,
+UI conventions, API design and so on. Blockchain-enabled dApps also need to interact with user wallets, for example using [MetaMask](https://metamask.io)
+to sign transactions inside the browser.
 
-Describe the high level process that we'll drill into in the next sections:
+Since Minty was written to demonstrate the concepts and process of minting IPFS-backed NFTs, we don't need to get caught up in all the details of
+modern dApp development. Instead, Minty is a simple command line app, written in Javascript and running on node.js. See the [Next Steps section](#next-steps)
+to explore how to use the techniques shown in this guide to build a full NFT platform.
 
-- An ethereum smart contract is deployed to the blockchain. The contract has a `mintToken` function that takes in an IPFS CID and creates a new token with an IPFS metadata URI.
-- The `Minty` javascript class coordinates the process of storing data in IPFS and calling the `mintToken` function.
-- To make the IPFS data highly-available, we can "pin" it to a remote pinning service like Pinata, using `Minty`'s `pinToken` method.
+Here's how to create a new token from an image file using the `minty` command:
+
+```
+minty mint ~/token-images/ipfs-logo.png 
+
+? Enter a name for your new NFT:  IPFS Logo
+? Enter a description for your new NFT:  The IPFS logo
+Minted new NFT:  {
+  tokenId: '2',
+  metadata: {
+    name: 'IPFS Logo',
+    description: 'The IPFS logo',
+    image: 'ipfs://QmUAACALRufqXnGHM1QCSr5JA3b54N5QBKD73EXx6pws2f/ipfs-logo.png'
+  },
+  assetURI: 'ipfs://QmUAACALRufqXnGHM1QCSr5JA3b54N5QBKD73EXx6pws2f/ipfs-logo.png',
+  metadataURI: 'ipfs://QmZ8WLvpoTgHVVAyAormrzWnEqTPZ5KLBJ6ymVCvbTzP2r/metadata.json',
+  assetGatewayURL: 'http://localhost:8080/ipfs/QmUAACALRufqXnGHM1QCSr5JA3b54N5QBKD73EXx6pws2f/ipfs-logo.png',
+  metadataGatewayURL: 'http://localhost:8080/ipfs/QmZ8WLvpoTgHVVAyAormrzWnEqTPZ5KLBJ6ymVCvbTzP2r/metadata.json'
+}
+```
+
+The `minty mint` command returns the id of the new token, some metadata containing the `name` and `description` we provided,
+and an IPFS URI to the image file we used for our NFT "asset".
+
+The `metadataURI` in the output above is the IPFS URI for the `metadata` that's been converted to a JSON string and saved to IPFS.
+
+If you have an IPFS-enabled browser like [Brave](https://brave.com) installed, you can paste the `assetURI` or `metadataURI` into
+the address bar directly and see the content served up by your local IPFS node. If your browser doesn't support IPFS natively,
+you can use the `assetGatewayURL` or `metadataGatewayURL` instead, which will serve the data from a local HTTP gateway.
+
+Check out the [Minty README][minty-repo] to see how to install the `minty` command and get started running a local
+Ethereum development chain. Once you've installed `minty`, you can run `minty --help` to get details about the available
+commands. Try minting a few NFTs and viewing their details with `minty show <token-id>`!
+
+Next, lets look at how things work.
+
+First, we'll [check out the smart contract](#the-minty-smart-contract), which defines the mapping between a token ID and the IPFS metadata URI.
+
+Then we'll see [how to get the data into IPFS in the first place](#storing-nft-data-on-ipfs), so we can get the metadata URI that our contract needs.
+
+Once the data has been stored an a token has been minted, we can [fetch the data from IPFS](#retrieving-nft-data) using the metadata URI returned from the contract.
+
+Finally, we'll see [how to "pin" our IPFS data to a remote IPFS Pinning Service](#pinning-nft-data-to-a-remote-service), so that it stays available even if our
+local IPFS node goes offline.
+
+
 
 ### The Minty Smart Contract
 
@@ -73,7 +120,7 @@ Describe why pinning is useful, and introduce Pinata as a pinning provider that 
 Show how [`pinTokenData`](https://github.com/yusefnapora/minty/blob/master/src/minty.js#L356-L367) looks up the metadata URI for a token,
 fetches the metadata to get the asset URI, and then calls [`pin`](https://github.com/yusefnapora/minty/blob/master/src/minty.js#L375-L394) to request that the remote pinning service pin both the asset URI and metadata URI using `ipfs.pin.remote.add`.
 
-## Next Steps to Production
+## Next Steps
 
 Wrap up what we've covered, and go over what would be needed to build a real NFT platform:
 
@@ -81,3 +128,6 @@ Wrap up what we've covered, and go over what would be needed to build a real NFT
 - Add access controls to the smart contract, and set a policy for who is authorized to transfer tokens
 - Maybe explain that users can use go-ipfs instead of an embedded js-ipfs by using `ipfs-http-client` instead of `ipfs-core`
 
+
+<!-- TODO: move minty repo to ipfs-shipyard? -->
+[minty-repo]: https://github.com/yusefnapora/minty
