@@ -111,7 +111,7 @@ contract Minty is ERC721 {
 }
 ```
 
-If you read the [OpenZeppelin example guide](https://docs.openzeppelin.com/contracts/3.x/erc721), you'll see that the Minty contract is extremely similar. The `mintToken` function simply increments a counter to issue token ids, and uses the `_setTokenURI` function provided by the base contract to associate the metadata URI with the new token id.
+If you read the [OpenZeppelin ERC721 guide](https://docs.openzeppelin.com/contracts/3.x/erc721), you'll see that the Minty contract is extremely similar. The `mintToken` function simply increments a counter to issue token ids, and it uses the `_setTokenURI` function provided by the base contract to associate the metadata URI with the new token id.
 
 One thing to notice is that we set the base URI prefix to `ipfs://` in the constructor. When we set a metadata URI for each token in the `mintToken` function, we don't need to store the prefix, since the base contract's `tokenURI` accessor function will apply it to each token's URI.
 
@@ -124,6 +124,44 @@ Before you can mint new NFTs, you need to deploy the contract to a blockchain ne
 To deploy, make sure the local development network and IPFS daemon are running with Minty's `start-local-environment.sh` script, then in another terminal run `minty deploy`. This will create a `minty-deployment.json` file that contains the contract address, which future `minty` commands will read to connect to the deployed contract.
 
 It's also possible to deploy the contract to an [Ethereum test network](https://ethereum.org/en/developers/docs/networks/) by editing the `hardhat.config.js` file in the minty repo. See the [HardHat documentation](https://hardhat.org/config/#json-rpc-based-networks) to learn how to configure HardHat to deploy to a node connected to a testnet, either running locally or hosted by a provider such as [Infura](https://infura.io). Because deployment consumes Ether as gas, you'll need to obtain some test Ether for your chosen network and configure hardhat to use the correct wallet.
+
+#### Calling the `mintToken` Smart Contract Function
+
+Let's look at how Minty's JavaScript code interacts with the smart contract's `mintToken` function. This happens in the
+`mintToken` method of the `Minty` class:
+
+```javascript
+async mintToken(ownerAddress, metadataURI) {
+    // The smart contract adds an ipfs:// prefix to all URIs, 
+    // so make sure to remove it so it doesn't get added twice
+    metadataURI = stripIpfsUriPrefix(metadataURI)
+
+    // Call the mintToken smart contract function to issue a new token to the given address
+    // This returns a transaction object, but the transaction hasn't been confirmed
+    // yet, so it doesn't have our token id.
+    const tx = await this.contract.mintToken(ownerAddress, metadataURI)
+
+    // The OpenZeppelin base ERC721 contract emits a Transfer event when a token is issued.
+    // tx.wait() will wait until a block containing our transaction has been mined and confirmed.
+    // The transaction receipt contains events emitted while processing the transaction.
+    const receipt = await tx.wait()
+    for (const event of receipt.events) {
+        if (event.event !== 'Transfer') {
+            console.log('ignoring unknown event type ', event.event)
+            continue
+        }
+        return event.args.tokenId.toString()
+    }
+
+    throw new Error('unable to get token id')
+}
+```
+
+As you can see, calling the smart contract function is mostly like calling a normal JavaScript function, thanks to the
+[ethers.js smart contract library](https://docs.ethers.io/v5/). However, since the `mintToken` function modifies the blockchain's state, it can't return a value right away. This is because the function call creates an ethereum transaction, and there's no way to know for sure that the block containing the transaction will actually be mined and incorporated into the blockchain. For example, there may not be enough gas to pay for the transaction.
+
+To get the token id for our new NFT, we need call `tx.wait()`, which waits until the transaction has been confirmed. The token id is wrapped inside a `Transfer` event, which is emitted by the base contract when a new token is created or transferred to a
+new owner.
 
 ### Storing NFT Data on IPFS
 
