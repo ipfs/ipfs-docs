@@ -30,7 +30,7 @@ The install process for this release is the same as previous versions of Go-IPFS
    > ipfs version 0.5.0
    ```
 
-   While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH.` by using the following steps.
+   While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH` by using the following steps.
 
 4. Print the current working directory and copy it to your clipboard:
 

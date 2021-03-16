@@ -7,27 +7,11 @@ description: Using IPFS through the command-line allows you to do everything tha
 
 Installing IPFS through the command-line is handy if you plan on building applications and services on top of an IPFS node. This method is also useful if you're setting up a node without a user interface, usually the case with remote servers or virtual machines. Using IPFS through the command-line allows you to do everything that IPFS Desktop can do, but at a more granular level since you can specify which commands to run.
 
-There are several different ways to install IPFS using the command-line. The easiest method is by using a [package manager](#package-managers). If you don't have one installed or would like a more up-to-date version of IPFS, you can use [dist.ipfs.io](https://dist.ipfs.io/) to grab the latest package and install it. Lastly, there are manual compilation instructions available if you're the kind of person who would rather bake a cake instead of using a pre-made one.
+![A terminal window running the IPFS daemon in Ubuntu.](./images/command-line/terminal-showing-ipfs-daemon-ubuntu.png)
 
 ## System requirements
 
 IPFS is a light-weight application in terms of CPU and RAM usage. You can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space, and the [default maximum disk storage](/how-to/configure-a-node) is set to 10GB.
-
-## Package managers
-
-Most operating systems have a package manager, although they may not come pre-installed. Both Windows and macOS have open-source package managers that the user must install. Ubuntu comes with the Snap package manager pre-installed. Package managers download packages, install applications and keep everything up-to-date. They're the easiest way to install IPFS from the command-line.
-
-| Operating system | Package manager                                    | Install command      |
-| ---------------- | -------------------------------------------------- | -------------------- |
-| Windows          | [Chocolatey](https://chocolatey.org/packages/ipfs) | `choco install ipfs` |
-| macOS            | [Homebrew](https://formulae.brew.sh/formula/ipfs)  | `brew install ipfs`  |
-| Ubuntu           | [Snap](https://snapcraft.io/ipfs)                  | `snap install ipfs`  |
-
-Although we try our best to keep the package manager releases up to date, they sometimes lag behind the Go-IPFS GitHub releases page by a few days. If you'd like to install a release the very same day it comes out, use the [official distributions](#official-distributions) from [dist.ipfs.io](https://dist.ipfs.io).
-
-:::warning
-On Ubuntu, the IPFS Snap uses [strict confinement](https://snapcraft.io/docs/snap-confinement) by default. This includes some restrictions, such as not allowing `ipfs` to access files outside of `/home`. If this affects usability for you, consider [connecting](https://snapcraft.io/docs/interface-management) the [removable-media interface](https://snapcraft.io/docs/removable-media-interface) for `ipfs` snap.
-:::
 
 ## Official distributions
 

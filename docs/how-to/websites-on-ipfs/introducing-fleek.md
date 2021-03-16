@@ -11,9 +11,9 @@ Most of the steps we've covered in this tutorial series have been fairly manual.
 
 Fleek is a service that lets you host a website on IPFS without needing to install anything on your computer or deal with the command-line.
 
-We already know that files and folders on IPFS are content-addressed, meaning you can find them using the hash of their content. If the content changes, then the hash changes too. As we've seen in previous lessions, this can be an issue when it comes to updating a website. A single character change to an HTML file will create an entirely new hash!
+We already know that files and folders on IPFS are content-addressed, meaning you can find them using the hash of their content. If the content changes, then the hash changes too. As we've seen in previous lessons, this can be an issue when it comes to updating a website. A single character change to an HTML file will create an entirely new hash!
 
-Fleek offers a simple workflow. Once you've pushed your changes to Git, Fleek builds, pins, and updates your site! The sevice also integrates well with React, Next.js, Gatsby, Jekyll, Hugo, and [a bunch of other popular development frameworks](https://docs.fleek.co/Sites/Frameworks). You can also manage your domains through Fleek, and monitor your sites in a similar method to traditional web development.
+Fleek offers a simple workflow. Once you've pushed your changes to Git, Fleek builds, pins, and updates your site! The sevice also integrates well with React, Next.js, Gatsby, Jekyll, Hugo, and [a bunch of other popular development frameworks](https://docs.fleek.co/hosting/site-deployment/#common-frameworks). You can also manage your domains through Fleek, and monitor your sites in a similar method to traditional web development.
 
 If you're looking to host a fast website on IPFS, Fleek is a great option! For more information check out [Fleek.co](https://fleek.co) and [their documentation](https://docs.fleek.co/).
 
@@ -21,7 +21,7 @@ If you're looking to host a fast website on IPFS, Fleek is a great option! For m
 
 If you've never used a service like Fleek, or just need a refresher, this quick guide walks through adding a website to a GitHub repository and linking that repo to your Fleek account.
 
-We're going to re-use the Random Planet Facts site we create in a previous tutorial. If you've been following this tutorial series, you should already have this project ready to go! If you don't, just download the [project `.zip` here](https://github.com/johnnymatthews/random-planet-facts/archive/master.zip) or [clone this repository](https://github.com/johnnymatthews/random-planet-facts).
+We're going to re-use the Random Planet Facts site we created in a previous tutorial. If you've been following this tutorial series, you should already have this project ready to go! If you don't, just download the [project `.zip` here](https://github.com/johnnymatthews/random-planet-facts/archive/master.zip) or [clone this repository](https://github.com/johnnymatthews/random-planet-facts).
 
 ### Upload to GitHub
 
@@ -35,7 +35,7 @@ If you cloned the Random Planet Facts repo above, you don't need to follow this 
 
 ### Add a repository to Fleek
 
-1. Go to [Fleek.co](https://fleek.co/) and sign in using your GitHub account. You may need to allow Fleek to access your GiHub profile.
+1. Go to [Fleek.co](https://fleek.co/) and sign in using your GitHub account. You may need to allow Fleek to access your GitHub profile.
 1. Once logged in, click **Add new site**.
 1. Select **Connect with GitHub** and find the site that you want to host on IPFS.
 1. Leave all the options with their default settings. Since we're not dealing with a special framework or a repository with lots of branches we don't have to change anything here.
@@ -56,4 +56,4 @@ Fleek allows you to configure your domain names with your sites on IPFS! No more
 
 ## Up next
 
-For the final tutorial in this series, we're going to take a quick look at [static-site generators, and how to host them on IPFS](../static-site-generators)
+For the final tutorial in this series, we're going to take a quick look at [static-site generators, and how to host them on IPFS](../static-site-generators).

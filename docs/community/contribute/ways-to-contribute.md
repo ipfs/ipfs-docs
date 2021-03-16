@@ -62,8 +62,7 @@ We currently don't have a single place for this. If you'd like to start it, plea
 
 ## Community
 
-If interacting with people is your favorite thing to do in this world, IPFS and
-co. are always happy to help you organize events and/or workshops to teach IPFS.
+If interacting with people is your favorite thing to do in this world, IPFS and co. are always happy to help you organize events and/or workshops to teach IPFS.
 
 We have a [repository for organizing community events](https://github.com/ipfs/community) and would love your help to have meetups in more locations or make the existing ones more regular.
 
@@ -90,4 +89,4 @@ IPFS is ultimately about building better protocols, and we always welcome ideas 
 
 ## Research
 
-Finally, we see Protocol Labs as a research lab, where YOUR ideas can become technologies that have a real impact on the world. If you're interested in contributing to our research, please reach out to [mailto:research@ipfs.io](research@ipfs.io) or [research@protocol.ai](mailto:research@protocol.ai) for more information. Include what your interests are so we can make sure you get to work on something fun and valuable.
+Finally, we see Protocol Labs as a research lab, where YOUR ideas can become technologies that have a real impact on the world. If you're interested in contributing to our research, please reach out to [research@ipfs.io](mailto:research@ipfs.io) or [research@protocol.ai](mailto:research@protocol.ai) for more information. Include what your interests are so we can make sure you get to work on something fun and valuable.

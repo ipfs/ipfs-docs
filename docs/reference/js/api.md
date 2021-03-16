@@ -7,7 +7,7 @@ description: Developer resources for working in JavaScript with IPFS, the InterP
 # JS-IPFS
 
 ::: callout
-[Explore js-ipfs through interactive coding challenges at ProtoSchool](https://proto.school/tutorials?course=ipfs)
+[Explore js-ipfs through interactive coding challenges at ProtoSchool](https://proto.school/tutorials?course=ipfs).
 :::
 
 ## IPFS and JavaScript
@@ -38,6 +38,6 @@ A [client library](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-htt
 
 ## Hands-on examples
 
-There are lots of JS-IPFS use-case examples in the [`ipfs/js-ipfs` GitHub repository](https://github.com/ipfs/js-ipfs). They're all self-contained projects that let your spin up and test environments quickly. [Check them out →](https://github.com/ipfs/js-ipfs/tree/master/examples).
+There are lots of JS-IPFS use-case examples in the [`ipfs/js-ipfs` GitHub repository](https://github.com/ipfs/js-ipfs). They're all self-contained projects that let your spin up and test environments quickly. [Check them out →](https://github.com/ipfs/js-ipfs/tree/master/examples)
 
 A good starting place is the [IPFS 101, spawn a node and add a file to the IPFS network](https://github.com/ipfs/js-ipfs/tree/master/examples/ipfs-101).
