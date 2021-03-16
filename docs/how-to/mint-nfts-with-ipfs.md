@@ -38,7 +38,7 @@ Here's how to create a new token from an image file using the `minty` command:
 ```
 minty mint ~/token-images/ipfs-logo.png 
 ? Enter a name for your new NFT:  IPFS Logo
-? Enter a description for your new NFT:  The IPFS logo (768ox, png)
+? Enter a description for your new NFT:  The IPFS logo (768px, png)
 
 🌿 Minted a new NFT: 
 Token ID:              14
@@ -49,7 +49,7 @@ Asset Gateway URL:     http://localhost:8080/ipfs/QmaNZ2FCgvBPqnxtkbToVVbK2Nes6x
 NFT Metadata:
 {
   "name": "The IPFS Logo",
-  "description": "The IPFS logo (768ox, png)",
+  "description": "The IPFS logo (768px, png)",
   "image": "ipfs://QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM/ipfs-logo-768px.png"
 }
 ```
@@ -175,7 +175,7 @@ The `image` field contains a URI that resolves to the NFT image data we want to 
 
 To get the metadata URI for our smart contract, we first add the image data to IPFS to get an IPFS Content ID, or [CID][docs-cid], and use the CID to build an `ipfs://` URI. Then we create a JSON object containing the image URI, along with user-provided `name` and `description` fields. Finally, we add the JSON data to IPFS to create the metadata `ipfs://` URI, and feed that into the smart contract.
 
-Minty's `createNFTFromAssetData` is responsible for this whole process, with help from a few utility functions:
+Minty's `createNFTFromAssetData` method is responsible for this process, with help from a few utility functions:
 
 ```javascript
 async createNFTFromAssetData(content, options) {
@@ -240,9 +240,9 @@ async getNFTMetadata(tokenId) {
 }
 ```
 
-See the [`getNFT` method][minty-code-get-nft] for an example that also fetches the asset data from IPFS by resolving the URI in the metadata's `image` field.
+See the [`getNFT` method][minty-code-get-nft] for an example that also fetches the asset data from IPFS by resolving the URI in the metadata's `image` field. 
 
-Using the `minty` command line app, we can view a token using the `minty show <token-id>` command:
+The `getNFT` method is used by the `minty` command line app to view a token using the `minty show <token-id>` command:
 
 ```
 minty show 14
@@ -256,7 +256,7 @@ Asset Gateway URL:     http://localhost:8080/ipfs/QmaNZ2FCgvBPqnxtkbToVVbK2Nes6x
 NFT Metadata:
 {
   "name": "The IPFS Logo",
-  "description": "The IPFS logo (768ox, png)",
+  "description": "The IPFS logo (768px, png)",
   "image": "ipfs://QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM/ipfs-logo-768px.png"
 }
 ```
@@ -266,6 +266,7 @@ If you have an IPFS-enabled browser like [Brave](https://brave.com) installed, y
 You can also try using a public gateway like the one at [https://ipfs.io](https://ipfs.io). To do so, replace `http://localhost:8080` in the gateway URL with `https://ipfs.io`. However, you may notice that this takes a little longer than requesting the same file from your local node. This is because the public gateway doesn't have a copy of the data yet, so it has to look up the CID on the IPFS network and fetch it from your local IPFS node.
 
 ### Pinning NFT Data to a Remote Service
+
 
 Describe why pinning is useful, and introduce Pinata as a pinning provider that supports the Pinning Services API.
 
