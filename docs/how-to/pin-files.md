@@ -17,7 +17,7 @@ echo "ipfs rocks" > foo
 ipfs add foo
 ipfs pin ls --type=all
 ipfs pin rm <foo hash>
-ipfs pin rm -r <foo hash>
+ipfs pin rm <foo hash>
 ipfs pin ls --type=all
 ```
 
@@ -40,7 +40,7 @@ ipfs cat <foo hash>
 But if `foo` were to somehow become unpinned ...
 
 ```bash
-ipfs pin rm -r <foo hash>
+ipfs pin rm <foo hash>
 ipfs repo gc
 ipfs cat <foo hash>
 ```
