@@ -37,28 +37,26 @@ Here's how to create a new token from an image file using the `minty` command:
 
 ```
 minty mint ~/token-images/ipfs-logo.png 
-
 ? Enter a name for your new NFT:  IPFS Logo
-? Enter a description for your new NFT:  The IPFS logo
-Minted new NFT:  {
-  tokenId: '2',
-  metadata: {
-    name: 'IPFS Logo',
-    description: 'The IPFS logo',
-    image: 'ipfs://QmUAACALRufqXnGHM1QCSr5JA3b54N5QBKD73EXx6pws2f/ipfs-logo.png'
-  },
-  assetURI: 'ipfs://QmUAACALRufqXnGHM1QCSr5JA3b54N5QBKD73EXx6pws2f/ipfs-logo.png',
-  metadataURI: 'ipfs://QmZ8WLvpoTgHVVAyAormrzWnEqTPZ5KLBJ6ymVCvbTzP2r/metadata.json',
-  assetGatewayURL: 'http://localhost:8080/ipfs/QmUAACALRufqXnGHM1QCSr5JA3b54N5QBKD73EXx6pws2f/ipfs-logo.png',
-  metadataGatewayURL: 'http://localhost:8080/ipfs/QmZ8WLvpoTgHVVAyAormrzWnEqTPZ5KLBJ6ymVCvbTzP2r/metadata.json'
+? Enter a description for your new NFT:  The IPFS logo (768ox, png)
+
+🌿 Minted a new NFT: 
+Token ID:              14
+Metadata URI:          ipfs://QmXFgNWRg3vyoMn887DFRCPK8G5atgqzHy7PyjWDmYMCnG/metadata.json
+Metadata Gateway URL:  http://localhost:8080/ipfs/QmXFgNWRg3vyoMn887DFRCPK8G5atgqzHy7PyjWDmYMCnG/metadata.json
+Asset URI:             ipfs://QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM/ipfs-logo-768px.png
+Asset Gateway URL:     http://localhost:8080/ipfs/QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM/ipfs-logo-768px.png
+NFT Metadata:
+{
+  "name": "The IPFS Logo",
+  "description": "The IPFS logo (768ox, png)",
+  "image": "ipfs://QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM/ipfs-logo-768px.png"
 }
 ```
 
 The `minty mint` command returns the id of the new token, some metadata containing the `name` and `description` we provided, and an IPFS URI to the image file we used for our NFT "asset".
 
-The `metadataURI` in the output above is the IPFS URI for the `metadata` that's been converted to a JSON string and saved to IPFS.
-
-If you have an IPFS-enabled browser like [Brave](https://brave.com) installed, you can paste the `assetURI` or `metadataURI` into the address bar directly and see the content served up by your local IPFS node. If your browser doesn't support IPFS natively, you can use the `assetGatewayURL` or `metadataGatewayURL` instead, which will serve the data from a local HTTP gateway.
+The `Metadata URI` in the output above is the IPFS URI for the NFT Metadata JSON object that's stored on IPFS.
 
 Check out the [Minty README][minty-repo] to see how to install the `minty` command and get started running a local Ethereum development chain. Once you've installed `minty`, you can run `minty --help` to get details about the available commands. Try minting a few NFTs and viewing their details with `minty show <token-id>`!
 
@@ -131,29 +129,29 @@ Let's look at how Minty's JavaScript code interacts with the smart contract's `m
 
 ```javascript
 async mintToken(ownerAddress, metadataURI) {
-    // The smart contract adds an ipfs:// prefix to all URIs, 
-    // so make sure to remove it so it doesn't get added twice
-    metadataURI = stripIpfsUriPrefix(metadataURI)
+  // The smart contract adds an ipfs:// prefix to all URIs, 
+  // so make sure to remove it so it doesn't get added twice
+  metadataURI = stripIpfsUriPrefix(metadataURI)
 
-    // Call the mintToken smart contract function to issue a new token
-    // to the given address. This returns a transaction object, but the 
-    // transaction hasn't been confirmed yet, so it doesn't have our token id.
-    const tx = await this.contract.mintToken(ownerAddress, metadataURI)
+  // Call the mintToken smart contract function to issue a new token
+  // to the given address. This returns a transaction object, but the 
+  // transaction hasn't been confirmed yet, so it doesn't have our token id.
+  const tx = await this.contract.mintToken(ownerAddress, metadataURI)
 
-    // The OpenZeppelin base ERC721 contract emits a Transfer event 
-    // when a token is issued. tx.wait() will wait until a block containing 
-    // our transaction has been mined and confirmed. The transaction receipt 
-    // contains events emitted while processing the transaction.
-    const receipt = await tx.wait()
-    for (const event of receipt.events) {
-        if (event.event !== 'Transfer') {
-            console.log('ignoring unknown event type ', event.event)
-            continue
-        }
-        return event.args.tokenId.toString()
+  // The OpenZeppelin base ERC721 contract emits a Transfer event 
+  // when a token is issued. tx.wait() will wait until a block containing 
+  // our transaction has been mined and confirmed. The transaction receipt 
+  // contains events emitted while processing the transaction.
+  const receipt = await tx.wait()
+  for (const event of receipt.events) {
+    if (event.event !== 'Transfer') {
+        console.log('ignoring unknown event type ', event.event)
+        continue
     }
+    return event.args.tokenId.toString()
+  }
 
-    throw new Error('unable to get token id')
+  throw new Error('unable to get token id')
 }
 ```
 
@@ -163,19 +161,109 @@ To get the token id for our new NFT, we need call `tx.wait()`, which waits until
 
 ### Storing NFT Data on IPFS
 
-Before calling the smart contract's `mintToken` function, we need to store the data for the NFT in IPFS and create some JSON metadata.
+The smart contract's `mintToken` function expects an IPFS metadata URI, which should resolve to a JSON object describing the NFT. Minty uses the metadata schema described in [EIP-721][eip-721], which supports JSON objects like this:
 
-`Minty`'s [`createNFTFromAssetData` method](https://github.com/yusefnapora/minty/blob/master/src/minty.js#L88-L115) adds the data for an NFT asset (e.g. an image file)
-to IPFS, and embeds the CID for the asset into a JSON object (see [`makeNFTMetadata`](https://github.com/yusefnapora/minty/blob/master/src/minty.js#L142-L150)). 
-The JSON data is also stored in IPFS, and the CID of the JSON data is used as the metadata CID when calling the contract's `mintToken` function.
+```json
+{
+    "name": "A name for this NFT",
+    "description": "An in-depth description of the NFT",
+    "image": "ipfs://QmUAACALRufqXnGHM1QCSr5JA3b54N5QBKD73EXx6pws2f/nft-image.png"
+}
+```
+
+The `image` field contains a URI that resolves to the NFT image data we want to associate with the token.
+
+To get the metadata URI for our smart contract, we first add the image data to IPFS to get an IPFS Content ID, or [CID][docs-cid], and use the CID to build an `ipfs://` URI. Then we create a JSON object containing the image URI, along with user-provided `name` and `description` fields. Finally, we add the JSON data to IPFS to create the metadata `ipfs://` URI, and feed that into the smart contract.
+
+Minty's `createNFTFromAssetData` is responsible for this whole process, with help from a few utility functions:
+
+```javascript
+async createNFTFromAssetData(content, options) {
+  // add the asset to IPFS
+  const filePath = options.path || 'asset.bin'
+  const basename =  path.basename(filePath)
+
+  // When you add an object to IPFS with a directory prefix in its path,
+  // IPFS will create a directory structure for you. This is nice, because
+  // it gives us URIs with descriptive filenames in them e.g.
+  // 'ipfs://QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM/cat-pic.png' vs
+  // 'ipfs://QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM'
+  const ipfsPath = '/nft/' + basename
+  const { cid: assetCid } = await this.ipfs.add({ path: ipfsPath, content })
+
+  // make the NFT metadata JSON
+  const assetURI = ensureIpfsUriPrefix(assetCid) + '/' + basename
+  const metadata = await this.makeNFTMetadata(assetURI, options)
+
+  // add the metadata to IPFS
+  const { cid: metadataCid } = await this.ipfs.add({ 
+    path: '/nft/metadata.json', 
+    content: JSON.stringify(metadata)
+  })
+  const metadataURI = ensureIpfsUriPrefix(metadataCid) + '/metadata.json'
+
+  // get the address of the token owner from options, 
+  // or use the default signing address if no owner is given
+  let ownerAddress = options.owner
+  if (!ownerAddress) {
+    ownerAddress = await this.defaultOwnerAddress()
+  }
+
+  // mint a new token referencing the metadata URI
+  const tokenId = await this.mintToken(ownerAddress, metadataURI)
+
+  // format and return the results
+  return {
+    tokenId,
+    metadata,
+    assetURI,
+    metadataURI,
+    assetGatewayURL: makeGatewayURL(assetURI),
+    metadataGatewayURL: makeGatewayURL(metadataURI),
+  }
+}
+```
+
+We're adding our data to IPFS using a `path` argument with a directory structure, e.g. `/nft/metadata.json` instead of just `metadata.json`. This isn't strictly necessary, but it gives us more descriptive URIs that include human-readable filenames. On the downside, the metadata URI requires a bit more space on chain, since it includes the `/metadata.json` portion as well as the IPFS CID. In a production environment where bytes cost money, you may want to modify the smart contract to only store the CID portion and automatically append the filename before returning the URI, or simply store metadata without a directory wrapper.
+
 
 ### Retrieving NFT Data
 
-To view the data for an NFT, the [`getNFT` method](https://github.com/yusefnapora/minty/blob/master/src/minty.js#L179-L193) and it's helper
-[`getNFTMetadata`](https://github.com/yusefnapora/minty/blob/master/src/minty.js#L202-L207) fetch the metadata URI from the smart contract using the contract's
-`getTokenURI` function (inherited from the OpenZeppelin base contract).
+To view the metadata for an existing NFT, we call the smart contract's `tokenURI` function, then fetch the JSON data from IPFS and parse it into an object. This happens in `getNFTMetadata`:
 
-Then the metadata is fetched from IPFS, and optionally, the original asset data as well.
+```javascript
+async getNFTMetadata(tokenId) {
+  const metadataURI = await this.contract.tokenURI(tokenId)
+  const metadata = await this.getIPFSJSON(metadataURI)
+
+  return {metadata, metadataURI}
+}
+```
+
+See the [`getNFT` method][minty-code-get-nft] for an example that also fetches the asset data from IPFS by resolving the URI in the metadata's `image` field.
+
+Using the `minty` command line app, we can view a token using the `minty show <token-id>` command:
+
+```
+minty show 14
+
+Token ID:              14
+Owner Address:         0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+Metadata URI:          ipfs://QmXFgNWRg3vyoMn887DFRCPK8G5atgqzHy7PyjWDmYMCnG/metadata.json
+Metadata Gateway URL:  http://localhost:8080/ipfs/QmXFgNWRg3vyoMn887DFRCPK8G5atgqzHy7PyjWDmYMCnG/metadata.json
+Asset URI:             ipfs://QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM/ipfs-logo-768px.png
+Asset Gateway URL:     http://localhost:8080/ipfs/QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM/ipfs-logo-768px.png
+NFT Metadata:
+{
+  "name": "The IPFS Logo",
+  "description": "The IPFS logo (768ox, png)",
+  "image": "ipfs://QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM/ipfs-logo-768px.png"
+}
+```
+
+If you have an IPFS-enabled browser like [Brave](https://brave.com) installed, you can paste the `Asset URI` or `Metadata URI` into the address bar directly and see the content served up by your local IPFS node. If your browser doesn't support IPFS natively, you can use the `Asset Gateway URL` or `Metadata Gateway URL` instead, which will serve the data from a local HTTP gateway.
+
+You can also try using a public gateway like the one at [https://ipfs.io](https://ipfs.io). To do so, replace `http://localhost:8080` in the gateway URL with `https://ipfs.io`. However, you may notice that this takes a little longer than requesting the same file from your local node. This is because the public gateway doesn't have a copy of the data yet, so it has to look up the CID on the IPFS network and fetch it from your local IPFS node.
 
 ### Pinning NFT Data to a Remote Service
 
@@ -195,4 +283,7 @@ Wrap up what we've covered, and go over what would be needed to build a real NFT
 
 <!-- TODO: move minty repo to ipfs-shipyard? -->
 [minty-repo]: https://github.com/yusefnapora/minty
+[minty-code-get-nft]: https://github.com/yusefnapora/minty/blob/39a3e79e01b4776372a08fa352c8fe508ffa9845/src/minty.js#L193-L212
+
 [eip-721]: https://eips.ethereum.org/EIPS/eip-721
+[docs-cid]: ../../concepts/content-addressing/
