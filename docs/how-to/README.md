@@ -6,7 +6,7 @@ description: Hands-on guides to using and developing with IPFS to build decentra
 
 # IPFS how-tos and tutorials
 
-::: tip
+::: callout
 Want to find even more resources for learning about IPFS and the technologies that power it? [Visit ProtoSchool](https://proto.school) for interactive tutorials that help you learn about the decentralized web by writing code and solving challenges, all from your browser!
 :::
 

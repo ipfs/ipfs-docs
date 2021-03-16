@@ -42,6 +42,10 @@ That last point is actually where IPFS gets its full name: the **InterPlanetary 
 
 ## Content addressing
 
+::: callout
+For a beginner-friendly primer on why cryptographic hashing and content addressing matter, take a look at ProtoSchool's tutorial, [Content Addressing on the Decentralized Web](https://proto.school/content-addressing).
+:::
+
 What about that link to the aardvark page above? It looked a little unusual:
 
 ```
