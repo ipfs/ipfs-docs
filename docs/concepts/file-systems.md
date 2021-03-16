@@ -6,12 +6,12 @@ description: Learn about file systems in IPFS and why working with files in IPFS
 
 # File systems and IPFS
 
-Working with files in IPFS can be a little different than you're used to for several various reasons:
+Working with files in IPFS can be a little different than you're used to for several reasons:
 
 - Content addressing means that when files change, the content identifier (CID) of those files changes too.
 - Files may be too big to fit in a single block, so IPFS splits the data into multiple blocks and uses metadata to link it all together.
 
-MFS and UnixFS can help you address these new ways of thinking of files.
+Mutable File System (MFS) and Unix File System (UnixFS) can help you address these new ways of thinking of files.
 
 ::: tip
 If you're interested in how MFS and UnixFS play into how IPFS works with files in general, check out this video from IPFS Camp 2019! [Core Course: How IPFS Deals With Files](https://www.youtube.com/watch?v=Z5zNPwMDYGg)
@@ -33,6 +33,10 @@ MFS is accessed through the files commands in the IPFS CLI and API. The commands
 - [Move a file or directory](#move-a-file-or-directory)
 - [Read the contents of a file](#read-the-contents-of-a-file)
 - [Remove a file or directory](#remove-a-file-or-directory)
+
+::: callout
+Prefer hands-on learning? Explore these MFS methods in ProtoSchool's [Mutable File System](https://proto.school/mutable-file-system) tutorial, solving coding challenges right in your web browser.
+:::
 
 #### Create a directory
 
@@ -80,7 +84,7 @@ await ipfs.files.write(path, content, [options])
 
 ::: tip
 
-This method can create a brand new file that accepts file `content` in multiple formats, in a specified `path` within the IPFS instance by providing the boolean option {` create: true` }.
+This method can create a brand new file that accepts file `content` in multiple formats, in a specified `path` within the IPFS instance by providing the boolean option {`create: true` }.
 
 :::
 
@@ -131,7 +135,7 @@ This method offers two formatting options for passing the `from` key:
 
 :::
 
-The `to` key is the destination path in MFS, and there's an option {` create: true` } that can be used to create parent directories that don't already exist.
+The `to` key is the destination path in MFS, and there's an option {`create: true` } that can be used to create parent directories that don't already exist.
 
 You can use this method to perform different operations including:
 
@@ -259,7 +263,7 @@ message UnixTime {
 }
 ```
 
-This `Data` object is used for all non-leaf nodes in Unixfs:
+This `Data` object is used for all non-leaf nodes in UnixFS:
 
 - For files that are comprised of more than a single block, the `Type` field will be set to `File`, the `filesize` field will be set to the total number of bytes in the files, and `blocksizes` will contain a list of the filesizes of each child node.
 
@@ -273,7 +277,7 @@ UnixFS also supports two optional metadata format fields:
 
 ### Importer
 
-Importing a file into UnixFS is split into two processes. A chunking function and a layout function. You can test these features using the IPFS [DAG builder](https://dag.ipfs.io)
+Importing a file into UnixFS is split into two processes. A chunking function and a layout function. You can test these features using the IPFS [DAG builder](https://dag.ipfs.io).
 
 #### Chunking
 
@@ -281,9 +285,9 @@ When an object is added to IPFS, it is chunked up into smaller parts, each part 
 
 The leaf format takes two format options, UnixFS leaves and raw leaves:
 
-- The Unixfs leaves format adds a data wrapper on newly added objects to produce UnixFS leaves with additional data sizes. This wrapper is used to determine whether newly added objects are files or directories.
+- The UnixFS leaves format adds a data wrapper on newly added objects to produce UnixFS leaves with additional data sizes. This wrapper is used to determine whether newly added objects are files or directories.
 
-- The raw leaves format is the default format on IPFS where nodes output from chunking will be raw data from the file with a CID type of `'raw'`. This is mainly configured for backward compatibility with formats that used a Unixfs Data object.
+- The raw leaves format is the default format on IPFS where nodes output from chunking will be raw data from the file with a CID type of 'raw'. This is mainly configured for backward compatibility with formats that used a UnixFS Data object.
 
 The chunking strategy is used to determine the size options available during the chunking process. The strategy currently has two different options, 'fixed size' and 'rabin'.
 
@@ -309,7 +313,7 @@ To export or read the file data out of the UnixFS graph, perform an in-order tra
 
 You can find additional resources to familiarize with these file systems at:
 
-- [Protoschool MFS course](https://proto.school/mutable-file-system)
+- [Protoschool MFS tutorial](https://proto.school/mutable-file-system)
 - [Understanding how the InterPlanetary File System deals with Files](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_A), from IPFS Camp 2019
 - [Jeromy Coffee Talks - Files API](https://www.youtube.com/watch?v=FX_AXNDsZ9k)
 - [UnixFS Specification](https://github.com/ipfs/specs/blob/master/UNIXFS.md)

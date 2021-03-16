@@ -5,7 +5,7 @@ description: IPFS Desktop gives you all the power of IPFS in a convenient deskto
 
 # IPFS Desktop
 
-**IPFS Desktop bundles an IPFS node, file manager, peer man, and content explorer into a single, easy to use application.**
+**IPFS Desktop bundles an IPFS node, file manager, peer manager, and content explorer into a single, easy to use application.**
 
 Use IPFS Desktop to get acquainted with IPFS without needing to touch the terminal — or, if you're already experienced, use the powerful menubar/taskbar shortcuts alongside the command line to make your IPFS workflow faster.
 

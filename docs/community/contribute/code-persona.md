@@ -11,6 +11,6 @@ Having a single theme keeps code examples self-contained and consistent. It does
 
 ## The theme
 
-The _interplanitary_ part of _InterPlanitary File System_ comes with obvious space connotations, so it makes sense that example use-cases and code examples are based around the final frontier. With this in mind, when creating code-examples to illustrate your ideas, try to keep them within this space theme.
+The _interplanetary_ part of _InterPlanetary File System_ comes with obvious space connotations, so it makes sense that example use-cases and code examples are based around the final frontier. With this in mind, when creating code-examples to illustrate your ideas, try to keep them within this space theme.
 
-We can expect the vast majority of IPFS users to be familiar with the planets within our solar system and some of the more famous telescopes, satellites, and space rocket names. However, it would help if you tried to stay away from more _exotic_ or niche planetary bodies. Not everybody is going to be familiar with the andromeda galaxy, and it may confuse some readers. Also, keep in mind that many language translators will be able to deal with common planet names like Jupiter or Mars but may struggle with less common names.
+We can expect the vast majority of IPFS users to be familiar with the planets within our solar system and some of the more famous telescopes, satellites, and space rocket names. However, it would help if you tried to stay away from more _exotic_ or niche planetary bodies. Not everybody is going to be familiar with the Andromeda Galaxy, and it may confuse some readers. Also, keep in mind that many language translators will be able to deal with common planet names like Jupiter or Mars but may struggle with less common names.

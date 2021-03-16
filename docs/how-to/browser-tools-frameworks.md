@@ -13,7 +13,7 @@ Want to learn how to use IPFS in combination with your favorite framework or bro
 
 ## Parcel.js
 
-[Example and boilerplate application](https://github.com/ipfs/js-ipfs/tree/master/examples/browser-parceljs) that connects to IPFS using JS-IPFS and is bundled with Parcel.js, so that you can follow it for creating Parcel.js bundled js-ipfs dapps.
+[Example and boilerplate application](https://github.com/ipfs/js-ipfs/tree/master/examples/browser-parceljs) that connects to IPFS using js-ipfs and is bundled with Parcel.js, so that you can follow it for creating Parcel.js bundled js-ipfs dapps.
 
 ## Vue
 
