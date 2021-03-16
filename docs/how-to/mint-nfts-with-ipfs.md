@@ -75,16 +75,55 @@ Finally, we'll see [how to "pin" our IPFS data to a remote IPFS Pinning Service]
 
 ### The Minty Smart Contract
 
-The Minty contract is intentionally very simple, to avoid getting lost in Ethereum development details. 
-It's short enough that we could probably include [the whole listing](https://github.com/yusefnapora/minty/blob/master/contracts/Minty.sol).
+Minty uses a smart contract written in [Solidity](https://soliditylang.org), the most popular language for Ethereum development.
 
-Important: highlight that the contract is not production ready! At minimum, it needs access controls.
+The contract implements the [ERC-721 Ethereum NFT standard][eip-721], by virtue of inheriting from the very convenient and fully featured [OpenZeppelin ERC721 base contract](https://docs.openzeppelin.com/contracts/3.x/api/token/erc721#ERC721).
 
-The contract is based on the [OpenZeppelin ERC721 base contract][https://docs.openzeppelin.com/contracts/3.x/api/token/erc721#ERC721], and is very similar
-to the one from the [OpenZeppelin example guide](https://docs.openzeppelin.com/contracts/3.x/erc721). 
+Because the OpenZeppelin base contract provides so much of the core functionality, the Minty contract is quite simple:
 
-Highlight that we set a `baseURI` of `ipfs://`, in the token constructor, since all of our metadata URIs will be IPFS URIs. In the `mintToken` function, we take in
-an IPFS cid, and the `ipfs://` prefix is added to form the full URI.
+```solidity
+pragma solidity ^0.7.0;
+
+import "hardhat/console.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+
+contract Minty is ERC721 {
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIds;
+
+    constructor(string memory tokenName, string memory symbol) ERC721(tokenName, symbol) {
+        _setBaseURI("ipfs://");
+    }
+
+    function mintToken(address owner, string memory metadataURI)
+    public
+    returns (uint256)
+    {
+        _tokenIds.increment();
+
+        uint256 id = _tokenIds.current();
+        _safeMint(owner, id);
+        _setTokenURI(id, metadataURI);
+
+        return id;
+    }
+}
+```
+
+If you read the [OpenZeppelin example guide](https://docs.openzeppelin.com/contracts/3.x/erc721), you'll see that the Minty contract is extremely similar. The `mintToken` function simply increments a counter to issue token ids, and uses the `_setTokenURI` function provided by the base contract to associate the metadata URI with the new token id.
+
+One thing to notice is that we set the base URI prefix to `ipfs://` in the constructor. When we set a metadata URI for each token in the `mintToken` function, we don't need to store the prefix, since the base contract's `tokenURI` accessor function will apply it to each token's URI.
+
+It's important to note that this contract is **not production ready** for most values of "production," because it doesn't include any [access controls](https://docs.openzeppelin.com/contracts/3.x/access-control) that limit which accounts are allowed to call the `mintToken` function. If you decide to develop a production platform based on Minty, please explore the access control patterns that are available and consider which should apply for your platform's access model.
+
+#### Deploying the Contract
+
+Before you can mint new NFTs, you need to deploy the contract to a blockchain network. Minty uses [HardHat](https://hardhat.org) to manage contract deployment, and by default it deploys to an instance of the [HardHat development network](https://hardhat.org/hardhat-network) that's been [configured to run on your machine's localhost network](https://hardhat.org/hardhat-network/#connecting-to-hardhat-network-from-wallets-and-other-software).
+
+To deploy, make sure the local development network and IPFS daemon are running with Minty's `start-local-environment.sh` script, then in another terminal run `minty deploy`. This will create a `minty-deployment.json` file that contains the contract address, which future `minty` commands will read to connect to the deployed contract.
+
+It's also possible to deploy the contract to an [Ethereum test network](https://ethereum.org/en/developers/docs/networks/) by editing the `hardhat.config.js` file in the minty repo. See the [HardHat documentation](https://hardhat.org/config/#json-rpc-based-networks) to learn how to configure HardHat to deploy to a node connected to a testnet, either running locally or hosted by a provider such as [Infura](https://infura.io). Because deployment consumes Ether as gas, you'll need to obtain some test Ether for your chosen network and configure hardhat to use the correct wallet.
 
 ### Storing NFT Data on IPFS
 
@@ -120,3 +159,4 @@ Wrap up what we've covered, and go over what would be needed to build a real NFT
 
 <!-- TODO: move minty repo to ipfs-shipyard? -->
 [minty-repo]: https://github.com/yusefnapora/minty
+[eip-721]: https://eips.ethereum.org/EIPS/eip-721
