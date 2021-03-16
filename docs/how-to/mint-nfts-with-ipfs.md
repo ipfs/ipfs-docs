@@ -135,14 +135,15 @@ async mintToken(ownerAddress, metadataURI) {
     // so make sure to remove it so it doesn't get added twice
     metadataURI = stripIpfsUriPrefix(metadataURI)
 
-    // Call the mintToken smart contract function to issue a new token to the given address
-    // This returns a transaction object, but the transaction hasn't been confirmed
-    // yet, so it doesn't have our token id.
+    // Call the mintToken smart contract function to issue a new token
+    // to the given address. This returns a transaction object, but the 
+    // transaction hasn't been confirmed yet, so it doesn't have our token id.
     const tx = await this.contract.mintToken(ownerAddress, metadataURI)
 
-    // The OpenZeppelin base ERC721 contract emits a Transfer event when a token is issued.
-    // tx.wait() will wait until a block containing our transaction has been mined and confirmed.
-    // The transaction receipt contains events emitted while processing the transaction.
+    // The OpenZeppelin base ERC721 contract emits a Transfer event 
+    // when a token is issued. tx.wait() will wait until a block containing 
+    // our transaction has been mined and confirmed. The transaction receipt 
+    // contains events emitted while processing the transaction.
     const receipt = await tx.wait()
     for (const event of receipt.events) {
         if (event.event !== 'Transfer') {
