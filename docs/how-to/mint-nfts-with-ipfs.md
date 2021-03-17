@@ -20,7 +20,7 @@ Describe the key features of an NFT:
 
 ## How Does IPFS Help?
 
-- Using traditional HTTP URLs for NFT metadata URIs is problematic, because the owner of the website can change the content after the NFT is created.
+- Using traditional HTTP urls for NFT metadata URIs is problematic, because the owner of the website can change the content after the NFT is created.
   - e.g. https://cointelegraph.com/news/opensea-collector-pulls-the-rug-on-nfts-to-highlight-arbitrary-value
 - IPFS prevents this using content addressing. An IPFS URI can only ever point to the content that was used to create it.
 - IPFS also allows multiple people / organizations to store and provide the data, so the owner of an NFT can keep the data alive even if the original NFT platform that created it disappears. If the NFT data were stored in an S3 bucket and the creator decides to stop paying their AWS bill, the data just disappears. With IPFS, if anyone still has a copy on the network, the original provider isn't needed.
@@ -58,7 +58,7 @@ The `minty mint` command returns the id of the new token, some metadata containi
 
 Check out the [Minty README][minty-repo] to see how to install the `minty` command and get started running a local Ethereum development chain. Once you've installed `minty`, you can run `minty --help` to get details about the available commands. Try minting a few NFTs and viewing their details with `minty show <token-id>`!
 
-Next, lets look at how things work.
+Once you've had a chance to play with Minty, lets look at how things work.
 
 First, we'll [check out the smart contract](#the-minty-smart-contract), which defines the mapping between a token ID and the IPFS metadata URI.
 
