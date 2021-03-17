@@ -113,7 +113,7 @@ If you read the [OpenZeppelin ERC721 guide](https://docs.openzeppelin.com/contra
 
 One thing to notice is that we set the base URI prefix to `ipfs://` in the constructor. When we set a metadata URI for each token in the `mintToken` function, we don't need to store the prefix, since the base contract's `tokenURI` accessor function will apply it to each token's URI.
 
-It's important to note that this contract is **not production ready** for most values of "production," because it doesn't include any [access controls](https://docs.openzeppelin.com/contracts/3.x/access-control) that limit which accounts are allowed to call the `mintToken` function. If you decide to develop a production platform based on Minty, please explore the access control patterns that are available and consider which should apply for your platform's access model.
+It's important to note that this contract is **not production ready** for most values of "production," because it doesn't include any [access controls][docs-openzeppelin-access-control] that limit which accounts are allowed to call the `mintToken` function. If you decide to develop a production platform based on Minty, please explore the access control patterns that are available and consider which should apply for your platform's access model.
 
 #### Deploying the Contract
 
@@ -351,20 +351,35 @@ To verify that the data was pinned, you can run `ipfs pin remote ls --service=pi
 
 ## Next Steps
 
-Wrap up what we've covered, and go over what would be needed to build a real NFT platform:
+That was quite a lot to cover! We've seen how to add assets to IPFS and create NFT metadata, how to link our metadata to a new NFT on Ethereum, and how to pin our data with a remote provider for persistence.
 
-- Convert the command line interface to a web API, to support a web-based minting platform
-- Add access controls to the smart contract, and set a policy for who is authorized to transfer tokens
-- Maybe explain that users can use go-ipfs instead of an embedded js-ipfs by using `ipfs-http-client` instead of `ipfs-core`
+At this point, you might be wondering how to take these techniques and use them to build a production NFT minting platform. Of course there are many decisions involved in any new product or marketplace, so we can't think of everything here. But there are a few places where Minty is clearly not "production ready", and by looking at them we can get a good idea of what technical work might be involved.
 
+As a command line app, `minty` is a pretty big departure from the rich, interactive web applications that power NFT minting platforms. If you want to build a web platform based on the techniques shown in Minty, you will either need to expose Minty's functionality via an HTTP api, or go the "fully decentralized" route and interact with the NFT contract directly in the user's Ethereum-enabled web browser. The good news is that all of the concepts we've learned so far are applicable to either environment.
+
+Since Minty currently runs on Node.js, it's straightforward to add an API server using one of the many Node HTTP frameworks like [Express][express-js] or [Koa][koa-js]. However, it can be difficult to allow users to sign Ethereum transactions with their own private keys if the code is running on a backend server. As such, you may want to put some "blockchain logic" in the frontend, so that users can use [MetaMask][metamask] or a similar wallet to authorize token transfers, etc.
+
+Work is also [underway][js-ipfs-remote-pin-pr] to support the remote pinning service API in `js-ipfs`, so soon you'll be able to run the entire process in the user's browser using an embedded IPFS node. 
+
+If you're building a dApp without a backend server today and just can't wait, you could also use an HTTP API provided by a pinning service to send and pin content using traditional HTTP requests instead of embedding js-ipfs into your dApp. See [Pinata's documentation][pinata-docs] for an example. This makes your dApp code a little less generic, since it's tied to one provider's API, but it may be a good way to get started. Doing everything in the browser also means you'll need to carefully manage the API tokens for the pinning services you support, perhaps by allowing users to add their own credentials and storing the tokens in the browser's local storage.
+
+Finally, please consider that the Minty smart contract is intentionally very simple and is not tailored to the needs of a production platform. In particular, it lacks [access controls][docs-openzeppelin-access-control] and is not [upgradable][docs-openzeppelin-upgrade] without re-deploying the contract. Chances are you'll want your contract to include features that are unique to your platform as well, beyond the base ERC-721 functionality.
+
+Thanks for following along! We can't wait to see what you'll build.
 
 <!-- TODO: move minty repo to ipfs-shipyard? -->
 [minty-repo]: https://github.com/yusefnapora/minty
 [minty-code-get-nft]: https://github.com/yusefnapora/minty/blob/39a3e79e01b4776372a08fa352c8fe508ffa9845/src/minty.js#L193-L212
-
+[js-ipfs-remote-pin-pr]: https://github.com/ipfs/js-ipfs/pull/3588
 [eip-721]: https://eips.ethereum.org/EIPS/eip-721
 [pin-service-api]: https://ipfs.github.io/pinning-services-api-spec/
 [pinata]: https://pinata.cloud
+[pinata-docs]: https://pinata.cloud/documentation
+[docs-openzeppelin-access-control]: https://docs.openzeppelin.com/contracts/3.x/access-control
+[docs-openzeppelin-upgrade]: https://docs.openzeppelin.com/contracts/3.x/upgradeable
+[express-js]: https://expressjs.com
+[koa-js]: https://koajs.com
+[metamask]: https://metamask.io
 
 [docs-cid]: ../../concepts/content-addressing/
 [docs-server-infra]: ../../install/server-infrastructure
