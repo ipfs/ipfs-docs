@@ -157,7 +157,7 @@ async mintToken(ownerAddress, metadataURI) {
 
 As you can see, calling the smart contract function is mostly like calling a normal JavaScript function, thanks to the [ethers.js smart contract library](https://docs.ethers.io/v5/). However, since the `mintToken` function modifies the blockchain's state, it can't return a value right away. This is because the function call creates an ethereum transaction, and there's no way to know for sure that the block containing the transaction will actually be mined and incorporated into the blockchain. For example, there may not be enough gas to pay for the transaction.
 
-To get the token id for our new NFT, we need call `tx.wait()`, which waits until the transaction has been confirmed. The token id is wrapped inside a `Transfer` event, which is emitted by the base contract when a new token is created or transferred to a new owner.
+To get the token id for our new NFT, we need call `tx.wait()`, which waits until the transaction has been confirmed. The token id is wrapped inside a `Transfer` event, which is emitted by the base contract when a new token is created or transferred to a new owner. By inspecting the transaction receipt returned from `tx.wait()`, we can pull the token id out of the `Transfer` event.
 
 ### Storing NFT Data on IPFS
 
@@ -267,11 +267,87 @@ You can also try using a public gateway like the one at [https://ipfs.io](https:
 
 ### Pinning NFT Data to a Remote Service
 
+When you add data to IPFS, it first gets added to your local IPFS node, which advertises the CID of the data to the IPFS network. This lets anyone request the data by looking up the CID and connecting to your node directly. Once they've done so, their IPFS node will hold onto a copy temporarily, which helps speed up access to the data if another node requests it. However, by default, these extra copies will eventually expire, so that people running IPFS don't use up all of their storage space.
 
-Describe why pinning is useful, and introduce Pinata as a pinning provider that supports the Pinning Services API.
+When minting NFTs, we generally want our data to be at least as "durable" as the blockchain platform the token was minted on, and we want it to be available all the time and across the globe.
 
-Show how [`pinTokenData`](https://github.com/yusefnapora/minty/blob/master/src/minty.js#L356-L367) looks up the metadata URI for a token,
-fetches the metadata to get the asset URI, and then calls [`pin`](https://github.com/yusefnapora/minty/blob/master/src/minty.js#L375-L394) to request that the remote pinning service pin both the asset URI and metadata URI using `ipfs.pin.remote.add`.
+As an NFT minting platform, you can certainly run your own IPFS infrastructure to ensure the storage of your user's NFT assets. To learn how, see the [Server Infrastructure documentation][docs-server-infra] to see how IPFS Cluster can provide highly-available IPFS storage and retrieval that scales to a large volume of data and requests.
+
+As an alternative to running your own infrastructure, you can arrange for an IPFS Pinning Service to "pin" your data to their IPFS nodes, which are already tuned for high volume and reliability.
+
+Minty uses the [IPFS Pinning Service API][pin-service-api] to request that a remote pinning service store that data for a given token, using the `minty pin <token-id>` command.
+
+Before you can run this command, you'll need an API token from a pinning service that supports the IPFS Pinning Service API. If you're following along and want to run the `minty pin` command, we recommend signing up for a free account at [Pinata][pinata], an excellent pinning service provider with a generous free tier. 
+
+The default Minty configuration expects to find an environment variable name `PINATA_API_TOKEN` containing the JWT access token for your Pinata account. Once you have a token, you can set the environment variable by using a command like:
+
+```shell
+export PINATA_API_TOKEN="Paste JWT token here"
+```
+
+Now when you run `minty pin`, Minty should have everything it needs to connect to Pinata.
+
+If you decide to use a different pinning service, change the configuration entry for Pinata in the `config/default.js` file in the Minty repo.
+
+Here's an example of running `minty pin <token-id>`:
+
+```
+minty pin 2
+Pinning asset data (ipfs://QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM/ipfs-logo-768px.png) for token id 2....
+Pinning metadata (ipfs://QmThb94cZavMRMBCiCUaha8zF36bmWah4PX5YpuTCFVt6E/metadata.json) for token id 2...
+🌿 Pinned all data for token id 2
+```
+
+This first looks up the token metadata and then sends a request to the pinning service to pin the asset CID and the metadata CID.
+
+In the code, this happens in the `pinTokenData` method:
+
+```javascript
+async pinTokenData(tokenId) {
+  const {metadata, metadataURI} = await this.getNFTMetadata(tokenId)
+  const {image: assetURI} = metadata
+  
+  console.log(`Pinning asset data (${assetURI}) for token id ${tokenId}....`)
+  await this.pin(assetURI)
+
+  console.log(`Pinning metadata (${metadataURI}) for token id ${tokenId}...`)
+  await this.pin(metadataURI)
+
+  return {assetURI, metadataURI}
+}
+```
+
+The actual pin request is sent in the `pin` method:
+
+```javascript
+async pin(cidOrURI) {
+  const cid = extractCID(cidOrURI)
+
+  // Make sure IPFS is set up to use our preferred pinning service.
+  await this._configurePinningService()
+
+  // Check if we've already pinned this CID to avoid a "duplicate pin" error.
+  const pinned = await this.isPinned(cid)
+  if (pinned) {
+      return
+  }
+
+  // Ask the remote service to pin the content.
+  // Behind the scenes, this will cause the pinning service to connect to our local IPFS node
+  // and fetch the data using Bitswap, IPFS's transfer protocol.
+  await this.ipfs.pin.remote.add(cid, { service: config.pinningService.name })
+}
+```
+
+Because the pinning service API expects a CID and we may have a full `ipfs://` URI, we use a little helper called `extractCID` to pull out the CID portion.
+
+Then, we call `_configurePinningService` to tell IPFS to use the remote service, if it hasn't already been configured.
+
+We do a check to see if we've already pinned this CID, since the API will return an error if we try to pin content that's already been pinned. Alternatively, you could just try to pin and check to see if the returned error is for duplicate content.
+
+Finally, we call `ipfs.pin.remote.add`, passing in the name of the pinning service. When the pinning service receives the request, it will try to connect to our local IPFS node, and our local node will also try to connect to their IPFS nodes. Once they're connected, the service will fetch the CIDs we asked it to pin and store the data on their infrastructure.
+
+To verify that the data was pinned, you can run `ipfs pin remote ls --service=pinata` to see a list of the content you've pinned to Pinata. If you don't already have a copy of IPFS installed on your machine, you can use the one bundled with Minty by running `npx go-ipfs pin remote ls --service=pinata` instead. Alternatively, you can log into the Pinata website and view your pins in their UI.
 
 ## Next Steps
 
@@ -287,4 +363,8 @@ Wrap up what we've covered, and go over what would be needed to build a real NFT
 [minty-code-get-nft]: https://github.com/yusefnapora/minty/blob/39a3e79e01b4776372a08fa352c8fe508ffa9845/src/minty.js#L193-L212
 
 [eip-721]: https://eips.ethereum.org/EIPS/eip-721
+[pin-service-api]: https://ipfs.github.io/pinning-services-api-spec/
+[pinata]: https://pinata.cloud
+
 [docs-cid]: ../../concepts/content-addressing/
+[docs-server-infra]: ../../install/server-infrastructure
