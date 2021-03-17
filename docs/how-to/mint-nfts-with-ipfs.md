@@ -6,24 +6,43 @@ sidebarDepth: 3
 
 # Minting NFTs with IPFS and Ethereum
 
-Intro paragraph. Explain who the tutorial is for and what we'll cover. Maybe show a screenshot of the example app in action.
+This guide explores how IPFS can be used as "off-chain" storage for NFTs, or Non-Fungible Tokens on a blockchain network.
+
+To learn about NFTs and IPFS, we'll look at an example application called [Minty][minty-repo], which was written for this guide to demonstrate the key concepts involved in "minting" or creating a new IPFS-powered NFT.
+
+This guide is aimed at developers who are interested in creating new NFT platforms, but it may also be of interest to people who want to see how NFTs work "under the hood" without all the moving pieces of a production NFT platform in the way.
+
+You'll likely get the most out of this guide if you know how to read JavaScript and are familiar with some basic Ethereum smart contract concepts like transactions and accounts. If Ethereum is brand new to you and you find yourself confused by this guide, check out the [Ethereum developer docs](https://ethereum.org/en/developers/docs/) to learn more.
 
 ## What is an NFT Made of?
 
-Describe the key features of an NFT:
+NFTs are a relatively new concept, powered by blockchain networks like Ethereum that run decentralized smart contracts to create and manage tokens. If you're brand new to the idea of NFTs and want to learn more, some good resources include the [OpenSea "NFT Bible"][nft-bible], which goes into the history and mechanics of NFTs, and the [Pinata Blog][pinata-blog], which includes many articles on using IPFS and NFTs together.
 
-- They're defined in a smart contract on a blockchain
- - There are several blockchains used for NFTs, but this tutorial focuses on Ethereum
-- Each token has a unique identifier and "exchange rate" or trade value. They're "non fungible" beacuse you can't just swap one NFT out for another from the same contract.
-- NFTs are often used to represent artwork or other digital "assets"
-- Storing data on the blockchain is incredibly expensive, so NFTs allow you to link to data that lives elsewhere using a "metadata URI"
+While there are several blockchain networks that support NFTs, this guide is focused on Ethereum, the most widely used blockchain for smart contract development today. Even just within the realm of Ethereum, there are several standards for how NFTs can work. We'll be using the [ERC-721 standard][eip-721], which was the first to be formally defined and is the most widely supported standard today. Although we're using the ERC-721 standard, most of the concepts should apply to any blockchain or contract interface.
+
+There are a few key features that define an NFT, regardless of platform. 
+
+First, each token has a unique id that distinguishes it from all other tokens. This is in contrast to a "fungible" token like Ether (Ethereum's native currency), which exists as a quantity attached to an account or wallet, with no way to tell one Ether from another.
+
+Because each token is unique, they're owned and traded individually, with the smart contract keeping track of who owns what.
+
+Another key feature of NFTs is the ability to link to data that's stored "off chain," or outside of the smart contract. Because data that's stored "on-chain" needs to be processed, verified and replicated across the entire blockchain network, it can be very expensive to store large amounts of data. This is a problem for many NFT use cases, especially tokens that represent digital collectibles or artwork, where storing the entire work could cost the equivalent of millions of US Dollars.
 
 ## How Does IPFS Help?
 
-- Using traditional HTTP urls for NFT metadata URIs is problematic, because the owner of the website can change the content after the NFT is created.
-  - e.g. https://cointelegraph.com/news/opensea-collector-pulls-the-rug-on-nfts-to-highlight-arbitrary-value
-- IPFS prevents this using content addressing. An IPFS URI can only ever point to the content that was used to create it.
-- IPFS also allows multiple people / organizations to store and provide the data, so the owner of an NFT can keep the data alive even if the original NFT platform that created it disappears. If the NFT data were stored in an S3 bucket and the creator decides to stop paying their AWS bill, the data just disappears. With IPFS, if anyone still has a copy on the network, the original provider isn't needed.
+In order for NFTs that represent digital artwork and other large data to be affordable to create and use, the data needs to be stored off-chain in an external system.
+
+The ERC-721 standard and others like it allow you to use a URI to link to external metadata, which is how NFTs representing images work. While it's possible to use traditional HTTP URLs to link to the external data, this comes with important drawbacks that are especially problematic in a blockchain environment.
+
+With an HTTP address like `https://cloud-bucket.provider.com/my-nft.jpeg`, anyone can fetch the contents of `my-nft.jpeg`, as long as the owner of the cloud bucket pays their bill. However, there's no way to guarantee that the _contents_ of `my-nft.jpeg` are the same as they were when the NFT was created. The owner of the cloud bucket can easily replace `my-nft.jpeg` with something completely different at any time, causing the NFT to change its meaning.
+
+One of the greatest strengths of blockchains is that their data is _immutable_; once something has been written to the blockchain it can't be changed later. However, using mutable links to external data undermines this property, since the _meaning_ of the data stored on-chain has changed, without any changes to the blockchain state.
+
+This isn't just a theoretical problem, as demonstrated by an artist who ["pulled the rug"](https://cointelegraph.com/news/opensea-collector-pulls-the-rug-on-nfts-to-highlight-arbitrary-value) on NFTs he created by changing their images after they were minted and sold to others.
+
+IPFS solves this problem thanks to [Content Addressing][docs-cid]. Adding data to IPFS produces a Content Identifier, or CID, that's directly derived from the data itself. Because the link between CID and content is immutable, a CID can only _ever_ refer to one piece of content, exactly as it was when the CID was created. Using the CID, anyone can fetch a copy of the data from the IPFS network as long as anyone on the network has a copy, even if the original provider has disappeared. This makes CIDs perfect for NFT storage. All we need to do is put the CID into an `ipfs://` URI like `ipfs://QmUAACALRufqXnGHM1QCSr5JA3b54N5QBKD73EXx6pws2f/my-nft.jpeg`, and we have an immutable link from the blockchain to the data for our token.
+
+Of course, there may be some cases in which you do want to change the metadata for an NFT after it's been published. That's no problem! You'll just need to add support to your smart contract for updating the URI for a token after it's been issued. That will let you change the URI to a new IPFS URI, while still leaving a record of the initial version in the blockchain's transaction history. This provides accountability and makes it clear to everyone what was changed, when, and by whom.
 
 ## Let's Mint Some NFTs!
 
@@ -373,11 +392,13 @@ Thanks for following along! We can't wait to see what you'll build.
 [pin-service-api]: https://ipfs.github.io/pinning-services-api-spec/
 [pinata]: https://pinata.cloud
 [pinata-docs]: https://pinata.cloud/documentation
+[pinata-blog]: https://medium.com/pinata
 [docs-openzeppelin-access-control]: https://docs.openzeppelin.com/contracts/3.x/access-control
 [docs-openzeppelin-upgrade]: https://docs.openzeppelin.com/contracts/3.x/upgradeable
 [express-js]: https://expressjs.com
 [koa-js]: https://koajs.com
 [metamask]: https://metamask.io
+[nft-bible]: https://opensea.io/blog/guides/non-fungible-tokens
 
 [docs-cid]: ../../concepts/content-addressing/
 [docs-server-infra]: ../../install/server-infrastructure
