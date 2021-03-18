@@ -14,12 +14,6 @@ Since IPFS isn't a blockchain, we'll be leveraging the power of the Ethereum blo
 
 ## What NFTs are made of 
 
-<!-- TODO 
-
-NFTs are a relatively new concept, powered by blockchain networks like Ethereum that run decentralized smart contracts to create and manage tokens. If you're brand new to the idea of NFTs and want to learn more, some good resources include the [OpenSea "NFT Bible"][nft-bible], which goes into the history and mechanics of NFTs, and the [Pinata Blog][pinata-blog], which includes many articles on using IPFS and NFTs together.
-
-While there are several blockchain networks that support NFTs, this guide is focused on Ethereum, the most widely used blockchain for smart contract development today. Even just within the realm of Ethereum, there are several standards for how NFTs can work. We'll be using the [ERC-721 standard][eip-721], which was the first to be formally defined and is the most widely supported standard today. Although we're using the ERC-721 standard, most of the concepts should apply to any blockchain or contract interface.
-
 There are a few key features that define an NFT, regardless of platform. 
 
 First, each token has a unique id that distinguishes it from all other tokens. This is in contrast to a "fungible" token like Ether (Ethereum's native currency), which exists as a quantity attached to an account or wallet, with no way to tell one Ether from another.
@@ -28,33 +22,26 @@ Because each token is unique, they're owned and traded individually, with the sm
 
 Another key feature of NFTs is the ability to link to data that's stored "off chain," or outside of the smart contract. Because data that's stored "on-chain" needs to be processed, verified and replicated across the entire blockchain network, it can be very expensive to store large amounts of data. This is a problem for many NFT use cases, especially tokens that represent digital collectibles or artwork, where storing the entire work could cost the equivalent of millions of US Dollars.
 
--->
-
 ## How IPFS helps 
 
-<!-- TODO
-
-In order for NFTs that represent digital artwork and other large data to be affordable to create and use, the data needs to be stored off-chain in an external system.
-
-The ERC-721 standard and others like it allow you to use a URI to link to external metadata, which is how NFTs representing images work. While it's possible to use traditional HTTP URLs to link to the external data, this comes with important drawbacks that are especially problematic in a blockchain environment.
+When an NFT is created and linked to a digital file that lives on some other system, _how_ the data is linked is very important. There are a few reasons why traditional HTTP links aren't a great fit.
 
 With an HTTP address like `https://cloud-bucket.provider.com/my-nft.jpeg`, anyone can fetch the contents of `my-nft.jpeg`, as long as the owner of the cloud bucket pays their bill. However, there's no way to guarantee that the _contents_ of `my-nft.jpeg` are the same as they were when the NFT was created. The owner of the cloud bucket can easily replace `my-nft.jpeg` with something completely different at any time, causing the NFT to change its meaning.
 
-One of the greatest strengths of blockchains is that their data is _immutable_; once something has been written to the blockchain it can't be changed later. However, using mutable links to external data undermines this property, since the _meaning_ of the data stored on-chain has changed, without any changes to the blockchain state.
-
 This isn't just a theoretical problem, as demonstrated by an artist who ["pulled the rug"](https://cointelegraph.com/news/opensea-collector-pulls-the-rug-on-nfts-to-highlight-arbitrary-value) on NFTs he created by changing their images after they were minted and sold to others.
 
-IPFS solves this problem thanks to [Content Addressing][docs-cid]. Adding data to IPFS produces a Content Identifier, or CID, that's directly derived from the data itself. Because the link between CID and content is immutable, a CID can only _ever_ refer to one piece of content, exactly as it was when the CID was created. Using the CID, anyone can fetch a copy of the data from the IPFS network as long as anyone on the network has a copy, even if the original provider has disappeared. This makes CIDs perfect for NFT storage. All we need to do is put the CID into an `ipfs://` URI like `ipfs://QmUAACALRufqXnGHM1QCSr5JA3b54N5QBKD73EXx6pws2f/my-nft.jpeg`, and we have an immutable link from the blockchain to the data for our token.
+IPFS solves this problem thanks to [Content Addressing][docs-cid]. Adding data to IPFS produces a Content Identifier, or CID, that's directly derived from the data itself and links to the data in the IPFS network. Because a CID can only _ever_ refer to one piece of content, we know that nobody can replace or alter the content without breaking the link.
+
+Using the CID, anyone can fetch a copy of the data from the IPFS network as long as at least one copy exists on the network, even if the original provider has disappeared. This makes CIDs perfect for NFT storage. All we need to do is put the CID into an `ipfs://` URI like `ipfs://QmUAACALRufqXnGHM1QCSr5JA3b54N5QBKD73EXx6pws2f/my-nft.jpeg`, and we have an immutable link from the blockchain to the data for our token.
 
 Of course, there may be some cases in which you do want to change the metadata for an NFT after it's been published. That's no problem! You'll just need to add support to your smart contract for updating the URI for a token after it's been issued. That will let you change the URI to a new IPFS URI, while still leaving a record of the initial version in the blockchain's transaction history. This provides accountability and makes it clear to everyone what was changed, when, and by whom.
 
--->
 
 ## Minty 
 
 To help explain how NFTs and IPFS can work together, we've created Minty - a simple command-line application to automatically _mint_ an NFT and pin it to IPFS using Pinata. 
 
-Production NFT platforms are a fairly complex thing. As with any modern web application, there are lots of decisions to make surrounding the tech stack, user interface conventions, API design, and so on. Blockchain-enabled d-apps also need to interact with user wallets such as [Metamask](https://metamask.com], further increasing their complexity.
+Production NFT platforms are a fairly complex thing. As with any modern web application, there are lots of decisions to make surrounding the tech stack, user interface conventions, API design, and so on. Blockchain-enabled d-apps also need to interact with user wallets such as [Metamask](https://metamask.io), further increasing their complexity.
 
 Since Minty was written to demonstrate the concepts and process of minting IPFS-backed NFTs, we don't need to get caught up in all the details of modern d-app development. Instead, Minty is a simple command-line app written in Javascript. 
 
@@ -197,13 +184,27 @@ You need to grab an API key from Pinata. Your API key allows Minty to interact w
     JWT: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiJiZDQ3NjM1Ny1lYWRhLTQ1ZDUtYTVmNS1mM2EwZjRmZGZmYmEiLCJlbWFpbCI6InRhaWxzbm93QHByb3Rvbm1haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBpbl9wb2xpY3kiOnsicmVnaW9ucyI6W3siaWQiOiJGUkExIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9XSwidmVyc2lvbiI6MX0sIm1mYV9lbmFibGVkIjpmYWxzZX0sImF1dGhlbnRpY2F0aW9uVHlwZSI6InNjb3BlZEtleSIsInNjb3BlZEtleUtleSI6IjQzNTM3ZDE3ZTg4ODA1MDA3MDg2Iiwic2NvcGVkS2V5U2VjcmV0IjoiNDkyYjI0ZjA0MWI5MTIwY2JmOGUzNWEyNDdmYjY4Njc5MzIzMWEzZDg5MDQ1ZjEwNDZhNGY1YjJkMjE3NTA4MiIsImlhdCI6MTYxNjAxMzExNX0.xDV9-cPwDIQInuiB0M--XiJ8dQwwDYMch4gJbc6ogXs
     ```
 
-    We just need the `API Key` and `API Secret`. You can ignore the `JWT` for now.
+    We just need the `JWT`. You can ignore the `API Key` and `API Secret` for now.
 
-<!-- TODO
+    Now that we have a JWT token, create a file called `default.env` inside the `config` folder in Minty's repository. Minty provides an example file we can copy into place:
 
-Add steps to connect Minty to the Pinata API!
+    ```shell
+    cp config/default.env.example config/default.env
+    ```
+    
+    The example file looks like this:
 
--->
+    ```shell
+    PINATA_API_TOKEN="Paste your Pinata JWT token inside the quotes!"
+    ```
+
+    Just paste the JWT token into the quotes and save the file. With the token from above, that would look like this:
+
+    ```shell
+    PINATA_API_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiJiZDQ3NjM1Ny1lYWRhLTQ1ZDUtYTVmNS1mM2EwZjRmZGZmYmEiLCJlbWFpbCI6InRhaWxzbm93QHByb3Rvbm1haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBpbl9wb2xpY3kiOnsicmVnaW9ucyI6W3siaWQiOiJGUkExIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9XSwidmVyc2lvbiI6MX0sIm1mYV9lbmFibGVkIjpmYWxzZX0sImF1dGhlbnRpY2F0aW9uVHlwZSI6InNjb3BlZEtleSIsInNjb3BlZEtleUtleSI6IjQzNTM3ZDE3ZTg4ODA1MDA3MDg2Iiwic2NvcGVkS2V5U2VjcmV0IjoiNDkyYjI0ZjA0MWI5MTIwY2JmOGUzNWEyNDdmYjY4Njc5MzIzMWEzZDg5MDQ1ZjEwNDZhNGY1YjJkMjE3NTA4MiIsImlhdCI6MTYxNjAxMzExNX0.xDV9-cPwDIQInuiB0M--XiJ8dQwwDYMch4gJbc6ogXs"
+    ```
+
+    Now Minty will be able to connect to Pinata and pin NFT data to your account.
 
 ### Deploying to a testnet
 
@@ -434,10 +435,10 @@ Minty uses the [IPFS Pinning Service API][pin-service-api] to request that a rem
 
 Before you can run this command, you'll need an API token from a pinning service that supports the IPFS Pinning Service API. If you're following along and want to run the `minty pin` command, we recommend signing up for a free account at [Pinata][pinata], an excellent pinning service provider with a generous free tier. 
 
-The default Minty configuration expects to find an environment variable name `PINATA_API_TOKEN` containing the JWT access token for your Pinata account. Once you have a token, you can set the environment variable by using a command like:
+The default Minty configuration expects to find an environment variable name `PINATA_API_TOKEN` containing the JWT access token for your Pinata account. Once you have a token, you can create a file called `config/default.env` in the Minty repo and make it look similar to this:
 
 ```shell
-export PINATA_API_TOKEN="Paste JWT token here"
+PINATA_API_TOKEN="Paste JWT token here"
 ```
 
 Now when you run `minty pin`, Minty should have everything it needs to connect to Pinata.
@@ -492,6 +493,7 @@ async pin(cidOrURI) {
   // and fetch the data using Bitswap, IPFS's transfer protocol.
   await this.ipfs.pin.remote.add(cid, { service: config.pinningService.name })
 }
+```
 
 Because the pinning service API expects a CID and we may have a full `ipfs://` URI, we use a little helper called `extractCID` to pull out the CID portion.
 
@@ -503,7 +505,7 @@ Finally, we call `ipfs.pin.remote.add`, passing in the name of the pinning servi
 
 To verify that the data was pinned, you can run `ipfs pin remote ls --service=pinata` to see a list of the content you've pinned to Pinata. If you don't already have a copy of IPFS installed on your machine, you can use the one bundled with Minty by running `npx go-ipfs pin remote ls --service=pinata` instead. Alternatively, you can log into the Pinata website and view your pins in their UI.
 
-## Next Steps
+## Next steps
 
 That was quite a lot to cover! We've seen how to add assets to IPFS and create NFT metadata, how to link our metadata to a new NFT on Ethereum, and how to pin our data with a remote provider for persistence.
 
