@@ -49,7 +49,7 @@ Since Minty was written to demonstrate the concepts and process of minting IPFS-
 
 Let's get Minty installed so we can start playing around with NFTs! To install and run Minty, you must have NPM installed. Windows is not currently supported. Installation of Minty is fairly simple. Just download the GitHub repository, install the NPM dependencies, and start the local testnet environment. 
 
-1. Clone this repository and move into the `minty` directory:
+1. Clone [the Minty repository][minty-repo] and move into the `minty` directory:
 
     ```shell
     git clone https://github.com/yusefnapora/minty
