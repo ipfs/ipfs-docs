@@ -173,9 +173,8 @@ You need to grab an API key from Pinata. Your API key allows Minty to interact w
 1. Click **New Key**.
 1. Expand the **Pinning Services API** drop-down and select all the options under **Pins**:
 
-<!--
     ![The permissions options available to API keys in Pinata.](./images/pinata-api-key-permissions.png)
--->
+
 1. Pinata will give you an _API key_, and _API secret_, and a _JWT_:
 
     ```
