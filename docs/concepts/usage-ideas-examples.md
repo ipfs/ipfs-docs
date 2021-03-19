@@ -36,7 +36,7 @@ Let IPFS coordinate the flow of data between you and your colleagues, even when 
 
 ### Collaborate on written documents
 
-[PeerPad.org](https://peerpad.net) is a service that allows you to write, collaborate, and export Markdown documents directly in your browser, similar to how Google Docs works.
+[PeerPad.net](https://peerpad.net) is a service that allows you to write, collaborate, and export Markdown documents directly in your browser, similar to how Google Docs works.
 
 ### Version control
 
