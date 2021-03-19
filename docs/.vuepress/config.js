@@ -266,6 +266,14 @@ module.exports = {
                   'how-to/companion-window-ipfs',
                   '/how-to/companion-x-ipfs-path-header'
                 ]
+              },
+              {
+                title: 'IPFS & Blockchain Networks',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  'how-to/mint-nfts-with-ipfs'
+                ]
               }
             ]
           },
