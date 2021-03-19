@@ -22,7 +22,7 @@ There are a few key features that define an NFT, regardless of platform.
 
 First, each token has a unique id that distinguishes it from all other tokens. This is in contrast to a fungible token like Ether `ETH`, which exists as a quantity attached to an account or wallet. There is no way to tell one `ETH` from another. Because each NFT is unique, they're owned and traded individually, with the smart contract keeping track of who owns what.
 
-Another key feature of an NFT is the ability to link to data that is stored outside of a smart contract. Storing or processing data outside of a smart-contract is known as being _off chain_. Because data that's stored _on-chain_ needs to be processed, verified and replicated across the entire blockchain network, it can be very expensive to store large amounts of data. This is a problem for many NFT use cases, especially tokens that represent digital collectibles or artwork, where storing the entire work could cost the equivalent of millions of US Dollars.
+Another key feature of an NFT is the ability to link to data that is stored outside of a smart contract. Storing or processing data outside of a smart-contract is known as being _ off-chain_. Because data that's stored _on-chain_ needs to be processed, verified, and replicated across the entire blockchain network, it can be very expensive to store large amounts of data. This is a problem for many NFT use cases, especially tokens that represent digital collectibles or artwork, where storing the entire work could cost the equivalent of millions of US Dollars.
 
 ### How IPFS helps 
 
@@ -36,7 +36,7 @@ IPFS solves this problem thanks to [Content Addressing][docs-cid]. Adding data t
 
 Using the CID, anyone can fetch a copy of the data from the IPFS network as long as at least one copy exists on the network, even if the original provider has disappeared. This makes CIDs perfect for NFT storage. All we need to do is put the CID into an `ipfs://` URI like `ipfs://QmUAACALRufqXnGHM1QCSr5JA3b54N5QBKD73EXx6pws2f/my-nft.jpeg`, and we have an immutable link from the blockchain to the data for our token.
 
-Of course, there may be some cases in which you do want to change the metadata for an NFT after it's been published. That's no problem! You'll just need to add support to your smart contract for updating the URI for a token after it's been issued. That will let you change the URI to a new IPFS URI, while still leaving a record of the initial version in the blockchain's transaction history. This provides accountability and makes it clear to everyone what was changed, when, and by whom.
+Of course, there may be some cases in which you do want to change the metadata for an NFT after it's been published. That's no problem! You'll just need to add support to your smart contract for updating the URI for a token after it's been issued. That will let you change the URI to a new IPFS URI while still leaving a record of the initial version in the blockchain's transaction history. This provides accountability and makes it clear to everyone what was changed, when, and by whom.
 
 ## Minty 
 
@@ -192,7 +192,7 @@ You need to grab an API key from Pinata. Your API key allows Minty to interact w
     cp config/default.env.example config/default.env
     ```
 
-1. Inside `config/default.env` add you JWT token to the `PINATA_API_TOKEN` line _between_ the double quotes `"`:
+1. Inside `config/default.env` add your JWT token to the `PINATA_API_TOKEN` line _between_ the double quotes `"`:
 
     ```shell
     PINATA_API_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsia..."
@@ -250,7 +250,7 @@ If you read the [OpenZeppelin ERC721 guide](https://docs.openzeppelin.com/contra
 
 One thing to notice is that we set the base URI prefix to `ipfs://` in the constructor. When we set a metadata URI for each token in the `mintToken` function, we don't need to store the prefix since the base contract's `tokenURI` accessor function will apply it to each token's URI.
 
-It's important to note that this contract is **not production ready**. It doesn't include any [access controls][docs-openzeppelin-access-control] that limit which accounts are allowed to call the `mintToken` function. If you decide to develop a production platform based on Minty, please explore the access control patterns that are available and consider which should apply for your platform's access model.
+It's important to note that this contract is **not production-ready**. It doesn't include any [access controls][docs-openzeppelin-access-control] that limit which accounts are allowed to call the `mintToken` function. If you decide to develop a production platform based on Minty, please explore the access control patterns that are available and consider which should apply to your platform's access model.
 
 #### Deploying the Contract
 
@@ -292,7 +292,7 @@ async mintToken(ownerAddress, metadataURI) {
 
 As you can see, calling the smart contract function is mostly like calling a normal JavaScript function, thanks to the [ethers.js smart contract library](https://docs.ethers.io/v5/). However, since the `mintToken` function modifies the blockchain's state, it can't return a value right away. This is because the function call creates an ethereum transaction, and there's no way to know for sure that the block containing the transaction will actually be mined and incorporated into the blockchain. For example, there may not be enough gas to pay for the transaction.
 
-To get the token id for our new NFT, we need call `tx.wait()`, which waits until the transaction has been confirmed. The token id is wrapped inside a `Transfer` event, which is emitted by the base contract when a new token is created or transferred to a new owner. By inspecting the transaction receipt returned from `tx.wait()`, we can pull the token id out of the `Transfer` event.
+To get the token id for our new NFT, we need to call `tx.wait()`, which waits until the transaction has been confirmed. The token id is wrapped inside a `Transfer` event, which is emitted by the base contract when a new token is created or transferred to a new owner. By inspecting the transaction receipt returned from `tx.wait()`, we can pull the token id out of the `Transfer` event.
 
 ### Storing NFT data on IPFS
 
@@ -306,7 +306,7 @@ The smart contract's `mintToken` function expects an IPFS metadata URI, which sh
 }
 ```
 
-The `image` field contains a URI that resolves to the NFT image data we want to associate with the token. This field doesn't necessarily have to be an image, it can be any file-type.
+The `image` field contains a URI that resolves to the NFT image data we want to associate with the token. This field doesn't necessarily have to be an image; it can be any file-type.
 
 To get the metadata URI for our smart contract, we first add the image data to IPFS to get an IPFS [CID][docs-cid] and use the CID to build an `ipfs://` URI. Then we create a JSON object containing the image URI along with the user-provided `name` and `description` fields. Finally, we add the JSON data to IPFS to create the metadata `ipfs://` URI and feed that into the smart contract.
 
@@ -376,7 +376,7 @@ async getNFTMetadata(tokenId) {
 
 See the [`getNFT` method][minty-code-get-nft] for an example that also fetches the asset data from IPFS by resolving the URI in the metadata's `image` field. 
 
-The `getNFT` method is used by the `minty` command line app to view a token using the `minty show <token-id>` command:
+The `getNFT` method is used by the `minty` command-line app to view a token using the `minty show <token-id>` command:
 
 ```
 minty show 14
@@ -401,7 +401,7 @@ You can also try using a public gateway like the one at [https://ipfs.io](https:
 
 ### Pinning NFT data to a remote service
 
-When you add data to IPFS, it first gets added to your local IPFS node, which advertises the CID of the data to the IPFS network. This lets anyone request the data by looking up the CID and connecting to your node directly. Once they've done so, their IPFS node will hold onto a copy temporarily, which helps speed up access to the data if another node requests it. However, by default, these extra copies will eventually expire, so that people running IPFS don't use up all of their storage space.
+When you add data to IPFS, it first gets added to your local IPFS node, which advertises the CID of the data to the IPFS network. This lets anyone request the data by looking up the CID and connecting to your node directly. Once they've done so, their IPFS node will hold onto a copy temporarily, which helps speed up access to the data if another node requests it. However, by default, these extra copies will eventually expire so that people running IPFS don't use up all of their storage space.
 
 When minting NFTs, we generally want our data to be at least as _durable_ as the blockchain platform the token was minted on, and we want it to be available all the time and across the globe.
 
@@ -473,9 +473,9 @@ async pin(cidOrURI) {
 
 Because the pinning service API expects a CID and we may have a full `ipfs://` URI, we use a little helper called `extractCID` to pull out the CID portion.
 
-Then, we call `_configurePinningService` to tell IPFS to use the remote service, if it hasn't already been configured.
+Then, we call `_configurePinningService` to tell IPFS to use the remote service if it hasn't already been configured.
 
-We do a check to see if we've already pinned this CID, since the API will return an error if we try to pin content that's already been pinned. Alternatively, you could just try to pin and check to see if the returned error is for duplicate content.
+We do a check to see if we've already pinned this CID since the API will return an error if we try to pin content that's already been pinned. Alternatively, you could just try to pin and check to see if the returned error is for duplicate content.
 
 Finally, we call `ipfs.pin.remote.add`, passing in the name of the pinning service. When the pinning service receives the request, it will try to connect to our local IPFS node, and our local node will also try to connect to their IPFS nodes. Once they're connected, the service will fetch the CIDs we asked it to pin and store the data on their infrastructure.
 
@@ -485,15 +485,15 @@ To verify that the data was pinned, you can run `ipfs pin remote ls --service=pi
 
 That was quite a lot to cover! We've seen how to add assets to IPFS and create NFT metadata, how to link our metadata to a new NFT on Ethereum, and how to pin our data with a remote provider for persistence.
 
-At this point, you might be wondering how to take these techniques and use them to build a production NFT minting platform. Of course there are many decisions involved in any new product or marketplace, so we can't think of everything here. But there are a few places where Minty is clearly not _production ready_, and by looking at them we can get a good idea of what technical work might be involved.
+At this point, you might be wondering how to take these techniques and use them to build a production NFT minting platform. Of course, there are many decisions involved in any new product or marketplace, so we can't think of everything here. But there are a few places where Minty is clearly not _production ready_, and by looking at them, we can get a good idea of what technical work might be involved.
 
-As a command-line app, `minty` is a pretty big departure from the rich, interactive web applications that power NFT minting platforms. If you want to build a web platform based on the techniques shown in Minty, you will either need to expose Minty's functionality via an HTTP api, or go the _fully decentralized_ route and interact with the NFT contract directly in the user's Ethereum-enabled web browser. The good news is that all of the concepts we've learned so far are applicable to either environment.
+As a command-line app, `minty` is a pretty big departure from the rich, interactive web applications that power NFT minting platforms. If you want to build a web platform based on the techniques shown in Minty, you will either need to expose Minty's functionality via an HTTP API or go the _fully decentralized_ route and interact with the NFT contract directly in the user's Ethereum-enabled web browser. The good news is that all of the concepts we've learned so far are applicable to either environment.
 
-Since Minty currently runs on Node.js, it's straightforward to add an API server using one of the many Node HTTP frameworks like [Express][express-js] or [Koa][koa-js]. However, it can be difficult to allow users to sign Ethereum transactions with their own private keys if the code is running on a backend server. As such, you may want to put some blockchain logic in the frontend, so that users can use [MetaMask][metamask] or a similar wallet to authorize token transfers.
+Since Minty currently runs on Node.js, it's straightforward to add an API server using one of the many Node HTTP frameworks like [Express][express-js] or [Koa][koa-js]. However, it can be difficult to allow users to sign Ethereum transactions with their own private keys if the code is running on a backend server. As such, you may want to put some blockchain logic in the frontend so that users can use [MetaMask][metamask] or a similar wallet to authorize token transfers.
 
 Work is also underway to [support the remote pinning service API][js-ipfs-remote-pin-pr] in `js-ipfs`, so soon you'll be able to run the entire process in the user's browser using an embedded IPFS node. 
 
-If you're building a d-app without a backend server today and just can't wait, you could also use an HTTP API provided by a pinning service to send and pin content using traditional HTTP requests instead of embedding js-ipfs into your d-app. See [Pinata's documentation][pinata-docs] for an example. This makes your d-app code a little less generic, since it's tied to one provider's API, but it may be a good way to get started. Doing everything in the browser also means you'll need to carefully manage the API tokens for the pinning services you support, perhaps by allowing users to add their own credentials and storing the tokens in the browser's local storage.
+If you're building a d-app without a backend server today and just can't wait, you could also use an HTTP API provided by a pinning service to send and pin content using traditional HTTP requests instead of embedding js-ipfs into your d-app. See [Pinata's documentation][pinata-docs] for an example. This makes your d-app code a little less generic since it's tied to one provider's API, but it may be a good way to get started. Doing everything in the browser also means you'll need to carefully manage the API tokens for the pinning services you support, perhaps by allowing users to add their own credentials and storing the tokens in the browser's local storage.
 
 Finally, please consider that the Minty smart contract is intentionally very simple and is not tailored to the needs of a production platform. In particular, it lacks [access controls][docs-openzeppelin-access-control] and is not [upgradable][docs-openzeppelin-upgrade] without re-deploying the contract. Chances are you'll want your contract to include features that are unique to your platform as well, beyond the base ERC-721 functionality.
 
@@ -518,3 +518,4 @@ Thanks for following along! We can't wait to see what you'll build.
 
 [docs-cid]: ../../concepts/content-addressing/
 [docs-server-infra]: ../../install/server-infrastructure
+
