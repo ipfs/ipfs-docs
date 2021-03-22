@@ -34,7 +34,7 @@ This problem was demonstrated by an artist who [_pulled the rug_](https://cointe
 
 IPFS solves this problem thanks to [Content Addressing][docs-cid]. Adding data to IPFS produces a content identifier (CID) that's directly derived from the data itself and links to the data in the IPFS network. Because a CID can only _ever_ refer to one piece of content, we know that nobody can replace or alter the content without breaking the link.
 
-Using the CID, anyone can fetch a copy of the data from the IPFS network as long as at least one copy exists on the network, even if the original provider has disappeared. This makes CIDs perfect for NFT storage. All we need to do is put the CID into an `ipfs://` URI like `ipfs://QmUAACALRufqXnGHM1QCSr5JA3b54N5QBKD73EXx6pws2f/my-nft.jpeg`, and we have an immutable link from the blockchain to the data for our token.
+Using the CID, anyone can fetch a copy of the data from the IPFS network as long as at least one copy exists on the network, even if the original provider has disappeared. This makes CIDs perfect for NFT storage. All we need to do is put the CID into an `ipfs://` URI like `ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/my-nft.jpeg`, and we have an immutable link from the blockchain to the data for our token.
 
 Of course, there may be some cases in which you do want to change the metadata for an NFT after it's been published. That's no problem! You'll just need to add support to your smart contract for updating the URI for a token after it's been issued. That will let you change the URI to a new IPFS URI while still leaving a record of the initial version in the blockchain's transaction history. This provides accountability and makes it clear to everyone what was changed, when, and by whom.
 
@@ -133,20 +133,20 @@ Now we're going to tokenize our ticket into an NFT. This process is often called
 1. Call the `mint` command and supply the file we want to mint, the name of our NFT, and a description:
 
     ```shell
-    minty mint ~/flight-to-the-moon.txt --name "Moon Flight #1" --description "This ticket serves as proof-of-ownership of a first-class seat on a flight to the moon."
+ minty mint ~/ticket.txt --name "Moon Flight #1" --description "This ticket serves as proof-of-ownership of a first-class seat on a flight to the moon."
 
-    > 🌿 Minted a new NFT:
-    > Token ID:              1
-    > Metadata URI:          ipfs://Qma4RRDu9Q5ZXb4F6HSPAHXeyinYYFuBMTrk7HbHrsbcN9/metadata.json
-    > Metadata Gateway URL:  http://localhost:8080/ipfs/Qma4RRDu9Q5ZXb4F6HSPAHXeyinYYFuBMTrk7HbHrsbcN9/metadata.json
-    > Asset URI:             ipfs://QmbwYvCrjnv9nKqagwYoniNzppf96za7BnateWD18mQnHX/flight-to-the-moon.txt
-    > Asset Gateway URL:     http://localhost:8080/ipfs/QmbwYvCrjnv9nKqagwYoniNzppf96za7BnateWD18mQnHX/flight-to-the-moon.txt
-    > NFT Metadata:
-    > {
-    >   "name": "Moon Flight #1",
-    >   "description": "This ticket serves are proof-of-ownership of a first-class seat on a flight to the moon.",
-    >   "image": "ipfs://QmbwYvCrjnv9nKqagwYoniNzppf96za7BnateWD18mQnHX/flight-to-the-moon.txt"
-    > }
+> 🌿 Minted a new NFT:
+> Token ID:              1
+> Metadata URI:          ipfs://bafybeic3ui4dj5dzsvqeiqbxjgg3fjmfmiinb3iyd2trixj2voe4jtefgq/metadata.json
+> Metadata Gateway URL:  http://localhost:8080/ipfs/bafybeic3ui4dj5dzsvqeiqbxjgg3fjmfmiinb3iyd2trixj2voe4jtefgq/metadata.json
+> Asset URI:             ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt
+> Asset Gateway URL:     http://localhost:8080/ipfs/bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt
+> NFT Metadata:
+> {
+>   "name": "Moon Flight #1",
+>   "description": "This ticket serves as proof-of-ownership of a first-class seat on a flight to the moon.",
+>   "image": "ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt"
+> }
     ```
 
 The `minty mint` command returns the id of the new token, some metadata containing the `name` and `description` we provided, and an IPFS URI to the file we used for our NFT asset. The `Metadata URI` in the output above is the IPFS URI for the NFT Metadata JSON object that's stored on IPFS.
@@ -302,7 +302,7 @@ The smart contract's `mintToken` function expects an IPFS metadata URI, which sh
 {
     "name": "A name for this NFT",
     "description": "An in-depth description of the NFT",
-    "image": "ipfs://QmUAACALRufqXnGHM1QCSr5JA3b54N5QBKD73EXx6pws2f/nft-image.png"
+    "image": "ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/nft-image.png"
 }
 ```
 
@@ -321,8 +321,8 @@ async createNFTFromAssetData(content, options) {
   // When you add an object to IPFS with a directory prefix in its path,
   // IPFS will create a directory structure for you. This is nice, because
   // it gives us URIs with descriptive filenames in them e.g.
-  // 'ipfs://QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM/cat-pic.png' vs
-  // 'ipfs://QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM'
+  // 'ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/cat-pic.png' vs
+  // 'ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq'
   const ipfsPath = '/nft/' + basename
   const { cid: assetCid } = await this.ipfs.add({ path: ipfsPath, content })
 
@@ -383,15 +383,15 @@ minty show 14
 
 Token ID:              14
 Owner Address:         0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
-Metadata URI:          ipfs://QmXFgNWRg3vyoMn887DFRCPK8G5atgqzHy7PyjWDmYMCnG/metadata.json
-Metadata Gateway URL:  http://localhost:8080/ipfs/QmXFgNWRg3vyoMn887DFRCPK8G5atgqzHy7PyjWDmYMCnG/metadata.json
-Asset URI:             ipfs://QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM/ipfs-logo-768px.png
-Asset Gateway URL:     http://localhost:8080/ipfs/QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM/ipfs-logo-768px.png
+Metadata URI:          ipfs://bafybeieeomufuwkwf7sbhyo7yiifaiknm7cht5tc3vakn25vbvazyasp3u/metadata.json
+Metadata Gateway URL:  http://localhost:8080/ipfs/bafybeieeomufuwkwf7sbhyo7yiifaiknm7cht5tc3vakn25vbvazyasp3u/metadata.json
+Asset URI:             ipfs://bafybeifszd4wbkeekwzwitvgijrw6zkzijxutm4kdumkxnc6677drtslni/ipfs-logo-768px.png
+Asset Gateway URL:     http://localhost:8080/ipfs/bafybeifszd4wbkeekwzwitvgijrw6zkzijxutm4kdumkxnc6677drtslni/ipfs-logo-768px.png
 NFT Metadata:
 {
   "name": "The IPFS Logo",
   "description": "The IPFS logo (768px, png)",
-  "image": "ipfs://QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM/ipfs-logo-768px.png"
+  "image": "ipfs://bafybeifszd4wbkeekwzwitvgijrw6zkzijxutm4kdumkxnc6677drtslni/ipfs-logo-768px.png"
 }
 ```
 
@@ -425,8 +425,8 @@ Here's an example of running `minty pin <token-id>`:
 
 ```
 minty pin 2
-Pinning asset data (ipfs://QmaNZ2FCgvBPqnxtkbToVVbK2Nes6xk5K4Ns6BsmkPucAM/ipfs-logo-768px.png) for token id 2....
-Pinning metadata (ipfs://QmThb94cZavMRMBCiCUaha8zF36bmWah4PX5YpuTCFVt6E/metadata.json) for token id 2...
+Pinning asset data (ipfs://bafybeifszd4wbkeekwzwitvgijrw6zkzijxutm4kdumkxnc6677drtslni/ipfs-logo-768px.png) for token id 2....
+Pinning metadata (ipfs://bafybeieeomufuwkwf7sbhyo7yiifaiknm7cht5tc3vakn25vbvazyasp3u/metadata.json) for token id 2...
 🌿 Pinned all data for token id 2
 ```
 
