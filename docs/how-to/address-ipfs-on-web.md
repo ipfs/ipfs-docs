@@ -6,7 +6,17 @@ description: Hands-on guides to using and developing with IPFS to build decentra
 
 # Address IPFS on the Web
 
-This document is a guide to how to address IPFS content paths on the web.
+_How to link to content on IPFS._
+
+```
+https://ipfs.io/ipfs/<CID>
+# e.g
+https://ipfs.io/ipfs/Qme7ss3ARVgxv6rXqVPiikMJ8u2NLgmgszg13pYrDKEoiu
+```
+
+Browsers that support IPFS can redirect these requests to your local IPFS node, while those that don't can fetch the resource from the ipfs.io gateway. 
+
+You can swap out `ipfs.io` for your own http-to-ipfs gateway, but you are then obliged to keep that gateway running _forever_. If your gateway goes down, users with IPFS aware tools will still be able to fetch the content from the IPFS network as long as any node still hosts it, but for those without, the link will be broken. Don't do that.
 
 ## Dweb addressing in brief
 
