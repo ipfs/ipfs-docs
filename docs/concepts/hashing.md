@@ -63,17 +63,17 @@ Let us look at a concrete example. When you download an image file for Ubuntu Li
 0xB45165ED3CD437B9FFAD02A2AAD22A4DDC69162470E2622982889CE5826F6E3D ubuntu-20.04.1-desktop-amd64.iso
 ```
 
-You can now verify the file integrity after the download of the file:
+After downloading the Ubuntu image, you can verify the integrity of the file by hashing the file to make sure the checksums match:
 
-```
+```shell
 echo "b45165ed3cd437b9ffad02a2aad22a4ddc69162470e2622982889ce5826f6e3d *ubuntu-20.04.1-desktop-amd64.iso" | shasum -a 256 --check
 
 ubuntu-20.04.1-desktop-amd64.iso: OK
 ```
 
-Let us compare the checksum provided with the download of our file with the hash included in the CID. We can use `ipfs add` with the `-n`switch to create the CID for a file without adding it to IPFS:
+If we add the `ubuntu-20.04.1-desktop-amd64.iso` file to IPFS we receive a hash as an output:
 
-```
+```shell
 ipfs add ubuntu-20.04.1-desktop-amd64.iso
 
 added QmPK1s3pNYLi9ERiq3BDxKa4XosgWwFRQUydHUtz4YgpqB ubuntu-20.04.1-desktop-amd64.iso
