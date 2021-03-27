@@ -102,7 +102,3 @@ shasum: WARNING: 1 computed checksum did NOT match
 ```
 
 As we can see, the hash included in the CID does NOT match the hash of the input file `ubuntu-20.04.1-desktop-amd64.iso`. To understand what the hash contained in the CID is, we must understand how IPFS stores files. IPFS uses a [distributed acyclic graph (DAG)](/concepts/merkle-dag/) to keep track of all the data stored in IPFS. A CID identifies one specific node in this graph. This identifier is the result of hashing the node's contents using a cryptographic hash function like `SHA256`.
-
-::: tip
-The [Tutorial: Merkle Trees and the IPFS DAG](https://dweb-primer.ipfs.io/ipfs-dag) inlcudes in-depth lessons coveing the IPFS DAG.
-:::
