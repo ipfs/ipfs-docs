@@ -40,6 +40,14 @@ When referring to projects by name, use proper noun capitalization: Go-IPFS and 
 
 Cases inside code blocks refer to commands and are not capitalized: `go-ifps` or `js-ifps`.
 
+### _Using_ IPFS, not _on_ IPFS
+
+IPFS is a protocol just like SSH, HTTP, or FTP. To that end, users do things _with_ IPFS, not _on_ IPFS.
+
+> The company uses IPFS to share data across office computers.
+>
+> Developers can use IPFS as a more efficient way of transferring files throughout a network.
+
 ## Formatting
 
 How the Markdown syntax looks, and code formatting rules to follow.
