@@ -45,7 +45,7 @@ You can use the first few bytes of the CID to interpret the remainder of the con
 
 It's easy to explore a CID for yourself. Want to pull apart a specific CID's multibase, multicodec, or multihash info? You can use the [CID Inspector](https://cid.ipfs.io/#QmY7Yh4UquoXHLPFo2XbhXkhBvFoPwmQUSa92pxnxjQuPU) or the [CID Info panel in IPLD Explorer](https://explore.ipld.io/#/explore/QmY7Yh4UquoXHLPFo2XbhXkhBvFoPwmQUSa92pxnxjQuPU) (both links launch using a sample CID) for an interactive breakdown of differently-formatted CIDs.
 
-Check out ProtoSchool's [Anatomy of a CID](https://proto.school/anatomy-of-cid) tutorial to see how a single file can be represented in multiple CID versions.
+Check out ProtoSchool's [Anatomy of a CID](https://proto.school/anatomy-of-a-cid) tutorial to see how a single file can be represented in multiple CID versions.
 
 ## Further resources
 
