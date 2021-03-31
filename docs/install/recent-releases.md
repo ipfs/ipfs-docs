@@ -6,7 +6,7 @@ title: Recent releases
 
 This section contains information about recent IPFS releases. You can find installation instructions, update information, and release notes here.
 
-## [Go-IPFS 0.8](/https://github.com/ipfs/go-ipfs/releases/tag/v0.8.0)
+## [Go-IPFS 0.8](https://github.com/ipfs/go-ipfs/releases/tag/v0.8.0)
 
 This release is focused on making it easier to work with pins. We have some snazzy new features around being able to ask remote services to pin data for you, and modifying large pin sets is much faster than ever before.
 
