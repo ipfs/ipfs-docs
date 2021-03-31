@@ -322,7 +322,7 @@ module.exports = {
       {
         normalSuffix: pageSuffix,
         indexSuffix: pageSuffix,
-        notFoundPath: '/404/'
+        notFoundPath: '/ipfs-404.html'
       }
     ],
     [
@@ -371,7 +371,8 @@ module.exports = {
     [
       'vuepress-plugin-sitemap',
       {
-        hostname: DEPLOY_DOMAIN
+        hostname: DEPLOY_DOMAIN,
+        exclude: ['/ipfs-404.html']
       }
     ],
     [
