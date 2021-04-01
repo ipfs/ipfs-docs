@@ -76,45 +76,8 @@ module.exports = {
               'install/ipfs-companion',
               'install/command-line',
               ['install/ipfs-updater', 'Updater'],
-              'install/server-infrastructure'
-            ]
-          },
-          {
-            title: 'Recent releases',
-            path: '/recent-releases/',
-            children: [
-              {
-                title: 'Go-IPFS 0.7',
-                sidebarDepth: 1,
-                children: [
-                  '/recent-releases/go-ipfs-0-7/',
-                  ['/recent-releases/go-ipfs-0-7/install', 'Install'],
-                  '/recent-releases/go-ipfs-0-7/update-procedure',
-                  '/recent-releases/go-ipfs-0-7/features'
-                ]
-              },
-              {
-                title: 'Go-IPFS 0.6',
-                sidebarDepth: 1,
-                children: [
-                  '/recent-releases/go-ipfs-0-6/',
-                  ['/recent-releases/go-ipfs-0-6/install', 'Install'],
-                  '/recent-releases/go-ipfs-0-6/update-procedure',
-                  '/recent-releases/go-ipfs-0-6/features'
-                ]
-              },
-              {
-                title: 'Go-IPFS 0.5',
-                sidebarDepth: 1,
-                children: [
-                  '/recent-releases/go-ipfs-0-5/',
-                  ['/recent-releases/go-ipfs-0-5/install', 'Install'],
-                  '/recent-releases/go-ipfs-0-5/update-procedure',
-                  '/recent-releases/go-ipfs-0-5/features',
-                  '/recent-releases/go-ipfs-0-5/fixes',
-                  '/recent-releases/go-ipfs-0-5/troubleshooting'
-                ]
-              }
+              'install/server-infrastructure',
+              'install/recent-releases'
             ]
           },
           {
@@ -359,7 +322,7 @@ module.exports = {
       {
         normalSuffix: pageSuffix,
         indexSuffix: pageSuffix,
-        notFoundPath: '/404/'
+        notFoundPath: '/ipfs-404.html'
       }
     ],
     [
@@ -408,7 +371,8 @@ module.exports = {
     [
       'vuepress-plugin-sitemap',
       {
-        hostname: DEPLOY_DOMAIN
+        hostname: DEPLOY_DOMAIN,
+        exclude: ['/ipfs-404.html']
       }
     ],
     [

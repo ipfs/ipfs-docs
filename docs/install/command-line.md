@@ -11,7 +11,7 @@ Installing IPFS through the command-line is handy if you plan on building applic
 
 ## System requirements
 
-IPFS is a light-weight application in terms of CPU and RAM usage. You can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space, and the [default maximum disk storage](/how-to/configure-a-node) is set to 10GB.
+IPFS requires 512MiB of memory and can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space, and the [default maximum disk storage](/how-to/configure-a-node) is set to 10GB.
 
 ## Official distributions
 
