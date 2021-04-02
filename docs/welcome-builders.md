@@ -17,6 +17,7 @@ description: The home page for developer documentation for IPFS, the InterPlanet
 [Learn more →](/concepts/what-is-ipfs/#what-is-ipfs)
 
 ## Who's building on IPFS
+
 **Individuals and orgs worldwide are using IPFS to build successful apps and services for a truly amazing variety of use cases and industries.** Whether you're interested in NFTs or networked communities, streaming music or social media, IPFS can play a critical part in your decentralized tech stack. Check out these resources:
 
 - [**Case Study Series**](/concepts/#examples-and-case-studies) — Success stories in industries ranging from big data to ecommerce and more.
