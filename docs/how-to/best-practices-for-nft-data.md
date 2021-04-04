@@ -24,54 +24,9 @@ First, there's the "raw" CID, which uniquely identifies a specific piece of cont
 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 ```
 
-That's a version 1 CID (often abbreviated to CIDv1) using the base32 string encoding. This is the preferred format to use when showing CID strings to a user, since it allows the best interoperability with web browsers when viewing IPFS data over an HTTP gateway or in an IPFS-enabled browser. 
+Because it's the most compact form of IPFS link, the CID is a good fit for storing directly on the blockchain. We recommend storing CIDs as strings, in the base 32 encoding as shown in the example above. 
 
-If you're already using the older CIDv0 format, things will still work, but your users may get confused when newer tools automatically convert to the new format. For consistency's sake, it's best to just use CIDv1 everywhere when showing CIDs in your user interface.
-
-Because it's the most compact form of IPFS link, the raw CID is a good fit for storing directly on the blockchain, especially in its binary form. To get the binary representation of a CID, you can use the `.bytes` property of the `CID` object in JavaScript:
-
-```js
-const CID = require('cids')
-const myCid = new CID('bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi')
-
-// Store the binary CID on-chain.
-const token = await contract.mintToken(ownerAddress, myCid.bytes)
-```
-
-<!-- TODO: decide whether to include this. it's quite a bit cheaper to just store the hash, but feels wrong to recommend as "Best practice" because you lose some future proofing benefits (plus it's more fiddly and harder to demonstrate)
--->
-
-It's also possible to get an even more compact representation by storing just the hash value that the CID is based upon. The default hash algorithm used by IPFS is SHA2-256, which can fit into the `bytes32` Ethereum type. This may be considerably cheaper than using the full CID, which must be stored in a more expensive dynamic-length `bytes` array. However, one of the benefits of using the full CID is flexibility and future proofing. If you decide to store raw hashes, you won't be able to switch to a different hash algorithm or adopt different IPLD data formats in the future.
-
-```js
-const CID = require('cids')
-const multihash = require('multihashes')
-const myCid = new CID('bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi')
-
-// We can pass myCid.multihash into multihash.decode to get the raw hash digest
-const { digest } = multihash.decode(myCid.multihash)
-
-// Depending on your smart contract library, you may need to convert the digest to a hex string.
-// Below is an example using ethers.js
-const ethers = require('ethers')
-const hashString = ethers.utils.hexlify(digest)
-
-// Store the hash on-chain
-const token = await contract.mintToken(ownerAddress, hashString)
-
-// Later, you can re-create a full CID from the hash digest.
-
-// First, you have to make a multihash, passing in the name of the hash algrithm:
-const mh = multihash.encode(digest, 'sha2-256')
-
-// Now you can turn it into a CID:
-const recreatedCid = new CID(
-  1,        // we want CID version 1
-  'dag-pb', // dag-pb is the default IPLD data format for IPFS files
-  mh        // the multihash we created from our hash digest
-)
-```
-
+While it's tempting to save a few bytes on-chain by storing a CID in its binary form, doing so may cause problems with standard smart contract interfaces like [ERC-721][eip-721], which expects each token to have a string `tokenURI`. By storing CIDs as strings to begin with, you can avoid an expensive on-chain conversion from binary to base 32.
 
 ### IPFS URI
 
@@ -79,7 +34,9 @@ A Uniform Resource Identifier, or URI, is used to specify a particular piece of 
 
 Here's an example: `ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi`
 
-IPFS URIs are the canonical representation for an IPFS link.
+IPFS URIs are the canonical representation for an IPFS link, since the `ipfs` scheme makes it clear and unambiguous that the CID refers to content on IPFS and not some other system. To produce an IPFS URI, simpley prefix a CID string with the static string `ipfs://`.
+
+NFT standards like [ERC-721][eip-721] and [ERC-1155][eip-1155] define smart contract functions for fetching the URI associated with an NFT. If you're storing raw CIDs as recommended, it's best to convert to URIs inside the smart contract, rather than in the presentation layer of a distributed app. By doing the conversion on-chain, tools like [EtherScan](https://etherscan.io) and other block explorers that are expecting URIs will be able to find your NFT data.
 
 <!-- TODO: refactor remaining blog post content, show metadata examples, etc
 
@@ -162,3 +119,5 @@ One of the primary reasons for using a decentralized network like IPFS to serve 
 [docs-mint-nfts]: ../mint-nfts-with-ipfs
 [docs-minty-how-ipfs-helps]: ../mint-nfts-with-ipfs#how-ipfs-helps
 [docs-multibase]: https://github.com/multiformats/multibase
+[eip-721]: https://eips.ethereum.org/EIPS/eip-721
+[eip-1155]: https://eips.ethereum.org/EIPS/eip-1155
