@@ -18,7 +18,7 @@ There are a few different ways to refer to data on IPFS, each of which is best s
 
 ### CID
 
-First, there's the "raw" CID, which uniquely identifies a specific piece of content. CIDs can be stored and sent over the network in a compact binary form, but they're represented as strings of random-seeming characters when displayed to users. Here's an example:
+CIDs can be stored and sent over the network in a compact binary form, but they're represented as strings of random-seeming characters when displayed to users. Here's an example:
 
 ```
 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
@@ -28,7 +28,7 @@ bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 You can learn more about CIDs in our [guide to Content Addressing][docs-cid], or by following the [interactive tutorials on ProtoSchool][protoschool-cid].
 :::
 
-Because it's the most compact form of IPFS link, the CID is a good fit for storing directly on the blockchain. We recommend storing CIDs as strings, in the base 32 encoding as shown in the example above. 
+Because it's the most compact form of IPFS link, the CID is a good fit for storing directly on the blockchain. 
 
 While it's tempting to save a few bytes on-chain by storing a CID in its binary form, doing so may cause problems with standard smart contract interfaces like [ERC-721][eip-721], whose `tokenURI` function returns a string URI value. By storing CIDs as strings to begin with, you can avoid an expensive on-chain conversion from binary to base 32.
 
