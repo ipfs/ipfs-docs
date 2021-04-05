@@ -50,16 +50,19 @@ ipfs daemon --enable-gc
 ```
 
 ::: tip
-If you use IPFS Desktop or the IPFS Web UI the settings related to garbage collection can be found in the **Settings** tab. You can also directly run the garbage collector by clicking on the taskbar icon of the IPFS Desktop application and selecting **Advanced** → **Run Garbage Collector**.
+If you use IPFS Desktop you can trigger the garbage collector by clicking on the taskbar icon of the IPFS Desktop application and selecting **Advanced** → **Run Garbage Collector**.
 :::
 
 ## Pinning in context
 
+An IPFS node can protect data from garbage collection based on different kinds of user events.
+- Universal way is adding a low level [local pin](/how-to/pin-files/). This works for all data types, can be done manually, but if you add a file using the CLI command [`ipfs add`](/reference/cli/#ipfs-add), the IPFS node will automatically pin that file for you.
+- When working with files and directories, a better way may be adding them to the local [Mutable File System (MFS)](/concepts/glossary/#mfs), which protects from being garbage collected the same way as local pin, but enables for easier management.
+
+
 ::: tip
 If you want to learn more about how pinning fits into the overall lifecycle of data in IPFS, check out the course from [IPFS Camp _The Lifecycle of Data in DWeb_](https://www.youtube.com/watch?v=fLUq0RkiTBA).
 :::
-
-An IPFS node can store data based on different kinds of user events. For example, if you add a file using the CLI command [`ipfs add`](https://docs.ipfs.io/reference/cli/#ipfs-add), the IPFS node will automatically pin that file. It also automatically stores data you request either by loading a web page through the gateway, or with [`ipfs cat`](https://docs.ipfs.io/reference/cli/#ipfs-cat). Not every CLI command will automatically pin content.
 
 
 ## Pinning services
@@ -70,11 +73,4 @@ To ensure that your important data is retained, you may want to use a pinning se
 - Your computer is a laptop, phone, or tablet that will have intermittent connectivity to the network. Still, you want to be able to access your data on IPFS from anywhere at any time, even when the device you added it from is offline.
 - You want a backup that ensures your data is always available from another computer on the network if you accidentally delete or garbage-collect your data on your own computer.
 
-
-Some available pinning service providers are:
-
-- [Axel](https://www.axel.org/blog/2019/07/23/qa-with-the-developers-of-axel-ipfs/)
-- [Eternum](https://www.eternum.io/)
-- [Infura](https://infura.io/)
-- [Pinata](https://pinata.cloud/)
-- [Temporal](https://temporal.cloud/)
+Want to learn more? See how to [work with remote pinning services](/how-to/work-with-pinning-services/).
