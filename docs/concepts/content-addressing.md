@@ -10,6 +10,8 @@ description: Learn about how content addressing works and how content identifier
 For a deep dive into how Content Identifiers (CIDs) are constructed, take a look at ProtoSchool's tutorial on the [Anatomy of a CID](https://proto.school/anatomy-of-a-cid).
 :::
 
+[[toc]]
+
 A _content identifier_, or CID, is a label used to point to material in IPFS. It doesn't indicate _where_ the content is stored, but it forms a kind of address based on the content itself. CIDs are short, regardless of the size of their underlying content.
 
 CIDs are based on the content’s [cryptographic hash](/concepts/hashing/). That means:
@@ -41,11 +43,69 @@ These leading identifiers also provide forward-compatibility, supporting differe
 
 You can use the first few bytes of the CID to interpret the remainder of the content address and know how to decode the content after being fetched from IPFS. For more details, check out the [CID specification](https://github.com/ipld/cid). It includes a [decoding algorithm](https://github.com/ipld/cid/blob/ef1b2002394b15b1e6c26c30545fd485f2c4c138/README.md#decoding-algorithm) and links to existing software implementations for decoding CIDs.
 
+If you can't decide between CIDv0 and CIDv1, consider choosing CIDv1 for your new project and opt-in by passing version flag (`ipfs add --cid-version 1`). It is more future-proof and [safe for use in browser contexts](/how-to/address-ipfs-on-web/#subdomain-gateway).
+
+IPFS project will switch to CIDv1 as the new default in the near future.
+
+
 ## CID Inspector
 
 It's easy to explore a CID for yourself. Want to pull apart a specific CID's multibase, multicodec, or multihash info? You can use the [CID Inspector](https://cid.ipfs.io/#QmY7Yh4UquoXHLPFo2XbhXkhBvFoPwmQUSa92pxnxjQuPU) or the [CID Info panel in IPLD Explorer](https://explore.ipld.io/#/explore/QmY7Yh4UquoXHLPFo2XbhXkhBvFoPwmQUSa92pxnxjQuPU) (both links launch using a sample CID) for an interactive breakdown of differently-formatted CIDs.
 
 Check out ProtoSchool's [Anatomy of a CID](https://proto.school/anatomy-of-a-cid) tutorial to see how a single file can be represented in multiple CID versions.
+
+## CID conversion
+
+Converting from v0 to v1 enables CID to be represented in one of multibase encodings.
+The default for CIDv1 is case-insensitive `base32`, but use of shorter `base36` is encouraged for IPNS names to ensure same text representation on [subdomains](/how-to/address-ipfs-on-web/#subdomain-gateway).
+
+### v0 to v1
+
+Built-in `ipfs cid format` command can be used on the CLI:
+
+```
+$ ipfs cid format -v 1 -b base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
+bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
+```
+
+JS users can also leverage `toV1()` method provided by the [`cids`](https://www.npmjs.com/package/cids) library:
+```js
+const CID = require('cids')
+new CID('QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR').toV1().toString()
+// → bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
+```
+
+### Text to binary
+
+CID can be represented as both text and a stream of bytes. The latter may be a better choice when speed and storage efficiency are important.
+
+To convert CIDv1 from text to the binary form, simply read the first character
+and then decode the remainder using encoding specified in the [multibase table](https://github.com/multiformats/multibase#multibase-table).
+
+JS users can leverage the [`cids`](https://www.npmjs.com/package/cids) library to get binary version as `Uint8Array`:
+
+
+```js
+const CID = require('cids')
+new CID('bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi').bytes
+// → Uint8Array [ 1, 112,  18,  32, 195, 196, 115,  62, ... ]
+```
+
+::: warning Be mindful about parsing CID correctly and avoid shortcuts.
+
+Unless you are the one who imported the data to IPFS, the length of a CID is not deterministic and depends on the length of the Multihash inside of it.
+
+To illustrate, passing a custom hash function will produce CIDs of varying lengths:
+
+```
+$ ipfs add --cid-version 1 --hash sha2-256    -nq cat.jpg | wc -c
+60
+$ ipfs add --cid-version 1 --hash blake2b-256 -nq cat.jpg | wc -c
+63
+$ ipfs add --cid-version 1 --hash sha3-512    -nq cat.jpg | wc -c
+111
+```
+:::
 
 ## Further resources
 

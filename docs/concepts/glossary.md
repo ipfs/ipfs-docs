@@ -174,6 +174,18 @@ A Merkle Tree is a specific type of hash tree used in cryptography and computer 
 
 The Mutable File System (MFS) is a tool built into IPFS that lets you treat files like a normal name-based filesystem. You may add, edit, and remove MFS files while all link updates and hashes are taken care of for you. [More about MFS](https://docs.ipfs.io/concepts/file-systems/#mutable-file-system-mfs)
 
+### Multibase
+
+Multibase is a protocol for disambiguating the encoding of base-encoded (e.g., base32, base36, base64, base58, etc.) binary appearing in text. In IPFS it is used as a prefix specifying the encoding used for the remainder of the CID. [More about Multibase](https://github.com/multiformats/multibase#readme)
+
+### Multicodec
+
+Multicodec is an identifier, indicating the format of the target content. It helps people and software to know how to interpret that content after the content is fetched. In IPFS it is backed by an agreed-upon codec table. It is designed for use in binary representations, such as keys or identifiers (i.e [CIDv1](#cid)). [More about Multicodec](https://github.com/multiformats/multicodec#readme)
+
+### Multihash
+
+Multihash is a protocol for differentiating outputs from various well-established hash functions, addressing size + encoding considerations. It is useful to write applications that future-proof their use of hashes, and allow multiple hash functions to coexist. [More about Multihash](https://multiformats.io/multihash/).
+
 ### Multiformats
 
 The Multiformats project is a collection of protocols that aim to future-proof systems today. A key element is enhancing format values with self-description. This allows for interoperability, protocol agility, and promotes extensibility. [More about Multiformats](https://multiformats.io/) and [Multihash](https://multiformats.io/multihash/)
