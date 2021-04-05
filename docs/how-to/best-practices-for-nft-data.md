@@ -30,7 +30,7 @@ You can learn more about CIDs in our [guide to Content Addressing][docs-cid], or
 
 Because it's the most compact form of IPFS link, the CID is a good fit for storing directly on the blockchain. 
 
-While it's tempting to save a few bytes on-chain by storing a CID in its binary form, doing so may cause problems with standard smart contract interfaces like [ERC-721][eip-721], whose `tokenURI` function returns a string URI value. By storing CIDs as strings to begin with, you can avoid an expensive on-chain conversion from binary to base 32.
+While it's tempting to save a few bytes on-chain by storing a CID in its binary form, doing so may cause problems with standard smart contract interfaces like [ERC-721][eip-721], whose `tokenURI` function returns a string URI value. By storing CIDs as strings to begin with, you can avoid an expensive on-chain conversion from binary to an encoded string that can be used in a URI.
 
 ### IPFS URI
 
