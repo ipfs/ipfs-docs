@@ -68,7 +68,7 @@ In user-facing applications, developers should link to IPFS content via both:
 - An IPFS URI
 - An HTTP gateway URL
 
-This will provide the best user experience until such a time as more browsers support native resolution of the IPFS URI scheme. Note that both kinds of link can easily be generated from a raw CID as needed.
+This will provide the best user experience until such a time as more browsers support native resolution of the IPFS URI scheme. Note that both kinds of gateway link can easily be generated from a CID or IPFS URI as needed.
 
 ## Metadata
 
