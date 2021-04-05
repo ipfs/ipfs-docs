@@ -78,9 +78,9 @@ Here's an example of some JSON metadata for an NFT:
 
 ```json
 {
-  "name": "Moon Flight #1",
-  "description": "This ticket serves as proof-of-ownership of a first-class seat on a flight to the moon.",
-  "image": "ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt"
+  "name": "No time to explain!",
+  "description": "I said there was no time to explain, and I stand by that.",
+  "image": "ipfs://bafybeict2kq6gt4ikgulypt7h7nwj4hmfi2kevrqvnx2osibfulyy5x3hu/no-time-to-explain.jpeg"
 }
 ```
 
