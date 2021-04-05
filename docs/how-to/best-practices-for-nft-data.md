@@ -8,7 +8,7 @@ date: 2021-04-02
 
 IPFS is a great fit for storing and addressing data for NFTs, or non-fungible tokens. This guide is all about how to store the data for NFTs on IPFS so that NFT creators and owners have a great experience that can stand the test of time.
 
-Since an NFT can't be easily changed after it's been created, it's a good idea to think about how the data for your NFTs is stored, addressed, and made persistent over time. That's why we'll be getting into the specifics of [how to prepare your NFT metadata](#metadata), and we'll also look at [the different kinds of links to IPFS content](#types-of-ipfs-links-and-when-to-use-them) and when you should use each one. By following these recommendations, you can help ensure a long and healthy future for your NFT data.
+Since an NFT can't be easily changed after it's been created, it's a good idea to think about how the data for your NFTs is stored, addressed, and made persistent over time. That's why we'll be getting into the specifics of [how to prepare your NFT metadata](#metadata), and we'll also look at [the different kinds of links to IPFS content](#types-of-ipfs-links-and-when-to-use-them) and when you should use each one. Finally, we'll see why [making a plan for your data's persistence](#persistence-and-availability) is important for a good user experience. By following these recommendations, you can help ensure a long and healthy future for your NFT data.
 
 This guide is aimed at developers building NFT platforms and other tools, and it's focused on how to format your data and link to it for the best long-term results. If you're looking for details about smart contract interactions and how token minting works, head over to our [guide to minting NFTs with IPFS][docs-mint-nfts], where we go over the whole process from end-to-end using an Ethereum test network.
 
@@ -53,7 +53,7 @@ HTTP gateways provide interoperability for legacy user-agents that cannot resolv
 
 Here's an example: `https://dweb.link/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi`
 
-User agents with built-in support for IPFS (either via the IPFS Companion browser extension, or via native support, such as provided by Brave) will be able to recognize gateway links and resolve the content using native IPFS protocols. Other user-agents will simply follow the link to the gateway, which will load the content over IPFS and serve it using HTTP.
+User agents with built-in support for IPFS (either via the IPFS Companion browser extension, or via native support, such as provided by Brave) will be able to recognize gateway links and resolve the content using native IPFS protocols. Other user-agents will simply follow the link to the gateway, which will load the content over IPFS and serve it using HTTP. You can learn more details about HTTP gateways in our [concept article on IPFS Gateway][docs-gateway].
 
 Gateway links are great for interoperability, but they should not be the primary or canonical link to your data on IPFS. While an IPFS URI will remain accessible as long as anyone on IPFS has the data, a gateway link can fail if the gateway operator goes offline. 
 
@@ -112,7 +112,18 @@ const cid = await ipfs.add(
 When adding files that are wrapped in a directory, `ipfs.add` returns the CID of the directory object. To build a full IPFS URI to the file, you can add a `/` character after the CID, followed by the filename. For example: `ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi/metadata.json`.
 
 
-<!-- TODO: persistence / high availability secction -->
+## Persistence and availability
+
+When your data is stored on IPFS, users can fetch it from any IPFS node that has a copy, which can make data transfers more efficient and reduce the load on any single server. As each user fetches a piece of data, they keep a local copy around to help other users who might request it later. However, it's important to remember that these copies are temporary and will eventually be deleted unless the user decides to "pin" the data. Pinning a CID tells IPFS that the data is important and shouldn't be removed when the node is near its disk space limit.
+
+If you're building a platform using IPFS for storage, it's important to pin your data to IPFS nodes that are robust and highly available, meaning that they can operate without significant downtime and with good performance. See our [server infrastructure documentation][docs-server-infra] to learn how [IPFS Cluster][ipfs-cluster] can help you manage your own cloud of IPFS nodes that coordinate to pin your platform's data and provide it to your users.
+
+If running your own infrastructure doesn't make sense for your platform or stage of growth, you can delegate this responsibility to a remote pinning service. Remote pinning services provide redundant, highly-available storage for your IPFS data, without any kind of "vendor lock-in". Because IPFS content is addressed by CID instead of location, you can switch between pinning services at any time, or migrate to your own infrastructure seamlessly as your platform grows.
+
+To learn more about persistence and pinning, including how to work with remote pinning services, see our [overview of persistence, permanence, and pinning][docs-persistence].
+
+For an example application that integrates with a remote pinning service for NFT data storage, see our [guide to minting NFTs with IPFS][docs-mint-nfts].
+
 <!-- TODO: summary / wrap up -->
 
 
@@ -125,9 +136,16 @@ One of the primary reasons for using a decentralized network like IPFS to serve 
 
 
 [docs-cid]: /concepts/content-addressing
-[docs-mint-nfts]: ../mint-nfts-with-ipfs
-[docs-minty-how-ipfs-helps]: ../mint-nfts-with-ipfs#how-ipfs-helps
+[docs-mint-nfts]: /how-to/mint-nfts-with-ipfs
+[docs-minty-how-ipfs-helps]: /how-to/mint-nfts-with-ipfs/#how-ipfs-helps
+[docs-persistence]: /concepts/persistence/
+[docs-server-infra]: /install/server-infrastructure/
+[docs-gateway]: /concepts/ipfs-gateway/
+
 [docs-multibase]: https://github.com/multiformats/multibase
+
+[ipfs-cluster]: https://cluster.ipfs.io
+
 [protoschool-cid]: https://proto.school/content-addressing
 [eip-721]: https://eips.ethereum.org/EIPS/eip-721
 [eip-1155]: https://eips.ethereum.org/EIPS/eip-1155
