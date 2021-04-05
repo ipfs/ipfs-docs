@@ -92,6 +92,8 @@ To link to images, videos and other media, simply use an [IPFS URI](#ipfs-uri). 
 
 ::: tip
 Using IPFS URIs inside your metadata to link to images and other media helps preserve the integrity of your NFT data! IPFS links can't be tampered with or altered to point to different data after they've been created.
+
+Even if you're not storing your data with IPFS today, generating an IPFS URI for your media and including it in your metadata will allow anyone to validate the data's integrity once they download it from another source. If you (or anyone else) later adds the data to IPFS, the URI will start working!
 :::
 
 Because you need to know the CID of images and other media that you want to reference in your metadata, it's simplest to create the metadata after you've added your media assets to IPFS.
@@ -124,15 +126,22 @@ To learn more about persistence and pinning, including how to work with remote p
 
 For an example application that integrates with a remote pinning service for NFT data storage, see our [guide to minting NFTs with IPFS][docs-mint-nfts].
 
-<!-- TODO: summary / wrap up -->
+## Summary
 
+IPFS allows NFTs to represent data of any size and format in a secure, verifiable, and distributed way that can stand the test of time. 
 
-<!-- 
-## High Availability
+Here's a quick recap of our recommendations:
 
-One of the primary reasons for using a decentralized network like IPFS to serve content is to forestall link rot. This is achieved by allowing other nodes in the network to mirror data via cohosting. However, developers wishing to ensure the availability of content should not rely on the altruism of other nodes. To ensure that linked content remains available, developers should host it themselves by pinning the CIDs of the content on IPFS nodes they manage, preserving and distributing the content alongside any others who wish to help. Should they prefer, developers can also delegate this responsibility via pinning services.
+- Use IPFS URIs as the canonical form of link to data on IPFS, for example: `ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi/metadata.json`
+  - To save space on-chain, you can store just the CID portion of an IPFS URI and create the URI dynamically in your smart contract's URI accessor function by adding the `ipfs://` prefix and path component (if any).
 
--->
+- HTTP gateway URLs should be generated in your application's presentation layer, to provide a good experience for users with browsers that don't support IPFS natively. If possible, provide both IPFS URIs and gateway URLs in your application's user interface.
+
+- Inside the metadata for your NFT, use IPFS URIs to link to images and other media assets. The `ipfs://` scheme makes it clear how to get the data, and the CID ensures data integrity.
+
+- Wrapping files in directories when adding to IPFS is recommended, as it preserves filenames and makes IPFS URIs more easily readable.
+
+- Data persistence should be part of your platform's design. Running your own IPFS infrastructure or using a remote pinning service will keep your data online and accessible.
 
 
 [docs-cid]: /concepts/content-addressing
