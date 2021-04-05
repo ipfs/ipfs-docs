@@ -72,7 +72,7 @@ This will provide the best user experience until such a time as more browsers su
 
 ## Metadata
 
-Most NFTs will need some kind of structured metadata to describe the token's essential properties. Many encodings and data formats can be used, but the de-facto standard is to store metadata as a JSON object, encoded to UTF-8 byte string.
+Most NFTs will need some kind of structured metadata to describe the token's essential properties. Many encodings and data formats can be used, but the de-facto standard is to store metadata as a JSON object, encoded to a UTF-8 byte string.
 
 Here's an example of some JSON metadata for an NFT:
 
@@ -98,7 +98,7 @@ Because you need to know the CID of images and other media that you want to refe
 
 ### Preserving filenames with IPFS directories
 
-When adding data to IPFS, you preserve human-readable filenames by wrapping your files in a directory.
+When adding data to IPFS, you can preserve human-readable filenames by wrapping your files in a directory.
 
 In javascript, you can set the `wrapWithDirectory` option when calling `ipfs.add`:
 
