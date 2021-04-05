@@ -38,7 +38,7 @@ Here's an example of a full IPFS URI: `ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf
 
 IPFS URIs are the canonical representation for an IPFS link, since the `ipfs` scheme makes it clear and unambiguous that the CID refers to content on IPFS and not some other system. To produce an IPFS URI, simply prefix a CID string with the static string `ipfs://`.
 
-You can also include filenames inside the path component of an IPFS URI. For example, if you've stored your token's metadata on IPFS wrapped in a directory, your URI might be: `ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi/metadata.json`
+You can also include filenames inside the path component of an IPFS URI. For example, if you've stored your token's metadata on IPFS wrapped in a directory, your URI might be: `ipfs://bafybeibnsoufr2renqzsh347nrx54wcubt5lgkeivez63xvivplfwhtpym/metadata.json`
 
 We recommend using an IPFS URI to link from your smart contract to any external data stored using IPFS, including any _metadata_ that describes and contextualizes the token.
 
@@ -109,7 +109,7 @@ const cid = await ipfs.add(
 )
 ```
 
-When adding files that are wrapped in a directory, `ipfs.add` returns the CID of the directory object. To build a full IPFS URI to the file, you can add a `/` character after the CID, followed by the filename. For example: `ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi/metadata.json`.
+When adding files that are wrapped in a directory, `ipfs.add` returns the CID of the directory object. To build a full IPFS URI to the file, you can add a `/` character after the CID, followed by the filename. For example: `ipfs://bafybeibnsoufr2renqzsh347nrx54wcubt5lgkeivez63xvivplfwhtpym/metadata.json`.
 
 
 ## Persistence and availability
@@ -130,7 +130,7 @@ IPFS allows NFTs to represent data of any size and format in a secure, verifiabl
 
 Here's a quick recap of our recommendations:
 
-- Use IPFS URIs as the canonical form of link to data on IPFS, for example: `ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi/metadata.json`
+- Use IPFS URIs as the canonical form of link to data on IPFS, for example: `ipfs://bafybeibnsoufr2renqzsh347nrx54wcubt5lgkeivez63xvivplfwhtpym/metadata.json`
 
 - HTTP gateway URLs should be generated in your application's presentation layer, to provide a good experience for users with browsers that don't support IPFS natively. If possible, provide both IPFS URIs and gateway URLs in your application's user interface.
 
