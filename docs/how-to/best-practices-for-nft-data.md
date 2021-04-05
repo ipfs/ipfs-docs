@@ -18,7 +18,7 @@ There are a few different ways to refer to data on IPFS, each of which is best s
 
 ### CID
 
-CIDs can be stored and sent over the network in a compact binary form, but they're represented as strings of random-seeming characters when displayed to users. Here's an example:
+CIDs uniquely identify a piece of content. A CID can be stored and sent over the network in a compact binary form, but they're represented as strings of random-seeming characters when displayed to users. Here's an example:
 
 ```
 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
@@ -28,9 +28,7 @@ bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 You can learn more about CIDs in our [guide to Content Addressing][docs-cid], or by following the [interactive tutorials on ProtoSchool][protoschool-cid].
 :::
 
-Because it's the most compact form of IPFS link, the CID is a good fit for storing directly on the blockchain. 
-
-While it's tempting to save a few bytes on-chain by storing a CID in its binary form, doing so may cause problems with standard smart contract interfaces like [ERC-721][eip-721], whose `tokenURI` function returns a string URI value. By storing CIDs as strings to begin with, you can avoid an expensive on-chain conversion from binary to an encoded string that can be used in a URI.
+When you add your data to IPFS using `ipfs.add`, you receive a CID that identifies the content. To link to your content from a smart contract or inside your NFT's metadata, you should convert your CID to an IPFS URI, as described below.
 
 ### IPFS URI
 
@@ -42,9 +40,9 @@ IPFS URIs are the canonical representation for an IPFS link, since the `ipfs` sc
 
 You can also include filenames inside the path component of an IPFS URI. For example, if you've stored your token's metadata on IPFS wrapped in a directory, your URI might be: `ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi/metadata.json`
 
-NFT standards like [ERC-721][eip-721] and [ERC-1155][eip-1155] define smart contract functions for fetching the URI associated with an NFT. If you're storing CID strings as recommended, it's best to convert to URIs inside the smart contract, rather than in the presentation layer of a distributed app. By doing the conversion on-chain, tools like [EtherScan](https://etherscan.io) and other block explorers that are expecting URIs will be able to find your NFT data.
+We recommend using an IPFS URI to link from your smart contract to any external data stored using IPFS, including any _metadata_ that describes and contextualizes the token.
 
-IPFS URIs are also the recommended way to link from a token's _metadata_ to images and other assets stored on IPFS. See the [metadata recommendations below](#metadata) for more details.
+IPFS URIs are also the recommended way to link from a within token's metadata to images and other assets stored on IPFS. See the [metadata recommendations below](#metadata) for more details.
 
 
 ### HTTP Gateway URL
@@ -133,7 +131,6 @@ IPFS allows NFTs to represent data of any size and format in a secure, verifiabl
 Here's a quick recap of our recommendations:
 
 - Use IPFS URIs as the canonical form of link to data on IPFS, for example: `ipfs://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi/metadata.json`
-  - To save space on-chain, you can store just the CID portion of an IPFS URI and create the URI dynamically in your smart contract's URI accessor function by adding the `ipfs://` prefix and path component (if any).
 
 - HTTP gateway URLs should be generated in your application's presentation layer, to provide a good experience for users with browsers that don't support IPFS natively. If possible, provide both IPFS URIs and gateway URLs in your application's user interface.
 
