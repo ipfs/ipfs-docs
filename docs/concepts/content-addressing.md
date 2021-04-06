@@ -122,7 +122,7 @@ To get hex for raw `.bytes` of entire CID, one can use built-in support for `bas
 ```
 
 To convert back to a CIDv1, prepend hex value with `f` ([multibase prefix](https://github.com/multiformats/multibase#multibase-table) for lowercase base16).
-Use it as-is (it is a [valid CID](https://ipfs.io/ipfs/f01701220c3c4733ec8affd06cf9e9ff50ffc6bcd2ec85a6170004bb709669c31de94391a)), or convert to different multibase by passing it as an argument to `toString`:
+Use it as-is (it is a [valid CID](https://ipfs.io/ipfs/f01701220c3c4733ec8affd06cf9e9ff50ffc6bcd2ec85a6170004bb709669c31de94391a)), or convert to a different multibase by passing it as an argument to `toString`:
 
 ```javascript
 > new CID('f' +'01701220c3c4733ec8affd06cf9e9ff50ffc6bcd2ec85a6170004bb709669c31de94391a').toString('base32')
