@@ -176,7 +176,7 @@ The Mutable File System (MFS) is a tool built into IPFS that lets you treat file
 
 ### Multibase
 
-Multibase is a protocol for disambiguating the encoding of base-encoded (e.g., base32, base36, base64, base58, etc.) binary appearing in text. In IPFS it is used as a prefix specifying the encoding used for the remainder of the CID. [More about Multibase](https://github.com/multiformats/multibase#readme)
+Multibase is a protocol for disambiguating the encoding of base-encoded (e.g. base32, base36, base64, base58, etc.) binary appearing in text. In IPFS, it is used as a prefix specifying the encoding used for the remainder of the CID. [More about Multibase](https://github.com/multiformats/multibase#readme)
 
 ### Multicodec
 
