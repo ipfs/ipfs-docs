@@ -77,7 +77,7 @@ new CID('QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR').toV1().toString()
 
 ### Text to binary
 
-CID can be represented as both text and a stream of bytes. The latter may be a better choice when speed and storage efficiency are important.
+A CID can be represented as both text and as a stream of bytes. The latter may be a better choice when speed and storage efficiency are considerations.
 
 To convert CIDv1 from text to the binary form, simply read the first character
 and then decode the remainder using encoding specified in the [multibase table](https://github.com/multiformats/multibase#multibase-table).
