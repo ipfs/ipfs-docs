@@ -91,7 +91,7 @@ new CID('bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi').bytes
 // → Uint8Array [ 1, 112,  18,  32, 195, 196, 115,  62, ... ]
 ```
 
-::: warning Be mindful about parsing CID correctly and avoid shortcuts.
+::: warning Be mindful about parsing CIDs correctly. Avoid shortcuts.
 
 Unless you are the one who imported the data to IPFS, the length of a CID is not deterministic and depends on the length of the Multihash inside of it.
 
