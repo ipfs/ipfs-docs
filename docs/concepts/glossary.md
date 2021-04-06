@@ -184,7 +184,7 @@ Multicodec is an identifier indicating the format of the target content. It help
 
 ### Multihash
 
-Multihash is a protocol for differentiating outputs from various well-established hash functions, addressing size + encoding considerations. It is useful to write applications that future-proof their use of hashes, and allow multiple hash functions to coexist. [More about Multihash](https://multiformats.io/multihash/).
+Multihash is a protocol for differentiating outputs from various well-established hash functions, addressing size and encoding considerations. It is useful to write applications that future-proof their use of hashes, and it allows multiple hash functions to coexist. [More about Multihash](https://multiformats.io/multihash/).
 
 ### Multiformats
 
