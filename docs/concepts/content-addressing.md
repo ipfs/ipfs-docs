@@ -130,7 +130,7 @@ Use it as-is (it is a [valid CID](https://ipfs.io/ipfs/f01701220c3c4733ec8affd06
 ```
 
 ::: tip
-[Subdomain gateways](/how-to/address-ipfs-on-web/#subdomain-gateway) convert paths with custom bases like base16 to base32 or base36 in effort to fit a CID in DNS label:
+[Subdomain gateways](/how-to/address-ipfs-on-web/#subdomain-gateway) convert paths with custom bases like base16 to base32 or base36, in an effort to fit a CID in a DNS label:
 - [dweb.link/ipfs/f01701220c3c4733ec8affd06cf9e9ff50ffc6bcd2ec85a6170004bb709669c31de94391a](https://dweb.link/ipfs/f01701220c3c4733ec8affd06cf9e9ff50ffc6bcd2ec85a6170004bb709669c31de94391a)
   returns a HTTP 301 redirect:
   → [bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi.ipfs.dweb.link](https://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi.ipfs.dweb.link/)
