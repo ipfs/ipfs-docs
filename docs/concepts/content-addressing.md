@@ -57,7 +57,7 @@ Check out ProtoSchool's [Anatomy of a CID](https://proto.school/anatomy-of-a-cid
 ## CID conversion
 
 Converting a CID from v0 to v1 enables it to be represented in multibase encodings.
-The default for CIDv1 is case-insensitive `base32`, but use of shorter `base36` is encouraged for IPNS names to ensure same text representation on [subdomains](/how-to/address-ipfs-on-web/#subdomain-gateway).
+The default for CIDv1 is the case-insensitive `base32`, but use of the shorter `base36` is encouraged for IPNS names to ensure same text representation on [subdomains](/how-to/address-ipfs-on-web/#subdomain-gateway).
 
 ### v0 to v1
 
