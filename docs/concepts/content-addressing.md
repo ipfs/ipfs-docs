@@ -45,7 +45,7 @@ You can use the first few bytes of the CID to interpret the remainder of the con
 
 If you can't decide between CIDv0 and CIDv1, consider choosing CIDv1 for your new project and opt in by passing a version flag (`ipfs add --cid-version 1`). This is more future-proof and [safe for use in browser contexts](/how-to/address-ipfs-on-web/#subdomain-gateway).
 
-IPFS project will switch to CIDv1 as the new default in the near future.
+The IPFS project will switch to CIDv1 as the new default in the near future.
 
 
 ## CID Inspector
