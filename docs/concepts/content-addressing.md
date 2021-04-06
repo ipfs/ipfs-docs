@@ -68,7 +68,7 @@ $ ipfs cid format -v 1 -b base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 ```
 
-JS users can also leverage `toV1()` method provided by the [`cids`](https://www.npmjs.com/package/cids) library:
+JavaScript users can also leverage the `toV1()` method provided by the [`cids`](https://www.npmjs.com/package/cids) library:
 ```js
 const CID = require('cids')
 new CID('QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR').toV1().toString()
