@@ -61,7 +61,7 @@ The default for CIDv1 is the case-insensitive `base32`, but use of the shorter `
 
 ### v0 to v1
 
-Built-in `ipfs cid format` command can be used on the CLI:
+The built-in `ipfs cid format` command can be used from the command line:
 
 ```
 $ ipfs cid format -v 1 -b base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
