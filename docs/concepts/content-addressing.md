@@ -43,7 +43,7 @@ These leading identifiers also provide forward-compatibility, supporting differe
 
 You can use the first few bytes of the CID to interpret the remainder of the content address and know how to decode the content after being fetched from IPFS. For more details, check out the [CID specification](https://github.com/ipld/cid). It includes a [decoding algorithm](https://github.com/ipld/cid/blob/ef1b2002394b15b1e6c26c30545fd485f2c4c138/README.md#decoding-algorithm) and links to existing software implementations for decoding CIDs.
 
-If you can't decide between CIDv0 and CIDv1, consider choosing CIDv1 for your new project and opt-in by passing version flag (`ipfs add --cid-version 1`). It is more future-proof and [safe for use in browser contexts](/how-to/address-ipfs-on-web/#subdomain-gateway).
+If you can't decide between CIDv0 and CIDv1, consider choosing CIDv1 for your new project and opt in by passing a version flag (`ipfs add --cid-version 1`). This is more future-proof and [safe for use in browser contexts](/how-to/address-ipfs-on-web/#subdomain-gateway).
 
 IPFS project will switch to CIDv1 as the new default in the near future.
 
