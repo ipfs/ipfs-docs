@@ -111,7 +111,7 @@ $ ipfs add --cid-version 1 --hash sha3-512    -nq cat.jpg | wc -c
 ### CID to hex
 
 Sometimes, a [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) representation of raw bytes is prefered for debug purposes.
-To get hex for raw `.bytes` of entire CID, one can use built-in support for `base16` encoding and skip the `f` (multibase prefix):
+To get the hex for raw `.bytes` of an entire CID, one can use built-in support for `base16` encoding and skip the `f` (multibase prefix):
 
 ```javascript
 > cid.toString('base16')
