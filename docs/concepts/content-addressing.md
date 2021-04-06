@@ -80,7 +80,7 @@ new CID('QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR').toV1().toString()
 A CID can be represented as both text and as a stream of bytes. The latter may be a better choice when speed and storage efficiency are considerations.
 
 To convert a CIDv1 from text to binary form, simply read the first character
-and then decode the remainder using encoding specified in the [multibase table](https://github.com/multiformats/multibase#multibase-table).
+and then decode the remainder using the encoding specified in the [multibase table](https://github.com/multiformats/multibase#multibase-table).
 
 JS users can leverage the [`cids`](https://www.npmjs.com/package/cids) library to get binary version as `Uint8Array`:
 
