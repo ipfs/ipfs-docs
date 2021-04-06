@@ -180,7 +180,7 @@ Multibase is a protocol for disambiguating the encoding of base-encoded (e.g. ba
 
 ### Multicodec
 
-Multicodec is an identifier, indicating the format of the target content. It helps people and software to know how to interpret that content after the content is fetched. In IPFS it is backed by an agreed-upon codec table. It is designed for use in binary representations, such as keys or identifiers (i.e [CIDv1](#cid)). [More about Multicodec](https://github.com/multiformats/multicodec#readme)
+Multicodec is an identifier indicating the format of the target content. It helps people and software know how to interpret that content after the content is fetched. In IPFS, it is backed by an agreed-upon codec table. It is designed for use in binary representations, such as keys or identifiers (i.e [CIDv1](#cid)). [More about Multicodec](https://github.com/multiformats/multicodec#readme)
 
 ### Multihash
 
