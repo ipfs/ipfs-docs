@@ -107,6 +107,29 @@ $ ipfs add --cid-version 1 --hash sha3-512    -nq cat.jpg | wc -c
 ```
 :::
 
+
+### CID to hex
+
+Sometimes, a [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) representation of raw bytes is prefered for debug purposes.
+To get hex for raw `.bytes` of entire CID, one can use built-in support for `base16` encoding and skip the `f` (multibase prefix):
+
+```javascript
+> cid.toString('base16')
+'f01701220c3c4733ec8affd06cf9e9ff50ffc6bcd2ec85a6170004bb709669c31de94391a'
+
+> cid.toString('base16').substring(1)
+'01701220c3c4733ec8affd06cf9e9ff50ffc6bcd2ec85a6170004bb709669c31de94391a' // "cid as hex"
+```
+
+To convert back to a CIDv1, prepend hex value with `f` ([multibase prefix](https://github.com/multiformats/multibase#multibase-table) for lowercase base16).
+Use it as-is (it is a [valid CID](https://ipfs.io/ipfs/f01701220c3c4733ec8affd06cf9e9ff50ffc6bcd2ec85a6170004bb709669c31de94391a)), or convert to different multibase by passing it as an argument to `toString`:
+
+```javascript
+> new CID('f' +'01701220c3c4733ec8affd06cf9e9ff50ffc6bcd2ec85a6170004bb709669c31de94391a').toString('base32')
+// → bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
+```
+
+
 ## Further resources
 
 Check out these links for more information on CIDs and how they work:
