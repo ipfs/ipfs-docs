@@ -46,8 +46,6 @@ If you cloned the Random Planet Facts repo above, you don't need to follow this 
 
    ![Deployment information window within Fleek.](./images/introducing-fleek/deployment-information-window.png)
 
-   Fleek will also assign you a random URL to view your site like [`delicate-scene-6611`](https://delicate-scene-6611.on.fleek.co/)
-
 ## Domain names
 
 Fleek allows you to configure your domain names with your sites on IPFS! No more wrangling with DNSlink or IPNS. You can even buy domains directly through Fleek. Click **Add or Buy Domain** to get started. [Check out the Fleek documentation for more information on how to get your domain linked up →](https://docs.fleek.co/hosting/domain-management/)
