@@ -33,7 +33,7 @@ Tools like [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) res
 
 ## Gateway providers
 
-Regardless of who deploys a gateway and where, any IPFS gateway resolves access to any requested IPFS [content identifier](/content/concepts/content-addressing). Therefore, for best performance, when you need the service of a gateway, you should use the one closest to you.
+Regardless of who deploys a gateway and where, any IPFS gateway resolves access to any requested IPFS [content identifier](/concepts/content-addressing). Therefore, for best performance, when you need the service of a gateway, you should use the one closest to you.
 
 ### Your local gateway
 
@@ -96,7 +96,7 @@ Subdomain resolution support began with [Go-IPFS](https://github.com/ipfs/go-ipf
 
 #### DNSlink
 
-Whenever the content of data within IPFS changes, IPFS creates a new CID based on the content of that data. Many applications require access to the latest version of a file or website but will not know the exact CID for that latest version. The [InterPlanetary Name Service (IPNS)](/content/concepts/ipns) allows a version-independent IPNS identifier to resolve into the current version's IPFS CID.
+Whenever the content of data within IPFS changes, IPFS creates a new CID based on the content of that data. Many applications require access to the latest version of a file or website but will not know the exact CID for that latest version. The [InterPlanetary Name Service (IPNS)](/concepts/ipns) allows a version-independent IPNS identifier to resolve into the current version's IPFS CID.
 
 The version-independent IPNS identifier contains a hash. When a gateway processes a request in the form `https://{gatewayURL}/ipns/{IPNS identifier}/{optional path}`, the gateway employs IPNS to resolve the IPNS identifier into the current version's CID and then fetches the corresponding content.
 
@@ -203,7 +203,7 @@ A compromised writeable gateway may inject falsified content into the IPFS netwo
 1. Alice gives the falsified content CID to Bob.
 1. Bob fetches the content with this CID and cryptographically validates the balance of `0.00`.
 
-To partially address this exposure, you may wish to use the public gateway [cf-ipfs.com](cf-ipfs.com) as an independent, trusted reference with both same-origin policy and CORS support.
+To partially address this exposure, you may wish to use the public gateway [cf-ipfs.com](https://cf-ipfs.com) as an independent, trusted reference with both same-origin policy and CORS support.
 
 ### Assumed filenames when downloading files
 
