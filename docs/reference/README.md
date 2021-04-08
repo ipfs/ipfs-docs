@@ -16,7 +16,7 @@ Looking for developer references for IPFS? Find them here.
 
 [API resources for js-ipfs](/reference/js/api/), including the JS core API reference and the JS HTTP client library.
 
-Explore the Mutable File System, Regular Files API, and DAG API through ProtoSchool's [coding challenges](https://proto.school/coures/ipfs).
+Explore the Mutable File System, Regular Files API, and DAG API through ProtoSchool's [coding challenges](https://proto.school/course/ipfs).
 
 ## HTTP
 
