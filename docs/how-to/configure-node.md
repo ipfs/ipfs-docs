@@ -353,9 +353,6 @@ different on-disk structure, you will need to run the [ipfs-ds-convert
 tool](https://github.com/ipfs/ipfs-ds-convert) to migrate data into the new
 structures.
 
-For more information on possible values for this configuration option, see
-[docs/datastores.md](datastores.md)
-
 Default:
 
 ```
