@@ -54,4 +54,4 @@ Fleek allows you to configure your domain names with your sites on IPFS! No more
 
 ## Up next
 
-For the final tutorial in this series, we're going to take a quick look at [static-site generators, and how to host them on IPFS](../static-site-generators).
+For the final tutorial in this series, we're going to take a quick look at [static-site generators, and how to host them on IPFS](./static-site-generators).
