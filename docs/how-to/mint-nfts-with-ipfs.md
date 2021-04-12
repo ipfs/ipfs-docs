@@ -132,8 +132,8 @@ Now we're going to tokenize our ticket into an NFT. This process is often called
 
 1. Call the `mint` command and supply the file we want to mint, the name of our NFT, and a description:
 
-    ```shell
- minty mint ~/ticket.txt --name "Moon Flight #1" --description "This ticket serves as proof-of-ownership of a first-class seat on a flight to the moon."
+```shell 
+minty mint ~/ticket.txt --name "Moon Flight #1" --description "This ticket serves as proof-of-ownership of a first-class seat on a flight to the moon."
 
 > 🌿 Minted a new NFT:
 > Token ID:              1
@@ -147,7 +147,7 @@ Now we're going to tokenize our ticket into an NFT. This process is often called
 >   "description": "This ticket serves as proof-of-ownership of a first-class seat on a flight to the moon.",
 >   "image": "ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt"
 > }
-    ```
+```
 
 The `minty mint` command returns the id of the new token, some metadata containing the `name` and `description` we provided, and an IPFS URI to the file we used for our NFT asset. The `Metadata URI` in the output above is the IPFS URI for the NFT Metadata JSON object that's stored on IPFS.
 
