@@ -66,7 +66,7 @@ The IPFS Desktop application has finished installing. You can now start to [add 
 
 ## macOS
 
-1. Download the latest available `.dmg` file from the `ipfs-shipyard/ipfs-desktop` GitHub repository:
+1. Download the latest available `.dmg` file from the [ipfs-shipyard/ipfs-desktop releases page](https://github.com/ipfs/ipfs-desktop/releases):
 
    ![List of available download links in GitHub.](./images/ipfs-desktop/install-macos-dmg-file-link.png)
 
