@@ -409,6 +409,7 @@ module.exports = {
         defaultTitle: ''
       }
     ],
+    'vuepress-plugin-chunkload-redirect',
     'vuepress-plugin-ipfs'
   ],
   extraWatchFiles: ['.vuepress/nav/en.js']
