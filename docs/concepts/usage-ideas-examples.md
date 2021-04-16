@@ -166,11 +166,9 @@ There are many available frameworks to build decentralized apps on IPFS. See for
 
 ### SecureMyState
 
-This app for government-citizen communication was built in two days during the [DenverETH 2020](https://ethdenver.com/) hackathon. It lets Colorado citizens manage state-owned data about themselves, such as their driving license status or business registration. You can see its [code](https://github.com/twos-complement/eth-denver-2020), or a [slide presentation](https://www.figma.com/proto/usEzmsRYQCe3MP8qp4ur5H/Advance-Colorado?node-id=76%3A5625&viewport=143%2C-89%2C0.049727652221918106&scaling=scale-down).
+This app for government-citizen communication was built in two days during the [DenverETH 2020](https://ethdenver.com/) hackathon. It lets Colorado citizens manage state-owned data about themselves, such as their driving license status or business registration. You can find out more about this project over on [Medium](https://medium.com/twos-complement/secure-mystate-government-services-for-citizens-ethdenver2020-17f47407b656). 
 
 ### Marketplace
-
-[Haven](https://gethaven.app/) is a privacy-focused mobile app for shopping. Haven doesn't know its users' buying history, lets them pay with crypto, and doesn't take a cut on.
 
 [Origin](https://www.originprotocol.com/) is a blockchain-powered online commerce platform that stores data on IPFS. The [Brave](https://brave.com/) web browser has its own store on it to sell their swag.
 
@@ -266,7 +264,7 @@ With IPFS and a blockchain, you can prove ownership of a file at a certain time 
 
 ### Decentralized weather data
 
-The weather risk marketplace [Arbol](https://www.arbolmarket.com/) relies on blockchain technology to track and validate weather data. [Arbol uses IPFS](https://www.arbolmarket.com/maintaining-data-integrity-at-arbol/) to store multiple terabytes of verified weather data without fear of tampering.
+The weather risk marketplace [Arbol](https://www.arbolmarket.com/) relies on blockchain technology to track and validate weather data. Arbol uses IPFS to store multiple terabytes of verified weather data without fear of tampering.
 
 ## Decentralized Identity
 
@@ -274,7 +272,7 @@ The weather risk marketplace [Arbol](https://www.arbolmarket.com/) relies on blo
 
 ### Element
 
-[Element](element-did.com) is an open-source project that combines the content addressing and the interactiveness of Ethereum smart contracts to provide a tool for managing identity.
+[Element](https://element-did.com) is an open-source project that combines the content addressing and the interactiveness of Ethereum smart contracts to provide a tool for managing identity.
 
 ### 3ID Connect
 
@@ -296,7 +294,7 @@ Here is a non-exhaustive list of use cases that were not implemented yet. Pick u
 - [Manage the knowledge of the whole world](https://www.underlay.org/)
 - [Build a giant database for genetic data](https://discuss.ipfs.io/t/addressing-petabytes-of-genetic-data-with-ipfs/1471/10)
 - [Create a mesh network on IPFS](https://discuss.ipfs.io/t/mozilla-nsf-a-2-million-prize-to-decentralize-the-web/654)
-- [Bring additional services to your existing mesh network](www.nycmesh.net)
+- [Bring additional services to your existing mesh network](https://www.nycmesh.net)
 - Serverless online gaming
 - [Put Hadoop on IPFS](https://discuss.ipfs.io/t/minerva-build-the-hadoop-hive-on-ipfs/5832)
 - Add more transports to IPFS for mobile usage ([here](https://github.com/ggerganov/wave-share#wave-share) or [here](https://github.com/RTradeLtd/libp2p-lora-transport) )

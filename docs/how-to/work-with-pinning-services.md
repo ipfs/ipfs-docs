@@ -69,7 +69,7 @@ Command-line users benefit from `ipfs pin remote` commands, which simplify remot
 
 To add a new pinning service, use the following command:
 
-```console
+```shell
 $ ipfs pin remote service add nickname https://my-pin-service.example.com/api-endpoint myAccessToken
 ```
 
@@ -83,25 +83,25 @@ Here are a few CLI commands to get you started. In all examples, replace `nickna
 
 To pin a CID under under a human-readable name:
 
-```console
+```shell
 $ ipfs pin remote add --service=nickname --name=war-and-peace.txt bafybeib32tuqzs2wrc52rdt56cz73sqe3qu2deqdudssspnu4gbezmhig4
 ```
 
 To list successful pins:
 
-```console
+```shell
 $ ipfs pin remote ls --service=nickname
 ```
 
 To list all "pending" pins:
 
-```console
+```shell
 $ ipfs pin remote ls --service=nickname --status=queued,pinning,failed
 ```
 
 For more commands and general help:
 
-```console
+```shell
 $ ipfs pin remote --help
 ```
 

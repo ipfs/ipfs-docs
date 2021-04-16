@@ -29,8 +29,8 @@ For more technical information about building, debugging or using the API, see:
 
 If you plan to use Go-IPFS as a package in your own Go application, you can take any of three main approaches:
 
-- Use [Go-IPFS](https://github.com/ipfs/go-ipfs) to run IPFS directly in your own process. See the [CoreAPI constructor](/go/pkg/go-ipfs/core/coreapi).
-- Use [Go-IPFS](https://github.com/ipfs/go-ipfs-http-client) to communicate with an IPFS daemon in a separate process via its HTTP API (this is what Go-IPFS does if a daemon is already running). See the [http client](/go/pkg/go-ipfs-http-client).
+- Use [Go-IPFS](https://github.com/ipfs/go-ipfs) to run IPFS directly in your own process.
+- Use [Go-IPFS](https://github.com/ipfs/go-ipfs-http-client) to communicate with an IPFS daemon in a separate process via its HTTP API (this is what Go-IPFS does if a daemon is already running).
 - Use other Go packages to communicate with the HTTP API directly. See the [HTTP API reference](/reference/http/api/).
 
 ## Go CoreAPI

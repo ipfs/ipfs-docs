@@ -94,7 +94,7 @@ minty deploy
 > Writing deployment info to minty-deployment.json
 ```
 
-This deploys to the network configured in [`hardhat.config.js`](./hardhat.config.js), which is set to the `localhost` network by default. If you get an error about not being able to reach the network, you started the local development network with `./start-local-environment.sh`.
+This deploys to the network configured in `hardhat.config.js`, which is set to the `localhost` network by default. If you get an error about not being able to reach the network, you started the local development network with `./start-local-environment.sh`.
 
 When this contract is deployed, the address and other information about the deployment are written to `minty-deployment.json`. This file must be present for subsequent commands to work.
 

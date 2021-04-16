@@ -98,7 +98,7 @@ For information on available functions, see the [js-ipfs](https://github.com/ipf
 
 ### How do I fall back if `window.ipfs` is not available?
 
-See the [example code](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/examples/window.ipfs-fallback.html) (and [live demo](https://ipfs-shipyard.github.io/ipfs-companion/examples/window.ipfs-fallback.html)) for getting an IPFS instance with a fallback.
+See the [example code](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/examples/window.ipfs-fallback.html) for getting an IPFS instance with a fallback.
 
 **Tip:** Use the [window.ipfs-fallback](https://www.npmjs.com/package/window.ipfs-fallback) library, which takes care of the fallback ceremony. It will ensure your app follows API changes and does not break in the future.
 
