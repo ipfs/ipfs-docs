@@ -5,7 +5,13 @@ description: Learn more about how to use "x-ipfs-path" headers in IPFS Companion
 
 # Support for `x-ipfs-path` headers in IPFS Companion
 
-IPFS Companion can redirect traditional HTTP requests to IPFS if the `x-ipfs-path` response header is provided.
+IPFS Companion can redirect traditional HTTP requests to IPFS if the `x-ipfs-path` response header is provided. 
+
+## Example
+
+```
+X-Ipfs-Path: /ipfs/QmPhnvn747LqwPYMJmQVorMaGbMSgA7mRRoyyZYz3DoZRQ
+```
 
 ## Overview
 
