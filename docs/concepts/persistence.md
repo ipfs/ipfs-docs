@@ -50,14 +50,14 @@ ipfs daemon --enable-gc
 ```
 
 ::: tip
-If you use IPFS Desktop you can trigger the garbage collector by clicking on the taskbar icon of the IPFS Desktop application and selecting **Advanced** → **Run Garbage Collector**.
+If you use IPFS Desktop, you can trigger garbage collection by clicking on the taskbar icon of the IPFS Desktop application and selecting **Advanced** → **Run Garbage Collector**.
 :::
 
 ## Pinning in context
 
 An IPFS node can protect data from garbage collection based on different kinds of user events.
-- Universal way is adding a low level [local pin](/how-to/pin-files/). This works for all data types, can be done manually, but if you add a file using the CLI command [`ipfs add`](/reference/cli/#ipfs-add), the IPFS node will automatically pin that file for you.
-- When working with files and directories, a better way may be adding them to the local [Mutable File System (MFS)](/concepts/glossary/#mfs), which protects from being garbage collected the same way as local pin, but enables for easier management.
+- The universal way is by adding a low-level [local pin](/how-to/pin-files/). This works for all data types and can be done manually, but if you add a file using the CLI command [`ipfs add`](/reference/cli/#ipfs-add), your IPFS node will automatically pin that file for you.
+- When working with files and directories, a better way may be to add them to the local [Mutable File System (MFS)](/concepts/glossary/#mfs); this protects from garbage collection in the same way as local pinning, but enables for easier management.
 
 
 ::: tip
