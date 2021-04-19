@@ -202,7 +202,11 @@ A Peer ID is how each unique IPFS node is identified on the network. The Peer ID
 
 ### Pinning
 
-Pinning is the method of telling an IPFS node that particular data is important and so it will never be removed from that node's cache. [More about Pinning](https://docs.ipfs.io/concepts/persistence/)
+Pinning is the method of telling an IPFS node that particular data is important and so it will never be removed from that node's cache. To learn more, start by understanding [persistence, permanence, and pinning](/concepts/persistence/); then, see how to [add local pin](/how-to/pin-files/) and read [what remote pins are](#remote-pinning).
+
+### Pinning Service API
+
+A vendor-agnostic [API specification](https://ipfs.github.io/pinning-services-api-spec/) that anyone can implement to provide a service for [remote pinning](#remote-pinning).
 
 ### Pubsub
 
@@ -211,6 +215,10 @@ Publish-subscribe (Pubsub) is an experimental feature in IPFS. Publishers send m
 ## Q
 
 ## R
+
+### Remote Pinning
+
+A variant of [pinning](#pinning) that uses a third-party service to ensure that data persists on IPFS, even when your local node goes offline or your local copy of data is deleted during garbage collection. [More about working with remote pinning services](/how-to/work-with-pinning-services/).
 
 ### Relay
 
@@ -244,7 +252,7 @@ In [libp2p](#libp2p), transport refers to the technology that lets us move data 
 
 ### UnixFS
 
-The Unix File System (UnixFS) is the data format used to represent files and all their links and metadata in IPFS and is loosely based on how files work in Unix. Adding a file to IPFS creates a block (or a tree of blocks) in the UnixFS format. [More about UnixFS](https://docs.ipfs.io/concepts/file-systems/#unix-file-system-unixfs)
+The Unix File System (UnixFS) is the data format used to represent files and all their links and metadata in IPFS. It is loosely based on how files work in Unix. Adding a file to IPFS creates a block, or a _tree_ of blocks, in the UnixFS format and protects it from being garbage-collected. [More about UnixFS](https://docs.ipfs.io/concepts/file-systems/#unix-file-system-unixfs)
 
 ## V
 
