@@ -252,7 +252,7 @@ In [libp2p](#libp2p), transport refers to the technology that lets us move data 
 
 ### UnixFS
 
-The Unix File System (UnixFS) is the data format used to represent files and all their links and metadata in IPFS and is loosely based on how files work in Unix. Adding a file to IPFS creates a block (or a tree of blocks) in the UnixFS format and protects it from being garbage-collected. [More about UnixFS](https://docs.ipfs.io/concepts/file-systems/#unix-file-system-unixfs)
+The Unix File System (UnixFS) is the data format used to represent files and all their links and metadata in IPFS. It is loosely based on how files work in Unix. Adding a file to IPFS creates a block, or a _tree_ of blocks, in the UnixFS format and protects it from being garbage-collected. [More about UnixFS](https://docs.ipfs.io/concepts/file-systems/#unix-file-system-unixfs)
 
 ## V
 

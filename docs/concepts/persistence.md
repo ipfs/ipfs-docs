@@ -57,7 +57,7 @@ If you use IPFS Desktop, you can trigger garbage collection by clicking on the t
 
 An IPFS node can protect data from garbage collection based on different kinds of user events.
 - The universal way is by adding a low-level [local pin](/how-to/pin-files/). This works for all data types and can be done manually, but if you add a file using the CLI command [`ipfs add`](/reference/cli/#ipfs-add), your IPFS node will automatically pin that file for you.
-- When working with files and directories, a better way may be to add them to the local [Mutable File System (MFS)](/concepts/glossary/#mfs); this protects from garbage collection in the same way as local pinning, but enables for easier management.
+- When working with files and directories, a better way may be to add them to the local [Mutable File System (MFS)](/concepts/glossary/#mfs). This protects the data from garbage collection in the same way as local pinning, but is somewhat easier to manage.
 
 
 ::: tip
@@ -73,4 +73,4 @@ To ensure that your important data is retained, you may want to use a pinning se
 - Your computer is a laptop, phone, or tablet that will have intermittent connectivity to the network. Still, you want to be able to access your data on IPFS from anywhere at any time, even when the device you added it from is offline.
 - You want a backup that ensures your data is always available from another computer on the network if you accidentally delete or garbage-collect your data on your own computer.
 
-Want to learn more? See how to [work with remote pinning services](/how-to/work-with-pinning-services/).
+See how to [work with remote pinning services](/how-to/work-with-pinning-services/).
