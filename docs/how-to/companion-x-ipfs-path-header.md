@@ -13,13 +13,16 @@ IPFS HTTP gateways can return an `x-ipfs-path` header with each response. The va
 
 ```shell
 curl -sI https://en.wikipedia-on-ipfs.org | grep x-ipfs-path
+
 > x-ipfs-path: /ipns/en.wikipedia-on-ipfs.org/
 ```
 
 ```shell
 curl -sI https://dweb.link/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi | grep x-ipfs-path
+
 > x-ipfs-path: /ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 ```
+````
 
 The WebExtension API [onHeadersReceived](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived) can cancel and redirect the HTTP request as soon as the response headers arrive. This means the client can drop the initial request, avoiding duplicate downloads of the content.
 
