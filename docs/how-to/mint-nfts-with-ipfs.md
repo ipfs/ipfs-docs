@@ -22,7 +22,7 @@ There are a few key features that define an NFT, regardless of platform.
 
 First, each token has a unique id that distinguishes it from all other tokens. This is in contrast to a fungible token like Ether `ETH`, which exists as a quantity attached to an account or wallet. There is no way to tell one `ETH` from another. Because each NFT is unique, they're owned and traded individually, with the smart contract keeping track of who owns what.
 
-Another key feature of an NFT is the ability to link to data that is stored outside of a smart contract. Storing or processing data outside of a smart-contract is known as being _ off-chain_. Because data that's stored _on-chain_ needs to be processed, verified, and replicated across the entire blockchain network, it can be very expensive to store large amounts of data. This is a problem for many NFT use cases, especially tokens that represent digital collectibles or artwork, where storing the entire work could cost the equivalent of millions of US Dollars.
+Another key feature of an NFT is the ability to link to data that is stored outside of a smart contract. Storing or processing data outside of a smart-contract is known as being _off-chain_. Because data that's stored _on-chain_ needs to be processed, verified, and replicated across the entire blockchain network, it can be very expensive to store large amounts of data. This is a problem for many NFT use cases, especially tokens that represent digital collectibles or artwork, where storing the entire work could cost the equivalent of millions of US Dollars.
 
 ### How IPFS helps 
 
