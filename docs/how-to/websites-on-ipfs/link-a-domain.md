@@ -107,4 +107,4 @@ In a few minutes, you'll be able to go to `Your_Domain.eth/` and view your websi
 
 ## Up next
 
-In the next tutorial in this series, we'll take a look at a tool that will help make this whole process easier: [Fleek](../introducing-fleek).
+In the next tutorial in this series, we'll take a look at a tool that will help make this whole process easier: [Fleek](./introducing-fleek).

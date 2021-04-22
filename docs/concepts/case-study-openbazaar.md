@@ -17,7 +17,7 @@ _&mdash; Brian Hoffman, CEO, OB1_
 <img src="./images/case-studies/logo-openbazaar.png" alt="OpenBazaar logo" width="120">
 :::
 
-[OpenBazaar](https://openbazaar.org/) is a peer-to-peer e-commerce platform where buyers and sellers can participate anonymously and privately without data collection by vendors or any other central authority. The OpenBazaar platform is developed by [OB1](https://ob1.io/), whose projects also include [Haven](https://gethaven.app/), a mobile version of OpenBazaar that offers shopping, chat, and the ability to send cryptocurrencies privately. (The products' codebases are similar, but due to the requirements of some mobile app stores, OB1 needed to separate the two with different brands and some code tweaks.)
+[OpenBazaar](https://openbazaar.org/) is a peer-to-peer e-commerce platform where buyers and sellers can participate anonymously and privately without data collection by vendors or any other central authority. The OpenBazaar platform is developed by [OB1](https://ob1.io/).
 
 IPFS serves as the content storage network for both OpenBazaar and Haven. On the network, merchants and buyers can each run storage nodes, eliminating the need for any central server. By using IPFS to create this collaborative network, OpenBazaar enables buyers and sellers to trade without the risks of centralized data collection or the threat of having their personal information hacked.
 

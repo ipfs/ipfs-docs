@@ -235,7 +235,8 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  'how-to/mint-nfts-with-ipfs'
+                  'how-to/mint-nfts-with-ipfs',
+                  'how-to/best-practices-for-nft-data',
                 ]
               }
             ]
@@ -408,6 +409,7 @@ module.exports = {
         defaultTitle: ''
       }
     ],
+    'vuepress-plugin-chunkload-redirect',
     'vuepress-plugin-ipfs'
   ],
   extraWatchFiles: ['.vuepress/nav/en.js']

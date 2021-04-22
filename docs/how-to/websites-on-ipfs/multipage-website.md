@@ -16,7 +16,7 @@ If you followed the previous tutorial, you will already have the IPFS Desktop ap
 Before we dig into IPFS, let's first create the files we'll need for this mini-project.
 
 1. Create a folder called `multi-page-first-step`.
-1. Within this new folder, create a file called `index.html` and paste in the following code. We'll continue using the [Random Planet Facts](https://randomplanetfacts.xyz) website from the previous tutorial, with an added link to an _About_ page:
+1. Within this new folder, create a file called `index.html` and paste in the following code. We'll continue using the [Random Planet Facts](http://randomplanetfacts.xyz) website from the previous tutorial, with an added link to an _About_ page:
 
 ```html
 <!DOCTYPE html>
