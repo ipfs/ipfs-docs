@@ -22,7 +22,7 @@ There are a few key features that define an NFT, regardless of platform.
 
 First, each token has a unique id that distinguishes it from all other tokens. This is in contrast to a fungible token like Ether `ETH`, which exists as a quantity attached to an account or wallet. There is no way to tell one `ETH` from another. Because each NFT is unique, they're owned and traded individually, with the smart contract keeping track of who owns what.
 
-Another key feature of an NFT is the ability to link to data that is stored outside of a smart contract. Storing or processing data outside of a smart-contract is known as being _ off-chain_. Because data that's stored _on-chain_ needs to be processed, verified, and replicated across the entire blockchain network, it can be very expensive to store large amounts of data. This is a problem for many NFT use cases, especially tokens that represent digital collectibles or artwork, where storing the entire work could cost the equivalent of millions of US Dollars.
+Another key feature of an NFT is the ability to link to data that is stored outside of a smart contract. Storing or processing data outside of a smart-contract is known as being _off-chain_. Because data that's stored _on-chain_ needs to be processed, verified, and replicated across the entire blockchain network, it can be very expensive to store large amounts of data. This is a problem for many NFT use cases, especially tokens that represent digital collectibles or artwork, where storing the entire work could cost the equivalent of millions of US Dollars.
 
 ### How IPFS helps 
 
@@ -132,24 +132,24 @@ Now we're going to tokenize our ticket into an NFT. This process is often called
 
 1. Call the `mint` command and supply the file we want to mint, the name of our NFT, and a description:
 
-    ```shell
- minty mint ~/ticket.txt --name "Moon Flight #1" --description "This ticket serves as proof-of-ownership of a first-class seat on a flight to the moon."
+    ```shell 
+    minty mint ~/ticket.txt --name "Moon Flight #1" --description "This ticket serves as proof-of-ownership of a first-class seat on a flight to the moon."
 
-> 🌿 Minted a new NFT:
-> Token ID:              1
-> Metadata URI:          ipfs://bafybeic3ui4dj5dzsvqeiqbxjgg3fjmfmiinb3iyd2trixj2voe4jtefgq/metadata.json
-> Metadata Gateway URL:  http://localhost:8080/ipfs/bafybeic3ui4dj5dzsvqeiqbxjgg3fjmfmiinb3iyd2trixj2voe4jtefgq/metadata.json
-> Asset URI:             ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt
-> Asset Gateway URL:     http://localhost:8080/ipfs/bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt
-> NFT Metadata:
-> {
->   "name": "Moon Flight #1",
->   "description": "This ticket serves as proof-of-ownership of a first-class seat on a flight to the moon.",
->   "image": "ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt"
-> }
+    > 🌿 Minted a new NFT:
+    > Token ID:              1
+    > Metadata URI:          ipfs://bafybeic3ui4dj5dzsvqeiqbxjgg3fjmfmiinb3iyd2trixj2voe4jtefgq/metadata.json
+    > Metadata Gateway URL:  http://localhost:8080/ipfs/bafybeic3ui4dj5dzsvqeiqbxjgg3fjmfmiinb3iyd2trixj2voe4jtefgq/metadata.json
+    > Asset URI:             ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt
+    > Asset Gateway URL:     http://localhost:8080/ipfs/bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt
+    > NFT Metadata:
+    > {
+    >   "name": "Moon Flight #1",
+    >   "description": "This ticket serves as proof-of-ownership of a first-class seat on a flight to the moon.",
+    >   "image": "ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt"
+    > }
     ```
 
-The `minty mint` command returns the id of the new token, some metadata containing the `name` and `description` we provided, and an IPFS URI to the file we used for our NFT asset. The `Metadata URI` in the output above is the IPFS URI for the NFT Metadata JSON object that's stored on IPFS.
+    The `minty mint` command returns the id of the new token, some metadata containing the `name` and `description` we provided, and an IPFS URI to the file we used for our NFT asset. The `Metadata URI` in the output above is the IPFS URI for the NFT Metadata JSON object that's stored on IPFS.
 
 Great! You've created your NFT, but it's only available to other people as long as you have your IPFS node running. If you shut down your computer or you lose your internet connection, then no one else will be able to view your NFT! To get around this issue, you should pin it to a pinning service.
 
