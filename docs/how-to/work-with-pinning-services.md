@@ -14,7 +14,7 @@ If you've got just one local IPFS node that's always running, local pinning may 
 - You don't have all the disk space you need on your local node.
 - You run more than one IPFS node, and would like to use one of them as a "personal pinning service" as your preferred location for permanent storage.
 
-There are a number of commercial pinning services that make it easy for you to purchase pinning capacity for your important files, some of which include Pinata, Temporal, Infura, Crust, and others. Each of these third-party services has its own unique interface for pinning files and managing those pins; this could include a GUI, an API, CLI commands, or other tooling.
+There are a number of commercial pinning services that make it easy for you to purchase pinning capacity for your important files, some of which include Pinata, Temporal, Infura, and others. Each of these third-party services has its own unique interface for pinning files and managing those pins; this could include a GUI, an API, CLI commands, or other tooling.
 
 However, you don't need to learn new commands or tools if your pinning service of choice supports the vendor-agnostic [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/) specification. Those services are supported within IPFS itself through the command line: `ipfs pin remote --help`.
 

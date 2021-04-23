@@ -228,6 +228,62 @@ An easy way to make sure important data is retained is to use a pinning service.
 
    ![Random planet fact website pinned using Pinata and displayed in Firefox](./images/single-page-website/pinned-random-planet-fact-website.png)
 
+#### Decentralized pinning services
+
+For decentralized websites and apps, it is also possible to pin them on IPFS through a decentralized approach. Technically, decentralized pinning services are realized by blockchain technologies such as [Filecoin](https://filecoin.io/), [Crust Network](crust.network), etc.
+
+Some well-known DApps, such as [Polkadot Apps](dotapps.io) and [Uniswap Interface](https://app.uniswap.org/#/swap), **have all been pinned to IPFS by integrating Crust decentralized deployment**. For this reason, we're going to use [Crust Network](https://crust.network/) for demonstration in this tutorial.
+
+0. Prerequest
+
+   > Please make sure you have **Node.js** env, you can go to [download page](https://nodejs.org/en/download/package-manager/) for installation. Be sure to have **IPFS** running locally, you can refer to [this page](https://ipfs.io/#install) to install and run IPFS.
+
+1. Install Crust Command Line
+
+   ```shell
+   sudo npm i -g @crustio/crust-cli
+   ```
+
+2. Login with seeds
+
+   > *SEEDS* are 12 secret words of your Crust account. You can refer to this [guide](crust-account.md) to create your Crust Account.
+
+   ```shell
+   crust-cli login [SEEDS]
+   ```
+
+3. Pin the `index.html` file for your website
+
+   Navigate to the directory of the `index.html` file
+
+   ```shell
+   crust-cli pin index.html
+   ```
+
+   You'll get an IPFS cid from this step, for example: `QmZsYLxJA6pW4mQVi6qskFRDcSWvQcS6wPfteQNzUQWY3m`.
+
+4. Publish the `index.html`
+
+   ```shell
+   crust-cli publish QmZsYLxJA6pW4mQVi6qskFRDcSWvQcS6wPfteQNzUQWY3m
+   ```
+
+   Now your website is published into Crust Network. Storage nodes in Crust Network will get notified and your website pinned to store.
+
+5. Query status
+
+   After publishing your website, you can run this command to check how many nodes have pinned your website
+
+   ```shell
+   crust-cli status QmZsYLxJA6pW4mQVi6qskFRDcSWvQcS6wPfteQNzUQWY3m
+   ```
+
+   ```shell
+   ✅ QmZsYLxJA6pW4mQVi6qskFRDcSWvQcS6wPfteQNzUQWY3m picked, replicas: 149
+   ```
+
+Crust also provides a [general Github workflow](https://github.com/crustio/ipfs-crust-pinner/blob/main/.github/workflows/template.yml) guiding developers to deploying a website/DApp in a decentralized way by establishing a consistent and automated CI/CD pipeline. Uniswap and Polakdot both are integrated in such an approach.
+
 ## Set up a domain
 
 This section is completely optional.
@@ -255,4 +311,4 @@ Domain name services are fairly slow to update. You should be able to go to your
 
 This project was designed to get you up and running quickly, but there are many improvements we can make here.
 
-You may have noticed that when visiting [randomplanetfacts.xyz](http://randomplanetfacts.xyz), your browser redirects to [gateway.pinata.cloud/ipfs/QmW7S5HR...](https://gateway.pinata.cloud/ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA). This isn't great for the user's experience, and it can cause issues with security certificates and other website validation methods. Also, this website is incredibly simple. There are no images, external stylesheets, or javascript files. If you're interested in building a more complex site using IPFS and securing it properly, [carry on with this tutorial series by hosting a multipage website on IPFS.](/how-to/websites-on-ipfs/multipage-website). If you want to make your website hosting more decentralized, you can integrate with decentralized pinning services, such as [Crust](https://crust.network), by drawing on the experience of [decentralized Uniswap Interface hosting on IPFS](https://medium.com/crustnetwork/decentralized-uniswap-interface-hosting-on-ipfs-18a78d1209ac).
+You may have noticed that when visiting [randomplanetfacts.xyz](http://randomplanetfacts.xyz), your browser redirects to [gateway.pinata.cloud/ipfs/QmW7S5HR...](https://gateway.pinata.cloud/ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA). This isn't great for the user's experience, and it can cause issues with security certificates and other website validation methods. Also, this website is incredibly simple. There are no images, external stylesheets, or javascript files. If you're interested in building a more complex site using IPFS and securing it properly, [carry on with this tutorial series by hosting a multipage website on IPFS.](/how-to/websites-on-ipfs/multipage-website)
