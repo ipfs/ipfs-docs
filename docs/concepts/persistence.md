@@ -78,3 +78,4 @@ Some available pinning service providers are:
 - [Infura](https://infura.io/)
 - [Pinata](https://pinata.cloud/)
 - [Temporal](https://temporal.cloud/)
+- [Crust Network](https://crust.network/)
