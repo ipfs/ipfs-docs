@@ -7,6 +7,8 @@ description: Learn more about how to use "x-ipfs-path" headers in IPFS Companion
 
 IPFS Companion can redirect traditional HTTP requests to IPFS if the `x-ipfs-path` response header is provided.
 
+Additionally, the Brave browser will display an “Open using IPFS” button on the address bar when this header is returned by a tab’s main document frame.
+
 ## Overview
 
 IPFS HTTP gateways can return an `x-ipfs-path` header with each response. The value of the header is the IPFS path of the returned payload.
