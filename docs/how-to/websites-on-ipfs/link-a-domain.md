@@ -40,7 +40,14 @@ The Ethereum naming service (ENS) is a decentralized way to address resources. L
 You need these things to get a domain name through ENS:
 
 - The [Metamask](https://metamask.io/) browser extension installed.
-- An Ethereum account with some `ETH` in it. The amount you need will depend on the domain name you end up buying, but a balance of around \$10 is probably enough.
+- An Ethereum account with some `ETH` in it.
+  The cost of your domain depends on a few things:
+  - Which domain you want to purchase.
+  - The current price of ETH.
+  - The gas fees associated with your transaction.
+  - How long you want the domain for.
+    - Note: The more years you choose to prepay, the less you will spend on gas fees overall.
+      - e.g. `1 year + 1 gas fee` < `10 years + 1 gas fee` < `10 * (1 year + 1 gas fee)`
 - A website hosted on IPFS. If you've been following this tutorial series, you should already have a website and CID ready.
 - A cool idea for a domain name!
 
