@@ -24,11 +24,16 @@ CIDs uniquely identify a piece of content. A CID can be stored and sent over the
 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 ```
 
+There are two versions of CIDs used by IPFS. The example above is a version 1 CID (or CIDv1), and it has some advantages over the older "version 0" format, especially when viewing IPFS content on the web using an IPFS gateway. It's best to use version 1 CIDs for addressing NFT data. In javascript, version 1 CIDs are already the default, so if you're using js-ipfs, you're all set. If you're using the go-ipfs command line to add your data to IPFS, you can use the `--cid-version=1` flag when running `ipfs add`.
+
+If you already have a version 0 CID for your content, there's no need to add it to IPFS again just to get the new CID format! You can convert a v0 CID to v1 using [the ipfs command line](/how-to/address-ipfs-on-web/#manual-use-cid-ipfs-io-or-the-command-line) or on the web at [cid.ipfs.io](https://cid.ipfs.io). If you're not sure which version you have, it's easy to tell the difference. Version 0 CIDs are always 46 characters long, starting with `Qm`.
+
 ::: tip
 You can learn more about CIDs in our [guide to Content Addressing][docs-cid], or by following the [interactive tutorials on ProtoSchool][protoschool-cid].
 :::
 
-When you add your data to IPFS using `ipfs.add`, you receive a CID that identifies the content. To link to your content from a smart contract or inside your NFT's metadata, you should convert your CID to an IPFS URI, as described below.
+Once you've added your data to IPFS and have a CID, you can prepare your token's metadata and "mint" the token on a blockchain. To link to your content from a smart contract or inside your NFT's metadata, you should convert your CID to an IPFS URI, as described below.
+
 
 ### IPFS URI
 
