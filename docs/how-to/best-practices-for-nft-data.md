@@ -32,7 +32,7 @@ If you already have a version 0 CID for your content, there's no need to add it 
 You can learn more about CIDs in our [guide to Content Addressing][docs-cid], or by following the [interactive tutorials on ProtoSchool][protoschool-cid].
 :::
 
-Once you've added your data to IPFS and have a CID, you can prepare your token's metadata and "mint" the token on a blockchain. To link to your content from a smart contract or inside your NFT's metadata, you should convert your CID to an IPFS URI, as described below.
+Once you've added your data to IPFS and have a CID, you can prepare your token's metadata and "mint" the token on a blockchain. To link to your content from a smart contract or inside your NFT's metadata, you should convert your CIDv1 to an IPFS URI, as described below.
 
 
 ### IPFS URI
