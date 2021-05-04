@@ -285,9 +285,9 @@ When an object is added to IPFS, it is chunked up into smaller parts, each part 
 
 The leaf format takes two format options, UnixFS leaves and raw leaves:
 
-- The UnixFS leaves format adds a data wrapper on newly added objects to produce UnixFS leaves with additional data sizes. This wrapper is used to determine whether newly added objects are files or directories.
+- The UnixFS leaves format adds a data wrapper on newly added objects to produce UnixFS leaves with additional data sizes. This wrapper is used to determine whether newly added objects are files or directories. This format is the default for CIDv0.
 
-- The raw leaves format is the default format on IPFS where nodes output from chunking will be raw data from the file with a CID type of 'raw'. This is mainly configured for backward compatibility with formats that used a UnixFS Data object.
+- The raw leaves format on IPFS where nodes output from chunking will be raw data from the file with a CID codec of 'raw'. This is mainly configured for backward compatibility with formats that used a UnixFS Data object. This format is the default for CIDv1 created with `ipfs add --cid-version 1`, soon to become the global default.
 
 The chunking strategy is used to determine the size options available during the chunking process. The strategy currently has two different options, 'fixed size' and 'rabin'.
 
