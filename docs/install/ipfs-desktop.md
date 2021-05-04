@@ -5,7 +5,7 @@ description: IPFS Desktop gives you all the power of IPFS in a convenient deskto
 
 # IPFS Desktop
 
-**IPFS Desktop bundles an IPFS node, file manager, peer manager, and content explorer into a single, easy to use application.**
+**IPFS Desktop bundles an IPFS node, file manager, peer manager, and content explorer into a single, easy-to-use application.**
 
 Use IPFS Desktop to get acquainted with IPFS without needing to touch the terminal — or, if you're already experienced, use the powerful menubar/taskbar shortcuts alongside the command line to make your IPFS workflow faster.
 
@@ -99,23 +99,21 @@ The IPFS Desktop application has finished installing. You can now start to [add 
 
 While these instructions are specific to Ubuntu, they will likely work with most Ubuntu-related Linux distributions. For non-Ubuntu Linux distributions, check out the [IPFS Desktop GitHub repository](https://github.com/ipfs-shipyard/ipfs-desktop#install) for install instructions.
 
-1. Download the latest `.deb` package from the [IPFS Desktop GitHub repository](https://github.com/ipfs-shipyard/ipfs-desktop#install).
-1. Open the `.deb` package in **Software Installer**:
+1. Download the latest `.AppImage` package from the [IPFS Desktop GitHub repository](https://github.com/ipfs-shipyard/ipfs-desktop#install).
+1. Move into where you downloaded the `.AppImage` file, and make it executable:
 
-   ![Right-click context menu of the IPFS deb package.](./images/ipfs-desktop/install-ubuntu-software-install.png)
+   ```shell
+   cd Downloads
+   chmod a+x /ipfs-desktop-linux.AppImage
+   ```
 
-1. Click **Install** and wait for the installation to finish:
+1. Open the `.AppImage` by calling `./ipfs-desktop-linux.AppImage` from the command-line:
 
-   ![Install screen within the Ubuntu software installation window.](./images/ipfs-desktop/install-ubuntu-install.png)
+   ```shell
+   ./ipfs-desktop-linux.AppImage
+   ```
 
-1. Click **Applications** or press the Windows key on your keyboard.
-1. Search for `IPFS` and select **IPFS Desktop**:
-
-   ![Ubuntu search screen with IPFS Desktop showing.](./images/ipfs-desktop/install-ubuntu-search-window.png)
-
-1. You can now find an IPFS icon in the status bar:
-
-   ![IPFS icon shown in the Ubuntu status bar.](./images/ipfs-desktop/install-ubuntu-ipfs-running-status-bar.png)
+   You can also run the `.AppImage` file by double-clicking on it in your file manager.
 
 ## Package Managers
 
@@ -124,9 +122,9 @@ While these instructions are specific to Ubuntu, they will likely work with most
 | [Homebrew](https://formulae.brew.sh/formula/ipfs#default)                                                                    | `brew cask install ipfs`     |
 | [Chocolatey](https://community.chocolatey.org/packages/ipfs)                                                         | `choco install ipfs-desktop` |
 | [Scoop](https://github.com/lukesampson/scoop-extras/blob/master/bucket/ipfs-desktop.json) maintained by [@NatoBoram](https://github.com/NatoBoram) | `scoop bucket add extras && scoop install ipfs-desktop` |
-| [Snap](https://snapcraft.io/ipfs-desktop)                                                                          | `snap install ipfs-desktop`  |
 | [AUR](https://aur.archlinux.org/packages/ipfs-desktop/) maintained by [@alexhenrie](https://github.com/alexhenrie) | `ipfs-desktop`               |
 
 ## Next steps
 
 Now that you've got IPFS Desktop installed, you can start sharing files and interacting with other nodes on the network! Check out how to [host a website using IPFS →](/how-to/websites-on-ipfs/single-page-website/)
+
