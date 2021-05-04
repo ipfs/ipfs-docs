@@ -1,17 +1,17 @@
 ---
 title: Peering with content providers
-description: Optimize retreival speed by making direct connections to large content providers.
+description: Optimize retrieval speed by making direct connections to large content providers.
 ---
 
 # Peering with content providers
 
-IPFS allows you to request data from any IPFS node that has a copy using the data's [CID][cid-explainer], or content identifier. This usually involves a lookup on the [distrubuted hash table][dht-explainer], and may also require establishing new connections to the nodes that are storing the content. 
+IPFS allows you to request data from any IPFS node with a copy using the data's [CID][cid-explainer] or content identifier. This process usually involves a lookup on the [distrubuted hash table][dht-explainer] and may also require establishing new connections to the nodes storing the content. 
 
-If you're running an IPFS node that serves a lot of requests, for example, a public HTTP gateway, you may be able to speed up queries by maintaining long-lived connections to nodes that provide a large volume of data. 
+If you're running an IPFS node that serves many requests, like a public HTTP gateway, for example, you may be able to speed up queries by maintaining long-lived connections to nodes that provide a large volume of data. 
 
 Prioritizing connections to certain peers is called **Peering**, and you can tell IPFS which peers to prioritize by editing the [`Peering` configuration][docs-peering-config] in your IPFS config file.
 
-For example, to peer with nodes from Cloudflare, you could update your config to include a `Peering` section like that includes the ID and addresses for their node:
+To _peer_ with nodes from Cloudflare, you could update your config to include a `Peering` section like that consists of the ID and addresses for their node:
 
 ```json
 {
@@ -29,7 +29,7 @@ For example, to peer with nodes from Cloudflare, you could update your config to
 ::: tip
 Generally speaking, users running IPFS at home won't need to set up peering and can ignore this page!
 
-Peering is most helpful for nodes that have a lot of concurrent connections, since it prevents the [connection manager][docs-connmgr] from dropping connections it thinks aren't "useful" any longer. If you find yourself running near the connection manager's limit, you may benefit from peering with content providers.
+Peering is most helpful for nodes that have a lot of concurrent connections since it prevents the [connection manager][docs-connmgr] from dropping connections it thinks aren't "useful" any longer. If you find yourself running near the connection manager's limit, you may benefit from peering with content providers.
 :::
 
 ## Content provider list
