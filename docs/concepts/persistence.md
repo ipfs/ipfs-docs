@@ -50,16 +50,19 @@ ipfs daemon --enable-gc
 ```
 
 ::: tip
-If you use IPFS Desktop or the IPFS Web UI the settings related to garbage collection can be found in the **Settings** tab. You can also directly run the garbage collector by clicking on the taskbar icon of the IPFS Desktop application and selecting **Advanced** → **Run Garbage Collector**.
+If you use IPFS Desktop, you can trigger garbage collection by clicking on the taskbar icon of the IPFS Desktop application and selecting **Advanced** → **Run Garbage Collector**.
 :::
 
 ## Pinning in context
 
+An IPFS node can protect data from garbage collection based on different kinds of user events.
+- The universal way is by adding a low-level [local pin](/how-to/pin-files/). This works for all data types and can be done manually, but if you add a file using the CLI command [`ipfs add`](/reference/cli/#ipfs-add), your IPFS node will automatically pin that file for you.
+- When working with files and directories, a better way may be to add them to the local [Mutable File System (MFS)](/concepts/glossary/#mfs). This protects the data from garbage collection in the same way as local pinning, but is somewhat easier to manage.
+
+
 ::: tip
 If you want to learn more about how pinning fits into the overall lifecycle of data in IPFS, check out the course from [IPFS Camp _The Lifecycle of Data in DWeb_](https://www.youtube.com/watch?v=fLUq0RkiTBA).
 :::
-
-An IPFS node can store data based on different kinds of user events. For example, if you add a file using the CLI command [`ipfs add`](https://docs.ipfs.io/reference/cli/#ipfs-add), the IPFS node will automatically pin that file. It also automatically stores data you request either by loading a web page through the gateway, or with [`ipfs cat`](https://docs.ipfs.io/reference/cli/#ipfs-cat). Not every CLI command will automatically pin content.
 
 
 ## Pinning services
@@ -78,3 +81,5 @@ Some available pinning service providers are:
 - [Pinata](https://pinata.cloud/)
 - [Temporal](https://temporal.cloud/)
 - [Crust Network](https://crust.network/)
+
+See how to [work with remote pinning services](/how-to/work-with-pinning-services/).

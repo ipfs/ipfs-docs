@@ -1,6 +1,7 @@
 // .vuepress/config.js
 
 const DEPLOY_DOMAIN = 'https://docs.ipfs.io'
+const SPEEDCURVE_ID = process.env.SPEEDCURVE_ID || ''
 const pageSuffix = '/'
 
 module.exports = {
@@ -195,7 +196,8 @@ module.exports = {
                 collapsable: false,
                 children: [
                   '/how-to/observe-peers',
-                  '/how-to/exchange-files-between-nodes'
+                  '/how-to/exchange-files-between-nodes',
+                  '/how-to/peering-with-content-providers'
                 ]
               },
               {
@@ -236,7 +238,7 @@ module.exports = {
                 collapsable: false,
                 children: [
                   'how-to/mint-nfts-with-ipfs',
-                  'how-to/best-practices-for-nft-data',
+                  'how-to/best-practices-for-nft-data'
                 ]
               }
             ]
@@ -272,7 +274,10 @@ module.exports = {
                   ['https://www.meetup.com/members/249142444/', 'Meetups'],
                   '/community/social-media',
                   ['https://awesome.ipfs.io', 'Awesome IPFS'],
-                  ['https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqqsew', 'YouTube']
+                  [
+                    'https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqqsew',
+                    'YouTube'
+                  ]
                 ]
               },
               {
@@ -311,6 +316,7 @@ module.exports = {
     }
   },
   plugins: [
+    [require('./plugins/vuepress-plugin-speedcurve'), { id: SPEEDCURVE_ID }],
     '@vuepress/plugin-back-to-top',
     [
       '@vuepress/google-analytics',

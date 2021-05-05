@@ -18,25 +18,24 @@ IPFS desktop application is the easiest way to get up and running quickly with I
 
 ### Windows
 
-1. Go to the [IPFS desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases).
-2. Find the link ending in `.exe` for the latest version of IPFS desktop:
+1. Download the latest available `.exe` file from the [IPFS desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases):
 
    ![The IPFS desktop download page.](./images/single-page-website/install-windows-download-exe-page.png)
 
-3. Run the `.exe` file to start the installation.
-4. Select whether you want to install the application for just yourself or all users on the computer. Click **Next**:
+2. Run the `.exe` file to start the installation.
+3. Select whether you want to install the application for just yourself or all users on the computer. Click **Next**:
 
    ![The IPFS desktop install options window.](./images/single-page-website/install-windows-install-options.png)
 
-5. Select the install location for the application. The default location is usually fine. Click **Next**:
+4. Select the install location for the application. The default location is usually fine. Click **Next**:
 
    ![The IPFS desktop installation location window.](./images/single-page-website/install-windows-install-location.png)
 
-6. Wait for the installation to finish and click **Finish**:
+5. Wait for the installation to finish and click **Finish**:
 
    ![The IPFS desktop installation finished window.](./images/single-page-website/install-windows-install-finish.png)
 
-7. You can now find an IPFS icon in the status bar:
+6. You can now find an IPFS icon in the status bar:
 
    ![The IPFS desktop status bar menu in the Windows status bar.](./images/single-page-website/install-windows-ipfs-desktop-status-bar.png)
 
@@ -44,7 +43,7 @@ The IPFS desktop application has finished installing. You can now start to [add 
 
 ### MacOS
 
-1. Download the latest available `.dmg` file from the `ipfs-shipyard/ipfs-desktop` GitHub repository:
+1. Download the latest available `.dmg` file from the [IPFS desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases):
 
    ![List of available download links in GitHub.](./images/single-page-website/install-macos-dmg-file-link.png)
 
@@ -75,7 +74,7 @@ The IPFS desktop application has finished installing. You can now start to [add 
 
 ### Linux
 
-1. Download the `.deb` package:
+1. Download the latest available `.deb` file from the [IPFS desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases):
 1. Open the `.deb` package in **Software Installer**:
 
    ![Right-click context menu of the IPFS deb package.](./images/single-page-website/install-ubuntu-software-install.png)

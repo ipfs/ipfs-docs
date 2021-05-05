@@ -7,9 +7,23 @@ description: Learn more about how to use "x-ipfs-path" headers in IPFS Companion
 
 IPFS Companion can redirect traditional HTTP requests to IPFS if the `x-ipfs-path` response header is provided.
 
+Additionally, some browser vendors like [Brave](https://brave.com/ipfs-support/) may display an **Open using IPFS** button on the address bar when this header is returned for the root document in the current tab.
+
 ## Overview
 
 IPFS HTTP gateways can return an `x-ipfs-path` header with each response. The value of the header is the IPFS path of the returned payload.
+
+```shell
+curl -sI https://en.wikipedia-on-ipfs.org | grep x-ipfs-path
+
+> x-ipfs-path: /ipns/en.wikipedia-on-ipfs.org/
+```
+
+```shell
+curl -sI https://dweb.link/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi | grep x-ipfs-path
+
+> x-ipfs-path: /ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
+```
 
 The WebExtension API [onHeadersReceived](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived) can cancel and redirect the HTTP request as soon as the response headers arrive. This means the client can drop the initial request, avoiding duplicate downloads of the content.
 

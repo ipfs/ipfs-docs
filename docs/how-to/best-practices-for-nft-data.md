@@ -24,11 +24,32 @@ CIDs uniquely identify a piece of content. A CID can be stored and sent over the
 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 ```
 
+There are two versions of CIDs used by IPFS. The example above is a version 1 CID (or CIDv1), and it has some advantages over the older "version 0" format, especially when viewing IPFS content on the web using an IPFS gateway. It's best to use version 1 CIDs for addressing NFT data, in the base32 encoding.
+
+To enable CIDv1 when using the IPFS command line, add the `--cid-version=1` flag when running the `ipfs add` command:
+
+```shell
+ipfs add --cid-version=1 ~/no-time-to-explain.jpeg
+added bafkreigg4a4z7o5m5pwzcfyphodsbbdp5sdiu5bwibdw5wvq5t24qswula no-time-to-explain.jpeg
+```
+
+In JavaScript, you can use the following options for the `ipfs.add` method:
+
+```javascript
+const cid = await ipfs.add({ content }, {
+  cidVersion: 1,
+  hashAlg: 'sha2-256'
+})
+```
+
+If you already have a version 0 CID for your content, there's no need to add it to IPFS again just to get the new CID format! You can convert a v0 CID to v1 using [the ipfs command line](/how-to/address-ipfs-on-web/#manual-use-cid-ipfs-io-or-the-command-line) or on the web at [cid.ipfs.io](https://cid.ipfs.io). If you're not sure which version you have, it's easy to tell the difference. Version 0 CIDs are always 46 characters long, starting with `Qm`.
+
 ::: tip
 You can learn more about CIDs in our [guide to Content Addressing][docs-cid], or by following the [interactive tutorials on ProtoSchool][protoschool-cid].
 :::
 
-When you add your data to IPFS using `ipfs.add`, you receive a CID that identifies the content. To link to your content from a smart contract or inside your NFT's metadata, you should convert your CID to an IPFS URI, as described below.
+Once you've added your data to IPFS and have a CID, you can prepare your token's metadata and "mint" the token on a blockchain. To link to your content from a smart contract or inside your NFT's metadata, you should convert your CIDv1 to an IPFS URI, as described below.
+
 
 ### IPFS URI
 
@@ -118,7 +139,9 @@ When your data is stored on IPFS, users can fetch it from any IPFS node that has
 
 If you're building a platform using IPFS for storage, it's important to pin your data to IPFS nodes that are robust and highly available, meaning that they can operate without significant downtime and with good performance. See our [server infrastructure documentation][docs-server-infra] to learn how [IPFS Cluster][ipfs-cluster] can help you manage your own cloud of IPFS nodes that coordinate to pin your platform's data and provide it to your users.
 
-If running your own infrastructure doesn't make sense for your platform or stage of growth, you can delegate this responsibility to a remote pinning service. Remote pinning services provide redundant, highly-available storage for your IPFS data, without any kind of "vendor lock-in". Because IPFS content is addressed by CID instead of location, you can switch between pinning services at any time, or migrate to your own infrastructure seamlessly as your platform grows.
+Alternatively, you can delegate the infrastructure responsibility to a remote pinning service. Remote pinning services like [Pinata](https://pinata.cloud) and [Eternum](https://www.eternum.io/) provide redundant, highly-available storage for your IPFS data, without any _vendor lock-in_. Because IPFS-based content is addressed by CID instead of location, you can switch between pinning services or migrate to your private infrastructure seamlessly as your platform grows. 
+
+You can also use a service from [Protocol Labs](https://protocol.ai) called [nft.storage](https://nft.storage) to get your data into IPFS, with long-term persistence backed by the decentralized [Filecoin](https://filecoin.io) storage network. To help foster the growth of the NFT ecosystem and preserve the new _digital commons_ of cultural artifacts that NFTs represent, [nft.storage](https://nft.storage) provides free storage and bandwidth for public NFT data. Sign up for a free account at [https://nft.storage](https://nft.storage) and try it out!
 
 To learn more about persistence and pinning, including how to work with remote pinning services, see our [overview of persistence, permanence, and pinning][docs-persistence].
 

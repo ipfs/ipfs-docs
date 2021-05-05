@@ -6,7 +6,7 @@ date: 2021-03-17
 
 # Mint an NFT with IPFS 
 
-Non-fungible tokens (NFTs) allow users to create and trade digital items with differing values. Go from nothing to creating a freshly-minted NFT token and storing it on IPFS with the help of the Pinata pinning service.
+Non-fungible tokens (NFTs) allow users to create and trade digital items with differing values. Go from nothing to creating a freshly-minted NFT token and storing it on IPFS with the help of services like [Pinata](https://pinata.cloud) and [nft.storage](https://nft.storage).
 
 Since IPFS isn't a blockchain, we'll be leveraging the power of the Ethereum blockchain for this guide. However, the steps described here can just as easily be applied to other blockchains.
 
@@ -22,7 +22,7 @@ There are a few key features that define an NFT, regardless of platform.
 
 First, each token has a unique id that distinguishes it from all other tokens. This is in contrast to a fungible token like Ether `ETH`, which exists as a quantity attached to an account or wallet. There is no way to tell one `ETH` from another. Because each NFT is unique, they're owned and traded individually, with the smart contract keeping track of who owns what.
 
-Another key feature of an NFT is the ability to link to data that is stored outside of a smart contract. Storing or processing data outside of a smart-contract is known as being _ off-chain_. Because data that's stored _on-chain_ needs to be processed, verified, and replicated across the entire blockchain network, it can be very expensive to store large amounts of data. This is a problem for many NFT use cases, especially tokens that represent digital collectibles or artwork, where storing the entire work could cost the equivalent of millions of US Dollars.
+Another key feature of an NFT is the ability to link to data that is stored outside of a smart contract. Storing or processing data outside of a smart-contract is known as being _off-chain_. Because data that's stored _on-chain_ needs to be processed, verified, and replicated across the entire blockchain network, it can be very expensive to store large amounts of data. This is a problem for many NFT use cases, especially tokens that represent digital collectibles or artwork, where storing the entire work could cost the equivalent of millions of US Dollars.
 
 ### How IPFS helps 
 
@@ -40,7 +40,7 @@ Of course, there may be some cases in which you do want to change the metadata f
 
 ## Minty 
 
-To help explain how NFTs and IPFS can work together, we've created Minty - a simple command-line application to automatically _mint_ an NFT and pin it to IPFS using Pinata. 
+To help explain how NFTs and IPFS can work together, we've created Minty - a simple command-line application to automatically _mint_ an NFT and pin it to IPFS using [Pinata](https://pinata.cloud) or [nft.storage](https://nft.storage).
 
 Production NFT platforms are a fairly complex thing. As with any modern web application, there are lots of decisions to make surrounding the tech stack, user interface conventions, API design, and so on. Blockchain-enabled d-apps also need to interact with user wallets such as [Metamask](https://metamask.io), further increasing their complexity.
 
@@ -94,7 +94,7 @@ minty deploy
 > Writing deployment info to minty-deployment.json
 ```
 
-This deploys to the network configured in `hardhat.config.js`, which is set to the `localhost` network by default. If you get an error about not being able to reach the network, you started the local development network with `./start-local-environment.sh`.
+This deploys to the network configured in `hardhat.config.js`, which is set to the `localhost` network by default. If you get an error about not being able to reach the network, make sure you started the local development network with `./start-local-environment.sh`.
 
 When this contract is deployed, the address and other information about the deployment are written to `minty-deployment.json`. This file must be present for subsequent commands to work.
 
@@ -132,41 +132,49 @@ Now we're going to tokenize our ticket into an NFT. This process is often called
 
 1. Call the `mint` command and supply the file we want to mint, the name of our NFT, and a description:
 
-    ```shell
- minty mint ~/ticket.txt --name "Moon Flight #1" --description "This ticket serves as proof-of-ownership of a first-class seat on a flight to the moon."
+    ```shell 
+    minty mint ~/ticket.txt --name "Moon Flight #1" --description "This ticket serves as proof-of-ownership of a first-class seat on a flight to the moon."
 
-> 🌿 Minted a new NFT:
-> Token ID:              1
-> Metadata URI:          ipfs://bafybeic3ui4dj5dzsvqeiqbxjgg3fjmfmiinb3iyd2trixj2voe4jtefgq/metadata.json
-> Metadata Gateway URL:  http://localhost:8080/ipfs/bafybeic3ui4dj5dzsvqeiqbxjgg3fjmfmiinb3iyd2trixj2voe4jtefgq/metadata.json
-> Asset URI:             ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt
-> Asset Gateway URL:     http://localhost:8080/ipfs/bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt
-> NFT Metadata:
-> {
->   "name": "Moon Flight #1",
->   "description": "This ticket serves as proof-of-ownership of a first-class seat on a flight to the moon.",
->   "image": "ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt"
-> }
+    > 🌿 Minted a new NFT:
+    > Token ID:              1
+    > Metadata URI:          ipfs://bafybeic3ui4dj5dzsvqeiqbxjgg3fjmfmiinb3iyd2trixj2voe4jtefgq/metadata.json
+    > Metadata Gateway URL:  http://localhost:8080/ipfs/bafybeic3ui4dj5dzsvqeiqbxjgg3fjmfmiinb3iyd2trixj2voe4jtefgq/metadata.json
+    > Asset URI:             ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt
+    > Asset Gateway URL:     http://localhost:8080/ipfs/bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt
+    > NFT Metadata:
+    > {
+    >   "name": "Moon Flight #1",
+    >   "description": "This ticket serves as proof-of-ownership of a first-class seat on a flight to the moon.",
+    >   "image": "ipfs://bafybeihhii26gwp4w7b7w7d57nuuqeexau4pnnhrmckikaukjuei2dl3fq/ticket.txt"
+    > }
     ```
 
-The `minty mint` command returns the id of the new token, some metadata containing the `name` and `description` we provided, and an IPFS URI to the file we used for our NFT asset. The `Metadata URI` in the output above is the IPFS URI for the NFT Metadata JSON object that's stored on IPFS.
+    The `minty mint` command returns the id of the new token, some metadata containing the `name` and `description` we provided, and an IPFS URI to the file we used for our NFT asset. The `Metadata URI` in the output above is the IPFS URI for the NFT Metadata JSON object that's stored on IPFS.
 
 Great! You've created your NFT, but it's only available to other people as long as you have your IPFS node running. If you shut down your computer or you lose your internet connection, then no one else will be able to view your NFT! To get around this issue, you should pin it to a pinning service.
 
 ### Pin your NFT
 
-To make the data highly available without needing to run a local IPFS daemon 24/7, you can request that a remote pinning service, like [Pinata](https://pinata.cloud/), store a copy of your IPFS data on their IPFS nodes. You can link Pinata and Minty together by signing up to Pinata, getting an API key, and adding the key to Minty's configuration file.
+To make the data highly available without needing to run a local IPFS daemon 24/7, you can request that a remote pinning service store a copy of your IPFS data on their IPFS nodes. 
 
-#### Sign up to Pinata
+Any pinning service that supports the [IPFS Remote Pinning API](https://ipfs.github.io/pinning-services-api-spec) can be used with Minty.
 
-You need to sign up to Pinata to use their API.
+Below we'll show how to configure Minty to two different pinning services. Either one will work, so you'll only need to sign up to one service to try things out.
+
+#### Option 1: Pinata
+
+[Pinata](https://pinata.cloud) is one of the oldest and most popular IPFS pinning services, and their free storage tier makes it easy to sign up and experiment.
+
+##### Sign up to Pinata
+
+To use Pinata to pin your data, you need to sign up for an account.
 
 1. Head over to [pinata.cloud](https://pinata.cloud/).
 1. Click **Sign up** and use your email address to create an account.
 
 Pinata gives each user 1GB of free storage space, which is plenty for storing a few NFTs.
 
-#### Get an API key
+##### Get an API key
 
 You need to grab an API key from Pinata. Your API key allows Minty to interact with your Pinata account automatically.
 
@@ -186,19 +194,55 @@ You need to grab an API key from Pinata. Your API key allows Minty to interact w
 
     We just need the `JWT`. You can ignore the `API Key` and `API Secret` for now.
 
-1. Copy the `config/default.env.example` file to `config/default.env`:
+1. Copy the `config/pinata.env.example` file to `config/.env`:
 
     ```shell
-    cp config/default.env.example config/default.env
+    cp config/pinata.env.example config/.env
     ```
 
-1. Inside `config/default.env` add your JWT token to the `PINATA_API_TOKEN` line _between_ the double quotes `"`:
+1. Inside `config/.env` add your JWT token to the `PINNING_SERVICE_KEY` line _between_ the double quotes `"`:
 
     ```shell
-    PINATA_API_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsia..."
+    PINNING_SERVICE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsia..."
     ```
 
 1. Minty can now connect to Pinata and pin NFT data to your account!
+
+#### Option 2: nft.storage
+
+[nft.storage](https://nft.storage) is a new service offered by Protocol Labs to store public NFT data. It's currently a free public beta, so it's super easy to sign up and try it out.
+
+##### Sign up to nft.storage
+
+To use nft.storage for your NFT data, you'll need to sign up for an account. You'll also need a GitHub account for logging in, if you don't already have one.
+
+1. Head over to [nft.storage](https://nft.storage).
+1. Click **Register** and use your GitHub account to register.
+
+##### Get an API Key
+
+You need to copy an API key from the nft.storage site and put it where Minty can find it.
+
+1. Log into nft.storage and select **Manage API Keys** from the top menu.
+1. Click **New Key**.
+1. The new key should show up in the list. Copy the key to your clipboard. It should be a long string starting with `ey...`.
+
+We need to put the key into a file where Minty can find it.
+
+1. Copy the `config/nft.storage.env.example` file to `config/.env`:
+
+    ```shell
+    cp config/nft.storage.env.example config/.env
+    ```
+
+1. Inside `config/.env` add your API key to the `PINNING_SERVICE_KEY` line _between_ the double quotes `"`:
+
+    ```shell
+    PINNING_SERVICE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsia..."
+    ```
+
+1. Minty can now connect to nft.storage and pin NFT data to your account!
+
 
 ### Deploying to a testnet
 

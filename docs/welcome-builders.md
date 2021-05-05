@@ -6,6 +6,8 @@ description: The home page for developer documentation for IPFS, the InterPlanet
 
 # IPFS helps you build the future web
 
+![Illustration of two rockets launching.](./images/welcome-builders/ipfs-builders-rocket.svg)
+
 ::: callout
 **Welcome, builders!** No matter who you are or what you're creating, the InterPlanetary File System (IPFS) makes it easier for you to build the decentralized apps and services that will power the next generation of the internet.
 :::
