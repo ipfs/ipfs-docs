@@ -1,10 +1,10 @@
 ---
 title: Merkle DAGs
 legacyUrl: https://docs.ipfs.io/guides/concepts/merkle-dag/
-description: Learn about Merkle Distributed Acyclic Graphs (DAGs) and why they're important to IPFS.
+description: Learn about Merkle Directed Acyclic Graphs (DAGs) and why they're important to IPFS.
 ---
 
-# Merkle Distributed Acyclic Graphs (DAGs)
+# Merkle Directed Acyclic Graphs (DAGs)
 
 ::: callout
 Take a deep dive into this superpowered, content-addresed data structure in ProtoSchool's tutorial, [Merkle DAGs: Structuring Data for the Distributed Web](https://proto.school/merkle-dags).
