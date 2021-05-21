@@ -10,7 +10,7 @@ description: Explore some helpful use cases, ideas, and examples for the InterPl
 <img src="./images/case-studies/logo-crust.png" alt="Crust logo" width="120">
 :::
 
-Crust is a peer-to-peer network that stores files in a decentralized way, with a blockchain-based incentive layer ensuring the high availability and reliability of files.
+[Crust](https://crust.network) is a peer-to-peer network that stores files in a decentralized way, with a blockchain-based incentive layer ensuring the high availability and reliability of files.
 Crust provides a decentralized storage network of Web3.0 ecosystem. It supports IPFS as a file layer protocol, and connects storage interfaces to the application layer. As such, it is designed to build a decentralized cloud ecosystem that values data privacy and ownership.
 
 ### Crust by the numbers
@@ -39,8 +39,8 @@ How to make it easier for users to use the IPFS services provided by nodes?
 In response to the above problems, Crust has devised an architecture with the following 3 layers:
 
 MPoW (Meaningful Proof of Work) - The low-trust/zero-trust storage proof layer to inspect and prove storage work of miners.
-GPoS (Guaranteed Proof of Stake) - The PoS-derived consensus layer that requires nodes to provide storage proof to get staking quota. 
-DSM (Decentralized Storage Market) - It enables users to place storage orders on the chain, to get their data stored and distributed on Crust Network.
+[GPoS](https://wiki.crust.network/docs/en/GPoS) (Guaranteed Proof of Stake) - The PoS-derived consensus layer that requires nodes to provide storage proof to get staking quota. 
+[DSM](https://wiki.crust.network/docs/en/DSM) (Decentralized Storage Market) - It enables users to place storage orders on the chain, to get their data stored and distributed on Crust Network.
 
 <img src="./images/case-studies/img-crust-nodes.png" alt="Crust high-level architecture">
 
@@ -50,11 +50,11 @@ The 3-layer architecture guarantees that nodes that provide IPFS services can ob
 
 #### Uniswap
 
-Uniswap has enabled decentralized deployment of its frontend interface by integrating Crust Network into its release workflow. Integration with Crust enables the full decentralization of storage and distribution, disengaging from the dependence of centralized pinning services. For details, please see Decentralized Uniswap Interface Hosting on IPFS.
+[Uniswap](https://app.uniswap.org) has enabled decentralized deployment of its frontend interface by integrating Crust Network into its release workflow. Integration with Crust enables the full decentralization of storage and distribution, disengaging from the dependence of centralized pinning services. For details, please see Decentralized Uniswap Interface Hosting on IPFS.
 
 #### Polkadot
 
-Polkadot also integrates Crust, the Polkadot.js is now hosted on Crust Network in a decentralized manner.
+Polkadot also integrates Crust, the [Polkadot.js](https://dotapps.io/) is now hosted on Crust Network in a decentralized manner.
 
 ## IPFS benefits
 
@@ -80,7 +80,7 @@ Crust DSM (Decentralized Storage Market) is using IPFS as a fundamental data sto
 
 As a data storage system, apart from the storage market, DSM also takes the responsibility of incentivizing the nodes to provide retrieval service. Therefore, DSM includes another layer of incentives to encourage nodes to support data retrieval:
 
-* The data retrieval mechanism in Crust Network follows the IPFS BitSwap Protocol. By such, data can be shared and exchanged among the nodes of the entire IPFS Network.
+* The data retrieval mechanism in Crust Network follows the IPFS [BitSwap](https://docs.ipfs.io/concepts/bitswap/) Protocol. By such, data can be shared and exchanged among the nodes of the entire IPFS Network.
 * Crust Network provides a highly efficient retrieval pointing mechanism. Enabled by the BitSwap protocol and using a “credit” mechanism, nodes can resist those “free-riding” nodes that only seek to pull data without providing retrieval services. Building on the BitSwap credit mechanism, Crust Network makes the access to trusted on-chain information available for nodes, further boosting the Crust Network credit mechanism.
 * Crust Network nodes provide reliable retrieval services. The initial earning of Crust Network nodes comes from Network Staking——GPoS, and storing more user files can translate into increased effective stake limits for nodes. Driven by such a bonus and coupled with Crust Network credit mechanism, nodes offer to provide corresponding retrieval services so as to receive more user files.
 
