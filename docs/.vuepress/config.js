@@ -105,6 +105,7 @@ module.exports = {
                 children: [
                   ['/concepts/case-study-arbol', 'Arbol'],
                   ['/concepts/case-study-audius', 'Audius'],
+                  ['/concepts/case-study-crust', 'Crust'],
                   ['/concepts/case-study-fleek', 'Fleek'],
                   ['/concepts/case-study-likecoin', 'LikeCoin'],
                   ['/concepts/case-study-morpheus', 'Morpheus.Network'],
