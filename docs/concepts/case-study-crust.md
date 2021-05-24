@@ -4,6 +4,12 @@ description: Explore some helpful use cases, ideas, and examples for the InterPl
 ---
 # Case study: Crust Network
 
+::: callout
+**"IPFS has the most optimal technology and ecology among the many distributed file protocols."**
+
+_&mdash; Bova Chen, CEO, Crust_
+:::
+
 ## Overview
 
 ::: right
@@ -89,6 +95,12 @@ As a data storage system, apart from the storage market, DSM also takes the resp
 Crust brings thousands of nodes to IPFS, which provide stable storage and retrieval services. In addition to the scenario of **website hosting** that has been implemented already, Crust can be used in a wide range of scenarios, including:
 
 * **General off-chain data storage**. Some blockchain-based decentralized applications, such as NFT and decentralized social platforms, involve a large amount of user data, far beyond the on-chain storage capacity. Based on Crust + IPFS, developers can provide general off-chain data storage services for these applications.
+
+::: callout
+**"We are looking into an initial storage solution as a parachain. Whatever we do it'll likely be integrated into IPFS"**
+
+_&mdash; Gavin Wood, Founder, Polkadot_
+:::
 
 * **Accelerated content delivery**. Developers are able to build P2P content delivery network (CDN) services with Crust + IPFS. Crust Network incentivizes the nodes to spontaneously distribute CDN data and play the role of CDN edge nodes to accelerate the data transmission for CDN users.
 Secured cloud storage
