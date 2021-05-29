@@ -20,9 +20,9 @@ No matter your area of specialty or level of expertise, there are many [ways to 
 
 The official [IPFS forums](https://discuss.ipfs.io/) are the primary home of IPFS-related discussion. Join the conversation on [https://discuss.ipfs.io](https://discuss.ipfs.io) for everything from technical questions, project brainstorming, talk on IPFS use cases, and more.
 
-## IRC
+## Chat
 
-IRC fan? Here are [all our channels](/community/irc/). New to IRC? There's getting-started advice for you here, too.
+Casual chat fan? Here are [all our channels](/community/chat/). There's getting-started advice for you here, too.
 
 ## ProtoSchool workshops
 
