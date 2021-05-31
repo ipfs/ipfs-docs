@@ -11,6 +11,10 @@ description: How to connect with the IPFS community using synchronous chat.
 If synchronous chat is your go-to for discussions and help on dev topics, there are several Matrix channels on `ipfs.io` dedicated to IPFS and related topic, it’s a great place for live chat:
 
 - Use [`#lobby:ipfs.io`](https://app.element.io/#/room/#lobby:ipfs.io) for general IPFS usage and community chat.
+- Topical rooms:
+  - [`#ipld:ipfs.io`](https://app.element.io/#/room/#ipld:ipfs.io)
+  - [`#libp2p:ipfs.io`](https://app.element.io/#/room/#libp2p:ipfs.io)
+  - Want to chat Filecoin? [Join the community here](https://github.com/filecoin-project/community#join-the-community).
 
 ## Discord
 
