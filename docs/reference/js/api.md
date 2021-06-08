@@ -26,7 +26,7 @@ Whenever reasonable, we recommend the second method (interacting with a separate
 
 Both the `js-ipfs` and `js-ipfs-http-client` libraries work in browsers, but each has some special considerations noted in their READMEs.
 
-You may also be interested in the IPFS browser extension, [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion). If a visitor to your site has it installed, it will make a global [`window.ipfs`](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/docs/window.ipfs.md) object available to your JavaScript. This object has the same interface as `js-ipfs-api`, but comes with much better security controls and lets you use IPFS without loading any special libraries.
+Until late 2019, the IPFS browser extension, [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) exposed a global [`window.ipfs`](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/docs/window.ipfs.md) object to web pages. This object had the same interface as `js-ipfs-api`, but came with much better security controls and let you use IPFS without loading any special libraries.  However, it was disabled due to reasons explained in [ipfs/ipfs-companion#777](https://github.com/ipfs/ipfs-companion/pull/777).
 
 ## JS API reference
 

@@ -50,6 +50,6 @@ Are you looking for inspiration? You can find a huge collection of awesome commu
 
 ## Be part of the IPFS community
 
-IPFS has a bustling community of designers, developers, writers, and activists who are all helping to improve the project. You can join in by attending a local meetup, helping out at a conference, chatting online through the `#ipfs` [IRC channel](/community/irc), or joining a discussion in [the IPFS forum](https://discuss.ipfs.io/).
+IPFS has a bustling community of designers, developers, writers, and activists who are all helping to improve the project. You can join in by attending a local meetup, helping out at a conference, chatting online through [Matrix channels](/community/chat), or joining a discussion in [the IPFS forum](https://discuss.ipfs.io/).
 
 [Find out more in the Community section →](/community/)
