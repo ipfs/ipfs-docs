@@ -48,7 +48,7 @@ If you cloned the Random Planet Facts repo above, you don't need to follow this 
 
 ## Domain names
 
-Fleek allows you to configure your domain names with your sites on IPFS! No more wrangling with DNSlink or IPNS. You can even buy domains directly through Fleek. Click **Add or Buy Domain** to get started. [Check out the Fleek documentation for more information on how to get your domain linked up →](https://docs.fleek.co/hosting/domain-management/)
+Fleek allows you to configure your domain names with your sites on IPFS! No more wrangling with DNSlink or IPNS. You can even buy domains directly through Fleek. Click **Add or Buy Domain** to get started. [Check out the Fleek documentation for more information on how to get your domain linked up →](https://docs.fleek.co/domain-management/overview/)
 
 ![A black button leading to the domain section of Fleek](./images/introducing-fleek/add-or-buy-domain.png)
 
