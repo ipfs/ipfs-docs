@@ -119,7 +119,7 @@ While these instructions are specific to Ubuntu, they will likely work with most
 
 | Package Manager                                                                                                    | Command                      |
 | ------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
-| [Homebrew](https://formulae.brew.sh/formula/ipfs#default)                                                                    | `brew cask install ipfs`     |
+| [Homebrew](https://formulae.brew.sh/formula/ipfs#default)                                                                    | `brew install ipfs --cask`     |
 | [Chocolatey](https://community.chocolatey.org/packages/ipfs)                                                         | `choco install ipfs-desktop` |
 | [Scoop](https://github.com/lukesampson/scoop-extras/blob/master/bucket/ipfs-desktop.json) maintained by [@NatoBoram](https://github.com/NatoBoram) | `scoop bucket add extras && scoop install ipfs-desktop` |
 | [AUR](https://aur.archlinux.org/packages/ipfs-desktop/) maintained by [@alexhenrie](https://github.com/alexhenrie) | `ipfs-desktop`               |
