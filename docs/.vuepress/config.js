@@ -169,6 +169,7 @@ module.exports = {
                   '/how-to/modify-bootstrap-list',
                   '/how-to/nat-configuration',
                   '/how-to/default-profile',
+                  '/how-to/run-ipfs-inside-docker',
                   [
                     'https://github.com/ipfs/js-ipfs/tree/master/examples/custom-ipfs-repo',
                     'Customize an IPFS repo'
