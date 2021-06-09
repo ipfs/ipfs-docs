@@ -1,9 +1,11 @@
 ---
 title: Run IPFS inside Docker
-description: Lorem ipsum.
+description: You can run IPFS inside Docker to simplify your deployment processes, as well as horizontally scale your IPFS infrastructure.
 ---
 
 # Run IPFS inside Docker 
+
+You can run IPFS inside Docker to simplify your deployment processes, as well as horizontally scale your IPFS infrastructure.
 
 1. Grab the IPFS docker image hosted at [hub.docker.com/r/ipfs/go-ipfs](https://hub.docker.com/r/ipfs/go-ipfs/).
 1. To make files visible inside the container, you need to mount a host directory
