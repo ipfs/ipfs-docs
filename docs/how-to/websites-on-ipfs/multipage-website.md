@@ -181,7 +181,7 @@ Now that you've got the project ready, we can add things to IPFS using the IPFS 
 ## Publish to IPNS
 
 :::tip This step is optional
-This step is optional but gives you some valuable insight into how IPNS and IPFS work together.
+You don't have to complete this section. However, it offers some valuable insight into how IPNS and IPFS work together.
 :::
 
 Using CIDs to get content is great; it means that the user always gets the content that they want. But what if the user doesn't know _what_ they're looking for and just wants the _latest_ version of that content? This is where IPNS comes in handy.
@@ -190,26 +190,26 @@ Instead of sharing the CID of your website, you publish the root CID of your web
 
 1. Open a terminal window, and navigate to where your multi-page project is saved:
 
-    "`shell
+    ```shell
     cd ~/Code/random-planet-facts
     ```
 
 1. Double check that this project has been added to IPFS by running `ipfs add -r .`:
 
-    "`shell
+    ```shell
     ipfs add -r .
 
     > added QmP4KNjSaVCR3jTxi8nsMq3DDqGyVUXyc5vfij31J3B3vr multi-page-first-step/about.html
     > added QmYp2jy5t7knzwhkqPJ68amuAqLYJ3DG5vvxgJW6bFdQwN multi-page-first-step/index.html
     > added QmW8U3NEHx3p73Nj9645sGnGa8XzR43rQh3Kd52UKncWMo multi-page-first-step/moon-logo.png
     > added QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR multi-page-first-step
- 12.65 KiB / 12.65 KiB [=====================================================] 100.00%
+    > 12.65 KiB / 12.65 KiB [=====================================================] 100.00%
     ```
 
 1. Copy the last CID `QmchJPQN...` from the output of the `ipfs add` command.
 1. Publish your project to IPNS using `ipfs name publich /ipfs/QMchJPQN...`. Replace `QMchJPQN...` with the CID you got in the last step:
 
-    "`shell
+    ```shell
     ipfs name publish /ipfs/QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR
 
     > Published to k51qzi5uqu5dh9gnl66grpnpuhj245ha1xq9ajtmuf7swe847zovdg1t9a0xiz: /ipfs/QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR
@@ -218,26 +218,23 @@ Instead of sharing the CID of your website, you publish the root CID of your web
     The `k51qzi...` is your IPFS installation's key! This is what you can use to point people to your content.
 
 1. You should now be able to view your project by going to `https://gateway.ipfs.io/ipns/k51qzi...`. Replace `k51qzi...` with the output from the previous step.
+1. Whenever you make any changes to your project, simply re-add your content to IPFS and publish it to IPNS:
 
-Whenever you make any changes to your project, simply re-add your content to IPFS and publish it to IPNS:
+    ```shell
+    ipfs add -r .
 
-"`shell
-ipfs add -r .
+    > ...
+    > added QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR multi-page-first-step
+    12.65 KiB / 12.65 KiB [=====================================================] 100.00%
 
-> ...
-> added QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR multi-page-first-step
-12.65 KiB / 12.65 KiB [=====================================================] 100.00%
+    ipfs name publish QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR
 
-ipfs name publish QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR
+    > Published to k51qzi5uqu5dh9gnl66grpnpuhj245ha1xq9ajtmuf7swe847zovdg1t9a0xiz: /ipfs/QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR
+    ```
 
-> Published to k51qzi5uqu5dh9gnl66grpnpuhj245ha1xq9ajtmuf7swe847zovdg1t9a0xiz: /ipfs/QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR
-```
+    Now, just head back to the `https://gateway.ipfs.io/ipns/k51qzi...` link to view your updates!
 
-Now, just head back to the `https://gateway.ipfs.io/ipns/k51qzi...` link to view your updates!
-
-:::tip Learn more about IPNS
-This is just the tip of the iceberg when it comes to IPNS. [Check out the IPNS page to learn more ->](../../concepts/ipns)
-:::
+This is just the tip of the iceberg when it comes to IPNS. [Check out the IPNS page to learn more →](../../concepts/ipns)
 
 ## Up next
 
