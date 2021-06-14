@@ -5,11 +5,11 @@ description: Learn how to host a website with multiple pages and external assets
 
 # Multi-page website
 
-In this guide you will learn how to host a website with multiple pages and external assets on IPFS. This tutorial is the second in a series of tutorials aimed at teaching web developers how to build websites and applications using IPFS. You don't need to have completed the previous tutorial to understand what's going on here, but if you're new to the IPFS ecosystem it's a good idea to follow through the [single page website guide](/how-to/websites-on-ipfs/single-page-website) before you start this one. It will give you a solid foundation to work off.
+In this guide, you will learn how to host a website with multiple pages and external assets on IPFS. This tutorial is the second in a series of tutorials aimed at teaching web developers how to build websites and applications using IPFS. You don't need to have completed the previous tutorial to understand what's going on here, but if you're new to the IPFS ecosystem, it's a good idea to follow through the [single page website guide](/how-to/websites-on-ipfs/single-page-website) before you start this one. It will give you a solid foundation to work off.
 
 ## Prerequisites
 
-If you followed the previous tutorial, you will already have the IPFS Desktop application installed. If not, you can grab it from the [IPFS Shipyard](https://github.com/ipfs-shipyard/ipfs-desktop).
+If you followed the previous tutorial, you would already have the IPFS Desktop application installed. If not, you can grab it from the [IPFS Shipyard](https://github.com/ipfs-shipyard/ipfs-desktop).
 
 ## Project set up
 
@@ -66,7 +66,7 @@ Before we dig into IPFS, let's first create the files we'll need for this mini-p
           'It takes Venus 225 days to orbit the sun.',
           'Venus was first discovered by 17th century Babylonian astronomers.',
           'Venus is nearly as big as the Earth with a diameter of 12,104 km.',
-          'The Earth’s rotation is gradually slowing.',
+          'The Earth's rotation is gradually slowing.',
           'There is only one natural satellite of the planet Earth, the moon.',
           'Earth is the only planet in our solar system not named after a god.',
           'The Earth is the densest planet in the solar system.',
@@ -91,8 +91,8 @@ Before we dig into IPFS, let's first create the files we'll need for this mini-p
           'The average temperatue of Neptune is about -201 °C.',
           'There is a 1:20 million scale model of the solar system in Sweden.',
           'The gap between the Earth and our moon is bigger than the diameters of all the planets combined.',
-          'The first accurate calculation of the speed of light was using Jupiter’s moons',
-          'Jupiter’s magnetic field is believed to be a result of rapidly spinning metallic hydrogen at the core, and is ~10x stronger than the Earth’s.',
+          'The first accurate calculation of the speed of light was using Jupiter's moons',
+          'Jupiter's magnetic field is believed to be a result of rapidly spinning metallic hydrogen at the core, and is ~10x stronger than the Earth's.',
           'Venus spins backwards.',
           'Uranus spins sideways, relative to the ecliptic plane of the solar system.',
           'It is easier to reach Pluto or escape the solar system from Earth than being able to <i>land</i> on the Sun.'
@@ -167,7 +167,7 @@ You should now have a folder that looks something like this:
 Now that you've got the project ready, we can add things to IPFS using the IPFS Desktop application. Instead of adding the files individually, we can add the whole project folder, and the IPFS Desktop app will take care of the rest for us!
 
 1. Open the IPFS Desktop application and select **Add** > **Folder**.
-1. Select the `multi-page-website` folder. Once it's loaded you should be able to see the folder within the application:
+1. Select the `multi-page-website` folder. Once it's loaded, you should be able to see the folder within the application:
 
    ![The IPFS Desktop application with the multi-page project folder showing.](./images/multipage-website/ipfs-desktop-with-multi-page-folder-showing.png)
 
@@ -176,27 +176,27 @@ Now that you've got the project ready, we can add things to IPFS using the IPFS 
 
    ![Random space facts open in a Firefox browser window.](./images/multipage-website/website-open-in-firefox.png)
 
-   Try clicking the link to the about page. You should be able to browse between the pages no problem.
+   Try clicking the link to the about page. You should be able to browse between the pages with no problem.
 
 ## Publish to IPNS
 
 :::tip This step is optional
-This step is optional, but gives you some valuable insight into how IPNS and IPFS work together.
+This step is optional but gives you some valuable insight into how IPNS and IPFS work together.
 :::
 
-Using CIDs to get content is great; it means that the user always gets the content that they want. But what if the user doesn't know _what_ they're looking for, and just wants the _latest_ version of that content? This is where IPNS comes in handy.
+Using CIDs to get content is great; it means that the user always gets the content that they want. But what if the user doesn't know _what_ they're looking for and just wants the _latest_ version of that content? This is where IPNS comes in handy.
 
-Instead of sharing the CID of your website, you publish the root CID of your website to IPNS, and then share the _key_ you get from IPNS.
+Instead of sharing the CID of your website, you publish the root CID of your website to IPNS and then share the _key_ you get from IPNS.
 
 1. Open a terminal window, and navigate to where your multi-page project is saved:
 
-    ```shell
+    "`shell
     cd ~/Code/random-planet-facts
     ```
 
 1. Double check that this project has been added to IPFS by running `ipfs add -r .`:
 
-    ```shell
+    "`shell
     ipfs add -r .
 
     > added QmP4KNjSaVCR3jTxi8nsMq3DDqGyVUXyc5vfij31J3B3vr multi-page-first-step/about.html
@@ -209,7 +209,7 @@ Instead of sharing the CID of your website, you publish the root CID of your web
 1. Copy the last CID `QmchJPQN...` from the output of the `ipfs add` command.
 1. Publish your project to IPNS using `ipfs name publich /ipfs/QMchJPQN...`. Replace `QMchJPQN...` with the CID you got in the last step:
 
-    ```shell
+    "`shell
     ipfs name publish /ipfs/QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR
 
     > Published to k51qzi5uqu5dh9gnl66grpnpuhj245ha1xq9ajtmuf7swe847zovdg1t9a0xiz: /ipfs/QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR
@@ -219,9 +219,9 @@ Instead of sharing the CID of your website, you publish the root CID of your web
 
 1. You should now be able to view your project by going to `https://gateway.ipfs.io/ipns/k51qzi...`. Replace `k51qzi...` with the output from the previous step.
 
-Whenever you make any changes to your project simple re-add your content to IPFS and publish it to IPNS:
+Whenever you make any changes to your project, simply re-add your content to IPFS and publish it to IPNS:
 
-```shell
+"`shell
 ipfs add -r .
 
 > ...
@@ -233,6 +233,13 @@ ipfs name publish QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR
 > Published to k51qzi5uqu5dh9gnl66grpnpuhj245ha1xq9ajtmuf7swe847zovdg1t9a0xiz: /ipfs/QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR
 ```
 
+Now, just head back to the `https://gateway.ipfs.io/ipns/k51qzi...` link to view your updates!
+
+:::tip Learn more about IPNS
+This is just the tip of the iceberg when it comes to IPNS. [Check out the IPNS page to learn more ->](../../concepts/ipns)
+:::
+
 ## Up next
 
-In the next tutorial we'll look at [linking a domain name to your site!](/how-to/websites-on-ipfs/link-a-domain)
+In the next tutorial, we'll look at [linking a domain name to your site!](/how-to/websites-on-ipfs/link-a-domain)
+
