@@ -207,7 +207,7 @@ Instead of sharing the CID of your website, you publish the root CID of your web
     ```
 
 1. Copy the last CID `QmchJPQN...` from the output of the `ipfs add` command.
-1. Publish your project to IPNS using `ipfs name publich /ipfs/QMchJPQN...`. Replace `QMchJPQN...` with the CID you got in the last step:
+1. Publish your project to IPNS using `ipfs name publish /ipfs/QMchJPQN...`. Replace `QMchJPQN...` with the CID you got in the last step:
 
     ```shell
     ipfs name publish /ipfs/QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR
@@ -234,7 +234,7 @@ Instead of sharing the CID of your website, you publish the root CID of your web
 
     Now, just head back to the `https://gateway.ipfs.io/ipns/k51qzi...` link to view your updates!
 
-This is just the tip of the iceberg when it comes to IPNS. [Check out the IPNS page to learn more →](../../concepts/ipns)
+This is just the tip of the iceberg when it comes to IPNS. [Check out the IPNS page to learn more →](../../../concepts/ipns)
 
 ## Up next
 
