@@ -46,11 +46,11 @@ Org and repo links for the top-level projects shipped as part of the IPFS projec
 ### IPFS tools and products
 
 - [IPFS Cluster](https://github.com/ipfs/ipfs-cluster): Automatically allocate, replicate, and track your data as a global pinset distributed among a swarm of peers.
-- [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion): The IPFS web browser extension.
-- [IPFS Web UI](https://github.com/ipfs/webui): An easy-to-use web interface for IPFS nodes.
-- [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop): Standalone IPFS app with an easy-to-use node interface, plus menubar/tray shortcuts
+- [IPFS Companion](https://github.com/ipfs/ipfs-companion): The IPFS web browser extension.
+- [IPFS Web UI](https://github.com/ipfs/ipfs-webui): An easy-to-use web interface for IPFS nodes.
+- [IPFS Desktop](https://github.com/ipfs/ipfs-desktop): Standalone IPFS app with an easy-to-use node interface, plus menubar/tray shortcuts
 - [ipfs-gui](https://github.com/ipfs/ipfs-gui): Coordinating development, user experience, and maintenance of IPFS GUIs.
-- [i18n](https://github.com/ipfs/i18n): The IPFS Translation Project, crowdsourcing translations of IPFS GUIs and websites.
+- [i18n](https://github.com/ipfs-shipyard/i18n): The IPFS Translation Project, crowdsourcing translations of IPFS GUIs and websites.
 - [IPFS Shipyard](https://github.com/ipfs-shipyard): GitHub org showcasing incubated projects of all types created by the global IPFS community.
 - [Testground](https://github.com/testground/testground): A platform for testing, benchmarking, and simulating distributed and p2p systems at scale.
 
