@@ -16,7 +16,7 @@ There are two main JavaScript libraries for working with IPFS. Both work in Node
 
 - [JS-IPFS](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs) is a full implementation of IPFS, similar to [Go-IPFS](https://github.com/ipfs/go-ipfs). You can use it either as a command-line application or as a library to start an IPFS node directly in your program.
 
-- The [JS-IPFS HTTP client](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) is a smaller library that controls an IPFS node that is already running via its [HTTP API](/reference/http/api/). JS-IPFS actually uses this library internally if it detects that another node is already running on your computer. You can also interact with the [HTTP API](/reference/http/api/) directly using `fetch()` in a browser or a module like `request` in Node.js, but using this library can be much more convenient.
+- The [JS-IPFS HTTP client](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) is a smaller library that controls an IPFS node that is already running via its [HTTP API](../http/api.md). JS-IPFS actually uses this library internally if it detects that another node is already running on your computer. You can also interact with the [HTTP API](../http/api.md) directly using `fetch()` in a browser or a module like `request` in Node.js, but using this library can be much more convenient.
 
 Both libraries have the same [interface for using all the major IPFS commands](https://github.com/ipfs/js-ipfs/tree/master/docs/core-api).
 
