@@ -32,7 +32,7 @@ However, the exact same input generates the following output using **SHA-256**:
 
 Notice that the second hash is longer than the first one. This is because SHA-1 creates a 160-bit hash, while SHA-256 creates a 256-bit hash. The prepended `0x` indicates that the following hash is represented as a hexadecimal number.
 
-Hashes can be represented in different bases (`base2`, `base16`, `base32`, etc.). In fact, IPFS makes use of that as part of its [content identifiers](/concepts/content-addressing/) and supports multiple base representations at the same time, using the [Multibase](https://github.com/multiformats/multibase) protocol.
+Hashes can be represented in different bases (`base2`, `base16`, `base32`, etc.). In fact, IPFS makes use of that as part of its [content identifiers](content-addressing.md) and supports multiple base representations at the same time, using the [Multibase](https://github.com/multiformats/multibase) protocol.
 
 For example, the SHA-256 hash of "Hello world" from above can be represented as base 32 as:
 
@@ -51,7 +51,7 @@ Cryptographic hashes come with a couple of very important characteristics:
 
 These features also mean we can use a cryptographic hash to identify any piece of data: the hash is unique to the data we calculated it from and it's not too long so sending it around the network doesn't take up a lot of resource. A hash is a fixed length, so the SHA-256 hash of a one-gigabyte video file is still only 32 bytes. 
 
-That's critical for a distributed system like IPFS, where we want to be able to store and retrieve data from many places. A computer running IPFS can ask all the peers it's connected to whether they have a file with a particular hash and, if one of them does, they send back the whole file. Without a short, unique identifier like a cryptographic hash, that wouldn't be possible. This technique is called [content addressing](/concepts/content-addressing/) — because the content itself is used to form an address, rather than information about the computer and disk location it's stored at.
+That's critical for a distributed system like IPFS, where we want to be able to store and retrieve data from many places. A computer running IPFS can ask all the peers it's connected to whether they have a file with a particular hash and, if one of them does, they send back the whole file. Without a short, unique identifier like a cryptographic hash, that wouldn't be possible. This technique is called [content addressing](content-addressing.md) — because the content itself is used to form an address, rather than information about the computer and disk location it's stored at.
 
 ## Content identifiers are not file hashes
 
@@ -101,4 +101,4 @@ ubuntu-20.04.1-desktop-amd64.iso: FAILED
 shasum: WARNING: 1 computed checksum did NOT match
 ```
 
-As we can see, the hash included in the CID does NOT match the hash of the input file `ubuntu-20.04.1-desktop-amd64.iso`. To understand what the hash contained in the CID is, we must understand how IPFS stores files. IPFS uses a [directed acyclic graph (DAG)](/concepts/merkle-dag/) to keep track of all the data stored in IPFS. A CID identifies one specific node in this graph. This identifier is the result of hashing the node's contents using a cryptographic hash function like `SHA256`.
+As we can see, the hash included in the CID does NOT match the hash of the input file `ubuntu-20.04.1-desktop-amd64.iso`. To understand what the hash contained in the CID is, we must understand how IPFS stores files. IPFS uses a [directed acyclic graph (DAG)](merkle-dag.md) to keep track of all the data stored in IPFS. A CID identifies one specific node in this graph. This identifier is the result of hashing the node's contents using a cryptographic hash function like `SHA256`.
