@@ -14,7 +14,7 @@ For a deep dive into how Content Identifiers (CIDs) are constructed, take a look
 
 A _content identifier_, or CID, is a label used to point to material in IPFS. It doesn't indicate _where_ the content is stored, but it forms a kind of address based on the content itself. CIDs are short, regardless of the size of their underlying content.
 
-CIDs are based on the content’s [cryptographic hash](/concepts/hashing/). That means:
+CIDs are based on the content’s [cryptographic hash](hashing.md). That means:
 
 - Any difference in the content will produce a different CID and
 - The same content added to two different IPFS nodes using the same settings will produce _the same CID_.
@@ -23,7 +23,7 @@ IPFS uses the `sha-256` hashing algorithm by default, but there is support for m
 
 ## Identifier formats
 
-CIDs can take a few different forms with different encoding bases or CID versions. Many of the existing IPFS tools still generate v0 CIDs, although the `files` ([Mutable File System](/concepts/file-systems/#mutable-file-system-mfs)) and `object` operations now use CIDv1 by default.
+CIDs can take a few different forms with different encoding bases or CID versions. Many of the existing IPFS tools still generate v0 CIDs, although the `files` ([Mutable File System](file-systems.md#mutable-file-system-mfs)) and `object` operations now use CIDv1 by default.
 
 ### Version 0 (v0)
 
@@ -43,7 +43,7 @@ These leading identifiers also provide forward-compatibility, supporting differe
 
 You can use the first few bytes of the CID to interpret the remainder of the content address and know how to decode the content after being fetched from IPFS. For more details, check out the [CID specification](https://github.com/ipld/cid). It includes a [decoding algorithm](https://github.com/ipld/cid/blob/ef1b2002394b15b1e6c26c30545fd485f2c4c138/README.md#decoding-algorithm) and links to existing software implementations for decoding CIDs.
 
-If you can't decide between CIDv0 and CIDv1, consider choosing CIDv1 for your new project and opt in by passing a version flag (`ipfs add --cid-version 1`). This is more future-proof and [safe for use in browser contexts](/how-to/address-ipfs-on-web/#subdomain-gateway).
+If you can't decide between CIDv0 and CIDv1, consider choosing CIDv1 for your new project and opt in by passing a version flag (`ipfs add --cid-version 1`). This is more future-proof and [safe for use in browser contexts](../how-to/address-ipfs-on-web.md#subdomain-gateway).
 
 The IPFS project will switch to CIDv1 as the new default in the near future.
 
@@ -57,7 +57,7 @@ Check out ProtoSchool's [Anatomy of a CID](https://proto.school/anatomy-of-a-cid
 ## CID conversion
 
 Converting a CID from v0 to v1 enables it to be represented in multibase encodings.
-The default for CIDv1 is the case-insensitive `base32`, but use of the shorter `base36` is encouraged for IPNS names to ensure same text representation on [subdomains](/how-to/address-ipfs-on-web/#subdomain-gateway).
+The default for CIDv1 is the case-insensitive `base32`, but use of the shorter `base36` is encouraged for IPNS names to ensure same text representation on [subdomains](../how-to/address-ipfs-on-web.md#subdomain-gateway).
 
 ### v0 to v1
 
@@ -130,7 +130,7 @@ Use it as-is (it is a [valid CID](https://ipfs.io/ipfs/f01701220c3c4733ec8affd06
 ```
 
 ::: tip
-[Subdomain gateways](/how-to/address-ipfs-on-web/#subdomain-gateway) convert paths with custom bases like base16 to base32 or base36, in an effort to fit a CID in a DNS label:
+[Subdomain gateways](../how-to/address-ipfs-on-web.md#subdomain-gateway) convert paths with custom bases like base16 to base32 or base36, in an effort to fit a CID in a DNS label:
 - [dweb.link/ipfs/f01701220c3c4733ec8affd06cf9e9ff50ffc6bcd2ec85a6170004bb709669c31de94391a](https://dweb.link/ipfs/f01701220c3c4733ec8affd06cf9e9ff50ffc6bcd2ec85a6170004bb709669c31de94391a)
   returns a HTTP 301 redirect:
   → [bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi.ipfs.dweb.link](https://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi.ipfs.dweb.link/)
