@@ -30,11 +30,11 @@ Protect yourself from single-point-of-failure risks and benefit from decentraliz
 
 Want to know more about the decentralized web (Dweb) and how it's changing the internet? These resources will give you a clearer understanding of the Dweb movement, and how it's improving the world:
 
-- [What is IPFS](/concepts/what-is-ipfs/)
-- [Peer-to-peer sharing](/concepts/dht/)
-- [Content-addressed data](/concepts/content-addressing/)
+- [What is IPFS](concepts/what-is-ipfs.md)
+- [Peer-to-peer sharing](concepts/dht.md)
+- [Content-addressed data](concepts/content-addressing.md)
 
-[See more guides in the Concepts section →](/concepts/)
+[See more guides in the Concepts section →](concepts/README.md)
 
 ::: callout
 ProtoSchool's self-guided [interactive tutorials](https://proto.school/tutorials) are designed to introduce you to decentralized web concepts, protocols, and tools. Explore js-ipfs APIs by completing browser-based coding challenges in ProtoSchool's [IPFS course](https://proto.school/course/ipfs), or explore code-free intros to essential dweb concepts and related projects in the IPFS ecosystem.
@@ -50,6 +50,6 @@ Are you looking for inspiration? You can find a huge collection of awesome commu
 
 ## Be part of the IPFS community
 
-IPFS has a bustling community of designers, developers, writers, and activists who are all helping to improve the project. You can join in by attending a local meetup, helping out at a conference, chatting online through [Matrix channels](/community/chat), or joining a discussion in [the IPFS forum](https://discuss.ipfs.io/).
+IPFS has a bustling community of designers, developers, writers, and activists who are all helping to improve the project. You can join in by attending a local meetup, helping out at a conference, chatting online through [Matrix channels](community/chat.md), or joining a discussion in [the IPFS forum](https://discuss.ipfs.io/).
 
-[Find out more in the Community section →](/community/)
+[Find out more in the Community section →](community/index.md)
