@@ -14,7 +14,7 @@ Sign up for the IPFS Weekly newsletter to get project updates, community news, e
 
 ## Ways to contribute
 
-No matter your area of specialty or level of expertise, there are many [ways to contribute](/community/contribute/ways-to-contribute/) to IPFS and make a real difference in the IPFS community at large.
+No matter your area of specialty or level of expertise, there are many [ways to contribute](contribute/ways-to-contribute.md) to IPFS and make a real difference in the IPFS community at large.
 
 ## IPFS forums
 
@@ -22,7 +22,7 @@ The official [IPFS forums](https://discuss.ipfs.io/) are the primary home of IPF
 
 ## Chat
 
-Casual chat fan? Here are [all our channels](/community/chat/). There's getting-started advice for you here, too.
+Casual chat fan? Here are [all our channels](chat.md). There's getting-started advice for you here, too.
 
 ## ProtoSchool workshops
 
@@ -34,7 +34,7 @@ IPFS meetups are also all over the world. [Find one close to you](https://www.me
 
 ## Social media
 
-We're in a lot of places. Here's [how to find them all](social-media) for your favorite platforms.
+We're in a lot of places. Here's [how to find them all](social-media.md) for your favorite platforms.
 
 ## Awesome IPFS
 
