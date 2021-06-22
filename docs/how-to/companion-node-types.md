@@ -13,7 +13,7 @@ IPFS Companion's preferences screen allows you to choose from several different 
 
 **If you're already running a local IPFS node, choose _External_.** If not, do one of the following:
 
-- [Install](/install) and run IPFS as an [external node](#external) (recommended).
+- [Install](../install/README.md) and run IPFS as an [external node](#external) (recommended).
 - Use a [native node](#native) built into your browser (Brave v1.19 or later only) or the [embedded node](#embedded) built into Companion.
 
 ## External
@@ -34,7 +34,7 @@ A good practice is to run your go-ipfs daemon on localhost (`127.0.0.1`), as it 
 You can get started with running a go-ipfs node on your local machine in several ways:
 
 - [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) installs and manages a local node for you, as well as offering an easy, convenient user interface for managing files and peers.
-- If you're comfortable with the command line and don't need the convenience of the IPFS Desktop UI, follow the directions in the [command line quick-start guide](/how-to/command-line-quick-start/).
+- If you're comfortable with the command line and don't need the convenience of the IPFS Desktop UI, follow the directions in the [command line quick-start guide](command-line-quick-start.md).
 - Docker fans can run and use go-ipfs from [inside a Docker container](https://github.com/ipfs/go-ipfs#running-ipfs-inside-docker).
 
 ## Native
