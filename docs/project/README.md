@@ -13,7 +13,7 @@ Want to know how it all began? Learn the [history of the IPFS project](/project/
 
 ## Repository guide
 
-IPFS is a big project, which means there are a lot of GitHub repos. If you're new to IPFS or just want a sense of what to check out first, use this quick guide to the most important and most frequently used [IPFS repositories](/project/repository-guide/).
+IPFS is a big project, which means there are a lot of GitHub repos. If you're new to IPFS or just want a sense of what to check out first, use this quick guide to the most important and most frequently used [IPFS repositories](repository-guide.md).
 
 ## Roadmap
 
