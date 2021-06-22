@@ -52,4 +52,4 @@ Are you looking for inspiration? You can find a huge collection of awesome commu
 
 IPFS has a bustling community of designers, developers, writers, and activists who are all helping to improve the project. You can join in by attending a local meetup, helping out at a conference, chatting online through [Matrix channels](community/chat.md), or joining a discussion in [the IPFS forum](https://discuss.ipfs.io/).
 
-[Find out more in the Community section →](community/index.md)
+[Find out more in the Community section →](community/README.md)
