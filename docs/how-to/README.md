@@ -14,13 +14,13 @@ No matter what you're looking to do with IPFS, you can find how-tos and tutorial
 
 See the site navigation menu for all our how-tos, organized by topic area, including favorites like these:
 
-- **Customize your install** by [configuring a node](/how-to/configure-node/), modifying the [bootstrap list](/how-to/modify-bootstrap-list/), and more
-- **Learn how to manage files** in IPFS with tutorials on concepts like [pinning](/how-to/pin-files/), how to [work with blocks](/how-to/work-with-blocks/), learning how to [troubleshoot file transfers](https://github.com/ipfs/go-ipfs/blob/master/docs/file-transfer.md), and understanding [working with large datasets](https://github.com/ipfs/archives/tree/master/tutorials/replicating-large-datasets)
+- **Customize your install** by [configuring a node](configure-node.md), modifying the [bootstrap list](modify-bootstrap-list.md), and more
+- **Learn how to manage files** in IPFS with tutorials on concepts like [pinning](pin-files.md), how to [work with blocks](work-with-blocks.md), learning how to [troubleshoot file transfers](https://github.com/ipfs/go-ipfs/blob/master/docs/file-transfer.md), and understanding [working with large datasets](https://github.com/ipfs/archives/tree/master/tutorials/replicating-large-datasets)
 - **See how to work with peers** using methods like [customizing libp2p bundles](https://github.com/ipfs/js-ipfs/tree/master/examples/custom-libp2p) and [using circuit relay](https://github.com/ipfs/js-ipfs/tree/master/examples/circuit-relaying)
-- **Understand website hosting** by starting with how to [host a simple single-page site](/how-to/websites-on-ipfs/single-page-website/)
+- **Understand website hosting** by starting with how to [host a simple single-page site](websites-on-ipfs/single-page-website.md)
 - **Work with blockchains** like the [Ethereum](https://github.com/ipfs/js-ipfs/tree/master/examples/explore-ethereum-blockchain) chain
 - **Learn how to build apps** on IPFS, starting with [exploring the IPFS API](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_C) and [making a basic libp2p app](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_B)
-- **Understand how IPFS works in the browser** by learning how to [address IPFS on the Web](/how-to/address-ipfs-on-web/), seeing how to [exchange files between nodes](https://github.com/ipfs/js-ipfs/tree/master/examples/browser-exchange-files), seeing [how IPFS can be used in your favorite browser tools and frameworks](/how-to/browser-tools-frameworks/), and more
+- **Understand how IPFS works in the browser** by learning how to [address IPFS on the Web](address-ipfs-on-web.md), seeing how to [exchange files between nodes](https://github.com/ipfs/js-ipfs/tree/master/examples/browser-exchange-files), seeing [how IPFS can be used in your favorite browser tools and frameworks](browser-tools-frameworks.md), and more
 
 ## Don't see what you're looking for?
 
