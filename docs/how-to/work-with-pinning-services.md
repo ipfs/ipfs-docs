@@ -5,7 +5,7 @@ description: Learn how to use or create remote pinning services with IPFS, the I
 
 # Work with remote pinning services
 
-Depending on how you use IPFS, you might find it helpful to use a **remote pinning service** instead of, or in addition to, pinning files on your local IPFS node. Whether it happens remotely or locally, **pinning** an item in IPFS identifies it as something you always wish to keep available, exempting it from the routine _garbage collection_ that IPFS does on infrequently-used items in order to efficiently manage storage space. [Learn more about local pinning →](/how-to/pin-files)
+Depending on how you use IPFS, you might find it helpful to use a **remote pinning service** instead of, or in addition to, pinning files on your local IPFS node. Whether it happens remotely or locally, **pinning** an item in IPFS identifies it as something you always wish to keep available, exempting it from the routine _garbage collection_ that IPFS does on infrequently-used items in order to efficiently manage storage space. [Learn more about local pinning →](pin-files.md)
 
 If you've got just one local IPFS node that's always running, local pinning may be all you need to ensure your important items are persisted and never garbage-collected. However, using a remote pinning service — or creating your own — might be useful to you if:
 
@@ -23,8 +23,6 @@ As of January 2021, [Pinata](https://pinata.cloud/) supports the [IPFS Pinning S
 ## Use an existing pinning service
 
 To add and use a remote pinning service directly in IPFS, you'll first need to have an account with that service. Once you've got an account, follow these steps to add and use it:
-
-<!-- TODO: GUI section can be uncommented after https://github.com/ipfs/ipfs-gui/issues/91 is closed
 
 ### IPFS Desktop or IPFS Web UI
 
@@ -122,7 +120,4 @@ If you're interested in creating your own pinning service for your own personal 
 You may also wish to read continuing details on how the API is evolving in the [Pinning Service API Spec GitHub repo](https://github.com/ipfs/pinning-services-api-spec), and be part of the discussion on its further development!
 :::
 
-
-<!-- TODO this call to action can be uncommented when https://github.com/ipfs/ipfs-gui/issues/91 is closed
 If you'd like to make your custom pinning service available to every IPFS user, we welcome your submissions. Once you're ready to open the doors to the public, make a PR against the [IPFS Web UI GitHub repo](https://github.com/ipfs-shipyard/ipfs-webui) in order to add it to the default list of pinning services that are displayed in the Desktop/Web UI Settings screen, and one of the core maintainers will be in touch.
--->
