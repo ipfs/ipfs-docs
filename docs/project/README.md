@@ -9,7 +9,7 @@ Curious about how it all got started, or where we're headed? Learn about the his
 
 ## History of IPFS
 
-Want to know how it all began? Learn the [history of the IPFS project](/project/history/).
+Want to know how it all began? Learn the [history of the IPFS project](/history/).
 
 ## Roadmap
 
@@ -25,7 +25,7 @@ Want to know the current state of your favorite IPFS feature? See the [current i
 
 ## Research
 
-Learn more about the exploratory research work and prototyping being done for inclusion in IPFS by exploring our [research repo on GitHub](https://github.com/ipfs/research).
+Learn more about the exploratory research work and prototyping being done for inclusion in IPFS by exploring our [research repo on GitHub](https://github.com/ipfs/notes).
 
 ## IPFS team org planning
 
@@ -33,11 +33,11 @@ See how IPFS team planning, management and coordination happens, and learn how t
 
 ## Related projects
 
-IPFS is a highly modular project that is itself made out of many different protocols and tools. Learn more about the [IPFS-related projects](/project/related-projects/) under the overall support of Protocol Labs.
+IPFS is a highly modular project that is itself made out of many different protocols and tools. Learn more about the [IPFS-related projects](/related-projects/) under the overall support of Protocol Labs.
 
 ## Contribute to IPFS
 
-Thousands of people contribute to IPFS from all over the world — and that can include you! No matter your areas of interest or expertise, there are a number of ways that you can make an impact on the future of the Internet by [contributing to IPFS](/project/contribute/).
+Thousands of people contribute to IPFS from all over the world — and that can include you! No matter your areas of interest or expertise, there are a number of ways that you can make an impact on the future of the Internet by [contributing to IPFS](/contribute/).
 
 ## Code of conduct
 
