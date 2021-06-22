@@ -38,7 +38,7 @@ A Block is a binary blob of data, identified by a [CID](#cid).
 
 ### Bootstrap Node
 
-A Bootstrap Node is a trusted peer on the IPFS network through which an IPFS node learns about other peers on the network. [More about Bootstrapping](https://docs.ipfs.io/how-to/modify-bootstrap-list/)
+A Bootstrap Node is a trusted peer on the IPFS network through which an IPFS node learns about other peers on the network. [More about Bootstrapping](../how-to/modify-bootstrap-list.md)
 
 ## C
 
@@ -48,15 +48,15 @@ The Concise Binary Object Representation (CBOR) is a data format based on [JSON]
 
 ### CID
 
-A Content Identifier (CID) is a self-describing content-addressed label used to point to the data stored in IPFS. It is the core identifier used for IPFS and [IPLD](#ipld). [More about CID](https://docs.ipfs.io/concepts/content-addressing/)
+A Content Identifier (CID) is a self-describing content-addressed label used to point to the data stored in IPFS. It is the core identifier used for IPFS and [IPLD](#ipld). [More about CID](../concepts/content-addressing.md)
 
 ### CID v0
 
-Version 0 (v0) of the IPFS content identifier. This CID is 46 characters in length, starting with "Qm". Uses a base 58-encoded multihash, very simple but much less flexible than newer CIDs. [More about CID v0](https://docs.ipfs.io/concepts/content-addressing/#version-0-v0)
+Version 0 (v0) of the IPFS content identifier. This CID is 46 characters in length, starting with "Qm". Uses a base 58-encoded multihash, very simple but much less flexible than newer CIDs. [More about CID v0](../concepts/content-addressing.md#version-0-v0)
 
 ### CID v1
 
-Version 1 (v1) of the IPFS content identifier. This CID version contains some leading identifiers which provide for forward-compatibility. Able to support different formats for future versions of CID. [More about CID v1](https://docs.ipfs.io/concepts/content-addressing/#version-1-v1)
+Version 1 (v1) of the IPFS content identifier. This CID version contains some leading identifiers which provide for forward-compatibility. Able to support different formats for future versions of CID. [More about CID v1](../concepts/content-addressing.md#version-1-v1)
 
 ### CRDT
 
@@ -66,7 +66,7 @@ A Conflict-Free Replicated Data Type (CRDT) is a type of specially-designed data
 
 ### Daemon
 
-A Daemon is a computer program that typically runs in the background. The IPFS daemon is how you take your node online to the IPFS network. [More about IPFS Daemon](https://docs.ipfs.io/how-to/command-line-quick-start/#take-your-node-online)
+A Daemon is a computer program that typically runs in the background. The IPFS daemon is how you take your node online to the IPFS network. [More about IPFS Daemon](../how-to/command-line-quick-start.md#take-your-node-online)
 
 ### DAG
 
@@ -78,11 +78,11 @@ The Datastore is the on-disk storage system used by an IPFS node. Configuration 
 
 ### DHT
 
-A Distributed Hash Table (DHT) is a distributed key-value store where keys are cryptographic hashes. In IPFS, each peer is responsible for a subset of the IPFS DHT. [More about DHT](https://docs.ipfs.io/concepts/dht/)
+A Distributed Hash Table (DHT) is a distributed key-value store where keys are cryptographic hashes. In IPFS, each peer is responsible for a subset of the IPFS DHT. [More about DHT](dht.md)
 
 ### Dialing
 
-Dialing is a function of the IPFS networking layer in [libp2p](#libp2p), wherein a connection is opened to another peer. Together, an implementation of dialing and [listening](#listening) forms a [transport](#transport").
+Dialing is a function of the IPFS networking layer in [libp2p](#libp2p), wherein a connection is opened to another peer. Together, an implementation of dialing and [listening](#listening) forms a [transport](#transport).
 
 ### DNSLink
 
@@ -122,7 +122,7 @@ Graphsync is an alternative content replication protocol under discussion, simil
 
 ### Hash
 
-A Cryptographic Hash is a function that takes some arbitrary input (content) and returns a fixed-length value. The exact same input data will always generate the same hash as output. There are numerous hash algorithms. [More about Hash](https://docs.ipfs.io/concepts/hashing/)
+A Cryptographic Hash is a function that takes some arbitrary input (content) and returns a fixed-length value. The exact same input data will always generate the same hash as output. There are numerous hash algorithms. [More about Hash](hashing.md)
 
 ## I
 
@@ -136,7 +136,7 @@ The InterPlanetary Linked Data (IPLD) model is a set of specifications in suppor
 
 ### IPNS
 
-The InterPlanetary Name System (IPNS) is a system for creating and updating mutable links to IPFS content. IPNS allows for publishing the latest version of any IPFS content, even though the underlying IPFS hash has changed. [More about IPNS](https://docs.ipfs.io/concepts/ipns/)
+The InterPlanetary Name System (IPNS) is a system for creating and updating mutable links to IPFS content. IPNS allows for publishing the latest version of any IPFS content, even though the underlying IPFS hash has changed. [More about IPNS](ipns.md)
 
 ## J
 
@@ -160,7 +160,7 @@ Listening is a function of the IPFS networking layer in libp2p, wherein an incom
 
 ### Merkle-DAG
 
-The Merkle-DAG is a computer science data structure used at the core of IPFS files/block storage. Merkle-DAGs create a hash to their content, known as a [Content Identifier](#cid). [More about Merkle-DAG](https://docs.ipfs.io/concepts/merkle-dag/)
+The Merkle-DAG is a computer science data structure used at the core of IPFS files/block storage. Merkle-DAGs create a hash to their content, known as a [Content Identifier](#cid). [More about Merkle-DAG](merkle-dag.md)
 
 ### Merkle Forest
 
@@ -172,7 +172,7 @@ A Merkle Tree is a specific type of hash tree used in cryptography and computer 
 
 ### MFS
 
-The Mutable File System (MFS) is a tool built into IPFS that lets you treat files like a normal name-based filesystem. You may add, edit, and remove MFS files while all link updates and hashes are taken care of for you. [More about MFS](https://docs.ipfs.io/concepts/file-systems/#mutable-file-system-mfs)
+The Mutable File System (MFS) is a tool built into IPFS that lets you treat files like a normal name-based filesystem. You may add, edit, and remove MFS files while all link updates and hashes are taken care of for you. [More about MFS](file-systems.md#mutable-file-system-mfs)
 
 ### Multibase
 
@@ -194,7 +194,7 @@ The Multiformats project is a collection of protocols that aim to future-proof s
 
 ### Node
 
-A Node or [peer](#peer) is the IPFS program that you run on your local computer to store/cache files and then connect to the IPFS network (by running the [daemon](#daemon)). [More about Node](https://docs.ipfs.io/how-to/command-line-quick-start/#take-your-node-online)
+A Node or [peer](#peer) is the IPFS program that you run on your local computer to store/cache files and then connect to the IPFS network (by running the [daemon](#daemon)). [More about Node](../how-to/command-line-quick-start.md#take-your-node-online)
 
 ## O
 
@@ -202,7 +202,7 @@ A Node or [peer](#peer) is the IPFS program that you run on your local computer 
 
 ### Path/Address
 
-A Path/Address is the method within IPFS of referencing content on the web. Addresses for content are path-like; they are components separated by slashes. [More about Path/Address](https://docs.ipfs.io/how-to/address-ipfs-on-web/)
+A Path/Address is the method within IPFS of referencing content on the web. Addresses for content are path-like; they are components separated by slashes. [More about Path/Address](../how-to/address-ipfs-on-web.md)
 
 ### Peer
 
@@ -210,11 +210,11 @@ In system architecture, a Peer is an equal player in the peer-to-peer model of d
 
 ### Peer ID
 
-A Peer ID is how each unique IPFS node is identified on the network. The Peer ID is created when the IPFS node is initialized and is essentially a cryptographic hash of the node's public key. [More about Peer ID](https://docs.ipfs.io/concepts/dht/#peer-ids)
+A Peer ID is how each unique IPFS node is identified on the network. The Peer ID is created when the IPFS node is initialized and is essentially a cryptographic hash of the node's public key. [More about Peer ID](dht.md#peer-ids)
 
 ### Pinning
 
-Pinning is the method of telling an IPFS node that particular data is important and so it will never be removed from that node's cache. To learn more, start by understanding [persistence, permanence, and pinning](/concepts/persistence/); then, see how to [add local pin](/how-to/pin-files/) and read [what remote pins are](#remote-pinning).
+Pinning is the method of telling an IPFS node that particular data is important and so it will never be removed from that node's cache. To learn more, start by understanding [persistence, permanence, and pinning](persistence.md); then, see how to [add local pin](../how-to/pin-files.md) and read [what remote pins are](#remote-pinning).
 
 ### Pinning Service API
 
@@ -230,7 +230,7 @@ Publish-subscribe (Pubsub) is an experimental feature in IPFS. Publishers send m
 
 ### Remote Pinning
 
-A variant of [pinning](#pinning) that uses a third-party service to ensure that data persists on IPFS, even when your local node goes offline or your local copy of data is deleted during garbage collection. [More about working with remote pinning services](/how-to/work-with-pinning-services/).
+A variant of [pinning](#pinning) that uses a third-party service to ensure that data persists on IPFS, even when your local node goes offline or your local copy of data is deleted during garbage collection. [More about working with remote pinning services](../how-to/work-with-pinning-services.md).
 
 ### Relay
 
@@ -238,7 +238,7 @@ The Relay is a means to establish connectivity between libp2p nodes (e.g., IPFS 
 
 ### Repo
 
-The Repository (Repo) is a directory where IPFS stores all its settings and internal data. It is created with the `ipfs init` command. [More about Repo](https://docs.ipfs.io/how-to/command-line-quick-start/#install-ipfs)
+The Repository (Repo) is a directory where IPFS stores all its settings and internal data. It is created with the `ipfs init` command. [More about Repo](../how-to/command-line-quick-start.md#install-ipfs)
 
 ## S
 
@@ -252,7 +252,7 @@ The signing of data cryptographically allows for trusting of data from untrusted
 
 ### Swarm
 
-The Swarm is a term for the network of IPFS peers with which your local node has connections. Swarm addresses are addresses that your local node will listen on for connections from other IPFS peers. [More about Swarm addresses](https://docs.ipfs.io/how-to/configure-node/#addresses)
+The Swarm is a term for the network of IPFS peers with which your local node has connections. Swarm addresses are addresses that your local node will listen on for connections from other IPFS peers. [More about Swarm addresses](../how-to/configure-node.md#addresses)
 
 ## T
 
@@ -264,7 +264,7 @@ In [libp2p](#libp2p), transport refers to the technology that lets us move data 
 
 ### UnixFS
 
-The Unix File System (UnixFS) is the data format used to represent files and all their links and metadata in IPFS. It is loosely based on how files work in Unix. Adding a file to IPFS creates a block, or a _tree_ of blocks, in the UnixFS format and protects it from being garbage-collected. [More about UnixFS](https://docs.ipfs.io/concepts/file-systems/#unix-file-system-unixfs)
+The Unix File System (UnixFS) is the data format used to represent files and all their links and metadata in IPFS. It is loosely based on how files work in Unix. Adding a file to IPFS creates a block, or a _tree_ of blocks, in the UnixFS format and protects it from being garbage-collected. [More about UnixFS](file-systems.md#unix-file-system-unixfs)
 
 ## V
 
