@@ -73,7 +73,7 @@ _&mdash; Noam Eppel, COO and co-founder, Morpheus.Network_
 
 ## How Morpheus.Network uses IPFS
 
-As noted above, Morpheus.Network's integration of IPFS was extremely straightforward. With the help of IPFS [documentation](https://docs.ipfs.io/) and an extensive [developer community](https://docs.ipfs.io/community/), the team was able to use standard IPFS tooling without any need for additional customization.
+As noted above, Morpheus.Network's integration of IPFS was extremely straightforward. With the help of IPFS [documentation](../README.md) and an extensive [developer community](../community/README.md), the team was able to use standard IPFS tooling without any need for additional customization.
 
 The Morpheus.Network team chose to run their own private IPFS nodes for two primary reasons:
 
