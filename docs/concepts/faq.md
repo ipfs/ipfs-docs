@@ -10,7 +10,7 @@ description: Explore frequently asked questions about IPFS, the InterPlanetary F
 
 IPFS stands for the InterPlanetary File System — a peer-to-peer network for storing and accessing files, websites, applications, and data in a distributed file system.
 
-To learn more, see the ["what is IPFS?"](/concepts/what-is-ipfs) guide.
+To learn more, see the ["what is IPFS?"](what-is-ipfs.md) guide.
 
 ## IPFS in action
 
@@ -24,13 +24,13 @@ To learn more, see the ["what is IPFS?"](/concepts/what-is-ipfs) guide.
 
 The quickest way to get IPFS up and running on your machine is by installing [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop), the easy-to-use app that enables you to run an IPFS node on your computer without having to bother with terminal commands.
 
-For installing and initializing IPFS from the command line, check out the [command-line quick start](/how-to/command-line-quick-start/) guide.
+For installing and initializing IPFS from the command line, check out the [command-line quick start](../how-to/command-line-quick-start.md) guide.
 
 ## Contributing to IPFS
 
 ### How do I start contributing to IPFS?
 
-There are a lot of ways you can contribute to IPFS, whether you're interested in helping with either of the core implementations, applications like IPFS Desktop, writing or editing documentation, doing UX, or whatever you enjoy working on. [Get all the details on where to get started here.](/project/contribute/)
+There are a lot of ways you can contribute to IPFS, whether you're interested in helping with either of the core implementations, applications like IPFS Desktop, writing or editing documentation, doing UX, or whatever you enjoy working on. [Get all the details on where to get started here.](../project/contribute.md)
 
 ## IPFS and Filecoin
 
