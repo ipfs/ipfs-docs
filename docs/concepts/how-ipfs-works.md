@@ -30,7 +30,7 @@ That problem exists for the internet and on your computer! Right now, content is
 - `/Users/Alice/Documents/term_paper.doc`
 - `C:\Users\Joe\My Documents\project_sprint_presentation.ppt`
 
-By contrast, every piece of content that uses the IPFS protocol has a [_content identifier_](/concepts/content-addressing/), or CID, that is its _hash_. The hash is unique to the content that it came from, even though it may look short compared to the original content. If hashes are new to you, check out our [guide to cryptographic hashing](/concepts/hashing/) for an introduction.
+By contrast, every piece of content that uses the IPFS protocol has a [_content identifier_](content-addressing.md), or CID, that is its _hash_. The hash is unique to the content that it came from, even though it may look short compared to the original content. If hashes are new to you, check out our [guide to cryptographic hashing](hashing.md) for an introduction.
 
 Many distributed systems make use of content addressing through hashes as a means for not just identifying content but also linking it together — everything from the commits that back your code to the blockchains that run cryptocurrencies leverage this strategy. However, the underlying data structures in these systems are not necessarily interoperable.
 
@@ -40,7 +40,7 @@ IPFS follows particular data-structure preferences and conventions. The IPFS pro
 
 ## Directed acyclic graphs (DAGs)
 
-IPFS and many other distributed systems take advantage of a data structure called [directed acyclic graphs](https://en.wikipedia.org/wiki/Directed_acyclic_graph), or DAGs. Specifically, they use _Merkle DAGs_, which are DAGs where each node has a unique identifier that is a hash of the node's contents. Sound familiar? This refers back to the _CID_ concept that we covered in the previous section. Put another way: identifying a data object (like a Merkle DAG node) by the value of its hash _is content addressing_. Check out our [guide to Merkle DAGs](/concepts/merkle-dag/) for a more in-depth treatment of this topic.
+IPFS and many other distributed systems take advantage of a data structure called [directed acyclic graphs](https://en.wikipedia.org/wiki/Directed_acyclic_graph), or DAGs. Specifically, they use _Merkle DAGs_, which are DAGs where each node has a unique identifier that is a hash of the node's contents. Sound familiar? This refers back to the _CID_ concept that we covered in the previous section. Put another way: identifying a data object (like a Merkle DAG node) by the value of its hash _is content addressing_. Check out our [guide to Merkle DAGs](merkle-dag.md) for a more in-depth treatment of this topic.
 
 IPFS uses a Merkle DAG that is optimized for representing directories and files, but you can structure a Merkle DAG in many different ways. For example, Git uses a Merkle DAG that has many versions of your repo inside of it.
 
@@ -58,7 +58,7 @@ So, to recap, IPFS lets you give CIDs to content and link that content together 
 
 ## Distributed hash tables (DHTs)
 
-To find which peers are hosting the content you're after (_discovery_), IPFS uses a [distributed hash table](/concepts/dht/), or DHT. A hash table is a database of keys to values. A _distributed_ hash table is one where the table is split across all the peers in a distributed network. To find content, you ask these peers.
+To find which peers are hosting the content you're after (_discovery_), IPFS uses a [distributed hash table](dht.md), or DHT. A hash table is a database of keys to values. A _distributed_ hash table is one where the table is split across all the peers in a distributed network. To find content, you ask these peers.
 
 The [libp2p project](https://libp2p.io/) is the part of the IPFS ecosystem that provides the DHT and handles peers connecting and talking to each other. (Note that, as with IPLD, libp2p can also be used as a tool for other distributed systems, not just IPFS.)
 
