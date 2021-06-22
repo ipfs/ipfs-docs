@@ -9,14 +9,14 @@ description: Learn how to host a simple single-page website on the decentralized
 A great way to get to know IPFS is to use it to host a simple, single-page website. Here's a step-by-step guide to doing just that.
 
 ::: tip
-We've put together a series of tutorials to walk you through hosting a full website on IPFS. [Take a look!](/how-to/websites-on-ipfs/single-page-website)
+We've put together a series of tutorials to walk you through hosting a full website on IPFS. [Take a look!](websites-on-ipfs/single-page-website.md)
 :::
 
 ## Create your site
 
 Assume you have a static website in a directory `mysite`.
 
-In order to publish it as a site, [install IPFS](/install/) and make sure your IPFS daemon is running:
+In order to publish it as a site, [install IPFS](../install/README.md) and make sure your IPFS daemon is running:
 
 ```bash
 $ ipfs daemon
@@ -46,7 +46,7 @@ Those hashes are difficult to remember. Let's look at some ways to get rid of th
 
 Assume you have the domain name `your.domain` and can access your registrar's control panel to manage DNS entries for it.
 
-Create a DNS TXT record ([DNSLink](/concepts/dnslink/)), with the key `your.domain.` and the value `dnslink=/ipfs/$SITE_CID` where `$SITE_CID` is the value from the section above.
+Create a DNS TXT record ([DNSLink](../concepts/dnslink.md)), with the key `your.domain.` and the value `dnslink=/ipfs/$SITE_CID` where `$SITE_CID` is the value from the section above.
 
 Once you've created that record, and it has propagated you should be able to find it.
 
@@ -65,7 +65,7 @@ More questions about DNSLink? Check out the [DNSLink website](http://dnslink.io/
 
 Each time you change your website, you will have to republish it, update the DNS TXT record with the new value of `$SITE_CID` and wait for it to propagate.
 
-You can get around that limitation by using IPNS, the [InterPlanetary Naming System](/concepts/ipns/).
+You can get around that limitation by using IPNS, the [InterPlanetary Naming System](../concepts/ipns.md).
 
 You might have noticed `/ipns/` instead of `/ipfs/` in the updated links in the previous section.
 
