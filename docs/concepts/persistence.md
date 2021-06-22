@@ -16,7 +16,7 @@ A 2011 study found that the [average lifespan of a web page is 100 days](https:/
 
 Nodes on the IPFS network can automatically cache resources they download, and keep those resources available for other nodes. This system depends on nodes being willing and able to cache and share resources with the network. Storage is finite, so nodes need to clear out some of their previously cached resources to make room for new resources. This process is called _garbage collection_.
 
-To ensure that data _persists_ on IPFS, and is not deleted during garbage collection, [data can be pinned](/how-to/pin-files/) to one or more IPFS nodes. Pinning gives you control over disk space and data retention. As such, you should use that control to pin any content you wish to keep on IPFS indefinitely.
+To ensure that data _persists_ on IPFS, and is not deleted during garbage collection, [data can be pinned](../how-to/pin-files.md) to one or more IPFS nodes. Pinning gives you control over disk space and data retention. As such, you should use that control to pin any content you wish to keep on IPFS indefinitely.
 
 ## Garbage Collection
 
@@ -28,7 +28,7 @@ The IPFS garbage collector is configured in the `Datastore`section of [the go-ip
 
 - `GCPeriod`: Specify how frequently garbage collection should run. Only used if automatic garbage collection is enabled. The default is 1 hour.
 
-To manually start garbage collection, [run `ipfs repo gc`](https://docs.ipfs.io/reference/cli/#ipfs-repo-gc):
+To manually start garbage collection, [run `ipfs repo gc`](../reference/cli.md#ipfs-repo-gc):
 
 ```bash
 ipfs repo gc
@@ -56,8 +56,8 @@ If you use IPFS Desktop, you can trigger garbage collection by clicking on the t
 ## Pinning in context
 
 An IPFS node can protect data from garbage collection based on different kinds of user events.
-- The universal way is by adding a low-level [local pin](/how-to/pin-files/). This works for all data types and can be done manually, but if you add a file using the CLI command [`ipfs add`](/reference/cli/#ipfs-add), your IPFS node will automatically pin that file for you.
-- When working with files and directories, a better way may be to add them to the local [Mutable File System (MFS)](/concepts/glossary/#mfs). This protects the data from garbage collection in the same way as local pinning, but is somewhat easier to manage.
+- The universal way is by adding a low-level [local pin](../how-to/pin-files.md). This works for all data types and can be done manually, but if you add a file using the CLI command [`ipfs add`](../reference/cli.md#ipfs-add), your IPFS node will automatically pin that file for you.
+- When working with files and directories, a better way may be to add them to the local [Mutable File System (MFS)](glossary.md#mfs). This protects the data from garbage collection in the same way as local pinning, but is somewhat easier to manage.
 
 
 ::: tip
@@ -82,4 +82,4 @@ Some available pinning service providers are:
 - [Temporal](https://temporal.cloud/)
 - [Crust Network](https://crust.network/)
 
-See how to [work with remote pinning services](/how-to/work-with-pinning-services/).
+See how to [work with remote pinning services](../how-to/work-with-pinning-services.md).
