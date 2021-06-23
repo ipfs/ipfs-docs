@@ -11,6 +11,10 @@ Curious about how it all got started, or where we're headed? Learn about the his
 
 Want to know how it all began? Learn the [history of the IPFS project](/project/history/).
 
+## Repository guide
+
+IPFS is a big project, which means there are a lot of GitHub repos. If you're new to IPFS or just want a sense of what to check out first, use this quick guide to the most important and most frequently used [IPFS repositories](repository-guide.md).
+
 ## Roadmap
 
 See the overall roadmap of [IPFS project requirements](https://github.com/ipfs/roadmap) from current state to maturity.
@@ -25,7 +29,7 @@ Want to know the current state of your favorite IPFS feature? See the [current i
 
 ## Research
 
-Learn more about the exploratory research work and prototyping being done for inclusion in IPFS by exploring our [research repo on GitHub](https://github.com/ipfs/research).
+Learn more about the exploratory research work and prototyping being done for inclusion in IPFS by exploring our [research repo on GitHub](https://github.com/ipfs/notes).
 
 ## IPFS team org planning
 
