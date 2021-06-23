@@ -5,6 +5,8 @@
 
 This repository organizes overall documentation issues across the IPFS project.
 
+**If you'd just like to read the IPFS docs, we recommend the website version of the info contained in this repo! https://docs.ipfs.io**
+
 ## Get involved
 
 We would **love ❤️ your help** to improve existing items or make new ones even better! [We also have bounties available](https://github.com/ipfs/devgrants/projects/1)!
