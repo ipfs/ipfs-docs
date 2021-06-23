@@ -29,7 +29,7 @@ Want to know the current state of your favorite IPFS feature? See the [current i
 
 ## Research
 
-Learn more about the exploratory research work and prototyping being done for inclusion in IPFS by exploring our [research repo on GitHub](https://github.com/ipfs/research).
+Learn more about the exploratory research work and prototyping being done for inclusion in IPFS by exploring our [research repo on GitHub](https://github.com/ipfs/notes).
 
 ## IPFS team org planning
 
