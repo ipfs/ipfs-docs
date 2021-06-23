@@ -10,7 +10,7 @@ description: The home page for developer documentation for IPFS, the InterPlanet
 No matter who you are or what you're creating, you can be part of the movement to create the next generation of the internet. This site contains everything you need to start building using the InterPlanetary File System (IPFS) and pave the way for the future Web.
 :::
 
-Check out some of the most popular content in these docs below — or explore the main site menu to learn about <a href="/concepts/">key concepts</a>, try out <a href="/how-to/">how-to guides</a>, see <a href="/reference/">API and CLI references</a>, or just <a href="/install/">install IPFS</a> and get hacking.
+Check out some of the most popular content in these docs below — or explore the main site menu to learn about [key concepts](concepts/README.md), try out [how-to guides](how-to/README.md), see [API and CLI references](reference/README.md), or just [install IPFS](install/README.md) and get hacking.
 
 ## Download IPFS tools
 
@@ -24,17 +24,17 @@ These tools can help you use and build on IPFS more quickly and efficiently — 
 
 Protect yourself from single-point-of-failure risks and benefit from decentralized infrastructure by hosting your static website using IPFS. If you're new to IPFS, this is an excellent place to start learning how to build on the decentralized web.
 
-[Start the tutorial →](/how-to/websites-on-ipfs/single-page-website/)
+[Start the tutorial →](how-to/websites-on-ipfs/single-page-website.md)
 
 ## Learn about the decentralized web
 
 Want to know more about the decentralized web (Dweb) and how it's changing the internet? These resources will give you a clearer understanding of the Dweb movement, and how it's improving the world:
 
-- [What is IPFS](/concepts/what-is-ipfs/)
-- [Peer-to-peer sharing](/concepts/dht/)
-- [Content-addressed data](/concepts/content-addressing/)
+- [What is IPFS](concepts/what-is-ipfs.md)
+- [Peer-to-peer sharing](concepts/dht.md)
+- [Content-addressed data](concepts/content-addressing.md)
 
-[See more guides in the Concepts section →](/concepts/)
+[See more guides in the Concepts section →](concepts/README.md)
 
 ::: callout
 ProtoSchool's self-guided [interactive tutorials](https://proto.school/tutorials) are designed to introduce you to decentralized web concepts, protocols, and tools. Explore js-ipfs APIs by completing browser-based coding challenges in ProtoSchool's [IPFS course](https://proto.school/course/ipfs), or explore code-free intros to essential dweb concepts and related projects in the IPFS ecosystem.
@@ -50,6 +50,6 @@ Are you looking for inspiration? You can find a huge collection of awesome commu
 
 ## Be part of the IPFS community
 
-IPFS has a bustling community of designers, developers, writers, and activists who are all helping to improve the project. You can join in by attending a local meetup, helping out at a conference, chatting online through [Matrix channels](/community/chat), or joining a discussion in [the IPFS forum](https://discuss.ipfs.io/).
+IPFS has a bustling community of designers, developers, writers, and activists who are all helping to improve the project. You can join in by attending a local meetup, helping out at a conference, chatting online through [Matrix channels](community/chat.md), or joining a discussion in [the IPFS forum](https://discuss.ipfs.io/).
 
-[Find out more in the Community section →](/community/)
+[Find out more in the Community section →](community/README.md)

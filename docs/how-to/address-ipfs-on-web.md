@@ -30,7 +30,7 @@ You can swap out `ipfs.io` for your own http-to-ipfs gateway, but you are then o
 
 ## HTTP gateways
 
-Gateways are provided strictly for convenience: in other words, they help tools that speak HTTP but do not speak distributed protocols (such as IPFS) to communicate. They are the first stage of the upgrade path for the web. [More information about IPFS Gateways](/concepts/ipfs-gateway/).
+Gateways are provided strictly for convenience: in other words, they help tools that speak HTTP but do not speak distributed protocols (such as IPFS) to communicate. They are the first stage of the upgrade path for the web. [More information about IPFS Gateways](../concepts/ipfs-gateway.md).
 
 ### Centralization
 
@@ -83,7 +83,7 @@ https://ipfs.io/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
 
 ### Subdomain gateway
 
-When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) is needed, [CIDv1](/concepts/content-addressing/#identifier-formats) in case-insensitive encoding such as Base32 or Base36 should be used in the subdomain:
+When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) is needed, [CIDv1](../concepts/content-addressing.md#identifier-formats) in case-insensitive encoding such as Base32 or Base36 should be used in the subdomain:
 
     https://<cidv1b32>.ipfs.<gateway-host>.tld/path/to/resource
 
@@ -155,7 +155,7 @@ k2k4r8jl0yz8qjgqbmc2cdu5hkqek5rj6flgnlkyywynci20j0iuyfuj
 
 ### DNSLink gateway
 
-The gateway provided by the IPFS daemon understands the `Host` header present in HTTP requests, and will check if [DNSLink](/guides/concepts/dnslink) exists for a specified [domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name).
+The gateway provided by the IPFS daemon understands the `Host` header present in HTTP requests, and will check if [DNSLink](../concepts/dnslink.md) exists for a specified [domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name).
 If DNSLink is present, the gateway will return content from a path resolved via DNS TXT record.
 This type of gateway provides full [origin isolation](https://en.wikipedia.org/wiki/Same-origin_policy).
 

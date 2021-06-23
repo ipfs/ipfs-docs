@@ -5,7 +5,7 @@ description: Learn the syntax and formatting rules for writing documentation for
 
 # Grammar, formatting, and style
 
-This page details the syntax and formatting rules for writing IPFS documentation. For more conceptual ideas of writing, check out the [writing guide](/community/contribute/writing-guide/).
+This page details the syntax and formatting rules for writing IPFS documentation. For more conceptual ideas of writing, check out the [writing guide](writing-guide.md).
 
 ## Grammar and spelling
 
@@ -55,6 +55,10 @@ How the Markdown syntax looks, and code formatting rules to follow.
 ### Syntax
 
 The IPFS Docs project follows the _GitHub Flavored Markdown_ syntax for markdown. This way, all articles display properly within GitHub itself. This gives readers the option to view articles on [the docs website](https://docs.ipfs.io) or [its GitHub repo](https://github.com/ipfs/ipfs-docs).
+
+#### Relative links
+
+If you include internal (relative) links to other content on the IPFS docs site, please link to them using full relative paths (e.g. use `../` for climbing a directory) and specifying the file's full name (e.g. `awesome-tutorial.md#subheading`). This ensures that users who read docs content directly in-repo on GitHub's web UI are able to follow relative links correctly.
 
 ### Rules
 

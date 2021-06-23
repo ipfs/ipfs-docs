@@ -28,57 +28,57 @@ Want the basics in theater mode? Check out these helpful videos for an overview 
 
 Get the basic concepts of IPFS in one place, including:
 
-- [What is IPFS?](/concepts/what-is-ipfs/)
-- [How IPFS works](/concepts/how-ipfs-works/)
+- [What is IPFS?](what-is-ipfs.md)
+- [How IPFS works](how-ipfs-works.md)
 - [IPFS primer](https://dweb-primer.ipfs.io/)
-- [Glossary](/concepts/glossary/)
-- [FAQ](/concepts/faq/)
+- [Glossary](glossary.md)
+- [FAQ](faq.md)
 
 ## Examples and case studies
 
 Get inspired by usage ideas, explore examples of IPFS implemented in the wild, and dig deeper with case studies on applications and projects in which IPFS plays a crucial role.
 
-- [Usage ideas & examples](/concepts/usage-ideas-examples/)
-- [Case study: Arbol](/concepts/case-study-arbol/)
-- [Case study: Audius](/concepts/case-study-audius/)
-- [Case study: Fleek](/concepts/case-study-fleek/)
-- [Case study: LikeCoin](/concepts/case-study-likecoin/)
-- [Case study: Morpheus.Network](/concepts/case-study-morpheus/)
-- [Case study: OpenBazaar](/concepts/case-study-openbazaar/)
+- [Usage ideas & examples](usage-ideas-examples.md)
+- [Case study: Arbol](case-study-arbol.md)
+- [Case study: Audius](case-study-audius.md)
+- [Case study: Fleek](case-study-fleek.md)
+- [Case study: LikeCoin](case-study-likecoin.md)
+- [Case study: Morpheus.Network](case-study-morpheus.md)
+- [Case study: OpenBazaar](case-study-openbazaar.md)
 
 ## Content-addressed storage
 
 Referring to files by their content, not their location, is one of the most powerful concepts within IPFS. Learn why with explainers on:
 
-- [Content addressing](/concepts/content-addressing/)
-- [Cryptographic hashing](/concepts/hashing/)
-- [Immutability](/concepts/immutability/)
-- [Persistence, permanence and pinning](/concepts/persistence/)
+- [Content addressing](content-addressing.md)
+- [Cryptographic hashing](hashing.md)
+- [Immutability](immutability.md)
+- [Persistence, permanence and pinning](persistence.md)
 
 ## Peer-to-peer file sharing
 
 Sharing files between peers is incredibly powerful — and has many nuances! Learn about file-sharing paradigms and tools:
 
-- [Distributed Hash Tables (DHTs)](/concepts/dht/)
-- [Merkle DAGs](/concepts/merkle-dag/)
-- [Bitswap](/concepts/bitswap/)
-- [IPLD](/concepts/ipld/)
-- [IPNS](/concepts/ipns/)
-- [libp2p](/concepts/libp2p/)
-- [File systems](/concepts/file-systems/)
+- [Distributed Hash Tables (DHTs)](dht.md)
+- [Merkle DAGs](merkle-dag.md)
+- [Bitswap](bitswap.md)
+- [IPLD](ipld.md)
+- [IPNS](ipns.md)
+- [libp2p](libp2p.md)
+- [File systems](file-systems.md)
 
 ## Integrating IPFS and the existing Web
 
 IPFS aims to be the future of the internet, but it still needs to play well with today's Web. Here are some ways to do just that:
 
-- [IPFS Gateway](/concepts/ipfs-gateway/)
-- [DNSLink](/concepts/dnslink/)
+- [IPFS Gateway](ipfs-gateway.md)
+- [DNSLink](dnslink.md)
 
 ## Further reading
 
-Want a more in-depth look into the decentralized web? Here are a few papers that are useful for understanding IPFS, whether it be understanding the IPFS spec itself or the background for the web, protocols, hashing, and so on. [Read the papers →](/concepts/further-reading/academic-papers)
+Want a more in-depth look into the decentralized web? Here are a few papers that are useful for understanding IPFS, whether it be understanding the IPFS spec itself or the background for the web, protocols, hashing, and so on. [Read the papers →](further-reading/academic-papers.md)
 
-You may also be interested in the community made [IPFS Primer →](https://dweb-primer.ipfs.io/)
+You may also be interested in the community-made [IPFS Primer →](https://dweb-primer.ipfs.io/)
 
 ## Don't see what you're looking for?
 

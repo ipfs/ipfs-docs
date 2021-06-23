@@ -14,7 +14,7 @@ Don’t want to use the command line right now? Give the desktop-app implementat
 
 ## Prerequisites
 
-If you have not yet installed Go-IPFS, follow the [install instructions](../../install/command-line).
+If you have not yet installed Go-IPFS, follow the [install instructions](../install/command-line.md).
 
 ## Initialize the repository
 
@@ -177,4 +177,4 @@ You need to install and set up FUSE in order to mount the file system. For more 
 
 ### Further help
 
-The IPFS community is friendly and able to help! Get support from other IPFS developers in the official [IPFS forums](https://discuss.ipfs.io/), or join the conversation on [Matrix](/community/chat/).
+The IPFS community is friendly and able to help! Get support from other IPFS developers in the official [IPFS forums](https://discuss.ipfs.io/), or join the conversation on [Matrix](../community/chat.md).

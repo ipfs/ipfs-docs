@@ -126,5 +126,5 @@ While these instructions are specific to Ubuntu, they will likely work with most
 
 ## Next steps
 
-Now that you've got IPFS Desktop installed, you can start sharing files and interacting with other nodes on the network! Check out how to [host a website using IPFS →](/how-to/websites-on-ipfs/single-page-website/)
+Now that you've got IPFS Desktop installed, you can start sharing files and interacting with other nodes on the network! Check out how to [host a website using IPFS →](../how-to/websites-on-ipfs/single-page-website.md)
 

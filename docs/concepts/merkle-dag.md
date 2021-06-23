@@ -18,7 +18,7 @@ A Merkle DAG is a DAG where each node has an identifier, and this is the result 
 
 Merkle DAGs are similar to Merkle trees, but there are no balance requirements, and every node can carry a payload. In DAGs, several branches can re-converge or, in other words, a node can have several parents.
 
-Identifying a data object (like a Merkle DAG node) by the value of its hash is referred to as _content addressing_. Thus, we name the node identifier as [_Content Identifier_](/concepts/content-addressing/), or CID.
+Identifying a data object (like a Merkle DAG node) by the value of its hash is referred to as _content addressing_. Thus, we name the node identifier as [_Content Identifier_](content-addressing.md), or CID.
 
 For example, the previous linked list, assuming that the payload of each node is just the CID of its descendant, would be: _A=Hash(B)→B=Hash(C)→C=Hash(∅)_. The properties of the hash function ensure that no cycles can exist when creating Merkle DAGs. (Note: Hash functions are one-way functions. Creating a cycle should then be impossibly difficult unless some weakness is discovered and exploited.)
 

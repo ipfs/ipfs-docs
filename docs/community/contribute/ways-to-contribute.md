@@ -32,11 +32,11 @@ IPFS is a huge project and undertaking, and with lots of code comes the need for
 
 Before contributing to the IPFS docs, please read these quick guides; they'll save you time and help keep the docs accurate and consistent!
 
-1. [Style and formatting guide](/community/contribute/grammar-formatting-and-style/)
-2. [Writing guide](/community/contribute/writing-guide/)
-3. [Code persona](/community/contribute/code-persona/)
+1. [Style and formatting guide](grammar-formatting-and-style.md)
+2. [Writing guide](writing-guide.md)
+3. [Code persona](code-persona.md)
 
-If you have never contributed to an open-source project before or just need a refresher, take a look at the [contribution tutorial](/community/contribute/contribution-tutorial/).
+If you have never contributed to an open-source project before or just need a refresher, take a look at the [contribution tutorial](contribution-tutorial.md).
 
 ## Support
 
