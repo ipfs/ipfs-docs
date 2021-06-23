@@ -44,7 +44,7 @@ To enable automatic garbage collection use `--enable-gc` when starting the IPFS 
 ipfs daemon --enable-gc
 
 > Initializing daemon...
-> go-ipfs version: 0.8.0
+> go-ipfs version: 0.9.0
 > Repo version: 10
 > ...
 ```
@@ -75,7 +75,7 @@ To ensure that your important data is retained, you may want to use a pinning se
 
 Some available pinning service providers are:
 
-- [Axel](https://www.axel.org/blog/2019/07/23/qa-with-the-developers-of-axel-ipfs/)
+- [Axel](https://www.axel.org/2019/07/23/qa-with-the-developers-of-axel-ipfs/)
 - [Eternum](https://www.eternum.io/)
 - [Infura](https://infura.io/)
 - [Pinata](https://pinata.cloud/)

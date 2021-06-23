@@ -32,7 +32,7 @@ Every command usable from the CLI is also available through the [HTTP API](/refe
 ```
 
 
-_Generated on 2021-02-24 17:19:32, from go-ipfs 0.8.0._
+_Generated on 2021-06-23 12:01:39, from go-ipfs 0.9.0._
 
 ## ipfs
 
@@ -67,7 +67,7 @@ OPTIONS
 
 SUBCOMMANDS
   BASIC COMMANDS
-    init          Initialize ipfs local configuration
+    init          Initialize local IPFS configuration
     add <path>    Add a file to IPFS
     cat <ref>     Show IPFS object data
     get <ref>     Download IPFS objects
@@ -75,10 +75,10 @@ SUBCOMMANDS
     refs <ref>    List hashes of links from an object
   
   DATA STRUCTURE COMMANDS
+    dag           Interact with IPLD DAG nodes
+    files         Interact with files as if they were a unix filesystem
     block         Interact with raw blocks in the datastore
-    object        Interact with raw dag nodes
-    files         Interact with objects as if they were a unix filesystem
-    dag           Interact with IPLD documents (experimental)
+    cid           Convert and discover properties of CIDs
   
   ADVANCED COMMANDS
     daemon        Start a long-running daemon process
@@ -100,13 +100,14 @@ SUBCOMMANDS
     dht           Query the DHT for values or peers
     ping          Measure the latency of a connection
     diag          Print diagnostics
+    bitswap       Inspect bitswap state
+    pubsub        Send and receive messages via pubsub
   
   TOOL COMMANDS
     config        Manage configuration
-    version       Show ipfs version information
+    version       Show IPFS version information
     update        Download and apply go-ipfs updates
     commands      List all available commands
-    cid           Convert and discover properties of CIDs
     log           Manage and show logs of running daemon
   
   Use 'ipfs <command> --help' to learn more about each command.
@@ -133,7 +134,7 @@ SUBCOMMANDS
 
 ```
 USAGE
-  ipfs add <path>... - Add a file or directory to ipfs.
+  ipfs add <path>... - Add a file or directory to IPFS.
 
 SYNOPSIS
   ipfs add [--recursive | -r] [--dereference-args] [--stdin-name=<stdin-name>]
@@ -147,7 +148,7 @@ SYNOPSIS
 
 ARGUMENTS
 
-  <path>... - The path to a file to be added to ipfs.
+  <path>... - The path to a file to be added to IPFS.
 
 OPTIONS
 
@@ -194,8 +195,8 @@ OPTIONS
 
 DESCRIPTION
 
-  Adds contents of <path> to ipfs. Use -r to add directories.
-  Note that directories are added recursively, to form the ipfs
+  Adds the content of <path> to IPFS. Use -r to add directories.
+  Note that directories are added recursively, to form the IPFS
   MerkleDAG.
   
   If the daemon is not running, it will just add locally.
@@ -819,7 +820,7 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs config <key> [<value>] - Get and set ipfs config values.
+  ipfs config <key> [<value>] - Get and set IPFS config values.
 
 SYNOPSIS
   ipfs config [--bool] [--json] [--] <key> [<value>]
@@ -838,7 +839,7 @@ DESCRIPTION
 
   'ipfs config' controls configuration variables. It works
   much like 'git config'. The configuration values are stored in a config
-  file inside your IPFS repository.
+  file inside your IPFS repository (IPFS_PATH).
   
   Examples:
   
@@ -899,6 +900,23 @@ DESCRIPTION
     'test':
       Reduces external interference of IPFS daemon, this
       is useful when using the daemon in test environments.
+    'default-datastore':
+      Configures the node to use the default datastore (flatfs).
+      
+      Read the "flatfs" profile description for more information on this datastore.
+      
+      This profile may only be applied when first initializing the node.
+      
+    'lowpower':
+      Reduces daemon overhead on the system. May affect node
+      functionality - performance of content discovery and data
+      fetching may be degraded.
+      
+    'randomports':
+      Use a random port number for swarm.
+    'default-networking':
+      Restores default network settings.
+      Inverse profile of the test profile.
     'flatfs':
       Configures the node to use the flatfs datastore.
       
@@ -917,16 +935,6 @@ DESCRIPTION
       
       This profile may only be applied when first initializing the node.
       
-    'default-networking':
-      Restores default network settings.
-      Inverse profile of the test profile.
-    'default-datastore':
-      Configures the node to use the default datastore (flatfs).
-      
-      Read the "flatfs" profile description for more information on this datastore.
-      
-      This profile may only be applied when first initializing the node.
-      
     'badgerds':
       Configures the node to use the badger datastore.
       
@@ -941,13 +949,6 @@ DESCRIPTION
       * This datastore uses up to several gigabytes of memory. 
       
       This profile may only be applied when first initializing the node.
-    'lowpower':
-      Reduces daemon overhead on the system. May affect node
-      functionality - performance of content discovery and data
-      fetching may be degraded.
-      
-    'randomports':
-      Use a random port number for swarm.
 
 SUBCOMMANDS
   ipfs config profile apply <profile> - Apply profile to config.
@@ -1153,14 +1154,14 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs dag - Interact with ipld dag objects.
+  ipfs dag - Interact with IPLD DAG objects.
 
 SYNOPSIS
   ipfs dag
 
 DESCRIPTION
 
-  'ipfs dag' is used for creating and manipulating dag objects/hierarchies.
+  'ipfs dag' is used for creating and manipulating DAG objects/hierarchies.
   
   This subcommand is currently an experimental feature, but it is intended
   to deprecate and replace the existing 'ipfs object' command moving forward.
@@ -1169,11 +1170,11 @@ DESCRIPTION
 SUBCOMMANDS
   ipfs dag export <root>        - Streams the selected DAG as a .car stream on
                                   stdout.
-  ipfs dag get <ref>            - Get a dag node from ipfs.
+  ipfs dag get <ref>            - Get a DAG node from IPFS.
   ipfs dag import <path>...     - Import the contents of .car files
-  ipfs dag put <object data>... - Add a dag node to ipfs.
-  ipfs dag resolve <ref>        - Resolve ipld block
-  ipfs dag stat <root>          - Gets stats for a DAG
+  ipfs dag put <object data>... - Add a DAG node to IPFS.
+  ipfs dag resolve <ref>        - Resolve IPLD block.
+  ipfs dag stat <root>          - Gets stats for a DAG.
 
   For more information about each command, use:
   'ipfs dag <subcmd> --help'
@@ -1200,7 +1201,7 @@ OPTIONS
 
 DESCRIPTION
 
-  'ipfs dag export' fetches a dag and streams it out as a well-formed .car file.
+  'ipfs dag export' fetches a DAG and streams it out as a well-formed .car file.
   Note that at present only single root selections / .car files are supported.
   The output of blocks happens in strict DAG-traversal, first-seen, order.
 
@@ -1211,7 +1212,7 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs dag get <ref> - Get a dag node from ipfs.
+  ipfs dag get <ref> - Get a DAG node from IPFS.
 
 SYNOPSIS
   ipfs dag get [--] <ref>
@@ -1222,7 +1223,7 @@ ARGUMENTS
 
 DESCRIPTION
 
-  'ipfs dag get' fetches a dag node from ipfs and prints it out in the specified
+  'ipfs dag get' fetches a DAG node from IPFS and prints it out in the specified
   format.
 
 
@@ -1275,7 +1276,7 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs dag put <object data>... - Add a dag node to ipfs.
+  ipfs dag put <object data>... - Add a DAG node to IPFS.
 
 SYNOPSIS
   ipfs dag put [--format=<format> | -f] [--input-enc=<input-enc>] [--pin]
@@ -1304,7 +1305,7 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs dag resolve <ref> - Resolve ipld block
+  ipfs dag resolve <ref> - Resolve IPLD block.
 
 SYNOPSIS
   ipfs dag resolve [--] <ref>
@@ -1315,7 +1316,7 @@ ARGUMENTS
 
 DESCRIPTION
 
-  'ipfs dag resolve' fetches a dag node from ipfs, prints its address and remaining path.
+  'ipfs dag resolve' fetches a DAG node from IPFS, prints its address and remaining path.
 
 
 ```
@@ -1324,7 +1325,7 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs dag stat <root> - Gets stats for a DAG
+  ipfs dag stat <root> - Gets stats for a DAG.
 
 SYNOPSIS
   ipfs dag stat [--progress=false] [--] <root>
@@ -1340,7 +1341,7 @@ OPTIONS
 
 DESCRIPTION
 
-  'ipfs dag stat' fetches a dag and returns various statistics about the DAG.
+  'ipfs dag stat' fetches a DAG and returns various statistics about it.
   Statistics include size and number of blocks.
   
   Note: This command skips duplicate blocks in reporting both size and the number of blocks
@@ -1769,16 +1770,17 @@ DESCRIPTION
   single, dynamic filesystem mount. MFS has a root CID that is transparently
   updated when a change happens (and can be checked with "ipfs files stat /").
   
-  All files and folders within MFS are respected and will not be cleaned up
-  during garbage collections. MFS is independent from the list of pinned items
-  ("ipfs pin ls"). Calls to "ipfs pin add" and "ipfs pin rm" will add and remove
-  pins independently of MFS. If MFS content that was
-  additionally pinned is removed by calling "ipfs files rm", it will still
-  remain pinned.
+  All files and folders within MFS are respected and will not be deleted
+  during garbage collections. However, a DAG may be referenced in MFS without
+  being fully available locally (MFS content is lazy loaded when accessed).
+  MFS is independent from the list of pinned items ("ipfs pin ls"). Calls to
+  "ipfs pin add" and "ipfs pin rm" will add and remove pins independently of
+  MFS. If MFS content that was additionally pinned is removed by calling
+  "ipfs files rm", it will still remain pinned.
   
   Content added with "ipfs add" (which by default also becomes pinned), is not
-  added to MFS. Any content can be put into MFS with the command "ipfs files cp
-  /ipfs/<cid> /some/path/".
+  added to MFS. Any content can be lazily referenced from MFS with the command
+  "ipfs files cp /ipfs/<cid> /some/path/" (see ipfs files cp --help).
   
   
   NOTE:
@@ -1791,10 +1793,10 @@ DESCRIPTION
   operations.
 
 SUBCOMMANDS
-  ipfs files chcid [<path>]      - Change the cid version or hash function of
+  ipfs files chcid [<path>]      - Change the CID version or hash function of
                                    the root node of a given path.
-  ipfs files cp <source> <dest>  - Copy any IPFS files and directories into MFS
-                                   (or copy within MFS).
+  ipfs files cp <source> <dest>  - Add references to IPFS files and directories
+                                   in MFS (or copy within MFS).
   ipfs files flush [<path>]      - Flush a given path's data to disk.
   ipfs files ls [<path>]         - List directories in the local mutable
                                    namespace.
@@ -1815,7 +1817,7 @@ SUBCOMMANDS
 
 ```
 USAGE
-  ipfs files chcid [<path>] - Change the cid version or hash function of the
+  ipfs files chcid [<path>] - Change the CID version or hash function of the
                               root node of a given path.
 
 SYNOPSIS
@@ -1834,7 +1836,7 @@ OPTIONS
 
 DESCRIPTION
 
-  Change the cid version or hash function of the root node of a given path.
+  Change the CID version or hash function of the root node of a given path.
 
 
 ```
@@ -1843,8 +1845,8 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs files cp <source> <dest> - Copy any IPFS files and directories into MFS
-                                  (or copy within MFS).
+  ipfs files cp <source> <dest> - Add references to IPFS files and directories
+                                  in MFS (or copy within MFS).
 
 SYNOPSIS
   ipfs files cp [--] <source> <dest>
@@ -1856,9 +1858,10 @@ ARGUMENTS
 
 DESCRIPTION
 
-  "ipfs files cp" can be used to copy any IPFS file or directory (usually in the
-  form /ipfs/<CID>, but also any resolvable path), into the Mutable File System
-  (MFS).
+  "ipfs files cp" can be used to add references to any IPFS file or directory
+  (usually in the form /ipfs/<CID>, but also any resolvable path) into MFS.
+  This performs a lazy copy: the full DAG will not be fetched, only the root
+  node being copied.
   
   It can also be used to copy files within MFS, but in the case when an
   IPFS-path matches an existing MFS path, the IPFS path wins.
@@ -1870,6 +1873,17 @@ DESCRIPTION
   # ...
   # ... outputs the root CID at the end
   $ ipfs cp /ipfs/<CID> /your/desired/mfs/path
+  
+  If you wish to fully copy content from a different IPFS peer into MFS, do not
+  forget to force IPFS to fetch to full DAG after doing the "cp" operation. i.e:
+  
+  $ ipfs cp /ipfs/<CID> /your/desired/mfs/path
+  $ ipfs pin add <CID>
+  
+  The lazy-copy feature can also be used to protect partial DAG contents from
+  garbage collection. i.e. adding the Wikipedia root to MFS would not download
+  all the Wikipedia, but will any downloaded Wikipedia-DAG content from being
+  GC'ed.
 
 
 ```
@@ -2025,7 +2039,7 @@ DESCRIPTION
   
       $ ipfs files read /test/hello
       hello
-          
+  	
 
 
 ```
@@ -2311,7 +2325,7 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs id [<peerid>] - Show ipfs node id info.
+  ipfs id [<peerid>] - Show IPFS node id info.
 
 SYNOPSIS
   ipfs id [--format=<format> | -f] [--peerid-base=<peerid-base>] [--] [<peerid>]
@@ -2417,10 +2431,10 @@ SUBCOMMANDS
   ipfs key export <name>           - Export a keypair
   ipfs key gen <name>              - Create a new keypair
   ipfs key import <name> <key>     - Import a key and prints imported key id
-  ipfs key list                    - List all local keypairs
-  ipfs key rename <name> <newName> - Rename a keypair
-  ipfs key rm <name>...            - Remove a keypair
-  ipfs key rotate                  - Rotates the ipfs identity.
+  ipfs key list                    - List all local keypairs.
+  ipfs key rename <name> <newName> - Rename a keypair.
+  ipfs key rm <name>...            - Remove a keypair.
+  ipfs key rotate                  - Rotates the IPFS identity.
 
   For more information about each command, use:
   'ipfs key <subcmd> --help'
@@ -2507,7 +2521,7 @@ OPTIONS
 
 ```
 USAGE
-  ipfs key list - List all local keypairs
+  ipfs key list - List all local keypairs.
 
 SYNOPSIS
   ipfs key list [-l] [--ipns-base=<ipns-base>]
@@ -2526,7 +2540,7 @@ OPTIONS
 
 ```
 USAGE
-  ipfs key rename <name> <newName> - Rename a keypair
+  ipfs key rename <name> <newName> - Rename a keypair.
 
 SYNOPSIS
   ipfs key rename [--force | -f] [--ipns-base=<ipns-base>] [--] <name> <newName>
@@ -2550,7 +2564,7 @@ OPTIONS
 
 ```
 USAGE
-  ipfs key rm <name>... - Remove a keypair
+  ipfs key rm <name>... - Remove a keypair.
 
 SYNOPSIS
   ipfs key rm [-l] [--ipns-base=<ipns-base>] [--] <name>...
@@ -2573,7 +2587,7 @@ OPTIONS
 
 ```
 USAGE
-  ipfs key rotate - Rotates the ipfs identity.
+  ipfs key rotate - Rotates the IPFS identity.
 
 SYNOPSIS
   ipfs key rotate [--oldkey=<oldkey> | -o] [--type=<type> | -t]
@@ -2929,9 +2943,9 @@ DESCRIPTION
   Note: this command is experimental and subject to change as the system is refined
 
 SUBCOMMANDS
-  ipfs name pubsub cancel <name> - Cancel a name subscription
-  ipfs name pubsub state         - Query the state of IPNS pubsub
-  ipfs name pubsub subs          - Show current name subscriptions
+  ipfs name pubsub cancel <name> - Cancel a name subscription.
+  ipfs name pubsub state         - Query the state of IPNS pubsub.
+  ipfs name pubsub subs          - Show current name subscriptions.
 
   For more information about each command, use:
   'ipfs name pubsub <subcmd> --help'
@@ -2942,7 +2956,7 @@ SUBCOMMANDS
 
 ```
 USAGE
-  ipfs name pubsub cancel <name> - Cancel a name subscription
+  ipfs name pubsub cancel <name> - Cancel a name subscription.
 
 SYNOPSIS
   ipfs name pubsub cancel [--] <name>
@@ -2958,7 +2972,7 @@ ARGUMENTS
 
 ```
 USAGE
-  ipfs name pubsub state - Query the state of IPNS pubsub
+  ipfs name pubsub state - Query the state of IPNS pubsub.
 
 SYNOPSIS
   ipfs name pubsub state
@@ -2970,7 +2984,7 @@ SYNOPSIS
 
 ```
 USAGE
-  ipfs name pubsub subs - Show current name subscriptions
+  ipfs name pubsub subs - Show current name subscriptions.
 
 SYNOPSIS
   ipfs name pubsub subs [--ipns-base=<ipns-base>]
@@ -3046,28 +3060,35 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs object - Interact with IPFS objects.
+  ipfs object - Deprecated commands to interact with dag-pb objects. Use 'dag'
+                or 'files' instead.
 
 SYNOPSIS
   ipfs object
 
 DESCRIPTION
 
-  'ipfs object' is a plumbing command used to manipulate DAG objects
-  directly.
+  'ipfs object' is a legacy plumbing command used to manipulate dag-pb objects
+  directly. Deprecated, use more modern 'ipfs dag' and 'ipfs files' instead.
 
 SUBCOMMANDS
-  ipfs object data <key>           - Output the raw bytes of an IPFS object.
-  ipfs object diff <obj_a> <obj_b> - Display the diff between two ipfs objects.
-  ipfs object get <key>            - Get and serialize the DAG node named by
-                                     <key>.
-  ipfs object links <key>          - Output the links pointed to by the
-                                     specified object.
-  ipfs object new [<template>]     - Create a new object from an ipfs template.
-  ipfs object patch                - Create a new merkledag object based on an
-                                     existing one.
-  ipfs object put <data>           - Store input as a DAG object, print its key.
-  ipfs object stat <key>           - Get stats for the DAG node named by <key>.
+  ipfs object data <key>           - Deprecated way to read the raw bytes of a
+                                     dag-pb object: use 'dag get' instead.
+  ipfs object diff <obj_a> <obj_b> - Display the diff between two IPFS objects.
+  ipfs object get <key>            - Deprecated way to get and serialize the
+                                     dag-pb node. Use 'dag get' instead
+  ipfs object links <key>          - Deprecated way to output links in the
+                                     specified dag-pb object: use 'dag get'
+                                     instead.
+  ipfs object new [<template>]     - Deprecated way to create a new dag-pb
+                                     object from a template.
+  ipfs object patch                - Deprecated way to create a new merkledag
+                                     object based on an existing one. Use MFS
+                                     with 'files cp|rm' instead.
+  ipfs object put <data>           - Deprecated way to store input as a DAG
+                                     object. Use 'dag put' instead.
+  ipfs object stat <key>           - Deprecated way to read stats for the
+                                     dag-pb node. Use 'files stat' instead.
 
   For more information about each command, use:
   'ipfs object <subcmd> --help'
@@ -3078,7 +3099,8 @@ SUBCOMMANDS
 
 ```
 USAGE
-  ipfs object data <key> - Output the raw bytes of an IPFS object.
+  ipfs object data <key> - Deprecated way to read the raw bytes of a dag-pb
+                           object: use 'dag get' instead.
 
 SYNOPSIS
   ipfs object data [--] <key>
@@ -3089,8 +3111,9 @@ ARGUMENTS
 
 DESCRIPTION
 
-  'ipfs object data' is a plumbing command for retrieving the raw bytes stored
-  in a DAG node. It outputs to stdout, and <key> is a base58 encoded multihash.
+  'ipfs object data' is a deprecated plumbing command for retrieving the raw
+  bytes stored in a dag-pb node. It outputs to stdout, and <key> is a base58
+  encoded multihash. Provided for legacy reasons. Use 'ipfs dag get' instead.
   
   Note that the "--encoding" option does not affect the output, since the output
   is the raw data of the object.
@@ -3102,7 +3125,7 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs object diff <obj_a> <obj_b> - Display the diff between two ipfs objects.
+  ipfs object diff <obj_a> <obj_b> - Display the diff between two IPFS objects.
 
 SYNOPSIS
   ipfs object diff [--verbose | -v] [--] <obj_a> <obj_b>
@@ -3144,14 +3167,16 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs object get <key> - Get and serialize the DAG node named by <key>.
+  ipfs object get <key> - Deprecated way to get and serialize the dag-pb node.
+                          Use 'dag get' instead
 
 SYNOPSIS
   ipfs object get [--data-encoding=<data-encoding>] [--] <key>
 
 ARGUMENTS
 
-  <key> - Key of the object to retrieve, in base58-encoded multihash format.
+  <key> - Key of the dag-pb object to retrieve, in base58-encoded multihash
+          format.
 
 OPTIONS
 
@@ -3160,22 +3185,11 @@ OPTIONS
 
 DESCRIPTION
 
-  'ipfs object get' is a plumbing command for retrieving DAG nodes.
+  'ipfs object get' is a plumbing command for retrieving dag-pb nodes.
   It serializes the DAG node to the format specified by the "--encoding"
   flag. It outputs to stdout, and <key> is a base58 encoded multihash.
   
-  This command outputs data in the following encodings:
-    * "protobuf"
-    * "json"
-    * "xml"
-  (Specified by the "--encoding" or "--enc" flag)
-  
-  The encoding of the object's data field can be specified by using the
-  --data-encoding flag
-  
-  Supported values are:
-  	* "text" (default)
-  	* "base64"
+  DEPRECATED and provided for legacy reasons. Use 'ipfs dag get' instead.
 
 
 ```
@@ -3184,14 +3198,16 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs object links <key> - Output the links pointed to by the specified object.
+  ipfs object links <key> - Deprecated way to output links in the specified
+                            dag-pb object: use 'dag get' instead.
 
 SYNOPSIS
   ipfs object links [--headers | -v] [--] <key>
 
 ARGUMENTS
 
-  <key> - Key of the object to retrieve, in base58-encoded multihash format.
+  <key> - Key of the dag-pb object to retrieve, in base58-encoded multihash
+          format.
 
 OPTIONS
 
@@ -3200,8 +3216,8 @@ OPTIONS
 DESCRIPTION
 
   'ipfs object links' is a plumbing command for retrieving the links from
-  a DAG node. It outputs to stdout, and <key> is a base58 encoded
-  multihash.
+  a dag-pb node. It outputs to stdout, and <key> is a base58 encoded
+  multihash. Provided for legacy reasons. Use 'ipfs dag get' instead.
 
 
 ```
@@ -3210,7 +3226,8 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs object new [<template>] - Create a new object from an ipfs template.
+  ipfs object new [<template>] - Deprecated way to create a new dag-pb object
+                                 from a template.
 
 SYNOPSIS
   ipfs object new [--] [<template>]
@@ -3221,13 +3238,15 @@ ARGUMENTS
 
 DESCRIPTION
 
-  'ipfs object new' is a plumbing command for creating new DAG nodes.
+  'ipfs object new' is a plumbing command for creating new dag-pb nodes.
   By default it creates and returns a new empty merkledag node, but
   you may pass an optional template argument to create a preformatted
   node.
   
   Available templates:
   	* unixfs-dir
+  
+  DEPRECATED and provided for legacy reasons. Use 'dag put' and 'files' instead.
 
 
 ```
@@ -3236,7 +3255,8 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs object patch - Create a new merkledag object based on an existing one.
+  ipfs object patch - Deprecated way to create a new merkledag object based on
+                      an existing one. Use MFS with 'files cp|rm' instead.
 
 SYNOPSIS
   ipfs object patch
@@ -3244,14 +3264,28 @@ SYNOPSIS
 DESCRIPTION
 
   'ipfs object patch <root> <cmd> <args>' is a plumbing command used to
-  build custom DAG objects. It mutates objects, creating new objects as a
+  build custom dag-pb objects. It mutates objects, creating new objects as a
   result. This is the Merkle-DAG version of modifying an object.
+  
+  DEPRECATED and provided for legacy reasons.
+  For modern use cases, use MFS with 'files' commands: 'ipfs files --help'.
+  
+    $ ipfs files cp /ipfs/QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn /some-dir
+    $ ipfs files cp /ipfs/Qmayz4F4UzqcAMitTzU4zCSckDofvxstDuj3y7ajsLLEVs /some-dir/added-file.jpg
+    $ ipfs files stat --hash /some-dir
+  
+    The above will add 'added-file.jpg' to the directory placed under /some-dir
+    and the CID of updated directory is returned by 'files stat'
+  
+    'files cp' does not download the data, only the root block, which makes it
+    possible to build arbitrary directory trees without fetching them in full to
+    the local node.
 
 SUBCOMMANDS
-  ipfs object patch add-link <root> <name> <ref> - Add a link to a given object.
-  ipfs object patch append-data <root> <data>    - Append data to the data segment of a dag node.
-  ipfs object patch rm-link <root> <name>        - Remove a link from a given object.
-  ipfs object patch set-data <root> <data>       - Set the data field of an IPFS object.
+  ipfs object patch add-link <root> <name> <ref> - Deprecated way to add a link to a given dag-pb.
+  ipfs object patch append-data <root> <data>    - Deprecated way to append data to the data segment of a DAG node.
+  ipfs object patch rm-link <root> <name>        - Deprecated way to remove a link from dag-pb object.
+  ipfs object patch set-data <root> <data>       - Deprecated way to set the data field of dag-pb object.
 
   For more information about each command, use:
   'ipfs object patch <subcmd> --help'
@@ -3262,7 +3296,7 @@ SUBCOMMANDS
 
 ```
 USAGE
-  ipfs object patch add-link <root> <name> <ref> - Add a link to a given object.
+  ipfs object patch add-link <root> <name> <ref> - Deprecated way to add a link to a given dag-pb.
 
 SYNOPSIS
   ipfs object patch add-link [--create | -p] [--] <root> <name> <ref>
@@ -3281,14 +3315,20 @@ DESCRIPTION
 
   Add a Merkle-link to the given object and return the hash of the result.
   
-  Example:
+  DEPRECATED and provided for legacy reasons.
   
-      $ EMPTY_DIR=$(ipfs object new unixfs-dir)
-      $ BAR=$(echo "bar" | ipfs add -q)
-      $ ipfs object patch $EMPTY_DIR add-link foo $BAR
+  Use MFS and 'files' commands instead:
   
-  This takes an empty directory, and adds a link named 'foo' under it, pointing
-  to a file containing 'bar', and returns the hash of the new object.
+    $ ipfs files cp /ipfs/QmUNLLsPACCz1vLxQVkXqqLX5R1X345qqfHbsf67hvA3Nn /some-dir
+    $ ipfs files cp /ipfs/Qmayz4F4UzqcAMitTzU4zCSckDofvxstDuj3y7ajsLLEVs /some-dir/added-file.jpg
+    $ ipfs files stat --hash /some-dir
+  
+    The above will add 'added-file.jpg' to the directory placed under /some-dir
+    and the CID of updated directory is returned by 'files stat'
+  
+    'files cp' does not download the data, only the root block, which makes it
+    possible to build arbitrary directory trees without fetching them in full to
+    the local node.
 
 
 ```
@@ -3297,8 +3337,9 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs object patch append-data <root> <data> - Append data to the data segment
-                                                of a dag node.
+  ipfs object patch append-data <root> <data> - Deprecated way to append data
+                                                to the data segment of a DAG
+                                                node.
 
 SYNOPSIS
   ipfs object patch append-data [--] <root> <data>
@@ -3317,8 +3358,10 @@ DESCRIPTION
   	$ echo "hello" | ipfs object patch $HASH append-data
   
   NOTE: This does not append data to a file - it modifies the actual raw
-  data within an object. Objects have a max size of 1MB and objects larger than
+  data within a dag-pb object. Blocks have a max size of 1MB and objects larger than
   the limit will not be respected by the network.
+  
+  DEPRECATED and provided for legacy reasons. Use 'ipfs add' or 'ipfs files' instead.
 
 
 ```
@@ -3327,7 +3370,8 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs object patch rm-link <root> <name> - Remove a link from a given object.
+  ipfs object patch rm-link <root> <name> - Deprecated way to remove a link
+                                            from dag-pb object.
 
 SYNOPSIS
   ipfs object patch rm-link [--] <root> <name>
@@ -3340,6 +3384,8 @@ ARGUMENTS
 DESCRIPTION
 
   Remove a Merkle-link from the given object and return the hash of the result.
+  
+  DEPRECATED and provided for legacy reasons. Use 'files rm' instead.
 
 
 ```
@@ -3348,8 +3394,8 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs object patch set-data <root> <data> - Set the data field of an IPFS
-                                             object.
+  ipfs object patch set-data <root> <data> - Deprecated way to set the data
+                                             field of dag-pb object.
 
 SYNOPSIS
   ipfs object patch set-data [--] <root> <data>
@@ -3366,6 +3412,8 @@ DESCRIPTION
   Example:
   
       $ echo "my data" | ipfs object patch $MYHASH set-data
+  
+  DEPRECATED and provided for legacy reasons. Use 'files cp' and 'dag put' instead.
 
 
 ```
@@ -3374,7 +3422,8 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs object put <data> - Store input as a DAG object, print its key.
+  ipfs object put <data> - Deprecated way to store input as a DAG object. Use
+                           'dag put' instead.
 
 SYNOPSIS
   ipfs object put [--inputenc=<inputenc>] [--datafieldenc=<datafieldenc>]
@@ -3382,7 +3431,7 @@ SYNOPSIS
 
 ARGUMENTS
 
-  <data> - Data to be stored as a DAG object.
+  <data> - Data to be stored as a dag-pb object.
 
 OPTIONS
 
@@ -3395,33 +3444,10 @@ OPTIONS
 
 DESCRIPTION
 
-  'ipfs object put' is a plumbing command for storing DAG nodes.
+  'ipfs object put' is a plumbing command for storing dag-pb nodes.
   It reads from stdin, and the output is a base58 encoded multihash.
   
-  Data should be in the format specified by the --inputenc flag.
-  --inputenc may be one of the following:
-  	* "protobuf"
-  	* "json" (default)
-  
-  Examples:
-  
-  	$ echo '{ "Data": "abc" }' | ipfs object put
-  
-  This creates a node with the data 'abc' and no links. For an object with
-  links, create a file named 'node.json' with the contents:
-  
-      {
-          "Data": "another",
-          "Links": [ {
-              "Name": "some link",
-              "Hash": "QmXg9Pp2ytZ14xgmQjYEiHjVjMFXzCVVEcRTWJBmLgR39V",
-              "Size": 8
-          } ]
-      }
-  
-  And then run:
-  
-  	$ ipfs object put node.json
+  DEPRECATED and provided for legacy reasons. Use 'ipfs dag put' instead.
 
 
 ```
@@ -3430,7 +3456,8 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs object stat <key> - Get stats for the DAG node named by <key>.
+  ipfs object stat <key> - Deprecated way to read stats for the dag-pb node.
+                           Use 'files stat' instead.
 
 SYNOPSIS
   ipfs object stat [--human] [--] <key>
@@ -3445,7 +3472,7 @@ OPTIONS
 
 DESCRIPTION
 
-  'ipfs object stat' is a plumbing command to print DAG node statistics.
+  'ipfs object stat' is a plumbing command to print dag-pb node statistics.
   <key> is a base58 encoded multihash. It outputs to stdout:
   
   	NumLinks        int number of links in link table
@@ -3453,6 +3480,26 @@ DESCRIPTION
   	LinksSize       int size of the links segment
   	DataSize        int size of the data segment
   	CumulativeSize  int cumulative size of object and its references
+  
+  DEPRECATED: Provided for legacy reasons. Modern replacements:
+  
+    For unixfs, 'ipfs files stat' can be used:
+  
+      $ ipfs files stat --with-local /ipfs/QmWfVY9y3xjsixTgbd9AorQxH7VtMpzfx2HaWtsoUYecaX
+  	QmWfVY9y3xjsixTgbd9AorQxH7VtMpzfx2HaWtsoUYecaX
+  	Size: 5
+  	CumulativeSize: 13
+  	ChildBlocks: 0
+  	Type: file
+  	Local: 13 B of 13 B (100.00%)
+  
+    Reported sizes are based on metadata present in root block, and should not be
+    trusted.  A slower, but more secure alternative is 'ipfs dag stat', which
+    will work for every DAG type.  It comes with a benefit of calculating the
+    size by walking the DAG:
+  
+  	$ ipfs dag stat /ipfs/QmWfVY9y3xjsixTgbd9AorQxH7VtMpzfx2HaWtsoUYecaX
+  	Size: 13, NumBlocks: 1
 
 
 ```
@@ -3475,8 +3522,8 @@ DESCRIPTION
 
 SUBCOMMANDS
   ipfs p2p close                                                - Stop listening for new connections to forward.
-  ipfs p2p forward <protocol> <listen-address> <target-address> - Forward connections to libp2p service
-  ipfs p2p listen <protocol> <target-address>                   - Create libp2p service
+  ipfs p2p forward <protocol> <listen-address> <target-address> - Forward connections to libp2p service.
+  ipfs p2p listen <protocol> <target-address>                   - Create libp2p service.
   ipfs p2p ls                                                   - List active p2p listeners.
   ipfs p2p stream                                               - P2P stream management.
 
@@ -3510,7 +3557,7 @@ OPTIONS
 
 ```
 USAGE
-  ipfs p2p forward <protocol> <listen-address> <target-address> - Forward connections to libp2p service
+  ipfs p2p forward <protocol> <listen-address> <target-address> - Forward connections to libp2p service.
 
 SYNOPSIS
   ipfs p2p forward [--allow-custom-protocol] [--] <protocol> <listen-address>
@@ -3544,7 +3591,7 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs p2p listen <protocol> <target-address> - Create libp2p service
+  ipfs p2p listen <protocol> <target-address> - Create libp2p service.
 
 SYNOPSIS
   ipfs p2p listen [--allow-custom-protocol] [--report-peer-id | -r] [--]
@@ -3664,7 +3711,7 @@ SUBCOMMANDS
                                           pinning service.
   ipfs pin rm <ipfs-path>...            - Remove pinned objects from local
                                           storage.
-  ipfs pin update <from-path> <to-path> - Update a recursive pin
+  ipfs pin update <from-path> <to-path> - Update a recursive pin.
   ipfs pin verify                       - Verify that recursive pins are
                                           complete.
 
@@ -4032,6 +4079,10 @@ DESCRIPTION
 
   Removes the pin from the given object allowing it to be garbage
   collected if needed. (By default, recursively. Use -r=false for direct pins.)
+  
+  A pin may not be removed because the specified object is not pinned or pinned
+  indirectly. To determine if the object is pinned indirectly, use the command:
+  ipfs pin ls -t indirect <cid>
 
 
 ```
@@ -4040,7 +4091,7 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs pin update <from-path> <to-path> - Update a recursive pin
+  ipfs pin update <from-path> <to-path> - Update a recursive pin.
 
 SYNOPSIS
   ipfs pin update [--unpin=false] [--] <from-path> <to-path>
@@ -4495,7 +4546,7 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs shutdown - Shut down the ipfs daemon
+  ipfs shutdown - Shut down the IPFS daemon.
 
 SYNOPSIS
   ipfs shutdown
@@ -4520,8 +4571,10 @@ DESCRIPTION
 SUBCOMMANDS
   ipfs stats bitswap        - Show some diagnostic information on the bitswap
                               agent.
-  ipfs stats bw             - Print ipfs bandwidth information.
-  ipfs stats dht [<dht>]... - Returns statistics about the node's DHT(s)
+  ipfs stats bw             - Print IPFS bandwidth information.
+  ipfs stats dht [<dht>]... - Returns statistics about the node's DHT(s).
+  ipfs stats provide        - Returns statistics about the node's (re)provider
+                              system.
   ipfs stats repo           - Get stats for the currently used repo.
 
   For more information about each command, use:
@@ -4550,7 +4603,7 @@ OPTIONS
 
 ```
 USAGE
-  ipfs stats bw - Print ipfs bandwidth information.
+  ipfs stats bw - Print IPFS bandwidth information.
 
 SYNOPSIS
   ipfs stats bw [--peer=<peer> | -p] [--proto=<proto> | -t] [--poll]
@@ -4609,19 +4662,39 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs stats dht [<dht>]... - Returns statistics about the node's DHT(s)
+  ipfs stats dht [<dht>]... - Returns statistics about the node's DHT(s).
 
 SYNOPSIS
   ipfs stats dht [--] [<dht>...]
 
 ARGUMENTS
 
-  [<dht>]... - The DHT whose table should be listed (wan or lan). Defaults to
-               both.
+  [<dht>]... - The DHT whose table should be listed (wanserver, lanserver, wan,
+               lan). wan and lan refer to client routing tables. When using the
+               experimental DHT client only WAN is supported. Defaults to wan
+               and lan.
 
 DESCRIPTION
 
   Returns statistics about the DHT(s) the node is participating in.
+  
+  This interface is not stable and may change from release to release.
+
+
+```
+
+## ipfs stats provide
+
+```
+USAGE
+  ipfs stats provide - Returns statistics about the node's (re)provider system.
+
+SYNOPSIS
+  ipfs stats provide
+
+DESCRIPTION
+
+  Returns statistics about the content the node is advertising.
   
   This interface is not stable and may change from release to release.
 
@@ -4900,7 +4973,7 @@ SYNOPSIS
   ipfs tar
 
 SUBCOMMANDS
-  ipfs tar add <file> - Import a tar file into ipfs.
+  ipfs tar add <file> - Import a tar file into IPFS.
   ipfs tar cat <path> - Export a tar file from IPFS.
 
   For more information about each command, use:
@@ -4912,7 +4985,7 @@ SUBCOMMANDS
 
 ```
 USAGE
-  ipfs tar add <file> - Import a tar file into ipfs.
+  ipfs tar add <file> - Import a tar file into IPFS.
 
 SYNOPSIS
   ipfs tar add [--] <file>
@@ -5011,7 +5084,7 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs version - Show ipfs version information.
+  ipfs version - Show IPFS version information.
 
 SYNOPSIS
   ipfs version [--number | -n] [--commit] [--repo] [--all]
@@ -5025,10 +5098,10 @@ OPTIONS
 
 DESCRIPTION
 
-  Returns the current version of ipfs and exits.
+  Returns the current version of IPFS and exits.
 
 SUBCOMMANDS
-  ipfs version deps - Shows information about dependencies used for build
+  ipfs version deps - Shows information about dependencies used for build.
 
   For more information about each command, use:
   'ipfs version <subcmd> --help'
@@ -5039,7 +5112,7 @@ SUBCOMMANDS
 
 ```
 USAGE
-  ipfs version deps - Shows information about dependencies used for build
+  ipfs version deps - Shows information about dependencies used for build.
 
 SYNOPSIS
   ipfs version deps
