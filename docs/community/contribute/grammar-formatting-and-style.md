@@ -58,7 +58,7 @@ The IPFS Docs project follows the _GitHub Flavored Markdown_ syntax for markdown
 
 #### Relative links
 
-If you include internal (relative) links to other content on NFT School, please link to them using full relative paths (e.g. use `../` for climbing a directory) and specifying the file's full name (e.g. a`wesome-tutorial.md#subheading`). This ensures that users who read docs content directly in-repo on GitHub's web UI are able to follow relative links correctly.
+If you include internal (relative) links to other content on the IPFS docs site, please link to them using full relative paths (e.g. use `../` for climbing a directory) and specifying the file's full name (e.g. a`wesome-tutorial.md#subheading`). This ensures that users who read docs content directly in-repo on GitHub's web UI are able to follow relative links correctly.
 
 ### Rules
 
