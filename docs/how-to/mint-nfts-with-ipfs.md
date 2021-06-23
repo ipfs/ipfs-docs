@@ -14,7 +14,7 @@ Since IPFS isn't a blockchain, we'll be leveraging the power of the Ethereum blo
 
 This guide doesn't go into the intricacies of NFTs, or even why they're important. This guide is solely to help you understand how to host NFTs on IPFS and how the process can be expanded to include other aspects of blockchain development.
 
-That being said, we're going to cover the _very basics_ of NFTs here so that everyone's on the same page.
+That being said, we're going to cover the _very basics_ of NFTs here so that everyone's on the same page. If you're interested in a deeper dive in the world of NFT best practices and NFT development in general, head over to [NFT School](https://nftschool.dev) for concept guides, tutorials, and how-tos.
 
 ### What NFTs are made of 
 
