@@ -25,6 +25,10 @@ If you are attempting to close an issue, great! Thanks for the help! Please leav
 
 Everyone has an opinion when it comes to docs, and **that's a good thing**! Having folks from different backgrounds add to a discussion empowers everyone within that discussion. So if you've got something to add or would like to bring up a topic for discussion about the IPFS Docs project, please do so! [Just create an issue using the `kind/question` tag!](https://github.com/ipfs/ipfs-docs/issues?q=is%3Aopen+is%3Aissue+label%3Akind%2Fquestion).
 
+#### Pull requests welcome
+
+Feel free to submit pull requestions with any changes you'd like to see! If you're simply changing a typo or adding editing a styling bug, you can add `ciskip` to the title of your pull request to stop Filecorgi from running.
+
 ## Project set up
 
 If you want to build this site locally, run the following:
