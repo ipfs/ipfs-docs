@@ -120,7 +120,7 @@ As noted above, your service must use the [IPFS Pinning Service API](https://ipf
 
 
 ::: tip
-If you're interested in creating your own pinning service for your own personal or shared use, you can [generate client and server from the OpenAPI spec](https://github.com/ipfs/pinning-services-api-spec#code-generation), reducing the development time, or [reuse one of existing solutions](https://github.com/ipfs/pinning-services-api-spec#adoption)
+If you're interested in creating your own pinning service for your own personal or shared use, you can [generate client and server from the OpenAPI spec](https://github.com/ipfs/pinning-services-api-spec#code-generation), reducing the development time, or [reuse an existing solution](https://github.com/ipfs/pinning-services-api-spec#adoption)
 
 You may also wish to read continuing details on how the API is evolving in the [Pinning Service API Spec GitHub repo](https://github.com/ipfs/pinning-services-api-spec), and be part of the discussion on its further development!
 :::
