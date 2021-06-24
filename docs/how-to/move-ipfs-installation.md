@@ -126,6 +126,33 @@ mv .ipfs-old .ipfs
 
 Running `ipfs daemon` now loads your old IPFS repository. Try repeating the backup and restore steps. Make sure to stop any IPFS services, daemons, or applications when backing up and restoring an IPFS repository.
 
+#### Some data from the old installation is missing on the new one
+
+If you've previously run some `ipfs` commands with `sudo`, for example, `sudo ipfs get $someCID`, the `ipfs` command may have created a new IPFS repository for the `root` user, separate from the one for your user account.
+
+If you have `root` / `sudo` access to the old system, check to see if the directory `/root/.ipfs` exists. If so, make a backup of the `/root/.ipfs` directory, as described above.
+
+If you want to consolidate the two repositories, you can export the IPFS objects from one repository to a set of CAR files and import them into a different repository. 
+
+Below is a small bash snippet to export all local IPFS objects to a set of files in a directory called `car_export`. These commands should be run as the user who owns the repository you want to export, and the ipfs daemon should be running.
+
+```bash
+mkdir -p car_export
+cd car_export
+cids=$(ipfs refs local)
+for cid in $cids; do
+  echo "exporting $cid"
+  ipfs dag export $cid > $cid.car
+done
+```
+
+You should then be able to import those files into a new IPFS installation using a command like this:
+
+```bash
+cd car_export
+ipfs dag import *.car
+```
+
 ### Windows
 
 #### IPFS Desktop has an error
