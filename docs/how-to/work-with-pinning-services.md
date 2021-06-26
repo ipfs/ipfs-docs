@@ -6,8 +6,6 @@ description: Learn how to use or create remote pinning services with IPFS, the I
 
 # Work with remote pinning services
 
-[[toc]]
-
 Depending on how you use IPFS, you might find it helpful to use a **remote pinning service** instead of, or in addition to, pinning files on your local IPFS node. Whether it happens remotely or locally, **pinning** an item in IPFS identifies it as something you always wish to keep available, exempting it from the routine _garbage collection_ that IPFS does on infrequently-used items in order to efficiently manage storage space. [Learn more about local pinning →](pin-files.md)
 
 If you've got just one local IPFS node that's always running, local pinning may be all you need to ensure your important items are persisted and never garbage-collected. However, using a remote pinning service — or creating your own — might be useful to you if:
@@ -25,7 +23,12 @@ As of January 2021, [Pinata](https://pinata.cloud/) supports the [IPFS Pinning S
 
 ## Use an existing pinning service
 
-To add and use a remote pinning service directly in IPFS, you'll first need to have an account with that service. Once you've got an account, follow these steps to add and use it:
+There are two methods to add an existing pinning service to your IPFS installation:
+
+- [IPFS Desktop or IPFS Web UI](#ipfs-desktop-or-ipfs-web-ui)
+- [IPFS CLI](#ipfs-cli)
+
+To add and use a remote pinning service directly in IPFS, you'll first need to have an account with that service.
 
 ### IPFS Desktop or IPFS Web UI
 
