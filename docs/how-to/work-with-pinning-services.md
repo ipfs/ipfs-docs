@@ -3,6 +3,7 @@ title: Work with pinning services
 description: Learn how to use or create remote pinning services with IPFS, the InterPlanetary File System.
 ---
 
+
 # Work with remote pinning services
 
 Depending on how you use IPFS, you might find it helpful to use a **remote pinning service** instead of, or in addition to, pinning files on your local IPFS node. Whether it happens remotely or locally, **pinning** an item in IPFS identifies it as something you always wish to keep available, exempting it from the routine _garbage collection_ that IPFS does on infrequently-used items in order to efficiently manage storage space. [Learn more about local pinning →](pin-files.md)
@@ -22,7 +23,12 @@ As of January 2021, [Pinata](https://pinata.cloud/) supports the [IPFS Pinning S
 
 ## Use an existing pinning service
 
-To add and use a remote pinning service directly in IPFS, you'll first need to have an account with that service. Once you've got an account, follow these steps to add and use it:
+There are two methods to add an existing pinning service to your IPFS installation:
+
+- [IPFS Desktop or IPFS Web UI](#ipfs-desktop-or-ipfs-web-ui)
+- [IPFS CLI](#ipfs-cli)
+
+To add and use a remote pinning service directly in IPFS, you'll first need to have an account with that service.
 
 ### IPFS Desktop or IPFS Web UI
 
@@ -32,32 +38,34 @@ You can add your favorite pinning service(s) to IPFS Desktop/Web UI directly, en
 
 To add a new pinning service, open up IPFS Desktop or Web UI, navigate to the **Pinning Services** section of the **Settings** screen, and click the **Add Service** button:
 
-![The Desktop/Web UI Settings screen, ready for adding a new pinning service](https://user-images.githubusercontent.com/1507828/102558464-b0c07700-408a-11eb-8ae4-cd30e3ce81fd.png)
+> ![The Desktop/Web UI Settings screen, ready for adding a new pinning service](./images/work-with-pinning-services/add-service.jpg)
 
 Then, select your chosen pinning service from the modal that pops up. If the pinning service you'd like to add isn't listed in that modal, don't worry — you can add any remote pinning service that supports the IPFS Pinning Service API by clicking the **Add a custom one** link.
 
-![Desktop/Web UI modal for selecting a pinning service to add](https://user-images.githubusercontent.com/1507828/102558471-b918b200-408a-11eb-9a28-b06d03f99121.png)
+> ![Desktop/Web UI modal for selecting a pinning service to add](./images/work-with-pinning-services/add-service-picker.jpg)
 
 In the next screen, you’ll be asked for a few other details:
 
-- A nickname for this service. This can be helpful if, for example, you want to add two accounts from the same service.
-- The URL for your service's API endpoint. _Note: This field only appears if you've selected a custom pinning service!_
-- Your secret API key. This is the unique token provided to you by the pinning service — check its documentation for more info.
-- Whether you want to automatically add all files in your local node’s Files directory to the pinning service, or choose which ones you upload.
+| Preconfigured service (eg. Pinata)                                                    | Custom service                                                                                                 |
+| ----                                                                                           | ----                                                                                                           |
+| ![Adding Pinata in Desktop/Web UI](./images/work-with-pinning-services/add-service-pinata.jpg) | ![Adding custom pinning service in Desktop/Web UI](./images/work-with-pinning-services/add-service-custom.jpg) |
 
-![Details modals for adding a new pinning service or a new custom pinning service in Desktop/Web UI](https://user-images.githubusercontent.com/1507828/102558910-ca15f300-408b-11eb-9fe3-742186c077c7.png)
+- A **nickname** for this service. This can be helpful if, for example, you want to add two accounts from the same service.
+- The URL for your service's **API endpoint**.
+  _Note: This field only appears if you've selected a custom pinning service!_
+- Your **secret access token**. This is the unique token provided to you by the pinning service — check its documentation for more info.
+  _To illustrate, example below shows which value should be copied from [pinata.cloud/keys](https://pinata.cloud/keys)_
+  > ![Pinata secret access token](./images/work-with-pinning-services/add-service-pinata-token.jpg)
 
 After you hit **Save**, you’ll see your new pinning service added to the **Pinning Services** section of your **Settings** screen.
 
-![Desktop/Web UI Settings screen with a new pinning service added](https://user-images.githubusercontent.com/1507828/102558530-db123480-408a-11eb-9e3b-58bbd59b2880.png)
+> ![Desktop/Web UI Settings screen with a new pinning service added](./images/work-with-pinning-services/added-service.jpg)
 
 #### Using a pinning service
 
 Now that you’re set up, you can pin or unpin files to your new pinning service directly from the Files screen. Just right-click any file or click the **three dots** action icon in the files list, and select **Set pinning**:
 
-![Desktop/Web UI Files screen with the action menu open and "Set pinning" visible](https://user-images.githubusercontent.com/1507828/102558546-e6656000-408a-11eb-97b8-5fdb060602d2.png)
-
--->
+> ![Desktop/Web UI Files screen with the action menu open and "Set pinning" visible](./images/work-with-pinning-services/set-pinning.jpg)
 
 ### IPFS CLI
 
@@ -115,7 +123,7 @@ As noted above, your service must use the [IPFS Pinning Service API](https://ipf
 
 
 ::: tip
-If you're interested in creating your own pinning service for your own personal or shared use, you can [generate client and server from the OpenAPI spec](https://github.com/ipfs/pinning-services-api-spec#code-generation), reducing the development time.
+If you're interested in creating your own pinning service for your own personal or shared use, you can [generate client and server from the OpenAPI spec](https://github.com/ipfs/pinning-services-api-spec#code-generation), reducing the development time, or [reuse an existing solution](https://github.com/ipfs/pinning-services-api-spec#adoption)
 
 You may also wish to read continuing details on how the API is evolving in the [Pinning Service API Spec GitHub repo](https://github.com/ipfs/pinning-services-api-spec), and be part of the discussion on its further development!
 :::
