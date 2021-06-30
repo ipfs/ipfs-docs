@@ -17,22 +17,22 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 
    ```powershell
    cd ~
-   wget https://dist.ipfs.io/ipfs-update/v1.6.0/ipfs-update_v1.6.0_windows-amd64.zip -Outfile ipfs-update_v1.6.0_windows-amd64.zip
+   wget https://dist.ipfs.io/ipfs-update/v1.7.1/ipfs-update_v1.7.1_windows-amd64.zip -Outfile ipfs-update_v1.7.1_windows-amd64.zip
    ```
 
 2. Unzip the file and move it somewhere handy:
 
    ```powershell
-   Expand-Archive -Path ipfs-update_v1.6.0_windows-amd64.zip -DestinationPath ~\Apps\ipfs-update_v1.6.0
+   Expand-Archive -Path ipfs-update_v1.7.1_windows-amd64.zip -DestinationPath ~\Apps\ipfs-update_v1.7.1
    ```
 
-3. Move into the `ipfs-update_v1.6.0` folder and check that the `ipfs-update.exe` works:
+3. Move into the `ipfs-update_v1.7.1` folder and check that the `ipfs-update.exe` works:
 
    ```powershell
-   cd Apps\ipfs-update_v1.6.0\ipfs-update\
+   cd Apps\ipfs-update_v1.7.1\ipfs-update\
    .\ipfs-update.exe --version
 
-   > ipfs-update version 1.6.0
+   > ipfs-update version 1.7.1
    ```
 
    While you can use `ipfs-update`right now, it's better to add `ipfs-update.exe` to your `PATH` by using the following steps.
@@ -44,7 +44,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 
    > Path
    > ----
-   > C:\Users\Johnny\Apps\ipfs-update_v1.6.0\ipfs-update
+   > C:\Users\Johnny\Apps\ipfs-update_v1.7.1\ipfs-update
    ```
 
 5. Check if a profile file for PowerShell already exists:
@@ -70,7 +70,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 7. Add the address you just copied to PowerShell's `PATH` by adding it to the end of the `Microsoft.PowerShell_profile.ps1` file stored in `Documents\WindowsPowerShell`:
 
    ```powershell
-   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\Johnny\Apps\ipfs-update_v1.6.0\ipfs-update')"
+   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\Johnny\Apps\ipfs-update_v1.7.1\ipfs-update')"
    ```
 
 8. Close and reopen your PowerShell window. Test that your `PATH` is set correctly by going to your home folder and asking `ipfs-update` for the version:
@@ -79,7 +79,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
    cd ~
    ipfs-update --version
 
-   > ipfs-update version 1.6.0
+   > ipfs-update version 1.7.1
    ```
 
    If you get an error during the next start of PowerShell while loading the profile file, you need to change `ExecutionPolicy` of PowerShell to `Unrestricted` as described in the [Microsoft PowerShell documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7).
@@ -89,13 +89,13 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 1. Download the macOS binary from [`dist.ipfs.io`](https://dist.ipfs.io/#ipfs-update).
 
    ```bash
-   curl https://dist.ipfs.io/ipfs-update/v1.6.0/ipfs-update_v1.6.0_darwin-amd64.tar.gz --output ipfs-update_v1.6.0_darwin-amd64.tar.gz
+   curl https://dist.ipfs.io/ipfs-update/v1.7.1/ipfs-update_v1.7.1_darwin-amd64.tar.gz --output ipfs-update_v1.7.1_darwin-amd64.tar.gz
    ```
 
 2. Unzip the file:
 
    ```bash
-   tar -xvzf ipfs-update_v1.6.0_darwin-amd64.tar.gz
+   tar -xvzf ipfs-update_v1.7.1_darwin-amd64.tar.gz
 
    > x ipfs-update/install.sh
    > x ipfs-update/ipfs-update
@@ -115,7 +115,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
    ```bash
    ipfs-update --version
 
-   > ipfs-update version 1.6.0
+   > ipfs-update version 1.7.1
    ```
 
 ### Linux
@@ -123,13 +123,13 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 1. Download the Linux binary from [`dist.ipfs.io`](https://dist.ipfs.io/#ipfs-update).
 
    ```bash
-   wget https://dist.ipfs.io/ipfs-update/v1.6.0/ipfs-update_v1.6.0_linux-amd64.tar.gz
+   wget https://dist.ipfs.io/ipfs-update/v1.7.1/ipfs-update_v1.7.1_linux-amd64.tar.gz
    ```
 
 2. Unzip the file:
 
    ```bash
-   tar -xvzf ipfs-update_v1.6.0_linux-amd64.tar.gz
+   tar -xvzf ipfs-update_v1.7.1_linux-amd64.tar.gz
 
    > x ipfs-update/install.sh
    > x ipfs-update/ipfs-update
@@ -149,7 +149,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
    ```bash
    ipfs-update --version
 
-   > ipfs-update version 1.6.0
+   > ipfs-update version 1.7.1
    ```
 
 ## Install IPFS
@@ -157,7 +157,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 Run `ipfs-update install` followed by the version of Go-IPFS you want to install:
 
 ```bash
-ipfs-update install 0.5.0
+ipfs-update install 0.9.0
 ```
 
 To install the latest release of Go-IPFS use the `latest` tag:
@@ -189,13 +189,13 @@ To uninstall IPFS Update, delete the binary and `ipfs-update` from your `PATH` v
    ```powershell
    gci -recurse -filter ipfs-update.exe -File -ErrorAction SilentlyContinue
 
-   > Directory: C:\Users\Johnny\Apps\ipfs-update_v1.6.0\ipfs-update
+   > Directory: C:\Users\Johnny\Apps\ipfs-update_v1.7.1\ipfs-update
    ```
 
 2. Remove the `ipfs-update` directory:
 
    ```powershell
-   Remove-Item -Recurse -Force C:\Users\Johnny\Apps\ipfs-update_v1.6.0
+   Remove-Item -Recurse -Force C:\Users\Johnny\Apps\ipfs-update_v1.7.1
    ```
 
 3. Delete the `ipfs-update` directory from the `PATH` variable. This process differs between Windows installations, so please check the [Microsoft documentation for details](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=msvc-160).
