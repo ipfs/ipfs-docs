@@ -57,7 +57,7 @@ The more years you choose to prepay, the less you will spend on gas fees overall
 
 ### Purchase an Ethereum domain name
 
-1. Go to [app.ens.domains](https://app.ens.domains/).
+1. Go to [ens.eth](http://ens.eth/) to visit using ENS+IPFS, alternatively go to [app.ens.domains](https://app.ens.domains/) to use regular DNS and the centralized web.
 2. Log in to MetaMask:
 
    ![Metamask pop-up showing a login screen.](./images/link-a-domain/ens-metamask-log-into-key.png)
