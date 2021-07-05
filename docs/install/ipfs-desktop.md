@@ -19,14 +19,14 @@ If you already have an IPFS node on your computer, IPFS Desktop will act as a co
 
 ### Feature highlights
 
-- **Start your node at system startup (Mac/Windows) and control it from your OS** using the convenient menubar/system tray menu
-- **Quickly import files, folders, and screenshots to IPFS** in a variety of convenient ways, including drag-and-drop and (for Windows) right-clicking a file/folder's icon
-- **Easily manage the contents of your node** with a familiar file browser that offers quick shortcuts for renaming/moving/pinning files and folders, previewing many common file formats directly in IPFS Desktop, copying content IDs or shareable links to your clipboard, and more
-- **Quick download for CIDs, IPFS paths, and IPNS paths** — choose `Download...` from your menubar/status tray, paste in a hash, and you're good to go
-- **Visualize your IPFS peers worldwide** on a map depicting what nodes you're connected to, where they are, the connections they're using, and more
-- **Explore the "Merkle Forest" of IPFS files** with a visualizer that lets you see firsthand how example datasets stored on IPFS — or your own IPFS files — are broken down into content-addressed pieces
-- **OS-wide support for IPFS files and links** (on Mac, Windows, and some Linux flavors) automatically hands off links starting with `ipfs://`, `ipns://` and `dweb:` to be opened in IPFS Desktop
-- **CLI Tutor Mode** helps you learn IPFS commands as you go
+- **Start your node at system startup (Mac/Windows) and control it from your OS** using the convenient menubar/system tray menu.
+- **Quickly import files, folders, and screenshots to IPFS** in a variety of convenient ways, including drag-and-drop and (for Windows) right-clicking a file/folder's icon.
+- **Easily manage the contents of your node** with a familiar file browser that offers quick shortcuts for renaming/moving/pinning files and folders, previewing many common file formats directly in IPFS Desktop, copying content IDs or shareable links to your clipboard, and more.
+- **Quick download for CIDs, IPFS paths, and IPNS paths** — choose `Download...` from your menubar/status tray, paste in a hash, and you're good to go.
+- **Visualize your IPFS peers worldwide** on a map depicting what nodes you're connected to, where they are, the connections they're using, and more.
+- **Explore the "Merkle Forest" of IPFS files** with a visualizer that lets you see firsthand how example datasets stored on IPFS — or your own IPFS files — are broken down into content-addressed pieces.
+- **OS-wide support for IPFS files and links** (on Mac, Windows, and some Linux flavors) automatically hands off links starting with `ipfs://`, `ipns://` and `dweb:` to be opened in IPFS Desktop.
+- **CLI Tutor Mode** helps you learn IPFS commands as you go.
 
 ### Install instructions
 
@@ -40,7 +40,7 @@ Or, if you'd rather use a package manager, check this [list of third-party packa
 
 ## Windows
 
-1. Go to the [IPFS Desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases).
+1. Go to the [IPFS Desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases)
 2. Find the link ending in `.exe` for the latest version of IPFS Desktop:
 
    ![The IPFS Desktop download page.](./images/ipfs-desktop/install-windows-download-exe-page.png)
@@ -66,7 +66,7 @@ The IPFS Desktop application has finished installing. You can now start to [add 
 
 ## macOS
 
-1. Download the latest available `.dmg` file from the [ipfs-shipyard/ipfs-desktop releases page](https://github.com/ipfs/ipfs-desktop/releases):
+1. Download the latest available `.dmg` file from the [ipfs-shipyard/ipfs-desktop releases page](https://github.com/ipfs/ipfs-desktop/releases)
 
    ![List of available download links in GitHub.](./images/ipfs-desktop/install-macos-dmg-file-link.png)
 
@@ -99,7 +99,7 @@ The IPFS Desktop application has finished installing. You can now start to [add 
 
 While these instructions are specific to Ubuntu, they will likely work with most Ubuntu-related Linux distributions. For non-Ubuntu Linux distributions, check out the [IPFS Desktop GitHub repository](https://github.com/ipfs-shipyard/ipfs-desktop#install) for install instructions.
 
-1. Download the latest `.AppImage` package from the [IPFS Desktop GitHub repository](https://github.com/ipfs-shipyard/ipfs-desktop#install).
+1. Download the latest `.AppImage` package from the [IPFS Desktop GitHub repository](https://github.com/ipfs-shipyard/ipfs-desktop#install)
 1. Move into where you downloaded the `.AppImage` file, and make it executable:
 
    ```shell
