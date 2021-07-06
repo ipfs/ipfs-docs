@@ -57,7 +57,7 @@ The more years you choose to prepay, the less you will spend on gas fees overall
 
 ### Purchase an Ethereum domain name
 
-1. Go to [app.ens.domains](https://app.ens.domains/).
+1. Go to [ens.eth](http://ens.eth/) to visit using ENS+IPFS. You can also go to [app.ens.domains](https://app.ens.domains/) to use regular DNS and the centralized web.
 2. Log in to MetaMask:
 
    ![Metamask pop-up showing a login screen.](./images/link-a-domain/ens-metamask-log-into-key.png)
@@ -114,7 +114,7 @@ The more years you choose to prepay, the less you will spend on gas fees overall
 
 In a few minutes, you'll be able to go to `Your_Domain.eth/` and view your website. Note the trailing slash `/`. Because `.eth` is not a registered DNS top-level domain, it is normally inaccessible through regular browsers.
 
-[Eth.link](https://eth.link/) provides a way for any browser to access your website. Append `.link` to your domain `Your_Domain.eth.link`. There are no additional steps for this.
+[Eth.link](https://eth.link/) provides a way for any browser to access your website. Just append `.link` to your domain `Your_Domain.eth.link`. There are no additional steps required for this.
 
 ## Up next
 
