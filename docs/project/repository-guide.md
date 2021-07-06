@@ -31,18 +31,18 @@ Organization and repository links for the top-level projects shipped as part of 
 ### Underlying components
 
 - [libp2p](https://github.com/libp2p):
-    - [go-libp2p](https://github.com/libp2p/go-libp2p): Reference libp2p implementation in Go.
-    - [js-libp2p](https://github.com/libp2p/js-libp2p): The JavaScript implementation of the libp2p networking stack.
-    - [rust-libp2p](https://github.com/libp2p/rust-libp2p): The Rust implementation of the libp2p networking stack.
+  - [go-libp2p](https://github.com/libp2p/go-libp2p): Reference libp2p implementation in Go.
+  - [js-libp2p](https://github.com/libp2p/js-libp2p): The JavaScript implementation of the libp2p networking stack.
+  - [rust-libp2p](https://github.com/libp2p/rust-libp2p): The Rust implementation of the libp2p networking stack.
 - [IPLD](https://github.com/ipld):
-    - [go-ipld](https://github.com/ipld/go-ipld): Entry-point repo for Go IPLD development.
-    - [js-ipld](https://github.com/ipld/js-ipld): The JavaScript Implementation of IPLD.
-    - [IPLD specifications](https://github.com/ipld/specs): The set of specifications that make up IPLD.
+  - [go-ipld](https://github.com/ipld/go-ipld): Entry-point repo for Go IPLD development.
+  - [js-ipld](https://github.com/ipld/js-ipld): The JavaScript Implementation of IPLD.
+  - [IPLD specifications](https://github.com/ipld/specs): The set of specifications that make up IPLD.
 - [Multiformats](https://github.com/multiformats):
-    - [Multiaddr](https://github.com/multiformats/multiaddr): Composable and future-proof network addresses.
-    - [Multibase](https://github.com/multiformats/multibase): Self-identifying base encodings.
-    - [Multicodec](https://github.com/multiformats/multicodec): Compact, self-describing codecs.
-    - [Multihash](https://github.com/multiformats/multihash): Self-describing hashes for future-proofing.
+  - [Multiaddr](https://github.com/multiformats/multiaddr): Composable and future-proof network addresses.
+  - [Multibase](https://github.com/multiformats/multibase): Self-identifying base encodings.
+  - [Multicodec](https://github.com/multiformats/multicodec): Compact, self-describing codecs.
+  - [Multihash](https://github.com/multiformats/multihash): Self-describing hashes for future-proofing.
 
 ### IPFS tools and products
 
@@ -55,6 +55,7 @@ Organization and repository links for the top-level projects shipped as part of 
 - [Testground](https://github.com/testground/testground): A platform for testing, benchmarking, and simulating distributed and p2p systems at scale.
 
 ### Interoperability, platforms, and standards
+
 - [IPFS Web Browsers Integration](https://github.com/ipfs/in-web-browsers): Tracking progress toward native IPFS support in web browsers.
 - [Are We Distributed Yet?](https://github.com/arewedistributedyet/arewedistributedyet): Prioritized listing of progress toward making peer-to-peer a first-class part of the web.
 - [IPFS Mobile Design Guidelines](https://github.com/ipfs/mobile-design-guidelines): Best practices for making IPFS work for mobile.

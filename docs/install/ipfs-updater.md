@@ -35,7 +35,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
    > ipfs-update version 1.7.1
    ```
 
-   While you can use `ipfs-update`right now, it's better to add `ipfs-update.exe` to your `PATH` by using the following steps.
+   While you can use `ipfs-update` right now, it's better to add `ipfs-update.exe` to your `PATH` by using the following steps.
 
 4. Print the current working directory and copy it to your clipboard:
 
