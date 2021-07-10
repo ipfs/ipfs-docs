@@ -148,6 +148,10 @@ JavaScript Object Notation (JSON) is a lightweight data-interchange format. JSON
 
 ## L
 
+### Leaf
+
+A Leaf is a node of a graph that by definition doesn't link to any other node. This is opposed to to [roots](#root). Leafs usualy just hold lots of data.
+
 ### libp2p
 
 The libp2p project is a modular system of protocols, specifications, and libraries that enable the development of peer-to-peer network applications. It is an essential component of IPFS. [More about libp2p](https://libp2p.io/)
@@ -196,6 +200,14 @@ The Multiformats project is a collection of protocols that aim to future-proof s
 
 A Node or [peer](#peer) is the IPFS program that you run on your local computer to store/cache files and then connect to the IPFS network (by running the [daemon](#daemon)). [More about Node](../how-to/command-line-quick-start.md#take-your-node-online)
 
+### Node (in graphs)
+
+A node in the context of [graphs](#Graph) is a point that may be linked to other Nodes by edges or links.
+
+For example in your social network, each people can be seen as a node and each connection between people as an edge.
+
+You can also call node, vertice or point and knot (altho knot is very rarely used outside of knot theory).
+
 ## O
 
 ## P
@@ -239,6 +251,12 @@ The Relay is a means to establish connectivity between libp2p nodes (e.g., IPFS 
 ### Repo
 
 The Repository (Repo) is a directory where IPFS stores all its settings and internal data. It is created with the `ipfs init` command. [More about Repo](../how-to/command-line-quick-start.md#install-ipfs)
+
+### Root
+
+A root is a node in an [IPLD](#ipld) [graph](#graph) that by definition links to at least one [leaf](#leaf) or root together, roots may contain data too but that is optional.
+
+This is used to aggregate multiple chunks of a file together. For example if your file is 600MiB, which fits in 3 chunk (the block size of IPFS being 256MiB), you will create 3 leafs and then create a root linking all of them together. Then the CID of this last root is what IPFS shows you as the CID of the file.
 
 ## S
 
