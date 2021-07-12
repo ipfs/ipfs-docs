@@ -27,7 +27,7 @@ description: The home page for developer documentation for IPFS, the InterPlanet
 
 Or, check out the [Building Web3 video series](https://www.youtube.com/playlist?list=PL_0VrY55uV1-THfh1GVoE6v0SxKO9M0gs) to meet the visionaries who are building the future using IPFS and other web3 tools!
 
-@[youtube](d1kpID1LSRE&list=PL_0VrY55uV1-THfh1GVoE6v0SxKO9M0gs)
+@[youtube](c50licHTOik)
 
 ## IPFS and you
 
