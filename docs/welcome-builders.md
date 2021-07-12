@@ -1,6 +1,5 @@
 ---
 title: IPFS Documentation
-legacyUrl: https://docs.ipfs.io/
 description: The home page for developer documentation for IPFS, the InterPlanetary File System.
 ---
 
@@ -14,7 +13,7 @@ description: The home page for developer documentation for IPFS, the InterPlanet
 
 ## What is IPFS?
 
-**IPFS is a content-addressed system for storing and delivering data over a globally distributed network of peers.** As a critical ingredient in a wide variety of decentralized applications and services powering the future of the internet, IPFS is an important complement to blockchains, decentralized identity, verifiable storage like [Filecoin](https://filecoin.io), and other ingredients in a distributed web (d-web) stack.
+**IPFS is a content-addressed system for storing and delivering data over a globally distributed network of peers.** As a critical ingredient in a wide variety of decentralized applications and services powering the future of the internet, IPFS is an important complement to blockchains, decentralized identity, verifiable storage like [Filecoin](https://filecoin.io), and other ingredients in a distributed web (dWeb) stack.
 
 [Learn more →](concepts/what-is-ipfs.md#what-is-ipfs)
 
@@ -23,12 +22,12 @@ description: The home page for developer documentation for IPFS, the InterPlanet
 **Individuals and organizations worldwide are using IPFS to build successful apps and services for a truly amazing variety of use cases and industries.** Whether you're interested in NFTs or networked communities, streaming music or social media, IPFS can play a critical part in your decentralized tech stack. Check out these resources:
 
 - [**Case Study Series**](concepts/README.md#examples-and-case-studies) — Success stories in industries ranging from big data to e-commerce and more.
-- [**IPFS Ecosystem Explorer**](https://ipfs.io/images/ipfs-applications-diagram.png) — See the full landscape of companies shipping apps, services, and more built on IPFS.
+- [**IPFS Ecosystem Explorer**](https://ecosystem.ipfs.io) — Traverse the full landscape of companies shipping apps, services, and more built on IPFS.
 - [**Awesome IPFS**](https://awesome.ipfs.io) — Community projects of all shapes and sizes, from production apps to open-source data sets to experimental repos.
 
 Or, check out the [Building Web3 video series](https://www.youtube.com/playlist?list=PL_0VrY55uV1-THfh1GVoE6v0SxKO9M0gs) to meet the visionaries who are building the future using IPFS and other web3 tools!
 
-@[youtube](d1kpID1LSRE)
+@[youtube](d1kpID1LSRE&list=PL_0VrY55uV1-THfh1GVoE6v0SxKO9M0gs)
 
 ## IPFS and you
 
@@ -49,3 +48,4 @@ Ready to roll up your sleeves and dive in? Start with these resources:
 - Ask questions or start a discussion in the [**official IPFS forums**](https://discuss.ipfs.io).
 - Find virtual and in-person [**hackathons and other events**](https://blog.ipfs.io/?category=Event) on the [IPFS Blog & News](https://blog.ipfs.io) page.
 - Learn the [**basics of IPFS concepts**](concepts/README.md) like content addressing and peer-to-peer sharing here in the docs, or try hands-on examples over at [ProtoSchool](https://proto.school).
+- Interested in IPFS because of the important role it plays in NFTs? Learn more about NFT development at [NFT School](https://nftschool.dev).
