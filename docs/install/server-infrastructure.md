@@ -43,7 +43,7 @@ If you're having issues here, head over to the [official Docker documentation to
 1. Unzip the package:
 
    ```bash
-   tar xvzf ipfs-cluster-ctl_v0.13.0_linux-amd64.tar.gz
+   tar xvzf ipfs-cluster-ctl_v0.13.1_linux-amd64.tar.gz
 
    > ipfs-cluster-ctl/ipfs-cluster-ctl
    > ipfs-cluster-ctl/LICENSE
