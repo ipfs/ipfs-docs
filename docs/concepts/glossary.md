@@ -150,7 +150,7 @@ JavaScript Object Notation (JSON) is a lightweight data-interchange format. JSON
 
 ### Leaf
 
-A Leaf is a node of a graph that by definition doesn't link to any other node. This is opposed to to [roots](#root). Leafs usualy just hold lots of data.
+A Leaf is a node of a graph that doesn't link to any other node. This is opposed to a [root](#root).
 
 ### libp2p
 
@@ -202,11 +202,9 @@ A Node or [peer](#peer) is the IPFS program that you run on your local computer 
 
 ### Node (in graphs)
 
-A node in the context of [graphs](#Graph) is a point that may be linked to other Nodes by edges or links.
+A node, in the context of [graphs](#graph), is a point that may be linked to by other nodes using edges or links.
 
-For example in your social network, each people can be seen as a node and each connection between people as an edge.
-
-You can also call node, vertice or point and knot (altho knot is very rarely used outside of knot theory).
+For example, in a family tree each person is a _node_, while each branch connecting one person to another is an _edge_.
 
 ## O
 
@@ -254,9 +252,17 @@ The Repository (Repo) is a directory where IPFS stores all its settings and inte
 
 ### Root
 
-A root is a node in an [IPLD](#ipld) [graph](#graph) that by definition links to at least one [leaf](#leaf) or root together, roots may contain data too but that is optional.
+A root is a [node](#node) in a [graph](#graph) that links to at least one other node. In an IPLD graph, roots are used to aggregate multiple chunks of a file together. 
 
-This is used to aggregate multiple chunks of a file together. For example if your file is 600MiB, which fits in 3 chunk (the block size of IPFS being 256MiB), you will create 3 leafs and then create a root linking all of them together. Then the CID of this last root is what IPFS shows you as the CID of the file.
+If you have a 600MiB file `A`, it can be split into 3 chunks `B`, `C`, and `D` since the block size of IPFS is 256MiB. The node `A` that links to each of these three chunks is the root. The CID of this root is what IPFS shows you as the CID of the file.
+
+```
+      A
+      |
+-------------
+|     |     |
+B     C     D
+```
 
 ## S
 
