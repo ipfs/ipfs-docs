@@ -148,6 +148,10 @@ JavaScript Object Notation (JSON) is a lightweight data-interchange format. JSON
 
 ## L
 
+### Leaf
+
+A Leaf is a node of a graph that doesn't link to any other node. This is opposed to a [root](#root).
+
 ### libp2p
 
 The libp2p project is a modular system of protocols, specifications, and libraries that enable the development of peer-to-peer network applications. It is an essential component of IPFS. [More about libp2p](https://libp2p.io/)
@@ -196,6 +200,12 @@ The Multiformats project is a collection of protocols that aim to future-proof s
 
 A Node or [peer](#peer) is the IPFS program that you run on your local computer to store/cache files and then connect to the IPFS network (by running the [daemon](#daemon)). [More about Node](../how-to/command-line-quick-start.md#take-your-node-online)
 
+### Node (in graphs)
+
+A node, in the context of [graphs](#graph), is a point that may be linked to by other nodes using edges or links.
+
+For example, in a family tree each person is a _node_, while each branch connecting one person to another is an _edge_.
+
 ## O
 
 ## P
@@ -239,6 +249,20 @@ The Relay is a means to establish connectivity between libp2p nodes (e.g., IPFS 
 ### Repo
 
 The Repository (Repo) is a directory where IPFS stores all its settings and internal data. It is created with the `ipfs init` command. [More about Repo](../how-to/command-line-quick-start.md#install-ipfs)
+
+### Root
+
+A root is a [node](#node) in a [graph](#graph) that links to at least one other node. In an IPLD graph, roots are used to aggregate multiple chunks of a file together. 
+
+If you have a 600MiB file `A`, it can be split into 3 chunks `B`, `C`, and `D` since the block size of IPFS is 256MiB. The node `A` that links to each of these three chunks is the root. The CID of this root is what IPFS shows you as the CID of the file.
+
+```
+      A
+      |
+-------------
+|     |     |
+B     C     D
+```
 
 ## S
 
