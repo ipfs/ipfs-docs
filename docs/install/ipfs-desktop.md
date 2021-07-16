@@ -32,7 +32,7 @@ If you already have an IPFS node on your computer, IPFS Desktop will act as a co
 
 To install IPFS Desktop, follow the specific instructions for your operating system. IPFS Desktop is built using the [Electron framework](https://www.electronjs.org), so the application should work wherever Electron works.
 
-| [Windows](#windows)                                                 | [macOS](#macos)                                               | [Ubuntu](#Ubuntu)                                                |
+| [Windows](#windows)                                                 | [macOS](#macos)                                               | [Ubuntu](#ubuntu)                                                |
 | ------------------------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------- |
 | [![Windows icon](./images/ipfs-desktop/windows-icon.png)](#windows) | [![macOS icon](./images/ipfs-desktop/apple-icon.png)](#macos) | [![Ubuntu icon](./images/ipfs-desktop/ubuntu-icon.png)](#ubuntu) |
 
