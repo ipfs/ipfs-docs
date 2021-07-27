@@ -18,6 +18,10 @@ Nodes on the IPFS network can automatically cache resources they download, and k
 
 To ensure that data _persists_ on IPFS, and is not deleted during garbage collection, [data can be pinned](../how-to/pin-files.md) to one or more IPFS nodes. Pinning gives you control over disk space and data retention. As such, you should use that control to pin any content you wish to keep on IPFS indefinitely.
 
+### Filecoin
+
+Lorem ipsum.
+
 ## Garbage Collection
 
 [Garbage collection](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>) is a form of automatic resource management widely used in software development. The garbage collector attempts to reclaim memory occupied by objects that are no longer in use. IPFS uses garbage collection to free disk space on your IPFS node by deleting data that it thinks is no longer needed.
