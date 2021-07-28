@@ -8,10 +8,6 @@ description: Learn how to pin files in IPFS in order to keep your files and othe
 
 Pinning is a very important concept in IPFS. IPFS semantics try to make it feel like every single object is local — there is no "retrieve this file for me from a remote server", just `ipfs cat` or `ipfs get`, which act the same way no matter where the actual object is located.
 
-:::tip Web3.Storage
-If you're looking for long-term storage, Web3.Storage combines the speed of a pinning service and the data resiliency of Filecoin. [Find out more at Web3.Storage →](https://web3.storage)
-:::
-
 While this is nice, sometimes you want to be able to control what you keep around. **Pinning** is the mechanism that allows you to tell IPFS to always keep a given object somewhere — the default being your local node, though this can be different if you use a [third-party remote pinning service](work-with-pinning-services.md). IPFS has a fairly aggressive caching mechanism that will keep an object local for a short time after you perform any IPFS operation on it, but these objects may get garbage-collected regularly. To prevent that garbage collection, simply pin the CID you care about, or add it to [MFS](../concepts/file-systems.md#mutable-file-system-mfs). Objects added through `ipfs add` are pinned recursively by default. Things in MFS are not pinned by default, but are protected from garbage-collection, so one can think about MFS as a mechanism for implicit pinning.
 
 Let's look at this example to explore pinning to your local IPFS node in a bit more depth:
