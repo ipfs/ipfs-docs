@@ -85,7 +85,7 @@ See how to [work with remote pinning services](../how-to/work-with-pinning-servi
 
 ## Long-term storage
 
-Storing data using a personal IPFS node is easy but inconvenient since you constantly have to manage your own hardware. This problem gave rise to pinning services that allow you to upload your data to a remotely-hosted IPFS node and retrieve it whenever you want. However, pinning services can be a dangerous form of long-term storage. Once a file, or collection of files, is no longer pinned, it may be lost entirely. There is no guarantee that the data is still accessible through IPFS. This is where [Filecoin](https://filecoin.io) comes in.
+Storing data using a personal IPFS node is easy, but it can be inconvenient since you have to manage your own hardware. This problem gave rise to _pinning services_, paid services that allow you to upload your data to a remotely hosted IPFS node and retrieve it whenever you want. However, while paying a pinning service to store data is a convenient workaround, it still requires someone to bear the cost of storing that data. If that one sponsor stops paying for that pinning, the content may be lost entirely. While IPFS guarantees that any content on the network is discoverable, it doesn't guarantee that any content is persistently available. This is where [Filecoin](https://filecoin.io) comes in.
 
 ### Storing data with Filecoin
 
