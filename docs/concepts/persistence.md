@@ -17,7 +17,7 @@ Nodes on the IPFS network can automatically cache resources they download, and k
 
 To ensure that data _persists_ on IPFS, and is not deleted during garbage collection, [data can be pinned](../how-to/pin-files.md) to one or more IPFS nodes. Pinning gives you control over disk space and data retention. As such, you should use that control to pin any content you wish to keep on IPFS indefinitely.
 
-## Garbage Collection
+## Garbage collection
 
 [Garbage collection](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>) is a form of automatic resource management widely used in software development. The garbage collector attempts to reclaim memory occupied by objects that are no longer in use. IPFS uses garbage collection to free disk space on your IPFS node by deleting data that it thinks is no longer needed.
 
@@ -91,10 +91,16 @@ Storing data using a personal IPFS node is easy, but it can be inconvenient sinc
 
 [Filecoin](https://filecoin.io) is a decentralized storage network in which storage providers rent their storage space to clients. The client and the storage provider agree on how much data will be stored, for how long, and at what cost. This agreement is called a _deal_. Once both parties agree to a deal, the client sends the data to the storage provider, who periodically verifies that they are correctly storing the data. When the client wants the data back, they send a request to the storage provider, who initiates the data transfer back to the client. For more information on how Filecoin works, head over to the [official Filecoin documentation →](https://docs.filecoin.io/about-filecoin/how-filecoin-works/)
 
-Filecoin provides users with a dependable, long-term storage solution. However, there are some limitations to consider. The retrieval process is not always as fast as an IPFS pinning service, and the minimum file size accepted by a Filecoin storage provider can be several GiB. Also, the process for creating a storage deal may seem complicated to new users who aren't familiar with blockchain transactions or simply aren't comfortable working within a command line. If these are potential blockers for you, you may want to use [Web3.Storage](https://web3.storage).
+Filecoin provides users with a dependable, long-term storage solution. However, there are some limitations to consider. The retrieval process is not always as fast as an IPFS pinning service, and the minimum file size accepted by a Filecoin storage provider can be several GiB. Also, the process for creating a storage deal may seem complicated to new users who aren't familiar with blockchain transactions or simply aren't comfortable working within a command line. 
 
-### Web3.Storage
+### IPFS + Filecoin solutions
 
-[Web3.Storage](https://web3.storage) is a free service that makes it simple to store data using decentralized protocols by acting as both an IPFS pinning service and a Filecoin storage platform. When you upload a file to Web3.Storage, that file is immediately available for download. Periodically, the service will bundle data and create a deal with a reputable Filecoin storage provider, ensuring that the data is available in long-term storage.
+Fortunately, there is a growing community of tools and service providers that help simplify the process of making content available over IPFS while also persisting the data via Filecoin. These solutions make it simple to store data using decentralized protocols by acting both as IPFS pinning services and Filecoin storage platforms. Combining the two means that when you upload a file, that file is immediately available for download. Additionally, combined IPFS + Filecoin solutions will periodically bundle data and create a deal with a reputable Filecoin storage provider, ensuring that the data is available in long-term storage. Many solutions include API client libraries for developers to integrate into their apps and services, as well as web interfaces for quickly managing and inspecting files.
 
-With Web3.Storage, developers can quickly upload and retrieve files programmatically using a simple JavaScript client library, with no need to worry about file sizes or transaction costs. Web3.Storage also provides a simple web interface for managing and inspecting files. All of these services are free to use. [Get started on Web3.Storage →](https://web3.storage)
+Options in this category include:
+
+- [Web3.Storage](https://Web3.Storage)
+- [Estuary](https://estuary.tech)
+- [Powergate](https://docs.filecoin.io/build/powergate)
+- [ChainSafe Storage](https://storage.chainsafe.io)
+- [Fleek Storage](https://fleek.co/storage)
