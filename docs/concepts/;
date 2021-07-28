@@ -1,0 +1,14 @@
+---
+title: Long-term storage
+description: "IPFS is, first and foremost, a protocol for sharing data. It can be leveraged as a storage medium by using things like _pinning services_. However, pinning services themselves should not be considered a long-term storage solution. Once a file, or collection of files, is no longer pinned then it may be lost entirely. Filecoin and Web3.Storage are two solutions that address the problem of using IPFS for long-term storage."
+---
+
+IPFS is a protocol for sharing data, and it can be leveraged by pinning services to act as a storage medium. However, pinning services themselves should not be considered a long-term storage solution. Once a file, or collection of files, is no longer pinned then the data may be lost forever. Web3.Storage is a service that leverages both IPFS and Filecoin to provide users with secure, content addressible long-term storage. 
+
+## Storing data with Filecoin
+
+Filecoin is a decentralized storage network, where storage providers rent their storage space to clients. The client and the storage provider agree on how much data will be stored fo how long, and what the cost is - this agreement is called a _deal_. Once a deal is made, the data is sent from the client to the storage provider who periodically verifies that they are correctly storing the data. When the client wants the data back, they send a request to the storage provider who initiates the data transfer back to the client. For more information on how Filecoin works, head over to the [Filecoin documentation site →](https://docs.filecoin.io/about-filecoin/how-filecoin-works/)
+
+With this process, Filecoin provides a users with a dependable long-term storage solution. However, there are some limitations. The retrieval process is not as fast as an IPFS pinning service, and the minimum filesize is several GiB.
+
+## 
