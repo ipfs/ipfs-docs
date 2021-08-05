@@ -1,9 +1,9 @@
 ---
-title: Privacy
+title: Privacy and encryption
 description: Learn about user privacy in IPFS and why it does not come with a built-in privacy layer or encryption.
 ---
 
-# Privacy
+# Privacy and encryption
 
 As a protocol for peer-to-peer data storage and delivery, IPFS is by design a _public network_: Nodes participating in the network store data affiliated with globally consistent [content addresses](content-addressing.md) (CIDs) and advertise that they have those CIDs available for other nodes to use through publicly viewable [distributed hash tables](dht.md) (DHTs). This paradigm is one of IPFS's core strengths — at its most basic, it's essentially a globally distributed "server" of the network's total available data, referenceable both by the content itself (those CIDs) and by the participants (the nodes) who have or want the content.
 
@@ -67,19 +67,26 @@ Content encryption is used to secure data until someone needs to access it. Albe
 
 ![A rough diagram showing how content-encryption works.](./images/content-encryption.png)
 
-IPFS only uses transport-encryption and not content encryption. This means that your data is secure when being sent from one IPFS node to another. However, anyone can download and view that data if they have the CID. The lack of content encryption is an intentional decision. Instead of forcing you to use a particular encryption protocol, you are free to choose whichever method is best for your project. This modular design keeps IPFS lightweight and free of _vendor lock-in_.
+IPFS uses transport-encryption but not content encryption. This means that your data is secure when being sent from one IPFS node to another. However, anyone can download and view that data if they have the CID. The lack of content encryption is an intentional decision. Instead of forcing you to use a particular encryption protocol, you are free to choose whichever method is best for your project. This modular design keeps IPFS lightweight and free of _vendor lock-in_.
 
 #### Encryption best practices
 
 If your privacy concerns are less about the potential for monitoring and more about the visibility of the IPFS-provided content itself, this can be mitigated simply by encrypting the content before adding it to the IPFS network. While traffic involving the encrypted content could still be tracked, the _data_ represented by encrypted content's CIDs remains unreadable by anyone without the ability to decrypt it.
 
-There's one caveat to keep in mind here: While today's encryption might seem bulletproof _today_, it's not guaranteed that it won't be broken at some point in the future. Future breakthroughs in computing might allow going back and decrypting older content that's been put on a public network such as IPFS. If you want to guard against this potential attack vector, using IPFS hybrid-private networks — in which nodes sit behind connection gates that check request ACLs before giving a node a request — is a potential design direction. For more details, [this article from Pinata](https://medium.com/pinata/dedicated-ipfs-networks-c692d53f938d) may be helpful.
+:::warning Encryption isn't bulletproof
+While today's encryption might seem bulletproof _right now_, there is no guarantee that it won't be broken at some point in the future. Future breakthroughs in computing might allow going back and decrypting older content that's been put on a public network, such as IPFS. If you want to guard against this potential attack vector, using IPFS hybrid-private networks — in which nodes sit behind connection gates that check request ACLs before giving a node a request — is a potential design direction. For more details, [this article from Pinata](https://medium.com/pinata/dedicated-ipfs-networks-c692d53f938d) may be helpful.
+:::
 
 If you're curious about implementing encryption with IPFS on a large scale, you may enjoy reading [this case study on Fleek, a fast-growing IPFS file hosting and delivery service](case-study-fleek.md).
 
 #### Encryption-based projects using IPFS
 
-- [Fleek](case-study-fleek.md) uses IPFS in combination with encryption tools to offer a best-of-both-worlds paradigm where users get the benefits of client-side encryption as well as the ability to share data directly without touching any third-party servers.
+- [Ceramic](https://ceramic.network/)
+- [Fission.codes](https://fission.codes/)
+- [Fleek](case-study-fleek.md)
+- [OrbitDB](https://orbitdb.org/)
+- [Peergos](https://peergos.org/)
+- [Textile](https://www.textile.io/)
 
 ### Creating a private network
 

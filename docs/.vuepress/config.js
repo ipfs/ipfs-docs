@@ -92,7 +92,7 @@ module.exports = {
                 children: [
                   '/concepts/what-is-ipfs',
                   '/concepts/how-ipfs-works',
-                  '/concepts/privacy',
+                  '/concepts/privacy-and-encryption',
                   '/concepts/glossary',
                   '/concepts/usage-ideas-examples',
                   '/concepts/faq'
