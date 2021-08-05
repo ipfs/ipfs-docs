@@ -5,13 +5,13 @@ description: Learn about user privacy in IPFS and why it does not come with a bu
 
 # Privacy and encryption
 
-As a protocol for peer-to-peer data storage and delivery, IPFS is by design a _public network_: Nodes participating in the network store data affiliated with globally consistent [content addresses](content-addressing.md) (CIDs) and advertise that they have those CIDs available for other nodes to use through publicly viewable [distributed hash tables](dht.md) (DHTs). This paradigm is one of IPFS's core strengths — at its most basic, it's essentially a globally distributed "server" of the network's total available data, referenceable both by the content itself (those CIDs) and by the participants (the nodes) who have or want the content.
+As a protocol for peer-to-peer data storage and delivery, IPFS is a _public network_: Nodes participating in the network store data affiliated with globally consistent [content addresses](content-addressing.md) (CIDs) and advertise that they have those CIDs available for other nodes to use through publicly viewable [distributed hash tables](dht.md) (DHTs). This paradigm is one of IPFS's core strengths — at its most basic, it's essentially a globally distributed "server" of the network's total available data, referenceable both by the content itself (those CIDs) and by the participants (the nodes) who have or want the content.
 
 What this does mean, however, is that IPFS itself isn't explicitly protecting knowledge _about_ CIDs and the nodes that provide or retrieve them. This isn't something unique to the distributed web; on both the d-web and the legacy web, traffic and other metadata can be monitored in ways that can infer a lot about a network and its users. Some key details on this are outlined below, but in short: While IPFS traffic _between nodes_ is encrypted, the metadata those nodes publish to the DHT is public. Nodes announce a variety of information essential to the DHT's function — including their unique node identifiers (PeerIDs) and the CIDs of data that they're providing — and because of this, information about which nodes are retrieving and/or reproviding which CIDs is publicly available.
 
-So why doesn't the IPFS protocol itself explicitly have a "privacy layer" built-in? This is in line with key principles of the protocol's highly modular design — after all, different uses of IPFS over its lifetime may call for different approaches to privacy. Explicitly implementing an approach to privacy within the IPFS core could "box in" future builders due to a lack of modularity, flexibility, and future-proofing. On the other hand, freeing those building on IPFS to use the best privacy approach for the situation at hand ensures IPFS is useful to as many as possible.
+So, why doesn't the IPFS protocol itself explicitly have a _privacy layer_ built-in? This is in line with key principles of the protocol's highly modular design — after all, different uses of IPFS over its lifetime may call for different approaches to privacy. Explicitly implementing an approach to privacy within the IPFS core could "box in" future builders due to a lack of modularity, flexibility, and future-proofing. On the other hand, freeing those building on IPFS to use the best privacy approach for the situation at hand ensures IPFS is useful to as many as possible.
 
-If you're worried about the implications of this for your own personal use case, it's worth taking additional measures such as disabling reproviding, encrypting sensitive content, or even running a private IPFS network if that's appropriate for you. More details on these are below.
+If you're worried about the implications of this, it might be worth taking additional measures such as disabling reproviding, encrypting sensitive content, or even running a private IPFS network if that's appropriate for you.
 
 ::: tip
 While IPFS traffic _between nodes_ is encrypted, the essential metadata that nodes publish to the DHT — including their unique node identifiers (PeerIDs) and the CIDs of data that they're providing — is public. If you're worried about the implications of this for your personal use case, it's worth taking additional measures.
@@ -39,7 +39,7 @@ If there are situations in which you know you'll need to remain private but stil
 
 ### Controlling what you share
 
-By default, an IPFS node announces to the rest of the network that it is willing to share every CID in its cache (in other words, _reproviding_ content that it's retrieved from other nodes), as well as CIDs that you've explicitly pinned or added to MFS in order to make them consistently available. If you'd like to disable this behavior, you can do so in the [reprovider settings](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#reprovider) of your node's config file.
+By default, an IPFS node announces to the rest of the network that it is willing to share every CID in its cache (in other words, _reproviding_ content that it's retrieved from other nodes), as well as CIDs that you've explicitly pinned or added to MFS to make them consistently available. If you'd like to disable this behavior, you can do so in the [reprovider settings](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#reprovider) of your node's config file.
 
 Changing your reprovider settings to "pinned" or "roots" will keep your node from announcing itself as a provider of non-pinned CIDs that are in your cache — so you can still use pinning to provide other nodes with content that you care about and want to make sure continues to be available over IPFS.
 
@@ -53,7 +53,7 @@ Public IPFS gateways are primarily intended as a "bridge" between the legacy web
 
 If you're familiar with [Tor](https://www.torproject.org/) and comfortable with the command line, you may wish to try [running IPFS over Tor transport](https://dweb-primer.ipfs.io/avenues-for-access/tor-transport) by configuring your node's settings.
 
-If you're a developer building on IPFS, it's worth noting that the global IPFS community continues to experiment with using Tor transport — see [this example from e-commerce organization OpenBazaar](https://github.com/OpenBazaar/go-onion-transport) — and there may already be an open-source codebase to help your own project achieve this.
+If you're a developer building on IPFS, it's worth noting that the global IPFS community continues to experiment with using Tor transport — see [this example from e-commerce organization OpenBazaar](https://github.com/OpenBazaar/go-onion-transport) — and there may already be an open-source codebase to help your project achieve this.
 
 ### Encryption
 
