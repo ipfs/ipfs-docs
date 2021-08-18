@@ -55,7 +55,7 @@ Arguments are added through the special query string key "arg":
 }
 ```
 
-Note that it can be used multiple times to signify multiple arguments.
+Note that it can be used multiple times to signify multiple arguments. Boolean `bool` values may have the value `true` or `false`.
 
 ### Flags
 
