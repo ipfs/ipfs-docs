@@ -1,6 +1,5 @@
 ---
 title: Pin files
-legacyUrl: https://docs.ipfs.io/guides/examples/pinning/
 description: Learn how to pin files in IPFS in order to keep your files and other objects local.
 ---
 

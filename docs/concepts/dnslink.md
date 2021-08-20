@@ -1,6 +1,5 @@
 ---
 title: DNSLink
-legacyUrl: https://docs.ipfs.io/guides/concepts/dnslink/
 description: Learn how to map IPFS content to DNS names using DNSLink.
 ---
 
@@ -26,11 +25,11 @@ Publish the mapping as DNS `TXT` record using your hostname prefixed with `_dnsl
 
 This not only makes DNSLink lookup more efficient by only returning relevant `TXT` records but enables you to improve the security of an automated setup or delegate control over your DNSLink records to a third party without giving away complete control over the original DNS zone.
 
-For example, [`docs.ipfs.io`](https://docs.ipfs.io) loads because a `TXT` record exists for `_dnslink.docs.ipfs.io`. If you look up the DNS records for `_dnslink.docs.ipfs.io`, you'll see the DNSLink entry:
+For example, [`docs.ipfs.eth.link`](https://docs.ipfs.eth.link) loads because a `TXT` record exists for `_dnslink.docs.ipfs.eth.link`. If you look up the DNS records for `_dnslink.docs.ipfs.eth.link`, you'll see the DNSLink entry:
 
 ```shell
-dig +noall +answer TXT \_dnslink.docs.ipfs.io
-> \_dnslink.docs.ipfs.io. 30 IN TXT "dnslink=/ipfs/bafybeieenxnjdjm7vbr5zdwemaun4sw4iy7h4imlvvl433q6gzjg6awdpq"
+dig +noall +answer TXT \_dnslink.docs.ipfs.eth.link
+> \_dnslink.docs.ipfs.eth.link. 30 IN TXT "dnslink=/ipfs/bafybeieenxnjdjm7vbr5zdwemaun4sw4iy7h4imlvvl433q6gzjg6awdpq"
 
 ```
 
@@ -44,17 +43,17 @@ dnslink=/ipfs/<CID for your content here>
 
 ```
 
-For example, let's go back to when we looked up the DNS records for `_dnslink.docs.ipfs.io` and saw its DNSLink entry:
+For example, let's go back to when we looked up the DNS records for `_dnslink.docs.ipfs.eth.link` and saw its DNSLink entry:
 
 ```sh
-$ dig +noall +answer TXT _dnslink.docs.ipfs.io
-_dnslink.docs.ipfs.io.  34  IN  TXT "dnslink=/ipfs/QmVMxjouRQCA2QykL5Rc77DvjfaX6m8NL6RyHXRTaZ9iya"
+$ dig +noall +answer TXT _dnslink.docs.ipfs.eth.link
+_dnslink.docs.ipfs.eth.link.  34  IN  TXT "dnslink=/ipfs/QmVMxjouRQCA2QykL5Rc77DvjfaX6m8NL6RyHXRTaZ9iya"
 ```
 
 Based on that, this address:
 
 ```
-/ipns/docs.ipfs.io/introduction/
+/ipns/docs.ipfs.eth.link/introduction/
 ```
 
 Will get you this block:

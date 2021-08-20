@@ -1,6 +1,5 @@
 ---
 title: File systems
-legacyUrl: https://docs.ipfs.io/guides/concepts/mfs/
 description: Learn about file systems in IPFS and why working with files in IPFS can be a little different than you may be used to.
 ---
 

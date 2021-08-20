@@ -1,6 +1,5 @@
 ---
 title: Default profile
-legacyUrl: https://docs.ipfs.io/guides/examples/default-profile/
 description: Your profile defines which file-system and data-store your IPFS node will use, along with other configuration options. Learn how to set, change, and reset your profile.
 ---
 

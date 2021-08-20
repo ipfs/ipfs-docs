@@ -1,6 +1,5 @@
 ---
 title: Host a single-page site
-legacyUrl: https://docs.ipfs.io/guides/examples/websites/
 description: Learn how to host a simple single-page website on the decentralized web using IPFS.
 ---
 

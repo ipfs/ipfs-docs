@@ -98,6 +98,6 @@ This process is essentially what the [InterPlantery Naming Service (IPNS)](/conc
 
 ```
 +--------+      +--------------+      +-------------------------------------------------------------+
-|  User  | ---> | docs.ipfs.io | ---> | bafybeigsddxhokzs3swgx6mss5i3gm6jqzv5b45e2xybqg7dr3jmsykrku |
+|  User  | ---> | docs.ipfs.eth.link | ---> | bafybeigsddxhokzs3swgx6mss5i3gm6jqzv5b45e2xybqg7dr3jmsykrku |
 +--------+      +--------------+      +-------------------------------------------------------------+
 ```

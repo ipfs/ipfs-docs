@@ -1,6 +1,5 @@
 ---
 title: API & CLI
-legacyUrl: https://docs.ipfs.io/reference/api/
 description: API and CLI reference materials for IPFS, the InterPlanetary File System.
 ---
 

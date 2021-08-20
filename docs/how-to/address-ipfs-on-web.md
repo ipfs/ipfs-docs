@@ -1,6 +1,5 @@
 ---
 title: Address IPFS on the Web
-legacyUrl: https://docs.ipfs.io/guides/guides/addressing/
 description: Hands-on guides to using and developing with IPFS to build decentralized web apps and services.
 ---
 
@@ -159,7 +158,7 @@ The gateway provided by the IPFS daemon understands the `Host` header present in
 If DNSLink is present, the gateway will return content from a path resolved via DNS TXT record.
 This type of gateway provides full [origin isolation](https://en.wikipedia.org/wiki/Same-origin_policy).
 
-Example: [https://docs.ipfs.io](https://docs.ipfs.io) (this website)
+Example: [https://docs.ipfs.eth.link](https://docs.ipfs.eth.link) (this website)
 
 ::: tip
 For a more complete DNSLink guide, including tutorials, usage examples and FAQs, check out [dnslink.io](https://dnslink.io).

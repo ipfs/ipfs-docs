@@ -1,6 +1,5 @@
 ---
 title: IPNS
-legacyUrl: https://docs.ipfs.io/guides/concepts/ipns/
 description: Learn about the InterPlanetary Name System (IPNS) and how it can be used in conjunction with IPFS.
 ---
 

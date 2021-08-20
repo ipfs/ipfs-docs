@@ -1,6 +1,5 @@
 ---
 title: Chat
-legacyUrl: https://docs.ipfs.io/community/irc/
 description: How to connect with the IPFS community using synchronous chat.
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: How-tos
-legacyUrl: https://docs.ipfs.io/guides/examples/
 description: Hands-on guides to using and developing with IPFS to build decentralized web apps and services.
 ---
 

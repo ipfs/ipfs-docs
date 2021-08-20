@@ -1,6 +1,5 @@
 ---
 title: Host a single-page website on IPFS
-legacyUrl: https://docs.ipfs.io/guides/examples/websites/
 description: Learn how to host a simple one-page website on IPFS and link up a domain name.
 ---
 
