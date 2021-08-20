@@ -232,7 +232,7 @@ A vendor-agnostic [API specification](https://ipfs.github.io/pinning-services-ap
 
 ### Pubsub
 
-Publish-subscribe (Pubsub) is an experimental feature in IPFS. Publishers send messages classified by topic or content, and subscribers receive only the messages they are interested in. [More about Pubsub](https://blog.ipfs.io/25-pubsub/)
+Publish-subscribe (Pubsub) is an experimental feature in IPFS. Publishers send messages classified by topic or content, and subscribers receive only the messages they are interested in. [More about Pubsub](blog.ipfs.eth.link/25-pubsub/)
 
 ## Q
 

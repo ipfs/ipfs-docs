@@ -35,7 +35,7 @@ The technology used to move your data from one machine to another. Transports ar
 
 #### [Security](https://docs.libp2p.io/introduction/what-is-libp2p/#security)
 
-Libp2p supports upgrading a transport connection into a securely encrypted channel. You can then trust the identity of the peer you're communicating with and that no third-party can read the conversation or alter it in-flight. The current default is [TLS 1.3](https://www.ietf.org/blog/tls13/) as of IPFS 0.7. The previous default of [SECIO](https://docs.libp2p.io/concepts/secure-comms/) is now deprecated and disabled by default (see [this blog post](https://blog.ipfs.io/2020-08-07-deprecating-secio/) for more information).
+Libp2p supports upgrading a transport connection into a securely encrypted channel. You can then trust the identity of the peer you're communicating with and that no third-party can read the conversation or alter it in-flight. The current default is [TLS 1.3](https://www.ietf.org/blog/tls13/) as of IPFS 0.7. The previous default of [SECIO](https://docs.libp2p.io/concepts/secure-comms/) is now deprecated and disabled by default (see [this blog post](https://blog.ipfs.eth.link/2020-08-07-deprecating-secio/) for more information).
 
 #### [Peer identity](https://docs.libp2p.io/concepts/peer-id/)
 

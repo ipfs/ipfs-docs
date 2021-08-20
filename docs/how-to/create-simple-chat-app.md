@@ -443,4 +443,4 @@ If you were successful in following this entire guide, you now have the ability 
 * [js-ipfs/examples/circuit-relaying](https://github.com/ipfs/js-ipfs/tree/master/examples/circuit-relaying)
 * [js-libp2p-webrtc-star](https://github.com/libp2p/js-libp2p-webrtc-star)
 
-_Thanks to [TheDiscordian](https://github.com/thediscordian) for originally creating this material as a post in [IPFS Blog & News](https://blog.ipfs.io/2021-06-10-guide-to-ipfs-connectivity-in-browsers/)._
+_Thanks to [TheDiscordian](https://github.com/thediscordian) for originally creating this material as a post in [IPFS Blog & News](https://blog.ipfs.eth.link/2021-06-10-guide-to-ipfs-connectivity-in-browsers/)._

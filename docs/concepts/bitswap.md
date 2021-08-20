@@ -43,7 +43,7 @@ Once peers have been added to a session, for each block that the client wants, B
 
 ### Additional references
 
-- [February 2020: New improvements to IPFS Bitswap](https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/)
+- [February 2020: New improvements to IPFS Bitswap](https://blog.ipfs.eth.link/2020-02-14-improved-bitswap-for-container-distribution/)
 - [Technical overview of the Go implementation of Bitswap](https://docs.google.com/presentation/d/1mbFFGIIKNvboHyLn-k26egOSWkt9nXjlNbxpmCEQfqQ/edit#slide=id.p)
 - [Article: Swapping bits and distributing hashes on the decentralized web (Textile)](https://medium.com/textileio/swapping-bits-and-distributing-hashes-on-the-decentralized-web-5da98a3507)
 - "About Bitswap" Go implementation poster from the IPFS developer summit in Berlin in July 2018:
