@@ -94,7 +94,7 @@ Example:
 
 #### Native support in go-ipfs 0.5+
 
-[go-ipfs](https://dist.ipfs.io/#go-ipfs) provides native support for subdomain gateways on hostnames defined in the [`Gateway.PublicGateways`](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) configuration map.
+[go-ipfs](https://dist.ipfs.eth.link/#go-ipfs) provides native support for subdomain gateways on hostnames defined in the [`Gateway.PublicGateways`](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) configuration map.
 
 Learn more about daemon configuration for hosting a public gateway:
 

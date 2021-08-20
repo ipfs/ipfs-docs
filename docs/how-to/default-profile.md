@@ -69,14 +69,14 @@ The above command shows the difference between your existing IPFS configuration 
 
 ## Converting profiles
 
-Not all profiles are compatible with each other, because they may use different technologies for storing the data inside the datastores. For instance, if you want to convert `badgerds` to `default-datastore`, you have to use another helper tool called [ipfs-ds-convert](https://dist.ipfs.io/#ipfs-ds-convert) to convert the datastore to the required format. Please follow the instructions given below to install `ipfs-ds-convert` for your operating system.
+Not all profiles are compatible with each other, because they may use different technologies for storing the data inside the datastores. For instance, if you want to convert `badgerds` to `default-datastore`, you have to use another helper tool called [ipfs-ds-convert](https://dist.ipfs.eth.link/#ipfs-ds-convert) to convert the datastore to the required format. Please follow the instructions given below to install `ipfs-ds-convert` for your operating system.
 
 ### MacOS
 
 Download the tarball for MacOS, extract the contents, and move the binary file to your path:
 
 ```bash
-wget -O /tmp/ipfs-ds-convert.tar.gz https://dist.ipfs.io/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_darwin-amd64.tar.gz
+wget -O /tmp/ipfs-ds-convert.tar.gz https://dist.ipfs.eth.link/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_darwin-amd64.tar.gz
 sudo tar -xzvf /tmp/ipfs-ds-convert.tar.gz -C /usr/local/bin/ --strip-components=1
 sudo chmod +x /usr/local/bin/ipfs-ds-convert
 rm /tmp/ipfs-ds-convert.tar.gz
@@ -87,7 +87,7 @@ rm /tmp/ipfs-ds-convert.tar.gz
 Download the tarball for Linux, extract the contents, and move the binary file to your path:
 
 ```bash
-wget -O /tmp/ipfs-ds-convert.tar.gz https://dist.ipfs.io/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_linux-amd64.tar.gz
+wget -O /tmp/ipfs-ds-convert.tar.gz https://dist.ipfs.eth.link/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_linux-amd64.tar.gz
 sudo tar -xzvf /tmp/ipfs-ds-convert.tar.gz -C /usr/local/bin/ --strip-components=1
 sudo chmod +x /usr/local/bin/ipfs-ds-convert
 rm /tmp/ipfs-ds-convert.tar.gz
@@ -97,10 +97,10 @@ rm /tmp/ipfs-ds-convert.tar.gz
 
 Download the zip file, extract it and then add the path to `ipfs-ds-convert.exe` to your environment path:
 
-- Download the zip package from here: [ipfs-ds-convert](https://dist.ipfs.io/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_windows-amd64.zip) and extract it.
+- Download the zip package from here: [ipfs-ds-convert](https://dist.ipfs.eth.link/ipfs-ds-convert/v0.5.0/ipfs-ds-convert_v0.5.0_windows-amd64.zip) and extract it.
 - Add the full path to `ipfs-ds-convert.exe` to your environment variables path.
 
-To find more about `ipfs-ds-convert` please visit here: [ipfs-ds-convert](https://dist.ipfs.io/#ipfs-ds-convert).
+To find more about `ipfs-ds-convert` please visit here: [ipfs-ds-convert](https://dist.ipfs.eth.link/#ipfs-ds-convert).
 Once you are done with the installation process, verify that `ipfs-ds-convert` has been installed successfully by executing the following command:
 
 ```bash
