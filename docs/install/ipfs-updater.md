@@ -9,15 +9,15 @@ The IPFS updater is a command-line tool originally used to help users update the
 
 ## Install updater
 
-You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#ipfs-update). Binaries are also available from the [IPFS Update GitHub release page](https://github.com/ipfs/ipfs-update/releases).
+You can download pre-built binaries from [`dist.ipfs.eth.link`](https://dist.ipfs.eth.link/#ipfs-update). Binaries are also available from the [IPFS Update GitHub release page](https://github.com/ipfs/ipfs-update/releases).
 
 ### Windows
 
-1. Download the Windows binary from [`dist.ipfs.io`](https://dist.ipfs.io/#ipfs-update).
+1. Download the Windows binary from [`dist.ipfs.eth.link`](https://dist.ipfs.eth.link/#ipfs-update).
 
    ```powershell
    cd ~
-   wget https://dist.ipfs.io/ipfs-update/v1.7.1/ipfs-update_v1.7.1_windows-amd64.zip -Outfile ipfs-update_v1.7.1_windows-amd64.zip
+   wget https://dist.ipfs.eth.link/ipfs-update/v1.7.1/ipfs-update_v1.7.1_windows-amd64.zip -Outfile ipfs-update_v1.7.1_windows-amd64.zip
    ```
 
 2. Unzip the file and move it somewhere handy:
@@ -86,10 +86,10 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 
 ### macOS
 
-1. Download the macOS binary from [`dist.ipfs.io`](https://dist.ipfs.io/#ipfs-update).
+1. Download the macOS binary from [`dist.ipfs.eth.link`](https://dist.ipfs.eth.link/#ipfs-update).
 
    ```bash
-   curl https://dist.ipfs.io/ipfs-update/v1.7.1/ipfs-update_v1.7.1_darwin-amd64.tar.gz --output ipfs-update_v1.7.1_darwin-amd64.tar.gz
+   curl https://dist.ipfs.eth.link/ipfs-update/v1.7.1/ipfs-update_v1.7.1_darwin-amd64.tar.gz --output ipfs-update_v1.7.1_darwin-amd64.tar.gz
    ```
 
 2. Unzip the file:
@@ -120,10 +120,10 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 
 ### Linux
 
-1. Download the Linux binary from [`dist.ipfs.io`](https://dist.ipfs.io/#ipfs-update).
+1. Download the Linux binary from [`dist.ipfs.eth.link`](https://dist.ipfs.eth.link/#ipfs-update).
 
    ```bash
-   wget https://dist.ipfs.io/ipfs-update/v1.7.1/ipfs-update_v1.7.1_linux-amd64.tar.gz
+   wget https://dist.ipfs.eth.link/ipfs-update/v1.7.1/ipfs-update_v1.7.1_linux-amd64.tar.gz
    ```
 
 2. Unzip the file:
