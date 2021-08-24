@@ -173,7 +173,8 @@ module.exports = {
                   [
                     'https://github.com/ipfs/js-ipfs/tree/master/examples/custom-ipfs-repo',
                     'Customize an IPFS repo'
-                  ]
+                  ],
+                  '/how-to/troubleshooting'
                 ]
               },
               {
@@ -184,7 +185,6 @@ module.exports = {
                   '/how-to/work-with-blocks',
                   '/how-to/pin-files',
                   '/how-to/work-with-pinning-services',
-                  '/how-to/troubleshoot-file-transfers',
                   '/how-to/take-snapshot',
                   '/how-to/store-play-videos',
                   '/how-to/host-git-style-repo',
