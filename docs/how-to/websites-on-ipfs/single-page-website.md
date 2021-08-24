@@ -18,7 +18,7 @@ IPFS desktop application is the easiest way to get up and running quickly with I
 
 ### Windows
 
-1. Download the latest available `.exe` file from the [IPFS desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases):
+1. Download the latest available `.exe` file from the [IPFS desktop downloads page](https://github.com/ipfs/ipfs-desktop/releases):
 
    ![The IPFS desktop download page.](./images/single-page-website/install-windows-download-exe-page.png)
 
@@ -43,7 +43,7 @@ The IPFS desktop application has finished installing. You can now start to [add 
 
 ### MacOS
 
-1. Download the latest available `.dmg` file from the [IPFS desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases):
+1. Download the latest available `.dmg` file from the [IPFS desktop downloads page](https://github.com/ipfs/ipfs-desktop/releases):
 
    ![List of available download links in GitHub.](./images/single-page-website/install-macos-dmg-file-link.png)
 
@@ -74,7 +74,7 @@ The IPFS desktop application has finished installing. You can now start to [add 
 
 ### Linux
 
-1. Download the latest available `.deb` file from the [IPFS desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases):
+1. Download the latest available `.deb` file from the [IPFS desktop downloads page](https://github.com/ipfs/ipfs-desktop/releases):
 1. Open the `.deb` package in **Software Installer**:
 
    ![Right-click context menu of the IPFS deb package.](./images/single-page-website/install-ubuntu-software-install.png)
@@ -211,9 +211,9 @@ IPFS collaborative clusters are groups of IPFS nodes that collaboratively pin al
 
 ### Pinning services
 
-An easy way to make sure important data is retained is to use a pinning service. These services run lots of IPFS nodes and will _pin_ your data for you! This way, you don't have to run and maintain your own IPFS node. Check out the [Persistence page](../../concepts/persistence.md) for more information on pinning services. In this tutorial, we're going to use [Pinata](https://pinata.cloud/) since it gives new users 1GB of storage for free, and has a very simple interface:
+An easy way to make sure important data is retained is to use a pinning service. These services run lots of IPFS nodes and will _pin_ your data for you! This way, you don't have to run and maintain your own IPFS node. Check out the [Persistence page](../../concepts/persistence.md) for more information on pinning services. In this tutorial, we're going to use [Pinata](https://pinata.cloud) since it gives new users 1GB of storage for free, and has a very simple interface:
 
-1. Go to [Pinata.cloud](https://pinata.cloud/) and sign up or log in.
+1. Go to [Pinata.cloud](https://pinata.cloud) and sign up or log in.
 2. Click **Pinata Upload**.
 3. Select **Upload File** and click **Browse**.
 4. Navigate to your `index.html` file and click **Open**.
@@ -238,8 +238,7 @@ We used Namecheap, but the process is very similar across all domain name servic
 1. Log into your domain name provider.
 2. Go to your domain management window and find the domain you want to assign to your website.
 3. Find where to change the **Redirection Settings**.
-4. In a new tab, go to the [Pinata Pin Explorer](https://pinata.cloud/pinexplorer) screen.
-5. Copy the **IPFS Hash** link.
+4. In a new tab, open [Pinata](https://pinata.cloud/), log in, and copy the **IPFS Hash** for your website.
 6. In your domain name providers **Redirection Settings** section, paste in the **IPFS Hash** link you just copied.
 
    ![Redirecting a source URL to an IPFS Hash link within Namecheap.](./images/single-page-website/namecheap-source-url-redirect.png)
