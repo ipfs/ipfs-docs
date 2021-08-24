@@ -3,6 +3,10 @@ title: Troubleshooting
 description: "If you're running into problems with IPFS, use this page to debug your issues and find a solution quickly."
 ---
 
+# Troubleshooting
+
+If you're running into problems with IPFS, use this page to debug your issues and find a solution quickly.
+
 ## IPFS is running slowly
 
 Commands like `ipfs ls` are going to the network to try and find data. If for some reason, that data is not _findable_ then Go-IPFS will just keep looking for who has the data forever. Common reasons for data not being _findable_ are that:
@@ -76,7 +80,7 @@ In the case where `node b` simply cannot form a connection to `node a`, despite 
 
 In this case, we can see a localhost (127.0.0.1) address, a LAN address (the 192.168._._ one), and another address. If this third address matches your external IP, then the network knows a valid external address for your node. At this point, it's safe to assume that your node has a difficult to traverse NAT situation. If this is the case, you can try to enable UPnP or NAT-PMP on the router of `node a` and retry the process. Otherwise, you can try manually connecting `node a` to `node b`.
 
-### Manually connecting `node a` to node `beta`
+### Manually connecting `node a` to `node b`
 
 On `node b` run `ipfs id` and take one of the _multiaddrs_ that contains its public IP address, and then on `node a` run `ipfs swarm connect <multiaddr>`. You can also try using a relayed connection. If that _still_ doesn't work, then you should either join IRC and ask for help there or file an issue on GitHub.
 
