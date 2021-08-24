@@ -238,8 +238,7 @@ We used Namecheap, but the process is very similar across all domain name servic
 1. Log into your domain name provider.
 2. Go to your domain management window and find the domain you want to assign to your website.
 3. Find where to change the **Redirection Settings**.
-4. In a new tab, go to the [Pinata Pin Explorer](https://pinata.cloud/pinexplorer) screen.
-5. Copy the **IPFS Hash** link.
+4. In a new tab, open [Pinata](https://pinata.cloud/), log in, and copy the **IPFS Hash** for your website.
 6. In your domain name providers **Redirection Settings** section, paste in the **IPFS Hash** link you just copied.
 
    ![Redirecting a source URL to an IPFS Hash link within Namecheap.](./images/single-page-website/namecheap-source-url-redirect.png)
