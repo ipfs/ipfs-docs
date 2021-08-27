@@ -61,7 +61,7 @@ Protocol Labs maintains a [list of public gateways](https://ipfs.github.io/publi
 Categorizing gateways involves several dimensions:
 
 - [Read/write support](#read-only-and-writeable-gateways)
-- [Authenticated support](#authenticated-gateways)
+- [Authentication support](#authenticated-gateways)
 - [Resolution style](#resolution-style)
 - [Service](#gateway-services)
 
