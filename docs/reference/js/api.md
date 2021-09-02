@@ -38,6 +38,6 @@ A [client library](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-htt
 
 ## Hands-on examples
 
-There are lots of JS-IPFS use-case examples in the [`ipfs/js-ipfs` GitHub repository](https://github.com/ipfs/js-ipfs). They're all self-contained projects that let your spin up and test environments quickly. [Check them out →](https://github.com/ipfs/js-ipfs/tree/master/examples)
+There are lots of JS-IPFS use-case examples in the [`ipfs/js-ipfs` GitHub repository](https://github.com/ipfs-examples/js-ipfs-examples). They're all self-contained projects that let your spin up and test environments quickly. [Check them out →](https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples)
 
-A good starting place is the [IPFS 101, spawn a node and add a file to the IPFS network](https://github.com/ipfs/js-ipfs/tree/master/examples/ipfs-101).
+A good starting place is the [IPFS 101, spawn a node and add a file to the IPFS network](https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/ipfs-101).
