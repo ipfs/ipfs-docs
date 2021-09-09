@@ -30,8 +30,9 @@ else
      git clone https://github.com/ipfs/go-ipfs.git
      git fetch --all --tags
      git checkout tags/$LATEST_IPFS_TAG
-     go install go-ipfs/cmd/ipfs
-     cd docs/reference
+     cd go-ipfs
+     go install ./cmd/ipfs
+     cd $ROOT/docs/reference
      ./generate-cli-docs.sh
 
      # submit a PR
