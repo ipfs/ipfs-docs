@@ -24,4 +24,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           source_branch: ${{ steps.update.outputs.updated_branch }}
+          destination_branch: "main"
           pr_title: "Bump http-api-docs dependency on go-ipfs to ${{ steps.latest_ipfs.outputs.latest_tag }}"
