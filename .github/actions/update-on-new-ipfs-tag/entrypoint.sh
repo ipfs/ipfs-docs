@@ -2,7 +2,7 @@
 set -eu
 
 API_FILE=`pwd`/docs/reference/http/api.md
-pushd .
+ROOT=`pwd`
 cd tools/http-api-docs
 
 # extract go-ipfs release tag used in http-api-docs from go.mod in this repo
@@ -23,7 +23,7 @@ else
      go mod tidy
      make
      http-api-docs > $API_FILE
-     popd # go back to root of ipfs-docs repo
+     cd $ROOT # go back to root of ipfs-docs repo
      git config --global user.email "${GITHUB_ACTOR}"
      git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
      git add -u
