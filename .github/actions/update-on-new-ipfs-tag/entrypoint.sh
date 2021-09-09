@@ -17,7 +17,7 @@ echo "The latest IPFS tag is ${LATEST_IPFS_TAG}"
 if [ "$CURRENT_IPFS_TAG" = "$LATEST_IPFS_TAG" ]; then
     echo "http-api-docs already uses the latest go-ipfs tag."
 else
-     git checkout -b bump-ipfs-to-$LATEST_IPFS_TAG
+     git checkout -b bump-http-api-docs-ipfs-to-$LATEST_IPFS_TAG
      sed "s/^\s*github.com\/ipfs\/go-ipfs\s\+$CURRENT_IPFS_TAG\s*$/	github.com\/ipfs\/go-ipfs $LATEST_IPFS_TAG/" go.mod > go.mod2
      mv go.mod2 go.mod
      go mod tidy
