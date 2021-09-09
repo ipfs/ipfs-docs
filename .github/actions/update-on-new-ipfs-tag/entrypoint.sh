@@ -17,12 +17,22 @@ echo "The latest IPFS tag is ${LATEST_IPFS_TAG}"
 if [ "$CURRENT_IPFS_TAG" = "$LATEST_IPFS_TAG" ]; then
     echo "http-api-docs already uses the latest go-ipfs tag."
 else
+     # update http-api-docs
      git checkout -b bump-http-api-docs-ipfs-to-$LATEST_IPFS_TAG
      sed "s/^\s*github.com\/ipfs\/go-ipfs\s\+$CURRENT_IPFS_TAG\s*$/	github.com\/ipfs\/go-ipfs $LATEST_IPFS_TAG/" go.mod > go.mod2
      mv go.mod2 go.mod
      go mod tidy
      make
      http-api-docs > $API_FILE
+
+     # update cli docs
+     cd $ROOT # go back to root of ipfs-docs repo
+     git clone https://github.com/ipfs/go-ipfs.git@$LATEST_IPFS_TAG
+     go install go-ipfs/cmd/ipfs
+     cd docs/reference
+     ./generate-cli-docs.sh
+
+     # submit a PR
      cd $ROOT # go back to root of ipfs-docs repo
      git config --global user.email "${GITHUB_ACTOR}"
      git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
