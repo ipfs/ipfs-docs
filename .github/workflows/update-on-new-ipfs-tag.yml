@@ -1,0 +1,27 @@
+name: Update docs on new ipfs-tag release
+on:
+  push:
+  # workflow_dispatch:
+  # schedule:
+  #   - cron: '30 5,17 * * *' # run every day at 5:30am and 5:30pm UTC
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout ipfs-docs
+        uses: actions/checkout@v2
+      - name: Find latest go-ipfs tag
+        id: latest_ipfs
+        uses: ./.github/actions/latest-ipfs-tag
+      - name: Update http-api-docs
+        id: update
+        uses: ./.github/actions/update-on-new-ipfs-tag
+        with:
+          latest_ipfs_tag: ${{ steps.latest_ipfs.outputs.latest_tag }}
+      - name: pull-request  # don't create a pr if there was no new ipfs tag
+        uses: repo-sync/pull-request@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_branch: ${{ steps.update.outputs.updated_branch }}
+          pr_title: "Bump http-api-docs dependency on go-ipfs to ${{ steps.latest_ipfs.outputs.latest_tag }}"
