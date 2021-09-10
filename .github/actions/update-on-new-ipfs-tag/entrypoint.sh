@@ -27,8 +27,8 @@ else
 
      # update cli docs
      cd $ROOT # go back to root of ipfs-docs repo
-     cd go-ipfs
      git clone https://github.com/ipfs/go-ipfs.git
+     cd go-ipfs
      git fetch --all --tags
      git checkout tags/$LATEST_IPFS_TAG
      go install ./cmd/ipfs
