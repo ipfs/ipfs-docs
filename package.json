@@ -5,6 +5,7 @@
   "author": "cwaring",
   "license": "MIT",
   "devDependencies": {
+    "@carsy/task-completion-survey-banner": "^1.3.0",
     "@centerforopenscience/markdown-it-video": "^1.0.0",
     "@vuepress/plugin-active-header-links": "^1.8.2",
     "@vuepress/plugin-back-to-top": "^1.8.2",
