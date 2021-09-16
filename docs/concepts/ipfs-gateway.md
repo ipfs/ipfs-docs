@@ -73,13 +73,13 @@ The examples discussed in the earlier sections above illustrated the use of read
 
 ### Authenticated gateways
 
-If the gateway providers want to limit the access only to the requests with authentication, they may need to config a reverse proxy, develop a IPFS plugin or set a cache-layer above IPFS.
+If a gateway provider wants to limit access to requests with authentication, they may need to configure a reverse proxy, develop an IPFS plugin, or set a cache-layer above IPFS.
 
-Reverse proxy is the most popular way for providers handling authentication. This tutorial configuring private gateway includes a description of controling access with Nginx. Reverse proxy can also keep the original IPFS API calls which makes gateway adaptable to all IPFS SDK/toolkits.
+Configuring a reverse proxy is the most popular way for providers handling authentication. Reverse proxy can also keep the original IPFS API calls which makes gateway adaptable to all IPFS SDK and toolkits.
 
 ![Auth with Reverse proxy](./images/ipfs-gateways/public-authed-gateway.png)
 
-Providers can design their own centralized auth service(like [Infura IPFS Auth](https://infura.io/docs/ipfs#section/Authentication/Overview)), or a decentralized auth service(like [IPFS W3Auth](https://wiki.crust.network/docs/en/buildIPFSWeb3AuthGW)).
+Providers can design their own centralized authentication service like [Infura IPFS Auth](https://infura.io/docs/ipfs#section/Authentication/Overview), or a decentralized authentication service like [IPFS W3Auth](https://wiki.crust.network/docs/en/buildIPFSWeb3AuthGW)).
 
 ### Resolution style
 
