@@ -18,6 +18,10 @@ related:
 
 Announcing is a function of the IPFS networking layer in [libp2p](#libp2p), wherein a peer can tell other peers that it has data blocks available.
 
+### ADL
+
+ADL is short for _Advanced Data Layout_, a concept in [IPLD](#ipld). See [IPLD docs](https://ipld.io/glossary/#adl).
+
 ## B
 
 ### Bitswap
@@ -34,7 +38,7 @@ A Blockchain is a growing list of records, known as blocks, that are linked usin
 
 ### Block
 
-A Block is a binary blob of data, identified by a [CID](#cid).
+A Block is a binary blob of data, identified by a [CID](#cid). I could be raw bytes or arbitrary data, or a chunk of serialized binary data encoded with [IPLD](#ipld) [codec](#codec).
 
 ### Bootstrap Node
 
@@ -58,6 +62,15 @@ Version 0 (v0) of the IPFS content identifier. This CID is 46 characters in leng
 
 Version 1 (v1) of the IPFS content identifier. This CID version contains some leading identifiers which provide for forward-compatibility. Able to support different formats for future versions of CID. [More about CID v1](../concepts/content-addressing.md#version-1-v1)
 
+### Codec
+
+A function which encodes or decodes serial data into and from some data model. In IPFS, we use an agreed-upon codec table implemented as part of [Multicodec](#multicodec).
+
+### Content Addressing
+
+A way to store information so it can be retrieved based on its content, not its location.
+[Learn how IPFS uses content addressing](/concepts/how-ipfs-works/#content-addressing).
+
 ### CRDT
 
 A Conflict-Free Replicated Data Type (CRDT) is a type of specially-designed data structure used to achieve strong eventual consistency (SEC) and monotonicity (absence of rollbacks). [More about CRDT](https://github.com/ipfs/research-CRDT)
@@ -70,7 +83,12 @@ A Daemon is a computer program that typically runs in the background. The IPFS d
 
 ### DAG
 
-A Directed Acyclic Graph (DAG) is a computer science data structure adapted for use with versioned file systems, blockchains, and for modeling many different kinds of information. [More about DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph)
+A Directed Acyclic Graph (DAG) is a computer science data structure adapted for use with versioned file systems, blockchains, and for modeling many different kinds of information. [IPLD](#ipld) data in IPFS is naturally a DAG. [More about DAG on Wikipedia](https://en.wikipedia.org/wiki/Directed_acyclic_graph).
+
+
+### Data Model
+
+Did you mean [IPLD Data Model](https://ipld.io/glossary/#data-model)?
 
 ### DataStore
 
@@ -78,7 +96,11 @@ The Datastore is the on-disk storage system used by an IPFS node. Configuration 
 
 ### DHT
 
-A Distributed Hash Table (DHT) is a distributed key-value store where keys are cryptographic hashes. In IPFS, each peer is responsible for a subset of the IPFS DHT. [More about DHT](dht.md)
+A _Distributed Hash Table_ (DHT) is a distributed key-value store where keys are cryptographic hashes. In IPFS, each peer is responsible for a subset of the IPFS DHT. [More about DHT](dht.md)
+
+### DMT
+
+Short for _Data Model Tree_, a term we coined in IPLD. [More about DMT in IPLD docs](https://ipld.io/glossary/#dmt)
 
 ### Dialing
 
@@ -86,7 +108,7 @@ Dialing is a function of the IPFS networking layer in [libp2p](#libp2p), wherein
 
 ### DNSLink
 
-DNSLink is a protocol to link content and services directly from DNS. A DNSLink address looks like an IPNS address, but it uses a domain name in place of a hashed public key, like /ipns/mydomain.org. [More about DNSLink](https://dnslink.io/)
+DNSLink is a protocol to link content and services directly from DNS. A DNSLink address looks like an IPNS address, but it uses a domain name in place of a hashed public key, like `/ipns/en.wikipedia-on-ipfs.org`. [More about DNSLink](https://dnslink.dev/)
 
 ### DWeb
 
@@ -160,6 +182,10 @@ The libp2p project is a modular system of protocols, specifications, and librari
 
 Listening is a function of the IPFS networking layer in libp2p, wherein an incoming connection is accepted from another peer. Together, an implementation of [dialing](#dialing) and listening forms a [transport](#transport).
 
+### Link
+
+In IPFS and [IPLD](#ipld) context, usually means a pointer to some [CID](#cid).
+
 ## M
 
 ### Merkle-DAG
@@ -184,7 +210,7 @@ Multibase is a protocol for disambiguating the encoding of base-encoded (e.g. ba
 
 ### Multicodec
 
-Multicodec is an identifier indicating the format of the target content. It helps people and software know how to interpret that content after the content is fetched. In IPFS, it is backed by an agreed-upon codec table. It is designed for use in binary representations, such as keys or identifiers (i.e [CIDv1](#cid)). [More about Multicodec](https://github.com/multiformats/multicodec#readme)
+Multicodec is an identifier indicating the format of the target content. It helps people and software know how to interpret that content after the content is fetched. In IPFS, it is backed by an agreed-upon [codec](#codec) table. It is designed for use in binary representations, such as keys or identifiers (i.e [CIDv1](#cid)). [More about Multicodec](https://github.com/multiformats/multicodec#readme)
 
 ### Multihash
 
@@ -198,11 +224,11 @@ The Multiformats project is a collection of protocols that aim to future-proof s
 
 ### Node
 
-A Node or [peer](#peer) is the IPFS program that you run on your local computer to store/cache files and then connect to the IPFS network (by running the [daemon](#daemon)). [More about Node](../how-to/command-line-quick-start.md#take-your-node-online)
+In IPFS context, a Node or [peer](#peer) is the IPFS program that you run on your local computer to store/cache files and then connect to the IPFS network (by running the [daemon](#daemon)). [More about IPFS Node](../how-to/command-line-quick-start.md#take-your-node-online).
 
 ### Node (in graphs)
 
-A node, in the context of [graphs](#graph), is a point that may be linked to by other nodes using edges or links.
+In IPLD [graph](#graph) context, a node is a point that may be linked to by other nodes using edges or links.
 
 For example, in a family tree each person is a _node_, while each branch connecting one person to another is an _edge_.
 
@@ -266,6 +292,14 @@ B     C     D
 
 ## S
 
+### Schemas
+
+In IPFS, IPLD Schemas are a system for describing data with structural types. [More about IPLD Schemas](https://ipld.io/glossary/#schemas)
+
+### Selectors
+
+IPLD Selectors are a form of graph query (or, a way to specify a traversal, if you prefer that mental model) over IPLD data. [More about IPLD Selectors](https://ipld.io/glossary/#selectors)
+
 ### SFS
 
 A Self-certifying File System (SFS) is a distributed file system that doesn't require special permissions for data exchange. It is self-certifying because data served to a client is authenticated by the file name (which is signed by the server). [More about SFS](https://en.wikipedia.org/wiki/Self-certifying_File_System)
@@ -273,6 +307,10 @@ A Self-certifying File System (SFS) is a distributed file system that doesn't re
 ### Signing (Cryptographic)
 
 The signing of data cryptographically allows for trusting of data from untrusted sources. Cryptographically signed values can be passed through an untrusted channel, and any tampering of the data can be detected. [More about Digital signature](https://en.wikipedia.org/wiki/Digital_signature)
+
+### Substrate
+
+A vocabulary term in [IPLD](#ipld), related to [ADLs](#adl).  [More in IPLD glossary](https://ipld.io/glossary/#substrate)
 
 ### Swarm
 
@@ -283,6 +321,10 @@ The Swarm is a term for the network of IPFS peers with which your local node has
 ### Transport
 
 In [libp2p](#libp2p), transport refers to the technology that lets us move data from one machine to another. This may be a TCP network, a WebSocket connection in a browser, or anything else capable of implementing the transport interface.
+
+### Traversal
+
+In [IPLD](#ipld), the act of walking across the [Data Model](#data-model). [More in IPLD glossary](https://ipld.io/glossary/#substrate)
 
 ## U
 
