@@ -191,7 +191,7 @@ Instead of sharing the CID of your website, you publish the root CID of your web
 1. Open a terminal window, and navigate to where your multi-page project is saved:
 
     ```shell
-    cd ~/Code/random-planet-facts
+    cd ~/Code/multi-page-first-step
     ```
 
 1. Double check that this project has been added to IPFS by running `ipfs add -r .`:
