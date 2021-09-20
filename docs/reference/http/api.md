@@ -3173,6 +3173,9 @@ Pin objects to local storage.
 
 On success, the call to this endpoint will return with 200 and the following body:
 
+- `Pins` [string]: List of completed pins.
+- `Progress` [int]: Number of blocks pinned so far.
+
 ```json
 {
   "Pins": [
