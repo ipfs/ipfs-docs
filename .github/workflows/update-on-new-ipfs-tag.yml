@@ -20,7 +20,7 @@ jobs:
         with:
           latest_ipfs_tag: ${{ steps.latest_ipfs.outputs.latest_tag }}
       - name: pull-request  # don't create a pr if there was no new ipfs tag
-        uses: repo-sync/pull-request@v2
+        uses: repo-sync/pull-request@65194d8015be7624d231796ddee1cd52a5023cb3 #v2.16
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           source_branch: ${{ steps.update.outputs.updated_branch }}
