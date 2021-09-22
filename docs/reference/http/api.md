@@ -9,7 +9,7 @@ description: HTTP API reference for IPFS, the InterPlanetary File System.
 <!-- TODO: Describe how to change ports and configure the API server -->
 <!-- TODO: Structure this around command groups (dag, object, files, etc.) -->
 
-_Generated on 2021-06-23, from go-ipfs v0.9.0._
+_Generated on 2021-09-21, from go-ipfs v0.9.1._
 
 When an IPFS node is running as a daemon, it exposes an HTTP API that allows you to control the node and run the same commands you can from the command line.
 
@@ -55,7 +55,7 @@ Arguments are added through the special query string key "arg":
 }
 ```
 
-Note that it can be used multiple times to signify multiple arguments. Boolean `bool` values may have the value `true` or `false`.
+Note that it can be used multiple times to signify multiple arguments.
 
 ### Flags
 
@@ -739,7 +739,7 @@ Format and convert a CID in various useful ways.
 ### Arguments
 
 - `arg` [string]: Cids to format. Required: **yes**.
-- `f` [string]: Printf style format string. Default: %!s(MISSING). Default: `%!s(MISSING)`. Required: no.
+- `f` [string]: Printf style format string. Default: %s. Default: `%s`. Required: no.
 - `v` [string]: CID version to convert to. Required: no.
 - `codec` [string]: CID codec to convert to. Required: no.
 - `b` [string]: Multibase to display CID in. Required: no.
@@ -3172,9 +3172,6 @@ Pin objects to local storage.
 ### Response
 
 On success, the call to this endpoint will return with 200 and the following body:
-
-- `Pins` [string]: List of completed pins.
-- `Progress` [int]: Number of blocks pinned so far.
 
 ```json
 {
