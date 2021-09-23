@@ -102,3 +102,28 @@ shasum: WARNING: 1 computed checksum did NOT match
 ```
 
 As we can see, the hash included in the CID does NOT match the hash of the input file `ubuntu-20.04.1-desktop-amd64.iso`. To understand what the hash contained in the CID is, we must understand how IPFS stores files. IPFS uses a [directed acyclic graph (DAG)](merkle-dag.md) to keep track of all the data stored in IPFS. A CID identifies one specific node in this graph. This identifier is the result of hashing the node's contents using a cryptographic hash function like `SHA256`.
+
+Let's take a very simple example, the "Hello world" string above, as an illustration of how the DAG differs from the raw text (or binary data).
+
+```shell
+echo -n "Hello world" > /tmp/hello.txt
+ipfs add /tmp/hello.txt
+added QmNRCQWfgze6AbBCaT1rkrkV5tJ2aP4oTNPb5JZcXYywve hello.txt
+ 11 B / 11 B [=========================================================] 100.00%
+hexdump -C $(grep -rl Hello.world ~/.ipfs/blocks/)
+00000000  0a 11 08 02 12 0b 48 65  6c 6c 6f 20 77 6f 72 6c  |......Hello worl|
+00000010  64 18 0b                                          |d..|
+00000013
+shasum -a 256 $(grep -rl Hello.world ~/.ipfs/blocks/)
+012a29aa21f4593528bb4c03a8556ac0729536c8307f4d5001c3de39c750b3ef  /home/username/.ipfs/blocks/H3/CIQACKRJVIQ7IWJVFC5UYA5IKVVMA4UVG3EDA72NKAA4HXRZY5ILH3Y.data
+```
+Checking with the [CID Inspector](https://cid.ipfs.io/#QmNRCQWfgze6AbBCaT1rkrkV5tJ2aP4oTNPb5JZcXYywve) you will find this matches:
+```
+CODE: 0x12
+NAME: sha2-256
+BITS: 256
+DIGEST (HEX): 012A29AA21F4593528BB4C03A8556AC0729536C8307F4D5001C3DE39C750B3EF
+```
+So what do those extra bytes mean? The `0a`, the 3 bytes `08 02 12`, and the `18` immediately following the text are common to all simple, short, text nodes (I'm still trying to figure out what they mean---jc). The `11`, `0b`, and final `0b` are [varint](https://github.com/multiformats/unsigned-varint)s indicating the length of the DAG, and the length of the data itself (twice).
+
+So, to summarize: to get the shasum of your data to match what IPFS thinks it is, you must prepend and append specific byte sequences to it. But if the dataset is large and must be broken into several other DAGs, there will be a nonempty `Links` section, and the above explanation is obviously not going to suffice.
