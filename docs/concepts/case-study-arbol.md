@@ -74,7 +74,7 @@ Arbol's end users enjoy the "it just works" benefits of parametric protection, b
 
 1. **Query/release:** If a dataset is uploaded to Arbol's network directly (a "push" method), the maintainer initiates this stage themselves as part of their data release procedure. If Arbol or some other entity is "pulling" to the network independently of the dataset maintainer, the dataset needs to be periodically queried to determine when new data is released. Since many data providers follow a regular schedule, querying can be configured accordingly.
 
-2. **Parsing:** Arbol parses providers' large data data files, re-indexes them on geolocation (rather than time) if necessary, and often condenses the format, allowing for easier and faster querying for Arbol's main use case of creating location-specific weather contracts.
+2. **Parsing:** Arbol parses providers' large data files, re-indexes them on geolocation (rather than time) if necessary, and often condenses the format, allowing for easier and faster querying for Arbol's main use case of creating location-specific weather contracts.
 
 3. **Interpretation:** When datasets have holes or apparent errors — for example, weather station data can be prone to missing or faulty data for individual stations — Arbol interpolates the data as needed by running a statistical "clean and fill" process.
 
