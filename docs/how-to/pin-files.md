@@ -13,13 +13,40 @@ While this is nice, sometimes you want to be able to control what you keep aroun
 Let's look at this example to explore pinning to your local IPFS node in a bit more depth:
 
 ```
-echo "ipfs rocks" > foo
-ipfs add foo
-ipfs pin ls --type=all
-ipfs pin rm <foo hash>
-ipfs pin rm <foo hash>
-ipfs pin ls --type=all
+echo "ipfs rocks" > foo    
+
+
+ipfs add foo               
+
+> added QmRTV3h1jLcACW4FRfdisokkQAk4E4qDhUzGpgdrd4JAFy foo
+
+
+ipfs pin ls --type=all     
+
+> QmQPeNsJPyVWPFDVHb77w8G42Fvo15z4bG2X8D2GhfbSXc recursive
+> QmRTV3h1jLcACW4FRfdisokkQAk4E4qDhUzGpgdrd4JAFy recursive
+> QmQy6xmJhrcC5QLboAcGFcAE1tC8CrwDVkrHdEYJkLscrQ indirect
+> ...
+
+
+ipfs pin rm <foo hash>     
+
+> unpinned QmRTV3h1jLcACW4FRfdisokkQAk4E4qDhUzGpgdrd4JAFy
+
+
+ipfs pin rm <foo hash>     
+
+> Error: not pinned or pinned indirectly
+
+
+ipfs pin ls --type=all    
+
+> QmQPeNsJPyVWPFDVHb77w8G42Fvo15z4bG2X8D2GhfbSXc recursive
+> QmQy6xmJhrcC5QLboAcGFcAE1tC8CrwDVkrHdEYJkLscrQ indirect
+> ...
 ```
+
+The command ```echo "ipfs rocks" > foo``` does not return an output, it creates a file called ```foo``` containing the content ```ipfs rocks```.
 
 ## Three kinds of pins
 
@@ -32,17 +59,43 @@ As you may have noticed in the example above, the first `ipfs pin rm` command di
 A pinned object cannot be garbage-collected — try this for proof:
 
 ```bash
-ipfs add foo
+ipfs add foo           
+
+> added QmRTV3h1jLcACW4FRfdisokkQAk4E4qDhUzGpgdrd4JAFy foo
+> 11 B / 11 B [===================] 100.00%
+
+
 ipfs repo gc
-ipfs cat <foo hash>
+
+> removed QmVoSaWpZYicoLSAcdwxDPt2Gk4WVFCfBFTBtwwY2ASD9P
+> removed QmcpK3cSDyPGiNriMZrZTNu8YCPBSiMAApuvMqXaJVyuWr
+> removed QmdpczDhBmrkxerCUWkEcRExcTHFcA4EcDCeYNdXcV5iqE
+> ...
+
+
+ipfs cat <foo hash>    
+
+> ipfs rocks
 ```
 
 But if `foo` were to somehow become unpinned ...
 
 ```bash
-ipfs pin rm <foo hash>
-ipfs repo gc
-ipfs cat <foo hash>
+ipfs pin rm <foo hash>    
+
+> unpinned QmRTV3h1jLcACW4FRfdisokkQAk4E4qDhUzGpgdrd4JAFy
+
+
+ipfs repo gc              
+
+> removed QmPPjksRv8SqiibAy6bSAXBnnfcBf3QnTnApxWjcFUTTkZ                                                
+> removed QmS3wrDNoaRtRi84K7Hf8jzh5sBZcwrQFj7CZLmmmacS2U                                                
+> removed QmRTV3h1jLcACW4FRfdisokkQAk4E4qDhUzGpgdrd4JAFy
+
+
+ipfs cat <foo hash>       
+
+> ipfs rocks
 ```
 
 ## Local versus remote pinning
