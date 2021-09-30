@@ -126,8 +126,7 @@ of strings, or null:
 
 ### `duration`
 
-Duration is a type for describing lengths of time, using the same format go
-does (e.g, `"1d2h4m40.01s"`).
+Duration is a type for describing lengths of time, using the same format [go](https://pkg.go.dev/time#Duration.String) does (e.g, `"1d2h4m40.01s"`).
 
 ## `Addresses`
 
@@ -267,7 +266,7 @@ Type: `integer` (non-negative, `0` means unlimited)
 
 Configures the interval for the above limits.
 
-Default: 1 Minute
+Default: `1m0s` (1 Minute)
 
 Type: `duration` (when `0`/unset, the default value is used)
 
@@ -675,18 +674,18 @@ Type: `string` (base64 encoded)
 A time duration specifying how frequently to republish ipns records to ensure
 they stay fresh on the network.
 
-Default: 4 hours.
+Default: `4h0m0s` (4 hours).
 
-Type: `interval` or an empty string for the default.
+Type: `duration` or an empty string for the default.
 
 ### `Ipns.RecordLifetime`
 
 A time duration specifying the value to set on ipns records for their validity
 lifetime.
 
-Default: 24 hours.
+Default: `24h0m0s` (24 hours).
 
-Type: `interval` or an empty string for the default.
+Type: `duration` or an empty string for the default.
 
 ### `Ipns.ResolveCacheSize`
 
