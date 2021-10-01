@@ -32,7 +32,7 @@ Every command usable from the CLI is also available through the [HTTP API](/refe
 ```
 
 
-_Generated on 2021-09-21 20:56:55, from go-ipfs 0.9.1._
+_Generated on 2021-10-01 11:11:01, from go-ipfs 0.10.0._
 
 ## ipfs
 
@@ -78,7 +78,10 @@ SUBCOMMANDS
     dag           Interact with IPLD DAG nodes
     files         Interact with files as if they were a unix filesystem
     block         Interact with raw blocks in the datastore
+  
+  TEXT ENCODING COMMANDS
     cid           Convert and discover properties of CIDs
+    multibase     Encode and decode data with Multibase format
   
   ADVANCED COMMANDS
     daemon        Start a long-running daemon process
@@ -813,6 +816,53 @@ DESCRIPTION
 
   Lists all available commands (and subcommands) and exits.
 
+SUBCOMMANDS
+  ipfs commands completion - Generate shell completions.
+
+  For more information about each command, use:
+  'ipfs commands <subcmd> --help'
+
+```
+
+## ipfs commands completion
+
+```
+USAGE
+  ipfs commands completion - Generate shell completions.
+
+SYNOPSIS
+  ipfs commands completion
+
+SUBCOMMANDS
+  ipfs commands completion bash - Generate bash shell completions.
+
+  For more information about each command, use:
+  'ipfs commands completion <subcmd> --help'
+
+```
+
+## ipfs commands completion bash
+
+```
+USAGE
+  ipfs commands completion bash - Generate bash shell completions.
+
+SYNOPSIS
+  ipfs commands completion bash
+
+DESCRIPTION
+
+  Generates command completions for the bash shell.
+  
+  The simplest way to see it working is write the completions
+  to a file and then source it:
+  
+    > ipfs commands completion bash > ipfs-completion.bash
+    > source ./ipfs-completion.bash
+  
+  To install the completions permanently, they can be moved to
+  /etc/bash_completion.d or sourced from your ~/.bashrc file.
+
 
 ```
 
@@ -894,9 +944,6 @@ DESCRIPTION
     'server':
       Disables local host discovery, recommended when
       running IPFS on machines with public IPv4 addresses.
-    'test':
-      Reduces external interference of IPFS daemon, this
-      is useful when using the daemon in test environments.
     'default-networking':
       Restores default network settings.
       Inverse profile of the test profile.
@@ -907,14 +954,6 @@ DESCRIPTION
       
       This profile may only be applied when first initializing the node.
       
-    'lowpower':
-      Reduces daemon overhead on the system. May affect node
-      functionality - performance of content discovery and data
-      fetching may be degraded.
-      
-    'local-discovery':
-      Sets default values to fields affected by the server
-      profile, enables discovery in local networks.
     'flatfs':
       Configures the node to use the flatfs datastore.
       
@@ -947,8 +986,19 @@ DESCRIPTION
       * This datastore uses up to several gigabytes of memory. 
       
       This profile may only be applied when first initializing the node.
+    'lowpower':
+      Reduces daemon overhead on the system. May affect node
+      functionality - performance of content discovery and data
+      fetching may be degraded.
+      
     'randomports':
       Use a random port number for swarm.
+    'local-discovery':
+      Sets default values to fields affected by the server
+      profile, enables discovery in local networks.
+    'test':
+      Reduces external interference of IPFS daemon, this
+      is useful when using the daemon in test environments.
 
 SUBCOMMANDS
   ipfs config profile apply <profile> - Apply profile to config.
@@ -1030,6 +1080,7 @@ SYNOPSIS
               [--disable-transport-encryption] [--enable-gc]
               [--manage-fdlimit=false] [--migrate] [--enable-pubsub-experiment]
               [--enable-namesys-pubsub] [--enable-mplex-experiment]
+              [--agent-version-suffix=<agent-version-suffix>]
 
 OPTIONS
 
@@ -1065,6 +1116,9 @@ OPTIONS
   --enable-namesys-pubsub         bool   - Enable IPNS record distribution
                                            through pubsub; enables pubsub.
   --enable-mplex-experiment       bool   - DEPRECATED.
+  --agent-version-suffix          string - Optional suffix to the AgentVersion
+                                           presented by `ipfs id` and also
+                                           advertised through BitSwap.
 
 DESCRIPTION
 
@@ -1215,11 +1269,16 @@ USAGE
   ipfs dag get <ref> - Get a DAG node from IPFS.
 
 SYNOPSIS
-  ipfs dag get [--] <ref>
+  ipfs dag get [--output-codec=<output-codec>] [--] <ref>
 
 ARGUMENTS
 
   <ref> - The object to get
+
+OPTIONS
+
+  --output-codec  string - Format that the object will be encoded as. Default:
+                           dag-json.
 
 DESCRIPTION
 
@@ -1236,7 +1295,7 @@ USAGE
   ipfs dag import <path>... - Import the contents of .car files
 
 SYNOPSIS
-  ipfs dag import [--silent] [--pin-roots=false] [--] <path>...
+  ipfs dag import [--pin-roots=false] [--silent] [--stats] [--] <path>...
 
 ARGUMENTS
 
@@ -1244,9 +1303,10 @@ ARGUMENTS
 
 OPTIONS
 
-  --silent     bool - No output.
   --pin-roots  bool - Pin optional roots listed in the .car headers after
                       importing. Default: true.
+  --silent     bool - No output.
+  --stats      bool - Output stats.
 
 DESCRIPTION
 
@@ -1279,8 +1339,8 @@ USAGE
   ipfs dag put <object data>... - Add a DAG node to IPFS.
 
 SYNOPSIS
-  ipfs dag put [--format=<format> | -f] [--input-enc=<input-enc>] [--pin]
-               [--hash=<hash>] [--] <object data>...
+  ipfs dag put [--store-codec=<store-codec>] [--input-codec=<input-codec>]
+               [--pin] [--hash=<hash>] [--] <object data>...
 
 ARGUMENTS
 
@@ -1288,10 +1348,12 @@ ARGUMENTS
 
 OPTIONS
 
-  -f, --format  string - Format that the object will be added as. Default: cbor.
-  --input-enc   string - Format that the input object will be. Default: json.
-  --pin         bool   - Pin this object when adding.
-  --hash        string - Hash function to use. Default: .
+  --store-codec  string - Codec that the stored object will be encoded with.
+                          Default: dag-cbor.
+  --input-codec  string - Codec that the input object is encoded in. Default:
+                          dag-json.
+  --pin          bool   - Pin this object when adding.
+  --hash         string - Hash function to use. Default: sha2-256.
 
 DESCRIPTION
 
@@ -1557,8 +1619,9 @@ SYNOPSIS
   ipfs diag
 
 SUBCOMMANDS
-  ipfs diag cmds - List commands run on this IPFS node.
-  ipfs diag sys  - Print system diagnostic information.
+  ipfs diag cmds    - List commands run on this IPFS node.
+  ipfs diag profile - Collect a performance profile for debugging.
+  ipfs diag sys     - Print system diagnostic information.
 
   For more information about each command, use:
   'ipfs diag <subcmd> --help'
@@ -1617,6 +1680,58 @@ SYNOPSIS
 ARGUMENTS
 
   <time> - Time to keep inactive requests in log.
+
+
+```
+
+## ipfs diag profile
+
+```
+USAGE
+  ipfs diag profile - Collect a performance profile for debugging.
+
+SYNOPSIS
+  ipfs diag profile [--output=<output> | -o]
+                    [--cpu-profile-time=<cpu-profile-time>]
+
+OPTIONS
+
+  -o, --output        string - The path where the output should be stored.
+  --cpu-profile-time  string - The amount of time spent profiling CPU usage.
+                               Default: 30s.
+
+DESCRIPTION
+
+  Collects cpu, heap, and goroutine profiles from a running go-ipfs daemon
+  into a single zipfile. To aid in debugging, this command also attempts to
+  include a copy of the running go-ipfs binary.
+  
+  Profile's can be examined using 'go tool pprof', some tips can be found at
+  https://github.com/ipfs/go-ipfs/blob/master/docs/debug-guide.md.
+  
+  Privacy Notice:
+  
+  The output file includes:
+  
+  - A list of running goroutines.
+  - A CPU profile.
+  - A heap profile.
+  - Your copy of go-ipfs.
+  - The output of 'ipfs version --all'.
+  
+  It does not include:
+  
+  - Any of your IPFS data or metadata.
+  - Your config or private key.
+  - Your IP address.
+  - The contents of your computer's memory, filesystem, etc.
+  
+  However, it could reveal:
+  
+  - Your build path, if you built go-ipfs yourself.
+  - If and how a command/feature is being used (inferred from running functions).
+  - Memory offsets of various data structures.
+  - Any modifications you've made to go-ipfs.
 
 
 ```
@@ -1849,12 +1964,16 @@ USAGE
                                   in MFS (or copy within MFS).
 
 SYNOPSIS
-  ipfs files cp [--] <source> <dest>
+  ipfs files cp [--parents | -p] [--] <source> <dest>
 
 ARGUMENTS
 
   <source> - Source IPFS or MFS path to copy.
   <dest>   - Destination within MFS.
+
+OPTIONS
+
+  -p, --parents  bool - Make parent directories as needed.
 
 DESCRIPTION
 
@@ -2796,6 +2915,147 @@ DESCRIPTION
   baz
   > cat /ipfs/QmWLdkp93sNxGRjnFHPaYg8tCQ35NBY3XPn6KiETd3Z4WR
   baz
+
+
+```
+
+## ipfs multibase
+
+```
+USAGE
+  ipfs multibase - Encode and decode files or stdin with multibase format
+
+SYNOPSIS
+  ipfs multibase
+
+SUBCOMMANDS
+  ipfs multibase decode <encoded_file>    - Decode multibase string
+  ipfs multibase encode <file>            - Encode data into multibase string
+  ipfs multibase list                     - List available multibase encodings.
+  ipfs multibase transcode <encoded_file> - Transcode multibase string between
+                                            bases
+
+  For more information about each command, use:
+  'ipfs multibase <subcmd> --help'
+
+```
+
+## ipfs multibase decode
+
+```
+USAGE
+  ipfs multibase decode <encoded_file> - Decode multibase string
+
+SYNOPSIS
+  ipfs multibase decode [--] <encoded_file>
+
+ARGUMENTS
+
+  <encoded_file> - encoded data to decode
+
+DESCRIPTION
+
+  This command expects multibase inside of a file or via stdin:
+  
+    > echo -n hello | ipfs multibase encode -b base16 > file
+    > cat file
+    f68656c6c6f
+  
+    > ipfs multibase decode file
+    hello
+  
+    > cat file | ipfs multibase decode
+    hello
+
+
+```
+
+## ipfs multibase encode
+
+```
+USAGE
+  ipfs multibase encode <file> - Encode data into multibase string
+
+SYNOPSIS
+  ipfs multibase encode [-b=<b>] [--] <file>
+
+ARGUMENTS
+
+  <file> - data to encode
+
+OPTIONS
+
+  -b  string - multibase encoding. Default: base64url.
+
+DESCRIPTION
+
+  This command expects a file name or data provided via stdin.
+  
+  By default it will use URL-safe base64url encoding,
+  but one can customize used base with -b:
+  
+    > echo hello | ipfs multibase encode -b base16 > output_file
+    > cat output_file
+    f68656c6c6f0a
+  
+    > echo hello > input_file
+    > ipfs multibase encode -b base16 input_file
+    f68656c6c6f0a
+    
+
+
+```
+
+## ipfs multibase list
+
+```
+USAGE
+  ipfs multibase list - List available multibase encodings.
+
+SYNOPSIS
+  ipfs multibase list [--prefix] [--numeric]
+
+OPTIONS
+
+  --prefix   bool - also include the single letter prefixes in addition to the
+                    code.
+  --numeric  bool - also include numeric codes.
+
+
+```
+
+## ipfs multibase transcode
+
+```
+USAGE
+  ipfs multibase transcode <encoded_file> - Transcode multibase string between
+                                            bases
+
+SYNOPSIS
+  ipfs multibase transcode [-b=<b>] [--] <encoded_file>
+
+ARGUMENTS
+
+  <encoded_file> - encoded data to decode
+
+OPTIONS
+
+  -b  string - multibase encoding. Default: base64url.
+
+DESCRIPTION
+
+  This command expects multibase inside of a file or via stdin.
+  
+  By default it will use URL-safe base64url encoding,
+  but one can customize used base with -b:
+  
+    > echo -n hello | ipfs multibase encode > file
+    > cat file
+    uaGVsbG8
+  
+    > ipfs multibase transcode file -b base16 > transcoded_file
+    > cat transcoded_file
+    f68656c6c6f
 
 
 ```
@@ -4751,6 +5011,7 @@ SUBCOMMANDS
   ipfs swarm connect <address>...    - Open connection to a given address.
   ipfs swarm disconnect <address>... - Close connection to a given address.
   ipfs swarm filters                 - Manipulate address filters.
+  ipfs swarm peering                 - Modify the peering subsystem.
   ipfs swarm peers                   - List peers with open connections.
 
   For more information about each command, use:
@@ -4936,6 +5197,90 @@ ARGUMENTS
 DESCRIPTION
 
   'ipfs swarm filters rm' will remove an address filter from the daemons swarm.
+
+
+```
+
+## ipfs swarm peering
+
+```
+USAGE
+  ipfs swarm peering - Modify the peering subsystem.
+
+SYNOPSIS
+  ipfs swarm peering
+
+DESCRIPTION
+
+  'ipfs swarm peering' manages the peering subsystem. 
+  Peers in the peering subsystem is maintained to be connected, reconnected 
+  on disconnect with a back-off.
+  The changes are not saved to the config.
+
+SUBCOMMANDS
+  ipfs swarm peering add <address>... - Add peers into the peering subsystem.
+  ipfs swarm peering ls               - List peers registered in the peering
+                                        subsystem.
+  ipfs swarm peering rm <ID>...       - Remove a peer from the peering
+                                        subsystem.
+
+  For more information about each command, use:
+  'ipfs swarm peering <subcmd> --help'
+
+```
+
+## ipfs swarm peering add
+
+```
+USAGE
+  ipfs swarm peering add <address>... - Add peers into the peering subsystem.
+
+SYNOPSIS
+  ipfs swarm peering add [--] <address>...
+
+ARGUMENTS
+
+  <address>... - address of peer to add into the peering subsystem
+
+DESCRIPTION
+
+  'ipfs swarm peering add' will add the new address to the peering subsystem as one that should always be connected to.
+
+
+```
+
+## ipfs swarm peering ls
+
+```
+USAGE
+  ipfs swarm peering ls - List peers registered in the peering subsystem.
+
+SYNOPSIS
+  ipfs swarm peering ls
+
+DESCRIPTION
+
+  'ipfs swarm peering ls' lists the peers that are registered in the peering subsystem and to which the daemon is always connected.
+
+
+```
+
+## ipfs swarm peering rm
+
+```
+USAGE
+  ipfs swarm peering rm <ID>... - Remove a peer from the peering subsystem.
+
+SYNOPSIS
+  ipfs swarm peering rm [--] <ID>...
+
+ARGUMENTS
+
+  <ID>... - ID of peer to remove from the peering subsystem
+
+DESCRIPTION
+
+  'ipfs swarm peering rm' will remove the given ID from the peering subsystem and remove it from the always-on connection.
 
 
 ```
