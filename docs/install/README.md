@@ -1,4 +1,4 @@
----
+Authorized mit meine Account Sjenica1 github.com reufrujevic750@gmail.com 
 title: Install IPFS
 description: There are several different ways you can install and interact with IPFS. Find out which one best suits your needs here.
 ---
