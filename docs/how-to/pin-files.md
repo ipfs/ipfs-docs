@@ -1,6 +1,5 @@
 ---
 title: Pin files
-legacyUrl: https://docs.ipfs.io/guides/examples/pinning/
 description: Learn how to pin files in IPFS in order to keep your files and other objects local.
 ---
 
@@ -12,13 +11,21 @@ While this is nice, sometimes you want to be able to control what you keep aroun
 
 Let's look at this example to explore pinning to your local IPFS node in a bit more depth:
 
-```
-echo "ipfs rocks" > foo    
+1. First, create a file called `foo` with the contents `ipfs rocks`:
 
+    ```shell
+    echo "ipfs rocks" > foo    
+    ```
 
-ipfs add foo               
+    The `echo` command does not give an output when using the _output redirection_ `>` instruction.
 
-> added QmRTV3h1jLcACW4FRfdisokkQAk4E4qDhUzGpgdrd4JAFy foo
+1. Next, add `foo` to IPFS using the `ipfs add` command:
+
+    ```shell
+    ipfs add foo               
+
+    > added QmRTV3h1jLcACW4FRfdisokkQAk4E4qDhUzGpgdrd4JAFy foo
+    ```
 
 
 ipfs pin ls --type=all     
@@ -45,8 +52,6 @@ ipfs pin ls --type=all
 > QmQy6xmJhrcC5QLboAcGFcAE1tC8CrwDVkrHdEYJkLscrQ indirect
 > ...
 ```
-
-The command ```echo "ipfs rocks" > foo``` does not return an output, it creates a file called ```foo``` containing the content ```ipfs rocks```.
 
 ## Three kinds of pins
 
