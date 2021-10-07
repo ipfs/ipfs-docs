@@ -6,6 +6,10 @@ title: Recent releases
 
 This section contains information about recent IPFS releases. You can find installation instructions, update information, and release notes here.
 
+## [Go-IPFS 0.10](https://github.com/ipfs/go-ipfs/releases/tag/v0.10.0)
+
+This release brings modern IPLD to IPFS, and some useful utilities.
+
 ## [Go-IPFS 0.9](https://github.com/ipfs/go-ipfs/releases/tag/v0.9.0)
 
 This release makes Go IPFS even more configurable, with some fun experiments to boot! We're also deprecating or removing some uncommonly used features to make it easier for users to discover the easy ways to use Go IPFS safely and efficiently.
