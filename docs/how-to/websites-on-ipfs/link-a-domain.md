@@ -5,7 +5,7 @@ description: Allow users to access your IPFS hosted site by linking up a domain 
 
 # Link a domain
 
-Users can view your website by entering its content identifier (CID) into their address bar. But, much like IP addresses, CIDs aren't particularly user-friendly or nice to look at. To fix this, we can map a domain name to your CID, so when users visit `www.YourDomain.com` they'll be forwarded to your site hosted on IPFS. This guide shows you how to map a regular domain name through DNS and a decentralized domain through the Ethereum naming service.
+Users can view your website by entering its content identifier (CID) into their address bar. But, much like IP addresses, CIDs aren't particularly user-friendly or nice to look at. To fix this, we can map a domain name to your CID, so when users visit `www.YourDomain.com` they'll be forwarded to your site hosted on IPFS. This guide shows you how to map a regular domain name through DNS and decentralized domains through Handshake and the Ethereum naming service.
 
 This section is completely optional, but following it will give you a solid grasp on how to manage domain names with IPFS.
 
@@ -29,7 +29,46 @@ Before we get started, you will need:
    b. Set the value to `dnslink=/ipfs/SITE_CID`, replacing `SITE_CID` with the CID of your website.
 1. Save your changes.
 
-DNS changes can take a while to propagate through the internet. Your domain should eventually point to your IPFS hosted site! Why not try doing the same thing with the [Ethereum naming service](#ethereum-naming-service)?
+DNS changes can take a while to propagate through the internet. Your domain should eventually point to your IPFS hosted site! Why not try doing the same thing with [Handshake](#handshake) or the [Ethereum naming service](#ethereum-naming-service)?
+
+## Handshake 
+
+Handshake is a layer 1 protocol built specifically for DNS. Handshake is decentralizing the root zone (to decentralize control of domain names from ICANN) with the goal of replacing Certificate Authorities (to rehaul Internet security and privacy). From a practical standpoint, Handshake provides fully decentralized and uncensorable domain names for your websites. To learn more, visit the [Namebase Learning Center](https://learn.namebase.io).
+
+### Things you'll need
+
+Before we get started, you will need:
+
+- A Handshake name ([how to get a Handshake name](https://learn.namebase.io/starting-from-zero/how-to-get-a-name))
+- The CID of your website hosted on IPFS
+
+#### Bare TLD
+
+1. Access your name's DNS records. You're looking for where you can add `ALIAS` and `TXT` records for your domain
+1. Create an `ALIAS` record
+   a. Set the **Host** to `@`
+   b. Set the **Value** to `ipfs.namebase.io`
+1. Create a `TXT` record
+   a. Set the **Host** to `_contenthash`
+   b. Set the value to `ipfs://SITE_CID`, replacing `SITE_CID` with the CID of your website
+1. Save your changes
+
+You should now be able to visit your IPFS website at your Handshake domain! If your Handshake name is `yourname/`, you can visit your website at http://yourname/ (no dots, just yourname/!)
+
+#### Subdomain
+
+If you want to create your website on a subdomain rather than a bare TLD (e.g. `sub.yourname/` vs. `yourname/`), follow these instructions instead:
+
+1. Access your name's DNS records. You're looking for where you can add `CNAME` and `TXT` records for your domain
+1. Create a `CNAME` record
+   a. Set the **Host** to `sub`, replacing `sub` with your desired subdomain name
+   b. Set the **Value** to `ipfs.namebase.io`
+1. Create a `TXT` record
+   a. Set the **Host** to `_contenthash.sub`, replacing `sub` with your desired subdomain name
+   b. Set the value to `ipfs://SITE_CID`, replacing `SITE_CID` with the CID of your website
+1. Save your changes
+
+You should now be able to visit your IPFS website at your Handshake domain! If your Handshake name is `sub.yourname/`, you can visit your website at http://sub.yourname/
 
 ## Ethereum naming service (ENS)
 
