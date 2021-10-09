@@ -47,7 +47,7 @@ Before we get started, you will need:
 1. Access your name's DNS records. You're looking for where you can add `ALIAS` and `TXT` records for your domain
 1. Create an `ALIAS` record
    a. Set the **Host** to `@`
-   b. Set the **Value** to `ipfs.namebase.io`
+   b. Set the **Value** to `ipfs.namebase.io.` (notice the trailing dot `.` at the end of `ipfs.namebase.io.`)
 1. Create a `TXT` record
    a. Set the **Host** to `_contenthash`
    b. Set the value to `ipfs://SITE_CID`, replacing `SITE_CID` with the CID of your website
@@ -62,7 +62,7 @@ If you want to create your website on a subdomain rather than a bare TLD (e.g. `
 1. Access your name's DNS records. You're looking for where you can add `CNAME` and `TXT` records for your domain
 1. Create a `CNAME` record
    a. Set the **Host** to `sub`, replacing `sub` with your desired subdomain name
-   b. Set the **Value** to `ipfs.namebase.io`
+   b. Set the **Value** to `ipfs.namebase.io.` (notice the trailing dot `.` at the end of `ipfs.namebase.io.`)
 1. Create a `TXT` record
    a. Set the **Host** to `_contenthash.sub`, replacing `sub` with your desired subdomain name
    b. Set the value to `ipfs://SITE_CID`, replacing `SITE_CID` with the CID of your website
