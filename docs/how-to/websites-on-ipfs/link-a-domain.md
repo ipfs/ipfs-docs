@@ -29,7 +29,7 @@ Before we get started, you will need:
    b. Set the value to `dnslink=/ipfs/SITE_CID`, replacing `SITE_CID` with the CID of your website.
 1. Save your changes.
 
-DNS changes can take a while to propagate through the internet. Your domain should eventually point to your IPFS hosted site! Why not try doing the same thing with [Handshake](#handshake) or the [Ethereum naming service](#ethereum-naming-service)?
+DNS changes can take a while to propagate through the internet. Your domain should eventually point to your IPFS hosted site! Why not try doing the same thing with the [Ethereum naming service](#ethereum-naming-service) or [Handshake](#handshake)?
 
 ## Handshake 
 
