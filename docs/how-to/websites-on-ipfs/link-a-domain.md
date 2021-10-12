@@ -44,14 +44,14 @@ Before we get started, you will need:
 
 #### Bare TLD
 
-1. Access your name's DNS records. You're looking for where you can add `ALIAS` and `TXT` records for your domain
-1. Create an `ALIAS` record
-   a. Set the **Host** to `@`
-   b. Set the **Value** to `ipfs.namebase.io.` (notice the trailing dot `.` at the end of `ipfs.namebase.io.`)
-1. Create a `TXT` record
-   a. Set the **Host** to `_contenthash`
-   b. Set the value to `ipfs://SITE_CID`, replacing `SITE_CID` with the CID of your website
-1. Save your changes
+1. Access your name's DNS records. You're looking for where you can add `ALIAS` and `TXT` records for your domain.
+1. Create an `ALIAS` record:
+    a. Set the **Host** to `@`.
+    a. Set the **Value** to `ipfs.namebase.io.` (notice the trailing dot `.` at the end of `ipfs.namebase.io.`).
+1. Create a `TXT` record:
+    a. Set the **Host** to `_contenthash`.
+    a. Set the value to `ipfs://SITE_CID`, replacing `SITE_CID` with the CID of your website.
+1. Save your changes.
 
 You should now be able to visit your IPFS website at your Handshake domain! If your Handshake name is `yourname/`, you can visit your website at http://yourname/ (no dots, just yourname/!)
 
