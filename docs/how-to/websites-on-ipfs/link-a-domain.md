@@ -35,7 +35,7 @@ DNS changes can take a while to propagate through the internet. Your domain shou
 
 Handshake is a layer 1 protocol built specifically for DNS. Handshake is decentralizing the root zone (to decentralize control of domain names from ICANN) with the goal of replacing Certificate Authorities (to rehaul Internet security and privacy). From a practical standpoint, Handshake provides fully decentralized and uncensorable domain names for your websites. To learn more, visit the [Namebase Learning Center](https://learn.namebase.io).
 
-### Things you'll need
+### Prerequisites
 
 Before we get started, you will need:
 
