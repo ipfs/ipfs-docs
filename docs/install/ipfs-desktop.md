@@ -99,15 +99,28 @@ The IPFS Desktop application has finished installing. You can now start to [add 
 
 While these instructions are specific to Ubuntu, they will likely work with most Ubuntu-related Linux distributions. For non-Ubuntu Linux distributions, check out the [IPFS Desktop GitHub repository](https://github.com/ipfs-shipyard/ipfs-desktop#install) for install instructions.
 
-1. Download the latest `.AppImage` package from the [IPFS Desktop GitHub repository](https://github.com/ipfs-shipyard/ipfs-desktop#install)
-1. Move into where you downloaded the `.AppImage` file, and make it executable:
+### Install with `.deb`
+
+1. Download the latest `.deb` installer from the [IPFS Desktop GitHub repository](https://github.com/ipfs/ipfs-desktop#linuxfreebsd).
+2. Double click to install the package with Ubuntu Software, or move into where you downloaded the installer and install from the command-line:
+
+    ```shell
+    sudo dpkg -i ./ipfs-desktop-[version]-amd64.deb
+    ```
+
+    Replace `[version]` with the version number of the IPFS package you just downloaded.
+
+### Install using AppImage
+
+1. Download the latest `.AppImage` package from the [IPFS Desktop GitHub repository](https://github.com/ipfs/ipfs-desktop#linuxfreebsd).
+2. Move into where you downloaded the `.AppImage` file, and make it executable:
 
    ```shell
    cd Downloads
-   chmod a+x /ipfs-desktop-linux.AppImage
+   chmod a+x ./ipfs-desktop-linux.AppImage
    ```
 
-1. Open the `.AppImage` by calling `./ipfs-desktop-linux.AppImage` from the command-line:
+3. Open the `.AppImage` by calling `./ipfs-desktop-linux.AppImage` from the command-line:
 
    ```shell
    ./ipfs-desktop-linux.AppImage
