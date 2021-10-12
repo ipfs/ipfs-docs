@@ -268,7 +268,7 @@ Configures the interval for the above limits.
 
 Default: `1m0s` (1 Minute)
 
-Type: `duration` (when `0`/unset, the default value is used)
+Type: `duration` (when set to `0` or unset, the default value is used)
 
 ## `Bootstrap`
 
