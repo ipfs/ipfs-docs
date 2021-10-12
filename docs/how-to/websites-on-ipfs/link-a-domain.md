@@ -118,9 +118,11 @@ In a few minutes, you'll be able to go to `Your_Domain.eth/` and view your websi
 
 ## Handshake 
 
-Handshake is a blockchain built specifically for DNS. When you attempt to visit a website like github.com, your browser will first need to figure out how to get to .com’s servers. To find .com, your browser will consult something called the root zone file. You can think of it like a spreadsheet where Column A are the top-level domains like .com, .net, .org, .io, and Column B are the servers each TLD points to. Controlling the root zone file is a single entity called ICANN, and they alone dictate whether you’re allowed to have a top-level domain. 
+Handshake is a blockchain built specifically for DNS. 
 
-Handshake is shifting control of the root zone file away from ICANN to a decentralized blockchain. From a practical standpoint, Handshake provides fully decentralized and uncensorable domain names for your websites. To learn more, visit the [Namebase Learning Center](https://learn.namebase.io).
+When you attempt to visit a website like github.com, your browser will first need to figure out how to get to .com’s servers. To find .com, your browser will consult something called the root zone file — you can think of it like a spreadsheet where Column A are the top-level domains like .com, .net, .org, .io, and Column B are the servers each TLD points to. Controlling the root zone file is a single entity called ICANN, and they alone dictate whether you’re allowed to have a top-level domain. 
+
+Handshake is shifting control of the root zone file away from ICANN to a decentralized blockchain. From a practical standpoint, Handshake provides fully decentralized and uncensorable top-level domains that you can own and use for your websites. To learn more, visit the [Namebase Learning Center](https://learn.namebase.io).
 
 ### Prerequisites
 
