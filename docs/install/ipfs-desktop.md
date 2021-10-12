@@ -104,9 +104,11 @@ While these instructions are specific to Ubuntu, they will likely work with most
 1. Download the latest `.deb` installer from the [IPFS Desktop GitHub repository](https://github.com/ipfs/ipfs-desktop#linuxfreebsd).
 2. Double click to install the package with Ubuntu Software, or move into where you downloaded the installer and install from the command-line:
 
-   ```shell
-   sudo dpkg -i ./ipfs-desktop-[version]-amd64.deb
-   ```
+    ```shell
+    sudo dpkg -i ./ipfs-desktop-[version]-amd64.deb
+    ```
+
+    Replace `[version]` with the version number of the IPFS package you just downloaded.
 
 ### Install using AppImage
 
