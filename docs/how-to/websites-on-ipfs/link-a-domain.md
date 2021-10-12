@@ -5,7 +5,7 @@ description: Allow users to access your IPFS hosted site by linking up a domain 
 
 # Link a domain
 
-Users can view your website by entering its content identifier (CID) into their address bar. But, much like IP addresses, CIDs aren't particularly user-friendly or nice to look at. To fix this, we can map a domain name to your CID, so when users visit `www.YourDomain.com` they'll be forwarded to your site hosted on IPFS. This guide shows you how to map a regular domain name through DNS and decentralized domains through Handshake and the Ethereum naming service.
+Users can view your website by entering its content identifier (CID) into their address bar. But, much like IP addresses, CIDs aren't particularly user-friendly or nice to look at. To fix this, we can map a domain name to your CID, so when users visit `www.YourDomain.com` they'll be forwarded to your site hosted on IPFS. This guide shows you how to map a regular domain name through DNS, and decentralized domains through the Ethereum naming service (ENS) or Handshake.
 
 This section is completely optional, but following it will give you a solid grasp on how to manage domain names with IPFS.
 
