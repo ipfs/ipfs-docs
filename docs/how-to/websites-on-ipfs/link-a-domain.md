@@ -31,45 +31,6 @@ Before we get started, you will need:
 
 DNS changes can take a while to propagate through the internet. Your domain should eventually point to your IPFS hosted site! Why not try doing the same thing with the [Ethereum naming service](#ethereum-naming-service) or [Handshake](#handshake)?
 
-## Handshake 
-
-Handshake is a layer 1 protocol built specifically for DNS. Handshake is decentralizing the root zone (to decentralize control of domain names from ICANN) with the goal of replacing Certificate Authorities (to rehaul Internet security and privacy). From a practical standpoint, Handshake provides fully decentralized and uncensorable domain names for your websites. To learn more, visit the [Namebase Learning Center](https://learn.namebase.io).
-
-### Prerequisites
-
-Before we get started, you will need:
-
-- A [Handshake domain](https://learn.namebase.io/starting-from-zero/how-to-get-a-name)
-- The CID of your website hosted on IPFS
-
-#### Bare TLD
-
-1. Access your name's DNS records. You're looking for where you can add `ALIAS` and `TXT` records for your domain.
-1. Create an `ALIAS` record:
-    a. Set the **Host** to `@`.
-    a. Set the **Value** to `ipfs.namebase.io.` (notice the trailing dot `.` at the end of `ipfs.namebase.io.`).
-1. Create a `TXT` record:
-    a. Set the **Host** to `_contenthash`.
-    a. Set the value to `ipfs://SITE_CID`, replacing `SITE_CID` with the CID of your website.
-1. Save your changes.
-
-You should now be able to visit your IPFS website at your Handshake domain! If your Handshake name is `yourname/`, you can visit your website at http://yourname/ (no dots, just yourname/!)
-
-#### Subdomain
-
-If you want to create your website on a subdomain rather than a bare TLD (e.g. `sub.yourname/` vs. `yourname/`), follow these instructions instead:
-
-1. Access your name's DNS records. You're looking for where you can add `CNAME` and `TXT` records for your domain
-1. Create a `CNAME` record
-   a. Set the **Host** to `sub`, replacing `sub` with your desired subdomain name
-   b. Set the **Value** to `ipfs.namebase.io.` (notice the trailing dot `.` at the end of `ipfs.namebase.io.`)
-1. Create a `TXT` record
-   a. Set the **Host** to `_contenthash.sub`, replacing `sub` with your desired subdomain name
-   b. Set the value to `ipfs://SITE_CID`, replacing `SITE_CID` with the CID of your website
-1. Save your changes
-
-You should now be able to visit your IPFS website at your Handshake domain! If your Handshake name is `sub.yourname/`, you can visit your website at http://sub.yourname/
-
 ## Ethereum naming service (ENS)
 
 The Ethereum naming service (ENS) is a decentralized way to address resources. Like DNS, which converts human-readable names to IP addresses, ENS converts human-readable names such as `randomplanetfacts.eth.link` to Ethereum addresses. These addresses can then be used to point to CIDs on IPFS. Without going into too much detail, ENS aims to fix some of DNS's problems, mainly man-in-the-middle attacks and scalability. For more information on why DNS is broken, [check out Cynthia Taylor's post on recompilermag.com](https://recompilermag.com/issues/issue-1/the-web-is-broken-how-dns-breaks-almost-every-design-principle-of-the-internet/).
@@ -154,6 +115,47 @@ The more years you choose to prepay, the less you will spend on gas fees overall
 In a few minutes, you'll be able to go to `Your_Domain.eth/` and view your website. Note the trailing slash `/`. Because `.eth` is not a registered DNS top-level domain, it is normally inaccessible through regular browsers.
 
 [Eth.link](https://eth.link/) provides a way for any browser to access your website. Just append `.link` to your domain `Your_Domain.eth.link`. There are no additional steps required for this.
+
+## Handshake 
+
+Handshake is a blockchain built specifically for DNS. When you attempt to visit a website like github.com, your browser will first need to figure out how to get to .com’s servers. To find .com, your browser will consult something called the root zone file. You can think of it like a spreadsheet where Column A are the top-level domains like .com, .net, .org, .io, and Column B are the servers each TLD points to. Controlling the root zone file is a single entity called ICANN, and they alone dictate whether you’re allowed to have a top-level domain. 
+
+Handshake is shifting control of the root zone file away from ICANN to a decentralized blockchain. From a practical standpoint, Handshake provides fully decentralized and uncensorable domain names for your websites. To learn more, visit the [Namebase Learning Center](https://learn.namebase.io).
+
+### Prerequisites
+
+Before we get started, you will need:
+
+- A [Handshake domain](https://learn.namebase.io/starting-from-zero/how-to-get-a-name)
+- The CID of your website hosted on IPFS
+
+### Bare TLD
+
+1. Access your name's DNS records. You're looking for where you can add `ALIAS` and `TXT` records for your domain.
+1. Create an `ALIAS` record:
+    a. Set the **Host** to `@`.
+    a. Set the **Value** to `ipfs.namebase.io.` (notice the trailing dot `.` at the end of `ipfs.namebase.io.`).
+1. Create a `TXT` record:
+    a. Set the **Host** to `_contenthash`.
+    a. Set the value to `ipfs://SITE_CID`, replacing `SITE_CID` with the CID of your website.
+1. Save your changes.
+
+You should now be able to visit your IPFS website at your Handshake domain! If your Handshake name is `yourname/`, you can visit your website at http://yourname/ (no dots, just yourname/!)
+
+### Subdomain
+
+If you want to create your website on a subdomain rather than a bare TLD (e.g. `sub.yourname/` vs. `yourname/`), follow these instructions instead:
+
+1. Access your name's DNS records. You're looking for where you can add `CNAME` and `TXT` records for your domain
+1. Create a `CNAME` record
+   a. Set the **Host** to `sub`, replacing `sub` with your desired subdomain name
+   b. Set the **Value** to `ipfs.namebase.io.` (notice the trailing dot `.` at the end of `ipfs.namebase.io.`)
+1. Create a `TXT` record
+   a. Set the **Host** to `_contenthash.sub`, replacing `sub` with your desired subdomain name
+   b. Set the value to `ipfs://SITE_CID`, replacing `SITE_CID` with the CID of your website
+1. Save your changes
+
+You should now be able to visit your IPFS website at your Handshake domain! If your Handshake name is `sub.yourname/`, you can visit your website at http://sub.yourname/
 
 ## Up next
 
