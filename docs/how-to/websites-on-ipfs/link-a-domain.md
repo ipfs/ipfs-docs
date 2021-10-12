@@ -39,7 +39,7 @@ Handshake is a layer 1 protocol built specifically for DNS. Handshake is decentr
 
 Before we get started, you will need:
 
-- A Handshake name ([how to get a Handshake name](https://learn.namebase.io/starting-from-zero/how-to-get-a-name))
+- A [Handshake domain](https://learn.namebase.io/starting-from-zero/how-to-get-a-name)
 - The CID of your website hosted on IPFS
 
 #### Bare TLD
