@@ -89,7 +89,7 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 1. Download the macOS binary from [`dist.ipfs.io`](https://dist.ipfs.io/#ipfs-update).
 
    ```bash
-   curl https://dist.ipfs.io/ipfs-update/v1.7.1/ipfs-update_v1.7.1_darwin-amd64.tar.gz --output ipfs-update_v1.7.1_darwin-amd64.tar.gz
+   curl -O https://dist.ipfs.io/ipfs-update/v1.7.1/ipfs-update_v1.7.1_darwin-amd64.tar.gz
    ```
 
 2. Unzip the file:
