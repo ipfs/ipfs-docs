@@ -9,7 +9,7 @@ If you're running into problems with IPFS, use this page to debug your issues an
 
 ## Is your daemon running?
 
-If you're getting unexpected behaviour when trying to run common commands such as `ipfs get <cid>` returning `Error: merkledag: not found`, the issue is likely that your daemon isn't running. This can be remedied by running `ipfs daemon`, and using a different terminal to interact with the daemon.
+If you're getting unexpected behavior when trying to run common commands such as `ipfs get <cid>` returning `Error: merkledag: not found`, the issue is likely that your daemon isn't running. This can be remedied by running `ipfs daemon`, and using a different terminal to interact with the daemon.
 
 ## IPFS is running slowly
 
