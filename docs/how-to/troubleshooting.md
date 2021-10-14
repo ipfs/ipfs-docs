@@ -7,6 +7,10 @@ description: "If you're running into problems with IPFS, use this page to debug 
 
 If you're running into problems with IPFS, use this page to debug your issues and find a solution quickly.
 
+## Is your daemon running?
+
+If you're getting unexpected behaviour when trying to run common commands such as `ipfs get <cid>` returning `Error: merkledag: not found`, the issue is likely that your daemon isn't running. This can be remedied by running `ipfs daemon`, and using a different terminal to interact with the daemon.
+
 ## IPFS is running slowly
 
 Commands like `ipfs ls` are going to the network to try and find data. If for some reason, that data is not _findable_ then Go-IPFS will just keep looking for who has the data forever. Common reasons for data not being _findable_ are that:
