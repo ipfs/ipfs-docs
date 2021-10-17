@@ -81,7 +81,7 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
 1. Download the macOS binary from [`dist.ipfs.io`](https://dist.ipfs.io/#go-ipfs).
 
    ```bash
-   wget https://dist.ipfs.io/go-ipfs/v0.10.0/go-ipfs_v0.10.0_darwin-amd64.tar.gz
+   curl -O https://dist.ipfs.io/go-ipfs/v0.10.0/go-ipfs_v0.10.0_darwin-amd64.tar.gz
    ```
 
 1. Unzip the file:
