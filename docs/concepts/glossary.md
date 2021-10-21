@@ -62,9 +62,9 @@ Version 0 (v0) of the IPFS content identifier. This CID is 46 characters in leng
 
 Version 1 (v1) of the IPFS content identifier. This CID version contains some leading identifiers which provide for forward-compatibility. Able to support different formats for future versions of CID. [More about CID v1](../concepts/content-addressing.md#version-1-v1)
 
-### Circuit Relay
+### Circuit relay
 
-Circuit relay is a transport protocol that routes traffic between two peers over a third-party “relay” peer. [More about Circuit Relay](https://docs.libp2p.io/concepts/circuit-relay)
+Circuit relay is a transport protocol that routes traffic between two peers over a third-party _relay_ peer. [More about Circuit Relay](https://docs.libp2p.io/concepts/circuit-relay)
 
 ### Codec
 
