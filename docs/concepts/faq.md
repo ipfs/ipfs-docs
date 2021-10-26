@@ -36,7 +36,7 @@ There are a lot of ways you can contribute to IPFS, whether you're interested in
 
 ### What is the connection between IPFS and Filecoin?
 
-Filecoin and IPFS are two separate, complementary protocols, both created by Protocol Labs. IPFS allows peers to store, request, and transfer verifiable data with each other, while Filecoin is designed to provide a system of persistent data storage. Under Filecoin's incentive structure, clients pay to store data at specific levels of redundancy and availability, and miners earn payments and rewards by continuously storing data and cryptographically proving it.
+Filecoin and IPFS are two separate, complementary protocols, both created by Protocol Labs. IPFS allows peers to store, request, and transfer verifiable data with each other, while Filecoin is designed to provide a system of persistent data storage. Under Filecoin's incentive structure, clients pay to store data at specific levels of redundancy and availability, and storage providers earn payments and rewards by continuously storing data and cryptographically proving it.
 
 In short: IPFS addresses and moves content, while Filecoin is an incentive layer to persist data.
 
