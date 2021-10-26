@@ -22,7 +22,7 @@ To learn more, see the ["What is IPFS?"](what-is-ipfs.md) guide.
 
 ### How do I get started with IPFS?
 
-The quickest way to get IPFS up and running on your machine is by installing [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop), the easy-to-use app that enables you to run an IPFS node on your computer without having to bother with terminal commands.
+The quickest way to get IPFS up and running on your machine is by installing [IPFS Desktop](https://github.com/ipfs/ipfs-desktop), the easy-to-use app that enables you to run an IPFS node on your computer without having to bother with terminal commands.
 
 For installing and initializing IPFS from the command line, check out the [command-line quick start](../how-to/command-line-quick-start.md) guide.
 
@@ -50,4 +50,4 @@ IPFS is an open-source project with a community of more than four thousand contr
 
 ## Don't see your question?
 
-We're working on expanding this FAQ with more content, including questions from the original-generation [IPFS forums](https://discuss.ipfs.io/c/help/Old-FAQ), so please watch this space! However, if you don't see your question, please [ask in the forums](https://discuss.ipfs.io/), so you can get the answers you need and make us aware of new FAQ items.
+We're working on expanding this FAQ with more content, including questions from the original-generation [IPFS forums](https://discuss.ipfs.io/c/help/old-faq/5), so please watch this space! However, if you don't see your question, please [ask in the forums](https://discuss.ipfs.io/), so you can get the answers you need and make us aware of new FAQ items.
