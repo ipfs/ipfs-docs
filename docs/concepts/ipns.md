@@ -14,7 +14,7 @@ A _name_ in IPNS is the [hash](hashing.md) of a public key. It is associated wit
 
 When looking up an IPNS address, use the `/ipns/` prefix:
 
-```bash
+```shell
 /ipns/QmSrPmbaUKA3ZodhzPWZnpFgcPMFWF4QsxXbkWfEptTBJd
 ```
 
@@ -22,19 +22,19 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 
 1. Start your IPFS daemon, if it isn't already running:
 
-   ```bash
+   ```shell
    ipfs daemon
    ```
 
 1. Create the file that you want to set up with IPNS. For the tutorial, we're just going to create a simple _hello world_ file:
 
-   ```bash
-   echo "Hello, world!" > hello.txt
+   ```shell
+   echo "Hello IPFS" > hello.txt
    ```
 
 1. Add your file to IPFS:
 
-   ```bash
+   ```shell
    ipfs add hello.txt
 
    > added QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2 hello.txt
@@ -45,15 +45,15 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 
 1. Use `cat` and the `Qm` hash you just got from IPFS to view the file again:
 
-   ```bash
+   ```shell
    ipfs cat QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
 
-   > Hello, world!
+   > Hello IPFS!
    ```
 
 1. Publish your `Qm` hash to IPNS:
 
-   ```bash
+   ```shell
    ipfs name publish /ipfs/QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
 
    > Published to k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew: /ipfs/QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
@@ -63,15 +63,15 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 
 1. You can view your file by going to `https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew`:
 
-   ```bash
+   ```shell
    curl https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew
 
-   > Hello, world!
+   > Hello IPFS!
    ```
 
 1. Make a change to your file, add it to IPFS, and update your IPNS:
 
-   ```bash
+   ```shell
    echo "Hello IPFS!" > hello.txt
    ipfs add hello.txt
 
@@ -85,7 +85,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 
 1. You can now go back to `https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew` to view your updated file using the same address:
 
-   ```bash
+   ```shell
    curl https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew
 
    > Hello IPFS!
@@ -93,7 +93,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 
 You can view the `Qm` hash of the file associated with your `k5` key by using `name resolve`:
 
-```bash
+```shell
 ipfs name resolve
 
 > /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
@@ -101,7 +101,7 @@ ipfs name resolve
 
 To use a different `k5` key, first create one using `key gen test`, and use the `--key` flag when calling `name publish`:
 
-```bash
+```shell
 ipfs key gen SecondKey
 
 > k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl
@@ -117,7 +117,7 @@ Imagine you want to publish your website under IPFS. You can use the [Files API]
 
 Here's where the Name API comes in handy. With it, you can create a single, stable IPNS address that points to the CID for the latest version of your website.
 
-```js
+```javascript
 // The address of your files.
 const addr = '/ipfs/QmbezGequPwcsWo8UL4wDF6a8hYwM1hmbzYv2mnKkEWaUp'
 
