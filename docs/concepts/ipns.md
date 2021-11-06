@@ -48,7 +48,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    ```shell
    ipfs cat QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
 
-   > Hello IPFS!
+   > Hello IPFS
    ```
 
 1. Publish your `Qm` hash to IPNS:
