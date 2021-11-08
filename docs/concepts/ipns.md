@@ -48,7 +48,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    ```shell
    ipfs cat QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
 
-   > Hello IPFS!
+   > Hello IPFS
    ```
 
 1. Publish your `Qm` hash to IPNS:
@@ -66,21 +66,21 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    ```shell
    curl https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew
 
-   > Hello IPFS!
+   > Hello IPFS
    ```
 
 1. Make a change to your file, add it to IPFS, and update your IPNS:
 
    ```shell
-   echo "Hello IPFS!" > hello.txt
+   echo "Hello again IPFS" > hello.txt
    ipfs add hello.txt
 
-   > added QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG hello.txt
-   > 11 B / 11 B [=============================================================================================] 100.00%
+   > added QmaVfeg2GM17RLjBs9C4fhpku6uDgrEGUYCTC183VrZaVW hello.txt
+   > 17 B / 17 B [=============================================================================================] 100.00%
 
-   ipfs name publish QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
+   ipfs name publish QmaVfeg2GM17RLjBs9C4fhpku6uDgrEGUYCTC183VrZaVW
 
-   > Published to k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew: /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
+   > Published to k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew: /ipfs/QmaVfeg2GM17RLjBs9C4fhpku6uDgrEGUYCTC183VrZaVW
    ```
 
 1. You can now go back to `https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew` to view your updated file using the same address:
@@ -88,7 +88,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    ```shell
    curl https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew
 
-   > Hello IPFS!
+   > Hello IPFS
    ```
 
 You can view the `Qm` hash of the file associated with your `k5` key by using `name resolve`:
@@ -96,7 +96,7 @@ You can view the `Qm` hash of the file associated with your `k5` key by using `n
 ```shell
 ipfs name resolve
 
-> /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
+> /ipfs/QmaVfeg2GM17RLjBs9C4fhpku6uDgrEGUYCTC183VrZaVW
 ```
 
 To use a different `k5` key, first create one using `key gen test`, and use the `--key` flag when calling `name publish`:
@@ -106,9 +106,9 @@ ipfs key gen SecondKey
 
 > k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl
 
-ipfs name publish --key=SecondKey /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
+ipfs name publish --key=SecondKey /ipfs/QmaVfeg2GM17RLjBs9C4fhpku6uDgrEGUYCTC183VrZaVW
 
-> Published to k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl: /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
+> Published to k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl: /ipfs/QmaVfeg2GM17RLjBs9C4fhpku6uDgrEGUYCTC183VrZaVW
 ```
 
 ## Example IPNS Setup with JS SDK API
