@@ -29,7 +29,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 1. Create the file that you want to set up with IPNS. For the tutorial, we're just going to create a simple _hello world_ file:
 
    ```shell
-   echo "Hello IPFS!" > hello.txt
+   echo "Hello IPFS" > hello.txt
    ```
 
 1. Add your file to IPFS:
@@ -48,7 +48,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    ```shell
    ipfs cat QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
 
-   > Hello IPFS!
+   > Hello IPFS
    ```
 
 1. Publish your `Qm` hash to IPNS:
@@ -66,7 +66,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    ```shell
    curl https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew
 
-   > Hello IPFS!
+   > Hello IPFS
    ```
 
 1. Make a change to your file, add it to IPFS, and update your IPNS:
@@ -88,7 +88,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    ```shell
    curl https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew
 
-   > Hello IPFS!
+   > Hello IPFS
    ```
 
 You can view the `Qm` hash of the file associated with your `k5` key by using `name resolve`:
