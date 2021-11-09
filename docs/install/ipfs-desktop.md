@@ -112,6 +112,12 @@ While these instructions are specific to Ubuntu, they will likely work with most
 
 ### Install using AppImage
 
+:::warning
+When installing IPFS Desktop using an AppImage executable, you will not have access to the command-line `ipfs` commands. This limitation is due to how AppImages work and how they containerize their processes. 
+
+If you are sure that you do not need to use the command-line `ipfs` commands, then go ahead and install the AppImage. However, if you are not sure, then you're probably better off installing IPFS using the [deb installer ↑](#install-with-deb)
+:::
+
 1. Download the latest `.AppImage` package from the [IPFS Desktop GitHub repository](https://github.com/ipfs/ipfs-desktop#linuxfreebsd).
 2. Move into where you downloaded the `.AppImage` file, and make it executable:
 
