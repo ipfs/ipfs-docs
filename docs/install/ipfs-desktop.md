@@ -40,7 +40,7 @@ Or, if you'd rather use a package manager, check this [list of third-party packa
 
 ## Windows
 
-1. Go to the [IPFS Desktop downloads page](https://github.com/ipfs-shipyard/ipfs-desktop/releases)
+1. Go to the [IPFS Desktop downloads page](https://github.com/ipfs/ipfs-desktop/releases)
 2. Find the link ending in `.exe` for the latest version of IPFS Desktop:
 
    ![The IPFS Desktop download page.](./images/ipfs-desktop/install-windows-download-exe-page.png)
@@ -66,7 +66,7 @@ The IPFS Desktop application has finished installing. You can now start to [add 
 
 ## macOS
 
-1. Download the latest available `.dmg` file from the [ipfs-shipyard/ipfs-desktop releases page](https://github.com/ipfs/ipfs-desktop/releases)
+1. Download the latest available `.dmg` file from the [ipfs/ipfs-desktop releases page](https://github.com/ipfs/ipfs-desktop/releases)
 
    ![List of available download links in GitHub.](./images/ipfs-desktop/install-macos-dmg-file-link.png)
 
@@ -97,7 +97,7 @@ The IPFS Desktop application has finished installing. You can now start to [add 
 
 ## Ubuntu
 
-While these instructions are specific to Ubuntu, they will likely work with most Ubuntu-related Linux distributions. For non-Ubuntu Linux distributions, check out the [IPFS Desktop GitHub repository](https://github.com/ipfs-shipyard/ipfs-desktop#install) for install instructions.
+While these instructions are specific to Ubuntu, they will likely work with most Ubuntu-related Linux distributions. For non-Ubuntu Linux distributions, check out the [IPFS Desktop GitHub repository](https://github.com/ipfs/ipfs-desktop#install) for install instructions.
 
 ### Install with `.deb`
 
@@ -115,7 +115,7 @@ While these instructions are specific to Ubuntu, they will likely work with most
 :::warning
 When installing IPFS Desktop using an AppImage executable, you will not have access to the command-line `ipfs` commands. This limitation is due to how AppImages work and how they containerize their processes. 
 
-If you are sure that you do not need to use the command-line `ipfs` commands, then go ahead and install the AppImage. However, if you are not sure, then you're probably better off installing IPFS using the [deb installer ↑](#install-with-deb)
+If you are certain that you do not need to use the command-line `ipfs` commands, then go ahead and install the AppImage. Otherwise, consider using the [deb installer ↑](#install-with-deb)
 :::
 
 1. Download the latest `.AppImage` package from the [IPFS Desktop GitHub repository](https://github.com/ipfs/ipfs-desktop#linuxfreebsd).
@@ -139,8 +139,8 @@ If you are sure that you do not need to use the command-line `ipfs` commands, th
 | Package Manager                                                                                                    | Command                      |
 | ------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
 | [Homebrew](https://formulae.brew.sh/formula/ipfs#default)                                                                    | `brew install ipfs --cask`     |
-| [Chocolatey](https://community.chocolatey.org/packages/ipfs)                                                         | `choco install ipfs-desktop` |
-| [Scoop](https://github.com/lukesampson/scoop-extras/blob/master/bucket/ipfs-desktop.json) maintained by [@NatoBoram](https://github.com/NatoBoram) | `scoop bucket add extras && scoop install ipfs-desktop` |
+| [Chocolatey](https://community.chocolatey.org/packages/ipfs-desktop)                                                         | `choco install ipfs-desktop` |
+| [Scoop](https://github.com/ScoopInstaller/Extras/blob/master/bucket/ipfs-desktop.json) maintained by [@NatoBoram](https://github.com/NatoBoram) | `scoop bucket add extras && scoop install ipfs-desktop` |
 | [AUR](https://aur.archlinux.org/packages/ipfs-desktop/) maintained by [@alexhenrie](https://github.com/alexhenrie) | `ipfs-desktop`               |
 
 ## Next steps
