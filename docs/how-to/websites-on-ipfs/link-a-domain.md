@@ -130,6 +130,7 @@ Before we get started, you will need:
 
 - A [Handshake domain](https://learn.namebase.io/starting-from-zero/how-to-get-a-name)
 - The CID of your website hosted on IPFS
+- A [way for resolving Handshake domains](https://www.namebase.io/blog/how-to-access-handshake-domains/) (to test the setup)
 
 ### Bare TLD
 
@@ -138,8 +139,8 @@ Before we get started, you will need:
     a. Set the **Host** to `@`.
     a. Set the **Value** to `ipfs.namebase.io.` and notice the trailing dot `.` at the end of `ipfs.namebase.io.`.
 1. Create a `TXT` record:
-    a. Set the **Host** to `_contenthash`.
-    a. Set the value to `ipfs://SITE_CID`, replacing `SITE_CID` with the CID of your website.
+    a. Set the **Host** to `_dnslink`.
+    a. Set the value to `dnslink=/ipfs/SITE_CID`, replacing `SITE_CID` with the CID of your website.
 1. Save your changes.
 
 You should now be able to visit your IPFS website at your Handshake domain! If your Handshake name is `yourname/`, you can visit your website at http://yourname/ (no dots, just yourname/!)
@@ -153,11 +154,18 @@ If you want to create your website on a subdomain rather than a bare TLD (e.g. `
    a. Set the **Host** to `sub`, replacing `sub` with your desired subdomain name.
    b. Set the **Value** to `ipfs.namebase.io.` and notice the trailing dot `.` at the end of `ipfs.namebase.io.`.
 1. Create a `TXT` record:
-   a. Set the **Host** to `_contenthash.sub`, replacing `sub` with your desired subdomain name.
-   b. Set the value to `ipfs://SITE_CID`, replacing `SITE_CID` with the CID of your website.
+   a. Set the **Host** to `_dnslink.sub`, replacing `sub` with your desired subdomain name.
+   b. Set the value to `dnslink=/ipfs/SITE_CID`, replacing `SITE_CID` with the CID of your website.
 1. Save your changes.
 
 You should now be able to visit your IPFS website at your Handshake domain! If your Handshake name is `sub.yourname/`, you can visit your website at http://sub.yourname/
+
+::: tip
+
+If you prefer to use Handshake-powered DNSLink with your own gateway, run [`ipfs daemon`](/install/command-line/) with config that has a Handshake resolver enabled for your domain: `ipfs config --json DNS.Resolvers '{ "yourname": "https://query.hdns.io/dns-query" }`
+Learn how to run a self-hosted, site-specific DNSLink gateway from [gateway recipes in go-ipfs config docs](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway-recipes).
+
+:::
 
 ## Up next
 
