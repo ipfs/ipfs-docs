@@ -25,7 +25,7 @@ The Javascript implementation is designed to run in the browser with a limited s
 
 - Can connect to server nodes using secure WebSockets.
     - WSS requires manual setup of TLS at the server.
-- Can connect to a browser node using WebRTC, with the help of a centralized ws-webrtc-star signaling service.
+- Can connect to a browser node using WebRTC using a centralized ws-webrtc-star signaling service.
 
 Specific limitations of the JS-IPFS implementation are:
 
@@ -41,7 +41,6 @@ There are different types of IPFS node. And depending on the use-case, a single 
 - [Relay](#relay)
 - [Bootstrap](#bootstrap)
 - [Delegate routing](#delegate-routing)
-- [Addenda](#addenda)
 
 ### Preload
 
@@ -55,7 +54,7 @@ Features of a preload node:
 - JS-ipfs nodes remain connected to the libp2p swarm ports of all preload nodes by having preload nodes on the bootstrap list.
 - Often on the same _server_ as a [delegate routing node](#delegate-routing), though both the delegate routing service and preload service are addressed differently. This is done by having different multiaddrs that resolve to the same machine. View their configurations for more details: [preload config](https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs-core/src/runtime/config-nodejs.js#L36-L39), [delegate config](https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs-core/src/runtime/config-nodejs.js#L14-L17)
 - Preload nodes are in the default JS-IPFS configuration as bootstrap nodes, so they will maintain libp2p swarm connections to them at all times.
-    - They are [configured](https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs-core/src/runtime/config-nodejs.js#L29-L39) as regular bootstrap nodes but have the string 'preload' in their multiaddrs.
+    - They are [configured](https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs-core/src/runtime/config-nodejs.js#L29-L39) as regular bootstrap nodes, but have the string 'preload' in their multiaddrs.
 
 Limitations of a preload node:
 
@@ -92,7 +91,7 @@ Limitations of a bootstrap node:
 
 ## Delegate routing
 
-When IPFS nodes are unable to run DHT logic on their own, they _delegate_ the task to a delegate routing node. Publishing works with arbitrary CID codecs as the [js-delegate-content module](https://github.com/libp2p/js-libp2p-delegated-content-routing/blob/master/src/index.js#L127-L128) publishes CIDs at the block level rather than the IPLD or DAG level.
+When IPFS nodes are unable to run DHT logic on their own, they _delegate_ the task to a delegate routing node. Publishing works with arbitrary CID codecs, as the [js-delegate-content module](https://github.com/libp2p/js-libp2p-delegated-content-routing/blob/master/src/index.js#L127-L128) publishes CIDs at the block level rather than the IPLD or DAG level.
 
 Features of a delegate routing node:
 
@@ -100,7 +99,7 @@ Features of a delegate routing node:
 - Usable by both Go-IPFS and JS-IPFS nodes.
 - Often on the same _server_ as a [preload](#preload) node, though both the delegate routing service and preload service are addressed differently. This is done by having different multiaddrs that resolve to the same machine. View their configurations for more details: [preload config](https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs-core/src/runtime/config-nodejs.js#L36-L39), [delegate config](https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs-core/src/runtime/config-nodejs.js#L14-L17)
 - Delegate routing nodes are in the default JS-IPFS configuration as bootstrap nodes, so they will maintain libp2p swarm connections to them at all times.
- - They are [configured](https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs-core/src/runtime/config-nodejs.js#L29-L39) as regular bootstrap nodes but have the string 'preload' in their multiaddrs.
+ - They are [configured](https://github.com/ipfs/js-ipfs/blob/master/packages/ipfs-core/src/runtime/config-nodejs.js#L29-L39) as regular bootstrap nodes, but have the string 'preload' in their multiaddrs.
 
 Limitations of a delegate routing node:
 
