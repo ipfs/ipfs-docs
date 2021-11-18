@@ -90,12 +90,13 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/concepts/what-is-ipfs',
-                  '/concepts/how-ipfs-works',
-                  '/concepts/privacy-and-encryption',
-                  '/concepts/glossary',
-                  '/concepts/usage-ideas-examples',
-                  '/concepts/faq'
+                    '/concepts/what-is-ipfs',
+                    '/concepts/how-ipfs-works',
+                    '/concepts/privacy-and-encryption',
+                    '/concepts/nodes',
+                    '/concepts/glossary',
+                    '/concepts/usage-ideas-examples',
+                    '/concepts/faq'
                 ]
               },
               {
@@ -127,7 +128,10 @@ module.exports = {
                 title: 'Integrating with the Web',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/concepts/ipfs-gateway', '/concepts/dnslink']
+                children: [
+                    '/concepts/ipfs-gateway', 
+                    '/concepts/dnslink'
+                ]
               },
               {
                 title: 'Case studies',
