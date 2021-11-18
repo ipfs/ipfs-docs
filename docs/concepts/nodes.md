@@ -61,7 +61,7 @@ Limitations of a preload node:
 - Preload nodes garbage collect every hour, so preloaded content only survives for that long. This is configurable, however.
 - Only DAG-PG CIDs can be understood by preload nodes. To retrieve non-dag-pb content, a node would need a connection to the publishing JS-IFPS instance, or that content would need to be put on the DHT by a delegate node. 
 
-## Relay
+### Relay
 
 If an IPFS node deems itself unreachable by the public internet, Go-IPFS nodes will use a relay node as a kind of VPN in an attempt to reach the unreachable node.
 
@@ -75,7 +75,7 @@ Limitations of relay nodes:
 
 - The list of relay nodes within Go-IPFS is preset and is not configurable.
 
-## Bootstrap
+### Bootstrap
 
 Both Go-IPFS and JS-IPFS nodes use bootstrap nodes to initially enter the DHT.
 
@@ -89,7 +89,7 @@ Limitations of a bootstrap node:
 
 - If an IPFS node only has one bootstrap node listed in that configuration and that bootstrap node goes offline, the IPFS node will lose access to the public DHT if it were to restart.
 
-## Delegate routing
+### Delegate routing
 
 When IPFS nodes are unable to run DHT logic on their own, they _delegate_ the task to a delegate routing node. Publishing works with arbitrary CID codecs, as the [js-delegate-content module](https://github.com/libp2p/js-libp2p-delegated-content-routing/blob/master/src/index.js#L127-L128) publishes CIDs at the block level rather than the IPLD or DAG level.
 
