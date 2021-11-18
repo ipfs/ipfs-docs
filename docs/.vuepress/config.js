@@ -99,19 +99,6 @@ module.exports = {
                 ]
               },
               {
-                title: 'Case studies',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  ['/concepts/case-study-arbol', 'Arbol'],
-                  ['/concepts/case-study-audius', 'Audius'],
-                  ['/concepts/case-study-fleek', 'Fleek'],
-                  ['/concepts/case-study-likecoin', 'LikeCoin'],
-                  ['/concepts/case-study-morpheus', 'Morpheus.Network'],
-                  ['/concepts/case-study-openbazaar', 'OpenBazaar']
-                ]
-              },
-              {
                 title: 'Content-addressed data',
                 sidebarDepth: 1,
                 collapsable: false,
@@ -141,6 +128,19 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: ['/concepts/ipfs-gateway', '/concepts/dnslink']
+              },
+              {
+                title: 'Case studies',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  ['/concepts/case-study-arbol', 'Arbol'],
+                  ['/concepts/case-study-audius', 'Audius'],
+                  ['/concepts/case-study-fleek', 'Fleek'],
+                  ['/concepts/case-study-likecoin', 'LikeCoin'],
+                  ['/concepts/case-study-morpheus', 'Morpheus.Network'],
+                  ['/concepts/case-study-openbazaar', 'OpenBazaar']
+                ]
               },
               {
                 title: 'Further reading',
