@@ -171,7 +171,7 @@ module.exports = {
                   '/how-to/default-profile',
                   '/how-to/run-ipfs-inside-docker',
                   [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/custom-ipfs-repo',
+                    'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
                     'Customize an IPFS repo'
                   ],
                   '/how-to/troubleshooting'
