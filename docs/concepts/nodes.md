@@ -5,7 +5,7 @@ description: "Participants in the IPFS network are called nodes. Nodes are the m
 
 # Nodes
 
-Computers running IPFS are called _nodes_. Nodes are the most crucial aspect of IPFS - without nodes running the IPFS daemon, there would be no such thing as IPFS in the first place.
+Participants in the IPFS network are called _nodes_. Nodes are the most crucial aspect of IPFS - without nodes running the IPFS daemon, there would be no IPFS Network.
 
 ## Implementations
 
