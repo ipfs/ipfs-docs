@@ -51,7 +51,7 @@ Public IPFS gateways are primarily intended as a "bridge" between the legacy web
 
 ### Using Tor
 
-If you're familiar with [Tor](https://www.torproject.org/) and comfortable with the command line, you may wish to try [running IPFS over Tor transport](https://dweb-primer.ipfs.io/avenues-for-access/tor-transport) by configuring your node's settings.
+If you're familiar with [Tor](https://www.torproject.org/) and comfortable with the command line, you may wish to try running IPFS over Tor transport by configuring your node's settings.
 
 If you're a developer building on IPFS, it's worth noting that the global IPFS community continues to experiment with using Tor transport — see [this example from e-commerce organization OpenBazaar](https://github.com/OpenBazaar/go-onion-transport) — and there may already be an open-source codebase to help your project achieve this.
 
