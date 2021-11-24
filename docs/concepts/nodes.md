@@ -1,6 +1,6 @@
 ---
 title: "Nodes"
-description: "Computers running IPFS are called nodes. Nodes are the most imporant aspect of IPFS - without nodes running the IPFS daemon, there would be no such thing as IPFS. This page discusses what nodes are, current IPFS implementations, and the types of services different nodes can offer."
+description: "Participants in the IPFS network are called nodes. Nodes are the most important aspect of IPFS - without nodes running the IPFS daemon, there would be no  IPFS network. This page discusses what nodes are, current IPFS implementations, and the types of services different nodes can offer."
 ---
 
 # Nodes
