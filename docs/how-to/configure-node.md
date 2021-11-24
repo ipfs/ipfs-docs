@@ -57,7 +57,7 @@ documented in `ipfs config profile --help`.
 
   - You need a very simple and very reliable datastore you and trust your
     filesystem. This datastore stores each block as a separate file in the
-    underlying filesystem so it's unlikely to loose data unless there's an issue
+    underlying filesystem so it's unlikely to lose data unless there's an issue
     with the underlying file system.
   - You need to run garbage collection on a small (<= 10GiB) datastore. The
     default datastore, badger, can leave several gigabytes of data behind when
