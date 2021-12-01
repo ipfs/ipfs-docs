@@ -138,7 +138,7 @@ The Datastore is the on-disk storage system used by an IPFS node. Configuration 
 
 ### DCUtR
 
-Direct Connection Upgrade through Relay (DCUtR) protocol enables hole punching for NAT traversal when port forwarding is not possible. A peer will coordinate with the counterparty using a [relayed connection](#circuit-relay-v2), to upgrade to a direct connection through a NAT/firewall whenever possible. [More about DCUtR](https://github.com/libp2p/specs/blob/master/relay/DCUtR.md)
+Direct Connection Upgrade through Relay (DCUtR) protocol enables [hole punching](#hole-punching) for NAT traversal when port forwarding is not possible. A peer will coordinate with the counterparty using a [relayed connection](#circuit-relay-v2), to upgrade to a direct connection through a NAT/firewall whenever possible. [More about DCUtR](https://github.com/libp2p/specs/blob/master/relay/DCUtR.md)
 
 ### DHT
 
@@ -195,6 +195,10 @@ The sharding technique used for [sharding](#sharding) big UnixFS directories. It
 ### Hash
 
 A Cryptographic Hash is a function that takes some arbitrary input (content) and returns a fixed-length value. The exact same input data will always generate the same hash as output. There are numerous hash algorithms. [More about Hash](hashing.md)
+
+### Hole punching
+
+A generic term for NAT traversal when port forwarding is not possible. [See DCUtR](#dcutr)
 
 ## I
 
