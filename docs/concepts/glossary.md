@@ -24,6 +24,22 @@ ADL is short for _Advanced Data Layout_, a concept in [IPLD](#ipld). See [IPLD d
 
 ## B
 
+### Base32
+
+Case-insensitive [Multibase](#multibase) encoding used for text representation of [CIDv1](#cid-v1).
+
+### Base36
+
+Case-insensitive [Multibase](#multibase)  used for text representation of [CIDv1](#cid-v1).
+
+### Base58btc
+
+Case-sensitive [Multibase](#multibase)  used for text representation [Multihashes](#multihash) and [CIDv0](#cid-v0).
+
+### Base64url
+
+Case-sensitive [Multibase](#multibase), uses modified Base64 with URL and filename safe alphabet ([RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648#section-5)), where the `+` and `/`  are respectively replaced by `-` and `_`.
+
 ### Bitswap
 
 Bitswap is IPFS's central block exchange protocol. Its purpose is to request blocks from and send blocks to other peers in the network. [More about Bitswap](https://github.com/ipfs/specs/blob/master/BITSWAP.md)
@@ -64,7 +80,15 @@ Version 1 (v1) of the IPFS content identifier. This CID version contains some le
 
 ### Circuit relay
 
-Circuit relay is a transport protocol that routes traffic between two peers over a third-party _relay_ peer. [More about Circuit Relay](https://docs.libp2p.io/concepts/circuit-relay)
+Circuit relay is a transport protocol that routes traffic between two peers over a third-party [_relay_ peer](#relay). [More about Circuit Relay](https://docs.libp2p.io/concepts/circuit-relay).
+
+### Circuit relay v1
+
+Unlimited relay that requires some centralized ACL to control resource usage. [See specification](https://github.com/libp2p/specs/blob/master/relay/circuit-v1.md).
+
+### Circuit relay v2
+
+Truly decentralized relay implementation that provides a limited relay for things like [hole punching](#hole-punching). Support for this type of relay was introduced in go-ipfs 0.11. [See specification](https://github.com/libp2p/specs/blob/master/relay/circuit-v2.md).
 
 ### Codec
 
@@ -88,6 +112,21 @@ A Daemon is a computer program that typically runs in the background. The IPFS d
 
 A Directed Acyclic Graph (DAG) is a computer science data structure adapted for use with versioned file systems, blockchains, and for modeling many different kinds of information. [IPLD](#ipld) data in IPFS is naturally a DAG. [More about DAG on Wikipedia](https://en.wikipedia.org/wiki/Directed_acyclic_graph).
 
+### DAG-JSON
+
+DAG-JSON is a [codec](#codec) that implements the [IPLD Data Model](https://ipld.io/glossary/#data-model) as JSON, plus some additional conventions for encoding links, which it does by claiming certain specific structures of map and assigning them this meaning. DAG-CBOR also adds a "link" type using a CBOR tag, to bring it in line with the IPLD Data Model. [More about DAG-JSON](https://ipld.io/docs/codecs/known/dag-json/)
+
+### DAG-JOSE
+
+[More in DAG-JOSE specification](https://ipld.io/specs/codecs/dag-jose/spec/)
+
+### DAG-CBOR
+
+DAG-CBOR is a [codec](#codec) that implements the [IPLD Data Model](https://ipld.io/glossary/#data-model) as a subset of CBOR, plus some additional constraints for hash consistent representations. DAG-CBOR also adds a "link" type using a CBOR tag, to bring it in line with the IPLD Data Model. [More about DAG-CBOR](https://ipld.io/docs/codecs/known/dag-cbor/)
+
+## DAG-PB
+
+DAG-PB is a [codec](#codec) that implements a very small subset of the [IPLD Data Model](https://ipld.io/glossary/#data-model) in a particular set [Protobuf](#protobuf) messages used in IPFS, where it is a backbone of how [UnixFS](#UnixFS)v1 data is serialized. [More about DAG-PB](https://ipld.io/specs/codecs/dag-pb/spec/)
 
 ### Data model
 
@@ -96,6 +135,10 @@ Did you mean [IPLD Data Model](https://ipld.io/glossary/#data-model)?
 ### DataStore
 
 The Datastore is the on-disk storage system used by an IPFS node. Configuration parameters control the location, size, construction, and operation of the datastore. [More about Datastore](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#datastore)
+
+### DCUtR
+
+Direct Connection Upgrade through Relay (DCUtR) protocol enables hole punching for NAT traversal when port forwarding is not possible. A peer will coordinate with the counterparty using a [relayed connection](#circuit-relay-v2), to upgrade to a direct connection through a NAT/firewall whenever possible. [More about DCUtR](https://github.com/libp2p/specs/blob/master/relay/DCUtR.md)
 
 ### DHT
 
@@ -144,6 +187,10 @@ In computer science, a Graph is an abstract data type from the field of graph th
 Graphsync is an alternative content replication protocol under discussion, similar to [Bitswap](#bitswap). Like Bitswap, the primary job is to synchronize data blocks across peers. [More about Graphsync](https://github.com/ipld/specs/blob/master/block-layer/graphsync/graphsync.md)
 
 ## H
+
+### HAMT-sharding
+
+The sharding technique used for [sharding](#sharding) big UnixFS directories. It leverages properties of hash array mapped tries (HAMT). [More about HAMT](https://en.wikipedia.org/wiki/Hash_array_mapped_trie).
 
 ### Hash
 
@@ -259,6 +306,10 @@ Pinning is the method of telling an IPFS node that particular data is important 
 
 A vendor-agnostic [API specification](https://ipfs.github.io/pinning-services-api-spec/) that anyone can implement to provide a service for [remote pinning](#remote-pinning).
 
+### Protobuf
+
+Protocol Buffers (Protobuf) is a free and open-source cross-platform data format used to serialize structured data. IPFS uses it in [DAG-PB](#dag-pb). [More about Protocol Buffers](https://en.wikipedia.org/wiki/Protocol_Buffers)
+
 ### Pubsub
 
 Publish-subscribe (Pubsub) is an experimental feature in IPFS. Publishers send messages classified by topic or content, and subscribers receive only the messages they are interested in. [More about Pubsub](https://blog.ipfs.io/25-pubsub/)
@@ -306,6 +357,10 @@ IPLD selectors are a form of graph query over IPLD data. They can also be though
 ### SFS
 
 A Self-certifying File System (SFS) is a distributed file system that doesn't require special permissions for data exchange. It is self-certifying because data served to a client is authenticated by the file name (which is signed by the server). [More about SFS](https://en.wikipedia.org/wiki/Self-certifying_File_System)
+
+### Sharding
+
+An introduction of horizontal partition of data in a database or a data structure. The main purpose is to spread load and improve performance. An example of sharding in IPFS is [HAMT-sharding](#hamt-sharding) of big [UnixFS](#unixfs) directories. 
 
 ### Signing (Cryptographic)
 
