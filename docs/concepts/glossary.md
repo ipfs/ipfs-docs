@@ -126,7 +126,7 @@ DAG-CBOR is a [codec](#codec) that implements the [IPLD Data Model](https://ipld
 
 ## DAG-PB
 
-DAG-PB is a [codec](#codec) that implements a very small subset of the [IPLD Data Model](https://ipld.io/glossary/#data-model) in a particular set [Protobuf](#protobuf) messages used in IPFS, where it is a backbone of how [UnixFS](#UnixFS)v1 data is serialized. [More about DAG-PB](https://ipld.io/specs/codecs/dag-pb/spec/)
+DAG-PB is a [codec](#codec) that implements a very small subset of the [IPLD Data Model](https://ipld.io/glossary/#data-model) in a particular set of [Protobuf](#protobuf) messages used in IPFS for defining how [UnixFS](#UnixFS)v1 data is serialized. [More about DAG-PB](https://ipld.io/specs/codecs/dag-pb/spec/)
 
 ### Data model
 
