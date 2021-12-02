@@ -30,11 +30,11 @@ Case-insensitive [Multibase](#multibase) encoding used for text representation o
 
 ### Base36
 
-Case-insensitive [Multibase](#multibase)  used for text representation of [CIDv1](#cid-v1).
+Case-insensitive [Multibase](#multibase) used for text representation of [CIDv1](#cid-v1).
 
 ### Base58btc
 
-Case-sensitive [Multibase](#multibase)  used for text representation [Multihashes](#multihash) and [CIDv0](#cid-v0).
+Case-sensitive [Multibase](#multibase) used for text representation [Multihashes](#multihash) and [CIDv0](#cid-v0).
 
 ### Base64url
 
@@ -84,7 +84,7 @@ A [libp2p](#libp2p) term for transport protocol that routes traffic between two 
 
 ### Circuit relay v1
 
-Unlimited relay that requires some centralized ACL to control resource usage. [See specification](https://github.com/libp2p/specs/blob/master/relay/circuit-v1.md).
+Unlimited relay that requires some external ACL to control resource usage. [See specification](https://github.com/libp2p/specs/blob/master/relay/circuit-v1.md).
 
 ### Circuit relay v2
 
