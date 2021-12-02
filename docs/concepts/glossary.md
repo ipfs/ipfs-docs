@@ -80,7 +80,7 @@ Version 1 (v1) of the IPFS content identifier. This CID version contains some le
 
 ### Circuit relay
 
-Circuit relay is a transport protocol that routes traffic between two peers over a third-party [_relay_ peer](#relay). [More about Circuit Relay](https://docs.libp2p.io/concepts/circuit-relay).
+A [libp2p](#libp2p) term for transport protocol that routes traffic between two peers over a third-party [_relay_ peer](#relay). [More about Circuit Relay](https://docs.libp2p.io/concepts/circuit-relay/).
 
 ### Circuit relay v1
 
