@@ -37,8 +37,8 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    ```shell
    ipfs add hello.txt
 
-   > added QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2 hello.txt
-   > 13 B / 13 B [===================================================================] 100.00%
+   > added QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG hello.txt
+   > 11 B / 11 B [=====================================================] 100.00%
    ```
 
    Take note of the `Qm` hash output by IPFS.
@@ -46,7 +46,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 1. Use `cat` and the `Qm` hash you just got from IPFS to view the file again:
 
    ```shell
-   ipfs cat QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
+   ipfs cat QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
 
    > Hello IPFS
    ```
@@ -54,9 +54,9 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 1. Publish your `Qm` hash to IPNS:
 
    ```shell
-   ipfs name publish /ipfs/QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
+   ipfs name publish /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
 
-   > Published to k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew: /ipfs/QmaMLRsvmDRCezZe2iebcKWtEzKNjBaQfwcu7mcpdm8eY2
+   > Published to k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew: /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
    ```
 
    `k51...` is the key of your IPFS installation.
@@ -76,7 +76,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    ipfs add hello.txt
 
    > added QmaVfeg2GM17RLjBs9C4fhpku6uDgrEGUYCTC183VrZaVW hello.txt
-   > 17 B / 17 B [=============================================================================================] 100.00%
+   > 17 B / 17 B [=====================================================] 100.00%
 
    ipfs name publish QmaVfeg2GM17RLjBs9C4fhpku6uDgrEGUYCTC183VrZaVW
 
@@ -88,7 +88,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    ```shell
    curl https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew
 
-   > Hello IPFS
+   > Hello again IPFS
    ```
 
 You can view the `Qm` hash of the file associated with your `k5` key by using `name resolve`:
