@@ -71,7 +71,13 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
    Add-Content $PROFILE "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;$GO_IPFS_LOCATION')"
    ```
 
-6. Close and reopen your PowerShell window. Test that your IPFS path is set correctly by going to your home folder and asking IPFS for the version:
+1. Load your `$PROFILE`:
+
+    ```powershell
+    & $profile   
+    ```
+
+6. Test that your IPFS path is set correctly by going to your home folder and asking IPFS for the version:
 
    ```powershell
    cd ~
