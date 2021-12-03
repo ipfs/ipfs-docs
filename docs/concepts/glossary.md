@@ -198,7 +198,7 @@ A Cryptographic Hash is a function that takes some arbitrary input (content) and
 
 ### Hole punching
 
-A generic term for NAT traversal when port forwarding is not possible. [See DCUtR](#dcutr)
+A  technique for NAT / firewall traversal that relies on coordinated simultaneous connections.  Used when port forwarding is not possible. [See DCUtR](#dcutr)
 
 ## I
 
