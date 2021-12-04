@@ -68,7 +68,7 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
 1. Add the location of your Go-IPFS daemon and add it to PowerShell's `PATH` by truncating it to the end of your PowerShell profile:
 
    ```powershell
-   Add-Content $PROFILE "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;$GO_IPFS_LOCATION')"
+   Add-Content $PROFILE "`n[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;$GO_IPFS_LOCATION')"
    ```
 
 1. Load your `$PROFILE`:
