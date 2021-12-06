@@ -5,11 +5,11 @@ description: Learn how to deploy a minimal chat app entirely in the browser usin
 
 # Create a simple chat app
 
-This how-to demonstrates a minimal chat example in `js-ipfs` entirely in the browser. It uses WebRTC to achieve browser-to-browser connectivity where possible, and a circuit relay to connect browser nodes where not. Message passing is done with libp2p's pubsub.
+This how-to demonstrates a minimal chat example in `js-ipfs` entirely in the browser. It uses WebRTC to achieve browser-to-browser connectivity where possible, and a circuit relay to connect browser nodes where not. Message passing is done with libp2p's pubsub. You can see the live demo [here](https://ipfs.io/ipfs/bafybeia5f2yk6td7ciroeped2uwfivo333b524t3zmoderfhl3xn7wi7aa/).
 
 ## Getting the code
 
-You can see the live demo [here](https://ipfs.io/ipfs/bafybeia5f2yk6td7ciroeped2uwfivo333b524t3zmoderfhl3xn7wi7aa/). If you'd like a local copy you can edit yourself, you can download the whole directory using IPFS:
+If you'd like a local copy you can edit yourself, you can download the whole directory using IPFS:
 
     ipfs get bafybeia5f2yk6td7ciroeped2uwfivo333b524t3zmoderfhl3xn7wi7aa
 
@@ -25,7 +25,12 @@ Let's take a look at how this works.
 
 In a browser, discovering and connecting to peers can be very hard, as we can't listen for new peers and we don't have access to the DHT. In order to have the best experience working in a browser, it's important to understand how to both find peers and stay connected with them.
 
-The chat example achieves this in two ways. Using WebRTC-Star, we achieve direct browser-to-browser communication, and with a circuit relay, we have a relay in the middle. The chat application also has a status indicator in the top left to let you know  what kind of connection you have. Green means you're connected to the relay, even if it's via another peer; yellow means you're only seeing direct peers; and red means you have no peers (at least none using the chat application).
+The chat example achieves this in two ways. Using [WebRTC-Star](https://github.com/libp2p/js-libp2p-webrtc-star), we achieve direct browser-to-browser communication, and with a [circuit relay](https://docs.libp2p.io/concepts/circuit-relay/), we have a relay to connect peers behind NATs (which we can't connect directly browser-to-browser). Later in this tutorial we'll go over what WebRTC-Star and circuit relay do, and how to set them up.
+
+The chat application also has a color status indicator in the top left to let you know what kind of connection you have:
+- **Green** means you're connected to a circuit relay, even if it's via another peer;
+- **Yellow** means you're only seeing direct peers (not connected to the circuit relay);
+- **Red** means you have no peers (at least not using the chat application).
 
 ![Network graph showing the paths nodes can use to discover and communicate with each other](https://ipfs.io/ipfs/QmX2og5BKJCMVaebEm9ZGsACEYExoGqxhJjePKNc2mZ2pE "Browser IPFS network graph")
 
@@ -33,11 +38,10 @@ The chat example achieves this in two ways. Using WebRTC-Star, we achieve direct
 The diagram above demonstrates what a three-user network can look like. It's worth noting that the browser nodes can communicate with `go-ipfs` as well, so BrowserC doesn't have to be a browser at all, but instead could be a `go-ipfs` node!
 :::
 
+
 ### Docker (optional)
 
-If you don't want to use Docker, skip to the [**WebRTC-Star**](#webrtc-star) section.
-
-After this section we'll go over what WebRTC-Star and circuit relay do, and how to set them up. However, if you'd like to quickly roll your own kit using Docker, this example includes an image you can use. It might not be the best long-term solution, but it should be great if you want to quickly get rolling and experiment.
+If you don't want to use Docker, skip to the [**WebRTC-Star**](#webrtc-star) section. However, if you'd like to quickly roll your own kit using Docker, this example includes an image you can use. It might not be the best long-term solution, but it should be great if you want to quickly get rolling and experiment.
 
 #### Create a volume
 
@@ -53,12 +57,12 @@ You need a domain and SSL to use this kit with browser nodes. There are two opti
 
 When you execute either commands, your IPFS node will also be set up for the first time giving you information such as its `PeerID` and circuit relay addresses. Take note of these — you'll want to edit them into the chat client so you can use your own node (see [WebRTC-Star Usage](#usage) and [p2p-circuit Usage](#usage-2) for usage examples, or edit `index.html` and change my node's multiaddresses out for your own).
 
-##### With certbot
+##### With [certbot](https://eff-certbot.readthedocs.io/en/stable/install.html)
 
 Ensure port 80 isn't being used, follow the checklist below, and then run the following command:
 
 ```bash
-docker run --mount source=ipfs_bundle,destination=/root -p 9091:9091 -p 4011:4011 -p 9090:9090 -p 4430:4430 -p 80:80 -it trdiscordian/ipfsbundle certbot DOMAIN.COM
+docker run --mount source=ipfs_bundle,destination=/root -p 9091:9091 -p 4011:4011 -p 9090:9090 -p 4430:4430 -p 80:80 -it trdiscordian/ipfsbundle certbot YOURDOMAIN.COM
 ```
 
 ##### No certbot (SSL disabled)
@@ -66,11 +70,11 @@ docker run --mount source=ipfs_bundle,destination=/root -p 9091:9091 -p 4011:401
 If you do this option, the container won't handle SSL at all, and you'll have to reverse proxy port 9091 to 9090 (SSL), and port 4011 to 4430 (SSL).
 
 ```bash
-docker run --mount source=ipfs_bundle,destination=/root -p 9091:9091 -p 4011:4011 -it trdiscordian/ipfsbundle DOMAIN.COM
+docker run --mount source=ipfs_bundle,destination=/root -p 9091:9091 -p 4011:4011 -it trdiscordian/ipfsbundle YOURDOMAIN.COM
 ```
 
 ::: tip CHECKLIST
-* Replace `DOMAIN.COM` with your domain
+* Replace `YOURDOMAIN.COM` with your domain
 * Ensure the domain is correctly pointing to the machine you're running the container on (subdomains work fine too)
 :::
 
@@ -109,7 +113,7 @@ ipfs = await Ipfs.create({
 
 #### Setup
 
-Please note that this how-to uses example star nodes — however, those won't necessarily always be accessible. Currently it's important to either find a reliable star node or host your own. You can host your own quite simply by following the instructions [here](https://github.com/libp2p/js-libp2p-webrtc-star#rendezvous-server-aka-signaling-server) for a native setup and [here](https://github.com/libp2p/js-libp2p-webrtc-star/blob/master/DEPLOYMENT.md) for a Docker container which includes Nginx (for SSL). If you opt for the native setup, we cover the Nginx reverse proxy process and SSL cert retrieval later in this post.
+Please note that this how-to uses example star nodes — however, those won't necessarily always be accessible. Currently it's important to either find a reliable star node or host your own. You can host your own quite simply by following the instructions [here](https://github.com/libp2p/js-libp2p-websocket-star-rendezvous/#hosted-rendezvous-server) for a native setup and [here](https://github.com/libp2p/js-libp2p-websocket-star-rendezvous/blob/master/DEPLOYMENT.md) for a Docker container which includes Nginx (for SSL). If you opt for the native setup, we cover the Nginx reverse proxy process and SSL cert retrieval later in this post.
 
 ::: tip
 This is a very clean and effective method of P2P communications; however, sometimes NATs get in the way. We use [`p2p-circuit`](https://docs.libp2p.io/concepts/circuit-relay/) to get around that.
@@ -117,11 +121,11 @@ This is a very clean and effective method of P2P communications; however, someti
 
 ### `p2p-circuit`
 
-Using `p2p-circuit` is really helpful for peers behind tricky NATs (or a VPN, or anything really). If you're familiar with [TURN](https://en.wikipedia.org/wiki/Traversal_Using_Relays_around_NAT), it might be useful to think of the relaying of `p2p-circuit` as something similar.
+Using `p2p-circuit` is really helpful for peers behind tricky NATs (or a VPN, or anything really). In a circuit, there is generally a relay node that tunnels traffic between peers. If you're familiar with [TURN](https://en.wikipedia.org/wiki/Traversal_Using_Relays_around_NAT), it might be useful to think of the relaying of `p2p-circuit` as something similar. More about that on [circuit relay](https://docs.libp2p.io/concepts/circuit-relay/).
 
 #### Usage
 
-Once all the services for `p2p-circuit` are put together, connecting to the node can be achieved in a few different ways. First, to connect on startup to _only_ our node(s):
+There are two ways to connect to the relay. First, to connect on startup:
 
 ```javascript
 ipfs = await Ipfs.create({
@@ -132,8 +136,11 @@ ipfs = await Ipfs.create({
         ]
 }});
 ```
+::: tip
+Here we're using the node setup by the IPFS team for this example, which is hosted at `ipfs.thedisco.zone`. If you're setting up your own relay node, make sure to replace it with your domain.
+:::
 
-Or we can add our own after, then manually initiate the connection:
+The second way to connect to the relay is by adding it to our bootstrap configuration, and then manually initiating the connection:
 
 ```javascript
 await ipfs.bootstrap.add('/dns6/ipfs.thedisco.zone/tcp/4430/wss/p2p/12D3KooWChhhfGdB9GJy1GbhghAAKCUR99oCymMEVS4eUcEy67nt');
@@ -142,7 +149,7 @@ await ipfs.bootstrap.add('/dns4/ipfs.thedisco.zone/tcp/4430/wss/p2p/12D3KooWChhh
 await ipfs.swarm.connect('/dns4/ipfs.thedisco.zone/tcp/4430/wss/p2p/12D3KooWChhhfGdB9GJy1GbhghAAKCUR99oCymMEVS4eUcEy67nt');
 ```
 
-If you're looking to do your own client without copying the example, ensure you're also communicating with the announce channel, which is described under [Advertising](#advertising). The relevant code in the chat demo is this (simplified):
+If you're looking to create your own client without copying the example, ensure you're also communicating with the announce channel, which is described under [Advertising](#advertising). The relevant code in the chat demo is this (simplified):
 
 ```javascript
 var ipfs; // store the IPFS node you're using in this variable
@@ -203,7 +210,7 @@ setInterval(function(){ipfs.pubsub.publish("announce-circuit", "peer-alive");}, 
 
 Like the star nodes, it'll be important to host your own things as the ones in this how-to could go offline at any moment.
 
-For the purposes of this example, you'll need to do a few things on a server hosting your own [go-ipfs](https://github.com/ipfs/go-ipfs) node. You'll also need a working Nginx install setup, which will be used for SSL, which is a requirement for browsers.
+For the purposes of this example, you'll need to host your own [go-ipfs](https://github.com/ipfs/go-ipfs) node. You'll also need a working Nginx install setup that will be used by SSL (which is a requirement for browsers to be able to connect with us through WebSockets).
 
 First configure the Go node, enabling [WebSocket](https://en.wikipedia.org/wiki/WebSocket) support, and designate it as a relay so we can communicate with it from a browser by editing `~/.ipfs/config` to add the following settings:
 
@@ -222,24 +229,36 @@ First configure the Go node, enabling [WebSocket](https://en.wikipedia.org/wiki/
 ```
 
 ::: tip
-Restart your `go-ipfs` node however you normally do (possibly `systemctl --user restart ipfs`), and we're mostly set up! We've enabled regular WebSockets with relaying support, however we need secure WebSockets (outlined in the SSL section below) — otherwise browsers won't be able to connect to us.
+Restart your `go-ipfs` node however you normally do (possibly `systemctl --user restart ipfs`), and we're mostly set up! We've enabled WebSockets with relaying support, however these are not secure yet. We need secure WebSockets (outlined in the SSL section below) — otherwise browsers won't be able to connect to us.
 :::
 
 #### Advertising
 
 Using `p2p-circuit` can be a bit tricky. Once we connect to the relay from a browser, we're not advertising that we're able to be reached through it! For this purpose, this how-to includes a Python script that runs alongside `go-ipfs` and advertises the browser `js-ipfs` peers it encounters over [PubSub](https://docs.libp2p.io/concepts/publish-subscribe/) with a `p2p-circuit` [multiaddress](https://docs.libp2p.io/concepts/addressing/).
 
-You can find the Python script [here](https://gist.github.com/TheDiscordian/51962fea72f8d5a5c3bba79dd7009e1c). It can be run with a simple `python ipfs_peeradvertiser.py`. However, ensure you first edit `CIRCUIT` with your own node's information, or you won't announce the peers correctly, and they won't know how to use your relay to connect to other peers.
-
+In order to run the [advertising Python script](https://gist.github.com/TheDiscordian/51962fea72f8d5a5c3bba79dd7009e1c), first download it:
+```bash
+wget https://gist.githubusercontent.com/TheDiscordian/51962fea72f8d5a5c3bba79dd7009e1c/raw/35dad2b6fa4a1dfd38c734536c6c4755b64fd9bd/ipfs_peeradvertiser.py
+```
+Then, edit the information on `CIRCUITS` to match your node:
+```
+CIRCUITS = ["/dns6/YOURDOMAIN.COM/tcp/4430/p2p/12D3KooWChhhfGdB9GJy1GbhghAAKCUR99oCymMEVS4eUcEy67nt/p2p-circuit/p2p/", "/dns4/YOURDOMAIN.COM/tcp/4430/p2p/12D3KooWChhhfGdB9GJy1GbhghAAKCUR99oCymMEVS4eUcEy67nt/p2p-circuit/p2p/"]
+```
 You can retrieve your own circuit info quite easily. Simply run `ipfs id` on your `go-ipfs` node to get your PeerID, then form the circuit URL like so:
 
     /dns6/ipfs.YOURDOMAIN.COM/tcp/4430/p2p/YOUR_PEERID/p2p-circuit/p2p/
 
+::: tip
 You should see here where you simply fill out your domain name you got the SSL cert for, as well as your node's PeerID. For the script, the leading and trailing slash are required, too.
-
+:::
 ::: warning IMPORTANT
 Ensure you specify DNS6 or DNS4, depending on if you're forming an IPv6 or IPv4 address. **It's important to ensure you use DNS, otherwise browser nodes likely won't be able to connect.** Also note the port 4430; if you used a different one, you'll need to specify that.
 :::
+
+Finally, run the script to announce:
+```bash
+python ipfs_peeradvertiser.py
+```
 
 ## SSL (Nginx)
 
@@ -348,7 +367,7 @@ Publishing is just as easy, too:
 await ipfs.pubsub.publish("example_topic", "Hello world!");
 ```
 
-This is effectively what the chat demo is doing. It's subscribing to a global topic (named "discochat-global"), and simply relaying the messages people type around over PubSub.
+This is effectively what the chat demo is doing. It's subscribing to a global topic (named "example_topic"), and simply relaying the messages people type around over PubSub.
 
 ### Possible browser pitfalls
 
@@ -363,7 +382,7 @@ setInterval(function(){sendmsg("1", prefix+"keepalive");}, 4000);
 setInterval(checkalive, 1000);
 ```
 
-This should help ensure we give peers looking to chat a high priority. Additionally, we  report over `announce-circuit` every 15 seconds to make sure we keep a connection to the circuit relay so we can connect to peers stuck behind a NAT. That's accomplished like so:
+This gives peers looking to chat a high priority. Additionally, we publish a message in `announce-circuit` every 15 seconds to maintain the connection to the relay:
 
 ```javascript
 // process announcements over the relay network, and publish our own keep-alives to keep the channel alive
