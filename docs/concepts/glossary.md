@@ -224,6 +224,10 @@ JavaScript Object Notation (JSON) is a lightweight data-interchange format. JSON
 
 ## L
 
+### LAN
+
+Local Area Network (LAN) is a type of (usually private) computer network that covers a limited area. [More about LAN](https://en.wikipedia.org/wiki/Local_area_network)
+
 ### Leaf
 
 A Leaf is a node of a graph that doesn't link to any other node. This is opposed to a [root](#root).
@@ -275,6 +279,10 @@ Multihash is a protocol for differentiating outputs from various well-establishe
 The Multiformats project is a collection of protocols that aim to future-proof systems today. A key element is enhancing format values with self-description. This allows for interoperability, protocol agility, and promotes extensibility. [More about Multiformats](https://multiformats.io/) and [Multihash](https://multiformats.io/multihash/)
 
 ## N
+
+### NAT
+
+Network Address Translation (NAT) enables communication between two networks by mapping IP addresses from one to another. Many consumer routers provide NAT service to allow multiple devices in local network ([LAN](#lan)) to access the internet ([WAN](#wan)) through a single public IP address. [More about NAT](https://en.wikipedia.org/wiki/Network_address_translation)
 
 ### Node
 
@@ -397,6 +405,10 @@ The Unix File System (UnixFS) is the data format used to represent files and all
 ## V
 
 ## W
+
+### WAN
+
+Wide Area Network (WAN) is a type of (usually public) computer network that spans over a large geographic area. [More about WAN](https://en.wikipedia.org/wiki/Wide_area_network)
 
 ## X
 
