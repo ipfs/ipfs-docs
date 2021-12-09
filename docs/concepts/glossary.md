@@ -118,7 +118,7 @@ DAG-JSON is a [codec](#codec) that implements the [IPLD Data Model](https://ipld
 
 ### DAG-JOSE
 
-[More in DAG-JOSE specification](https://ipld.io/specs/codecs/dag-jose/spec/)
+DAG-JOSE is a [codec](#codec) that defines CBOR serialization for JOSE, a standard for signing and encrypting objects. [More in DAG-JOSE specification](https://ipld.io/specs/codecs/dag-jose/spec/)
 
 ### DAG-CBOR
 
@@ -198,7 +198,7 @@ A Cryptographic Hash is a function that takes some arbitrary input (content) and
 
 ### Hole punching
 
-A  technique for NAT / firewall traversal that relies on coordinated simultaneous connections.  Used when port forwarding is not possible. [See DCUtR](#dcutr)
+A  technique for [NAT](#nat) or firewall traversal that relies on coordinated simultaneous connections.  Used when port forwarding is not possible. [See DCUtR](#dcutr)
 
 ## I
 
