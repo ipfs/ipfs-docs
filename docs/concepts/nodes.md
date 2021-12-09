@@ -18,6 +18,7 @@ The Go implementation is designed to run on servers and user machines with the f
 - TCP and QUIC transports are enabled by default.
 - `/ws/` transport disabled by default.
 - HTTP gateway with subdomain support for origin isolation between content roots.
+- Various [experimental features](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md)
 
 ### JS-IPFS
 
@@ -25,7 +26,7 @@ The Javascript implementation is designed to run in the browser with a limited s
 
 - Can connect to server nodes using secure WebSockets.
     - WSS requires manual setup of TLS at the server.
-- Can connect to a browser node using WebRTC using a centralized ws-webrtc-star signaling service.
+- Can connect to a browser node using WebRTC using a centralized [ws-webrtc-star signaling service](https://github.com/libp2p/js-libp2p-webrtc-star).
 
 Specific limitations of the JS-IPFS implementation are:
 
@@ -49,31 +50,32 @@ When users want to make a UnixFS DAG publicly available, they call `ipfs refs -r
 Features of a preload node:
 
 - They are Go-IPFS nodes with API ports exposed. Some HTTP API commands are accessible.
-- The [`stabilize-dht` patch](https://github.com/ipfs/go-ipfs/tree/feat/stabilize-dht) has been applied.
-- Used by both Go-IPFS and JS-IPFS nodes.
+- Used by JS-IPFS nodes running in browser contexts.
 - JS-ipfs nodes remain connected to the libp2p swarm ports of all preload nodes by having preload nodes on the bootstrap list.
 - Often on the same _server_ as a [delegate routing node](#delegate-routing), though both the delegate routing service and preload service are addressed differently. This is done by having different multiaddrs that resolve to the same machine.
 - Preload nodes are in the default JS-IPFS configuration as bootstrap nodes, so they will maintain libp2p swarm connections to them at all times.
-    - They are configured as regular bootstrap nodes, but have the string 'preload' in their multiaddrs.
+    - They are configured as regular bootstrap nodes, but as a convention have the string 'preload' in their `/dnsaddr` multiaddrs.
 
 Limitations of a preload node:
 
-- Preload nodes garbage collect every hour, so preloaded content only survives for that long. This is configurable, however.
-- Only DAG-PG CIDs can be understood by preload nodes. To retrieve non-dag-pb content, a node would need a connection to the publishing JS-IFPS instance, or that content would need to be put on the DHT by a delegate node. 
+- Default preload nodes provided by Protocol Labs garbage collect every hour, so preloaded content only survives for that long. This is configurable, however, one can run their own nodes with different policy..
+- Requires client to be smart about what gets preloaded: recursive preload of a big DAG. 
 
 ### Relay
 
-If an IPFS node deems itself unreachable by the public internet, Go-IPFS nodes will use a relay node as a kind of VPN in an attempt to reach the unreachable node.
+If an IPFS node deems itself unreachable by the public internet, IPFS nodes may choose use a relay node as a kind of VPN in an attempt to reach the unreachable node.
 
 Features of a relay node:
-
-- Can be either Go-IPFS or JS-IPFS nodes; however, JS-IPFS nodes require some advanced configuration using [JS Relay](https://github.com/libp2p/js-libp2p-relay-server).
+- Implements either [v1](https://github.com/libp2p/specs/blob/master/relay/circuit-v1.md) or [v2](https://github.com/libp2p/specs/blob/master/relay/circuit-v2.md) of the Circuit Relay protocol.
+- Can be either Go-IPFS or JS-IPFS nodes; however there are standalone implementations as well:
+  - [js-libp2p-relay-server](https://github.com/libp2p/js-libp2p-relay-server) (supports circuit v1)
+  - [go-libp2p-relay-daemon](https://github.com/libp2p/go-libp2p-relay-daemon) (supports circuit v1 & v2)
 - They're used by both Go-IPFS and JS-IPFS nodes.
     - JS-IPFS nodes can also use relay nodes to overcome the lack of transport compatibility within the JS-IPFS implementation. A browser node with WebSockets/webRTC transports can talk with a Go-IPFS node that only communicates through TCP using a relay that supports both transports. This is not enabled by default and needs to be set up.
 
 Limitations of relay nodes:
-
-- The list of relay nodes within Go-IPFS is preset and is not configurable.
+- v1 relays can be used by anyone without any limits, unless [go-libp2p-relay-daemon](https://github.com/libp2p/go-libp2p-relay-daemon)  is used with ACLs set up.
+- v2 relays are "limited relays" that are designed to be used for [Direct Connection Upgrade through Relay](https://github.com/libp2p/specs/blob/master/relay/DCUtR.md) (aka hole punching).
 
 ### Bootstrap
 
@@ -81,7 +83,7 @@ Both Go-IPFS and JS-IPFS nodes use bootstrap nodes to initially enter the DHT.
 
 Features of a bootstrap node:
 
-- All bootstrap nodes use the Go-IPFS implementation.
+- All default bootstrap nodes are part of the public DHT.
 - They are used by both Go-IPFS and JS-IPFS nodes.
 - The list of bootstrap nodes a Go-IPFS or JS-IPFS node connects to is configuration.
 
@@ -95,7 +97,7 @@ When IPFS nodes are unable to run DHT logic on their own, they _delegate_ the ta
 
 Features of a delegate routing node:
 
-- They are Go-IPFS nodes with API ports exposed. Some HTTP API commands are accessible.
+- They are Go-IPFS nodes with some HTTP RPC API commands exposed unser `/api/v0`.
 - Usable by both Go-IPFS and JS-IPFS nodes.
 - Often on the same _server_ as a [preload](#preload) node, though both the delegate routing service and preload service are addressed differently. This is done by having different multiaddrs that resolve to the same machine.
 - Delegate routing nodes are in the default JS-IPFS configuration as bootstrap nodes, so they will maintain libp2p swarm connections to them at all times.
@@ -103,6 +105,6 @@ Features of a delegate routing node:
 
 Limitations of a delegate routing node:
 
-- Garbage collection happens every hour, so provided content only survives for that long. If the uploading JS-IPFS node is still running, it will issue periodic re-provides using the same publishing mechanic, which extends the life of the content on the DHT.
+- On default delegate nodes provided by Protocol Labs, the garbage collection happens every hour, so provided content only survives for that long. If the uploading JS-IPFS node is still running, it will issue periodic re-provides using the same publishing mechanic, which extends the life of the content on the DHT.
 
 
