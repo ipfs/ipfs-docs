@@ -166,7 +166,7 @@ The Decentralized Web (DWeb) looks like today's World Wide Web, but it is built 
 
 ### Filestore
 
-The Filestore is a data store that stores the [UnixFS](#unixfs) data components of blocks as files on the file system instead of as blocks. This allows adding content to IPFS without duplicating the content in the IPFS datastore.
+An experimental data store used when `--nocopy` is passed to `ipfs add`. It stores the [UnixFS](#unixfs) data components of blocks as files on the file system instead of as blocks. This allows adding content to IPFS without duplicating the content in the IPFS datastore. [More about Filestore experiment](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#ipfs-filestore)
 
 ## G
 
@@ -401,6 +401,10 @@ In [IPLD](#ipld), the act of walking across the [Data Model](#data-model). [More
 ### UnixFS
 
 The Unix File System (UnixFS) is the data format used to represent files and all their links and metadata in IPFS. It is loosely based on how files work in Unix. Adding a file to IPFS creates a block, or a _tree_ of blocks, in the UnixFS format and protects it from being garbage-collected. [More about UnixFS](file-systems.md#unix-file-system-unixfs)
+
+### Urlstore
+
+An experimental data store similar to [`filestore`](#filestore), but it retrieves blocks contents via a HTTP URL instead of a local filesystem. [More about urlstore experiment](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#ipfs-urlstore)
 
 ## V
 
