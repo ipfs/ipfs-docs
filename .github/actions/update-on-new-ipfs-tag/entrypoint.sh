@@ -42,5 +42,5 @@ else
      git add -u
      git commit -m "Bumped go-ipfs dependence of http-api-docs to tag $LATEST_IPFS_TAG."
      git push -u origin bump-http-api-docs-ipfs-to-$LATEST_IPFS_TAG
+     echo "::set-output name=updated_branch::bump-http-api-docs-ipfs-to-$LATEST_IPFS_TAG"
 fi
-echo "::set-output name=updated_branch::bump-http-api-docs-ipfs-to-$LATEST_IPFS_TAG"

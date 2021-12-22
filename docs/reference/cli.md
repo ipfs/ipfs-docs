@@ -32,7 +32,7 @@ Every command usable from the CLI is also available through the [HTTP API](/refe
 ```
 
 
-_Generated on 2021-10-01 11:11:01, from go-ipfs 0.10.0._
+_Generated on 2021-12-09 05:36:13, from go-ipfs 0.11.0._
 
 ## ipfs
 
@@ -180,14 +180,14 @@ OPTIONS
   --pin                      bool   - Pin this object when adding. Default:
                                       true.
   --raw-leaves               bool   - Use raw blocks for leaf nodes.
-                                      (experimental).
   --nocopy                   bool   - Add the file using filestore. Implies
                                       raw-leaves. (experimental).
   --fscache                  bool   - Check the filestore for pre-existing
                                       blocks. (experimental).
   --cid-version              int    - CID version. Defaults to 0 unless an
                                       option that depends on CIDv1 is passed.
-                                      (experimental).
+                                      Passing version 1 will cause the
+                                      raw-leaves option to default to true.
   --hash                     string - Hash function to use. Implies CIDv1 if
                                       not sha2-256. (experimental). Default:
                                       sha2-256.
@@ -941,12 +941,9 @@ SYNOPSIS
 DESCRIPTION
 
   Available profiles:
-    'server':
-      Disables local host discovery, recommended when
-      running IPFS on machines with public IPv4 addresses.
-    'default-networking':
-      Restores default network settings.
-      Inverse profile of the test profile.
+    'test':
+      Reduces external interference of IPFS daemon, this
+      is useful when using the daemon in test environments.
     'default-datastore':
       Configures the node to use the default datastore (flatfs).
       
@@ -972,6 +969,17 @@ DESCRIPTION
       
       This profile may only be applied when first initializing the node.
       
+    'randomports':
+      Use a random port number for swarm.
+    'server':
+      Disables local host discovery, recommended when
+      running IPFS on machines with public IPv4 addresses.
+    'local-discovery':
+      Sets default values to fields affected by the server
+      profile, enables discovery in local networks.
+    'default-networking':
+      Restores default network settings.
+      Inverse profile of the test profile.
     'badgerds':
       Configures the node to use the badger datastore.
       
@@ -991,14 +999,6 @@ DESCRIPTION
       functionality - performance of content discovery and data
       fetching may be degraded.
       
-    'randomports':
-      Use a random port number for swarm.
-    'local-discovery':
-      Sets default values to fields affected by the server
-      profile, enables discovery in local networks.
-    'test':
-      Reduces external interference of IPFS daemon, this
-      is useful when using the daemon in test environments.
 
 SUBCOMMANDS
   ipfs config profile apply <profile> - Apply profile to config.
@@ -1111,10 +1111,11 @@ OPTIONS
                                            limits if needed. Default: true.
   --migrate                       bool   - If true, assume yes at the migrate
                                            prompt. If false, assume no.
-  --enable-pubsub-experiment      bool   - Instantiate the ipfs daemon with the
-                                           experimental pubsub feature enabled.
-  --enable-namesys-pubsub         bool   - Enable IPNS record distribution
-                                           through pubsub; enables pubsub.
+  --enable-pubsub-experiment      bool   - Enable experimental pubsub feature.
+                                           Overrides Pubsub.Enabled config.
+  --enable-namesys-pubsub         bool   - Enable IPNS over pubsub. Implicitly
+                                           enables pubsub, overrides
+                                           Ipns.UsePubsub config.
   --enable-mplex-experiment       bool   - DEPRECATED.
   --agent-version-suffix          string - Optional suffix to the AgentVersion
                                            presented by `ipfs id` and also
@@ -1991,12 +1992,12 @@ DESCRIPTION
   $ ipfs add --quieter --pin=false <your file>
   # ...
   # ... outputs the root CID at the end
-  $ ipfs cp /ipfs/<CID> /your/desired/mfs/path
+  $ ipfs files cp /ipfs/<CID> /your/desired/mfs/path
   
   If you wish to fully copy content from a different IPFS peer into MFS, do not
   forget to force IPFS to fetch to full DAG after doing the "cp" operation. i.e:
   
-  $ ipfs cp /ipfs/<CID> /your/desired/mfs/path
+  $ ipfs files cp /ipfs/<CID> /your/desired/mfs/path
   $ ipfs pin add <CID>
   
   The lazy-copy feature can also be used to protect partial DAG contents from
@@ -3519,7 +3520,14 @@ USAGE
                       an existing one. Use MFS with 'files cp|rm' instead.
 
 SYNOPSIS
-  ipfs object patch
+  ipfs object patch [--allow-big-block]
+
+OPTIONS
+
+  --allow-big-block  bool - Disable block size check and allow creation of
+                            blocks bigger than 1MB. WARNING: such blocks won't
+                            be transferable over the standard bitswap. Default:
+                            false.
 
 DESCRIPTION
 
@@ -4437,17 +4445,17 @@ DESCRIPTION
   ipfs pubsub allows you to publish messages to a given topic, and also to
   subscribe to new messages on a given topic.
   
-  This is an experimental feature. It is not intended in its current state
-  to be used in a production environment.
+  EXPERIMENTAL FEATURE
   
-  To use, the daemon must be run with '--enable-pubsub-experiment'.
+    It is not intended in its current state to be used in a production
+    environment.  To use, the daemon must be run with
+    '--enable-pubsub-experiment'.
 
 SUBCOMMANDS
-  ipfs pubsub ls                    - List subscribed topics by name.
-  ipfs pubsub peers [<topic>]       - List peers we are currently pubsubbing
-                                      with.
-  ipfs pubsub pub <topic> <data>... - Publish a message to a given pubsub topic.
-  ipfs pubsub sub <topic>           - Subscribe to messages on a given topic.
+  ipfs pubsub ls                 - List subscribed topics by name.
+  ipfs pubsub peers [<topic>]    - List peers we are currently pubsubbing with.
+  ipfs pubsub pub <topic> <data> - Publish data to a given pubsub topic.
+  ipfs pubsub sub <topic>        - Subscribe to messages on a given topic.
 
   For more information about each command, use:
   'ipfs pubsub <subcmd> --help'
@@ -4467,10 +4475,20 @@ DESCRIPTION
 
   ipfs pubsub ls lists out the names of topics you are currently subscribed to.
   
-  This is an experimental feature. It is not intended in its current state
-  to be used in a production environment.
+  EXPERIMENTAL FEATURE
   
-  To use, the daemon must be run with '--enable-pubsub-experiment'.
+    It is not intended in its current state to be used in a production
+    environment.  To use, the daemon must be run with
+    '--enable-pubsub-experiment'.
+  
+  TOPIC ENCODING
+  
+    Topic names are a binary data. To ensure all bytes are transferred
+    correctly RPC client and server will use multibase encoding behind
+    the scenes.
+  
+    You can inspect the format by passing --enc=json. ipfs multibase commands
+    can be used for encoding/decoding multibase strings in the userland.
 
 
 ```
@@ -4486,18 +4504,28 @@ SYNOPSIS
 
 ARGUMENTS
 
-  [<topic>] - topic to list connected peers of
+  [<topic>] - Topic to list connected peers of.
 
 DESCRIPTION
 
   ipfs pubsub peers with no arguments lists out the pubsub peers you are
-  currently connected to. If given a topic, it will list connected
-  peers who are subscribed to the named topic.
+  currently connected to. If given a topic, it will list connected peers who are
+  subscribed to the named topic.
   
-  This is an experimental feature. It is not intended in its current state
-  to be used in a production environment.
+  EXPERIMENTAL FEATURE
   
-  To use, the daemon must be run with '--enable-pubsub-experiment'.
+    It is not intended in its current state to be used in a production
+    environment.  To use, the daemon must be run with
+    '--enable-pubsub-experiment'.
+  
+  TOPIC AND DATA ENCODING
+  
+    Topic names are a binary data. To ensure all bytes are transferred
+    correctly RPC client and server will use multibase encoding behind
+    the scenes.
+  
+    You can inspect the format by passing --enc=json. ipfs multibase commands
+    can be used for encoding/decoding multibase strings in the userland.
 
 
 ```
@@ -4506,24 +4534,34 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs pubsub pub <topic> <data>... - Publish a message to a given pubsub topic.
+  ipfs pubsub pub <topic> <data> - Publish data to a given pubsub topic.
 
 SYNOPSIS
-  ipfs pubsub pub [--] <topic> <data>...
+  ipfs pubsub pub [--] <topic> <data>
 
 ARGUMENTS
 
-  <topic>   - Topic to publish to.
-  <data>... - Payload of message to publish.
+  <topic> - Topic to publish to.
+  <data>  - The data to be published.
 
 DESCRIPTION
 
   ipfs pubsub pub publishes a message to a specified topic.
+  It reads binary data from stdin or a file.
   
-  This is an experimental feature. It is not intended in its current state
-  to be used in a production environment.
+  EXPERIMENTAL FEATURE
   
-  To use, the daemon must be run with '--enable-pubsub-experiment'.
+    It is not intended in its current state to be used in a production
+    environment.  To use, the daemon must be run with
+    '--enable-pubsub-experiment'.
+  
+  HTTP RPC ENCODING
+  
+    The data to be published is sent in HTTP request body as multipart/form-data.
+  
+    Topic names are binary data too. To ensure all bytes are transferred
+    correctly via URL params, the RPC client and server will use multibase
+    encoding behind the scenes.
 
 
 ```
@@ -4535,29 +4573,35 @@ USAGE
   ipfs pubsub sub <topic> - Subscribe to messages on a given topic.
 
 SYNOPSIS
-  ipfs pubsub sub [--discover] [--] <topic>
+  ipfs pubsub sub [--] <topic>
 
 ARGUMENTS
 
-  <topic> - String name of topic to subscribe to.
-
-OPTIONS
-
-  --discover  bool - Deprecated option to instruct pubsub to discovery peers
-                     for the topic. Discovery is now built into pubsub.
+  <topic> - Name of topic to subscribe to.
 
 DESCRIPTION
 
   ipfs pubsub sub subscribes to messages on a given topic.
   
-  This is an experimental feature. It is not intended in its current state
-  to be used in a production environment.
+  EXPERIMENTAL FEATURE
   
-  To use, the daemon must be run with '--enable-pubsub-experiment'.
+    It is not intended in its current state to be used in a production
+    environment.  To use, the daemon must be run with
+    '--enable-pubsub-experiment'.
   
-  This command outputs data in the following encodings:
-    * "json"
-  (Specified by the "--encoding" or "--enc" flag)
+  PEER ENCODING
+  
+    Peer IDs in From fields are encoded using the default text representation
+    from go-libp2p. This ensures the same string values as in 'ipfs pubsub peers'.
+  
+  TOPIC AND DATA ENCODING
+  
+    Topics, Data and Seqno are binary data. To ensure all bytes are transferred
+    correctly the RPC client and server will use multibase encoding behind
+    the scenes.
+  
+    You can inspect the format by passing --enc=json. The ipfs multibase commands
+    can be used for encoding/decoding multibase strings in the userland.
 
 
 ```

@@ -30,13 +30,13 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
    wget https://dist.ipfs.io/go-ipfs/v0.10.0/go-ipfs_v0.10.0_windows-amd64.zip -Outfile go-ipfs_v0.10.0.zip
    ```
 
-2. Unzip the file and move it somewhere handy.
+1. Unzip the file and move it somewhere handy.
 
    ```powershell
    Expand-Archive -Path go-ipfs_v0.10.0.zip -DestinationPath ~\Apps\go-ipfs_v0.10.0
    ```
 
-3. Move into the `go-ipfs_v0.10.0` folder and check that the `ipfs.exe` works:
+1. Move into the `go-ipfs_v0.10.0` folder and check that the `ipfs.exe` works:
 
    ```powershell
    cd ~\Apps\go-ipfs_v0.10.0\go-ipfs
@@ -47,23 +47,37 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
 
    While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH` by using the following steps.
 
-4. Print the current working directory and copy it to your clipboard:
+1. Save the current working directory into a temporary variable:
 
    ```powershell
-   pwd
-
-   > Path
-   > ----
-   > C:\Users\Johnny\Apps\go-ipfs_v0.10.0\go-ipfs
+   $GO_IPFS_LOCATION = pwd
    ```
 
-5. Add the address you just copied to PowerShell's `PATH` by adding it to the end of the `profile.ps1` file stored in `Documents\WindowsPowerShell`:
+1. Create a powershell profile:
+
+    ```powershell
+    if (!(Test-Path -Path $PROFILE)) { New-Item -ItemType File -Path $PROFILE -Force }
+    ```
+
+    This command first checks to see if you have a profile set. If you do, it leaves it there and doesn't create a new one. You can view the contents of your profile by opening it in Notepad:
+
+    ```powershell
+    notepad $PROFILE
+    ```
+
+1. Add the location of your Go-IPFS daemon and add it to PowerShell's `PATH` by truncating it to the end of your PowerShell profile:
 
    ```powershell
-   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\Johnny\Apps\go-ipfs_v0.10.0\go-ipfs')"
+   Add-Content $PROFILE "`n[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;$GO_IPFS_LOCATION')"
    ```
 
-6. Close and reopen your PowerShell window. Test that your IPFS path is set correctly by going to your home folder and asking IPFS for the version:
+1. Load your `$PROFILE`:
+
+    ```powershell
+    & $profile   
+    ```
+
+6. Test that your IPFS path is set correctly by going to your home folder and asking IPFS for the version:
 
    ```powershell
    cd ~
