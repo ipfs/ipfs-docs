@@ -36,7 +36,7 @@ Specific limitations of the JS-IPFS implementation are:
 
 ## Types
 
-There are different types of IPFS node. And depending on the use-case, a single IPFS node can serve one of many functions:
+There are different types of IPFS nodes. And depending on the use-case, a single IPFS node can serve one of many functions:
 
 - [Preload](#preload)
 - [Relay](#relay)
@@ -58,7 +58,7 @@ Features of a preload node:
 
 Limitations of a preload node:
 
-- Default preload nodes provided by Protocol Labs garbage collect every hour, so preloaded content only survives for that long. This is configurable, however, one can run their own nodes with different policy..
+- Default preload nodes provided by Protocol Labs garbage collect every hour, so preloaded content only survives for that long. This is configurable, however, one can run their own nodes with different policy.
 - Requires client to be smart about what gets preloaded: recursive preload of a big DAG. 
 
 ### Relay
@@ -74,7 +74,7 @@ Features of a relay node:
     - JS-IPFS nodes can also use relay nodes to overcome the lack of transport compatibility within the JS-IPFS implementation. A browser node with WebSockets/webRTC transports can talk with a Go-IPFS node that only communicates through TCP using a relay that supports both transports. This is not enabled by default and needs to be set up.
 
 Limitations of relay nodes:
-- v1 relays can be used by anyone without any limits, unless [go-libp2p-relay-daemon](https://github.com/libp2p/go-libp2p-relay-daemon)  is used with ACLs set up.
+- v1 relays can be used by anyone without any limits, unless [go-libp2p-relay-daemon](https://github.com/libp2p/go-libp2p-relay-daemon) is used with ACLs set up.
 - v2 relays are "limited relays" that are designed to be used for [Direct Connection Upgrade through Relay](https://github.com/libp2p/specs/blob/master/relay/DCUtR.md) (aka hole punching).
 
 ### Bootstrap
@@ -85,7 +85,7 @@ Features of a bootstrap node:
 
 - All default bootstrap nodes are part of the public DHT.
 - They are used by both Go-IPFS and JS-IPFS nodes.
-- The list of bootstrap nodes a Go-IPFS or JS-IPFS node connects to is configuration.
+- The list of bootstrap nodes a Go-IPFS or JS-IPFS node connects to is configurable.
 
 Limitations of a bootstrap node:
 
