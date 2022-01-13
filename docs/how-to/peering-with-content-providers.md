@@ -47,6 +47,7 @@ To have your platform added to this list, please [open a PR to edit this page](h
 |`QmcfgsJsMtx6qJb74akCw1M24X1zFwgGo11h1cuhwQjtJP`|`/ip6/2606:4700:60::6/tcp/4009` <br/><br/>`/ip4/172.65.0.13/tcp/4009`|
 
 #### NFT.Storage
+
 |Peer ID|Addresses|
 |:-|:-|
 |`12D3KooWEGeZ19Q79NdzS6CJBoCwFZwujqi5hoK8BtRcLa48fJdu`|`/ip4/145.40.96.233/tcp/4001`|
@@ -95,6 +96,7 @@ To have your platform added to this list, please [open a PR to edit this page](h
 |`QmR69wtWUMm1TWnmuD4JqC1TWLZcc8iR2KrTenfZZbiztd`|`/ip4/104.210.43.77`|
 
 #### Web3.Storage
+
 |Peer ID|Addresses|
 |:-|:-|
 |`12D3KooWR19qPPiZH4khepNjS3CLXiB7AbrbAD4ZcDjN1UjGUNE1`|`/ip4/139.178.69.155/tcp/4001`|
@@ -103,8 +105,6 @@ To have your platform added to this list, please [open a PR to edit this page](h
 |`12D3KooWNuoVEfVLJvU3jWY2zLYjGUaathsecwT19jhByjnbQvkj`|`/ip4/147.75.32.73/tcp/4001`|
 |`12D3KooWSnniGsyAF663gvHdqhyfJMCjWJv54cGSzcPiEMAfanvU`|`/ip4/145.40.89.195/tcp/4001`|
 |`12D3KooWKytRAd2ujxhGzaLHKJuje8sVrHXvjGNvHXovpar5KaKQ`|`/ip4/136.144.56.153/tcp/4001`|
-
-
 [dht-explainer]: /concepts/how-ipfs-works/#distributed-hash-tables-dhts
 [cid-explainer]: /concepts/content-addressing/#identifier-formats
 [docs-peering-config]: /how-to/configure-node/#peering
