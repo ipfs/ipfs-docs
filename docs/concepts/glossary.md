@@ -20,7 +20,7 @@ Announcing is a function of the IPFS networking layer in [libp2p](#libp2p), wher
 
 ### ACL
 
-In computer security, an access-control list (ACL) is a list of permissions associated with a system resource (object). An ACL specifies which users or system processes are granted access to objects, as well as what operations are allowed on given objects. [More about ACL](https://en.wikipedia.org/wiki/Access-control_list)
+In computer security, an access-control list (ACL) is a list of permissions associated with a system resource, also known as an _object_. An ACL specifies which users or system processes are granted access to objects, as well as what operations are allowed on given objects. [More about ACL](https://en.wikipedia.org/wiki/Access-control_list)
 
 ### ADL
 
