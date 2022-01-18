@@ -150,7 +150,7 @@ You can view the web console on your local node by going to `localhost:5001/webu
 
 The web console shows files that are in your [Mutable File System (MFS)](https://docs.ipfs.io/concepts/file-systems/#mutable-file-system-mfs) which is a tool built into the web console that helps you navigate IPFS files in the same way you would a name-based file system.
 
-in order to get ipfs files to show up in the web console (including ones you [added](https://docs.ipfs.io/reference/cli/#ipfs-add)), copy them over to MFS:
+in order to get ipfs files to show up in the web console (including ones you [added using the CLI](https://docs.ipfs.io/reference/cli/#ipfs-add)), copy them over to MFS:
 
 ```
 ipfs files cp /ipfs/<ipfs-CID>
