@@ -9,7 +9,7 @@ description: Quick-start guide for installing and getting started with IPFS from
 If you're command-line savvy and just want to get up and running with IPFS right away, follow this quick-start guide. Please note that this guide assumes that you'll be installing go-ipfs, the reference implementation written in Go.
 
 ::: tip
-Don’t want to use the command line right now? Give the desktop-app implementation of IPFS a try. It also does all the steps listed on this page automatically, so you can run IPFS from the terminal later whenever you want. [Download IPFS Desktop now](https://github.com/ipfs-shipyard/ipfs-desktop)
+Don’t want to use the command line right now? Give the desktop-app implementation of IPFS a try. It also does all the steps listed on this page automatically, so you can run IPFS from the terminal later whenever you want. [Download IPFS Desktop now](https://github.com/ipfs/ipfs-desktop)
 :::
 
 ## Prerequisites
@@ -158,15 +158,15 @@ ipfs files cp /ipfs/<ipfs-CID>
 
 ## IPFS Companion
 
-While we are at it, [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion) is a browser extension that simplifies access to IPFS resources and adds support for the IPFS protocol.
+While we are at it, [IPFS Companion](https://github.com/ipfs/ipfs-desktop#ipfs-companion) is a browser extension that simplifies access to IPFS resources and adds support for the IPFS protocol.
 
 It will automatically redirect IPFS gateway requests to your local daemon so that you are not relying on or trusting remote gateways.
 
 It runs in Firefox (desktop and Android) and various Chromium-based browsers such as Google Chrome or [Brave](https://brave.com).
-[Check out its features](https://github.com/ipfs-shipyard/ipfs-companion#features) and install it today!
+[Check out its features](https://github.com/ipfs/ipfs-companion#features) and install it today!
 
-- [Direct download](https://github.com/ipfs-shipyard/ipfs-companion#install)
-- [Install from Firefox Add-ons](https://addons.mozilla.org/firefox/addon/ipfs-companion/)
+- [Direct download](https://github.com/ipfs/ipfs-companion#install)
+- [Install from Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/ipfs-companion/)
 - [Install from Chrome Store](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch)
 
 ## Troubleshooting
@@ -181,7 +181,7 @@ go version
 > go version go1.12.2 linux/amd64
 ```
 
-If you need to update, we recommend you install from the [canonical Go packages](https://golang.org/doc/install). Package managers often contain out-of-date Go packages.
+If you need to update, we recommend you install from the [canonical Go packages](https://go.dev/doc/install). Package managers often contain out-of-date Go packages.
 
 ### Check that FUSE is installed
 
