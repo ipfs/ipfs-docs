@@ -152,7 +152,7 @@ The web console shows files that are in your [Mutable File System (MFS)](../conc
 
 When you add files using the [CLI command `ipfs add ...`](../cli#ipfs-add), these files are not automatically available within the MFS. To view files in IPFS Desktop that you added using the CLI, you must copy the files over to the MFS:
 
-```
+```shell
 ipfs files cp /ipfs/<ipfs-CID>
 ```
 
