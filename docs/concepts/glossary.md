@@ -266,6 +266,10 @@ A Merkle Tree is a specific type of hash tree used in cryptography and computer 
 
 The Mutable File System (MFS) is a tool built into IPFS that lets you treat files like a normal name-based filesystem. You may add, edit, and remove MFS files while all link updates and hashes are taken care of for you. [More about MFS](file-systems.md#mutable-file-system-mfs)
 
+### Multiaddr
+
+Multiaddr is a way to create self-describing, composable and future-proof network addresses. In [libp2p](#libp2p), it is used in [peer](#peer) addressing. [More about Multiaddr](https://github.com/multiformats/multiaddr)
+
 ### Multibase
 
 Multibase is a protocol for disambiguating the encoding of base-encoded (e.g. base32, base36, base64, base58, etc.) binary appearing in text. In IPFS, it is used as a prefix specifying the encoding used for the remainder of the CID. [More about Multibase](https://github.com/multiformats/multibase#readme)
