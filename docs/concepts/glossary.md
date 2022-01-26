@@ -14,10 +14,6 @@ related:
 
 ## A
 
-### Announcing
-
-Announcing is a function of the IPFS networking layer in [libp2p](#libp2p), wherein a peer can tell other peers that it has data blocks available.
-
 ### ACL
 
 In computer security, an access-control list (ACL) is a list of permissions associated with a system resource, also known as an _object_. An ACL specifies which users or system processes are granted access to objects, as well as what operations are allowed on given objects. [More about ACL](https://en.wikipedia.org/wiki/Access-control_list)
@@ -25,6 +21,14 @@ In computer security, an access-control list (ACL) is a list of permissions asso
 ### ADL
 
 ADL is short for _Advanced Data Layout_, a concept in [IPLD](#ipld). See [IPLD docs](https://ipld.io/glossary/#adl).
+
+### Announcing
+
+Announcing is a function of the IPFS networking layer in [libp2p](#libp2p), wherein a peer can tell other peers that it has data blocks available.
+
+### AutoNAT
+
+The [libp2p](#libp2p) protocol that allows a [peer](#peer) to determine if it is located behind a [Network address translator (NAT)](#nat). [More about AutoNAT](https://github.com/libp2p/specs/blob/master/autonat/#readme).
 
 ## B
 
