@@ -28,7 +28,7 @@ Announcing is a function of the IPFS networking layer in [libp2p](#libp2p), wher
 
 ### AutoNAT
 
-The [libp2p](#libp2p) protocol that allows a [peer](#peer) to determine if it is located behind a [Network address translator (NAT)](#nat). [More about AutoNAT](https://github.com/libp2p/specs/blob/master/autonat/#readme)
+The [libp2p](#libp2p) protocol that allows a [peer](#peer) to determine if it is located behind a [Network address translator (NAT)](#nat). [More about AutoNAT](https://github.com/libp2p/specs/blob/master/autonat/#readme).
 
 ## B
 
