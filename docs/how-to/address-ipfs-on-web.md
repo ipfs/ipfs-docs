@@ -42,6 +42,18 @@ Tools and browser extensions should detect IPFS content paths and resolve them d
 
 ::: tip
 Use relative or absolute URLs that include content-addressed paths. This will take advantage of content addressing today while ensuring backward compatibility with the legacy web.
+
+For example, a website can load static assets from content-addressed paths:
+
+```
+<link rel="stylesheet" href="https://example.com/ipfs/QmNrgEMcUygbKzZeZgYFosdd27VE9KnWbyUD73bKZJ3bGi?filename=style.css">
+```
+
+```
+<link rel="stylesheet" href="/ipfs/QmNrgEMcUygbKzZeZgYFosdd27VE9KnWbyUD73bKZJ3bGi?filename=style.css">
+```
+
+User agents that support IPFS, such as a browser with [ipfs-companion](https://docs.ipfs.io/install/ipfs-companion/), may recognize the `/ipfs/<CID>` content path and load the related asset over IPFS instead of HTTP. User agents without IPFS support still get the correct data from the original HTTP server.
 :::
 
 ### Path gateway
