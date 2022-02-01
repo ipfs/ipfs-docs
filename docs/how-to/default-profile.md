@@ -31,15 +31,20 @@ If you previously configured your IPFS node to use another profile, let's say `b
 
 Here's a list of all the profiles available for your IPFS node:
 
-- `flatfs`
-- `badgerds`
-- `server`
-- `randomports`
-- `default-datastore`
-- `local-discovery`
-- `test`
-- `default-networking`
-- `lowpower`
+### Available only when initializing the node:
+- `flatfs` - the most tested datastore. Stores each block as a separate file. Use when you want a simple and reliable datastore, need garbage collection on a small datastore (<= 10GiB), or you're concerned about memory. The default datastore.
+- `badgerds`- the fastest datastore. Use when performance is critical. Will not properly reclaim space when your datastore is smaller than several gigabytes. Uses up to several gigabytes of memory.
+- `default-datastore` - configures the node to use `flatfs`. <!-- Since this is available only upon initialization, why don't they just stick with the default?  When would they need this?-->
+
+### Available at any time: <!-- I tried to group these in a logical order. Did I get it right? -->
+- `lowpower` - Reduces daemon overhead on the system. May affect node functionality. Performance of content discovery and data fetching may be degraded.
+- `server`- disables local host discovery. Use when running IPFS on machines with public IPv4 addresses.
+- `local-discovery` - sets default values to fields affected by the server profile; enables discovery in local networks.
+- `test` - reduces external interference of the IPFS daemon. Use to run the daemon in test environments.
+- `default-networking` - restores default network settings after using the test profile. <!-- correct interpretation of "inverse of test profile"? -->
+- `randomports` - provides a random port number for a Docker swarm (cluster of nodes). <!-- Docker? -->
+
+See [Configure a Node](./configure-node.md) for more context. <!-- What is the proper format to a page within our doc? I looked all over for an example, and haven't found one so far. The format I have goes to the github page and I see many links within the ipfs doc doing the same. It's within how-to, so only one dot, yes? Include .md or not?-->
 
 ## Reset your profile
 
