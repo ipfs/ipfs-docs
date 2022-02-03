@@ -28,7 +28,7 @@ For installing and initializing IPFS from the command line, check out the [comma
 
 ### Why doesn't the SHA-256 hash of the file match the IPFS CID?
 
-When you add a file to IPFS, IPFS splits it into chunks. Each of these chunks is hashed individually and represents a node in a tree structure. IPFS creates a for each node in this graph as well as a separate CID for the parent node. For more details, see [Merkle Directed Acyclic Graphs (DAGs)](../concepts/merkle-dag.md).
+When you add a file to IPFS, IPFS splits it into chunks, each of which represents a node in a tree structure. IPFS creates a CID for each node in this graph as well as separate CIDs for any parent nodes. For more details, see [Merkle Directed Acyclic Graphs (DAGs)](../concepts/merkle-dag.md).
 
 ## Contributing to IPFS
 
