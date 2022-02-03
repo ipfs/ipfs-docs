@@ -26,6 +26,10 @@ The quickest way to get IPFS up and running on your machine is by installing [IP
 
 For installing and initializing IPFS from the command line, check out the [command-line quick start](../how-to/command-line-quick-start.md) guide.
 
+### Why doesn't the sha256sum hash of the file match the IPFS CID?
+
+When a file is added to IPFS, it's split into smaller pieces. Each of those pieces is hashed individually, which then results in an overall different hash. For more details, see [Merkle Directed Acyclic Graphs (DAGs)](../concepts/merkle-dag.md).
+
 ## Contributing to IPFS
 
 ### How do I start contributing to IPFS?
