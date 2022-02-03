@@ -31,15 +31,20 @@ If you previously configured your IPFS node to use another profile, let's say `b
 
 Here's a list of all the profiles available for your IPFS node:
 
-- `flatfs`
-- `badgerds`
-- `server`
-- `randomports`
-- `default-datastore`
-- `local-discovery`
-- `test`
-- `default-networking`
-- `lowpower`
+### Available only when initializing the node:
+- `flatfs` - the default and most tested datastore. Stores each block as a separate file. Use when you want a simple and reliable datastore, need garbage collection on a small datastore (<= 10GiB), or you're concerned about memory.
+- `badgerds`- the fastest datastore. Use when performance is critical. Will not properly reclaim space when your datastore is smaller than several gigabytes. Uses up to several gigabytes of memory.
+
+### Available at any time:
+- `default-datastore` - reconfigures the node to use `flatfs`. Use to reset the datastore to the default. <!-- "Configure a node" article says this is available only upon initialization, but this sounds like a reset, so I'm thinking that must be after initialization. If that's correct, I'll need to update "Configure a node." Please comment.  -->
+- `lowpower` - Reduces daemon overhead on the system. May affect node functionality. Performance of content discovery and data fetching may be degraded.
+- `server`- disables local host discovery. Use when running IPFS on machines with public IPv4 addresses.
+- `local-discovery` - sets default values to fields affected by the server profile; enables discovery in local networks.
+- `test` - reduces external interference of the IPFS daemon. Use to run the daemon in test environments.
+- `default-networking` - restores default network settings after using the test profile.
+- `randomports` - provides a random port number for a Docker swarm (cluster of nodes).
+
+See [Configure a Node](../how-to/configure-node.md) for more context.
 
 ## Reset your profile
 
