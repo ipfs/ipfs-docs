@@ -36,11 +36,13 @@ Many distributed systems make use of content addressing through hashes as a mean
 
 This is where the [Interplanetary Linked Data (IPLD) project](https://ipld.io/) comes in. IPLD translates between hash-linked data structures allowing for the unification of the data across distributed systems. IPLD provides libraries for combining pluggable modules (parsers for each possible type of IPLD node) to resolve a path, selector, or query across many linked nodes, allowing you to explore data regardless of the underlying protocol. IPLD provides a way to translate between content-addressable data structures: _"Oh, you use Git-style, no worries, I can follow those links. Oh, you use Ethereum, I got you, I can follow those links too!"_
 
-IPFS follows particular data-structure preferences and conventions. The IPFS protocol uses those conventions and IPLD to get from raw content to an IPFS address that uniquely identifies content on the IPFS network. The next section explores how links between content are embedded within that content address through a DAG data structure.
+IPFS follows particular data-structure preferences and conventions. The IPFS protocol uses those conventions and IPLD to get from raw content to an IPFS address that uniquely identifies content on the IPFS network.
+
+The next section explores how links between content are embedded within that content address through a DAG data structure.
 
 ## Directed acyclic graphs (DAGs)
 
-IPFS and many other distributed systems take advantage of a data structure called [directed acyclic graphs](https://en.wikipedia.org/wiki/Directed_acyclic_graph), or DAGs. Specifically, they use _Merkle DAGs_, which are DAGs where each node has a unique identifier that is a hash of the node's contents. Sound familiar? This refers back to the _CID_ concept that we covered in the previous section. Put another way: identifying a data object (like a Merkle DAG node) by the value of its hash _is content addressing_. Check out our [guide to Merkle DAGs](merkle-dag.md) for a more in-depth treatment of this topic.
+IPFS and many other distributed systems take advantage of a data structure called [directed acyclic graphs](https://en.wikipedia.org/wiki/Directed_acyclic_graph), or DAGs. Specifically, they use _Merkle DAGs_, where each node has a unique identifier that is a hash of the node's contents. Sound familiar? This refers back to the _CID_ concept that we covered in the previous section. Put another way: identifying a data object (like a Merkle DAG node) by the value of its hash _is content addressing_. Check out our [guide to Merkle DAGs](merkle-dag.md) for a more in-depth treatment of this topic.
 
 IPFS uses a Merkle DAG that is optimized for representing directories and files, but you can structure a Merkle DAG in many different ways. For example, Git uses a Merkle DAG that has many versions of your repo inside of it.
 
@@ -67,6 +69,12 @@ Once you know where your content is (or, more precisely, which peers are storing
 You've discovered your content, and you've found the current location(s) of that content. Now, you need to connect to that content and get it (_exchange_). To request blocks from and send blocks to other peers, IPFS currently uses a module called [_Bitswap_](https://github.com/ipfs/specs/blob/master/BITSWAP.md). Bitswap allows you to connect to the peer or peers that have the content you want, send them your _wantlist_ (a list of all the blocks you're interested in), and have them send you the blocks you requested. Once those blocks arrive, you can verify them by hashing their content to get CIDs and compare them to the CIDs that you requested. These CIDs also allow you to deduplicate blocks if needed.
 
 There are [other content replication protocols under discussion](https://github.com/ipfs/camp/blob/master/DEEP_DIVES/24-replication-protocol.md) as well, the most developed of which is [_Graphsync_](https://github.com/ipld/specs/blob/master/block-layer/graphsync/graphsync.md). There's also a proposal under discussion to [extend the Bitswap protocol](https://github.com/ipfs/go-bitswap/issues/186) to add functionality around requests and responses.
+
+## SHA file hashes won't match Content IDs
+
+You may be used to verifying the integrity of a file by matching SHA hashes, but don't be surprised when a SHA hash doesn't match a CID. Because IPFS splits a file into blocks, each block has its own CID, including separate CIDs for any parent nodes. The DAG keeps track of all the content stored in IPFS as blocks, not files. So CIDs will not match SHA hashes.
+
+With IPFS, don't expect to use SHA hashes to check the integrity of a file. Merkle DAGs are self-verified structures. To learn more about DAGs, see [directed acyclic graph (DAG)](../concepts/merkle-dag.md).
 
 ### Libp2p
 

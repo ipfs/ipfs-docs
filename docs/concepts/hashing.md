@@ -39,7 +39,7 @@ mtwirsqawjuoloq2gvtyug2tc3jbf5htm2zeo4rsknfiv3fdp46a
 If you're interested in how cryptographic hashes fit into how IPFS works with files in general, check out this video from IPFS Camp 2019! [Core Course: How IPFS Deals With Files](https://www.youtube.com/watch?v=Z5zNPwMDYGg)
 :::
 
-## Characteristics of hashes
+## Important hash characteristics
 
 Cryptographic hashes come with a couple of very important characteristics:
 
@@ -52,17 +52,11 @@ These features also mean we can use a cryptographic hash to identify any piece o
 
 That's critical for a distributed system like IPFS, where we want to be able to store and retrieve data from many places. A computer running IPFS can ask all the peers it's connected to whether they have a file with a particular hash and, if one of them does, they send back the whole file. Without a short, unique identifier like a cryptographic hash, this kind of [content addressing](content-addressing.md) wouldn't be possible.
 
-## Content identifiers are not file hashes
+## Example: Content Identifier doesn't match file hash
 
-When you add a file to IPFS, IPFS splits it into chunks. Each chunk represents a node in the tree structure, called a Directed Acyclic Graph (DAG). IPFS creates a CID for each node in this structure, including separate CIDs for any parent nodes. The DAG keeps track of all the content stored in IPFS (as chunks, not files), so don't be surprised when a SHA hash doesn't match a CID.
+Hash functions are widely used to check for file integrity. Because IPFS splits content into blocks and verifies them through [directed acyclic graphs (DAGs)](../concepts/merkle-dag.md), SHA file hashes won't match CIDs. Here's an example of what will happen if you try to do that.
 
-With IPFS, you don't use SHA hashes to check the integrity of a file. To learn more about how IPFS keeps track of data, see [directed acyclic graph (DAG)](merkle-dag.md).
-
-To understand how a CID is broken down, see the [CID Inpsector](../concepts/content-addressing/#cid-inspector). <!--What link format are we suppose to use. I see several formats. -->
-
-<!-- Concerning the below text: Are we basically saying: "This is why you can't use hash functions to check file integrity with IPFS."? If so, I don't think we want to be in the business of describing what doesn't work. We might like to delete all of the below. -->
-
-Hash functions are widely used as to check for file integrity. A download provider may publish the output of a hash function for a file, often called a _checksum_. The checksum enables users to verify that a file has not been altered since it was published. This check is done by performing the same hash function against the downloaded file that was used to generate the checksum. If that checksum that the user receives from the downloaded file exactly matches the checksum on the website, then the user knows that the file was not altered and can be trusted.
+A download provider may publish the output of a hash function for a file, often called a _checksum_. The checksum enables users to verify that a file has not been altered since it was published. This check is done by performing the same hash function against the downloaded file that was used to generate the checksum. If that checksum that the user receives from the downloaded file exactly matches the checksum on the website, then the user knows that the file was not altered and can be trusted.
 
 Let's look at a concrete example. When you download an image file for [Ubuntu Linux](https://ubuntu.com/) you might see the following `SHA-256` checksum on the Ubuntu website listed for verification purposes:
 
