@@ -52,7 +52,7 @@ These features also mean we can use a cryptographic hash to identify any piece o
 
 That's critical for a distributed system like IPFS, where we want to be able to store and retrieve data from many places. A computer running IPFS can ask all the peers it's connected to whether they have a file with a particular hash and, if one of them does, they send back the whole file. Without a short, unique identifier like a cryptographic hash, this kind of [content addressing](content-addressing.md) wouldn't be possible.
 
-## Example: Content Identifier doesn't match file hash
+## Example: Content Identifiers are not file hashes
 
 Hash functions are widely used to check for file integrity. Because IPFS splits content into blocks and verifies them through [directed acyclic graphs (DAGs)](../concepts/merkle-dag.md), SHA file hashes won't match CIDs. Here's an example of what will happen if you try to do that.
 
@@ -103,3 +103,5 @@ shasum: WARNING: 1 computed checksum did NOT match
 ```
 
 As we can see, the hash included in the CID does NOT match the hash of the input file `ubuntu-20.04.1-desktop-amd64.iso`.
+
+As we can see, the hash included in the CID does NOT match the hash of the input file ubuntu-20.04.1-desktop-amd64.iso. To understand what the hash contained in the CID is, we must understand how IPFS stores files. IPFS uses a directed acyclic graph (DAG) to keep track of all the data stored in IPFS. A CID identifies one specific node in this graph. This identifier is the result of hashing the node's contents using a cryptographic hash function like SHA256.

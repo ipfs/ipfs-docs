@@ -72,13 +72,15 @@ There are [other content replication protocols under discussion](https://github.
 
 ## SHA file hashes won't match Content IDs
 
-You may be used to verifying the integrity of a file by matching SHA hashes, but don't be surprised when a SHA hash doesn't match a CID. Because IPFS splits a file into blocks, each block has its own CID, including separate CIDs for any parent nodes. The DAG keeps track of all the content stored in IPFS as blocks, not files. So CIDs will not match SHA hashes.
+You may be used to verifying the integrity of a file by matching SHA hashes, but SHA hashes won't match CIDs. Because IPFS splits a file into blocks, each block has its own CID, including separate CIDs for any parent nodes.
 
-With IPFS, don't expect to use SHA hashes to check the integrity of a file. Merkle DAGs are self-verified structures. To learn more about DAGs, see [directed acyclic graph (DAG)](../concepts/merkle-dag.md).
+The DAG keeps track of all the content stored in IPFS as blocks, not files, and Merkle DAGs are self-verified structures. To learn more about DAGs, see [directed acyclic graph (DAG)](../concepts/merkle-dag.md).
+
+For a detailed example of what happens when you try to compare SHA hashes with CIDs, see [Content Identifiers are not hashes](../concepts/hashing/#content-identifiers-are-not-file-hashes).
 
 ### Libp2p
 
-What makes libp2p especially useful for peer to peer connections is _connection multiplexing_. Traditionally, every service in a system opens a different connection to communicate with other services of the same kind remotely. Using IPFS, you open just one connection, and you multiplex everything on that. For everything your peers need to talk to each other about, you send a little bit of each thing, and the other end knows how to sort those chunks where they belong.
+What makes libp2p especially useful for peer-to-peer connections is _connection multiplexing_. Traditionally, every service in a system opens a different connection to communicate with other services of the same kind remotely. Using IPFS, you open just one connection, and you multiplex everything on that. For everything your peers need to talk to each other about, you send a little bit of each thing, and the other end knows how to sort those chunks where they belong.
 
 This is useful because establishing connections is usually hard to set up and expensive to maintain. With multiplexing, once you have that connection, you can do whatever you need on it.
 
