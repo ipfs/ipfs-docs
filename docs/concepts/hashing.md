@@ -28,7 +28,7 @@ However, the exact same input generates the following output using **SHA-256**:
 
 Notice that the second hash is longer than the first one. This is because SHA-1 creates a 160-bit hash, while SHA-256 creates a 256-bit hash. The prepended `0x` indicates that the following hash is represented as a hexadecimal number.
 
-Hashes can be represented in different bases (`base2`, `base16`, `base32`, etc.). In fact, IPFS makes use of that as part of its [content identifiers](content-addressing.md) and supports multiple base representations at the same time, using the [Multibase](https://github.com/multiformats/multibase) protocol.
+Hashes can be represented in different bases (`base2`, `base16`, `base32`, etc.). In fact, IPFS uses that as part of its [content identifiers](content-addressing.md) and supports multiple base representations at the same time, using the [Multibase](https://github.com/multiformats/multibase) protocol.
 
 For example, the SHA-256 hash of "Hello world" from above can be represented as base 32 as:
 
@@ -41,7 +41,7 @@ If you're interested in how cryptographic hashes fit into how IPFS works with fi
 
 ## Important hash characteristics
 
-Cryptographic hashes come with a couple of very important characteristics:
+Cryptographic hashes come with a several important characteristics:
 
 - **deterministic** - the same input message always returns exactly the same output hash
 - **uncorrelated** - a small change in the message should generate a completely different hash
