@@ -50,7 +50,7 @@ Cryptographic hashes come with a couple of very important characteristics:
 
 These features also mean we can use a cryptographic hash to identify any piece of data: the hash is unique to the data we calculated it from and it's not too long so sending it around the network doesn't take up a lot of resource. A hash is a fixed length, so the SHA-256 hash of a one-gigabyte video file is still only 32 bytes.
 
-That's critical for a distributed system like IPFS, where we want to be able to store and retrieve data from many places. A computer running IPFS can ask all the peers it's connected to whether they have a file with a particular hash and, if one of them does, they send back the whole file. Without a short, unique identifier like a cryptographic hash, this kind of [content addressing](content-addressing.md) wouldn't be possible.
+That's critical for a distributed system like IPFS, where we want to be able to store and retrieve data from many places. A computer running IPFS can ask all the peers it's connected to whether they have a file with a particular hash and, if one of them does, they send back the whole file. Without a short, unique identifier like a cryptographic hash, [content addressing](content-addressing.md) wouldn't be possible.
 
 ## Example: Content Identifiers are not file hashes
 
@@ -58,7 +58,7 @@ Hash functions are widely used to check for file integrity. Because IPFS splits 
 
 A download provider may publish the output of a hash function for a file, often called a _checksum_. The checksum enables users to verify that a file has not been altered since it was published. This check is done by performing the same hash function against the downloaded file that was used to generate the checksum. If that checksum that the user receives from the downloaded file exactly matches the checksum on the website, then the user knows that the file was not altered and can be trusted.
 
-Let's look at a concrete example. When you download an image file for [Ubuntu Linux](https://ubuntu.com/) you might see the following `SHA-256` checksum on the Ubuntu website listed for verification purposes:
+For example, when you download an image file for [Ubuntu Linux](https://ubuntu.com/) you might see the following `SHA-256` checksum on the Ubuntu website listed for verification purposes:
 
 ```
 0xB45165ED3CD437B9FFAD02A2AAD22A4DDC69162470E2622982889CE5826F6E3D ubuntu-20.04.1-desktop-amd64.iso
@@ -104,4 +104,4 @@ shasum: WARNING: 1 computed checksum did NOT match
 
 As we can see, the hash included in the CID does NOT match the hash of the input file `ubuntu-20.04.1-desktop-amd64.iso`.
 
-As we can see, the hash included in the CID does NOT match the hash of the input file ubuntu-20.04.1-desktop-amd64.iso. To understand what the hash contained in the CID is, we must understand how IPFS stores files. IPFS uses a directed acyclic graph (DAG) to keep track of all the data stored in IPFS. A CID identifies one specific node in this graph. This identifier is the result of hashing the node's contents using a cryptographic hash function like SHA256.
+To understand what the hash contained in the CID is, we must understand how IPFS stores files. IPFS uses a directed acyclic graph (DAG) to keep track of all the data stored in IPFS. A CID identifies one specific node in this graph. This identifier is the result of hashing the node's contents using a cryptographic hash function like SHA256.
