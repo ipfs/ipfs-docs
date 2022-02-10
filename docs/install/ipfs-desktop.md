@@ -19,7 +19,7 @@ If you already have an IPFS node on your computer, IPFS Desktop will act as a co
 
 ### Feature highlights
 
-- **Start your node at system startup (Mac/Windows) and control it from your OS** by right-clicking the IPFS icon on the top right of your computer's menubar. <!-- ![IPFS Menubar Icon](.images/ipfs-menubar-icon.png). How do I get an image added? Is this the right format for an inline image? -->
+- **Start your node at system startup (Mac/Windows) and control it from your OS** using the convenient menubar/system tray menu.
 - **Quickly import files, folders, and screenshots to IPFS** in a variety of convenient ways, including drag-and-drop and (for Windows) right-clicking a file/folder's icon.
 - **Easily manage the contents of your node** with a familiar file browser that offers quick shortcuts for renaming/moving/pinning files and folders, previewing many common file formats directly in IPFS Desktop, copying content IDs or shareable links to your clipboard, and more.
 - **Quick download for CIDs, IPFS paths, and IPNS paths** — choose `Download...` by right-clicking the IPFS icon on your computer's menubar, paste in a hash, and you're good to go.
