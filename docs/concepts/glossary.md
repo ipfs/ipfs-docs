@@ -192,10 +192,7 @@ Garbage Collection (GC) is the process within each IPFS node of clearing out cac
 
 ### GO-IPFS node
 
-Runs on servers and user machines with the full set of capabilities.
-* tcp and quic transports enabled by default
-* /ws/transport disabled by default
-* http gateway with subdomain support for origin isolation between content roots
+The primary IPFS reference implementation, i.e., implements all requirements from the corresponding IPFS specification. It runs on servers and user machines with full IPFS capabilities, enabling experimentation. See [Nodes > GO-IPFS](../concepts/nodes/#go-ipfs).
 
 ### Graph
 
@@ -237,13 +234,7 @@ The InterPlanetary Name System (IPNS) is a system for creating and updating muta
 
 ### JS-IPFS node
 
-* Runs in the browser with a limited set of capabilities
-  * Can connect to server nodes (go/js-ipfs) only via secure websockets (/wss/ requires manual setup of TLS at the server)
-  * Can connect to browser nodes via webrtc (with help of centralized ws-webrtc-star signaling service)
-  * No http gateway (can't open TCP port)
-* Runs on servers and user machines with (in theory) the full set of capabilities
-  * DHT not in par with go-ipfs
-  * http gateway present, but has no subdomain support
+* Runs in the browser with a limited set of capabilities. See [Nodes > JS-IPFS](../concepts/nodes/#implementations).
 
 ### JSON
 
@@ -319,7 +310,7 @@ Network Address Translation (NAT) enables communication between two networks by 
 
 ### Node
 
-In IPFS, a node or [peer](#peer) is the IPFS program that you run on your local computer to store files and then connect to the IPFS network. [More about IPFS Node](../how-to/command-line-quick-start.md#take-your-node-online).
+In IPFS, a node or [peer](#peer) is the IPFS program that you run on your local computer to store files and then connect to the IPFS network. See [Nodes](../concepts/nodes/#nodes).
 
 ### Node (in graphs)
 
@@ -353,17 +344,7 @@ A vendor-agnostic [API specification](https://ipfs.github.io/pinning-services-ap
 
 ### Preload node
 
-* GO-ipfs nodes with their API ports exposed, some HTTP API commands accessible, and a patch applied [link to an issue](https://github.com/ipfs/go-ipfs/tree/feat/stabilize-dht)
-* Used by JS-IPFS nodes, both in-browser and not
-* js-ipfs nodes remain connected to the libp2p swarm ports of all preload nodes by having preload nodes on the bootstrap list.
-* when users want to make some UnixFS DAG publicly available, they call `ipfs refs -r <CID>` on a randomly chosen preload node's HTTP API, which puts the CID in the preload nodes' wantlist and then causes it to fetch the data from the user.
-* Other js-ipfs nodes requesting the content can then resolve it from the preload node via bitswap as the data is now present in the preload node's blockstore
-* Only works with dag-pb CIDs because that's all the refs command understands
-  * Q: What are the net effects of this? Bad perf or broken js-ipfs for non-dag-pb CIDs? Are there mitigations?
-  * A: Harder to find non-dag-pb content - e.g. you need a connection to the publishing js-ipfs instance or it needs to be put on the DHT by a delegate node. We could do this at the block level and use block stat in the same way as js-delegate-content module
-* Preload nodes garbage collect every hour so preloaded content only survives for that long
-  * Q: Is this configurable?
-  * A: Yes? Infra would be able to tell you more
+Part of the process of making a UnixFS DAG publicly available via the preload node's `wantlist`, causing it to fetch data. Other nodes requesting the content can then resolve it from the preload node using Bitswap, as the data is now present in the preload node’s blockstore. See [Nodes > Preload](https://docs.ipfs.io/concepts/nodes/#preload).
 
 ### Protobuf
 
@@ -379,21 +360,11 @@ Publish-subscribe (Pubsub) is an experimental feature in IPFS. Publishers send m
 
 ### Relay node
 
-* go-ipfs nodes
-  * Q: or are they custom go-libp2p nodes?
-* can also be js-libp2p nodes properly configured, or the out of the box js relay
-* used by go-ipfs nodes to serve as relays/VPNs for nodes who deem themselves to be unreachable by the public internet
-  * Q: Used by js-ipfs too?
-  * A: Yes. They can also be used to overcome lack of transport compatibility. For instance, a browser node with websockets/webRTC transports can talk with a go-ipfs node that only talks TCP, via a relay that support both transports. This is not enabled by default and needs to be setup.
-* not configurable in go-ipfs and uses a preset list of relays
+A means to establish connectivity between libp2p nodes (e.g., IPFS nodes) that wouldn't otherwise be able to establish a direct connection to each other. This may be due to nodes that are behind NAT (Network Address Translation), reverse proxies, firewalls, etc. See [Nodes > Relay](../concepts/nodes/#relay)
 
 ### Remote Pinning
 
 A variant of [pinning](#pinning) that uses a third-party service to ensure that data persists on IPFS, even when your local node goes offline or your local copy of data is deleted during garbage collection. [More about working with remote pinning services](../how-to/work-with-pinning-services.md).
-
-### Relay
-
-The Relay is a means to establish connectivity between libp2p nodes (e.g., IPFS nodes) that wouldn't otherwise be able to establish a direct connection to each other. This may be due to nodes that are behind NAT, reverse proxies, firewalls, etc. [More about Relay](https://github.com/libp2p/specs/tree/master/relay)
 
 ### Repo
 

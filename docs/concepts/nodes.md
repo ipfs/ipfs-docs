@@ -31,7 +31,7 @@ There are different types of IPFS nodes. And depending on the use-case, a single
 
 ### Preload
 
-When users want to make a UnixFS DAG publicly available, they call `ipfs refs -r <CID>` on a randomly chosen preload node's HTTP API. This puts the CID in the preload nodes' `wantlist`, which then causes it to fetch the data from the user. Other nodes requesting the content can then resolve it from the preload node using Bitswap, as the data is now present in the preload node’s blockstore.
+Use to make a UnixFS DAG publicly available by calling `ipfs refs -r <CID>` on a randomly chosen preload node's HTTP API. This puts the CID in the preload nodes' wantlist, causing it to fetch the data from the user. Other nodes requesting the content can then resolve it from the preload node using bitswap, as the data is now present in the preload node’s blockstore.
 
 Features of a preload node:
 
@@ -46,12 +46,14 @@ Limitations of a preload node:
 
 - Default preload nodes provided by Protocol Labs garbage collect every hour, so preloaded content only survives for that long. However, this is configurable. You can run nodes with customized policies.
 - Requires client to be smart about what gets preloaded: recursive preload of a big DAG.
+- Only works with dag-pb CIDs because that's all the refs command understands. It's harder to find non-dag-pb content, e.g., you need a connection to the publishing js-ipfs instance or it needs to be put on the DHT by a delegate node.
 
 ### Relay
 
 If an IPFS node deems itself unreachable by the public internet, IPFS nodes may choose to use a relay node as a kind of VPN in an attempt to reach the unreachable node.
 
 Features of a relay node:
+
 - Implements either [v1](https://github.com/libp2p/specs/blob/master/relay/circuit-v1.md) or [v2](https://github.com/libp2p/specs/blob/master/relay/circuit-v2.md) of the Circuit Relay protocol.
 - Can be either Go-IPFS or JS-IPFS nodes; however there are standalone implementations as well:
   - [js-libp2p-relay-server](https://github.com/libp2p/js-libp2p-relay-server) (supports circuit v1)
@@ -62,6 +64,9 @@ Features of a relay node:
 Limitations of relay nodes:
 - v1 relays can be used by anyone without any limits, unless [go-libp2p-relay-daemon](https://github.com/libp2p/go-libp2p-relay-daemon) is used with ACLs (Access Control Lists) set up.
 - v2 relays are "limited relays" that are designed to be used for [Direct Connection Upgrade through Relay](https://github.com/libp2p/specs/blob/master/relay/DCUtR.md) (aka hole punching).
+- Not configurable in go-ipfs; uses a preset list of relays
+
+See [p2p-circuit relay](https://github.com/libp2p/specs/tree/master/relay)
 
 ### Bootstrap
 
@@ -101,16 +106,22 @@ Protocol Labs manages two primary implementations of the IPFS spec: Go-IPFS and 
 
 ### Go-IPFS
 
-The Go implementation is designed to run on servers and user machines with the full capabilities of IPFS. New IPFS features are usually created on Go-IPFS before any other implementation. Features include:
+The Go implementation is designed to run on servers and user machines with full IPFS capabilities, enabling experimentation. New IPFS features are usually created on Go-IPFS before any other implementation.
+
+Features include:
 
 - TCP and QUIC transports are enabled by default.
 - `/ws/` transport disabled by default.
 - HTTP gateway with subdomain support for origin isolation between content roots.
 - Various [experimental features](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md)
 
+See [API > Working with Go](https://docs.ipfs.io/reference/go/api/#working-with-go)
+
 ### JS-IPFS
 
-The Javascript implementation is designed to run in the browser with a limited set of capabilities. Features include:
+The Javascript implementation is designed to run in the browser with a limited set of IPFS capabilities.
+
+Features include:
 
 - Can connect to server nodes using secure WebSockets.
     - WSS requires manual setup of TLS at the server.
@@ -120,4 +131,6 @@ Specific limitations of the JS-IPFS implementation are:
 
 - Unless using WSS, a JS-IPFS node cannot connect to the main public DHT. They will only connect to other JS-IPFS nodes.
 - The performance of the DHT is not on-par with the Go-IPFS implementation.
-- The HTTP gateway is present, but it has no subdomain support
+- The HTTP gateway is present, but it has no subdomain support (can't open TCP port)
+
+See [More about IPFS Node](../how-to/command-line-quick-start.md#take-your-node-online)
