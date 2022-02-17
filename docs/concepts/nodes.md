@@ -70,21 +70,23 @@ Both Go-IPFS and JS-IPFS nodes use bootstrap nodes to initially enter the DHT.
 Features of a bootstrap node:
 
 - All default bootstrap nodes are part of the public DHT.
-- They are used by both Go-IPFS and JS-IPFS nodes.
-- The list of bootstrap nodes a Go-IPFS or JS-IPFS node connects to is configurable.
+- The list of bootstrap nodes a Go-IPFS or JS-IPFS node connects to is configurable in their config files.
 
 Limitations of a bootstrap node:
 
 - If an IPFS node only has one bootstrap node listed in that configuration and that bootstrap node goes offline, the IPFS node will lose access to the public DHT if it were to restart.
 
-### Delegate routing
+[More about Bootstrapping](../how-to/modify-bootstrap-list.md)
 
-When IPFS nodes are unable to run DHT logic on their own, they _delegate_ the task to a delegate routing node. Publishing works with arbitrary CID codecs, as the [js-delegate-content module](https://github.com/libp2p/js-libp2p-delegated-content-routing/blob/master/src/index.js#L127-L128) publishes CIDs at the block level rather than the IPLD or DAG level.
+### Delegate routing node
+
+When IPFS nodes are unable to run Distributed Hash Tag (DHT) logic on their own, they _delegate_ the task to a delegate routing node.  Publishing works with arbitrary CID codecs (compression/decompression technology), as the [js-delegate-content module](https://github.com/libp2p/js-libp2p-delegated-content-routing/blob/master/src/index.js#L127-L128) publishes CIDs at the block level rather than the IPLD or DAG level.
 
 Features of a delegate routing node:
 
-- They are Go-IPFS nodes with some HTTP RPC API commands exposed under `/api/v0`.
+- They are Go-IPFS nodes with their API ports exposed and some API commands accessible under `/api/v0`.
 - Usable by both Go-IPFS and JS-IPFS nodes.
+- JS-IPFS nodes use them to query the DHT and also publish content without having to actually run DHT logic on their own.
 - Often on the same _server_ as a [preload](#preload) node, though both the delegate routing service and preload service are addressed differently. This is done by having different multiaddrs that resolve to the same machine.
 - Delegate routing nodes are in the default JS-IPFS configuration as bootstrap nodes, so they will maintain libp2p swarm connections to them at all times.
  - They are configured as regular bootstrap nodes, but have the string 'preload' in their multiaddrs.
@@ -92,7 +94,6 @@ Features of a delegate routing node:
 Limitations of a delegate routing node:
 
 - On default delegate nodes provided by Protocol Labs, the garbage collection happens every hour, so provided content only survives for that long. If the uploading JS-IPFS node is still running, it will issue periodic re-provides using the same publishing mechanic, which extends the life of the content on the DHT.
-
 
 ## Implementations
 

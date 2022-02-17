@@ -66,7 +66,7 @@ A Block is a binary blob of data identified by a [CID](#cid). It could be raw by
 
 ### Bootstrap node
 
-A Bootstrap Node is a trusted peer on the IPFS network through which an IPFS node learns about other peers on the network. [More about Bootstrapping](../how-to/modify-bootstrap-list.md)
+A Bootstrap Node is a trusted peer on the IPFS network through which an IPFS node learns about other peers on the network. Both go-ipfs and js-ipfs use bootstrap nodes to enter the Distributed Hash Table (DHT). See [Bootstrap](../concepts/nodes/#bootstrap)
 
 ## C
 
@@ -148,6 +148,10 @@ The Datastore is the on-disk storage system used by an IPFS node. Configuration 
 
 Direct Connection Upgrade through Relay (DCUtR) protocol enables [hole punching](#hole-punching) for NAT traversal when port forwarding is not possible. A peer will coordinate with the counterparty using a [relayed connection](#circuit-relay-v2), to upgrade to a direct connection through a NAT/firewall whenever possible. [More about DCUtR](https://github.com/libp2p/specs/blob/master/relay/DCUtR.md)
 
+### Delegate routing node
+
+GO-IPFS nodes with their API ports exposed and some HTTP API commands accessible. JS-IPFS nodes use them to query the DHT and also publish content without having to actually run DHT logic on their own. See [Delegate routing](../concepts/nodes/#types)
+
 ### DHT
 
 A _Distributed Hash Table_ (DHT) is a distributed key-value store where keys are cryptographic hashes. In IPFS, each peer is responsible for a subset of the IPFS DHT. [More about DHT](dht.md)
@@ -186,6 +190,13 @@ An IPFS Gateway acts as a bridge between traditional web browsers and IPFS. Thro
 
 Garbage Collection (GC) is the process within each IPFS node of clearing out cached files and blocks. Nodes need to clear out previously cached resources to make room for new resources. [Pinned resources](#pinning) are never deleted.
 
+### GO-IPFS node
+
+Runs on servers and user machines with the full set of capabilities.
+* tcp and quic transports enabled by default
+* /ws/transport disabled by default
+* http gateway with subdomain support for origin isolation between content roots
+
 ### Graph
 
 In computer science, a Graph is an abstract data type from the field of graph theory within mathematics. The [Merkle-DAG](#merkledag) used in IPFS is a specialized graph.
@@ -223,6 +234,16 @@ The InterPlanetary Linked Data (IPLD) model is a set of specifications in suppor
 The InterPlanetary Name System (IPNS) is a system for creating and updating mutable links to IPFS content. IPNS allows for publishing the latest version of any IPFS content, even though the underlying IPFS hash has changed. [More about IPNS](ipns.md)
 
 ## J
+
+### JS-IPFS node
+
+* Runs in the browser with a limited set of capabilities
+  * Can connect to server nodes (go/js-ipfs) only via secure websockets (/wss/ requires manual setup of TLS at the server)
+  * Can connect to browser nodes via webrtc (with help of centralized ws-webrtc-star signaling service)
+  * No http gateway (can't open TCP port)
+* Runs on servers and user machines with (in theory) the full set of capabilities
+  * DHT not in par with go-ipfs
+  * http gateway present, but has no subdomain support
 
 ### JSON
 
@@ -330,6 +351,20 @@ Pinning is the method of telling an IPFS node that particular data is important 
 
 A vendor-agnostic [API specification](https://ipfs.github.io/pinning-services-api-spec/) that anyone can implement to provide a service for [remote pinning](#remote-pinning).
 
+### Preload node
+
+* GO-ipfs nodes with their API ports exposed, some HTTP API commands accessible, and a patch applied [link to an issue](https://github.com/ipfs/go-ipfs/tree/feat/stabilize-dht)
+* Used by JS-IPFS nodes, both in-browser and not
+* js-ipfs nodes remain connected to the libp2p swarm ports of all preload nodes by having preload nodes on the bootstrap list.
+* when users want to make some UnixFS DAG publicly available, they call `ipfs refs -r <CID>` on a randomly chosen preload node's HTTP API, which puts the CID in the preload nodes' wantlist and then causes it to fetch the data from the user.
+* Other js-ipfs nodes requesting the content can then resolve it from the preload node via bitswap as the data is now present in the preload node's blockstore
+* Only works with dag-pb CIDs because that's all the refs command understands
+  * Q: What are the net effects of this? Bad perf or broken js-ipfs for non-dag-pb CIDs? Are there mitigations?
+  * A: Harder to find non-dag-pb content - e.g. you need a connection to the publishing js-ipfs instance or it needs to be put on the DHT by a delegate node. We could do this at the block level and use block stat in the same way as js-delegate-content module
+* Preload nodes garbage collect every hour so preloaded content only survives for that long
+  * Q: Is this configurable?
+  * A: Yes? Infra would be able to tell you more
+
 ### Protobuf
 
 Protocol Buffers (Protobuf) is a free and open-source cross-platform data format used to serialize structured data. IPFS uses it in [DAG-PB](#dag-pb). [More about Protocol Buffers](https://en.wikipedia.org/wiki/Protocol_Buffers)
@@ -341,6 +376,16 @@ Publish-subscribe (Pubsub) is an experimental feature in IPFS. Publishers send m
 ## Q
 
 ## R
+
+### Relay node
+
+* go-ipfs nodes
+  * Q: or are they custom go-libp2p nodes?
+* can also be js-libp2p nodes properly configured, or the out of the box js relay
+* used by go-ipfs nodes to serve as relays/VPNs for nodes who deem themselves to be unreachable by the public internet
+  * Q: Used by js-ipfs too?
+  * A: Yes. They can also be used to overcome lack of transport compatibility. For instance, a browser node with websockets/webRTC transports can talk with a go-ipfs node that only talks TCP, via a relay that support both transports. This is not enabled by default and needs to be setup.
+* not configurable in go-ipfs and uses a preset list of relays
 
 ### Remote Pinning
 
@@ -356,7 +401,7 @@ The Repository (Repo) is a directory where IPFS stores all its settings and inte
 
 ### Root
 
-A root is a [node](#node) in a [graph](#graph) that links to at least one other node. In an IPLD graph, roots are used to aggregate multiple chunks of a file together. 
+A root is a [node](#node) in a [graph](#graph) that links to at least one other node. In an IPLD graph, roots are used to aggregate multiple chunks of a file together.
 
 If you have a 600MiB file `A`, it can be split into 3 chunks `B`, `C`, and `D` since the block size of IPFS is 256MiB. The node `A` that links to each of these three chunks is the root. The CID of this root is what IPFS shows you as the CID of the file.
 
@@ -384,7 +429,7 @@ A Self-certifying File System (SFS) is a distributed file system that doesn't re
 
 ### Sharding
 
-An introduction of horizontal partition of data in a database or a data structure. The main purpose is to spread load and improve performance. An example of sharding in IPFS is [HAMT-sharding](#hamt-sharding) of big [UnixFS](#unixfs) directories. 
+An introduction of horizontal partition of data in a database or a data structure. The main purpose is to spread load and improve performance. An example of sharding in IPFS is [HAMT-sharding](#hamt-sharding) of big [UnixFS](#unixfs) directories.
 
 ### Signing (Cryptographic)
 
