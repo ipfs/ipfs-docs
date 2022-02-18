@@ -170,13 +170,32 @@ For a complete DNSLink guide, including tutorials, usage examples, and FAQs, che
 
 ## Native URLs
 
-Subdomain convention can be replaced with a native handler. The IPFS URL protocol scheme follows the same requirement of case-insensitive CIDv1 in Base32 as subdomains:
-
 ```plaintext
-ipfs://{cidv1b32}/path/to/resource
+ipfs://{cid}/path/to/subresource/cat.jpg
 ```
 
-An IPFS URL does not retain the original path, but instead requires a conversion step to/from URI representation:
+The native address format is the same as a [subdomain gateway](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) HTTP URL, but with:
+
+- protocol scheme replaced by `ipfs` or `ipns` namespace
+- location-based authority component (gateway host+port) replaced with content-addressed one in the form of a unique content identifier (CID)
+
+::: tip
+
+Our North Star here is to reuse existing standards to maximize interop with existing user agents like browsers and CLI tools, so if something is not clear, HTTP URL rules apply.
+
+:::
+
+
+```plaintext
+ipfs://{cidv1}
+ipfs://{cidv1}/path/to/resource
+
+ipns://{cidv1-libp2p-key}
+ipns://{cidv1-libp2p-key}/path/to/resource
+ipns://{dnslink-name}/path/to/resource
+```
+
+Every "URL" address can be turned into a content path with ease:
 
 > `ipfs://{immutable-root}/path/to/resourceA` → `/ipfs/{immutable-root}/path/to/resourceA`  
 > `ipns://{mutable-root}/path/to/resourceB` → `/ipns/{mutable-root}/path/to/resourceB`
@@ -189,9 +208,10 @@ Example:
 ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
 ```
 
-::: tip
+::: warning Avoid case-sensitive CID encodings
 
-Native URIs require a CID to be case-insensitive. Use of CIDv1 in Base32 is advised.
+Some user agents will force-lowercase the CID component of URL-like address.
+To ensure interop with existing libraries and software, use case-insensitive CID encoding. Use of CIDv1 in Base32 or Base36 is advised.
 
 :::
 
