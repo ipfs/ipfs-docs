@@ -179,26 +179,24 @@ The native address format is the same as a [subdomain gateway](https://docs.ipfs
 - protocol scheme replaced by `ipfs` or `ipns` namespace
 - location-based authority component (gateway host+port) replaced with content-addressed one in the form of a unique content identifier (CID)
 
+For example:
+
+```plaintext
+ipfs://{cidv1}
+ipfs://{cidv1}/path/to/resource
+ipfs://{cidv1}/path/to/resource?query=foo#fragment
+
+ipns://{cidv1-libp2p-key}
+ipns://{cidv1-libp2p-key}/path/to/resource
+ipns://{dnslink-name}/path/to/resource?query=foo#fragment
+```
+
 ::: tip
 
 Our North Star here is to reuse existing standards to maximize interop with existing user agents like browsers and CLI tools, so if something is not clear, HTTP URL rules apply.
 
 :::
 
-
-```plaintext
-ipfs://{cidv1}
-ipfs://{cidv1}/path/to/resource
-
-ipns://{cidv1-libp2p-key}
-ipns://{cidv1-libp2p-key}/path/to/resource
-ipns://{dnslink-name}/path/to/resource
-```
-
-Every "URL" address can be turned into a content path with ease:
-
-> `ipfs://{immutable-root}/path/to/resourceA` → `/ipfs/{immutable-root}/path/to/resourceA`  
-> `ipns://{mutable-root}/path/to/resourceB` → `/ipns/{mutable-root}/path/to/resourceB`
 
 The first element after the double slash is an opaque identifier representing the content root. It is interpreted as an authority component used for origin calculation, which provides necessary isolation between security contexts of different content trees.
 
@@ -208,12 +206,20 @@ Example:
 ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
 ```
 
-::: warning Avoid case-sensitive CID encodings
+::: warning Avoid case-sensitive CID in ipfs://
 
 Some user agents will force-lowercase the CID component of URL-like address.
 To ensure interop with existing libraries and software, use case-insensitive CID encoding. Use of CIDv1 in Base32 or Base36 is advised.
 
 :::
+
+### Turning native address to a canonical content path
+
+Every "URL" address can be turned back into a content path with ease:
+
+> `ipfs://{immutable-root}/path/to/resourceA` → `/ipfs/{immutable-root}/path/to/resourceA`  
+> `ipns://{mutable-root}/path/to/resourceB` → `/ipns/{mutable-root}/path/to/resourceB`
+
 
 ## Further resources
 
