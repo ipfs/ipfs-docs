@@ -65,7 +65,7 @@ You can also include filenames inside the path component of an IPFS URI. For exa
 
 We recommend using an IPFS URI to link from your smart contract to any external data stored using IPFS, including any _metadata_ that describes and contextualizes the token.
 
-IPFS URIs are also the recommended way to link from a within token's metadata to images and other assets stored on IPFS. See the [metadata recommendations below](#metadata) for more details.
+IPFS URIs are also the recommended way to link from within a token's metadata to images and other assets stored on IPFS. See the [metadata recommendations below](#metadata) for more details.
 
 
 ### HTTP Gateway URL
