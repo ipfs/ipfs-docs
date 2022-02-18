@@ -106,7 +106,7 @@ Learn more about daemon configuration for hosting a public gateway:
 ::: warning Known issues
 
 - Some browsers and other user agents force lowercase for the authority part of URLs, breaking case-sensitive CIDs before the HTTP gateway has a chance to read them
-- DNS label length is limited to 63 characters ([RFC 1034](https://tools.ietf.org/html/rfc1034#page-7))
+- DNS label length is limited to 63 characters ([RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034#page-7))
 
 Due to these limitations, the use of short, case-insensitive CIDv1 in a subdomain context is advised.
 Base32 is the safe default; the less-popular Base36 can be used for longer ED25519 libp2p keys.
@@ -138,7 +138,7 @@ The multihash in CIDv1 is the same as in the original CIDv0.
 #### Manual — use cid.ipfs.io or the command line
 
 One can also do the conversion manually.
-To convert a CID to Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) use [cid.ipfs.io](https://cid.ipfs.io) or the command line:
+To convert a CID to Base32 ([RFC4648](https://datatracker.ietf.org/doc/html/rfc4648#section-6), no padding) use [cid.ipfs.io](https://cid.ipfs.io) or the command line:
 
 ```shell-session
 $ ipfs cid base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
@@ -227,7 +227,7 @@ Discussions around IPFS addressing have been going on since [@jbenet](https://gi
 
 ### IPFS Companion
 
-[IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion) is a browser extension that simplifies access to IPFS resources.
+[IPFS Companion](https://github.com/ipfs/ipfs-companion#readme) is a browser extension that simplifies access to IPFS resources.
 
 It provides support for native URLs and will automatically redirect IPFS gateway requests to your local daemon so that you are not relying on or trusting remote gateways.
 
