@@ -4,13 +4,20 @@ legacyUrl: https://docs.ipfs.io/
 description: The home page for developer documentation for IPFS, the InterPlanetary File System.
 ---
 
-# Learn how to build the future of the internet
+# Welcome to the IPFS docs
 
-::: callout
-No matter who you are or what you're creating, you can be part of the movement to create the next generation of the internet. This site contains everything you need to start building using the InterPlanetary File System (IPFS) and pave the way for the future Web.
-:::
+The Interplanetary File System (IPFS) is a decentralized file system for building the next generation of the internet. [Filecoin](https://filecoin.io) and many popular Web3 projects are built on IPFS. Some call it the hard drive for blockchain and Web3, though its power extends much further.
 
-Check out some of the most popular content in these docs below — or explore the main site menu to learn about [key concepts](concepts/README.md), try out [how-to guides](how-to/README.md), see [API and CLI references](reference/README.md), or just [install IPFS](install/README.md) and get hacking.
+## Get started
+
+Check out these docs to get started with IPFS:
+
+- [What is IPFS?](concepts/what-is-ipfs.md#what-is-ipfs)
+- [Key concepts](concepts/README.md)
+- [Case studies](concepts/README.md#examples-and-case-studies)
+- [How-to guides](how-to/README.md)
+- [API and CLI references](reference/README.md)
+- [Install IPFS](install/README.md)
 
 ## Download IPFS tools
 
