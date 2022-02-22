@@ -32,7 +32,7 @@ Every command usable from the CLI is also available through the [HTTP API](/refe
 ```
 
 
-_Generated on 2021-12-09 05:36:13, from go-ipfs 0.11.0._
+_Generated on 2022-02-19 05:33:06, from go-ipfs 0.12.0._
 
 ## ipfs
 
@@ -941,9 +941,9 @@ SYNOPSIS
 DESCRIPTION
 
   Available profiles:
-    'test':
-      Reduces external interference of IPFS daemon, this
-      is useful when using the daemon in test environments.
+    'default-networking':
+      Restores default network settings.
+      Inverse profile of the test profile.
     'default-datastore':
       Configures the node to use the default datastore (flatfs).
       
@@ -951,35 +951,6 @@ DESCRIPTION
       
       This profile may only be applied when first initializing the node.
       
-    'flatfs':
-      Configures the node to use the flatfs datastore.
-      
-      This is the most battle-tested and reliable datastore, but it's significantly
-      slower than the badger datastore. You should use this datastore if:
-      
-      * You need a very simple and very reliable datastore and you trust your
-        filesystem. This datastore stores each block as a separate file in the
-        underlying filesystem so it's unlikely to loose data unless there's an issue
-        with the underlying file system.
-      * You need to run garbage collection on a small (<= 10GiB) datastore. The
-        default datastore, badger, can leave several gigabytes of data behind when
-        garbage collecting.
-      * You're concerned about memory usage. In its default configuration, badger can
-        use up to several gigabytes of memory.
-      
-      This profile may only be applied when first initializing the node.
-      
-    'randomports':
-      Use a random port number for swarm.
-    'server':
-      Disables local host discovery, recommended when
-      running IPFS on machines with public IPv4 addresses.
-    'local-discovery':
-      Sets default values to fields affected by the server
-      profile, enables discovery in local networks.
-    'default-networking':
-      Restores default network settings.
-      Inverse profile of the test profile.
     'badgerds':
       Configures the node to use the badger datastore.
       
@@ -999,6 +970,35 @@ DESCRIPTION
       functionality - performance of content discovery and data
       fetching may be degraded.
       
+    'randomports':
+      Use a random port number for swarm.
+    'test':
+      Reduces external interference of IPFS daemon, this
+      is useful when using the daemon in test environments.
+    'local-discovery':
+      Sets default values to fields affected by the server
+      profile, enables discovery in local networks.
+    'flatfs':
+      Configures the node to use the flatfs datastore.
+      
+      This is the most battle-tested and reliable datastore, but it's significantly
+      slower than the badger datastore. You should use this datastore if:
+      
+      * You need a very simple and very reliable datastore and you trust your
+        filesystem. This datastore stores each block as a separate file in the
+        underlying filesystem so it's unlikely to loose data unless there's an issue
+        with the underlying file system.
+      * You need to run garbage collection on a small (<= 10GiB) datastore. The
+        default datastore, badger, can leave several gigabytes of data behind when
+        garbage collecting.
+      * You're concerned about memory usage. In its default configuration, badger can
+        use up to several gigabytes of memory.
+      
+      This profile may only be applied when first initializing the node.
+      
+    'server':
+      Disables local host discovery, recommended when
+      running IPFS on machines with public IPv4 addresses.
 
 SUBCOMMANDS
   ipfs config profile apply <profile> - Apply profile to config.
@@ -4658,7 +4658,7 @@ SYNOPSIS
 
 DESCRIPTION
 
-  Displays the hashes of all local objects.
+  Displays the hashes of all local objects. NOTE: This treats all local objects as "raw blocks" and returns CIDv1-Raw CIDs.
 
 
 ```
