@@ -66,7 +66,7 @@ Write everything in using the [GitHub Flavored Markdown](https://github.github.c
 
 When referring to projects by name, use proper noun capitalization: Go-IPFS and JS-IPFS.
 
-Cases inside code blocks refer to commands and are not capitalized: `go-ifps` or `js-ifps`.
+Cases inside code blocks refer to commands and are not capitalized: `go-ipfs` or `js-ipfs`.
 
 ### Style and tone
 

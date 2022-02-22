@@ -5,7 +5,7 @@ description:
 
 # Static-site generators
 
-Static-site generators like Hugo, Jekyll, Middleman, Nextjs, and VuePress are all incredibly popular platforms building websites quickly. This guide walks through how to integrate IFPS into each of these workflows.
+Static-site generators like Hugo, Jekyll, Middleman, Nextjs, and VuePress are all incredibly popular platforms building websites quickly. This guide walks through how to integrate IPFS into each of these workflows.
 
 ## Hugo
 
