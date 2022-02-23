@@ -138,6 +138,7 @@ The multihash in CIDv1 is the same as in the original CIDv0.
 #### Manual — use cid.ipfs.io or the command line
 
 One can also do the conversion manually.
+
 To convert a CID to Base32 ([RFC4648](https://datatracker.ietf.org/doc/html/rfc4648#section-6), no padding) use [cid.ipfs.io](https://cid.ipfs.io) or the command line:
 
 ```shell-session
@@ -192,9 +193,7 @@ ipns://{dnslink-name}/path/to/resource?query=foo#fragment
 ```
 
 ::: tip
-
-Our North Star here is to reuse existing standards to maximize interop with existing user agents like browsers and CLI tools, so if something is not clear, HTTP URL rules apply.
-
+Our main goal here is to reuse existing standards that maximize interoperability with existing user-agents like browsers and CLI tools. If something is not clear, HTTP URL rules apply.
 :::
 
 
@@ -207,10 +206,8 @@ ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_
 ```
 
 ::: warning Avoid case-sensitive CID in ipfs://
-
 Some user agents will force-lowercase the CID component of URL-like address.
 To ensure interop with existing libraries and software, use case-insensitive CID encoding. Use of CIDv1 in Base32 or Base36 is advised.
-
 :::
 
 ### Turning native address to a canonical content path
@@ -219,7 +216,6 @@ Every "URL" address can be turned back into a content path with ease:
 
 > `ipfs://{immutable-root}/path/to/resourceA` → `/ipfs/{immutable-root}/path/to/resourceA`  
 > `ipns://{mutable-root}/path/to/resourceB` → `/ipns/{mutable-root}/path/to/resourceB`
-
 
 ## Further resources
 
