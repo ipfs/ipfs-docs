@@ -41,7 +41,7 @@ If you're interested in how cryptographic hashes fit into how IPFS works with fi
 
 ## Important hash characteristics
 
-Cryptographic hashes come with a several important characteristics:
+Cryptographic hashes come with several important characteristics:
 
 - **deterministic** - the same input message always returns exactly the same output hash
 - **uncorrelated** - a small change in the message should generate a completely different hash
