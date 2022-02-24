@@ -3803,7 +3803,9 @@ This endpoint returns a `text/plain` response body.
 
 ### cURL Example
 
-`curl -X POST -F file=@myfile "http://127.0.0.1:5001/api/v0/pubsub/pub?arg=<topic>"`
+`curl -X POST "http://127.0.0.1:5001/api/v0/pubsub/pub?arg=u<topic>&arg=<data>"`
+
+Multibase encoded topics require the prefix `u` at the start of the `<topic>` string, as shown in the example above.
 
 ---
 
@@ -3835,7 +3837,9 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ### cURL Example
 
-`curl -X POST "http://127.0.0.1:5001/api/v0/pubsub/sub?arg=<topic>"`
+`curl -X POST "http://127.0.0.1:5001/api/v0/pubsub/sub?arg=u<topic>&discover=<value>"`
+
+Multibase encoded topics require the prefix `u` at the start of the `<topic>` string, as shown in the example above.
 
 ---
 
