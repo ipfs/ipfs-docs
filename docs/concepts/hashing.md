@@ -35,6 +35,7 @@ For example, the SHA-256 hash of "Hello world" from above can be represented as 
 ```
 mtwirsqawjuoloq2gvtyug2tc3jbf5htm2zeo4rsknfiv3fdp46a
 ```
+
 ::: tip
 If you're interested in how cryptographic hashes fit into how IPFS works with files in general, check out this video from IPFS Camp 2019! [Core Course: How IPFS Deals With Files](https://www.youtube.com/watch?v=Z5zNPwMDYGg)
 :::
