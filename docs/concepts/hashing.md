@@ -32,7 +32,7 @@ Hashes can be represented in different bases (`base2`, `base16`, `base32`, etc.)
 
 For example, the SHA-256 hash of "Hello world" from above can be represented as base 32 as:
 
-```
+```plaintext
 mtwirsqawjuoloq2gvtyug2tc3jbf5htm2zeo4rsknfiv3fdp46a
 ```
 
@@ -53,7 +53,7 @@ These features also mean we can use a cryptographic hash to identify any piece o
 
 That's critical for a distributed system like IPFS, where we want to be able to store and retrieve data from many places. A computer running IPFS can ask all the peers it's connected to whether they have a file with a particular hash and, if one of them does, they send back the whole file. Without a short, unique identifier like a cryptographic hash, this kind of [content addressing](content-addressing.md) wouldn't be possible.
 
-## Example: Content Identifiers are not file hashes
+## Content Identifiers are not file hashes
 
 Hash functions are widely used to check for file integrity. Because IPFS splits content into blocks and verifies them through [directed acyclic graphs (DAGs)](../concepts/merkle-dag.md), SHA file hashes won't match CIDs. Here's an example of what will happen if you try to do that.
 
