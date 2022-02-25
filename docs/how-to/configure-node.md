@@ -99,7 +99,7 @@ This document refers to the standard JSON types (e.g., `null`, `string`,
 Flags allow enabling and disabling features. However, unlike simple booleans,
 they can also be `null` (or omitted) to indicate that the default value should
 be chosen. This makes it easier for go-ipfs to change the defaults in the
-future unless the user _explicitly_ sets the flag to either `true` (enabled) or
+future, unless the user _explicitly_ sets the flag to either `true` (enabled) or
 `false` (disabled). Flags have three possible states:
 
 - `null` or missing (apply the default value).
@@ -242,7 +242,7 @@ Type: `string` (one of `"enabled"` or `"disabled"`)
 
 ### `AutoNAT.Throttle`
 
-When set, this option configure's the AutoNAT services throttling behavior. By
+When set, this option configures the AutoNAT services throttling behavior. By
 default, go-ipfs will rate-limit the number of NAT checks performed for other
 nodes to 30 per minute, and 3 per peer.
 

@@ -26,6 +26,9 @@ The quickest way to get IPFS up and running on your machine is by installing [IP
 
 For installing and initializing IPFS from the command line, check out the [command-line quick start](../how-to/command-line-quick-start.md) guide.
 
+### Why doesn't my SHA hash match my CID?
+When you add a file to IPFS, IPFS splits it into smaller blocks. IPFS hashes each of these pieces individually, building a [Merkle Directed Acyclic Graphs (DAGs)](../concepts/merkle-dag.md) and resulting in an overall different hash.
+
 ## Contributing to IPFS
 
 ### How do I start contributing to IPFS?
@@ -40,7 +43,7 @@ Filecoin and IPFS are two separate, complementary protocols, both created by Pro
 
 In short: IPFS addresses and moves content, while Filecoin is an incentive layer to persist data.
 
-These components are separable - you can use one without the other, and IPFS already supports more self-organized or altruistic forms of data persistence via tools like [IPFS Cluster](https://cluster.ipfs.io/). Compatibility between IPFS and Filecoin is intended to be as seamless as possible, but we expect it to evolve over time. You can view the [draft spec for IPFS-Filecoin Interoperability](https://github.com/filecoin-project/specs/issues/143) and [ideas for future improvements](https://github.com/filecoin-project/specs/issues/144) to learn more.
+These components are separable - you can use one without the other, and IPFS already supports more self-organized or altruistic forms of data persistence via tools like [IPFS Cluster](https://cluster.ipfs.io/). Compatibility between IPFS and Filecoin is intended to be as seamless as possible, but we expect it to evolve. You can view the [draft spec for IPFS-Filecoin Interoperability](https://github.com/filecoin-project/specs/issues/143) and [ideas for future improvements](https://github.com/filecoin-project/specs/issues/144) to learn more.
 
 ## IPFS and Protocol Labs
 
