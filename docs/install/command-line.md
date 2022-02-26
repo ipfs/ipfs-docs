@@ -11,11 +11,11 @@ Installing IPFS through the command-line is handy if you plan on building applic
 
 ## System requirements
 
-IPFS requires 512MiB of memory and can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space, and the [default maximum disk storage](../how-to/configure-node.md) is set to 10GB.
+IPFS requires 512MiB of memory and can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space. One can enable automatic garbage collection via [--enable-gc](/reference/cli/#ipfs-daemon) and adjust the [default maximum disk storage](https://github.com/ipfs/go-ipfs/blob/v0.11.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
 
 ## Official distributions
 
-The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help users quickly find the latest version of every IPFS package. As soon as a new release of an IPFS package comes out, it is automatically shown on `dist.ipfs.io`, so you can be sure you're getting the latest software. These steps detail how to download and install Go-IPFS 0.9.0 from `dist.ipfs.io` using the command-line.
+The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help users quickly find the latest version of every IPFS package. As soon as a new release of an IPFS package comes out, it is automatically shown on `dist.ipfs.io`, so you can be sure you're getting the latest software. These steps detail how to download and install the latest `go-ipfs` from `dist.ipfs.io` using the command-line.
 
 | [Windows](#windows)                                                          | [macOS](#macos)                                                        | [Linux](#linux)                                                        |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -27,49 +27,63 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
 
    ```powershell
    cd ~\
-   wget https://dist.ipfs.io/go-ipfs/v0.9.0/go-ipfs_v0.9.0_windows-amd64.zip -Outfile go-ipfs_v0.9.0.zip
+   wget https://dist.ipfs.io/go-ipfs/v0.11.0/go-ipfs_v0.11.0_windows-amd64.zip -Outfile go-ipfs_v0.11.0.zip
    ```
 
-2. Unzip the file and move it somewhere handy.
+1. Unzip the file and move it somewhere handy.
 
    ```powershell
-   Expand-Archive -Path go-ipfs_v0.9.0.zip -DestinationPath ~\Apps\go-ipfs_v0.9.0
+   Expand-Archive -Path go-ipfs_v0.11.0.zip -DestinationPath ~\Apps\go-ipfs_v0.11.0
    ```
 
-3. Move into the `go-ipfs_v0.9.0` folder and check that the `ipfs.exe` works:
+1. Move into the `go-ipfs_v0.11.0` folder and check that the `ipfs.exe` works:
 
    ```powershell
-   cd ~\Apps\go-ipfs_v0.9.0\go-ipfs
+   cd ~\Apps\go-ipfs_v0.11.0\go-ipfs
    .\ipfs.exe --version
 
-   > ipfs version 0.9.0
+   > ipfs version 0.11.0
    ```
 
    While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH` by using the following steps.
 
-4. Print the current working directory and copy it to your clipboard:
+1. Save the current working directory into a temporary variable:
 
    ```powershell
-   pwd
-
-   > Path
-   > ----
-   > C:\Users\Johnny\Apps\go-ipfs_v0.9.0\go-ipfs
+   $GO_IPFS_LOCATION = pwd
    ```
 
-5. Add the address you just copied to PowerShell's `PATH` by adding it to the end of the `profile.ps1` file stored in `Documents\WindowsPowerShell`:
+1. Create a powershell profile:
+
+    ```powershell
+    if (!(Test-Path -Path $PROFILE)) { New-Item -ItemType File -Path $PROFILE -Force }
+    ```
+
+    This command first checks to see if you have a profile set. If you do, it leaves it there and doesn't create a new one. You can view the contents of your profile by opening it in Notepad:
+
+    ```powershell
+    notepad $PROFILE
+    ```
+
+1. Add the location of your Go-IPFS daemon and add it to PowerShell's `PATH` by truncating it to the end of your PowerShell profile:
 
    ```powershell
-   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\Johnny\Apps\go-ipfs_v0.9.0\go-ipfs')"
+   Add-Content $PROFILE "`n[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;$GO_IPFS_LOCATION')"
    ```
 
-6. Close and reopen your PowerShell window. Test that your IPFS path is set correctly by going to your home folder and asking IPFS for the version:
+1. Load your `$PROFILE`:
+
+    ```powershell
+    & $profile   
+    ```
+
+6. Test that your IPFS path is set correctly by going to your home folder and asking IPFS for the version:
 
    ```powershell
    cd ~
    ipfs --version
 
-   > ipfs version 0.9.0
+   > ipfs version 0.11.0
    ```
 
 ### macOS
@@ -81,13 +95,13 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
 1. Download the macOS binary from [`dist.ipfs.io`](https://dist.ipfs.io/#go-ipfs).
 
    ```bash
-   wget https://dist.ipfs.io/go-ipfs/v0.9.0/go-ipfs_v0.9.0_darwin-amd64.tar.gz
+   curl -O https://dist.ipfs.io/go-ipfs/v0.11.0/go-ipfs_v0.11.0_darwin-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.9.0_darwin-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.11.0_darwin-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
@@ -111,7 +125,7 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
    ```bash
    ipfs --version
 
-   > ipfs version 0.9.0
+   > ipfs version 0.11.0
    ```
 
 ### Linux
@@ -119,13 +133,13 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
 1. Download the Linux binary from [`dist.ipfs.io`](https://dist.ipfs.io/#go-ipfs).
 
    ```bash
-   wget https://dist.ipfs.io/go-ipfs/v0.9.0/go-ipfs_v0.9.0_linux-amd64.tar.gz
+   wget https://dist.ipfs.io/go-ipfs/v0.11.0/go-ipfs_v0.11.0_linux-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.9.0_linux-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.11.0_linux-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
@@ -149,7 +163,7 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
    ```bash
    ipfs --version
 
-   > ipfs version 0.9.0
+   > ipfs version 0.11.0
    ```
 
 ## Compile manually

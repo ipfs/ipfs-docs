@@ -1,0 +1,11 @@
+name: 'Update on new go-ipfs tag'
+inputs:
+  latest_ipfs_tag:
+      description: "latest go ipfs tag"
+      required: true
+outputs:
+  updated_branch:
+    description: "name of pushed branch with updated doc"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

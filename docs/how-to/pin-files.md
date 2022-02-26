@@ -1,6 +1,5 @@
 ---
 title: Pin files
-legacyUrl: https://docs.ipfs.io/guides/examples/pinning/
 description: Learn how to pin files in IPFS in order to keep your files and other objects local.
 ---
 
@@ -12,14 +11,68 @@ While this is nice, sometimes you want to be able to control what you keep aroun
 
 Let's look at this example to explore pinning to your local IPFS node in a bit more depth:
 
-```
-echo "ipfs rocks" > foo
-ipfs add foo
-ipfs pin ls --type=all
-ipfs pin rm <foo hash>
-ipfs pin rm <foo hash>
-ipfs pin ls --type=all
-```
+1. First, create a file called `foo` with the contents `ipfs rocks`:
+
+    ```shell
+    echo "ipfs rocks" > foo    
+    ```
+
+    The `echo` command does not give an output when using the _output redirection_ `>` instruction.
+
+1. Next, add `foo` to IPFS using the `ipfs add` command:
+
+    ```shell
+    ipfs add foo               
+
+    > added QmRTV3h1jLcACW4FRfdisokkQAk4E4qDhUzGpgdrd4JAFy foo
+    ```
+
+1. Next, generate a list of all the objects you have pinned to your local storage.
+
+    ```shell
+    ipfs pin ls --type=all     
+
+    
+    > QmQPeNsJPyVWPFDVHb77w8G42Fvo15z4bG2X8D2GhfbSXc recursive
+    > QmRTV3h1jLcACW4FRfdisokkQAk4E4qDhUzGpgdrd4JAFy recursive
+    > QmQy6xmJhrcC5QLboAcGFcAE1tC8CrwDVkrHdEYJkLscrQ indirect
+    > ...
+    ```
+    
+   The `pin ls` command will list all objects that are pinned to your local storage, `--type=all` means it will list all the different kinds of pins (recursive, indirect, etc.).
+
+1. Next, use the `pin rm <foo hash>` command to unpin the target object.
+
+    ```shell
+    ipfs pin rm <foo hash>     
+
+    > unpinned QmRTV3h1jLcACW4FRfdisokkQAk4E4qDhUzGpgdrd4JAFy
+    ```
+    
+    This will remove the `foo hash` object from your pinned items.
+
+
+1. Next, attempt to run the same command as the previous step.
+
+    ```shell
+    ipfs pin rm <foo hash>     
+
+    > Error: not pinned or pinned indirectly
+    ```
+    
+    Attempting to run `ipfs pin rm <foo hash>` again here will return an error, this is because the previous step has already removed the pin from `<foo hash>`.
+
+1. Next, generate a new list of all pinned objects.
+
+    ```shell
+    ipfs pin ls --type=all    
+
+    > QmQPeNsJPyVWPFDVHb77w8G42Fvo15z4bG2X8D2GhfbSXc recursive
+    > QmQy6xmJhrcC5QLboAcGFcAE1tC8CrwDVkrHdEYJkLscrQ indirect
+    > ...
+    ```
+    
+    You will notice that this list is the exact same as the previous one above, except the `<foo hash>` is no longer listed.
 
 ## Three kinds of pins
 
@@ -31,19 +84,74 @@ As you may have noticed in the example above, the first `ipfs pin rm` command di
 
 A pinned object cannot be garbage-collected — try this for proof:
 
-```bash
-ipfs add foo
-ipfs repo gc
-ipfs cat <foo hash>
-```
+1. First, add `foo` to IPFS.
+
+    ```bash
+    ipfs add foo           
+
+    > added QmRTV3h1jLcACW4FRfdisokkQAk4E4qDhUzGpgdrd4JAFy foo
+    > 11 B / 11 B [===================] 100.00%
+    ```
+    
+    This will add the file `foo` to IPFS.
+
+1. Next, use the `repo gc` command to perform garbage collection on the repository.
+
+    ```bash
+    ipfs repo gc
+
+    > removed QmVoSaWpZYicoLSAcdwxDPt2Gk4WVFCfBFTBtwwY2ASD9P
+    > removed QmcpK3cSDyPGiNriMZrZTNu8YCPBSiMAApuvMqXaJVyuWr
+    > removed QmdpczDhBmrkxerCUWkEcRExcTHFcA4EcDCeYNdXcV5iqE
+    > ...
+    ```
+    
+    The `repo gc` command will remove all unpinned objects from IPFS.
+
+1. Next, use command `cat <foo hash>` to show the contents of `foo`.
+
+    ```bash
+    ipfs cat <foo hash>    
+
+    > ipfs rocks
+    ```
+    
+    The command will return `ipfs rocks` as the `<foo hash>` was pinned, therefore it can't be removed.
+      
 
 But if `foo` were to somehow become unpinned ...
 
-```bash
-ipfs pin rm <foo hash>
-ipfs repo gc
-ipfs cat <foo hash>
-```
+1. Use the `pin rm` command to unpin `<foo hash>`.
+
+    ```bash
+    ipfs pin rm <foo hash>    
+
+    > unpinned QmRTV3h1jLcACW4FRfdisokkQAk4E4qDhUzGpgdrd4JAFy
+    ```
+    
+    This will unpin `foo`.
+
+1. Now, run the garbage collection command again.
+
+    ```bash
+    ipfs repo gc              
+
+    > removed QmPPjksRv8SqiibAy6bSAXBnnfcBf3QnTnApxWjcFUTTkZ                                                
+    > removed QmS3wrDNoaRtRi84K7Hf8jzh5sBZcwrQFj7CZLmmmacS2U                                                
+    > removed QmRTV3h1jLcACW4FRfdisokkQAk4E4qDhUzGpgdrd4JAFy
+    ```
+    
+    Just like before, this will remove all unpinned objects from IPFS.
+
+1. Finally, run `cat <foo hash>` again to see if it returns the contents of `foo`.
+    
+    ```bash
+    ipfs cat <foo hash>       
+
+    > ipfs rocks
+    ```
+    
+    You will notice it still returns the correct response, this is because while `<foo hash>` was removed from your local storage, the data still exists over IPFS.
 
 ## Local versus remote pinning
 

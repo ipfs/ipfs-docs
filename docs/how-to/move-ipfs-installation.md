@@ -24,13 +24,14 @@ The easiest way to move your IPFS installation is to grab the `.ipfs` folder, an
 1. Make a copy of the `.ipfs` directory:
 
    ```bash
-   cp --recursive --verbose .ipfs ipfs-backup
+   cp --recursive --verbose $([[ -z $(cp --help | grep "\-\-reflink" | head -n1) ]] || echo -n "--reflink=auto") .ipfs ipfs-backup
 
    > '.ipfs' -> 'ipfs-backup'
    > '.ipfs/datastore_spec' -> 'ipfs-backup/data'
    > ...
    ```
 
+The above command checks whether the current operating system supports the `cp --reflink` command. If it does, like in most Linux operating systems, then this command will use the `--reflink` argument when calling the `cp` program. If the operating system does not support the `--reflink` argument, like MacOS, then it will not use that argument.
 1. You now have a copy of your IPFS repository within the `ipfs-backup` folder.
 
 ### Windows

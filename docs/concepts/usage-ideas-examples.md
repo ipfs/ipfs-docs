@@ -314,4 +314,3 @@ Here is a non-exhaustive list of use cases that were not implemented yet. Pick u
 - [Make a Gif-sharing platform](https://discuss.ipfs.io/t/a-vine-clone-built-using-ipfs/3337)
 - An interactive P2P application working in crowded events such as festivals
 - [Ethereum/Solidity Smart Contract CI Toolchain on IPFS](https://discuss.ipfs.io/t/ethereum-solidity-smart-contract-ci-toolchain-on-ipfs-wip/1780)
-- [Various ideas from GitHub](https://github.com/ipfs/ipfs/labels/applications%20of%20ipfs)

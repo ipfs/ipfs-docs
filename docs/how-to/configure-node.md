@@ -57,7 +57,7 @@ documented in `ipfs config profile --help`.
 
   - You need a very simple and very reliable datastore you and trust your
     filesystem. This datastore stores each block as a separate file in the
-    underlying filesystem so it's unlikely to loose data unless there's an issue
+    underlying filesystem so it's unlikely to lose data unless there's an issue
     with the underlying file system.
   - You need to run garbage collection on a small (<= 10GiB) datastore. The
     default datastore, badger, can leave several gigabytes of data behind when
@@ -99,7 +99,7 @@ This document refers to the standard JSON types (e.g., `null`, `string`,
 Flags allow enabling and disabling features. However, unlike simple booleans,
 they can also be `null` (or omitted) to indicate that the default value should
 be chosen. This makes it easier for go-ipfs to change the defaults in the
-future unless the user _explicitly_ sets the flag to either `true` (enabled) or
+future, unless the user _explicitly_ sets the flag to either `true` (enabled) or
 `false` (disabled). Flags have three possible states:
 
 - `null` or missing (apply the default value).
@@ -126,8 +126,7 @@ of strings, or null:
 
 ### `duration`
 
-Duration is a type for describing lengths of time, using the same format go
-does (e.g, `"1d2h4m40.01s"`).
+Duration is a type for describing lengths of time, using the same format [go](https://pkg.go.dev/time#Duration.String) does (e.g, `"1d2h4m40.01s"`).
 
 ## `Addresses`
 
@@ -243,7 +242,7 @@ Type: `string` (one of `"enabled"` or `"disabled"`)
 
 ### `AutoNAT.Throttle`
 
-When set, this option configure's the AutoNAT services throttling behavior. By
+When set, this option configures the AutoNAT services throttling behavior. By
 default, go-ipfs will rate-limit the number of NAT checks performed for other
 nodes to 30 per minute, and 3 per peer.
 
@@ -267,9 +266,9 @@ Type: `integer` (non-negative, `0` means unlimited)
 
 Configures the interval for the above limits.
 
-Default: 1 Minute
+Default: `1m0s` (1 Minute)
 
-Type: `duration` (when `0`/unset, the default value is used)
+Type: `duration` (when set to `0` or unset, the default value is used)
 
 ## `Bootstrap`
 
@@ -675,18 +674,18 @@ Type: `string` (base64 encoded)
 A time duration specifying how frequently to republish ipns records to ensure
 they stay fresh on the network.
 
-Default: 4 hours.
+Default: `4h0m0s` (4 hours).
 
-Type: `interval` or an empty string for the default.
+Type: `duration` or an empty string for the default.
 
 ### `Ipns.RecordLifetime`
 
 A time duration specifying the value to set on ipns records for their validity
 lifetime.
 
-Default: 24 hours.
+Default: `24h0m0s` (24 hours).
 
-Type: `interval` or an empty string for the default.
+Type: `duration` or an empty string for the default.
 
 ### `Ipns.ResolveCacheSize`
 

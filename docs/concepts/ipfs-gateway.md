@@ -61,6 +61,7 @@ Protocol Labs maintains a [list of public gateways](https://ipfs.github.io/publi
 Categorizing gateways involves several dimensions:
 
 - [Read/write support](#read-only-and-writeable-gateways)
+- [Authentication support](#authenticated-gateways)
 - [Resolution style](#resolution-style)
 - [Service](#gateway-services)
 
@@ -69,6 +70,16 @@ Choosing the form of gateway usage has security, performance, and other function
 ### Read-only and writeable gateways
 
 The examples discussed in the earlier sections above illustrated the use of read-only HTTP gateways to fetch content from IPFS via an HTTP GET method. _Writeable_ HTTP gateways also support `POST`, `PUT`, and `DELETE` methods.
+
+### Authenticated gateways
+
+If a gateway provider wants to limit access to requests with authentication, they may need to configure a reverse proxy, develop an IPFS plugin, or set a cache-layer above IPFS.
+
+Configuring a reverse proxy is the most popular way for providers handling authentication. Reverse proxy can also keep the original IPFS API calls which makes gateway adaptable to all IPFS SDK and toolkits.
+
+![Auth with Reverse proxy](./images/ipfs-gateways/public-authed-gateway.png)
+
+Providers can design their own centralized authentication service like [Infura IPFS Auth](https://infura.io/docs/ipfs#section/Authentication/Overview), or a decentralized authentication service like [IPFS W3Auth](https://wiki.crust.network/docs/en/buildIPFSWeb3AuthGW)).
 
 ### Resolution style
 

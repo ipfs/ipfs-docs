@@ -90,25 +90,13 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/concepts/what-is-ipfs',
-                  '/concepts/how-ipfs-works',
-                  '/concepts/privacy',
-                  '/concepts/glossary',
-                  '/concepts/usage-ideas-examples',
-                  '/concepts/faq'
-                ]
-              },
-              {
-                title: 'Case studies',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  ['/concepts/case-study-arbol', 'Arbol'],
-                  ['/concepts/case-study-audius', 'Audius'],
-                  ['/concepts/case-study-fleek', 'Fleek'],
-                  ['/concepts/case-study-likecoin', 'LikeCoin'],
-                  ['/concepts/case-study-morpheus', 'Morpheus.Network'],
-                  ['/concepts/case-study-openbazaar', 'OpenBazaar']
+                    '/concepts/what-is-ipfs',
+                    '/concepts/how-ipfs-works',
+                    '/concepts/privacy-and-encryption',
+                    '/concepts/nodes',
+                    '/concepts/glossary',
+                    '/concepts/usage-ideas-examples',
+                    '/concepts/faq'
                 ]
               },
               {
@@ -140,7 +128,23 @@ module.exports = {
                 title: 'Integrating with the Web',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/concepts/ipfs-gateway', '/concepts/dnslink']
+                children: [
+                    '/concepts/ipfs-gateway', 
+                    '/concepts/dnslink'
+                ]
+              },
+              {
+                title: 'Case studies',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  ['/concepts/case-study-arbol', 'Arbol'],
+                  ['/concepts/case-study-audius', 'Audius'],
+                  ['/concepts/case-study-fleek', 'Fleek'],
+                  ['/concepts/case-study-likecoin', 'LikeCoin'],
+                  ['/concepts/case-study-morpheus', 'Morpheus.Network'],
+                  ['/concepts/case-study-openbazaar', 'OpenBazaar']
+                ]
               },
               {
                 title: 'Further reading',
@@ -171,9 +175,10 @@ module.exports = {
                   '/how-to/default-profile',
                   '/how-to/run-ipfs-inside-docker',
                   [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/custom-ipfs-repo',
+                    'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
                     'Customize an IPFS repo'
-                  ]
+                  ],
+                  '/how-to/troubleshooting'
                 ]
               },
               {
@@ -184,7 +189,6 @@ module.exports = {
                   '/how-to/work-with-blocks',
                   '/how-to/pin-files',
                   '/how-to/work-with-pinning-services',
-                  '/how-to/troubleshoot-file-transfers',
                   '/how-to/take-snapshot',
                   '/how-to/store-play-videos',
                   '/how-to/host-git-style-repo',

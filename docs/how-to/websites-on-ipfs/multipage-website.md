@@ -66,7 +66,7 @@ Before we dig into IPFS, let's first create the files we'll need for this mini-p
           'It takes Venus 225 days to orbit the sun.',
           'Venus was first discovered by 17th century Babylonian astronomers.',
           'Venus is nearly as big as the Earth with a diameter of 12,104 km.',
-          'The Earth's rotation is gradually slowing.',
+          'The Earth\'s rotation is gradually slowing.',
           'There is only one natural satellite of the planet Earth, the moon.',
           'Earth is the only planet in our solar system not named after a god.',
           'The Earth is the densest planet in the solar system.',
@@ -91,8 +91,8 @@ Before we dig into IPFS, let's first create the files we'll need for this mini-p
           'The average temperatue of Neptune is about -201 °C.',
           'There is a 1:20 million scale model of the solar system in Sweden.',
           'The gap between the Earth and our moon is bigger than the diameters of all the planets combined.',
-          'The first accurate calculation of the speed of light was using Jupiter's moons',
-          'Jupiter's magnetic field is believed to be a result of rapidly spinning metallic hydrogen at the core, and is ~10x stronger than the Earth's.',
+          'The first accurate calculation of the speed of light was using Jupiter\'s moons',
+          'Jupiter\'s magnetic field is believed to be a result of rapidly spinning metallic hydrogen at the core, and is ~10x stronger than the Earth\'s.',
           'Venus spins backwards.',
           'Uranus spins sideways, relative to the ecliptic plane of the solar system.',
           'It is easier to reach Pluto or escape the solar system from Earth than being able to <i>land</i> on the Sun.'
@@ -191,7 +191,7 @@ Instead of sharing the CID of your website, you publish the root CID of your web
 1. Open a terminal window, and navigate to where your multi-page project is saved:
 
     ```shell
-    cd ~/Code/random-planet-facts
+    cd ~/Code/multi-page-first-step
     ```
 
 1. Double check that this project has been added to IPFS by running `ipfs add -r .`:

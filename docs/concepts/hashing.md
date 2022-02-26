@@ -6,10 +6,6 @@ description: Learn about cryptographic hashes and why they're critical to how IP
 
 # Hashing
 
-::: tip
-If you're interested in how cryptographic hashes fit into how IPFS works with files in general, check out this video from IPFS Camp 2019! [Core Course: How IPFS Deals With Files](https://www.youtube.com/watch?v=Z5zNPwMDYGg)
-:::
-
 Cryptographic hashes are functions that take some arbitrary input and return a fixed-length value. The particular value depends on the given hash algorithm in use, such as [SHA-1](https://en.wikipedia.org/wiki/SHA-1) (used by git), [SHA-256](https://en.wikipedia.org/wiki/SHA-2), or [BLAKE2](<https://en.wikipedia.org/wiki/BLAKE_(hash_function)#BLAKE2>), but a given hash algorithm always returns the same value for a given input. Have a look at Wikipedia's [full list of hash functions](https://en.wikipedia.org/wiki/List_of_hash_functions) for more.
 
 As an example, the input:
@@ -32,32 +28,37 @@ However, the exact same input generates the following output using **SHA-256**:
 
 Notice that the second hash is longer than the first one. This is because SHA-1 creates a 160-bit hash, while SHA-256 creates a 256-bit hash. The prepended `0x` indicates that the following hash is represented as a hexadecimal number.
 
-Hashes can be represented in different bases (`base2`, `base16`, `base32`, etc.). In fact, IPFS makes use of that as part of its [content identifiers](content-addressing.md) and supports multiple base representations at the same time, using the [Multibase](https://github.com/multiformats/multibase) protocol.
+Hashes can be represented in different bases (`base2`, `base16`, `base32`, etc.). In fact, IPFS uses that as part of its [content identifiers](content-addressing.md) and supports multiple base representations at the same time, using the [Multibase](https://github.com/multiformats/multibase) protocol.
 
 For example, the SHA-256 hash of "Hello world" from above can be represented as base 32 as:
 
 ```
 mtwirsqawjuoloq2gvtyug2tc3jbf5htm2zeo4rsknfiv3fdp46a
 ```
+::: tip
+If you're interested in how cryptographic hashes fit into how IPFS works with files in general, check out this video from IPFS Camp 2019! [Core Course: How IPFS Deals With Files](https://www.youtube.com/watch?v=Z5zNPwMDYGg)
+:::
 
-## Hashes are important
+## Important hash characteristics
 
-Cryptographic hashes come with a couple of very important characteristics:
+Cryptographic hashes come with several important characteristics:
 
 - **deterministic** - the same input message always returns exactly the same output hash
 - **uncorrelated** - a small change in the message should generate a completely different hash
 - **unique** - it's infeasible to generate the same hash from two different messages
 - **one-way** - it's infeasible to guess or calculate the input message from its hash
 
-These features also mean we can use a cryptographic hash to identify any piece of data: the hash is unique to the data we calculated it from and it's not too long so sending it around the network doesn't take up a lot of resource. A hash is a fixed length, so the SHA-256 hash of a one-gigabyte video file is still only 32 bytes. 
+These features also mean we can use a cryptographic hash to identify any piece of data: the hash is unique to the data we calculated it from and it's not too long so sending it around the network doesn't take up a lot of resource. A hash is a fixed length, so the SHA-256 hash of a one-gigabyte video file is still only 32 bytes.
 
-That's critical for a distributed system like IPFS, where we want to be able to store and retrieve data from many places. A computer running IPFS can ask all the peers it's connected to whether they have a file with a particular hash and, if one of them does, they send back the whole file. Without a short, unique identifier like a cryptographic hash, that wouldn't be possible. This technique is called [content addressing](content-addressing.md) — because the content itself is used to form an address, rather than information about the computer and disk location it's stored at.
+That's critical for a distributed system like IPFS, where we want to be able to store and retrieve data from many places. A computer running IPFS can ask all the peers it's connected to whether they have a file with a particular hash and, if one of them does, they send back the whole file. Without a short, unique identifier like a cryptographic hash, [content addressing](content-addressing.md) wouldn't be possible.
 
-## Content identifiers are not file hashes
+## Example: Content Identifiers are not file hashes
 
-Hash functions are widely used as to check for file integrity. A download provider may publish the output of a hash function for a file, often called a _checksum_. The checksum enables users to verify that a file has not been altered since it was published. This check is done by performing the same hash function against the downloaded file that was used to generate the checksum. If that checksum that the user receives from the downloaded file exactly matches the checksum on the website, then the user knows that the file was not altered and can be trusted.
+Hash functions are widely used to check for file integrity. Because IPFS splits content into blocks and verifies them through [directed acyclic graphs (DAGs)](../concepts/merkle-dag.md), SHA file hashes won't match CIDs. Here's an example of what will happen if you try to do that.
 
-Let us look at a concrete example. When you download an image file for [Ubuntu Linux](https://ubuntu.com/) you might see the following `SHA-256` checksum on the Ubuntu website listed for verification purposes:
+A download provider may publish the output of a hash function for a file, often called a _checksum_. The checksum enables users to verify that a file has not been altered since it was published. This check is done by performing the same hash function against the downloaded file that was used to generate the checksum. If that checksum that the user receives from the downloaded file exactly matches the checksum on the website, then the user knows that the file was not altered and can be trusted.
+
+For example, when you download an image file for [Ubuntu Linux](https://ubuntu.com/) you might see the following `SHA-256` checksum on the Ubuntu website listed for verification purposes:
 
 ```
 0xB45165ED3CD437B9FFAD02A2AAD22A4DDC69162470E2622982889CE5826F6E3D ubuntu-20.04.1-desktop-amd64.iso
@@ -80,7 +81,7 @@ added QmPK1s3pNYLi9ERiq3BDxKa4XosgWwFRQUydHUtz4YgpqB ubuntu-20.04.1-desktop-amd6
  2.59 GiB / 2.59 GiB [==========================================================================================] 100.00%
 ```
 
-The string `QmPK1s3pNYLi9ERiq3BDxKa4XosgWwFRQUydHUtz4YgpqB` returned by the `ipfs add` command is the content identifier (CID) of the file `ubuntu-20.04.1-desktop-amd64.iso`. We can utilize the [CID Inspector](https://cid.ipfs.io/) to see what the CID includes. The actual hash is listed under `DIGEST (HEX)`:
+The string `QmPK1s3pNYLi9ERiq3BDxKa4XosgWwFRQUydHUtz4YgpqB` returned by the `ipfs add` command is the content identifier (CID) of the file `ubuntu-20.04.1-desktop-amd64.iso`. We can use the [CID Inspector](https://cid.ipfs.io/) to see what the CID includes. The actual hash is listed under `DIGEST (HEX)`:
 
 ```
 NAME: sha2-256
@@ -100,30 +101,4 @@ echo "0E7071C59DF3B9454D1D18A15270AA36D54F89606A576DC621757AFD44AD1D2E *ubuntu-2
 ubuntu-20.04.1-desktop-amd64.iso: FAILED
 shasum: WARNING: 1 computed checksum did NOT match
 ```
-
-As we can see, the hash included in the CID does NOT match the hash of the input file `ubuntu-20.04.1-desktop-amd64.iso`. To understand what the hash contained in the CID is, we must understand how IPFS stores files. IPFS uses a [directed acyclic graph (DAG)](merkle-dag.md) to keep track of all the data stored in IPFS. A CID identifies one specific node in this graph. This identifier is the result of hashing the node's contents using a cryptographic hash function like `SHA256`.
-
-Let's take a very simple example, the "Hello world" string above, as an illustration of how the DAG differs from the raw text (or binary data).
-
-```shell
-echo -n "Hello world" > /tmp/hello.txt
-ipfs add /tmp/hello.txt
-added QmNRCQWfgze6AbBCaT1rkrkV5tJ2aP4oTNPb5JZcXYywve hello.txt
- 11 B / 11 B [=========================================================] 100.00%
-hexdump -C $(grep -rl Hello.world ~/.ipfs/blocks/)
-00000000  0a 11 08 02 12 0b 48 65  6c 6c 6f 20 77 6f 72 6c  |......Hello worl|
-00000010  64 18 0b                                          |d..|
-00000013
-shasum -a 256 $(grep -rl Hello.world ~/.ipfs/blocks/)
-012a29aa21f4593528bb4c03a8556ac0729536c8307f4d5001c3de39c750b3ef  /home/username/.ipfs/blocks/H3/CIQACKRJVIQ7IWJVFC5UYA5IKVVMA4UVG3EDA72NKAA4HXRZY5ILH3Y.data
-```
-Checking with the [CID Inspector](https://cid.ipfs.io/#QmNRCQWfgze6AbBCaT1rkrkV5tJ2aP4oTNPb5JZcXYywve) you will find this matches:
-```
-CODE: 0x12
-NAME: sha2-256
-BITS: 256
-DIGEST (HEX): 012A29AA21F4593528BB4C03A8556AC0729536C8307F4D5001C3DE39C750B3EF
-```
-So what do those extra bytes mean? The `0a`, the 3 bytes `08 02 12`, and the `18` immediately following the text are common to all simple, short, text nodes (I'm still trying to figure out what they mean---jc). The `11`, `0b`, and final `0b` are [varint](https://github.com/multiformats/unsigned-varint)s indicating the length of the DAG, and the length of the data itself (twice).
-
-So, to summarize: to get the shasum of your data to match what IPFS thinks it is, you must prepend and append specific byte sequences to it. But if the dataset is large and must be broken into several other DAGs, there will be a nonempty `Links` section, and the above explanation is obviously not going to suffice.
+As we can see, the hash included in the CID does NOT match the hash of the input file `ubuntu-20.04.1-desktop-amd64.iso`.
