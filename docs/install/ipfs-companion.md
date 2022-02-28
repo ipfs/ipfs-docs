@@ -25,7 +25,7 @@ IPFS Companion supercharges your browser for the DWeb with features including th
 
 ### Detect URLs with IPFS paths
 
-IPFS Companion detects and tests requests for IPFS-like paths, such as `/ipfs/{cid}` or `/ipns/{peerid_or_host-with-dnslink}`, on any website. If a path is a valid IPFS address, it is redirected to load from your local gateway. The gateway at `localhost` will also automatically switch to a subdomain to provide a unique origin for each website:
+IPFS Companion detects and tests requests for IPFS-like paths, such as `/ipfs/{cid}` or `/ipns/{peerid_or_host-with-dnslink}`, on any website. If a path is a valid IPFS address, it is redirected to load from your local gateway, which converts data from one protocol to another. The gateway at `localhost` will also automatically switch to a subdomain to provide a unique origin for each website. Providing a unique origin accommodates operations that are restricted to content that shares the same protocol, domain, and port, also known as [same-origin content](https://en.wikipedia.org/wiki/Same-origin_policy#:~:text=In%20computing%2C%20the%20same%2Dorigin,pages%20have%20the%20same%20origin).
 
 > `https://ipfs.io/ipfs/QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR`  
 > → `http://localhost:8080/ipfs/QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR`
@@ -33,7 +33,7 @@ IPFS Companion detects and tests requests for IPFS-like paths, such as `/ipfs/{c
 
 ### Detect DNSLink-enabled URLs
 
-IPFS Companion detects DNSLink info in the DNS records of websites. If a site uses DNSLink, IPFS Companion redirects the HTTP request to your local gateway:
+IPFS Companion detects DNSLink info in the DNS records of websites. DNSLink is a simple protocol that links content and serviceability from DNS and leverages the DNS distributed architecture. See ../concepts/glossary/#dnslink. If a site uses DNSLink, IPFS Companion redirects the HTTP request to your local gateway:
 
 > `http://docs.ipfs.io`  
 > → `http://localhost:8080/ipns/docs.ipfs.io` → `http://docs.ipfs.io.ipns.localhost:8080/`
