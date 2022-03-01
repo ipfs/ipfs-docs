@@ -7,87 +7,11 @@ description: IPFS nodes can be customzied using the configuration file. The defa
 
 IPFS is configured through a json formatted text file, located by default at `~/.ipfs/config`. Implementation-specific information can be found within the [go-ipfs](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md) and [js-ipfs](https://github.com/ipfs/js-ipfs/blob/master/docs/CONFIG.md) repositories. It is read once at node instantiation, either for an offline command, or when starting the daemon. Commands that execute on a running daemon do not read the config file at runtime.
 
-## Profiles
+# Profiles
 
-Configuration profiles allow you to tweak configuration quickly. Profiles can be
-applied with `--profile` flag to `ipfs init` or with the `ipfs config profile apply` command. When a profile is applied a backup of the configuration file
-will be created in `$IPFS_PATH`.
+Configuring profiles allows you to tweak configuration quickly. You can apply profiles with the `--profile` flag to `ipfs init` or with the `ipfs config profile apply` command. When a profile is applied, a backup of the configuration file will be created in `$IPFS_PATH`.
 
-The available configuration profiles are listed below. You can also find them
-documented in `ipfs config profile --help`.
-
-- `server`
-
-  Disables local host discovery, recommended when
-  running IPFS on machines with public IPv4 addresses.
-
-- `randomports`
-
-  Use a random port number for swarm.
-
-- `default-datastore`
-
-  Configures the node to use the default datastore (flatfs).
-
-  Read the "flatfs" profile description for more information on this datastore.
-
-  This profile may only be applied when first initializing the node.
-
-- `local-discovery`
-
-  Sets default values to fields affected by the server
-  profile, enables discovery in local networks.
-
-- `test`
-
-  Reduces external interference of IPFS daemon, this
-  is useful when using the daemon in test environments.
-
-- `default-networking`
-
-  Restores default network settings.
-  Inverse profile of the test profile.
-
-- `flatfs`
-
-  Configures the node to use the flatfs datastore.
-
-  This is the most battle-tested and reliable datastore, but it's significantly
-  slower than the badger datastore. You should use this datastore if:
-
-  - You need a very simple and very reliable datastore you and trust your
-    filesystem. This datastore stores each block as a separate file in the
-    underlying filesystem so it's unlikely to lose data unless there's an issue
-    with the underlying file system.
-  - You need to run garbage collection on a small (<= 10GiB) datastore. The
-    default datastore, badger, can leave several gigabytes of data behind when
-    garbage collecting.
-  - You're concerned about memory usage. In its default configuration, badger can
-    use up to several gigabytes of memory.
-
-  This profile may only be applied when first initializing the node.
-
-- `badgerds`
-
-  Configures the node to use the badger datastore.
-
-  This is the fastest datastore. Use this datastore if performance, especially
-  when adding many gigabytes of files, is critical. However:
-
-  - This datastore will not properly reclaim space when your datastore is
-    smaller than several gigabytes. If you run IPFS with '--enable-gc' (you have
-    enabled block-level garbage collection), you plan on storing very little data in
-    your IPFS node, and disk usage is more critical than performance, consider using
-    flatfs.
-  - This datastore uses up to several gigabytes of memory.
-
-  This profile may only be applied when first initializing the node.
-
-- `lowpower`
-
-  Reduces daemon overhead on the system. May affect node
-  functionality - performance of content discovery and data
-  fetching may be degraded.
+For a list of all the available profiles and other details, see [Configure a profile](../how-to/default-profile/#configure-a-profile-and-switch-between-profiles).
 
 ## Types
 
