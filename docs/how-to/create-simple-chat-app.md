@@ -5,7 +5,7 @@ description: Learn how to deploy a minimal chat app entirely in the browser usin
 
 # Create a simple chat app
 
-This how-to demonstrates a minimal chat example in `js-ipfs` entirely in the browser. It uses WebRTC to achieve browser-to-browser connectivity where possible, and a circuit relay to connect browser nodes where not. Message passing is done with libp2p's pubsub.
+This how-to demonstrates a minimal chat example in `js-ipfs` entirely in the browser. It uses WebRTC to achieve browser-to-browser connectivity where possible, and a circuit relay to connect browser nodes where not. Message passing is done with [libp2p](https://libp2p.io/)'s pubsub.
 
 ## Getting the code
 
@@ -14,6 +14,9 @@ You can see the live demo [here](https://ipfs.io/ipfs/bafybeia5f2yk6td7ciroeped2
     ipfs get bafybeia5f2yk6td7ciroeped2uwfivo333b524t3zmoderfhl3xn7wi7aa
 
 Then simply open `index.html` in your web browser and you'll immediately begin automatically connecting to nodes and looking for peers!
+
+A quick video demo of the chat app: 
+![A quick video demo of the chat app with four browsers open](https://ipfs.io/ipfs/bafybeihh4zncvsazoyfnbzkjrc4a7vozp6ejhrsewfcg5p6tiqn3chccly "Quick Video Demo of the chat app")
 
 You can also fork [TheDiscordian/browser-ipfs-chat](https://github.com/TheDiscordian/browser-ipfs-chat) on GitHub, and it'll be ready to test right away. If you want to deploy your own version, simply edit `index.html` and follow the setup information below.
 
@@ -25,7 +28,11 @@ Let's take a look at how this works.
 
 In a browser, discovering and connecting to peers can be very hard, as we can't listen for new peers and we don't have access to the DHT. In order to have the best experience working in a browser, it's important to understand how to both find peers and stay connected with them.
 
-The chat example achieves this in two ways. Using WebRTC-Star, we achieve direct browser-to-browser communication, and with a circuit relay, we have a relay in the middle. The chat application also has a status indicator in the top left to let you know  what kind of connection you have. Green means you're connected to the relay, even if it's via another peer; yellow means you're only seeing direct peers; and red means you have no peers (at least none using the chat application).
+The chat example achieves this in two ways. Using WebRTC-Star, we achieve direct browser-to-browser communication, and with a circuit relay, we have a relay in the middle. The chat application also has a status indicator in the top left to let you know  what kind of connection you have.
+
+![Where the status indictor is](https://ipfs.io/ipfs/bafkreibtzxsr5pn2sqy6eipa3tz7vxgvlbpyavlivskr5x6zzsnkuqx7ia "The status indicator on the app")
+
+Green means you're connected to the relay, even if it's via another peer; yellow means you're only seeing direct peers; and red means you have no peers (at least none using the chat application).
 
 ![Network graph showing the paths nodes can use to discover and communicate with each other](https://ipfs.io/ipfs/QmX2og5BKJCMVaebEm9ZGsACEYExoGqxhJjePKNc2mZ2pE "Browser IPFS network graph")
 
@@ -35,9 +42,9 @@ The diagram above demonstrates what a three-user network can look like. It's wor
 
 ### Docker (optional)
 
-If you don't want to use Docker, skip to the [**WebRTC-Star**](#webrtc-star) section.
+Skip to the [**WebRTC-Star**](#webrtc-star) section, if you are not using Docker
 
-After this section we'll go over what WebRTC-Star and circuit relay do, and how to set them up. However, if you'd like to quickly roll your own kit using Docker, this example includes an image you can use. It might not be the best long-term solution, but it should be great if you want to quickly get rolling and experiment.
+After this section we'll go over what WebRTC-Star and circuit relay do, and how to set them up. However, if you'd like to quickly roll your own kit using Docker, this example includes an Docker image you can use. It might not be the best long-term solution, but it should be great if you want to quickly get rolling and experiment.
 
 #### Create a volume
 
