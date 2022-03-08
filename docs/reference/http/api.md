@@ -3803,7 +3803,13 @@ This endpoint returns a `text/plain` response body.
 
 ### cURL Example
 
-`curl -X POST -F file=@myfile "http://127.0.0.1:5001/api/v0/pubsub/pub?arg=<topic>"`
+`curl -X POST -F file=@myfile "http://127.0.0.1:5001/api/v0/pubsub/pub?arg=u<topic>"`
+
+When publishing data to a pubsub topic, the topic is required to be multibase encoded, this means a prefix needs to be attached to the topic.
+The cURL example above shows a `u` prefix attached to the topic. The `u` represents Base64URL encoding, which is the default/recommended encoding.
+More information on multibase encoding can be found [here](https://github.com/multiformats/multibase).
+
+You can also use [this](https://base64.guru/standards/base64url/encode) tool to convert your topic string to Base64URL.
 
 ---
 
