@@ -98,6 +98,12 @@ ipfs daemon
 
 Make a note of the TCP ports you receive. If they are different, use yours in the commands below.
 
+::: danger NEVER EXPOSE THE RPC API TO THE PUBLIC INTERNET
+
+The API port provides admin-level access to your IPFS node, see [RPC API docs](/reference/http/api/) for more information.
+
+:::
+
 Now, switch back to your original terminal. If you’re connected to the network, you should be able to see the IPFS addresses of your peers when you run:
 
 ```bash

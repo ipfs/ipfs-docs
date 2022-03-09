@@ -17,11 +17,17 @@ You can run IPFS inside Docker to simplify your deployment processes, as well as
     export ipfs_data=</absolute/path/to/somewhere_else/>
     ```
 
-1. Start a container running ipfs and expose ports `4001`, `5001` and `8080`:
+1. Start a container running ipfs and expose ports `4001` (P2P TCP/QUIC transports), `5001` (RPC API) and `8080` (Gateway):
 
     ```shell
     docker run -d --name ipfs_host -v $ipfs_staging:/export -v $ipfs_data:/data/ipfs -p 4001:4001 -p 4001:4001/udp -p 127.0.0.1:8080:8080 -p 127.0.0.1:5001:5001 ipfs/go-ipfs:latest
     ```
+
+    ::: danger NEVER EXPOSE THE RPC API TO THE PUBLIC INTERNET
+
+    The API port provides admin-level access to your IPFS node, see [RPC API docs](/reference/http/api/) for more information.
+
+    :::
 
 1. Watch the ipfs log:
 
