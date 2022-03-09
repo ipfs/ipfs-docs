@@ -79,7 +79,7 @@ In many cases, using this RPC API is preferable to embedding IPFS directly in yo
 
 The RPC API provides admin-level access to your IPFS node, including `+"`/api/v0/config`"+`.
 
-It is bound to `+"`localhost`"+` by default on purpose, you should never expose it to the public internet, just like you would never expose an SQL database or other backend service.
+It is bound to `+"`localhost`"+` by default on purpose. You should never expose it to the public internet, just like you would never expose a SQL database or other backend service.
 
 If you are looking for an interface designed for browsers and public internet, consider [Gateway](/concepts/glossary/#gateway) instead.
 :::

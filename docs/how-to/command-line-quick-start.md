@@ -100,7 +100,7 @@ Make a note of the TCP ports you receive. If they are different, use yours in th
 
 ::: danger NEVER EXPOSE THE RPC API TO THE PUBLIC INTERNET
 
-The API port provides admin-level access to your IPFS node, see [RPC API docs](/reference/http/api/) for more information.
+The API port provides admin-level access to your IPFS node.  See [RPC API docs](/reference/http/api/) for more information.
 
 :::
 

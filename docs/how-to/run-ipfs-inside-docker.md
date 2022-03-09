@@ -25,7 +25,7 @@ You can run IPFS inside Docker to simplify your deployment processes, as well as
 
     ::: danger NEVER EXPOSE THE RPC API TO THE PUBLIC INTERNET
 
-    The API port provides admin-level access to your IPFS node, see [RPC API docs](/reference/http/api/) for more information.
+    The API port provides admin-level access to your IPFS node.  See [RPC API docs](/reference/http/api/) for more information.
 
     :::
 
