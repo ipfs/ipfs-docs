@@ -3784,13 +3784,11 @@ Publish data to a given pubsub topic.
 
 ### Arguments
 
-- `arg` [string]: Topic to publish to. Required: **yes**.
-
-
+- `arg` [string]: Topic to publish to. Required: **yes**. Requires multibase encoding. The default and recommended encoding is `u` for base64url, but you can use any base encoding character. See the Multibase Table at [multibase](https://github.com/multiformats/multibase).
 
 ### Request Body
 
-Argument `data` is of file type. This endpoint expects one or several files (depending on the command) in the body of the request as 'multipart/form-data'.
+Argument `data` is of file type. This endpoint expects one or several files (depending on the command) in the body of the request as `<multipart/form-data>`.
 
 
 ### Response
@@ -3803,8 +3801,9 @@ This endpoint returns a `text/plain` response body.
 
 ### cURL Example
 
-`curl -X POST -F file=@myfile "http://127.0.0.1:5001/api/v0/pubsub/pub?arg=<topic>"`
+`curl -X POST -F file=@myfile "http://127.0.0.1:5001/api/v0/pubsub/pub?arg=u<topic>"`
 
+Note the `u` prefix before the topic name, satisfying the argument requirement to be base-encoded.
 ---
 
 ## /api/v0/pubsub/sub
@@ -4828,4 +4827,3 @@ On success, the call to this endpoint will return with 200 and the following bod
 `curl -X POST "http://127.0.0.1:5001/api/v0/version/deps"`
 
 ---
-
