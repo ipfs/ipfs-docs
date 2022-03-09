@@ -214,7 +214,7 @@ IPFS collaborative clusters are groups of IPFS nodes that collaboratively pin al
 An easy way to make sure important data is retained is to use a pinning service. These services run lots of IPFS nodes and will _pin_ your data for you! This way, you don't have to run and maintain your own IPFS node. Check out the [Persistence page](../../concepts/persistence.md) for more information on pinning services. In this tutorial, we're going to use [Pinata](https://pinata.cloud) since it gives new users 1GB of storage for free, and has a very simple interface:
 
 1. Go to [Pinata.cloud](https://pinata.cloud) and sign up or log in.
-2. Select **Upload File** and click **Browse**.
+2. Select **Upload** and click **Browse**.
 3. Navigate to your `index.html` file and click **Open**.
 4. Click **Upload**.
 5. You should be able to see your `index.html` file pinned:
