@@ -26,7 +26,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    ipfs daemon
    ```
 
-1. Create the file that you want to set up with IPNS. For the tutorial, we're just going to create a simple _hello world_ file:
+1. Open another command line window and create the file that you want to set up with IPNS. For the tutorial, we're just going to create a simple _hello world_ file:
 
    ```shell
    echo "Hello IPFS" > hello.txt
@@ -59,7 +59,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    > Published to k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew: /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
    ```
 
-   `k51...` is the key of your IPFS installation.
+   `k51...` is the public key or IPNS name of the IPFS you are running. You can now change the file repeatedly, and, even though the CID changes when you change the file, you can continue to use this key.
 
 1. You can view your file by going to `https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew`:
 
