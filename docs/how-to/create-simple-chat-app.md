@@ -28,9 +28,9 @@ Let's take a look at how this works.
 
 In a browser, discovering and connecting to peers can be very hard, as we can't listen for new peers and we don't have access to the DHT. In order to have the best experience working in a browser, it's important to understand how to both find peers and stay connected with them.
 
-The chat example achieves this in two ways. Using WebRTC-Star, we achieve direct browser-to-browser communication, and with a circuit relay, we have a relay in the middle. The chat application also has a status indicator in the top left to let you know  what kind of connection you have.
+The chat example achieves this in two ways. Using WebRTC-Star, we achieve direct browser-to-browser communication, and with a circuit relay, we have a relay in the middle. The chat application also has a status indicator in the top left to let you know what kind of connection you have.
 
-![Where the status indictor is](https://ipfs.io/ipfs/bafkreibtzxsr5pn2sqy6eipa3tz7vxgvlbpyavlivskr5x6zzsnkuqx7ia "The status indicator on the app")
+![Where the status indicator is](https://ipfs.io/ipfs/bafkreibtzxsr5pn2sqy6eipa3tz7vxgvlbpyavlivskr5x6zzsnkuqx7ia "The status indicator on the app")
 
 Green means you're connected to the relay, even if it's via another peer; yellow means you're only seeing direct peers; and red means you have no peers (at least none using the chat application).
 
