@@ -52,7 +52,7 @@ We work on [CI tools](https://github.com/ipfs/jenkins) and plan larger scale tes
 
 ## Design
 
-We have many design needs, but only a small team of visual and UX designers who divide their time between IPFS-related projects and other work here. That means there are a number of issues that could use your design contributions. As home to IPFS Desktop and Companion, the [ipfs-gui](https://github.com/ipfs/ipfs-gui) repo is a good place to look for opportunities to help move our design work forward. Simply filter by the label that best fits your skill set, such as [design-visual](https://github.com/ipfs/ipfs-gui/issues?q=is%3Aissue+is%3Aopen+label%3Adesign-visual) or [design-ux](https://github.com/ipfs/ipfs-gui/labels/design-ux).
+We have many design needs, but only a small team of visual and UX designers who divide their time between IPFS-related projects and other work here. That means there are a number of issues that could use your design contributions. As home to IPFS Desktop and Companion, the [ipfs-gui](https://github.com/ipfs/ipfs-gui) repo is a good place to look for opportunities to help move our design work forward. Simply filter by the label that best fits your skill set, such as [design-visual](https://github.com/ipfs/ipfs-gui/issues?q=is%3Aissue+is%3Aopen+label%3Atopic/design-visual) or [design-ux](https://github.com/ipfs/ipfs-gui/labels/topic/design-ux).
 
 ## Issues / Triaging
 
