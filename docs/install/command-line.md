@@ -172,27 +172,27 @@ Manually compiling IPFS is a fairly involved process that changes frequently. It
 
 ## Which node should you use with the command line
 
-The command line can detect and use any node that's running (unless it's configured to use an external binary file). Here's which node to use for the local daemon or a remote client:
+The command line can detect and use any node that's running, unless it's configured to use an external binary file. Here's which node to use for the local daemon or a remote client:
 
 ### Local daemon
 
-The local daemon process is automatically started with the ipfs daemon. It creates an `$IPFS_PATH/api` file with an [RPC API](./reference/http/api/#http-rpc-api-reference) address.
+The local daemon process is automatically started with the `ipfs` daemon. It creates an `$IPFS_PATH/api` file with an [RPC API](./reference/http/api/#http-rpc-api-reference) address.
 
 ### Remote client
 
-You can install the standalone CLI client independently and use it to talk to an IPFS Desktop node or a Brave node (either Release or Nightly). Use the [RPC API](./reference/http/api/#http-rpc-api-reference) to talk to the daemon.
+You can install the standalone CLI client independently and use it to talk to an IPFS Desktop node or a Brave node. Use the [RPC API](./reference/http/api/#http-rpc-api-reference) to talk to the `IPFS` daemon.
 
 When an IPFS command is executed without parameters, the CLI client checks whether the `$IPFS_PATH/api` file exists and connects to the address listed there.
 
-- If an `$IPFS_PATH` is in the default location (for example, `~/.ipfs` on Linux), then it works automatically and the ipfs CLI client talks to the locally running ipfs daemon without any additional configuration.
+- If an `$IPFS_PATH` is in the default location (for example, `~/.ipfs` on Linux), then it works automatically and the IPFS CLI client talks to the locally running `ipfs` daemon without any additional configuration.
 
-- If an `$IPFS_PATH` is not in the default location, pass `--api <rpc-api-addr>` or set the environment variable to `IPFS_PATH` to point to a directory with the api file with the existing daemon instance.
+- If an `$IPFS_PATH` is not in the default location, use the `--api <rpc-api-addr>` command-line argument or set the environment variable to `IPFS_PATH` to point to a directory with the api file with the existing daemon instance.
 
 #### Most common examples
 
 If you are an IPFS Desktop user, you can install CLI tools and an `.ipfs/api` file is automatically picked up. If you're not running IPFS Desktop, specify a custom port via `ipfs --api /ip4/127.0.0.1/tcp/<port> id`.
 
-For example, Brave RPC API runs on port 45001, so CLI can talk to the Brave daemon via `ipfs --api /ip4/127.0.0.1/tcp/45001 id`. But there is a trick to it: Use `mkdir -p ~/.ipfs && echo "/ip4/<ip>/tcp/<rpc-port>" > ~/.ipfs/api` to avoid passing `--api` every time.
+For example, Brave RPC API runs on port 45001, so the CLI can talk to the Brave daemon using `ipfs --api /ip4/127.0.0.1/tcp/45001 id`. you can also use `mkdir -p ~/.ipfs && echo "/ip4/<ip>/tcp/<rpc-port>" > ~/.ipfs/api` to avoid passing `--api` every time.
 
 ## Next steps
 
