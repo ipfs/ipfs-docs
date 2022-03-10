@@ -15,8 +15,6 @@ You can see the live demo [here](https://ipfs.io/ipfs/bafybeia5f2yk6td7ciroeped2
 
 Then simply open `index.html` in your web browser and you'll immediately begin automatically connecting to nodes and looking for peers!
 
-A quick video demo of the chat app: 
-![A quick video demo of the chat app with four browsers open](https://ipfs.io/ipfs/bafybeihh4zncvsazoyfnbzkjrc4a7vozp6ejhrsewfcg5p6tiqn3chccly "Quick Video Demo of the chat app")
 
 You can also fork [TheDiscordian/browser-ipfs-chat](https://github.com/TheDiscordian/browser-ipfs-chat) on GitHub, and it'll be ready to test right away. If you want to deploy your own version, simply edit `index.html` and follow the setup information below.
 
