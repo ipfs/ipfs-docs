@@ -42,9 +42,9 @@ The diagram above demonstrates what a three-user network can look like. It's wor
 
 ### Docker (optional)
 
-Skip to the [**WebRTC-Star**](#webrtc-star) section, if you are not using Docker
+Skip to the [**WebRTC-Star**](#webrtc-star) section, if you are not using Docker.
 
-After this section we'll go over what WebRTC-Star and circuit relay do, and how to set them up. However, if you'd like to quickly roll your own kit using Docker, this example includes an Docker image you can use. It might not be the best long-term solution, but it should be great if you want to quickly get rolling and experiment.
+After this section we'll go over what WebRTC-Star and circuit relay do, and how to set them up. However, if you'd like to quickly roll your own kit using Docker, this example includes a Docker image you can use. It might not be the best long-term solution, but it should be great if you want to quickly get rolling and experiment.
 
 #### Create a volume
 
