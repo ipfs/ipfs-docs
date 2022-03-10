@@ -40,9 +40,9 @@ Green means you're connected to the relay, even if it's via another peer; yellow
 The diagram above demonstrates what a three-user network can look like. It's worth noting that the browser nodes can communicate with `go-ipfs` as well, so BrowserC doesn't have to be a browser at all, but instead could be a `go-ipfs` node!
 :::
 
-### Docker (optional)
+### Docker
 
-Skip to the [**WebRTC-Star**](#webrtc-star) section, if you are not using Docker.
+This step is optional. If you are not using Docker skip to the [**WebRTC-Star**](#webrtc-star) section.
 
 After this section we'll go over what WebRTC-Star and circuit relay do, and how to set them up. However, if you'd like to quickly roll your own kit using Docker, this example includes a Docker image you can use. It might not be the best long-term solution, but it should be great if you want to quickly get rolling and experiment.
 
