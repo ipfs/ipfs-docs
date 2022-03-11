@@ -62,7 +62,7 @@ Or, if you'd rather use a package manager, check this [list of third-party packa
 
    ![The IPFS Desktop status bar menu in the Windows status bar.](./images/ipfs-desktop/install-windows-ipfs-desktop-status-bar.png)
 
-The IPFS Desktop application has finished installing. You can now start to [add your site](#add-your-site).
+The IPFS Desktop application has finished installing. You can now start to [add your site](./how-to/websites-on-ipfs/single-page-website/#add-your-site).
 
 ## macOS
 
@@ -113,7 +113,7 @@ While these instructions are specific to Ubuntu, they will likely work with most
 ### Install using AppImage
 
 :::warning
-When installing IPFS Desktop using an AppImage executable, you will not have access to the command-line `ipfs` commands. This limitation is due to how AppImages work and how they containerize their processes. 
+When installing IPFS Desktop using an AppImage executable, you will not have access to the command-line `ipfs` commands. This limitation is due to how AppImages work and how they containerize their processes.
 
 If you are certain that you do not need to use the command-line `ipfs` commands, then go ahead and install the AppImage. Otherwise, consider using the [deb installer ↑](#install-with-deb)
 :::
