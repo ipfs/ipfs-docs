@@ -176,7 +176,7 @@ The command line can detect and use any node that's running, unless it's configu
 
 ### Local daemon
 
-The local daemon process is automatically started in the CLI with `ipfs daemon`. It creates an `$IPFS_PATH/api` file with an [RPC API](./reference/http/api/#http-rpc-api-reference) address.
+The local daemon process is automatically started in the CLI with the command `ipfs daemon`. It creates an `$IPFS_PATH/api` file with an [RPC API](./reference/http/api/#http-rpc-api-reference) address.
 
 ### Remote client
 
