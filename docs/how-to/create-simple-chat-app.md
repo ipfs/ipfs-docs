@@ -15,6 +15,8 @@ You can see the live demo [here](https://ipfs.io/ipfs/bafybeia5f2yk6td7ciroeped2
 
 Then simply open `index.html` in your web browser and you'll immediately begin automatically connecting to nodes and looking for peers!
 
+A quick demo of the app: 
+![A quick demo of the browser chat app](https://ipfs.io/ipfs/bafkreiguhhdgbivdzzzmohhdgilw2nk3d73idz4zjlciv6uws5ovfxm5xu "A quick demo of the browser chat app")
 
 You can also fork [TheDiscordian/browser-ipfs-chat](https://github.com/TheDiscordian/browser-ipfs-chat) on GitHub, and it'll be ready to test right away. If you want to deploy your own version, simply edit `index.html` and follow the setup information below.
 
@@ -234,7 +236,7 @@ Restart your `go-ipfs` node however you normally do (possibly `systemctl --user 
 
 Using `p2p-circuit` can be a bit tricky. Once we connect to the relay from a browser, we're not advertising that we're able to be reached through it! For this purpose, this how-to includes a Python script that runs alongside `go-ipfs` and advertises the browser `js-ipfs` peers it encounters over [PubSub](https://docs.libp2p.io/concepts/publish-subscribe/) with a `p2p-circuit` [multiaddress](https://docs.libp2p.io/concepts/addressing/).
 
-You can find the Python script [here](https://gist.github.com/TheDiscordian/51962fea72f8d5a5c3bba79dd7009e1c). It can be run with a simple `python ipfs_peeradvertiser.py`. However, ensure you first edit `CIRCUIT` with your own node's information, or you won't announce the peers correctly, and they won't know how to use your relay to connect to other peers.
+You can find the Python script [here](https://gist.github.com/TheDiscordian/51962fea72f8d5a5c3bba79dd7009e1c). It can be run with a simple `python ipfs_peeradvertiser.py`. However, ensure you first edit `CIRCUIT` with your own node's information, or you won't announce peers correctly, and they won't know how to use your relay to connect to other peers.
 
 You can retrieve your own circuit info quite easily. Simply run `ipfs id` on your `go-ipfs` node to get your PeerID, then form the circuit URL like so:
 
@@ -332,7 +334,7 @@ Nginx is now operating as a reverse proxy, giving you secured WebSockets!
 
 ## Communication
 
-Whew! Since you made it this far, you might be wondering "what is communication like?" Luckily the answer is that it's _very_ easy in comparison to finding the peers, with only minor pitfalls. We're going to simply cover how we're using [PubSub](https://docs.libp2p.io/concepts/publish-subscribe/) in the chat example, and exactly what pitfalls were found while it was developed.
+Whew! Since you made it this far, you might be wondering "what is communication like?" Luckily the answer is that it's _very_ easy in comparison to finding peers, with only minor pitfalls. We're going to simply cover how we're using [PubSub](https://docs.libp2p.io/concepts/publish-subscribe/) in the chat example, and exactly what pitfalls were found while it was developed.
 
 ### PubSub
 
