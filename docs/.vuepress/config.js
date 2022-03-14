@@ -178,6 +178,7 @@ module.exports = {
                     'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
                     'Customize an IPFS repo'
                   ],
+                  '/how-to/best-practices-for-ipfs-builders',
                   '/how-to/troubleshooting'
                 ]
               },
