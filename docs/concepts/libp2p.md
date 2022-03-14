@@ -72,3 +72,5 @@ Often abbreviated as _pub-sub_, this is a system where peers congregate around t
 - [Getting started with Libp2p](https://docs.libp2p.io/tutorials/getting-started/)
 - [The Libp2p glossary](https://docs.libp2p.io/reference/glossary/)
 - [The Libp2p specification](https://github.com/libp2p/specs)
+- [ResNetLab on Tour - Content Routing](https://research.protocol.ai/tutorials/resnetlab-on-tour/content-routing/)
+- [ResNetLab on Tour - Content Exchange](https://research.protocol.ai/tutorials/resnetlab-on-tour/content-exchange/)

@@ -143,3 +143,4 @@ Check out these links for more information on CIDs and how they work:
 
 - [Core Course: How IPFS Deals With Files](https://www.youtube.com/watch?v=Z5zNPwMDYGg)
 - [Files and IPFS Companion](https://www.youtube.com/watch?v=OCv5PvLnk-Y)
+- [ResNetLab on Tour](https://research.protocol.ai/tutorials/resnetlab-on-tour/content-addressing/)

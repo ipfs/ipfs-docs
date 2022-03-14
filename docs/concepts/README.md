@@ -24,6 +24,10 @@ Want the basics in theater mode? Check out these helpful videos for an overview 
 
 - [IPFS: A Whiteboard Overview](https://www.youtube.com/watch?v=J-drqD2UebM)
 
+Check out ResNetLab on Tour for complete tutorials on IPFS and the Web 3.0 stack:
+
+- [ResNetLab on Tour 2021](https://research.protocol.ai/tutorials/resnetlab-on-tour/)
+
 ## IPFS 101
 
 Get the basic concepts of IPFS in one place, including:
