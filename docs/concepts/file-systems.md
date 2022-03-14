@@ -31,7 +31,6 @@ MFS is accessed through the files commands in the IPFS CLI and API. The commands
 - [View contents of a directory](#view-contents-of-a-directory)
 - [Copy a file or directory](#copy-a-file-or-directory)
 - [Move a file or directory](#move-a-file-or-directory)
-- 
 - [Read the contents of a file](#read-the-contents-of-a-file)
 - [Remove a file or directory](#remove-a-file-or-directory)
 
