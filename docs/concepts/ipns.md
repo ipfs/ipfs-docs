@@ -136,4 +136,4 @@ In the same way, you can republish a new version of your website under the same 
 IPNS is not the only way to create mutable addresses on IPFS. You can also use [DNSLink](dnslink.md), which is currently much faster than IPNS and also uses human-readable names. Other community members are exploring ways to use blockchains to store common name records.
 
 ## Further Resources
-- [ResNetLab on Tour](https://research.protocol.ai/tutorials/resnetlab-on-tour/mutable-content/)
+- [ResNetLab on Tour - Mutable Content](https://research.protocol.ai/tutorials/resnetlab-on-tour/mutable-content/)
