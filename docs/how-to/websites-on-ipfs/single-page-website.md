@@ -16,6 +16,7 @@ IPFS desktop application is the easiest way to get up and running quickly with I
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | [![Windows icon](./images/single-page-website/windows-icon.png)](#windows) | [![macOS icon](./images/single-page-website/apple-icon.png)](#macos) | [![Linux icon](./images/single-page-website/linux-icon.png)](#linux) |
 
+Already downloaded? you can [Skip this step](#add-your-site)
 ### Windows
 
 1. Download the latest available `.exe` file from the [IPFS desktop downloads page](https://github.com/ipfs/ipfs-desktop/releases):
