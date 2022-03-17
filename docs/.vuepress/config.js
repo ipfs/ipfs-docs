@@ -118,7 +118,7 @@ module.exports = {
                   '/concepts/dht',
                   '/concepts/merkle-dag',
                   '/concepts/bitswap',
-                  '/concepts/ipld',
+                  ['https://ipld.io/docs/intro/primer/', 'IPLD' ],
                   '/concepts/ipns',
                   '/concepts/libp2p',
                   '/concepts/file-systems'
@@ -178,6 +178,7 @@ module.exports = {
                     'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
                     'Customize an IPFS repo'
                   ],
+                  '/how-to/best-practices-for-ipfs-builders',
                   '/how-to/troubleshooting'
                 ]
               },
