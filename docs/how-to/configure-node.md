@@ -696,8 +696,11 @@ Type: `string`
 
 ## `Pubsub`
 
-Pubsub configures the `ipfs pubsub` subsystem. To use, it must be enabled by
-passing the `--enable-pubsub-experiment` flag to the daemon.
+Pubsub allows you to publish and subscribe to messages on a given topic. To enable it, use the `--enable-pubsub-experiment` flag to the daemon.
+
+```shell
+ipfs pubsub --enable-pubsub-experiment
+```
 
 ### `Pubsub.Router`
 
