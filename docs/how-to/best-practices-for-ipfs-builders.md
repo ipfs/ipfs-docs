@@ -1,4 +1,5 @@
----title: Best practices for IPFS builders
+---
+title: Best practices for IPFS builders
 description: Some IPFS features are disabled or not defaults, but we encourage their use under the right circumstances. We list them here for easy access by busy builders.
 date: 2022-03-11
 ---
