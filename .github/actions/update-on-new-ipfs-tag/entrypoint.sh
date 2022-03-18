@@ -27,9 +27,11 @@ else
 
      # update installation docs
      cd $ROOT # go back to root of ipfs-docs repo
+     CURRENT_IPFS_NUMBER=${CURRENT_IPFS_TAG:1}
+     LATEST_IPFS_NUMBER=${LATEST_IPFS_TAG:1}
      while read -r file; do
-          echo "replacing $CURRENT_IPFS_TAG with $LATEST_IPFS_TAG in $file"
-          sed -E -i "s/$CURRENT_IPFS_TAG/$LATEST_IPFS_TAG/g" $file
+          echo "replacing $CURRENT_IPFS_NUMBER with $LATEST_IPFS_NUMBER in $file"
+          sed -E -i "s/$CURRENT_IPFS_NUMBER/$LATEST_IPFS_NUMBER/g" $file
      done <<< "$(grep "current-ipfs-version" ./docs -R --files-with-matches)"
 
      # update cli docs
