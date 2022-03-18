@@ -45,6 +45,7 @@ const MaxIndent = 20
 // Endpoint defines an IPFS RPC API endpoint.
 type Endpoint struct {
 	Name        string
+	Status      cmds.Status
 	Arguments   []*Argument
 	Options     []*Argument
 	Description string
@@ -73,6 +74,16 @@ const APIPrefix = "/api/v0"
 // AllEndpoints gathers all the endpoints from go-ipfs.
 func AllEndpoints() []*Endpoint {
 	return Endpoints(APIPrefix, corecmds.Root)
+}
+
+func InStatus(endpoints []*Endpoint, status cmds.Status) []*Endpoint {
+	var results []*Endpoint
+	for _, endpoint := range endpoints {
+		if endpoint.Status == status {
+			results = append(results, endpoint)
+		}
+	}
+	return results
 }
 
 func IPFSVersion() string {
@@ -128,6 +139,7 @@ func Endpoints(name string, cmd *cmds.Command) (endpoints []*Endpoint) {
 		endpoints = []*Endpoint{
 			{
 				Name:        name,
+				Status:      cmd.Status,
 				Description: cmd.Helptext.Tagline,
 				Arguments:   arguments,
 				Options:     options,
