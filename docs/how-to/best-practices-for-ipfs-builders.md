@@ -36,9 +36,9 @@ To convert a CID from v0 to v1, see [CID conversion](https://docs.ipfs.io/concep
 
 For more information on content addressing and CID versions, see [Content Addressing and CIDs](https://docs.ipfs.io/concepts/content-addressing/#content-addressing-and-cids).
 
-## Enable pubsub if you need fast IPNS
+## Enable pubsub for fast IPNS
 
-Pubsub is one of the available options for configuring your IPFS node. It allows you to publish and subscribe to messages on a given topic. It can be a quick alternative to accessing data instead of setting up [IPNS](../concepts/ipns/#interplanetary-name-system-ipns). Pubsub is an experimental feature and it should not be used in a production environment. It is disabled by default.
+As a standalone feature, `pubsub` is a way to publish and subscribe to messages. However, within `ipns`, you can use it to accelerate  publishing and resolution of IPNS records. Within IPNS, `pubsub` calls both the topic and the DHT (Distributed Hash Table) key of the IPNS. Pubsub is an experimental feature, so use it with care. It's disabled by default.
 
 To use this feature, use `Ipns.UsePubsub` before starting the IPFS daemon:
 
@@ -47,7 +47,7 @@ ipfs config --json Ipns.UsePubsub true
 ipfs daemon
 ```
 
-From this point on, IPNS will be resolved using both DHT and pubsub. Be mindful that this is still an experimental feature, with known limitations. See: 
+From this point on, IPNS will be resolved using both the `pubsub` and the DHT. Learn more about the limitations of this experimental feature here: 
 
 - [Experimental features > IPNS pubsub](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#ipns-pubsub)
 - [Enable IPNS over pubsub by default, Issue 8591](https://github.com/ipfs/go-ipfs/issues/8591)
