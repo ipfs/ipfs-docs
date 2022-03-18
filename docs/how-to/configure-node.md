@@ -7,7 +7,7 @@ description: IPFS nodes can be customzied using the configuration file. The defa
 
 IPFS is configured through a json formatted text file, located by default at `~/.ipfs/config`. Implementation-specific information can be found within the [go-ipfs](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md) and [js-ipfs](https://github.com/ipfs/js-ipfs/blob/master/docs/CONFIG.md) repositories. It is read once at node instantiation, either for an offline command, or when starting the daemon. Commands that execute on a running daemon do not read the config file at runtime.
 
-# Profiles
+## Profiles
 
 Configuring profiles allows you to tweak configuration quickly. You can apply profiles with the `--profile` flag to `ipfs init` or with the `ipfs config profile apply` command. When a profile is applied, a backup of the configuration file will be created in `$IPFS_PATH`.
 
@@ -696,7 +696,7 @@ Type: `string`
 
 ## `Pubsub`
 
-Pubsub allows you to publish and subscribe to messages on a given topic. To enable it, use the `--enable-pubsub-experiment` flag to the daemon.
+Pubsub allows you to publish and subscribe to messages on a given topic. To enable it, use the `--enable-pubsub-experiment` flag.
 
 ```shell
 ipfs pubsub --enable-pubsub-experiment
