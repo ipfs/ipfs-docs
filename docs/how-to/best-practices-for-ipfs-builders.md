@@ -39,7 +39,7 @@ For more information on content addressing and CID versions, see [Content Addres
 
 ## Enable pubsub for fast IPNS
 
-As a standalone feature, `pubsub` is a way to publish and subscribe to messages. However, within `ipns`, you can use it to accelerate  publishing and resolution of IPNS records. Within IPNS, `pubsub` calls both the topic and the DHT (Distributed Hash Table) key of the IPNS. Pubsub is an experimental feature, so use it with care. It's disabled by default.
+As a standalone feature, `pubsub` is a way to publish and subscribe to messages. However, within `ipns`, you can use it to accelerate  publishing and resolution of IPNS records. Pubsub is an experimental feature, so use it with care. It's disabled by default.
 
 To use this feature, use `Ipns.UsePubsub` before starting the IPFS daemon:
 
