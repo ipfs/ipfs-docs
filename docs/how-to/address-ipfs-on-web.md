@@ -106,7 +106,7 @@ Learn more about daemon configuration for hosting a public gateway:
 ::: warning Known issues
 
 - Some browsers and other user agents force lowercase for the authority part of URLs, breaking case-sensitive CIDs before the HTTP gateway has a chance to read them
-- DNS label length is limited to 63 characters ([RFC 1034](https://tools.ietf.org/html/rfc1034#page-7))
+- DNS label length is limited to 63 characters ([RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034#page-7))
 
 Due to these limitations, the use of short, case-insensitive CIDv1 in a subdomain context is advised.
 Base32 is the safe default; the less-popular Base36 can be used for longer ED25519 libp2p keys.
@@ -138,7 +138,8 @@ The multihash in CIDv1 is the same as in the original CIDv0.
 #### Manual — use cid.ipfs.io or the command line
 
 One can also do the conversion manually.
-To convert a CID to Base32 ([RFC4648](https://tools.ietf.org/html/rfc4648#section-6), no padding) use [cid.ipfs.io](https://cid.ipfs.io) or the command line:
+
+To convert a CID to Base32 ([RFC4648](https://datatracker.ietf.org/doc/html/rfc4648#section-6), no padding) use [cid.ipfs.io](https://cid.ipfs.io) or the command line:
 
 ```shell-session
 $ ipfs cid base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
@@ -170,16 +171,31 @@ For a complete DNSLink guide, including tutorials, usage examples, and FAQs, che
 
 ## Native URLs
 
-Subdomain convention can be replaced with a native handler. The IPFS URL protocol scheme follows the same requirement of case-insensitive CIDv1 in Base32 as subdomains:
-
 ```plaintext
-ipfs://{cidv1b32}/path/to/resource
+ipfs://{cid}/path/to/subresource/cat.jpg
 ```
 
-An IPFS URL does not retain the original path, but instead requires a conversion step to/from URI representation:
+The native address format is the same as a [subdomain gateway](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) HTTP URL, but with:
 
-> `ipfs://{immutable-root}/path/to/resourceA` → `/ipfs/{immutable-root}/path/to/resourceA`  
-> `ipns://{mutable-root}/path/to/resourceB` → `/ipns/{mutable-root}/path/to/resourceB`
+- protocol scheme replaced by `ipfs` or `ipns` namespace
+- location-based authority component (gateway host+port) replaced with content-addressed one in the form of a unique content identifier (CID)
+
+For example:
+
+```plaintext
+ipfs://{cidv1}
+ipfs://{cidv1}/path/to/resource
+ipfs://{cidv1}/path/to/resource?query=foo#fragment
+
+ipns://{cidv1-libp2p-key}
+ipns://{cidv1-libp2p-key}/path/to/resource
+ipns://{dnslink-name}/path/to/resource?query=foo#fragment
+```
+
+::: tip
+Our main goal here is to reuse existing standards that maximize interoperability with existing user-agents like browsers and CLI tools. If something is not clear, HTTP URL rules apply.
+:::
+
 
 The first element after the double slash is an opaque identifier representing the content root. It is interpreted as an authority component used for origin calculation, which provides necessary isolation between security contexts of different content trees.
 
@@ -189,11 +205,17 @@ Example:
 ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
 ```
 
-::: tip
-
-Native URIs require a CID to be case-insensitive. Use of CIDv1 in Base32 is advised.
-
+::: warning Avoid case-sensitive CID in ipfs://
+Some user agents will force-lowercase the CID component of URL-like address.
+To ensure interop with existing libraries and software, use case-insensitive CID encoding. Use of CIDv1 in Base32 or Base36 is advised.
 :::
+
+### Turning native address to a canonical content path
+
+Every "URL" address can be turned back into a content path with ease:
+
+> `ipfs://{immutable-root}/path/to/resourceA` → `/ipfs/{immutable-root}/path/to/resourceA`  
+> `ipns://{mutable-root}/path/to/resourceB` → `/ipns/{mutable-root}/path/to/resourceB`
 
 ## Further resources
 
@@ -207,7 +229,7 @@ Discussions around IPFS addressing have been going on since [@jbenet](https://gi
 
 ### IPFS Companion
 
-[IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion) is a browser extension that simplifies access to IPFS resources.
+[IPFS Companion](https://github.com/ipfs/ipfs-companion#readme) is a browser extension that simplifies access to IPFS resources.
 
 It provides support for native URLs and will automatically redirect IPFS gateway requests to your local daemon so that you are not relying on or trusting remote gateways.
 
