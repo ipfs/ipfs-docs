@@ -25,6 +25,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           source_branch: ${{ steps.update.outputs.updated_branch }}
           destination_branch: "main"
-          pr_title: "Bump CLI and HTTP API reference to go-ipfs ${{ steps.latest_ipfs.outputs.latest_tag }}"
+          pr_title: "Bump references to go-ipfs ${{ steps.latest_ipfs.outputs.latest_tag }}"
           pr_body: "Release Notes: https://github.com/ipfs/go-ipfs/releases/${{ steps.latest_ipfs.outputs.latest_tag }}"
           pr_label: "needs/triage,P0"
