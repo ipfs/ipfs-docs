@@ -41,9 +41,9 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    > 11 B / 11 B [=====================================================] 100.00%
    ```
 
-   Take note of the `Qm` hash output by IPFS.
+   Take note of the CID output by IPFS.
 
-1. Use `cat` and the `Qm` hash you just got from IPFS to view the file again:
+1. Use `cat` and the CID you just got from IPFS to view the file again:
 
    ```shell
    ipfs cat QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
@@ -51,7 +51,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    > Hello IPFS
    ```
 
-1. Publish your `Qm` hash to IPNS:
+1. Publish your CID to IPNS:
 
    ```shell
    ipfs name publish /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
@@ -91,7 +91,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    > Hello again IPFS
    ```
 
-You can view the `Qm` hash of the file associated with your `k5` key by using `name resolve`:
+You can view the CID of the file associated with your `k5` key by using `name resolve`:
 
 ```shell
 ipfs name resolve
