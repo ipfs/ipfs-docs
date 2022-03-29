@@ -18,8 +18,6 @@ Installation instructions for [Windows](../install/ipfs-desktop/#windows), [MacO
 The installation guides linked above are straight forward and easy to follow; simply follow the instructions that correspond to your operating system and you will have IPFS Desktop going in just a few minutes.
 
 
----
-
 
 ## Share a local file using IPFS Desktop
 
