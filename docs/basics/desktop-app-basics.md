@@ -9,9 +9,7 @@ This guide will walk you through the basics of IPFS Desktop and will teach you h
 
 If you are unsure what some of the terms mean, check out the [glossary](../concepts/glossary/) where you can find definitions of all the common terms used when talking about IPFS.
 
-
 ---
-
 
 ## Install IPFS Desktop
 
@@ -28,13 +26,9 @@ The installation guides linked above are straight forward and easy to follow; si
 Now that you have IPFS Desktop up and running, you can add the files that you wish to host on IPFS.
 
 1. First, open IPFS Desktop and make sure you are connected to IPFS. Navigate to the status screen by clicking on the `Status` tab on the left side of the app. At the top of the status screen you will see that it says "Connected to IPFS".
-
 1. Now that you know you are connected to IPFS, navigate to the files screen. To do this simply click on the `Files` tab on the left side of the app.
-
 1. On the files screen, you will see a button that says `+Import`, click on that and then select either `File` or `Folder`. If you are uploading just a single file to IPFS, select the `File` option. If you are uploading a folder containing multiple files, select the `Folder` option. Selecting either option will bring up a file selection window.
-
 1. In the file selection window, navigate to the file or folder that you wish to upload and host on IPFS. Once you have found the file or folder, simply double click on it.
-
 1. Your file has now been imported to your local IPFS node!
 
 When files are imported to your IPFS node, they are automatically given a content identifier (CID). The CID for each file is listed directly under the file name on the `Files` page. To share a file that you are hosting on IPFS, simply click the 3 dots to the right of the desired file, select `Copy CID` and send the CID to who ever you would like to have access to the file. Remember that your node must be online for other peers to retrieve the data from you.
