@@ -184,7 +184,7 @@ An experimental data store used when `--nocopy` is passed to `ipfs add`. It stor
 
 ### Gateway
 
-An IPFS Gateway acts as a bridge between traditional web browsers and IPFS. Through the gateway, users can browse files and websites stored in IPFS as if they were stored on a traditional web server. [More about Gateway](https://github.com/ipfs/go-ipfs/blob/master/docs/gateway.md)
+An IPFS Gateway acts as a bridge between traditional web browsers and IPFS. Through the gateway, users can browse files and websites stored in IPFS as if they were stored on a traditional web server. [More about Gateway](../concepts/ipfs-gateway.md) and [addressing IPFS on the web](../how-to/address-ipfs-on-web.md)
 
 ### Garbage Collection
 

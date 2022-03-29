@@ -19,6 +19,9 @@ Check out these docs to get started with IPFS:
 - [API and CLI references](reference/README.md)
 - [Install IPFS](install/README.md)
 
+<abbr title="too long; didn't read">TL;DR</abbr>? [Glossary](concepts/glossary.md) provides short definitions of IPFS terms and concepts.
+
+
 ## Download IPFS tools
 
 These tools can help you use and build on IPFS more quickly and efficiently — give them a try today!
