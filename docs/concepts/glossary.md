@@ -412,7 +412,7 @@ A vocabulary term in [IPLD](#ipld), related to [ADLs](#adl).  [More in IPLD glos
 
 ### Swarm
 
-The Swarm is a term for the network of IPFS peers with which your local node has connections. Swarm addresses are addresses that your local node will listen on for connections from other IPFS peers. [More about Swarm addresses](../how-to/configure-node.md#addresses)
+The Swarm is a term for the network of IPFS peers with which your local node has connections. Swarm addresses are addresses that your local node will listen on for connections from other IPFS peers. 
 
 ## T
 
