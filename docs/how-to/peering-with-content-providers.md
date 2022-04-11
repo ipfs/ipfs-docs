@@ -89,6 +89,12 @@ To have your platform added to this list, please [open a PR to edit this page](h
 |`12D3KooWQtpvNvUYFzAo1cRYkydgk15JrMSHp6B6oujqgYSnvsVm`|`/dns4/nft-storage-dc13.nft.dwebops.net/tcp/18402`|
 |`12D3KooWQcgCwNCTYkyLXXQSZuL5ry1TzpM8PRe9dKddfsk1BxXZ`|`/dns4/nft-storage-sv15.nft.dwebops.net/tcp/18402`|
 
+#### RavencoinIPFS-Gateway
+
+|Peer ID|Addresses|
+|:-|:-|
+|`12D3KooWEMVcEZDeickgWoWYUokeU9Ef2i7W74h396SS1XwVNq59`|`/ip4/54.212.175.171/tcp/4001`|
+
 #### Textile
 
 |Peer ID|Addresses|
