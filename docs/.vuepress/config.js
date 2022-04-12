@@ -85,6 +85,9 @@ module.exports = {
             title: 'Basics',
             path: '/basics/',
             children: [
+                'basics/concepts',
+                'basics/desktop-app',
+                'basics/command-line'
             ]
           },
           {
