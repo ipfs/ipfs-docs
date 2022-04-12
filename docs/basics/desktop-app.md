@@ -1,21 +1,23 @@
 ---
-title: "Beginners Guide to IPFS Desktop"
-description: "Walkthrough of the basic funtions of IPFS Desktop"
+title: "Desktop app"
+description: "A simple walkthrough of the basic funtions of the IPFS desktop app."
 ---
 
-# Beginners Guide to IPFS Desktop
+# IPFS desktop app basics
 
-This guide will walk you through the basics of IPFS Desktop and will teach you how to add, remove and download a file using IPFS. This guide will only cover the basics and will avoid talking about more complex concepts. 
+This guide will walk you through the basics of IPFS Desktop and teach you how to add, remove, and download a file using IPFS. This guide will only cover the basics and will avoid talking about more complex concepts.
 
-If you are unsure what some of the terms mean, check out the [glossary](../concepts/glossary/) where you can find definitions of all the common terms used when talking about IPFS.
+:::tip Use the glossary
+Some of these terms might be unfamiliar to you, and that's ok! Just check out the [glossary](../concepts/glossary/)! There you'll find definitions of all the common terms used when talking about IPFS.
+:::
 
-## Install IPFS Desktop
+## Install
 
 Installation instructions for [Windows](../install/ipfs-desktop/#windows), [MacOS](../install/ipfs-desktop/#macos) and [Ubuntu](../install/ipfs-desktop/#ubuntu).
 
 The installation guides linked above are straight forward and easy to follow; simply follow the instructions that correspond to your operating system and you will have IPFS Desktop going in just a few minutes.
 
-## Share a local file using IPFS Desktop
+## Add
 
 Now that you have IPFS Desktop up and running, you can add the files that you wish to host on IPFS.
 
@@ -27,7 +29,13 @@ Now that you have IPFS Desktop up and running, you can add the files that you wi
 
 When files are imported to your IPFS node, they are automatically given a content identifier (CID). The CID for each file is listed directly under the file name on the `Files` page. To share a file that you are hosting on IPFS, simply click the 3 dots to the right of the desired file, select `Copy CID` and send the CID to who ever you would like to have access to the file. Remember that your node must be online for other peers to retrieve the data from you.
 
-## Download a remote file using IPFS Desktop
+## Share
+
+1. Lorem
+1. Ipsum 
+1. ...
+
+## Download
 
 Importing and downloading a remote file to your local storage using IPFS is an easy task with IPFS Desktop, these simple steps will walk you through the process.
 
@@ -46,11 +54,9 @@ You now have a pointer to the file on your local IPFS node, but it is important 
 
 You now have a copy of the file saved to your computers local storage! You can access this file at any time, no IPFS connection needed!
 
-## Delete a file from IPFS Desktop
+## Delete
 
-Now that you know how to import files using IPFS Desktop, you may want to know how to remove them as well. The following steps will guide you through the simple process.
-
-### Important note
+Now that you know how to import files using IPFS Desktop, you may want to know how to remove them as well. 
 
 Removing a file from your local IPFS node will not necessarily remove the file from the IPFS network. If your file has been shared and imported by other peers on IPFS, they will continue to have access to the file and will continue hosting it for others to import and download.
 
@@ -59,7 +65,7 @@ Removing a file from your local IPFS node will not necessarily remove the file f
 1. Click `Remove` in the drop down menu, a confirmation window will appear.
 1. In the confirmation window, ensure you have the `Also remove local pin` box checked (only present if the file is pinned). Confirm the removal by clicking the `Remove` button.
 
-No further action is required to permanently remove the file from IPFS, the garbage collector (GC) that is built into IPFS Desktop automatically runs every hour by default. If you wish to manually run the garbage collector to immediately remove the file, follow the steps below.
+No further action is required to permanently remove the file from IPFS, the garbage collector that is built into IPFS Desktop automatically runs every hour by default. If you wish to manually run the garbage collector to immediately remove the file, follow the steps below.
 
 1. Find the small IPFS logo. On MacOS it is in the top right of the screen on the Menu Bar, on Windows it is in the bottom right of the screen in the System Tray.
 1. Click on the IPFS logo and a drop down menu will appear.
