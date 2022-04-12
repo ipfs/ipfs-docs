@@ -82,6 +82,12 @@ module.exports = {
             ]
           },
           {
+            title: 'Basics',
+            path: '/basics/',
+            children: [
+            ]
+          },
+          {
             title: 'Concepts',
             path: '/concepts/',
             children: [
