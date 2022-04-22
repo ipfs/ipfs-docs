@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 set -eu
 
 API_FILE=`pwd`/docs/reference/http/api.md
