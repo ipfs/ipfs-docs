@@ -15,6 +15,9 @@ updates:
       - 'dependencies'
   - package-ecosystem: 'gomod'
     directory: 'tools/http-api-docs/' # Location of go package manifests
+    schedule:
+      interval: 'monthly'
+      day: 'monday'
     open-pull-requests-limit: 0 # Disable dependabot for go deps, we want them rock solid
     ignore:
-      dependency-name: "go-ipfs" # explicit ignore just in case, because this is handled by  .github/workflows/update-on-new-ipfs-tag.yml
+      - dependency-name: "go-ipfs" # explicit ignore just in case, because this is handled by  .github/workflows/update-on-new-ipfs-tag.yml
