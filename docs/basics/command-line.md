@@ -83,10 +83,10 @@ cd Documents
 2. Now that you are in the desired destination directory, use the command `ipfs get <CID>` to retrieve the folder.
 
 ```
-ipfs get bafybeia6b2lmxqbf6572ig4pj4lepjm7u4vgk4bg4hzewmev2owkvedtwm
+ipfs get bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu
 
-> Saving file(s) to bafybeia6b2lmxqbf6572ig4pj4lepjm7u4vgk4bg4hzewmev2owkvedtwm
-> 86.89 KiB / 86.89 KiB [==============================================] 100.00% 0s
+> Saving file(s) to bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu
+> 1.76 KiB / 1.76 KiB [==============================================] 100.00% 0s
 ```
 
 You have now retrieved the folder over IPFS and a copy of it has been saved to your computers local storage. You are also now hosting the folder and it's contents for others to retrieve.
@@ -94,17 +94,17 @@ You have now retrieved the folder over IPFS and a copy of it has been saved to y
 You can now pin the folder that you just retrieved by running the `ipfs pin add <CID>` command.
 
 ```
-ipfs pin add bafybeia6b2lmxqbf6572ig4pj4lepjm7u4vgk4bg4hzewmev2owkvedtwm
+ipfs pin add bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu
 
-> pinned bafybeia6b2lmxqbf6572ig4pj4lepjm7u4vgk4bg4hzewmev2owkvedtwm recursively
+> pinned bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu recursively
 ```
 
-Objects that you retrieve over IPFS are not pinned to your node by default, if you wish to prevent the files from being garbage collected, you need to pin them. You will notice that the pin you just added is a `recursive` pin, meaning it is a directory containing other objects. More about pins [here](../how-to/pin-files/#three-kinds-of-pins).
+Objects that you retrieve over IPFS are not pinned to your node by default, if you wish to prevent the files from being garbage collected, you need to pin them. You will notice that the pin you just added is a `recursive` pin, meaning it is a directory containing other objects or is a file consisting of only one block. More about pins [here](../how-to/pin-files/#three-kinds-of-pins).
 
 You can also view the contents of a file from within the CLI using the command `ipfs cat <CID>`. In the example below, I will be using this command in an attempt to view the contents of the folder we just retrieved and pinned.
 
 ```
-ipfs cat bafybeia6b2lmxqbf6572ig4pj4lepjm7u4vgk4bg4hzewmev2owkvedtwm
+ipfs cat bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu
 
 > Error: this dag node is a directory
 ```
@@ -112,19 +112,32 @@ ipfs cat bafybeia6b2lmxqbf6572ig4pj4lepjm7u4vgk4bg4hzewmev2owkvedtwm
 Attempting to run `ipfs cat` on the CID from above returns an error, this is because the CID points to the directory, not the file. In order to view the contents of the directory we will run `ipfs refs <CID>.
 
 ```
-ipfs refs bafybeia6b2lmxqbf6572ig4pj4lepjm7u4vgk4bg4hzewmev2owkvedtwm
+ipfs refs bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu
 
-> bafkreifcwhj4ppd7rhxxmznpd7w4op35n5fssgumwdg2miq3ncjblrtyrq
+> bafkreihzugbuvgoyhyanpqsnwol6fzmnte7dbqs6jmvvesxdz52thralzm
 ```
 
 The command returned the CID that points to the file within the directory. Now we can use `ipfs cat <CID> to view the content of that file.
 
 ```
-ipfs cat bafkreifcwhj4ppd7rhxxmznpd7w4op35n5fssgumwdg2miq3ncjblrtyrq
+ipfs cat bafkreihzugbuvgoyhyanpqsnwol6fzmnte7dbqs6jmvvesxdz52thralzm
 
-> Narrator:
-> According to all known laws of aviation, there is no way that a bee should be able to fly.
-> ...
+> MMMMMMMMMMN0xo;';ox0NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+> MMMMMMWXOdoloxkkkxolodOXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+> MMMN0xdoodkOOOOOOOOOkdoodx0NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+> MKo;;oxOOOOOOOOOOOOOOOOOxo;;oKMMMMMXOKMMMN0kkkkkO0NWMMXOkkkkkkOXMMWKkddddk0NMMMM\
+> Wd...':okOOOOOOOOOOOOOko:'...dWMMMWd.lWMM0,.;ccc:;,oXWd.'clllco0WO:,:loolcckWMMM\
+> Wdckdc,..;lxOOOOOOOxl;..';lo;dWMMMWo.lWMM0''0MMMWK:.oNo.lWMMMMMMX:.dWMMMMMWWMMMM\
+> WdcOKK0ko;'.,:c:c:,..,:oxxxd;dWMMMWo.lWMM0''0MMMMNc.oNo.lNWWWWWMNl.;x0XNWMMMMMMM\
+> WdcOKKKKKKOd:.   .,cdxxxxxxd;dWMMMWo.lWMM0'.coool;'cKWo..clllldXMNkl:;;;:lxXMMMM\
+> WdcOKKKKKKKK0l. .:dxxxxxxxxd;dWMMMWo.lWMM0'.cooodkKWMWo.:0K000KWMMMMWNK0xc.,0MMM\
+> WdcOKKKKKKKKK0: ,dxxxxxxxxxd:dWMMMWo.lWMM0''0MMMMMMMMWo.lWMMMMMMMMMMMMMMMX:.dWMM\
+> Wd;xKKKKKKKKK0: ,dxxxxxxxxxl,dWMMMWo.lWMM0''0MMMMMMMMWo.lWMMMMMMWOdk0KXXKd.,0MMM\
+> Mk',d0KKKKKKK0: ,dxxxxxxxdc.'kMMMMMO:xWMMKllXMMMMMMMMWk:kWMMMMMMWOlcccccccdKWMMM\
+> MWKkdooxOKKKK0: ,dxxxxdlclokKWMMMMMWWWMMMMWWMMMMMMMMMMMWMMMMMMMMMMMWWNNNNWMMMMMM\
+> MMMMWNOxdodk00: ,ddoccldONWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+> MMMMMMMMWKkdol' .:lokKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
+> MMMMMMMMMMMWKd'.'dKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM}% 
 ```
 
 It is important to note that `ipfs cat` only works with text files. As we demonstrated above, attempting to `cat` a directory will return an error, and if you attempt to `cat` an image file you will get hundreds of unreadable lines in return.
@@ -137,7 +150,7 @@ It is important to note that `ipfs cat` only works with text files. As we demons
 ```
 ipfs pin rm 
 
-> unpinned bafybeia6b2lmxqbf6572ig4pj4lepjm7u4vgk4bg4hzewmev2owkvedtwm
+> unpinned bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu
 ```
 
 3. The directory and file is now unpinned but it has not been removed from your node completely. To remove it completely, we need to run the garbage collection. The command will remove everything from your node that does not have a pin.
@@ -149,7 +162,7 @@ Before you run the garbage collection, ensure all CIDs that you wish to keep are
 ```
 ipfs repo gc
 
-> removed bafkreihb3l6s7z4rxkvcxte6t6te75e4laow3bj3gar4tfpjt7qqqqtza4
+> removed bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu
 > removed bafkreieceevgg2auxo4u3rjgeiqfr4ccxh6ylkgxt2ss6k2leuad5xckxe
 > removed bafkreiblcvcr7letdbp2k2thkbjyunznrwq3y6pyoylzaq4epawqcca2my
 > ...
