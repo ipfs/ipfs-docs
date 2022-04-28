@@ -238,7 +238,7 @@ You can retrieve your own circuit info by running ipfs id on your go-ipfs node
 
 You should see here where you fill out the domain name that you got the SSL cert for, as well as your node's PeerID. For the script, the leading and trailing slash are required, too.
 
-:::important
+:::warning
 Ensure you specify DNS6 or DNS4, depending on if you're forming an IPv6 or IPv4 address. It's important to ensure that you use DNS, otherwise browser nodes likely won't be able to connect. Also note the port 4430; if you used a different one, you'll need to specify that.
 :::
 
@@ -434,7 +434,7 @@ function checkalive() {
 setInterval(checkalive, 1000);
 ```
 
-:::important
+:::warning
 The above code  should be used with the full version of processAnnounce, as it relies on lastAlive and lastPeer, which aren't updated in the simplified version.
 :::
 
