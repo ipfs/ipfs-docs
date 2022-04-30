@@ -12,6 +12,7 @@ pages_to_update = {
     "docs/install/ipfs-updater.md": "ipfs/ipfs-update",
     "docs/install/server-infrastructure.md": "ipfs/ipfs-cluster"
 }
+
 pattern = "\d{1,2}\.\d{1,2}\.\d{1,2}"
 version_pattern = r"v"+pattern
 ipfs_pattern = r"ipfs version "+pattern
@@ -39,3 +40,4 @@ for page, repo in pages_to_update.items():
     page_open = open(page_path, "w")
     page_open.write(updated_page_content)
     page_open.close()
+
