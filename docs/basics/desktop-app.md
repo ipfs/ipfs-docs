@@ -22,10 +22,12 @@ The installation guides linked above are straight forward and easy to follow; si
 Now that you have IPFS Desktop up and running, you can add the files that you wish to host on IPFS.
 
 1. First, open IPFS Desktop and make sure you are connected to IPFS. Navigate to the status screen by clicking on the `Status` tab on the left side of the app. At the top of the status screen you will see that it says "Connected to IPFS".
-1. Now that you know you are connected to IPFS, navigate to the files screen. To do this simply click on the `Files` tab on the left side of the app.
-1. On the files screen, you will see a button that says `+Import`, click on that and then select either `File` or `Folder`. If you are uploading just a single file to IPFS, select the `File` option. If you are uploading a folder containing multiple files, select the `Folder` option. Selecting either option will bring up a file selection window.
-1. In the file selection window, navigate to the file or folder that you wish to upload and host on IPFS. Once you have found the file or folder, simply double click on it.
-1. Your file has now been imported to your local IPFS node!
+![Status and Connected](https://ipfs.io/ipfs/bafkreidfsaiakraedkl3u7zlxzjpjy3typhdqz24bam7vhietdcn7gzm3u "Status and Connected.png")
+2. Now that you know you are connected to IPFS, navigate to the files screen. To do this simply click on the `Files` tab on the left side of the app.
+3. On the files screen, you will see a button that says `+Import`, click on that and then select either `File` or `Folder`. If you are uploading just a single file to IPFS, select the `File` option. If you are uploading a folder containing multiple files, select the `Folder` option. Selecting either option will bring up a file selection window.
+![Files Tab and Import Button](https://ipfs.io/ipfs/bafkreib766pjfowf3z66yz2culsqjb7pe26s5kw45y7euubfv7txwyau74 "Files Import.png")
+4. In the file selection window, navigate to the file or folder that you wish to upload and host on IPFS. Once you have found the file or folder, simply double click on it.
+5. Your file has now been imported to your local IPFS node!
 
 When files are imported to your IPFS node, they are automatically given a content identifier (CID). The CID for each file is listed directly under the file name on the `Files` page. To share a file that you are hosting on IPFS, simply click the 3 dots to the right of the desired file, select `Copy CID` and send the CID to who ever you would like to have access to the file. Remember that your node must be online for other peers to retrieve the data from you.
 
@@ -45,10 +47,11 @@ Importing and downloading a remote file to your local storage using IPFS is an e
 1. In the drop down menu that appears, select `From IPFS`, a new window will appear.
 1. In this new "Import from IPFS" window, paste the desired CID into the "Path or CID (required)" field. A couple of example CIDs are given for you to try it out. If you wish to give the file a specific name, there is also an optional field to do that.
 1. Once you have the desired CID and name filled out, click `import`. The file metadata will be automatically retrieved over IPFS and it will now appear in the list of files with the name you have chosen.
-
+![Import from IPFS](https://ipfs.io/ipfs/bafkreihzdmqtouxjkdn6wrxlvx64dzxkvdnu4rwpveed5plvyon2zogx5y "Import from IPFS.png")
 You now have a pointer to the file on your local IPFS node, but it is important to know that this does not mean it is saved to your computers local storage. This type of import is called lazy-loaded, meaning the actual data is fetched on-demand. If you wish to download and save a copy of the file directly to your computers storage, the following steps will walk you through the process.
 
 1. Click on the 3 dots that correspond to the file that you wish to download and save. In the drop down menu that appears, select `Download`.
+![Download the file](https://ipfs.io/ipfs/bafkreid4wkkwreywwdj2qqjnho56kodskmhi4e7tpzzvjpu3hn4o5eaxk4 "Download File.png")
 1. A new window will appear asking you to choose a name for the file and to select a save destination for the file.
 1. Once you have decided on the name and destination, click the `Save` button.
 
