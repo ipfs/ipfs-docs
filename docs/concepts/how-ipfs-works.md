@@ -64,7 +64,7 @@ To find which peers are hosting the content you're after (_discovery_), IPFS use
 
 The [libp2p project](https://libp2p.io/) is the part of the IPFS ecosystem that provides the DHT and handles peers connecting and talking to each other. (Note that, as with IPLD, libp2p can also be used as a tool for other distributed systems, not just IPFS.)
 
-Once you know where your content is (or, more precisely, which peers are storing each of the blocks that make up the content you're after), you use the DHT again to find the current location of those peers (_routing_). So, to get to content, use libp2p to query the DHT twice.
+Once you know where your content is (or, more precisely, which peers are storing each of the blocks that make up the content you're after), you use the DHT again to find the current location of those peers (_routing_). So, to get to the content, use libp2p to query the DHT twice.
 
 You've discovered your content, and you've found the current location(s) of that content. Now, you need to connect to that content and get it (_exchange_). To request blocks from and send blocks to other peers, IPFS currently uses a module called [_Bitswap_](https://github.com/ipfs/specs/blob/master/BITSWAP.md). Bitswap allows you to connect to the peer or peers that have the content you want, send them your _wantlist_ (a list of all the blocks you're interested in), and have them send you the blocks you requested. Once those blocks arrive, you can verify them by hashing their content to get CIDs and compare them to the CIDs that you requested. These CIDs also allow you to deduplicate blocks if needed.
 
