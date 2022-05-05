@@ -56,7 +56,7 @@ Now that you have your IPFS node up and running, you are ready to add your file 
     > Documents
     ```
 
-2. Once you are in the directory that contains the file/folder you wish to host and share on IPFS, you will be using the `ipfs add <"File/Folder Name">` command to add it to IPFS.
+2. Once you are in the directory that contains the file/folder you wish to host and share on IPFS, you will be using the `ipfs add <"File/Folder Name">` command to add it to IPFS. If you are adding just a single file, be sure to add the file entension to the end of the file name, `<"File Name.ext">`.
 
     ```shell
     ipfs add "Hello IPFS"
@@ -83,9 +83,9 @@ In the previous section we went through how to add local files to IPFS, now we w
 2. Now that you are in the desired destination directory, use the command `ipfs get <CID>` to retrieve the folder.
 
     ```shell
-    ipfs get bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu
+    ipfs get bafybeif2ewg3nqa33mjokpxii36jj2ywfqjpy3urdh7v6vqyfjoocvgy3a
 
-    > Saving file(s) to bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu
+    > Saving file(s) to bafybeif2ewg3nqa33mjokpxii36jj2ywfqjpy3urdh7v6vqyfjoocvgy3a
     > 1.76 KiB / 1.76 KiB [==============================================] 100.00% 0s
     ```
 
@@ -94,19 +94,19 @@ You have now retrieved the folder over IPFS and a copy of it has been saved to y
 You can now pin the folder that you just retrieved by running the `ipfs pin add <CID>` command.
 
 ```shell
-ipfs pin add bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu
+ipfs pin add bafybeif2ewg3nqa33mjokpxii36jj2ywfqjpy3urdh7v6vqyfjoocvgy3a
 
-> pinned bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu recursively
+> pinned bafybeif2ewg3nqa33mjokpxii36jj2ywfqjpy3urdh7v6vqyfjoocvgy3a recursively
 ```
 
-Objects that you retrieve over IPFS are not pinned to your node by default, if you wish to prevent the files from being garbage collected, you need to pin them. You will notice that the pin you just added is a `recursive` pin, meaning it is a directory containing other objects or is a file consisting of only one block. We have a [page dedicated to pins](../how-to/pin-files/#three-kinds-of-pins.md/) where you can learn more about how pinning works.
+Objects that you retrieve over IPFS are not pinned to your node by default, if you wish to prevent the files from being garbage collected, you need to pin them. You will notice that the pin you just added is a `recursive` pin, meaning it is a directory containing other objects or is a file consisting of only one block. We have a [page dedicated to pins](../how-to/pin-files/) where you can learn more about how pinning works.
 
 ## View a file within the CLI
 
 You can also view the contents of a file from within the CLI using the command `ipfs cat <CID>`. In the example below, I will be using this command in an attempt to view the contents of the folder we just retrieved and pinned.
 
 ```shell
-ipfs cat bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu
+ipfs cat bafybeif2ewg3nqa33mjokpxii36jj2ywfqjpy3urdh7v6vqyfjoocvgy3a
 
 > Error: this dag node is a directory
 ```
@@ -114,35 +114,35 @@ ipfs cat bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu
 Attempting to run `ipfs cat` on the CID from above returns an error, this is because the CID points to the directory, not the file. In order to view the contents of the directory we will run `ipfs refs <CID>`.
 
 ```shell
-ipfs refs bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu
+ipfs refs bafybeif2ewg3nqa33mjokpxii36jj2ywfqjpy3urdh7v6vqyfjoocvgy3a
 
-> bafkreihzugbuvgoyhyanpqsnwol6fzmnte7dbqs6jmvvesxdz52thralzm
+> bafkreig24ijzqxj3cxdp6yh6ia2ysxzvxsfnd6rzahxxjv6ofcuix52wtq
 ```
 
 The command returned the CID that points to the file within the directory. Now we can use `ipfs cat <CID>` to view the content of that file.
 
 ```plaintext
-ipfs cat bafkreihzugbuvgoyhyanpqsnwol6fzmnte7dbqs6jmvvesxdz52thralzm
+ipfs cat bafkreig24ijzqxj3cxdp6yh6ia2ysxzvxsfnd6rzahxxjv6ofcuix52wtq
 
-> MMMMMMMMMMN0xo;';ox0NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
-> MMMMMMWXOdoloxkkkxolodOXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
-> MMMN0xdoodkOOOOOOOOOkdoodx0NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
-> MKo;;oxOOOOOOOOOOOOOOOOOxo;;oKMMMMMXOKMMMN0kkkkkO0NWMMXOkkkkkkOXMMWKkddddk0NMMMM\
-> Wd...':okOOOOOOOOOOOOOko:'...dWMMMWd.lWMM0,.;ccc:;,oXWd.'clllco0WO:,:loolcckWMMM\
-> Wdckdc,..;lxOOOOOOOxl;..';lo;dWMMMWo.lWMM0''0MMMWK:.oNo.lWMMMMMMX:.dWMMMMMWWMMMM\
-> WdcOKK0ko;'.,:c:c:,..,:oxxxd;dWMMMWo.lWMM0''0MMMMNc.oNo.lNWWWWWMNl.;x0XNWMMMMMMM\
-> WdcOKKKKKKOd:.   .,cdxxxxxxd;dWMMMWo.lWMM0'.coool;'cKWo..clllldXMNkl:;;;:lxXMMMM\
-> WdcOKKKKKKKK0l. .:dxxxxxxxxd;dWMMMWo.lWMM0'.cooodkKWMWo.:0K000KWMMMMWNK0xc.,0MMM\
-> WdcOKKKKKKKKK0: ,dxxxxxxxxxd:dWMMMWo.lWMM0''0MMMMMMMMWo.lWMMMMMMMMMMMMMMMX:.dWMM\
-> Wd;xKKKKKKKKK0: ,dxxxxxxxxxl,dWMMMWo.lWMM0''0MMMMMMMMWo.lWMMMMMMWOdk0KXXKd.,0MMM\
-> Mk',d0KKKKKKK0: ,dxxxxxxxdc.'kMMMMMO:xWMMKllXMMMMMMMMWk:kWMMMMMMWOlcccccccdKWMMM\
-> MWKkdooxOKKKK0: ,dxxxxdlclokKWMMMMMWWWMMMMWWMMMMMMMMMMMWMMMMMMMMMMMWWNNNNWMMMMMM\
-> MMMMWNOxdodk00: ,ddoccldONWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
-> MMMMMMMMWKkdol' .:lokKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM\
-> MMMMMMMMMMMWKd'.'dKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM}% 
+> MMMMMMMMMMN0xo;';ox0NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+> MMMMMMWXOdoloxkkkxolodOXWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+> MMMN0xdoodkOOOOOOOOOkdoodx0NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+> MKo;;oxOOOOOOOOOOOOOOOOOxo;;oKMMMMMXOKMMMN0kkkkkO0NWMMXOkkkkkkOXMMWKkddddk0NMMMM
+> Wd...':okOOOOOOOOOOOOOko:'...dWMMMWd.lWMM0,.;ccc:;,oXWd.'clllco0WO:,:loolcckWMMM
+> Wdckdc,..;lxOOOOOOOxl;..';lo;dWMMMWo.lWMM0''0MMMWK:.oNo.lWMMMMMMX:.dWMMMMMWWMMMM
+> WdcOKK0ko;'.,:c:c:,..,:oxxxd;dWMMMWo.lWMM0''0MMMMNc.oNo.lNWWWWWMNl.;x0XNWMMMMMMM
+> WdcOKKKKKKOd:.   .,cdxxxxxxd;dWMMMWo.lWMM0'.coool;'cKWo..clllldXMNkl:;;;:lxXMMMM
+> WdcOKKKKKKKK0l. .:dxxxxxxxxd;dWMMMWo.lWMM0'.cooodkKWMWo.:0K000KWMMMMWNK0xc.,0MMM
+> WdcOKKKKKKKKK0: ,dxxxxxxxxxd:dWMMMWo.lWMM0''0MMMMMMMMWo.lWMMMMMMMMMMMMMMMX:.dWMM
+> Wd;xKKKKKKKKK0: ,dxxxxxxxxxl,dWMMMWo.lWMM0''0MMMMMMMMWo.lWMMMMMMWOdk0KXXKd.,0MMM
+> Mk',d0KKKKKKK0: ,dxxxxxxxdc.'kMMMMMO:xWMMKllXMMMMMMMMWk:kWMMMMMMWOlcccccccdKWMMM
+> MWKkdooxOKKKK0: ,dxxxxdlclokKWMMMMMWWWMMMMWWMMMMMMMMMMMWMMMMMMMMMMMWWNNNNWMMMMMM
+> MMMMWNOxdodk00: ,ddoccldONWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+> MMMMMMMMWKkdol' .:lokKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+> MMMMMMMMMMMWKd'.'dKWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 ```
 
-It is important to note that `ipfs cat` only works with text files. As we demonstrated above, attempting to `cat` a directory will return an error, and if you attempt to `cat` an image file you will get hundreds of unreadable lines in return.
+It is important to note that `ipfs cat` only works with plaintext files. As we demonstrated above, attempting to `cat` a directory will return an error, and if you attempt to `cat` an image file or a text file that is not plaintext, your terminal will be filled with unreadable lines in return.
 
 ## Remove a file from your local node
 
@@ -150,9 +150,9 @@ It is important to note that `ipfs cat` only works with text files. As we demons
 2. Using the command `ipfs pin rm <CID>`, we will remove the recursive pin from the directory, doing so will also remove the indirect pin from the text file inside.
 
     ```shell
-    ipfs pin rm bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu
+    ipfs pin rm bafybeif2ewg3nqa33mjokpxii36jj2ywfqjpy3urdh7v6vqyfjoocvgy3a
 
-    > unpinned bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu
+    > unpinned bafybeif2ewg3nqa33mjokpxii36jj2ywfqjpy3urdh7v6vqyfjoocvgy3a
     ```
 3. The directory and file is now unpinned but it has not been removed from your node completely. To remove it completely, we need to run the garbage collection. The command will remove everything from your node that does not have a pin.
 
@@ -161,7 +161,7 @@ Before you run the garbage collection, ensure all CIDs that you wish to keep are
 ```shell
 ipfs repo gc
 
-> removed bafybeifsohflj3hk4mond6pla2utxux6xblsevrwfeluc6rjij4pdywtlu
+> removed bafybeif2ewg3nqa33mjokpxii36jj2ywfqjpy3urdh7v6vqyfjoocvgy3a
 > removed bafkreieceevgg2auxo4u3rjgeiqfr4ccxh6ylkgxt2ss6k2leuad5xckxe
 > removed bafkreiblcvcr7letdbp2k2thkbjyunznrwq3y6pyoylzaq4epawqcca2my
 > ...
