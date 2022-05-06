@@ -5,13 +5,13 @@ description: "A simple walkthrough of how to perform basic IPFS operations using
 
 # Basic CLI Operations
 
-This short guide aims to walk you through the basics of using IPFS with the CLI. You will learn how to add, retrieve, read, and remove files from within the CLI. We will try to keep it simple here. If you are unsure about the meaning of some terms, you can check out the [glossary](../concepts/glossary.md/). Also don't forget to check out the rest of the [docs](../) to learn more about IPFS!
+This short guide aims to walk you through the basics of using IPFS with the CLI. You will learn how to add, retrieve, read, and remove files from within the CLI. We will try to keep it simple here. If you are unsure about the meaning of some terms, you can check out the [glossary](../concepts/glossary.md). Also don't forget to check out the rest of the [docs](../) to learn more about IPFS!
 
 All instructions and examples shown here were performed and tested on an M1 Mac. However, the IPFS commands are the same on Linux, MacOS, and Windows. You will need to know how to navigate through your computers directories from within the CLI, if you are unsure how to do that, it is recommended to learn how before continuing with this guide.
 
 ## Install IPFS
 
-We have a great guide that will walk you through the process of how to [install IPFS with the CLI](../install/command-line.md/).
+We have a great guide that will walk you through the process of how to [install IPFS with the CLI](../install/command-line.md).
 
 Once you have IPFS installed, you need to get your node up and running. If this is your first time using IPFS you will first need to initialize the configuration files.
 
@@ -99,7 +99,7 @@ ipfs pin add bafybeif2ewg3nqa33mjokpxii36jj2ywfqjpy3urdh7v6vqyfjoocvgy3a
 > pinned bafybeif2ewg3nqa33mjokpxii36jj2ywfqjpy3urdh7v6vqyfjoocvgy3a recursively
 ```
 
-Objects that you retrieve over IPFS are not pinned to your node by default, if you wish to prevent the files from being garbage collected, you need to pin them. You will notice that the pin you just added is a `recursive` pin, meaning it is a directory containing other objects or is a file consisting of only one block. We have a [page dedicated to pins](../how-to/pin-files/) where you can learn more about how pinning works.
+Objects that you retrieve over IPFS are not pinned to your node by default, if you wish to prevent the files from being garbage collected, you need to pin them. You will notice that the pin you just added is a `recursive` pin, meaning it is a directory containing other objects or is a file consisting of only one block. We have a [page dedicated to pins](../how-to/pin-files.md) where you can learn more about how pinning works.
 
 ## View a file within the CLI
 
