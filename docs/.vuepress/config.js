@@ -193,7 +193,7 @@ module.exports = {
                   '/how-to/take-snapshot',
                   '/how-to/store-play-videos',
                   '/how-to/host-git-style-repo',
-                  '/how-to/move-ipfs-installation'
+                  '/how-to/move-ipfs-installation/move-ipfs-installation'
                 ]
               },
               {
