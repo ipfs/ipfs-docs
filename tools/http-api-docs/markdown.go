@@ -7,6 +7,8 @@ import (
 	"regexp"
 	"strings"
 	"time"
+
+	cmds "github.com/ipfs/go-ipfs-cmds"
 )
 
 // MarkdownFormatter implements a markdown doc generator. It is
@@ -181,7 +183,6 @@ A `+"`405`"+` error may mean that you are using the wrong HTTP method (i.e. GET 
 When a request is sent from a browser, HTTP RPC API follows the [Origin-based security model](https://en.wikipedia.org/wiki/Same-origin_policy), and expects the `+"`Origin`"+` HTTP header to be present.
 The API will return HTTP Error 403 when Origin is missing, does not match the API port, or is not safelisted via `+"`API.HTTPHeaders.Access-Control-Allow-Origin`"+` in the config.
 
-## HTTP RPC commands
 `,
 		time.Now().Format("2006-01-02"),
 		IPFSVersion(),
@@ -189,6 +190,63 @@ The API will return HTTP Error 403 when Origin is missing, does not match the AP
 		"`&encoding=json`")
 
 	return buf.String()
+}
+
+func (md *MarkdownFormatter) GenerateStatusIntro(status cmds.Status) string {
+	return fmt.Sprintf(`
+## %s RPC commands
+
+%s
+
+`, statusLabel(status), statusDescription(status))
+}
+
+func statusLabel(status cmds.Status) string {
+	switch status {
+	case cmds.Active:
+		return ""
+	case cmds.Deprecated:
+		return "Deprecated"
+	case cmds.Experimental:
+		return "Experimental"
+	case cmds.Removed:
+		return "Removed"
+	default:
+		panic("unknown command status")
+	}
+}
+
+func statusDescription(status cmds.Status) string {
+	switch status {
+	case cmds.Active:
+		return ""
+	case cmds.Deprecated:
+		return "Below commands are deprecated and will be removed in the future."
+	case cmds.Experimental:
+		return "Below commands are experimental and should be used with care. The API may change in future releases."
+	case cmds.Removed:
+		return "Below commands were removed, listing them here only for documentation purposes."
+	default:
+		panic("unknown command status")
+	}
+}
+
+func statusInfobox(status cmds.Status) string {
+	switch status {
+	case cmds.Active:
+		return "" // noop
+	case cmds.Deprecated, cmds.Experimental, cmds.Removed:
+		st := statusLabel(status)
+		return fmt.Sprintf(`
+::: warning %s
+
+This command is %s.
+
+:::
+`, strings.ToUpper(st), strings.ToLower(st))
+	default:
+		panic("unknown command status")
+	}
 }
 
 func (md *MarkdownFormatter) GenerateIndex(endps []*Endpoint) string {
@@ -208,12 +266,12 @@ func (md *MarkdownFormatter) GenerateIndex(endps []*Endpoint) string {
 func (md *MarkdownFormatter) GenerateEndpointBlock(endp *Endpoint) string {
 	buf := new(bytes.Buffer)
 	fmt.Fprintf(buf, `
-## %s
 
+## %s
+%s
 %s
 
-
-`, endp.Name, html.EscapeString(endp.Description))
+`, endp.Name, statusInfobox(endp.Status), html.EscapeString(endp.Description))
 	return buf.String()
 }
 

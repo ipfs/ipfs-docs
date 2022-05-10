@@ -5,7 +5,7 @@ description: Optimize retrieval speed by making direct connections to large cont
 
 # Peering with content providers
 
-IPFS allows you to request data from any IPFS node with a copy using the data's [CID][cid-explainer] or content identifier. This process usually involves a lookup on the [distrubuted hash table][dht-explainer] and may also require establishing new connections to the nodes storing the content. 
+IPFS allows you to request data from any IPFS node with a copy using the data's [CID][cid-explainer] or content identifier. This process usually involves a lookup on the [distributed hash table][dht-explainer] and may also require establishing new connections to the nodes storing the content. 
 
 If you're running an IPFS node that serves many requests, like a public HTTP gateway, for example, you may be able to speed up queries by maintaining long-lived connections to nodes that provide a large volume of data. 
 
