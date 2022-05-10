@@ -85,7 +85,7 @@ The browser nodes can communicate with go-ipfs as well, so BrowserC doesn't hav
 
 We use [WebRTC-Star](https://github.com/libp2p/js-libp2p-webrtc-star) nodes to help discover other peers to connect with directly, browser-to-browser. WebRTC stands for Web Real Time Communication. Nodes using the libp2p-webrtc-star transport connect to a known rendezvous point in the network, where they can learn about other nodes (Discovery) and exchange their [Session Description Protocol (SDP)](https://www.html5rocks.com/en/tutorials/webrtc/infrastructure/) offers (their signaling data).
 
-We use the [js-ipfs](https://github.com/ipfs/js-ipfs/blob/master/docs/BROWSERS.md) and Bootstrap libraries. For Bootstrap, we’re only using minified CSS. If you want a newer version of "js-ipfs" (It now just goes by _ipfs_), you can use the [latest version available](https://cdn.jsdelivr.net/npm/ipfs/) from JSDelivr.
+We use the [js-ipfs](https://github.com/ipfs/js-ipfs/blob/master/docs/BROWSERS.md) and Bootstrap libraries. For Bootstrap, we’re only using minified CSS. If you want a newer version of _js-ipfs_, you can use the [latest version available](https://cdn.jsdelivr.net/npm/ipfs/) from JSDelivr (They call it _ipfs_).
 
 If you're familiar with the concept of [STUN](https://en.wikipedia.org/wiki/STUN), it might be helpful to think of WebRTC-Star nodes as conceptually similar. Effectively, each connecting node is given a WebRTC-Star [multiaddress](https://docs.libp2p.io/concepts/addressing/) that other nodes can use to discover and connect to your browser directly. This means that if you peer with someone using the star node, and the star node goes offline, you remain connected.
 
@@ -117,7 +117,7 @@ Using p2p-circuit is helpful for peers behind tricky NATs (or a VPN, or anythin
 
 WebRTC-Star is a very clean and effective method of P2P communications; however, sometimes NATs get in the way, so we use [p2p-circuit](https://docs.libp2p.io/concepts/circuit-relay) to get around that.
 
-#### Connect to a star node
+#### Connect to a star node behind NATs
 
 Once all the services for p2p-circuit are put together, you can connect to the star node in a few different ways.
 
