@@ -5,15 +5,15 @@ description: "A simple walkthrough of how to perform basic IPFS operations using
 
 # Basic CLI Operations
 
-This short guide aims to walk you through the basics of using IPFS with the CLI. You will learn how to add, retrieve, read, and remove files from within the CLI. We will try to keep it simple here. If you are unsure about the meaning of some terms, you can check out the [glossary](../concepts/glossary.md). Also don't forget to check out the rest of the [docs](../) to learn more about IPFS!
+This short guide aims to walk you through the basics of using IPFS with the CLI. You will learn how to add, retrieve, read, and remove files from within the CLI. We will try to keep it simple here. If you are unsure about the meaning of some terms, you can check out the [glossary](../concepts/glossary.md). Also, don't forget to check out the rest of the [docs](../) to learn more about IPFS!
 
-All instructions and examples shown here were performed and tested on an M1 Mac. However, the IPFS commands are the same on Linux, MacOS, and Windows. You will need to know how to navigate through your computers directories from within the CLI, if you are unsure how to do that, it is recommended to learn how before continuing with this guide.
+All instructions and examples shown here were performed and tested on an M1 Mac. However, the IPFS commands are the same on Linux, macOS, and Windows. You will need to know how to navigate through your computer's directories from within the CLI, if you are unsure how to do that, it is recommended to learn how before continuing with this guide.
 
 ## Install IPFS
 
 We have a great guide that will walk you through the process of how to [install IPFS with the CLI](../install/command-line.md).
 
-Once you have IPFS installed, you need to get your node up and running. If this is your first time using IPFS you will first need to initialize the configuration files.
+Once you have IPFS installed, you need to get your node up and running. If this is your first time using IPFS, you will first need to initialize the configuration files.
 
 ```shell
 ipfs init
@@ -70,7 +70,7 @@ You have now added your files to IPFS and they are ready to be shared and hosted
 
 ## Retrieve a file from IPFS
 
-In the previous section we went through how to add local files to IPFS, now we will learn how to retrieve remote files from IPFS and save them to your computer locally. For this example we will be retrieving a folder that contains a single text file.
+In the previous section we went through how to add local files to IPFS, now we will learn how to retrieve remote files from IPFS and save them to your computer locally. For this example, we will be retrieving a folder that contains a single text file.
 
 1. Within the CLI, navigate to the directory where you wish to save the folder. The folder will be saved to whichever directory you are in. In this case, I want to save the folder to my documents directory.
 
@@ -89,7 +89,7 @@ In the previous section we went through how to add local files to IPFS, now we w
     > 1.76 KiB / 1.76 KiB [==============================================] 100.00% 0s
     ```
 
-You have now retrieved the folder over IPFS and a copy of it has been saved to your computers local storage. You are also now hosting the folder and it's contents for others to retrieve.
+You have now retrieved the folder over IPFS and a copy of it has been saved to your computer's local storage. You are also now hosting the folder and it's contents for others to retrieve.
 
 You can now pin the folder that you just retrieved by running the `ipfs pin add <CID>` command.
 
@@ -111,7 +111,7 @@ ipfs cat bafybeif2ewg3nqa33mjokpxii36jj2ywfqjpy3urdh7v6vqyfjoocvgy3a
 > Error: this dag node is a directory
 ```
 
-Attempting to run `ipfs cat` on the CID from above returns an error, this is because the CID points to the directory, not the file. In order to view the contents of the directory we will run `ipfs refs <CID>`.
+Attempting to run `ipfs cat` on the CID from above returns an error, this is because the CID points to the directory, not the file. In order to view the contents of the directory, we will run `ipfs refs <CID>`.
 
 ```shell
 ipfs refs bafybeif2ewg3nqa33mjokpxii36jj2ywfqjpy3urdh7v6vqyfjoocvgy3a
@@ -146,7 +146,7 @@ It is important to note that `ipfs cat` only works with plaintext files. As we d
 
 ## Remove a file from your local node
 
-1. First, find the CID of the file you wish to remove from your IPFS node. For this example we will be removing the directory that we retrieved above.
+1. First, find the CID of the file you wish to remove from your IPFS node. For this example, we will be removing the directory that we retrieved above.
 2. Using the command `ipfs pin rm <CID>`, we will remove the recursive pin from the directory, doing so will also remove the indirect pin from the text file inside.
 
     ```shell
@@ -154,7 +154,7 @@ It is important to note that `ipfs cat` only works with plaintext files. As we d
 
     > unpinned bafybeif2ewg3nqa33mjokpxii36jj2ywfqjpy3urdh7v6vqyfjoocvgy3a
     ```
-3. The directory and file is now unpinned but it has not been removed from your node completely. To remove it completely, we need to run the garbage collection. The command will remove everything from your node that does not have a pin.
+3. The directory and file is now unpinned, but it has not been removed from your node completely. To remove it completely, we need to run the garbage collection. The command will remove everything from your node that does not have a pin.
 
 Before you run the garbage collection, ensure all CIDs that you wish to keep are pinned.
 
@@ -167,4 +167,4 @@ ipfs repo gc
 > ...
 ```
 
-The target file has now been fully removed from your IPFS node, along with any other files that were not pinned. If the content that was just garbage collected was saved to your computers local storage, it is still there. If you wish to remove the content from your computers local storage, you will need to find where it is saved and delete it using the normal deletion method.
+The target file has now been fully removed from your IPFS node, along with any other files that were not pinned. If the content that was just garbage collected was saved to your computer's local storage, it is still there. If you wish to remove the content from your computer's local storage, you will need to find where it is saved and delete it using the normal deletion method.
