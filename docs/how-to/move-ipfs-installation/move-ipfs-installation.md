@@ -143,7 +143,21 @@ A different approach to moving your IPFS repository is to simply create a symlin
 
 ### Linux and MacOS
 
+Unix-based operating systems can use the `ln -s` command to create a symbolic link:
+
+```shell
+ln -s ~/.ipfs ~/new-ipfs-repo
+```
+
 ### Windows
+
+Windows users can use the `mklink` command to create a symbolic link. This command is available within command-prompt or PowerShell:
+
+```powershell
+mklink "C:\New IPFS Repo" "C:\Windows\Users\YOUR_USERNAME\.ipfs\"
+```
+
+Make sure to replace `YOUR_USERNAME` with the name of the user you are currently logged in as.
 
 ## Troubleshooting
 
