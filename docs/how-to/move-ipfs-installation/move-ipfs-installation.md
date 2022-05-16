@@ -126,13 +126,13 @@ Follow these steps to move your IPFS installation using the IPFS Desktop applica
 
     | Linux | MacOS | Windows |
     |---|---|---|
-    | ![The IPFS tray icon in Ubuntu Linux.](./linux-ipfs-tray-icon.png) | ![The IPFS tray icon in MacOS.](./macos-ipfs-tray-icon.png) | ![The IPFS tray icon in Windows.](./windows-ipfs-tray-icon.png) |
+    | ![The IPFS tray icon in Ubuntu Linux.](./ubuntu-ipfs-tray-icon.png) | ![The IPFS tray icon in MacOS.](./macos-ipfs-tray-icon.png) | ![The IPFS tray icon in Windows.](./windows-ipfs-tray-icon.png) |
 
 1. Select **Advanced** → **Move Repository Location**.
 
-    | MacOS | Ubuntu | Windows |
+    | Linux | MacOS | Windows |
     |---|---|---|
-    | ![The advanced options IPFS tray menu in Ubuntu Linux.](./linux-advanced-options.png) | ![The advanced options IPFS tray menu in MacOS.](./macos-advanced-options.png) | ![The advanced options IPFS tray menu in Windows.](./windows-advanced-options.png) |
+    | ![The advanced options IPFS tray menu in Ubuntu Linux.](./ubuntu-advanced-options-menu.png) | ![The advanced options IPFS tray menu in MacOS.](./macos-advanced-options-menu.png) | ![The advanced options IPFS tray menu in Windows.](./windows-advanced-options-menu.png) |
 
 1. Choose your new IPFS location within the file browser.
 1. IPFS will stop, move your repository to the new location, and the start up again. If you have a repository larger than 1 GiB it may take a few moments to move it to the new location.
