@@ -374,7 +374,7 @@ The Repository (Repo) is a directory where IPFS stores all its settings and inte
 
 A root is a [node](#node-in-graphs) in a [graph](#graph) that links to at least one other node. In an IPLD graph, roots are used to aggregate multiple chunks of a file together.
 
-If you have a 600KiB file `A`, it can be split into 3 chunks `B`, `C`, and `D` since the default block size of IPFS is 256KiB. The node `A` that links to each of these three chunks is the root. The CID of this root is what IPFS shows you as the CID of the file.
+If you have a 600 KiB file `A`, it can be split into 3 chunks `B`, `C`, and `D` since the default block size of IPFS is 256 KiB. The node `A` that links to each of these three chunks is the root. The CID of this root is what IPFS shows you as the CID of the file.
 
 ```
       A
