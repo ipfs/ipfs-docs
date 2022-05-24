@@ -9,7 +9,12 @@ draft: true
 THIS PAGE CURRENTLY JUST CONTAINS NOTES. 
 IT IS NOT COMPLETE OR FINISHED BY ANY MEANS.
 
--->
+START HERE:
+    HTTP: it's how your browser sends and receives files from the internet.
+    IPFS: does the same thing, but with three major changes:
+        - it doesn't send "files" it sends blocks/chunks of data.
+        - locates data based on it's fingerprint, rather than the location.
+            - as a consequence IPFS doesn't rely on a central server to get data.
 
 # Concepts
 
@@ -48,3 +53,5 @@ Lorem ipsum.
 ## IPFS is not a blockchain.
 
 - It's not.
+
+-->
