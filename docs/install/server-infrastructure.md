@@ -37,13 +37,13 @@ If you're having issues here, head over to the [official Docker documentation to
 1. Download the latest `ipfs-cluster-ctl` package from [dist.ipfs.io](https://dist.ipfs.io/#ipfs-cluster-ctl):
 
     ```shell
-    wget https://dist.ipfs.io/ipfs-cluster-ctl/v1.0.0-rc4/ipfs-cluster-ctl_v1.0.0-rc4_linux-amd64.tar.gz
+    wget https://dist.ipfs.io/ipfs-cluster-ctl/v1.0.1/ipfs-cluster-ctl_v1.0.1_linux-amd64.tar.gz
     ```
 
 1. Unzip the package:
 
     ```shell
-    tar xvzf ipfs-cluster-ctl_v1.0.0-rc4_linux-amd64.tar.gz
+    tar xvzf ipfs-cluster-ctl_v1.0.1_linux-amd64.tar.gz
 
     > ipfs-cluster-ctl/ipfs-cluster-ctl
     > ipfs-cluster-ctl/LICENSE
@@ -52,16 +52,16 @@ If you're having issues here, head over to the [official Docker documentation to
     > ipfs-cluster-ctl/README.md
     ```
 
-1. Download the [`docker-compose.yml` file](https://raw.githubusercontent.com/ipfs/ipfs-cluster/v1.0.0-rc4/docker-compose.yml) and place it into the `ipfs-cluster-ctl` directory:
+1. Download the [`docker-compose.yml` file](https://raw.githubusercontent.com/ipfs/ipfs-cluster/v1.0.1/docker-compose.yml) and place it into the `ipfs-cluster-ctl` directory:
 
     ```shell
-    wget https://raw.githubusercontent.com/ipfs/ipfs-cluster/v1.0.0-rc4/docker-compose.yml
+    wget https://raw.githubusercontent.com/ipfs/ipfs-cluster/v1.0.1/docker-compose.yml
     ```
 
 1. Start the cluster using `docker-compose`. You may have to run as root:
 
     ```shell
-    docker-compose up
+    sudo docker-compose up
 
     > Recreating ipfs2 ... done
     > Recreating ipfs1    ... done
@@ -132,7 +132,7 @@ This shows us that `QmdzvHZ...` is pinned across the three IPFS nodes within our
 1. When you're finished playing around, kill the cluster. You may have to run this as root:
 
     ```shell
-    docker-compose kill
+    sudo docker-compose kill
 
     > Killing cluster0 ... done
     > Killing cluster1 ... done
