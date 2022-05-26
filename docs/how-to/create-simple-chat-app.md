@@ -25,10 +25,10 @@ To see a live demo, start your ipfs daemon (open IPFS Desktop or enter ipfs daem
 
 To get a minimal chat app going in your browser, you can [download a copy of the chat app code](#getting-the-code), run the daemon, and open index.html (instructions below).
 
-To test and deploy your own version with your own star nodes and addresses, follow the setup below for:
+To test and deploy your own version with your own nodes (recommended for deployments), follow the setup below for:
 
 - [Getting the code](#getting-the-code)
-- [Discovery and connectivity set up](#peer-discovery-and-connectivity) to peers (or use [Docker](#docker))
+- [Discovery and connectivity set up](#peer-discovery-and-connectivity) to peers
 - [Advertising set up](#advertising) to let other peers know your users are there
 - [Publishing set up and staying connected](#communication) to peers
 
@@ -77,8 +77,6 @@ This diagram demonstrates what a three-user network can look like.
 
 The browser nodes can communicate with go-ipfs as well, so BrowserC doesn't have to be a browser at all, but instead could be a go-ipfs node!
 
-You have a choice between using our recommended method with WebRTC-Star or you can quickly create your own kit if you’re comfortable using Docker. We provide a [Docker](#docker) image with instructions below.
-
 ### WebRTC-Star
 
 We use [WebRTC-Star](https://github.com/libp2p/js-libp2p-webrtc-star) nodes to help discover other peers to connect with directly, browser-to-browser. We use the [js-ipfs](https://github.com/ipfs/js-ipfs/blob/master/docs/BROWSERS.md) and Bootstrap libraries. For Bootstrap, we’re only using minified CSS. If you want a newer version of [js-ipfs](https://github.com/ipfs/js-ipfs/blob/master/docs/BROWSERS.md), you can use the [latest version available](https://cdn.jsdelivr.net/npm/ipfs/dist/index.min.js) from JSDelivr.
@@ -105,9 +103,13 @@ ipfs = await Ipfs.create({
 
 #### Setup
 
-Please note that this how-to uses example star nodes — however, those won't necessarily always be accessible. Currently it's important to either find a reliable star node or host your own. You can host your own by following the instructions for a [native setup](https://github.com/libp2p/js-libp2p-webrtc-star%23rendezvous-server-aka-signaling-server) or for a [Docker container](https://github.com/libp2p/js-libp2p-webrtc-star/blob/master/DEPLOYMENT.md) which includes Nginx (for SSL). If you opt for the native setup, we cover the Nginx reverse proxy process and SSL cert retrieval later in this post.
+Please note that this how-to uses example star nodes — however, those won't necessarily always be accessible. Currently it's important to either find a reliable star node or host your own. You can host your own by following the instructions for a [native setup](https://github.com/libp2p/js-libp2p-webrtc-star/tree/master/packages/webrtc-star-signalling-server) or for a [Docker container](https://github.com/libp2p/js-libp2p-webrtc-star/blob/master/packages/webrtc-star-signalling-server/DEPLOYMENT.md) which includes Nginx (for SSL). If you opt for the native setup, we cover the Nginx reverse proxy process and SSL cert retrieval later in this post.
 
 ### p2p-circuit
+
+:::warning
+This section is currently only relevant for go-ipfs versions **before** v0.11.0 as it's about circuit relay v1. There is currently no solution available to directly replace it, though most of the work has been complete [here](https://github.com/libp2p/go-libp2p-relay-daemon).
+:::
 
 WebRTC-Star is a very clean and effective method of P2P communications; however, sometimes NATs get in the way, so we use [p2p-circuit](https://docs.libp2p.io/concepts/circuit-relay) to get around that.
 
@@ -233,7 +235,7 @@ Here is  the [Python script](https://gist.github.com/TheDiscordian/51962fea72f8
 You can retrieve your own circuit info by running ipfs id on your go-ipfs node to get your PeerID. Then form the circuit URL like so:
 
 ```shell
-/dns6/ipfs.YOURDOMAIN.COM/tcp/4430/p2p/YOUR\_PEERID/p2p-circuit/p2p/
+/dns6/YOURDOMAIN.COM/tcp/4430/p2p/YOUR\_PEERID/p2p-circuit/p2p/
 ```
 
 You should see here where you fill out the domain name that you got the SSL cert for, as well as your node's PeerID. For the script, the leading and trailing slash are required, too.
@@ -437,56 +439,6 @@ setInterval(checkalive, 1000);
 :::warning
 The above code  should be used with the full version of processAnnounce, as it relies on lastAlive and lastPeer, which aren't updated in the simplified version.
 :::
-
-## Docker
-
-This step is optional. If you would like to quickly create your own kit using Docker, instead of using [WebRTC-Star](https://docs.ipfs.io/how-to/create-simple-chat-app/%23webrtc-star), this example includes a Docker image you can use. It might not be the best long-term solution, but it should be great if you want to quickly get rolling and experiment.
-
-### Create a volume
-
-First, create a volume to store long-term data like keys and node data.
-
-```shell
-docker volume create ipfs_bundle
-```
-
-### Configure a domain
-
-You need a domain and SSL to use this kit with browser nodes. There are two options:
-
-- One will run certbot and automatically grab a certificate for the provided domain name.
-- The other option won't handle SSL for you, and instead you'll have to reverse proxy port 9091 to 9090 (SSL), and port 4011 to 4430 (SSL).
-
-When you execute either of the commands, your IPFS node will also be set up for the first time giving you information such as its PeerID and circuit relay addresses. Take note of these — you'll want to edit them into the chat client so you can use your own node (see [WebRTC-Star Usage](https://docs.ipfs.io/how-to/create-simple-chat-app/%23usage) and [p2p-circuit Usage](https://docs.ipfs.io/how-to/create-simple-chat-app/%23usage-2) below for usage examples, or edit index.html and change the node's [multiaddresses](https://docs.libp2p.io/concepts/addressing/) out for your own).
-
-#### With certbot
-
-Ensure port 80 isn't being used, follow the checklist below, and then run the following command:
-
-```shell
-docker run --mount source=ipfs_bundle,destination=/root -p 9091:9091 -p 4011:4011 -p 9090:9090 -p 4430:4430 -p 80:80 -it trdiscordian/ipfsbundle certbot DOMAIN.COM
-```
-
-#### No certbot SSL disabled
-
-If you use this option, the container won't handle SSL at all, and you'll have to reverse proxy port 9091 to 9090 (SSL), and port 4011 to 4430 (SSL).
-
-```shell
-docker run --mount source=ipfs_bundle,destination=/root -p 9091:9091 -p 4011:4011 -it trdiscordian/ipfsbundle DOMAIN.COM
-```
-
-- Replace DOMAIN.COM with your domain
-- Ensure the domain is correctly pointing to the machine you're running the container on (subdomains work fine too)
-
-#### Running the container
-
-Once you're configured, you’re almost ready to run the container. Ensure that, at minimum, ports 4430 and 9090 are forwarded.
-
-```shell
-docker run --mount source=ipfs\_bundle,destination=/root -p 9091:9091 -p 4011:4011 -p 9090:9090 -p 4430:4430 -it trdiscordian/ipfsbundle
-```
-
-You should now be able to use your machine as both a WebRTC-Star node and a p2p-circuit node.
 
 ## More resources
 
