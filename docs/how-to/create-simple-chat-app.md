@@ -108,7 +108,7 @@ Please note that this how-to uses example star nodes — however, those won't ne
 ### p2p-circuit
 
 :::warning
-This section is currently only relevant for go-ipfs versions **before** v0.11.0 as it's about circuit relay v1. There is currently no solution available to directly replace it, though most of the work has been complete [here](https://github.com/libp2p/go-libp2p-relay-daemon).
+This section is currently only relevant for go-ipfs versions **before** v0.11.0 as it's about circuit relay v1. There is currently no solution available to directly replace it, though most of the work [has been completed](https://github.com/libp2p/go-libp2p-relay-daemon).
 :::
 
 WebRTC-Star is a very clean and effective method of P2P communications; however, sometimes NATs get in the way, so we use [p2p-circuit](https://docs.libp2p.io/concepts/circuit-relay) to get around that.
