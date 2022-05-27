@@ -96,7 +96,9 @@ docker run -d --name ipfs \
   -p 127.0.0.1:5001:5001 \
   ipfs/go-ipfs
 ```
-
+:::tip Use in custom images
+See `gateway` example at[github.com/ipfs-shipyard/go-ipfs-docker-examples](https://github.com/ipfs-shipyard/go-ipfs-docker-examples)
+:::
 
 ## Private swarms inside Docker
 
