@@ -3,7 +3,7 @@ title: Run IPFS inside Docker
 description: You can run IPFS inside Docker to simplify your deployment processes, and horizontally scale your IPFS infrastructure.
 ---
 
-# Run IPFS inside Docker 
+# Run IPFS inside Docker
 
 You can run IPFS inside Docker to simplify your deployment processes, as well as horizontally scale your IPFS infrastructure.
 
@@ -72,13 +72,14 @@ docker run -d --name ipfs_host -e IPFS_PROFILE=server -v $ipfs_staging:/export -
 ```
 
 ## Customizing your node
+
 Custom initialization code can be run by mounting scripts in the `/container-init.d` directory in the container. These are executed sequentially and in lexicographic order, after `ipfs init` is run and the swarm keys are copied (if the IPFS repo needs initialization), and before the IPFS daemon is started.
 
 Since this runs each time the container is started, you should check if your initialization code should be idempotent, particularly if you're persisting state outside of the container (e.g. using mounted directories).
 
 For example, this sets a custom bootstrap node before the daemon starts:
 
-```
+```shell
 #!/bin/sh
 set -ex
 ipfs bootstrap rm all
@@ -86,7 +87,8 @@ ipfs bootstrap add "/ip4/$PRIVATE_PEER_IP_ADDR/tcp/4001/ipfs/$PRIVATE_PEER_ID"
 ```
 
 This shows how to mount the file into the `container-init.d` directory when running the container:
-```
+
+```shell
 docker run -d --name ipfs \
   -e PRIVATE_PEER_ID=... \
   -e PRIVATE_PEER_IP_ADDR=... \
@@ -96,6 +98,7 @@ docker run -d --name ipfs \
   -p 127.0.0.1:5001:5001 \
   ipfs/go-ipfs
 ```
+
 :::tip Use in custom images
 See `gateway` example at[github.com/ipfs-shipyard/go-ipfs-docker-examples](https://github.com/ipfs-shipyard/go-ipfs-docker-examples)
 :::
