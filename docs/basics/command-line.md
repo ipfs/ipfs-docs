@@ -11,7 +11,7 @@ All instructions and examples shown here were performed and tested on an M1 Mac.
 
 ## Install IPFS
 
-If up, we need to install IPFS for the command-line. We have a great guide that will walk you through how to [install IPFS with the CLI](../install/command-line.md).
+Next up, we need to install IPFS for the command-line. We have a great guide that will walk you through how to [install IPFS with the CLI](../install/command-line.md).
 
 Once you have IPFS installed, we need to get our node up and running. If this is your first time using IPFS, you will first need to initialize the configuration files:
 
@@ -89,9 +89,6 @@ Now that we have our IPFS node up and running, we're ready to add files to IPFS.
     ```
 
 We've now added a file to IPFS, and it's ready to be shared with peers on the network!
-
-<!-- TODO: we might want to delete this paragraph if we cover pinner later. -->
-When you add a local file or folder to IPFS, it is automatically _pinned_ to your node. Pinning a file prevents objects on your IPFS node from being removed during _garbage collection_. We'll cover garbage collection in more detail later on.
 
 ## Retrieve a file
 
@@ -178,7 +175,7 @@ It is important to note that `ipfs cat` only works with plaintext files. As demo
 
 ## Pin a file
 
-We can _pin_ files and date we want to save to our IPFS node to ensure we don't lose this data.
+We can _pin_ data we want to save to our IPFS node to ensure we don't lose this data.
 
 1. Use the `ipfs pin add` command:
 
