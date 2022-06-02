@@ -166,7 +166,7 @@ Dialing is a function of the IPFS networking layer in [libp2p](#libp2p), wherein
 
 ### DNSAddr
 
-DNSAddr is a protocol for publishing multiple [Multiaddrs](#multiaddr) on DNS name. DNSAddr itself is a valid Multiaddr that looks like `/dnsaddr/bootstrap.libp2p.io`. [More about DNSAddr](https://github.com/multiformats/multiaddr/blob/master/protocols/DNSADDR.md)
+DNSAddr is a protocol for publishing multiple [Multiaddrs](#multiaddr) on DNS name. DNSAddr itself is a valid Multiaddr that looks like `/dnsaddr/bootstrap.libp2p.io`. Can be used for scaling, dynamic bootstrapping, or act as an additional content routing hint for [DNSLink](#dnslink) websites.  [More about DNSAddr](https://github.com/multiformats/multiaddr/blob/master/protocols/DNSADDR.md)
 
 ### DNSLink
 
