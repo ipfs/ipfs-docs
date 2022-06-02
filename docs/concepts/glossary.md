@@ -4,8 +4,8 @@ sidebarDepth: 0
 description: A glossary guide to key terminology for IPFS, the InterPlanetary File System.
 related:
   'Guide to libp2p terminology': https://docs.libp2p.io/reference/glossary/
-  'Article: The Decentralized Web Explained in Words You Can Understand (Breaker)': https://breakermag.com/the-decentralized-web-explained-in-words-you-can-understand/
-  'Decentralized Web Primer': https://github.com/ipfs-shipyard/ipfs-primer
+  'Guide to IPLD terminology': https://ipld.io/glossary/
+  'IPFS Course at ProtoSchool': https://proto.school/course/ipfs
 ---
 
 # IPFS glossary
@@ -163,6 +163,10 @@ Short for _Data Model Tree_, a term coined by the IPLD team. [More about DMT in 
 ### Dialing
 
 Dialing is a function of the IPFS networking layer in [libp2p](#libp2p), wherein a connection is opened to another peer. Together, an implementation of dialing and [listening](#listening) forms a [transport](#transport).
+
+### DNSAddr
+
+DNSAddr is a protocol for publishing multiple [Multiaddrs](#multiaddr) on DNS name. DNSAddr itself is a valid Multiaddr that looks like `/dnsaddr/bootstrap.libp2p.io`. [More about DNSAddr](https://github.com/multiformats/multiaddr/blob/master/protocols/DNSADDR.md)
 
 ### DNSLink
 
