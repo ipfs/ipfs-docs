@@ -5,6 +5,7 @@ SCRIPT_DIRECTORY="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 API_FILE=`pwd`/docs/reference/http/api.md
 ROOT=`pwd`
+
 cd tools/http-api-docs
 
 # extract go-ipfs release tag used in http-api-docs from go.mod in this repo
@@ -27,12 +28,6 @@ else
      make
      http-api-docs > $API_FILE
 
-     # update installation docs
-     cd $ROOT # go back to root of ipfs-docs repo
-     "${SCRIPT_DIRECTORY}/update_version.sh" ipfs/ipfs-update current-ipfs-updater-version
-     "${SCRIPT_DIRECTORY}/update_version.sh" ipfs/ipfs-cluster current-ipfs-cluster-version
-     "${SCRIPT_DIRECTORY}/update_version.sh" ipfs/go-ipfs current-ipfs-version
-
      # update cli docs
      cd $ROOT # go back to root of ipfs-docs repo
      git clone https://github.com/ipfs/go-ipfs.git
@@ -42,13 +37,24 @@ else
      go install ./cmd/ipfs
      cd $ROOT/docs/reference
      ./generate-cli-docs.sh
-
-     # submit a PR
-     cd $ROOT # go back to root of ipfs-docs repo
-     git config --global user.email "${GITHUB_ACTOR}"
-     git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
-     git add -u
-     git commit -m "Bumped go-ipfs dependence of http-api-docs to tag $LATEST_IPFS_TAG."
-     git push -u origin bump-http-api-docs-ipfs-to-$LATEST_IPFS_TAG
-     echo "::set-output name=updated_branch::bump-http-api-docs-ipfs-to-$LATEST_IPFS_TAG"
 fi
+
+# update versions in docs
+cd $ROOT # go back to root of ipfs-docs repo
+"${SCRIPT_DIRECTORY}/update_version.sh" ipfs/ipfs-update current-ipfs-updater-version
+"${SCRIPT_DIRECTORY}/update_version.sh" ipfs/ipfs-cluster current-ipfs-cluster-version
+"${SCRIPT_DIRECTORY}/update_version.sh" ipfs/go-ipfs current-ipfs-version
+
+# submit a PR
+if [[ ! `git status --porcelain` ]]; then
+    echo "No changes to commit."
+    exit 0;
+fi
+
+cd $ROOT # go back to root of ipfs-docs repo
+git config --global user.email "${GITHUB_ACTOR}"
+git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
+git add -u
+git commit -m "Bumped documentation & installation docs."
+git push -fu origin bump-docs-to-$LATEST_IPFS_TAG
+echo "::set-output name=updated_branch::bump-docs-to-$LATEST_IPFS_TAG"
