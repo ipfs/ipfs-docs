@@ -1,4 +1,4 @@
-name: 'Update on new go-ipfs tag'
+name: 'Update when a new tag or a new released is available'
 inputs:
   latest_ipfs_tag:
       description: "latest go ipfs tag"
