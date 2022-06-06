@@ -51,6 +51,8 @@ update_version() {
     LATEST_VERSION_TAG=`curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${INPUT_REPOSITORY}/releases/latest | jq --raw-output ".tag_name"` 
     LATEST_VERSION_NUMBER=${LATEST_VERSION_TAG:1}
 
+    echo "Updating documentation files that rely on ${INPUT_VERSION_IDENTIFIER} to ${LATEST_VERSION_TAG}"
+
     while read -r file; do
         echo "updating ${INPUT_REPOSITORY} version to ${LATEST_VERSION_NUMBER} in ${file}"
         CURRENT_VERSION_TAG=`awk "/${INPUT_VERSION_IDENTIFIER}/{print \\$2; exit;}" "${file}"`
