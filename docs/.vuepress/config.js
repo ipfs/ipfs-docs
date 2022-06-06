@@ -118,7 +118,7 @@ module.exports = {
                   '/concepts/dht',
                   '/concepts/merkle-dag',
                   '/concepts/bitswap',
-                  ['https://ipld.io/docs/intro/primer/', 'IPLD' ],
+                  '/concepts/ipld',
                   '/concepts/ipns',
                   '/concepts/libp2p',
                   '/concepts/file-systems'
@@ -178,7 +178,6 @@ module.exports = {
                     'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
                     'Customize an IPFS repo'
                   ],
-                  '/how-to/best-practices-for-ipfs-builders',
                   '/how-to/troubleshooting'
                 ]
               },
@@ -193,7 +192,7 @@ module.exports = {
                   '/how-to/take-snapshot',
                   '/how-to/store-play-videos',
                   '/how-to/host-git-style-repo',
-                  '/how-to/move-ipfs-installation/move-ipfs-installation'
+                  '/how-to/move-ipfs-installation'
                 ]
               },
               {

@@ -16,8 +16,6 @@ IPFS desktop application is the easiest way to get up and running quickly with I
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | [![Windows icon](./images/single-page-website/windows-icon.png)](#windows) | [![macOS icon](./images/single-page-website/apple-icon.png)](#macos) | [![Linux icon](./images/single-page-website/linux-icon.png)](#linux) |
 
-Already downloaded? you can [Skip this step](#add-your-site)
-
 ### Windows
 
 1. Download the latest available `.exe` file from the [IPFS desktop downloads page](https://github.com/ipfs/ipfs-desktop/releases):
@@ -216,14 +214,16 @@ IPFS collaborative clusters are groups of IPFS nodes that collaboratively pin al
 An easy way to make sure important data is retained is to use a pinning service. These services run lots of IPFS nodes and will _pin_ your data for you! This way, you don't have to run and maintain your own IPFS node. Check out the [Persistence page](../../concepts/persistence.md) for more information on pinning services. In this tutorial, we're going to use [Pinata](https://pinata.cloud) since it gives new users 1GB of storage for free, and has a very simple interface:
 
 1. Go to [Pinata.cloud](https://pinata.cloud) and sign up or log in.
-2. Select **Upload** and click **Browse**.
-3. Navigate to your `index.html` file and click **Open**.
-4. Click **Upload**.
-5. You should be able to see your `index.html` file pinned:
+2. Click **Pinata Upload**.
+3. Select **Upload File** and click **Browse**.
+4. Navigate to your `index.html` file and click **Open**.
+5. Click **Upload**.
+6. Once the file has finished uploading, click **Pin Explorer** to view any files you have pinned.
+7. You should be able to see your `index.html` file pinned:
 
    ![The Pinata Pin Explorer screen showing the index.html pinned.](./images/single-page-website/pinned-index-file-in-pinata.png)
 
-6. Click your `index.html` file to open your website through the Pinata gateway.
+8. Click the **IPFS Hash** of your `index.html` file to open your website through the Pinata gateway.
 
    ![Random planet fact website pinned using Pinata and displayed in Firefox](./images/single-page-website/pinned-random-planet-fact-website.png)
 
@@ -253,5 +253,4 @@ Domain name services are fairly slow to update. You should be able to go to your
 
 This project was designed to get you up and running quickly, but there are many improvements we can make here.
 
-You may have noticed that when visiting [randomplanetfacts.xyz](http://randomplanetfacts.xyz), your browser redirects to [gateway.pinata.cloud/ipfs/QmW7S5HR...](https://gateway.pinata.cloud/ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA). This isn't great for the user's experience, and it can cause issues with security certificates and other website validation methods. Also, this website is incredibly simple. There are no images, external stylesheets, or javascript files. 
-If you're interested in building a more complex site using IPFS and securing it properly, [carry on with this tutorial series by hosting a multipage website on IPFS.](multipage-website.md)
+You may have noticed that when visiting [randomplanetfacts.xyz](http://randomplanetfacts.xyz), your browser redirects to [gateway.pinata.cloud/ipfs/QmW7S5HR...](https://gateway.pinata.cloud/ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA). This isn't great for the user's experience, and it can cause issues with security certificates and other website validation methods. Also, this website is incredibly simple. There are no images, external stylesheets, or javascript files. If you're interested in building a more complex site using IPFS and securing it properly, [carry on with this tutorial series by hosting a multipage website on IPFS.](multipage-website.md)

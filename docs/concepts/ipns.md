@@ -26,7 +26,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    ipfs daemon
    ```
 
-1. Open another command line window and create the file that you want to set up with IPNS. For the tutorial, we're just going to create a simple _hello world_ file:
+1. Create the file that you want to set up with IPNS. For the tutorial, we're just going to create a simple _hello world_ file:
 
    ```shell
    echo "Hello IPFS" > hello.txt
@@ -41,9 +41,9 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    > 11 B / 11 B [=====================================================] 100.00%
    ```
 
-   Take note of the CID output by IPFS.
+   Take note of the `Qm` hash output by IPFS.
 
-1. Use `cat` and the CID you just got from IPFS to view the file again:
+1. Use `cat` and the `Qm` hash you just got from IPFS to view the file again:
 
    ```shell
    ipfs cat QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
@@ -51,7 +51,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    > Hello IPFS
    ```
 
-1. Publish your CID to IPNS:
+1. Publish your `Qm` hash to IPNS:
 
    ```shell
    ipfs name publish /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
@@ -59,7 +59,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    > Published to k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew: /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
    ```
 
-   `k51...` is the public key or IPNS name of the IPFS you are running. You can now change the file repeatedly, and, even though the CID changes when you change the file, you can continue to access it with this key.
+   `k51...` is the key of your IPFS installation.
 
 1. You can view your file by going to `https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew`:
 
@@ -91,7 +91,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    > Hello again IPFS
    ```
 
-You can view the CID of the file associated with your `k5` key by using `name resolve`:
+You can view the `Qm` hash of the file associated with your `k5` key by using `name resolve`:
 
 ```shell
 ipfs name resolve
@@ -134,7 +134,3 @@ In the same way, you can republish a new version of your website under the same 
 ## Alternatives to IPNS
 
 IPNS is not the only way to create mutable addresses on IPFS. You can also use [DNSLink](dnslink.md), which is currently much faster than IPNS and also uses human-readable names. Other community members are exploring ways to use blockchains to store common name records.
-
-## Further Resources
-
-- [ResNetLab on Tour - Mutable Content](https://research.protocol.ai/tutorials/resnetlab-on-tour/mutable-content/)

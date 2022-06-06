@@ -1,7 +1,6 @@
 ---
 title: Command-line
 description: Using IPFS through the command-line allows you to do everything that IPFS Desktop can do, but at a more granular level since you can specify which commands to run. Learn how to install it here.
-current-ipfs-version: v0.10.2
 ---
 
 # Command-line
@@ -12,7 +11,7 @@ Installing IPFS through the command-line is handy if you plan on building applic
 
 ## System requirements
 
-IPFS requires 512MiB of memory and can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space. One can enable automatic garbage collection via [--enable-gc](/reference/cli/#ipfs-daemon) and adjust the [default maximum disk storage](https://github.com/ipfs/go-ipfs/blob/v0.10.2/docs/config.md#datastorestoragemax) for data retrieved from other peers.
+IPFS requires 512MiB of memory and can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space. One can enable automatic garbage collection via [--enable-gc](/reference/cli/#ipfs-daemon) and adjust the [default maximum disk storage](https://github.com/ipfs/go-ipfs/blob/v0.10.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
 
 ## Official distributions
 
@@ -28,22 +27,22 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
 
    ```powershell
    cd ~\
-   wget https://dist.ipfs.io/go-ipfs/v0.10.2/go-ipfs_v0.10.2_windows-amd64.zip -Outfile go-ipfs_v0.10.2.zip
+   wget https://dist.ipfs.io/go-ipfs/v0.10.0/go-ipfs_v0.10.0_windows-amd64.zip -Outfile go-ipfs_v0.10.0.zip
    ```
 
 1. Unzip the file and move it somewhere handy.
 
    ```powershell
-   Expand-Archive -Path go-ipfs_v0.10.2.zip -DestinationPath ~\Apps\go-ipfs_v0.10.2
+   Expand-Archive -Path go-ipfs_v0.10.0.zip -DestinationPath ~\Apps\go-ipfs_v0.10.0
    ```
 
-1. Move into the `go-ipfs_v0.10.2` folder and check that the `ipfs.exe` works:
+1. Move into the `go-ipfs_v0.10.0` folder and check that the `ipfs.exe` works:
 
    ```powershell
-   cd ~\Apps\go-ipfs_v0.10.2\go-ipfs
+   cd ~\Apps\go-ipfs_v0.10.0\go-ipfs
    .\ipfs.exe --version
 
-   > ipfs version 0.12.0
+   > ipfs version 0.10.0
    ```
 
    While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH` by using the following steps.
@@ -84,7 +83,7 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
    cd ~
    ipfs --version
 
-   > ipfs version 0.12.0
+   > ipfs version 0.10.0
    ```
 
 ### macOS
@@ -96,13 +95,13 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
 1. Download the macOS binary from [`dist.ipfs.io`](https://dist.ipfs.io/#go-ipfs).
 
    ```bash
-   curl -O https://dist.ipfs.io/go-ipfs/v0.10.2/go-ipfs_v0.10.2_darwin-amd64.tar.gz
+   curl -O https://dist.ipfs.io/go-ipfs/v0.10.0/go-ipfs_v0.10.0_darwin-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.10.2_darwin-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.10.0_darwin-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
@@ -126,7 +125,7 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
    ```bash
    ipfs --version
 
-   > ipfs version 0.12.0
+   > ipfs version 0.10.0
    ```
 
 ### Linux
@@ -134,13 +133,13 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
 1. Download the Linux binary from [`dist.ipfs.io`](https://dist.ipfs.io/#go-ipfs).
 
    ```bash
-   wget https://dist.ipfs.io/go-ipfs/v0.10.2/go-ipfs_v0.10.2_linux-amd64.tar.gz
+   wget https://dist.ipfs.io/go-ipfs/v0.10.0/go-ipfs_v0.10.0_linux-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.10.2_linux-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.10.0_linux-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
@@ -164,38 +163,12 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
    ```bash
    ipfs --version
 
-   > ipfs version 0.12.0
+   > ipfs version 0.10.0
    ```
 
 ## Compile manually
 
 Manually compiling IPFS is a fairly involved process that changes frequently. It can be handy if you'd like to build a specific branch or use the _bleeding-edge_ version of Go-IPFS. See the [`ipfs/go-ipfs` GitHub repository for details →](https://github.com/ipfs/go-ipfs)
-
-## Which node should you use with the command line
-
-The command line can detect and use any node that's running, unless it's configured to use an external binary file. Here's which node to use for the local daemon or a remote client:
-
-### Local daemon
-
-The local daemon process is automatically started in the CLI with the command `ipfs daemon`. It creates an `$IPFS_PATH/api` file with an [RPC API](./reference/http/api/#http-rpc-api-reference) address.
-
-### Remote client
-
-You can install the standalone IPFS CLI client independently and use it to talk to an IPFS Desktop node or a Brave node. Use the [RPC API](./reference/http/api/#http-rpc-api-reference) to talk to the `ipfs` daemon.
-
-When an IPFS command is executed without parameters, the CLI client checks whether the `$IPFS_PATH/api` file exists and connects to the address listed there.
-
-- If an `$IPFS_PATH` is in the default location (for example, `~/.ipfs` on Linux), then it works automatically and the IPFS CLI client talks to the locally running `ipfs` daemon without any additional configuration.
-
-- If an `$IPFS_PATH` is not in the default location, use the `--api <rpc-api-addr>` command-line argument. Alternatively, you can set the environment variable to `IPFS_PATH`. `IPFS_PATH` will point to a directory with the api file with the existing `ipfs` daemon instance.
-
-#### Most common examples
-
-If you are an IPFS Desktop user, you can install CLI tools and an `.ipfs/api` file is automatically picked up.
-
-If you're not running IPFS Desktop, specify a custom port with `ipfs --api /ip4/127.0.0.1/tcp/<port> id` in the CLI.
-
-For example, Brave RPC API runs on port 45001, so the CLI can talk to the Brave daemon using `ipfs --api /ip4/127.0.0.1/tcp/45001 id`. You can use `mkdir -p ~/.ipfs && echo "/ip4/<ip>/tcp/<rpc-port>" > ~/.ipfs/api` to avoid passing `--api` every time.
 
 ## Next steps
 

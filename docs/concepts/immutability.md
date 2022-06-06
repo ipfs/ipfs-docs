@@ -50,6 +50,9 @@ If we change the content of `B` to `IPFS!`, all the upstream paths will change a
 "hello"    "world"     "hello"    "IPFS!"
 ```
 
+Again, node `B` does not change. It will always refer to the same content, `world`. Node `A` also appears in the new DAG. This is not because we are _keeping_ it; that would imply the location-addressed paradigm. In the content-addressed system, any time someone writes a block with `"hello"`, it will _always_ have CID `A`.
+This is different from location-addressed systems where we could reuse the original buffer and edit the small substring that represents the difference.
+
 Again, node `B` does not change. It will always refer to the same content, `world`. Node `A` also appears in the new DAG. This does not necessarily mean we copied the memory/buffer that contained the `hello` string into our new message; that would imply the location-addressed paradigm that focuses on the _where_ and not the _what_. In a content-addressed system, any time someone writes the string `hello` it will always have CID `A`, regardless of whether we copied the string from a previous location or we wrote it from scratch.
 
 ## Website explanation

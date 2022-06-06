@@ -1,5 +1,5 @@
 ---
-title: Configure profile
+title: Default profile
 legacyUrl: https://docs.ipfs.io/guides/examples/default-profile/
 description: Your profile defines which file-system and data-store your IPFS node will use, along with other configuration options. Learn how to set, change, and reset your profile.
 ---
@@ -29,56 +29,17 @@ If you previously configured your IPFS node to use another profile, let's say `b
 
 ## Available profiles
 
-Here's a list of all the profiles available for your IPFS node. You can also find them documented in `ipfs config profile --help`.
-
-### Available only when initializing the node
+Here's a list of all the profiles available for your IPFS node:
 
 - `flatfs`
-  Configures the node to use the flatfs datastore.
-
-  This is the most battle-tested and reliable datastore, but it's significantly slower than the badger datastore.
-
-  Use this datastore if:
-
-  - You need a very simple and very reliable datastore you and trust your filesystem. This datastore stores each block as a separate file in the underlying filesystem, so it's unlikely to lose data, unless there's an issue with the underlying file system.
-  - You need to run garbage collection on a small (<= 10GiB) datastore. The default datastore, badger, can leave several gigabytes of data behind when garbage collecting.
-  - You're concerned about memory usage. In its default configuration, badger can use up to several gigabytes of memory.
-
 - `badgerds`
-  Configures the node to use the badger datastore.
-
-  This is the fastest datastore. Use this datastore if performance, especially when adding many gigabytes of files, is critical.
-
-  However, this datastore will not properly reclaim space when your datastore is smaller than several gigabytes. If you run IPFS with '--enable-gc' (you have enabled block-level garbage collection), you plan on storing very little data in
-  your IPFS node, and disk usage is more critical than performance, consider using
-  `flatfs`.
-
-  This datastore uses up to several gigabytes of memory.
-
-### Available at any time
-
-- `default-datastore`
-  Restores the default datastore (flatfs).
-
-  Read the `flatfs` profile description for more information on this datastore.
-
 - `server`
-  Disables local host discovery, recommended when running IPFS on machines with public IPv4 addresses.
-
-- `local-discovery`
-  Sets default values to fields affected by the server profile, enables discovery in local networks.
-
 - `randomports`
-  Uses a random port number for swarm.
-
+- `default-datastore`
+- `local-discovery`
 - `test`
-  Reduces external interference of IPFS daemon. Useful when using the daemon in test environments.
-
 - `default-networking`
-  Restores default network settings. Inverse profile of the test profile.
-
 - `lowpower`
-  Reduces daemon overhead on the system. May degrade performance of content discovery and data fetching.
 
 ## Reset your profile
 

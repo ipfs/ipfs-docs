@@ -14,6 +14,14 @@
               >Suggest new content</a
             >
           </li>
+          <li>
+            <a
+              href="https://ipfs.canny.io/docs-features"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Request features</a
+            >
+          </li>
         </ul>
       </div>
       <div class="block">
