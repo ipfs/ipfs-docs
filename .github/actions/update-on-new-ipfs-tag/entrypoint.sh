@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -eu
 
+SCRIPT_DIRECTORY="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 API_FILE=`pwd`/docs/reference/http/api.md
 ROOT=`pwd`
 cd tools/http-api-docs
@@ -27,12 +29,9 @@ else
 
      # update installation docs
      cd $ROOT # go back to root of ipfs-docs repo
-     CURRENT_IPFS_NUMBER=${CURRENT_IPFS_TAG:1}
-     LATEST_IPFS_NUMBER=${LATEST_IPFS_TAG:1}
-     while read -r file; do
-          echo "replacing $CURRENT_IPFS_NUMBER with $LATEST_IPFS_NUMBER in $file"
-          sed -E -i "s/$CURRENT_IPFS_NUMBER/$LATEST_IPFS_NUMBER/g" $file
-     done <<< "$(grep "current-ipfs-version" ./docs -R --files-with-matches)"
+     "${SCRIPT_DIRECTORY}/update_version.sh" ipfs/ipfs-update current-ipfs-updater-version
+     "${SCRIPT_DIRECTORY}/update_version.sh" ipfs/ipfs-cluster current-ipfs-cluster-version
+     "${SCRIPT_DIRECTORY}/update_version.sh" ipfs/go-ipfs current-ipfs-version
 
      # update cli docs
      cd $ROOT # go back to root of ipfs-docs repo
