@@ -3,6 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '30 5,17 * * *' # run every day at 5:30am and 5:30pm UTC
+  workflow_call:
 
 jobs:
   update:
