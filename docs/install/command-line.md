@@ -1,7 +1,7 @@
 ---
 title: Command-line
 description: Using IPFS through the command-line allows you to do everything that IPFS Desktop can do, but at a more granular level since you can specify which commands to run. Learn how to install it here.
-current-ipfs-version: v0.12.2
+current-ipfs-version: v0.10.2
 ---
 
 # Command-line
@@ -12,7 +12,7 @@ Installing IPFS through the command-line is handy if you plan on building applic
 
 ## System requirements
 
-IPFS requires 512MiB of memory and can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space. One can enable automatic garbage collection via [--enable-gc](/reference/cli/#ipfs-daemon) and adjust the [default maximum disk storage](https://github.com/ipfs/go-ipfs/blob/v0.12.2/docs/config.md#datastorestoragemax) for data retrieved from other peers.
+IPFS requires 512MiB of memory and can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space. One can enable automatic garbage collection via [--enable-gc](/reference/cli/#ipfs-daemon) and adjust the [default maximum disk storage](https://github.com/ipfs/go-ipfs/blob/v0.10.2/docs/config.md#datastorestoragemax) for data retrieved from other peers.
 
 ## Official distributions
 
@@ -28,19 +28,19 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
 
    ```powershell
    cd ~\
-   wget https://dist.ipfs.io/go-ipfs/v0.12.2/go-ipfs_v0.12.2_windows-amd64.zip -Outfile go-ipfs_v0.12.2.zip
+   wget https://dist.ipfs.io/go-ipfs/v0.10.2/go-ipfs_v0.10.2_windows-amd64.zip -Outfile go-ipfs_v0.10.2.zip
    ```
 
 1. Unzip the file and move it somewhere handy.
 
    ```powershell
-   Expand-Archive -Path go-ipfs_v0.12.2.zip -DestinationPath ~\Apps\go-ipfs_v0.12.2
+   Expand-Archive -Path go-ipfs_v0.10.2.zip -DestinationPath ~\Apps\go-ipfs_v0.10.2
    ```
 
-1. Move into the `go-ipfs_v0.12.2` folder and check that the `ipfs.exe` works:
+1. Move into the `go-ipfs_v0.10.2` folder and check that the `ipfs.exe` works:
 
    ```powershell
-   cd ~\Apps\go-ipfs_v0.12.2\go-ipfs
+   cd ~\Apps\go-ipfs_v0.10.2\go-ipfs
    .\ipfs.exe --version
 
    > ipfs version 0.12.0
@@ -96,13 +96,13 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
 1. Download the macOS binary from [`dist.ipfs.io`](https://dist.ipfs.io/#go-ipfs).
 
    ```bash
-   curl -O https://dist.ipfs.io/go-ipfs/v0.12.2/go-ipfs_v0.12.2_darwin-amd64.tar.gz
+   curl -O https://dist.ipfs.io/go-ipfs/v0.10.2/go-ipfs_v0.10.2_darwin-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.12.2_darwin-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.10.2_darwin-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
@@ -134,13 +134,13 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
 1. Download the Linux binary from [`dist.ipfs.io`](https://dist.ipfs.io/#go-ipfs).
 
    ```bash
-   wget https://dist.ipfs.io/go-ipfs/v0.12.2/go-ipfs_v0.12.2_linux-amd64.tar.gz
+   wget https://dist.ipfs.io/go-ipfs/v0.10.2/go-ipfs_v0.10.2_linux-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.12.2_linux-amd64.tar.gz
+   tar -xvzf go-ipfs_v0.10.2_linux-amd64.tar.gz
 
    > x go-ipfs/install.sh
    > x go-ipfs/ipfs
