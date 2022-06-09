@@ -32,7 +32,7 @@ Every command usable from the CLI is also available through the [HTTP API](/refe
 ```
 
 
-_Generated on 2022-02-19 05:33:06, from go-ipfs 0.12.0._
+_Generated on 2022-06-09 20:44:40, from go-ipfs 0.13.0._
 
 ## ipfs
 
@@ -45,7 +45,10 @@ SYNOPSIS
 
 OPTIONS
 
-  -c, --config               string - Path to the configuration file to use.
+  --repo-dir                 string - Path to the repository directory to use.
+  --config-file              string - Path to the configuration file to use.
+  -c, --config               string - [DEPRECATED] Path to the configuration
+                                      file to use.
   -D, --debug                bool   - Operate in debug mode.
   --help                     bool   - Show the full command help text.
   -h                         bool   - Show a short version of the command help
@@ -85,16 +88,15 @@ SUBCOMMANDS
   
   ADVANCED COMMANDS
     daemon        Start a long-running daemon process
-    mount         Mount an IPFS read-only mount point
-    resolve       Resolve any type of name
+    resolve       Resolve any type of content path
     name          Publish and resolve IPNS names
     key           Create and list IPNS name keypairs
-    dns           Resolve DNS links
     pin           Pin objects to local storage
     repo          Manipulate the IPFS repository
     stats         Various operational stats
-    p2p           Libp2p stream mounting
+    p2p           Libp2p stream mounting (experimental)
     filestore     Manage the filestore (experimental)
+    mount         Mount an IPFS read-only mount point (experimental)
   
   NETWORK COMMANDS
     id            Show info about IPFS peers
@@ -102,13 +104,13 @@ SUBCOMMANDS
     swarm         Manage connections to the p2p network
     dht           Query the DHT for values or peers
     ping          Measure the latency of a connection
-    diag          Print diagnostics
     bitswap       Inspect bitswap state
     pubsub        Send and receive messages via pubsub
   
   TOOL COMMANDS
     config        Manage configuration
     version       Show IPFS version information
+    diag          Generate diagnostic reports
     update        Download and apply go-ipfs updates
     commands      List all available commands
     log           Manage and show logs of running daemon
@@ -130,6 +132,7 @@ SUBCOMMANDS
 
   For more information about each command, use:
   'ipfs <subcmd> --help'
+
 
 ```
 
@@ -276,6 +279,7 @@ SUBCOMMANDS
   For more information about each command, use:
   'ipfs bitswap <subcmd> --help'
 
+
 ```
 
 ## ipfs bitswap ledger
@@ -365,17 +369,18 @@ SYNOPSIS
 DESCRIPTION
 
   'ipfs block' is a plumbing command used to manipulate raw IPFS blocks.
-  Reads from stdin or writes to stdout, and <key> is a base58 encoded
-  multihash.
+  Reads from stdin or writes to stdout. A block is identified by a Multihash
+  passed with a valid CID.
 
 SUBCOMMANDS
-  ipfs block get <key>     - Get a raw IPFS block.
+  ipfs block get <cid>     - Get a raw IPFS block.
   ipfs block put <data>... - Store input as an IPFS block.
-  ipfs block rm <hash>...  - Remove IPFS block(s).
-  ipfs block stat <key>    - Print information of a raw IPFS block.
+  ipfs block rm <cid>...   - Remove IPFS block(s) from the local datastore.
+  ipfs block stat <cid>    - Print information of a raw IPFS block.
 
   For more information about each command, use:
   'ipfs block <subcmd> --help'
+
 
 ```
 
@@ -383,19 +388,19 @@ SUBCOMMANDS
 
 ```
 USAGE
-  ipfs block get <key> - Get a raw IPFS block.
+  ipfs block get <cid> - Get a raw IPFS block.
 
 SYNOPSIS
-  ipfs block get [--] <key>
+  ipfs block get [--] <cid>
 
 ARGUMENTS
 
-  <key> - The base58 multihash of an existing block to get.
+  <cid> - The CID of an existing block to get.
 
 DESCRIPTION
 
   'ipfs block get' is a plumbing command for retrieving raw IPFS blocks.
-  It outputs to stdout, and <key> is a base58 encoded multihash.
+  It takes a <cid>, and outputs the block to stdout.
 
 
 ```
@@ -407,8 +412,9 @@ USAGE
   ipfs block put <data>... - Store input as an IPFS block.
 
 SYNOPSIS
-  ipfs block put [--format=<format> | -f] [--mhtype=<mhtype>] [--mhlen=<mhlen>]
-                 [--pin] [--] <data>...
+  ipfs block put [--cid-codec=<cid-codec>] [--mhtype=<mhtype>] [--mhlen=<mhlen>]
+                 [--pin] [--allow-big-block] [--format=<format> | -f] [--]
+                 <data>...
 
 ARGUMENTS
 
@@ -416,18 +422,30 @@ ARGUMENTS
 
 OPTIONS
 
-  -f, --format  string - cid format for blocks to be created with.
-  --mhtype      string - multihash hash function. Default: sha2-256.
-  --mhlen       int    - multihash hash length. Default: -1.
-  --pin         bool   - pin added blocks recursively. Default: false.
+  --cid-codec        string - Multicodec to use in returned CID. Default: raw.
+  --mhtype           string - Multihash hash function. Default: sha2-256.
+  --mhlen            int    - Multihash hash length. Default: -1.
+  --pin              bool   - Pin added blocks recursively. Default: false.
+  --allow-big-block  bool   - Disable block size check and allow creation of
+                              blocks bigger than 1MiB. WARNING: such blocks
+                              won't be transferable over the standard bitswap.
+                              Default: false.
+  -f, --format       string - Use legacy format for returned CID (DEPRECATED).
 
 DESCRIPTION
 
   'ipfs block put' is a plumbing command for storing raw IPFS blocks.
-  It reads from stdin, and outputs the block's CID to stdout.
+  It reads data from stdin, and outputs the block's CID to stdout.
   
-  Unless specified, this command returns dag-pb CIDv0 CIDs. Setting 'mhtype' to anything
-  other than 'sha2-256' or format to anything other than 'v0' will result in CIDv1.
+  Unless cid-codec is specified, this command returns raw (0x55) CIDv1 CIDs.
+  
+  Passing alternative --cid-codec does not modify imported data, nor run any
+  validation. It is provided solely for convenience for users who create blocks
+  in userland.
+  
+  NOTE:
+  Do not use --format for any new code. It got superseded by --cid-codec and left
+  only for backward compatibility when a legacy CIDv0 is required (--format=v0).
 
 
 ```
@@ -436,14 +454,14 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs block rm <hash>... - Remove IPFS block(s).
+  ipfs block rm <cid>... - Remove IPFS block(s) from the local datastore.
 
 SYNOPSIS
-  ipfs block rm [--force | -f] [--quiet | -q] [--] <hash>...
+  ipfs block rm [--force | -f] [--quiet | -q] [--] <cid>...
 
 ARGUMENTS
 
-  <hash>... - Bash58 encoded multihash of block(s) to remove.
+  <cid>... - CIDs of block(s) to remove.
 
 OPTIONS
 
@@ -453,7 +471,7 @@ OPTIONS
 DESCRIPTION
 
   'ipfs block rm' is a plumbing command for removing raw ipfs blocks.
-  It takes a list of base58 encoded multihashes to remove.
+  It takes a list of CIDs to remove from the local datastore..
 
 
 ```
@@ -462,21 +480,21 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs block stat <key> - Print information of a raw IPFS block.
+  ipfs block stat <cid> - Print information of a raw IPFS block.
 
 SYNOPSIS
-  ipfs block stat [--] <key>
+  ipfs block stat [--] <cid>
 
 ARGUMENTS
 
-  <key> - The base58 multihash of an existing block to stat.
+  <cid> - The CID of an existing block to stat.
 
 DESCRIPTION
 
   'ipfs block stat' is a plumbing command for retrieving information
   on raw IPFS blocks. It outputs the following to stdout:
   
-  	Key  - the base58 encoded multihash
+  	Key  - the CID of the block
   	Size - the size of the block in bytes
 
 
@@ -509,6 +527,7 @@ SUBCOMMANDS
 
   For more information about each command, use:
   'ipfs bootstrap <subcmd> --help'
+
 
 ```
 
@@ -548,6 +567,7 @@ SUBCOMMANDS
 
   For more information about each command, use:
   'ipfs bootstrap add <subcmd> --help'
+
 
 ```
 
@@ -619,6 +639,7 @@ SUBCOMMANDS
   For more information about each command, use:
   'ipfs bootstrap rm <subcmd> --help'
 
+
 ```
 
 ## ipfs bootstrap rm all
@@ -644,7 +665,8 @@ USAGE
   ipfs cat <ipfs-path>... - Show IPFS object data.
 
 SYNOPSIS
-  ipfs cat [--offset=<offset> | -o] [--length=<length> | -l] [--] <ipfs-path>...
+  ipfs cat [--offset=<offset> | -o] [--length=<length> | -l] [--progress=false]
+           [--] <ipfs-path>...
 
 ARGUMENTS
 
@@ -652,8 +674,9 @@ ARGUMENTS
 
 OPTIONS
 
-  -o, --offset  int64 - Byte offset to begin reading from.
-  -l, --length  int64 - Maximum number of bytes to read.
+  -o, --offset    int64 - Byte offset to begin reading from.
+  -l, --length    int64 - Maximum number of bytes to read.
+  -p, --progress  bool  - Stream progress data. Default: true.
 
 DESCRIPTION
 
@@ -674,12 +697,13 @@ SYNOPSIS
 SUBCOMMANDS
   ipfs cid base32 <cid>... - Convert CIDs to Base32 CID version 1.
   ipfs cid bases           - List available multibase encodings.
-  ipfs cid codecs          - List available CID codecs.
+  ipfs cid codecs          - List available CID multicodecs.
   ipfs cid format <cid>... - Format and convert a CID in various useful ways.
   ipfs cid hashes          - List available multihashes.
 
   For more information about each command, use:
   'ipfs cid <subcmd> --help'
+
 
 ```
 
@@ -694,7 +718,12 @@ SYNOPSIS
 
 ARGUMENTS
 
-  <cid>... - Cids to convert.
+  <cid>... - CIDs to convert.
+
+DESCRIPTION
+
+  'ipfs cid base32' normalizes passes CIDs to their canonical case-insensitive encoding.
+  Useful when processing third-party CIDs which could come with arbitrary formats.
 
 
 ```
@@ -714,6 +743,10 @@ OPTIONS
                     code.
   --numeric  bool - also include numeric codes.
 
+DESCRIPTION
+
+  'ipfs cid bases' relies on https://github.com/multiformats/go-multibase
+
 
 ```
 
@@ -721,14 +754,19 @@ OPTIONS
 
 ```
 USAGE
-  ipfs cid codecs - List available CID codecs.
+  ipfs cid codecs - List available CID multicodecs.
 
 SYNOPSIS
-  ipfs cid codecs [--numeric]
+  ipfs cid codecs [--numeric | -n] [--supported | -s]
 
 OPTIONS
 
-  --numeric  bool - also include numeric codes.
+  -n, --numeric    bool - also include numeric codes.
+  -s, --supported  bool - list only codecs supported by go-ipfs commands.
+
+DESCRIPTION
+
+  'ipfs cid codecs' relies on https://github.com/multiformats/go-multicodec
 
 
 ```
@@ -740,18 +778,18 @@ USAGE
   ipfs cid format <cid>... - Format and convert a CID in various useful ways.
 
 SYNOPSIS
-  ipfs cid format [-f=<f>] [-v=<v>] [--codec=<codec>] [-b=<b>] [--] <cid>...
+  ipfs cid format [-f=<f>] [-v=<v>] [--mc=<mc>] [-b=<b>] [--] <cid>...
 
 ARGUMENTS
 
-  <cid>... - Cids to format.
+  <cid>... - CIDs to format.
 
 OPTIONS
 
-  -f       string - Printf style format string. Default: %s.
-  -v       string - CID version to convert to.
-  --codec  string - CID codec to convert to.
-  -b       string - Multibase to display CID in.
+  -f    string - Printf style format string. Default: %s.
+  -v    string - CID version to convert to.
+  --mc  string - CID multicodec to convert to.
+  -b    string - Multibase to display CID in.
 
 DESCRIPTION
 
@@ -790,11 +828,16 @@ USAGE
   ipfs cid hashes - List available multihashes.
 
 SYNOPSIS
-  ipfs cid hashes [--numeric]
+  ipfs cid hashes [--numeric | -n] [--supported | -s]
 
 OPTIONS
 
-  --numeric  bool - also include numeric codes.
+  -n, --numeric    bool - also include numeric codes.
+  -s, --supported  bool - list only codecs supported by go-ipfs commands.
+
+DESCRIPTION
+
+  'ipfs cid hashes' relies on https://github.com/multiformats/go-multihash
 
 
 ```
@@ -822,6 +865,7 @@ SUBCOMMANDS
   For more information about each command, use:
   'ipfs commands <subcmd> --help'
 
+
 ```
 
 ## ipfs commands completion
@@ -838,6 +882,7 @@ SUBCOMMANDS
 
   For more information about each command, use:
   'ipfs commands completion <subcmd> --help'
+
 
 ```
 
@@ -910,6 +955,7 @@ SUBCOMMANDS
   For more information about each command, use:
   'ipfs config <subcmd> --help'
 
+
 ```
 
 ## ipfs config edit
@@ -941,9 +987,34 @@ SYNOPSIS
 DESCRIPTION
 
   Available profiles:
+    'test':
+      Reduces external interference of IPFS daemon, this
+      is useful when using the daemon in test environments.
     'default-networking':
       Restores default network settings.
       Inverse profile of the test profile.
+    'flatfs':
+      Configures the node to use the flatfs datastore.
+      
+      This is the most battle-tested and reliable datastore. 
+      You should use this datastore if:
+      
+      * You need a very simple and very reliable datastore, and you trust your
+        filesystem. This datastore stores each block as a separate file in the
+        underlying filesystem so it's unlikely to loose data unless there's an issue
+        with the underlying file system.
+      * You need to run garbage collection in a way that reclaims free space as soon as possible.
+      * You want to minimize memory usage.
+      * You are ok with the default speed of data import, or prefer to use --nocopy.
+      
+      This profile may only be applied when first initializing the node.
+      
+    'server':
+      Disables local host discovery, recommended when
+      running IPFS on machines with public IPv4 addresses.
+    'local-discovery':
+      Sets default values to fields affected by the server
+      profile, enables discovery in local networks.
     'default-datastore':
       Configures the node to use the default datastore (flatfs).
       
@@ -952,17 +1023,21 @@ DESCRIPTION
       This profile may only be applied when first initializing the node.
       
     'badgerds':
-      Configures the node to use the badger datastore.
+      Configures the node to use the experimental badger datastore.
       
-      This is the fastest datastore. Use this datastore if performance, especially
-      when adding many gigabytes of files, is critical. However:
+      Use this datastore if some aspects of performance, 
+      especially the speed of adding many gigabytes of files, are critical.
+      However, be aware that:
       
       * This datastore will not properly reclaim space when your datastore is
-        smaller than several gigabytes. If you run IPFS with '--enable-gc' (you have
-        enabled block-level garbage collection), you plan on storing very little data in
-        your IPFS node, and disk usage is more critical than performance, consider using
-        flatfs.
-      * This datastore uses up to several gigabytes of memory. 
+        smaller than several gigabytes.  If you run IPFS with --enable-gc, you plan
+        on storing very little data in your IPFS node, and disk usage is more
+        critical than performance, consider using flatfs.
+      * This datastore uses up to several gigabytes of memory.  
+      * Good for medium-size datastores, but may run into performance issues
+        if your dataset is bigger than a terabyte.
+      * The current implementation is based on old badger 1.x
+        which is no longer supported by the upstream team.
       
       This profile may only be applied when first initializing the node.
     'lowpower':
@@ -972,39 +1047,13 @@ DESCRIPTION
       
     'randomports':
       Use a random port number for swarm.
-    'test':
-      Reduces external interference of IPFS daemon, this
-      is useful when using the daemon in test environments.
-    'local-discovery':
-      Sets default values to fields affected by the server
-      profile, enables discovery in local networks.
-    'flatfs':
-      Configures the node to use the flatfs datastore.
-      
-      This is the most battle-tested and reliable datastore, but it's significantly
-      slower than the badger datastore. You should use this datastore if:
-      
-      * You need a very simple and very reliable datastore and you trust your
-        filesystem. This datastore stores each block as a separate file in the
-        underlying filesystem so it's unlikely to loose data unless there's an issue
-        with the underlying file system.
-      * You need to run garbage collection on a small (<= 10GiB) datastore. The
-        default datastore, badger, can leave several gigabytes of data behind when
-        garbage collecting.
-      * You're concerned about memory usage. In its default configuration, badger can
-        use up to several gigabytes of memory.
-      
-      This profile may only be applied when first initializing the node.
-      
-    'server':
-      Disables local host discovery, recommended when
-      running IPFS on machines with public IPv4 addresses.
 
 SUBCOMMANDS
   ipfs config profile apply <profile> - Apply profile to config.
 
   For more information about each command, use:
   'ipfs config profile <subcmd> --help'
+
 
 ```
 
@@ -1093,7 +1142,8 @@ OPTIONS
                                            more.
   --routing                       string - Overrides the routing option.
                                            Default: default.
-  --mount                         bool   - Mounts IPFS to the filesystem.
+  --mount                         bool   - Mounts IPFS to the filesystem using
+                                           FUSE (experimental).
   --writable                      bool   - Enable writing objects (with POST,
                                            PUT and DELETE).
   --mount-ipfs                    string - Path to the mountpoint for IPFS (if
@@ -1218,9 +1268,8 @@ DESCRIPTION
 
   'ipfs dag' is used for creating and manipulating DAG objects/hierarchies.
   
-  This subcommand is currently an experimental feature, but it is intended
-  to deprecate and replace the existing 'ipfs object' command moving forward.
-  		
+  This subcommand is intended to deprecate and replace
+  the existing 'ipfs object' command moving forward.
 
 SUBCOMMANDS
   ipfs dag export <root>        - Streams the selected DAG as a .car stream on
@@ -1233,6 +1282,7 @@ SUBCOMMANDS
 
   For more information about each command, use:
   'ipfs dag <subcmd> --help'
+
 
 ```
 
@@ -1296,7 +1346,8 @@ USAGE
   ipfs dag import <path>... - Import the contents of .car files
 
 SYNOPSIS
-  ipfs dag import [--pin-roots=false] [--silent] [--stats] [--] <path>...
+  ipfs dag import [--pin-roots=false] [--silent] [--stats] [--allow-big-block]
+                  [--] <path>...
 
 ARGUMENTS
 
@@ -1304,10 +1355,14 @@ ARGUMENTS
 
 OPTIONS
 
-  --pin-roots  bool - Pin optional roots listed in the .car headers after
-                      importing. Default: true.
-  --silent     bool - No output.
-  --stats      bool - Output stats.
+  --pin-roots        bool - Pin optional roots listed in the .car headers after
+                            importing. Default: true.
+  --silent           bool - No output.
+  --stats            bool - Output stats.
+  --allow-big-block  bool - Disable block size check and allow creation of
+                            blocks bigger than 1MiB. WARNING: such blocks won't
+                            be transferable over the standard bitswap. Default:
+                            false.
 
 DESCRIPTION
 
@@ -1341,7 +1396,7 @@ USAGE
 
 SYNOPSIS
   ipfs dag put [--store-codec=<store-codec>] [--input-codec=<input-codec>]
-               [--pin] [--hash=<hash>] [--] <object data>...
+               [--pin] [--hash=<hash>] [--allow-big-block] [--] <object data>...
 
 ARGUMENTS
 
@@ -1349,12 +1404,16 @@ ARGUMENTS
 
 OPTIONS
 
-  --store-codec  string - Codec that the stored object will be encoded with.
-                          Default: dag-cbor.
-  --input-codec  string - Codec that the input object is encoded in. Default:
-                          dag-json.
-  --pin          bool   - Pin this object when adding.
-  --hash         string - Hash function to use. Default: sha2-256.
+  --store-codec      string - Codec that the stored object will be encoded
+                              with. Default: dag-cbor.
+  --input-codec      string - Codec that the input object is encoded in.
+                              Default: dag-json.
+  --pin              bool   - Pin this object when adding.
+  --hash             string - Hash function to use. Default: sha2-256.
+  --allow-big-block  bool   - Disable block size check and allow creation of
+                              blocks bigger than 1MiB. WARNING: such blocks
+                              won't be transferable over the standard bitswap.
+                              Default: false.
 
 DESCRIPTION
 
@@ -1437,6 +1496,7 @@ SUBCOMMANDS
 
   For more information about each command, use:
   'ipfs dht <subcmd> --help'
+
 
 ```
 
@@ -1627,6 +1687,7 @@ SUBCOMMANDS
   For more information about each command, use:
   'ipfs diag <subcmd> --help'
 
+
 ```
 
 ## ipfs diag cmds
@@ -1653,6 +1714,7 @@ SUBCOMMANDS
 
   For more information about each command, use:
   'ipfs diag cmds <subcmd> --help'
+
 
 ```
 
@@ -1692,22 +1754,37 @@ USAGE
   ipfs diag profile - Collect a performance profile for debugging.
 
 SYNOPSIS
-  ipfs diag profile [--output=<output> | -o]
-                    [--cpu-profile-time=<cpu-profile-time>]
+  ipfs diag profile [--output=<output> | -o] [--collectors=<collectors>]...
+                    [--profile-time=<profile-time>]
+                    [--mutex-profile-fraction=<mutex-profile-fraction>]
+                    [--block-profile-rate=<block-profile-rate>]
 
 OPTIONS
 
-  -o, --output        string - The path where the output should be stored.
-  --cpu-profile-time  string - The amount of time spent profiling CPU usage.
-                               Default: 30s.
+  -o, --output              string - The path where the output .zip should be
+                                     stored. Default:
+                                     ./ipfs-profile-[timestamp].zip.
+  --collectors              array  - The list of collectors to use for
+                                     collecting diagnostic data. Default:
+                                     [goroutines-stack goroutines-pprof version
+                                     heap bin cpu mutex block].
+  --profile-time            string - The amount of time spent profiling. If
+                                     this is set to 0, then sampling profiles
+                                     are skipped. Default: 30s.
+  --mutex-profile-fraction  int    - The fraction 1/n of mutex contention
+                                     events that are reported in the mutex
+                                     profile. Default: 4.
+  --block-profile-rate      string - The duration to wait between sampling
+                                     goroutine-blocking events for the blocking
+                                     profile. Default: 1ms.
 
 DESCRIPTION
 
-  Collects cpu, heap, and goroutine profiles from a running go-ipfs daemon
-  into a single zipfile. To aid in debugging, this command also attempts to
-  include a copy of the running go-ipfs binary.
+  Collects profiles from a running go-ipfs daemon into a single zipfile.
+  To aid in debugging, this command also attempts to include a copy of
+  the running go-ipfs binary.
   
-  Profile's can be examined using 'go tool pprof', some tips can be found at
+  Profiles can be examined using 'go tool pprof', some tips can be found at
   https://github.com/ipfs/go-ipfs/blob/master/docs/debug-guide.md.
   
   Privacy Notice:
@@ -1717,6 +1794,8 @@ DESCRIPTION
   - A list of running goroutines.
   - A CPU profile.
   - A heap profile.
+  - A mutex profile.
+  - A block profile.
   - Your copy of go-ipfs.
   - The output of 'ipfs version --all'.
   
@@ -1756,8 +1835,10 @@ DESCRIPTION
 ## ipfs dns
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
-  ipfs dns <domain-name> - Resolve DNS links.
+  ipfs dns <domain-name> - Resolve DNSLink records.
 
 SYNOPSIS
   ipfs dns [--recursive=false] [--] <domain-name>
@@ -1773,31 +1854,13 @@ OPTIONS
 
 DESCRIPTION
 
-  Multihashes are hard to remember, but domain names are usually easy to
-  remember.  To create memorable aliases for multihashes, DNS TXT
-  records can point to other DNS links, IPFS objects, IPNS keys, etc.
-  This command resolves those links to the referenced object.
+  This command can only recursively resolve DNSLink TXT records.
+  It will fail to recursively resolve through IPNS keys etc.
   
-  Note: This command can only recursively resolve DNS links,
-  it will fail to recursively resolve through IPNS keys etc.
-  For general-purpose recursive resolution, use ipfs name resolve -r.
+  DEPRECATED: superseded by 'ipfs resolve'
   
-  For example, with this DNS TXT record:
-  
-  	> dig +short TXT _dnslink.ipfs.io
-  	dnslink=/ipfs/QmRzTuh2Lpuz7Gr39stNr6mTFdqAghsZec1JoUnfySUzcy
-  
-  The resolver will give:
-  
-  	> ipfs dns ipfs.io
-  	/ipfs/QmRzTuh2Lpuz7Gr39stNr6mTFdqAghsZec1JoUnfySUzcy
-  
-  The resolver can recursively resolve:
-  
-  	> dig +short TXT recursive.ipfs.io
-  	dnslink=/ipns/ipfs.io
-  	> ipfs dns -r recursive.ipfs.io
-  	/ipfs/QmRzTuh2Lpuz7Gr39stNr6mTFdqAghsZec1JoUnfySUzcy
+  For general-purpose recursive resolution, use 'ipfs resolve -r'.
+  It will work across multiple DNSLinks and IPNS keys.
 
 
 ```
@@ -1805,6 +1868,8 @@ DESCRIPTION
 ## ipfs file
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs file - Interact with IPFS objects representing Unix filesystems.
 
@@ -1813,25 +1878,26 @@ SYNOPSIS
 
 DESCRIPTION
 
-  'ipfs file' provides a familiar interface to file systems represented
-  by IPFS objects, which hides ipfs implementation details like layout
-  objects (e.g. fanout and chunking).
+  Old interface to file systems represented by UnixFS.
+  Superseded by modern alternatives: 'ipfs ls' and 'ipfs files'
 
-SUBCOMMANDS
+DEPRECATED SUBCOMMANDS
   ipfs file ls <ipfs-path>... - List directory contents for Unix filesystem
-                                objects. Deprecated: Use 'ipfs ls' instead.
+                                objects. Deprecated: Use 'ipfs ls' and 'ipfs
+                                files ls' instead.
 
-  For more information about each command, use:
-  'ipfs file <subcmd> --help'
 
 ```
 
 ## ipfs file ls
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs file ls <ipfs-path>... - List directory contents for Unix filesystem
-                                objects. Deprecated: Use 'ipfs ls' instead.
+                                objects. Deprecated: Use 'ipfs ls' and 'ipfs
+                                files ls' instead.
 
 SYNOPSIS
   ipfs file ls [--] <ipfs-path>...
@@ -1927,6 +1993,7 @@ SUBCOMMANDS
   For more information about each command, use:
   'ipfs files <subcmd> --help'
 
+
 ```
 
 ## ipfs files chcid
@@ -2002,8 +2069,8 @@ DESCRIPTION
   
   The lazy-copy feature can also be used to protect partial DAG contents from
   garbage collection. i.e. adding the Wikipedia root to MFS would not download
-  all the Wikipedia, but will any downloaded Wikipedia-DAG content from being
-  GC'ed.
+  all the Wikipedia, but will prevent any downloaded Wikipedia-DAG content from
+  being GC'ed.
 
 
 ```
@@ -2317,6 +2384,7 @@ SUBCOMMANDS
   For more information about each command, use:
   'ipfs filestore <subcmd> --help'
 
+
 ```
 
 ## ipfs filestore dups
@@ -2413,7 +2481,8 @@ USAGE
 
 SYNOPSIS
   ipfs get [--output=<output> | -o] [--archive | -a] [--compress | -C]
-           [--compression-level=<compression-level> | -l] [--] <ipfs-path>
+           [--compression-level=<compression-level> | -l] [--progress=false]
+           [--] <ipfs-path>
 
 ARGUMENTS
 
@@ -2425,6 +2494,7 @@ OPTIONS
   -a, --archive            bool   - Output a TAR archive.
   -C, --compress           bool   - Compress the output with GZIP compression.
   -l, --compression-level  int    - The level of compression (1-9).
+  -p, --progress           bool   - Stream progress data. Default: true.
 
 DESCRIPTION
 
@@ -2559,6 +2629,7 @@ SUBCOMMANDS
   For more information about each command, use:
   'ipfs key <subcmd> --help'
 
+
 ```
 
 ## ipfs key export
@@ -2568,7 +2639,7 @@ USAGE
   ipfs key export <name> - Export a keypair
 
 SYNOPSIS
-  ipfs key export [--output=<output> | -o] [--] <name>
+  ipfs key export [--output=<output> | -o] [--format=<format> | -f] [--] <name>
 
 ARGUMENTS
 
@@ -2577,6 +2648,9 @@ ARGUMENTS
 OPTIONS
 
   -o, --output  string - The path where the output should be stored.
+  -f, --format  string - The format of the exported private key,
+                         libp2p-protobuf-cleartext or pem-pkcs8-cleartext.
+                         Default: libp2p-protobuf-cleartext.
 
 DESCRIPTION
 
@@ -2584,6 +2658,13 @@ DESCRIPTION
   
   By default, the output will be stored at './<key-name>.key', but an alternate
   path can be specified with '--output=<path>' or '-o=<path>'.
+  
+  It is possible to export a private key to interoperable PEM PKCS8 format by explicitly
+  passing '--format=pem-pkcs8-cleartext'. The resulting PEM file can then be consumed
+  elsewhere. For example, using openssl to get a PEM with public key:
+  
+    $ ipfs key export testkey --format=pem-pkcs8-cleartext -o privkey.pem
+    $ openssl pkey -in privkey.pem -pubout > pubkey.pem
 
 
 ```
@@ -2621,7 +2702,8 @@ USAGE
   ipfs key import <name> <key> - Import a key and prints imported key id
 
 SYNOPSIS
-  ipfs key import [--ipns-base=<ipns-base>] [--] <name> <key>
+  ipfs key import [--ipns-base=<ipns-base>] [--format=<format> | -f]
+                  [--allow-any-key-type] [--] <name> <key>
 
 ARGUMENTS
 
@@ -2630,9 +2712,28 @@ ARGUMENTS
 
 OPTIONS
 
-  --ipns-base  string - Encoding used for keys: Can either be a multibase
-                        encoded CID or a base58btc encoded multihash. Takes
-                        {b58mh|base36|k|base32|b...}. Default: base36.
+  --ipns-base           string - Encoding used for keys: Can either be a
+                                 multibase encoded CID or a base58btc encoded
+                                 multihash. Takes {b58mh|base36|k|base32|b...}.
+                                 Default: base36.
+  -f, --format          string - The format of the private key to import,
+                                 libp2p-protobuf-cleartext or
+                                 pem-pkcs8-cleartext. Default:
+                                 libp2p-protobuf-cleartext.
+  --allow-any-key-type  bool   - Allow importing any key type. Default: false.
+
+DESCRIPTION
+
+  Imports a key and stores it under the provided name.
+  
+  By default, the key is assumed to be in 'libp2p-protobuf-cleartext' format,
+  however it is possible to import private keys wrapped in interoperable PEM PKCS8
+  by passing '--format=pem-pkcs8-cleartext'.
+  
+  The PEM format allows for key generation outside of the IPFS node:
+  
+    $ openssl genpkey -algorithm ED25519 > ed25519.pem
+    $ ipfs key import test-openssl -f pem-pkcs8-cleartext ed25519.pem
 
 
 ```
@@ -2760,10 +2861,13 @@ DESCRIPTION
 SUBCOMMANDS
   ipfs log level <subsystem> <level> - Change the logging level.
   ipfs log ls                        - List the logging subsystems.
-  ipfs log tail                      - Read the event log.
 
   For more information about each command, use:
   'ipfs log <subcmd> --help'
+
+EXPERIMENTAL SUBCOMMANDS
+  ipfs log tail - Read the event log.
+
 
 ```
 
@@ -2812,6 +2916,8 @@ DESCRIPTION
 ## ipfs log tail
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs log tail - Read the event log.
 
@@ -2864,6 +2970,8 @@ DESCRIPTION
 ## ipfs mount
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs mount - Mounts IPFS to the filesystem (read-only).
 
@@ -2938,6 +3046,7 @@ SUBCOMMANDS
 
   For more information about each command, use:
   'ipfs multibase <subcmd> --help'
+
 
 ```
 
@@ -3021,6 +3130,10 @@ OPTIONS
   --prefix   bool - also include the single letter prefixes in addition to the
                     code.
   --numeric  bool - also include numeric codes.
+
+DESCRIPTION
+
+  'ipfs cid bases' relies on https://github.com/multiformats/go-multibase
 
 
 ```
@@ -3110,11 +3223,14 @@ DESCRIPTION
 
 SUBCOMMANDS
   ipfs name publish <ipfs-path> - Publish IPNS names.
-  ipfs name pubsub              - IPNS pubsub management
   ipfs name resolve [<name>]    - Resolve IPNS names.
 
   For more information about each command, use:
   'ipfs name <subcmd> --help'
+
+EXPERIMENTAL SUBCOMMANDS
+  ipfs name pubsub - IPNS pubsub management
+
 
 ```
 
@@ -3191,6 +3307,8 @@ DESCRIPTION
 ## ipfs name pubsub
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs name pubsub - IPNS pubsub management
 
@@ -3203,19 +3321,19 @@ DESCRIPTION
   
   Note: this command is experimental and subject to change as the system is refined
 
-SUBCOMMANDS
+EXPERIMENTAL SUBCOMMANDS
   ipfs name pubsub cancel <name> - Cancel a name subscription.
   ipfs name pubsub state         - Query the state of IPNS pubsub.
   ipfs name pubsub subs          - Show current name subscriptions.
 
-  For more information about each command, use:
-  'ipfs name pubsub <subcmd> --help'
 
 ```
 
 ## ipfs name pubsub cancel
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs name pubsub cancel <name> - Cancel a name subscription.
 
@@ -3232,6 +3350,8 @@ ARGUMENTS
 ## ipfs name pubsub state
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs name pubsub state - Query the state of IPNS pubsub.
 
@@ -3244,6 +3364,8 @@ SYNOPSIS
 ## ipfs name pubsub subs
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs name pubsub subs - Show current name subscriptions.
 
@@ -3320,6 +3442,8 @@ DESCRIPTION
 ## ipfs object
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs object - Deprecated commands to interact with dag-pb objects. Use 'dag'
                 or 'files' instead.
@@ -3332,7 +3456,7 @@ DESCRIPTION
   'ipfs object' is a legacy plumbing command used to manipulate dag-pb objects
   directly. Deprecated, use more modern 'ipfs dag' and 'ipfs files' instead.
 
-SUBCOMMANDS
+DEPRECATED SUBCOMMANDS
   ipfs object data <key>           - Deprecated way to read the raw bytes of a
                                      dag-pb object: use 'dag get' instead.
   ipfs object diff <obj_a> <obj_b> - Display the diff between two IPFS objects.
@@ -3351,14 +3475,14 @@ SUBCOMMANDS
   ipfs object stat <key>           - Deprecated way to read stats for the
                                      dag-pb node. Use 'files stat' instead.
 
-  For more information about each command, use:
-  'ipfs object <subcmd> --help'
 
 ```
 
 ## ipfs object data
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs object data <key> - Deprecated way to read the raw bytes of a dag-pb
                            object: use 'dag get' instead.
@@ -3385,6 +3509,8 @@ DESCRIPTION
 ## ipfs object diff
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs object diff <obj_a> <obj_b> - Display the diff between two IPFS objects.
 
@@ -3427,6 +3553,8 @@ DESCRIPTION
 ## ipfs object get
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs object get <key> - Deprecated way to get and serialize the dag-pb node.
                           Use 'dag get' instead
@@ -3458,6 +3586,8 @@ DESCRIPTION
 ## ipfs object links
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs object links <key> - Deprecated way to output links in the specified
                             dag-pb object: use 'dag get' instead.
@@ -3486,6 +3616,8 @@ DESCRIPTION
 ## ipfs object new
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs object new [<template>] - Deprecated way to create a new dag-pb object
                                  from a template.
@@ -3515,6 +3647,8 @@ DESCRIPTION
 ## ipfs object patch
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs object patch - Deprecated way to create a new merkledag object based on
                       an existing one. Use MFS with 'files cp|rm' instead.
@@ -3525,7 +3659,7 @@ SYNOPSIS
 OPTIONS
 
   --allow-big-block  bool - Disable block size check and allow creation of
-                            blocks bigger than 1MB. WARNING: such blocks won't
+                            blocks bigger than 1MiB. WARNING: such blocks won't
                             be transferable over the standard bitswap. Default:
                             false.
 
@@ -3549,20 +3683,20 @@ DESCRIPTION
     possible to build arbitrary directory trees without fetching them in full to
     the local node.
 
-SUBCOMMANDS
+DEPRECATED SUBCOMMANDS
   ipfs object patch add-link <root> <name> <ref> - Deprecated way to add a link to a given dag-pb.
   ipfs object patch append-data <root> <data>    - Deprecated way to append data to the data segment of a DAG node.
   ipfs object patch rm-link <root> <name>        - Deprecated way to remove a link from dag-pb object.
   ipfs object patch set-data <root> <data>       - Deprecated way to set the data field of dag-pb object.
 
-  For more information about each command, use:
-  'ipfs object patch <subcmd> --help'
 
 ```
 
 ## ipfs object patch add-link
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs object patch add-link <root> <name> <ref> - Deprecated way to add a link to a given dag-pb.
 
@@ -3604,6 +3738,8 @@ DESCRIPTION
 ## ipfs object patch append-data
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs object patch append-data <root> <data> - Deprecated way to append data
                                                 to the data segment of a DAG
@@ -3626,7 +3762,7 @@ DESCRIPTION
   	$ echo "hello" | ipfs object patch $HASH append-data
   
   NOTE: This does not append data to a file - it modifies the actual raw
-  data within a dag-pb object. Blocks have a max size of 1MB and objects larger than
+  data within a dag-pb object. Blocks have a max size of 1MiB and objects larger than
   the limit will not be respected by the network.
   
   DEPRECATED and provided for legacy reasons. Use 'ipfs add' or 'ipfs files' instead.
@@ -3637,6 +3773,8 @@ DESCRIPTION
 ## ipfs object patch rm-link
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs object patch rm-link <root> <name> - Deprecated way to remove a link
                                             from dag-pb object.
@@ -3661,6 +3799,8 @@ DESCRIPTION
 ## ipfs object patch set-data
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs object patch set-data <root> <data> - Deprecated way to set the data
                                              field of dag-pb object.
@@ -3689,6 +3829,8 @@ DESCRIPTION
 ## ipfs object put
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs object put <data> - Deprecated way to store input as a DAG object. Use
                            'dag put' instead.
@@ -3723,6 +3865,8 @@ DESCRIPTION
 ## ipfs object stat
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs object stat <key> - Deprecated way to read stats for the dag-pb node.
                            Use 'files stat' instead.
@@ -3775,6 +3919,8 @@ DESCRIPTION
 ## ipfs p2p
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs p2p - Libp2p stream mounting.
 
@@ -3788,21 +3934,21 @@ DESCRIPTION
   Note: this command is experimental and subject to change as usecases and APIs
   are refined
 
-SUBCOMMANDS
+EXPERIMENTAL SUBCOMMANDS
   ipfs p2p close                                                - Stop listening for new connections to forward.
   ipfs p2p forward <protocol> <listen-address> <target-address> - Forward connections to libp2p service.
   ipfs p2p listen <protocol> <target-address>                   - Create libp2p service.
   ipfs p2p ls                                                   - List active p2p listeners.
   ipfs p2p stream                                               - P2P stream management.
 
-  For more information about each command, use:
-  'ipfs p2p <subcmd> --help'
 
 ```
 
 ## ipfs p2p close
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs p2p close - Stop listening for new connections to forward.
 
@@ -3824,6 +3970,8 @@ OPTIONS
 ## ipfs p2p forward
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs p2p forward <protocol> <listen-address> <target-address> - Forward connections to libp2p service.
 
@@ -3858,6 +4006,8 @@ DESCRIPTION
 ## ipfs p2p listen
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs p2p listen <protocol> <target-address> - Create libp2p service.
 
@@ -3892,6 +4042,8 @@ DESCRIPTION
 ## ipfs p2p ls
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs p2p ls - List active p2p listeners.
 
@@ -3908,6 +4060,8 @@ OPTIONS
 ## ipfs p2p stream
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs p2p stream - P2P stream management.
 
@@ -3918,18 +4072,18 @@ DESCRIPTION
 
   Create and manage p2p streams
 
-SUBCOMMANDS
+EXPERIMENTAL SUBCOMMANDS
   ipfs p2p stream close [<id>] - Close active p2p stream.
   ipfs p2p stream ls           - List active p2p streams.
 
-  For more information about each command, use:
-  'ipfs p2p stream <subcmd> --help'
 
 ```
 
 ## ipfs p2p stream close
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs p2p stream close [<id>] - Close active p2p stream.
 
@@ -3950,6 +4104,8 @@ OPTIONS
 ## ipfs p2p stream ls
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs p2p stream ls - List active p2p streams.
 
@@ -3977,14 +4133,14 @@ SUBCOMMANDS
   ipfs pin ls [<ipfs-path>]...          - List objects pinned to local storage.
   ipfs pin remote                       - Pin (and unpin) objects to remote
                                           pinning service.
-  ipfs pin rm <ipfs-path>...            - Remove pinned objects from local
-                                          storage.
+  ipfs pin rm <ipfs-path>...            - Remove object from pin-list.
   ipfs pin update <from-path> <to-path> - Update a recursive pin.
   ipfs pin verify                       - Verify that recursive pins are
                                           complete.
 
   For more information about each command, use:
   'ipfs pin <subcmd> --help'
+
 
 ```
 
@@ -4090,6 +4246,7 @@ SUBCOMMANDS
 
   For more information about each command, use:
   'ipfs pin remote <subcmd> --help'
+
 
 ```
 
@@ -4240,6 +4397,7 @@ SUBCOMMANDS
   For more information about each command, use:
   'ipfs pin remote service <subcmd> --help'
 
+
 ```
 
 ## ipfs pin remote service add
@@ -4329,7 +4487,7 @@ DESCRIPTION
 
 ```
 USAGE
-  ipfs pin rm <ipfs-path>... - Remove pinned objects from local storage.
+  ipfs pin rm <ipfs-path>... - Remove object from pin-list.
 
 SYNOPSIS
   ipfs pin rm [--recursive=false] [--] <ipfs-path>...
@@ -4434,6 +4592,8 @@ DESCRIPTION
 ## ipfs pubsub
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs pubsub - An experimental publish-subscribe system on ipfs.
 
@@ -4451,20 +4611,20 @@ DESCRIPTION
     environment.  To use, the daemon must be run with
     '--enable-pubsub-experiment'.
 
-SUBCOMMANDS
+EXPERIMENTAL SUBCOMMANDS
   ipfs pubsub ls                 - List subscribed topics by name.
   ipfs pubsub peers [<topic>]    - List peers we are currently pubsubbing with.
   ipfs pubsub pub <topic> <data> - Publish data to a given pubsub topic.
   ipfs pubsub sub <topic>        - Subscribe to messages on a given topic.
 
-  For more information about each command, use:
-  'ipfs pubsub <subcmd> --help'
 
 ```
 
 ## ipfs pubsub ls
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs pubsub ls - List subscribed topics by name.
 
@@ -4496,6 +4656,8 @@ DESCRIPTION
 ## ipfs pubsub peers
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs pubsub peers [<topic>] - List peers we are currently pubsubbing with.
 
@@ -4533,6 +4695,8 @@ DESCRIPTION
 ## ipfs pubsub pub
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs pubsub pub <topic> <data> - Publish data to a given pubsub topic.
 
@@ -4541,7 +4705,7 @@ SYNOPSIS
 
 ARGUMENTS
 
-  <topic> - Topic to publish to.
+  <topic> - Topic to publish to (multibase encoded when sent over HTTP RPC).
   <data>  - The data to be published.
 
 DESCRIPTION
@@ -4569,6 +4733,8 @@ DESCRIPTION
 ## ipfs pubsub sub
 
 ```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
 USAGE
   ipfs pubsub sub <topic> - Subscribe to messages on a given topic.
 
@@ -4577,7 +4743,8 @@ SYNOPSIS
 
 ARGUMENTS
 
-  <topic> - Name of topic to subscribe to.
+  <topic> - Name of topic to subscribe to (multibase encoded when sent over
+            HTTP RPC).
 
 DESCRIPTION
 
@@ -4645,6 +4812,7 @@ SUBCOMMANDS
   For more information about each command, use:
   'ipfs refs <subcmd> --help'
 
+
 ```
 
 ## ipfs refs local
@@ -4677,7 +4845,6 @@ DESCRIPTION
   'ipfs repo' is a plumbing command used to manipulate the repo.
 
 SUBCOMMANDS
-  ipfs repo fsck    - Remove repo lockfiles.
   ipfs repo gc      - Perform a garbage collection sweep on the repo.
   ipfs repo stat    - Get stats for the currently used repo.
   ipfs repo verify  - Verify all blocks in repo are not corrupted.
@@ -4686,11 +4853,17 @@ SUBCOMMANDS
   For more information about each command, use:
   'ipfs repo <subcmd> --help'
 
+DEPRECATED SUBCOMMANDS
+  ipfs repo fsck - Remove repo lockfiles.
+
+
 ```
 
 ## ipfs repo fsck
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs repo fsck - Remove repo lockfiles.
 
@@ -4711,12 +4884,13 @@ USAGE
   ipfs repo gc - Perform a garbage collection sweep on the repo.
 
 SYNOPSIS
-  ipfs repo gc [--stream-errors] [--quiet | -q]
+  ipfs repo gc [--stream-errors] [--quiet | -q] [--silent]
 
 OPTIONS
 
   --stream-errors  bool - Stream errors.
   -q, --quiet      bool - Write minimal output.
+  --silent         bool - Write no output.
 
 DESCRIPTION
 
@@ -4883,6 +5057,7 @@ SUBCOMMANDS
 
   For more information about each command, use:
   'ipfs stats <subcmd> --help'
+
 
 ```
 
@@ -5061,6 +5236,12 @@ SUBCOMMANDS
   For more information about each command, use:
   'ipfs swarm <subcmd> --help'
 
+EXPERIMENTAL SUBCOMMANDS
+  ipfs swarm limit <scope> [<limit.json>] - Get or set resource limits for a
+                                            scope.
+  ipfs swarm stats <scope>                - Report resource usage for a scope.
+
+
 ```
 
 ## ipfs swarm addrs
@@ -5082,6 +5263,7 @@ SUBCOMMANDS
 
   For more information about each command, use:
   'ipfs swarm addrs <subcmd> --help'
+
 
 ```
 
@@ -5203,6 +5385,7 @@ SUBCOMMANDS
   For more information about each command, use:
   'ipfs swarm filters <subcmd> --help'
 
+
 ```
 
 ## ipfs swarm filters add
@@ -5245,6 +5428,46 @@ DESCRIPTION
 
 ```
 
+## ipfs swarm limit
+
+```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
+USAGE
+  ipfs swarm limit <scope> [<limit.json>] - Get or set resource limits for a
+                                            scope.
+
+SYNOPSIS
+  ipfs swarm limit [--] <scope> [<limit.json>]
+
+ARGUMENTS
+
+  <scope>        - scope of the limit
+  [<limit.json>] - limits to be set
+
+DESCRIPTION
+
+  Get or set resource limits for a scope.
+  The scope can be one of the following:
+  - system        -- limits for the system aggregate resource usage.
+  - transient     -- limits for the transient resource usage.
+  - svc:<service> -- limits for the resource usage of a specific service.
+  - proto:<proto> -- limits for the resource usage of a specific protocol.
+  - peer:<peer>   -- limits for the resource usage of a specific peer.
+  
+  The output of this command is JSON.
+  
+  It is possible to use this command to inspect and tweak limits at runtime:
+  
+  	$ ipfs swarm limit system > limit.json
+  	$ vi limit.json
+  	$ ipfs swarm limit system limit.json
+  
+  Changes made via command line are persisted in the Swarm.ResourceMgr.Limits field of the $IPFS_PATH/config file.
+
+
+```
+
 ## ipfs swarm peering
 
 ```
@@ -5257,7 +5480,7 @@ SYNOPSIS
 DESCRIPTION
 
   'ipfs swarm peering' manages the peering subsystem. 
-  Peers in the peering subsystem is maintained to be connected, reconnected 
+  Peers in the peering subsystem are maintained to be connected, reconnected 
   on disconnect with a back-off.
   The changes are not saved to the config.
 
@@ -5270,6 +5493,7 @@ SUBCOMMANDS
 
   For more information about each command, use:
   'ipfs swarm peering <subcmd> --help'
+
 
 ```
 
@@ -5352,27 +5576,60 @@ DESCRIPTION
 
 ```
 
+## ipfs swarm stats
+
+```
+WARNING:   EXPERIMENTAL, command may change in future releases
+
+USAGE
+  ipfs swarm stats <scope> - Report resource usage for a scope.
+
+SYNOPSIS
+  ipfs swarm stats [--] <scope>
+
+ARGUMENTS
+
+  <scope> - scope of the stat report
+
+DESCRIPTION
+
+  Report resource usage for a scope.
+  The scope can be one of the following:
+  - system        -- reports the system aggregate resource usage.
+  - transient     -- reports the transient resource usage.
+  - svc:<service> -- reports the resource usage of a specific service.
+  - proto:<proto> -- reports the resource usage of a specific protocol.
+  - peer:<peer>   -- reports the resource usage of a specific peer.
+  - all           -- reports the resource usage for all currently active scopes.
+  
+  The output of this command is JSON.
+
+
+```
+
 ## ipfs tar
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs tar - Utility functions for tar files in ipfs.
 
 SYNOPSIS
   ipfs tar
 
-SUBCOMMANDS
+DEPRECATED SUBCOMMANDS
   ipfs tar add <file> - Import a tar file into IPFS.
   ipfs tar cat <path> - Export a tar file from IPFS.
 
-  For more information about each command, use:
-  'ipfs tar <subcmd> --help'
 
 ```
 
 ## ipfs tar add
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs tar add <file> - Import a tar file into IPFS.
 
@@ -5394,6 +5651,8 @@ DESCRIPTION
 ## ipfs tar cat
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs tar cat <path> - Export a tar file from IPFS.
 
@@ -5416,7 +5675,7 @@ DESCRIPTION
 ```
 ipfs-update is an 'external' command.
 It does not currently appear to be installed.
-Please see https://git.io/fjylH for installation instructions.
+Please see https://github.com/ipfs/ipfs-update/blob/master/README.md#install for installation instructions.
 ```
 
 ## ipfs urlstore
@@ -5428,17 +5687,17 @@ USAGE
 SYNOPSIS
   ipfs urlstore
 
-SUBCOMMANDS
+DEPRECATED SUBCOMMANDS
   ipfs urlstore add <url> - Add URL via urlstore.
 
-  For more information about each command, use:
-  'ipfs urlstore <subcmd> --help'
 
 ```
 
 ## ipfs urlstore add
 
 ```
+WARNING:   DEPRECATED, command will be removed in the future
+
 USAGE
   ipfs urlstore add <url> - Add URL via urlstore.
 
@@ -5494,6 +5753,7 @@ SUBCOMMANDS
 
   For more information about each command, use:
   'ipfs version <subcmd> --help'
+
 
 ```
 
