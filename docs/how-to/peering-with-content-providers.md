@@ -95,6 +95,11 @@ To have your platform added to this list, please [open a PR to edit this page](h
 |:-|:-|
 |`QmR69wtWUMm1TWnmuD4JqC1TWLZcc8iR2KrTenfZZbiztd`|`/ip4/104.210.43.77`|
 
+#### Estuary
+|Peer ID|Addresses|
+|:-|:-|
+|`12D3KooWCVXs8P7iq6ao4XhfAmKWrEeuKFWCJgqe9jGDMTqHYBjw`|`/ip4/139.178.68.217/tcp/6744`|
+
 #### Web3.Storage
 
 |Peer ID|Addresses|
