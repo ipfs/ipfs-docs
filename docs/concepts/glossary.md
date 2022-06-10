@@ -70,6 +70,18 @@ A Bootstrap Node is a trusted peer on the IPFS network through which an IPFS nod
 
 ## C
 
+### CAR
+
+The CAR (Content Addressable aRchives) is a format for serialized representation of any [IPLD](#ipld) [DAG](#dag). Typically in a file with a .car filename extension or a byte stream marked as [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) media type. [More about CAR](https://ipld.io/specs/transport/car/)
+
+### CAR v1
+
+Version 1 of the [CAR](#car) format, a concatenation of DAG blocks, plus a header that describes the graphs in the file (via root CIDs). [More about CAR v1](https://ipld.io/specs/transport/car/carv1/)
+
+### CAR v2
+
+A minimal upgrade to the [CAR v1](#car-v1) format with the primary aim of adding an optional index within the format for fast random-access to blocks. [More about CAR v2](https://ipld.io/specs/transport/car/carv2/)
+
 ### CBOR
 
 The Concise Binary Object Representation (CBOR) is a data format based on [JSON](#json), featuring small code and message size, and extensibility. Used within [IPLD](#ipld). [More about CBOR](http://cbor.io/)
