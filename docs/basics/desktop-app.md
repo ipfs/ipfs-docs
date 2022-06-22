@@ -66,7 +66,8 @@ You now have a copy of the file saved to your computer's local storage, you can 
 
 Now that you know how to import files using IPFS Desktop, you may want to know how to remove them as well. 
 
-:::tip Removing a file from your local IPFS node will not necessarily remove the file from the IPFS network. If your file has been shared and imported by other peers on IPFS, they will continue to have access to the file and will continue hosting it for others to import and download.
+:::tip
+Removing a file from your local IPFS node will not necessarily remove the file from the IPFS network. If your file has been shared and imported by other peers on IPFS, they will continue to have access to the file and will continue hosting it for others to import and download.
 :::
 
 1. In IPFS Desktop, navigate to the **Files** tab.
@@ -78,7 +79,8 @@ Now that you know how to import files using IPFS Desktop, you may want to know h
 
 No further action is required to remove the file from your IPFS node, the garbage collector that is built into IPFS Desktop automatically runs every hour by default. If you wish to run the garbage collector manually to remove the file, follow the steps below.
 
-:::warning Before running the garbage collection, ensure any items you wish to keep are either pinned or saved to your computer locally. Garbage collection will remove all items that are not pinned or saved locally.
+:::warning
+Before running the garbage collection, ensure any items you wish to keep are either pinned or saved to your computer locally. Garbage collection will remove all items that are not pinned or saved locally.
 :::
 
 1. Find the small IPFS logo. On macOS it is in the top right of the screen on the Menu Bar, on Windows it is in the bottom right of the screen in the System Tray.
