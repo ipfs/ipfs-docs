@@ -428,7 +428,15 @@ A vocabulary term in [IPLD](#ipld), related to [ADLs](#adl).  [More in IPLD glos
 
 ### Swarm
 
-The Swarm is a term for the network of IPFS peers with which your local node has connections. Swarm addresses are addresses that your local node will listen on for connections from other IPFS peers. 
+_Swarm_ is a term for the network of IPFS peers with which your local node has connections. Swarm addresses are addresses that your local node will listen on for connections from other IPFS peers.
+
+### Switch
+
+In [libp2p](#libp2p), a _switch_ is a component responsible for composing multiple [transports](#transport) into a single interface, allowing application code to [dial](#dialing) peers without having to specify which transport to use.
+
+Switches also coordinate the _connection upgrade_ process, which promotes a _raw_ connection from the transport layer into one that supports [protocol negotiation](https://docs.libp2p.io/concepts/protocols/#protocol-negotiation), [stream multiplexing](../concepts/libp2p/#stream-multiplexing), and secure communications.
+
+Sometimes called [swarm](#swarm) for historical reasons.
 
 ## T
 
