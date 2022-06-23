@@ -102,11 +102,12 @@ Limitations of a delegate routing node:
 
 ## Implementations
 
-Protocol Labs manages two primary implementations of the IPFS spec: Kubo and JS-IPFS. These implementations use specific types of nodes to perform server, browser, and other client functions.
+Protocol Labs manages two implementations of the IPFS spec: Kubo and JS-IPFS. These implementations use specific types of nodes to perform server, browser, and other client functions.
 
 ### Kubo
 
-The Go implementation is designed to run on servers and user machines with full IPFS capabilities, enabling experimentation. New IPFS features are usually created on Kubo before any other implementation.
+An implementation of IPFS in Go. Designed to run on servers and user machines with full IPFS capabilities, enabling experimentation. New IPFS features are usually created on Kubo before any other implementation.
+More at [Github](https://github.com/ipfs/go-ipfs#readme).
 
 Features include:
 
@@ -115,13 +116,19 @@ Features include:
 - HTTP gateway with subdomain support for origin isolation between content roots.
 - Various [experimental features](https://github.com/ipfs/kubo/blob/master/docs/experimental-features.md)
 
-See [API > Working with Go](https://docs.ipfs.io/reference/go/api/#working-with-go)
+See [Working with Go](../reference/go/api/#working-with-go) and [CLI Quick Start](../how-to/command-line-quick-start.md)
 
 ### JS-IPFS
 
-The Javascript implementation is designed to run in the browser with a limited set of IPFS capabilities.
+An implementation of IPFS written entirely in JavaScript. It runs in a browser, a Service Worker, Electron and Node.js. Capabilities depend on the runtime.
 
-Features include:
+More at [js.ipfs.io](https://js.ipfs.io) and [Github](https://github.com/ipfs/js-ipfs#readme).
+
+#### JS-IPFS node in a browser
+
+When in a browser, runs with a limited set of IPFS capabilities.
+
+Browser features include:
 
 - Can connect to server nodes using secure WebSockets.
     - WSS requires manual setup of TLS at the server.
@@ -133,4 +140,4 @@ Specific limitations of the JS-IPFS implementation are:
 - The performance of the DHT is not on-par with the Kubo implementation.
 - The HTTP gateway is present, but it has no subdomain support (can't open TCP port)
 
-See [More about IPFS Node](../how-to/command-line-quick-start.md#take-your-node-online)
+More at [js.ipfs.io](https://js.ipfs.io) and [Github](https://github.com/ipfs/js-ipfs#readme).

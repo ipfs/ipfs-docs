@@ -162,7 +162,7 @@ Direct Connection Upgrade through Relay (DCUtR) protocol enables [hole punching]
 
 ### Delegate routing node
 
-GO-IPFS nodes with their API ports exposed and some HTTP API commands accessible. JS-IPFS nodes use them to query the DHT and also publish content without having to actually run DHT logic on their own. See [Delegate routing](../concepts/nodes/#types)
+[Kubo](#kubo) nodes with a subset of RPC API commands exposed. JS-IPFS nodes use them to query the DHT and also publish content without having to actually run DHT logic on their own. See [Delegate routing](../concepts/nodes/#types)
 
 ### DHT
 
@@ -206,9 +206,9 @@ An IPFS Gateway acts as a bridge between traditional web browsers and IPFS. Thro
 
 Garbage Collection (GC) is the process within each IPFS node of clearing out cached files and blocks. Nodes need to clear out previously cached resources to make room for new resources. [Pinned resources](#pinning) are never deleted.
 
-### GO-IPFS node
+### GO-IPFS
 
-The primary IPFS reference implementation, i.e., implements all requirements from the corresponding IPFS specification. It runs on servers and user machines with full IPFS capabilities, enabling experimentation. See [Nodes > GO-IPFS](../concepts/nodes/#kubo).
+Old name of [Kubo](#kubo).
 
 ### Graph
 
@@ -248,15 +248,19 @@ The InterPlanetary Name System (IPNS) is a system for creating and updating muta
 
 ## J
 
-### JS-IPFS node
+### JS-IPFS
 
-* Runs in the browser with a limited set of capabilities. See [Nodes > JS-IPFS](../concepts/nodes/#implementations).
+An implementation of IPFS written entirely in JavaScript. It runs in a Browser, a Service Worker, Electron and Node.js.  See [Nodes > JS-IPFS](../concepts/nodes/#js-ipfs)
 
 ### JSON
 
 JavaScript Object Notation (JSON) is a lightweight data-interchange format. JSON is a text format that is completely language independent, human-readable, and easy to parse and generate. [More about JSON](https://www.json.org/)
 
 ## K
+
+### Kubo
+
+AKA [go-ipfs](#go-ipfs). The earliest and most widely used implementation of IPFS, written in Go. It runs on servers and user machines with full IPFS capabilities. See [Nodes > Kubo](../concepts/nodes/#kubo).
 
 ## L
 
