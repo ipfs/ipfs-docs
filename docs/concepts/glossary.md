@@ -416,7 +416,7 @@ The Swarm is a term for the network of IPFS peers with which your local node has
 
 ### Switch
 
-In [libp2p](#libp2p), the switch is the component responsible for composing multiple [transports](#transport) into a single interface, allowing application code to [dial](#dialing) peers without having to specify which transport to use.
+In [libp2p](#libp2p), a _switch_ is a component responsible for composing multiple [transports](#transport) into a single interface, allowing application code to [dial](#dialing) peers without having to specify which transport to use.
 
 The switch also coordinates the "connection upgrade" process, which promotes a "raw" connection from the transport layer into one that supports [protocol negotiation](https://docs.libp2p.io/concepts/protocols/#protocol-negotiation), [stream multiplexing](../concepts/libp2p/#stream-multiplexing), and secure communications.
 
