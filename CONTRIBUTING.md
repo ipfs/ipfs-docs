@@ -100,7 +100,7 @@ Follow these steps to learn how to file an issue with the IPFS project.
 2. Search for the issue you want to raise. It may already exist. Make sure to also search _closed_ issues by including `is:closed` in your search query.
 3. If the issue doesn't already exist, click **New issue**.
 4. Select either the **Content request** or **Documentation issue** issue template. These templates auto-fill some of the issues for you, and direct you to fill out the required information.
-5. Answer the questions listed in the issue form. Issues are created using Github Flavoured Markdown.
+5. Answer the questions listed in the issue form. Issues are created using GitHub Flavoured Markdown.
 6. Once you have finished describing your issue, click **Submit new issue**.
 
 Shortly after your issue is submitted, an internal project lead from the IPFS project evaluates your issue. Further questions or requests-for-comment may be asked within the issue.
