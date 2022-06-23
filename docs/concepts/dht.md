@@ -158,4 +158,4 @@ IPFS tries to connect to the peer with ID `H` as soon as we learn addresses abou
 If you're eager for more information about the DHT, take a look at these resources:
 
 - [_Content Routing Improvements: Deep Dive_ blog post](https://blog.ipfs.io/2020-07-20-dht-deep-dive/)
-- [Go-IPFS 0.5.0 release highlights](https://www.youtube.com/watch?v=G8FvB_0HlCE)
+- [Kubo 0.5.0 release highlights](https://www.youtube.com/watch?v=G8FvB_0HlCE)

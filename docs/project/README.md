@@ -21,7 +21,7 @@ See the overall roadmap of [IPFS project requirements](https://github.com/ipfs/r
 
 ## Implementation status
 
-Want to know the current state of your favorite IPFS feature? See the [current implementation status](implementation-status.md) for go-ipfs and js-ipfs, listed by commands and endpoints.
+Want to know the current state of your favorite IPFS feature? See the [current implementation status](implementation-status.md) for Kubo and js-ipfs, listed by commands and endpoints.
 
 ## IPFS specifications
 

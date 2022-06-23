@@ -19,7 +19,7 @@ Organization and repository links for the top-level projects shipped as part of 
 
 ### Protocol implementations
 
-- [go-ipfs](https://github.com/ipfs/go-ipfs): The reference implementation written in Go.
+- [Kubo](https://github.com/ipfs/kubo): The reference implementation written in Go.
 - [js-ipfs](https://github.com/ipfs/js-ipfs): The JavaScript implementation of IPFS.
 - [rust-ipfs](https://github.com/rs-ipfs/rust-ipfs): Alpha implementation in Rust.
 - [Other implementations](https://github.com/ipfs/ipfs#protocol-implementations): Up-to-date links to all other protocol implementations.

@@ -21,7 +21,7 @@ To ensure that data _persists_ on IPFS, and is not deleted during garbage collec
 
 [Garbage collection](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>) is a form of automatic resource management widely used in software development. The garbage collector attempts to reclaim memory occupied by objects that are no longer in use. IPFS uses garbage collection to free disk space on your IPFS node by deleting data that it thinks is no longer needed.
 
-The IPFS garbage collector is configured in the `Datastore`section of [the go-ipfs config file](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md). The important settings related to the garbage collector are:
+The IPFS garbage collector is configured in the `Datastore`section of [the Kubo config file](https://github.com/ipfs/kubo/blob/master/docs/config.md). The important settings related to the garbage collector are:
 
 - `StorageGCWatermark`: The percentage of the `StorageMax` value at which a garbage collection will be triggered automatically, if the daemon is running with automatic garbage collection enabled. The default is 90`.
 
@@ -43,7 +43,7 @@ To enable automatic garbage collection use `--enable-gc` when starting the IPFS 
 ipfs daemon --enable-gc
 
 > Initializing daemon...
-> go-ipfs version: 0.9.0
+> Kubo version: 0.9.0
 > Repo version: 10
 > ...
 ```

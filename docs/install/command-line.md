@@ -12,11 +12,11 @@ Installing IPFS through the command-line is handy if you plan on building applic
 
 ## System requirements
 
-IPFS requires 512MiB of memory and can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space. One can enable automatic garbage collection via [--enable-gc](/reference/cli/#ipfs-daemon) and adjust the [default maximum disk storage](https://github.com/ipfs/go-ipfs/blob/v0.13.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
+IPFS requires 512MiB of memory and can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space. One can enable automatic garbage collection via [--enable-gc](/reference/cli/#ipfs-daemon) and adjust the [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.13.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
 
 ## Official distributions
 
-The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help users quickly find the latest version of every IPFS package. As soon as a new release of an IPFS package comes out, it is automatically shown on `dist.ipfs.io`, so you can be sure you're getting the latest software. These steps detail how to download and install the latest `go-ipfs` from `dist.ipfs.io` using the command-line.
+The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help users quickly find the latest version of every IPFS package. As soon as a new release of an IPFS package comes out, it is automatically shown on `dist.ipfs.io`, so you can be sure you're getting the latest software. These steps detail how to download and install the latest `kubo` from `dist.ipfs.io` using the command-line.
 
 | [Windows](#windows)                                                          | [macOS](#macos)                                                        | [Linux](#linux)                                                        |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -24,23 +24,23 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
 
 ### Windows
 
-1. Download the Windows binary from [`dist.ipfs.io`](https://dist.ipfs.io/#go-ipfs).
+1. Download the Windows binary from [`dist.ipfs.io`](https://dist.ipfs.io/#kubo).
 
    ```powershell
    cd ~\
-   wget https://dist.ipfs.io/go-ipfs/v0.13.0/go-ipfs_v0.13.0_windows-amd64.zip -Outfile go-ipfs_v0.13.0.zip
+   wget https://dist.ipfs.io/kubo/v0.13.0/kubo_v0.13.0_windows-amd64.zip -Outfile kubo_v0.13.0.zip
    ```
 
 1. Unzip the file and move it somewhere handy.
 
    ```powershell
-   Expand-Archive -Path go-ipfs_v0.13.0.zip -DestinationPath ~\Apps\go-ipfs_v0.13.0
+   Expand-Archive -Path kubo_v0.13.0.zip -DestinationPath ~\Apps\kubo_v0.13.0
    ```
 
-1. Move into the `go-ipfs_v0.13.0` folder and check that the `ipfs.exe` works:
+1. Move into the `kubo_v0.13.0` folder and check that the `ipfs.exe` works:
 
    ```powershell
-   cd ~\Apps\go-ipfs_v0.13.0\go-ipfs
+   cd ~\Apps\kubo_v0.13.0\kubo
    .\ipfs.exe --version
 
    > ipfs version 0.12.0
@@ -66,7 +66,7 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
     notepad $PROFILE
     ```
 
-1. Add the location of your Go-IPFS daemon and add it to PowerShell's `PATH` by truncating it to the end of your PowerShell profile:
+1. Add the location of your Kubo daemon and add it to PowerShell's `PATH` by truncating it to the end of your PowerShell profile:
 
    ```powershell
    Add-Content $PROFILE "`n[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;$GO_IPFS_LOCATION')"
@@ -93,29 +93,29 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
 You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead of the `amd64` binary listed in these instructions.
 :::
 
-1. Download the macOS binary from [`dist.ipfs.io`](https://dist.ipfs.io/#go-ipfs).
+1. Download the macOS binary from [`dist.ipfs.io`](https://dist.ipfs.io/#kubo).
 
    ```bash
-   curl -O https://dist.ipfs.io/go-ipfs/v0.13.0/go-ipfs_v0.13.0_darwin-amd64.tar.gz
+   curl -O https://dist.ipfs.io/kubo/v0.13.0/kubo_v0.13.0_darwin-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.13.0_darwin-amd64.tar.gz
+   tar -xvzf kubo_v0.13.0_darwin-amd64.tar.gz
 
-   > x go-ipfs/install.sh
-   > x go-ipfs/ipfs
-   > x go-ipfs/LICENSE
-   > x go-ipfs/LICENSE-APACHE
-   > x go-ipfs/LICENSE-MIT
-   > x go-ipfs/README.md
+   > x kubo/install.sh
+   > x kubo/ipfs
+   > x kubo/LICENSE
+   > x kubo/LICENSE-APACHE
+   > x kubo/LICENSE-MIT
+   > x kubo/README.md
    ```
 
-1. Move into the `go-ipfs` folder and run the install script:
+1. Move into the `kubo` folder and run the install script:
 
    ```bash
-   cd go-ipfs
+   cd kubo
    bash install.sh
 
    > Moved ./ipfs to /usr/local/bin
@@ -131,29 +131,29 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
 
 ### Linux
 
-1. Download the Linux binary from [`dist.ipfs.io`](https://dist.ipfs.io/#go-ipfs).
+1. Download the Linux binary from [`dist.ipfs.io`](https://dist.ipfs.io/#kubo).
 
    ```bash
-   wget https://dist.ipfs.io/go-ipfs/v0.13.0/go-ipfs_v0.13.0_linux-amd64.tar.gz
+   wget https://dist.ipfs.io/kubo/v0.13.0/kubo_v0.13.0_linux-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf go-ipfs_v0.13.0_linux-amd64.tar.gz
+   tar -xvzf kubo_v0.13.0_linux-amd64.tar.gz
 
-   > x go-ipfs/install.sh
-   > x go-ipfs/ipfs
-   > x go-ipfs/LICENSE
-   > x go-ipfs/LICENSE-APACHE
-   > x go-ipfs/LICENSE-MIT
-   > x go-ipfs/README.md
+   > x kubo/install.sh
+   > x kubo/ipfs
+   > x kubo/LICENSE
+   > x kubo/LICENSE-APACHE
+   > x kubo/LICENSE-MIT
+   > x kubo/README.md
    ```
 
-1. Move into the `go-ipfs` folder and run the install script:
+1. Move into the `kubo` folder and run the install script:
 
    ```bash
-   cd go-ipfs
+   cd kubo
    sudo bash install.sh
 
    > Moved ./ipfs to /usr/local/bin
@@ -169,7 +169,8 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
 
 ## Compile manually
 
-Manually compiling IPFS is a fairly involved process that changes frequently. It can be handy if you'd like to build a specific branch or use the _bleeding-edge_ version of Go-IPFS. See the [`ipfs/go-ipfs` GitHub repository for details →](https://github.com/ipfs/go-ipfs)
+Manually compiling IPFS is a fairly involved process that changes frequently. It can be handy if you'd like to build a specific branch or use the _bleeding-edge_ version of Kubo
+. See the [`ipfs/kubo` GitHub repository for details →](https://github.com/ipfs/kubo)
 
 ## Which node should you use with the command line
 

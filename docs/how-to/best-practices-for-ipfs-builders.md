@@ -50,8 +50,8 @@ ipfs daemon
 
 From this point on, IPNS will be resolved using both the `pubsub` and the DHT. Learn more about the limitations of this experimental feature here: 
 
-- [Experimental features > IPNS pubsub](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#ipns-pubsub)
-- [Enable IPNS over pubsub by default, Issue 8591](https://github.com/ipfs/go-ipfs/issues/8591)
+- [Experimental features > IPNS pubsub](https://github.com/ipfs/kubo/blob/master/docs/experimental-features.md#ipns-pubsub)
+- [Enable IPNS over pubsub by default, Issue 8591](https://github.com/ipfs/kubo/issues/8591)
 
 ## Enable Garbage Collection if your data churn is expected to be high
 

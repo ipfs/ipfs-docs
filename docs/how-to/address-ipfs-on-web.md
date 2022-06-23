@@ -94,14 +94,14 @@ https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.cf-ipfs
 https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.localhost:8080/wiki/
 ```
 
-#### Native support in go-ipfs 0.5+
+#### Native support in Kubo 0.5+
 
-[go-ipfs](https://dist.ipfs.io/#go-ipfs) provides native support for subdomain gateways on hostnames defined in the [`Gateway.PublicGateways`](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) configuration map.
+[Kubo](https://dist.ipfs.io/#kubo) provides native support for subdomain gateways on hostnames defined in the [`Gateway.PublicGateways`](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewaypublicgateways) configuration map.
 
 Learn more about daemon configuration for hosting a public gateway:
 
-- [`Gateway.PublicGateways` docs](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) for defining gateway behavior on specified hostnames
-- [`Gateway` recipes](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway-recipes) with ready to use one-liners for most common use cases
+- [`Gateway.PublicGateways` docs](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewaypublicgateways) for defining gateway behavior on specified hostnames
+- [`Gateway` recipes](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes) with ready to use one-liners for most common use cases
 
 ::: warning Known issues
 
@@ -119,7 +119,7 @@ See the next section to learn how to convert an existing CIDv0 to a DNS-safe rep
 
 If you have content identified by an older CIDv0, there are easy ways to safely represent it as CIDv1 for use in subdomains and other case-insensitive contexts.
 
-#### Automatic — leverage the gateway in go-ipfs
+#### Automatic — leverage the gateway in Kubo
 
 **TL;DR:** Using a subdomain gateway as a drop-in replacement for a path one removes the need for manual CID conversion.
 

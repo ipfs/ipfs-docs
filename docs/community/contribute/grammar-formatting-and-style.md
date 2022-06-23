@@ -36,9 +36,9 @@ If you have to use an acronym, spell the full phrase first and include the acron
 
 ### Project specific titles
 
-When referring to projects by name, use proper noun capitalization: Go-IPFS and JS-IPFS.
+When referring to projects by name, use proper noun capitalization: Kubo and JS-IPFS.
 
-Cases inside code blocks refer to commands and are not capitalized: `go-ipfs` or `js-ipfs`.
+Cases inside code blocks refer to commands and are not capitalized: `kubo` or `js-ipfs`.
 
 ### _Using_ IPFS, not _on_ IPFS
 

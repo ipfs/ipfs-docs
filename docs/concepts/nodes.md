@@ -13,7 +13,7 @@ You're likely to see the term _node_ throughout the IPFS docs, issues, and relat
   * _node_: Use _node_ when you're referring to an individual point on the network. It's a very general term. For example, when you open IPFS Desktop, you establish yourself as a node with the potential to interact with other nodes. See [Configure a node](https://docs.ipfs.io/how-to/configure-node/).
   * _peer_: Use _peer_ when you're talking about the relationship of one node (even your own) to other nodes. It refers to their relationship as equals, with no central authority, so your node is a peer to other peers. See [Observe peers](../how-to/observe-peers/), [Exchange files between nodes](../how-to/exchange-files-between-nodes/), and [Peering with content providers](https://docs.ipfs.io/how-to/peering-with-content-providers/).
   * _daemon_: Use _daemon_ when talking about a node's activity status. When a node is online and running in the background, listening for requests for its data, it's called a _daemon_. See [Take your node online](../how-to/command-line-quick-start/#take-your-node-online)
-  * _instance_: Use _instance_ when talking about a library or program, such as a Go or JS version, running on an IPFS node at a particular point in time. The peer ID is the same, so it's still the same _node_ as far as the IPFS network is concerned. See [Go-IPFS](../reference/go/api/) and [JS-IPFS](../reference/js/api/#ipfs-and-javascript).
+  * _instance_: Use _instance_ when talking about a library or program, such as a Go or JS version, running on an IPFS node at a particular point in time. The peer ID is the same, so it's still the same _node_ as far as the IPFS network is concerned. See [Kubo](../reference/go/api/) and [JS-IPFS](../reference/js/api/#ipfs-and-javascript).
 
 * __Data nodes__, Use _data nodes_ when talking about actual pieces of data on IPFS, such as DAG nodes, UnixFS nodes, and IPLD nodes. When you add a file with the `ipfs add myfile.txt` command, IPFS breaks them up into several nodes that each contain a chunk of the file and are linked to each other. See [Merkle Directed Acyclic Graphs (DAGs)](../concepts/merkle-dag/), [Unix File System (UnixFS)](../concepts/file-systems/#unix-file-system-unixfs), and stay tuned for [InterPlanetary Linked Data (IPLD) model](../concepts/ipld/) docs, which is in progress.
 
@@ -35,7 +35,7 @@ Use to make a UnixFS DAG publicly available by calling `ipfs refs -r <CID>` on a
 
 Features of a preload node:
 
-- They are Go-IPFS nodes with API ports exposed. Some HTTP API commands are accessible.
+- They are Kubo nodes with API ports exposed. Some HTTP API commands are accessible.
 - Used by JS-IPFS nodes running in browser contexts.
 - JS-ipfs nodes remain connected to the libp2p swarm ports of all preload nodes by having preload nodes on the bootstrap list.
 - Often on the same _server_ as a [delegate routing node](#delegate-routing), though both the delegate routing service and preload service are addressed differently. This is done by having different multiaddrs that resolve to the same machine.
@@ -55,27 +55,27 @@ If an IPFS node deems itself unreachable by the public internet, IPFS nodes may 
 Features of a relay node:
 
 - Implements either [v1](https://github.com/libp2p/specs/blob/master/relay/circuit-v1.md) or [v2](https://github.com/libp2p/specs/blob/master/relay/circuit-v2.md) of the Circuit Relay protocol.
-- Can be either Go-IPFS or JS-IPFS nodes; however there are standalone implementations as well:
+- Can be either Kubo or JS-IPFS nodes; however there are standalone implementations as well:
   - [js-libp2p-relay-server](https://github.com/libp2p/js-libp2p-relay-server) (supports circuit v1)
   - [go-libp2p-relay-daemon](https://github.com/libp2p/go-libp2p-relay-daemon) (supports circuit v1 & v2)
-- They're used by both Go-IPFS and JS-IPFS nodes.
-    - JS-IPFS nodes can also use relay nodes to overcome the lack of transport compatibility within the JS-IPFS implementation. A browser node with WebSockets/webRTC transports can talk with a Go-IPFS node that only communicates through TCP using a relay that supports both transports. This is not enabled by default and needs to be set up.
+- They're used by both Kubo and JS-IPFS nodes.
+    - JS-IPFS nodes can also use relay nodes to overcome the lack of transport compatibility within the JS-IPFS implementation. A browser node with WebSockets/webRTC transports can talk with a Kubo node that only communicates through TCP using a relay that supports both transports. This is not enabled by default and needs to be set up.
 
 Limitations of relay nodes:
 - v1 relays can be used by anyone without any limits, unless [go-libp2p-relay-daemon](https://github.com/libp2p/go-libp2p-relay-daemon) is used with ACLs (Access Control Lists) set up.
 - v2 relays are "limited relays" that are designed to be used for [Direct Connection Upgrade through Relay](https://github.com/libp2p/specs/blob/master/relay/DCUtR.md) (aka hole punching).
-- Not configurable in go-ipfs; uses a preset list of relays
+- Not configurable in Kubo; uses a preset list of relays
 
 See [p2p-circuit relay](https://github.com/libp2p/specs/tree/master/relay)
 
 ### Bootstrap
 
-Both Go-IPFS and JS-IPFS nodes use bootstrap nodes to initially enter the DHT.
+Both Kubo and JS-IPFS nodes use bootstrap nodes to initially enter the DHT.
 
 Features of a bootstrap node:
 
 - All default bootstrap nodes are part of the public DHT.
-- The list of bootstrap nodes a Go-IPFS or JS-IPFS node connects to is configurable in their config files.
+- The list of bootstrap nodes a or JS-IPFS node connects to is configurable in their config files.
 
 Limitations of a bootstrap node:
 
@@ -89,8 +89,8 @@ When IPFS nodes are unable to run Distributed Hash Table (DHT) logic on their ow
 
 Features of a delegate routing node:
 
-- They are Go-IPFS nodes with their API ports exposed and some API commands accessible under `/api/v0`.
-- Usable by both Go-IPFS and JS-IPFS nodes.
+- They are Kubo nodes with their API ports exposed and some API commands accessible under `/api/v0`.
+- Usable by both Kubo and JS-IPFS nodes.
 - JS-IPFS nodes use them to query the DHT and also publish content without having to actually run DHT logic on their own.
 - Often on the same _server_ as a [preload](#preload) node, though both the delegate routing service and preload service are addressed differently. This is done by having different multiaddrs that resolve to the same machine.
 - Delegate routing nodes are in the default JS-IPFS configuration as bootstrap nodes, so they will maintain libp2p swarm connections to them at all times.
@@ -102,18 +102,18 @@ Limitations of a delegate routing node:
 
 ## Implementations
 
-Protocol Labs manages two primary implementations of the IPFS spec: Go-IPFS and JS-IPFS. These implementations use specific types of nodes to perform server, browser, and other client functions.
+Protocol Labs manages two primary implementations of the IPFS spec: Kubo and JS-IPFS. These implementations use specific types of nodes to perform server, browser, and other client functions.
 
-### Go-IPFS
+### Kubo
 
-The Go implementation is designed to run on servers and user machines with full IPFS capabilities, enabling experimentation. New IPFS features are usually created on Go-IPFS before any other implementation.
+The Go implementation is designed to run on servers and user machines with full IPFS capabilities, enabling experimentation. New IPFS features are usually created on Kubo before any other implementation.
 
 Features include:
 
 - TCP and QUIC transports are enabled by default.
 - `/ws/` transport disabled by default.
 - HTTP gateway with subdomain support for origin isolation between content roots.
-- Various [experimental features](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md)
+- Various [experimental features](https://github.com/ipfs/kubo/blob/master/docs/experimental-features.md)
 
 See [API > Working with Go](https://docs.ipfs.io/reference/go/api/#working-with-go)
 
@@ -130,7 +130,7 @@ Features include:
 Specific limitations of the JS-IPFS implementation are:
 
 - Unless using WSS, a JS-IPFS node cannot connect to the main public DHT. They will only connect to other JS-IPFS nodes.
-- The performance of the DHT is not on-par with the Go-IPFS implementation.
+- The performance of the DHT is not on-par with the Kubo implementation.
 - The HTTP gateway is present, but it has no subdomain support (can't open TCP port)
 
 See [More about IPFS Node](../how-to/command-line-quick-start.md#take-your-node-online)

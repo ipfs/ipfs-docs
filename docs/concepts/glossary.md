@@ -66,7 +66,7 @@ A Block is a binary blob of data identified by a [CID](#cid). It could be raw by
 
 ### Bootstrap node
 
-A Bootstrap Node is a trusted peer on the IPFS network through which an IPFS node learns about other peers on the network. Both go-ipfs and js-ipfs use bootstrap nodes to enter the Distributed Hash Table (DHT). See [Bootstrap](../concepts/nodes/#bootstrap)
+A Bootstrap Node is a trusted peer on the IPFS network through which an IPFS node learns about other peers on the network. Both Kubo and js-ipfs use bootstrap nodes to enter the Distributed Hash Table (DHT). See [Bootstrap](../concepts/nodes/#bootstrap)
 
 ## C
 
@@ -108,7 +108,7 @@ Unlimited relay that requires some external ACL to control resource usage. [See 
 
 ### Circuit relay v2
 
-Truly decentralized relay implementation that provides a limited relay for things like [hole punching](#hole-punching). Support for this type of relay was introduced in go-ipfs 0.11. [See specification](https://github.com/libp2p/specs/blob/master/relay/circuit-v2.md).
+Truly decentralized relay implementation that provides a limited relay for things like [hole punching](#hole-punching). Support for this type of relay was introduced in Kubo 0.11. [See specification](https://github.com/libp2p/specs/blob/master/relay/circuit-v2.md).
 
 ### Codec
 
@@ -154,7 +154,7 @@ Did you mean [IPLD Data Model](https://ipld.io/glossary/#data-model)?
 
 ### DataStore
 
-The Datastore is the on-disk storage system used by an IPFS node. Configuration parameters control the location, size, construction, and operation of the datastore. [More about Datastore](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#datastore)
+The Datastore is the on-disk storage system used by an IPFS node. Configuration parameters control the location, size, construction, and operation of the datastore. [More about Datastore](https://github.com/ipfs/kubo/blob/master/docs/config.md#datastore)
 
 ### DCUtR
 
@@ -194,7 +194,7 @@ The Decentralized Web (DWeb) looks like today's World Wide Web, but it is built 
 
 ### Filestore
 
-An experimental data store used when `--nocopy` is passed to `ipfs add`. It stores the [UnixFS](#unixfs) data components of blocks as files on the file system instead of as blocks. This allows adding content to IPFS without duplicating the content in the IPFS datastore. [More about Filestore experiment](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#ipfs-filestore)
+An experimental data store used when `--nocopy` is passed to `ipfs add`. It stores the [UnixFS](#unixfs) data components of blocks as files on the file system instead of as blocks. This allows adding content to IPFS without duplicating the content in the IPFS datastore. [More about Filestore experiment](https://github.com/ipfs/kubo/blob/master/docs/experimental-features.md#ipfs-filestore)
 
 ## G
 
@@ -208,7 +208,7 @@ Garbage Collection (GC) is the process within each IPFS node of clearing out cac
 
 ### GO-IPFS node
 
-The primary IPFS reference implementation, i.e., implements all requirements from the corresponding IPFS specification. It runs on servers and user machines with full IPFS capabilities, enabling experimentation. See [Nodes > GO-IPFS](../concepts/nodes/#go-ipfs).
+The primary IPFS reference implementation, i.e., implements all requirements from the corresponding IPFS specification. It runs on servers and user machines with full IPFS capabilities, enabling experimentation. See [Nodes > GO-IPFS](../concepts/nodes/#kubo).
 
 ### Graph
 
@@ -456,7 +456,7 @@ The Unix File System (UnixFS) is the data format used to represent files and all
 
 ### Urlstore
 
-An experimental data store similar to [`filestore`](#filestore), but it retrieves blocks contents via a HTTP URL instead of a local filesystem. [More about urlstore experiment](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#ipfs-urlstore)
+An experimental data store similar to [`filestore`](#filestore), but it retrieves blocks contents via a HTTP URL instead of a local filesystem. [More about urlstore experiment](https://github.com/ipfs/kubo/blob/master/docs/experimental-features.md#ipfs-urlstore)
 
 ## V
 

@@ -92,7 +92,7 @@ Optional `scope` and `permissions` attributes provide detailed information:
 
 ### What is a `window.ipfs`?
 
-It is an IPFS proxy endpoint that enables you to obtain an IPFS API instance. Depending how IPFS Companion is configured, you may be talking directly to a `js-ipfs` node running in Companion, a `go-ipfs` daemon over `js-ipfs-http-client`, or a `js-ipfs` daemon over `js-ipfs-http-client` ... and potentially others in the future. Note that object returned by `window.ipfs.enable` is _not_ an instance of `js-ipfs` or `js-ipfs-http-client`, but is a proxy to one of them, so don't expect to be able to detect either of them or be able to use any undocumented or instance-specific functions.
+It is an IPFS proxy endpoint that enables you to obtain an IPFS API instance. Depending how IPFS Companion is configured, you may be talking directly to a `js-ipfs` node running in Companion, a `kubo` daemon over `js-ipfs-http-client`, or a `js-ipfs` daemon over `js-ipfs-http-client` ... and potentially others in the future. Note that object returned by `window.ipfs.enable` is _not_ an instance of `js-ipfs` or `js-ipfs-http-client`, but is a proxy to one of them, so don't expect to be able to detect either of them or be able to use any undocumented or instance-specific functions.
 
 For information on available functions, see the [js-ipfs](https://github.com/ipfs/js-ipfs) and [js-ipfs-http-client](https://github.com/ipfs/js-ipfs-http-client) docs for available functions. If you find that some new functions are missing, the proxy might be out of date. Please check the [current status](https://github.com/tableflip/ipfs-postmsg-proxy#current-status) and submit a PR.
 

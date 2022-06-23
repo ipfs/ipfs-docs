@@ -8,9 +8,9 @@ description: API and CLI reference materials for IPFS, the InterPlanetary File S
 
 Looking for developer references for IPFS? Find them here.
 
-## Go (go-ipfs)
+## Go (Kubo)
 
-[API resources for go-ipfs](go/api.md) (the reference implementation of IPFS), including the Go CoreAPI, the Go embedded client, and the experimental Go CoreAPI implementation using HTTP API.
+[API resources for Kubo](go/api.md) (the reference implementation of IPFS), including the Go CoreAPI, the Go embedded client, and the experimental Go CoreAPI implementation using HTTP API.
 
 ## JavaScript (js-ipfs)
 
