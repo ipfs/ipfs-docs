@@ -129,7 +129,7 @@ module.exports = {
                   ['https://ipld.io/docs/intro/primer/', 'IPLD' ],
                   '/concepts/ipns',
                   '/concepts/libp2p',
-                  '/concepts/file-systems'
+                  '/concepts/file-systems',
                 ]
               },
               {

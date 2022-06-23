@@ -4,8 +4,8 @@ sidebarDepth: 0
 description: A glossary guide to key terminology for IPFS, the InterPlanetary File System.
 related:
   'Guide to libp2p terminology': https://docs.libp2p.io/reference/glossary/
-  'Article: The Decentralized Web Explained in Words You Can Understand (Breaker)': https://breakermag.com/the-decentralized-web-explained-in-words-you-can-understand/
-  'Decentralized Web Primer': https://github.com/ipfs-shipyard/ipfs-primer
+  'Guide to IPLD terminology': https://ipld.io/glossary/
+  'IPFS Course at ProtoSchool': https://proto.school/course/ipfs
 ---
 
 # IPFS glossary
@@ -69,6 +69,18 @@ A Block is a binary blob of data identified by a [CID](#cid). It could be raw by
 A Bootstrap Node is a trusted peer on the IPFS network through which an IPFS node learns about other peers on the network. Both go-ipfs and js-ipfs use bootstrap nodes to enter the Distributed Hash Table (DHT). See [Bootstrap](../concepts/nodes/#bootstrap)
 
 ## C
+
+### CAR
+
+The CAR (Content Addressable aRchives) is a format for serialized representation of any [IPLD](#ipld) [DAG](#dag). Typically in a file with a .car filename extension or a byte stream marked as [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) media type. [More about CAR](https://ipld.io/specs/transport/car/)
+
+### CAR v1
+
+Version 1 of the [CAR](#car) format, a concatenation of DAG blocks, plus a header that describes the graphs in the file (via root CIDs). [More about CAR v1](https://ipld.io/specs/transport/car/carv1/)
+
+### CAR v2
+
+A minimal upgrade to the [CAR v1](#car-v1) format with the primary aim of adding an optional index within the format for fast random-access to blocks. [More about CAR v2](https://ipld.io/specs/transport/car/carv2/)
 
 ### CBOR
 
@@ -163,6 +175,10 @@ Short for _Data Model Tree_, a term coined by the IPLD team. [More about DMT in 
 ### Dialing
 
 Dialing is a function of the IPFS networking layer in [libp2p](#libp2p), wherein a connection is opened to another peer. Together, an implementation of dialing and [listening](#listening) forms a [transport](#transport).
+
+### DNSAddr
+
+DNSAddr is a protocol for publishing multiple [Multiaddrs](#multiaddr) on DNS name. DNSAddr itself is a valid Multiaddr that looks like `/dnsaddr/bootstrap.libp2p.io`. Can be used for scaling, dynamic bootstrapping, or act as an additional content routing hint for [DNSLink](#dnslink) websites. [More about DNSAddr](https://github.com/multiformats/multiaddr/blob/master/protocols/DNSADDR.md)
 
 ### DNSLink
 
@@ -372,9 +388,9 @@ The Repository (Repo) is a directory where IPFS stores all its settings and inte
 
 ### Root
 
-A root is a [node](#node) in a [graph](#graph) that links to at least one other node. In an IPLD graph, roots are used to aggregate multiple chunks of a file together.
+A root is a [node](#node-in-graphs) in a [graph](#graph) that links to at least one other node. In an IPLD graph, roots are used to aggregate multiple chunks of a file together.
 
-If you have a 600MiB file `A`, it can be split into 3 chunks `B`, `C`, and `D` since the block size of IPFS is 256MiB. The node `A` that links to each of these three chunks is the root. The CID of this root is what IPFS shows you as the CID of the file.
+If you have a 600 KiB file `A`, it can be split into 3 chunks `B`, `C`, and `D` since the default block size of IPFS is 256 KiB. The node `A` that links to each of these three chunks is the root. The CID of this root is what IPFS shows you as the CID of the file.
 
 ```
       A
@@ -412,7 +428,15 @@ A vocabulary term in [IPLD](#ipld), related to [ADLs](#adl).  [More in IPLD glos
 
 ### Swarm
 
-The Swarm is a term for the network of IPFS peers with which your local node has connections. Swarm addresses are addresses that your local node will listen on for connections from other IPFS peers. 
+_Swarm_ is a term for the network of IPFS peers with which your local node has connections. Swarm addresses are addresses that your local node will listen on for connections from other IPFS peers.
+
+### Switch
+
+In [libp2p](#libp2p), a _switch_ is a component responsible for composing multiple [transports](#transport) into a single interface, allowing application code to [dial](#dialing) peers without having to specify which transport to use.
+
+Switches also coordinate the _connection upgrade_ process, which promotes a _raw_ connection from the transport layer into one that supports [protocol negotiation](https://docs.libp2p.io/concepts/protocols/#protocol-negotiation), [stream multiplexing](../concepts/libp2p/#stream-multiplexing), and secure communications.
+
+Sometimes called [swarm](#swarm) for historical reasons.
 
 ## T
 

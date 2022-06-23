@@ -64,7 +64,7 @@ You now have a copy of the file saved to your computer's local storage, you can 
 
 ## Remove Files From Your IPFS Node
 
-Now that you know how to import files using IPFS Desktop, you may want to know how to remove them as well. 
+Now that you know how to import files using IPFS Desktop, you may want to know how to remove them as well.
 
 :::tip
 Removing a file from your local IPFS node will not necessarily remove the file from the IPFS network. If your file has been shared and imported by other peers on IPFS, they will continue to have access to the file and will continue hosting it for others to import and download.

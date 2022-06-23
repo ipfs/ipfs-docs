@@ -1,6 +1,7 @@
 ---
 title: IPFS updater
 description: The IPFS updater is a command-line tool originally used to help users update their IPFS version. Learn how to install, upgrade, and downgrade Go-IPFS using the IPFS updater.
+current-ipfs-updater-version: v1.8.0
 ---
 
 # IPFS updater

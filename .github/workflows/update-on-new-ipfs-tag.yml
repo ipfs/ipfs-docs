@@ -1,8 +1,9 @@
-name: Update docs on new ipfs-tag release
+name: Update docs on new version (ipfs, ipfs-cluster, etc.)
 on:
   workflow_dispatch:
   schedule:
     - cron: '30 5,17 * * *' # run every day at 5:30am and 5:30pm UTC
+  workflow_call:
 
 jobs:
   update:
@@ -13,18 +14,19 @@ jobs:
       - name: Find latest go-ipfs tag
         id: latest_ipfs
         uses: ./.github/actions/latest-ipfs-tag
-      - name: Update http-api-docs
+      - name: Update docs
         id: update
-        uses: ./.github/actions/update-on-new-ipfs-tag
+        uses: ./.github/actions/update-with-latest-versions
         with:
           latest_ipfs_tag: ${{ steps.latest_ipfs.outputs.latest_tag }}
-      - name: pull-request  # don't create a pr if there was no new ipfs tag
-        uses: repo-sync/pull-request@65194d8015be7624d231796ddee1cd52a5023cb3 #v2.16
-        if: ${{ steps.update.outputs.updated_branch }}
+      - name: pull-request
+        uses: repo-sync/pull-request@65785d95a5a466e46a9d0708933a3bd51bbf9dde #v2.6.2
+        if: ${{ steps.update.outputs.updated_branch }} # don't create a pr if there was no branch pushed
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           source_branch: ${{ steps.update.outputs.updated_branch }}
           destination_branch: "main"
-          pr_title: "Bump references to go-ipfs ${{ steps.latest_ipfs.outputs.latest_tag }}"
+          pr_title: "Update documentation ${{ steps.latest_ipfs.outputs.latest_tag }}"
           pr_body: "Release Notes: https://github.com/ipfs/go-ipfs/releases/${{ steps.latest_ipfs.outputs.latest_tag }}"
           pr_label: "needs/triage,P0"
+
