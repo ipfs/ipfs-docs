@@ -122,7 +122,6 @@ module.exports = {
                   '/concepts/ipns',
                   '/concepts/libp2p',
                   '/concepts/file-systems',
-                  '/concepts/peers-and-swarms'
                 ]
               },
               {
