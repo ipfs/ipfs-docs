@@ -43,7 +43,7 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
    cd ~\Apps\go-ipfs_v0.13.0\go-ipfs
    .\ipfs.exe --version
 
-   > ipfs version 0.12.0
+   > ipfs version 0.13.0
    ```
 
    While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH` by using the following steps.
@@ -84,7 +84,7 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
    cd ~
    ipfs --version
 
-   > ipfs version 0.12.0
+   > ipfs version 0.13.0
    ```
 
 ### macOS
@@ -126,7 +126,7 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
    ```bash
    ipfs --version
 
-   > ipfs version 0.12.0
+   > ipfs version 0.13.0
    ```
 
 ### Linux
@@ -164,7 +164,7 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
    ```bash
    ipfs --version
 
-   > ipfs version 0.12.0
+   > ipfs version 0.13.0
    ```
 
 ## Compile manually
