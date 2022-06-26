@@ -1,5 +1,5 @@
 ---
-title: "Kubo command-line reference"
+title: "Kubo CLI"
 description: API documentation for the Kubo command-line executable.
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Kubo RPC API v0
+title: Kubo RPC API
 description: RPC API v0 reference for Kubo IPFS daemon.
 ---
 

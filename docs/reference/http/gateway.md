@@ -5,11 +5,11 @@ description: HTTP Gateway API reference for IPFS clients.
 
 # HTTP Gateway reference
 
-Gateways provide implementation and runtime agnostic HTTP interface for retrieving [content-addressed](../concepts/glossary/#content-addressing) data from IPFS with regular HTTP clients and libraries.
+Gateways provide implementation and runtime agnostic HTTP interface for retrieving [content-addressed](/concepts/glossary/#content-addressing) data from IPFS with regular HTTP clients and libraries.
 
 ::: tip Before you dive into low level specifications...
 
-Make sure you understand [how to address IPFS on the web](/how-to/address-ipfs-on-web/), and what are differences between [Path](/how-to/address-ipfs-on-web/#path-gateway) and [Subdomain Gateways](/how-to/address-ipfs-on-web/#subdomain-gateway).
+Make sure you understand [how to address IPFS on the web](../how-to/address-ipfs-on-web/), and what are differences between [Path](/how-to/address-ipfs-on-web/#path-gateway) and [Subdomain Gateways](/how-to/address-ipfs-on-web/#subdomain-gateway).
 :::
 
 ::: warning SPECIFICATION DRAFT (WORK IN PROGRESS)
