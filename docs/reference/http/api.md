@@ -6,15 +6,19 @@ description: HTTP APIs provided by IPFS implementations.
 
 # HTTP APIs
 
-<!-- this page is provided for backward-compatibility, ensuring existing hotlinks to our docs remain functional -->
+<!--
 
-<script>
-// migrate users linking to specific RPC command to the new location
-if (window.location.hash.startsWith('#api-v0')) {
-  window.location.replace(window.location.href.replace('/reference/http/api','/reference/kubo/rpc'))
-}
-// otherwise, user can manually click one of links below..
-</script>
+This page is provided for backward-compatibility,
+ensuring existing hotlinks to our docs remain functional.
+
+Most of users won't ever see this, because this.advancedRedirect() in
+.vuepress/theme/components/Page.vue will detect references starting with
+#api-v0-foo and will redirect to correct URL at /reference/kubo/rpc/#api-v0-foo
+
+In case when RPC reference page was linked without an anchor, below two links
+should be enough.
+
+-->
 
 - [HTTP Gateway](/reference/http/gateway/): implementation-agnostic interface for retrieving [content-addressed](../concepts/glossary/#content-addressing) data from IPFS
 - [Kubo RPC API v0](/reference/kubo/rpc/): RPC for managing Kubo IPFS nodes
