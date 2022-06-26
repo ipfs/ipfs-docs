@@ -28,16 +28,16 @@ else
      mv go.mod2 go.mod
      go mod tidy
      make
-     http-api-docs > $API_FILE
+     http-api-docs > "$API_FILE"
 
      # update cli docs
-     cd $ROOT # go back to root of ipfs-docs repo
+     cd "$ROOT" # go back to root of ipfs-docs repo
      git clone https://github.com/ipfs/go-ipfs.git
      cd go-ipfs
      git fetch --all --tags
-     git checkout tags/$LATEST_IPFS_TAG
+     git checkout "tags/$LATEST_IPFS_TAG"
      go install ./cmd/ipfs
-     cd $ROOT/docs/reference/kubo
+     cd "$ROOT/docs/reference/kubo"
      ./generate-cli-docs.sh
 fi
 
@@ -48,7 +48,7 @@ update_version() {
     INPUT_REPOSITORY=$1
     INPUT_VERSION_IDENTIFIER=$2
 
-    LATEST_VERSION_TAG=`curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${INPUT_REPOSITORY}/releases/latest | jq --raw-output ".tag_name"` 
+    LATEST_VERSION_TAG=`curl -L -H "Accept: application/vnd.github.v3+json" "https://api.github.com/repos/${INPUT_REPOSITORY}/releases/latest" | jq --raw-output ".tag_name"`
     LATEST_VERSION_NUMBER=${LATEST_VERSION_TAG:1}
 
     echo "Updating documentation files that rely on ${INPUT_VERSION_IDENTIFIER} to ${LATEST_VERSION_TAG}"
@@ -57,13 +57,13 @@ update_version() {
         echo "updating ${INPUT_REPOSITORY} version to ${LATEST_VERSION_NUMBER} in ${file}"
         CURRENT_VERSION_TAG=`awk "/${INPUT_VERSION_IDENTIFIER}/{print \\$2; exit;}" "${file}"`
         CURRENT_VERSION_NUMBER=${CURRENT_VERSION_TAG:1}
-        sed -E -i "s/$CURRENT_VERSION_NUMBER/$LATEST_VERSION_NUMBER/g" ${file}
+        sed -E -i "s/$CURRENT_VERSION_NUMBER/$LATEST_VERSION_NUMBER/g" "${file}"
     done <<< "$(grep "${INPUT_VERSION_IDENTIFIER}" ./docs -R --files-with-matches)"
 }
 
 cd "${ROOT}"
 update_version ipfs/ipfs-update current-ipfs-updater-version
-update_version ipfs/ipfs-cluster current-ipfs-cluster-version
+update_version ipfs-cluster/ipfs-cluster current-ipfs-cluster-version
 update_version ipfs/go-ipfs current-ipfs-version
 
 

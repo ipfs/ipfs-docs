@@ -95,6 +95,15 @@ To have your platform added to this list, please [open a PR to edit this page](h
 |:-|:-|
 |`QmR69wtWUMm1TWnmuD4JqC1TWLZcc8iR2KrTenfZZbiztd`|`/ip4/104.210.43.77`|
 
+#### Estuary
+|Peer ID|Addresses|
+|:-|:-|
+|`12D3KooWCVXs8P7iq6ao4XhfAmKWrEeuKFWCJgqe9jGDMTqHYBjw`|`/ip4/139.178.68.217/tcp/6744`|
+|`12D3KooWGBWx9gyUFTVQcKMTenQMSyE2ad9m7c9fpjS4NMjoDien`|`/ip4/147.75.49.71/tcp/6745`|
+|`12D3KooWFrnuj5o3tx4fGD2ZVJRyDqTdzGnU3XYXmBbWbc8Hs8Nd`|`/ip4/147.75.86.255/tcp/6745`|
+|`12D3KooWN8vAoGd6eurUSidcpLYguQiGZwt4eVgDvbgaS7kiGTup`|`/ip4/3.134.223.177/tcp/6745`|
+|`12D3KooWLV128pddyvoG6NBvoZw7sSrgpMTPtjnpu3mSmENqhtL7`|`/ip4/35.74.45.12/udp/6746/quic`|
+
 #### Web3.Storage
 
 |Peer ID|Addresses|
