@@ -1,11 +1,11 @@
 ---
-title: Run IPFS inside Docker
+title: Run Kubo IPFS inside Docker
 description: You can run IPFS inside Docker to simplify your deployment processes, and horizontally scale your IPFS infrastructure.
 ---
 
 # Run IPFS inside Docker
 
-You can run IPFS inside Docker to simplify your deployment processes, as well as horizontally scale your IPFS infrastructure.
+You can run Kubo IPFS inside Docker to simplify your deployment processes, as well as horizontally scale your IPFS infrastructure.
 
 ## Set up
 
@@ -25,7 +25,7 @@ You can run IPFS inside Docker to simplify your deployment processes, as well as
 
     ::: danger NEVER EXPOSE THE RPC API TO THE PUBLIC INTERNET
 
-    The API port provides admin-level access to your IPFS node.  See [RPC API docs](/reference/http/api/) for more information.
+    The API port provides admin-level access to your IPFS node.  See [RPC API docs](/reference/kubo/rpc/) for more information.
 
     :::
 
@@ -124,10 +124,10 @@ It is possible to do key rotation in an ephemeral container that is temporarily 
 
 ```shell
 # given container named 'ipfs-test' that persists repo at /path/to/persisted/.ipfs
-docker run -d --name ipfs-test -v /path/to/persisted/.ipfs:/data/ipfs ipfs/kubo:v0.7.0 
+docker run -d --name ipfs-test -v /path/to/persisted/.ipfs:/data/ipfs ipfs/kubo:latest
 docker stop ipfs-test  
 
 # key rotation works like this (old key saved under 'old-self')
-docker run --rm -it -v /path/to/persisted/.ipfs:/data/ipfs ipfs/kubo:v0.7.0 key rotate -o old-self -t ed25519
+docker run --rm -it -v /path/to/persisted/.ipfs:/data/ipfs ipfs/kubo:latest key rotate -o old-self -t ed25519
 docker start ipfs-test # will start with the new key
 ```

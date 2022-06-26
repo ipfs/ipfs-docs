@@ -27,7 +27,7 @@ The IPFS garbage collector is configured in the `Datastore`section of [the Kubo 
 
 - `GCPeriod`: Specify how frequently garbage collection should run. Only used if automatic garbage collection is enabled. The default is 1 hour.
 
-To manually start garbage collection, [run `ipfs repo gc`](../reference/cli.md#ipfs-repo-gc):
+To manually start garbage collection, [run `ipfs repo gc`](../reference/kubo/cli.md#ipfs-repo-gc):
 
 ```bash
 ipfs repo gc
@@ -55,7 +55,7 @@ If you use IPFS Desktop, you can trigger garbage collection by clicking on the t
 ## Pinning in context
 
 An IPFS node can protect data from garbage collection based on different kinds of user events.
-- The universal way is by adding a low-level [local pin](../how-to/pin-files.md). This works for all data types and can be done manually, but if you add a file using the CLI command [`ipfs add`](../reference/cli.md#ipfs-add), your IPFS node will automatically pin that file for you.
+- The universal way is by adding a low-level [local pin](../how-to/pin-files.md). This works for all data types and can be done manually, but if you add a file using the CLI command [`ipfs add`](../reference/kubo/cli.md#ipfs-add), your IPFS node will automatically pin that file for you.
 - When working with files and directories, a better way may be to add them to the local [Mutable File System (MFS)](glossary.md#mfs). This protects the data from garbage collection in the same way as local pinning, but is somewhat easier to manage.
 
 

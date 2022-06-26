@@ -8,7 +8,7 @@ echo "The latest IPFS tag is ${LATEST_IPFS_TAG}"
 
 ROOT=`pwd`
 git checkout -b ${BRANCH}
-API_FILE=`pwd`/docs/reference/http/api.md
+API_FILE="$(pwd)/docs/reference/kubo/rpc.md"
 
 
 # Update http api docs and cli docs
@@ -37,7 +37,7 @@ else
      git fetch --all --tags
      git checkout tags/$LATEST_IPFS_TAG
      go install ./cmd/ipfs
-     cd $ROOT/docs/reference
+     cd $ROOT/docs/reference/kubo
      ./generate-cli-docs.sh
 fi
 

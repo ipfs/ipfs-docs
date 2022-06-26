@@ -1,7 +1,7 @@
 ---
 title: Command-line quick start
 legacyUrl: https://docs.ipfs.io/introduction/usage/
-description: Quick-start guide for installing and getting started with IPFS from the command line.
+description: Quick-start guide for installing and getting started with Kubo IPFS from the command line.
 ---
 
 # Command-line quick start
@@ -100,7 +100,7 @@ Make a note of the TCP ports you receive. If they are different, use yours in th
 
 ::: danger NEVER EXPOSE THE RPC API TO THE PUBLIC INTERNET
 
-The API port provides admin-level access to your IPFS node.  See [RPC API docs](/reference/http/api/) for more information.
+The API port provides admin-level access to your Kubo IPFS node.  See [RPC API v0 docs](/reference/kubo/rpc/) for more information.
 
 :::
 
@@ -195,4 +195,4 @@ You need to install and set up FUSE in order to mount the file system. For more 
 
 ### Further help
 
-The IPFS community is friendly and able to help! Get support from other IPFS developers in the official [IPFS forums](https://discuss.ipfs.io/), or join the conversation on [Discord](https://discord.com/invite/KKucsCpZmY).
+The IPFS community is friendly and able to help! Get support from other IPFS developers in the official [IPFS forums](https://discuss.ipfs.io/), or join [community chat channels](../community/chat/).
