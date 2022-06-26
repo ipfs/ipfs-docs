@@ -11,9 +11,9 @@ jobs:
     steps:
       - name: Checkout ipfs-docs
         uses: actions/checkout@v2
-      - name: Find latest go-ipfs tag
+      - name: Find latest kubo tag
         id: latest_ipfs
-        uses: ./.github/actions/latest-ipfs-tag
+        uses: ./.github/actions/latest-kubo-tag
       - name: Update docs
         id: update
         uses: ./.github/actions/update-with-latest-versions
@@ -26,7 +26,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           source_branch: ${{ steps.update.outputs.updated_branch }}
           destination_branch: "main"
-          pr_title: "Update documentation ${{ steps.latest_ipfs.outputs.latest_tag }}"
-          pr_body: "Release Notes: https://github.com/ipfs/go-ipfs/releases/${{ steps.latest_ipfs.outputs.latest_tag }}"
+          pr_title: "Update release version numbers"
+          pr_body: "This PR was opened from update-on-new-ipfs-tag.yml workflow."
           pr_label: "needs/triage,P0"
 

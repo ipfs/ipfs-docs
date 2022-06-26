@@ -4,7 +4,7 @@ set -eu
 BRANCH=bump-documentation-to-latest-versions
 LATEST_IPFS_TAG=$INPUT_LATEST_IPFS_TAG
 
-echo "The latest IPFS tag is ${LATEST_IPFS_TAG}"
+echo "The latest Kubo tag is ${LATEST_IPFS_TAG}"
 
 ROOT=`pwd`
 git checkout -b ${BRANCH}
@@ -15,16 +15,16 @@ API_FILE="$(pwd)/docs/reference/kubo/rpc.md"
 
 cd tools/http-api-docs
 
-# extract go-ipfs release tag used in http-api-docs from go.mod in this repo
-CURRENT_IPFS_TAG=`grep 'github.com/ipfs/go-ipfs ' ./go.mod | awk '{print $2}'`
-echo "The currently used go-ipfs tag in http-api-docs is ${CURRENT_IPFS_TAG}"
+# extract kubo release tag used in http-api-docs from go.mod in this repo
+CURRENT_IPFS_TAG=$(grep 'github.com/ipfs/kubo ' ./go.mod | awk '{print $2}')
+echo "The currently used Kubo tag in http-api-docs is ${CURRENT_IPFS_TAG}"
 
-# make the upgrade, if newer go-ipfs tags exist
+# make the upgrade, if newer Kubo tags exist
 if [ "$CURRENT_IPFS_TAG" = "$LATEST_IPFS_TAG" ]; then
-    echo "http-api-docs already uses the latest go-ipfs tag."
+    echo "http-api-docs already uses the latest Kubo tag."
 else
      # update http-api-docs
-     sed "s/^\s*github.com\/ipfs\/go-ipfs\s\+$CURRENT_IPFS_TAG\s*$/	github.com\/ipfs\/go-ipfs $LATEST_IPFS_TAG/" go.mod > go.mod2
+     sed "s/^\s*github.com\/ipfs\/kubo\s\+$CURRENT_IPFS_TAG\s*$/	github.com\/ipfs\/kubo $LATEST_IPFS_TAG/" go.mod > go.mod2
      mv go.mod2 go.mod
      go mod tidy
      make
@@ -32,8 +32,8 @@ else
 
      # update cli docs
      cd "$ROOT" # go back to root of ipfs-docs repo
-     git clone https://github.com/ipfs/go-ipfs.git
-     cd go-ipfs
+     git clone https://github.com/ipfs/kubo.git
+     cd kubo
      git fetch --all --tags
      git checkout "tags/$LATEST_IPFS_TAG"
      go install ./cmd/ipfs
@@ -64,7 +64,7 @@ update_version() {
 cd "${ROOT}"
 update_version ipfs/ipfs-update current-ipfs-updater-version
 update_version ipfs-cluster/ipfs-cluster current-ipfs-cluster-version
-update_version ipfs/go-ipfs current-ipfs-version
+update_version ipfs/kubo current-ipfs-version
 
 
 # Push on change
