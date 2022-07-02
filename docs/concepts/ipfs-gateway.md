@@ -4,7 +4,7 @@ description: Learn why gateways are an important part of using IPFS in conjuncti
 related:
   'IPFS Docs: Address IPFS on the Web': /how-to/address-ipfs-on-web/
   'IPFS public gateway checker': https://ipfs.github.io/public-gateway-checker/
-  'GitHub repo: Gateway summary from Kubo': https://github.com/ipfs/kubo/blob/master/docs/gateway.md
+  'Gateway specifications': https://github.com/ipfs/specs/blob/main/http-gateways/#readme
   'Article: Solving the IPFS Gateway Problem (Pinata)': https://medium.com/pinata/the-ipfs-gateway-problem-64bbe7eb8170
   'Tutorial: Setting up an IPFS gateway on Google Cloud Platform (Stacktical)': https://blog.stacktical.com/ipfs/gateway/dapp/2019/09/21/ipfs-server-google-cloud-platform.html
 ---
@@ -276,4 +276,7 @@ No. The ipfs.io gateway is one of many portals used to view content stored by th
 
 ## Learning more
 
+- [A Practical Explainer for IPFS Gateways - Part 1](https://blog.ipfs.io/2022-06-09-practical-explainer-ipfs-gateways-1/)
+- [A Practical Explainer for IPFS Gateways - Part 2](https://blog.ipfs.io/2022-06-30-practical-explainer-ipfs-gateways-2/)
 - [Gateway configuration options](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway)
+- [Gateway specifications](https://github.com/ipfs/specs/blob/main/http-gateways/#readme)
