@@ -12,26 +12,26 @@ Gateways provide implementation and runtime agnostic HTTP interface for retrievi
 Make sure you understand [how to address IPFS on the web](../how-to/address-ipfs-on-web/), and what are differences between [Path](/how-to/address-ipfs-on-web/#path-gateway) and [Subdomain Gateways](/how-to/address-ipfs-on-web/#subdomain-gateway).
 :::
 
-::: warning SPECIFICATION DRAFT (WORK IN PROGRESS)
+::: warning SPECIFICATION (WORK IN PROGRESS)
 
 <!-- TODO update this section (at least the links) when ipfs/specs PR lands -->
-HTTP Gateway specification for IPFS implementers is being drafted in [ipfs/specs/pull/283](https://github.com/ipfs/specs/pull/283)
+HTTP Gateway specification for IPFS implementers is available in [ipfs/specs](https://github.com/ipfs/specs/blob/main/http-gateways/#readme):
 
 ### HTTP
 
 These are "low level" gateways that expose IPFS resources over HTTP protocol.
 
-* [PATH_GATEWAY.md](https://github.com/ipfs/specs/blob/feat/gateway-specs/http-gateways/PATH_GATEWAY.md) ← **START HERE**
-* [TRUSTLESS_GATEWAY.md](https://github.com/ipfs/specs/blob/feat/gateway-specs/http-gateways/TRUSTLESS_GATEWAY.md)
+* [PATH_GATEWAY.md](https://github.com/ipfs/specs/blob/main/http-gateways/PATH_GATEWAY.md) ← **START HERE**
+* [TRUSTLESS_GATEWAY.md](https://github.com/ipfs/specs/blob/main/http-gateways/TRUSTLESS_GATEWAY.md)
 
 ### Web
 
 Special types of gateway which leverage `Host` header in addition to URL `pathname`. Designed for website hosting and improved interoperability with web browsers and [origin-based security model](https://en.wikipedia.org/wiki/Same-origin_policy).
 
-* [SUBDOMAIN_GATEWAY.md](https://github.com/ipfs/specs/blob/feat/gateway-specs/http-gateways/SUBDOMAIN_GATEWAY.md)
-* [DNSLINK_GATEWAY.md](https://github.com/ipfs/specs/blob/feat/gateway-specs/http-gateways/DNSLINK_GATEWAY.md)
+* [SUBDOMAIN_GATEWAY.md](https://github.com/ipfs/specs/blob/main/http-gateways/SUBDOMAIN_GATEWAY.md)
+* [DNSLINK_GATEWAY.md](https://github.com/ipfs/specs/blob/main/http-gateways/DNSLINK_GATEWAY.md)
 
-If you are a gateway operator or an implementer, consider providing feedback in [ipfs/specs/pull/283](https://github.com/ipfs/specs/pull/283)
+If you are a gateway operator or an implementer, consider providing feedback in [ipfs/specs](https://github.com/ipfs/specs/) repository.
 
 :::
 
