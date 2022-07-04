@@ -56,6 +56,40 @@ If you want to build this site locally, run the following:
 1. Close the local server with `CTRL` + `c`.
 1. To restart the local server, run `npm start` from within the `ipfs-docs` folder.
 
+## Troubleshooting
+
+If you're having trouble setting up the site locally, check here for solutions to some common problems.
+
+### Digital envelope routines initialization error
+
+The following error message may display when using Node.js version 18.0.0 when attempting to locally deploy this project for the first time:
+
+   ```shell
+   opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
+   library: 'digital envelope routines',
+   reason: 'unsupported',
+   code: 'ERR_OSSL_EVP_UNSUPPORTED'
+   ```
+To solve this error, perform the following steps:
+
+1. Open a terminal.
+2. Navigate into the `ipfs-docs` folder:
+   
+   ```bash
+   cd ipfs-docs
+   ```
+3. Run the following command:
+
+   ```shell
+    export NODE_OPTIONS=--openssl-legacy-provider
+   ```
+4. Run `npm start`.
+
+   ```bash
+   npm start
+   ```
+You can now return to the `Project set up` section above and continue on with the steps. You can also check [this issue](https://github.com/webpack/webpack/issues/14532) for more information about this error.
+
 ## Core members
 
 - [@johnnymatthews](https://github.com/johnnymatthews): Project leadership, organization, and primary contact
