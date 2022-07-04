@@ -69,7 +69,6 @@ The following error message may display when using Node.js version 18.0.0 when a
    library: 'digital envelope routines',
    reason: 'unsupported',
    code: 'ERR_OSSL_EVP_UNSUPPORTED'
-   ```
 To solve this error, perform the following steps:
 
 1. Open a terminal.
@@ -77,18 +76,15 @@ To solve this error, perform the following steps:
    
    ```bash
    cd ipfs-docs
-   ```
 3. Run the following command:
 
    ```shell
     export NODE_OPTIONS=--openssl-legacy-provider
-   ```
 4. Run `npm start`.
 
    ```bash
    npm start
-   ```
-You can now return to the `Project set up` section above and continue on with the steps. You can also check [this issue](https://github.com/webpack/webpack/issues/14532) for more information about this error.
+You can now return to the [Project set-up](#project-set-up) section above and continue on with the steps. You can also check [this issue in the Webpack GitHub repository](https://github.com/webpack/webpack/issues/14532) for more information about this error.
 
 ## Core members
 
