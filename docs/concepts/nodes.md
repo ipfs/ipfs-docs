@@ -107,7 +107,7 @@ Protocol Labs manages two implementations of the IPFS spec: Kubo and JS-IPFS. Th
 ### Kubo
 
 An implementation of IPFS in Go. Designed to run on servers and user machines with full IPFS capabilities, enabling experimentation. New IPFS features are usually created on Kubo before any other implementation.
-More at [Github](https://github.com/ipfs/go-ipfs#readme).
+More at [Github](https://github.com/ipfs/kubo#readme).
 
 Features include:
 
