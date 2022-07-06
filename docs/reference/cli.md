@@ -32,7 +32,7 @@ Every command usable from the CLI is also available through the [HTTP API](/refe
 ```
 
 
-_Generated on 2022-06-09 20:44:40, from go-ipfs 0.13.0._
+_Generated on 2022-07-06 16:10:04, from go-ipfs 0.13.1._
 
 ## ipfs
 
@@ -987,12 +987,13 @@ SYNOPSIS
 DESCRIPTION
 
   Available profiles:
-    'test':
-      Reduces external interference of IPFS daemon, this
-      is useful when using the daemon in test environments.
-    'default-networking':
-      Restores default network settings.
-      Inverse profile of the test profile.
+    'default-datastore':
+      Configures the node to use the default datastore (flatfs).
+      
+      Read the "flatfs" profile description for more information on this datastore.
+      
+      This profile may only be applied when first initializing the node.
+      
     'flatfs':
       Configures the node to use the flatfs datastore.
       
@@ -1006,19 +1007,6 @@ DESCRIPTION
       * You need to run garbage collection in a way that reclaims free space as soon as possible.
       * You want to minimize memory usage.
       * You are ok with the default speed of data import, or prefer to use --nocopy.
-      
-      This profile may only be applied when first initializing the node.
-      
-    'server':
-      Disables local host discovery, recommended when
-      running IPFS on machines with public IPv4 addresses.
-    'local-discovery':
-      Sets default values to fields affected by the server
-      profile, enables discovery in local networks.
-    'default-datastore':
-      Configures the node to use the default datastore (flatfs).
-      
-      Read the "flatfs" profile description for more information on this datastore.
       
       This profile may only be applied when first initializing the node.
       
@@ -1040,6 +1028,12 @@ DESCRIPTION
         which is no longer supported by the upstream team.
       
       This profile may only be applied when first initializing the node.
+    'test':
+      Reduces external interference of IPFS daemon, this
+      is useful when using the daemon in test environments.
+    'default-networking':
+      Restores default network settings.
+      Inverse profile of the test profile.
     'lowpower':
       Reduces daemon overhead on the system. May affect node
       functionality - performance of content discovery and data
@@ -1047,6 +1041,12 @@ DESCRIPTION
       
     'randomports':
       Use a random port number for swarm.
+    'server':
+      Disables local host discovery, recommended when
+      running IPFS on machines with public IPv4 addresses.
+    'local-discovery':
+      Sets default values to fields affected by the server
+      profile, enables discovery in local networks.
 
 SUBCOMMANDS
   ipfs config profile apply <profile> - Apply profile to config.
