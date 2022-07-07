@@ -1,0 +1,14 @@
+---
+title: IPFS Implementations
+legacyUrl: ???
+description: Learn about the various IPFS implementations available for different usecases
+---
+
+There isn't one canonical IPFS implementation.  
+There is so much to explore in this space that it's ideal to have a plethora of implementations experimenting and optimizing for various usecases.
+Below is a list of IPFS implementations. 
+
+# How do I create and "register" another implementation?
+1. Specs
+2. Add PR here
+3. Share in the IPFS community
