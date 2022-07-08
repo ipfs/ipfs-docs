@@ -1,6 +1,5 @@
 ---
 title: IPFS Implementations
-legacyUrl: ???
 description: Learn about the various IPFS implementations available for different usecases
 ---
 
