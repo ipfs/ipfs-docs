@@ -18,3 +18,7 @@ Have an idea of what IPFS is but haven't really used it before? You should start
 ![An IPFS daemon running in a terminal window.](./images/ipfs-command-line.png)
 
 If you're a bit more serious about IPFS and want to start poking around the command-line interfact (CLI), then this section is for you. No buttons or images here; [just good-old-fashioned CLI interfaces and pipeable commands →](./command-line.md)
+
+## Other implementations
+
+There are many other IPFS implementations than the onramps discussed above.  [Check them out here!](./ipfs-implementations.md)
