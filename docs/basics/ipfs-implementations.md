@@ -9,11 +9,11 @@ Below is a list of IPFS implementations that we know of in name alphabetical ord
 If you're aware of more, please add!
 
 | Name | URL | Language(s) |
-|-|-|-|
-| Agregore | https://github.com/AgregoreWeb/agregore-ipfs-daemon | go,javascript |
+|---|---|---|
+| Agregore | https://github.com/AgregoreWeb/agregore-ipfs-daemon | go, javascript |
 | barge | https://github.com/application-research/estuary/tree/master/cmd/barge | go |
 | Boost | https://github.com/filecoin-project/boost | go |
-| Elastic provider | https://github.com/ipfs-elastic-provider/ipfs-elastic-provider | javascript,typescript |
+| Elastic provider | https://github.com/ipfs-elastic-provider/ipfs-elastic-provider | javascript, typescript |
 | Estuary | https://github.com/application-research/estuary/ | go |
 | gomobile-ipfs | https://github.com/ipfs-shipyard/gomobile-ipfs | go |
 | ipfs cluster | https://github.com/ipfs/ipfs-cluster | go |
@@ -23,7 +23,7 @@ If you're aware of more, please add!
 | ipfs-nucleus |  https://github.com/peergos/ipfs-nucleus/  | go |
 | ipget | https://github.com/ipfs/ipget | go |
 | iroh | https://github.com/n0-computer/iroh | rust |
-| js-ipfs | https://github.com/ipfs/js-ipfs | javascript,typescript |
+| js-ipfs | https://github.com/ipfs/js-ipfs | javascript, typescript |
 | Kubo | https://github.com/ipfs/kubo | go |
 | Lotus | https://github.com/filecoin-project/lotus | go |
 | py-ipfs | https://github.com/ipfs-shipyard/py-ipfs | python |
