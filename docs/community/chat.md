@@ -10,15 +10,15 @@ In general, public IPFS Discord channels are bridged to Matrix and Slack.  As a 
 
 ## Discord
 
-Join the [IPFS Discord server](https://discord.com/ipfs) for synchronous chat! Server documentation is [here](https://pl-strflt.notion.site/IPFS-Discord-Server-Documentation-85bbc451303a473bbf6846b01610e3c1).
+Join the [IPFS Discord server](https://discord.com/ipfs) for synchronous chat! [Server documentation can be found on Notion](https://pl-strflt.notion.site/IPFS-Discord-Server-Documentation-85bbc451303a473bbf6846b01610e3c1).
 
 ## Matrix
 
-Join the [Matrix space](https://matrix.to/#/#ipfs-space:ipfs.io).  Homeserver documentation is [here](https://pl-strflt.notion.site/IPFS-Matrix-Homeserver-Documentation-31481e76843547b7ab5160a87eed2b9f).
+Join the [Matrix space](https://matrix.to/#/#ipfs-space:ipfs.io). [Homeserver documentation is available on Notion](https://pl-strflt.notion.site/IPFS-Matrix-Homeserver-Documentation-31481e76843547b7ab5160a87eed2b9f).
 
 ## Slack
 
-Join [Filecoin slack](https://filecoin.io/slack) and join the bridged #ipfs channels.  Filecoin Slack workspace userguide is [here](https://pl-strflt.notion.site/Filecoin-Slack-User-Guide-29072679986b4ccb8ad7b091097dd770).
+Join [Filecoin slack](https://filecoin.io/slack) and join the bridged #ipfs channels. The [Filecoin Slack workspace user guide is available on Notion](https://pl-strflt.notion.site/Filecoin-Slack-User-Guide-29072679986b4ccb8ad7b091097dd770).
 
 # Forums
 
