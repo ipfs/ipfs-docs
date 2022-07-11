@@ -17,21 +17,26 @@ Installation instructions for [macOS](../install/ipfs-desktop/#macos), [Ubuntu](
 
 The installation guides linked above are straightforward and easy to follow; simply follow the instructions that correspond to your operating system and you will have IPFS Desktop going in just a few minutes.
 
-## Add Local Files to IPFS
+## Add local files
 
 Now that you have IPFS Desktop up and running, you can add the files that you wish to host on IPFS.
 
-1. First, open IPFS Desktop and make sure you are connected to IPFS. Navigate to the status screen by clicking on the **Status** tab on the left side of the app. At the top of the status screen you will see that it says "Connected to IPFS".
-![Status and Connected](https://ipfs.io/ipfs/bafkreidfsaiakraedkl3u7zlxzjpjy3typhdqz24bam7vhietdcn7gzm3u "Status and Connected.png")
-1. Now that you know you are connected to IPFS, navigate to the files screen. To do this, simply click on the **files** tab on the left side of the app.
-1. On the files screen, you will see a button that says **+Import**, click on that and then select either **File** or **Folder**. If you are uploading just a single file to IPFS, select the **File** option. If you are uploading a folder containing multiple files, select the **Folder** option. Selecting either option will bring up a file selection window.
-![Files Tab and Import Button](https://ipfs.io/ipfs/bafkreib766pjfowf3z66yz2culsqjb7pe26s5kw45y7euubfv7txwyau74 "Files Import.png")
+1. First, open IPFS Desktop and make sure you are connected to IPFS. 
+1. Navigate to the status screen by clicking on the **Status** tab on the left side of the app. At the top of the status screen you will see that it says _Connected to IPFS_:
+
+    ![Status and Connected](https://ipfs.io/ipfs/bafkreidfsaiakraedkl3u7zlxzjpjy3typhdqz24bam7vhietdcn7gzm3u "Status and Connected.png")
+
+1. Now that you know you are connected to IPFS, navigate to the files screen by cclicking on the **Files** tab.
+1. Click the **Import** button and select either **File** or **Folder**.
+
+    ![Files Tab and Import Button](https://ipfs.io/ipfs/bafkreib766pjfowf3z66yz2culsqjb7pe26s5kw45y7euubfv7txwyau74 "Files Import.png")
+
 1. In the file selection window, navigate to the file or folder that you wish to upload and host on IPFS. Once you have found the file or folder, simply double-click on it.
 1. Your file has now been imported to your local IPFS node!
 
-When files are imported to your IPFS node, they are automatically given a content identifier (CID). The CID for each file is listed directly under the file name on the **Files** page.
+When files are imported to your IPFS node, the content identifier (CID) of that file is _calculated_. The CID for each file is listed directly under the file name on the **Files** page.
 
-## Share Files using IPFS
+## Share files
 
 Sharing a file over IPFS is simple. All you have to do is find the file you wish to share, copy the CID of that file, and send the CID to the person you wish to share it with.
 
@@ -42,7 +47,7 @@ Sharing a file over IPFS is simple. All you have to do is find the file you wish
 ![Copy Desired CID](https://ipfs.io/ipfs/bafkreig6g5k5tu5k6vgwvwstzn6lzppjtoxzdzczb4fthrcfngetoz4klm "CopyCID.png")
 1. Paste the CID that you just copied into a message and send it to the person you wish to have the file.
 
-## Import and Download
+## Import and download
 
 Importing and downloading a remote file to your local storage using IPFS is an easy task with IPFS Desktop, these simple steps will walk you through the process.
 
@@ -62,20 +67,21 @@ You now have a pointer to the file on your local IPFS node, but it is important 
 
 You now have a copy of the file saved to your computer's local storage, you can access this file at any time, no IPFS connection needed!
 
-## Remove Files From Your IPFS Node
+## Remove files
 
 Now that you know how to import files using IPFS Desktop, you may want to know how to remove them as well.
 
-:::tip
 Removing a file from your local IPFS node will not necessarily remove the file from the IPFS network. If your file has been shared and imported by other peers on IPFS, they will continue to have access to the file and will continue hosting it for others to import and download.
-:::
 
 1. In IPFS Desktop, navigate to the **Files** tab.
 1. Click on the 3 dots next to the file that you wish to remove.
-1. Click **Remove** in the dropdown menu, a confirmation window will appear.
-![Remove](https://ipfs.io/ipfs/bafkreihqa4a5nhldieme2h66fbpnp52zihk7oqne5ble377qcqxppn4l6y "Remove.png")
-1. In the confirmation window, ensure you have the "Also remove local pin" box checked (only present if the file is pinned). Confirm the removal by clicking the **Remove** button.
-![Confirm Removal](https://ipfs.io/ipfs/bafkreibkhgbhkgooue2h23qb4qxljbcco2gpoi4fz42coaxq5yeqgp6rry "ConfirmRemove.png")
+1. Click **Remove** in the dropdown menu, a confirmation window will appear:
+
+    ![Remove](https://ipfs.io/ipfs/bafkreihqa4a5nhldieme2h66fbpnp52zihk7oqne5ble377qcqxppn4l6y "Remove.png")
+
+1. In the confirmation window, ensure you have the "Also remove local pin" box checked (only present if the file is pinned). Confirm the removal by clicking the **Remove** button:
+
+    ![Confirm Removal](https://ipfs.io/ipfs/bafkreibkhgbhkgooue2h23qb4qxljbcco2gpoi4fz42coaxq5yeqgp6rry "ConfirmRemove.png")
 
 No further action is required to remove the file from your IPFS node, the garbage collector that is built into IPFS Desktop automatically runs every hour by default. If you wish to run the garbage collector manually to remove the file, follow the steps below.
 
