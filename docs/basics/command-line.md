@@ -1,19 +1,21 @@
 ---
 title: "Command-line"
-description: "A simple walkthrough of how to perform basic IPFS operations using the command-line."
+description: "A simple walkthrough of how to perform basic IPFS operations using the Kubo command-line."
 ---
 
 # Basic CLI Operations
 
-This short guide aims to walk you through the basics of using IPFS with the CLI. You will learn how to add, retrieve, read, and remove files within the CLI. If you are unsure about the meaning of some terms, you can check out the [glossary](../concepts/glossary.md).
+This short guide aims to walk you through the basics of using IPFS with the Kubo CLI.  Kubo is [one of multiple IPFS implementations](.ipfs-implementations.md). It is the oldest IPFS implementation and exposes a CLI (among other things).
+
+You will learn how to add, retrieve, read, and remove files within the CLI. If you are unsure about the meaning of some terms, you can check out the [glossary](../concepts/glossary.md).
 
 All instructions and examples shown here were performed and tested on an M1 Mac. However, the IPFS commands are the same on Linux, macOS, and Windows. You will need to know how to navigate your computer's directories from within the CLI. If you're unsure how to use the CLI, we recommend learning how before continuing with this guide.
 
-## Install IPFS
+## Install Kubo
 
-Next up, we need to install IPFS for the command-line. We have a great guide that will walk you through how to [install IPFS with the CLI](../install/command-line.md).
+Next up, we need to install Kubo for the command-line. We have a great guide that will walk you through how to [install Kubo with the CLI](../install/command-line.md).
 
-Once you have IPFS installed, we need to get our node up and running. If this is your first time using IPFS, you will first need to initialize the configuration files:
+Once you have Kubo installed, we need to get our node up and running. If this is your first time using Kubo, you will first need to initialize the configuration files:
 
 ```shell
 ipfs init
@@ -55,7 +57,7 @@ Do not close the CLI that you used to initialize your daemon. Only terminate the
 
 ## Add files
 
-Now that we have our IPFS node up and running, we're ready to add files to IPFS.
+Now that we have our Kubo IPFS node up and running, we're ready to add files to IPFS.
 
 1. Within the CLI, navigate to the directory containing the file or folder you wish to share. In this example, we will navigate to the `~/Documents` directory:
 

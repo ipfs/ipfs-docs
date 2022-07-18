@@ -1,6 +1,6 @@
 ---
 title: "Desktop app"
-description: "A simple walkthrough of the basic funtions of the IPFS desktop app."
+description: "A simple walkthrough of the basic functions of the IPFS desktop app."
 ---
 
 # IPFS Desktop app basics
