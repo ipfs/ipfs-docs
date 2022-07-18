@@ -16,9 +16,9 @@ One of the simplest use-cases to grasp is the sharing of files between peers.
 
 [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) is the official desktop client for IPFS. It comes with a built-in IPFS node that lets you pin files and gives you a link to share them. This is generally seen as the easiest point-of-entry into the IPFS ecosystem.
 
-[Arbore](https://arbo.re) Arbore is a free and open-source file-sharing application that enables you to send your pictures, documents, files to your contacts privately and without limits.
+The [Brave](https://brave.com/) web browser has [built-in IPFS support](https://brave.com/ipfs-support/). It uses the same IPFS implementation as IPFS Desktop and resolves `ipfs://{cid}` addresses out-of-the-box.
 
-Another alternative is [Orion](https://orion.siderus.io). Orion is an easy to use IPFS Desktop client. It helps to share content on the public peer to peer network without any command line or technical knowledge. The app includes everything needed to start your own personal IPFS node.
+[Arbore](https://arbo.re) Arbore is a free and open-source file-sharing application that enables you to send your pictures, documents, files to your contacts privately and without limits.
 
 ### Share your files or sell copies of it
 
