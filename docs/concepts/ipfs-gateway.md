@@ -276,7 +276,6 @@ No. The ipfs.io gateway is one of many portals used to view content stored by th
 
 ## Learning more
 
-- [A Practical Explainer for IPFS Gateways - Part 1](https://blog.ipfs.io/2022-06-09-practical-explainer-ipfs-gateways-1/)
-- [A Practical Explainer for IPFS Gateways - Part 2](https://blog.ipfs.io/2022-06-30-practical-explainer-ipfs-gateways-2/)
-- [Gateway configuration options](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway)
+- [A Practical Explainer for IPFS Gateways – Part 1](https://blog.ipfs.io/2022-06-09-practical-explainer-ipfs-gateways-1/), [Part 2](https://blog.ipfs.io/2022-06-30-practical-explainer-ipfs-gateways-2/)
+- [Kubo: Gateway configuration options](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway)
 - [Gateway specifications](https://github.com/ipfs/specs/blob/main/http-gateways/#readme)

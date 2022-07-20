@@ -18,8 +18,6 @@ One of the simplest use-cases to grasp is the sharing of files between peers.
 
 [Arbore](https://arbo.re) Arbore is a free and open-source file-sharing application that enables you to send your pictures, documents, files to your contacts privately and without limits.
 
-Another alternative is [Orion](https://orion.siderus.io). Orion is an easy to use IPFS Desktop client. It helps to share content on the public peer to peer network without any command line or technical knowledge. The app includes everything needed to start your own personal IPFS node.
-
 ### Share your files or sell copies of it
 
 [Enzypt.io](https://enzypt.io) lets you sell files or simply get a link to share.

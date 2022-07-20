@@ -36,6 +36,12 @@ IPFS meetups are also all over the world. [Find one close to you](https://www.me
 
 We're in a lot of places. Here's [how to find them all](social-media.md) for your favorite platforms.
 
+## Ecosystem directory
+
+Explore the world of projects and products built on IPFS in the [Ecosystem directory](https://ecosystem.ipfs.io/) – an interactive showcase filterable by industry, tooling, and more.
+
+If you want to add a new project to the IPFS ecosystem directory, use [this form](https://airtable.com/shrjwvk9pAeAk0Ci7).
+
 ## Awesome IPFS
 
-Get inspired by [Awesome IPFS](https://awesome.ipfs.io/), a catalog of community-built projects using IPFS for everything from image sharing to decentralized archiving. Have a project of your own to add to Awesome IPFS? Make a PR [in the repo!](https://github.com/ipfs/awesome-ipfs)
+Get inspired by [Awesome IPFS](https://awesome.ipfs.io/), a catalog of community-built open-source projects using IPFS for everything from image sharing to decentralized archiving. Have a project of your own to add to Awesome IPFS? Make a PR [in the repo!](https://github.com/ipfs/awesome-ipfs).
