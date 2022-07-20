@@ -55,7 +55,7 @@ For example, a website can load static assets from content-addressed paths:
 User agents that support IPFS, such as a browser with [ipfs-companion](https://docs.ipfs.io/install/ipfs-companion/), may recognize the `/ipfs/<CID>` content path and load the related asset over IPFS instead of HTTP. User agents without IPFS support still get the correct data from the original HTTP server.
 :::
 
-### Path gateway
+## Path gateway
 
 In the most basic scheme, a URL path used for content addressing is effectively a resource name without a canonical location. The HTTP server provides the location part, which makes it possible for browsers to interpret an IPFS content path as relative to the current server and just work without a need for any conversion:
 
@@ -78,7 +78,7 @@ https://ipfs.io/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.ht
 https://ipfs.io/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
 ```
 
-### Subdomain gateway
+## Subdomain gateway
 
 When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) is needed, [CIDv1](../concepts/content-addressing.md#identifier-formats) in case-insensitive encoding such as Base32 or Base36 should be used in the subdomain:
 
@@ -157,7 +157,7 @@ $ ipfs cid format -v 1 -b base36 --codec libp2p-key QmNnooDu7bfjPFoTZYxMNLWUQJyr
 k2k4r8jl0yz8qjgqbmc2cdu5hkqek5rj6flgnlkyywynci20j0iuyfuj
 ```
 
-### DNSLink gateway
+## DNSLink gateway
 
 The gateway provided by the IPFS daemon understands the `Host` header present in HTTP requests and will check if [DNSLink](../concepts/dnslink.md) exists for a specified [domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name).
 If DNSLink is present, the gateway will return content from a path resolved via DNS TXT record.
