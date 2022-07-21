@@ -652,8 +652,8 @@ github.com/ipfs/go-verifcid v0.0.1/go.mod h1:5Hrva5KBeIog4A+UpqlaIU+DEstipcJYQQZ
 github.com/ipfs/interface-go-ipfs-core v0.4.0/go.mod h1:UJBcU6iNennuI05amq3FQ7g0JHUkibHFAfhfUIy927o=
 github.com/ipfs/interface-go-ipfs-core v0.7.0 h1:7tb+2upz8oCcjIyjo1atdMk+P+u7wPmI+GksBlLE8js=
 github.com/ipfs/interface-go-ipfs-core v0.7.0/go.mod h1:lF27E/nnSPbylPqKVXGZghal2hzifs3MmjyiEjnc9FY=
-github.com/ipfs/kubo v0.14.0-rc1 h1:NWLMfvbZnseNb8lly+uXnPJ6em+Gth3LyFafcK3Yb4I=
-github.com/ipfs/kubo v0.14.0-rc1/go.mod h1:i++XWlyJH/PpZNHI//LyoloBFUykQvcbqhmFcW6PQzY=
+github.com/ipfs/kubo v0.14.0 h1:qOmR3vd/n+ConnRiXrrLNlj4uek6S9BalMsmhG+a+u8=
+github.com/ipfs/kubo v0.14.0/go.mod h1:i++XWlyJH/PpZNHI//LyoloBFUykQvcbqhmFcW6PQzY=
 github.com/ipfs/tar-utils v0.0.2 h1:UNgHB4x/PPzbMkmJi+7EqC9LNMPDztOVSnx1HAqSNg4=
 github.com/ipfs/tar-utils v0.0.2/go.mod h1:4qlnRWgTVljIMhSG2SqRYn66NT+3wrv/kZt9V+eqxDM=
 github.com/ipld/edelweiss v0.1.4 h1:g4+C2Ph+8SV2MCJBG3oRtetvxJYAS2WzlNGgsOY95iM=
