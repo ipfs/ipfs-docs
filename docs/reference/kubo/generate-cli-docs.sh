@@ -6,7 +6,7 @@ exec &> ./cli.md
 
 VER="$(ipfs version -n)"
 echo "---
-title: \"Kubo command-line reference\"
+title: \"Kubo CLI\"
 description: API documentation for the Kubo command-line executable.
 ---
 
