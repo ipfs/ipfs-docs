@@ -66,7 +66,7 @@ A Block is a binary blob of data identified by a [CID](#cid). It could be raw by
 
 ### Bootstrap node
 
-A Bootstrap Node is a trusted peer on the IPFS network through which an IPFS node learns about other peers on the network. Both go-ipfs and js-ipfs use bootstrap nodes to enter the Distributed Hash Table (DHT). See [Bootstrap](../concepts/nodes/#bootstrap)
+A Bootstrap Node is a trusted peer on the IPFS network through which an IPFS node learns about other peers on the network. Both Kubo and js-ipfs use bootstrap nodes to enter the Distributed Hash Table (DHT). See [Bootstrap](../concepts/nodes/#bootstrap)
 
 ## C
 
@@ -108,7 +108,7 @@ Unlimited relay that requires some external ACL to control resource usage. [See 
 
 ### Circuit relay v2
 
-Truly decentralized relay implementation that provides a limited relay for things like [hole punching](#hole-punching). Support for this type of relay was introduced in go-ipfs 0.11. [See specification](https://github.com/libp2p/specs/blob/master/relay/circuit-v2.md).
+Truly decentralized relay implementation that provides a limited relay for things like [hole punching](#hole-punching). Support for this type of relay was introduced in Kubo 0.11. [See specification](https://github.com/libp2p/specs/blob/master/relay/circuit-v2.md).
 
 ### Codec
 
@@ -154,7 +154,7 @@ Did you mean [IPLD Data Model](https://ipld.io/glossary/#data-model)?
 
 ### DataStore
 
-The Datastore is the on-disk storage system used by an IPFS node. Configuration parameters control the location, size, construction, and operation of the datastore. [More about Datastore](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#datastore)
+The Datastore is the on-disk storage system used by an IPFS node. Configuration parameters control the location, size, construction, and operation of the datastore. [More about Datastore](https://github.com/ipfs/kubo/blob/master/docs/config.md#datastore)
 
 ### DCUtR
 
@@ -162,7 +162,7 @@ Direct Connection Upgrade through Relay (DCUtR) protocol enables [hole punching]
 
 ### Delegate routing node
 
-GO-IPFS nodes with their API ports exposed and some HTTP API commands accessible. JS-IPFS nodes use them to query the DHT and also publish content without having to actually run DHT logic on their own. See [Delegate routing](../concepts/nodes/#types)
+[Kubo](#kubo) nodes with a subset of RPC API commands exposed. JS-IPFS nodes use them to query the DHT and also publish content without having to actually run DHT logic on their own. See [Delegate routing](../concepts/nodes/#types)
 
 ### DHT
 
@@ -194,7 +194,7 @@ The Decentralized Web (DWeb) looks like today's World Wide Web, but it is built 
 
 ### Filestore
 
-An experimental data store used when `--nocopy` is passed to `ipfs add`. It stores the [UnixFS](#unixfs) data components of blocks as files on the file system instead of as blocks. This allows adding content to IPFS without duplicating the content in the IPFS datastore. [More about Filestore experiment](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#ipfs-filestore)
+An experimental data store used when `--nocopy` is passed to `ipfs add`. It stores the [UnixFS](#unixfs) data components of blocks as files on the file system instead of as blocks. This allows adding content to IPFS without duplicating the content in the IPFS datastore. [More about Filestore experiment](https://github.com/ipfs/kubo/blob/master/docs/experimental-features.md#ipfs-filestore)
 
 ## G
 
@@ -206,9 +206,9 @@ An IPFS Gateway acts as a bridge between traditional web browsers and IPFS. Thro
 
 Garbage Collection (GC) is the process within each IPFS node of clearing out cached files and blocks. Nodes need to clear out previously cached resources to make room for new resources. [Pinned resources](#pinning) are never deleted.
 
-### GO-IPFS node
+### GO-IPFS
 
-The primary IPFS reference implementation, i.e., implements all requirements from the corresponding IPFS specification. It runs on servers and user machines with full IPFS capabilities, enabling experimentation. See [Nodes > GO-IPFS](../concepts/nodes/#go-ipfs).
+Old name of [Kubo](#kubo).
 
 ### Graph
 
@@ -248,15 +248,19 @@ The InterPlanetary Name System (IPNS) is a system for creating and updating muta
 
 ## J
 
-### JS-IPFS node
+### JS-IPFS
 
-* Runs in the browser with a limited set of capabilities. See [Nodes > JS-IPFS](../concepts/nodes/#implementations).
+An implementation of IPFS written entirely in JavaScript. It runs in a Browser, a Service Worker, Electron and Node.js.  See [Nodes > JS-IPFS](../concepts/nodes/#js-ipfs)
 
 ### JSON
 
 JavaScript Object Notation (JSON) is a lightweight data-interchange format. JSON is a text format that is completely language independent, human-readable, and easy to parse and generate. [More about JSON](https://www.json.org/)
 
 ## K
+
+### Kubo
+
+AKA [go-ipfs](#go-ipfs). The earliest and most widely used implementation of IPFS, written in Go. It runs on servers and user machines with full IPFS capabilities. See [Nodes > Kubo](../concepts/nodes/#kubo).
 
 ## L
 
@@ -456,7 +460,7 @@ The Unix File System (UnixFS) is the data format used to represent files and all
 
 ### Urlstore
 
-An experimental data store similar to [`filestore`](#filestore), but it retrieves blocks contents via a HTTP URL instead of a local filesystem. [More about urlstore experiment](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#ipfs-urlstore)
+An experimental data store similar to [`filestore`](#filestore), but it retrieves blocks contents via a HTTP URL instead of a local filesystem. [More about urlstore experiment](https://github.com/ipfs/kubo/blob/master/docs/experimental-features.md#ipfs-urlstore)
 
 ## V
 

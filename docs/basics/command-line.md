@@ -42,7 +42,7 @@ This will output something like:
 
 ```plaintext
 Initializing daemon...
-go-ipfs version: 0.12.0
+Kubo version: 0.12.0
 Repo version: 12
 System version: arm64/darwin
 [...]

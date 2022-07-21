@@ -9,7 +9,7 @@ There are two locations in which IPFS stores private keys:
 
 | Location                       | Purpose                                                                                               | Specification                                                                                        |
 | ------------------------------ | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| Config file (`~/.ipfs/config`) | Holds a single private key; used as the default for initializing the IPFS node, IPNS publishing, etc. | [config#identityprivkey](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#identityprivkey) |
+| Config file (`~/.ipfs/config`) | Holds a single private key; used as the default for initializing the IPFS node, IPNS publishing, etc. | [config#identityprivkey](https://github.com/ipfs/kubo/blob/master/docs/config.md#identityprivkey) |
 | Keystore (`~/.ipfs/keystore`)  | Holds additional private keys the node has access to; can be used for IPNS signing, publishing, etc.  | [fs-repo#keystore](https://github.com/ipfs/specs/blob/master/REPO_FS.md#keystore)                    |
 
 Private keys are handled programmatically through code or through the CLI. Here we will show you how to use your existing private keys using both methods.
@@ -20,7 +20,7 @@ Use the CLI to manage your private keys.
 
 ### Go-IPFS
 
-There's no way of directly initializing an IPFS node using your private keys from the Go-IPFS CLI at this time. To learn more and look for possible workarounds, see the discussion on issue [ipfs/go-ipfs#4240](https://github.com/ipfs/go-ipfs/issues/4240).
+There's no way of directly initializing an IPFS node using your private keys from the Go-IPFS CLI at this time. To learn more and look for possible workarounds, see the discussion on issue [ipfs/kubo#4240](https://github.com/ipfs/kubo/issues/4240).
 
 You can, however, import private keys into the IPFS keystore:
 

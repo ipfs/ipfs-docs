@@ -523,7 +523,7 @@ We do a check to see if we've already pinned this CID since the API will return 
 
 Finally, we call `ipfs.pin.remote.add`, passing in the name of the pinning service. When the pinning service receives the request, it will try to connect to our local IPFS node, and our local node will also try to connect to their IPFS nodes. Once they're connected, the service will fetch the CIDs we asked it to pin and store the data on their infrastructure.
 
-To verify that the data was pinned, you can run `ipfs pin remote ls --service=pinata` to see a list of the content you've pinned to Pinata. If you don't already have a copy of IPFS installed on your machine, you can use the one bundled with Minty by running `npx go-ipfs pin remote ls --service=pinata` instead. Alternatively, you can log into the [Pinata website](https://pinata.cloud) and use the **Pin explorer** to view your data. 
+To verify that the data was pinned, you can run `ipfs pin remote ls --service=pinata` to see a list of the content you've pinned to Pinata. If you don't already have a copy of IPFS installed on your machine, you can use the one bundled with Minty by running `npx kubo pin remote ls --service=pinata` instead. Alternatively, you can log into the [Pinata website](https://pinata.cloud) and use the **Pin explorer** to view your data. 
 
 ## Next steps
 

@@ -55,7 +55,7 @@ For example, a website can load static assets from content-addressed paths:
 User agents that support IPFS, such as a browser with [ipfs-companion](https://docs.ipfs.io/install/ipfs-companion/), may recognize the `/ipfs/<CID>` content path and load the related asset over IPFS instead of HTTP. User agents without IPFS support still get the correct data from the original HTTP server.
 :::
 
-### Path gateway
+## Path gateway
 
 In the most basic scheme, a URL path used for content addressing is effectively a resource name without a canonical location. The HTTP server provides the location part, which makes it possible for browsers to interpret an IPFS content path as relative to the current server and just work without a need for any conversion:
 
@@ -78,7 +78,7 @@ https://ipfs.io/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.ht
 https://ipfs.io/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
 ```
 
-### Subdomain gateway
+## Subdomain gateway
 
 When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) is needed, [CIDv1](../concepts/content-addressing.md#identifier-formats) in case-insensitive encoding such as Base32 or Base36 should be used in the subdomain:
 
@@ -94,14 +94,14 @@ https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.cf-ipfs
 https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.localhost:8080/wiki/
 ```
 
-#### Native support in go-ipfs 0.5+
+#### Native support in Kubo 0.5+
 
-[go-ipfs](https://dist.ipfs.io/#go-ipfs) provides native support for subdomain gateways on hostnames defined in the [`Gateway.PublicGateways`](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) configuration map.
+[Kubo](https://dist.ipfs.io/#kubo) provides native support for subdomain gateways on hostnames defined in the [`Gateway.PublicGateways`](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewaypublicgateways) configuration map.
 
 Learn more about daemon configuration for hosting a public gateway:
 
-- [`Gateway.PublicGateways` docs](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gatewaypublicgateways) for defining gateway behavior on specified hostnames
-- [`Gateway` recipes](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway-recipes) with ready to use one-liners for most common use cases
+- [`Gateway.PublicGateways` docs](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewaypublicgateways) for defining gateway behavior on specified hostnames
+- [`Gateway` recipes](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes) with ready to use one-liners for most common use cases
 
 ::: warning Known issues
 
@@ -119,7 +119,7 @@ See the next section to learn how to convert an existing CIDv0 to a DNS-safe rep
 
 If you have content identified by an older CIDv0, there are easy ways to safely represent it as CIDv1 for use in subdomains and other case-insensitive contexts.
 
-#### Automatic — leverage the gateway in go-ipfs
+#### Automatic — leverage the gateway in Kubo
 
 **TL;DR:** Using a subdomain gateway as a drop-in replacement for a path one removes the need for manual CID conversion.
 
@@ -157,7 +157,7 @@ $ ipfs cid format -v 1 -b base36 --codec libp2p-key QmNnooDu7bfjPFoTZYxMNLWUQJyr
 k2k4r8jl0yz8qjgqbmc2cdu5hkqek5rj6flgnlkyywynci20j0iuyfuj
 ```
 
-### DNSLink gateway
+## DNSLink gateway
 
 The gateway provided by the IPFS daemon understands the `Host` header present in HTTP requests and will check if [DNSLink](../concepts/dnslink.md) exists for a specified [domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name).
 If DNSLink is present, the gateway will return content from a path resolved via DNS TXT record.

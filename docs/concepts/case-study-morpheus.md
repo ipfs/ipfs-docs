@@ -52,7 +52,7 @@ From the perspective of the user, all of this is transparent. Shippers and other
 
 ## IPFS benefits
 
-The decision to use IPFS was an easy one for the Morpheus.Network team. Not only was their integration of out-of-the-box [`go-ipfs`](https://github.com/ipfs/go-ipfs) and [`ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) a straightforward process that didn't require additional customization, but many of the benefits provided by IPFS were critical to the success of the platform:
+The decision to use IPFS was an easy one for the Morpheus.Network team. Not only was their integration of out-of-the-box [`kubo`](https://github.com/ipfs/kubo) and [`ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) a straightforward process that didn't require additional customization, but many of the benefits provided by IPFS were critical to the success of the platform:
 
 - Proof of data integrity (or, if appropriate, revision) via IPFS content addressing
 - Middleman-free architecture enabling multiple parties to access official documents without a central data broker
@@ -82,7 +82,7 @@ The Morpheus.Network team chose to run their own private IPFS nodes for two prim
 
 ### The tooling
 
-- [`go-ipfs`](https://github.com/ipfs/go-ipfs) core
+- [`kubo`](https://github.com/ipfs/kubo) core
 - [`ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) for integrating with the Digital Footprint web app
 - Private nodes for document storage
 

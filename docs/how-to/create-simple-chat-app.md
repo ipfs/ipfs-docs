@@ -34,7 +34,7 @@ To test and deploy your own version with your own nodes (recommended for deploym
 
 Besides [IPFS](/concepts/what-is-ipfs) (with CIDv1) and JavaScript, our chat app uses these technologies:
 
-- [Libp2p](https://libp2p.io/)’s [WebRTC](https://www.npmjs.com/package/libp2p-webrtc-star)-Star and [circuit relay](https://docs.libp2p.io/concepts/circuit-relay) for discovery and connecting (with two libraries:  [js-ipfs](https://github.com/ipfs/js-ipfs/blob/master/docs/BROWSERS.md),  Bootstrap–with minified CSS), and [go-ipfs](https://docs.ipfs.io/reference/go/api/%23working-with-go) for p2p circuit connecting with websockets,
+- [Libp2p](https://libp2p.io/)’s [WebRTC](https://www.npmjs.com/package/libp2p-webrtc-star)-Star and [circuit relay](https://docs.libp2p.io/concepts/circuit-relay) for discovery and connecting (with two libraries:  [js-ipfs](https://github.com/ipfs/js-ipfs/blob/master/docs/BROWSERS.md),  Bootstrap–with minified CSS), and [Kubo](https://docs.ipfs.io/reference/go/api/%23working-with-go) for p2p circuit connecting with websockets,
 - some [Python code](#advertising) that we supply for advertising, and
 - Libp2p’s experimental [PubSub](https://docs.libp2p.io/concepts/publish-subscribe) feature for publishing, with some tips for staying connected.
 
@@ -75,7 +75,7 @@ This diagram demonstrates what a three-user network can look like.
 
 ![Network graph showing the paths nodes can use to discover and communicate with each other](./create-simple-chat-app/discovery-diagram.png)
 
-The browser nodes can communicate with go-ipfs as well, so BrowserC doesn't have to be a browser at all, but instead could be a go-ipfs node!
+The browser nodes can communicate with Kubo as well, so BrowserC doesn't have to be a browser at all, but instead could be a Kubo node!
 
 ### WebRTC-Star
 
@@ -108,7 +108,7 @@ Please note that this how-to uses example star nodes — however, those won't ne
 ### p2p-circuit
 
 :::warning
-This section is currently only relevant for go-ipfs versions **before** v0.11.0 as it's about circuit relay v1. There is currently no solution available to directly replace it, though most of the work [has been completed](https://github.com/libp2p/go-libp2p-relay-daemon).
+This section is currently only relevant for Kubo versions **before** v0.11.0 as it's about circuit relay v1. There is currently no solution available to directly replace it, though most of the work [has been completed](https://github.com/libp2p/go-libp2p-relay-daemon).
 :::
 
 WebRTC-Star is a very clean and effective method of P2P communications; however, sometimes NATs get in the way, so we use [p2p-circuit](https://docs.libp2p.io/concepts/circuit-relay) to get around that.
@@ -204,7 +204,7 @@ setInterval(function(){ipfs.pubsub.publish("announce-circuit", "peer-alive");}, 
 
 Like the star nodes, it will be important to host your own things, as the ones in this how-to could go offline at any moment.
 
-For the purposes of this example, you'll need to do a few things on a server hosting your own [go-ipfs](https://github.com/ipfs/go-ipfs) node. You'll also need a working Nginx install setup, which will be used for SSL, which is a requirement for browsers.
+For the purposes of this example, you'll need to do a few things on a server hosting your own [Kubo](https://github.com/ipfs/kubo) node. You'll also need a working Nginx install setup, which will be used for SSL, which is a requirement for browsers.
 
 First configure the Go node, enabling [WebSocket](https://en.wikipedia.org/wiki/WebSocket) support, and designate it as a relay so we can communicate with it from a browser by editing `~/.ipfs/config` to add the following settings:
 
@@ -223,16 +223,16 @@ First configure the Go node, enabling [WebSocket](https://en.wikipedia.org/wiki/
 ```
 
 :::tip
-Restart your go-ipfs node however you normally would (such as by using `systemctl --user restart ipfs`), and you're mostly set up! You've enabled regular WebSockets with relaying support; however, you still need secure WebSockets (outlined in the [SSL](https://docs.ipfs.io/how-to/create-simple-chat-app/%23ssl-nginx) section below) — otherwise browsers won't be able to connect to us.
+Restart your Kubo node however you normally would (such as by using `systemctl --user restart ipfs`), and you're mostly set up! You've enabled regular WebSockets with relaying support; however, you still need secure WebSockets (outlined in the [SSL](https://docs.ipfs.io/how-to/create-simple-chat-app/%23ssl-nginx) section below) — otherwise browsers won't be able to connect to us.
 :::
 
 ## Advertising
 
-Using p2p-circuit can be a bit tricky. Once you connect to the relay from a browser, you're still not advertising that you're able to be reached through it\! For this purpose, this how-to includes a Python script that runs alongside go-ipfs and advertises the browser js-ipfs peers it encounters over [PubSub](https://docs.libp2p.io/concepts/publish-subscribe/) with a p2p-circuit [multiaddress](https://docs.libp2p.io/concepts/addressing/).
+Using p2p-circuit can be a bit tricky. Once you connect to the relay from a browser, you're still not advertising that you're able to be reached through it\! For this purpose, this how-to includes a Python script that runs alongside Kubo and advertises the browser js-ipfs peers it encounters over [PubSub](https://docs.libp2p.io/concepts/publish-subscribe/) with a p2p-circuit [multiaddress](https://docs.libp2p.io/concepts/addressing/).
 
 Here is  the [Python script](https://gist.github.com/TheDiscordian/51962fea72f8d5a5c3bba79dd7009e1c). You can  run it with python `ipfs_peeradvertiser.py`. However, first ensure that you edit CIRCUITS with your own node's information, or you won't announce peers correctly, and they won't know how to use your relay to connect to other peers.
 
-You can retrieve your own circuit info by running ipfs id on your go-ipfs node to get your PeerID. Then form the circuit URL like so:
+You can retrieve your own circuit info by running ipfs id on your Kubo node to get your PeerID. Then form the circuit URL like so:
 
 ```shell
 /dns6/YOURDOMAIN.COM/tcp/4430/p2p/YOUR\_PEERID/p2p-circuit/p2p/

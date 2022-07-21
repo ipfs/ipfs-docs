@@ -51,7 +51,10 @@
 /recent-releases/go-ipfs-0-7/install/ /install/recent-releases
 /recent-releases/go-ipfs-0-7/update-procedure/ /install/recent-releases
 /reference/api/ /reference
-/reference/api/cli/ /reference/cli
+/reference/api/cli/ /reference/kubo/cli
+/reference/cli/ /reference/kubo/cli
+/reference/kubo/ /reference
+/reference/http/ /reference/http/api
 /reference/api/http/ /reference/http/api
 /reference/go/overview/ /reference/go/api
 /reference/js/overview/ /reference/js/api

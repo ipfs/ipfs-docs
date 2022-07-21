@@ -21,13 +21,13 @@ To ensure that data _persists_ on IPFS, and is not deleted during garbage collec
 
 [Garbage collection](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>) is a form of automatic resource management widely used in software development. The garbage collector attempts to reclaim memory occupied by objects that are no longer in use. IPFS uses garbage collection to free disk space on your IPFS node by deleting data that it thinks is no longer needed.
 
-The IPFS garbage collector is configured in the `Datastore`section of [the go-ipfs config file](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md). The important settings related to the garbage collector are:
+The IPFS garbage collector is configured in the `Datastore`section of [the Kubo config file](https://github.com/ipfs/kubo/blob/master/docs/config.md). The important settings related to the garbage collector are:
 
 - `StorageGCWatermark`: The percentage of the `StorageMax` value at which a garbage collection will be triggered automatically, if the daemon is running with automatic garbage collection enabled. The default is 90`.
 
 - `GCPeriod`: Specify how frequently garbage collection should run. Only used if automatic garbage collection is enabled. The default is 1 hour.
 
-To manually start garbage collection, [run `ipfs repo gc`](../reference/cli.md#ipfs-repo-gc):
+To manually start garbage collection, [run `ipfs repo gc`](../reference/kubo/cli.md#ipfs-repo-gc):
 
 ```bash
 ipfs repo gc
@@ -43,7 +43,7 @@ To enable automatic garbage collection use `--enable-gc` when starting the IPFS 
 ipfs daemon --enable-gc
 
 > Initializing daemon...
-> go-ipfs version: 0.9.0
+> Kubo version: 0.9.0
 > Repo version: 10
 > ...
 ```
@@ -55,7 +55,7 @@ If you use IPFS Desktop, you can trigger garbage collection by clicking on the t
 ## Pinning in context
 
 An IPFS node can protect data from garbage collection based on different kinds of user events.
-- The universal way is by adding a low-level [local pin](../how-to/pin-files.md). This works for all data types and can be done manually, but if you add a file using the CLI command [`ipfs add`](../reference/cli.md#ipfs-add), your IPFS node will automatically pin that file for you.
+- The universal way is by adding a low-level [local pin](../how-to/pin-files.md). This works for all data types and can be done manually, but if you add a file using the CLI command [`ipfs add`](../reference/kubo/cli.md#ipfs-add), your IPFS node will automatically pin that file for you.
 - When working with files and directories, a better way may be to add them to the local [Mutable File System (MFS)](glossary.md#mfs). This protects the data from garbage collection in the same way as local pinning, but is somewhat easier to manage.
 
 

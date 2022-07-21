@@ -538,7 +538,7 @@ See [object](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/OBJECT.md
 
 ## p2p (libp2p exposed API)
 
-> **This is blocked until there is a formalized `interface-libp2p`**. Currently, js-ipfs exposes libp2p directly while go-ipfs exposes a subset of commands that use libp2p.
+> **This is blocked until there is a formalized `interface-libp2p`**. Currently, js-ipfs exposes libp2p directly while Kubo exposes a subset of commands that use libp2p.
 
 ### CLI
 

@@ -15,12 +15,12 @@ There are two versions of CIDs ([Content Identifiers](../concepts/content-addres
 CIDv0 is simpler but much less flexible than CIDv1. It doesn't offer the future-proof and case-insensitive addressing that CIDv1 offers. You can quickly tell the difference between v0 and v1 CIDs, because v0 CIDs always start with `Qm`. Many of the existing IPFS tools still generate CIDs in v0, for example:
 
 - [IPFS Desktop](../install/ipfs-desktop/#ipfs-desktop)
-- [/api/v0/add](..//reference/http/api/#api-v0-add), where the `cid-version` defaults to 0 unless an option that depends on CIDv1 is passed.
+- [/api/v0/add](../reference/kubo/rpc/#api-v0-add), where the `cid-version` defaults to 0 unless an option that depends on CIDv1 is passed.
 
 Some features use CIDv1 by default:
 
 - `files` ([Mutable File System](../concepts/file-systems/#mutable-file-system-mfs))
-- `dag` operations ([ipfs object](https://docs.ipfs.io/reference/cli/#ipfs-dag))
+- `dag` operations ([ipfs object](../reference/kubo/cli/#ipfs-dag))
 
 Use CIDv1 when you want:
 
@@ -50,8 +50,8 @@ ipfs daemon
 
 From this point on, IPNS will be resolved using both the `pubsub` and the DHT. Learn more about the limitations of this experimental feature here: 
 
-- [Experimental features > IPNS pubsub](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#ipns-pubsub)
-- [Enable IPNS over pubsub by default, Issue 8591](https://github.com/ipfs/go-ipfs/issues/8591)
+- [Experimental features > IPNS pubsub](https://github.com/ipfs/kubo/blob/master/docs/experimental-features.md#ipns-pubsub)
+- [Enable IPNS over pubsub by default, Issue 8591](https://github.com/ipfs/kubo/issues/8591)
 
 ## Enable Garbage Collection if your data churn is expected to be high
 
@@ -68,7 +68,7 @@ However, you may also have data that you value. To make sure that you keep data 
 Then you can safely enable garbage collection for all other data. See:
 
 - [Garbage collection](../concepts/persistence/#garbage-collection)
-- [api/v0/repo/gc](../reference/http/api/#api-v0-repo-gc)
+- [api/v0/repo/gc](../reference/kubo/rpc/#api-v0-repo-gc)
 
 ## Use subdomain gateways or DNSLink when publishing apps for secure context and origin isolation
 

@@ -1,12 +1,12 @@
 ---
 title: IPFS updater
-description: The IPFS updater is a command-line tool originally used to help users update their IPFS version. Learn how to install, upgrade, and downgrade Go-IPFS using the IPFS updater.
+description: The IPFS updater is a command-line tool originally used to help users update their IPFS version. Learn how to install, upgrade, and downgrade Kubo using the IPFS updater.
 current-ipfs-updater-version: v1.8.0
 ---
 
 # IPFS updater
 
-The IPFS updater is a command-line tool originally used to help users update their IPFS version. It has since been upgraded to allow users to _install_ Go-IPFS as well. The easiest way to install the IPFS updater is by using the pre-built binaries, detailed below. See the [project repository](https://github.com/ipfs/ipfs-update#from-source) if you'd prefer to build it from source.
+The IPFS updater is a command-line tool originally used to help users update their IPFS version. It has since been upgraded to allow users to _install_ Kubo as well. The easiest way to install the IPFS updater is by using the pre-built binaries, detailed below. See the [project repository](https://github.com/ipfs/ipfs-update#from-source) if you'd prefer to build it from source.
 
 ## Install updater
 
@@ -155,29 +155,29 @@ You can download pre-built binaries from [`dist.ipfs.io`](https://dist.ipfs.io/#
 
 ## Install IPFS
 
-Run `ipfs-update install` followed by the version of Go-IPFS you want to install:
+Run `ipfs-update install` followed by the version of Kubo you want to install:
 
 ```bash
 ipfs-update install 0.9.0
 ```
 
-To install the latest release of Go-IPFS use the `latest` tag:
+To install the latest release of Kubo use the `latest` tag:
 
 ```bash
 ipfs-update install latest
 ```
 
-`ipfs-update install` downloads, tests, and installs the specified version of Go-IPFS. If a version of IPFS is already installed, that version is _stashed_ and can be reverted to later.
+`ipfs-update install` downloads, tests, and installs the specified version of Kubo. If a version of IPFS is already installed, that version is _stashed_ and can be reverted to later.
 
 ## Downgrade IPFS
 
-Use the `revert` function to roll-back to a previous version of Go-IPFS:
+Use the `revert` function to roll-back to a previous version of Kubo:
 
 ```bash
 ipfs-update revert
 ```
 
-`ipfs-update revert` reverts to the previously installed version of Go-IPFS. This is useful if the newly installed version has issues and you would like to switch back to your older stable installation.
+`ipfs-update revert` reverts to the previously installed version of Kubo. This is useful if the newly installed version has issues and you would like to switch back to your older stable installation.
 
 ## Uninstall updater
 

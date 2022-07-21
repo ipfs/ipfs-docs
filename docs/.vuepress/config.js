@@ -263,10 +263,11 @@ module.exports = {
             title: 'API & CLI',
             path: '/reference/',
             children: [
-              '/reference/go/api',
+              '/reference/http/gateway',
               '/reference/js/api',
-              '/reference/http/api',
-              '/reference/cli'
+              '/reference/go/api',
+              '/reference/kubo/cli',
+              '/reference/kubo/rpc'
             ]
           },
           {

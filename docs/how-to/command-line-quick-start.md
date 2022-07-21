@@ -1,12 +1,12 @@
 ---
 title: Command-line quick start
 legacyUrl: https://docs.ipfs.io/introduction/usage/
-description: Quick-start guide for installing and getting started with IPFS from the command line.
+description: Quick-start guide for installing and getting started with Kubo IPFS from the command line.
 ---
 
 # Command-line quick start
 
-If you're command-line savvy and just want to get up and running with IPFS right away, follow this quick-start guide. Please note that this guide assumes that you'll be installing go-ipfs, the reference implementation written in Go.
+If you're command-line savvy and just want to get up and running with IPFS right away, follow this quick-start guide. Please note that this guide assumes that you'll be installing Kubo, the reference implementation written in Go.
 
 ::: tip
 Don’t want to use the command line right now? Give the desktop-app implementation of IPFS a try. It also does all the steps listed on this page automatically, so you can run IPFS from the terminal later whenever you want. [Download IPFS Desktop now](https://github.com/ipfs/ipfs-desktop)
@@ -14,7 +14,7 @@ Don’t want to use the command line right now? Give the desktop-app implementat
 
 ## Prerequisites
 
-If you have not yet installed Go-IPFS, follow the [install instructions](../install/command-line.md).
+If you have not yet installed Kubo, follow the [install instructions](../install/command-line.md).
 
 ## Initialize the repository
 
@@ -41,7 +41,7 @@ If you are running on a server in a data center, you should initialize IPFS with
 ipfs init --profile server
 ```
 
-There are a whole host of other configuration options you may want to set — check [the full reference](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md) for more.
+There are a whole host of other configuration options you may want to set — check [the full reference](https://github.com/ipfs/kubo/blob/master/docs/config.md) for more.
 
 The hash after `peer identity:` is your node’s ID and will be different from the one shown in the above output. Other nodes on the network use it to find and connect to you. You can run `ipfs id` at any time to get it again if you need it.
 
@@ -100,7 +100,7 @@ Make a note of the TCP ports you receive. If they are different, use yours in th
 
 ::: danger NEVER EXPOSE THE RPC API TO THE PUBLIC INTERNET
 
-The API port provides admin-level access to your IPFS node.  See [RPC API docs](/reference/http/api/) for more information.
+The API port provides admin-level access to your Kubo IPFS node.  See [RPC API v0 docs](/reference/kubo/rpc/) for more information.
 
 :::
 
@@ -191,8 +191,8 @@ If you need to update, we recommend you install from the [canonical Go packages]
 
 ### Check that FUSE is installed
 
-You need to install and set up FUSE in order to mount the file system. For more details on setting up FUSE, see [github.com/ipfs/go-ipfs/blob/master/docs/fuse.md](https://github.com/ipfs/go-ipfs/blob/master/docs/fuse.md)
+You need to install and set up FUSE in order to mount the file system. For more details on setting up FUSE, see [github.com/ipfs/kubo/blob/master/docs/fuse.md](https://github.com/ipfs/kubo/blob/master/docs/fuse.md)
 
 ### Further help
 
-The IPFS community is friendly and able to help! Get support from other IPFS developers in the official [IPFS forums](https://discuss.ipfs.io/), or join the conversation on [Discord](https://discord.com/invite/KKucsCpZmY).
+The IPFS community is friendly and able to help! Get support from other IPFS developers in the official [IPFS forums](https://discuss.ipfs.io/), or join [community chat channels](../community/chat/).

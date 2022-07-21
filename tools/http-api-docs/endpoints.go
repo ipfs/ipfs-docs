@@ -8,9 +8,9 @@ import (
 
 	jsondoc "github.com/Stebalien/go-json-doc"
 	cid "github.com/ipfs/go-cid"
-	config "github.com/ipfs/go-ipfs"
 	cmds "github.com/ipfs/go-ipfs-cmds"
-	corecmds "github.com/ipfs/go-ipfs/core/commands"
+	config "github.com/ipfs/kubo"
+	corecmds "github.com/ipfs/kubo/core/commands"
 	peer "github.com/libp2p/go-libp2p-core/peer"
 	multiaddr "github.com/multiformats/go-multiaddr"
 )

@@ -54,10 +54,21 @@ export default {
       return root.scrollHeight < 15000
         ? root.classList.add('smooth-scroll')
         : root.classList.remove('smooth-scroll')
+    },
+    advancedRedirect: async function () {
+      // Advanced redirect that is aware of URL #hash
+      const url = window.location.href
+      // https://github.com/ipfs/ipfs-docs/pull/1185
+      if (url.includes('/reference/http/api')) {
+        if (window.location.hash.startsWith('#api-v0')) {
+          window.location.replace(url.replace('/reference/http/api','/reference/kubo/rpc'))
+        }
+      }
     }
   },
   mounted: function () {
     this.smoothScroll()
+    this.advancedRedirect()
   },
   updated: function () {
     this.smoothScroll()

@@ -1,7 +1,7 @@
 name: 'Update when a new tag or a new release is available'
 inputs:
   latest_ipfs_tag:
-      description: "latest go ipfs tag"
+      description: "latest Kubo tag"
       required: true
 outputs:
   updated_branch:

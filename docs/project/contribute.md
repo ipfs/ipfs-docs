@@ -14,7 +14,7 @@ to start contributing code.
 
 The biggest and most active repositories we have today are:
 
-- [https://github.com/ipfs/go-ipfs](https://github.com/ipfs/go-ipfs)
+- [https://github.com/ipfs/kubo](https://github.com/ipfs/kubo) (go-ipfs)
 - [https://github.com/ipfs/js-ipfs](https://github.com/ipfs/js-ipfs)
 - [https://github.com/libp2p/go-libp2p](https://github.com/libp2p/go-libp2p)
 - [https://github.com/libp2p/js-libp2p](https://github.com/libp2p/js-libp2p)

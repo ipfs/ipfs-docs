@@ -94,15 +94,15 @@ IPFS has provided Audius the full benefits of decentralized storage with no hass
 
 ## How Audius uses IPFS
 
-All files and metadata on Audius are _shared_ using IPFS by creator node services, _registered_ on Audius smart contracts, _indexed_ by discovery services, and _served_ through the client to end users. Audius runs nodes internally to test new changes, and there are a dozen public hosts running nodes for specific services and geographies. However, content creators and listeners don’t need to know anything about the back end; they use the Audius client and client libraries to upload and stream audio. Each IPFS node within the Audius network is currently a [`go-ipfs`](https://github.com/ipfs/go-ipfs) container co-located with service logic. Audius implements the services interface with `go-ipfs` using [`py-ipfs-api`](https://github.com/ipfs-shipyard/py-ipfs-http-client) or [`ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) (JavaScript) to perform read and write operations.
+All files and metadata on Audius are _shared_ using IPFS by creator node services, _registered_ on Audius smart contracts, _indexed_ by discovery services, and _served_ through the client to end users. Audius runs nodes internally to test new changes, and there are a dozen public hosts running nodes for specific services and geographies. However, content creators and listeners don’t need to know anything about the back end; they use the Audius client and client libraries to upload and stream audio. Each IPFS node within the Audius network is currently a [`kubo`](https://github.com/ipfs/kubo) container co-located with service logic. Audius implements the services interface with `kubo` using [`py-ipfs-api`](https://github.com/ipfs-shipyard/py-ipfs-http-client) or [`ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) (JavaScript) to perform read and write operations.
 
 ### The tooling
 
 Audius uses the following IPFS implementations with no modification:
 
 - **IPFS core**
-- [`go-ipfs`](https://github.com/ipfs/go-ipfs)
-  - _All individual nodes are `go-ipfs` containers_
+- [`kubo`](https://github.com/ipfs/kubo)
+  - _All individual nodes are `kubo` containers_
 - [`py-ipfs-api`](https://github.com/ipfs-shipyard/py-ipfs-http-client)
   - _Discovery provider is a Python application_
   - _Python application uses a Flask server + Celery worker queue + PostgreSQL database_

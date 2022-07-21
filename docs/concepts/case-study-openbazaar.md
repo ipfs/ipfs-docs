@@ -72,18 +72,18 @@ In terms of concrete benefits, the OpenBazaar team cites the following as key wi
 
 ## How OpenBazaar uses IPFS
 
-OpenBazaar's implementation is built upon a fork of the [`go-ipfs`](https://github.com/ipfs/go-ipfs) reference implementation, customized for their specific needs:
+OpenBazaar's implementation is built upon a fork of the [`kubo`](https://github.com/ipfs/kubo) reference implementation, customized for their specific needs:
 
 - Persistent storage of at least a week (to remember buyers' shopping carts and allow for merchants who may not be online 24/7)
 - Support for Bitcoin wallets
 - A customized search engine that crawls the IPFS network to update shop content (the crawler maintains the inventory for OpenBazaar's and Haven's front end)
 - Circuit relay capabilities for working around firewalls and mobile iOS networks
-- The use of `go-ipfs` without IPNS, to optimize for OpenBazaar's extremely large number of product images
+- The use of `kubo` without IPNS, to optimize for OpenBazaar's extremely large number of product images
 - The use of [`libp2p`](https://libp2p.io/), but with its original addressing scheme
 
 ### The architecture
 
-At its highest level, the OpenBazaar network is made up of many nodes, whether desktop/laptop (OpenBazaar) or mobile (Haven). Each node is either a merchant or a seller, with a few exceptions; OB1 does run some gateway nodes and caching nodes themselves. Every node has either the OpenBazaar or Haven app installed, and "inside" the respective app is a complete `go-ipfs` node.
+At its highest level, the OpenBazaar network is made up of many nodes, whether desktop/laptop (OpenBazaar) or mobile (Haven). Each node is either a merchant or a seller, with a few exceptions; OB1 does run some gateway nodes and caching nodes themselves. Every node has either the OpenBazaar or Haven app installed, and "inside" the respective app is a complete `kubo` node.
 
 <img src="./images/case-studies/img-openbazaar-nodes.png" alt="OpenBazaar high-level architecture">
 
