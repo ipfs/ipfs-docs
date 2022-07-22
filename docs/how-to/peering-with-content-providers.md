@@ -19,7 +19,7 @@ To _peer_ with nodes from Cloudflare, you could update your config to include a 
     "Peers": [
       {
         "ID": "QmcfgsJsMtx6qJb74akCw1M24X1zFwgGo11h1cuhwQjtJP",
-        "Addrs": ["/ip6/2606:4700:60::6/tcp/4009", "/ip4/172.65.0.13/tcp/4009"]
+        "Addrs": ["/dnsaddr/node-8.ingress.cloudflare-ipfs.com"]
       }
     ]
   }
@@ -42,9 +42,20 @@ To have your platform added to this list, please [open a PR to edit this page](h
 
 ### Cloudflare
 
-| Peer ID | Addresses |
-| ------- | --------- |
-|`QmcfgsJsMtx6qJb74akCw1M24X1zFwgGo11h1cuhwQjtJP`|`/ip6/2606:4700:60::6/tcp/4009` <br/><br/>`/ip4/172.65.0.13/tcp/4009`|
+| Peer ID                                          | Addresses                                      |
+| -----------------------------------------------  | ---------------------------------------------  |
+| `QmcFf2FH3CEgTNHeMRGhN7HNHU1EXAxoEk6EFuSyXCsvRE` | `/dnsaddr/node-1.ingress.cloudflare-ipfs.com`  |
+| `QmcFmLd5ySfk2WZuJ1mfSWLDjdmHZq7rSAua4GoeSQfs1z` | `/dnsaddr/node-2.ingress.cloudflare-ipfs.com`  |
+| `QmcfFmzSDVbwexQ9Au2pt5YEXHK5xajwgaU6PpkbLWerMa` | `/dnsaddr/node-3.ingress.cloudflare-ipfs.com`  |
+| `QmcfJeB3Js1FG7T8YaZATEiaHqNKVdQfybYYkbT1knUswx` | `/dnsaddr/node-4.ingress.cloudflare-ipfs.com`  |
+| `QmcfVvzK4tMdFmpJjEKDUoqRgP4W9FnmJoziYX5GXJJ8eZ` | `/dnsaddr/node-5.ingress.cloudflare-ipfs.com`  |
+| `QmcfZD3VKrUxyP9BbyUnZDpbqDnT7cQ4WjPP8TRLXaoE7G` | `/dnsaddr/node-6.ingress.cloudflare-ipfs.com`  |
+| `QmcfZP2LuW4jxviTeG8fi28qjnZScACb8PEgHAc17ZEri3` | `/dnsaddr/node-7.ingress.cloudflare-ipfs.com`  |
+| `QmcfgsJsMtx6qJb74akCw1M24X1zFwgGo11h1cuhwQjtJP` | `/dnsaddr/node-8.ingress.cloudflare-ipfs.com`  |
+| `Qmcfr2FC7pFzJbTSDfYaSy1J8Uuy8ccGLeLyqJCKJvTHMi` | `/dnsaddr/node-9.ingress.cloudflare-ipfs.com`  |
+| `QmcfR3V5YAtHBzxVACWCzXTt26SyEkxdwhGJ6875A8BuWx` | `/dnsaddr/node-10.ingress.cloudflare-ipfs.com` |
+| `Qmcfuo1TM9uUiJp6dTbm915Rf1aTqm3a3dnmCdDQLHgvL5` | `/dnsaddr/node-11.ingress.cloudflare-ipfs.com` |
+| `QmcfV2sg9zaq7UUHVCGuSvT2M2rnLBAPsiE79vVyK3Cuev` | `/dnsaddr/node-12.ingress.cloudflare-ipfs.com` |
 
 ### Estuary
 
