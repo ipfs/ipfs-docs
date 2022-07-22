@@ -68,7 +68,7 @@ Once you know where your content is (or, more precisely, which peers are storing
 
 You've discovered your content, and you've found the current location(s) of that content. Now, you need to connect to that content and get it (_exchange_). To request blocks from and send blocks to other peers, IPFS currently uses a module called [_Bitswap_](https://github.com/ipfs/specs/blob/master/BITSWAP.md). Bitswap allows you to connect to the peer or peers that have the content you want, send them your _wantlist_ (a list of all the blocks you're interested in), and have them send you the blocks you requested. Once those blocks arrive, you can verify them by hashing their content to get CIDs and compare them to the CIDs that you requested. These CIDs also allow you to deduplicate blocks if needed.
 
-There are [other content replication protocols under discussion](https://github.com/ipfs/camp/blob/master/DEEP_DIVES/24-replication-protocol.md) as well, the most developed of which is [_Graphsync_](https://github.com/ipld/specs/blob/master/block-layer/graphsync/graphsync.md). There's also a proposal under discussion to [extend the Bitswap protocol](https://github.com/ipfs/go-bitswap/issues/186) to add functionality around requests and responses.
+There are [other content replication protocols under discussion](https://github.com/ipfs/camp/blob/master/DEEP_DIVES/24-replication-protocol.md) as well, the most developed of which is [_Graphsync_](https://github.com/ipld/ipld/blob/master/specs/transport/graphsync/index.md). There's also a proposal under discussion to [extend the Bitswap protocol](https://github.com/ipfs/go-bitswap/issues/186) to add functionality around requests and responses.
 
 ## SHA file hashes won't match Content IDs
 
