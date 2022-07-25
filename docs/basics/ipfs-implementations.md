@@ -20,6 +20,7 @@ Relevant specifications are listed in [ipfs/specs](https://github.com/ipfs/specs
 
 | Name             | URL                                                                     | Language(s)            | What it's trying to do                                                                                                   |
 |------------------|-------------------------------------------------------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| auspinner        | <https://github.com/2color/auspinner>                                   | go                     | CLI tool to deal with the pinning service API and upload files through bitswap.                                          |
 | Agregore         | <https://github.com/AgregoreWeb/agregore-ipfs-daemon>                   | go, javascript         | Mobile friendly Kubo daemon.                                                                                             |
 | barge            | <https://github.com/application-research/estuary/tree/master/cmd/barge> | go                     | CLI tool with a git like workflow to upload deltas to estuary.                                                           |
 | Boost            | <https://github.com/filecoin-project/boost>                             | go                     | Daemon to get IPFS data in and out of a Filecoin storage provider.                                                       |
