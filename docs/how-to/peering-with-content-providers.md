@@ -5,9 +5,9 @@ description: Optimize retrieval speed by making direct connections to large cont
 
 # Peering with content providers
 
-IPFS allows you to request data from any IPFS node with a copy using the data's [CID][cid-explainer] or content identifier. This process usually involves a lookup on the [distributed hash table][dht-explainer] and may also require establishing new connections to the nodes storing the content. 
+IPFS allows you to request data from any IPFS node with a copy using the data's [CID][cid-explainer] or content identifier. This process usually involves a lookup on the [distributed hash table][dht-explainer] and may also require establishing new connections to the nodes storing the content.
 
-If you're running an IPFS node that serves many requests, like a public HTTP gateway, for example, you may be able to speed up queries by maintaining long-lived connections to nodes that provide a large volume of data. 
+If you're running an IPFS node that serves many requests, like a public HTTP gateway, for example, you may be able to speed up queries by maintaining long-lived connections to nodes that provide a large volume of data.
 
 Prioritizing connections to certain peers is called **Peering**, and you can tell IPFS which peers to prioritize by editing the [`Peering` configuration][docs-peering-config] in your IPFS config file.
 
@@ -40,16 +40,26 @@ If you're running a public IPFS gateway, you may see improved performance for po
 
 To have your platform added to this list, please [open a PR to edit this page](https://github.com/ipfs/ipfs-docs/edit/main/docs/how-to/peering-with-content-providers.md) and add yourself to the list in alphabetical order.
 
-#### Cloudflare
+### Cloudflare
 
-|Peer ID|Addresses|
-|:-|:-|
+| Peer ID | Addresses |
+| ------- | --------- |
 |`QmcfgsJsMtx6qJb74akCw1M24X1zFwgGo11h1cuhwQjtJP`|`/ip6/2606:4700:60::6/tcp/4009` <br/><br/>`/ip4/172.65.0.13/tcp/4009`|
 
-#### NFT.Storage
+### Estuary
 
-|Peer ID|Addresses|
-|:-|:-|
+| Peer ID | Addresses |
+| ------- | --------- |
+|`12D3KooWCVXs8P7iq6ao4XhfAmKWrEeuKFWCJgqe9jGDMTqHYBjw`|`/ip4/139.178.68.217/tcp/6744`|
+|`12D3KooWGBWx9gyUFTVQcKMTenQMSyE2ad9m7c9fpjS4NMjoDien`|`/ip4/147.75.49.71/tcp/6745`|
+|`12D3KooWFrnuj5o3tx4fGD2ZVJRyDqTdzGnU3XYXmBbWbc8Hs8Nd`|`/ip4/147.75.86.255/tcp/6745`|
+|`12D3KooWN8vAoGd6eurUSidcpLYguQiGZwt4eVgDvbgaS7kiGTup`|`/ip4/3.134.223.177/tcp/6745`|
+|`12D3KooWLV128pddyvoG6NBvoZw7sSrgpMTPtjnpu3mSmENqhtL7`|`/ip4/35.74.45.12/udp/6746/quic`|
+
+### NFT.Storage
+
+| Peer ID | Addresses |
+| ------- | --------- |
 |`12D3KooWEGeZ19Q79NdzS6CJBoCwFZwujqi5hoK8BtRcLa48fJdu`|`/ip4/145.40.96.233/tcp/4001`|
 |`12D3KooWBnmsaeNRP6SCdNbhzaNHihQQBPDhmDvjVGsR1EbswncV`|`/ip4/147.75.87.85/tcp/4001`|
 |`12D3KooWDLYiAdzUdM7iJHhWu5KjmCN62aWd7brQEQGRWbv8QcVb`|`/ip4/136.144.57.203/tcp/4001`|
@@ -66,9 +76,10 @@ To have your platform added to this list, please [open a PR to edit this page](h
 |`12D3KooWJbARcvvEEF4AAqvAEaVYRkEUNPC3Rv3joebqfPh4LaKq`|`/ip4/136.144.57.127/tcp/4001`|
 |`12D3KooWNcshtC1XTbPxew2kq3utG2rRGLeMN8y5vSfAMTJMV7fE`|`/ip4/147.75.87.249/tcp/4001`|
 
-#### Pinata
-|Peer ID|Addresses|
-|:-|:-|
+### Pinata
+
+| Peer ID | Addresses |
+| ------- | --------- |
 |`QmWaik1eJcGHq1ybTWe7sezRfqKNcDRNkeBaLnGwQJz1Cj`|`/dnsaddr/fra1-1.hostnodes.pinata.cloud`|
 |`QmNfpLrQQZr5Ns9FAJKpyzgnDL2GgC6xBug1yUZozKFgu4`|`/dnsaddr/fra1-2.hostnodes.pinata.cloud`|
 |`QmPo1ygpngghu5it8u4Mr3ym6SEU2Wp2wA66Z91Y1S1g29`|`/dnsaddr/fra1-3.hostnodes.pinata.cloud`|
@@ -76,10 +87,10 @@ To have your platform added to this list, please [open a PR to edit this page](h
 |`QmPySsdmbczdZYBpbi2oq2WMJ8ErbfxtkG8Mo192UHkfGP`|`/dnsaddr/nyc1-2.hostnodes.pinata.cloud`|
 |`QmSarArpxemsPESa6FNkmuu9iSE1QWqPX2R3Aw6f5jq4D5`|`/dnsaddr/nyc1-3.hostnodes.pinata.cloud`|
 
-#### Protocol Labs
+### Protocol Labs
 
-|Peer ID|Addresses|
-|:-|:-|
+| Peer ID | Addresses |
+| ------- | --------- |
 |`QmUEMvxS2e7iDrereVYc5SWPauXPyNwxcy9BXZrC1QTcHE`|`/dns/cluster0.fsn.dwebops.pub`|
 |`QmNSYxZAiJHeLdkBg38roksAR9So7Y5eojks1yjEcUtZ7i`|`/dns/cluster1.fsn.dwebops.pub`|
 |`QmUd6zHcbkbcs7SMxwLs48qZVX3vpcM8errYS7xEczwRMA`|`/dns/cluster2.fsn.dwebops.pub`|
@@ -89,33 +100,24 @@ To have your platform added to this list, please [open a PR to edit this page](h
 |`12D3KooWQtpvNvUYFzAo1cRYkydgk15JrMSHp6B6oujqgYSnvsVm`|`/dns4/nft-storage-dc13.nft.dwebops.net/tcp/18402`|
 |`12D3KooWQcgCwNCTYkyLXXQSZuL5ry1TzpM8PRe9dKddfsk1BxXZ`|`/dns4/nft-storage-sv15.nft.dwebops.net/tcp/18402`|
 
-#### Storj
+### Storj
 
-|Peer ID|Addresses|
-|:-|:-|
+| Peer ID | Addresses |
+| ------- | --------- |
 |`12D3KooWFFhc8fPYnQXdWBCowxSV21EFYin3rU27p3NVgSMjN41k`|`/ip4/5.161.92.43/tcp/4001`<br/>`/ip4/5.161.92.43/udp/4001/quic`<br/>`/ip6/2a01:4ff:f0:3b1e::1/tcp/4001`<br/>`/ip6/2a01:4ff:f0:3b1e::1/udp/4001/quic`|
 |`12D3KooWSW4hoHmDXmY5rW7nCi9XmGTy3foFt72u86jNP53LTNBJ`|`/ip4/5.161.55.227/tcp/4001`<br/>`/ip4/5.161.55.227/udp/4001/quic`<br/>`/ip6/2a01:4ff:f0:1e5a::1/tcp/4001`<br/>`/ip6/2a01:4ff:f0:1e5a::1/udp/4001/quic`|
 |`12D3KooWSDj6JM2JmoHwE9AUUwqAFUEg9ndd3pMA8aF2bkYckZfo`|`/ip4/5.161.92.36/tcp/4001`<br/>`/ip4/5.161.92.36/udp/4001/quic`<br/>`/ip6/2a01:4ff:f0:3764::1/tcp/4001`<br/>`/ip6/2a01:4ff:f0:3764::1/udp/4001/quic`|
 
-#### Textile
+### Textile
 
-|Peer ID|Addresses|
-|:-|:-|
+| Peer ID | Addresses |
+| ------- | --------- |
 |`QmR69wtWUMm1TWnmuD4JqC1TWLZcc8iR2KrTenfZZbiztd`|`/ip4/104.210.43.77`|
 
-#### Estuary
-|Peer ID|Addresses|
-|:-|:-|
-|`12D3KooWCVXs8P7iq6ao4XhfAmKWrEeuKFWCJgqe9jGDMTqHYBjw`|`/ip4/139.178.68.217/tcp/6744`|
-|`12D3KooWGBWx9gyUFTVQcKMTenQMSyE2ad9m7c9fpjS4NMjoDien`|`/ip4/147.75.49.71/tcp/6745`|
-|`12D3KooWFrnuj5o3tx4fGD2ZVJRyDqTdzGnU3XYXmBbWbc8Hs8Nd`|`/ip4/147.75.86.255/tcp/6745`|
-|`12D3KooWN8vAoGd6eurUSidcpLYguQiGZwt4eVgDvbgaS7kiGTup`|`/ip4/3.134.223.177/tcp/6745`|
-|`12D3KooWLV128pddyvoG6NBvoZw7sSrgpMTPtjnpu3mSmENqhtL7`|`/ip4/35.74.45.12/udp/6746/quic`|
+### Web3.Storage
 
-#### Web3.Storage
-
-|Peer ID|Addresses|
-|:-|:-|
+| Peer ID | Addresses |
+| ------- | --------- |
 |`12D3KooWR19qPPiZH4khepNjS3CLXiB7AbrbAD4ZcDjN1UjGUNE1`|`/ip4/139.178.69.155/tcp/4001`|
 |`12D3KooWEDMw7oRqQkdCJbyeqS5mUmWGwTp8JJ2tjCzTkHboF6wK`|`/ip4/139.178.68.91/tcp/4001`|
 |`12D3KooWPySxxWQjBgX9Jp6uAHQfVmdq8HG1gVvS1fRawHNSrmqW`|`/ip4/147.75.33.191/tcp/4001`|
