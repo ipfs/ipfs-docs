@@ -10,7 +10,7 @@ In general, public IPFS Discord channels are bridged to Matrix and Slack.  As a 
 
 ## Discord
 
-Join the [IPFS Discord server](https://discord.com/ipfs) for synchronous chat! [Server documentation can be found on Notion](https://pl-strflt.notion.site/IPFS-Discord-Server-Documentation-85bbc451303a473bbf6846b01610e3c1).
+Join the [IPFS Discord server](https://discord.gg/ipfs) for synchronous chat! [Server documentation can be found on Notion](https://pl-strflt.notion.site/IPFS-Discord-Server-Documentation-85bbc451303a473bbf6846b01610e3c1).
 
 ## Matrix
 
