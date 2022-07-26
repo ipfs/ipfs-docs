@@ -116,7 +116,7 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
 
    ```bash
    cd kubo
-   bash install.sh
+   sudo bash install.sh
 
    > Moved ./ipfs to /usr/local/bin
    ```
