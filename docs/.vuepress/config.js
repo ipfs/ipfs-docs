@@ -1,6 +1,6 @@
 // .vuepress/config.js
 
-const DEPLOY_DOMAIN = 'https://docs.ipfs.io'
+const DEPLOY_DOMAIN = 'https://docs.ipfs.tech'
 const SPEEDCURVE_ID = process.env.SPEEDCURVE_ID || ''
 const pageSuffix = '/'
 

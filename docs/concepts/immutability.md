@@ -94,7 +94,7 @@ In the website example, when we change a variable, the CID of the webpage is dif
 This process is essentially what the [InterPlantery Naming Service (IPNS)](/concepts/ipns) does! CIDs can be difficult to deal with and hard to remember, so IPNS saves users from the cumbersome task of dealing with CIDs directly. More importantly, CIDs change with the content because they are the content. Whereas the inbound reference of URLs/pointers stay the same, and the outbound referral changes:
 
 ```
-+--------+      +--------------+      +-------------------------------------------------------------+
-|  User  | ---> | docs.ipfs.io | ---> | bafybeigsddxhokzs3swgx6mss5i3gm6jqzv5b45e2xybqg7dr3jmsykrku |
-+--------+      +--------------+      +-------------------------------------------------------------+
++--------+      +----------------+      +-------------------------------------------------------------+
+|  User  | ---> | docs.ipfs.tech | ---> | bafybeigsddxhokzs3swgx6mss5i3gm6jqzv5b45e2xybqg7dr3jmsykrku |
++--------+      +----------------+      +-------------------------------------------------------------+
 ```

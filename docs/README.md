@@ -1,6 +1,5 @@
 ---
 title: IPFS Documentation
-legacyUrl: https://docs.ipfs.io/
 description: The home page for developer documentation for IPFS, the InterPlanetary File System.
 ---
 

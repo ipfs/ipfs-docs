@@ -52,7 +52,7 @@ For example, a website can load static assets from content-addressed paths:
 <link rel="stylesheet" href="/ipfs/QmNrgEMcUygbKzZeZgYFosdd27VE9KnWbyUD73bKZJ3bGi?filename=style.css">
 ```
 
-User agents that support IPFS, such as a browser with [ipfs-companion](https://docs.ipfs.io/install/ipfs-companion/), may recognize the `/ipfs/<CID>` content path and load the related asset over IPFS instead of HTTP. User agents without IPFS support still get the correct data from the original HTTP server.
+User agents that support IPFS, such as a browser with [ipfs-companion](https://docs.ipfs.tech/install/ipfs-companion/), may recognize the `/ipfs/<CID>` content path and load the related asset over IPFS instead of HTTP. User agents without IPFS support still get the correct data from the original HTTP server.
 :::
 
 ## Path gateway
@@ -163,7 +163,7 @@ The gateway provided by the IPFS daemon understands the `Host` header present in
 If DNSLink is present, the gateway will return content from a path resolved via DNS TXT record.
 This type of gateway provides full [origin isolation](https://en.wikipedia.org/wiki/Same-origin_policy).
 
-Example: [https://docs.ipfs.io](https://docs.ipfs.io) (this website)
+Example: [https://docs.ipfs.tech](https://docs.ipfs.tech) (this website)
 
 ::: tip
 For a complete DNSLink guide, including tutorials, usage examples, and FAQs, check out [dnslink.io](https://dnslink.io).
@@ -175,7 +175,7 @@ For a complete DNSLink guide, including tutorials, usage examples, and FAQs, che
 ipfs://{cid}/path/to/subresource/cat.jpg
 ```
 
-The native address format is the same as a [subdomain gateway](https://docs.ipfs.io/how-to/address-ipfs-on-web/#subdomain-gateway) HTTP URL, but with:
+The native address format is the same as a [subdomain gateway](https://docs.ipfs.tech/how-to/address-ipfs-on-web/#subdomain-gateway) HTTP URL, but with:
 
 - protocol scheme replaced by `ipfs` or `ipns` namespace
 - location-based authority component (gateway host+port) replaced with content-addressed one in the form of a unique content identifier (CID)

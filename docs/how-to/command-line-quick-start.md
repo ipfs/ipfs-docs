@@ -1,6 +1,5 @@
 ---
 title: Command-line quick start
-legacyUrl: https://docs.ipfs.io/introduction/usage/
 description: Quick-start guide for installing and getting started with Kubo IPFS from the command line.
 ---
 

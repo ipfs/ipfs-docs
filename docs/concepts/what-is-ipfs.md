@@ -1,6 +1,5 @@
 ---
 title: What is IPFS?
-legacyUrl: https://docs.ipfs.io/introduction/overview/
 description: Learn about IPFS, the InterPlanetary File System, how it works, and why it's important to the future of the internet.
 ---
 

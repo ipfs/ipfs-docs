@@ -33,7 +33,7 @@ To opt in, use the `--cid-version` flag in the CLI:
 ipfs add --cid-version 1
 ```
 
-To convert a CID from v0 to v1, see [CID conversion](https://docs.ipfs.io/concepts/content-addressing/#cid-conversion).
+To convert a CID from v0 to v1, see [CID conversion](https://docs.ipfs.tech/concepts/content-addressing/#cid-conversion).
 
 For more information on content addressing and CID versions, see [Content Addressing and CIDs](../concepts/content-addressing/#content-addressing-and-cids).
 

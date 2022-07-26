@@ -34,7 +34,7 @@ To test and deploy your own version with your own nodes (recommended for deploym
 
 Besides [IPFS](/concepts/what-is-ipfs) (with CIDv1) and JavaScript, our chat app uses these technologies:
 
-- [Libp2p](https://libp2p.io/)’s [WebRTC](https://www.npmjs.com/package/libp2p-webrtc-star)-Star and [circuit relay](https://docs.libp2p.io/concepts/circuit-relay) for discovery and connecting (with two libraries:  [js-ipfs](https://github.com/ipfs/js-ipfs/blob/master/docs/BROWSERS.md),  Bootstrap–with minified CSS), and [Kubo](https://docs.ipfs.io/reference/go/api/%23working-with-go) for p2p circuit connecting with websockets,
+- [Libp2p](https://libp2p.io/)’s [WebRTC](https://www.npmjs.com/package/libp2p-webrtc-star)-Star and [circuit relay](https://docs.libp2p.io/concepts/circuit-relay) for discovery and connecting (with two libraries:  [js-ipfs](https://github.com/ipfs/js-ipfs/blob/master/docs/BROWSERS.md),  Bootstrap–with minified CSS), and [Kubo](https://docs.ipfs.tech/reference/go/api/#working-with-go) for p2p circuit connecting with websockets,
 - some [Python code](#advertising) that we supply for advertising, and
 - Libp2p’s experimental [PubSub](https://docs.libp2p.io/concepts/publish-subscribe) feature for publishing, with some tips for staying connected.
 
@@ -66,7 +66,7 @@ Let's take a look at how this works.
 
 ## Peer discovery and connectivity
 
-Browsers don’t automatically provide discovery and connectivity, so, without the code we provide, you can't listen for new peers and get access to the navigation system that the [distributed hash table (DHT)](https://docs.ipfs.io/concepts/dht) provides. Our chat app provides discovery and connectivity in two ways:
+Browsers don’t automatically provide discovery and connectivity, so, without the code we provide, you can't listen for new peers and get access to the navigation system that the [distributed hash table (DHT)](https://docs.ipfs.tech/concepts/dht) provides. Our chat app provides discovery and connectivity in two ways:
 
 - [WebRTC-Star](https://www.npmjs.com/package/libp2p-webrtc-star) achieves direct browser-to-browser communication.
 - [circuit relay](https://docs.libp2p.io/concepts/circuit-relay/), maintains the connection with a relay in the middle.
@@ -140,7 +140,7 @@ await ipfs.bootstrap.add('/dns4/ipfs.thedisco.zone/tcp/4430/wss/p2p/12D3KooWChhh
 await ipfs.swarm.connect('/dns4/ipfs.thedisco.zone/tcp/4430/wss/p2p/12D3KooWChhhfGdB9GJy1GbhghAAKCUR99oCymMEVS4eUcEy67nt');
 ```
 
-If you're looking to do your own client without copying the example, ensure that you're also communicating with the announce channel, which is described under [Advertising](https://docs.ipfs.io/how-to/create-simple-chat-app/%23advertising) below. This is the simplified version of the relevant code in the chat demo:
+If you're looking to do your own client without copying the example, ensure that you're also communicating with the announce channel, which is described under [Advertising](https://docs.ipfs.tech/how-to/create-simple-chat-app/#advertising) below. This is the simplified version of the relevant code in the chat demo:
 
 ```javascript
 var ipfs; // store the IPFS node you're using in this variable
@@ -223,7 +223,7 @@ First configure the Go node, enabling [WebSocket](https://en.wikipedia.org/wiki/
 ```
 
 :::tip
-Restart your Kubo node however you normally would (such as by using `systemctl --user restart ipfs`), and you're mostly set up! You've enabled regular WebSockets with relaying support; however, you still need secure WebSockets (outlined in the [SSL](https://docs.ipfs.io/how-to/create-simple-chat-app/%23ssl-nginx) section below) — otherwise browsers won't be able to connect to us.
+Restart your Kubo node however you normally would (such as by using `systemctl --user restart ipfs`), and you're mostly set up! You've enabled regular WebSockets with relaying support; however, you still need secure WebSockets (outlined in the [SSL](https://docs.ipfs.tech/how-to/create-simple-chat-app/#ssl-and-nginx) section below) — otherwise browsers won't be able to connect to us.
 :::
 
 ## Advertising

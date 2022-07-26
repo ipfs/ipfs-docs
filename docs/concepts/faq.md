@@ -1,6 +1,5 @@
 ---
 title: FAQ
-legacyUrl: https://docs.ipfs.io/introduction/faq/
 description: Explore frequently asked questions about IPFS, the InterPlanetary File System.
 ---
 

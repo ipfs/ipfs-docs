@@ -31,7 +31,7 @@ checkedLinks = ''
 for link in links:
     linkUrl = link['href'].split('#')[0]
     if ("http" in linkUrl and
-    "docs.ipfs.io" not in linkUrl and
+    "docs.ipfs.tech" not in linkUrl and
     "https://github.com/ipfs/ipfs-docs" not in linkUrl and
     (linkUrl + "|") not in checkedLinks):
         #print(linkUrl)
