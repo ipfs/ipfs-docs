@@ -12,7 +12,7 @@ Gateways provide implementation and runtime agnostic HTTP interface for retrievi
 
 ### `GET /ipfs/{cid}[/{path}][?{params}]`
 
-- `cid` is a [CID](https://docs.ipfs.io/concepts/glossary/#cid), the root identifier of the requested content path
+- `cid` is a [CID](https://docs.ipfs.tech/concepts/glossary/#cid), the root identifier of the requested content path
 - `path` – optional path under the root CID
 
 Optional query parameters:

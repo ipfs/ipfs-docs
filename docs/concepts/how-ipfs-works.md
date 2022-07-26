@@ -1,6 +1,5 @@
 ---
 title: How IPFS works
-legacyUrl: https://docs.ipfs.io/introduction/how-ipfs-works/
 description: Learn how the InterPlanetary File System (IPFS) works and why it's an essential part of the future internet.
 ---
 

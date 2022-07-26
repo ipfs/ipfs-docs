@@ -1,6 +1,5 @@
 ---
 title: HTTP APIs for IPFS
-legacyUrl: https://docs.ipfs.io/reference/api/http/
 description: HTTP APIs provided by IPFS implementations.
 ---
 

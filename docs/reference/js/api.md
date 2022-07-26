@@ -1,6 +1,5 @@
 ---
 title: IPFS in JS
-legacyUrl: https://docs.ipfs.io/reference/js/
 description: Developer resources for working in JavaScript with IPFS, the InterPlanetary File System.
 ---
 

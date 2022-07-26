@@ -364,7 +364,7 @@ A vendor-agnostic [API specification](https://ipfs.github.io/pinning-services-ap
 
 ### Preload node
 
-Part of the process of making a UnixFS DAG publicly available via the preload node's `wantlist`, causing it to fetch data. Other nodes requesting the content can then resolve it from the preload node using Bitswap, as the data is now present in the preload node’s blockstore. See [Nodes > Preload](https://docs.ipfs.io/concepts/nodes/#preload).
+Part of the process of making a UnixFS DAG publicly available via the preload node's `wantlist`, causing it to fetch data. Other nodes requesting the content can then resolve it from the preload node using Bitswap, as the data is now present in the preload node’s blockstore. See [Nodes > Preload](https://docs.ipfs.tech/concepts/nodes/#preload).
 
 ### Protobuf
 

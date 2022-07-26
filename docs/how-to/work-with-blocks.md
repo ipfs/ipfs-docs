@@ -1,6 +1,5 @@
 ---
 title: Work with blocks
-legacyUrl: https://docs.ipfs.io/guides/examples/blocks/
 description: Learn how your files are broken down into blocks in IPFS and how to work with them.
 ---
 
