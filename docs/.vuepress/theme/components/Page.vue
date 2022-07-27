@@ -56,8 +56,31 @@ export default {
         : root.classList.remove('smooth-scroll')
     },
     advancedRedirect: async function () {
-      // Advanced redirect that is aware of URL #hash
+      // Advanced redirect that is aware of domain name in different contexts
       const url = window.location.href
+
+      // Move docs.ipfs.io → docs.ipfs.tech
+      // https://github.com/ipfs/ipfs-docs/pull/1220
+      // https://github.com/protocol/bifrost-infra/issues/178#issuecomment-1195867284
+      const { hostname, pathname } = window.location
+      // regular docs.ipfs.io
+      if (hostname === 'docs.ipfs.io') {
+        window.location.replace(url.replace('//docs.ipfs.io/', '//docs.ipfs.tech/'))
+      }
+      // subdomain gateways (no tls)
+      if (hostname.startsWith('docs.ipfs.io.ipns.')) {
+        window.location.replace(url.replace('//docs.ipfs.io.ipns.', '//docs.ipfs.tech.ipns.'))
+      }
+      // subdomain gateways (inlined)
+      if (hostname.startsWith('docs-ipfs-io.ipns.')) {
+        window.location.replace(url.replace('//docs-ipfs-io.ipns.', '//docs-ipfs-tech.ipns.'))
+      }
+      // path gateways
+      if (pathname.startsWith('/ipns/docs.ipfs.io/')) {
+        window.location.replace(url.replace('/ipns/docs.ipfs.io/', '/ipns/docs.ipfs.tech/'))
+      }
+
+      // Advanced redirect that is aware of URL #hash
       // https://github.com/ipfs/ipfs-docs/pull/1185
       if (url.includes('/reference/http/api')) {
         if (window.location.hash.startsWith('#api-v0')) {
