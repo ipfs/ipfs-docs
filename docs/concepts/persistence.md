@@ -100,6 +100,7 @@ Fortunately, there is a growing community of tools and service providers that he
 Options in this category include:
 
 - [Web3.Storage](https://Web3.Storage)
+- [NFT.storage](https://nft.storage/)
 - [Estuary](https://estuary.tech)
 - [Powergate](https://docs.filecoin.io/build/powergate)
 - [ChainSafe Storage](https://storage.chainsafe.io)
