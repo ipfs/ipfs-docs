@@ -434,7 +434,8 @@ module.exports = {
       }
     ],
     'vuepress-plugin-chunkload-redirect',
-    'vuepress-plugin-ipfs'
+    'vuepress-plugin-ipfs',
+    'tabs'
   ],
   extraWatchFiles: ['.vuepress/nav/en.js']
 }
