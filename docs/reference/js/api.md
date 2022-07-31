@@ -11,7 +11,7 @@ There are two main JavaScript libraries for working with IPFS. Both work in Node
 
 ### JS-IPFS
 
-[JS-IPFS](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs) is a full implementation of IPFS, similar to [Kubo (Go-IPFS)](https://github.com/ipfs/kubo). You can use it either as a command-line application or as a library to start an IPFS node directly in your program, as JS implementation is available as two node packages, `ipfs-core` and `ipfs`.
+[JS-IPFS](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs) is a full implementation of IPFS, similar to [Kubo (Go-IPFS)](https://github.com/ipfs/kubo). You can use it either as a command-line application or as a library to start an IPFS node directly in your program, as JS implementation is available as two Node.js packages, `ipfs-core` and `ipfs`.
 
 - [ipfs-core](https://www.npmjs.com/package/ipfs-core) includes the core IPFS API and is intended to be used to run an IPFS node as part of your application without the need to start external processes or manage API ports and servers.
 
@@ -57,7 +57,7 @@ The `js-ipfs` and `js-ipfs-http-client` libraries work in browsers, but each has
 
 ### JS-IPFS module
 
-To use the CLI on your machine, globally install the `ipfs` node package:
+To use the CLI on your machine, globally install the `ipfs` Node.js package:
 
 ```bash
 npm i --location=global ipfs
@@ -73,7 +73,7 @@ To build from source, clone the [source packages](https://github.com/ipfs/js-ipf
 
 ### IPFS core API
 
-To use the IPFS core API, install the `ipfs-core` node package:
+To use the IPFS core API, install the `ipfs-core` Node.js package:
 
 ```bash
 npm i ipfs-core
@@ -85,11 +85,11 @@ To build from source, clone the [source packages](https://github.com/ipfs/js-ipf
 
 :::
 
-::: tab js-ipfs-http-client
+::: tab ipfs-http-client
 
 ### HTTP client module
 
-To use the client on your machine, install the `js-ipfs-http-client` node package:
+To use the client on your machine, install the `ipfs-http-client` Node.js package:
 
 ```bash
 npm i ipfs-http-client
@@ -98,6 +98,24 @@ npm i ipfs-http-client
 ### Build from source
 
 To build from source, clone the [source package](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) and follow the build instructions.
+
+:::
+
+::: tab ipfs-client
+
+### HTTP client module
+
+To use the client on your machine, install the `ipfs-client` Node.js package:
+
+```bash
+npm i ipfs-client
+```
+
+### Build from source
+
+To build from source, clone the [source package](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) and follow the build instructions.
+
+:::
 
 ::::
 
@@ -135,8 +153,9 @@ Daemon is ready
 
 ::: tab ipfs-core
 
-Create a simple node application to host the logic that will allow you to use the RPC API.
-Start by initiating a new node project:
+Create a simple Node.js application to host the logic that will allow you to use the RPC API.
+
+Start by initiating a new project:
 
 ```bash
 npm init -y
@@ -176,7 +195,7 @@ async function main() {
 main();
 ```
 
-This imports IPFS as a dependency and uses the `create()` method to create a node instance. 
+This imports IPFS as a dependency and uses the `create()` function to create a node instance. 
 
 To spawn the node, run the application:
 
@@ -194,10 +213,17 @@ Swarm listening on /ip4/127.0.0.1/tcp/4003/ws/p2p/12D3KooWMZr34r6FArFH36QxyT25BM
 
 :::
 
-::: tab js-ipfs-http-client
+::::
 
-Create a simple node application to host the logic that will spawn an IPFS node.
-Start by initiating a new node project:
+## Connect to a node
+
+:::: tabs
+
+::: tab ipfs-http-client
+
+Create a simple Node.js application to host the logic that will connect to the API client.
+
+Start by initiating a new project:
 
 ```bash
 npm init -y
@@ -215,17 +241,17 @@ Create an `index.js` file for the application logic:
 touch index.js
 ```
 
-Now, populate the `index.js` file with the following:
+Now, populate the `index.js` file with the following to create an instance of the HTTP API client:
 
 ```js{1,3}
 import { create } from 'ipfs-http-client'
 
-const ipfs = create('http://localhost:5001')
+const client = create() // the default API address http://localhost:5001
 ```
 
-This imports the client library and uses the `create()` method to connect to an IPFS daemon. 
+This imports the client library and uses the `create()` function to connect to an IPFS API server. 
 
-To spawn the node, run the application:
+To connect to the API, run the application:
 
 ```bash
 node index.js
@@ -234,12 +260,62 @@ node index.js
 You should see an output similar to:
 
 ```shell
-Swarm listening on /ip4/127.0.0.1/tcp/4002/p2p/12D3KooWMZr34r6FArFH36QxyT25BM4HL4u2WF7jQzwNdg91awB6
-Swarm listening on /ip4/10.0.0.25/tcp/4002/p2p/12D3KooWMZr34r6FArFH36QxyT25BM4HL4u2WF7jQzwNdg91awB6
-Swarm listening on /ip4/127.0.0.1/tcp/4003/ws/p2p/12D3KooWMZr34r6FArFH36QxyT25BM4HL4u2WF7jQzwNdg91awB6
+
 ```
 
 :::
+
+::: tab ipfs-client
+
+Create a simple Node.js application to use the IPFS client as a backend to connect to IPFS servers.
+
+Start by initiating a new project:
+
+```bash
+npm init -y
+```
+
+If you have not already installed the client library, add the `ipfs-http-client` module to your project:
+
+```bash
+npm i ipfs-client
+```
+
+Create an `index.js` file for the application logic:
+
+```bash
+touch index.js
+```
+
+Now, populate the `index.js` file with the following to create an instance of the HTTP API client:
+
+```js{1,3-5}
+import { create } from 'ipfs-client'
+
+const client = create({
+  grpc: '/ipv4/127.0.0.1/tcp/5003/ws',
+  http: '/ipv4/127.0.0.1/tcp/5002/http'
+})
+
+const id = await client.id()
+```
+
+This imports the client library and uses the `create()` function to define the server endpoints.
+
+To connect to the endpoints, run the application:
+
+```bash
+node index.js
+```
+
+You should see an output similar to:
+
+```shell
+
+```
+
+:::
+
 
 ::::
 
