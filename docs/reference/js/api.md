@@ -149,11 +149,22 @@ Web UI available at http://127.0.0.1:5002/webui
 Daemon is ready
 ```
 
+You should be able to point to the [webpage](http://127.0.0.1:5002/webui):
+
+<img src="../../images/jsipfs-webui.png" width="1000">
+
+If you are unable to connect to the API, ensure [cross-origin (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) requests are configured:
+
+```bash
+jsipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["http://127.0.0.1:5002", "http://localhost:3000", "http://127.0.0.1:5001", "https://webui.ipfs.io"]'
+jsipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["PUT", "POST"]'
+```
+
 :::
 
 ::: tab ipfs-core
 
-Create a simple Node.js application to host the logic that will allow you to use the RPC API.
+Create a simple Node.js application to host the logic that will allow you to use the RPC API. You'll also use this Node.js application later on to add and remove files.
 
 Start by initiating a new project:
 
@@ -221,7 +232,7 @@ Swarm listening on /ip4/127.0.0.1/tcp/4003/ws/p2p/12D3KooWMZr34r6FArFH36QxyT25BM
 
 ::: tab ipfs-http-client
 
-Create a simple Node.js application to host the logic that will connect to the API client.
+Create a simple Node.js application to host the logic that will connect to the API client. You'll use this Node.js application later on to add and remove files.
 
 Start by initiating a new project:
 
