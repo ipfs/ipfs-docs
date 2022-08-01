@@ -43,4 +43,4 @@ If you want to add a new project to the IPFS ecosystem directory, use [this form
 
 ## Awesome IPFS
 
-Get inspired by [Awesome IPFS](https://awesome.ipfs.io/), a catalog of community-built open-source projects using IPFS for everything from image sharing to decentralized archiving. Have a project of your own to add to Awesome IPFS? Make a PR [in the repo!](https://github.com/ipfs/awesome-ipfs).
+Get inspired by [Awesome IPFS](https://awesome.ipfs.tech/), a catalog of community-built open-source projects using IPFS for everything from image sharing to decentralized archiving. Have a project of your own to add to Awesome IPFS? Make a PR [in the repo!](https://github.com/ipfs/awesome-ipfs).

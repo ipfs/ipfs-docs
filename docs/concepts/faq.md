@@ -15,7 +15,7 @@ To learn more, see the ["What is IPFS?"](what-is-ipfs.md) guide.
 
 ### Where can I see IPFS in action today?
 
-[Awesome IPFS](https://awesome.ipfs.io/) is a good starting point to see the wide variety of projects that are using IPFS today. If you've got your own awesome IPFS project, please add it to the [Awesome IPFS repo](https://github.com/ipfs/awesome-ipfs), so the rest of the world can see it!
+[Awesome IPFS](https://awesome.ipfs.tech/) is a good starting point to see the wide variety of projects that are using IPFS today. If you've got your own awesome IPFS project, please add it to the [Awesome IPFS repo](https://github.com/ipfs/awesome-ipfs), so the rest of the world can see it!
 
 ## Getting started
 

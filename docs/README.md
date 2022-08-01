@@ -53,7 +53,7 @@ ProtoSchool's self-guided [interactive tutorials](https://proto.school/tutorials
 
 Are you looking for inspiration? You can find a huge collection of awesome community projects over at Awesome IPFS.
 
-[Check out Awesome IPFS now →](https://awesome.ipfs.io/)
+[Check out Awesome IPFS now →](https://awesome.ipfs.tech/)
 
 ![The Awesome IPFS homepage.](./images/awesome-ipfs.png =740x420)
 
