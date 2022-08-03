@@ -86,7 +86,8 @@ module.exports = {
             path: '/basics/',
             children: [
                 'basics/desktop-app',
-                'basics/command-line',
+                'basics/go/command-line',
+                'basics/js/js-ipfs',
                 'basics/ipfs-implementations'
             ]
           },
