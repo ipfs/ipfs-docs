@@ -19,6 +19,6 @@ Join the [Matrix space](https://matrix.to/#/#ipfs-space:ipfs.io). [Homeserver do
 
 Join [Filecoin slack](https://filecoin.io/slack) and join the bridged #ipfs channels. The [Filecoin Slack workspace user guide is available on Notion](https://pl-strflt.notion.site/Filecoin-Slack-User-Guide-29072679986b4ccb8ad7b091097dd770).
 
-# Forums
+## Forums
 
 For longer-lived discussions and for support, please use the discussion forums at [https://discuss.ipfs.io](https://discuss.ipfs.io) instead! It’s easy for complex discussions to get lost in a sea of new messages on chat, and posting longer discussions and support requests on the forums help future visitors, too.
