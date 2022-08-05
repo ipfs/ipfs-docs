@@ -20,11 +20,11 @@ When you put that URL in your browser's address bar, your computer asks one of W
 However, that's not the only option for meeting your aardvark needs! There's a mirror of Wikipedia stored on IPFS, and you could use that instead. If you use IPFS, your computer asks to get the aardvark page like this:
 
 ```
-/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Aardvark.html
+/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Aardvark.html
 ```
 
 :::tip
-The easiest way to view the above link is by opening it in your browser through an _IPFS Gateway_. Simply add `https://ipfs.io` to the start of the above link and you'll be able to [view the page →](https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Aardvark.html)
+The easiest way to view the above link is by opening it in your browser through an _IPFS Gateway_. Simply add `https://ipfs.io` to the start of the above link and you'll be able to [view the page →](https://ipfs.io/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Aardvark.html)
 :::
 
 IPFS knows how to find that sweet, sweet aardvark information by its [contents](content-addressing.md), not its location (more on that, which is called content addressing, below). The IPFS-ified version of the aardvark info is represented by that string of numbers in the middle of the URL (`QmXo…`), and instead of asking one of Wikipedia's computers for the page, your computer uses IPFS to ask lots of computers around the world to share the page with you. It can get your aardvark info from anyone who has it, not just Wikipedia.
@@ -52,7 +52,7 @@ For a beginner-friendly primer on why cryptographic hashing and content addressi
 What about that link to the aardvark page above? It looked a little unusual:
 
 ```
-/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Aardvark.html
+/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Aardvark.html
 ```
 
 That jumble of letters after `/ipfs/` is called a [_content identifier_](content-addressing.md) and it’s how IPFS can get content from multiple places.
