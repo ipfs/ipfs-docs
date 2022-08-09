@@ -54,38 +54,6 @@ To build from source, clone the [source packages](https://github.com/ipfs/js-ipf
 
 :::
 
-::: tab ipfs-http-client
-
-### HTTP client module
-
-To use the client on your machine, install the `ipfs-http-client` Node.js package:
-
-  ```bash
-  npm i ipfs-http-client
-  ```
-
-### Build from source
-
-To build from source, clone the [source package](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) and follow the build instructions.
-
-:::
-
-::: tab ipfs-client
-
-### HTTP client module
-
-To use the client on your machine, install the `ipfs-client` Node.js package:
-
-  ```bash
-  npm i ipfs-client
-  ```
-
-### Build from source
-
-To build from source, clone the [source package](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) and follow the build instructions.
-
-:::
-
 ::::
 
 ## Spawn a node
@@ -264,7 +232,7 @@ file are likely to change. Please reference the
 
 ::: tab ipfs-cli
 
-Navigate to the directory you wish to add a file from. You can also specify the file path when using the cli to add a file.
+In a new session, navigate to the directory you wish to add a file from. You can also specify the file path when using the cli to add a file.
 
 The daemon uses an `ADD` method to request data from IPFS; `jsipfs add`. We will use a test file called `test.txt` to add through the jsipfs daemon.
 
@@ -281,6 +249,12 @@ You should obtain a result that verifies the file was added and returns the CID:
 The file has been added to the IPFS network and has given the file a CID.
 You can share this CID with anyone, and they can use it on their IPFS node to 
 obtain the content you uploaded.
+
+To view the file contents, navigate to the [webui](http://127.0.0.1:5002/webui) and provide the CID on the search bar. The UI will provide the file contents, similar to the following:
+
+<img src="../../images/jsipfs-add-webui.png" width="1000">
+
+:::
 
 ::: tab ipfs-core
 
@@ -318,7 +292,7 @@ The file has been added to the IPFS network and has given the file a CID.
 You can share this CID with anyone, and they can use it on their IPFS node to obtain
 the content you uploaded.
 
-If you take the CID and load it on the gateway, you will see the content:
+If you take the CID and load it on the HTTP gateway, you will see the content:
 > e.g. https://ipfs.io/ipfs/QmYt9ypyGsR1BKdaCGPdwdBgAiuXK5AYN2bGSNZov7YXuk
 
 <img src="../../images/jsipfs-add-gateway.png" width="1000">
@@ -413,7 +387,13 @@ By default, objects that you retrieve over IPFS are not pinned to your node. If 
 
 ## Remove a file
 
-Simply removing the content pin will remove a file from IPFS. In this section, we will remove the pinned `test.txt` file we pinned earlier.
+::: warning Removing a file from IPFS does not guarantee that is was completely removed from network.
+
+There is no way to know if someone else has made a copy of the content from when it became available on the network. This is a caveat is also found in regular HTTP networks, as nothing stops users from addressing content and creating a copy once it is pushed to IPFS.
+
+:::
+
+Removing the content pin will remove a file from IPFS. In this section, we will remove the pinned `test.txt` file we pinned earlier.
 
 :::: tabs
 
@@ -468,9 +448,9 @@ This will output something like:
 
 The target file has now been fully removed from your IPFS node and any other files that we did not pin. If the content that was just garbage collected was saved to your computer's local storage, it is still there. If you wish to remove the content from your computer's local storage, you will need to find where it is saved and delete it using the normal deletion method.
 
-:::
+::: tip
 
-::: tab ipfs-core
+Run `jsipfs pin ls` again to confirm that the CID you intended to remove is no longer pinned.
 
 :::
 
