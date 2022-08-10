@@ -12,7 +12,7 @@ Gateways provide implementation and runtime agnostic HTTP interface for retrievi
 
 ### `GET /ipfs/{cid}[/{path}][?{params}]`
 
-- `cid` is a [CID](https://docs.ipfs.tech/concepts/glossary/#cid), the root identifier of the requested content path
+- `cid` is a [CID](../../concepts/glossary/#cid), the root identifier of the requested content path
 - `path` – optional path under the root CID
 
 Optional query parameters:
@@ -23,7 +23,7 @@ Optional query parameters:
 
 ::: tip Before you continue
 
-Make sure you understand [how to address IPFS on the web](../../how-to/address-ipfs-on-web/), and what are differences between [Path](../../how-to/address-ipfs-on-web/#path-gateway) and [Subdomain Gateways](../how-to/address-ipfs-on-web/#subdomain-gateway).
+Make sure you understand [how to address IPFS on the web](../../how-to/address-ipfs-on-web/), and what are differences between [Path](../../how-to/address-ipfs-on-web/#path-gateway) and [Subdomain Gateways](../../how-to/address-ipfs-on-web/#subdomain-gateway).
 
 :::
 
@@ -50,7 +50,7 @@ When fetching a CID directly, one can include a `filename` parameter with file n
 
 ### Trustless, verifiable retrieval
 
-Clients capable of verifying content-addressed data on their own, should use [application/vnd.ipld.raw](https://www.iana.org/assignments/media-types/application/vnd.ipld.raw) and [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) response types (raw [blocks](../concepts/glossary/#block) and [CARs](../concepts/glossary/#car)), and always ask for CIDs directly (`/ipfs/{cid}`).
+Clients capable of verifying content-addressed data on their own, should use [application/vnd.ipld.raw](https://www.iana.org/assignments/media-types/application/vnd.ipld.raw) and [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) response types (raw [blocks](../../concepts/glossary/#block) and [CARs](../../concepts/glossary/#car)), and always ask for CIDs directly (`/ipfs/{cid}`).
 
 #### Example: fetching a raw block
 
@@ -99,7 +99,7 @@ Below are links for the most useful specifications.
 These are "low level" gateways that expose IPFS resources over HTTP protocol.
 
 * [Path Gateway](https://github.com/ipfs/specs/blob/main/http-gateways/PATH_GATEWAY.md) ← **START HERE**, other types of gateway are specified as a delta against this specification.
-* [Trustless Gateway](https://github.com/ipfs/specs/blob/main/http-gateways/TRUSTLESS_GATEWAY.md) is a subset that returns verifiable response types (raw [blocks](../concepts/glossary/#block) and [CARs](../concepts/glossary/#car))
+* [Trustless Gateway](https://github.com/ipfs/specs/blob/main/http-gateways/TRUSTLESS_GATEWAY.md) is a subset that returns verifiable response types (raw [blocks](../../concepts/glossary/#block) and [CARs](../../concepts/glossary/#car))
 
 ### Web
 
