@@ -34,12 +34,12 @@ HTTP clients are in control, decide how much trust and work is delegated to the 
 
 ### Delegating trust
 
-By default, a gateway will take care of UnixFS deserialization and return reassembled files to the client, as if they were stored in a traditional HTTP server. This means all validation happens on the gateway, and clients trust the gateway is correctly validating content-addressed data before returning it to them.
+By default, a gateway will take care of UnixFS deserialization and return reassembled files to the client, as if they were stored in a traditional HTTP server. This means all validation happens on the gateway, and clients trust the gateway is correctly validating content-addressed data before returning it to them. 
 
-#### Example: fetching an UnixFS file
+#### Example: fetching an UnixFS file from a local gateway
 
 ```bash
-$ curl -L "https://ipfs.io/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi" > cat.jpg
+$ curl "http://127.0.0.1:8080/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi" > cat.jpg
 ```
 
 ::: tip
@@ -52,12 +52,18 @@ When fetching a CID directly, one can include a `filename` parameter with file n
 
 Clients capable of verifying content-addressed data on their own, should use [application/vnd.ipld.raw](https://www.iana.org/assignments/media-types/application/vnd.ipld.raw) and [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) response types (raw [blocks](../../concepts/glossary/#block) and [CARs](../../concepts/glossary/#car)), and always ask for CIDs directly (`/ipfs/{cid}`).
 
-#### Example: fetching a raw block
+::: callout
+
+This mode of operation removes the need for trusting gateway returns correct data. Client can always verify that returned bytes match the requested CID.
+
+:::
+
+#### Example: fetching a raw block from a public gateway
 
 Using `Accept` HTTP header with [application/vnd.ipld.raw](https://www.iana.org/assignments/media-types/application/vnd.ipld.raw) type:
 
 ```bash
-$ curl -L -H "Accept: application/vnd.ipld.raw" "https://ipfs.io/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi" > raw-block.bin
+$ curl -H "Accept: application/vnd.ipld.raw" "https://ipfs.io/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi" > raw-block.bin
 $ ipfs block put raw-block.bin
 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 ```
@@ -71,7 +77,7 @@ An alternative is to pass `?format=raw` URL parameter:
 
 :::
 
-#### Example: fetching an entire DAG as a CAR stream
+#### Example: fetching an entire DAG as a CAR stream from a public gateway
 
 Using `Accept` HTTP header with [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) type:
 
