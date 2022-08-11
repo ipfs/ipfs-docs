@@ -2,7 +2,7 @@
 <img align="center" src="ipfs-docs-header.png" width="1000">
 </p>
 
-<div align="Center">
+<div align="center">
 <h3> IPFS powers the distributed web </h3>
 <br>
 
@@ -84,7 +84,7 @@ To solve this error, perform the following steps:
 
 1. Open a terminal.
 2. Navigate into the `ipfs-docs` folder:
-   
+
    ```bash
    cd ipfs-docs
    ```
@@ -137,7 +137,7 @@ The IPFS documentation site uses the [VuePress static website generator](https:/
 
 When opening a pull request, CI scripts will run against your feature branch to test your changes.
 
-The CI/CD production workflow builds on the `main` branch and deploys the documentation site on [fleek](https://fleek.co/). The site reflects the latest commit on `main`. 
+The CI/CD production workflow builds on the `main` branch and deploys the documentation site on [fleek](https://fleek.co/). The site reflects the latest commit on `main`.
 
 ### Translation
 
