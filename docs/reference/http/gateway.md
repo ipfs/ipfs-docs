@@ -58,7 +58,39 @@ This mode of operation removes the need for trusting gateway returns correct dat
 
 :::
 
-#### Example: fetching a raw block from a public gateway
+#### Example: fetching an entire DAG as a CAR stream from a public gateway
+
+Using `Accept` HTTP header with [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) type:
+
+```bash
+$ curl -H "Accept: application/vnd.ipld.car" "https://ipfs.io/ipfs/bafybeiakou6e7hnx4ms2yangplzl6viapsoyo6phlee6bwrg4j2xt37m3q" > dag.car
+$ ipfs dag import dag.car
+```
+
+::: tip
+
+An alternative is to pass `?format=car` URL parameter:
+
+<https://ipfs.io/ipfs/bafybeiakou6e7hnx4ms2yangplzl6viapsoyo6phlee6bwrg4j2xt37m3q?format=car>
+
+::: 
+
+::: tip Verify CAR without running full IPFS node
+
+CAR verification does not require running IPFS node. Clients can leverage standalone tools and libraries such as [ipfs-car](https://www.npmjs.com/package/ipfs-car):
+
+```bash
+$ npm i -g ipfs-car
+$ curl "https://ipfs.io/ipfs/bafybeiakou6e7hnx4ms2yangplzl6viapsoyo6phlee6bwrg4j2xt37m3q?format=car" | ipfs-car
+$ ls ./bafybeiakou6e7hnx4ms2yangplzl6viapsoyo6phlee6bwrg4j2xt37m3q/
+1007 - Sustainable - alt.txt
+1007 - Sustainable - transcript.txt
+1007 - Sustainable.png
+```
+
+:::
+
+#### Example: fetching a single raw block from a public gateway
 
 Using `Accept` HTTP header with [application/vnd.ipld.raw](https://www.iana.org/assignments/media-types/application/vnd.ipld.raw) type:
 
@@ -74,23 +106,6 @@ bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 An alternative is to pass `?format=raw` URL parameter:
 
 <https://ipfs.io/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi?format=raw>
-
-:::
-
-#### Example: fetching an entire DAG as a CAR stream from a public gateway
-
-Using `Accept` HTTP header with [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) type:
-
-```bash
-$ curl -H "Accept: application/vnd.ipld.car" "https://ipfs.io/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi" > dag.car
-$ ipfs dag import dag.car
-```
-
-::: tip
-
-An alternative is to pass `?format=car` URL parameter:
-
-<https://ipfs.io/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi?format=car>
 
 :::
 
