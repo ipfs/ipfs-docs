@@ -1,14 +1,11 @@
 ---
 title: IPFS in JavaScript
-description: "A simple walkthrough of how to perform basic IPFS operations using the JS implementation."
+description: "A simple walkthrough of how to perform basic IPFS operations using the JavaScript implementation."
 ---
 
-# JS-IPFS Basics
+# IPFS in JavaScript
 
-This guide aims to walk you through the basics of using IPFS with JavaScript. JS-IPFS is one of multiple [IPFS implementations](../ipfs-implementations.md).
-
-You will learn how install and spawn a node using the available libraries, as well as add, retrieve, 
-read, and remove files. If you are unsure about the meaning of some terms, check out the [glossary](../concepts/glossary.md).
+This guide aims to walk you through the basics of using IPFS with JavaScript. JS-IPFS is one of multiple [IPFS implementations](../ipfs-implementations.md). You will learn how install and spawn a node using the available libraries, as well as add, retrieve, read, and remove files. If you are unsure about the meaning of some terms, check out the [glossary](../concepts/glossary.md).
 
 ::: tip Environment
 
@@ -16,13 +13,11 @@ All instructions and examples shown here were performed and tested on an M1 Mac.
 
 :::
 
-There are two main JavaScript libraries for working with IPFS, learn about each library in the [reference section](../reference/js/api).
-
 ## Install JS-IPFS
 
 :::: tabs
 
-::: tab ipfs-cli
+::: tab ipfs-cli id="install-ipfs-cli"
 
 ### JS-IPFS module
 
@@ -38,7 +33,7 @@ To build from source, clone the [source packages](https://github.com/ipfs/js-ipf
 
 :::
 
-::: tab ipfs-core
+::: tab ipfs-core id="install-ipfs-core"
 
 ### IPFS core API
 
@@ -60,7 +55,7 @@ To build from source, clone the [source packages](https://github.com/ipfs/js-ipf
 
 :::: tabs
 
-::: tab ipfs-cli
+::: tab ipfs-cli id="spawn-ipfs-cli"
 
 To spawn a node using the CLI, simply start the daemon:
 
@@ -99,7 +94,7 @@ jsipfs config --json API.HTTPHeaders.Access-Control-Allow-Methods '["PUT", "POST
 
 :::
 
-::: tab ipfs-core
+::: tab ipfs-core id="spawn-ipfs-core"
 
 Create a simple Node.js application to host the logic that will allow you to use the RPC API. You'll also use this Node.js application later on to add and remove files.
 
@@ -143,7 +138,7 @@ To create an IPFS node, add:
   main();
   ```
 
-This imports IPFS as a dependency and uses the `create()` function to create a node instance. 
+This imports IPFS as a dependency and uses the `create()` function to create a node instance.
 
 To spawn the node, run the application:
 
@@ -169,7 +164,7 @@ The JS-IPFS implementation is split into several Node.js modules. The following 
 
 :::: tabs
 
-::: tab ipfs-http-client
+::: tab ipfs-http-client id="connect-ipfs-http-client"
 
 If you have not already installed the client library, add the `ipfs-http-client` module to your project:
 
@@ -185,13 +180,13 @@ Populate your `index.js` file with the following to create an instance of the HT
   const client = create() // the default API address http://localhost:5001
   ```
 
-This imports the client library and uses the `create()` function to connect to an IPFS API server. 
+This imports the client library and uses the `create()` function to connect to an IPFS API server.
 
 To connect to the API, run the application:
 
 :::
 
-::: tab ipfs-client
+::: tab ipfs-client id="connect-ipfs-client"
 
 If you have not already installed the client library, add the `ipfs-http-client` module to your project:
 
@@ -222,15 +217,13 @@ Now you can start to add files using JS-IPFS to the IPFS network.
 
 ::: warning Section changes coming soon
 
-As the JS-IPFS implementation goes through changes, the steps to add a 
-file are likely to change. Please reference the 
-[source packages](https://github.com/ipfs/js-ipfs) for the latest updates.
+As the JS-IPFS implementation goes through changes, the steps to add a file are likely to change. Please reference the [source packages](https://github.com/ipfs/js-ipfs) for the latest updates.
 
 :::
 
 :::: tabs
 
-::: tab ipfs-cli
+::: tab ipfs-cli id="add-ipfs-cli"
 
 In a new session, navigate to the directory you wish to add a file from. You can also specify the file path when using the cli to add a file.
 
@@ -256,14 +249,11 @@ To view the file contents, navigate to the [webui](http://127.0.0.1:5002/webui) 
 
 :::
 
-::: tab ipfs-core
+::: tab ipfs-core id="add-ipfs-core"
 
-To add a file using `ipfs-core`, you can create a test `.txt` file in 
-your project directory or point to a local file on your machine that you would
-like to upload to IPFS.
+To add a file using `ipfs-core`, you can create a test `.txt` file in your project directory or point to a local file on your machine that you would like to upload to IPFS.
 
-Then, using `node.add`, add an `await` operator that includes a `path` 
-and `content` field and an output message in the project's `index.js` file:
+Then, using `node.add`, add an `await` operator that includes a `path` and `content` field and an output message in the project's `index.js` file:
 
   ```js{6-9,11}
   import * as IPFS from 'ipfs-core';
@@ -288,11 +278,10 @@ You should obtain an output similar to:
   Added file: test.txt CID(QmYt9ypyGsR1BKdaCGPdwdBgAiuXK5AYN2bGSNZov7YXuk)
   ```
 
-The file has been added to the IPFS network and has given the file a CID.
-You can share this CID with anyone, and they can use it on their IPFS node to obtain
-the content you uploaded.
+The file has been added to the IPFS network and has given the file a CID. You can share this CID with anyone, and they can use it on their IPFS node to obtain the content you uploaded.
 
 If you take the CID and load it on the HTTP gateway, you will see the content:
+
 > e.g. https://ipfs.io/ipfs/QmYt9ypyGsR1BKdaCGPdwdBgAiuXK5AYN2bGSNZov7YXuk
 
 <img src="../../images/jsipfs-add-gateway.png" width="1000">
@@ -305,7 +294,7 @@ If you take the CID and load it on the HTTP gateway, you will see the content:
 
 ::::tabs
 
-::: tab ipfs-cli
+::: tab ipfs-cli id="retrieve-ipfs-cli"
 
 Navigate to the directory where you wish to save the folder. IPFS will save the folder to whichever directory you are in. Here, we're going to save the file in the ~/Desktop directory:
 
@@ -329,7 +318,7 @@ You will notice a new file in your project directory that is labelled as the CID
 
 :::
 
-::: tab ipfs-core
+::: tab ipfs-core id="retrieve-ipfs-core"
 
 Continuing with the same Node.js application, retrieving a file from IPFS can be done by using 
 a `cat` call. We will use the CID from the previous section when we added the `test.txt` file by passing `fileAdded.cid` as an argument to `node.cat`:
@@ -397,7 +386,7 @@ Removing the content pin will remove a file from IPFS. In this section, we will 
 
 :::: tabs
 
-::: tab ipfs-cli
+::: tab ipfs-cli id="remove-ipfs-cli"
 
 If you would like to remove a different piece of content, you can run `jsipfs pin ls` to view a list of pinned content on the local IPFS node:
 
