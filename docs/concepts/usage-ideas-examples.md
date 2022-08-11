@@ -14,21 +14,19 @@ One of the simplest use-cases to grasp is the sharing of files between peers.
 
 ### Desktop applications
 
-[IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) is the official desktop client for IPFS. It comes with a built-in IPFS node that lets you pin files and gives you a link to share them. This is generally seen as the easiest point-of-entry into the IPFS ecosystem.
+[IPFS Desktop](https://github.com/ipfs/ipfs-desktop) is the official desktop client for IPFS. It comes with a built-in IPFS node that lets you pin files and gives you a link to share them. This is generally seen as the easiest point-of-entry into the IPFS ecosystem.
 
 The [Brave](https://brave.com/) web browser has [built-in IPFS support](https://brave.com/ipfs-support/). It uses the same IPFS implementation as IPFS Desktop and resolves `ipfs://{cid}` addresses out-of-the-box.
 
-[Arbore](https://arbo.re) Arbore is a free and open-source file-sharing application that enables you to send your pictures, documents, files to your contacts privately and without limits.
+[Arbore](https://arbo.re) is a free and open-source file-sharing application that enables you to send your pictures, documents, and files to your contacts privately and without limits.
 
-### Share your files or sell copies of it
+### Share your files
 
-[Enzypt.io](https://enzypt.io) lets you sell files or simply get a link to share.
-
-[FileNation](https://github.com/FileNation/FileNation) is an alternative if you only want to share.
+[FileNation](https://github.com/FileNation/FileNation) is an open-source tool for sharing files using IPFS.
 
 ### Dead drop
 
-A [dead drop](https://deaddrops.com/) is a drive or another storage device that is physically immobilized in a public location for people to pick-up and deposit files. There is now an IPFS version, thanks to the [IPFS Dead Drop project](https://github.com/c-base/ipfs-deaddrop).
+A [dead drop](https://deaddrops.com/) is a drive or another storage device that is physically immobilized in a public location for people to pick up and deposit files. There is now an IPFS version, thanks to the [IPFS Dead Drop project](https://github.com/c-base/ipfs-deaddrop).
 
 ## Collaborate
 
@@ -41,10 +39,6 @@ Let IPFS coordinate the flow of data between you and your colleagues, even when 
 ### Version control
 
 The [Inter-Planetary Version Control system (IPVC)](https://github.com/martindbp/ipvc) is a distributed version control system similar to [git](https://git-scm.com/) but built on IPFS. It is suitable for any kind of data, not only human-readable content. It is also particularly suitable for versioning large files. The underlying concepts are heavily influenced by [git](https://git-scm.com/) and [gitless](https://gitless.com/).
-
-### Connect event attendants
-
-[Gthr.io](https://gthr.io) was a simple demo app to connect participants to an event by letting them scan each other's QR code. It was made for IPFS Camp 2019. You can look at their [presentation](https://www.dropbox.com/s/wodmbi6ico3inya/Offline%20Presentation.pdf?dl=0). The code of this simple app is still in its [GitHub repository](https://github.com/JustMaier/gathering).
 
 ### Exchange messages
 
@@ -62,7 +56,7 @@ By storing small scripts or big databases of your project on IPFS, and depending
 
 ### Video hosting platform
 
-[DTube](https://d.tube) is hosting videos on IPFS to reduce stress on their infrastructure. The website itself is not decentralized, but it mainly manages coordination between users and the discoverability of content. You can also learn how to replicate [Youtube on IPFS](https://simpleaswater.com/youtube-on-ipfs/)
+[DTube](https://d.tube) is hosting videos on IPFS to reduce stress on their infrastructure. The website itself is not decentralized, but it mainly manages coordination between users and the discoverability of content.
 
 ### Co-host large datasets
 
@@ -90,7 +84,7 @@ Thanks to recent improvements with IPFS Cluster, you can call for help to store 
 
 ### Video live-streaming
 
-Let your users stream from each other to remove the need for a server without overloading a popular streamer. You can get inspired by the working prototype of [Toronto Mesh](https://github.com/tomeshnet/ipfs-live-streaming), or by the [experimentations](https://blog.fission.codes/experimenting-with-hls-video-streaming-and-ipfs/) of [Fission](https://fission.codes). [Fleek](https://fleek.co) also did some [experimentation](https://medium.com/temporal-cloud/introducing-s3x-endless-ipfs-dynamic-possibilities-stream-videos-host-dynamic-websites-f0072127070f) using their Amazon S3/IPFS compatibility tool.
+Let your users stream from each other to remove the need for a server without overloading a popular streamer. You can get inspired by the working prototype of [Toronto Mesh](https://github.com/tomeshnet/ipfs-live-streaming), or by the [experimentations](https://fission.codes/blog/experimenting-with-hls-video-streaming-and-ipfs/) of [Fission](https://fission.codes). [Fleek](https://fleek.co) also did some [experimentation](https://medium.com/temporal-cloud/introducing-s3x-endless-ipfs-dynamic-possibilities-stream-videos-host-dynamic-websites-f0072127070f) using their Amazon S3/IPFS compatibility tool.
 
 ### Decentralized robots
 
@@ -102,7 +96,7 @@ Using IPFS allows you to abstract away a lot of the complexity of coordination b
 
 ### Decentralized clusters
 
-[IPFS Cluster](https://cluster.ipfs.io/) is the official tool to manage a cluster of nodes to replicate data. Like any distributed cluster, you will have the benefits of redundancy, load balancing, and write permission management. You can choose to connect your cluster to the rest of the IPFS network or run it privately. You can also invite outsiders to help replicate your data without them having write-access, thanks to the [collaborative mode](https://cluster.ipfs.io/documentation/collaborative/).
+[IPFS Cluster](https://ipfscluster.io/) is the official tool to manage a cluster of nodes to replicate data. Like any distributed cluster, you will have the benefits of redundancy, load balancing, and write permission management. You can choose to connect your cluster to the rest of the IPFS network or run it privately. You can also invite outsiders to help replicate your data without them having write-access, thanks to the [collaborative mode](https://ipfscluster.io/documentation/collaborative/).
 
 ### Content delivery networks
 
@@ -126,10 +120,6 @@ Netflix is on its way to use IPFS to [synchronize their Docker containers worldw
 
 By storing identical data only once on your node, storage-constrained projects are another natural fit for IPFS.
 
-### Compress telemetry data
-
-Sensor data is typically-structured and often contains duplicated blocks of data. In cases where a lot of sensor data is recorded, IPFS can reduce disk usage even more than simple compression [thanks to its de-duplication techniques](http://blog.klaehn.org/2018/06/10/efficient-telemetry-storage-on-ipfs/).
-
 ## Decentralize your data
 
 By decentralizing your data, you increase availability in case your server runs into an issue, your ISP is unhappy with what you publish, or a hostile government issues a take-down-order. You will also decrease the load time for your swarm-connected users and natively enable your app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native de-duplication and caching.
@@ -142,7 +132,7 @@ If you are currently using MongoDB, you might be more comfortable with [ThreadDB
 
 ### IPFS hosting with Textile
 
-[Textile](https://Textile.io) is a hosting company on IPFS developing the layers on top of IPFS. Among other things, they came up with separated _cloud_ environments called [buckets](https://docs.textile.io/hub/buckets/). Textile has also built an impressive toolset for [building decentralized applications and integrations](https://blog.textile.io/announcing-the-textile-protocol-hub/).
+[Textile](https://linktr.ee/textileio) is a hosting company on IPFS developing the layers on top of IPFS. Among other things, they came up with separated _cloud_ environments called [buckets](https://docs.textile.io/hub/buckets/). Textile has also built an impressive toolset for [building decentralized applications and integrations](https://blog.textile.io/announcing-the-textile-protocol-hub/).
 
 ### NextCloud integration
 
@@ -162,11 +152,11 @@ Several plugins exist to decentralize your website built with popular static-sit
 
 ## Build a dApp
 
-There are many available frameworks to build decentralized apps on IPFS. See for example [Dappkit](https://dappkit.io/), [Fission](https://fission.codes/), [Fleek](https://fleek.co/), or [Textile](https://textile.io/).
+There are many available frameworks to build decentralized apps on IPFS. See for example [Fission](https://fission.codes/), [Fleek](https://fleek.co/), or [Textile](https://textile.io/).
 
 ### SecureMyState
 
-This app for government-citizen communication was built in two days during the [DenverETH 2020](https://ethdenver.com/) hackathon. It lets Colorado citizens manage state-owned data about themselves, such as their driving license status or business registration. You can find out more about this project over on [Medium](https://medium.com/twos-complement/secure-mystate-government-services-for-citizens-ethdenver2020-17f47407b656). 
+This app for government-citizen communication was built in two days during the [DenverETH 2020](https://www.ethdenver.com/) hackathon. It lets Colorado citizens manage state-owned data about themselves, such as their driving license status or business registration. You can find out more about this project over on [Medium](https://medium.com/twos-complement/secure-mystate-government-services-for-citizens-ethdenver2020-17f47407b656). 
 
 ### Marketplace
 
