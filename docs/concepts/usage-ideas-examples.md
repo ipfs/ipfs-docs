@@ -14,7 +14,7 @@ One of the simplest use-cases to grasp is the sharing of files between peers.
 
 ### Desktop applications
 
-[IPFS Desktop](https://github.com/ipfs/ipfs-desktop) is the official desktop client for IPFS. It comes with a built-in IPFS node that lets you pin files and gives you a link to share them. This is generally seen as the easiest point-of-entry into the IPFS ecosystem.
+[IPFS Desktop](https://github.com/ipfs/ipfs-desktop) is the official desktop client for IPFS. It comes with a built-in IPFS node that lets you pin files and gives you a link to share them. This is generally seen as the easiest point of entry into the IPFS ecosystem.
 
 The [Brave](https://brave.com/) web browser has [built-in IPFS support](https://brave.com/ipfs-support/). It uses the same IPFS implementation as IPFS Desktop and resolves `ipfs://{cid}` addresses out-of-the-box.
 
@@ -48,7 +48,7 @@ Berty is leading the effort to bring [IPFS to mobile](https://github.com/ipfs-sh
 
 ## Store assets
 
-By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits. If your users don't use an IPFS client, you will still have content de-duplication out of the box. If they use it, your users will seed the content they use, decreasing the workload on your infrastructure, increase the uptime of the service in case you go offline. Your users also won't contact your servers for the content they already have.
+By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits. If your users don't use an IPFS client, you will still have content de-duplication out of the box. If they use it, your users will seed the content they use, decreasing the workload on your infrastructure, and increase the uptime of the service in case you go offline. Your users also won't contact your servers for the content they already have.
 
 ### Decentralized virtual reality
 
@@ -110,7 +110,7 @@ The developers of the [Nix package manager](https://nixos.org/) are working on i
 
 ### Hosting software containers
 
-Netflix is on its way to use IPFS to [synchronize their Docker containers worldwide](https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/). Since each node fetches them from the fastest peers they know, synchronization is substantially faster than regular sync methods.
+Netflix is on its way to using IPFS to [synchronize their Docker containers worldwide](https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/). Since each node fetches them from the fastest peers they know, synchronization is substantially faster than regular sync methods.
 
 ### Efficient network factories
 
@@ -122,7 +122,7 @@ By storing identical data only once on your node, storage-constrained projects a
 
 ## Decentralize your data
 
-By decentralizing your data, you increase availability in case your server runs into an issue, your ISP is unhappy with what you publish, or a hostile government issues a take-down-order. You will also decrease the load time for your swarm-connected users and natively enable your app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native de-duplication and caching.
+By decentralizing your data, you increase availability in case your server runs into an issue, your ISP is unhappy with what you publish, or a hostile government issues a take-down order. You will also decrease the load time for your swarm-connected users and natively enable your app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native de-duplication and caching.
 
 ### Decentralized database
 
@@ -192,7 +192,7 @@ In a recent update, Wolfram let users store their computation or assets on IPFS.
 
 ## Decentralize the Web itself
 
-Some core pieces of the web are still centralized, making it more prone to break or being censored. IPFS can help and make the web more resilient.
+Some core pieces of the web are still centralized, making it more prone to breaking or being censored. IPFS can help and make the web more resilient.
 
 ### Decentralized DNS
 
@@ -210,7 +210,7 @@ Wikipedia has not been accessible in Turkey for a few years. The company behind 
 
 IPFS is a natural fit for [blockchain](https://en.wikipedia.org/wiki/Blockchain) use cases. The common state of the chain is distributed on-chain among participants, and specific data is stored on IPFS. Thanks to content addressing, the blockchain only needs to store the IPFS multihash, and users are sure to fetch correct data from any of their peers. This architecture is becoming the de facto standard for blockchain applications.
 
-### Global market place for data storage
+### Global marketplace for data storage
 
 [Filecoin](https://filecoin.io/) lets any storage owner host data for users who need additional space. It is one of the reasons IPFS exists in the first place and will be a great accelerator of the IPFS growth once fully online later this year. The project is developed by [Protocol Labs](https://protocol.ai/).
 
@@ -250,7 +250,7 @@ With IPFS and a blockchain, you can prove ownership of a file at a certain time 
 
 ### Decentralized prediction markets
 
-[Augur](https://www.augur.net/) is a blockchain and decentralized market where you can bet on anything or request prediction from the crowd's wisdom. Like so many blockchain-based apps, the data is hosted on IPFS.
+[Augur](https://www.augur.net/) is a blockchain and decentralized market where you can bet on anything or request predictions from the crowd's wisdom. Like so many blockchain-based apps, the data is hosted on IPFS.
 
 ### Decentralized weather data
 
