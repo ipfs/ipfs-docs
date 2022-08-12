@@ -74,12 +74,13 @@ To ensure that your important data is retained, you may want to use a pinning se
 
 Some available pinning service providers are:
 
-- [Axel](https://www.axel.org/2019/07/23/qa-with-the-developers-of-axel-ipfs/)
-- [Eternum](https://www.eternum.io/)
+- [Web3.Storage](https://web3.storage/)
+- [NFT.Storage](https://nft.storage/)
+- [Filebase](https://filebase.com/)
 - [Infura](https://infura.io/)
 - [Pinata](https://pinata.cloud/)
-- [Temporal](https://temporal.cloud/)
 - [Crust Network](https://crust.network/)
+- [Axel](https://www.axel.org/2019/07/23/qa-with-the-developers-of-axel-ipfs/)
 
 See how to [work with remote pinning services](../how-to/work-with-pinning-services.md).
 
