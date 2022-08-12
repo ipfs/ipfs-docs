@@ -35,10 +35,10 @@ If you're having issues here, head over to the [official Docker documentation to
 
 ### Steps
 
-1. Download the latest `ipfs-cluster-ctl` package from [dist.ipfs.io](https://dist.ipfs.io/#ipfs-cluster-ctl):
+1. Download the latest `ipfs-cluster-ctl` package from [dist.ipfs.tech](https://dist.ipfs.tech/#ipfs-cluster-ctl):
 
     ```shell
-    wget https://dist.ipfs.io/ipfs-cluster-ctl/v1.0.2/ipfs-cluster-ctl_v1.0.2_linux-amd64.tar.gz
+    wget https://dist.ipfs.tech/ipfs-cluster-ctl/v1.0.2/ipfs-cluster-ctl_v1.0.2_linux-amd64.tar.gz
     ```
 
 1. Unzip the package:

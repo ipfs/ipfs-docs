@@ -16,7 +16,7 @@ Kubo IPFS requires 512MiB of memory and can run an IPFS node on a Raspberry Pi. 
 
 ## Official distributions
 
-The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help users quickly find the latest version of every IPFS package. As soon as a new release of an IPFS package comes out, it is automatically shown on `dist.ipfs.io`, so you can be sure you're getting the latest software. These steps detail how to download and install the latest `kubo` from `dist.ipfs.io` using the command-line.
+The IPFS team manages the [dist.ipfs.tech website](https://dist.ipfs.tech/) to help users quickly find the latest version of every IPFS package. As soon as a new release of an IPFS package comes out, it is automatically shown on `dist.ipfs.tech`, so you can be sure you're getting the latest software. These steps detail how to download and install the latest `kubo` from `dist.ipfs.tech` using the command-line.
 
 | [Windows](#windows)                                                          | [macOS](#macos)                                                        | [Linux](#linux)                                                        |
 | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -24,11 +24,11 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
 
 ### Windows
 
-1. Download the Windows binary from [`dist.ipfs.io`](https://dist.ipfs.io/#kubo).
+1. Download the Windows binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
    ```powershell
    cd ~\
-   wget https://dist.ipfs.io/kubo/v0.14.0/kubo_v0.14.0_windows-amd64.zip -Outfile kubo_v0.14.0.zip
+   wget https://dist.ipfs.tech/kubo/v0.14.0/kubo_v0.14.0_windows-amd64.zip -Outfile kubo_v0.14.0.zip
    ```
 
 1. Unzip the file and move it somewhere handy.
@@ -93,10 +93,10 @@ The IPFS team manages the [dist.ipfs.io website](https://dist.ipfs.io/) to help 
 You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead of the `amd64` binary listed in these instructions.
 :::
 
-1. Download the macOS binary from [`dist.ipfs.io`](https://dist.ipfs.io/#kubo).
+1. Download the macOS binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
    ```bash
-   curl -O https://dist.ipfs.io/kubo/v0.14.0/kubo_v0.14.0_darwin-amd64.tar.gz
+   curl -O https://dist.ipfs.tech/kubo/v0.14.0/kubo_v0.14.0_darwin-amd64.tar.gz
    ```
 
 1. Unzip the file:
@@ -131,10 +131,10 @@ You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead
 
 ### Linux
 
-1. Download the Linux binary from [`dist.ipfs.io`](https://dist.ipfs.io/#kubo).
+1. Download the Linux binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
    ```bash
-   wget https://dist.ipfs.io/kubo/v0.14.0/kubo_v0.14.0_linux-amd64.tar.gz
+   wget https://dist.ipfs.tech/kubo/v0.14.0/kubo_v0.14.0_linux-amd64.tar.gz
    ```
 
 1. Unzip the file:
