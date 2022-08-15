@@ -48,7 +48,7 @@ Berty is leading the effort to bring [IPFS to mobile](https://github.com/ipfs-sh
 
 ## Store assets
 
-By storing small scripts or big databases of your project on IPFS, and depending on your architecture, you can yield several benefits. If your users don't use an IPFS client, you will still have content de-duplication out of the box. If they use it, your users will seed the content they use, decreasing the workload on your infrastructure, and increase the uptime of the service in case you go offline. Your users also won't contact your servers for the content they already have.
+By storing small scripts or big databases of your project on IPFS, depending on your architecture, you can yield several benefits. Your users won't contact your servers for the content they already have. You will still have content de-duplication if your users don't use an IPFS client. If they use it, your users will seed the content they use, decreasing the workload on your infrastructure and increasing the uptime of the service in case you go offline.
 
 ### Decentralized virtual reality
 
@@ -84,7 +84,7 @@ Thanks to recent improvements with IPFS Cluster, you can call for help to store 
 
 ### Video live-streaming
 
-Let your users stream from each other to remove the need for a server without overloading a popular streamer. You can get inspired by the working prototype of [Toronto Mesh](https://github.com/tomeshnet/ipfs-live-streaming), or by the [experimentations](https://fission.codes/blog/experimenting-with-hls-video-streaming-and-ipfs/) of [Fission](https://fission.codes). [Fleek](https://fleek.co) also did some [experimentation](https://medium.com/temporal-cloud/introducing-s3x-endless-ipfs-dynamic-possibilities-stream-videos-host-dynamic-websites-f0072127070f) using their Amazon S3/IPFS compatibility tool.
+Let your users stream from each other to remove the need for a server without overloading a popular streamer. You can get inspired by the working prototype of [Toronto Mesh](https://github.com/tomeshnet/ipfs-live-streaming) or by the [experimentations](https://fission.codes/blog/experimenting-with-hls-video-streaming-and-ipfs/) of [Fission](https://fission.codes). [Fleek](https://fleek.co) also did some [experimentation](https://medium.com/temporal-cloud/introducing-s3x-endless-ipfs-dynamic-possibilities-stream-videos-host-dynamic-websites-f0072127070f) using their Amazon S3/IPFS compatibility tool.
 
 ### Decentralized robots
 
@@ -110,7 +110,7 @@ The developers of the [Nix package manager](https://nixos.org/) are working on i
 
 ### Hosting software containers
 
-Netflix is on its way to using IPFS to [synchronize their Docker containers worldwide](https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/). Since each node fetches them from the fastest peers they know, synchronization is substantially faster than regular sync methods.
+Netflix is on its way to using IPFS to [synchronize their Docker containers worldwide](https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/). Since each node fetches them from the fastest peers they know, synchronization is substantially faster than traditional synchronization methods.
 
 ### Efficient network factories
 
@@ -122,7 +122,7 @@ By storing identical data only once on your node, storage-constrained projects a
 
 ## Decentralize your data
 
-By decentralizing your data, you increase availability in case your server runs into an issue, your ISP is unhappy with what you publish, or a hostile government issues a take-down order. You will also decrease the load time for your swarm-connected users and natively enable your app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native de-duplication and caching.
+By decentralizing your data, you increase availability if your server runs into an issue, your ISP is unhappy with what you publish, or a hostile government issues a take-down order. You will also decrease the load time for your swarm-connected users and natively enable your app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native de-duplication and caching.
 
 ### Decentralized database
 
@@ -132,7 +132,7 @@ If you are currently using MongoDB, you might be more comfortable with [ThreadDB
 
 ### IPFS hosting with Textile
 
-[Textile](https://linktr.ee/textileio) is a hosting company on IPFS developing the layers on top of IPFS. Among other things, they came up with separated _cloud_ environments called [buckets](https://docs.textile.io/hub/buckets/). Textile has also built an impressive toolset for [building decentralized applications and integrations](https://blog.textile.io/announcing-the-textile-protocol-hub/).
+[Textile](https://linktr.ee/textileio) is developing the layers on top of IPFS to extend its hosting capabilities. Among other things, they came up with separated _cloud_ environments called [buckets](https://docs.textile.io/hub/buckets/). Textile has also built an impressive toolset for [building decentralized applications and integrations](https://blog.textile.io/announcing-the-textile-protocol-hub/).
 
 ### NextCloud integration
 
@@ -152,11 +152,11 @@ Several plugins exist to decentralize your website built with popular static-sit
 
 ## Build a dApp
 
-There are many available frameworks to build decentralized apps on IPFS. See for example [Fission](https://fission.codes/), [Fleek](https://fleek.co/), or [Textile](https://textile.io/).
+There are many available frameworks to build decentralized apps on IPFS. [Fission](https://fission.codes/), [Fleek](https://fleek.co/), and [Textile](https://textile.io/) are great examples.
 
 ### SecureMyState
 
-This app for government-citizen communication was built in two days during the [DenverETH 2020](https://www.ethdenver.com/) hackathon. It lets Colorado citizens manage state-owned data about themselves, such as their driving license status or business registration. You can find out more about this project over on [Medium](https://medium.com/twos-complement/secure-mystate-government-services-for-citizens-ethdenver2020-17f47407b656). 
+The SecureMyState government-citizen communication app was built two days during the [ETHDenver 2020](https://www.ethdenver.com/) hackathon. It lets Colorado citizens manage state-owned data about themselves, such as their driving license status or business registration. You can find out more about this project on [Medium](https://medium.com/twos-complement/secure-mystate-government-services-for-citizens-ethdenver2020-17f47407b656). 
 
 ### Marketplace
 

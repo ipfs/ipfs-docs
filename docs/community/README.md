@@ -27,7 +27,7 @@ Casual chat fan? Here are [all our channels](chat.md). There's getting-started a
 
 If you're an IPFS implementer, consumer, or user, you are welcome to join the community meetings we host regularly.
 
-Stay up to date by subscribing to the [**IPFS Community Calendar**](https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84%40group.calendar.google.com) and joining community meetings such as triage sessions, the IPFS implementers sync, and the IPLD sync.
+Stay up-to-date by subscribing to the [**IPFS Community Calendar**](https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84%40group.calendar.google.com) and joining community meetings such as triage sessions, the IPFS implementers sync, and the IPLD sync.
 
 Events can be added to the IPFS community calendar by inviting `ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com`.
 

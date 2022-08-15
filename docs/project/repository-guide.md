@@ -5,7 +5,7 @@ description: A quick guide to the most important and most frequently used IPFS r
 
 # IPFS repository guide
 
-IPFS is a _big_ open-source project, and with that comes a lot of code — and a lot of issue-based discussions that go with it. The IPFS project uses GitHub both for code development and for road mapping and operations discussions, meaning that both types of activities can happen asynchronously, in the open, and from anywhere on the planet.
+IPFS is an _extensive_ open-source project, and with that comes a lot of code and issue-based discussions. The IPFS project uses GitHub for both code development and road mapping and operations discussions, meaning that both types of activities can happen asynchronously, in the open, and from anywhere on the planet.
 
 If you're looking for specific IPFS-related code, or want to find where to join in a particular discussion, start with this high-level guide to the most prominent and/or frequently used GitHub organizations and repositories in the IPFS project. It's not an exhaustive list of all IPFS organizations and repositories, but instead is intended to help guide you based on what you are trying to do in the following areas:
 
