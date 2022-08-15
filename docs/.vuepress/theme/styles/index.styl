@@ -76,3 +76,12 @@ code {
 	--code-bg-color: $codeBgColor;
 	--highlight-color: $highlightColor;
 }
+
+section.tabs-component-panel::before {
+    content: '';
+    display: block;
+    position: relative;
+    width: 0;
+    height: 10em;
+    margin-top: -10em;
+}
