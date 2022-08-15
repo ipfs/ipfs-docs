@@ -46,7 +46,7 @@ if (window.ipfs && window.ipfs.enable) {
 To add and get content, you could update the above example to do something like this:
 
 <!-- TODO: update below example to use async iterators:
-https://blog.ipfs.io/2020-02-01-async-await-refactor/
+https://blog.ipfs.tech/2020-02-01-async-await-refactor/
 -->
 
 ```js
