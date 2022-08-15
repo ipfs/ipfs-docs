@@ -180,21 +180,32 @@ The JS-IPFS implementation is split into several Node.js modules. The following 
 
     This imports the client library and uses the `create()` function to connect to an IPFS API server.
 
-1. To connect to the API, run the application: <!--TODO: complete -->
+1. To connect to the API, run the application:
+
+    ```bash
+    node index.js
+    ```
+
+The library internally detects if your machine is running a local node.
 
 :::
 
 ::: tab ipfs-client id="connect-ipfs-client"
 
-1. If you have not already installed the client library, add the `ipfs-http-client` module to your project: <!--TODO: complete -->
-1. Populate your `index.js` file with the following to create an instance of the HTTP API client:
+1. If you have not already installed the client library, add the `ipfs-client` module to your project:
+
+    ```bash
+    npm i ipfs-client
+    ```
+
+2. Populate your `index.js` file with the following to create an instance of the HTTP API client:
 
     ```js{1,3-5}
     import { create } from 'ipfs-client'
 
     const client = create({
-    grpc: '/ipv4/127.0.0.1/tcp/5003/ws',
-    http: '/ipv4/127.0.0.1/tcp/5002/http'
+      grpc: '/ip4/127.0.0.1/tcp/5003/ws',
+      http: '/ip4/127.0.0.1/tcp/5002/http'
     })
 
     const id = await client.id()
@@ -202,7 +213,13 @@ The JS-IPFS implementation is split into several Node.js modules. The following 
 
     This imports the client library and uses the `create()` function to define the server endpoints.
 
-1. To connect to the endpoints, run the application: <!-- TODO: complete -->
+3. To connect to the endpoints, run the application:
+
+    ```bash
+    node index.js
+    ```
+
+The library internally detects if your machine is running a local node that leverages the specified connections.
 
 :::
 
