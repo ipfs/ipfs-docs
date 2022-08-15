@@ -5,11 +5,11 @@ description: "A simple walkthrough of how to perform basic IPFS operations using
 
 # IPFS in JavaScript
 
-This guide aims to walk you through the basics of using IPFS with JavaScript. JS-IPFS is one of multiple [IPFS implementations](../ipfs-implementations.md). You will learn how to install and spawn a node using the available libraries, as well as add, retrieve, read, and remove files. If you are unsure about the meaning of some terms, check out the [glossary](../concepts/glossary.md).
+This guide will walk you through the basics of using IPFS with JavaScript. JS-IPFS is one of multiple [IPFS implementations](../ipfs-implementations.md). You will learn how to install and spawn a node using the available libraries, and add, retrieve, read, and remove files. If you are unsure about the meaning of some terms, check out the [glossary](../concepts/glossary.md).
 
 ::: tip Environment
 
-All instructions and examples shown here were performed and tested on an M1 Mac. However, the IPFS commands are the same on Linux, macOS, and Windows. You will need to know how to navigate your computer's directories from within the CLI. If you're unsure how to use the CLI, we recommend learning how before continuing with this guide.
+All instructions and examples shown here were performed and tested on an M1 Mac. However, the IPFS commands are the same on Linux, macOS, and Windows. You will to navigate your computer's directories from within the CLI. If you're unsure how to use the CLI, we recommend learning how before continuing with this guide.
 
 :::
 
@@ -29,7 +29,7 @@ To use the CLI on your machine, globally install the `ipfs` Node.js package:
   npm i --location=global ipfs
   ```
 
-Alternatively, you can build the project from source. See the [JS-IPFS GitHub repository](https://github.com/ipfs/js-ipfs) for instructions.
+Alternatively, you can build the project from the source. See the [JS-IPFS GitHub repository](https://github.com/ipfs/js-ipfs) for instructions.
 
 :::
 
@@ -43,7 +43,7 @@ To use the IPFS core API, install the `ipfs-core` Node.js package:
   npm i ipfs-core
   ```
 
-Alternatively, you can build the project from source. See the [JS-IPFS GitHub repository](https://github.com/ipfs/js-ipfs) for instructions.
+Alternatively, you can build the project from the source. See the [JS-IPFS GitHub repository](https://github.com/ipfs/js-ipfs) for instructions.
 
 :::
 
@@ -55,13 +55,13 @@ Alternatively, you can build the project from source. See the [JS-IPFS GitHub re
 
 ::: tab ipfs-cli id="spawn-ipfs-cli"
 
-1. To spawn a node using the CLI, simply start the daemon:
+1. To spawn a node using the CLI, start the daemon:
 
     ```bash
     jsipfs daemon
     ```
 
-1. You should see an output similar to:
+2. You should see an output similar to:
 
     ```shell
     Initializing IPFS daemon...
@@ -79,11 +79,11 @@ Alternatively, you can build the project from source. See the [JS-IPFS GitHub re
     Daemon is ready
     ```
 
-1. You should be able to point to the [webpage](http://127.0.0.1:5002/webui) using the address output by the terminal `http://127.0.0.1:5002/webui`:
+3. You should be able to point to the [webpage](http://127.0.0.1:5002/webui) using the address output by the terminal `http://127.0.0.1:5002/webui`:
 
     ![The JS-IPFS daemon showing the web-ui.](../../images/jsipfs-webui.png)
 
-1. If you are unable to connect to the API, ensure [cross-origin (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) requests are configured:
+4. If you are unable to connect to the API, ensure [cross-origin (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) requests are configured:
 
     ```bash
     jsipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["http://127.0.0.1:5002", "http://localhost:3000", "http://127.0.0.1:5001", "https://webui.ipfs.io"]'
@@ -158,7 +158,7 @@ Create a simple Node.js application to host the logic that will allow you to use
 
 ### Connect to IPFS
 
-The JS-IPFS implementation is split into several Node.js modules. The following section shows examples of how you can use the HTTP client to connect to IPFS. For more information on the different modules, examine the [API Packages table](../../reference/js/api.md##packages)
+The JS-IPFS implementation is split into several Node.js modules. The following section shows examples of using the HTTP client to connect to IPFS. For more information on the different modules, examine the [API Packages table](../../reference/js/api.md##packages)
 
 :::: tabs
 
@@ -198,7 +198,7 @@ The library internally detects if your machine is running a local node.
     npm i ipfs-client
     ```
 
-2. Populate your `index.js` file with the following to create an instance of the HTTP API client:
+1. Populate your `index.js` file with the following to create an instance of the HTTP API client:
 
     ```js{1,3-5}
     import { create } from 'ipfs-client'
@@ -213,7 +213,7 @@ The library internally detects if your machine is running a local node.
 
     This imports the client library and uses the `create()` function to define the server endpoints.
 
-3. To connect to the endpoints, run the application:
+1. To connect to the endpoints, run the application:
 
     ```bash
     node index.js
@@ -231,7 +231,7 @@ Now you can start to add files using JS-IPFS to the IPFS network.
 
 ::: warning Section changes coming soon
 
-As the JS-IPFS implementation goes through changes, the steps to add a file are likely to change. Please reference the [source packages](https://github.com/ipfs/js-ipfs) for the latest updates.
+As the JS-IPFS implementation changes, some of these steps should be deemed conditional. Please reference the [source packages](https://github.com/ipfs/js-ipfs) for the latest updates.
 
 :::
 
@@ -239,21 +239,21 @@ As the JS-IPFS implementation goes through changes, the steps to add a file are 
 
 ::: tab ipfs-cli id="add-ipfs-cli"
 
-1. In a new session, navigate to the directory you wish to add a file from. You can also specify the file path when using the cli to add a file.
-1. The daemon uses an `ADD` method to request data from IPFS; `jsipfs add`. We will use a test file called `test.txt` to add through the jsipfs daemon.
+1. In a new session, navigate to the directory from which you wish to add a file. You can also specify the file path when using the cli to add a file.
+2. The daemon uses an `ADD` method to request data from IPFS; `jsipfs add`. We will use a test file called `test.txt` to add through the jsipfs daemon.
 
     ```bash
     jsipfs add ./test.txt
     ```
 
-1. You should obtain a result that verifies the file was added and returns the CID:
+3. You should obtain a result that verifies the file was added and returns the CID:
 
     ```shell
     added QmWcYcWY5vdDzBcAoLo3rYXQ2tLkjzu57vEePCvyhuwZRi test.txt
     ```
 
-1. The file has been added to the IPFS network and has given the file a CID.  You can share this CID with anyone, and they can use it on their IPFS node to obtain the content you uploaded.
-1. To view the file contents, navigate to the [webui](http://127.0.0.1:5002/webui) and provide the CID on the search bar. The UI will provide the file contents, similar to the following:
+4. The file has been added to the IPFS network and has given the file a CID.  You can share this CID with anyone, and they can use it on their IPFS node to obtain the content you uploaded.
+5. To view the file contents, navigate to the [webui](http://127.0.0.1:5002/webui) and provide the CID on the search bar. The UI will provide the file contents, similar to the following:
 
 ![](../../images/jsipfs-add-webui.png)
 
@@ -424,7 +424,7 @@ Removing the content pin will remove a file from IPFS. In this section, we will 
     unpinned QmWcYcWY5vdDzBcAoLo3rYXQ2tLkjzu57vEePCvyhuwZRi
     ```
 
-1. `test.txt` file is now unpinned, but it has not been removed from our node completely. To remove it completely, we need to run the [garbage collection](../../concepts/persistence##garbage-collection). The command will remove everything from your node that does not have a pin:
+1. `test.txt` file is now unpinned, but it has not been removed from our node completely. To remove it completely, run the [garbage collection](../../concepts/persistence##garbage-collection). The command will remove everything from your node that does not have a pin:
 
     ```shell
     jsipfs repo gc
@@ -439,7 +439,7 @@ Removing the content pin will remove a file from IPFS. In this section, we will 
     [...]
     ```
 
-1. The target file has now been fully removed from your IPFS node and any other files that we did not pin. If the content that was just garbage collected was saved to your computer's local storage, it is still there. If you wish to remove the content from your computer's local storage, you will need to find where it is saved and delete it using the normal deletion method.
+2. The target file has now been removed from your IPFS node and other files that were not pinned. If the content that was just garbage collected was saved to your computer's local storage, it is still there. If you wish to remove the content from your computer's local storage, you will need to find where it is saved and delete it using the normal deletion method.
 
 ::: tip
 
