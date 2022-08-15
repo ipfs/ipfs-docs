@@ -202,7 +202,7 @@ module.exports = {
                   '/how-to/work-with-pinning-services',
                   '/how-to/take-snapshot',
                   '/how-to/store-play-videos',
-                  '/how-to/host-git-style-repo',
+                  '/how-to/host-git-repo',
                   '/how-to/move-ipfs-installation/move-ipfs-installation'
                 ]
               },
