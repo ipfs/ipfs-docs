@@ -14,7 +14,7 @@ One of the simplest use-cases to grasp is the sharing of files between peers.
 
 ### Desktop applications
 
-[IPFS Desktop](https://github.com/ipfs/ipfs-desktop) is the official desktop client for IPFS. It comes with a built-in IPFS node that lets you pin files and gives you a link to share them. This is generally seen as the easiest point of entry into the IPFS ecosystem.
+[IPFS Desktop](https://github.com/ipfs/ipfs-desktop) is the official desktop client for IPFS. It comes with a built-in IPFS node that lets you pin files and gives you a link to share them. This is one of the easiest ways to start pinning your files to IPFS.
 
 The [Brave](https://brave.com/) web browser has [built-in IPFS support](https://brave.com/ipfs-support/). It uses the same IPFS implementation as IPFS Desktop and resolves `ipfs://{cid}` addresses out-of-the-box.
 
