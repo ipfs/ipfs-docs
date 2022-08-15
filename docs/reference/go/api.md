@@ -110,6 +110,6 @@ Listing of the main go packages in the IPFS ecosystem:
 
 ## Hands-on examples
 
-There are use-case examples in the [`ipfs/kubo` GitHub repository](https://github.com/ipfs/go-ipfs). They're all self-contained projects that let your spin up and test environments quickly. [Check them out →](https://github.com/ipfs/kubo/tree/master/docs/examples).
+There are use-case examples in the [`ipfs/kubo` GitHub repository](https://github.com/ipfs/kubo). They're all self-contained projects that let your spin up and test environments quickly. [Check them out →](https://github.com/ipfs/kubo/tree/master/docs/examples).
 
-A good starting place is the [Use kubo as a library to spawn a node and add a file](https://github.com/ipfs/kubo/blob/master/docs/examples/go-ipfs-as-a-library/README.md).
+A good starting place is the [Use kubo as a library to spawn a node and add a file](https://github.com/ipfs/kubo/tree/master/docs/examples/kubo-as-a-library).
