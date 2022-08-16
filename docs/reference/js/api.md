@@ -7,30 +7,7 @@ description: Developer resources for working in JavaScript with IPFS, the InterP
 
 ## JavaScript libraries
 
-There are two main JavaScript libraries for working with IPFS. Both work in Node.js and modern web browsers.
-The implementation is split into several modules. 
-
-::: details Node modules
-
-* [`/packages/interface-ipfs-core`](./packages/interface-ipfs-core) Tests to ensure adherence of an implementation to the spec
-* [`/packages/ipfs`](./packages/ipfs) An aggregator module that bundles the core implementation, the CLI, HTTP API server and daemon
-* [`/packages/ipfs-cli`](./packages/ipfs-cli) A CLI to the core implementation
-* [`/packages/ipfs-core`](./packages/ipfs-core) The core implementation
-* [`/packages/ipfs-core-types`](./packages/ipfs-core-types) Typescript definitions for the core API
-* [`/packages/ipfs-core-utils`](./packages/ipfs-core-utils) Helpers and utilities common to core and the HTTP RPC API client
-* [`/packages/ipfs-daemon`](./packages/ipfs-daemon) Run js-IPFS as a background daemon
-* [`/packages/ipfs-grpc-client`](./packages/ipfs-grpc-client) A gRPC client for js-IPFS
-* [`/packages/ipfs-grpc-protocol`](./packages/ipfs-grpc-protocol) Shared module between the gRPC client and server
-* [`/packages/ipfs-grpc-server`](./packages/ipfs-grpc-server) A gRPC-over-websockets server for js-IPFS
-* [`/packages/ipfs-http-client`](./packages/ipfs-http-client) A client for the RPC-over-HTTP API presented by both js-ipfs and go-ipfs
-* [`/packages/ipfs-http-server`](./packages/ipfs-http-server) JS implementation of the [Kubo RPC HTTP API](https://docs.ipfs.io/reference/kubo/rpc/)
-* [`/packages/ipfs-http-gateway`](./packages/ipfs-http-gateway) JS implementation of the [IPFS HTTP Gateway](https://docs.ipfs.io/concepts/ipfs-gateway/)
-* [`/packages/ipfs-http-response`](./packages/ipfs-http-response) Creates a HTTP response for a given IPFS Path
-* [`/packages/ipfs-message-port-client`](./packages/ipfs-message-port-client) A client for the RPC-over-message-port API presented by js-ipfs running in a shared worker
-* [`/packages/ipfs-message-port-protocol`](./packages/ipfs-message-port-protocol) Code shared by the message port client & server
-* [`/packages/ipfs-message-port-server`](./packages/ipfs-message-port-server) The server that receives requests from ipfs-message-port-client
-
-:::
+There are two main JavaScript libraries for working with IPFS, `ipfs` and `ipfs-http-client`. Both work in Node.js and modern web browsers. JS-IPFS in Node.js is long-running and supports transports like TCP and UDP along with WebScoekts and WebRTC, while JS-IPFS in the browser is short-lived and limited to Web APIs available on a web page; it only supports WebSockets and WebRTC as transports. The browser is also resource constrained and does not support all of the interfaces found in the Node.js version.
 
 ### JS-IPFS
 
@@ -68,7 +45,31 @@ We recommend the second method (interacting with a separate IPFS node via RPC AP
 
 ::: warning Browsers
 
-The `js-ipfs` and `js-ipfs-http-client` libraries work in browsers, but each has special considerations noted in their READMEs.
+The `ipfs` and `ipfs-http-client` libraries work in browsers, but each has special considerations noted in their READMEs.
+
+:::
+
+The implementation is split into several modules. 
+
+::: details Node modules
+
+* [`/packages/interface-ipfs-core`](./packages/interface-ipfs-core) Tests to ensure adherence of an implementation to the spec
+* [`/packages/ipfs`](./packages/ipfs) An aggregator module that bundles the core implementation, the CLI, HTTP API server and daemon
+* [`/packages/ipfs-cli`](./packages/ipfs-cli) A CLI to the core implementation
+* [`/packages/ipfs-core`](./packages/ipfs-core) The core implementation
+* [`/packages/ipfs-core-types`](./packages/ipfs-core-types) Typescript definitions for the core API
+* [`/packages/ipfs-core-utils`](./packages/ipfs-core-utils) Helpers and utilities common to core and the HTTP RPC API client
+* [`/packages/ipfs-daemon`](./packages/ipfs-daemon) Run js-IPFS as a background daemon
+* [`/packages/ipfs-grpc-client`](./packages/ipfs-grpc-client) A gRPC client for js-IPFS
+* [`/packages/ipfs-grpc-protocol`](./packages/ipfs-grpc-protocol) Shared module between the gRPC client and server
+* [`/packages/ipfs-grpc-server`](./packages/ipfs-grpc-server) A gRPC-over-websockets server for js-IPFS
+* [`/packages/ipfs-http-client`](./packages/ipfs-http-client) A client for the RPC-over-HTTP API presented by both js-ipfs and go-ipfs
+* [`/packages/ipfs-http-server`](./packages/ipfs-http-server) JS implementation of the [Kubo RPC HTTP API](https://docs.ipfs.io/reference/kubo/rpc/)
+* [`/packages/ipfs-http-gateway`](./packages/ipfs-http-gateway) JS implementation of the [IPFS HTTP Gateway](https://docs.ipfs.io/concepts/ipfs-gateway/)
+* [`/packages/ipfs-http-response`](./packages/ipfs-http-response) Creates a HTTP response for a given IPFS Path
+* [`/packages/ipfs-message-port-client`](./packages/ipfs-message-port-client) A client for the RPC-over-message-port API presented by js-ipfs running in a shared worker
+* [`/packages/ipfs-message-port-protocol`](./packages/ipfs-message-port-protocol) Code shared by the message port client & server
+* [`/packages/ipfs-message-port-server`](./packages/ipfs-message-port-server) The server that receives requests from ipfs-message-port-client
 
 :::
 
