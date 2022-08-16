@@ -372,7 +372,7 @@ Protocol Buffers (Protobuf) is a free and open-source cross-platform data format
 
 ### Pubsub
 
-Publish-subscribe (Pubsub) is an experimental feature in IPFS. Publishers send messages classified by topic or content, and subscribers receive only the messages they are interested in. [More about Pubsub](https://blog.ipfs.io/25-pubsub/)
+Publish-subscribe (Pubsub) is an experimental feature in IPFS. Publishers send messages classified by topic or content, and subscribers receive only the messages they are interested in. [More about Pubsub](https://blog.ipfs.tech/25-pubsub/)
 
 ## Q
 

@@ -23,18 +23,18 @@ Optional query parameters:
 
 ::: tip Before you continue
 
-Make sure you understand [how to address IPFS on the web](../../how-to/address-ipfs-on-web/), and what are differences between [Path](../../how-to/address-ipfs-on-web/#path-gateway) and [Subdomain Gateways](../../how-to/address-ipfs-on-web/#subdomain-gateway).
+Make sure you understand [how to address IPFS on the web](../../how-to/address-ipfs-on-web/) and the differences between [Path Gateways](../../how-to/address-ipfs-on-web/#path-gateway) and [Subdomain Gateways](../../how-to/address-ipfs-on-web/#subdomain-gateway).
 
 :::
 
 ## Trusted vs trustless
 
 Gateways can be used in a trusted or trustless way.
-HTTP clients are in control, decide how much trust and work is delegated to the gateway.
+HTTP clients are in control; they decide how much trust and work is delegated to the gateway.
 
 ### Delegating trust
 
-By default, a gateway will take care of UnixFS deserialization and return reassembled files to the client, as if they were stored in a traditional HTTP server. This means all validation happens on the gateway, and clients trust the gateway is correctly validating content-addressed data before returning it to them. 
+By default, a gateway will take care of UnixFS deserialization and return reassembled files to the client, as if they were stored in a traditional HTTP server. This means all validation happens on the gateway, and clients trust that the gateway is correctly validating content-addressed data before returning it to them. 
 
 #### Example: fetching an UnixFS file from a local gateway
 
@@ -50,7 +50,7 @@ When fetching a CID directly, one can include a `filename` parameter with file n
 
 ### Trustless, verifiable retrieval
 
-Clients capable of verifying content-addressed data on their own, should use [application/vnd.ipld.raw](https://www.iana.org/assignments/media-types/application/vnd.ipld.raw) and [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) response types (raw [blocks](../../concepts/glossary/#block) and [CARs](../../concepts/glossary/#car)), and always ask for CIDs directly (`/ipfs/{cid}`).
+Clients capable of verifying content-addressed data on their own, should use [application/vnd.ipld.raw](https://www.iana.org/assignments/media-types/application/vnd.ipld.raw) and [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) response types (raw [blocks](../../concepts/glossary/#block) and [CARs](../../concepts/glossary/#car)) and always ask for CIDs directly (`/ipfs/{cid}`).
 
 ::: callout
 
@@ -111,7 +111,7 @@ An alternative is to pass `?format=raw` URL parameter:
 
 ## Specifications
 
-HTTP Gateway specification for IPFS implementers is available in [ipfs/specs](https://github.com/ipfs/specs/blob/main/http-gateways/#readme) repository.
+The HTTP Gateway specification for IPFS implementers is available in [ipfs/specs repository](https://github.com/ipfs/specs/blob/main/http-gateways/#readme).
 Below are links for the most useful specifications.
 
 

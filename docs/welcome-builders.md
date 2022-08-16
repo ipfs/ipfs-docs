@@ -46,6 +46,6 @@ Ready to roll up your sleeves and dive in? Start with these resources:
 - Just want to get hacking right away? [Install IPFS](install/command-line.md) through the command line and start exploring.
 - Check out the [**API and CLI reference guides**](reference/README.md) to learn more about hands-on use, or dig into the [**how-tos and tutorials**](how-to/README.md) here in the docs.
 - Ask questions or start a discussion in the [**official IPFS forums**](https://discuss.ipfs.io).
-- Find virtual and in-person [**hackathons and other events**](https://blog.ipfs.io/?category=Event) on the [IPFS Blog & News](https://blog.ipfs.io) page.
+- Find virtual and in-person [**hackathons and other events**](https://blog.ipfs.tech/?category=Event) on the [IPFS Blog & News](https://blog.ipfs.tech) page.
 - Learn the [**basics of IPFS concepts**](concepts/README.md) like content addressing and peer-to-peer sharing here in the docs, or try hands-on examples over at [ProtoSchool](https://proto.school).
 - Interested in IPFS because of the important role it plays in NFTs? Learn more about NFT development at [NFT School](https://nftschool.dev).
