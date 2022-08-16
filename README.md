@@ -104,7 +104,7 @@ To solve this error, perform the following steps:
 1. Open a terminal.
 1. Navigate into the `ipfs-docs` folder:
 
-   ```bash
+   ```shell
    cd ipfs-docs
    ```
 
