@@ -83,38 +83,38 @@ The following error message may display when using Node.js version 18.0.0 when a
 To solve this error, perform the following steps:
 
 1. Open a terminal.
-2. Navigate into the `ipfs-docs` folder:
+1. Navigate into the `ipfs-docs` folder:
 
    ```bash
    cd ipfs-docs
    ```
 
-3. Run the following command:
+1. Run the following command:
 
    ```shell
     export NODE_OPTIONS=--openssl-legacy-provider
    ```
 
-4. Run `npm start`.
+1. Run `npm start`.
 
    ```bash
    npm start
    ```
 
 1. Open a terminal.
-2. Navigate into the `ipfs-docs` folder:
+1. Navigate into the `ipfs-docs` folder:
 
    ```bash
    cd ipfs-docs
    ```
 
-3. Run the following command:
+1. Run the following command:
 
    ```shell
     export NODE_OPTIONS=--openssl-legacy-provider
    ```
 
-4. Run `npm start`.
+1. Run `npm start`.
 
    ```bash
    npm start
