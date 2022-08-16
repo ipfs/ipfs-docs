@@ -5,13 +5,12 @@ description: A quick guide to the most important and most frequently used IPFS r
 
 # IPFS repository guide
 
-IPFS is a _big_ open-source project, and with that comes a lot of code — and a lot of issue-based discussion that goes with it. The IPFS project uses GitHub both for code development and for road mapping and operations discussions, meaning that both types of activities can happen asynchronously, in the open, and from anywhere on the planet.
+IPFS is an _extensive_ open-source project, and with that comes a lot of code and issue-based discussions. The IPFS project uses GitHub for both code development and road mapping and operations discussions, meaning that both types of activities can happen asynchronously, in the open, and from anywhere on the planet.
 
 If you're looking for specific IPFS-related code, or want to find where to join in a particular discussion, start with this high-level guide to the most prominent and/or frequently used GitHub organizations and repositories in the IPFS project. It's not an exhaustive list of all IPFS organizations and repositories, but instead is intended to help guide you based on what you are trying to do in the following areas:
 
 - [Fetching or contributing to IPFS code](#fetch-or-contribute-to-ipfs-code)
 - [Participating in IPFS project operations](#participate-in-ipfs-project-operations)
-- [Discussing ideas for using IPFS](#discuss-ideas-for-using-ipfs)
 
 ## Fetch or contribute to IPFS code
 
@@ -67,19 +66,10 @@ IPFS project operations at large are also captured in GitHub. These repos don't 
 
 ### Operations discussions and tools
 
-- [IPFS Community](https://github.com/ipfs/community)
 - [IPFS Project Roadmap](https://github.com/ipfs/roadmap)
 - [IPFS Specifications](https://github.com/ipfs/specs)
 - [IPFS Infrastructure](https://github.com/ipfs/infra)
-- [IPFS Team Planning, Management, and Coordination](https://github.com/ipfs/team-mgmt)
 
 ### Internationalization
 
 - [i18n](https://github.com/ipfs-shipyard/i18n): The IPFS Translation Project, crowdsourcing translations of IPFS GUIs and websites.
-
-## Discuss ideas for using IPFS
-
-As with the IPFS project operations repos, these repositories don't necessarily contain code but instead capture discussions, ideas, and linked artifacts in an issue-driven format.
-
-- [ipfs/notes](https://github.com/ipfs/notes): IPFS collaborative notebook for research.
-- [ipfs/community](https://github.com/ipfs/community/discussions): IPFS community discussions board.

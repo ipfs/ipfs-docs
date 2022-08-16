@@ -23,6 +23,14 @@ The official [IPFS forums](https://discuss.ipfs.io/) are the primary home of IPF
 
 Casual chat fan? Here are [all our channels](chat.md). There's getting-started advice for you here, too.
 
+## Community Calendar
+
+If you're an IPFS implementer, consumer, or user, you are welcome to join the community meetings we host regularly.
+
+Stay up-to-date by subscribing to the [**IPFS Community Calendar**](https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84%40group.calendar.google.com) and joining community meetings such as triage sessions, the IPFS implementers sync, and the IPLD sync.
+
+Events can be added to the IPFS community calendar by inviting `ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com`.
+
 ## ProtoSchool workshops
 
 ProtoSchool isn't just home to interactive tutorials on the decentralized web — it's also a vibrant community of makers and doers around the globe! Community groups worldwide host [ProtoSchool workshops](https://proto.school/events) regularly, offering you the opportunity to complete our interactive tutorials with the support of local mentors.
