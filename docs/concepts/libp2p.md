@@ -21,7 +21,7 @@ libp2p's superpower is its modularity. Learn more in ProtoSchool's [Introduction
 
 A [peer-to-peer network](https://docs.libp2p.io/reference/glossary/#peer-to-peer-p2p) is one in which the players, known as _"peers"_, communicate with each other directly as equal participants. This is in direct contrast to the traditional [client-server model](https://docs.libp2p.io/reference/glossary/#client-server), where a privileged central server may provide services to many client programs on the network. These client programs usually do not communicate with each other; they communicate only with the central server.
 
-Someone using Libp2p for the network layer of their peer-to-peer application is instantly freed up to focus on their own unique tasks, knowing that Libp2p handles a lot of [tasks in a decentralized system](https://hub.packtpub.com/libp2p-the-modular-p2p-network-stack-by-ipfs-for-better-decentralized-computing/). At the same time, they can customize Libp2p regarding key elements like transport, identity, and security. Some applications using Libp2p are [Filecoin](https://filecoin.io/), [Parity](https://www.parity.io/why-libp2p/), and [OpenBazaar](https://www.openbazaar.org/).
+Someone using Libp2p for the network layer of their peer-to-peer application is instantly freed up to focus on their own unique tasks, knowing that Libp2p handles a lot of [tasks in a decentralized system](https://hub.packtpub.com/libp2p-the-modular-p2p-network-stack-by-ipfs-for-better-decentralized-computing/). At the same time, they can customize Libp2p regarding key elements like transport, identity, and security. Some applications using Libp2p are [Filecoin](https://filecoin.io/), and [Parity](https://www.parity.io/why-libp2p/).
 
 ### Features of Libp2p
 
