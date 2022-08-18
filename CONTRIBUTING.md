@@ -115,7 +115,7 @@ You can learn more about [pull requests on GitHub](https://help.github.com/en/gi
 
 ### Discuss
 
-You can also contribute to the project without specifically writing content for the site. Many discussions are happening all around the project. Protocol Labs, and by extension, IPFS, is a collaborative company that relies heavily on the community. We need your opinions and input! If you have an idea about a topic or want to weigh in on a discussion, feel free to have your say either on [GitHub](https://github.com/ipfs/ipfs-docs/issues) or on the [IPFS forums](https://discuss.ipfs.io/).
+You can also contribute to the project without specifically writing content for the site. Many discussions are happening all around the project. Protocol Labs, and by extension, IPFS, is a collaborative company that relies heavily on the community. We need your opinions and input! If you have an idea about a topic or want to weigh in on a discussion, feel free to have your say either on [GitHub](https://github.com/ipfs/ipfs-docs/issues) or on the [IPFS forums](https://discuss.ipfs.tech/).
 
 ## Tools
 
@@ -143,4 +143,4 @@ This app helps to simplify your writing. It's easy to ramble on while writing, w
 
 ## Just Ask
 
-After all that, if you're still not sure how to contribute to this project just post a question on the [IPFS forum](https://discuss.ipfs.io/), or join us on IRC at `#ipfs`.
+After all that, if you're still not sure how to contribute to this project just post a question on the [IPFS forum](https://discuss.ipfs.tech/), or join us on IRC at `#ipfs`.

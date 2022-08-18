@@ -18,7 +18,7 @@ CIDs are based on the content’s [cryptographic hash](hashing.md). That means:
 - Any difference in the content will produce a different CID and
 - The same content added to two different IPFS nodes using the same settings will produce _the same CID_.
 
-IPFS uses the `sha-256` hashing algorithm by default, but there is support for many other algorithms. The [Multihash](https://multiformats.io/multihash/) project represents the work for this, with the aim of future-proofing applications' use of hashes and allowing multiple hash functions to coexist. (If you're curious about how hash types in IPFS are decided upon, you may wish to keep an eye on [this forum discussion](https://discuss.ipfs.io/t/who-decides-what-hashing-algorithms-ipfs-allows/6742).)
+IPFS uses the `sha-256` hashing algorithm by default, but there is support for many other algorithms. The [Multihash](https://multiformats.io/multihash/) project represents the work for this, with the aim of future-proofing applications' use of hashes and allowing multiple hash functions to coexist. (If you're curious about how hash types in IPFS are decided upon, you may wish to keep an eye on [this forum discussion](https://discuss.ipfs.tech/t/who-decides-what-hashing-algorithms-ipfs-allows/6742).)
 
 ## Identifier formats
 

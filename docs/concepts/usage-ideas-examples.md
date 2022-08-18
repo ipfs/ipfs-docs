@@ -278,29 +278,29 @@ The [Ceramic Protocol](https://www.ceramic.network/) is another proposition for 
 
 ## Non-implemented use cases
 
-Here is a non-exhaustive list of use cases that were not implemented yet. Pick up the challenge yourself or follow your own idea! If you want to discuss your idea or have some problems, head to [the IPFS forum](https://discuss.ipfs.io) or [the IPFS help page](https://ipfs.io/help/).
+Here is a non-exhaustive list of use cases that were not implemented yet. Pick up the challenge yourself or follow your own idea! If you want to discuss your idea or have some problems, head to [the IPFS forum](https://discuss.ipfs.tech) or [the IPFS help page](https://ipfs.io/help/).
 
-- [Coordinate activists groups without fear from censorship](https://discuss.ipfs.io/t/building-a-secure-activist-membership-management-tool-on-ipfs/5702/3)
+- [Coordinate activists groups without fear from censorship](https://discuss.ipfs.tech/t/building-a-secure-activist-membership-management-tool-on-ipfs/5702/3)
 - [Manage the knowledge of the whole world](https://www.underlay.org/)
-- [Build a giant database for genetic data](https://discuss.ipfs.io/t/addressing-petabytes-of-genetic-data-with-ipfs/1471/10)
-- [Create a mesh network on IPFS](https://discuss.ipfs.io/t/mozilla-nsf-a-2-million-prize-to-decentralize-the-web/654)
+- [Build a giant database for genetic data](https://discuss.ipfs.tech/t/addressing-petabytes-of-genetic-data-with-ipfs/1471/10)
+- [Create a mesh network on IPFS](https://discuss.ipfs.tech/t/mozilla-nsf-a-2-million-prize-to-decentralize-the-web/654)
 - [Bring additional services to your existing mesh network](https://www.nycmesh.net)
 - Serverless online gaming
-- [Put Hadoop on IPFS](https://discuss.ipfs.io/t/minerva-build-the-hadoop-hive-on-ipfs/5832)
+- [Put Hadoop on IPFS](https://discuss.ipfs.tech/t/minerva-build-the-hadoop-hive-on-ipfs/5832)
 - Add more transports to IPFS for mobile usage ([here](https://github.com/ggerganov/wave-share#wave-share) or [here](https://github.com/RTradeLtd/libp2p-lora-transport) )
 - [Cohost the site you visit](https://github.com/ipfs-shipyard/cohosting)
-- [Distributed cards for spaced learning](https://discuss.ipfs.io/t/check-out-my-flashcard-app-that-uses-the-ipfs/6543/2)
+- [Distributed cards for spaced learning](https://discuss.ipfs.tech/t/check-out-my-flashcard-app-that-uses-the-ipfs/6543/2)
 - [Unblock the offline-first use cases](http://offlinefirst.org/casestudies/)
 - [Build a distributed OS](https://github.com/ipfs/ipfs/issues/247)
 - [Distribute the medical data](https://github.com/ipfs/notes/issues/292)
 - Improve information sharing during disaster recovery
 - [Get a grant for your help or propose an open grand](https://github.com/ipfs/devgrants)
 - Make an interactive app for your classroom
-- [Build a distributed social media](https://discuss.ipfs.io/t/social-media-architecture-with-ipfs/4625/58)
-- [Decentralize peer-reviewing of scholar papers](https://discuss.ipfs.io/t/ipfs-implementation-for-publication-of-decentralized-peer-review/7692)
-- [Help to host NASA databases](https://discuss.ipfs.io/t/nasas-earthdata-cloud/7528)
-- [Help to host LibGen materials](https://discuss.ipfs.io/t/torrent-site-of-scientific-papers-needs-help/6815)
-- [Make a manga reader](https://discuss.ipfs.io/t/manga-reader-over-ipfs/4832)
-- [Make a Gif-sharing platform](https://discuss.ipfs.io/t/a-vine-clone-built-using-ipfs/3337)
+- [Build a distributed social media](https://discuss.ipfs.tech/t/social-media-architecture-with-ipfs/4625/58)
+- [Decentralize peer-reviewing of scholar papers](https://discuss.ipfs.tech/t/ipfs-implementation-for-publication-of-decentralized-peer-review/7692)
+- [Help to host NASA databases](https://discuss.ipfs.tech/t/nasas-earthdata-cloud/7528)
+- [Help to host LibGen materials](https://discuss.ipfs.tech/t/torrent-site-of-scientific-papers-needs-help/6815)
+- [Make a manga reader](https://discuss.ipfs.tech/t/manga-reader-over-ipfs/4832)
+- [Make a Gif-sharing platform](https://discuss.ipfs.tech/t/a-vine-clone-built-using-ipfs/3337)
 - An interactive P2P application working in crowded events such as festivals
-- [Ethereum/Solidity Smart Contract CI Toolchain on IPFS](https://discuss.ipfs.io/t/ethereum-solidity-smart-contract-ci-toolchain-on-ipfs-wip/1780)
+- [Ethereum/Solidity Smart Contract CI Toolchain on IPFS](https://discuss.ipfs.tech/t/ethereum-solidity-smart-contract-ci-toolchain-on-ipfs-wip/1780)

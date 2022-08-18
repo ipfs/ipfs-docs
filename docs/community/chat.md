@@ -21,4 +21,4 @@ Join [Filecoin slack](https://filecoin.io/slack) and join the bridged #ipfs chan
 
 ## Forums
 
-For longer-lived discussions and for support, please use the discussion forums at [https://discuss.ipfs.io](https://discuss.ipfs.io) instead! It’s easy for complex discussions to get lost in a sea of new messages on chat, and posting longer discussions and support requests on the forums help future visitors, too.
+For longer-lived discussions and for support, please use the discussion forums at [https://discuss.ipfs.tech](https://discuss.ipfs.tech) instead! It’s easy for complex discussions to get lost in a sea of new messages on chat, and posting longer discussions and support requests on the forums help future visitors, too.

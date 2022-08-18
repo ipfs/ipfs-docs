@@ -41,7 +41,7 @@ If you have never contributed to an open-source project before or just need a re
 
 IPFS already has lots of users and curious people experimenting and using IPFS in their applications. These users sometimes get stuck or have questions that need answering. If you've contributed something with code or documentation, the chances are that you can probably help a lot of people with their questions.
 
-The [IPFS forum](https://discuss.ipfs.io/) is the best place to go if you're looking for support.
+The [IPFS forum](https://discuss.ipfs.tech/) is the best place to go if you're looking for support.
 
 ## Testing
 
@@ -74,7 +74,7 @@ Get started by looking at our awesome-ipfs list. Build anything you think is mis
 - [ipfs/awesome-ipfs](https://github.com/ipfs/awesome-ipfs)
 - [ipfs/notes](https://github.com/ipfs/notes)
 - [ipfs/apps](https://github.com/ipfs/apps)
-- [IPFS forum](https://discuss.ipfs.io/)
+- [IPFS forum](https://discuss.ipfs.tech/)
 
 ## Protocol Design
 

@@ -17,7 +17,7 @@ No matter your area of specialty or level of expertise, there are many [ways to 
 
 ## IPFS forums
 
-The official [IPFS forums](https://discuss.ipfs.io/) are the primary home of IPFS-related discussion. Join the conversation on [https://discuss.ipfs.io](https://discuss.ipfs.io) for everything from technical questions, project brainstorming, talk on IPFS use cases, and more.
+The official [IPFS forums](https://discuss.ipfs.tech/) are the primary home of IPFS-related discussion. Join the conversation on [https://discuss.ipfs.tech](https://discuss.ipfs.tech) for everything from technical questions, project brainstorming, talk on IPFS use cases, and more.
 
 ## Chat
 
