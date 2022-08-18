@@ -19,7 +19,7 @@ Want to build decentralized applications and store your application data on IPFS
 
 ## IPFS as infrastructure
 
-Planning to set up several IPFS nodes within one network? You'll want to take a look at installing [IPFS Cluster →](./server-infrastructure.md)
+Planning to set up several IPFS nodes within one network? You'll want to take a look at installing [IPFS Cluster →](./ipfs-cluster.md)
 
 ## Surf the decentralized web
 

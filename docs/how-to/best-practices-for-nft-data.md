@@ -170,12 +170,12 @@ Here's a quick recap of our recommendations:
 [docs-mint-nfts]: /how-to/mint-nfts-with-ipfs
 [docs-minty-how-ipfs-helps]: /how-to/mint-nfts-with-ipfs/#how-ipfs-helps
 [docs-persistence]: /concepts/persistence/
-[docs-server-infra]: /install/server-infrastructure/
+[docs-server-infra]: /install/ipfs-cluster/
 [docs-gateway]: /concepts/ipfs-gateway/
 
 [docs-multibase]: https://github.com/multiformats/multibase
 
-[ipfs-cluster]: https://cluster.ipfs.io
+[ipfs-cluster]: https://ipfscluster.io/
 
 [protoschool-cid]: https://proto.school/content-addressing
 [eip-721]: https://eips.ethereum.org/EIPS/eip-721

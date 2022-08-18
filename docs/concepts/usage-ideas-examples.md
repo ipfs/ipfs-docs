@@ -80,7 +80,7 @@ There is an existing [IPFS devgrant](https://github.com/ipfs/devgrants) to host 
 
 ### Help host important data
 
-Thanks to recent improvements with IPFS Cluster, you can call for help to store your data without having to trust other nodes won't alter the data. With [collaborative mode](https://cluster.ipfs.io/documentation/collaborative), you can [replicate Pacman packages or COVID-19-related papers](https://collab.ipfscluster.io/) without needing to know the intricacies of IPFS.
+Thanks to recent improvements with IPFS Cluster, you can call for help to store your data without having to trust other nodes won't alter the data. With [collaborative mode](https://ipfscluster.io/documentation/collaborative), you can [replicate Pacman packages or COVID-19-related papers](https://collab.ipfscluster.io/) without needing to know the intricacies of IPFS.
 
 ### Video live-streaming
 

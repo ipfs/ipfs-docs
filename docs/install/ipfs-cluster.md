@@ -1,16 +1,18 @@
 ---
-title: Server infrastructure
+title: IPFS Cluster
 description: IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pin-set distributed among multiple peers. Learn how to install it here.
 current-ipfs-cluster-version: v1.0.2
 ---
 
-# Server infrastructure
+# IPFS Cluster
 
-If you want to install IPFS in a server environment and offer IPFS as a service, you should look at IPFS Cluster. IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pin-set distributed among multiple peers. This makes it significantly easier to manage multiple IPFS nodes and ensure that data is available across an internal network.
+If you want to install IPFS in a server environment and offer IPFS as a service, you should look at [IPFS Cluster](https://ipfscluster.io/) as a way to scale your IPFS deployment beyond a single IPFS daemon. IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pin-set distributed among multiple peers. This makes it significantly easier to manage multiple IPFS nodes and ensure that data is available across an internal network.
+
+@[youtube](-SYDlid7Nqs)
 
 ## Create a local cluster
 
-To see if IPFS Cluster is suitable for your project, follow this quick start guide and spin up a local IPFS Cluster instance. At the end of this guide, you will have a solid understanding of how IPFS Cluster is set up and how to interact with it. If you'd rather create a production-ready cluster, take a look at the [official IPFS Cluster documentation →](https://cluster.ipfs.io/)
+To see if IPFS Cluster is suitable for your project, follow this quick start guide and spin up a local IPFS Cluster instance. At the end of this guide, you will have a solid understanding of how IPFS Cluster is set up and how to interact with it. If you'd rather create a production-ready cluster, take a look at the [official IPFS Cluster documentation](https://ipfscluster.io/)
 
 ### Prerequisites
 
@@ -157,4 +159,4 @@ The terminal running the `ipfs-cluster-ctl` daemon will close any open connectio
 
 ## Next steps
 
-If you want to delve deeper into IPFS Cluster, check out the project's documentation at [cluster.ipfs.io →](https://cluster.ipfs.io/)
+If you want to delve deeper into IPFS Cluster, check out the project's documentation at [ipfscluster.io](https://ipfscluster.io/)

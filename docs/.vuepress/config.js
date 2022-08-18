@@ -77,7 +77,7 @@ module.exports = {
               'install/ipfs-companion',
               'install/command-line',
               ['install/ipfs-updater', 'Updater'],
-              'install/server-infrastructure',
+              'install/ipfs-cluster',
               'install/recent-releases'
             ]
           },

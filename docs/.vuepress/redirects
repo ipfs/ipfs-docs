@@ -58,3 +58,4 @@
 /reference/api/http/ /reference/http/api
 /reference/go/overview/ /reference/go/api
 /reference/js/overview/ /reference/js/api
+/install/server-infrastructure /install/ipfs-cluster
