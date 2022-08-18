@@ -28,6 +28,12 @@ The [Brave](https://brave.com/) web browser has [built-in IPFS support](https://
 
 A [dead drop](https://deaddrops.com/) is a drive or another storage device that is physically immobilized in a public location for people to pick up and deposit files. There is now an IPFS version, thanks to the [IPFS Dead Drop project](https://github.com/c-base/ipfs-deaddrop).
 
+## Governance
+
+### Voting and governance
+
+[Snapshot](https://snapshot.org/) is a voting platform for Web3 projects, DAOs, and communities that uses IPFS as its main storage layer. Snapshot uses IPFS to store proposals and user votes using a technique known as ‘off-chain’ voting, where the cryptographic signatures proving user votes are persisted to IPFS instead of being stored on the blockchain.
+
 ## Collaborate
 
 Let IPFS coordinate the flow of data between you and your colleagues, even when working offline or on a local network.
