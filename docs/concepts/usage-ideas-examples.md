@@ -110,7 +110,7 @@ The developers of the [Nix package manager](https://nixos.org/) are working on i
 
 ### Hosting software containers
 
-Netflix is on its way to using IPFS to [synchronize their Docker containers worldwide](https://blog.ipfs.io/2020-02-14-improved-bitswap-for-container-distribution/). Since each node fetches them from the fastest peers they know, synchronization is substantially faster than traditional synchronization methods.
+Netflix is on its way to using IPFS to [synchronize their Docker containers worldwide](https://blog.ipfs.tech/2020-02-14-improved-bitswap-for-container-distribution/). Since each node fetches them from the fastest peers they know, synchronization is substantially faster than traditional synchronization methods.
 
 ### Efficient network factories
 
