@@ -170,7 +170,7 @@ Here's a quick recap of our recommendations:
 [docs-mint-nfts]: /how-to/mint-nfts-with-ipfs
 [docs-minty-how-ipfs-helps]: /how-to/mint-nfts-with-ipfs/#how-ipfs-helps
 [docs-persistence]: /concepts/persistence/
-[docs-server-infra]: /install/ipfs-cluster/
+[docs-server-infra]: /install/server-infrastructure/
 [docs-gateway]: /concepts/ipfs-gateway/
 
 [docs-multibase]: https://github.com/multiformats/multibase
