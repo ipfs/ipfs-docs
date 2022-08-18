@@ -208,7 +208,7 @@ However, if you want your IPFS data to remain accessible when your local IPFS no
 
 ### Collaborative clusters
 
-IPFS collaborative clusters are groups of IPFS nodes that collaboratively pin all content added to the IPFS Cluster by one or many trusted peers. You can learn more about collaborative clusters, including how to set up a cluster yourself, from [cluster.ipfs.io](https://cluster.ipfs.io/documentation/collaborative/setup/)
+IPFS collaborative clusters are groups of IPFS nodes that collaboratively pin all content added to the IPFS Cluster by one or many trusted peers. You can learn more about collaborative clusters, including how to set up a cluster yourself, from [ipfscluster.io](https://ipfscluster.io/documentation/collaborative/setup/)
 
 ### Pinning services
 

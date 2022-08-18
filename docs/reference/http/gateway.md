@@ -131,7 +131,7 @@ Special types of gateway which leverage `Host` header in addition to URL `pathna
 
 ::: tip
 
-If you are a gateway operator or an implementer, consider joining [Gateway Operators Forum](https://discuss.ipfs.io/c/31)
+If you are a gateway operator or an implementer, consider joining [Gateway Operators Forum](https://discuss.ipfs.tech/c/31)
 
 :::
 

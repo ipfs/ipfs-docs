@@ -284,12 +284,12 @@ module.exports = {
                     'IPFS newsletter'
                   ],
                   '/community/contribute/ways-to-contribute',
-                  ['https://discuss.ipfs.io/', 'IPFS forums'],
+                  ['https://discuss.ipfs.tech/', 'IPFS forums'],
                   '/community/chat',
                   ['https://proto.school/events', 'ProtoSchool workshops'],
                   ['https://www.meetup.com/members/249142444/', 'Meetups'],
                   '/community/social-media',
-                  ['https://awesome.ipfs.io', 'Awesome IPFS'],
+                  ['https://awesome.ipfs.tech', 'Awesome IPFS'],
                   [
                     'https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqqsew',
                     'YouTube'
