@@ -42,7 +42,7 @@ If there are situations in which you know you'll need to remain private but stil
 By default, an IPFS node announces to the rest of the network that it is willing to share every CID in its cache (in other words, _reproviding_ content that it's retrieved from other nodes), as well as CIDs that you've explicitly pinned or added to MFS to make them consistently available. If you'd like to disable this behavior, you can do so in the [reprovider settings](https://github.com/ipfs/kubo/blob/master/docs/config.md#reprovider) of your node's config file.
 
 Changing your reprovider settings to "pinned" or "roots" will keep your node from announcing itself as a provider of non-pinned CIDs that are in your cache — so you can still use pinning to provide other nodes with content that you care about and want to make sure continues to be available over IPFS.
-The most private option is "roots", as it will only announce "direct" pins instead of "indirect" pins, We recommend choosing the option most appropiate for your needs.
+The most private option is "roots", as it will only announce "direct" pins instead of "indirect" pins, We suggest that you choose the option most appropriate for your needs.
 
 ### Using a public gateway
 
