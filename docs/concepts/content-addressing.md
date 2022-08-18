@@ -1,5 +1,5 @@
 ---
-title: Content addressing
+title: Content addressing and CIDs
 description: Learn about how content addressing works and how content identifiers, or CIDs, play a crucial role in IPFS.
 ---
 
