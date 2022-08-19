@@ -16,7 +16,12 @@ _&mdash; Fabien, Founder and CEO, Snapshot Labs_
 ::: right
 <img src="./images/case-studies/logo-snapshot.png" alt="Snapshot logo" width="200">
 :::
-[Snapshot](https://snapshot.org/#/) is an open-source **voting platform** for Web3 projects, DAOs, and communities that uses IPFS as its main storage layer.
+
+In this case study, you'll learn how [Snapshot](https://snapshot.org/) works and how it uses IPFS to lower the barriers to entry for voting and community governance.
+
+## What is Snapshot
+
+Snapshot is an open-source **voting platform** for Web3 projects, DAOs, and communities that uses IPFS as its main storage layer.
 Snapshot works with projects deployed to Ethereum and EVM compatible chains and allows the use of governance tokens as a means to distribute voting power and eligibility.
 
 Snapshot is unique in its use of IPFS to store proposals and user votes using a technique known as ‘off-chain’ voting, where the cryptographic signatures proving user votes are persisted to IPFS instead of being stored on the blockchain.
@@ -64,13 +69,13 @@ For example, the ENS project requires holding the ENS token to vote on proposals
 
 ### Participants vote on proposals
 
-Once a space is created, voting happens through **proposals**. A proposal describes the issue of a vote and also has a voting system that determines how voters can select choices and how its results will be calculated.
+Once a space is created, voting happens through **proposals**. A proposal describes the issue of a vote and also has a voting system that determines the choices voters can select, and how the results will be calculated.
 
 Importantly, each proposal includes a **Snapshot block number** pointing to an Ethereum (or any other supported blockchain) block number. The block number is the snapshot where the balance of voters will be counted. This prevents manipulation by the temporary acquisition of tokens after a proposal is made.
 
-## Voting systems are used to calculate the results of a vote
+### Calculating results
 
-In addition to strategies, each proposal employs one of the following **voting systems**:
+To calculate the results of a vote, each proposal employs one of the following **voting systems**:
 
 - Single choice
 - Approval voting, where a voter can select multiple choices
@@ -78,7 +83,7 @@ In addition to strategies, each proposal employs one of the following **voting s
 - Weighted voting
 - [and others](https://docs.snapshot.org/proposals/voting-types)
 
-These voting systems are used to calculate the results of a vote based on the voting power. For example, the [following proposal](https://snapshot.org/#/decrypt-media.eth/proposal/QmPDpQSZuokqGpzqtPbmLp1LTqDjbhd6vCeKaSmqEXM9KH)) in the [Decrypt Media](https://decrypt.co/) pace, granted Decrypt DAO members who held Decrypt NFTs the right to vote on what content they will write next.
+These voting systems are used to calculate the results of a vote based on the voting power. For example, the [following proposal](https://snapshot.org/#/decrypt-media.eth/proposal/QmPDpQSZuokqGpzqtPbmLp1LTqDjbhd6vCeKaSmqEXM9KH)) in the [Decrypt Media](https://decrypt.co/) space, grants Decrypt NFT holders the right to choose a single topic for the content they will write next. Voting power for this proposal is relative to the number of Decrypt NFTs held by the voter at block number `12,811,388`.
 
 ![Decrypt content proposal](./images/case-studies/img-snapshot-decrypt-proposal.png)
 
@@ -106,7 +111,7 @@ pineapple.js exposes a `pin` method that takes a JSON object and sends it to the
 
 ### Open access via IPFS Gateways
 
-After data is added to the IPFS network via pinning services, it is also made available for viewing by users via an IPFS Gateway. Links to the signed messages for [proposals](https://snapshot.mypinata.cloud/ipfs/bafkreigva2y23hnepirhvup2widmawmjiih3kvvuaph3a7mrivkiqcvuki) and [votes](https://snapshot.mypinata.cloud/ipfs/bafkreibozdzgw5y5piburro6pxspw7yjcdaymj3fyqjl2rohsthnqfwc6e) are integrated into the Snapshot UI.
+After data is added to the IPFS network via pinning services, it is also made available for viewing by users via an [IPFS Gateway](/concepts/ipfs-gateway/). Links to the signed messages for [proposals](https://snapshot.mypinata.cloud/ipfs/bafkreigva2y23hnepirhvup2widmawmjiih3kvvuaph3a7mrivkiqcvuki) and [votes](https://snapshot.mypinata.cloud/ipfs/bafkreibozdzgw5y5piburro6pxspw7yjcdaymj3fyqjl2rohsthnqfwc6e) are integrated into the Snapshot UI.
 
 ## IPFS benefits
 
