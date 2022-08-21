@@ -44,6 +44,7 @@ By default, an IPFS node announces to the rest of the network that it is willing
 Changing your reprovider settings to "pinned" or "roots" will keep your node from announcing itself as a provider of non-pinned CIDs that are in your cache — so you can still use pinning to provide other nodes with content that you care about and want to make sure continues to be available over IPFS.
 
 **The most private option is "roots"**, as it will only announce "direct" or "recursive" pins and not "indirect" pins, however, please, keep in mind that some applications like *Bitswap* will still respond to requests for indirect pins if the CID is present in the wantlist.
+**Either way, you should assume that your CIDs are public information, regardless of the option chosen.**
 
 ### Using a public gateway
 
