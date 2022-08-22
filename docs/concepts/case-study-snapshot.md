@@ -8,7 +8,7 @@ description: Explore how the leading decentralized gasless voting platform Snaps
 ::: callout
 **"IPFS is the standard for storing data in a verifiable way that is fully transparent, thereby allowing us to build openly auditable governance systems"**
 
-_&mdash; Fabien, Founder and CEO, Snapshot Labs_
+_&mdash; [Fabien](https://twitter.com/bonustrack87), Founder and CEO, Snapshot Labs_
 :::
 
 ## Overview
@@ -45,7 +45,11 @@ In essence, Snapshot allows projects and DAOs aiming for decentralization to pol
 
 ## The story
 
-Snapshot was originally built as a side project while Fabien, Snapshot's founder, was working for the automated market maker Balancer. The goal was to create a "simple voting platform”. Fabien realized his gas-efficient implementation using IPFS could be used by other projects.
+Snapshot was originally built while Fabien, Snapshot's founder, was working for the automated market maker [Balancer](https://balancer.fi/). The goal was to create a voting platform that would be flexible enough to grant BAL tokens within [Balancer pools](https://docs.balancer.fi/products/balancer-pools) voting power. However, doing this on-chain turned out to be too computationally heavy to be feasible. That's when he realized that doing it off-chain with IPFS could provide them with the flexibility needed.
+
+While free ("gassless") voting was not one of the initial requirements for Balancer, it came as a serendipitous bonus of the off-chain design with IPFS.
+
+Two weeks later, Fabien began generalizing his gas-efficient implementation using IPFS so that could be used by projects and DAOs beyond Balancer – and Snapshot was born.
 
 After open-sourcing an early version of Snapshot, it was quickly adopted by early DeFi projects like Yam and Yearn and has since taken over the governance landscape.
 
@@ -91,11 +95,11 @@ These voting systems are used to calculate the results of a vote based on the vo
 
 Snapshot uses IPFS to make the whole voting process fully transparent and auditable. Every space, proposal, vote, and user action is added to IPFS and has a [content identifier (CID)](/concepts/content-addressing/).
 
-Additionally, the Snapshot UI is also [available on IPFS](https://bafybeihzjoqahhgrhnsksyfubnlmjvkt66aliodeicywwtofodeuo2icde.ipfs.dweb.link/).
+Additionally, the Snapshot UI is also [available on IPFS](https://bafybeihzjoqahhgrhnsksyfubnlmjvkt66aliodeicywwtofodeuo2icde.ipfs.dweb.link/) and linked using the ENS name `shot.eth` which is accessible via any ENS resolution service, e.g. [shot.eth.limo](https://shot.eth.limo/), and [shot.eth.link](https://shot.eth.link/) (see the `x-ipfs-path` and `X-Ipfs-Roots` headers when making an HTTP request.)
 
 To understand how Snapshot uses IPFS, it's useful to understand how the whole architecture was designed. Snapshot is a hybrid app combining design patterns common to Web2 and Web3 apps, and is based on the three-tier architecture:
 
-- **Presentation tier:** [The Snapshot UI](https://github.com/snapshot-labs/snapshot). The UI is also available over IPFS (see the `x-ipfs-path` header when making an HTTP request to `https://snapshot.org`.)
+- **Presentation tier:** [The Snapshot UI](https://github.com/snapshot-labs/snapshot).
 - **Logic tier:** The [snapshot-hub](https://github.com/snapshot-labs/snapshot-hub) node.js server that exposes a GraphQL API.
 - **Data tier:** A combination of a MySQL database for indexing and querying and IPFS as its storage layer for space configuration, proposals, user actions, and votes.
 
