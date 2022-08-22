@@ -175,7 +175,7 @@ Here's a quick recap of our recommendations:
 
 [docs-multibase]: https://github.com/multiformats/multibase
 
-[ipfs-cluster]: https://cluster.ipfs.io
+[ipfs-cluster]: https://ipfscluster.io/
 
 [protoschool-cid]: https://proto.school/content-addressing
 [eip-721]: https://eips.ethereum.org/EIPS/eip-721

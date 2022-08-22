@@ -17,7 +17,7 @@ A modular network stack, libp2p enables you to run your network applications fre
 
 ## IPFS Cluster
 
-IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating and tracking a global pinset distributed among multiple peers. Learn more at [https://cluster.ipfs.io/](https://cluster.ipfs.io/).
+IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating and tracking a global pinset distributed among multiple peers. Learn more at [https://ipfscluster.io/](https://ipfscluster.io/).
 
 ## DNSLink
 

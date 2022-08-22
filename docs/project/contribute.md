@@ -32,7 +32,7 @@ The best place to get started is by looking through the GitHub readme and issues
 
 IPFS already has lots of users and curious people experimenting and using IPFS in their applications. These users sometimes get stuck or have questions that need answering. If you’ve contributed something with code or documentation, chances are that you can probably help a lot of people with their questions.
 
-We do most support via the forum we have at [https://discuss.ipfs.io/](https://discuss.ipfs.io/).
+We do most support via the forum we have at [https://discuss.ipfs.tech/](https://discuss.ipfs.tech/).
 
 ## Testing
 
@@ -63,7 +63,7 @@ Get started by looking at our awesome-ipfs list. Build anything you think is mis
 - [https://github.com/ipfs/awesome-ipfs](https://github.com/ipfs/awesome-ipfs)
 - [https://github.com/ipfs/notes](https://github.com/ipfs/notes)
 - [https://github.com/ipfs/apps](https://github.com/ipfs/apps)
-- [https://discuss.ipfs.io/](https://discuss.ipfs.io/)
+- [https://discuss.ipfs.tech/](https://discuss.ipfs.tech/)
 
 ## Protocol design
 

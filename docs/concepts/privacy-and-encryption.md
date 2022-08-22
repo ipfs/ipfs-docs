@@ -35,7 +35,7 @@ While a long string of letters and numbers may not be a "Johnny Appleseed" level
 
 ## Enhancing your privacy
 
-If there are situations in which you know you'll need to remain private but still want to use IPFS, one of the approaches outlined below may help. And don't forget, you can always discuss privacy and get others' input or ideas in the official [IPFS forums](https://discuss.ipfs.io).
+If there are situations in which you know you'll need to remain private but still want to use IPFS, one of the approaches outlined below may help. And don't forget, you can always discuss privacy and get others' input or ideas in the official [IPFS forums](https://discuss.ipfs.tech).
 
 ### Controlling what you share
 
