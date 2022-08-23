@@ -5,9 +5,19 @@ description: Learn about the InterPlanetary Name System (IPNS) and how it can be
 
 # InterPlanetary Name System (IPNS)
 
-IPFS uses [content-based addressing](content-addressing.md); it creates an address of a file based on data contained within the file. If you were to share an IPFS address such as `/ipfs/QmbezGequPwcsWo8UL4wDF6a8hYwM1hmbzYv2mnKkEWaUp` with someone, you would need to give the person a new link every time you update the content.
+## Mutability in IPFS
 
-The InterPlanetary Name System (IPNS) solves this issue by creating an address that can be updated.
+[Content addressing](content-addressing.md) in IPFS is by nature *immutable*:  when you add a file to IPFS, it creates an address of a file based on data contained within it. Changing a file changes its hash, and consequently its CID which is used as an address.
+
+Yet, there are many situations where **mutable pointers** are useful as a complement to immutability, for example, when publishing a website that frequently changes, it would be impractical to share a new CID every time you update the website. Using mutable pointers, you can share the address of the pointer, and update the pointer every time you publish a change.
+
+The InterPlanetary Name System (IPNS) enables the creation of **self-certifying mutable pointers** to a content path.
+
+Self-certifying means that an IPNS recrod contains all the information necessary to certify its authenticity. IPNS achieves this using public and private key pairs, where the name of the mutable pointer is derived from the public key that can verify the pointer.
+
+For example, [`](https://cid.ipfs.tech/#k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l)
+
+## How IPNS works
 
 A _name_ in IPNS is the [hash](hashing.md) of a public key. It is associated with a record containing information about the hash it links to that is signed by the corresponding private key. New records can be signed and published at any time.
 
