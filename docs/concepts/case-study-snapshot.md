@@ -13,13 +13,13 @@ _&mdash; [Fabien](https://twitter.com/bonustrack87), Founder and CEO, Snapshot L
 
 ## Overview
 
-::: right
-<img src="./images/case-studies/logo-snapshot.png" alt="Snapshot logo" width="200">
-:::
-
 In this case study, you'll learn how [Snapshot](https://snapshot.org/) works and how it uses IPFS to lower the barriers to entry for voting and community governance.
 
 ## What is Snapshot
+
+::: right
+<img src="./images/case-studies/logo-snapshot.png" alt="Snapshot logo" width="200">
+:::
 
 Snapshot is an open-source **voting platform** for Web3 projects, DAOs, and communities that uses IPFS as its main storage layer.
 Snapshot works with projects deployed to Ethereum and EVM compatible chains and allows the use of governance tokens as a means to distribute voting power and eligibility.
@@ -133,7 +133,7 @@ Moreover, IPFS has several properties that enable that mission:
 
 ## Snapshot & IPFS: the future
 
-As Snapshot continues to evolve, the team looks forward to decentralizing its tech stack so that anyone can run a node, reducing the dependency on the Snapshot Node.js severs. Thanks to IPFS's integral role in Snapshot, a significant part of their data layer is already decentralized.
+As Snapshot continues to evolve, the team looks forward to decentralizing its tech stack so that anyone can run a node, reducing the dependency on the Snapshot Node.js servers. Thanks to IPFS's integral role in Snapshot, a significant part of their data layer is already decentralized.
 
 ::: callout
 **"Anytime we need to store data in Snapshot, we use IPFS so that users get full transparency and the ability to also take an active part in replicating that data."**
