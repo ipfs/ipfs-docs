@@ -7,19 +7,51 @@ description: Learn about the InterPlanetary Name System (IPNS) and how it can be
 
 ## Mutability in IPFS
 
-[Content addressing](content-addressing.md) in IPFS is by nature *immutable*:  when you add a file to IPFS, it creates an address of a file based on data contained within it. Changing a file changes its hash, and consequently its CID which is used as an address.
+[Content addressing](content-addressing.md) in IPFS is by nature _immutable_: when you add a file to IPFS, it creates a hash from the data contained in it. Changing a file changes its hash, and consequently its CID which is used as an address.
 
-Yet, there are many situations where **mutable pointers** are useful as a complement to immutability, for example, when publishing a website that frequently changes, it would be impractical to share a new CID every time you update the website. Using mutable pointers, you can share the address of the pointer, and update the pointer every time you publish a change.
+Yet, there are many situations where **mutable pointers** are useful as a complement to immutability, for example, when publishing a website that frequently changes. It would be impractical to share a new CID every time you update the website. With mutable pointers, you can share the address of the pointer once, and update the pointer – to the new CID – every time you publish a change.
 
-The InterPlanetary Name System (IPNS) enables the creation of **self-certifying mutable pointers** to a content path.
+The InterPlanetary Name System (IPNS) enables the creation of such mutable pointers to CIDs and are known as **names** or **IPNS names**. IPNS names can be thought of as links that can be updated over time.
 
-Self-certifying means that an IPNS recrod contains all the information necessary to certify its authenticity. IPNS achieves this using public and private key pairs, where the name of the mutable pointer is derived from the public key that can verify the pointer.
-
-For example, [`](https://cid.ipfs.tech/#k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l)
+> **Note:** Technically, an IPNS name can also point to another IPNS name or DNSLink path. However, it most commonly points to a CID.
 
 ## How IPNS works
 
-A _name_ in IPNS is the [hash](hashing.md) of a public key. It is associated with a record containing information about the hash it links to that is signed by the corresponding private key. New records can be signed and published at any time.
+### Anatomy of an IPNS name
+
+A **name** in IPNS is the [hash](hashing.md) of a public key. It is associated with a [**record**](https://github.com/ipfs/specs/blob/main/IPNS.md#ipns-record) containing the CID it links to and other information such as the expiration, the version number, and a cryptographic signature signed by the corresponding private key. New records can be signed and published at any time by the holder of the private key.
+
+For example, [`k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l`](https://cid.ipfs.tech/#k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l)
+
+The content path that an IPNS name points to, is typically a CID, e.g. `bafybeicklkqcnlvtiscr2hzkubjwnwjinvskffn4xorqeduft3wq7vm`
+
+### IPNS names are self-certifying
+
+IPNS names are self-certifying. This means that an IPNS record contains all the information necessary to certify its authenticity. IPNS achieves this using public and private key pairs:
+
+- Each IPNS name corresponds to a key pair
+- The IPNS name is a hash of the public key
+- The IPNS record contains the public key and signature, allowing anyone to verify that the name was signed by the key holder.
+
+This self-certifying nature gives IPNS several benefits not preset in hierarchical and consensus systems such as DNS, and blockchain identifiers. Notably, IPNS records can come from anywhere, not just a particular service/system, and it is very fast and easy to confirm a record is authentic.
+
+### IPNS is transport agnostic
+
+Thanks to the self-certifying nature of IPNS records, they are not tied to a specific transport protocol. However, in practice, most IPFS implementations will publish and resolve IPNS records using either the [**DHT**](dht.md) or **PubSub**.
+
+Due to the ephemeral nature of the DHT,
+
+
+
+## IPNS in practice
+
+### Consistency vs. availability when publishing IPNS records
+
+### IPNS names can be resolved using IPFS gateways
+
+
+## Example
+
 
 When looking up an IPNS address, use the `/ipns/` prefix:
 
