@@ -46,6 +46,7 @@ Get inspired by usage ideas, explore examples of IPFS implemented in the wild, a
 - [Case study: Fleek](case-study-fleek.md)
 - [Case study: LikeCoin](case-study-likecoin.md)
 - [Case study: Morpheus.Network](case-study-morpheus.md)
+- [Case study: Snapshot](case-study-snapshot.md)
 
 ## Content-addressed storage
 
