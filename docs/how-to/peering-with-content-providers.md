@@ -113,6 +113,13 @@ See [nft.storage/PEERS](https://github.com/nftstorage/nft.storage/blob/main/PEER
 
 See [web3.storage/PEERS](https://github.com/web3-storage/web3.storage/blob/main/PEERS).
 
+### 8api.sh
+
+| Peer ID | Addresses |
+| ------- | --------- |
+|`12D3KooWGASC2jm3pmohEJXUhuStkxDitPgzvs4qMuFPaiD9x1BA`|`/ip4/78.46.108.24`|
+|`12D3KooWRbWZN3GvLf9CHmozq4vnTzDD4EEoiqtRJxg5FV6Gfjmm`|`/ip4/65.109.19.136`|
+
 [dht-explainer]: /concepts/how-ipfs-works/#distributed-hash-tables-dhts
 [cid-explainer]: /concepts/content-addressing/#identifier-formats
 [docs-peering-config]: /how-to/configure-node/#peering
