@@ -11,7 +11,7 @@ description: Learn about the InterPlanetary Name System (IPNS) and how it can be
 
 Yet, there are many situations where **mutable pointers** are useful as a complement to immutability, for example, when publishing a website that frequently changes. It would be impractical to share a new CID every time you update the website. With mutable pointers, you can share the address of the pointer once, and update the pointer – to the new CID – every time you publish a change.
 
-The InterPlanetary Name System (IPNS) enables the creation of such mutable pointers to CIDs and are known as **names** or **IPNS names**. IPNS names can be thought of as links that can be updated over time.
+The InterPlanetary Name System (IPNS) enables the creation of such mutable pointers to CIDs known as **names** or **IPNS names**. IPNS names can be thought of as links that can be updated over time.
 
 > **Note:** Technically, an IPNS name can also point to another IPNS name or DNSLink path. However, it most commonly points to a CID.
 
@@ -21,9 +21,11 @@ The InterPlanetary Name System (IPNS) enables the creation of such mutable point
 
 A **name** in IPNS is the [hash](hashing.md) of a public key. It is associated with a [**record**](https://github.com/ipfs/specs/blob/main/IPNS.md#ipns-record) containing the CID it links to and other information such as the expiration, the version number, and a cryptographic signature signed by the corresponding private key. New records can be signed and published at any time by the holder of the private key.
 
-For example, [`k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l`](https://cid.ipfs.tech/#k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l)
+For example, the following is an IPNS name represented by a CIDv1 of public key: [`k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8`](https://cid.ipfs.tech/#k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8).
 
-The content path that an IPNS name points to, is typically a CID, e.g. `bafybeicklkqcnlvtiscr2hzkubjwnwjinvskffn4xorqeduft3wq7vm`
+Typically
+
+<!-- The content path that an IPNS name points to, is typically a CID, e.g. `bafybeicklkqcnlvtiscr2hzkubjwnwjinvskffn4xorqeduft3wq7vm` -->
 
 ### IPNS names are self-certifying
 
@@ -35,23 +37,61 @@ IPNS names are self-certifying. This means that an IPNS record contains all the 
 
 This self-certifying nature gives IPNS several benefits not preset in hierarchical and consensus systems such as DNS, and blockchain identifiers. Notably, IPNS records can come from anywhere, not just a particular service/system, and it is very fast and easy to confirm a record is authentic.
 
+### IPNS record validity tradeoffs – consistency vs. availability
+
+When setting the `validity` (referred to as [`lifetime` by Kubo](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsrecordlifetime)) field of an IPNS record, you typically need to choose whether you favor **consistency** (short validity period, e.g. 24 hours) or **availability** (long validity period, e.g. 1 month), due to the inherent trade-off between the two.
+
+Consistency means ensuring that users resolve to the latest published IPNS record for the name (with the highest sequence number) at the cost of potentially not being able to resolve.
+
+Availability means resolving to a valid IPNS record, at the cost of potentially resolving to an outdated record.
+
 ### IPNS is transport agnostic
 
-Thanks to the self-certifying nature of IPNS records, they are not tied to a specific transport protocol. However, in practice, most IPFS implementations will publish and resolve IPNS records using either the [**DHT**](dht.md) or **PubSub**.
+The self-certifying nature of IPNS records means that they are not tied to a specific transport protocol. In practice, most IPFS implementations rely on the [**DHT**](dht.md) and **PubSub** to publish and resolve IPNS records.
 
-Due to the ephemeral nature of the DHT,
+There are a few nuanced differences between the **DHT** and **PubSub** to be aware of.
 
+#### IPNS over the DHT
 
+Due to the ephemeral nature of the DHT, records get dropped after 24 hours. This applies to any record in the DHT, irrespective of the `validity` (also referred to as `lifetime`) field in the IPNS record.
+
+Therefore, IPNS records need to be regularly published to the DHT.
+
+By default, Kubo will republish IPNS records to the DHT based on the [`Ipns.RepublishPeriod`] configuration which defaults to 4 hours. Republishing involves two steps:
+
+1. Creating an updated IPNS record with the `sequence` field incremented, the `validity` field set to a timestamp (by default based on `Ipns.RecordLifetime`), and signed with the private key.
+2. Publish the [IPNS record to the DHT](https://docs.ipfs.tech/concepts/dht/#ipns-records)
+
+> Note: See the DHT documentation for more information on the lifecycle of GETs and PUTs of IPNS records.
+
+It's worth noting that publishing and resolving IPNS names using the DHT can be slow. This is because multiple records need to be found to ensure the latest version (record with the highest `sequence`), which involves round trips to multiple nodes.
+
+#### IPNS with PubSub
+
+PubSub improves both publishing and resolving times of IPNS by relying on interested peers for both operations.
+
+TODO: more details here about the **publishing lifecycle** with PubSub
+TODO: more details here about the **resolution lifecycle** works with PubSub
 
 ## IPNS in practice
 
-### Consistency vs. availability when publishing IPNS records
+### Common actions with IPNS
+
+As a user or developer using IPNS for naming, there are three common actions worth understanding:
+
+- Updating/Creating IPNS records
+- Publishing IPNS records
+- Resolving IPNS names
 
 ### IPNS names can be resolved using IPFS gateways
 
+TODO:
+
+
+
+### Third-party providing/publishing w3name
 
 ## Example
-
 
 When looking up an IPNS address, use the `/ipns/` prefix:
 
