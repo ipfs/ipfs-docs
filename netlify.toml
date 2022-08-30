@@ -1,3 +1,3 @@
 [build]
-  publish = ".vuepress/dist"
+  publish = "./docs/.vuepress/dist"
   command = "npm i && npm run docs:build"
