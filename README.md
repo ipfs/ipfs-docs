@@ -145,8 +145,11 @@ Please stay tuned on the steps to translate the documentation.
 
 ## Core members
 
-- [@johnnymatthews](https://github.com/johnnymatthews): Project leadership, organization, and primary contact
+- [@TMoMoreau](https://github.com/TMoMoreau): Primary contact, tech writer(engineering)
+- [@johnnymatthews](https://github.com/johnnymatthews): Project leadership, organization
 - [@cwaring](https://github.com/cwaring): Development support
+- [@2color](https://github.com/2color): Dev Rel, tech writer(ecosystem)
+- [@jennijuju](https://github.com/jennijuju): TPM
 
 ## License
 
