@@ -1,5 +1,5 @@
 ---
-title: "Command-line"
+title: IPFS in Golang
 description: "A simple walkthrough of how to perform basic IPFS operations using the Kubo command-line."
 ---
 

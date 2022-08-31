@@ -7,7 +7,7 @@ description: Developer resources for working in JavaScript with IPFS, the InterP
 
 ## JavaScript libraries
 
-There are two main JavaScript libraries for working with IPFS, `ipfs` and `ipfs-http-client`. Both work in Node.js and modern web browsers. JS-IPFS in Node.js is long-running and supports transports like TCP and UDP along with WebScoekts and WebRTC, while JS-IPFS in the browser is short-lived and limited to Web APIs available on a web page; it only supports WebSockets and WebRTC as transports. The browser is also resource constrained and does not support all of the interfaces found in the Node.js version.
+There are two main JavaScript libraries for working with IPFS, `ipfs` and `ipfs-http-client`. Both work in Node.js and modern web browsers. JS-IPFS in Node.js serves to be long-running and supports transports like TCP and UDP along with WebScoekts and WebRTC, while JS-IPFS in the browser is short-lived and limited to Web APIs available on a web page; only supports WebSockets and WebRTC as transports. The browser is also resource constrained and does not support all of the interfaces found in the Node.js version.
 
 ### JS-IPFS
 
