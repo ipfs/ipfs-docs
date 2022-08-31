@@ -12,7 +12,7 @@ Gateways provide implementation and runtime agnostic HTTP interface for retrievi
 
 ### `GET /ipfs/{cid}[/{path}][?{params}]`
 
-- `cid` is a [CID](https://docs.ipfs.tech/concepts/glossary/#cid), the root identifier of the requested content path
+- `cid` is a [CID](../../concepts/glossary/#cid), the root identifier of the requested content path
 - `path` – optional path under the root CID
 
 Optional query parameters:
@@ -23,23 +23,23 @@ Optional query parameters:
 
 ::: tip Before you continue
 
-Make sure you understand [how to address IPFS on the web](../../how-to/address-ipfs-on-web/), and what are differences between [Path](../../how-to/address-ipfs-on-web/#path-gateway) and [Subdomain Gateways](../how-to/address-ipfs-on-web/#subdomain-gateway).
+Make sure you understand [how to address IPFS on the web](../../how-to/address-ipfs-on-web/) and the differences between [Path Gateways](../../how-to/address-ipfs-on-web/#path-gateway) and [Subdomain Gateways](../../how-to/address-ipfs-on-web/#subdomain-gateway).
 
 :::
 
 ## Trusted vs trustless
 
 Gateways can be used in a trusted or trustless way.
-HTTP clients are in control, decide how much trust and work is delegated to the gateway.
+HTTP clients are in control; they decide how much trust and work is delegated to the gateway.
 
 ### Delegating trust
 
-By default, a gateway will take care of UnixFS deserialization and return reassembled files to the client, as if they were stored in a traditional HTTP server. This means all validation happens on the gateway, and clients trust the gateway is correctly validating content-addressed data before returning it to them.
+By default, a gateway will take care of UnixFS deserialization and return reassembled files to the client, as if they were stored in a traditional HTTP server. This means all validation happens on the gateway, and clients trust that the gateway is correctly validating content-addressed data before returning it to them. 
 
-#### Example: fetching an UnixFS file
+#### Example: fetching an UnixFS file from a local gateway
 
 ```bash
-$ curl -L "https://ipfs.io/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi" > cat.jpg
+$ curl "http://127.0.0.1:8080/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi" > cat.jpg
 ```
 
 ::: tip
@@ -50,14 +50,52 @@ When fetching a CID directly, one can include a `filename` parameter with file n
 
 ### Trustless, verifiable retrieval
 
-Clients capable of verifying content-addressed data on their own, should use [application/vnd.ipld.raw](https://www.iana.org/assignments/media-types/application/vnd.ipld.raw) and [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) response types (raw [blocks](../concepts/glossary/#block) and [CARs](../concepts/glossary/#car)), and always ask for CIDs directly (`/ipfs/{cid}`).
+Clients capable of verifying content-addressed data on their own, should use [application/vnd.ipld.raw](https://www.iana.org/assignments/media-types/application/vnd.ipld.raw) and [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) response types (raw [blocks](../../concepts/glossary/#block) and [CARs](../../concepts/glossary/#car)) and always ask for CIDs directly (`/ipfs/{cid}`).
 
-#### Example: fetching a raw block
+::: callout
+
+This mode of operation removes the need for trusting gateway returns correct data. Client can always verify that returned bytes match the requested CID.
+
+:::
+
+#### Example: fetching an entire DAG as a CAR stream from a public gateway
+
+Using `Accept` HTTP header with [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) type:
+
+```bash
+$ curl -H "Accept: application/vnd.ipld.car" "https://ipfs.io/ipfs/bafybeiakou6e7hnx4ms2yangplzl6viapsoyo6phlee6bwrg4j2xt37m3q" > dag.car
+$ ipfs dag import dag.car
+```
+
+::: tip
+
+An alternative is to pass `?format=car` URL parameter:
+
+<https://ipfs.io/ipfs/bafybeiakou6e7hnx4ms2yangplzl6viapsoyo6phlee6bwrg4j2xt37m3q?format=car>
+
+::: 
+
+::: tip Verify CAR without running full IPFS node
+
+CAR verification does not require running IPFS node. Clients can leverage standalone tools and libraries such as [ipfs-car](https://www.npmjs.com/package/ipfs-car):
+
+```bash
+$ npm i -g ipfs-car
+$ curl "https://ipfs.io/ipfs/bafybeiakou6e7hnx4ms2yangplzl6viapsoyo6phlee6bwrg4j2xt37m3q?format=car" | ipfs-car
+$ ls ./bafybeiakou6e7hnx4ms2yangplzl6viapsoyo6phlee6bwrg4j2xt37m3q/
+1007 - Sustainable - alt.txt
+1007 - Sustainable - transcript.txt
+1007 - Sustainable.png
+```
+
+:::
+
+#### Example: fetching a single raw block from a public gateway
 
 Using `Accept` HTTP header with [application/vnd.ipld.raw](https://www.iana.org/assignments/media-types/application/vnd.ipld.raw) type:
 
 ```bash
-$ curl -L -H "Accept: application/vnd.ipld.raw" "https://ipfs.io/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi" > raw-block.bin
+$ curl -H "Accept: application/vnd.ipld.raw" "https://ipfs.io/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi" > raw-block.bin
 $ ipfs block put raw-block.bin
 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 ```
@@ -71,26 +109,9 @@ An alternative is to pass `?format=raw` URL parameter:
 
 :::
 
-#### Example: fetching an entire DAG as a CAR stream
-
-Using `Accept` HTTP header with [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) type:
-
-```bash
-$ curl -H "Accept: application/vnd.ipld.car" "https://ipfs.io/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi" > dag.car
-$ ipfs dag import dag.car
-```
-
-::: tip
-
-An alternative is to pass `?format=car` URL parameter:
-
-<https://ipfs.io/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi?format=car>
-
-:::
-
 ## Specifications
 
-HTTP Gateway specification for IPFS implementers is available in [ipfs/specs](https://github.com/ipfs/specs/blob/main/http-gateways/#readme) repository.
+The HTTP Gateway specification for IPFS implementers is available in [ipfs/specs repository](https://github.com/ipfs/specs/blob/main/http-gateways/#readme).
 Below are links for the most useful specifications.
 
 
@@ -99,7 +120,7 @@ Below are links for the most useful specifications.
 These are "low level" gateways that expose IPFS resources over HTTP protocol.
 
 * [Path Gateway](https://github.com/ipfs/specs/blob/main/http-gateways/PATH_GATEWAY.md) ← **START HERE**, other types of gateway are specified as a delta against this specification.
-* [Trustless Gateway](https://github.com/ipfs/specs/blob/main/http-gateways/TRUSTLESS_GATEWAY.md) is a subset that returns verifiable response types (raw [blocks](../concepts/glossary/#block) and [CARs](../concepts/glossary/#car))
+* [Trustless Gateway](https://github.com/ipfs/specs/blob/main/http-gateways/TRUSTLESS_GATEWAY.md) is a subset that returns verifiable response types (raw [blocks](../../concepts/glossary/#block) and [CARs](../../concepts/glossary/#car))
 
 ### Web
 
@@ -110,7 +131,7 @@ Special types of gateway which leverage `Host` header in addition to URL `pathna
 
 ::: tip
 
-If you are a gateway operator or an implementer, consider joining [Gateway Operators Forum](https://discuss.ipfs.io/c/31)
+If you are a gateway operator or an implementer, consider joining [Gateway Operators Forum](https://discuss.ipfs.tech/c/31)
 
 :::
 

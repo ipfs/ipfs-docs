@@ -14,7 +14,7 @@ The [IPFS YouTube channel](https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqq
 
 ## Blog
 
-Explore the latest news, events, and other happenings in the IPFS multiverse on the official [IPFS Blog](https://blog.ipfs.io/).
+Explore the latest news, events, and other happenings in the IPFS multiverse on the official [IPFS Blog](https://blog.ipfs.tech/).
 
 ## Twitter
 

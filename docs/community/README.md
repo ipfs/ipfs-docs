@@ -17,11 +17,19 @@ No matter your area of specialty or level of expertise, there are many [ways to 
 
 ## IPFS forums
 
-The official [IPFS forums](https://discuss.ipfs.io/) are the primary home of IPFS-related discussion. Join the conversation on [https://discuss.ipfs.io](https://discuss.ipfs.io) for everything from technical questions, project brainstorming, talk on IPFS use cases, and more.
+The official [IPFS forums](https://discuss.ipfs.tech/) are the primary home of IPFS-related discussion. Join the conversation on [https://discuss.ipfs.tech](https://discuss.ipfs.tech) for everything from technical questions, project brainstorming, talk on IPFS use cases, and more.
 
 ## Chat
 
 Casual chat fan? Here are [all our channels](chat.md). There's getting-started advice for you here, too.
+
+## Community Calendar
+
+If you're an IPFS implementer, consumer, or user, you are welcome to join the community meetings we host regularly.
+
+Stay up-to-date by subscribing to the [**IPFS Community Calendar**](https://calendar.google.com/calendar/embed?src=ipfs.io_eal36ugu5e75s207gfjcu0ae84%40group.calendar.google.com) and joining community meetings such as triage sessions, the IPFS implementers sync, and the IPLD sync.
+
+Events can be added to the IPFS community calendar by inviting `ipfs.io_eal36ugu5e75s207gfjcu0ae84@group.calendar.google.com`.
 
 ## ProtoSchool workshops
 
@@ -43,4 +51,4 @@ If you want to add a new project to the IPFS ecosystem directory, use [this form
 
 ## Awesome IPFS
 
-Get inspired by [Awesome IPFS](https://awesome.ipfs.io/), a catalog of community-built open-source projects using IPFS for everything from image sharing to decentralized archiving. Have a project of your own to add to Awesome IPFS? Make a PR [in the repo!](https://github.com/ipfs/awesome-ipfs).
+Get inspired by [Awesome IPFS](https://awesome.ipfs.tech/), a catalog of community-built open-source projects using IPFS for everything from image sharing to decentralized archiving. Have a project of your own to add to Awesome IPFS? Make a PR [in the repo!](https://github.com/ipfs/awesome-ipfs).

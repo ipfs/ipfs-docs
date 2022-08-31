@@ -19,7 +19,7 @@ To _peer_ with nodes from Cloudflare, you could update your config to include a 
     "Peers": [
       {
         "ID": "QmcfgsJsMtx6qJb74akCw1M24X1zFwgGo11h1cuhwQjtJP",
-        "Addrs": ["/ip6/2606:4700:60::6/tcp/4009", "/ip4/172.65.0.13/tcp/4009"]
+        "Addrs": ["/dnsaddr/node-8.ingress.cloudflare-ipfs.com"]
       }
     ]
   }
@@ -42,9 +42,20 @@ To have your platform added to this list, please [open a PR to edit this page](h
 
 ### Cloudflare
 
-| Peer ID | Addresses |
-| ------- | --------- |
-|`QmcfgsJsMtx6qJb74akCw1M24X1zFwgGo11h1cuhwQjtJP`|`/ip6/2606:4700:60::6/tcp/4009` <br/><br/>`/ip4/172.65.0.13/tcp/4009`|
+| Peer ID                                          | Addresses                                      |
+| -----------------------------------------------  | ---------------------------------------------  |
+| `QmcFf2FH3CEgTNHeMRGhN7HNHU1EXAxoEk6EFuSyXCsvRE` | `/dnsaddr/node-1.ingress.cloudflare-ipfs.com`  |
+| `QmcFmLd5ySfk2WZuJ1mfSWLDjdmHZq7rSAua4GoeSQfs1z` | `/dnsaddr/node-2.ingress.cloudflare-ipfs.com`  |
+| `QmcfFmzSDVbwexQ9Au2pt5YEXHK5xajwgaU6PpkbLWerMa` | `/dnsaddr/node-3.ingress.cloudflare-ipfs.com`  |
+| `QmcfJeB3Js1FG7T8YaZATEiaHqNKVdQfybYYkbT1knUswx` | `/dnsaddr/node-4.ingress.cloudflare-ipfs.com`  |
+| `QmcfVvzK4tMdFmpJjEKDUoqRgP4W9FnmJoziYX5GXJJ8eZ` | `/dnsaddr/node-5.ingress.cloudflare-ipfs.com`  |
+| `QmcfZD3VKrUxyP9BbyUnZDpbqDnT7cQ4WjPP8TRLXaoE7G` | `/dnsaddr/node-6.ingress.cloudflare-ipfs.com`  |
+| `QmcfZP2LuW4jxviTeG8fi28qjnZScACb8PEgHAc17ZEri3` | `/dnsaddr/node-7.ingress.cloudflare-ipfs.com`  |
+| `QmcfgsJsMtx6qJb74akCw1M24X1zFwgGo11h1cuhwQjtJP` | `/dnsaddr/node-8.ingress.cloudflare-ipfs.com`  |
+| `Qmcfr2FC7pFzJbTSDfYaSy1J8Uuy8ccGLeLyqJCKJvTHMi` | `/dnsaddr/node-9.ingress.cloudflare-ipfs.com`  |
+| `QmcfR3V5YAtHBzxVACWCzXTt26SyEkxdwhGJ6875A8BuWx` | `/dnsaddr/node-10.ingress.cloudflare-ipfs.com` |
+| `Qmcfuo1TM9uUiJp6dTbm915Rf1aTqm3a3dnmCdDQLHgvL5` | `/dnsaddr/node-11.ingress.cloudflare-ipfs.com` |
+| `QmcfV2sg9zaq7UUHVCGuSvT2M2rnLBAPsiE79vVyK3Cuev` | `/dnsaddr/node-12.ingress.cloudflare-ipfs.com` |
 
 ### Estuary
 
@@ -58,23 +69,7 @@ To have your platform added to this list, please [open a PR to edit this page](h
 
 ### NFT.Storage
 
-| Peer ID | Addresses |
-| ------- | --------- |
-|`12D3KooWEGeZ19Q79NdzS6CJBoCwFZwujqi5hoK8BtRcLa48fJdu`|`/ip4/145.40.96.233/tcp/4001`|
-|`12D3KooWBnmsaeNRP6SCdNbhzaNHihQQBPDhmDvjVGsR1EbswncV`|`/ip4/147.75.87.85/tcp/4001`|
-|`12D3KooWDLYiAdzUdM7iJHhWu5KjmCN62aWd7brQEQGRWbv8QcVb`|`/ip4/136.144.57.203/tcp/4001`|
-|`12D3KooWFZmGztVoo2K1BcAoDEUmnp7zWFhaK5LcRHJ8R735T3eY`|`/ip4/145.40.69.29/tcp/4001`|
-|`12D3KooWRJpsEsBtJ1TNik2zgdirqD4KFq5V4ar2vKCrEXUqFXPP`|`/ip4/139.178.70.235/tcp/4001`|
-|`12D3KooWNxUGEN1SzRuwkJdbMDnHEVViXkRQEFCSuHRTdjFvD5uw`|`/ip4/145.40.67.89/tcp/4001`|
-|`12D3KooWMZmMp9QwmfJdq3aXXstMbTCCB3FTWv9SNLdQGqyPMdUw`|`/ip4/145.40.69.133/tcp/4001`|
-|`12D3KooWCpu8Nk4wmoXSsVeVSVzVHmrwBnEoC9jpcVpeWP7n67Bt`|`/ip4/145.40.69.171/tcp/4001`|
-|`12D3KooWGx5pFFG7W2EG8N6FFwRLh34nHcCLMzoBSMSSpHcJYN7G`|`/ip4/145.40.90.235/tcp/4001`|
-|`12D3KooWQsVxhA43ZjGNUDfF9EEiNYxb1PVEgCBMNj87E9cg92vT`|`/ip4/139.178.69.135/tcp/4001`|
-|`12D3KooWMSrRXHgbBTsNGfxG1E44fLB6nJ5wpjavXj4VGwXKuz9X`|`/ip4/147.75.32.99/tcp/4001`|
-|`12D3KooWE48wcXK7brQY1Hw7LhjF3xdiFegLnCAibqDtyrgdxNgn`|`/ip4/147.75.86.227/tcp/4001`|
-|`12D3KooWSGCJYbM6uCvCF7cGWSitXSJTgEb7zjVCaxDyYNASTa8i`|`/ip4/136.144.55.33/tcp/4001`|
-|`12D3KooWJbARcvvEEF4AAqvAEaVYRkEUNPC3Rv3joebqfPh4LaKq`|`/ip4/136.144.57.127/tcp/4001`|
-|`12D3KooWNcshtC1XTbPxew2kq3utG2rRGLeMN8y5vSfAMTJMV7fE`|`/ip4/147.75.87.249/tcp/4001`|
+See [nft.storage/PEERS](https://github.com/nftstorage/nft.storage/blob/main/PEERS).
 
 ### Pinata
 
@@ -116,14 +111,15 @@ To have your platform added to this list, please [open a PR to edit this page](h
 
 ### Web3.Storage
 
+See [web3.storage/PEERS](https://github.com/web3-storage/web3.storage/blob/main/PEERS).
+
+### 8api.sh
+
 | Peer ID | Addresses |
 | ------- | --------- |
-|`12D3KooWR19qPPiZH4khepNjS3CLXiB7AbrbAD4ZcDjN1UjGUNE1`|`/ip4/139.178.69.155/tcp/4001`|
-|`12D3KooWEDMw7oRqQkdCJbyeqS5mUmWGwTp8JJ2tjCzTkHboF6wK`|`/ip4/139.178.68.91/tcp/4001`|
-|`12D3KooWPySxxWQjBgX9Jp6uAHQfVmdq8HG1gVvS1fRawHNSrmqW`|`/ip4/147.75.33.191/tcp/4001`|
-|`12D3KooWNuoVEfVLJvU3jWY2zLYjGUaathsecwT19jhByjnbQvkj`|`/ip4/147.75.32.73/tcp/4001`|
-|`12D3KooWSnniGsyAF663gvHdqhyfJMCjWJv54cGSzcPiEMAfanvU`|`/ip4/145.40.89.195/tcp/4001`|
-|`12D3KooWKytRAd2ujxhGzaLHKJuje8sVrHXvjGNvHXovpar5KaKQ`|`/ip4/136.144.56.153/tcp/4001`|
+|`12D3KooWGASC2jm3pmohEJXUhuStkxDitPgzvs4qMuFPaiD9x1BA`|`/ip4/78.46.108.24`|
+|`12D3KooWRbWZN3GvLf9CHmozq4vnTzDD4EEoiqtRJxg5FV6Gfjmm`|`/ip4/65.109.19.136`|
+
 [dht-explainer]: /concepts/how-ipfs-works/#distributed-hash-tables-dhts
 [cid-explainer]: /concepts/content-addressing/#identifier-formats
 [docs-peering-config]: /how-to/configure-node/#peering

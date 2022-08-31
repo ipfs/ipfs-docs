@@ -77,8 +77,7 @@ module.exports = {
               'install/ipfs-companion',
               'install/command-line',
               ['install/ipfs-updater', 'Updater'],
-              'install/server-infrastructure',
-              'install/recent-releases'
+              'install/server-infrastructure'
             ]
           },
           {
@@ -153,7 +152,7 @@ module.exports = {
                   ['/concepts/case-study-fleek', 'Fleek'],
                   ['/concepts/case-study-likecoin', 'LikeCoin'],
                   ['/concepts/case-study-morpheus', 'Morpheus.Network'],
-                  ['/concepts/case-study-openbazaar', 'OpenBazaar']
+                  ['/concepts/case-study-snapshot', 'Snapshot']
                 ]
               },
               {
@@ -286,12 +285,12 @@ module.exports = {
                     'IPFS newsletter'
                   ],
                   '/community/contribute/ways-to-contribute',
-                  ['https://discuss.ipfs.io/', 'IPFS forums'],
+                  ['https://discuss.ipfs.tech/', 'IPFS forums'],
                   '/community/chat',
                   ['https://proto.school/events', 'ProtoSchool workshops'],
                   ['https://www.meetup.com/members/249142444/', 'Meetups'],
                   '/community/social-media',
-                  ['https://awesome.ipfs.io', 'Awesome IPFS'],
+                  ['https://awesome.ipfs.tech', 'Awesome IPFS'],
                   [
                     'https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqqsew',
                     'YouTube'
