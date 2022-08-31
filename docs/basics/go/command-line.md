@@ -1,11 +1,11 @@
 ---
-title: IPFS in Golang
+title: "Command-line"
 description: "A simple walkthrough of how to perform basic IPFS operations using the Kubo command-line."
 ---
 
 # Basic CLI Operations
 
-This short guide aims to walk you through the **basics of using IPFS with the Kubo CLI**.  Kubo is [one of multiple IPFS implementations](../ipfs-implementations.md). It is the oldest IPFS implementation and exposes a CLI (among other things).
+This short guide aims to walk you through the basics of using IPFS with the Kubo CLI.  Kubo is [one of multiple IPFS implementations](ipfs-implementations.md). It is the oldest IPFS implementation and exposes a CLI (among other things).
 
 You will learn how to add, retrieve, read, and remove files within the CLI. If you are unsure about the meaning of some terms, you can check out the [glossary](../concepts/glossary.md).
 
@@ -261,4 +261,3 @@ If we decide that we no longer want to host a file, all we have to do is remove 
     ```
 
 The target file has now been fully removed from your IPFS node and any other files that we did not pin. If the content that was just garbage collected was saved to your computer's local storage, it is still there. If you wish to remove the content from your computer's local storage, you will need to find where it is saved and delete it using the normal deletion method.
-
