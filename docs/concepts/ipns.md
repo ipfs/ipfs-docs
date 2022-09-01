@@ -23,6 +23,7 @@ A **name** in IPNS is the [hash](hashing.md) of a public key. It is associated w
 
 For example, the following is an IPNS name represented by a CIDv1 of public key: [`k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8`](https://cid.ipfs.tech/#k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8).
 
+> **Note:** Kubo uses the identity private key (used for the PeerID) as the default IPNS name.
 
 ### IPNS names are self-certifying
 
@@ -30,63 +31,94 @@ IPNS names are self-certifying. This means that an IPNS record contains all the 
 
 - Each IPNS name corresponds to a key pair
 - The IPNS name is a hash of the public key
-- The IPNS record contains the public key and signature, allowing anyone to verify that the name was signed by the key holder.
+- The IPNS record contains the public key and signature, allowing anyone to verify that the record was signed by the private key holder.
 
 This self-certifying nature gives IPNS several benefits not preset in hierarchical and consensus systems such as DNS, and blockchain identifiers. Notably, IPNS records can come from anywhere, not just a particular service/system, and it is very fast and easy to confirm a record is authentic.
 
-### IPNS record validity tradeoffs – consistency vs. availability
+### Common IPNS operations
 
-When setting the `validity` (referred to as [`lifetime` by Kubo](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsrecordlifetime)) field of an IPNS record, you typically need to choose whether you favor **consistency** (short validity period, e.g. 24 hours) or **availability** (long validity period, e.g. 1 month), due to the inherent trade-off between the two.
+As a user or developer using IPNS for naming, there are three common operations worth understanding:
 
-Consistency means ensuring that users resolve to the latest published IPNS record for the name (with the highest sequence number) at the cost of potentially not being able to resolve.
-
-Availability means resolving to a valid IPNS record, at the cost of potentially resolving to an outdated record.
+- **Updating/Creating an IPNS record:** refers to the creation of an IPNS record and signing it with a private key.
+- **Publishing an IPNS record:** advertising the IPNS record so that other nodes can resolve it. Details depend on the transport.
+- **Resolving an IPNS name:** Resolving an IPNS name to a content path
 
 ### IPNS is transport agnostic
 
 The self-certifying nature of IPNS records means that they are not tied to a specific transport protocol. In practice, most IPFS implementations rely on the [**DHT**](dht.md) and **PubSub** to publish and resolve IPNS records.
 
-There are a few nuanced differences between the **DHT** and **PubSub** to be aware of.
+There are nuanced differences and trade-offs between the **DHT** and **PubSub** to be aware of.
+
+The main qualitative difference between the two is that IPNS over the DHT publishes and resolves to a global shared state, whereas IPNS over PubSub uses messaging over topics (where each IPNS name has a unique topic) to publish to and resolve from **interested peers**.
+
+The main implication of this difference is that IPNS operations (publishing and resolving) over the DHT can take longer than over PubSub, while potentially ensuring higher consistency (you resolve to the latest version).
+
+> **Note:** This trade-off is best explained by [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem).
 
 #### IPNS over the DHT
 
+The DHT is the default transport mechanism for IPNS records in Kubo.
+
 Due to the ephemeral nature of the DHT, records get dropped after 24 hours. This applies to any record in the DHT, irrespective of the `validity` (also referred to as `lifetime`) field in the IPNS record.
 
-Therefore, IPNS records need to be regularly published to the DHT.
+Therefore, IPNS records need to be regularly published to the DHT. Moreover, publishing to the DHT at regular intervals ensures that the IPNS name can be resolved even when there's high node churn (nodes coming and going.)
 
-By default, Kubo will republish IPNS records to the DHT based on the [`Ipns.RepublishPeriod`] configuration which defaults to 4 hours. Republishing involves two steps:
+By default, Kubo will republish IPNS records to the DHT based on the [`Ipns.RepublishPeriod`] configuration which defaults to 4 hours. [Republishing](https://github.com/ipfs/go-namesys/blob/1bf7d3d9cbe8f988b232b92288b24d25add85a00/republisher/repub.go#L130-L167) involves two steps:
 
-1. Creating an updated IPNS record with the `sequence` field incremented, the `validity` field set to a timestamp (by default based on `Ipns.RecordLifetime`), and signed with the private key.
+1. Creating an updated IPNS record with the `validity` timestamp field updated (by default based on `Ipns.RecordLifetime`), and signing it with the private key. The `sequence` number will only be incremented if the content path changes.
 2. Publish the [IPNS record to the DHT](https://docs.ipfs.tech/concepts/dht/#ipns-records)
 
-> Note: See the DHT documentation for more information on the lifecycle of GETs and PUTs of IPNS records.
+> **Note:** See the [DHT documentation](dht.md#ipns-records) for more information on the lifecycle of GETs and PUTs of IPNS records.
 
 It's worth noting that publishing and resolving IPNS names using the DHT can be slow. This is because multiple records need to be found to ensure the latest version (record with the highest `sequence`), which involves round trips to multiple nodes.
 
-#### IPNS with PubSub
+#### IPNS over PubSub
 
-PubSub improves both publishing and resolving times of IPNS by relying on interested peers for both operations.
+IPNS over PubSub uses the [Libp2p PubSub](https://docs.libp2p.io/concepts/publish-subscribe/) to publish records and resolve names amongst **interested peers**.
 
-TODO: more details here about the **publishing lifecycle** with PubSub
-TODO: more details here about the **resolution lifecycle** works with PubSub
+This is achieved by deriving the PubSub topic name from the IPNS name so that each IPNS name has a unique topic.
+
+Because PubSub doesn't have the notion of persistence (messages are ephemeral and dropped after propagation), IPNS over PubSub [adds a persistence layer](https://github.com/ipfs/specs/blob/main/naming/pubsub.md#layering-persistence-onto-libp2p-pubsub) to ensure that IPNS records are always available to the network.
+
+In Kubo, IPNS over PubSub is not enabled by default and can be enabled using the [`Ipns.UsePubsub`](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsusepubsub) configuration.
+
+Initial operations, e.g. resolving or publishing an IPNS name for the first time can take time as they involve a roundtrip to the DHT (to lookup or publish provider records for the topic). After the subscription to the topic is established, PubSub usually improves both publishing and resolving times of IPNS by relying on interested peers for both operations.
+
+It should be noted that there's an upper limit to the number of unique IPNS names you can resolve over PubSub, because for each name, a subscription is created which requires several open network connections for the mesh peer.
+
+##### Publishing IPNS records over PubSub lifecycle
+
+1. Create a record and sign it
+2. Calculate PubSub topic name from IPNS name
+3. Join the topic by querying the DHT for the topic's provider records
+4. Publish the IPNS record to the topic
+5. Whenever [a new peer joins the topic](https://github.com/libp2p/go-libp2p-pubsub-router/blob/292d99457d224853706c5e49f8ddc112740a856a/pubsub.go#L538-L560) (specifically your peer mesh), ask them for the record. If they respond with a newer record, update it locally and publish the updated record to the.
+6. Periodically (by default every 10 minutes) rebroadcast the IPNS record,
+
+### Tradeoffs between consistency vs. availability
+
+The self-certifying nature of IPNS comes with an inherent tradeoff between **consistency** and **availability**.
+
+Consistency means ensuring that users resolve to the latest published IPNS record for the name (with the highest sequence number) at the cost of potentially not being able to resolve.
+
+Availability means resolving to a valid IPNS record, at the cost of potentially resolving to an outdated record.
+
+#### IPNS record validity tradeoffs
+
+When setting the `validity` (referred to as [`lifetime` by Kubo](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsrecordlifetime)) field of an IPNS record, you typically need to choose whether you favor **consistency** (short validity period, e.g. 24 hours) or **availability** (long validity period, e.g. 1 month), due to the inherent trade-off between the two.
 
 ## IPNS in practice
 
-### Common actions with IPNS
-
-As a user or developer using IPNS for naming, there are three common actions worth understanding:
-
-- Updating/Creating IPNS records
-- Publishing IPNS records
-- Resolving IPNS names
-
 ### IPNS names can be resolved using IPFS gateways
 
-TODO:
+IPNS names can be resolved by [IPFS gateways](ipfs-gateway.md) in a _trusted_ fashion using both path resolution and subdomain resolution style:
 
+- Path resolution: `https://ipfs.io/ipns/{ipns-name}`
+- Subdomain resolution: `https://{ipns-name}.ipns.dweb.link`
 
+> **Note** IPNS resolution via an IPFS gateway is **trusted** which means you delegate IPNS resolution to the gateway without any means to verify the response you get, i.e the content path and signature of the IPNS record.
 
-### Third-party providing/publishing w3name
+<!-- ### Third-party providing/publishing w3name -->
 
 ## Example
 
