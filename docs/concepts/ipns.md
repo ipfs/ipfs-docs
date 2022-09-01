@@ -23,9 +23,6 @@ A **name** in IPNS is the [hash](hashing.md) of a public key. It is associated w
 
 For example, the following is an IPNS name represented by a CIDv1 of public key: [`k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8`](https://cid.ipfs.tech/#k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8).
 
-Typically
-
-<!-- The content path that an IPNS name points to, is typically a CID, e.g. `bafybeicklkqcnlvtiscr2hzkubjwnwjinvskffn4xorqeduft3wq7vm` -->
 
 ### IPNS names are self-certifying
 
