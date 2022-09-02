@@ -5,6 +5,28 @@ description: Learn about the InterPlanetary Name System (IPNS) and how it can be
 
 # InterPlanetary Name System (IPNS)
 
+- [InterPlanetary Name System (IPNS)](#interplanetary-name-system-ipns)
+  - [Mutability in IPFS](#mutability-in-ipfs)
+  - [How IPNS works](#how-ipns-works)
+    - [Anatomy of an IPNS name](#anatomy-of-an-ipns-name)
+      - [How IPNS names relate to CIDs](#how-ipns-names-relate-to-cids)
+    - [IPNS names are self-certifying](#ipns-names-are-self-certifying)
+    - [Common IPNS operations](#common-ipns-operations)
+    - [IPNS is transport agnostic](#ipns-is-transport-agnostic)
+      - [IPNS over the DHT](#ipns-over-the-dht)
+      - [IPNS over PubSub](#ipns-over-pubsub)
+        - [Publishing IPNS records over PubSub lifecycle](#publishing-ipns-records-over-pubsub-lifecycle)
+    - [Tradeoffs between consistency vs. availability](#tradeoffs-between-consistency-vs-availability)
+      - [IPNS record validity](#ipns-record-validity)
+      - [Practical considerations](#practical-considerations)
+  - [IPNS in practice](#ipns-in-practice)
+    - [Resolving IPNS names using IPFS gateways](#resolving-ipns-names-using-ipfs-gateways)
+  - [Publishing IPNS names with Kubo](#publishing-ipns-names-with-kubo)
+  - [Example IPNS Setup with JS SDK API](#example-ipns-setup-with-js-sdk-api)
+  - [Alternatives to IPNS](#alternatives-to-ipns)
+  - [Further Resources](#further-resources)
+
+
 ## Mutability in IPFS
 
 [Content addressing](content-addressing.md) in IPFS is by nature _immutable_: when you add a file to IPFS, it creates a hash from the data contained in it. Changing a file changes its hash, and consequently its CID which is used as an address.
