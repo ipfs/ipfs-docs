@@ -10,6 +10,12 @@ If you want to install IPFS in a server environment and offer IPFS as a service,
 
 @[youtube](-SYDlid7Nqs)
 
+# Kubernetes
+
+If you are a kubernetes user, you might be interested to know that a kubernetes [operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
+is available. This project is in active development and it isn't yet recommended for production use cases. If this is something
+you would like to try, you can check out our current [documentation](https://ipfs-operator.readthedocs.io/) or [github](https://github.com/redhat-et/ipfs-operator).
+
 ## Create a local cluster
 
 To see if IPFS Cluster is suitable for your project, follow this quick start guide and spin up a local IPFS Cluster instance. At the end of this guide, you will have a solid understanding of how IPFS Cluster is set up and how to interact with it. If you'd rather create a production-ready cluster, take a look at the [official IPFS Cluster documentation →](https://cluster.ipfs.io/)
