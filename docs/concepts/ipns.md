@@ -23,7 +23,23 @@ A **name** in IPNS is the [hash](hashing.md) of a public key. It is associated w
 
 For example, the following is an IPNS name represented by a CIDv1 of public key: [`k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8`](https://cid.ipfs.tech/#k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8).
 
-> **Note:** Kubo uses the identity private key (used for the PeerID) as the default IPNS name.
+> **Note:** Kubo uses the identity private key (used for the PeerID) as the default IPNS name. But you can generate multiple keys.
+
+#### How IPNS names relate to CIDs
+
+A CIDv1 can be used to represent both:
+
+- [Immutable content on IPFS](https://cid.ipfs.tech/#bafybeibml5uieyxa5tufngvg7fgwbkwvlsuntwbxgtskoqynbt7wlchmfm) (since the CID contains a multihash)
+- [IPNS name](https://cid.ipfs.tech/#k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8) which corresponds to a libp2p public key.
+
+The following is a useful mental model for understanding the difference between the two:
+
+```
+IPFS = immutable *Pointer => content
+IPNS = **Pointer => content
+```
+
+IPNS names are essentially pointers (IPNS names) to pointers (IPFS CIDs) whereas IPFS CIDs are immutable (because they're derived from the content) pointers to content.
 
 ### IPNS names are self-certifying
 
