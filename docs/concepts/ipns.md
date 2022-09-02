@@ -79,7 +79,7 @@ As a user or developer using IPNS for naming, there are three common operations 
 
 - **Updating/Creating an IPNS record:** refers to the creation of an IPNS record and signing it with a private key.
 - **Publishing an IPNS record:** advertising the IPNS record so that other nodes can resolve it. Details depend on the transport.
-- **Resolving an IPNS name:** Resolving an IPNS name to a content path
+- **Resolving an IPNS name:** Resolving an IPNS name to a content path.
 
 ### IPNS is transport agnostic
 
