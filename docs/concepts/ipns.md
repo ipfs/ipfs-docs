@@ -98,9 +98,11 @@ Because PubSub doesn't have the notion of persistence (messages are ephemeral an
 
 In Kubo, IPNS over PubSub is not enabled by default and can be enabled using the [`Ipns.UsePubsub`](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsusepubsub) configuration.
 
-Initial operations, e.g. resolving or publishing an IPNS name for the first time can take time as they involve a roundtrip to the DHT (to lookup or publish provider records for the topic). After the subscription to the topic is established, PubSub usually improves both publishing and resolving times of IPNS by relying on interested peers for both operations.
+Initial operations, e.g. resolving or publishing an IPNS name for the first time can take time as they involve a roundtrip to the DHT (to lookup or publish provider records for the topic).
 
-It should be noted that there's an upper limit to the number of unique IPNS names you can resolve over PubSub, because for each name, a subscription is created which requires several open network connections for the mesh peer.
+After the subscription to the topic is established, PubSub usually improves both publishing and resolving times of IPNS by relying on interested peers for both operations.
+
+It should be noted that there's an upper limit to the number of unique IPNS names you can resolve over PubSub, because for each name, a subscription is created which opens several network connections to mesh peers.
 
 ##### Publishing IPNS records over PubSub lifecycle
 
@@ -111,6 +113,8 @@ It should be noted that there's an upper limit to the number of unique IPNS name
 5. Whenever [a new peer joins the topic](https://github.com/libp2p/go-libp2p-pubsub-router/blob/292d99457d224853706c5e49f8ddc112740a856a/pubsub.go#L538-L560) (specifically your peer mesh), ask them for the record. If they respond with a newer record, update it locally and publish the updated record to the.
 6. Periodically (by default every 10 minutes) rebroadcast the IPNS record,
 
+Steps 5 and 6 describe from a high level how IPNS record persistence is layered over PubSub by ensuring continuous propagation of the IPNS record in the face of node churn (nodes dropping in and out of the network).
+
 ### Tradeoffs between consistency vs. availability
 
 The self-certifying nature of IPNS comes with an inherent tradeoff between **consistency** and **availability**.
@@ -119,32 +123,37 @@ Consistency means ensuring that users resolve to the latest published IPNS recor
 
 Availability means resolving to a valid IPNS record, at the cost of potentially resolving to an outdated record.
 
-#### IPNS record validity tradeoffs
+#### IPNS record validity
 
 When setting the `validity` (referred to as [`lifetime` by Kubo](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsrecordlifetime)) field of an IPNS record, you typically need to choose whether you favor **consistency** (short validity period, e.g. 24 hours) or **availability** (long validity period, e.g. 1 month), due to the inherent trade-off between the two.
 
+#### Practical considerations
+
+One of the most important things to consider with IPNS names is **how frequently you intend on updating the name**.
+
+Practically, two levers within your control determine where your IPNS name is on the spectrum between consistency and availability:
+
+- **IPNS record validity:** longer validity will veer towards availability. Moreover, longer validity will reduce the dependence on the keyholder (which for most purposes is stored on a single machine and rare shared) since the record can continue to persist without requiring the private key holder to sign a new record. Another benefit of a longer validity is that the transport can be delegated to other nodes or services (such as [w3name](https://staging.web3.storage/docs/how-tos/w3name/)), without compromising the private key.
+- **Transport mechanism:** the DHT veers towards consistency while PubSub veers towards availability. However, with Kubo, IPNS names are always published to the DHT, while PubSub is opt-in. For most purposes, enabling PubSub is a net gain unless you hit the upper limit of connections as a result of too many PubSub subscriptions.
+
 ## IPNS in practice
 
-### IPNS names can be resolved using IPFS gateways
+### Resolving IPNS names using IPFS gateways
 
 IPNS names can be resolved by [IPFS gateways](ipfs-gateway.md) in a _trusted_ fashion using both path resolution and subdomain resolution style:
 
 - Path resolution: `https://ipfs.io/ipns/{ipns-name}`
 - Subdomain resolution: `https://{ipns-name}.ipns.dweb.link`
 
-> **Note** IPNS resolution via an IPFS gateway is **trusted** which means you delegate IPNS resolution to the gateway without any means to verify the response you get, i.e the content path and signature of the IPNS record.
+For example:
+- [https://ipfs.io/ipns/k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8](https://ipfs.io/ipns/k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8)
+
+> **Note** IPNS resolution via an IPFS gateway is **trusted** (in the sense of trusting the gateway) which means you delegate IPNS resolution to the gateway without any means to verify the authenticity response you get, i.e the content path and signature of the IPNS record.
 
 <!-- ### Third-party providing/publishing w3name -->
 
-## Example
 
-When looking up an IPNS address, use the `/ipns/` prefix:
-
-```shell
-/ipns/QmSrPmbaUKA3ZodhzPWZnpFgcPMFWF4QsxXbkWfEptTBJd
-```
-
-## Example IPNS Setup with CLI
+## Publishing IPNS names with Kubo
 
 1. Start your IPFS daemon, if it isn't already running:
 
@@ -161,9 +170,9 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 1. Add your file to IPFS:
 
    ```shell
-   ipfs add hello.txt
+   ipfs add --cid-version 1 hello.txt
 
-   > added QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG hello.txt
+   > added bafkreidfdrlkeq4m4xnxuyx6iae76fdm4wgl5d4xzsb77ixhyqwumhz244 hello.txt
    > 11 B / 11 B [=====================================================] 100.00%
    ```
 
@@ -172,7 +181,7 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 1. Use `cat` and the CID you just got from IPFS to view the file again:
 
    ```shell
-   ipfs cat QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
+   ipfs cat bafkreidfdrlkeq4m4xnxuyx6iae76fdm4wgl5d4xzsb77ixhyqwumhz244
 
    > Hello IPFS
    ```
@@ -180,17 +189,17 @@ When looking up an IPNS address, use the `/ipns/` prefix:
 1. Publish your CID to IPNS:
 
    ```shell
-   ipfs name publish /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
+   ipfs name publish /ipfs/bafkreidfdrlkeq4m4xnxuyx6iae76fdm4wgl5d4xzsb77ixhyqwumhz244
 
-   > Published to k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew: /ipfs/QmUVTKsrYJpaxUT7dr9FpKq6AoKHhEM7eG1ZHGL56haKLG
+   > Published to k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l: /ipfs/bafkreidfdrlkeq4m4xnxuyx6iae76fdm4wgl5d4xzsb77ixhyqwumhz244
    ```
 
    `k51...` is the public key or IPNS name of the IPFS you are running. You can now change the file repeatedly, and, even though the CID changes when you change the file, you can continue to access it with this key.
 
-1. You can view your file by going to `https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew`:
+1. You can view your file by going to `https://ipfs.io/ipns/k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l`:
 
    ```shell
-   curl https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew
+   curl https://ipfs.io/ipns/k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l
 
    > Hello IPFS
    ```
@@ -201,18 +210,18 @@ When looking up an IPNS address, use the `/ipns/` prefix:
    echo "Hello again IPFS" > hello.txt
    ipfs add hello.txt
 
-   > added QmaVfeg2GM17RLjBs9C4fhpku6uDgrEGUYCTC183VrZaVW hello.txt
+   > added bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq hello.txt
    > 17 B / 17 B [=====================================================] 100.00%
 
-   ipfs name publish QmaVfeg2GM17RLjBs9C4fhpku6uDgrEGUYCTC183VrZaVW
+   ipfs name publish bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq
 
-   > Published to k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew: /ipfs/QmaVfeg2GM17RLjBs9C4fhpku6uDgrEGUYCTC183VrZaVW
+   > Published to k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l: /ipfs/bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq
    ```
 
-1. You can now go back to `https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew` to view your updated file using the same address:
+2. You can now go back to `https://ipfs.io/ipns/k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l` to view your updated file using the same address:
 
    ```shell
-   curl https://gateway.ipfs.io/ipns/k51qzi5uqu5dkkciu33khkzbcmxtyhn376i1e83tya8kuy7z9euedzyr5nhoew
+   curl https://ipfs.io/ipns/k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l
 
    > Hello again IPFS
    ```
@@ -222,7 +231,7 @@ You can view the CID of the file associated with your `k5` key by using `name re
 ```shell
 ipfs name resolve
 
-> /ipfs/QmaVfeg2GM17RLjBs9C4fhpku6uDgrEGUYCTC183VrZaVW
+> /ipfs/bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq
 ```
 
 To use a different `k5` key, first create one using `key gen test`, and use the `--key` flag when calling `name publish`:
@@ -232,9 +241,9 @@ ipfs key gen SecondKey
 
 > k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl
 
-ipfs name publish --key=SecondKey /ipfs/QmaVfeg2GM17RLjBs9C4fhpku6uDgrEGUYCTC183VrZaVW
+ipfs name publish --key=SecondKey /ipfs/bafybeicklkqcnlvtiscr2hzkubjwnwjinvskffn4xorqeduft3wq7vm5u4
 
-> Published to k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl: /ipfs/QmaVfeg2GM17RLjBs9C4fhpku6uDgrEGUYCTC183VrZaVW
+> Published to k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl: /ipfs/bafybeicklkqcnlvtiscr2hzkubjwnwjinvskffn4xorqeduft3wq7vm5u4
 ```
 
 ## Example IPNS Setup with JS SDK API
@@ -245,13 +254,13 @@ Here's where the Name API comes in handy. With it, you can create a single, stab
 
 ```javascript
 // The address of your files.
-const addr = '/ipfs/QmbezGequPwcsWo8UL4wDF6a8hYwM1hmbzYv2mnKkEWaUp'
+const addr = '/ipfs/bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq'
 
 ipfs.name.publish(addr).then(function (res) {
   // You now receive a res which contains two fields:
   //   - name: the name under which the content was published.
   //   - value: the "real" address to which Name points.
-  console.log(`https://gateway.ipfs.io/ipns/${res.name}`)
+  console.log(`https://ipfs.io/ipns/${res.name}`)
 })
 ```
 
