@@ -31,9 +31,9 @@ description: Learn about the InterPlanetary Name System (IPNS) and how it can be
 
 [Content addressing](content-addressing.md) in IPFS is by nature _immutable_: when you add a file to IPFS, it creates a hash from the data contained in it. Changing a file changes its hash, and consequently its CID which is used as an address.
 
-Yet, there are many situations where **mutable pointers** are useful as a complement to immutability, for example, when publishing a website that frequently changes. It would be impractical to share a new CID every time you update the website. With mutable pointers, you can share the address of the pointer once, and update the pointer – to the new CID – every time you publish a change.
+Yet, there are many situations where content-addressed data needs to be regularly updated, for example, when publishing a website that frequently changes. It would be impractical to share a new CID every time you update the website. With **mutable pointers**, you can share the address of the pointer once, and update the pointer – to the new CID – every time you publish a change.
 
-The InterPlanetary Name System (IPNS) enables the creation of such mutable pointers to CIDs known as **names** or **IPNS names**. IPNS names can be thought of as links that can be updated over time.
+The InterPlanetary Name System (IPNS) is a system for creating such mutable pointers to CIDs known as **names** or **IPNS names**. IPNS names can be thought of as links that can be updated over time, while retaining the verifiability of content addressing.
 
 > **Note:** Technically, an IPNS name can also point to another IPNS name or DNSLink path. However, it most commonly points to a CID.
 
