@@ -149,7 +149,7 @@ Please stay tuned on the steps to translate the documentation.
 - [@johnnymatthews](https://github.com/johnnymatthews): Project leadership & organization
 - [@cwaring](https://github.com/cwaring): Development support
 - [@2color](https://github.com/2color): Dev Rel, tech writer(ecosystem)
-- [@jennijuju](https://github.com/jennijuju): TPM
+- [@jennijuju](https://github.com/jennijuju): Management and supervision
 
 ## License
 
