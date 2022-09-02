@@ -143,7 +143,7 @@ The CI/CD production workflow builds on the `main` branch and deploys the docume
 
 Please stay tuned on the steps to translate the documentation.
 
-## Core members
+## Primary maintainers
 
 - [@TMoMoreau](https://github.com/TMoMoreau): Primary contact, tech writer(engineering)
 - [@johnnymatthews](https://github.com/johnnymatthews): Project leadership, organization
