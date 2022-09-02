@@ -148,7 +148,8 @@ Please stay tuned on the steps to translate the documentation.
 - [@TMoMoreau](https://github.com/TMoMoreau): Primary contact, technical writing(engineering)
 - [@johnnymatthews](https://github.com/johnnymatthews): Project leadership & organization
 - [@cwaring](https://github.com/cwaring): Development support
-- [@2color](https://github.com/2color): Dev Rel, tech writer(ecosystem)
+- [@2color](https://github.com/2color): Developer relations & technical writing(ecosystem)
+- [@DannyS03](https://github.com/DannyS03}: Technical writing(engineering) 
 - [@jennijuju](https://github.com/jennijuju): Management and supervision
 
 ## License
