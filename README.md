@@ -145,7 +145,7 @@ Please stay tuned on the steps to translate the documentation.
 
 ## Primary maintainers
 
-- [@TMoMoreau](https://github.com/TMoMoreau): Primary contact, tech writer(engineering)
+- [@TMoMoreau](https://github.com/TMoMoreau): Primary contact, technical writing(engineering)
 - [@johnnymatthews](https://github.com/johnnymatthews): Project leadership & organization
 - [@cwaring](https://github.com/cwaring): Development support
 - [@2color](https://github.com/2color): Dev Rel, tech writer(ecosystem)
