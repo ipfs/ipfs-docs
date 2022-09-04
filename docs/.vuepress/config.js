@@ -24,8 +24,8 @@ module.exports = {
       md.use(require('markdown-it-footnote'))
       md.use(require('markdown-it-task-lists'))
       md.use(require('markdown-it-deflist')),
-        md.use(require('markdown-it-imsize')),
-        md.use(require('markdown-it-image-lazy-loading'))
+      md.use(require('markdown-it-imsize')),
+      md.use(require('markdown-it-image-lazy-loading'))
     }
   },
   themeConfig: {
@@ -85,7 +85,8 @@ module.exports = {
             path: '/basics/',
             children: [
                 'basics/desktop-app',
-                'basics/command-line',
+                'basics/go/command-line',
+                'basics/js/js-ipfs',
                 'basics/ipfs-implementations'
             ]
           },
@@ -200,7 +201,7 @@ module.exports = {
                   '/how-to/work-with-pinning-services',
                   '/how-to/take-snapshot',
                   '/how-to/store-play-videos',
-                  '/how-to/host-git-style-repo',
+                  '/how-to/host-git-repo',
                   '/how-to/move-ipfs-installation/move-ipfs-installation'
                 ]
               },
@@ -433,7 +434,8 @@ module.exports = {
       }
     ],
     'vuepress-plugin-chunkload-redirect',
-    'vuepress-plugin-ipfs'
+    'vuepress-plugin-ipfs',
+    'tabs'
   ],
   extraWatchFiles: ['.vuepress/nav/en.js']
 }

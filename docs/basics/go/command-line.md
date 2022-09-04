@@ -1,11 +1,11 @@
 ---
-title: "Command-line"
+title: IPFS in Golang
 description: "A simple walkthrough of how to perform basic IPFS operations using the Kubo command-line."
 ---
 
 # Basic CLI Operations
 
-This short guide aims to walk you through the basics of using IPFS with the Kubo CLI.  Kubo is [one of multiple IPFS implementations](ipfs-implementations.md). It is the oldest IPFS implementation and exposes a CLI (among other things).
+This short guide aims to walk you through the **basics of using IPFS with the Kubo CLI**.  Kubo is [one of multiple IPFS implementations](../ipfs-implementations.md). It is the oldest IPFS implementation and exposes a CLI (among other things).
 
 You will learn how to add, retrieve, read, and remove files within the CLI. If you are unsure about the meaning of some terms, you can check out the [glossary](../concepts/glossary.md).
 
