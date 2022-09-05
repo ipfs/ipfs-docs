@@ -94,7 +94,7 @@ The main implication of this difference is that IPNS operations (publishing and 
 
 #### IPNS over the DHT
 
-The DHT is the default transport mechanism for IPNS records in Kubo.
+The DHT is the default transport mechanism for IPNS records in most IPFS implementations, e.g. Kubo, and js-ipfs.
 
 Due to the ephemeral nature of the DHT, peers forget records after 24 hours. This applies to any record in the DHT, irrespective of the `validity` (also referred to as `lifetime`) field in the IPNS record.
 
@@ -123,7 +123,7 @@ Initial operations, e.g. resolving or publishing an IPNS name for the first time
 
 After the subscription to the topic is established, PubSub usually improves both publishing and resolving times of IPNS by relying on interested peers for both operations.
 
-It should be noted that there's an upper limit to the number of unique IPNS names you can resolve over PubSub, because for each name, a subscription is created which opens several network connections to mesh peers.
+It should be noted that there's an upper limit to the number of unique IPNS names you can resolve over PubSub, because for each name, a subscription is created which opens several (by default 6) network connections to mesh members.
 
 ##### Publishing IPNS records over PubSub lifecycle
 
@@ -131,7 +131,7 @@ It should be noted that there's an upper limit to the number of unique IPNS name
 2. Calculate PubSub topic name from IPNS name
 3. Join the topic by querying the DHT for the topic's provider records
 4. Publish the IPNS record to the topic
-5. Whenever [a new peer joins the topic](https://github.com/libp2p/go-libp2p-pubsub-router/blob/292d99457d224853706c5e49f8ddc112740a856a/pubsub.go#L538-L560) (specifically your peer mesh), ask them for the record. If they respond with a newer record, update it locally and publish the updated record to the.
+5. Whenever [a new peer joins the topic](https://github.com/libp2p/go-libp2p-pubsub-router/blob/292d99457d224853706c5e49f8ddc112740a856a/pubsub.go#L538-L560) (specifically your mesh), ask them for the record. If they respond with a newer record, update it locally and publish the updated record to the.
 6. Periodically (by default every 10 minutes) rebroadcast the IPNS record,
 
 Steps 5 and 6 describe from a high level how IPNS record persistence is layered over PubSub by ensuring continuous propagation of the IPNS record in the face of node churn (nodes dropping in and out of the network).
