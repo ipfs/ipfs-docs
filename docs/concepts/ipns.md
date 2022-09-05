@@ -26,10 +26,9 @@ description: Learn about the InterPlanetary Name System (IPNS) and how it can be
   - [Alternatives to IPNS](#alternatives-to-ipns)
   - [Further Resources](#further-resources)
 
-
 ## Mutability in IPFS
 
-[Content addressing](content-addressing.md) in IPFS is by nature _immutable_: when you add a file to IPFS, it creates a hash from the data contained in it. Changing a file changes its hash, and consequently its CID which is used as an address.
+[Content addressing](content-addressing.md) in IPFS is by nature _immutable_: when you add a file to IPFS, it creates a hash from the data, with which the CID is constructed. Changing a file changes its hash, and consequently its CID which is used as an address.
 
 Yet, there are many situations where content-addressed data needs to be regularly updated, for example, when publishing a website that frequently changes. It would be impractical to share a new CID every time you update the website. With **mutable pointers**, you can share the address of the pointer once, and update the pointer – to the new CID – every time you publish a change.
 
@@ -168,12 +167,12 @@ IPNS names can be resolved by [IPFS gateways](ipfs-gateway.md) in a _trusted_ fa
 - Subdomain resolution: `https://{ipns-name}.ipns.dweb.link`
 
 For example:
+
 - [https://ipfs.io/ipns/k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8](https://ipfs.io/ipns/k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8)
 
 > **Note** IPNS resolution via an IPFS gateway is **trusted** (in the sense of trusting the gateway) which means you delegate IPNS resolution to the gateway without any means to verify the authenticity response you get, i.e the content path and signature of the IPNS record.
 
 <!-- ### Third-party providing/publishing w3name -->
-
 
 ## Publishing IPNS names with Kubo
 
