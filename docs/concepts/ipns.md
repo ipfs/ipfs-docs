@@ -45,14 +45,14 @@ A **name** in IPNS is the [hash](hashing.md) of a public key. It is associated w
 
 For example, the following is an IPNS name represented by a CIDv1 of public key: [`k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8`](https://cid.ipfs.tech/#k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8).
 
-> **Note:** Kubo uses the identity private key (used for the PeerID) as the default IPNS name. But you can generate multiple keys.
+> **Note:**  Kubo uses the `self` key (ed25519 private key used for the PeerID) as the default IPNS name. But you can generate multiple keys via [`ipfs key gen`](https://docs.ipfs.tech/reference/kubo/cli/#ipfs-key-gen), and use them for managing multiple IPNS names.
 
-#### How IPNS names relate to CIDs
+#### How IPNS names relate to content paths
 
-A CIDv1 can be used to represent both:
+IPNS record can point at an immutable or a mutable path. The meaning behind CID used in a path depends on used  namespace:
 
-- [Immutable content on IPFS](https://cid.ipfs.tech/#bafybeibml5uieyxa5tufngvg7fgwbkwvlsuntwbxgtskoqynbt7wlchmfm) (since the CID contains a multihash)
-- [IPNS name](https://cid.ipfs.tech/#k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8) which corresponds to a libp2p public key.
+- `/ipfs/<cid>` – an  [immutable content on IPFS](https://cid.ipfs.tech/#bafybeibml5uieyxa5tufngvg7fgwbkwvlsuntwbxgtskoqynbt7wlchmfm) (since the CID contains a multihash)
+- `/ipns/<cid-of-libp2p-key>` – a mutable, cryptographic [IPNS name](https://cid.ipfs.tech/#k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8) which corresponds to a libp2p public key.
 
 The following is a useful mental model for understanding the difference between the two:
 
@@ -68,7 +68,7 @@ IPNS names are essentially pointers (IPNS names) to pointers (IPFS CIDs) whereas
 IPNS names are self-certifying. This means that an IPNS record contains all the information necessary to certify its authenticity. IPNS achieves this using public and private key pairs:
 
 - Each IPNS name corresponds to a key pair
-- The IPNS name is a hash of the public key
+- The IPNS name is a CID with a multihash of the public key
 - The IPNS record contains the public key and signature, allowing anyone to verify that the record was signed by the private key holder.
 
 This self-certifying nature gives IPNS several benefits not preset in hierarchical and consensus systems such as DNS, and blockchain identifiers. Notably, IPNS records can come from anywhere, not just a particular service/system, and it is very fast and easy to confirm a record is authentic.
@@ -83,7 +83,7 @@ As a user or developer using IPNS for naming, there are three common operations 
 
 ### IPNS is transport agnostic
 
-The self-certifying nature of IPNS records means that they are not tied to a specific transport protocol. In practice, most IPFS implementations rely on the [**DHT**](dht.md) and **PubSub** to publish and resolve IPNS records.
+The self-certifying nature of IPNS records means that they are not tied to a specific transport protocol. In practice, most IPFS implementations rely on the [**DHT**](dht.md) and [**libp2p PubSub**](https://docs.libp2p.io/concepts/publish-subscribe/) to publish and resolve IPNS records.
 
 There are nuanced differences and trade-offs between the **DHT** and **PubSub** to be aware of.
 
@@ -97,13 +97,13 @@ The main implication of this difference is that IPNS operations (publishing and 
 
 The DHT is the default transport mechanism for IPNS records in Kubo.
 
-Due to the ephemeral nature of the DHT, records get dropped after 24 hours. This applies to any record in the DHT, irrespective of the `validity` (also referred to as `lifetime`) field in the IPNS record.
+Due to the ephemeral nature of the DHT, peers forget records after 24 hours. This applies to any record in the DHT, irrespective of the `validity` (also referred to as `lifetime`) field in the IPNS record.
 
-Therefore, IPNS records need to be regularly published to the DHT. Moreover, publishing to the DHT at regular intervals ensures that the IPNS name can be resolved even when there's high node churn (nodes coming and going.)
+Therefore, IPNS records need to be regularly (re-)published to the DHT. Moreover, publishing to the DHT at regular intervals ensures that the IPNS name can be resolved even when there's high node churn (nodes coming and going.)
 
-By default, Kubo will republish IPNS records to the DHT based on the [`Ipns.RepublishPeriod`] configuration which defaults to 4 hours. [Republishing](https://github.com/ipfs/go-namesys/blob/1bf7d3d9cbe8f988b232b92288b24d25add85a00/republisher/repub.go#L130-L167) involves two steps:
+By default, Kubo will republish IPNS records to the DHT based on the [`Ipns.RepublishPeriod`](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsrepublishperiod) configuration which defaults to 4 hours. [Republishing](https://github.com/ipfs/go-namesys/blob/1bf7d3d9cbe8f988b232b92288b24d25add85a00/republisher/repub.go#L130-L167) involves two steps:
 
-1. Creating an updated IPNS record with the `validity` timestamp field updated (by default based on `Ipns.RecordLifetime`), and signing it with the private key. The `sequence` number will only be incremented if the content path changes.
+1. Creating an updated IPNS record with the `validity` timestamp field updated (by default based on [`Ipns.RecordLifetime`](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsrecordlifetime)), and signing it with the private key. The `sequence` number will only be incremented if the content path changes.
 2. Publish the [IPNS record to the DHT](https://docs.ipfs.tech/concepts/dht/#ipns-records)
 
 > **Note:** See the [DHT documentation](dht.md#ipns-records) for more information on the lifecycle of GETs and PUTs of IPNS records.
