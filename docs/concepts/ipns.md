@@ -136,6 +136,8 @@ It should be noted that there's an upper limit to the number of unique IPNS name
 
 Steps 5 and 6 describe from a high level how IPNS record persistence is layered over PubSub by ensuring continuous propagation of the IPNS record in the face of node churn (nodes dropping in and out of the network).
 
+> Further details about the IPNS over PubSub protocol can be found in the [IPNS over PubSub Spec](https://github.com/ipfs/specs/blob/main/naming/pubsub.md#protocol)
+
 ### Tradeoffs between consistency vs. availability
 
 The self-certifying nature of IPNS comes with an inherent tradeoff between **consistency** and **availability**.
