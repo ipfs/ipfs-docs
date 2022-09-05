@@ -34,7 +34,7 @@ Yet, there are many situations where content-addressed data needs to be regularl
 
 The InterPlanetary Name System (IPNS) is a system for creating such mutable pointers to CIDs known as **names** or **IPNS names**. IPNS names can be thought of as links that can be updated over time, while retaining the verifiability of content addressing.
 
-> **Note:** Technically, an IPNS name can also point to another IPNS name or DNSLink path. However, it most commonly points to a CID.
+> **Note:** Technically, an IPNS name can point to an arbitrary content path (`/ipfs/` or `/ipns/`), including another IPNS name or DNSLink path. However, it most commonly points to a fully resolved and immutable path, i.e. `/ipfs/[CID]`.
 
 ## How IPNS works
 
