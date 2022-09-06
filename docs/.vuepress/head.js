@@ -49,9 +49,13 @@ module.exports = [
     }
   ],
   ['meta', { name: 'theme-color', content: '#5bbad5' }],
-  ['script', {
-    defer: true,
-    'data-domain': "docs.ipfs.tech", 
-    src: "https://plausible.io/js/plausible.js"
-  }, ``],
+  [
+    'script',
+    {
+      defer: true,
+      'data-domain': 'docs.ipfs.tech',
+      'data-api': 'https://proxy.daas.workers.dev/api/event',
+      src: 'https://proxy.daas.workers.dev/js/script.js'
+    }
+  ]
 ]
