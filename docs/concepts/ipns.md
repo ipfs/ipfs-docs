@@ -1,30 +1,27 @@
 ---
 title: IPNS
-description: Learn about the InterPlanetary Name System (IPNS) and how it can be used in conjunction with IPFS.
+description: Learn about the mutability in IPFS, InterPlanetary Name System (IPNS), and how it can be used in conjunction with IPFS.
 ---
 
 # InterPlanetary Name System (IPNS)
 
-- [InterPlanetary Name System (IPNS)](#interplanetary-name-system-ipns)
-  - [Mutability in IPFS](#mutability-in-ipfs)
-  - [How IPNS works](#how-ipns-works)
-    - [Anatomy of an IPNS name](#anatomy-of-an-ipns-name)
-      - [How IPNS names relate to CIDs](#how-ipns-names-relate-to-cids)
-    - [IPNS names are self-certifying](#ipns-names-are-self-certifying)
-    - [Common IPNS operations](#common-ipns-operations)
-    - [IPNS is transport agnostic](#ipns-is-transport-agnostic)
-      - [IPNS over the DHT](#ipns-over-the-dht)
-      - [IPNS over PubSub](#ipns-over-pubsub)
-        - [Publishing IPNS records over PubSub lifecycle](#publishing-ipns-records-over-pubsub-lifecycle)
-    - [Tradeoffs between consistency vs. availability](#tradeoffs-between-consistency-vs-availability)
-      - [IPNS record validity](#ipns-record-validity)
-      - [Practical considerations](#practical-considerations)
-  - [IPNS in practice](#ipns-in-practice)
-    - [Resolving IPNS names using IPFS gateways](#resolving-ipns-names-using-ipfs-gateways)
-  - [Publishing IPNS names with Kubo](#publishing-ipns-names-with-kubo)
-  - [Example IPNS Setup with JS SDK API](#example-ipns-setup-with-js-sdk-api)
-  - [Alternatives to IPNS](#alternatives-to-ipns)
-  - [Further Resources](#further-resources)
+- [Mutability in IPFS](#mutability-in-ipfs)
+- [How IPNS works](#how-ipns-works)
+  - [Anatomy of an IPNS name](#anatomy-of-an-ipns-name)
+    - [How IPNS names relate to content paths](#how-ipns-names-relate-to-content-paths)
+  - [IPNS names are self-certifying](#ipns-names-are-self-certifying)
+  - [Common IPNS operations](#common-ipns-operations)
+  - [IPNS is transport agnostic](#ipns-is-transport-agnostic)
+    - [IPNS over the DHT](#ipns-over-the-dht)
+    - [IPNS over PubSub](#ipns-over-pubsub)
+  - [Tradeoffs between consistency vs. availability](#tradeoffs-between-consistency-vs-availability)
+    - [IPNS record validity](#ipns-record-validity)
+    - [Practical considerations](#practical-considerations)
+- [IPNS in practice](#ipns-in-practice)
+  - [Resolving IPNS names using IPFS gateways](#resolving-ipns-names-using-ipfs-gateways)
+  - [Publishing IPNS names](#publishing-ipns-names)
+- [Alternatives to IPNS](#alternatives-to-ipns)
+- [Further Resources](#further-resources)
 
 ## Mutability in IPFS
 
@@ -44,13 +41,13 @@ A **name** in IPNS is the [hash](hashing.md) of a public key. It is associated w
 
 For example, the following is an IPNS name represented by a CIDv1 of public key: [`k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8`](https://cid.ipfs.tech/#k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8).
 
-> **Note:**  Kubo uses the `self` key (ed25519 private key used for the PeerID) as the default IPNS name. But you can generate multiple keys via [`ipfs key gen`](https://docs.ipfs.tech/reference/kubo/cli/#ipfs-key-gen), and use them for managing multiple IPNS names.
+> **Note:** Kubo uses the `self` key (ed25519 private key used for the PeerID) as the default IPNS name. But you can generate multiple keys via [`ipfs key gen`](https://docs.ipfs.tech/reference/kubo/cli/#ipfs-key-gen), and use them for managing multiple IPNS names.
 
 #### How IPNS names relate to content paths
 
-IPNS record can point at an immutable or a mutable path. The meaning behind CID used in a path depends on used  namespace:
+IPNS record can point at an immutable or a mutable path. The meaning behind CID used in a path depends on used namespace:
 
-- `/ipfs/<cid>` – an  [immutable content on IPFS](https://cid.ipfs.tech/#bafybeibml5uieyxa5tufngvg7fgwbkwvlsuntwbxgtskoqynbt7wlchmfm) (since the CID contains a multihash)
+- `/ipfs/<cid>` – an [immutable content on IPFS](https://cid.ipfs.tech/#bafybeibml5uieyxa5tufngvg7fgwbkwvlsuntwbxgtskoqynbt7wlchmfm) (since the CID contains a multihash)
 - `/ipns/<cid-of-libp2p-key>` – a mutable, cryptographic [IPNS name](https://cid.ipfs.tech/#k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8) which corresponds to a libp2p public key.
 
 The following is a useful mental model for understanding the difference between the two:
@@ -176,118 +173,9 @@ For example:
 
 <!-- ### Third-party providing/publishing w3name -->
 
-## Publishing IPNS names with Kubo
+### Publishing IPNS names
 
-1. Start your IPFS daemon, if it isn't already running:
-
-   ```shell
-   ipfs daemon
-   ```
-
-1. Open another command line window and create the file that you want to set up with IPNS. For the tutorial, we're just going to create a simple _hello world_ file:
-
-   ```shell
-   echo "Hello IPFS" > hello.txt
-   ```
-
-1. Add your file to IPFS:
-
-   ```shell
-   ipfs add --cid-version 1 hello.txt
-
-   > added bafkreidfdrlkeq4m4xnxuyx6iae76fdm4wgl5d4xzsb77ixhyqwumhz244 hello.txt
-   > 11 B / 11 B [=====================================================] 100.00%
-   ```
-
-   Take note of the CID output by IPFS.
-
-1. Use `cat` and the CID you just got from IPFS to view the file again:
-
-   ```shell
-   ipfs cat bafkreidfdrlkeq4m4xnxuyx6iae76fdm4wgl5d4xzsb77ixhyqwumhz244
-
-   > Hello IPFS
-   ```
-
-1. Publish your CID to IPNS:
-
-   ```shell
-   ipfs name publish /ipfs/bafkreidfdrlkeq4m4xnxuyx6iae76fdm4wgl5d4xzsb77ixhyqwumhz244
-
-   > Published to k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l: /ipfs/bafkreidfdrlkeq4m4xnxuyx6iae76fdm4wgl5d4xzsb77ixhyqwumhz244
-   ```
-
-   `k51...` is the public key or IPNS name of the IPFS you are running. You can now change the file repeatedly, and, even though the CID changes when you change the file, you can continue to access it with this key.
-
-1. You can view your file by going to `https://ipfs.io/ipns/k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l`:
-
-   ```shell
-   curl https://ipfs.io/ipns/k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l
-
-   > Hello IPFS
-   ```
-
-1. Make a change to your file, add it to IPFS, and update your IPNS:
-
-   ```shell
-   echo "Hello again IPFS" > hello.txt
-   ipfs add hello.txt
-
-   > added bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq hello.txt
-   > 17 B / 17 B [=====================================================] 100.00%
-
-   ipfs name publish bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq
-
-   > Published to k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l: /ipfs/bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq
-   ```
-
-2. You can now go back to `https://ipfs.io/ipns/k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l` to view your updated file using the same address:
-
-   ```shell
-   curl https://ipfs.io/ipns/k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l
-
-   > Hello again IPFS
-   ```
-
-You can view the CID of the file associated with your `k5` key by using `name resolve`:
-
-```shell
-ipfs name resolve
-
-> /ipfs/bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq
-```
-
-To use a different `k5` key, first create one using `key gen test`, and use the `--key` flag when calling `name publish`:
-
-```shell
-ipfs key gen SecondKey
-
-> k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl
-
-ipfs name publish --key=SecondKey /ipfs/bafybeicklkqcnlvtiscr2hzkubjwnwjinvskffn4xorqeduft3wq7vm5u4
-
-> Published to k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl: /ipfs/bafybeicklkqcnlvtiscr2hzkubjwnwjinvskffn4xorqeduft3wq7vm5u4
-```
-
-## Example IPNS Setup with JS SDK API
-
-Imagine you want to publish your website under IPFS. You can use the [Files API](file-systems.md#mutable-file-system-mfs) to publish your static website, and then you'll get a CID you can link to. But when you need to make a change, a problem arises: you get a new CID because you now have different content. And it is not possible for you to be always giving others a new address.
-
-Here's where the Name API comes in handy. With it, you can create a single, stable IPNS address that points to the CID for the latest version of your website.
-
-```javascript
-// The address of your files.
-const addr = '/ipfs/bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq'
-
-ipfs.name.publish(addr).then(function (res) {
-  // You now receive a res which contains two fields:
-  //   - name: the name under which the content was published.
-  //   - value: the "real" address to which Name points.
-  console.log(`https://ipfs.io/ipns/${res.name}`)
-})
-```
-
-In the same way, you can republish a new version of your website under the same address. By default, `ipfs.name.publish` will use the Peer ID.
+See the following guide on [publishing IPNS names with Kubo and js-ipfs](../how-to/publish-ipns.md).
 
 ## Alternatives to IPNS
 
