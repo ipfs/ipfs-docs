@@ -224,7 +224,8 @@ module.exports = {
                   '/how-to/websites-on-ipfs/multipage-website',
                   '/how-to/websites-on-ipfs/link-a-domain',
                   '/how-to/websites-on-ipfs/introducing-fleek',
-                  '/how-to/websites-on-ipfs/static-site-generators'
+                  '/how-to/websites-on-ipfs/static-site-generators',
+                  '/how-to/websites-on-ipfs/gateway-redirects'
                 ]
               },
               {
