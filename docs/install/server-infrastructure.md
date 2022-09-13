@@ -12,7 +12,7 @@ If you want to install IPFS in a server environment and offer IPFS as a service,
 
 # Kubernetes
 
-If you are a kubernetes user, you might be interested to know that a kubernetes [operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
+As a Kubernetes user, you can use a Kubernetes operator for IPFS called [IPFS operator] (https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) to easily create and manage clusters consisting of hundreds of peers.
 is available. This project is in active development and it isn't yet recommended for production use cases. If this is something
 you would like to try, you can check out our current [documentation](https://ipfs-operator.readthedocs.io/) or [github](https://github.com/redhat-et/ipfs-operator).
 
