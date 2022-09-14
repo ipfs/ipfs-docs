@@ -41,7 +41,7 @@ IPFS is a highly modular project that is itself made out of many different proto
 
 ## Contribute to IPFS
 
-Thousands of people contribute to IPFS from all over the world — and that can include you! No matter your areas of interest or expertise, there are a number of ways that you can make an impact on the future of the Internet by [contributing to IPFS](contribute.md).
+Thousands of people contribute to IPFS from all over the world — and that can include you! No matter your areas of interest or expertise, there are a number of ways that you can make an impact on the future of the Internet by [contributing to IPFS](../community/contribute/ways-to-contribute.md).
 
 ## Code of conduct
 

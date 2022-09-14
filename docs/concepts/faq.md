@@ -32,7 +32,7 @@ When you add a file to IPFS, IPFS splits it into smaller blocks. IPFS hashes eac
 
 ### How do I start contributing to IPFS?
 
-There are a lot of ways you can contribute to IPFS, whether you're interested in helping with either of the core implementations, applications like IPFS Desktop, writing or editing documentation, doing UX, or whatever you enjoy working on. [Get all the details on where to get started here.](../project/contribute.md)
+There are a lot of ways you can contribute to IPFS, whether you're interested in helping with either of the core implementations, applications like IPFS Desktop, writing or editing documentation, doing UX, or whatever you enjoy working on. [Get all the details on where to get started here.](../community/contribute/ways-to-contribute.md)
 
 ## IPFS and Filecoin
 
