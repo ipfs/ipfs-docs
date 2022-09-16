@@ -238,6 +238,14 @@ module.exports = {
                 ]
               },
               {
+                title: 'IPNS and mutability',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/how-to/publish-ipns'
+                ]
+              },
+              {
                 title: 'IPFS Companion',
                 sidebarDepth: 1,
                 collapsable: false,
