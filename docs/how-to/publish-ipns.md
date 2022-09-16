@@ -105,7 +105,7 @@ ipfs name publish --key=SecondKey /ipfs/bafybeicklkqcnlvtiscr2hzkubjwnwjinvskffn
 
 ## Publishing IPNS names programmatically with JS-IPFS
 
-With [ipfs-core](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-core#readme) (a full IPNS node in JavaScript) you can you can publish an IPNS name as follows:
+With [ipfs-core](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-core#readme) (a full IPNS node in JavaScript) you can publish an IPNS name as follows:
 
 ```javascript
 import * as IPFS from 'ipfs-core'
@@ -118,13 +118,13 @@ const addr = '/ipfs/bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq'
 ipfs.name.publish(addr, options).then(function (res) {
   // You now receive a res which contains two fields:
   //   - name: the name under which the content was published.
-  //   - value: the "real" address to which Name points.
-  console.log(`https://ipfs.io/ipns/${res.name}`)
+  //   - value: the IPFS path to which the IPNS name points.
+  console.log(`IPNS name: ${res.name}\n value: ${res.value}`)
 })
 ```
 
 By default, `ipfs.name.publish` will use the Peer ID and set the lifetime to 24 hours. To learn more about the full API, check out the [API docs](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/NAME.md#ipfsnamepublishvalue-options).
 
 :::warning
-Note that when using `ipfs-core`, you're instantiating a full IPFS node. For your IPNS record to propagate through the network, it needs to be connected to other peers. Typically this is not a problem, however, if you're running `ipfs-core` in the browser, you may want to connect it to a long-running IPFS node to ensure it successfully propagates due to [browser connectivity limitations.](https://github.com/ipfs/js-ipfs/blob/master/docs/BROWSERS.md#limitations-of-the-browser-context)
+Note that when using `ipfs-core`, you're instantiating a full IPFS node. For your IPNS record to propagate through the network, it needs to be connected to other peers. If you're running `ipfs-core` in the browser, you may want to connect it to a long-running IPFS node to ensure it successfully propagates due to [browser connectivity limitations.](https://github.com/ipfs/js-ipfs/blob/master/docs/BROWSERS.md#limitations-of-the-browser-context).
 :::
