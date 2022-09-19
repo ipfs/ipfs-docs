@@ -52,6 +52,12 @@ IPNS record can point at an immutable or a mutable path. The meaning behind CID 
 
 The following is a useful mental model for understanding the difference between the two:
 
+```mermaid
+graph LR;
+    IPNS-- mutable pointer -->IPFS;
+    IPFS-- immutable pointer -->content;
+```
+
 ```
 IPFS = immutable *Pointer => content
 IPNS = **Pointer => content
@@ -78,6 +84,24 @@ As a user or developer using IPNS for naming, there are three common operations 
 - **Resolving an IPNS name:** Resolving an IPNS name to a content path.
 
 ### IPNS is transport agnostic
+
+```mermaid
+graph TB
+    Record>"IPNS Record"]
+    subgraph Routing
+      Publisher
+      Resolver
+      Local[("Local store")]
+      subgraph Transports
+        PubSub[(PubSub)]
+        DHT[(DHT)]
+      end
+    end
+    Resolver-- resolve -->Record-- "(re)publish" -->Publisher
+    Publisher-- PUT -->DHT-. GET .->Resolver
+    Publisher-- PUT -->PubSub-. GET .->Resolver
+    Publisher-- Cache -->Local-. GET .->Resolver-- Cache -->Local
+```
 
 The self-certifying nature of IPNS records means that they are not tied to a specific transport protocol. In practice, most IPFS implementations rely on the [**DHT**](dht.md) and [**libp2p PubSub**](https://docs.libp2p.io/concepts/publish-subscribe/) to publish and resolve IPNS records.
 

@@ -442,6 +442,7 @@ module.exports = {
     ],
     'vuepress-plugin-chunkload-redirect',
     'vuepress-plugin-ipfs',
+    'vuepress-plugin-mermaidjs',
     'tabs'
   ],
   extraWatchFiles: ['.vuepress/nav/en.js']
