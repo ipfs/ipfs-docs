@@ -8,7 +8,7 @@ The `_redirects` file provides support for URL redirects and rewrites for websit
 
 This `_redirects` implementaion is a subset of pre-existing standards supported by [Cloudflare](https://developers.cloudflare.com/pages/platform/redirects) and [Netlify](https://docs.netlify.com/routing/redirects/).
 
-For more detailed information, check out the [`_redirects` file support specs](https://github.com/ipfs/specs/pull/290).
+For more detailed information, check out the [`_redirects` file support specs](https://github.com/ipfs/specs/blob/main/http-gateways/REDIRECTS_FILE.md).
 
 # Supported HTTP status codes
 
