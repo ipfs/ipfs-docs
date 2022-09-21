@@ -1,5 +1,5 @@
 ---
-title: _redirects file support
+title: redirects file support
 description: What the _redirect file is and how to use them with a website on IPFS.
 ---
 # `_redirects` file support
