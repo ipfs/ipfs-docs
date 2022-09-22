@@ -33,7 +33,7 @@ Each line contained within the `_redirects` file has 3 basic components:
 
 For example, if you want to temporarily redirect traffic from your home page to your index page, the `_redirects` file should contain a line that looks something like this:
 
-```
+```plaintext
 /home /index.html 302 \n
 ```
 
@@ -45,7 +45,7 @@ The same format is used for all redirects.
 
 The `200` status will be treated as a rewrite, returning OK without changing the URL shown in the browser. This staus code can be used to build [Progressive Web Apps](https://en.wikipedia.org/wiki/Progressive_web_app) and [Single Page Applications](https://en.wikipedia.org/wiki/Single-page_application).
 
-```
+```plaintext
 /home /index.html 200 \n
 ```
 
@@ -53,13 +53,13 @@ The `200` status will be treated as a rewrite, returning OK without changing the
 
 The `301` status is a permanent redirect, this is the default status code used when no others are spcified. 
 
-```
+```plaintext
 /index /docs.html 301 \n
 ```
 
 The `302` status is commonly used for temporary redirects.
 
-```
+```plaintext
 /home /under-construction.html 302 \n
 ```
 
@@ -67,7 +67,7 @@ The `302` status is commonly used for temporary redirects.
 
 Use the `_redirects` file support to add a custom 404 page to your website.
 
-```
+```plaintext
 /home /custom-404.html 404 \n
 ```
 
@@ -79,7 +79,7 @@ This is useful for redirecting users to their desired content, even if their sea
 
 For example, if I wanted to search for an article titled "hello world" that was written on June 15, 2022, I could search for it like this: `/posts/06/15/2022/hello-world` and be redirected to `/articles/2022/06/15/hello-world`
 
-```
+```plaintext
 /posts/<month>/<day>/<year>/<slug> /articles/<year>/<month>/<day>/<slug> \n
 ```
 
