@@ -7,6 +7,10 @@ description: Learn how to host a simple one-page website on IPFS and link up a d
 
 In this tutorial, we will host a simple one-page website on IPFS and link up a domain name. This is the first step is a series of tutorials to teach web developers on how to build websites and applications using IPFS.
 
+::: callout
+If you are looking for [single-page application (SPA)](https://en.wikipedia.org/wiki/Single-page_application) support, see [redirects and custom 404s](/how-to/websites-on-ipfs/redirects-and-custom-404s) instead.
+:::
+
 ## Install IPFS desktop
 
 IPFS desktop application is the easiest way to get up and running quickly with IPFS. The installation steps for IPFS desktop differ between operating systems. Follow the instructions for your system.
@@ -254,3 +258,4 @@ This project was designed to get you up and running quickly, but there are many 
 
 You may have noticed that when visiting [randomplanetfacts.xyz](http://randomplanetfacts.xyz), your browser redirects to [gateway.pinata.cloud/ipfs/QmW7S5HR...](https://gateway.pinata.cloud/ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA). This isn't great for the user's experience, and it can cause issues with security certificates and other website validation methods. Also, this website is incredibly simple. There are no images, external stylesheets, or javascript files. 
 If you're interested in building a more complex site using IPFS and securing it properly, [carry on with this tutorial series by hosting a multipage website on IPFS.](multipage-website.md)
+

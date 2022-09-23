@@ -225,7 +225,7 @@ module.exports = {
                   '/how-to/websites-on-ipfs/link-a-domain',
                   '/how-to/websites-on-ipfs/introducing-fleek',
                   '/how-to/websites-on-ipfs/static-site-generators',
-                  '/how-to/websites-on-ipfs/redirects-file-support'
+                  '/how-to/websites-on-ipfs/redirects-and-custom-404s'
                 ]
               },
               {
