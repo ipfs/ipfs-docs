@@ -20,9 +20,9 @@ Redirect logic will only be evaluated if the requested path is not in the [DAG](
 
 ## How to set up
 
-To define rules executed when requested path is not found in DAG, there must be a file named `_redirects` stored underneath the root CID of the website. This `_redirects` file must be a text file containing one or more lines that follow the format explained below.
+To define rules that will be executed when the requested path is not found in the DAG, there must be a file named `_redirects` stored underneath the root CID of the website. This `_redirects` file must be a text file containing one or more lines that follow the format explained below.
 
-## Format of the `_redirects` file
+### Format of the `_redirects` file
 
 Each line contained within the `_redirects` file has 3 basic components:
 
@@ -34,12 +34,11 @@ from  to  [status]
 1. The `to` path. This specifies the path to be redirected to.
 1. The `status` component. This part is optional and specifies the HTTP status code that will be returned. (301, 404, etc.)
 
-For example, if you removed `home.html` and want to temporarily redirect traffic from `home.html` page to your `index.html` page, the `_redirects` file should contain a line that looks something like this:
+For example, if you removed `home.html` and want to temporarily redirect traffic from `home.html` to `index.html`, the `_redirects` file should contain a line that looks something like this:
 
 ```plaintext
 /home.html /index.html 302
 ```
-
 
 ### Status codes
 
@@ -54,7 +53,7 @@ For example, if you removed `home.html` and want to temporarily redirect traffic
 
 Placeholders are named variables that can be used to match path segments in the `from` path and inject them into the `to` path.
 
-This is useful for redirecting users to their desired content, even if the way your website is organized changed .
+This is useful for redirecting users to their desired content, even if the way your website is organized changed.
 
 For example, if I wanted to search for an article titled "hello world" that was written on June 15, 2022, I could search for it like this: `/posts/06/15/2022/hello-world` and be redirected to `/articles/2022/06/15/hello-world`
 
@@ -62,7 +61,7 @@ For example, if I wanted to search for an article titled "hello world" that was 
 /posts/:month/:day/:year/:title  /articles/:year/:month/:day/:title  301
 ```
 
-There is also special catch-all placeholder named `:splat` which represents everything captured via `*`.
+There is also a special catch-all placeholder named `:splat` which represents everything captured via `*`.
 
 ```plaintext
 /blog/*  /new-blog/:splat  302
@@ -76,7 +75,6 @@ There is no overwrite/shadowing: the file is evaluated only when requested path 
 ::: tip
 For more detailed information about supported features, check out the [`_redirects` file specification](https://github.com/ipfs/specs/blob/main/http-gateways/REDIRECTS_FILE.md).
 :::
-
 
 ## Examples
 
@@ -93,7 +91,7 @@ Opening `/app/this-does-not-exist` will return HTTP 200 response with content fr
 ### Redirect an old URL to a new place
 
 The `301` status is a permanent redirect, this is the default status code used when no code is specified.
-Below two rules mean the same:
+The two rules below mean the same thing:
 
 ```plaintext
 /old/docs.html /new/documentation.html
@@ -106,12 +104,12 @@ The `302` status is commonly used for temporary redirects.
 /home /under-construction.html 302
 ```
 
-For advanced and catch-all redirects, see [Placeholders](#placeholders) below.
+For advanced and catch-all redirects, see [Placeholders](#placeholders).
 
 ### Add a custom 404 page to your website
 
 Since the `_redirects` is evaluated only when requested path does not exist,
-it is possibleto define a custom 404 page for your website:
+it is possible to define a custom 404 page for your website:
 
 ```plaintext
 /* /custom-404.html 404
