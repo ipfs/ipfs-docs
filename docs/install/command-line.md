@@ -94,8 +94,8 @@ The IPFS team manages the [dist.ipfs.tech website](https://dist.ipfs.tech/) to h
    a. In the upper left hand corner of your screen, click the "Apple" icon. 
    b. In the drop-down menu displayed, select `About this Mac`.
    c. A window with information about your Mac is displayed. 
-      - If your system uses Apple Silicon, the specific `Chip` is shown, such as `Apple M1 Pro`.
-      - If your system uses an Intel CPU, the specific `Processor` is shown, such as `2.3 GHz 8-Core Intel Core i9`.
+      - If your system uses Apple Silicon, the specific chip is shown, such as `Apple M1 Pro`.
+      - If your system uses an Intel CPU, the specific processor is shown, such as `2.3 GHz 8-Core Intel Core i9`.
 
 1. Download the appropriate macOS binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) based on your hardware:
 
