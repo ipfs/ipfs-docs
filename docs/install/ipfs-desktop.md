@@ -62,7 +62,7 @@ Or, if you'd rather use a package manager, check this [list of third-party packa
 
    ![The IPFS Desktop status bar menu in the Windows status bar.](./images/ipfs-desktop/install-windows-ipfs-desktop-status-bar.png)
 
-The IPFS Desktop application has finished installing. You can now start to [add your site](./how-to/websites-on-ipfs/single-page-website/#add-your-site).
+The IPFS Desktop application has finished installing. Now, learn how to [host a website using IPFS →](../how-to/websites-on-ipfs/single-page-website.md).
 
 ## macOS
 
@@ -93,7 +93,8 @@ The IPFS Desktop application has finished installing. You can now start to [add 
 
    ![The IPFS Desktop status bar menu in the macOS status bar.](./images/ipfs-desktop/install-macos-ipfs-desktop-status-bar.png)
 
-The IPFS Desktop application has finished installing. You can now start to [add your site](#add-your-site).
+The IPFS Desktop application has finished installing. Now, learn how to [host a website using IPFS →](../how-to/websites-on-ipfs/single-page-website.md).
+
 
 ## Ubuntu
 
