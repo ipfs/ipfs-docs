@@ -10,8 +10,6 @@ This feature is new, and requires Kubo 0.16 or later.
 
 This feature enables support for redirects, [single-page applications](#catch-all-and-pwa-spa-support), [custom 404 pages](#add-a-custom-404-page-to-your-website), and moving to IPFS-backed hosting [without breaking existing links](https://www.w3.org/Provider/Style/URI).
 
-[[toc]]
-
 ## Evaluation
 
 This feature is limited to websites hosted in web contexts with unique [Origins](https://en.wikipedia.org/wiki/Same-origin_policy) for content roots, e.g., [subdomain](/how-to/address-ipfs-on-web/#subdomain-gateway) or [DNSLink](/how-to/address-ipfs-on-web/#dnslink-gateway) gateways.
