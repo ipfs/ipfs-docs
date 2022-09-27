@@ -89,11 +89,11 @@ The IPFS team manages the [dist.ipfs.tech website](https://dist.ipfs.tech/) to h
 
 ### macOS
 
-1. Decide which macOS binary to download from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) by determining whether your system uses Apple or Intel CPUs. On most MacOS systems, you can determine the system specs by doing the following:
+1. Decide which macOS binary to download from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) by determining whether your system uses an Apple or Intel CPU. On most macOS systems, you can determine the system specs by doing the following:
 
    a. In the upper left hand corner of your screen, click the "Apple" icon. 
-   b. In the pop-up menu displayed, select `About this Mac`.
-   c. Information on your Mac system is displayed. 
+   b. In the drop-down menu displayed, select `About this Mac`.
+   c. A window with information about your Mac is displayed. 
       - If your system uses Apple Silicon, the specific `Chip` is shown, such as `Apple M1 Pro`.
       - If your system uses an Intel CPU, the specific `Processor` is shown, such as `2.3 GHz 8-Core Intel Core i9`.
 
@@ -102,19 +102,17 @@ The IPFS team manages the [dist.ipfs.tech website](https://dist.ipfs.tech/) to h
    > :warning:
    > Ensure that you download and install the appropriate binary, as the binary for an Intel-based system will not work on a system with Apple Silicon, and vice-versa.
 
-   - *If you are using hardware with Apple Silicon, download
-     the IPFS binary for `darwin-arm64`.* For example, to download the IPFS binary for Kubo v0.15.0 for an Apple-based system, run the following command:
+   - *If you are using hardware with Apple Silicon, download the `darwin-arm64` binary.* For example, to download the IPFS binary for `Kubo v0.15.0` for an Apple-based system, run the following command:
      ```bash
      curl -O https://dist.ipfs.tech/kubo/v0.15.0/kubo_v0.15.0_darwin-arm64.tar.gz
      ```
 
-   - *If you are using hardware with an Intel Processor, download
-     the IPFS binary for `darwin-amd64`.* For example, to download the IPFS binary for Kubo v0.15.0 for an Intel-based system, run the following command:
+   - *If you are using hardware with an Intel Processor, download the `darwin-amd64` binary.* For example, to download the IPFS binary for `Kubo v0.15.0` for an Intel-based system, run the following command:
      ```bash
      curl -O https://dist.ipfs.tech/kubo/v0.15.0/kubo_v0.15.0_darwin-amd64.tar.gz
      ```
 
-1. Unzip the file. For example, to unzip kubo `v0.15.0` for an Intel-based system:
+1. Unzip the file. For example, to unzip `Kubo v0.15.0` for an Intel-based system:
 
    ```bash
    tar -xvzf kubo_v0.15.0_darwin-amd64.tar.gz
