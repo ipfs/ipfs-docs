@@ -91,6 +91,13 @@ module.exports = {
             ]
           },
           {
+            title: 'Test',
+            path: '/test/',
+            children: [
+              'test/new-page-test'
+            ]
+          },
+          {
             title: 'Concepts',
             path: '/concepts/',
             children: [
