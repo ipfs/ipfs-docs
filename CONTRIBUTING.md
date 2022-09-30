@@ -117,6 +117,58 @@ You can learn more about [pull requests on GitHub](https://help.github.com/en/gi
 
 You can also contribute to the project without specifically writing content for the site. Many discussions are happening all around the project. Protocol Labs, and by extension, IPFS, is a collaborative company that relies heavily on the community. We need your opinions and input! If you have an idea about a topic or want to weigh in on a discussion, feel free to have your say either on [GitHub](https://github.com/ipfs/ipfs-docs/issues) or on the [IPFS forums](https://discuss.ipfs.tech/).
 
+## Create a new page
+
+Sometimes you will need to make a whole new page for content to live. The process to do this is outlined below.
+
+These steps were performed in Visual Studio Code (VSCode).
+
+The first step to creating a new page is to identify the type of content it will be to determine where it will live in the structure of the docs. It may need to be a whole new section or it could be added to an existing section as a sub-page. An important concept to keep in mind when deciding where to put the new content is the flow of the already existing content. You wouldn't want to put a page or section designed for experienced users between the already existing **Install** and **Basics** sections.
+
+Once you have determined where the content will live, you must add the appropriate lines to the `config.js` file.
+
+### Create a branch
+
+You can't just add a new page directly to the main branch. First, you will have to create your own branch to push commits to.
+
+To do this in VSCode:
+
+1. First, click the branch icon in the bottom left of the window.
+    <br><br>
+    <img src="./images/create-new-branch.png" style="display:block;margin:0 auto;width:40vw;">
+    <br>
+1. A text field will open at the top of the window, type the name of your new branch. (Preferably, the name of the branch references the changes you are making).
+1. Once you have the name of your new branch figured out, click **+Create new branch**.
+
+You will see now that VSCode has automatically switched your working branch to the new one that you just created. This is the branch that you will push all commits to when creating a new page.
+
+### Adding a single page
+
+Adding a single page to an already existing section is as simple as adding one line to the `config.js` file.
+
+1. Open `config.js` in VSCode.
+1. Find the section you want to add a new page to. For this example, a page titled **Add a new page** will be added to the **Basics** section.
+    <br><br>
+    <img src="./images/add-new-page.png" style="display:block;margin:0 auto;width:40vw;"/>
+    <br>
+2. With the page now added to `config.js`, save the file, stage the changes, and commit them to your branch.
+
+### Adding a new section
+
+Adding a new section to the sidebar of the docs is a little more in-depth. For this example, a new section titled **Test** will be added between the **Basics** and **Concepts** sections.
+
+1. Open `config.js` in VSCode.
+1. Find the spot that you wish to add a new section. Again, for this example, the spot is between the **Basics** and **Concepts** sections.
+    <br><br>
+    <img src="./images/basics-and-concepts-sections.png" style="display:block;margin:0 auto;width:40vw;"/>
+    <br>
+1. Once you have found the right spot, add in the following lines, replacing any variables with your own content.
+    <br><br>
+    <img src="./images/add-new-section.png" style="display:block;margin:0 auto;width:40vw;"/>
+    <br>
+::: warning
+Be sure you put the opening `{` in the correct column, and the rest of the lines cascade accordingly. :::
+
 ## Tools
 
 The following tools are used by the IPFS docs team to help create documentation.
