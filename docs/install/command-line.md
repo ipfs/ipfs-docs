@@ -91,11 +91,11 @@ The IPFS team manages the [dist.ipfs.tech website](https://dist.ipfs.tech/) to h
 
 1. Decide which macOS binary to download from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) by determining whether your system uses an Apple or Intel CPU. On most macOS systems, you can determine the system specs by doing the following:
 
-   a. In the upper left hand corner of your screen, click the "Apple" icon. 
-   b. In the drop-down menu displayed, select `About this Mac`.
-   c. A window with information about your Mac is displayed. 
-      - If your system uses Apple Silicon, the specific chip is shown, such as `Apple M1 Pro`.
-      - If your system uses an Intel CPU, the specific processor is shown, such as `2.3 GHz 8-Core Intel Core i9`.
+   1. In the upper left hand corner of your screen, click the "Apple" icon. 
+   1. In the drop-down menu displayed, select *About this Mac*.
+   1. A window with information about your Mac is displayed. 
+      - If your system uses Apple Silicon, the specific chip is shown, such as *Apple M1 Pro*.
+      - If your system uses an Intel CPU, the specific processor is shown, such as *2.3 GHz 8-Core Intel Core i9*.
 
 1. Download the appropriate macOS binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) based on your hardware:
 
