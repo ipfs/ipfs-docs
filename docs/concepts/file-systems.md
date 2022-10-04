@@ -217,19 +217,23 @@ await ipfs.files.rm('/my/beautiful/directory')
 
 ## Unix File System (UnixFS)
 
-When you add a _file_ to IPFS, it might be too big to fit in a single block, so it needs metadata to link all its blocks together. UnixFS is a [protocol-buffers](https://developers.google.com/protocol-buffers/)-based format for describing files, directories, and symlinks in IPFS. This data format is used to represent files and all their links and metadata in IPFS. UnixFS creates a block (or a tree of blocks) of linked objects.
+To represent, import and export files and directories, IPFS uses UnixFS, a [protocol-buffers](https://developers.google.com/protocol-buffers/)-based format for describing files, directories, and symlinks. At a high-level, when a file or directory (referred to as an _entry_) is imported, UnixFS does the following:
 
-UnixFS currently has [Javascript](https://github.com/ipfs/js-ipfs-unixfs) and [Go](https://github.com/ipfs/kubo/tree/b3faaad1310bcc32dc3dd24e1919e9edf51edba8/unixfs) implementations. These implementations have modules written in to run different functions:
+- Serializes the file / directory as a protocol-buffer.
+- Splits the file / directory into multiple [blocks](../how-to/work-with-blocks.md#blocks-vs-objects) if the data is too large to fit in a single block.
+- Links the blocks together using a [Merkle Directed Acylic Graph (DAG)](../concepts/merkle-dag.md). 
 
-- **Data Formats**: manage the serialization/deserialization of UnixFS objects to protocol buffers
+UnixFS currently has implementations in [Javascript](https://github.com/ipfs/js-ipfs-unixfs) and [Go](https://github.com/ipfs/kubo/tree/b3faaad1310bcc32dc3dd24e1919e9edf51edba8/unixfs). Both implement the **Data Formats**, **Importer** and **Exporter** module. Click each link below to learn more about the module and how it works:
 
-- **Importer**: Build DAGs from files and directories
+- [**Data Formats**](#data-formats): manages the serialization/deserialization of UnixFS objects to protocol buffers. 
 
-- **Exporter**: Export DAGs
+- [**Importer**](#importer): Builds DAGs from files and directories.
+
+- [**Exporter**](#exporter): Exports DAGs as files or directories.
 
 ### Data Formats
 
-On UnixFS-v1 the data format is represented by this protobuf:
+In UnixFS, all non-leaf nodes are represented by a protobuf withe the following structure:
 
 ```
 message Data {
@@ -262,45 +266,72 @@ message UnixTime {
 }
 ```
 
-This `Data` object is used for all non-leaf nodes in UnixFS:
+The most important fields are described below:
 
-- For files that are comprised of more than a single block, the `Type` field will be set to `File`, the `filesize` field will be set to the total number of bytes in the files, and `blocksizes` will contain a list of the filesizes of each child node.
+| Field &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Description                                                                                                                                                                                                                                                                |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Type`       | The entry being added to UnixFS, such as a file or directory.                                                                                                                                                                                   |
+| `Data`       | The data for the entry.                                                                                                                                                                                                                                                    |
+| `filesize`   | Total size of the entry in bytes.                                                                                                                                                                                                                                          |
+| `blocksizes` | List of `filesize` values for each node.                                                                                                                                                                                                                                   |
+| `mode`       | Defines the file permissions using [numeric notation]( https://en.wikipedia.org/wiki/File_system_permissions#Numeric_notation ). If unspecified, this field defaults to  `0755`  for directories and HAMT shards, and  `0644`  for all the other types where applicable. |
+| `mtime`      | The time of modification of the node relative to the Unix epoch `1970-01-01T00:00:00Z`. Represented as a two-element structure ( `Seconds` , `FractionalNanoseconds` ).                                                                                                  |                                                                                              |          |
 
-- For files comprised of a single block, the `Type` field will be set to `File`, `filesize` will be set to the total number of bytes in the file, and file data will be stored in the `Data` field.
 
-UnixFS also supports two optional metadata format fields:
+In the following table, the values of each field in the protobuf for a file small enough to be represented as one block are compared to the values for a file large enough to require multiple blocks. Notice the differences in `Data` and `Blocksizes`:
 
-- `mode` - used for persisting the file permissions in [numeric notation](https://en.wikipedia.org/wiki/File_system_permissions#Numeric_notation). If unspecified, this field defaults to `0755` for directories/HAMT shards and `0644` for all the other types where applicable.
+| Field        | Single Block                | Multiple Blocks                                  |
+|--------------|-----------------------------|--------------------------------------------------|
+| `Type`       | `File`                      | `File`                                           |
+| `filesize`   | Total size of file in bytes | Total size of file in bytes                      |
+| `Data`       | Serialized data             | Array containing links to each child node        |
+| `Blocksizes` | Empty array                 | Array containing `filesize` of each child node   |
 
-- `mtime` - is a two-element structure (`Seconds`, `FractionalNanoseconds`) representing the modification time in seconds relative to the Unix epoch `1970-01-01T00:00:00Z`.
+
 
 ### Importer
 
-Importing a file into UnixFS is split into two processes. A chunking function and a layout function. You can test these features using the IPFS [DAG builder](https://dag.ipfs.io).
+When you import data into UnixFS, two processes occur: the chunking process and the layout process. You can learn more about each process below.
+
+> *Try It!*
+>
+> You can test and explore these features using the [IPFS DAG builder](https://dag.ipfs.io).
 
 #### Chunking
 
-When an object is added to IPFS, it is chunked up into smaller parts, each part is hashed, and a CID is created for each chunk. This DAG building process has two main parameters, the leaf format and the chunking strategy.
+When an entry is added to IPFS, the _chunking_ process occurs. During this process:
 
-The leaf format takes two format options, UnixFS leaves and raw leaves:
+1. The entry is split into smaller parts called _chunks_.
+2. Each chunk is hashed.
+3. A CID is created for each chunk. 
 
-- The UnixFS leaves format adds a data wrapper on newly added objects to produce UnixFS leaves with additional data sizes. This wrapper is used to determine whether newly added objects are files or directories. This format is the default for CIDv0.
+Chunking has several purposes:
+- Duplicate bytes are deduplicated
+- Entries can be transferred piecewise
 
-- The raw leaves format on IPFS where nodes output from chunking will be raw data from the file with a CID codec of 'raw'. This is mainly configured for backward compatibility with formats that used a UnixFS Data object. This format is the default for CIDv1 created with `ipfs add --cid-version 1`, soon to become the global default.
+This process has two main parameters, the _leaf format_ and the _chunking strategy_.
 
-The chunking strategy is used to determine the size options available during the chunking process. The strategy currently has two different options, 'fixed size' and 'rabin'.
+- The _leaf format_ can be one of the following:
 
-- Fixed sizing will chunk the input data into pieces of a given size. This could be 512 bytes, 1024 bytes, and more—the smaller the byte size, the better the deduplication of data.
+  - The `UnixFS` leaf format adds a data wrapper to newly added objects to produce UnixFS leaves with additional data sizes. This wrapper is used to determine whether newly added objects are files or directories. *Currently, this format is the default for CIDv0*.
 
-- Rabin chunking will chunk the input data using Rabin fingerprinting to determine the boundaries between chunks. Rabin also reduces the number of input data chunked nodes.
+  - When `rawLeaves` is used, nodes outputted from chunking are raw data with a CID codec of `raw`. This is mainly configured for backward compatibility with formats that used a UnixFS Data object. When `ipfs add --cid-version 1` is used, this format is the default for CIDv1.
+
+- The _chunking strategy_ is used to determine the size that each chunk should be. The strategy currently has two different options, `fixed` and `rabin`.
+
+  - The `fixed` strategy will chunk the input data into pieces of a given size, such as 512 bytes or 1024 bytes. With smaller byte sizes, more data is deduplicated.
+
+  - The `rabin` strategy will chunk the input data using [Rabin fingerprinting](https://en.wikipedia.org/wiki/Rabin_fingerprint) to determine the boundaries between chunks. Rabin also reduces the number of input data chunked nodes.
 
 #### Layout
 
-The layout defines the shape of the tree that gets built from the chunks of the input file.
+During the layout process, the shape of the Merkle DAG that gets built from the chunks is defined.
 
-There are currently two options for layout, balanced and trickle. Additionally, a `max-width` must be specified. The default max width is 174.
+There are currently two options for layout, `balanced` and `trickle`. Additionally, a `max-width` must be specified. The default max width is `174`.
 
-The balanced layout creates a balanced tree of width `max-width`. The tree is formed by taking up to `max-width` chunks from the _chunk stream_ and creating a UnixFS file node that links to all of them. This is repeated until `max-width` UnixFS file nodes are created, at which point a UnixFS file node is created to hold all of those nodes recursively. The root node of the resultant tree is returned as the handle to the newly imported file.
+- The `balanced` layout creates a balanced tree of width `max-width`. The tree is formed by taking up to `max-width` chunks from the _chunk stream_ and creating a UnixFS file node that links to each chunk. This is repeated until `max-width` UnixFS file nodes are created, at which point a UnixFS file node is created to hold all of those nodes recursively. The root node of the resultant tree is returned as the handle to the newly imported file.
+
+- The `trickle` layout creates a [trickle tree](https://github.com/ipfs/specs/pull/57#issuecomment-265205384).
 
 If there is only a single chunk, no intermediate UnixFS file nodes are created, and the single chunk is returned as the handle to the file.
 
