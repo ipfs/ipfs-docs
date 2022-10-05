@@ -7,7 +7,10 @@ description: Developer resources for working in JavaScript with IPFS, the InterP
 
 ## JavaScript libraries
 
-There are two main JavaScript libraries for working with IPFS, `ipfs` and `ipfs-http-client`. Both work in Node.js and modern web browsers. JS-IPFS in Node.js is long-running and supports transports like TCP and UDP along with WebScoekts and WebRTC, while JS-IPFS in the browser is short-lived and limited to Web APIs available on a web page; it only supports WebSockets and WebRTC as transports. The browser is also resource constrained and does not support all of the interfaces found in the Node.js version.
+There are three main JavaScript libraries for working with IPFS in JavaScript: `ipfs`, `ipfs-http-client`, and `kubo-rpc-client`. All three work in Node.js and modern web browsers. JS-IPFS in Node.js is long-running and supports transports like TCP and UDP along with WebSockets and WebRTC, while JS-IPFS in the browser is short-lived and limited to Web APIs available on a web page; it only supports WebSockets and WebRTC as transports. The browser is also resource constrained and does not support all of the interfaces found in the Node.js version.
+
+- `ipfs-http-client` is the official JavaScript client for talking to a js-ipfs node.
+- `kubo-rpc-client` is the official JavaScript client for talking to a Kubo node.
 
 ### JS-IPFS
 
@@ -29,10 +32,18 @@ If you are writing an application that needs to access the IPFS network, use `ip
 
 :::
 
-### HTTP client
+### HTTP clients
 
-[JS-IPFS HTTP RPC API](https://www.npmjs.com/package/ipfs-http-client) is a client library that controls an active IPFS node (Kubo or JS-IPFS) running through its [RPC API](../kubo/rpc.md).
-  - JS-IPFS will internally use this library if it detects another node is running on your machine. You can also interact with the [RPC API](../kubo/rpc.md) directly using `fetch()` in a browser or a module like `request` in Node.js, but using this library can be much more convenient.
+[Kubo HTTP RPC API](https://www.npmjs.com/package/kubo-rpc-client) is a client library that controls an active Kubo node running through its [RPC API](../kubo/rpc.md).
+  - Use this library to talk to a Kubo node from your JavaScript application
+  - You can also interact with the [RPC API](../kubo/rpc.md) directly using `fetch()` in a browser or a module like `request` in Node.js, but using this library can be much more convenient.
+
+::: warning Changes to IPFS HTTP RPC API
+
+There is ongoing work that will result in HTTP RPC API divergence in the future. See https://github.com/ipfs/kubo/issues/9125 for more information.
+
+[JS-IPFS HTTP RPC API](https://www.npmjs.com/package/ipfs-http-client) is a client library that controls an active IPFS node (JS-IPFS) running through its [RPC API](../kubo/rpc.md).
+  - JS-IPFS will internally use this library if it detects another node is running on your machine. You can also interact with the [RPC API](../kubo/rpc.md) directly using `fetch()` in a browser or a module like `request` in Node.js, but using this library can be much more convenient. JS-IPFS implements it's [own version of the RPC API](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-server).
   - When using JS-IPFS as a backend, use the [ipfs-client](https://www.npmjs.com/package/ipfs-client) instead to leverage gRPC connections over WebSockets to allow some commands to achieve the bidirectional streaming necessary to have full duplex streams running in the browser.
 
 All the libraries have the [same interface](https://github.com/ipfs/js-ipfs/tree/master/docs/core-api) for using all the major IPFS commands. This client library implements the interface-ipfs-core enabling applications to change between an embedded js-ipfs node and any remote IPFS node without changing the code. In addition, this client library implements a set of utility functions.
@@ -45,11 +56,11 @@ We recommend the second method (interacting with a separate IPFS node via RPC AP
 
 ::: warning Browsers
 
-The `ipfs` and `ipfs-http-client` libraries work in browsers, but each has special considerations noted in their READMEs.
+The `ipfs`, `kubo-rpc-client`, and `ipfs-http-client` libraries work in browsers, but each has special considerations noted in their READMEs.
 
 :::
 
-The implementation is split into several modules. 
+The implementation is split into several modules.
 
 ::: details Node modules
 
@@ -63,7 +74,8 @@ The implementation is split into several modules.
 * [`/packages/ipfs-grpc-client`](./packages/ipfs-grpc-client) A gRPC client for js-IPFS
 * [`/packages/ipfs-grpc-protocol`](./packages/ipfs-grpc-protocol) Shared module between the gRPC client and server
 * [`/packages/ipfs-grpc-server`](./packages/ipfs-grpc-server) A gRPC-over-websockets server for js-IPFS
-* [`/packages/ipfs-http-client`](./packages/ipfs-http-client) A client for the RPC-over-HTTP API presented by both js-ipfs and go-ipfs
+* [`/packages/ipfs-http-client`](./packages/ipfs-http-client) A client for the RPC-over-HTTP API presented by js-ipfs
+* [`/packages/kubo-rpc-client`](./packages/kubo-rpc-client) A client for the RPC-over-HTTP API presented by Kubo
 * [`/packages/ipfs-http-server`](./packages/ipfs-http-server) JS implementation of the [Kubo RPC HTTP API](https://docs.ipfs.io/reference/kubo/rpc/)
 * [`/packages/ipfs-http-gateway`](./packages/ipfs-http-gateway) JS implementation of the [IPFS HTTP Gateway](https://docs.ipfs.io/concepts/ipfs-gateway/)
 * [`/packages/ipfs-http-response`](./packages/ipfs-http-response) Creates a HTTP response for a given IPFS Path
@@ -74,8 +86,6 @@ The implementation is split into several modules.
 :::
 
 ## Packages
-
-> This table is generated using the module [`package-table`](https://www.npmjs.com/package/package-table) with `package-table --data=package-list.json`.
 
 Listing of the main JS packages in the IPFS ecosystem:
 
@@ -93,6 +103,7 @@ Listing of the main JS packages in the IPFS ecosystem:
 | **Generics/Utils** |
 | [`ipfs-utils`](//github.com/ipfs/js-ipfs) | [![npm](https://img.shields.io/npm/v/ipfs-utils.svg?maxAge=86400&style=flat-square)](//github.com/ipfs/js-ipfs/releases) | [![Deps](https://david-dm.org/ipfs/js-ipfs.svg?style=flat-square)](https://david-dm.org/ipfs/js-ipfs) | [![Travis CI](https://flat.badgen.net/travis/ipfs/js-ipfs/master)](https://travis-ci.com/ipfs/js-ipfs) | [![codecov](https://codecov.io/gh/ipfs/js-ipfs/branch/master/graph/badge.svg?style=flat-square)](https://codecov.io/gh/ipfs/js-ipfs) | [Hugo Dias](mailto:hugomrdias@gmail.com) |
 | [`ipfs-http-client`](//github.com/ipfs/js-ipfs) | [![npm](https://img.shields.io/npm/v/ipfs-http-client.svg?maxAge=86400&style=flat-square)](//github.com/ipfs/js-ipfs/releases) | [![Deps](https://david-dm.org/ipfs/js-ipfs.svg?style=flat-square)](https://david-dm.org/ipfs/js-ipfs) | [![Travis CI](https://flat.badgen.net/travis/ipfs/js-ipfs/master)](https://travis-ci.com/ipfs/js-ipfs) | [![codecov](https://codecov.io/gh/ipfs/js-ipfs/branch/master/graph/badge.svg?style=flat-square)](https://codecov.io/gh/ipfs/js-ipfs) | [Alex Potsides](mailto:alex@achingbrain.net) |
+| [`kubo-rpc-client`](//github.com/ipfs/js-kubo-rpc-client) | [![npm](https://img.shields.io/npm/v/kubo-rpc-client.svg?maxAge=86400&style=flat-square)](//github.com/ipfs/js-kubo-rpc-client/releases) | [![Deps](https://david-dm.org/ipfs/js-kubo-rpc-client.svg?style=flat-square)](https://david-dm.org/ipfs/js-kubo-rpc-client) | [![test & maybe release](https://github.com/ipfs/js-kubo-rpc-client/actions/workflows/js-test-and-release.yml/badge.svg)](https://github.com/ipfs/js-kubo-rpc-client/actions/workflows/js-test-and-release.yml) | [![codecov](https://codecov.io/gh/ipfs/js-kubo-rpc-client/branch/master/graph/badge.svg?style=flat-square)](https://codecov.io/gh/ipfs/js-kubo-rpc-client) | [Marcin Rataj](mailto:lidel@lidel.org) |
 | [`ipfs-http-response`](//github.com/ipfs/js-ipfs-http-response) | [![npm](https://img.shields.io/npm/v/ipfs-http-response.svg?maxAge=86400&style=flat-square)](//github.com/ipfs/js-ipfs-http-response/releases) | [![Deps](https://david-dm.org/ipfs/js-ipfs-http-response.svg?style=flat-square)](https://david-dm.org/ipfs/js-ipfs-http-response) | [![Travis CI](https://flat.badgen.net/travis/ipfs/js-ipfs-http-response/master)](https://travis-ci.com/ipfs/js-ipfs-http-response) | [![codecov](https://codecov.io/gh/ipfs/js-ipfs-http-response/branch/master/graph/badge.svg?style=flat-square)](https://codecov.io/gh/ipfs/js-ipfs-http-response) | [Vasco Santos](mailto:vasco.santos@moxy.studio) |
 | [`ipfsd-ctl`](//github.com/ipfs/js-ipfsd-ctl) | [![npm](https://img.shields.io/npm/v/ipfsd-ctl.svg?maxAge=86400&style=flat-square)](//github.com/ipfs/js-ipfsd-ctl/releases) | [![Deps](https://david-dm.org/ipfs/js-ipfsd-ctl.svg?style=flat-square)](https://david-dm.org/ipfs/js-ipfsd-ctl) | [![Travis CI](https://flat.badgen.net/travis/ipfs/js-ipfsd-ctl/master)](https://travis-ci.com/ipfs/js-ipfsd-ctl) | [![codecov](https://codecov.io/gh/ipfs/js-ipfsd-ctl/branch/master/graph/badge.svg?style=flat-square)](https://codecov.io/gh/ipfs/js-ipfsd-ctl) | [Hugo Dias](mailto:mail@hugodias.me) |
 | [`is-ipfs`](//github.com/ipfs/is-ipfs) | [![npm](https://img.shields.io/npm/v/is-ipfs.svg?maxAge=86400&style=flat-square)](//github.com/ipfs/is-ipfs/releases) | [![Deps](https://david-dm.org/ipfs/is-ipfs.svg?style=flat-square)](https://david-dm.org/ipfs/is-ipfs) | [![Travis CI](https://flat.badgen.net/travis/ipfs/is-ipfs/master)](https://travis-ci.com/ipfs/is-ipfs) | [![codecov](https://codecov.io/gh/ipfs/is-ipfs/branch/master/graph/badge.svg?style=flat-square)](https://codecov.io/gh/ipfs/is-ipfs) | [Marcin Rataj](mailto:lidel@lidel.org) |
