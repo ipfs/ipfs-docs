@@ -133,7 +133,8 @@ You can't just add a new page directly to the main branch. First, you will have 
 
 To do this in VSCode:
 
-1. First, click the branch icon in the bottom left of the window.
+1. Ensure you are in the `ipfs-docs` directory on VSCode.
+1. Click the branch icon in the bottom left of the window.
     <br><br>
     <img src="./images/create-new-branch.png" style="display:block;margin:0 auto;width:40vw;">
     <br>
@@ -146,6 +147,8 @@ You will see now that VSCode has automatically switched your working branch to t
 
 Adding a single page to an already existing section is as simple as adding one line to the `config.js` file.
 
+When adding the new line, be sure to follow the exact same format and syntax as the other lines that are already present.
+
 1. Open `config.js` in VSCode.
 1. Find the section you want to add a new page to. For this example, a page titled **Add a new page** will be added to the **Basics** section.
     <br><br>
@@ -157,6 +160,8 @@ Adding a single page to an already existing section is as simple as adding one l
 
 Adding a new section to the sidebar of the docs is a little more in-depth. For this example, a new section titled **Test** will be added between the **Basics** and **Concepts** sections.
 
+When adding a new section, be sure you have the opening and closing curly brackets (`{` `}`) in the correct column. The easiest way to do this is to follow the same positioning and format as the other sections that are already in the file.
+
 1. Open `config.js` in VSCode.
 1. Find the spot that you wish to add a new section. Again, for this example, the spot is between the **Basics** and **Concepts** sections.
     <br><br>
@@ -166,8 +171,21 @@ Adding a new section to the sidebar of the docs is a little more in-depth. For t
     <br><br>
     <img src="./images/add-new-section.png" style="display:block;margin:0 auto;width:40vw;"/>
     <br>
-::: warning
-Be sure you put the opening `{` in the correct column, and the rest of the lines cascade accordingly. :::
+
+### Commit your changes
+
+Now that you have made the changes to `config.js`, you can commit them to your branch and make a pull request.
+
+1. Save the changes you have made to the `config.js` file.
+1. Click the **source control** button in the VSCode sidebar.
+    <img src="./images/source-control.png" style="display:block;margin:0 auto;width:40vw;"/>
+1. In the **source control** menu, mouse-over the changes you made and click the **+** button to stage those changes.
+1. Now click the **Commit** button to commit your changes to your branch.
+1. Finally, click the **Sync changes** button to push your branch to the IPFS Docs repo.
+
+Your branch is now synced with the IPFS Docs repo, along with the changes that you made to the `config.js` file. Now you need to make a pull request in the `ipfs-docs` repo on GitHub.
+
+1. Go to the **Code** section of the `ipfs-docs` repo.
 
 ## Tools
 
