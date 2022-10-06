@@ -186,6 +186,10 @@ Now that you have made the changes to `config.js`, you can commit them to your b
 Your branch is now synced with the IPFS Docs repo, along with the changes that you made to the `config.js` file. Now you need to make a pull request in the `ipfs-docs` repo on GitHub.
 
 1. Go to the **Code** section of the `ipfs-docs` repo.
+1. You will see a **Compare & pull request** button, click that. If the button does not appear, try refreshing the page.
+1. After clicking **Compare & pull request**, you will be brought to a page to name and create the pull request. Name the pull request something that is relevant to the changes you are making and add in any extra information in the comment section.
+
+The branch, pull request, and new pages or sections are now ready. You can continue on with adding the actual content of the new pages or sections to the pull request. Any changes you commit to the branch you just created will be added to that pull request.
 
 ## Tools
 
