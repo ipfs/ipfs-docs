@@ -42,8 +42,8 @@ If you are writing an application that needs to access the IPFS network, use `ip
 
 There is ongoing work that will result in HTTP RPC API divergence in the future. See https://github.com/ipfs/kubo/issues/9125 for more information.
 
-[JS-IPFS HTTP RPC API](https://www.npmjs.com/package/ipfs-http-client) is a client library that controls an active IPFS node (JS-IPFS) running through its [RPC API](../kubo/rpc.md).
-  - JS-IPFS will internally use this library if it detects another node is running on your machine. You can also interact with the [RPC API](../kubo/rpc.md) directly using `fetch()` in a browser or a module like `request` in Node.js, but using this library can be much more convenient. JS-IPFS implements it's [own version of the RPC API](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-server).
+JS-IPFS [ipfs-http-client](https://www.npmjs.com/package/ipfs-http-client) is a library that controls an active IPFS node (JS-IPFS) running through its own version of the [RPC API over HTTP](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-server).
+  - JS-IPFS will internally use this library if it detects another node is running on your machine. You can also interact with the HTTP version of JS-IPFS RPC API directly using `fetch()` in a browser or a module like `request` in Node.js, but using this library can be much more convenient. 
   - When using JS-IPFS as a backend, use the [ipfs-client](https://www.npmjs.com/package/ipfs-client) instead to leverage gRPC connections over WebSockets to allow some commands to achieve the bidirectional streaming necessary to have full duplex streams running in the browser.
 
 All the libraries have the [same interface](https://github.com/ipfs/js-ipfs/tree/master/docs/core-api) for using all the major IPFS commands. This client library implements the interface-ipfs-core enabling applications to change between an embedded js-ipfs node and any remote IPFS node without changing the code. In addition, this client library implements a set of utility functions.
