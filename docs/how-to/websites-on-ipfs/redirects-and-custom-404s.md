@@ -8,7 +8,7 @@ description: What the _redirect file is and how to use them with a website or si
 This feature is new, and requires Kubo 0.16 or later.
 :::
 
-This feature enables support for redirects, [single-page applications](#catch-all-and-pwa-spa-support), [custom 404 pages](#add-a-custom-404-page-to-your-website), and moving to IPFS-backed hosting [without breaking existing links](https://www.w3.org/Provider/Style/URI).
+This feature enables support for redirects, [single-page applications](#examples), [custom 404 pages](#add-a-custom-404-page-to-your-website), and moving to IPFS-backed hosting [without breaking existing links](https://www.w3.org/Provider/Style/URI).
 
 ## Evaluation
 
