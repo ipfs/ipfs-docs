@@ -95,7 +95,7 @@ These voting systems are used to calculate the results of a vote based on the vo
 
 Snapshot uses IPFS to make the whole voting process fully transparent and auditable. Every space, proposal, vote, and user action is added to IPFS and has a [content identifier (CID)](/concepts/content-addressing.md).
 
-Additionally, the Snapshot UI is also [available on IPFS](https://bafybeihzjoqahhgrhnsksyfubnlmjvkt66aliodeicywwtofodeuo2icde.ipfs.dweb.link/) and linked using the ENS name `shot.eth` which is accessible via any ENS resolution service, e.g. [shot.eth.limo](https://shot.eth.limo/), and [shot.eth.link](https://shot.eth.link/) (see the `x-ipfs-path` and `X-Ipfs-Roots` headers when making an HTTP request.)
+Additionally, the Snapshot UI is also [available on IPFS](https://bafybeihzjoqahhgrhnsksyfubnlmjvkt66aliodeicywwtofodeuo2icde.ipfs.dweb.link/) and linked using the ENS name `shot.eth` which is accessible via any ENS resolution service, e.g. [shot.eth.limo](https://shot.eth.limo/)(see the `x-ipfs-path` and `X-Ipfs-Roots` headers when making an HTTP request.)
 
 To understand how Snapshot uses IPFS, it's useful to understand how the whole architecture was designed. Snapshot is a hybrid app combining design patterns common to Web2 and Web3 apps, and is based on the three-tier architecture:
 
