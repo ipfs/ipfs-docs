@@ -73,7 +73,7 @@ IPNS names are self-certifying. This means that an IPNS record contains all the 
 - The IPNS name is a CID with a multihash of the public key
 - The IPNS record contains the public key and signature, allowing anyone to verify that the record was signed by the private key holder.
 
-This self-certifying nature gives IPNS several benefits not preset in hierarchical and consensus systems such as DNS, and blockchain identifiers. Notably, IPNS records can come from anywhere, not just a particular service/system, and it is very fast and easy to confirm a record is authentic.
+This self-certifying nature gives IPNS several benefits not present in hierarchical and consensus systems such as DNS, and blockchain identifiers. Notably, IPNS records can come from anywhere, not just a particular service/system, and it is very fast and easy to confirm a record is authentic.
 
 ### Common IPNS operations
 
