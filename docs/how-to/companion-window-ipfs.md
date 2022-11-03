@@ -11,7 +11,7 @@ Learn about exposing IPFS API in IPFS Companion via "window.ipfs".
 
 ## `window.ipfs` is currently disabled
 
-IPFS Companion 2.11 stopped injecting `window.ipfs`. It is currently permanently disabled per comments on the [window.ifps Meta Issue](https://github.com/ipfs-shipyard/ipfs-companion/issues/589#issuecomment-712356448), as of October 19, 2020, and [Remove legacy window.ifps](https://github.com/ipfs/in-web-browsers/issues/172) as of December 14, 2020. This page is provided for reference only.
+IPFS Companion 2.11 stopped injecting `window.ipfs`. It is currently permanently disabled per comments on the [window.ipfs Meta Issue](https://github.com/ipfs-shipyard/ipfs-companion/issues/589#issuecomment-712356448), as of October 19, 2020, and [Remove legacy window.ipfs](https://github.com/ipfs/in-web-browsers/issues/172) as of December 14, 2020. This page is provided for reference only.
 
 <!-- below disclaimer will be restored  when window.ipfs injection resumes
 ### Disclaimer
@@ -46,7 +46,7 @@ if (window.ipfs && window.ipfs.enable) {
 To add and get content, you could update the above example to do something like this:
 
 <!-- TODO: update below example to use async iterators:
-https://blog.ipfs.io/2020-02-01-async-await-refactor/
+https://blog.ipfs.tech/2020-02-01-async-await-refactor/
 -->
 
 ```js
@@ -92,7 +92,7 @@ Optional `scope` and `permissions` attributes provide detailed information:
 
 ### What is a `window.ipfs`?
 
-It is an IPFS proxy endpoint that enables you to obtain an IPFS API instance. Depending how IPFS Companion is configured, you may be talking directly to a `js-ipfs` node running in Companion, a `go-ipfs` daemon over `js-ipfs-http-client`, or a `js-ipfs` daemon over `js-ipfs-http-client` ... and potentially others in the future. Note that object returned by `window.ipfs.enable` is _not_ an instance of `js-ipfs` or `js-ipfs-http-client`, but is a proxy to one of them, so don't expect to be able to detect either of them or be able to use any undocumented or instance-specific functions.
+It is an IPFS proxy endpoint that enables you to obtain an IPFS API instance. Depending how IPFS Companion is configured, you may be talking directly to a `js-ipfs` node running in Companion, a `kubo` daemon over `js-ipfs-http-client`, or a `js-ipfs` daemon over `js-ipfs-http-client` ... and potentially others in the future. Note that object returned by `window.ipfs.enable` is _not_ an instance of `js-ipfs` or `js-ipfs-http-client`, but is a proxy to one of them, so don't expect to be able to detect either of them or be able to use any undocumented or instance-specific functions.
 
 For information on available functions, see the [js-ipfs](https://github.com/ipfs/js-ipfs) and [js-ipfs-http-client](https://github.com/ipfs/js-ipfs-http-client) docs for available functions. If you find that some new functions are missing, the proxy might be out of date. Please check the [current status](https://github.com/tableflip/ipfs-postmsg-proxy#current-status) and submit a PR.
 

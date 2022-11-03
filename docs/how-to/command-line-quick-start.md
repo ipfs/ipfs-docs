@@ -1,20 +1,19 @@
 ---
 title: Command-line quick start
-legacyUrl: https://docs.ipfs.io/introduction/usage/
-description: Quick-start guide for installing and getting started with IPFS from the command line.
+description: Quick-start guide for installing and getting started with Kubo IPFS from the command line.
 ---
 
 # Command-line quick start
 
-If you're command-line savvy and just want to get up and running with IPFS right away, follow this quick-start guide. Please note that this guide assumes that you'll be installing go-ipfs, the reference implementation written in Go.
+If you're command-line savvy and just want to get up and running with IPFS right away, follow this quick-start guide. Please note that this guide assumes that you'll be installing Kubo, the reference implementation written in Go.
 
 ::: tip
-Don’t want to use the command line right now? Give the desktop-app implementation of IPFS a try. It also does all the steps listed on this page automatically, so you can run IPFS from the terminal later whenever you want. [Download IPFS Desktop now](https://github.com/ipfs-shipyard/ipfs-desktop)
+Don’t want to use the command line right now? Give the desktop-app implementation of IPFS a try. It also does all the steps listed on this page automatically, so you can run IPFS from the terminal later whenever you want. [Download IPFS Desktop now](https://github.com/ipfs/ipfs-desktop)
 :::
 
 ## Prerequisites
 
-If you have not yet installed Go-IPFS, follow the [install instructions](../install/command-line.md).
+If you have not yet installed Kubo, follow the [install instructions](../install/command-line.md).
 
 ## Initialize the repository
 
@@ -41,7 +40,7 @@ If you are running on a server in a data center, you should initialize IPFS with
 ipfs init --profile server
 ```
 
-There are a whole host of other configuration options you may want to set — check [the full reference](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md) for more.
+There are a whole host of other configuration options you may want to set — check [the full reference](https://github.com/ipfs/kubo/blob/master/docs/config.md) for more.
 
 The hash after `peer identity:` is your node’s ID and will be different from the one shown in the above output. Other nodes on the network use it to find and connect to you. You can run `ipfs id` at any time to get it again if you need it.
 
@@ -98,6 +97,12 @@ ipfs daemon
 
 Make a note of the TCP ports you receive. If they are different, use yours in the commands below.
 
+::: danger NEVER EXPOSE THE RPC API TO THE PUBLIC INTERNET
+
+The API port provides admin-level access to your Kubo IPFS node.  See [RPC API v0 docs](/reference/kubo/rpc/) for more information.
+
+:::
+
 Now, switch back to your original terminal. If you’re connected to the network, you should be able to see the IPFS addresses of your peers when you run:
 
 ```bash
@@ -148,17 +153,25 @@ You can view the web console on your local node by going to `localhost:5001/webu
 
 ![Web console connection view](./images/command-line-quick-start/webui-connection.png)
 
+The web console shows files that are in your [Mutable File System (MFS)](../concepts/file-systems#mutable-file-system-mfs). MFS is a tool built into the web console that helps you navigate IPFS files in the same way you would a name-based file system.
+
+When you add files using the [CLI command `ipfs add ...`](../cli#ipfs-add), these files are not automatically available within the MFS. To view files in IPFS Desktop that you added using the CLI, you must copy the files over to the MFS:
+
+```shell
+ipfs files cp /ipfs/<ipfs-CID>
+```
+
 ## IPFS Companion
 
-While we are at it, [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion#ipfs-companion) is a browser extension that simplifies access to IPFS resources and adds support for the IPFS protocol.
+While we are at it, [IPFS Companion](https://github.com/ipfs/ipfs-desktop#ipfs-companion) is a browser extension that simplifies access to IPFS resources and adds support for the IPFS protocol.
 
 It will automatically redirect IPFS gateway requests to your local daemon so that you are not relying on or trusting remote gateways.
 
 It runs in Firefox (desktop and Android) and various Chromium-based browsers such as Google Chrome or [Brave](https://brave.com).
-[Check out its features](https://github.com/ipfs-shipyard/ipfs-companion#features) and install it today!
+[Check out its features](https://github.com/ipfs/ipfs-companion#features) and install it today!
 
-- [Direct download](https://github.com/ipfs-shipyard/ipfs-companion#install)
-- [Install from Firefox Add-ons](https://addons.mozilla.org/firefox/addon/ipfs-companion/)
+- [Direct download](https://github.com/ipfs/ipfs-companion#install)
+- [Install from Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/ipfs-companion/)
 - [Install from Chrome Store](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch)
 
 ## Troubleshooting
@@ -173,12 +186,12 @@ go version
 > go version go1.12.2 linux/amd64
 ```
 
-If you need to update, we recommend you install from the [canonical Go packages](https://golang.org/doc/install). Package managers often contain out-of-date Go packages.
+If you need to update, we recommend you install from the [canonical Go packages](https://go.dev/doc/install). Package managers often contain out-of-date Go packages.
 
 ### Check that FUSE is installed
 
-You need to install and set up FUSE in order to mount the file system. For more details on setting up FUSE, see [github.com/ipfs/go-ipfs/blob/master/docs/fuse.md](https://github.com/ipfs/go-ipfs/blob/master/docs/fuse.md)
+You need to install and set up FUSE in order to mount the file system. For more details on setting up FUSE, see [github.com/ipfs/kubo/blob/master/docs/fuse.md](https://github.com/ipfs/kubo/blob/master/docs/fuse.md)
 
 ### Further help
 
-The IPFS community is friendly and able to help! Get support from other IPFS developers in the official [IPFS forums](https://discuss.ipfs.io/), or join the conversation on [Matrix](../community/chat.md).
+The IPFS community is friendly and able to help! Get support from other IPFS developers in the official [IPFS forums](https://discuss.ipfs.tech/), or join [community chat channels](../community/chat/).

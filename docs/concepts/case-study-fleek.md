@@ -82,7 +82,7 @@ In short, a developer on Fleek can use familiar tools and workflows without worr
 
 ### The tooling
 
-At the core of all of Fleek's offerings are [`go-ipfs`](https://github.com/ipfs/go-ipfs) and [`ipfs-http-client`](https://github.com/ipfs/js-ipfs), used out of the box. Nodes on `go-ipfs` appear throughout the Fleek ecosystem, including:
+At the core of all of Fleek's offerings are [`kubo`](https://github.com/ipfs/kubo) and [`ipfs-http-client`](https://github.com/ipfs/js-ipfs), used out of the box. Nodes on `kubo` appear throughout the Fleek ecosystem, including:
 
 - Pinning nodes used by Fleek Hosting and Fleek Storage
 - Nodes for encrypted backups
@@ -97,26 +97,26 @@ Additionally, Fleek relies upon building blocks from [Textile](https://textile.i
 
 #### Fleek Hosting
 
-- Fleek Hosting deploys built sites onto `go-ipfs` nodes directly, and also replicates on at least one additional node.
+- Fleek Hosting deploys built sites onto `kubo` nodes directly, and also replicates on at least one additional node.
 - Additionally, the service augments these nodes with a traditional HTTP CDN in order to improve performance on secondary fetching. Says Shear: "Websites these days are used to 20ms times for fetching sites past the first load, so we want to offer at least that."
 - This CDN's cache is cleared, at minimum, for each new Git commit and its resulting Fleek Hosting auto-deployment.
 - Whenever the CDN's cache is cleared, content is re-fetched from IPFS (with all requests made to Fleek's gateway) in the same manner in which it was originally fetched — e.g. from the TXT record of an IPFS hash added to a user's DNS, via [DNSLink](https://dnslink.io/), or via [Ethereum Name Service (ENS)](https://ens.domains/) domains.
 
 #### Fleek Storage
 
-- Fleek Storage uses `go-ipfs` nodes in combination with [MinIO](https://min.io/) S3-equivalent APIs; the S3-like APIs give full compatibility with any AWS tooling and a familiar bucket structure to files.
+- Fleek Storage uses `kubo` nodes in combination with [MinIO](https://min.io/) S3-equivalent APIs; the S3-like APIs give full compatibility with any AWS tooling and a familiar bucket structure to files.
 - Fleek-built handlers create a root bucket hash, as well as folder hashes that Fleek Storage files live within.
 - Any change to files or folders updates all the way back up to the root bucket hash.
 
 #### Space Daemon
 
-- The Space Daemon developer toolset code combines a `go-ipfs` IPFS node with offerings from Textile (particularly its [Threads](http://docs.textile.io/threads) multi-party database architecture) and a key management tool in a single, easy-to-install Go daemon.
+- The Space Daemon developer toolset code combines a `kubo` IPFS node with offerings from Textile (particularly its [Threads](http://docs.textile.io/threads) multi-party database architecture) and a key management tool in a single, easy-to-install Go daemon.
 - Third-party integrations for enhanced functionality include — but aren't limited to — Filecoin (via [Textile Powergate](https://docs.textile.io/powergate/)) for encrypted backups, [Ceramic](https://www.ceramic.network/) for identity management, and [Handshake](https://handshake.org/) for naming and domain functionality.
 - The Space Daemon JavaScript library acts as an abstraction layer to the [gRPC](https://grpc.io/docs/) methods of the Go daemon, providing developers with a convenient JavaScript interface that they can install locally in their applications.
 
 #### Fleek Gateway
 
-- While not a Fleek "product" per se, Fleek extensively uses its own HTTP gateway (ipfs.fleek.co) created from their `go-ipfs` node infrastructure.
+- While not a Fleek "product" per se, Fleek extensively uses its own HTTP gateway (ipfs.fleek.co) created from their `kubo` node infrastructure.
 - When gateway-based delivery is needed — for example, for verification and other links in Fleek product GUIs — links to CIDs of hosting or storage content use this gateway, but can also be fetched using any other IPFS gateway.
 
 ## Fleek + IPFS: the future

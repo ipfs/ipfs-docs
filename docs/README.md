@@ -1,16 +1,25 @@
 ---
 title: IPFS Documentation
-legacyUrl: https://docs.ipfs.io/
 description: The home page for developer documentation for IPFS, the InterPlanetary File System.
 ---
 
-# Learn how to build the future of the internet
+# Welcome to the IPFS docs
 
-::: callout
-No matter who you are or what you're creating, you can be part of the movement to create the next generation of the internet. This site contains everything you need to start building using the InterPlanetary File System (IPFS) and pave the way for the future Web.
-:::
+The Interplanetary File System (IPFS) is a decentralized file system for building the next generation of the internet. [Filecoin](https://filecoin.io) and many popular Web3 projects are built on IPFS. Some call it the hard drive for blockchain and Web3, though its power extends much further.
 
-Check out some of the most popular content in these docs below — or explore the main site menu to learn about [key concepts](concepts/README.md), try out [how-to guides](how-to/README.md), see [API and CLI references](reference/README.md), or just [install IPFS](install/README.md) and get hacking.
+## Get started
+
+Check out these docs to get started with IPFS:
+
+- [What is IPFS?](concepts/what-is-ipfs.md#what-is-ipfs)
+- [Key concepts](concepts/README.md)
+- [Case studies](concepts/README.md#examples-and-case-studies)
+- [How-to guides](how-to/README.md)
+- [API and CLI references](reference/README.md)
+- [Install IPFS](install/README.md)
+
+<abbr title="too long; didn't read">TL;DR</abbr>? [Glossary](concepts/glossary.md) provides short definitions of IPFS terms and concepts.
+
 
 ## Download IPFS tools
 
@@ -18,7 +27,7 @@ These tools can help you use and build on IPFS more quickly and efficiently — 
 
 | [Browser Companion](https://github.com/ipfs-shipyard/ipfs-companion)            | [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop)                                          | [IPLD Explorer](https://explore.ipld.io/)                           |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
-| ![The IPFS browser companion in Firefox.](./images/ipfs-companion.png =300x200) | ![The IPFS desktop app running on MacOS with the status tab open.](./images/ipfs-desktop.png =300x200) | ![The IPLD Explorer homepage.](./images/ipld-explorer.png =300x200) |
+| ![The IPFS browser companion in Firefox.](./images/ipfs-companion.png) | ![The IPFS desktop app running on MacOS with the status tab open.](./images/ipfs-desktop.png) | ![The IPLD Explorer homepage.](./images/ipld-explorer.png) |
 
 ## Host your website on IPFS
 
@@ -44,12 +53,12 @@ ProtoSchool's self-guided [interactive tutorials](https://proto.school/tutorials
 
 Are you looking for inspiration? You can find a huge collection of awesome community projects over at Awesome IPFS.
 
-[Check out Awesome IPFS now →](https://awesome.ipfs.io/)
+[Check out Awesome IPFS now →](https://awesome.ipfs.tech/)
 
 ![The Awesome IPFS homepage.](./images/awesome-ipfs.png =740x420)
 
 ## Be part of the IPFS community
 
-IPFS has a bustling community of designers, developers, writers, and activists who are all helping to improve the project. You can join in by attending a local meetup, helping out at a conference, chatting online through [Matrix channels](community/chat.md), or joining a discussion in [the IPFS forum](https://discuss.ipfs.io/).
+IPFS has a bustling community of designers, developers, writers, and activists who are all helping to improve the project. You can join in by attending a local meetup, helping out at a conference, chatting online through [Discord](https://discord.com/invite/KKucsCpZmY), or joining a discussion in [the IPFS forum](https://discuss.ipfs.tech/).
 
 [Find out more in the Community section →](community/README.md)

@@ -13,7 +13,7 @@ Fleek is a service that lets you host a website on IPFS without needing to insta
 
 We already know that files and folders on IPFS are content-addressed, meaning you can find them using the hash of their content. If the content changes, then the hash changes too. As we've seen in previous lessons, this can be an issue when it comes to updating a website. A single character change to an HTML file will create an entirely new hash!
 
-Fleek offers a simple workflow. Once you've pushed your changes to Git, Fleek builds, pins, and updates your site! The sevice also integrates well with React, Next.js, Gatsby, Jekyll, Hugo, and [a bunch of other popular development frameworks](https://docs.fleek.co/hosting/site-deployment/#common-frameworks). You can also manage your domains through Fleek, and monitor your sites in a similar method to traditional web development.
+Fleek offers a simple workflow. Once you've pushed your changes to git, Fleek builds, pins, and updates your site. The service also integrates well with React, Next.js, Gatsby, Jekyll, Hugo, and [a bunch of other popular development frameworks](https://docs.fleek.co/hosting/site-deployment/#common-frameworks). You can also manage your domains through Fleek, and monitor your sites in a similar method to traditional web development.
 
 If you're looking to host a fast website on IPFS, Fleek is a great option! For more information check out [Fleek.co](https://fleek.co) and [their documentation](https://docs.fleek.co/).
 

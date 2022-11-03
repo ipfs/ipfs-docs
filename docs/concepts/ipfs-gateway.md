@@ -4,7 +4,7 @@ description: Learn why gateways are an important part of using IPFS in conjuncti
 related:
   'IPFS Docs: Address IPFS on the Web': /how-to/address-ipfs-on-web/
   'IPFS public gateway checker': https://ipfs.github.io/public-gateway-checker/
-  'GitHub repo: Gateway summary from go-ipfs': https://github.com/ipfs/go-ipfs/blob/master/docs/gateway.md
+  'Gateway specifications': https://github.com/ipfs/specs/blob/main/http-gateways/#readme
   'Article: Solving the IPFS Gateway Problem (Pinata)': https://medium.com/pinata/the-ipfs-gateway-problem-64bbe7eb8170
   'Tutorial: Setting up an IPFS gateway on Google Cloud Platform (Stacktical)': https://blog.stacktical.com/ipfs/gateway/dapp/2019/09/21/ipfs-server-google-cloud-platform.html
 ---
@@ -103,7 +103,7 @@ Path-resolving gateways, however, violate the [same-origin policy](https://en.wi
 
 Subdomain resolution style maintains compliance with the [single-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy). The canonical form of access, `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}`, causes the browser to interpret each returned file as being from a different origin.
 
-Subdomain resolution support began with [Go-IPFS](https://github.com/ipfs/go-ipfs) release `0.5.0`.
+Subdomain resolution support began with [Kubo](https://github.com/ipfs/kubo) release `0.5.0`.
 
 #### DNSlink
 
@@ -276,4 +276,6 @@ No. The ipfs.io gateway is one of many portals used to view content stored by th
 
 ## Learning more
 
-- [Gateway configuration options](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#gateway)
+- [A Practical Explainer for IPFS Gateways – Part 1](https://blog.ipfs.tech/2022-06-09-practical-explainer-ipfs-gateways-1/), [Part 2](https://blog.ipfs.tech/2022-06-30-practical-explainer-ipfs-gateways-2/)
+- [Kubo: Gateway configuration options](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway)
+- [Gateway specifications](https://github.com/ipfs/specs/blob/main/http-gateways/#readme)

@@ -31,15 +31,15 @@ This is one of the advantages of IPFS over traditional legacy web hosting. It me
 
 The other half of the equation when considering the prospect of IPFS traffic monitoring is that nodes' unique identifiers are themselves public. Just like with CIDs, every individual IPFS node has its own public identifier (known as a PeerID), such as `QmRGgYP1P5bjgapLaShMVhGMSwGN9SfYG3CM2TfhpJ3igE`.
 
-While a long string of letters and numbers may not be a "Johnny Appleseed" level of human-readable specificity, your PeerID is still a long-lived, unique identifier for your node. Keep in mind that it's possible to do a DHT lookup on your PeerID and, particularly if your node is regularly running from the same location (like your home), find your IP address. (It's possible to [reset your PeerID](../reference/cli.md#ipfs-key-rotate) if necessary, but similarly to changing your user ID on legacy web apps and services, is likely to involve extra effort.) Additionally, longer-term monitoring of the public IPFS network could yield information about what CIDs your node is requesting and/or reproviding and when.
+While a long string of letters and numbers may not be a "Johnny Appleseed" level of human-readable specificity, your PeerID is still a long-lived, unique identifier for your node. Keep in mind that it's possible to do a DHT lookup on your PeerID and, particularly if your node is regularly running from the same location (like your home), find your IP address. (It's possible to [reset your PeerID](../reference/kubo/cli.md#ipfs-key-rotate) if necessary, but similarly to changing your user ID on legacy web apps and services, is likely to involve extra effort.) Additionally, longer-term monitoring of the public IPFS network could yield information about what CIDs your node is requesting and/or reproviding and when.
 
 ## Enhancing your privacy
 
-If there are situations in which you know you'll need to remain private but still want to use IPFS, one of the approaches outlined below may help. And don't forget, you can always discuss privacy and get others' input or ideas in the official [IPFS forums](https://discuss.ipfs.io).
+If there are situations in which you know you'll need to remain private but still want to use IPFS, one of the approaches outlined below may help. And don't forget, you can always discuss privacy and get others' input or ideas in the official [IPFS forums](https://discuss.ipfs.tech).
 
 ### Controlling what you share
 
-By default, an IPFS node announces to the rest of the network that it is willing to share every CID in its cache (in other words, _reproviding_ content that it's retrieved from other nodes), as well as CIDs that you've explicitly pinned or added to MFS to make them consistently available. If you'd like to disable this behavior, you can do so in the [reprovider settings](https://github.com/ipfs/go-ipfs/blob/master/docs/config.md#reprovider) of your node's config file.
+By default, an IPFS node announces to the rest of the network that it is willing to share every CID in its cache (in other words, _reproviding_ content that it's retrieved from other nodes), as well as CIDs that you've explicitly pinned or added to MFS to make them consistently available. If you'd like to disable this behavior, you can do so in the [reprovider settings](https://github.com/ipfs/kubo/blob/master/docs/config.md#reprovider) of your node's config file.
 
 Changing your reprovider settings to "pinned" or "roots" will keep your node from announcing itself as a provider of non-pinned CIDs that are in your cache — so you can still use pinning to provide other nodes with content that you care about and want to make sure continues to be available over IPFS.
 
@@ -51,7 +51,7 @@ Public IPFS gateways are primarily intended as a "bridge" between the legacy web
 
 ### Using Tor
 
-If you're familiar with [Tor](https://www.torproject.org/) and comfortable with the command line, you may wish to try [running IPFS over Tor transport](https://dweb-primer.ipfs.io/avenues-for-access/tor-transport) by configuring your node's settings.
+If you're familiar with [Tor](https://www.torproject.org/) and comfortable with the command line, you may wish to try running IPFS over Tor transport by configuring your node's settings.
 
 If you're a developer building on IPFS, it's worth noting that the global IPFS community continues to experiment with using Tor transport — see [this example from e-commerce organization OpenBazaar](https://github.com/OpenBazaar/go-onion-transport) — and there may already be an open-source codebase to help your project achieve this.
 
@@ -84,13 +84,14 @@ If you're curious about implementing encryption with IPFS on a large scale, you 
 - [Ceramic](https://ceramic.network/)
 - [Fission.codes](https://fission.codes/)
 - [Fleek](case-study-fleek.md)
+- [Lit Protocol](https://litprotocol.com/)
 - [OrbitDB](https://orbitdb.org/)
 - [Peergos](https://peergos.org/)
 - [Textile](https://www.textile.io/)
 
 ### Creating a private network
 
-[Private IPFS networks](https://github.com/ipfs/go-ipfs/blob/release-v0.9.0/docs/experimental-features.md#private-networks) provide full protection from public monitoring but can lack the scale benefits provided by the public IPFS network. A private network operates identically to the public one, but with one critical difference: it can only be accessed by nodes that have been given access, and it will only ever scale to those nodes. This means that the benefits of the public IPFS network's massive scale, such as geographic resiliency and speedy retrieval of high-demand content, won't be realized unless the private network is explicitly designed and scaled with this in mind.
+[Private IPFS networks](https://github.com/ipfs/kubo/blob/release-v0.9.0/docs/experimental-features.md#private-networks) provide full protection from public monitoring but can lack the scale benefits provided by the public IPFS network. A private network operates identically to the public one, but with one critical difference: it can only be accessed by nodes that have been given access, and it will only ever scale to those nodes. This means that the benefits of the public IPFS network's massive scale, such as geographic resiliency and speedy retrieval of high-demand content, won't be realized unless the private network is explicitly designed and scaled with this in mind.
 
 Running a private network can be a great option for corporate implementations of IPFS — for one example, see [this case study on Morpheus.Network](case-study-morpheus.md) — because the network's topology can be specified and built exactly as desired.
 

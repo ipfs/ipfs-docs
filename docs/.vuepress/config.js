@@ -1,6 +1,6 @@
 // .vuepress/config.js
 
-const DEPLOY_DOMAIN = 'https://docs.ipfs.io'
+const DEPLOY_DOMAIN = 'https://docs.ipfs.tech'
 const SPEEDCURVE_ID = process.env.SPEEDCURVE_ID || ''
 const pageSuffix = '/'
 
@@ -24,8 +24,8 @@ module.exports = {
       md.use(require('markdown-it-footnote'))
       md.use(require('markdown-it-task-lists'))
       md.use(require('markdown-it-deflist')),
-        md.use(require('markdown-it-imsize')),
-        md.use(require('markdown-it-image-lazy-loading'))
+      md.use(require('markdown-it-imsize')),
+      md.use(require('markdown-it-image-lazy-loading'))
     }
   },
   themeConfig: {
@@ -77,8 +77,17 @@ module.exports = {
               'install/ipfs-companion',
               'install/command-line',
               ['install/ipfs-updater', 'Updater'],
-              'install/server-infrastructure',
-              'install/recent-releases'
+              'install/server-infrastructure'
+            ]
+          },
+          {
+            title: 'Basics',
+            path: '/basics/',
+            children: [
+                'basics/desktop-app',
+                'basics/go/command-line',
+                'basics/js/js-ipfs',
+                'basics/ipfs-implementations'
             ]
           },
           {
@@ -90,25 +99,13 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/concepts/what-is-ipfs',
-                  '/concepts/how-ipfs-works',
-                  '/concepts/privacy-and-encryption',
-                  '/concepts/glossary',
-                  '/concepts/usage-ideas-examples',
-                  '/concepts/faq'
-                ]
-              },
-              {
-                title: 'Case studies',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  ['/concepts/case-study-arbol', 'Arbol'],
-                  ['/concepts/case-study-audius', 'Audius'],
-                  ['/concepts/case-study-fleek', 'Fleek'],
-                  ['/concepts/case-study-likecoin', 'LikeCoin'],
-                  ['/concepts/case-study-morpheus', 'Morpheus.Network'],
-                  ['/concepts/case-study-openbazaar', 'OpenBazaar']
+                    '/concepts/what-is-ipfs',
+                    '/concepts/how-ipfs-works',
+                    '/concepts/privacy-and-encryption',
+                    '/concepts/nodes',
+                    '/concepts/glossary',
+                    '/concepts/usage-ideas-examples',
+                    '/concepts/faq'
                 ]
               },
               {
@@ -130,17 +127,33 @@ module.exports = {
                   '/concepts/dht',
                   '/concepts/merkle-dag',
                   '/concepts/bitswap',
-                  '/concepts/ipld',
+                  ['https://ipld.io/docs/intro/primer/', 'IPLD' ],
                   '/concepts/ipns',
                   '/concepts/libp2p',
-                  '/concepts/file-systems'
+                  '/concepts/file-systems',
                 ]
               },
               {
                 title: 'Integrating with the Web',
                 sidebarDepth: 1,
                 collapsable: false,
-                children: ['/concepts/ipfs-gateway', '/concepts/dnslink']
+                children: [
+                    '/concepts/ipfs-gateway', 
+                    '/concepts/dnslink'
+                ]
+              },
+              {
+                title: 'Case studies',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  ['/concepts/case-study-arbol', 'Arbol'],
+                  ['/concepts/case-study-audius', 'Audius'],
+                  ['/concepts/case-study-fleek', 'Fleek'],
+                  ['/concepts/case-study-likecoin', 'LikeCoin'],
+                  ['/concepts/case-study-morpheus', 'Morpheus.Network'],
+                  ['/concepts/case-study-snapshot', 'Snapshot']
+                ]
               },
               {
                 title: 'Further reading',
@@ -171,9 +184,10 @@ module.exports = {
                   '/how-to/default-profile',
                   '/how-to/run-ipfs-inside-docker',
                   [
-                    'https://github.com/ipfs/js-ipfs/tree/master/examples/custom-ipfs-repo',
+                    'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
                     'Customize an IPFS repo'
                   ],
+                  '/how-to/best-practices-for-ipfs-builders',
                   '/how-to/troubleshooting'
                 ]
               },
@@ -187,8 +201,8 @@ module.exports = {
                   '/how-to/work-with-pinning-services',
                   '/how-to/take-snapshot',
                   '/how-to/store-play-videos',
-                  '/how-to/host-git-style-repo',
-                  '/how-to/move-ipfs-installation'
+                  '/how-to/host-git-repo',
+                  '/how-to/move-ipfs-installation/move-ipfs-installation'
                 ]
               },
               {
@@ -210,7 +224,8 @@ module.exports = {
                   '/how-to/websites-on-ipfs/multipage-website',
                   '/how-to/websites-on-ipfs/link-a-domain',
                   '/how-to/websites-on-ipfs/introducing-fleek',
-                  '/how-to/websites-on-ipfs/static-site-generators'
+                  '/how-to/websites-on-ipfs/static-site-generators',
+                  '/how-to/websites-on-ipfs/redirects-and-custom-404s'
                 ]
               },
               {
@@ -221,6 +236,14 @@ module.exports = {
                   'how-to/address-ipfs-on-web',
                   'how-to/create-simple-chat-app',
                   '/how-to/browser-tools-frameworks'
+                ]
+              },
+              {
+                title: 'IPNS and mutability',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/how-to/publish-ipns'
                 ]
               },
               {
@@ -249,10 +272,11 @@ module.exports = {
             title: 'API & CLI',
             path: '/reference/',
             children: [
-              '/reference/go/api',
+              '/reference/http/gateway',
               '/reference/js/api',
-              '/reference/http/api',
-              '/reference/cli'
+              '/reference/go/api',
+              '/reference/kubo/cli',
+              '/reference/kubo/rpc'
             ]
           },
           {
@@ -270,12 +294,12 @@ module.exports = {
                     'IPFS newsletter'
                   ],
                   '/community/contribute/ways-to-contribute',
-                  ['https://discuss.ipfs.io/', 'IPFS forums'],
+                  ['https://discuss.ipfs.tech/', 'IPFS forums'],
                   '/community/chat',
                   ['https://proto.school/events', 'ProtoSchool workshops'],
                   ['https://www.meetup.com/members/249142444/', 'Meetups'],
                   '/community/social-media',
-                  ['https://awesome.ipfs.io', 'Awesome IPFS'],
+                  ['https://awesome.ipfs.tech', 'Awesome IPFS'],
                   [
                     'https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqqsew',
                     'YouTube'
@@ -307,7 +331,6 @@ module.exports = {
               ['https://github.com/ipfs/research', 'Research'],
               ['https://github.com/ipfs/team-mgmt', 'Team org planning'],
               '/project/related-projects',
-              '/project/contribute',
               [
                 'https://github.com/ipfs/community/blob/master/code-of-conduct.md',
                 'Code of conduct'
@@ -419,7 +442,9 @@ module.exports = {
       }
     ],
     'vuepress-plugin-chunkload-redirect',
-    'vuepress-plugin-ipfs'
+    'vuepress-plugin-ipfs',
+    'vuepress-plugin-mermaidjs',
+    'tabs'
   ],
   extraWatchFiles: ['.vuepress/nav/en.js']
 }

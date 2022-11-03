@@ -1,17 +1,26 @@
 ---
-title: Server infrastructure
+title: Server infrastructure with IPFS Cluster
 description: IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pin-set distributed among multiple peers. Learn how to install it here.
+current-ipfs-cluster-version: v1.0.4
 ---
 
 # Server infrastructure
 
-If you want to install IPFS in a server environment and offer IPFS as a service, you should look at IPFS Cluster. IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pin-set distributed among multiple peers. This makes it significantly easier to manage multiple IPFS nodes and ensure that data is available across an internal network.
+If you want to install IPFS in a server environment and offer IPFS as a service, you should look at [IPFS Cluster](https://cluster.ipfs.io/) as a way to scale your IPFS deployment beyond a single IPFS daemon. IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pin-set distributed among multiple peers. This makes it significantly easier to manage multiple IPFS nodes and ensure that data is available across an internal network.
+
+@[youtube](-SYDlid7Nqs)
+
+::: tip
+As a Kubernetes user, you can use a Kubernetes operator for IPFS called [IPFS operator] (https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) to easily create and manage clusters consisting of hundreds of peers.
+The IPFS operator is in active development and not yet recommended for production use cases. If the operator is something you would like to include in your infrastructure, 
+check out the [official documentation](https://ipfs-operator.readthedocs.io/) and [operator source code](https://github.com/redhat-et/ipfs-operator) for instructions and the latest progress.
+:::
 
 ## Create a local cluster
 
 To see if IPFS Cluster is suitable for your project, follow this quick start guide and spin up a local IPFS Cluster instance. At the end of this guide, you will have a solid understanding of how IPFS Cluster is set up and how to interact with it. If you'd rather create a production-ready cluster, take a look at the [official IPFS Cluster documentation →](https://cluster.ipfs.io/)
 
-### Prerequsites
+### Prerequisites
 
 You must have both [Docker](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) installed. Check that they're both installed properly by asking for their version:
 
@@ -34,16 +43,16 @@ If you're having issues here, head over to the [official Docker documentation to
 
 ### Steps
 
-1. Download the latest `ipfs-cluster-ctl` package from [dist.ipfs.io](https://dist.ipfs.io/#ipfs-cluster-ctl):
+1. Download the latest `ipfs-cluster-ctl` package from [dist.ipfs.tech](https://dist.ipfs.tech/#ipfs-cluster-ctl):
 
     ```shell
-    wget https://dist.ipfs.io/ipfs-cluster-ctl/v0.14.0/ipfs-cluster-ctl_v0.14.0_linux-amd64.tar.gz
+    wget https://dist.ipfs.tech/ipfs-cluster-ctl/v1.0.4/ipfs-cluster-ctl_v1.0.4_linux-amd64.tar.gz
     ```
 
 1. Unzip the package:
 
     ```shell
-    tar xvzf ipfs-cluster-ctl_v0.14.0_linux-amd64.tar.gz
+    tar xvzf ipfs-cluster-ctl_v1.0.4_linux-amd64.tar.gz
 
     > ipfs-cluster-ctl/ipfs-cluster-ctl
     > ipfs-cluster-ctl/LICENSE
@@ -52,10 +61,10 @@ If you're having issues here, head over to the [official Docker documentation to
     > ipfs-cluster-ctl/README.md
     ```
 
-1. Download the [`docker-composer.yml` file](https://raw.githubusercontent.com/ipfs/ipfs-cluster/master/docker-compose.yml) and place it into the `ipfs-cluster-ctl` directory:
+1. Download the [`docker-compose.yml` file](https://raw.githubusercontent.com/ipfs/ipfs-cluster/v1.0.4/docker-compose.yml) and place it into the `ipfs-cluster-ctl` directory:
 
     ```shell
-    wget https://raw.githubusercontent.com/ipfs/ipfs-cluster/master/docker-compose.yml
+    wget https://raw.githubusercontent.com/ipfs/ipfs-cluster/v1.0.4/docker-compose.yml
     ```
 
 1. Start the cluster using `docker-compose`. You may have to run as root:

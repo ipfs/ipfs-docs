@@ -56,7 +56,7 @@ Users control their own Ethereum private keys, which permission control of their
 
 One other key ingredient in Audius' decision to initially adopt IPFS was its separation from Filecoin. The Audius team was able to get started using IPFS and hosting on a network of community-operated nodes, without concern for hosting costs. Over time, they are looking forward to having Filecoin-supported nodes so that they can separate their core content business from the hosting aspects of the business. Meanwhile, their current storage network of community-operated creator nodes does offer a high level of flexibility in terms of customization. "The node itself is very customizable," Nagaraj says. "We’ve taken advantage of that. I think we’ve used the node in every way possible."
 
-As a large user of the IPFS network, Audius has taken advantage of the [official IPFS forums](https://discuss.ipfs.io), as well as support provided directly from the core IPFS development team. They are particularly impressed with the level of support and third-party tools that are available on IPFS.
+As a large user of the IPFS network, Audius has taken advantage of the [official IPFS forums](https://discuss.ipfs.tech), as well as support provided directly from the core IPFS development team. They are particularly impressed with the level of support and third-party tools that are available on IPFS.
 
 "We think about the IPFS and Filecoin community as a great role model for what we are doing with the community around Audius, in terms of activity and robustness," says Nagaraj. "There are a lot of developers who are constantly contributing to IPFS. A few post on websites like [simpleaswater.com](http://www.simpleaswater.com) with tons of examples of what you can do with IPFS, how to actually implement it, breaking down all the details. We would aim for something like that. It would be incredible for us if we could reach that level of community participation." Nagaraj also calls out as particularly helpful blog posts and other content created by third-party contributors to the codebase, as well as the ecosystem that is developing around IPFS collaborators such as [Textile](http://textile.io/) and [Pinata](https://pinata.cloud/). Having such an active community around an open-source project adds to the momentum and progress of IPFS as a whole.
 
@@ -94,15 +94,15 @@ IPFS has provided Audius the full benefits of decentralized storage with no hass
 
 ## How Audius uses IPFS
 
-All files and metadata on Audius are _shared_ using IPFS by creator node services, _registered_ on Audius smart contracts, _indexed_ by discovery services, and _served_ through the client to end users. Audius runs nodes internally to test new changes, and there are a dozen public hosts running nodes for specific services and geographies. However, content creators and listeners don’t need to know anything about the back end; they use the Audius client and client libraries to upload and stream audio. Each IPFS node within the Audius network is currently a [`go-ipfs`](https://github.com/ipfs/go-ipfs) container co-located with service logic. Audius implements the services interface with `go-ipfs` using [`py-ipfs-api`](https://github.com/ipfs-shipyard/py-ipfs-http-client) or [`ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) (JavaScript) to perform read and write operations.
+All files and metadata on Audius are _shared_ using IPFS by creator node services, _registered_ on Audius smart contracts, _indexed_ by discovery services, and _served_ through the client to end users. Audius runs nodes internally to test new changes, and there are a dozen public hosts running nodes for specific services and geographies. However, content creators and listeners don’t need to know anything about the back end; they use the Audius client and client libraries to upload and stream audio. Each IPFS node within the Audius network is currently a [`kubo`](https://github.com/ipfs/kubo) container co-located with service logic. Audius implements the services interface with `kubo` using [`py-ipfs-api`](https://github.com/ipfs-shipyard/py-ipfs-http-client) or [`ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) (JavaScript) to perform read and write operations.
 
 ### The tooling
 
 Audius uses the following IPFS implementations with no modification:
 
 - **IPFS core**
-- [`go-ipfs`](https://github.com/ipfs/go-ipfs)
-  - _All individual nodes are `go-ipfs` containers_
+- [`kubo`](https://github.com/ipfs/kubo)
+  - _All individual nodes are `kubo` containers_
 - [`py-ipfs-api`](https://github.com/ipfs-shipyard/py-ipfs-http-client)
   - _Discovery provider is a Python application_
   - _Python application uses a Flask server + Celery worker queue + PostgreSQL database_

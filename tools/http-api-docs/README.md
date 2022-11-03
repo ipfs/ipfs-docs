@@ -1,23 +1,25 @@
 # http-api-docs
 
-[![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
-[![](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.io/)
+[![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://protocol.ai)
+[![](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](https://ipfs.tech/)
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 [![Build Status](https://travis-ci.com/ipfs/http-api-docs.svg?branch=master)](https://travis-ci.org/ipfs/http-api-docs)
 
-> A generator for go-ipfs API endpoints documentation.
+> A generator for Kubo (go-ipfs) RPC `/api/v0` endpoints documentation.
 
-Note: This is just the generator for the docs that are available on ipfs.io, which can be found here: https://docs.ipfs.io/reference/http/api/
+Note: This is just the generator for the docs that are available on https://docs.ipfs.tech/reference/kubo/rpc/
 
 The original docs are written in Markdown format and are available for community contributions here: https://github.com/ipfs/ipfs-docs
 
-## Table of Contents
+# Table of Contents
 
-- [Install](#install)
-- [Usage](#usage)
-- [Captain](#captain)
-- [Contribute](#contribute)
-- [License](#license)
+- [http-api-docs](#http-api-docs)
+- [Table of Contents](#table-of-contents)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Captain](#captain)
+  - [Contribute](#contribute)
+  - [License](#license)
 
 ## Install
 

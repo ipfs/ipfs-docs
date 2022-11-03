@@ -5,37 +5,19 @@ description: Allow users to access your IPFS hosted site by linking up a domain 
 
 # Link a domain
 
-Users can view your website by entering its content identifier (CID) into their address bar. But, much like IP addresses, CIDs aren't particularly user-friendly or nice to look at. To fix this, we can map a domain name to your CID, so when users visit `www.YourDomain.com` they'll be forwarded to your site hosted on IPFS. This guide shows you how to map a regular domain name through DNS and a decentralized domain through the Ethereum naming service.
+Users can view your website by entering its content identifier (CID) into their address bar. But, much like IP addresses, CIDs aren't particularly user-friendly or nice to look at. To fix this, we can map a domain name to your CID, so when users visit `www.YourDomain.com` they'll be forwarded to your site hosted on IPFS. This guide shows you how to map a regular domain name through DNS, and decentralized domains through the Ethereum naming service (ENS) or Handshake.
 
 This section is completely optional, but following it will give you a solid grasp on how to manage domain names with IPFS.
 
 ## Domain name service (DNS)
 
-We're going to walk through mapping a domain name to a CID. It doesn't matter which domain name registrar you use since all the steps are the same, but the links and settings will be in different places.
-
-### Things you'll need
-
-Before we get started, you will need:
-
-- A domain name, preferably one not already registered to a website.
-- The CID of your website hosted on IPFS. If you've been following this tutorial series, you should already have a website and CID ready.
-
-1. Access your registrar's control panel. You're looking for where you can manage the `CNAME` record and `TXT` records for your domain.
-1. Create a `CNAME` record.
-   a. Set the **Host** to `@`.
-   b. Set the **Value** to `gateway.ipfs.io.` Notice the trailing dot `.` at the end of `gateway.ipfs.io.`.
-1. Create a `TXT` record.
-   a. Set the **Host** to `_dnslink`.
-   b. Set the value to `dnslink=/ipfs/SITE_CID`, replacing `SITE_CID` with the CID of your website.
-1. Save your changes.
-
-DNS changes can take a while to propagate through the internet. Your domain should eventually point to your IPFS hosted site! Why not try doing the same thing with the [Ethereum naming service](#ethereum-naming-service)?
+See [dnslink.io](https://dnslink.io) for explanation and instructions.
 
 ## Ethereum naming service (ENS)
 
 The Ethereum naming service (ENS) is a decentralized way to address resources. Like DNS, which converts human-readable names to IP addresses, ENS converts human-readable names such as `randomplanetfacts.eth.link` to Ethereum addresses. These addresses can then be used to point to CIDs on IPFS. Without going into too much detail, ENS aims to fix some of DNS's problems, mainly man-in-the-middle attacks and scalability. For more information on why DNS is broken, [check out Cynthia Taylor's post on recompilermag.com](https://recompilermag.com/issues/issue-1/the-web-is-broken-how-dns-breaks-almost-every-design-principle-of-the-internet/).
 
-### Before we get started
+### Things you'll need 
 
 You need these things to get a domain name through ENS:
 
@@ -57,7 +39,7 @@ The more years you choose to prepay, the less you will spend on gas fees overall
 
 ### Purchase an Ethereum domain name
 
-1. Go to [ens.eth](http://ens.eth/) to visit using ENS+IPFS. You can also go to [app.ens.domains](https://app.ens.domains/) to use regular DNS and the centralized web.
+1. Go to `ens.eth` using a browser that supports ENS domains, like Brave or Opera. You can also go to [app.ens.domains](https://app.ens.domains/) to use regular DNS and the centralized web.
 2. Log in to MetaMask:
 
    ![Metamask pop-up showing a login screen.](./images/link-a-domain/ens-metamask-log-into-key.png)
@@ -114,7 +96,55 @@ The more years you choose to prepay, the less you will spend on gas fees overall
 
 In a few minutes, you'll be able to go to `Your_Domain.eth/` and view your website. Note the trailing slash `/`. Because `.eth` is not a registered DNS top-level domain, it is normally inaccessible through regular browsers.
 
-[Eth.link](https://eth.link/) provides a way for any browser to access your website. Just append `.link` to your domain `Your_Domain.eth.link`. There are no additional steps required for this.
+[Eth.link](https://eth.link/) provides a way for any browser to access your website. Just append `.link` to your domain. For example, `Your_Domain.eth.link`. There are no additional steps required for this.
+
+## Handshake 
+
+Handshake is a blockchain built specifically for DNS. 
+
+When you attempt to visit a website like GitHub.com, your browser will first need to figure out how to get to .com’s servers. To find .com, your browser will consult something called the root zone file — you can think of it like a spreadsheet where Column A are the top-level domains like .com, .net, .org, .io, and Column B are the servers each TLD points to. Controlling the root zone file is a single entity called ICANN, and they alone dictate whether you’re allowed to have a top-level domain. 
+
+Handshake is shifting control of the root zone file away from ICANN to a decentralized blockchain. From a practical standpoint, Handshake provides fully decentralized and uncensorable top-level domains that you can own and use for your websites. To learn more, visit the [Namebase Learning Center](https://learn.namebase.io).
+
+### Prerequisites
+
+Before we get started, you will need:
+
+- A [Handshake domain](https://learn.namebase.io/starting-from-zero/how-to-get-a-name)
+- The CID of your website hosted on IPFS
+- A [way for resolving Handshake domains](https://www.namebase.io/blog/how-to-access-handshake-domains/) (to test the setup)
+
+### Bare TLD
+
+1. Access your name's DNS records. You're looking for where you can add `ALIAS` and `TXT` records for your domain.
+1. Create an `ALIAS` record:
+    a. Set the **Host** to `@`.
+    a. Set the **Value** to `ipfs.namebase.io.` and notice the trailing dot `.` at the end of `ipfs.namebase.io.`
+1. Create a `TXT` record:
+    a. Set the **Host** to `_dnslink`.
+    a. Set the value to `dnslink=/ipfs/SITE_CID`, replacing `SITE_CID` with the CID of your website.
+1. Save your changes.
+
+You should now be able to visit your IPFS website at your Handshake domain! If your Handshake name is `yourname/`, you can visit your website at http://yourname/ (no dots, just yourname/!)
+
+### Subdomain
+
+If you want to create your website on a subdomain rather than a bare TLD (e.g. `sub.yourname/` vs. `yourname/`), follow these instructions instead:
+
+1. Access your name's DNS records. You're looking for where you can add `CNAME` and `TXT` records for your domain.
+1. Create a `CNAME` record:
+   a. Set the **Host** to `sub`, replacing `sub` with your desired subdomain name.
+   b. Set the **Value** to `ipfs.namebase.io.` and notice the trailing dot `.` at the end of `ipfs.namebase.io.`
+1. Create a `TXT` record:
+   a. Set the **Host** to `_dnslink.sub`, replacing `sub` with your desired subdomain name.
+   b. Set the value to `dnslink=/ipfs/SITE_CID`, replacing `SITE_CID` with the CID of your website.
+1. Save your changes.
+
+You should now be able to visit your IPFS website at your Handshake domain! If your Handshake name is `sub.yourname/`, you can visit your website at http://sub.yourname/
+
+::: tip
+If you prefer to use Handshake-powered DNSLink with your custom gateway, run [`ipfs daemon`](/install/command-line/) with config that has a Handshake resolver enabled for your domain: `ipfs config --json DNS.Resolvers '{ "yourname": "https://query.hdns.io/dns-query" }`. Learn how to run a self-hosted, site-specific DNSLink gateway from [gateway recipes in Kubo config docs](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes).
+:::
 
 ## Up next
 

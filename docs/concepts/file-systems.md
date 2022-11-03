@@ -1,6 +1,5 @@
 ---
 title: File systems
-legacyUrl: https://docs.ipfs.io/guides/concepts/mfs/
 description: Learn about file systems in IPFS and why working with files in IPFS can be a little different than you may be used to.
 ---
 
@@ -220,7 +219,7 @@ await ipfs.files.rm('/my/beautiful/directory')
 
 When you add a _file_ to IPFS, it might be too big to fit in a single block, so it needs metadata to link all its blocks together. UnixFS is a [protocol-buffers](https://developers.google.com/protocol-buffers/)-based format for describing files, directories, and symlinks in IPFS. This data format is used to represent files and all their links and metadata in IPFS. UnixFS creates a block (or a tree of blocks) of linked objects.
 
-UnixFS currently has [Javascript](https://github.com/ipfs/js-ipfs-unixfs) and [Go](https://github.com/ipfs/go-ipfs/tree/b3faaad1310bcc32dc3dd24e1919e9edf51edba8/unixfs) implementations. These implementations have modules written in to run different functions:
+UnixFS currently has [Javascript](https://github.com/ipfs/js-ipfs-unixfs) and [Go](https://github.com/ipfs/kubo/tree/b3faaad1310bcc32dc3dd24e1919e9edf51edba8/unixfs) implementations. These implementations have modules written in to run different functions:
 
 - **Data Formats**: manage the serialization/deserialization of UnixFS objects to protocol buffers
 
@@ -317,3 +316,4 @@ You can find additional resources to familiarize with these file systems at:
 - [Understanding how the InterPlanetary File System deals with Files](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_A), from IPFS Camp 2019
 - [Jeromy Coffee Talks - Files API](https://www.youtube.com/watch?v=FX_AXNDsZ9k)
 - [UnixFS Specification](https://github.com/ipfs/specs/blob/master/UNIXFS.md)
+- [ResNetLab on Tour - Mutable Content](https://research.protocol.ai/tutorials/resnetlab-on-tour/mutable-content/)

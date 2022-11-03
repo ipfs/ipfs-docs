@@ -1,6 +1,5 @@
 ---
 title: Ways to contribute
-legacyUrl: https://docs.ipfs.io/community/contribute/how-to-help/
 description: Learn about how to contribute to IPFS, the InterPlanetary File System.
 ---
 
@@ -14,7 +13,7 @@ IPFS and its sister-projects are big, with lots of code written in multiple lang
 
 The biggest and most active repositories we have today are:
 
-- [ipfs/go-ipfs](https://github.com/ipfs/go-ipfs)
+- [ipfs/kubo](https://github.com/ipfs/kubo)
 - [ipfs/js-ipfs](https://github.com/ipfs/js-ipfs)
 - [libp2p/go-libp2p](https://github.com/libp2p/go-libp2p)
 - [libp2p/js-libp2p](https://github.com/libp2p/js-libp2p)
@@ -42,7 +41,7 @@ If you have never contributed to an open-source project before or just need a re
 
 IPFS already has lots of users and curious people experimenting and using IPFS in their applications. These users sometimes get stuck or have questions that need answering. If you've contributed something with code or documentation, the chances are that you can probably help a lot of people with their questions.
 
-The [IPFS forum](https://discuss.ipfs.io/) is the best place to go if you're looking for support.
+The [IPFS forum](https://discuss.ipfs.tech/) is the best place to go if you're looking for support.
 
 ## Testing
 
@@ -52,7 +51,7 @@ We work on [CI tools](https://github.com/ipfs/jenkins) and plan larger scale tes
 
 ## Design
 
-We have many design needs, but only a small team of visual and UX designers who divide their time between IPFS-related projects and other work here. That means there are a number of issues that could use your design contributions. As home to IPFS Desktop and Companion, the [ipfs-gui](https://github.com/ipfs/ipfs-gui) repo is a good place to look for opportunities to help move our design work forward. Simply filter by the label that best fits your skill set, such as [design-visual](https://github.com/ipfs/ipfs-gui/issues?q=is%3Aissue+is%3Aopen+label%3Adesign-visual) or [design-ux](https://github.com/ipfs/ipfs-gui/labels/design-ux).
+We have many design needs, but only a small team of visual and UX designers who divide their time between IPFS-related projects and other work here. That means there are a number of issues that could use your design contributions. As home to IPFS Desktop and Companion, the [ipfs-gui](https://github.com/ipfs/ipfs-gui) repo is a good place to look for opportunities to help move our design work forward. Simply filter by the label that best fits your skill set, such as [design-visual](https://github.com/ipfs/ipfs-gui/issues?q=is%3Aissue+is%3Aopen+label%3Atopic/design-visual) or [design-ux](https://github.com/ipfs/ipfs-gui/labels/topic/design-ux).
 
 ## Issues / Triaging
 
@@ -75,7 +74,7 @@ Get started by looking at our awesome-ipfs list. Build anything you think is mis
 - [ipfs/awesome-ipfs](https://github.com/ipfs/awesome-ipfs)
 - [ipfs/notes](https://github.com/ipfs/notes)
 - [ipfs/apps](https://github.com/ipfs/apps)
-- [IPFS forum](https://discuss.ipfs.io/)
+- [IPFS forum](https://discuss.ipfs.tech/)
 
 ## Protocol Design
 

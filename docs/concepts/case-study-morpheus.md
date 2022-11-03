@@ -38,7 +38,7 @@ Without the IPFS-backed document management system that Morpheus.Network offers,
 
 ![Digital Footprint example](./images/case-studies/img-morpheus-digitalfootprint.png)
 
-Every [Digital Footprint](https://gateway.ipfs.io/ipfs/QmPZ3Feqy9KkfA7Yjct8Nd73y6rbGaUCHExZP47SNArPjB) is a cross-referenced, clickable timeline depicting a shipment's progress and linking to documentation or validation for every associated event. As a shipment progresses, every event along the way — everything from issuance of a new document, to a recorded temperature deviation recorded by an IoT device in a shipping container, to a receipt for final delivery — is recorded on the Ethereum blockchain, and if an event results in a document being added, those files are encrypted and stored using IPFS. This provides two layers of assurance: Apart from the access control afforded by encryption (only authorized users on the platform can view documents), IPFS' use of [content addressing](https://docs.ipfs.io/concepts/content-addressing/) offers inherent tamper protection, solving a too-real problem in the global shipping industry. Because importing a file to IPFS associates it with a unique content identifier (CID) that changes if file content changes, every party in a shipment can be assured the documents they work with are unmodified originals. Every transaction is recorded on a private sidechain, with a consolidated transaction recorded on the Ethereum blockchain; this methodology enables Morpheus.Network to reduce Ethereum transaction fees from potentially millions of dollars per day down to a fraction of that.
+Every [Digital Footprint](https://gateway.ipfs.io/ipfs/QmPZ3Feqy9KkfA7Yjct8Nd73y6rbGaUCHExZP47SNArPjB) is a cross-referenced, clickable timeline depicting a shipment's progress and linking to documentation or validation for every associated event. As a shipment progresses, every event along the way — everything from issuance of a new document, to a recorded temperature deviation recorded by an IoT device in a shipping container, to a receipt for final delivery — is recorded on the Ethereum blockchain, and if an event results in a document being added, those files are encrypted and stored using IPFS. This provides two layers of assurance: Apart from the access control afforded by encryption (only authorized users on the platform can view documents), IPFS' use of [content addressing](https://docs.ipfs.tech/concepts/content-addressing/) offers inherent tamper protection, solving a too-real problem in the global shipping industry. Because importing a file to IPFS associates it with a unique content identifier (CID) that changes if file content changes, every party in a shipment can be assured the documents they work with are unmodified originals. Every transaction is recorded on a private sidechain, with a consolidated transaction recorded on the Ethereum blockchain; this methodology enables Morpheus.Network to reduce Ethereum transaction fees from potentially millions of dollars per day down to a fraction of that.
 
 From the perspective of the user, all of this is transparent. Shippers and others logged in to the Digital Footprint simply see a regular web interface, although they can also drill down to see individual transactions' blockchain events if they wish. Pragmatically speaking, the process isn't much different for shippers, recipients, and customs authorities — just substantially easier because there's no need to verify authenticity or maintain multiple accounts on multiple tracking services. Below is an example Morpheus.Network workflow (or see this [video version](https://www.youtube.com/watch?v=rZ6zYK6ULV8)):
 
@@ -52,7 +52,7 @@ From the perspective of the user, all of this is transparent. Shippers and other
 
 ## IPFS benefits
 
-The decision to use IPFS was an easy one for the Morpheus.Network team. Not only was their integration of out-of-the-box [`go-ipfs`](https://github.com/ipfs/go-ipfs) and [`ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) a straightforward process that didn't require additional customization, but many of the benefits provided by IPFS were critical to the success of the platform:
+The decision to use IPFS was an easy one for the Morpheus.Network team. Not only was their integration of out-of-the-box [`kubo`](https://github.com/ipfs/kubo) and [`ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) a straightforward process that didn't require additional customization, but many of the benefits provided by IPFS were critical to the success of the platform:
 
 - Proof of data integrity (or, if appropriate, revision) via IPFS content addressing
 - Middleman-free architecture enabling multiple parties to access official documents without a central data broker
@@ -82,7 +82,7 @@ The Morpheus.Network team chose to run their own private IPFS nodes for two prim
 
 ### The tooling
 
-- [`go-ipfs`](https://github.com/ipfs/go-ipfs) core
+- [`kubo`](https://github.com/ipfs/kubo) core
 - [`ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client) for integrating with the Digital Footprint web app
 - Private nodes for document storage
 

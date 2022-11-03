@@ -7,9 +7,13 @@ description: "If you're running into problems with IPFS, use this page to debug 
 
 If you're running into problems with IPFS, use this page to debug your issues and find a solution quickly.
 
+## Check that your IPFS daemon is running
+
+If you're getting unexpected behavior when trying to run common commands such as `ipfs get <cid>` returning `Error: merkledag: not found`, the issue is likely that your daemon isn't running. This can be remedied by running `ipfs daemon`, and using a different terminal to interact with the daemon.
+
 ## IPFS is running slowly
 
-Commands like `ipfs ls` are going to the network to try and find data. If for some reason, that data is not _findable_ then Go-IPFS will just keep looking for who has the data forever. Common reasons for data not being _findable_ are that:
+Commands like `ipfs ls` are going to the network to try and find data. If for some reason, that data is not _findable_ then Kubo will just keep looking for who has the data forever. Common reasons for data not being _findable_ are that:
 
 - Nobody online has it.
 - There is one node that has the data, but it's behind a NAT.
@@ -19,7 +23,7 @@ You can take a look at what's going on with Bitswap using `ipfs bitswap stat` to
 
 Some functions also have flags like `--stream` or `--progress` that can help you see incremental updates. For logging behavior, there is `ipfs log`, where `ipfs log level` can help you inspect subsystems further.
 
-You can pass a timeout flag to basically all Go-IPFS commands if you're concerned about your CLI not responding quickly enough when the data just isn't available on the network.
+You can pass a timeout flag to basically all Kubo commands if you're concerned about your CLI not responding quickly enough when the data just isn't available on the network.
 
 ## File transfers
 
@@ -54,7 +58,7 @@ The first thing to do is to double-check that both nodes are, in fact, running a
         "/ip4/192.168.2.131/tcp/4001/p2p/QmTNwsFkLAed15kQEC1ZJWPfoNbBQnMFojfJKQ9sZj1dk8",
         "/ip4/192.168.2.131/udp/4001/quic/p2p/QmTNwsFkLAed15kQEC1ZJWPfoNbBQnMFojfJKQ9sZj1dk8"
         ],
-        "AgentVersion": "go-ipfs/0.4.11-dev/",
+       "AgentVersion": "kubo/0.4.11-dev/",
         "ProtocolVersion": "ipfs/0.1.0"
 }
 ```

@@ -1,0 +1,7 @@
+name: 'Find latest Kubo tag'
+outputs:
+  latest_tag:
+    description: "latest Kubo tag name"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

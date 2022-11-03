@@ -1,6 +1,5 @@
 ---
 title: Store & play videos
-legacyUrl: https://docs.ipfs.io/guides/examples/videos/
 description: Learn how to store, play, and work with videos in IPFS, the InterPlanetary File System.
 ---
 

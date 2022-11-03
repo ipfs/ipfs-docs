@@ -6,28 +6,29 @@
   "license": "MIT",
   "devDependencies": {
     "@centerforopenscience/markdown-it-video": "^1.0.0",
-    "@vuepress/plugin-active-header-links": "^1.8.2",
-    "@vuepress/plugin-back-to-top": "^1.8.2",
-    "@vuepress/plugin-google-analytics": "^1.8.2",
-    "@vuepress/plugin-html-redirect": "^0.1.2",
-    "@vuepress/plugin-last-updated": "^1.8.2",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
+    "@vuepress/plugin-active-header-links": "^1.9.7",
+    "@vuepress/plugin-back-to-top": "^1.9.7",
+    "@vuepress/plugin-google-analytics": "^1.9.7",
+    "@vuepress/plugin-html-redirect": "^0.1.4",
+    "@vuepress/plugin-last-updated": "^1.9.7",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "markdown-it-deflist": "^2.1.0",
-    "markdown-it-footnote": "^3.0.2",
-    "markdown-it-image-lazy-loading": "^1.0.2",
+    "markdown-it-footnote": "^3.0.3",
+    "markdown-it-image-lazy-loading": "^1.2.0",
     "markdown-it-imsize": "^2.0.1",
     "markdown-it-task-lists": "^2.1.1",
     "markdown-it-video": "^0.6.3",
-    "prettier": "^2.4.1",
-    "stylus-supremacy": "^2.15.0",
-    "vuepress": "^1.8.2",
+    "prettier": "^2.7.1",
+    "stylus-supremacy": "^2.17.3",
+    "vuepress": "^1.9.7",
     "vuepress-plugin-canonical": "^1.0.0",
     "vuepress-plugin-chunkload-redirect": "^1.0.3",
     "vuepress-plugin-clean-urls": "^1.1.2",
     "vuepress-plugin-ipfs": "^1.0.2",
+    "vuepress-plugin-mermaidjs": "^1.9.1",
     "vuepress-plugin-robots": "^1.0.1",
-    "vuepress-plugin-seo": "^0.1.4",
+    "vuepress-plugin-seo": "^0.2.0",
     "vuepress-plugin-sitemap": "^2.3.1"
   },
   "prettier": {
@@ -62,5 +63,9 @@
     "format:styles": "stylus-supremacy format ./docs/.vuepress/**/*.styl --replace",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "vue-tabs-component": "^1.5.0",
+    "vuepress-plugin-tabs": "^0.3.0"
   }
 }

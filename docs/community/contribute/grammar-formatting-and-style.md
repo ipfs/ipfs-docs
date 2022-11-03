@@ -30,15 +30,15 @@ Follow each list of three or more items with a comma `,`:
 
 ### Acronyms
 
-If you have to use an acronym, spell the full phrase first and include the acronym in parentheses `()` the first time it is used in each document. Exception: This generally isn't necessary for commonly-encountered acronyms like _IPFS_, unless writing for a stand-alone article that may not be presented alongside [docs.ipfs.io](https://docs.ipfs.io).
+If you have to use an acronym, spell the full phrase first and include the acronym in parentheses `()` the first time it is used in each document. Exception: This generally isn't necessary for commonly-encountered acronyms like _IPFS_, unless writing for a stand-alone article that may not be presented alongside [docs.ipfs.tech](https://docs.ipfs.tech).
 
 > Virtual Machine (VM), Decentralized Web (DWeb).
 
 ### Project specific titles
 
-When referring to projects by name, use proper noun capitalization: Go-IPFS and JS-IPFS.
+When referring to projects by name, use proper noun capitalization: Kubo and JS-IPFS.
 
-Cases inside code blocks refer to commands and are not capitalized: `go-ifps` or `js-ifps`.
+Cases inside code blocks refer to commands and are not capitalized: `kubo` or `js-ipfs`.
 
 ### _Using_ IPFS, not _on_ IPFS
 
@@ -54,7 +54,7 @@ How the Markdown syntax looks, and code formatting rules to follow.
 
 ### Syntax
 
-The IPFS Docs project follows the _GitHub Flavored Markdown_ syntax for markdown. This way, all articles display properly within GitHub itself. This gives readers the option to view articles on [the docs website](https://docs.ipfs.io) or [its GitHub repo](https://github.com/ipfs/ipfs-docs).
+The IPFS Docs project follows the _GitHub Flavored Markdown_ syntax for markdown. This way, all articles display properly within GitHub itself. This gives readers the option to view articles on [the docs website](https://docs.ipfs.tech) or [its GitHub repo](https://github.com/ipfs/ipfs-docs).
 
 #### Relative links
 

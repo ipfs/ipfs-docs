@@ -1,6 +1,5 @@
 ---
 title: Modify the bootstrap list
-legacyUrl: https://docs.ipfs.io/guides/examples/bootstrap/
 description: Learn how to modify the IPFS bootstrap peers list to create a personal IPFS network.
 ---
 

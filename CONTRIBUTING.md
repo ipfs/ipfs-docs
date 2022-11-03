@@ -64,9 +64,9 @@ Write everything in using the [GitHub Flavored Markdown](https://github.github.c
 
 ### Project specific titles
 
-When referring to projects by name, use proper noun capitalization: Go-IPFS and JS-IPFS.
+When referring to projects by name, use proper noun capitalization: Kubo (GO-IPFS) and JS-IPFS.
 
-Cases inside code blocks refer to commands and are not capitalized: `go-ifps` or `js-ifps`.
+Cases inside code blocks refer to commands and are not capitalized: `kubo` (`go-ipfs`) or `js-ipfs`.
 
 ### Style and tone
 
@@ -100,7 +100,7 @@ Follow these steps to learn how to file an issue with the IPFS project.
 2. Search for the issue you want to raise. It may already exist. Make sure to also search _closed_ issues by including `is:closed` in your search query.
 3. If the issue doesn't already exist, click **New issue**.
 4. Select either the **Content request** or **Documentation issue** issue template. These templates auto-fill some of the issues for you, and direct you to fill out the required information.
-5. Answer the questions listed in the issue form. Issues are created using Github Flavoured Markdown.
+5. Answer the questions listed in the issue form. Issues are created using GitHub Flavoured Markdown.
 6. Once you have finished describing your issue, click **Submit new issue**.
 
 Shortly after your issue is submitted, an internal project lead from the IPFS project evaluates your issue. Further questions or requests-for-comment may be asked within the issue.
@@ -115,7 +115,7 @@ You can learn more about [pull requests on GitHub](https://help.github.com/en/gi
 
 ### Discuss
 
-You can also contribute to the project without specifically writing content for the site. Many discussions are happening all around the project. Protocol Labs, and by extension, IPFS, is a collaborative company that relies heavily on the community. We need your opinions and input! If you have an idea about a topic or want to weigh in on a discussion, feel free to have your say either on [GitHub](https://github.com/ipfs/ipfs-docs/issues) or on the [IPFS forums](https://discuss.ipfs.io/).
+You can also contribute to the project without specifically writing content for the site. Many discussions are happening all around the project. Protocol Labs, and by extension, IPFS, is a collaborative company that relies heavily on the community. We need your opinions and input! If you have an idea about a topic or want to weigh in on a discussion, feel free to have your say either on [GitHub](https://github.com/ipfs/ipfs-docs/issues) or on the [IPFS forums](https://discuss.ipfs.tech/).
 
 ## Create a new page
 
@@ -217,4 +217,4 @@ This app helps to simplify your writing. It's easy to ramble on while writing, w
 
 ## Just Ask
 
-After all that, if you're still not sure how to contribute to this project just post a question on the [IPFS forum](https://discuss.ipfs.io/), or join us on IRC at `#ipfs`.
+After all that, if you're still not sure how to contribute to this project just post a question on the [IPFS forum](https://discuss.ipfs.tech/), or join us on IRC at `#ipfs`.

@@ -50,9 +50,6 @@ If we change the content of `B` to `IPFS!`, all the upstream paths will change a
 "hello"    "world"     "hello"    "IPFS!"
 ```
 
-Again, node `B` does not change. It will always refer to the same content, `world`. Node `A` also appears in the new DAG. This is not because we are _keeping_ it; that would imply the location-addressed paradigm. In the content-addressed system, any time someone writes a block with `"hello"`, it will _always_ have CID `A`.
-This is different from location-addressed systems where we could reuse the original buffer and edit the small substring that represents the difference.
-
 Again, node `B` does not change. It will always refer to the same content, `world`. Node `A` also appears in the new DAG. This does not necessarily mean we copied the memory/buffer that contained the `hello` string into our new message; that would imply the location-addressed paradigm that focuses on the _where_ and not the _what_. In a content-addressed system, any time someone writes the string `hello` it will always have CID `A`, regardless of whether we copied the string from a previous location or we wrote it from scratch.
 
 ## Website explanation
@@ -97,7 +94,7 @@ In the website example, when we change a variable, the CID of the webpage is dif
 This process is essentially what the [InterPlantery Naming Service (IPNS)](/concepts/ipns) does! CIDs can be difficult to deal with and hard to remember, so IPNS saves users from the cumbersome task of dealing with CIDs directly. More importantly, CIDs change with the content because they are the content. Whereas the inbound reference of URLs/pointers stay the same, and the outbound referral changes:
 
 ```
-+--------+      +--------------+      +-------------------------------------------------------------+
-|  User  | ---> | docs.ipfs.io | ---> | bafybeigsddxhokzs3swgx6mss5i3gm6jqzv5b45e2xybqg7dr3jmsykrku |
-+--------+      +--------------+      +-------------------------------------------------------------+
++--------+      +----------------+      +-------------------------------------------------------------+
+|  User  | ---> | docs.ipfs.tech | ---> | bafybeigsddxhokzs3swgx6mss5i3gm6jqzv5b45e2xybqg7dr3jmsykrku |
++--------+      +----------------+      +-------------------------------------------------------------+
 ```
