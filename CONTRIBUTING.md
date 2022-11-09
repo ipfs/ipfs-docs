@@ -123,28 +123,29 @@ Sometimes you will need to make a whole new page for content to live. The proces
 
 These steps were performed in Visual Studio Code (VSCode).
 
-It is important to know what kind of content you are creating. The questions below will help to determine where your new content should live. For example, you wouldn't want to put a page written for experienced users between the already existing **Install** and **Basics** section.
+It is important to know what kind of content you are creating. The questions below will help to determine where your new content should live. For example, you wouldn't want to put a page written for experienced users between the already existing **Install** and **Basics** sections.
 
 - What type of content am I creating?
 - Who is my intended audience?
 - Does this content require a new page or can it be added to an existing page?
 - If a new page or section must be added, how will it fit into the existing structure and flow of the docs?
 
-### Fork and clone the repo
+When you have the above questions figured out and you know where the new content will live, continue on with the steps below.
+
+### Fork, clone, and branch
 
 You can't just make changes to the main repo directly. First you need to fork the repo, from there you can clone it to your local machine to make changes to the files locally. Follow [these steps from the existing guide](https://docs.ipfs.tech/community/contribute/contribution-tutorial/#creating-a-fix) to do so. Once you have the repo forked and cloned, return here to continue on with creating a new page or section.
 
-Before you start making changes to file, it is a good idea to first make a branch to commit all of your changes to. This will help keep your work organized, and will help you avoid committing undesired changes to your main branch. To do this in VSCode, follow the steps below.
+Before you start making changes to the files, make a branch to commit all of your changes to. This will help keep your work organized, and will help you avoid committing undesired changes to your main branch.
+To do this in VSCode, follow the steps below.
 
 1. Ensure you are in the `ipfs-docs` directory on VSCode.
-1. Click the branch icon in the bottom left corner of the VSCode window.
+2. Click the branch icon in the bottom left corner of the VSCode window.
  ![Create a new branch](./images/create-new-branch.png)
 1. A text field will open at the top of the window, type the desired name of your new branch. Preferably, the name of the branch reflects the work that you will be doing on the branch.
 1. Once you have the name figured out, click **+Create new branch**.
 
 Make sure that any changes you make are done in this new branch, you can verify this by checking the current branch in the bottom left corner of the window.
-
-Now you are ready to start adding your new page or section.
 
 ### Adding a single page
 
