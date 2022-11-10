@@ -143,19 +143,6 @@ module.exports = {
                 ]
               },
               {
-                title: 'Case studies',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  ['/concepts/case-study-arbol', 'Arbol'],
-                  ['/concepts/case-study-audius', 'Audius'],
-                  ['/concepts/case-study-fleek', 'Fleek'],
-                  ['/concepts/case-study-likecoin', 'LikeCoin'],
-                  ['/concepts/case-study-morpheus', 'Morpheus.Network'],
-                  ['/concepts/case-study-snapshot', 'Snapshot']
-                ]
-              },
-              {
                 title: 'Further reading',
                 sidebarDepth: 1,
                 collapsable: false,
@@ -277,6 +264,17 @@ module.exports = {
               '/reference/go/api',
               '/reference/kubo/cli',
               '/reference/kubo/rpc'
+            ]
+          },
+          {
+            title: 'Case studies',
+            children: [
+              ['/concepts/case-study-arbol', 'Arbol'],
+              ['/concepts/case-study-audius', 'Audius'],
+              ['/concepts/case-study-fleek', 'Fleek'],
+              ['/concepts/case-study-likecoin', 'LikeCoin'],
+              ['/concepts/case-study-morpheus', 'Morpheus.Network'],
+              ['/concepts/case-study-snapshot', 'Snapshot']
             ]
           },
           {
