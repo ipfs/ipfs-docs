@@ -37,7 +37,7 @@ The InterPlanetary Name System (IPNS) is a system for creating such mutable poin
 
 ### Anatomy of an IPNS name
 
-A **name** in IPNS is the [hash](hashing.md) of a public key. It is associated with an [**IPNS record**](https://github.com/ipfs/specs/blob/main/IPNS.md#ipns-record) containing the content path (`/ipfs/CID`) it links to and other information such as the expiration, the version number, and a cryptographic signature signed by the corresponding private key. New records can be signed and published at any time by the holder of the private key.
+A **name** in IPNS is the [hash](hashing.md) of a public key. It is associated with an [**IPNS record**](https://github.com/ipfs/specs/blob/main/ipns/IPNS.md#ipns-record) containing the content path (`/ipfs/CID`) it links to and other information such as the expiration, the version number, and a cryptographic signature signed by the corresponding private key. New records can be signed and published at any time by the holder of the private key.
 
 For example, the following is an IPNS name represented by a CIDv1 of public key: [`k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8`](https://cid.ipfs.tech/#k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8).
 
@@ -73,7 +73,7 @@ IPNS names are self-certifying. This means that an IPNS record contains all the 
 - The IPNS name is a CID with a multihash of the public key
 - The IPNS record contains the public key and signature, allowing anyone to verify that the record was signed by the private key holder.
 
-This self-certifying nature gives IPNS several benefits not preset in hierarchical and consensus systems such as DNS, and blockchain identifiers. Notably, IPNS records can come from anywhere, not just a particular service/system, and it is very fast and easy to confirm a record is authentic.
+This self-certifying nature gives IPNS several benefits not present in hierarchical and consensus systems such as DNS, and blockchain identifiers. Notably, IPNS records can come from anywhere, not just a particular service/system, and it is very fast and easy to confirm a record is authentic.
 
 ### Common IPNS operations
 
@@ -136,7 +136,7 @@ IPNS over PubSub uses the [Libp2p PubSub](https://docs.libp2p.io/concepts/publis
 
 This is achieved by deriving the PubSub topic name from the IPNS name so that each IPNS name has a unique topic.
 
-Because PubSub doesn't have the notion of persistence (messages are ephemeral and dropped after propagation), IPNS over PubSub [adds a persistence layer](https://github.com/ipfs/specs/blob/main/naming/pubsub.md#layering-persistence-onto-libp2p-pubsub) to ensure that IPNS records are always available to the network.
+Because PubSub doesn't have the notion of persistence (messages are ephemeral and dropped after propagation), IPNS over PubSub [adds a persistence layer](https://github.com/ipfs/specs/blob/main/ipns/IPNS_PUBSUB.md#layering-persistence-onto-libp2p-pubsub) to ensure that IPNS records are always available to the network.
 
 In Kubo, IPNS over PubSub is not enabled by default and can be enabled using the [`Ipns.UsePubsub`](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsusepubsub) configuration.
 
@@ -157,7 +157,7 @@ It should be noted that there's an upper limit to the number of unique IPNS name
 
 Steps 5 and 6 describe from a high level how IPNS record persistence is layered over PubSub by ensuring continuous propagation of the IPNS record in the face of node churn (nodes dropping in and out of the network).
 
-> Further details about the IPNS over PubSub protocol can be found in the [IPNS over PubSub Spec](https://github.com/ipfs/specs/blob/main/naming/pubsub.md#protocol)
+> Further details about the IPNS over PubSub protocol can be found in the [IPNS over PubSub Spec](https://github.com/ipfs/specs/blob/main/ipns/IPNS_PUBSUB.md#protocol)
 
 ### Tradeoffs between consistency vs. availability
 
