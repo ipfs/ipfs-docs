@@ -61,13 +61,14 @@ Referring to files by their content, not their location, is one of the most powe
 
 Sharing files between peers is incredibly powerful — and has many nuances! Learn about file-sharing paradigms and tools:
 
-- [Distributed Hash Tables (DHTs)](dht.md)
-- [Merkle DAGs](merkle-dag.md)
 - [Bitswap](bitswap.md)
+- [Distributed Hash Tables (DHTs)](dht.md)
+- [File systems](file-systems.md)
+- [Filecoin network indexer](https://docs.cid.contact/filecoin-network-indexer/overview)
 - [IPLD](ipld.md)
 - [IPNS](ipns.md)
 - [libp2p](libp2p.md)
-- [File systems](file-systems.md)
+- [Merkle DAGs](merkle-dag.md)
 
 ## Integrating IPFS and the existing Web
 

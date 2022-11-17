@@ -242,6 +242,11 @@ Information Space is the set of concepts, and relations among them, held by an i
 
 The InterPlanetary Linked Data (IPLD) model is a set of specifications in support of decentralized data structures for the content-addressable web. Key features are interoperable protocols, easily upgradeable, backward compatible. A single namespace for all hash-based protocols. [More about IPLD](https://ipld.io/)
 
+### IPNI
+
+The InterPlanetary Network Indexer (IPNI). Reference: https://github.com/ipni
+Lorem ipsum, this is just a placeholder for now.
+
 ### IPNS
 
 The InterPlanetary Name System (IPNS) is a system for creating and updating mutable links to IPFS content. IPNS allows for publishing the latest version of any IPFS content, even though the underlying IPFS hash has changed. [More about IPNS](ipns.md)
