@@ -12,3 +12,4 @@ jobs:
         config-file: 'mlc_pull_req_config.json'
         check-modified-files-only: 'yes'
         use-verbose-mode: 'yes'
+        base_branch: 'main'
