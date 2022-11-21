@@ -123,11 +123,11 @@ Sometimes, you will need to make a whole new page for content to live. The proce
 
 These steps were performed in Visual Studio Code (VSCode).
 
-It's important to know what kind of content you are creating. The questions below will help you decide where your new content should live. For example, you wouldn't want to put a page written for experienced users between the already existing **Install** and **Basics** sections.
+It's important to know what kind of content you are creating. The questions below will help you decide where your new content should live. For example, you would want to avoid putting a page written for experienced users between the already existing **Install** and **Basics** sections.
 
 - What type of content am I creating?
 - Who is my intended audience?
-- Does this content require a new page or can it be added to an existing page?
+- Does this content require a new page, or can it be added to an existing page?
 - If a new page or section must be added, how will it fit into the existing structure and flow of the docs?
 
 When you've answered the questions outlined above and you know where the new content will live, continue with the steps below.
@@ -139,13 +139,15 @@ You can't just make changes to the main repository directly, first you need to:
 1. Fork the repo.
 2. Clone the repo to your local storage.
 
-Follow [this guide](https://docs.ipfs.tech/community/contribute/contribution-tutorial/#creating-a-fix) to do the steps listed above.
+Follow [this guide](https://docs.ipfs.tech/community/contribute/contribution-tutorial/#creating-a-fix) to do the above steps.
 
-Once you have the repo forked and cloned, the next step is to make a branch to commit all of your changes to. This will help keep your work organized, and will help you avoid committing undesired changes to your main branch. Here are the steps to do this in VSCode:
+Once you have the repo forked and cloned, the next step is to make a branch to commit all of your changes to. Doing so will help keep your work organized and will help you avoid committing undesired changes to your main branch. Here are the steps to do this in VSCode:
 
 1. Ensure that you are in the `ipfs-docs` directory on VSCode.
 2. Click the branch icon in the bottom left corner of the VSCode window. A text field will open at the top of the window.
+
  ![Create a new branch](./images/create-new-branch.png)
+
 3. Type the desired name of your new branch. Preferably, the name of the branch reflects the work that you will be doing on the branch.
 4. Once you have the name figured out, click **+Create new branch**.
 
@@ -155,11 +157,13 @@ Make sure that any changes you make are done in this new branch. You can verify 
 
 Adding a single page to an already existing section is as simple as adding one line to the `config.js` file.
 
-When adding the new line, be sure to follow the exact same format and syntax as the other lines that are already present.
+When adding the new line, follow the exact same format and syntax as the other lines already present.
 
 1. Open `config.js` in VSCode.
 2. Find the section you want to add a new page to. For this example, a page titled **Add a new page** will be added to the **Basics** section.
+
  ![Add a new page](./images/add-new-page.png)
+
 3. Add the new line to the desired section.
   ```javascript
   'title-of-section/title-of-new-page'
@@ -170,12 +174,15 @@ When adding the new line, be sure to follow the exact same format and syntax as 
 
 Adding a new section to the sidebar of the docs is a little more in-depth. For this example, a new section titled **Test** will be added between the **Basics** and **Concepts** sections.
 
-When adding a new section, be sure you have the opening and closing curly brackets (`{` `}`) in the correct column. The easiest way to do this is to follow the same positioning and format as the other sections that are already in the file.
+When adding a new section, be sure you have the opening and closing curly brackets (`{` `}`) in the correct column. The easiest way to do this is to follow the exact positioning and format as the other sections already in the file.
 
 1. Open `config.js` in VSCode.
 2. Find the spot that you wish to add a new section. Again, for this example, the spot is between the **Basics** and **Concepts** sections.
+
  ![Basics and concepts sections](./images/basics-and-concepts-sections.png)
+
 3. Once you have found the right spot, add in the following lines, replacing any variables with your own content.
+
  ![Add a new section](./images/add-new-section.png)
 
 ### Commit your changes
@@ -184,12 +191,14 @@ Now that you have made the changes to `config.js`, you can commit them to your b
 
 1. Save the changes you have made to the `config.js` file.
 2. Click the **source control** button in the VSCode sidebar.
- ![Source control](./images/source-control.png)
-3. In the **source control** menu, mouseover the changes you made and click the **+** button to stage those changes.
-4. Now, click the **Commit** button to commit your changes to your branch.
-5. Click the **Sync changes** button to push the changes back to GitHub.
 
-The changes you made are now synced with your fork on GitHub. Now, you need to make a pull request in the `ipfs-docs` repo on GitHub. You can [follow these steps to create a pull request](https://docs.ipfs.tech/community/contribute/contribution-tutorial/#creating-a-fix).
+ ![Source control](./images/source-control.png)
+
+3. In the **source control** menu, mouseover the changes you made and click the **+** button to stage those changes.
+4. Click **Commit** to commit your changes to your branch.
+5. Click **Sync changes** to push the changes back to GitHub.
+
+The changes you made are now synced with your fork on GitHub. You now need to make a pull request in the `ipfs-docs` repo on GitHub. You can [follow these steps to create a pull request](https://docs.ipfs.tech/community/contribute/contribution-tutorial/#creating-a-fix).
 
 The branch, pull request, and new pages or sections are now ready. The next step is to add the actual content of the new pages or sections to the pull request. Any changes you commit to the branch you just created will be added to that pull request.
 
