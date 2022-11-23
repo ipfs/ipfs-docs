@@ -12,7 +12,7 @@ Let's just start with a one-line definition of IPFS:
 What does that mean, exactly? Let's say you're doing some research on aardvarks. (Just roll with it; aardvarks are cool! Did you know they can tunnel 3 feet in only 5 minutes?) You might start by visiting the Wikipedia page on aardvarks at:
 
 ```
-https:://en.wikipedia.org/wiki/Aardvark
+https://en.wikipedia.org/wiki/Aardvark
 ```
 
 When you put that URL in your browser's address bar, your computer asks one of Wikipedia's computers, which might be somewhere on the other side of the country (or even the planet), for the aardvark page.
@@ -24,7 +24,7 @@ However, that's not the only option for meeting your aardvark needs! There's a m
 ```
 
 :::tip
-The easiest way to view the above link is by opening it in your browser through an _IPFS Gateway_. Simply add `https://ipfs.io` to the start of the above link and you'll be able to [view the page →](https://ipfs.io/ipfs/bafybeiaysi4s6lnjev27ln5icwm6tueaw2vdykrtjkwiphwekaywqhcjze/wiki/Aardvark)
+The easiest way to view the above link is by opening it in your browser through an _IPFS Gateway_. Simply add `https://ipfs.io` to the start of the above link and you'll be able to [view the page →](https://ipfs.io/ipfs/bafybeiaysi4s6lnjev27ln5icwm666tueaw2vdykrtjkwiphwekaywqhcjze/wiki/Aardvark)
 :::
 
 IPFS knows how to find that sweet, sweet aardvark information by its [contents](content-addressing.md), not its location (more on that, which is called content addressing, below). The IPFS-ified version of the aardvark info is represented by that string of numbers in the middle of the URL (`baf…`), and instead of asking one of Wikipedia's computers for the page, your computer uses IPFS to ask lots of computers around the world to share the page with you. It can get your aardvark info from anyone who has it, not just Wikipedia.
