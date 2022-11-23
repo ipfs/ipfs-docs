@@ -24,7 +24,7 @@ However, that's not the only option for meeting your aardvark needs! There's a m
 ```
 
 :::tip
-The easiest way to view the above link is by opening it in your browser through an _IPFS Gateway_. Simply add `https://ipfs.io` to the start of the above link and you'll be able to [view the page →](https://ipfs.io/ipfs/bafybeiaysi4s6lnjev27ln5icwm666tueaw2vdykrtjkwiphwekaywqhcjze/wiki/Aardvark)
+The easiest way to view the above link is by opening it in your browser through an _IPFS Gateway_. Simply add `https://ipfs.io` to the start of the above link and you'll be able to [view the page →](https://ipfs.io/ipfs/bafybeiaysi4s6lnjev27ln5icwm6tueaw2vdykrtjkwiphwekaywqhcjze/wiki/Aardvark)
 :::
 
 IPFS knows how to find that sweet, sweet aardvark information by its [contents](content-addressing.md), not its location (more on that, which is called content addressing, below). The IPFS-ified version of the aardvark info is represented by that string of numbers in the middle of the URL (`baf…`), and instead of asking one of Wikipedia's computers for the page, your computer uses IPFS to ask lots of computers around the world to share the page with you. It can get your aardvark info from anyone who has it, not just Wikipedia.
@@ -55,7 +55,7 @@ What about that link to the aardvark page above? It looked a little unusual:
 /ipfs/bafybeiaysi4s6lnjev27ln5icwm6tueaw2vdykrtjkwiphwekaywqhcjze/wiki/Aardvark
 ```
 
-That jumble of letters after `/ipfs/` is called a [_content identifier_](content-addressing.md) and it’s how IPFS can get content from multiple places.
+That jumble of letters after `/ipfs/` is called a [_content identifier_](content-addressing) and it’s how IPFS can get content from multiple places.
 
 Traditional URLs and file paths such as…
 
