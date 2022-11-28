@@ -1,9 +1,12 @@
 ipfs
 IPFS
-Filecoin
-LibP2P
+[Ff]ilecoin
+(!i)libp2p
 Protocol Labs
-Kademlia
-Webpack
-Filecorgi
-fleek
+[Kk]ademlia
+[Ww]ebpack
+[Ff]ilecorgi
+[Ff]leek
+[Kk]ubo
+JS-IPFS
+js-ipfs
