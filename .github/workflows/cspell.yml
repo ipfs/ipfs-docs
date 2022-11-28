@@ -1,0 +1,15 @@
+name: 'Check spelling with cspell'
+on: [pull-request]
+
+jobs:
+  cspell: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: streetsidesoftware/cspell-action@v2
+      - with: 
+          # Limit the files checked to the ones in the pull request or push.
+          incremental_files_only: true
+          # Path to `cspell.json`
+          config: '.'   
+          
