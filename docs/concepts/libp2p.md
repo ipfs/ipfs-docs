@@ -6,7 +6,7 @@ related:
   'What is Libp2p?': https://docs.libp2p.io/introduction/#what-is-libp2p
   'Foundational Libp2p concepts': https://docs.libp2p.io/concepts/
   'Getting started with Libp2p': https://docs.libp2p.io/guides/
-  'Examples of Libp2p key features': https://docs.libp2p.io/examples/
+  'Examples of Libp2p key features': https://docs.libp2p.io/guides/
 ---
 
 # Libp2p
@@ -29,13 +29,13 @@ Someone using Libp2p for the network layer of their peer-to-peer application is 
 
 Libp2p works with a lot of different addressing schemes in a consistent way. A multiaddress (abbreviated [multiaddr](https://github.com/multiformats/multiaddr)) encodes multiple layers of addressing information into a single "future-proof" path structure. For example, `/ipv4/171.113.242.172/udp/162` indicates the use of the IPv4 protocol with the address 171.113.242.172, along with sending UDP packets to port 162.
 
-#### [Transport](https://docs.libp2p.io/concepts/transport/)
+#### [Transport](https://docs.libp2p.io/concepts/transports/overview/)
 
 The technology used to move your data from one machine to another. Transports are defined in terms of two core operations, _listening_ and _dialing_. Listening means that you can accept incoming connections from other peers. _Dialing_ is the process of opening an outgoing connection to a listening peer. One of Libp2p's core requirements is to be _transport agnostic_, meaning the decision of what transport protocol to use is up to an application's developer (who may decide to support many different _transports_ at the same time).
 
 #### [Security](https://docs.libp2p.io/concepts/secure-comm/overview/)
 
-Libp2p supports upgrading a transport connection into a securely encrypted channel. You can then trust the identity of the peer you're communicating with and that no third-party can read the conversation or alter it in-flight. The current default is [TLS 1.3](https://www.ietf.org/blog/tls13/) as of IPFS 0.7. The previous default of [SECIO](https://docs.libp2p.io/concepts/secure-comms/) is now deprecated and disabled by default (see [this blog post](https://blog.ipfs.tech/2020-08-07-deprecating-secio/) for more information).
+Libp2p supports upgrading a transport connection into a securely encrypted channel. You can then trust the identity of the peer you're communicating with and that no third-party can read the conversation or alter it in-flight. The current default is [TLS 1.3](https://www.ietf.org/blog/tls13/) as of IPFS 0.7. The previous default of [SECIO](https://docs.libp2p.io/concepts/secure-comm/overview) is now deprecated and disabled by default (see [this blog post](https://blog.ipfs.tech/2020-08-07-deprecating-secio/) for more information).
 
 #### [Peer identity](https://docs.libp2p.io/concepts/fundamentals/peers/#peer-id)
 
@@ -55,7 +55,7 @@ Network Address Translation (NAT) allows you to move traffic seamlessly between 
 
 #### [Protocol](https://docs.libp2p.io/concepts/fundamentals/protocols)
 
-These are the protocols built with Libp2p itself, using core Libp2p abstractions like [transport](https://docs.libp2p.io/concepts/transport/), [peer identity](https://docs.libp2p.io/reference/glossary/#peerid), and [addressing](https://docs.libp2p.io/concepts/addressing/). Each Libp2p protocol has a unique string identifier used in the [protocol negotiation](https://docs.libp2p.io/concepts/protocols/#protocol-negotiation) process when connections are first opened. The core Libp2p protocols are [Ping](https://docs.libp2p.io/concepts/protocols/#ping), [Identify](https://docs.libp2p.io/concepts/protocols/#identify), [secio](https://docs.libp2p.io/concepts/protocols/#secio), [kad-dht](https://docs.libp2p.io/concepts/protocols/#kad-dht), and [Circuit Relay](https://docs.libp2p.io/concepts/protocols/#circuit-relay).
+These are the protocols built with Libp2p itself, using core Libp2p abstractions like [transport](https://docs.libp2p.io/concepts/transports/overview), [peer identity](https://docs.libp2p.io/reference/glossary/#peerid), and [addressing](https://docs.libp2p.io/concepts/addressing/). Each Libp2p protocol has a unique string identifier used in the [protocol negotiation](https://docs.libp2p.io/concepts/protocols/#protocol-negotiation) process when connections are first opened. The core Libp2p protocols are [Ping](https://docs.libp2p.io/concepts/protocols/#ping), [Identify](https://docs.libp2p.io/concepts/protocols/#identify), [secio](https://docs.libp2p.io/concepts/protocols/#secio), [kad-dht](https://docs.libp2p.io/concepts/protocols/#kad-dht), and [Circuit Relay](https://docs.libp2p.io/concepts/protocols/#circuit-relay).
 
 #### [Stream multiplexing](https://docs.libp2p.io/concepts/stream-multiplexing/)
 
