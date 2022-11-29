@@ -73,6 +73,7 @@ To ensure that your important data is retained, you may want to use a pinning se
 
 Some available pinning service providers are:
 
+- [Estuary](https://estuary.tech/)
 - [Filebase](https://filebase.com/)
 - [Infura](https://infura.io/)
 - [NFT.Storage](https://nft.storage/)

@@ -103,7 +103,7 @@ While the lookup algorithm is what allows IPFS to `PUT` and `GET` records into t
 
 For a block with Multihash `H`:
 
-#### Provide `PUT`
+#### Provider `PUT`
 
 1. Do a standard lookup for the `K` closest peers to `SHA256(H)`
 1. Put the provider record at those K closest peers, and also store it ourselves.

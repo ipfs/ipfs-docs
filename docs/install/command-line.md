@@ -1,7 +1,7 @@
 ---
 title: Command-line
 description: Using IPFS through the command-line allows you to do everything that IPFS Desktop can do, but at a more granular level since you can specify which commands to run. Learn how to install it here.
-current-ipfs-version: v0.15.0
+current-ipfs-version: v0.17.0
 ---
 
 # Command-line
@@ -12,7 +12,7 @@ Installing IPFS through the command-line is handy if you plan on building applic
 
 ## System requirements
 
-Kubo IPFS requires 512MiB of memory and can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space. One can enable automatic garbage collection via [--enable-gc](/reference/kubo/cli/#ipfs-daemon) and adjust the [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.15.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
+Kubo IPFS requires 512MiB of memory and can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space. One can enable automatic garbage collection via [--enable-gc](/reference/kubo/cli/#ipfs-daemon) and adjust the [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.17.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
 
 ## Official distributions
 
@@ -28,22 +28,22 @@ The IPFS team manages the [dist.ipfs.tech website](https://dist.ipfs.tech/) to h
 
    ```powershell
    cd ~\
-   wget https://dist.ipfs.tech/kubo/v0.15.0/kubo_v0.15.0_windows-amd64.zip -Outfile kubo_v0.15.0.zip
+   wget https://dist.ipfs.tech/kubo/v0.17.0/kubo_v0.17.0_windows-amd64.zip -Outfile kubo_v0.17.0.zip
    ```
 
 1. Unzip the file and move it somewhere handy.
 
    ```powershell
-   Expand-Archive -Path kubo_v0.15.0.zip -DestinationPath ~\Apps\kubo_v0.15.0
+   Expand-Archive -Path kubo_v0.17.0.zip -DestinationPath ~\Apps\kubo_v0.17.0
    ```
 
-1. Move into the `kubo_v0.15.0` folder and check that the `ipfs.exe` works:
+1. Move into the `kubo_v0.17.0` folder and check that the `ipfs.exe` works:
 
    ```powershell
-   cd ~\Apps\kubo_v0.15.0\kubo
+   cd ~\Apps\kubo_v0.17.0\kubo
    .\ipfs.exe --version
 
-   > ipfs version 0.15.0
+   > ipfs version 0.17.0
    ```
 
    While you can use IPFS right now, it's better to add `ipfs.exe` to your `PATH` by using the following steps.
@@ -84,7 +84,7 @@ The IPFS team manages the [dist.ipfs.tech website](https://dist.ipfs.tech/) to h
    cd ~
    ipfs --version
 
-   > ipfs version 0.15.0
+   > ipfs version 0.17.0
    ```
 
 ### macOS
@@ -97,7 +97,12 @@ The IPFS team manages the [dist.ipfs.tech website](https://dist.ipfs.tech/) to h
       - If your system uses Apple Silicon, the specific chip is shown, such as *Apple M1 Pro*.
       - If your system uses an Intel CPU, the specific processor is shown, such as *2.3 GHz 8-Core Intel Core i9*.
 
-1. Download the appropriate macOS binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) based on your hardware:
+
+1. Download the appropriate macOS binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) based on your hardware. For example:
+
+   ```bash
+   curl -O https://dist.ipfs.tech/kubo/v0.17.0/kubo_v0.17.0_darwin-amd64.tar.gz
+   ```
 
    > :warning:
    > Ensure that you download and install the appropriate binary, as the binary for an Intel-based system will not work on a system with Apple Silicon, and vice-versa.
@@ -115,7 +120,7 @@ The IPFS team manages the [dist.ipfs.tech website](https://dist.ipfs.tech/) to h
 1. Unzip the file. For example, to unzip `Kubo v0.15.0` for an Intel-based system:
 
    ```bash
-   tar -xvzf kubo_v0.15.0_darwin-amd64.tar.gz
+   tar -xvzf kubo_v0.17.0_darwin-amd64.tar.gz
    ```
 
    The following output displays:
@@ -150,7 +155,7 @@ The IPFS team manages the [dist.ipfs.tech website](https://dist.ipfs.tech/) to h
 
    If IPFS is installed, the IPFS version number is displayed. For example:
    ``` 
-   > ipfs version 0.15.0
+   > ipfs version 0.17.0
    ```
 
 ### Linux
@@ -158,13 +163,13 @@ The IPFS team manages the [dist.ipfs.tech website](https://dist.ipfs.tech/) to h
 1. Download the Linux binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
    ```bash
-   wget https://dist.ipfs.tech/kubo/v0.15.0/kubo_v0.15.0_linux-amd64.tar.gz
+   wget https://dist.ipfs.tech/kubo/v0.17.0/kubo_v0.17.0_linux-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf kubo_v0.15.0_linux-amd64.tar.gz
+   tar -xvzf kubo_v0.17.0_linux-amd64.tar.gz
 
    > x kubo/install.sh
    > x kubo/ipfs
@@ -188,7 +193,7 @@ The IPFS team manages the [dist.ipfs.tech website](https://dist.ipfs.tech/) to h
    ```bash
    ipfs --version
 
-   > ipfs version 0.15.0
+   > ipfs version 0.17.0
    ```
 
 ## Compile manually
