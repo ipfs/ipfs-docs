@@ -12,7 +12,11 @@ Installing IPFS through the command-line is handy if you plan on building applic
 
 ## System requirements
 
+<<<<<<< Updated upstream
 Kubo IPFS requires 512MiB of memory and can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space. One can enable automatic garbage collection via [--enable-gc](/reference/kubo/cli/#ipfs-daemon) and adjust the [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.17.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
+=======
+Kubo IPFS requires 512MiB of memory and can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space. One can enable automatic garbage collection via [--enable-gc](../reference/kubo/cli.md#ipfs-daemon) and adjust the [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.15.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
+>>>>>>> Stashed changes
 
 ## Official distributions
 
@@ -207,11 +211,11 @@ The command line can detect and use any node that's running, unless it's configu
 
 ### Local daemon
 
-The local daemon process is automatically started in the CLI with the command `ipfs daemon`. It creates an `$IPFS_PATH/api` file with an [RPC API](./reference/kubo/rpc/#http-rpc-api-reference) address.
+The local daemon process is automatically started in the CLI with the command `ipfs daemon`. It creates an `$IPFS_PATH/api` file with an [RPC API](../reference/kubo/rpc.md#http-rpc-api-reference) address.
 
 ### Remote client
 
-You can install the standalone IPFS CLI client independently and use it to talk to an IPFS Desktop node or a Brave node. Use the [RPC API](./reference/kubo/rpc/#http-rpc-api-reference) to talk to the `ipfs` daemon.
+You can install the standalone IPFS CLI client independently and use it to talk to an IPFS Desktop node or a Brave node. Use the [RPC API](../reference/kubo/rpc.md#http-rpc-api-reference) to talk to the `ipfs` daemon.
 
 When an IPFS command is executed without parameters, the CLI client checks whether the `$IPFS_PATH/api` file exists and connects to the address listed there.
 
