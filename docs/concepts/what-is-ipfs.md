@@ -5,6 +5,8 @@ description: Learn about IPFS, the InterPlanetary File System, how it works, and
 
 # What is IPFS?
 
+This is a test setence to test if vale is working. Some wrds are misspelled on porpose.
+
 Let's just start with a one-line definition of IPFS:
 
 **IPFS is a distributed system for storing and accessing files, websites, applications, and data.**
@@ -55,7 +57,7 @@ What about that link to the aardvark page above? It looked a little unusual:
 /ipfs/bafybeiaysi4s6lnjev27ln5icwm6tueaw2vdykrtjkwiphwekaywqhcjze/wiki/Aardvark
 ```
 
-That jumble of letters after `/ipfs/` is called a [_content identifier_](content-addressing.md) and it’s how IPFS can get content from multiple places.
+That jumble of letters after `/ipfs/` is called a [_content identifier_](content-addressing) and it’s how IPFS can get content from multiple places.
 
 Traditional URLs and file paths such as…
 
@@ -87,3 +89,16 @@ While there's lots of complex technology in IPFS, the fundamental ideas are abou
 That means IPFS only works well when people are actively participating. If you use your computer to share files using IPFS, but then you turn your computer off, other people won't be able to get those files from you anymore. But if you or others make sure that copies of those files are stored on more than one computer that's powered on and running IPFS, those files will be more reliably available to other IPFS users who want them. This happens to some extent automatically: by default, your computer shares a file with others for a limited time after you've downloaded it using IPFS. You can also make content available more permanently by _pinning_ it, which saves it to your computer and makes it available on the IPFS network until you decide to _unpin_ it. (You can learn more about this in our [guide to persistence and pinning](persistence.md).)
 
 If you want to make sure one of your own files is permanently shared on the internet today, you might use a for-pay file-sharing service like Dropbox. Some people have begun offering similar services based on IPFS called _pinning services_. But since IPFS makes this kind of sharing a built-in feature, you can also collaborate with friends or partner with institutions (for example, museums and libraries might work together) to share each others' files. We hope IPFS can be the low-level tool that allows a rich fabric of communities, business, and cooperative organizations to all form a distributed web that is much more reliable, robust, and equitable than the one we have today.
+
+[Test 1](#test1)
+[Test 2](#test-)
+[Test 3](test-3)
+[Test 4](est-4)
+
+### Test 1
+
+#### Test 2
+
+##### Test 3
+
+# Test 4
