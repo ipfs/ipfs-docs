@@ -12,11 +12,7 @@ Installing IPFS through the command-line is handy if you plan on building applic
 
 ## System requirements
 
-<<<<<<< Updated upstream
 Kubo IPFS requires 512MiB of memory and can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space. One can enable automatic garbage collection via [--enable-gc](/reference/kubo/cli/#ipfs-daemon) and adjust the [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.17.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
-=======
-Kubo IPFS requires 512MiB of memory and can run an IPFS node on a Raspberry Pi. However, how much disk space your IPFS installation takes up depends on how much data you're sharing. A base installation takes up about 12MB of disk space. One can enable automatic garbage collection via [--enable-gc](../reference/kubo/cli.md#ipfs-daemon) and adjust the [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.15.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
->>>>>>> Stashed changes
 
 ## Official distributions
 
