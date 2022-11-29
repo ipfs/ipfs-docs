@@ -14,6 +14,7 @@ description: Learn about mutability in IPFS, InterPlanetary Name System (IPNS), 
   - [IPNS is transport agnostic](#ipns-is-transport-agnostic)
     - [IPNS over the DHT](#ipns-over-the-dht)
     - [IPNS over PubSub](#ipns-over-pubsub)
+      - [Publishing IPNS records over PubSub lifecycle](#publishing-ipns-records-over-pubsub-lifecycle)
   - [Tradeoffs between consistency vs. availability](#tradeoffs-between-consistency-vs-availability)
     - [IPNS record validity](#ipns-record-validity)
     - [Practical considerations](#practical-considerations)
@@ -21,7 +22,6 @@ description: Learn about mutability in IPFS, InterPlanetary Name System (IPNS), 
   - [Resolving IPNS names using IPFS gateways](#resolving-ipns-names-using-ipfs-gateways)
   - [Publishing IPNS names](#publishing-ipns-names)
 - [Alternatives to IPNS](#alternatives-to-ipns)
-- [Further Resources](#further-resources)
 
 ## Mutability in IPFS
 
@@ -148,12 +148,12 @@ It should be noted that there's an upper limit to the number of unique IPNS name
 
 ##### Publishing IPNS records over PubSub lifecycle
 
-1. Create a record and sign it
-2. Calculate PubSub topic name from IPNS name
-3. Join the topic by querying the DHT for the topic's provider records
-4. Publish the IPNS record to the topic
-5. Whenever [a new peer joins the topic](https://github.com/libp2p/go-libp2p-pubsub-router/blob/292d99457d224853706c5e49f8ddc112740a856a/pubsub.go#L538-L560) (specifically your mesh), ask them for the record. If they respond with a newer record, update it locally and publish the updated record to the.
-6. Periodically (by default every 10 minutes) rebroadcast the IPNS record,
+1. Create a record and sign it.
+2. Calculate PubSub topic name from IPNS name.
+3. Join the topic by querying the DHT for the topic's provider records.
+4. Publish the IPNS record to the topic.
+5. Whenever [a new peer joins the topic](https://github.com/libp2p/go-libp2p-pubsub-router/blob/292d99457d224853706c5e49f8ddc112740a856a/pubsub.go#L538-L560) (specifically your mesh), ask them for the record. If they respond with a newer record, update it locally and publish the updated record to the topic.
+6. Periodically (by default every 10 minutes) rebroadcast the IPNS record.
 
 Steps 5 and 6 describe from a high level how IPNS record persistence is layered over PubSub by ensuring continuous propagation of the IPNS record in the face of node churn (nodes dropping in and out of the network).
 
