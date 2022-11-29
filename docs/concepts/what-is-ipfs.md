@@ -5,8 +5,6 @@ description: Learn about IPFS, the InterPlanetary File System, how it works, and
 
 # What is IPFS?
 
-This is a test setence to test if vale is working. Some wrds are misspelled on porpose.
-
 Let's just start with a one-line definition of IPFS:
 
 **IPFS is a distributed system for storing and accessing files, websites, applications, and data.**
@@ -39,15 +37,15 @@ IPFS makes this possible for not only web pages but also any kind of file a comp
 
 Making it possible to download a file from many locations that aren't managed by one organization:
 
-- **Supports a resilient internet.** If someone attacks Wikipedia's web servers or an engineer at Wikipedia makes a big mistake that causes their servers to catch fire, you can still get the same webpages from somewhere else.
+- **Supports a resilient internet.** If someone attacks Wikipedia's web servers or an engineer at Wikipedia makes a big mistake that causes their servers to catch fire, you can still get the same web pages from somewhere else.
 - **Makes it harder to censor content.** Because files on IPFS can come from many places, it's harder for anyone (whether they're states, corporations, or someone else) to block things. We hope IPFS can help provide ways to circumvent actions like these when they happen.
-- **Can speed up the web when you're far away or disconnected.** If you can retrieve a file from someone nearby instead of hundreds or thousands of miles away, you can often get it faster. This is especially valuable if your community is networked locally but doesn't have a good connection to the wider internet. (Well-funded organizations with technical expertise do this today by using multiple data centers or CDNs — [content distribution networks](https://en.wikipedia.org/wiki/Content_delivery_network). IPFS hopes to make this possible for everyone.)
+- **Can speed up the web when you're far away or disconnected.** If you can retrieve a file from someone nearby instead of hundreds or thousands of miles away, you can often get it faster. This is especially valuable if your community is networked locally but doesn't have a good connection to the wider internet. (Well-funded organizations with technical expertise do this today by using multiple data centers [content distribution networks](https://en.wikipedia.org/wiki/Content_delivery_network). IPFS hopes to make this possible for everyone.)
 
 That last point is actually where IPFS gets its full name: the **InterPlanetary File System**. We're striving to build a system that works across places as disconnected or as far apart as planets. While that's an idealistic goal, it keeps us working and thinking hard, and almost everything we create in pursuit of that goal is also useful here at home.
 
 ## Content addressing
 
-::: callout
+::: call out
 For a beginner-friendly primer on why cryptographic hashing and content addressing matter, take a look at ProtoSchool's tutorial, [Content Addressing on the Decentralized Web](https://proto.school/content-addressing).
 :::
 
@@ -70,7 +68,7 @@ Traditional URLs and file paths such as…
 Instead of being location-based, IPFS addresses a file by _what's in it_, or by its _content_. The content identifier above is a _cryptographic hash_ of the content at that address. The hash is unique to the content that it came from, even though it may look short compared to the original content. It also allows you to verify that you got what you asked for — bad actors can't just hand you content that doesn't match. (If hashes are new to you, check out [the concept guide on hashes](hashing.md) for an introduction.)
 
 ::: tip NOTE
-Why do we say "content" instead of "files" or "web pages" here? Because a content identifier can point to many different types of data, such as a single small file, a piece of a larger file, or metadata. (In case you don't know, metadata is "data about the data." You use metadata when you access the date, location, or file size of your digital pictures, for example.) So, an individual IPFS address can refer to the metadata of just a single piece of a file, a whole file, a directory, a whole website, or any other kind of content. For more on this, check out our guide to [how IPFS works](how-ipfs-works.md).
+Why do we say "content" instead of "files" or "web pages" here? Because a content identifier can point to many different types of data, such as a single small file, a piece of a larger file, or metadata. (In case you don't know, metadata is "data about the data." You use metadata when you access the date, location, or file size of your digital pictures, for example.) An individual IPFS address can refer to the metadata of just a single piece of a file, a whole file, a directory, a whole website, or any other kind of content. For more on this, check out our guide to [how IPFS works](how-ipfs-works.md).
 :::
 
 Because the address of a file in IPFS is created from the content itself, links in IPFS can't be changed. For example ...
@@ -78,7 +76,7 @@ Because the address of a file in IPFS is created from the content itself, links 
 - If the text on a web page is changed, the new version gets a new, different address.
 - Content can't be moved to a different address. On today's internet, a company could reorganize content on their website and move a page at `http://mycompany.com/what_we_do` to `http://mycompany.com/services`. In IPFS, the old link you have would still point to the same old content.
 
-Of course, people want to update and change content all the time and don't want to send new links every time they do it. This is entirely possible in an IPFS world, but explaining it requires a little more info than what's within the scope of this IPFS introduction. Check out the concept guides on [IPNS](ipns.md), the [Mutable File System (MFS)](file-systems.md#mutable-file-system-mfs), and [DNSLink](dnslink.md) to learn more about how changing content can work in a content-addressed, distributed system.
+Of course, people want to update and change content all the time and don't want to send new links every time they do it. This is entirely possible in an IPFS world, but explaining it requires a little more info than what's within the scope of this IPFS introduction. Check out the concept guides on [IPNS](ipns.md) and the [Mutable File System (MFS)](file-systems.md#mutable-file-system-mfs), to learn more about how changing content can work in a content-addressed, distributed system.
 
 It's important to remember in all of these situations, using IPFS is participatory and collaborative. If nobody using IPFS has the content identified by a given address available for others to access, you won't be able to get it. On the other hand, content can't be removed from IPFS as long as _someone_ is interested enough to make it available, whether that person is the original author or not. Note that this is similar to the current web, where it is also impossible to remove content that's been copied across an unknowable number of websites; the difference with IPFS is that you are always able to find those copies.
 
@@ -89,16 +87,3 @@ While there's lots of complex technology in IPFS, the fundamental ideas are abou
 That means IPFS only works well when people are actively participating. If you use your computer to share files using IPFS, but then you turn your computer off, other people won't be able to get those files from you anymore. But if you or others make sure that copies of those files are stored on more than one computer that's powered on and running IPFS, those files will be more reliably available to other IPFS users who want them. This happens to some extent automatically: by default, your computer shares a file with others for a limited time after you've downloaded it using IPFS. You can also make content available more permanently by _pinning_ it, which saves it to your computer and makes it available on the IPFS network until you decide to _unpin_ it. (You can learn more about this in our [guide to persistence and pinning](persistence.md).)
 
 If you want to make sure one of your own files is permanently shared on the internet today, you might use a for-pay file-sharing service like Dropbox. Some people have begun offering similar services based on IPFS called _pinning services_. But since IPFS makes this kind of sharing a built-in feature, you can also collaborate with friends or partner with institutions (for example, museums and libraries might work together) to share each others' files. We hope IPFS can be the low-level tool that allows a rich fabric of communities, business, and cooperative organizations to all form a distributed web that is much more reliable, robust, and equitable than the one we have today.
-
-[Test 1](#test1)
-[Test 2](#test-)
-[Test 3](test-3)
-[Test 4](est-4)
-
-### Test 1
-
-#### Test 2
-
-##### Test 3
-
-# Test 4
