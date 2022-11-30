@@ -88,4 +88,4 @@ That means IPFS works when people are actively participating. If you use your co
 
 If you want to make sure one of your own files is permanently shared on the internet today, you might use a for-pay file-sharing service like Dropbox. Some people have begun offering similar services based on IPFS called _pinning services_. But since IPFS makes this kind of sharing a built-in feature, you can also collaborate with friends or partner with institutions (for example, museums and libraries might work together) to share each others' files. We hope IPFS can be the low-level tool that allows a rich fabric of communities, business, and cooperative organizations to all form a distributed web that is much more reliable, robust, and fair than the one we have today.
 
-hazzz cheeeezzburger
+iIsSpellingError
