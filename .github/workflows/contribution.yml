@@ -1,4 +1,6 @@
 name: contribution
+
+on: 
   pull_request:
     # 'edited': check the PR title on changes
     types: [opened, edited, reopened, synchronize]
