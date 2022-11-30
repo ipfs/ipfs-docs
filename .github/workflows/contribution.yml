@@ -24,3 +24,4 @@ jobs:
           files: ${{ steps.files.outputs.added_modified }}  
           fail_on_error: false
           vale_flags: "--no-exit"
+          vale_flags: "--minAlertLevel=error"
