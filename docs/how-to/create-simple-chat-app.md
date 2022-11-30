@@ -19,7 +19,7 @@ The heading shows which user is chatting and has a status indicator in the top l
 - Yellow means you're only seeing direct peers (no other peer in the middle).
 - Red means you have no peers (at least none using the chat application).
 
-To see a live demo, start your ipfs daemon (open IPFS Desktop or enter ipfs daemon in the CLI) and have a chat buddy do the same. Then you can both open the [live demo](https://ipfs.io/ipfs/bafybeia5f2yk6td7ciroeped2uwfivo333b524t3zmoderfhl3xn7wi7aa/&sa=D&source=editors&ust=1651157762663308&usg=AOvVaw1sQEgWa5q7YI8HnLTPUq0Y) and chat. Once our chat app gets some traction, you’ll be able to make new friends on the network.
+To see a live demo, start your ipfs daemon (open IPFS Desktop or enter ipfs daemon in the CLI) and have a chat buddy do the same. Then you can both open the [live demo](https://ipfs.io/ipfs/bafybeia5f2yk6td7ciroeped2uwfivo333b524t3zmoderfhl3xn7wi7aa/) and chat. Once our chat app gets some traction, you’ll be able to make new friends on the network.
 
 ## How it works
 

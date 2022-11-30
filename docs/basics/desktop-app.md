@@ -8,12 +8,12 @@ description: "A simple walkthrough of the basic functions of the IPFS desktop ap
 This guide will walk you through the basics of IPFS Desktop and teach you how to add, remove, and download a file using IPFS. This guide will only cover the basics and will avoid talking about more complex concepts.
 
 :::tip Use the glossary
-Some of these terms might be unfamiliar to you, and that's ok! Just check out the [glossary](../concepts/glossary/)! There you'll find definitions of all the common terms used when talking about IPFS.
+Some of these terms might be unfamiliar to you, and that's ok! Just check out the [glossary](../concepts/glossary.md)! There you'll find definitions of all the common terms used when talking about IPFS.
 :::
 
 ## Install IPFS Desktop
 
-Installation instructions for [macOS](../install/ipfs-desktop/#macos), [Ubuntu](../install/ipfs-desktop/#ubuntu), and [Windows](../install/ipfs-desktop/#windows).
+Installation instructions for [macOS](../install/ipfs-desktop.md#macos), [Ubuntu](../install/ipfs-desktop.md#ubuntu), and [Windows](../install/ipfs-desktop.md#windows).
 
 The installation guides linked above are straightforward and easy to follow; simply follow the instructions that correspond to your operating system, and you will have IPFS Desktop going in just a few minutes.
 
