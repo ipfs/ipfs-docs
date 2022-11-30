@@ -89,43 +89,72 @@ The IPFS team manages the [dist.ipfs.tech website](https://dist.ipfs.tech/) to h
 
 ### macOS
 
-:::tip M1-based Macs
-You can install IPFS on M1-based Macs by using the `darwin-arm64` binary instead of the `amd64` binary listed in these instructions.
-:::
+1. Decide which macOS binary to download from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) by determining whether your system uses an Apple or Intel CPU. On most macOS systems, you can determine the system specs by doing the following:
 
-1. Download the macOS binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
+   1. In the upper left hand corner of your screen, click the "Apple" icon. 
+   1. In the drop-down menu displayed, select *About this Mac*.
+   1. A window with information about your Mac is displayed. 
+      - If your system uses Apple Silicon, the specific chip is shown, such as *Apple M1 Pro*.
+      - If your system uses an Intel CPU, the specific processor is shown, such as *2.3 GHz 8-Core Intel Core i9*.
+
+
+1. Download the appropriate macOS binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) based on your hardware. For example:
 
    ```bash
    curl -O https://dist.ipfs.tech/kubo/v0.17.0/kubo_v0.17.0_darwin-amd64.tar.gz
    ```
 
-1. Unzip the file:
+   > :warning:
+   > Ensure that you download and install the appropriate binary, as the binary for an Intel-based system will not work on a system with Apple Silicon, and vice-versa.
+
+   - *If you are using hardware with Apple Silicon, download the `darwin-arm64` binary.* For example, to download the IPFS binary for `Kubo v0.17.0` for an Apple-based system, run the following command:
+     ```bash
+     curl -O https://dist.ipfs.tech/kubo/v0.17.0/kubo_v0.17.0_darwin-arm64.tar.gz
+     ```
+
+   - *If you are using hardware with an Intel Processor, download the `darwin-amd64` binary.* For example, to download the IPFS binary for `Kubo v0.17.0` for an Intel-based system, run the following command:
+     ```bash
+     curl -O https://dist.ipfs.tech/kubo/v0.17.0/kubo_v0.17.0_darwin-amd64.tar.gz
+     ```
+
+1. Unzip the file. For example, to unzip `Kubo v0.17.0` for an Intel-based system:
 
    ```bash
    tar -xvzf kubo_v0.17.0_darwin-amd64.tar.gz
-
-   > x kubo/install.sh
-   > x kubo/ipfs
-   > x kubo/LICENSE
-   > x kubo/LICENSE-APACHE
-   > x kubo/LICENSE-MIT
-   > x kubo/README.md
    ```
 
-1. Move into the `kubo` folder and run the install script:
+   The following output displays:
+   ```
+   x kubo/
+   x kubo/ipfs
+   x kubo/install.sh
+   ```
+
+1. Navigate to the `kubo` directory:
 
    ```bash
    cd kubo
-   sudo bash install.sh
+   ```
 
+1. Run the install script:
+
+   ```bash
+   sudo bash install.sh
+   ```
+
+   On successful install, the following displays:
+   ```
    > Moved ./ipfs to /usr/local/bin
    ```
 
-1. Check that IPFS installed:
+1. Confirm that IPFS is installed:
 
    ```bash
    ipfs --version
+   ```
 
+   If IPFS is installed, the IPFS version number is displayed. For example:
+   ``` 
    > ipfs version 0.17.0
    ```
 
@@ -178,11 +207,11 @@ The command line can detect and use any node that's running, unless it's configu
 
 ### Local daemon
 
-The local daemon process is automatically started in the CLI with the command `ipfs daemon`. It creates an `$IPFS_PATH/api` file with an [RPC API](./reference/kubo/rpc/#http-rpc-api-reference) address.
+The local daemon process is automatically started in the CLI with the command `ipfs daemon`. It creates an `$IPFS_PATH/api` file with an [RPC API](../reference/kubo/rpc.md#http-rpc-api-reference) address.
 
 ### Remote client
 
-You can install the standalone IPFS CLI client independently and use it to talk to an IPFS Desktop node or a Brave node. Use the [RPC API](./reference/kubo/rpc/#http-rpc-api-reference) to talk to the `ipfs` daemon.
+You can install the standalone IPFS CLI client independently and use it to talk to an IPFS Desktop node or a Brave node. Use the [RPC API](../reference/kubo/rpc.md#http-rpc-api-reference) to talk to the `ipfs` daemon.
 
 When an IPFS command is executed without parameters, the CLI client checks whether the `$IPFS_PATH/api` file exists and connects to the address listed there.
 
