@@ -22,5 +22,5 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}    
         with:
           files: ${{ steps.files.outputs.added_modified }}  
-          fail_on_error: false
+          fail_on_error: true
           vale_flags: "--no-exit --minAlertLevel=error"
