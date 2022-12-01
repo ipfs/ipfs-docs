@@ -120,6 +120,12 @@ See [web3.storage/PEERS](https://github.com/web3-storage/web3.storage/blob/main/
 |`12D3KooWGASC2jm3pmohEJXUhuStkxDitPgzvs4qMuFPaiD9x1BA`|`/ip4/78.46.108.24`|
 |`12D3KooWRbWZN3GvLf9CHmozq4vnTzDD4EEoiqtRJxg5FV6Gfjmm`|`/ip4/65.109.19.136`|
 
+### ipfs-gateway.cloud
+
+| Peer ID | Addresses |
+| ------- | --------- |
+|`12D3KooWL4mvb3f9fwtdgnVfUEHzPzHiWHzsMawhV6PqVujhaaz4`|`/dns4/node.ipfs-gateway.cloud/tcp/4001`<br/>`/dns4/node.ipfs-gateway.cloud/udp/4001/quic`|
+
 [dht-explainer]: /concepts/how-ipfs-works/#distributed-hash-tables-dhts
 [cid-explainer]: /concepts/content-addressing/#identifier-formats
 [docs-peering-config]: /how-to/configure-node/#peering
