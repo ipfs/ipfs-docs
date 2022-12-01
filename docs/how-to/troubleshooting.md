@@ -63,7 +63,7 @@ The first thing to do is to double-check that both nodes are, in fact, running a
 }
 ```
 
-Next, check to see if the nodes have a connection to each other. You can do this by running `ipfs swarm peers` on one node and checking for the other node's peer ID in the output. If the two nodes _are_ connected, and the `ipfs get` command is still hanging, then something unexpected is going on, and I recommend filing an issue about it. If they are not connected, then let's try and debug why. (Note: you can skip to [Manually connecting `node a` to `node b`](#manually-connecting-node-a-to-b) if you just want things to work. However, going through the debugging process and reporting what happened to the IPFS team on IRC is helpful to us to understand common pitfalls that people run into).
+Next, check to see if the nodes have a connection to each other. You can do this by running `ipfs swarm peers` on one node and checking for the other node's peer ID in the output. If the two nodes _are_ connected, and the `ipfs get` command is still hanging, then something unexpected is going on, and I recommend filing an issue about it. If they are not connected, then let's try and debug why. (Note: you can skip to [Manually connecting `node a` to `node b`](#manually-connecting-node-a-to-node-b) if you just want things to work. However, going through the debugging process and reporting what happened to the IPFS team on IRC is helpful to us to understand common pitfalls that people run into).
 
 ### Checking providers
 
