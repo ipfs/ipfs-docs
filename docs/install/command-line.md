@@ -16,8 +16,8 @@ In this installation guide, you will install IPFS Kubo in the command line. Kubo
 
 Installing Kubo in the command line is handy for multiple use cases, such as:
 
-- building applications and services on top of an IPFS node. 
-- setting up a node without a user interface (which is usually the case with remote servers or virtual machines). 
+- building applications and services on top of an IPFS node.  
+- setting up a node without a user interface (which is usually the case with remote servers or virtual machines).  
 
 An example of the IPFS daemon running with Kubo is shown below:
 ![A terminal window running the IPFS daemon in Ubuntu.](./images/command-line/wsl-running-ipfs-in-linux.png)
@@ -27,27 +27,29 @@ An example of the IPFS daemon running with Kubo is shown below:
 IPFS runs on most Windows, MacOS, Linux, FreeBSD and OpenBSD systems. The following minumum system requirements are recommended:
 
 - 512MiB of memory
-- At least 2 GB of RAM 
-- 2 CPU cores (kubo is highly parallel). 
+- At least 2 GB of RAM
+- 2 CPU cores (kubo is highly parallel).
 
 ### Things to note
+
 - On systems with less memory, Kubo may not be completely stable.
 If your system is resource-constrained, we recommend that you:
 
   1. Install OpenSSL and rebuild kubo manually with `make build GOTAGS=openssl`. See the [download and compile](https://github.com/ipfs/kubo/blob/v0.17.0/README.md#download-and-compile-ipfs) section for more information on compiling kubo.
-  2. Initialize your daemon with `ipfs init --profile=lowpower`
+  1. Initialize your daemon with `ipfs init --profile=lowpower`
 
 - The amount of disk space your IPFS installation uses depends on how much data you're sharing. A base installation uses around 12MB of disk space.
 
-- Automatic garbage collection can be enabled via [--enable-gc](/reference/kubo/cli/#ipfs-daemon) and adjusted using [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.17.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
+- Automatic garbage collection can be enabled via [--enable-gc](../reference/kubo/cli.md#ipfs-daemon) and adjusted using [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.17.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
 
 ## Official binary distributions
 
 The latest, official prebuilt kubo binaries are published on the [dist.ipfs.tech website](https://dist.ipfs.tech#kubo). As soon as a new release of an IPFS Kubo binary is released, it is automatically shown on the Kubo page on `dist.ipfs.tech`. 
 
+<!-- markdown-link-check-disable -->
 > **Note**
 > If you are unable to access [dist.ipfs.tech](https://dist.ipfs.tech#kubo), you can also download kubo (go-ipfs) from the project's GitHub [releases](https://github.com/ipfs/kubo/releases/latest) page or `/ipns/dist.ipfs.tech` at the [dweb.link](https://dweb.link/ipns/dist.ipfs.tech#kubo) gateway
-
+<!-- markdown-link-check-enable -->
 
 The following section provides instructions on how to download and install the latest `kubo` release from `dist.ipfs.tech` using the command-line. Binaries are available for the following operating systems:
 
@@ -58,7 +60,6 @@ The following section provides instructions on how to download and install the l
 | Linux   | Yes    | Yes    | Yes | Yes    |
 | OpenBSD | Yes    | Yes    | Yes | No     |
 | Windows | Yes    | Yes    | No  | No     |
-
 
 To install the appropriate binary for your operating system, select a tab below.
 
@@ -107,15 +108,15 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
 
 1. Create a powershell profile:
 
-    ```powershell
-    if (!(Test-Path -Path $PROFILE)) { New-Item -ItemType File -Path $PROFILE -Force }
-    ```
+   ```powershell
+   if (!(Test-Path -Path $PROFILE)) { New-Item -ItemType File -Path $PROFILE -Force }
+   ```
 
-    This command first checks to see if you have a profile set. If you do, it leaves it there and doesn't create a new one. You can view the contents of your profile by opening it in an editor, such as Notepad:
+   This command first checks to see if you have a profile set. If you do, it leaves it there and doesn't create a new one. You can view the contents of your profile by opening it in an editor, such as Notepad:
 
-    ```powershell
-    notepad $PROFILE
-    ```
+   ```powershell
+   notepad $PROFILE
+   ```
 
 1. Add the location of your Kubo daemon and add it to PowerShell's `PATH` by truncating it to the end of your PowerShell profile:
 
@@ -125,14 +126,19 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
 
 1. Load your `$PROFILE`:
 
-    ```powershell
-    & $profile   
-    ```
+   ```powershell
+   & $profile   
+   ```
 
-6. Test that your IPFS path is set correctly by going to your home folder and asking IPFS for the version:
+1. Navigate to your home folder
 
    ```powershell
    cd ~
+   ```
+
+1. Test that IPFS is installed correctly:
+
+   ```powershell
    ipfs --version
 
    > ipfs version 0.17.0
@@ -148,11 +154,11 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
 
 1. Decide which macOS binary to download from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) by determining whether your system uses an Apple or Intel CPU. On most macOS systems, you can determine the system specs by doing the following:
 
-   1. In the upper left hand corner of your screen, click the "Apple" icon. 
-   1. In the drop-down menu displayed, select *About this Mac*.
-   1. A window with information about your Mac is displayed. 
-      - If your system uses Apple Silicon, the specific chip is shown, such as *Apple M1 Pro*.
-      - If your system uses an Intel CPU, the specific processor is shown, such as *2.3 GHz 8-Core Intel Core i9*.
+   1. In the upper left hand corner of your screen, click the "Apple" icon.
+   1. In the drop-down menu displayed, select _About this Mac_.
+   1. A window with information about your Mac is displayed.
+      - If your system uses Apple Silicon, the specific chip is shown, such as _Apple M1 Pro_.
+      - If your system uses an Intel CPU, the specific processor is shown, such as _2.3 GHz 8-Core Intel Core i9_.
 
 
 1. Download the appropriate macOS binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) based on your hardware. For example:
@@ -164,12 +170,14 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
    > :warning:
    > Ensure that you download and install the appropriate binary, as the binary for an Intel-based system will not work on a system with Apple Silicon, and vice-versa.
 
-   - *If you are using hardware with Apple Silicon, download the `darwin-arm64` binary.* For example, to download the IPFS binary for `Kubo v0.17.0` for an Apple-based system, run the following command:
+   - _If you are using hardware with Apple Silicon, download the `darwin-arm64` binary._ For example, to download the IPFS binary for `Kubo v0.17.0` for an Apple-based system, run the following command:
+
      ```bash
      curl -O https://dist.ipfs.tech/kubo/v0.17.0/kubo_v0.17.0_darwin-arm64.tar.gz
      ```
 
-   - *If you are using hardware with an Intel Processor, download the `darwin-amd64` binary.* For example, to download the IPFS binary for `Kubo v0.17.0` for an Intel-based system, run the following command:
+   - _If you are using hardware with an Intel Processor, download the `darwin-amd64` binary._ For example, to download the IPFS binary for `Kubo v0.17.0` for an Intel-based system, run the following command:
+
      ```bash
      curl -O https://dist.ipfs.tech/kubo/v0.17.0/kubo_v0.17.0_darwin-amd64.tar.gz
      ```
@@ -181,7 +189,8 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
    ```
 
    The following output displays:
-   ```
+
+   ```bash
    x kubo/
    x kubo/ipfs
    x kubo/install.sh
@@ -200,7 +209,8 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
    ```
 
    On successful install, the following displays:
-   ```
+   
+   ```bash
    > Moved ./ipfs to /usr/local/bin
    ```
 
@@ -211,9 +221,10 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
    ```
 
    If IPFS is installed, the IPFS version number is displayed. For example:
-   ``` 
+
+   ```bash
    > ipfs version 0.17.0
-   ```
+   you are
 
 :::
 
@@ -297,7 +308,7 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
 
 1. Run the install script:
 
-   ```
+   ```bash
    doas bash install.sh
 
    > Moved ./ipfs to /usr/local/bin
@@ -344,7 +355,7 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
 
 1. Run the install script:
 
-   ```
+   ```bash
    doas bash install.sh
 
    > Moved ./ipfs to /usr/local/bin
