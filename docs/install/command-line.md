@@ -6,7 +6,7 @@ current-ipfs-version: v0.17.0
 
 # Install Kubo on the command line
 
-This guide describes the available installation processes for IPFS Kubo. Kubo was the first implementation of the IPFS protocol, and is the most widely used implementation today. Kubo allows you to do everything that IPFS Desktop can do, but at a more granular level, since you can specify which commands to run. Kubo is written in the Go programming language, and has the following features:
+This guide describes the available installation processes for IPFS Kubo, a Go-based implementation of the IPFS protocol. Kubo was the first implementation of the IPFS, and is the most widely used implementation today. Kubo allows you to do everything that IPFS Desktop can do, but at a more granular level, since you can specify which commands to run. Kubo has the following features:
 
 - An IPFS daemon server
 - Extensive command line tooling
@@ -14,12 +14,12 @@ This guide describes the available installation processes for IPFS Kubo. Kubo wa
 - An HTTP Gateway for serving content to HTTP browsers
 - Binaries for Windows, MacOS, Linux, FreeBSD and OpenBSD
 
-Installing Kubo in the command line is handy for multiple use cases, such as building applications and services on top of an IPFS node, or setting up a node without a user interface (which is usually the case with remote servers or virtual machines).  
+Installing Kubo in the command line is handy for many use cases, such as building applications and services on top of an IPFS node, or setting up a node without a user interface (which is usually the case with remote servers or virtual machines).  
 
 To get started, familiarize yourself with the system requirements. Then, determine if you'd like to install Kubo using one of the 5 official binary distributions, or build Kubo from source. Once you've installed Kubo, determine which node to use in the command line. Finally, check out the next steps.
 
 > :warning:
-> In most cases, you should install Kubo using one of the official binaries. Building from source is only recommended if you are running Kubo on a system with severe resource constraints, or are contributing to the Kubo project.
+> Usually, installing Kubo using one of the official binaries is the appropriate option. Building from source is only recommended if you are running Kubo on a system with severe resource constraints, or are contributing to the Kubo project.
 
 ## Table of Contents
 - [System requirements](#system-requirements)
@@ -38,7 +38,7 @@ To get started, familiarize yourself with the system requirements. Then, determi
 
 ## System requirements
 
-IPFS runs on most Windows, MacOS, Linux, FreeBSD and OpenBSD systems. The following minimum system requirements are recommended:
+IPFS runs on most Windows, MacOS, Linux, FreeBSD and OpenBSD systems. Ensure that you meet the following minimum system requirements:
 
 - 512MiB of memory
 - At least 2 GB of RAM
@@ -47,18 +47,18 @@ IPFS runs on most Windows, MacOS, Linux, FreeBSD and OpenBSD systems. The follow
 ### Things to note
 
 - On systems with less memory, Kubo may not be completely stable.
-If your system is resource-constrained, we recommend that you:
+If your system is resource-constrained, you should complete the following steps:
 
   1. Install OpenSSL and rebuild Kubo manually with `make build GOTAGS=openssl`. See the [download and compile](https://github.com/ipfs/kubo/blob/v0.17.0/README.md#download-and-compile-ipfs) section for more information on compiling Kubo.
   1. Initialize your daemon with `ipfs init --profile=lowpower`
 
 - The amount of disk space your IPFS installation uses depends on how much data you're sharing. A base installation uses around 12MB of disk space.
 
-- Automatic garbage collection can be enabled via [--enable-gc](../reference/kubo/cli.md#ipfs-daemon) and adjusted using [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.17.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
+- You can enable automatic garbage collection via [--enable-gc](../reference/kubo/cli.md#ipfs-daemon) and adjusted using [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.17.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
 
 ## Official binary distributions
 
-The following section provides instructions on how to download and install the latest Kubo release from `dist.ipfs.tech` using the command-line. The latest, official prebuilt Kubo binaries are published on the [dist.ipfs.tech website](https://dist.ipfs.tech#kubo). As soon as a new release of an IPFS Kubo binary is released, it is automatically shown on the Kubo page on `dist.ipfs.tech`. 
+The following section provides instructions on how to download and install the latest Kubo release from `dist.ipfs.tech` using the command-line. The IPFS team publishes the latest, official prebuilt Kubo binaries on the [dist.ipfs.tech website](https://dist.ipfs.tech#kubo). New IPFS Kubo binary releases are automatically shown on the Kubo page on `dist.ipfs.tech`. 
 
 <!-- markdown-link-check-disable -->
 > **Note**
@@ -112,7 +112,7 @@ To install the appropriate binary for your operating system, select a tab below.
    > ipfs version 0.17.0
    ```
 
-At this point, IPFS is usable. However, it's strongly recommended that you first add `ipfs.exe` to your `PATH` using the following steps:
+At this point, Kubo is usable. However, it's strongly recommended that you first add `ipfs.exe` to your `PATH` using the following steps:
 
 1. Save the current working directory into a temporary variable:
 
@@ -150,7 +150,7 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
    cd ~
    ```
 
-1. Test that IPFS is installed correctly:
+1. Test that Kubo installed correctly:
 
    ```powershell
    ipfs --version
@@ -166,13 +166,13 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
 
 ![macOS icon](./images/command-line/apple-icon.png =250x200)
 
-1. Decide which macOS binary to download from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) by determining whether your system uses an Apple or Intel CPU. On most macOS systems, you can determine the system specs by doing the following:
+1. Decide which macOS binary to download from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) by determining whether your system uses an Apple or Intel CPU. On most macOS systems, you can find systems specs by doing the following:
 
    1. In the upper left hand corner of your screen, click the "Apple" icon.
    1. In the drop-down menu displayed, select _About this Mac_.
    1. A window with information about your Mac is displayed.
-      - If your system uses Apple Silicon, the specific chip is shown, such as _Apple M1 Pro_.
-      - If your system uses an Intel CPU, the specific processor is shown, such as _2.3 GHz 8-Core Intel Core i9_.
+      - If your system uses Apple Silicon, the specific chip displays, such as _Apple M1 Pro_.
+      - If your system uses an Intel CPU, the specific processor displays, such as _2.3 GHz 8-Core Intel Core i9_.
 
 
 1. Download the appropriate macOS binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) based on your hardware. For example:
@@ -182,7 +182,7 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
    ```
 
    > :warning:
-   > Ensure that you download and install the appropriate binary, as the binary for an Intel-based system will not work on a system with Apple Silicon, and vice-versa.
+   > Ensure that you download and install the appropriate binary, as the binary for an Intel-based system won't work on a system with Apple Silicon, and vice-versa.
 
    - _If you are using hardware with Apple Silicon, download the `darwin-arm64` binary._ For example, to download the IPFS binary for `Kubo v0.17.0` for an Apple-based system, run the following command:
 
@@ -228,13 +228,13 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
    > Moved ./ipfs to /usr/local/bin
    ```
 
-1. Confirm that IPFS is installed:
+1. Confirm your Kubo installation:
 
    ```bash
    ipfs --version
    ```
 
-   If IPFS is installed, the IPFS version number is displayed. For example:
+   If Kubo is installed, the version number displays. For example:
 
    ```bash
    > ipfs version 0.17.0
@@ -281,7 +281,7 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
    > Moved ./ipfs to /usr/local/bin
    ```
 
-1. Test that IPFS has installed correctly:
+1. Test that Kubo has installed correctly:
 
    ```bash
    ipfs --version
@@ -328,7 +328,7 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
    > Moved ./ipfs to /usr/local/bin
    ```
 
-1. Test that IPFS has installed correctly:
+1. Test that Kubo has installed correctly:
 
    ```bash
    ipfs --version
@@ -375,7 +375,7 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
    > Moved ./ipfs to /usr/local/bin
    ```
 
-1. Test that IPFS has installed correctly:
+1. Test that Kubo has installed correctly:
 
    ```bash
    ipfs --version
@@ -403,11 +403,11 @@ The local daemon process is automatically started in the CLI with the command `i
 
 You can install the standalone IPFS CLI client independently and use it to talk to an IPFS Desktop node or a Brave node. Use the [RPC API](../reference/kubo/rpc.md#http-rpc-api-reference) to talk to the `ipfs` daemon.
 
-When an IPFS command is executed without parameters, the CLI client checks whether the `$IPFS_PATH/api` file exists and connects to the address listed there.
+When an IPFS command executes without parameters, the CLI client checks whether the `$IPFS_PATH/api` file exists and connects to the address listed there.
 
-- If an `$IPFS_PATH` is in the default location (for example, `~/.ipfs` on Linux), then it works automatically and the IPFS CLI client talks to the locally running `ipfs` daemon without any additional configuration.
+- If an `$IPFS_PATH` is in the default location (for example, `~/.ipfs` on Linux), then it works automatically and the IPFS CLI client talks to the locally running `ipfs` daemon without any extra configuration.
 
-- If an `$IPFS_PATH` is not in the default location, use the `--api <rpc-api-addr>` command-line argument. Alternatively, you can set the environment variable to `IPFS_PATH`. `IPFS_PATH` will point to a directory with the api file with the existing `ipfs` daemon instance.
+- If an `$IPFS_PATH` isn't in the default location, use the `--api <rpc-api-addr>` command-line argument. Alternatively, you can set the environment variable to `IPFS_PATH`. `IPFS_PATH` will point to a directory with the api file with the existing `ipfs` daemon instance.
 
 #### Most common examples
 
@@ -419,4 +419,4 @@ For example, Brave RPC API runs on port 45001, so the CLI can talk to the Brave 
 
 ## Next steps
 
-Now that you've got an IPFS node installed, you can start building applications and services on top of the network! Check out the Command-line- quicks start guide and jump straight to the [Initialize the repository section](../how-to/command-line-quick-start.md#initialize-the-repository).
+Now that you've got an IPFS node installed, you can start building applications and services on top of the network! Check out the [command line quick start guide](../how-to/command-line-quick-start.md) guide.
