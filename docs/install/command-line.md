@@ -238,7 +238,7 @@ At this point, Kubo is usable. However, it's strongly recommended that you first
 
    ```bash
    > ipfs version 0.17.0
-   you are
+   ```
 
 :::
 
