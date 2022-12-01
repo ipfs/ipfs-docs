@@ -38,7 +38,7 @@ To get started, familiarize yourself with the system requirements. Then, determi
 
 ## System requirements
 
-IPFS runs on most Windows, MacOS, Linux, FreeBSD and OpenBSD systems. Ensure that you meet the following minimum system requirements:
+IPFS runs on most Windows, MacOS, Linux, FreeBSD and OpenBSD systems. Ensure that your system meets the following minimum requirements:
 
 - 512MiB of memory
 - At least 2 GB of RAM
