@@ -6,25 +6,39 @@ current-ipfs-version: v0.17.0
 
 # Install Kubo on the command line
 
-In this installation guide, you will install IPFS Kubo in the command line. Kubo was the first implementation of the IPFS protocol, and is the most widely used implementation today. Kubo allows you to do everything that IPFS Desktop can do, but at a more granular level, since you can specify which commands to run. Kubo is written in the Go programming language, and has the following features:
+This guide describes the available installation processes for IPFS Kubo. Kubo was the first implementation of the IPFS protocol, and is the most widely used implementation today. Kubo allows you to do everything that IPFS Desktop can do, but at a more granular level, since you can specify which commands to run. Kubo is written in the Go programming language, and has the following features:
 
-- an IPFS daemon server
-- extensive command line tooling
-- an HTTP RPC API for controlling the node
-- an HTTP Gateway for serving content to HTTP browsers
-- binaries for Windows, MacOS, Linux, FreeBSD and OpenBSD
+- An IPFS daemon server
+- Extensive command line tooling
+- An HTTP RPC API for controlling the node
+- An HTTP Gateway for serving content to HTTP browsers
+- Binaries for Windows, MacOS, Linux, FreeBSD and OpenBSD
 
-Installing Kubo in the command line is handy for multiple use cases, such as:
+Installing Kubo in the command line is handy for multiple use cases, such as building applications and services on top of an IPFS node, or setting up a node without a user interface (which is usually the case with remote servers or virtual machines).  
 
-- building applications and services on top of an IPFS node.  
-- setting up a node without a user interface (which is usually the case with remote servers or virtual machines).  
+To get started, familiarize yourself with the system requirements. Then, determine if you'd like to install Kubo using one of the 5 official binary distributions, or build Kubo from source. Once you've installed Kubo, determine which node to use in the command line. Finally, check out the next steps.
 
-An example of the IPFS daemon running with Kubo is shown below:
-![A terminal window running the IPFS daemon in Ubuntu.](./images/command-line/wsl-running-ipfs-in-linux.png)
+> :warning:
+> In most cases, you should install Kubo using one of the official binaries. Building from source is only recommended if you are running Kubo on a system with severe resource constraints, or are contributing to the Kubo project.
+
+## Table of Contents
+- [System requirements](#system-requirements)
+  - [Things to note](#things-to-note)
+- [Official binary distributions](#official-binary-distributions)
+  - [Windows](#install-kubo-windows)
+  - [macOS](#install-kubo-mac)
+  - [Linux](#install-kubo-linux)
+  - [FreeBSD](#install-kubo-freeBSD)
+  - [OpenBSD](#install-kubo-openBSD)
+- [Build Kubo from source](#build-kubo-from-source)
+- [Determining which node to use with the command line](#determining-which-node-to-use-with-the-command-line)
+  - [Local daemon](#local-daemon)
+  - [Remote client](#remote-client)
+- [Next steps](#next-steps)
 
 ## System requirements
 
-IPFS runs on most Windows, MacOS, Linux, FreeBSD and OpenBSD systems. The following minumum system requirements are recommended:
+IPFS runs on most Windows, MacOS, Linux, FreeBSD and OpenBSD systems. The following minimum system requirements are recommended:
 
 - 512MiB of memory
 - At least 2 GB of RAM
@@ -44,14 +58,14 @@ If your system is resource-constrained, we recommend that you:
 
 ## Official binary distributions
 
-The latest, official prebuilt kubo binaries are published on the [dist.ipfs.tech website](https://dist.ipfs.tech#kubo). As soon as a new release of an IPFS Kubo binary is released, it is automatically shown on the Kubo page on `dist.ipfs.tech`. 
+The following section provides instructions on how to download and install the latest `kubo` release from `dist.ipfs.tech` using the command-line. The latest, official prebuilt kubo binaries are published on the [dist.ipfs.tech website](https://dist.ipfs.tech#kubo). As soon as a new release of an IPFS Kubo binary is released, it is automatically shown on the Kubo page on `dist.ipfs.tech`. 
 
 <!-- markdown-link-check-disable -->
 > **Note**
 > If you are unable to access [dist.ipfs.tech](https://dist.ipfs.tech#kubo), you can also download kubo (go-ipfs) from the project's GitHub [releases](https://github.com/ipfs/kubo/releases/latest) page or `/ipns/dist.ipfs.tech` at the [dweb.link](https://dweb.link/ipns/dist.ipfs.tech#kubo) gateway
 <!-- markdown-link-check-enable -->
 
-The following section provides instructions on how to download and install the latest `kubo` release from `dist.ipfs.tech` using the command-line. Binaries are available for the following operating systems:
+ Binaries are available for the following operating systems:
 
 | OS      | 32-bit | 64-bit | ARM | ARM-64 |
 |---------|--------|--------|-----|--------|
@@ -209,7 +223,7 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
    ```
 
    On successful install, the following displays:
-   
+
    ```bash
    > Moved ./ipfs to /usr/local/bin
    ```
@@ -372,6 +386,10 @@ At this point, IPFS is usable. However, it's strongly recommended that you first
 :::
 
 ::::
+
+## Build Kubo from source
+
+For the current instructions on how to manually download, compile and build Kubo from source, see the [Build from Source](https://github.com/ipfs/kubo/blob/v0.17.0/README.md#build-from-source) section in the Kubo repository.
 
 ## Determining which node to use with the command line
 
