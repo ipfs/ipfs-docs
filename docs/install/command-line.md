@@ -49,7 +49,7 @@ IPFS runs on most Windows, MacOS, Linux, FreeBSD and OpenBSD systems. The follow
 - On systems with less memory, Kubo may not be completely stable.
 If your system is resource-constrained, we recommend that you:
 
-  1. Install OpenSSL and rebuild kubo manually with `make build GOTAGS=openssl`. See the [download and compile](https://github.com/ipfs/kubo/blob/v0.17.0/README.md#download-and-compile-ipfs) section for more information on compiling kubo.
+  1. Install OpenSSL and rebuild Kubo manually with `make build GOTAGS=openssl`. See the [download and compile](https://github.com/ipfs/kubo/blob/v0.17.0/README.md#download-and-compile-ipfs) section for more information on compiling Kubo.
   1. Initialize your daemon with `ipfs init --profile=lowpower`
 
 - The amount of disk space your IPFS installation uses depends on how much data you're sharing. A base installation uses around 12MB of disk space.
@@ -58,11 +58,11 @@ If your system is resource-constrained, we recommend that you:
 
 ## Official binary distributions
 
-The following section provides instructions on how to download and install the latest `kubo` release from `dist.ipfs.tech` using the command-line. The latest, official prebuilt kubo binaries are published on the [dist.ipfs.tech website](https://dist.ipfs.tech#kubo). As soon as a new release of an IPFS Kubo binary is released, it is automatically shown on the Kubo page on `dist.ipfs.tech`. 
+The following section provides instructions on how to download and install the latest Kubo release from `dist.ipfs.tech` using the command-line. The latest, official prebuilt Kubo binaries are published on the [dist.ipfs.tech website](https://dist.ipfs.tech#kubo). As soon as a new release of an IPFS Kubo binary is released, it is automatically shown on the Kubo page on `dist.ipfs.tech`. 
 
 <!-- markdown-link-check-disable -->
 > **Note**
-> If you are unable to access [dist.ipfs.tech](https://dist.ipfs.tech#kubo), you can also download kubo (go-ipfs) from the project's GitHub [releases](https://github.com/ipfs/kubo/releases/latest) page or `/ipns/dist.ipfs.tech` at the [dweb.link](https://dweb.link/ipns/dist.ipfs.tech#kubo) gateway
+> If you are unable to access [dist.ipfs.tech](https://dist.ipfs.tech#kubo), you can also download Kubo (go-ipfs) from the project's GitHub [releases](https://github.com/ipfs/kubo/releases/latest) page or `/ipns/dist.ipfs.tech` at the [dweb.link](https://dweb.link/ipns/dist.ipfs.tech#kubo) gateway
 <!-- markdown-link-check-enable -->
 
  Binaries are available for the following operating systems:
