@@ -6,9 +6,10 @@ jobs:
   markdown-link-check:
     runs-on: ubuntu-latest
     steps:
+    - name: checkout
+      uses: actions/checkout@master
     - name: link-check
-    - uses: actions/checkout@master
-    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
       run: echo "{out}" >> .github/workflows/link-check-summary.md
       with:
         config-file: 'mlc_pull_req_config.json'
