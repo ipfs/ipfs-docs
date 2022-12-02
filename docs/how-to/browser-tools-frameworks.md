@@ -9,7 +9,7 @@ Want to learn how to use IPFS in combination with your favorite framework or bro
 
 ## Browserify
 
-[Example and boilerplate](https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/browser-browserify) you can use to guide yourself into bundling js-ipfs with browserify, so that you can use it in your own web app.
+[Example and boilerplate](https://github.com/ipfs-examples/js-ipfs-browser-browserify) you can use to guide yourself into bundling js-ipfs with browserify, so that you can use it in your own web app.
 
 ## Parcel.js
 

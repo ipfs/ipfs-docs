@@ -27,7 +27,7 @@ There are different types of IPFS nodes. And depending on the use-case, a single
 - [Preload](#preload)
 - [Relay](#relay)
 - [Bootstrap](#bootstrap)
-- [Delegate routing](#delegate-routing)
+- [Delegate routing](#delegate-routing-node)
 
 ### Preload
 
@@ -38,7 +38,7 @@ Features of a preload node:
 - They are Kubo nodes with API ports exposed. Some HTTP API commands are accessible.
 - Used by JS-IPFS nodes running in browser contexts.
 - JS-ipfs nodes remain connected to the libp2p swarm ports of all preload nodes by having preload nodes on the bootstrap list.
-- Often on the same _server_ as a [delegate routing node](#delegate-routing), though both the delegate routing service and preload service are addressed differently. This is done by having different multiaddrs that resolve to the same machine.
+- Often on the same _server_ as a [delegate routing node](#delegate-routing-node), though both the delegate routing service and preload service are addressed differently. This is done by having different multiaddrs that resolve to the same machine.
 - Preload nodes are in the default JS-IPFS configuration as bootstrap nodes, so they will maintain libp2p swarm connections to them at all times.
     - They are configured as regular bootstrap nodes, but as a convention have the string 'preload' in their `/dnsaddr` multiaddrs.
 
@@ -85,7 +85,7 @@ Limitations of a bootstrap node:
 
 ### Delegate routing node
 
-When IPFS nodes are unable to run Distributed Hash Table (DHT) logic on their own, they _delegate_ the task to a delegate routing node.  Publishing works with arbitrary CID codecs (compression/decompression technology), as the [js-delegate-content module](https://github.com/libp2p/js-libp2p-delegated-content-routing/blob/master/src/index.js#L127-L128) publishes CIDs at the block level rather than the IPLD or DAG level.
+When IPFS nodes are unable to run Distributed Hash Table (DHT) logic on their own, they _delegate_ the task to a delegate routing node.  Publishing works with arbitrary CID codecs (compression/decompression technology), as the [js-delegate-content module](https://github.com/libp2p/js-libp2p-delegated-content-routing/blob/master/src/index.ts) publishes CIDs at the block level rather than the IPLD or DAG level.
 
 Features of a delegate routing node:
 
