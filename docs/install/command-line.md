@@ -21,16 +21,6 @@ To get started, familiarize yourself with the system requirements. Then, determi
 > :warning:
 > Usually, installing Kubo using one of the official binaries is the appropriate option. Building from source is only recommended if you are running Kubo on a system with severe resource constraints, or are contributing to the Kubo project.
 
-## Table of Contents
-- [System requirements](#system-requirements)
-  - [Things to note](#things-to-note)
-- [Official binary distributions](#official-binary-distributions)
-- [Build Kubo from source](#build-kubo-from-source)
-- [Determining which node to use with the command line](#determining-which-node-to-use-with-the-command-line)
-  - [Local daemon](#local-daemon)
-  - [Remote client](#remote-client)
-- [Next steps](#next-steps)
-
 ## System requirements
 
 IPFS runs on most Windows, MacOS, Linux, FreeBSD and OpenBSD systems. Ensure that your system meets the following minimum requirements:
