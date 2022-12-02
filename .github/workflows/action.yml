@@ -17,9 +17,7 @@ jobs:
         base-branch: 'main'
         continue-on-error: true
     - name: summary
-      run: echo "{out}" >> .github/workflows/link-check-summary.md
-      with: 
-        file: .github/workflows/link-check-summary.md
-        vars: |
-          message: markdown-link-check found 
-          out: ${{ steps.link-check.outputs }}
+      run: |
+        echo '# markdown-link-check summary' >> $GITHUB_STEP_SUMMARY
+        echo >> $GITHUB_STEP_SUMMARY
+        echo '${{ steps.link-check.outputs }}' >> $GITHUB_STEP_SUMMARY
