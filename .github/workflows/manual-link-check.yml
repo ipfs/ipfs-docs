@@ -1,4 +1,4 @@
-name: Check Markdown links for modified files
+name: Manual Markdown links for all files
 
 on: [workflow_dispatch]
 
