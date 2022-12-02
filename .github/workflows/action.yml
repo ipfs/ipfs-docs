@@ -9,7 +9,7 @@ jobs:
     - name: link-check
     - uses: actions/checkout@master
     - uses: gaurav-nelson/github-action-markdown-link-check@v1
-      run: echo "{markdown content}" >> $GITHUB_STEP_SUMMARY
+      run: echo "{out}" >> .github/workflows/link-check-summary.md
       with:
         config-file: 'mlc_pull_req_config.json'
         check-modified-files-only: 'yes'
