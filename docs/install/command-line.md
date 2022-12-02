@@ -25,11 +25,6 @@ To get started, familiarize yourself with the system requirements. Then, determi
 - [System requirements](#system-requirements)
   - [Things to note](#things-to-note)
 - [Official binary distributions](#official-binary-distributions)
-  - [Windows](#install-kubo-windows)
-  - [macOS](#install-kubo-mac)
-  - [Linux](#install-kubo-linux)
-  - [FreeBSD](#install-kubo-freeBSD)
-  - [OpenBSD](#install-kubo-openBSD)
 - [Build Kubo from source](#build-kubo-from-source)
 - [Determining which node to use with the command line](#determining-which-node-to-use-with-the-command-line)
   - [Local daemon](#local-daemon)
@@ -60,10 +55,8 @@ If your system is resource-constrained, you should complete the following steps:
 
 The following section provides instructions on how to download and install the latest Kubo release from `dist.ipfs.tech` using the command-line. The IPFS team publishes the latest, official prebuilt Kubo binaries on the [dist.ipfs.tech website](https://dist.ipfs.tech#kubo). New IPFS Kubo binary releases are automatically shown on the Kubo page on `dist.ipfs.tech`. 
 
-<!-- markdown-link-check-disable -->
 > **Note**
 > If you are unable to access [dist.ipfs.tech](https://dist.ipfs.tech#kubo), you can also download Kubo (go-ipfs) from the project's GitHub [releases](https://github.com/ipfs/kubo/releases/latest) page or `/ipns/dist.ipfs.tech` at the [dweb.link](https://dweb.link/ipns/dist.ipfs.tech#kubo) gateway
-<!-- markdown-link-check-enable -->
 
  Binaries are available for the following operating systems:
 
