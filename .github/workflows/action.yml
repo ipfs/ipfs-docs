@@ -17,6 +17,7 @@ jobs:
         base-branch: 'main'
         continue-on-error: true
     - name: summary
+      run: echo "{out}" >> .github/workflows/link-check-summary.md
       with: 
         file: .github/workflows/link-check-summary.md
         vars: |
