@@ -325,7 +325,7 @@ At this point, Kubo is usable. However, it's strongly recommended that you first
 
 ### OpenBSD
 
-1. Download the FreeBSD binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
+1. Download the OpenBSD binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
    ```bash
    wget https://dist.ipfs.tech/kubo/v0.17.0/kubo_v0.17.0_openbsd-amd64.tar.gz
