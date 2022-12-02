@@ -10,13 +10,14 @@ jobs:
       uses: actions/checkout@master
     - name: link-check
       uses: gaurav-nelson/github-action-markdown-link-check@v1
-      run: echo "{out}" >> .github/workflows/link-check-summary.md
       with:
         config-file: 'mlc_pull_req_config.json'
         check-modified-files-only: 'yes'
         use-verbose-mode: 'yes'
         base-branch: 'main'
         continue-on-error: true
+    - name: summary
+      with: 
         file: .github/workflows/link-check-summary.md
         vars: |
           message: markdown-link-check found 
