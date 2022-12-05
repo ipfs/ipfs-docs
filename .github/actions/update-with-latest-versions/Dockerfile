@@ -1,4 +1,4 @@
-FROM golang:1.17
+FROM golang:1.18
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt install -y jq && rm -rf /var/lib/apt/lists/*
