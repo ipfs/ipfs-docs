@@ -79,6 +79,7 @@ Some available pinning service providers are:
 - [NFT.Storage](https://nft.storage/)
 - [Pinata](https://pinata.cloud/)
 - [Web3.Storage](https://web3.storage/)
+- [4EVERLAND](https://www.4everland.org/)
 
 See how to [work with remote pinning services](../how-to/work-with-pinning-services.md).
 
@@ -104,3 +105,4 @@ Options in this category include:
 - [Powergate](https://docs.filecoin.io/build/powergate)
 - [ChainSafe Storage](https://storage.chainsafe.io)
 - [Fleek Storage](https://fleek.co/storage)
+- [4EVERLAND Bucket](https://www.4everland.org/bucket)
