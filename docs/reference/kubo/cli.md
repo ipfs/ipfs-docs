@@ -14,13 +14,13 @@ For issues and support, check out the [generate-cli-docs.sh](https://github.com/
 
 IPFS can run in either _online_ or _offline_ mode. Online mode is when you have IPFS running separately as a daemon process. If you do not have an IPFS daemon running, you are in offline mode. Some commands, like `ipfs swarm peers`, are only supported when online.
 
-The [command-line quickstart guide](/how-to/command-line-quick-start/#take-your-node-online) explains how to start the IPFS daemon and take your node online.
+The [command-line quickstart guide](../../how-to/command-line-quick-start.md#take-your-node-online) explains how to start the IPFS daemon and take your node online.
 
 
 
 ### Alignment with Kubo RPC API
 
-Every command usable from the CLI is also available through the [RPC API v0](/reference/kubo/rpc). For example:
+Every command usable from the CLI is also available through the [RPC API v0](../../reference/kubo/rpc.md). For example:
 
 ```sh
 > ipfs swarm peers
