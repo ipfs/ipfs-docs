@@ -99,7 +99,7 @@ Make a note of the TCP ports you receive. If they are different, use yours in th
 
 ::: danger NEVER EXPOSE THE RPC API TO THE PUBLIC INTERNET
 
-The API port provides admin-level access to your Kubo IPFS node.  See [RPC API v0 docs](/reference/kubo/rpc/) for more information.
+The API port provides admin-level access to your Kubo IPFS node.  See [RPC API v0 docs](../reference/kubo/rpc.md) for more information.
 
 :::
 
@@ -153,9 +153,9 @@ You can view the web console on your local node by going to `localhost:5001/webu
 
 ![Web console connection view](./images/command-line-quick-start/webui-connection.png)
 
-The web console shows files that are in your [Mutable File System (MFS)](../concepts/file-systems#mutable-file-system-mfs). MFS is a tool built into the web console that helps you navigate IPFS files in the same way you would a name-based file system.
+The web console shows files that are in your [Mutable File System (MFS)](../concepts/file-systems.md#mutable-file-system-mfs). MFS is a tool built into the web console that helps you navigate IPFS files in the same way you would a name-based file system.
 
-When you add files using the [CLI command `ipfs add ...`](../cli#ipfs-add), these files are not automatically available within the MFS. To view files in IPFS Desktop that you added using the CLI, you must copy the files over to the MFS:
+When you add files using the [CLI command `ipfs add ...`](../reference/kubo/cli.md#ipfs-add), these files are not automatically available within the MFS. To view files in IPFS Desktop that you added using the CLI, you must copy the files over to the MFS:
 
 ```shell
 ipfs files cp /ipfs/<ipfs-CID>
@@ -194,4 +194,4 @@ You need to install and set up FUSE in order to mount the file system. For more 
 
 ### Further help
 
-The IPFS community is friendly and able to help! Get support from other IPFS developers in the official [IPFS forums](https://discuss.ipfs.tech/), or join [community chat channels](../community/chat/).
+The IPFS community is friendly and able to help! Get support from other IPFS developers in the official [IPFS forums](https://discuss.ipfs.tech/), or join [community chat channels](../community/chat.md).
