@@ -18,8 +18,9 @@ Installing Kubo in the command line is handy for many use cases, such as buildin
 
 To get started, familiarize yourself with the system requirements. Then, determine if you'd like to install Kubo using one of the 5 official binary distributions, or build Kubo from source. Once you've installed Kubo, determine which node to use in the command line. Finally, check out the next steps.
 
-> :warning:
-> Usually, installing Kubo using one of the official binaries is the appropriate option. Building from source is only recommended if you are running Kubo on a system with severe resource constraints, or are contributing to the Kubo project.
+:::warning
+Building from source is only recommended if you are running Kubo on a system with severe resource constraints, or are contributing to the Kubo project. 
+:::
 
 ## System requirements
 
@@ -65,8 +66,6 @@ To install the appropriate binary for your operating system, select a tab below.
 ::: tab windows id="install-kubo-windows"
 
 ### Windows
-
-![Windows icon](./images/command-line/windows-icon.png =250x200)
 
 1. Download the Windows binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
@@ -147,8 +146,6 @@ At this point, Kubo is usable. However, it's strongly recommended that you first
 
 ### macOS
 
-![macOS icon](./images/command-line/apple-icon.png =250x200)
-
 1. Decide which macOS binary to download from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) by determining whether your system uses an Apple or Intel CPU. On most macOS systems, you can find systems specs by doing the following:
 
    1. In the upper left hand corner of your screen, click the "Apple" icon.
@@ -228,8 +225,6 @@ At this point, Kubo is usable. However, it's strongly recommended that you first
 ::: tab linux id="install-kubo-linux"
 
 ### Linux
-
-![Linux icon](./images/command-line/linux-icon.png =250x200)
 
 1. Download the Linux binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
