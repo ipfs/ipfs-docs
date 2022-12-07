@@ -6,9 +6,9 @@ jobs:
   markdown-link-check:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
+    - id: checkout
       uses: actions/checkout@master
-    - name: link-check
+    - id: link-check
       uses: gaurav-nelson/github-action-markdown-link-check@v1
       continue-on-error: true
       with:
@@ -17,7 +17,7 @@ jobs:
         use-verbose-mode: 'yes'
         base-branch: 'main'
         use-quiet-mode: 'yes'
-    - name: summary
+    - id: summary
       run: |
         echo '# markdown-link-check summary' >> $GITHUB_STEP_SUMMARY
         echo >> $GITHUB_STEP_SUMMARY
