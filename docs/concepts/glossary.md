@@ -66,7 +66,7 @@ A Block is a binary blob of data identified by a [CID](#cid). It could be raw by
 
 ### Bootstrap node
 
-A Bootstrap Node is a trusted peer on the IPFS network through which an IPFS node learns about other peers on the network. Both Kubo and js-ipfs use bootstrap nodes to enter the Distributed Hash Table (DHT). See [Bootstrap](../concepts/nodes/#bootstrap)
+A Bootstrap Node is a trusted peer on the IPFS network through which an IPFS node learns about other peers on the network. Both Kubo and js-ipfs use bootstrap nodes to enter the Distributed Hash Table (DHT). See [Bootstrap](../concepts/nodes.md#bootstrap)
 
 ## C
 
@@ -116,7 +116,7 @@ A function that encodes or decodes serial data into and from some data model. In
 
 ### Content addressing
 
-A way to store information so a device can retrieve the data based on its content, not its location. [Learn how IPFS uses content addressing](/concepts/how-ipfs-works/#content-addressing).
+A way to store information so a device can retrieve the data based on its content, not its location. [Learn how IPFS uses content addressing](../concepts/how-ipfs-works.md#content-addressing).
 
 ### CRDT
 
@@ -162,7 +162,7 @@ Direct Connection Upgrade through Relay (DCUtR) protocol enables [hole punching]
 
 ### Delegate routing node
 
-[Kubo](#kubo) nodes with a subset of RPC API commands exposed. JS-IPFS nodes use them to query the DHT and also publish content without having to actually run DHT logic on their own. See [Delegate routing](../concepts/nodes/#types)
+[Kubo](#kubo) nodes with a subset of RPC API commands exposed. JS-IPFS nodes use them to query the DHT and also publish content without having to actually run DHT logic on their own. See [Delegate routing](../concepts/nodes.md#types)
 
 ### DHT
 
@@ -250,7 +250,7 @@ The InterPlanetary Name System (IPNS) is a system for creating and updating muta
 
 ### JS-IPFS
 
-An implementation of IPFS written entirely in JavaScript. It runs in a Browser, a Service Worker, Electron and Node.js.  See [Nodes > JS-IPFS](../concepts/nodes/#js-ipfs)
+An implementation of IPFS written entirely in JavaScript. It runs in a Browser, a Service Worker, Electron and Node.js.  See [Nodes > JS-IPFS](../concepts/nodes.md#js-ipfs)
 
 ### JSON
 
@@ -260,7 +260,7 @@ JavaScript Object Notation (JSON) is a lightweight data-interchange format. JSON
 
 ### Kubo
 
-AKA [go-ipfs](#go-ipfs). The earliest and most widely used implementation of IPFS, written in Go. It runs on servers and user machines with full IPFS capabilities. See [Nodes > Kubo](../concepts/nodes/#kubo).
+AKA [go-ipfs](#go-ipfs). The earliest and most widely used implementation of IPFS, written in Go. It runs on servers and user machines with full IPFS capabilities. See [Nodes > Kubo](../concepts/nodes.md#kubo).
 
 ## L
 
@@ -330,7 +330,7 @@ Network Address Translation (NAT) enables communication between two networks by 
 
 ### Node
 
-In IPFS, a node or [peer](#peer) is the IPFS program that you run on your local computer to store files and then connect to the IPFS network. See [Nodes](../concepts/nodes/#nodes).
+In IPFS, a node or [peer](#peer) is the IPFS program that you run on your local computer to store files and then connect to the IPFS network. See [Nodes](../concepts/nodes.md#nodes).
 
 ### Node (in graphs)
 
@@ -364,7 +364,7 @@ A vendor-agnostic [API specification](https://ipfs.github.io/pinning-services-ap
 
 ### Preload node
 
-Part of the process of making a UnixFS DAG publicly available via the preload node's `wantlist`, causing it to fetch data. Other nodes requesting the content can then resolve it from the preload node using Bitswap, as the data is now present in the preload node’s blockstore. See [Nodes > Preload](https://docs.ipfs.tech/concepts/nodes/#preload).
+Part of the process of making a UnixFS DAG publicly available via the preload node's `wantlist`, causing it to fetch data. Other nodes requesting the content can then resolve it from the preload node using Bitswap, as the data is now present in the preload node’s blockstore. See [Nodes > Preload](../concepts/nodes.md#preload).
 
 ### Protobuf
 
@@ -380,7 +380,7 @@ Publish-subscribe (Pubsub) is an experimental feature in IPFS. Publishers send m
 
 ### Relay node
 
-A means to establish connectivity between libp2p nodes (e.g., IPFS nodes) that wouldn't otherwise be able to establish a direct connection to each other. This may be due to nodes that are behind NAT (Network Address Translation), reverse proxies, firewalls, etc. See [Nodes > Relay](../concepts/nodes/#relay)
+A means to establish connectivity between libp2p nodes (e.g., IPFS nodes) that wouldn't otherwise be able to establish a direct connection to each other. This may be due to nodes that are behind NAT (Network Address Translation), reverse proxies, firewalls, etc. See [Nodes > Relay](../concepts/nodes.md#relay)
 
 ### Remote Pinning
 
@@ -438,7 +438,7 @@ _Swarm_ is a term for the network of IPFS peers with which your local node has c
 
 In [libp2p](#libp2p), a _switch_ is a component responsible for composing multiple [transports](#transport) into a single interface, allowing application code to [dial](#dialing) peers without having to specify which transport to use.
 
-Switches also coordinate the _connection upgrade_ process, which promotes a _raw_ connection from the transport layer into one that supports [protocol negotiation](https://docs.libp2p.io/concepts/protocols/#protocol-negotiation), [stream multiplexing](../concepts/libp2p/#stream-multiplexing), and secure communications.
+Switches also coordinate the _connection upgrade_ process, which promotes a _raw_ connection from the transport layer into one that supports [protocol negotiation](https://docs.libp2p.io/concepts/protocols/#protocol-negotiation), [stream multiplexing](../concepts/libp2p.md#stream-multiplexing), and secure communications.
 
 Sometimes called [swarm](#swarm) for historical reasons.
 

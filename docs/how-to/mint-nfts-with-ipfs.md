@@ -560,6 +560,6 @@ Thanks for following along! We can't wait to see what you'll build.
 [metamask]: https://metamask.io
 [nft-bible]: https://opensea.io/blog/guides/non-fungible-tokens
 
-[docs-cid]: ../../concepts/content-addressing/
-[docs-server-infra]: ../../install/server-infrastructure
+[docs-cid]: ../concepts/content-addressing.md
+[docs-server-infra]: ../install/server-infrastructure.md
 

@@ -5,7 +5,7 @@ description: Details of DNSLink support in IPFS Companion.
 
 # Support for DNSLink in IPFS Companion
 
-DNSLink maps a domain name to an IPFS address using DNS TXT records. Read the [DNSLink guide](/concepts/dnslink.md) for full details, including how to set it up on your website.
+DNSLink maps a domain name to an IPFS address using DNS TXT records. Read the [DNSLink guide](../concepts/dnslink.md) for full details, including how to set it up on your website.
 
 ## Lookup cache
 

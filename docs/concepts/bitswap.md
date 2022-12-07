@@ -19,7 +19,7 @@ Bitswap has two main jobs:
 
 ## How Bitswap works
 
-IPFS breaks up files into chunks of data called _blocks_. These blocks are identified by a [content identifier (CID)](/concepts/content-addressing.md). 
+IPFS breaks up files into chunks of data called _blocks_. These blocks are identified by a [content identifier (CID)](../concepts/content-addressing.md). 
 
 ### Want Lists
 
