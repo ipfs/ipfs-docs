@@ -143,7 +143,7 @@ If you want to create your website on a subdomain rather than a bare TLD (e.g. `
 You should now be able to visit your IPFS website at your Handshake domain! If your Handshake name is `sub.yourname/`, you can visit your website at http://sub.yourname/
 
 ::: tip
-If you prefer to use Handshake-powered DNSLink with your custom gateway, run [`ipfs daemon`](/install/command-line/) with config that has a Handshake resolver enabled for your domain: `ipfs config --json DNS.Resolvers '{ "yourname": "https://query.hdns.io/dns-query" }`. Learn how to run a self-hosted, site-specific DNSLink gateway from [gateway recipes in Kubo config docs](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes).
+If you prefer to use Handshake-powered DNSLink with your custom gateway, run [`ipfs daemon`](../../install/command-line.md) with config that has a Handshake resolver enabled for your domain: `ipfs config --json DNS.Resolvers '{ "yourname": "https://query.hdns.io/dns-query" }`. Learn how to run a self-hosted, site-specific DNSLink gateway from [gateway recipes in Kubo config docs](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes).
 :::
 
 ## Up next

@@ -33,7 +33,7 @@ IPFS Companion detects and tests requests for IPFS-like paths, such as `/ipfs/{c
 
 ### Detect DNSLink-enabled URLs
 
-IPFS Companion detects DNSLink info in the DNS records of websites. DNSLink is a simple protocol that links content and serviceability from DNS and leverages the DNS distributed architecture. See [Glossary > DNSLink](../concepts/glossary.md/#dnslink). If a site uses DNSLink, IPFS Companion redirects the HTTP request to your local gateway:
+IPFS Companion detects DNSLink info in the DNS records of websites. DNSLink is a simple protocol that links content and serviceability from DNS and leverages the DNS distributed architecture. See [Glossary > DNSLink](../../concepts/glossary.md#dnslink). If a site uses DNSLink, IPFS Companion redirects the HTTP request to your local gateway:
 
 > `http://docs.ipfs.tech`  
 > → `http://localhost:8080/ipns/docs.ipfs.tech` → `http://docs.ipfs.tech.ipns.localhost:8080/`

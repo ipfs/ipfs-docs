@@ -70,7 +70,7 @@ By storing small scripts or big databases of your project on IPFS, depending on 
 
 ### Parallelize Big Data analysis
 
-On some heavy analysis, you can benefit from parallelizing calculations on several nodes using Hadoop, for example. But on very large datasets, fetching the relevant subset for each node to compute is longer than the actual computation. Scott Brisbane proposed a design in a [thesis](https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf) to drastically reduce the fetching time using IPFS and divided the overall analysis time by four. Here is a [one-page summary](https://www.cse.unsw.edu.au/~hpaik/thesis/showcases/16s2/scott_brisbane.pdf) of the concept.
+On some heavy analysis, you can benefit from parallelizing calculations on several nodes using Hadoop, for example. But on very large datasets, fetching the relevant subset for each node to compute is longer than the actual computation. Scott Brisbane proposed a design in a [thesis](https://s3-ap-southeast-2.amazonaws.com/scott-brisbane-thesis/decentralising-big-data-processing.pdf) to drastically reduce the fetching time using IPFS and divided the overall analysis time by four. 
 
 ### Deadman switch
 
