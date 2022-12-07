@@ -21,8 +21,7 @@ jobs:
       run: |
         echo '# markdown-link-check summary' >> $GITHUB_STEP_SUMMARY
         echo >> $GITHUB_STEP_SUMMARY
-        echo '${{ steps.link-check.outputs }}' >> $GITHUB_STEP_SUMMARY
-        echo '${{ steps.link-check.with }}' >> $GITHUB_STEP_SUMMARY
+        echo $GITHUB_OUTPUT >> $GITHUB_STEP_SUMMARY
         echo 'Results: ' >> $GITHUB_STEP_SUMMARY       
         echo '${{ steps.link-check.results }}' >> $GITHUB_STEP_SUMMARY       
         echo '# call to action' >> $GITHUB_STEP_SUMMARY
