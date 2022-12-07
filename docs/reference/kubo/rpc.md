@@ -62,7 +62,7 @@ The RPC API provides admin-level access to your Kubo IPFS node, including `/api/
 
 It is bound to `localhost` by default on purpose. You should never expose it to the public internet, just like you would never expose a SQL database or other backend service.
 
-If you are looking for an interface designed for browsers and public internet, consider implementation-agnostic [HTTP Gateway](/reference/http/gateway/) instead.
+If you are looking for an interface designed for browsers and public internet, consider implementation-agnostic [HTTP Gateway](../../reference/http/gateway.md) instead.
 :::
 
 ## Getting started
@@ -71,7 +71,7 @@ If you are looking for an interface designed for browsers and public internet, c
 
 The API under `/api/v0/` is an RPC-style API over HTTP, not a REST API.
 
-[Every command](/reference/kubo/cli/) usable from the CLI is also available through the HTTP RPC API. For example:
+[Every command](../../reference/kubo/cli.md) usable from the CLI is also available through the HTTP RPC API. For example:
 ```sh
 > ipfs swarm peers
 /ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ

@@ -9,7 +9,7 @@ Looking for user and developer references for IPFS? Find them here.
 
 ## HTTP Gateway
 
-The [Gateway API](http/gateway.md) provides implementation-agnostic HTTP interface for retrieving [content-addressed](../concepts/glossary/#content-addressing) data from IPFS with regular HTTP clients and libraries. Use it for future-proofing your applications.
+The [Gateway API](http/gateway.md) provides implementation-agnostic HTTP interface for retrieving [content-addressed](../concepts/glossary.md#content-addressing) data from IPFS with regular HTTP clients and libraries. Use it for future-proofing your applications.
 
 ## Custom APIs
 
