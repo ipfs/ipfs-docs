@@ -24,22 +24,28 @@ Building from source is only recommended if you are running Kubo on a system wit
 
 ## System requirements
 
-IPFS runs on most Windows, MacOS, Linux, FreeBSD and OpenBSD systems. Ensure that your system meets the following minimum requirements:
+Kubo runs on most Windows, MacOS, Linux, FreeBSD and OpenBSD systems that meet the following requirements:
 
-- 6 GiB of memory
-  - If you are using a device like a Raspberry Pi with the [`lowpower` profile](../../how-to/default-profile.md#available-profiles), 2 GiB of memory is sufficient.
+- 6 GiB of memory.
 - 2 CPU cores (kubo is highly parallel).
 
-### Things to note
+Note the following:
+- The amount of disk space your IPFS installation uses depends on how much data you're sharing. A base installation uses around 12MB of disk space.
+- You can enable automatic garbage collection via [--enable-gc](../reference/kubo/cli.md#ipfs-daemon) and adjust using [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.17.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
 
-On systems with less memory, Kubo may not be completely stable.
-If your system is resource-constrained, you should complete the following steps:
+### Kubo on resource-contrained systems 
+
+If you are running Kubo on a resource-constrained system (such as a Raspberry Pi), you should complete the following steps:
 
   1. Install OpenSSL and rebuild Kubo manually with `make build GOTAGS=openssl`. See the [download and compile](https://github.com/ipfs/kubo/blob/v0.17.0/README.md#download-and-compile-ipfs) section for more information on compiling Kubo.
-  1. Initialize your daemon with `ipfs init --profile=lowpower`
+  1. Initialize your daemon with the `lowpower` profile. This reduces daemon overhead on the system but may degrade performance of content discovery and data fetching.
+  
+  ```bash
+  ipfs init --profile=lowpower
+  ```
 
-- The amount of disk space your IPFS installation uses depends on how much data you're sharing. A base installation uses around 12MB of disk space.
-- You can enable automatic garbage collection via [--enable-gc](../reference/kubo/cli.md#ipfs-daemon) and adjusted using [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.17.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
+
+
 
 ## Official binary distributions
 
