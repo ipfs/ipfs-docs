@@ -8,6 +8,8 @@ current-ipfs-updater-version: v1.9.0
 
 The IPFS updater is a command-line tool originally used to help users update their IPFS version. It has since been upgraded to allow users to _install_ Kubo as well. The easiest way to install the IPFS updater is by using the pre-built binaries, detailed below. See the [project repository](https://github.com/ipfs/ipfs-update#from-source) if you'd prefer to build it from source.
 
+[IM A BROKEN LINK](https://givweuewbivbweiuvwbeiuv.com#nvruvwrveri) 
+
 ## Install updater
 
 You can download pre-built binaries from [`dist.ipfs.tech`](https://dist.ipfs.tech/#ipfs-update). Binaries are also available from the [IPFS Update GitHub release page](https://github.com/ipfs/ipfs-update/releases).
