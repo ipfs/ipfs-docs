@@ -20,7 +20,6 @@ jobs:
       run: |
         echo '# markdown-link-check summary' >> $GITHUB_STEP_SUMMARY
         echo >> $GITHUB_STEP_SUMMARY
-        echo 'This Github action is currently in beta, and may incorrectly report broken links. To help us improve this Github action, please report any false negatives, false positives or any other issues by [opening an issue](https://github.com/ipfs/ipfs-docs/issues/new/choose). ' >> $GITHUB_STEP_SUMMARY
         echo '## Job Status: '>> $GITHUB_STEP_SUMMARY
         echo ${{ job.status }} >> $GITHUB_STEP_SUMMARY
         echo '## Results: ' >> $GITHUB_STEP_SUMMARY     
@@ -29,7 +28,7 @@ jobs:
         echo '2. In the search field (upper right hand corner), type _MARKDOWN LINK CHECK_. The log jumps to the output of the markdown-link-check action.' >> $GITHUB_STEP_SUMMARY  
         echo '3. Look through the log lines below the _=========================> MARKDOWN LINK CHECK <=========================_ line. ' >> $GITHUB_STEP_SUMMARY  
         echo '   If a dead link was found, it, along with the status code, will be listed below the _ERROR_ line. Find the link in your markdown and fix it.' >> $GITHUB_STEP_SUMMARY  
-        echo '**Example:**'
-        echo 'ERROR: 1 dead links found!
-        echo '[✖] https://givweueerervuvwbeiuv.com#nvruvwrveri → Status: 404
-        echo '4. If the action incorrectly identified a link as broken, please copy the log output and '
+        echo '**Example:**' >> $GITHUB_STEP_SUMMARY  
+        echo 'ERROR: 1 dead links found!' >> $GITHUB_STEP_SUMMARY  
+        echo '[✖] https://givweueerervuvwbeiuv.com#nvruvwrveri → Status: 404' >> $GITHUB_STEP_SUMMARY  
+        echo '4. If the action incorrectly identified a link as broken, please help us improve this Github action by reporting any false negatives, false positives or any other issues by [opening a GH issue](https://github.com/ipfs/ipfs-docs/issues/new/choose). Please include the log output in the issue description. ' >> $GITHUB_STEP_SUMMARY'
