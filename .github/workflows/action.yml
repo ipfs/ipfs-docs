@@ -10,6 +10,7 @@ jobs:
       uses: actions/checkout@master
     - id: link-check
       uses: gaurav-nelson/github-action-markdown-link-check@v1
+      continue-on-error: true
       with:
         config-file: 'mlc_pull_req_config.json'
         check-modified-files-only: 'yes'
@@ -20,14 +21,12 @@ jobs:
       run: |
         echo '# markdown-link-check summary' >> $GITHUB_STEP_SUMMARY
         echo >> $GITHUB_STEP_SUMMARY
-        echo '## Job Status: '>> $GITHUB_STEP_SUMMARY
-        echo ${{ job.status }} >> $GITHUB_STEP_SUMMARY
         echo '## Results: ' >> $GITHUB_STEP_SUMMARY     
         echo 'To view the results of this GitHub action, do the following:' >> $GITHUB_STEP_SUMMARY    
         echo '1. Navigate to the ${{ steps.link-check.outputs }}.' >> $GITHUB_STEP_SUMMARY       
         echo '2. In the search field (upper right hand corner), type _MARKDOWN LINK CHECK_. The log jumps to the output of the markdown-link-check action.' >> $GITHUB_STEP_SUMMARY  
         echo '3. Look through the log lines below the _=========================> MARKDOWN LINK CHECK <=========================_ line. ' >> $GITHUB_STEP_SUMMARY  
-        echo '   If a dead link was found, it, along with the status code, will be listed below the _ERROR_ line. Find the link in your markdown and fix it.' >> $GITHUB_STEP_SUMMARY  
+        echo '   If a dead link was found, it, will be listed below the _ERROR_ line, along with the status code. Find the link in your markdown and fix it.' >> $GITHUB_STEP_SUMMARY  
         echo '   **Example:**' >> $GITHUB_STEP_SUMMARY  
         echo '   `ERROR: 1 dead links found!`' >> $GITHUB_STEP_SUMMARY  
         echo ' . `[✖] https://givweueerervuvwbeiuv.com#nvruvwrveri → Status: 404`' >> $GITHUB_STEP_SUMMARY  
