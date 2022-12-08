@@ -32,7 +32,7 @@ To add and use a remote pinning service directly in IPFS, you'll first need to h
 
 ### IPFS Desktop or IPFS Web UI
 
-You can add your favorite pinning service(s) to IPFS Desktop/Web UI directly, enabling you to pin and unpin items from the Files screen in the same way as as you do local pins.
+You can add your favorite pinning service(s) to IPFS Desktop/Web UI directly, enabling you to pin and unpin items from the Files screen in the same way you do with local pins.
 
 #### Adding a new pinning service
 
@@ -46,7 +46,7 @@ Then, select your chosen pinning service from the modal that pops up. If the pin
 
 In the next screen, you’ll be asked for a few other details:
 
-| Preconfigured service (eg. Pinata)                                                    | Custom service                                                                                                 |
+| Preconfigured service (e.g., Pinata)                                                    | Custom service                                                                                                 |
 | ----                                                                                           | ----                                                                                                           |
 | ![Adding Pinata in Desktop/Web UI](./images/work-with-pinning-services/add-service-pinata.jpg) | ![Adding custom pinning service in Desktop/Web UI](./images/work-with-pinning-services/add-service-custom.jpg) |
 
@@ -87,7 +87,7 @@ $ ipfs pin remote service add nickname https://my-pin-service.example.com/api-en
 
 Here are a few CLI commands to get you started. In all examples, replace `nickname` with the unique name you gave the pinning service when you added it.
 
-To pin a CID under under a human-readable name:
+To pin a CID under a human-readable name:
 
 ```shell
 $ ipfs pin remote add --service=nickname --name=war-and-peace.txt bafybeib32tuqzs2wrc52rdt56cz73sqe3qu2deqdudssspnu4gbezmhig4
