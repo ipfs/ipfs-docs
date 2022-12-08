@@ -1,3 +1,7 @@
+<!-- 
+Please feel free to delete this note AFTER reading through it :) 
+!-->
+
 ## A note on the markdown-link-chech GitHub action
 
 The IPFS docs team recently added a GitHub action that checks all pull requests for broken links.
@@ -20,7 +24,7 @@ To view the results of this GitHub action, do the following:
    ERROR: 1 dead links found!
    [✖] https://givweueerervuvwbeiuv.com#nvruvwrveri → Status: 404
    ``` 
-1. If the action incorrectly identified a link as broken, please help us improve this Github action by reporting any false negatives, false positives or any other issues by [opening a GH issue](https://github.com/ipfs/ipfs-docs/issues/new/choose). Please include the log output in the issue description. 
+1. If the action incorrectly failed, please help us improve this Github action by reporting any false negatives, false positives or any other issues by [opening a GH issue](https://github.com/ipfs/ipfs-docs/issues/new/choose). Please reference this PR in the issue, and include the log output in the issue description.
 <!-- 
 Please feel free to delete everything above this comment line after reading the note on the markdown-link-chech GitHub action :) 
 !-->
@@ -62,11 +66,9 @@ Add links to any PRs that this PR depends on. For example, if this is a document
 ## Checklist before requesting a review
 - [ ] If it is a new doc / doc update, the author has performed a self-review of their writing
 - [ ] If it is an update to a procedure doc / a new procedure doc update, someone has tested it.
-- [ ] Passing the beta version of the [markdown-link-check](https://github.com/ipfs/ipfs-docs/actions/workflows/action.yml) test
-   - [ ] If not passing the beta version of the markdown-link-check test, I have opened an [issue]() <!-- Open an issue at https://github.com/ipfs/ipfs-docs/issues/new?assignees=&labels=need%2Ftriage&template=open_an_issue.md&title= and update the issue link accordingly!-->
-- [ ] 
+- [ ] Passing the beta version of the **Check Markdown links for modified files** check. Action results can be viewed [here](https://github.com/ipfs/ipfs-docs/actions/workflows/action.yml).
 
 ## Checklist before merging
 - [ ] The documentation has been reviewed and approved by the following writers: <!-- Add the GH handles of one or more subject matter experts who have reviewed and approved this change for writing style, grammar, spelling, formatting, etc.. !--> 
 - [ ] My documentation has been reviewed and approved by the following SMEs: <!-- Add the GH handles of one or more subject matter experts who have reviewed and approved this change for technical correctness. !--> 
-- [ ] Passing all required checks
+- [ ] Passing all required checks (doese not include t)
