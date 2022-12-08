@@ -64,11 +64,11 @@ Add links to any PRs that this PR depends on. For example, if this is a document
 - 
 
 ## Checklist before requesting a review
-- [ ] If it is a new doc / doc update, the author has performed a self-review of their writing
+- [ ] If it is a new doc / doc update, the author has performed a self-review of their writing and checked for things like spelling errors, styling and formatting.
 - [ ] If it is an update to a procedure doc / a new procedure doc update, someone has tested it.
 - [ ] Passing the beta version of the **Check Markdown links for modified files** check. Action results can be viewed [here](https://github.com/ipfs/ipfs-docs/actions/workflows/action.yml).
 
 ## Checklist before merging
-- [ ] The documentation has been reviewed and approved by the following writers: <!-- Add the GH handles of one or more subject matter experts who have reviewed and approved this change for writing style, grammar, spelling, formatting, etc.. !--> 
-- [ ] My documentation has been reviewed and approved by the following SMEs: <!-- Add the GH handles of one or more subject matter experts who have reviewed and approved this change for technical correctness. !--> 
-- [ ] Passing all required checks (doese not include t)
+- [ ] The documentation has been reviewed and approved by or more writers: <!-- Add the GH handles of one or more subject matter experts who have reviewed and approved this change for writing style, grammar, spelling, formatting, etc.. !--> 
+- [ ] My documentation has been reviewed and approved by SME(s): <!-- Add the GH handles of one or more subject matter experts who have reviewed and approved this change for technical correctness. !--> 
+- [ ] Passing all required checks (The beta **Check Markdown links for modified files** check is not required)
