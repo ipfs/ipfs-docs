@@ -229,4 +229,4 @@ For example, Brave RPC API runs on port 45001, so the CLI can talk to the Brave 
 
 ## Next steps
 
-Now that you've got an IPFS node installed, you can start building applications and services on top of the network! Check out the Command-line- quicks start guide and jump straight to the [Initialize the repository section](../how-to/command-line-quick-start.md#initialize-the-repository).
+Now that you've got an IPFS node installed, you can start building applications and services on top of the network! Check out the command-line quick start guide and jump straight to the [initialize the repository section](../how-to/command-line-quick-start.md#initialize-the-repository).
