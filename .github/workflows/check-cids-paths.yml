@@ -2,6 +2,7 @@ name: IPFS Resolver
 
 on:
   pull_request:
+    branches: [ main ]
     paths:
       - '**/*.md'
       - '**/*.txt'
