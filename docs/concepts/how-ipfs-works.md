@@ -75,7 +75,7 @@ You may be used to verifying the integrity of a file by matching SHA hashes, but
 
 The DAG keeps track of all the content stored in IPFS as blocks, not files, and Merkle DAGs are self-verified structures. To learn more about DAGs, see [directed acyclic graph (DAG)](../concepts/merkle-dag.md).
 
-For a detailed example of what happens when you try to compare SHA hashes with CIDs, see [Content Identifiers are not hashes](../concepts/hashing/#content-identifiers-are-not-file-hashes).
+For a detailed example of what happens when you try to compare SHA hashes with CIDs, see [Content Identifiers are not hashes](../concepts/hashing.md#content-identifiers-are-not-file-hashes).
 
 ### Libp2p
 

@@ -12,7 +12,7 @@ related:
 
 # Immutability
 
-An immutable object is an object whose state cannot be altered or modified once created. Once a file is added to the IPFS network, the content of that file cannot be changed without altering the [content identifier (CID)](/concepts/content-addressing) of the file. This feature is excellent for storing data that does not need to change. However, when it comes to content that needs to be altered or updated, immutability becomes a problem. This page discusses how to keep a mutable _state_ built from immutable building blocks.
+An immutable object is an object whose state cannot be altered or modified once created. Once a file is added to the IPFS network, the content of that file cannot be changed without altering the [content identifier (CID)](../concepts/content-addressing.md) of the file. This feature is excellent for storing data that does not need to change. However, when it comes to content that needs to be altered or updated, immutability becomes a problem. This page discusses how to keep a mutable _state_ built from immutable building blocks.
 
 A CID is an _absolute_ pointer to content. No matter when we request a CID, the CID value will always be the same. This is part of the content's architecture and cannot be changed. To manage _immutable_ files in a _mutable_ system, we need to add another layer that sits on top of CIDs.
 
@@ -79,7 +79,7 @@ Having a user visit the site using the CID is cumbersome since the CID will chan
 +--------+      +---------+      +----------+
 ```
 
-In the website example, when we change a variable, the CID of the webpage is different. The pointer must be updated to redirect users to the latest webpage. What's important is that the _old_ CID still exists. Nothing is overwritten. The original CID `QmWLdyFMUugMtKZs1xeJCSUKerWd9M627gxjAtp6TLrAgP` will always refer to a webpage with the headers `hello` and `world`. What we're doing is constructing a new [DAG](/concepts/merkle-dag).
+In the website example, when we change a variable, the CID of the webpage is different. The pointer must be updated to redirect users to the latest webpage. What's important is that the _old_ CID still exists. Nothing is overwritten. The original CID `QmWLdyFMUugMtKZs1xeJCSUKerWd9M627gxjAtp6TLrAgP` will always refer to a webpage with the headers `hello` and `world`. What we're doing is constructing a new [DAG](../concepts/merkle-dag.md).
 
 ```
 +--------+      +---------+      +----------+
@@ -91,7 +91,7 @@ In the website example, when we change a variable, the CID of the webpage is dif
                                  +----------+
 ```
 
-This process is essentially what the [InterPlantery Naming Service (IPNS)](/concepts/ipns) does! CIDs can be difficult to deal with and hard to remember, so IPNS saves users from the cumbersome task of dealing with CIDs directly. More importantly, CIDs change with the content because they are the content. Whereas the inbound reference of URLs/pointers stay the same, and the outbound referral changes:
+This process is essentially what the [InterPlantery Naming Service (IPNS)](../concepts/ipns.md) does! CIDs can be difficult to deal with and hard to remember, so IPNS saves users from the cumbersome task of dealing with CIDs directly. More importantly, CIDs change with the content because they are the content. Whereas the inbound reference of URLs/pointers stay the same, and the outbound referral changes:
 
 ```
 +--------+      +----------------+      +-------------------------------------------------------------+

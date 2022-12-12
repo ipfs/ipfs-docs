@@ -1,5 +1,5 @@
 <p align="center">
-<img align="center" src="ipfs-docs-header.png" width="1000">
+<img align="center" src="./images/ipfs-docs-header.png" width="1000">
 </p>
 
 <div align="center">
@@ -26,7 +26,7 @@
   - [Static-site generator](#static-site-generator)
   - [Automated deployments](#automated-deployments)
   - [Translation](#translation)
-- [Core members](#primary-maintainers)
+- [Primary maintainers](#primary-maintainers)
 - [License](#license)
 <!-- /TOC -->
 
