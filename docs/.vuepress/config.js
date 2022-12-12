@@ -138,7 +138,7 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                    '/concepts/ipfs-gateway', 
+                    '/concepts/ipfs-gateway',
                     '/concepts/dnslink'
                 ]
               },
@@ -269,6 +269,7 @@ module.exports = {
           {
             title: 'Case studies',
             children: [
+              ['/concepts/comparisons', 'Comparisons'],
               ['/concepts/case-study-arbol', 'Arbol'],
               ['/concepts/case-study-audius', 'Audius'],
               ['/concepts/case-study-fleek', 'Fleek'],
