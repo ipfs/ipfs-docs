@@ -1,0 +1,66 @@
+name: IPFS Resolver
+
+on:
+  pull_request:
+    paths:
+      - '**/*.md'
+      - '**/*.txt'
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  check-and-resolve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check for CIDs, paths, and DNSLink records
+        run: |
+          # Check for CIDs
+          CIDS=$(grep -rnw '.' -e '^[Qmz]\{1,2}[a-zA-Z0-9]\{44\}$')
+          # Check for content paths
+          PATHS=$(grep -rnw '.' -e '/ipfs/[a-zA-Z0-9]\{46\}')
+          # Check for DNSLink records (excluding .com, .net, and .org)
+          DNSLINKS=$(grep -rnw '.' -e '/ipns/[^(.com|.net|.org)]')
+      - name: Validate and resolve CIDs, paths, and DNSLink records
+        run: |
+          # Validate and resolve CIDs
+          for CID in $CIDS; do
+            ipfs resolve $CID
+            if [ $? -eq 0 ]; then
+              echo "$CID is valid and resolves successfully"
+            else
+              echo "$CID is invalid or does not resolve successfully"
+            fi
+          done
+          # Validate and resolve content paths
+          for PATH in $PATHS; do
+            ipfs resolve $PATH
+            if [ $? -eq 0 ]; then
+              echo "$PATH is valid and resolves successfully"
+            else
+              echo "$PATH is invalid or does not resolve successfully"
+            fi
+          done
+          # Validate and resolve DNSLink records
+          for DNSLINK in $DNSLINKS; do
+            # Use the `ipfs dns` command to validate DNSLink records
+            ipfs dns $DNSLINK
+            if [ $? -eq 0 ]; then
+              echo "$DNSLINK is valid and resolves successfully"
+            else
+              echo "$DNSLINK is invalid or does not resolve successfully"
+            fi
+          done
+      - name: Check for URIs
+        run: |
+          # Check for URIs
+          URIS=$(grep -rnw '.' -e 'ipfs://[a-zA-Z0-9]\{46\}')
+          # Validate and resolve URIs
+          for URI in $URIS; do
+            ipfs resolve $URI
+            if [ $? -eq 0 ]; then
+              echo "$URI is valid and resolves successfully"
+            else
+              echo "$URI is invalid or does not resolve successfully"
+            fi
+          done
