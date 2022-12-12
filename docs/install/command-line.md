@@ -47,7 +47,7 @@ If you are running Kubo on a resource-constrained system (such as a Raspberry Pi
 
 
 
-## Official binary distributions
+## Install official binary distributions
 
 The following section provides instructions on how to download and install the latest Kubo release from `dist.ipfs.tech` using the command-line. The IPFS team publishes the latest, official prebuilt Kubo binaries on the [dist.ipfs.tech website](https://dist.ipfs.tech#kubo). New IPFS Kubo binary releases are automatically shown on the Kubo page on `dist.ipfs.tech`. 
 
@@ -66,16 +66,17 @@ The following section provides instructions on how to download and install the l
 
 To install the appropriate binary for your operating system, select a tab below.
 
+### Install manually
+
 :::: tabs
 
 ::: tab windows id="install-kubo-windows"
 
-### Windows
+#### Windows
 
 1. Download the Windows binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
    ```powershell
-   cd ~\
    wget https://dist.ipfs.tech/kubo/v0.17.0/kubo_v0.17.0_windows-amd64.zip -Outfile kubo_v0.17.0.zip
    ```
 
@@ -99,7 +100,7 @@ To install the appropriate binary for your operating system, select a tab below.
    > ipfs version 0.17.0
    ```
 
-At this point, Kubo is usable. However, it's strongly recommended that you first add `ipfs.exe` to your `PATH` using the following steps:
+   At this point, Kubo is usable. However, it's strongly recommended that you first add `ipfs.exe` to your `PATH` using the following steps:
 
 1. Save the current working directory into a temporary variable:
 
@@ -149,7 +150,7 @@ At this point, Kubo is usable. However, it's strongly recommended that you first
 
 ::: tab macOS id="install-kubo-mac"
 
-### macOS
+#### macOS
 
 1. Decide which macOS binary to download from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) by determining whether your system uses an Apple or Intel CPU. On most macOS systems, you can find systems specs by doing the following:
 
@@ -229,7 +230,7 @@ At this point, Kubo is usable. However, it's strongly recommended that you first
 
 ::: tab linux id="install-kubo-linux"
 
-### Linux
+#### Linux
 
 1. Download the Linux binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
@@ -276,7 +277,7 @@ At this point, Kubo is usable. However, it's strongly recommended that you first
 
 ::: tab freeBSD id="install-kubo-freeBSD"
 
-### FreeBSD
+#### FreeBSD
 
 1. Download the FreeBSD binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
@@ -323,7 +324,7 @@ At this point, Kubo is usable. However, it's strongly recommended that you first
 
 ::: tab openBSD id="install-kubo-openBSD"
 
-### OpenBSD
+#### OpenBSD
 
 1. Download the OpenBSD binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
@@ -369,6 +370,24 @@ At this point, Kubo is usable. However, it's strongly recommended that you first
 :::
 
 ::::
+
+
+### Install using ipfs-update
+
+The ipfs-update tool is a command-line utility that can be used to install and update Kubo. Before you install Kubo, you must [install ipfs-update](../install/ipfs-updater.md). The commands are the same for all operating systems.
+
+- To install a specific Kubo `<version-number>`, run:
+
+  ```bash
+  ipfs-update install <version-number>
+  ```
+
+- To install the latest release of Kubo, use the `latest` tag:
+
+  ```bash
+  ipfs-update install latest
+  ```
+
 
 ## Build Kubo from source
 
