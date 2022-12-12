@@ -115,6 +115,7 @@ module.exports = {
                 children: [
                   '/concepts/content-addressing',
                   '/concepts/hashing',
+                  '/concepts/multiaddr',
                   '/concepts/immutability',
                   '/concepts/persistence'
                 ]
