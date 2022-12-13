@@ -3,11 +3,11 @@ title: 'IPFS Comparisons'
 description: Comparing IPFS to other solutions.
 ---
 
-# Protocol Comparisons
+# IPFS Comparisons
 
 ## How is IPFS different from other solutions?
 
-IPFS is a general-purpose file system that uses a distributed hash table (DHT) to store and retrieve data. This sets it apart from other solutions with a more specific focus or use different data storage mechanisms. For example:
+IPFS is a general-purpose file system that uses a distributed hash table (DHT) to route and transfer content-addressed data. This sets it apart from other solutions with a more specific focus or use of a specific data storage mechanism. For example:
 
 - [BitTorrent](https://www.bittorrent.com/) is a peer-to-peer (P2P) file-sharing protocol that uses a centralized tracker to manage the distribution of files among peers. It focuses on file-sharing rather than file storage.
 - [Storj](https://storj.io/) and [Sia](https://sia.tech/) are decentralized cloud storage platforms that use distributed networks of nodes for data storage. They focus on providing cloud storage services rather than a general-purpose distributed file system.
