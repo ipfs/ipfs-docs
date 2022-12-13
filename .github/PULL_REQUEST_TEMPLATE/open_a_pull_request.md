@@ -6,7 +6,7 @@ Please feel free to delete this note AFTER reading through it :)
 
 The IPFS docs team recently added a GitHub action that checks all pull requests for broken links.
 
-The action runs on both initial PR creation and every commit to that PR.
+The action runs on both initial PR creation and every commit to that repo.
 
 Because the [markdown-link-check](https://github.com/ipfs/ipfs-docs/actions/workflows/action.yml) is currently in beta, and may incorrectly identify some links as broken, **it is not required to be passing before merging at this time**. 
 
