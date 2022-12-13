@@ -80,7 +80,7 @@ You can download pre-built binaries from [`dist.ipfs.tech`](https://dist.ipfs.te
 1. Add the address copied in step 5 to PowerShell's `PATH` by adding it to the end of the `Microsoft.PowerShell_profile.ps1` file stored in `Documents\WindowsPowerShell`:
 
    ```powershell
-   Add-Content C:\Users\Johnny\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\<username>\Apps\ipfs-update_v1.9.0\ipfs-update')"
+   Add-Content C:\Users\<username>\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 "[System.Environment]::SetEnvironmentVariable('PATH',`$Env:PATH+';;C:\Users\<username>\Apps\ipfs-update_v1.9.0\ipfs-update')"
    ```
 
 1. Close and reopen your PowerShell window. 
@@ -230,13 +230,13 @@ To uninstall IPFS Update, delete the binary and `ipfs-update` from your `PATH` v
    ```powershell
    gci -recurse -filter ipfs-update.exe -File -ErrorAction SilentlyContinue
 
-   > Directory: C:\Users\Johnny\Apps\ipfs-update_v1.9.0\ipfs-update
+   > Directory: C:\Users\<username>\Apps\ipfs-update_v1.9.0\ipfs-update
    ```
 
 2. Remove the `ipfs-update` directory:
 
    ```powershell
-   Remove-Item -Recurse -Force C:\Users\Johnny\Apps\ipfs-update_v1.9.0
+   Remove-Item -Recurse -Force C:\Users\<username>\Apps\ipfs-update_v1.9.0
    ```
 
 3. Delete the `ipfs-update` directory from the `PATH` variable. This process differs between Windows installations, so please check the [Microsoft documentation for details](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=msvc-160).

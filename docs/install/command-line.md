@@ -33,7 +33,7 @@ Note the following:
 - The amount of disk space your IPFS installation uses depends on how much data you're sharing. A base installation uses around 12MB of disk space.
 - You can enable automatic garbage collection via [--enable-gc](../reference/kubo/cli.md#ipfs-daemon) and adjust using [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.17.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
 
-### Kubo on resource-contrained systems 
+### Kubo on resource-constrained systems 
 
 If you are running Kubo on a resource-constrained system (such as a Raspberry Pi), you should complete the following steps:
 
@@ -402,4 +402,4 @@ For example, Brave RPC API runs on port 45001, so the CLI can talk to the Brave 
 
 ## Next steps
 
-Now that you've got an IPFS node installed, you can start building applications and services on top of the network! Check out the [command line quick start guide](../how-to/command-line-quick-start.md) guide.
+Now that you've got an IPFS node installed, you can start building applications and services on top of the network! Check out the [command line quick start guide](../how-to/command-line-quick-start.md).
