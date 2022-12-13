@@ -23,7 +23,7 @@ jobs:
         echo '## Results: ' >> $GITHUB_STEP_SUMMARY     
         echo 'To view the results of this GitHub action, do the following:' >> $GITHUB_STEP_SUMMARY    
         echo '1. Click to the _Job summary generated at run-time_ at the bottom of this page.' >> $GITHUB_STEP_SUMMARY       
-        echo '2. Click the `>` next to _Run gaurav-nelson/github-action-markdown-link-check@v1_
+        echo '2. Click the `>` next to _Run gaurav-nelson/github-action-markdown-link-check@v1_ ' >> $GITHUB_STEP_SUMMARY
         echo '3. In the search field (upper right hand corner), type _MARKDOWN LINK CHECK_. The log jumps to the output of the markdown-link-check action.' >> $GITHUB_STEP_SUMMARY  
         echo '4. Look through the log lines below the _=========================> MARKDOWN LINK CHECK <=========================_ line. ' >> $GITHUB_STEP_SUMMARY  
         echo '   If a dead link was found, it, will be listed below the _ERROR_ line, along with the status code. Find the link in your markdown and fix it.' >> $GITHUB_STEP_SUMMARY  
