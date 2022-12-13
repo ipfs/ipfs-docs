@@ -8,8 +8,6 @@ current-ipfs-updater-version: v1.9.0
 
 The ipfs-update tool is a command-line utility that can be used to install and update Kubo. The easiest way to install ipfs-update is by using the pre-built binaries, detailed below. See the [project repository](https://github.com/ipfs/ipfs-update#from-source) if you'd prefer to build it from source.
 
-[IM A BROKEN LINK](https://givwyinere.com#vrri) 
-
 ## Install ipfs-update
 
 
