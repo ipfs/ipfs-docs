@@ -104,6 +104,7 @@ module.exports = {
                     '/concepts/privacy-and-encryption',
                     '/concepts/nodes',
                     '/concepts/glossary',
+                    '/concepts/comparisons',
                     '/concepts/usage-ideas-examples',
                     '/concepts/faq'
                 ]
@@ -269,7 +270,6 @@ module.exports = {
           {
             title: 'Case studies',
             children: [
-              ['/concepts/comparisons', 'Comparisons'],
               ['/concepts/case-study-arbol', 'Arbol'],
               ['/concepts/case-study-audius', 'Audius'],
               ['/concepts/case-study-fleek', 'Fleek'],
