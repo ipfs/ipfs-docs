@@ -18,24 +18,23 @@ IPFS is a general-purpose file system that uses a distributed hash table (DHT) t
   Filecoin is built on IPFS and uses the IPFS network for data storage and retrieval. Filecoin and IPFS are complementary technologies providing decentralized and efficient storage solutions.
   :::
 
-- [Dat](https://datproject.org/) is a decentralized data-sharing tool that uses a distributed hash table (DHT) for data storage. It focuses on enabling data sharing and collaboration.
+- [Hypercore](https://hypercore-protocol.org/) is a decentralized data-sharing tool that uses a distributed hash table (DHT) for data storage. It focuses on enabling data sharing and collaboration.
 - [Holo](https://holochain.org/) is a decentralized hosting platform that uses a unique data storage and sharing mechanism called Holochain. It allows users to host and run web-based applications on a peer-to-peer network.
 - [Swarm](https://swarm-gateways.net/bzz:/theswarm.eth/) is a decentralized storage and sharing platform built on the Ethereum blockchain. It uses smart contracts and cryptographic techniques to securely store and share data. It focuses on providing a decentralized, secure, and censorship-resistant storage solution.
 
 ## Comparing the key features of other solutions to IPFS
 
-The following table outlines key features of storage mechanisms and how they compare to IPFS.
+The following tables outline key features of different mechanisms and how they compare to IPFS.
 
 :::callout
 All of these solutions use content-based addressing.
 ::::
 
-### P2P protocols
+### General protocols
 
 | technology            | storage mechanism         | data model            | consensus mechanism         | networking stack | identifier          | address composition | use cases                | similarity to IPFS |
 | --------------------- | ------------------------- | --------------------- | --------------------------- | ---------------- | ------------------- | ------------------- | ------------------------ | ------------------ |
 | [bittorrent](https://www.bittorrent.com/protocols/bittorrent-rfc.html) | P2P file-sharing          | -                      | -                             | TCP/IP           | torrent file        | filename + sha1 hash    | file sharing              | low                 |
-| [arweave](https://www.arweave.org/docs)               | blockchain-based storage  | blockweave                 | proof-of-access              | TCP/IP           | block ID            | block ID            | permanent data archiving | low                 |
 | [hypercore](https://hypercore-protocol.org/guides/)                   | decentralized data-sharing| hypercore                 | Kademlia DHT                  | UDP           | dat key             | dat key             | decentralized data sharing| medium              |
 
 ### Crypto-economic networks
@@ -47,3 +46,4 @@ All of these solutions use content-based addressing.
 | [Holo](https://developer.holochain.org/docs/)             | decentralized application | distributed hash table     | distributed hash table         | actor model             | agent ID            | agent ID            | decentralized applications | medium              |
 | [Swarm](https://swarm-guide.readthedocs.io/)                 | decentralized storage     | distributed hash table     | proof-of-custody              | libp2p           | chunk ID            | chunk ID            | decentralized data storage    | high       |
 | [sia](https://sia.tech/docs/)                   | decentralized storage     | erasure coding             | proof-of-work                | UDP              | sector ID           | sector ID + file metadata | encrypted cloud storage  | medium              |
+| [arweave](https://www.arweave.org/docs)               | blockchain-based storage  | blockweave                 | proof-of-access              | TCP/IP           | block ID            | block ID            | permanent data archiving | low                 |
