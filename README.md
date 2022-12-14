@@ -1,6 +1,6 @@
 <p align="center">
 <img align="center" src="./images/ipfs-docs-header.png" width="1000">
-</p>
+</p> 
 
 <div align="center">
 <h3> IPFS powers the distributed web </h3>
