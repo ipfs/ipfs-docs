@@ -8,7 +8,9 @@ current-ipfs-cluster-version: v1.0.4
 
 If you want to install IPFS in a server environment and offer IPFS as a service, you should look at [IPFS Cluster](https://cluster.ipfs.io/) as a way to scale your IPFS deployment beyond a single IPFS daemon. IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pin-set distributed among multiple peers. This makes it significantly easier to manage multiple IPFS nodes and ensure that data is available across an internal network.
 
+<!-- markdown-link-check-disable -->
 @[youtube](-SYDlid7Nqs)
+<!-- markdown-link-check-enable-->
 
 :::tip
 As a Kubernetes user, you can use a Kubernetes operator for IPFS called [IPFS operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) to easily create and manage clusters consisting of hundreds of peers.
