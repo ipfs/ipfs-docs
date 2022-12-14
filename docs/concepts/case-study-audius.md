@@ -109,7 +109,7 @@ Audius uses the following IPFS implementations with no modification:
 - [`ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client)
   - _Creator node is a Node.js-based service and heavily uses this client to interact with dedicated IPFS nodes_
 
-For streaming, the Audius team uses HTTP Livestreaming (HLS) on top of the IPFS core implementation. The client pre-fetches the segments as the listener streams them using HLS.
+For streaming, the Audius team uses HTTP Live Streaming (HLS) on top of the IPFS core implementation. The client pre-fetches the segments as the listener streams them using HLS.
 
 ## Audius + IPFS: the future
 
