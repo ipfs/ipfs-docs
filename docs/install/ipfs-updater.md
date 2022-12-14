@@ -10,6 +10,7 @@ The ipfs-update tool is a command-line utility that can be used to install and u
 
 ## Install ipfs-update
 
+
 You can download pre-built binaries from [`dist.ipfs.tech`](https://dist.ipfs.tech/#ipfs-update). Binaries are also available from the [IPFS Update GitHub release page](https://github.com/ipfs/ipfs-update/releases).
 
 
