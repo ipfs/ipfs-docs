@@ -173,7 +173,7 @@ Check that you got connected:
 
 ![Screenshot of successful peer connection](./images/exchange-files-between-nodes/connect-2.png)
 
-> It only works on localhost environments because of a restriction with WebCrypto where it will not load in a page unless that page is loaded over https, or the page is served from localhost: [libp2p/js-libp2p-crypto#105][js-libp2p-crypto#105]
+> It only works on localhost environments because of a restriction with WebCrypto where it will not load in a page unless that page is loaded over HTTPS, or the page is served from localhost: [libp2p/js-libp2p-crypto#105][js-libp2p-crypto#105]
 
 [js-libp2p-crypto#105]: https://github.com/libp2p/js-libp2p-crypto/issues/105
 
@@ -193,7 +193,7 @@ Copy and paste the _multihash_ and fetch the file in the browser!
 
 You can also open two browser tabs, drag and drop files in one of them, and fetch them in the other!
 
-But the coolest thing about this tutorial is `pubsub`! You can open two tabs that will share files through workspaces named after the url. Try opening two tabs with the following url:
+But the coolest thing about this tutorial is `pubsub`! You can open two tabs that will share files through workspaces named after the URL. Try opening two tabs with the following URL:
 
 ```
 http://127.0.0.1:12345/#file-exchange
