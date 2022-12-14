@@ -32,10 +32,12 @@ All of these solutions use content-based addressing.
 
 ### General protocols
 
-| technology            | storage mechanism         | data model            | consensus mechanism         | networking stack | identifier          | address composition | use cases                | similarity to IPFS |
-| --------------------- | ------------------------- | --------------------- | --------------------------- | ---------------- | ------------------- | ------------------- | ------------------------ | ------------------ |
-| [bittorrent](https://www.bittorrent.com/protocols/bittorrent-rfc.html) | P2P file-sharing          | -                      | -                             | TCP/IP           | torrent file        | filename + sha1 hash    | file sharing              | low                 |
-| [hypercore](https://hypercore-protocol.org/guides/)                   | decentralized data-sharing| hypercore                 | Kademlia DHT                  | UDP           | dat key             | dat key             | decentralized data sharing| medium              |
+| technology            | storage mechanism         | data model            | networking stack | identifier          | address composition | links                 | use cases                | similarity to IPFS | hashing algorithm |
+| --------------------- | ------------------------- | --------------------- | ---------------- | ------------------- | ------------------- | ---------------------- | -------------------- | ------------------ | --------------------- |
+| [bittorrent](https://www.bittorrent.com/protocols/bittorrent-rfc.html) | P2P file-sharing          | merkle DAG             | TCP/IP           | torrent file        | filename + sha1 hash    | -                     | file sharing              | low                 | SHA-256          |
+| [hypercore](https://hypercore-protocol.org/guides/)                   | decentralized data-sharing| merkle DAG                 | UDP           | dat key             | dat key             | dat://{key}            | decentralized data sharing| medium              | SHA-256          |
+| [git](https://git-scm.com/)                                          |  version control| commit history          | TCP/IP           | commit hash        | commit hash           | -                     | version control           | medium              | SHA-1, SHA-256   |
+| [Secure Scuttlebutt (SSB)](https://ssbc.github.io/scuttlebutt-protocol-guide/) | decentralized social network | append-only log       | Scuttlebutt Protocol | feed id            | feed id              | ssb://{feed id}         | decentralized social networking| high                | SHA-256          |
 
 ### Crypto-economic networks
 
