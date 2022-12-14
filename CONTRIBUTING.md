@@ -19,12 +19,12 @@ By following these guidelines, you're helping to keep the IPFS docs consistent.
   | One, two, three, and four.    | One, two, three and four.    |
   | Henry, Elizabeth, and George. | Henry, Elizabeth and George. |
 
-- Write clearly and concisely. Sentences should be shorter than 25 words. Any longer and things tend to get a little _blurry_.
+- Write clearly and concisely. Sentences should be shorter than 25 words. Any longer, and things tend to get a little _blurry_.
 - Don’t use formal or complex words when easy or short ones work fine.
 
   | Use   | Don't Use     |
   | ----- | ------------- |
-  | Get   | Aquire        |
+  | Get   | Acquire        |
   | Help  | Assist        |
   | About | Approximately |
 
@@ -38,7 +38,7 @@ By following these guidelines, you're helping to keep the IPFS docs consistent.
 
 ### Formatting
 
-Write everything in using the [GitHub Flavored Markdown](https://github.github.com/gfm/) syntax. Here are a few guidelines that help to keep everything nice and tidy.
+Write everything using the [GitHub Flavored Markdown](https://github.github.com/gfm/) syntax. Here are a few guidelines that help to keep everything nice and tidy.
 
 - Write file names, folders, addresses, and variables between code tags.
 
@@ -56,13 +56,13 @@ Write everything in using the [GitHub Flavored Markdown](https://github.github.c
   console.log(contribution_guidelines[0])
   ```
 
-- Keep titles in sentence-case (only capitalize the first letter, and any names):
+- Keep titles in sentence-case (only capitalize the first letter and any names):
 
   > Types of contribution
   >
   > Dealing with the James Harden effect
 
-### Project specific titles
+### Project-specific titles
 
 When referring to projects by name, use proper noun capitalization: Kubo (GO-IPFS) and JS-IPFS.
 
@@ -76,7 +76,7 @@ When you're writing conceptual explanations or overviews, you can be more creati
 
 ## How to contribute
 
-There're lots of ways you can contribute to the docs project! It all depends on how much time you have and your knowledge of the topic.
+There are lots of ways you can contribute to the docs project! It all depends on how much time you have and your knowledge of the topic.
 
 ### Types of contribution
 
@@ -90,18 +90,18 @@ Sometimes small mistakes fall through the cracks. So if you see an error in the 
 
 Have an idea for a new page or article, or even a series of articles? The first step is to create an issue with your suggestions. The article you are suggesting may have been discussed before, or somebody else could already be working on it.
 
-Once an issue has been created, it can be discussed by the community and IPFS project leads. Once approved, you are free to start writing and implementing your documentation into the repository. Internal IPFS project leads from Protocol Labs review all pull-requests.
+Once an issue has been created, it can be discussed by the community and IPFS project leads. Once approved, you are free to start writing and implementing your documentation into the repository. Internal IPFS project leads from Protocol Labs review all pull requests.
 
 ### File an issue
 
 Follow these steps to learn how to file an issue with the IPFS project.
 
 1. Go to the [Issues](https://github.com/ipfs/ipfs-docs/issues/) tab in the [`ipfs/ipfs-docs`](https://github.com/ipfs/ipfs-docs) repository.
-2. Search for the issue you want to raise. It may already exist. Make sure to also search _closed_ issues by including `is:closed` in your search query.
-3. If the issue doesn't already exist, click **New issue**.
-4. Select either the **Content request** or **Documentation issue** issue template. These templates auto-fill some of the issues for you, and direct you to fill out the required information.
-5. Answer the questions listed in the issue form. Issues are created using GitHub Flavoured Markdown.
-6. Once you have finished describing your issue, click **Submit new issue**.
+1. Search for the issue you want to raise. It may already exist. Make sure to also search _closed_ issues by including `is:closed` in your search query.
+1. If the issue doesn't already exist, click **New issue**.
+1. Select either the **Content request** or **Documentation issue** issue template. These templates auto-fill some of the issues for you and direct you to fill out the required information.
+1. Answer the questions listed in the issue form. Issues are created using GitHub Flavoured Markdown.
+1. Once you have finished describing your issue, click **Submit new issue**.
 
 Shortly after your issue is submitted, an internal project lead from the IPFS project evaluates your issue. Further questions or requests-for-comment may be asked within the issue.
 
@@ -115,7 +115,86 @@ You can learn more about [pull requests on GitHub](https://help.github.com/en/gi
 
 ### Discuss
 
-You can also contribute to the project without specifically writing content for the site. Many discussions are happening all around the project. Protocol Labs, and by extension, IPFS, is a collaborative company that relies heavily on the community. We need your opinions and input! If you have an idea about a topic or want to weigh in on a discussion, feel free to have your say either on [GitHub](https://github.com/ipfs/ipfs-docs/issues) or on the [IPFS forums](https://discuss.ipfs.tech/).
+You can also contribute to the project without specifically writing content for the site. Many discussions are happening all around the project. Protocol Labs, and by extension, IPFS, is a collaborative company that relies heavily on the community. We need your opinions and input! If you have an idea about a topic or want to weigh in on a discussion, feel free to have your say on either [GitHub](https://github.com/ipfs/ipfs-docs/issues) or on the [IPFS forums](https://discuss.ipfs.tech/).
+
+## Create a new page
+
+Sometimes, you will need to make a whole new page for content to live. The process to do this is outlined below.
+
+The screenshots included in this guide were taken in Visual Studio Code (VSCode). The steps are the same regardless of which text editor you use.
+
+It's important to know what kind of content you are creating. The questions below will help you decide where your new content should live. For example, you would want to avoid adding a page written for experienced users between the already existing **Install** and **Basics** sections.
+
+- What type of content am I creating?
+- Who is my intended audience?
+- Does this content require a new page, or can it be added to an existing page?
+- If a new page or section must be added, how will it fit into the existing structure and flow of the docs?
+
+When you've answered the questions outlined above, and you know where the new content will live, continue with the steps below.
+
+### Fork, clone, and branch
+
+You can't make changes to the main repo directly. First, you need to:
+
+1. Fork the repo.
+1. Clone the forked repo to your local storage.
+
+Follow [this guide](https://docs.ipfs.tech/community/contribute/contribution-tutorial/#creating-a-fix) to do the above steps.
+
+Once you have the repo forked and cloned, the next step is to create a branch to add your changes. Doing so will help keep your work organized and will help you avoid committing undesired changes to your main branch.
+
+1. In the CLI, ensure that you are in the `ipfs-docs` directory.
+1. Use the `git branch` command to create a new branch:
+
+    ```shell
+    git branch <NEW-BRANCH-NAME>
+    ```
+
+1. Move to that branch using the `git checkout` command:
+
+    ```shell
+    git checkout <NEW-BRANCH-NAME>
+    ```
+
+In your text editor, you should see that it has automatically switched your working branch to the new branch you just made. If your text editor hasn't automatically switched branches, do so manually now. Make sure any changes you make are done in this new branch.
+
+### Adding a single page
+
+Adding a single page to an existing section is as simple as adding one line to the `config.js` file.
+
+When adding the new line, follow the same format and syntax as the other lines.
+
+1. Open `config.js` in your text editor of choice.
+1. Find the section you want to add a new page to. For this example, a page titled **Add a new page** will be added to the **Basics** section.
+
+    ![Add a new page](./images/add-new-page.png)
+
+1. Add the new line to the desired section.
+
+    ```javascript
+    'title-of-section/title-of-new-page'
+    ```
+
+1. With the page now added to `config.js`, you can move on to the [**commit your changes** section](#commit-your-changes).
+
+### Adding a new section
+
+Adding a new section to the sidebar of the docs is a little more in-depth. For this example, a new section titled **Test** will be added between the **Basics** and **Concepts** sections.
+
+When adding a new section, be sure you have the opening and closing curly brackets (`{` `}`) in the correct column. The easiest way to do this is to follow the positioning and format of the other sections in the file.
+
+1. Open `config.js` in your text editor of choice.
+1. Find the spot where you wish to add a new section. Again, the spot is between the **Basics** and **Concepts** sections for this example.
+
+    ![Basics and concepts sections](./images/basics-and-concepts-sections.png)
+
+1. Once you have found the right spot, add the following lines, replacing any variables with your own content.
+
+    ![Add a new section](./images/add-new-section.png)
+
+### Commit your changes
+
+Return to [this guide](https://docs.ipfs.tech/community/contribute/contribution-tutorial/#creating-a-fix) and follow the steps to push your changes back to GitHub. Then, move on to the [create a pull request](https://docs.ipfs.tech/community/contribute/contribution-tutorial/#create-a-pull-request) section to create your pull request.
 
 ## Tools
 
@@ -135,7 +214,7 @@ While not essential, this extension contains a bunch of _quality of life_ improv
 
 ### [Grammarly](https://app.grammarly.com/)
 
-It might not be the most elegant or robust application available, but Grammarly can help fix some of the complex or easy to miss mistakes in your docs. The free version is more than enough to get you by. The paid-for version comes with some _quality of life_ improvements like adjusting the tone of your document or suggesting more optimal words, but it's not 100% necessary.
+It might not be the most elegant or robust application available, but Grammarly can help fix some of the complex or easy-to-miss mistakes in your docs. The free version is more than enough to get you by. The paid-for version comes with some _quality of life_ improvements, like adjusting the tone of your document or suggesting more optimal words, but it's not 100% necessary.
 
 ### [Hemingway](http://www.hemingwayapp.com/)
 
@@ -143,4 +222,4 @@ This app helps to simplify your writing. It's easy to ramble on while writing, w
 
 ## Just Ask
 
-After all that, if you're still not sure how to contribute to this project just post a question on the [IPFS forum](https://discuss.ipfs.tech/), or join us on IRC at `#ipfs`.
+After all that, if you're still not sure how to contribute to this project, just post a question on the [IPFS forum](https://discuss.ipfs.tech/), or join us on IRC at `#ipfs`.

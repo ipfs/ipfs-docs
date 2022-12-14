@@ -8,13 +8,13 @@ description: What the _redirect file is and how to use them with a website or si
 This feature is new, and requires Kubo 0.16 or later.
 :::
 
-This feature enables support for redirects, [single-page applications](#catch-all-and-pwa-spa-support), [custom 404 pages](#add-a-custom-404-page-to-your-website), and moving to IPFS-backed hosting [without breaking existing links](https://www.w3.org/Provider/Style/URI).
+This feature enables support for redirects, [single-page applications](#examples), [custom 404 pages](#add-a-custom-404-page-to-your-website), and moving to IPFS-backed hosting [without breaking existing links](https://www.w3.org/Provider/Style/URI).
 
 ## Evaluation
 
-This feature is limited to websites hosted in web contexts with unique [Origins](https://en.wikipedia.org/wiki/Same-origin_policy) for content roots, e.g., [subdomain](/how-to/address-ipfs-on-web/#subdomain-gateway) or [DNSLink](/how-to/address-ipfs-on-web/#dnslink-gateway) gateways.
+This feature is limited to websites hosted in web contexts with unique [Origins](https://en.wikipedia.org/wiki/Same-origin_policy) for content roots, e.g., [subdomain](../../how-to/address-ipfs-on-web.md#subdomain-gateway) or [DNSLink](../../how-to/address-ipfs-on-web.md#dnslink-gateway) gateways.
 
-Redirect logic will only be evaluated if the requested path is not in the [DAG](/concepts/glossary/#dag).  Any performance impact associated with checking for the existence of a `_redirects` file or evaluating redirect rules will only be incurred for non-existent paths. If there are any errors reading or parsing the `_redirects` file, the error codes will be returned with an HTTP 500 status code.
+Redirect logic will only be evaluated if the requested path is not in the [DAG](../../concepts/glossary.md#dag).  Any performance impact associated with checking for the existence of a `_redirects` file or evaluating redirect rules will only be incurred for non-existent paths. If there are any errors reading or parsing the `_redirects` file, the error codes will be returned with an HTTP 500 status code.
 
 ## How to set up
 
@@ -68,7 +68,7 @@ There is also a special catch-all placeholder named `:splat` which represents ev
 ### Compatibility
 
 IPFS hosting supports only a subset of pre-existing standards supported by [Cloudflare](https://developers.cloudflare.com/pages/platform/redirects) and [Netlify](https://docs.netlify.com/routing/redirects/).
-There is no overwrite/shadowing: the file is evaluated only when requested path is not found in a [DAG](/concepts/glossary/#dag).
+There is no overwrite/shadowing: the file is evaluated only when requested path is not found in a [DAG](../../concepts/glossary.md#dag).
 
 ::: tip
 For more detailed information about supported features, check out the [`_redirects` file specification](https://github.com/ipfs/specs/blob/main/http-gateways/REDIRECTS_FILE.md).

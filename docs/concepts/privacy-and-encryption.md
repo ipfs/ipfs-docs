@@ -85,7 +85,7 @@ If you're curious about implementing encryption with IPFS on a large scale, you 
 - [Fission.codes](https://fission.codes/)
 - [Fleek](case-study-fleek.md)
 - [Lit Protocol](https://litprotocol.com/)
-- [OrbitDB](https://orbitdb.org/)
+- [OrbitDB](https://github.com/orbitdb)
 - [Peergos](https://peergos.org/)
 - [Textile](https://www.textile.io/)
 

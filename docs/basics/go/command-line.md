@@ -7,13 +7,13 @@ description: "A simple walkthrough of how to perform basic IPFS operations using
 
 This short guide aims to walk you through the **basics of using IPFS with the Kubo CLI**.  Kubo is [one of multiple IPFS implementations](../ipfs-implementations.md). It is the oldest IPFS implementation and exposes a CLI (among other things).
 
-You will learn how to add, retrieve, read, and remove files within the CLI. If you are unsure about the meaning of some terms, you can check out the [glossary](../concepts/glossary.md).
+You will learn how to add, retrieve, read, and remove files within the CLI. If you are unsure about the meaning of some terms, you can check out the [glossary](../../concepts/glossary.md).
 
 All instructions and examples shown here were performed and tested on an M1 Mac. However, the IPFS commands are the same on Linux, macOS, and Windows. You will need to know how to navigate your computer's directories from within the CLI. If you're unsure how to use the CLI, we recommend learning how before continuing with this guide.
 
 ## Install Kubo
 
-Next up, we need to install Kubo for the command-line. We have a great guide that will walk you through how to [install Kubo with the CLI](../install/command-line.md).
+Next up, we need to install Kubo for the command-line. We have a great guide that will walk you through how to [install Kubo with the CLI](../../install/command-line.md).
 
 Once you have Kubo installed, we need to get our node up and running. If this is your first time using Kubo, you will first need to initialize the configuration files:
 
@@ -191,7 +191,7 @@ We can _pin_ data we want to save to our IPFS node to ensure we don't lose this 
     pinned bafybeif2ewg3nqa33mjokpxii36jj2ywfqjpy3urdh7v6vqyfjoocvgy3a recursively
     ```
 
-By default, objects that you retrieve over IPFS are not pinned to your node. If you wish to prevent the files from being garbage collected, you need to pin them. You will notice that the pin you just added is a `recursive` pin, meaning it is a directory containing other objects. Check out the [Pinning page to learn more about how this works](../concepts/persistence.md).
+By default, objects that you retrieve over IPFS are not pinned to your node. If you wish to prevent the files from being garbage collected, you need to pin them. You will notice that the pin you just added is a `recursive` pin, meaning it is a directory containing other objects. Check out the [Pinning page to learn more about how this works](../../concepts/persistence.md).
 
 ## Remove a file
 

@@ -5,7 +5,7 @@ description: "Learn how to deploy a minimal chat app entirely in the browser usi
 
 # Create a simple chat app
 
-This how-to demonstrates a minimal chat app in [js-ipfs](/reference/js/api#js-ipfs) entirely in the browser.
+This how-to demonstrates a minimal chat app in [js-ipfs](/reference/js/api.md#js-ipfs) entirely in the browser.
 
 Here’s a quick demo of the app:
 
@@ -19,7 +19,7 @@ The heading shows which user is chatting and has a status indicator in the top l
 - Yellow means you're only seeing direct peers (no other peer in the middle).
 - Red means you have no peers (at least none using the chat application).
 
-To see a live demo, start your ipfs daemon (open IPFS Desktop or enter ipfs daemon in the CLI) and have a chat buddy do the same. Then you can both open the [live demo](https://ipfs.io/ipfs/bafybeia5f2yk6td7ciroeped2uwfivo333b524t3zmoderfhl3xn7wi7aa/&sa=D&source=editors&ust=1651157762663308&usg=AOvVaw1sQEgWa5q7YI8HnLTPUq0Y) and chat. Once our chat app gets some traction, you’ll be able to make new friends on the network.
+To see a live demo, start your ipfs daemon (open IPFS Desktop or enter ipfs daemon in the CLI) and have a chat buddy do the same. Then you can both open the [live demo](https://ipfs.io/ipfs/bafybeia5f2yk6td7ciroeped2uwfivo333b524t3zmoderfhl3xn7wi7aa/) and chat. Once our chat app gets some traction, you’ll be able to make new friends on the network.
 
 ## How it works
 
@@ -32,7 +32,7 @@ To test and deploy your own version with your own nodes (recommended for deploym
 - [Advertising set up](#advertising) to let other peers know your users are there
 - [Publishing set up and staying connected](#communication) to peers
 
-Besides [IPFS](/concepts/what-is-ipfs) (with CIDv1) and JavaScript, our chat app uses these technologies:
+Besides [IPFS](/concepts/what-is-ipfs.md) (with CIDv1) and JavaScript, our chat app uses these technologies:
 
 - [Libp2p](https://libp2p.io/)’s [WebRTC](https://www.npmjs.com/package/libp2p-webrtc-star)-Star and [circuit relay](https://docs.libp2p.io/concepts/circuit-relay) for discovery and connecting (with two libraries:  [js-ipfs](https://github.com/ipfs/js-ipfs/blob/master/docs/BROWSERS.md),  Bootstrap–with minified CSS), and [Kubo](https://docs.ipfs.tech/reference/go/api/#working-with-go) for p2p circuit connecting with websockets,
 - some [Python code](#advertising) that we supply for advertising, and

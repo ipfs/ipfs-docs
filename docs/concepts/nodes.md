@@ -11,11 +11,11 @@ You're likely to see the term _node_ throughout the IPFS docs, issues, and relat
 
 * __IPFS Nodes__ are programs that run on a computer that can exchange data with other IPFS nodes. They go by several different names, but we refer to them by a different term, depending on the context:
   * _node_: Use _node_ when you're referring to an individual point on the network. It's a very general term. For example, when you open IPFS Desktop, you establish yourself as a node with the potential to interact with other nodes. See [Configure a node](https://docs.ipfs.tech/how-to/configure-node/).
-  * _peer_: Use _peer_ when you're talking about the relationship of one node (even your own) to other nodes. It refers to their relationship as equals, with no central authority, so your node is a peer to other peers. See [Observe peers](../how-to/observe-peers/), [Exchange files between nodes](../how-to/exchange-files-between-nodes/), and [Peering with content providers](../how-to/peering-with-content-providers/).
-  * _daemon_: Use _daemon_ when talking about a node's activity status. When a node is online and running in the background, listening for requests for its data, it's called a _daemon_. See [Take your node online](../how-to/command-line-quick-start/#take-your-node-online)
-  * _instance_: Use _instance_ when talking about a library or program, such as a Go or JS version, running on an IPFS node at a particular point in time. The peer ID is the same, so it's still the same _node_ as far as the IPFS network is concerned. See [Kubo](../reference/go/api/) and [JS-IPFS](../reference/js/api/#ipfs-and-javascript).
+  * _peer_: Use _peer_ when you're talking about the relationship of one node (even your own) to other nodes. It refers to their relationship as equals, with no central authority, so your node is a peer to other peers. See [Observe peers](../how-to/observe-peers.md), [Exchange files between nodes](../how-to/exchange-files-between-nodes.md), and [Peering with content providers](../how-to/peering-with-content-providers.md).
+  * _daemon_: Use _daemon_ when talking about a node's activity status. When a node is online and running in the background, listening for requests for its data, it's called a _daemon_. See [Take your node online](../how-to/command-line-quick-start.md#take-your-node-online)
+  * _instance_: Use _instance_ when talking about a library or program, such as a Go or JS version, running on an IPFS node at a particular point in time. The peer ID is the same, so it's still the same _node_ as far as the IPFS network is concerned. See [Kubo](../reference/go/api.md) and [JS-IPFS](../reference/js/api.md#ipfs-and-javascript).
 
-* __Data nodes__, Use _data nodes_ when talking about actual pieces of data on IPFS, such as DAG nodes, UnixFS nodes, and IPLD nodes. When you add a file with the `ipfs add myfile.txt` command, IPFS breaks them up into several nodes that each contain a chunk of the file and are linked to each other. See [Merkle Directed Acyclic Graphs (DAGs)](../concepts/merkle-dag/), [Unix File System (UnixFS)](../concepts/file-systems/#unix-file-system-unixfs), and stay tuned for [InterPlanetary Linked Data (IPLD) model](../concepts/ipld/) docs, which is in progress.
+* __Data nodes__, Use _data nodes_ when talking about actual pieces of data on IPFS, such as DAG nodes, UnixFS nodes, and IPLD nodes. When you add a file with the `ipfs add myfile.txt` command, IPFS breaks them up into several nodes that each contain a chunk of the file and are linked to each other. See [Merkle Directed Acyclic Graphs (DAGs)](../concepts/merkle-dag.md), [Unix File System (UnixFS)](../concepts/file-systems.md#unix-file-system-unixfs), and stay tuned for [InterPlanetary Linked Data (IPLD) model](../concepts/ipld.md) docs, which is in progress.
 
 * __libp2p peer__ Use _libp2p peer_ when talking about libp2p nodes on which you can build applications. They're usually referred to as _peers_ in libp2p, because it provides solutions for essential peer-to-peer elements like transport, security, peer routing, and content discovery. See [concepts](../concepts/libp2p.md)
 
@@ -27,7 +27,7 @@ There are different types of IPFS nodes. And depending on the use-case, a single
 - [Preload](#preload)
 - [Relay](#relay)
 - [Bootstrap](#bootstrap)
-- [Delegate routing](#delegate-routing)
+- [Delegate routing](#delegate-routing-node)
 
 ### Preload
 
@@ -38,7 +38,7 @@ Features of a preload node:
 - They are Kubo nodes with API ports exposed. Some HTTP API commands are accessible.
 - Used by JS-IPFS nodes running in browser contexts.
 - JS-ipfs nodes remain connected to the libp2p swarm ports of all preload nodes by having preload nodes on the bootstrap list.
-- Often on the same _server_ as a [delegate routing node](#delegate-routing), though both the delegate routing service and preload service are addressed differently. This is done by having different multiaddrs that resolve to the same machine.
+- Often on the same _server_ as a [delegate routing node](#delegate-routing-node), though both the delegate routing service and preload service are addressed differently. This is done by having different multiaddrs that resolve to the same machine.
 - Preload nodes are in the default JS-IPFS configuration as bootstrap nodes, so they will maintain libp2p swarm connections to them at all times.
     - They are configured as regular bootstrap nodes, but as a convention have the string 'preload' in their `/dnsaddr` multiaddrs.
 
@@ -85,7 +85,7 @@ Limitations of a bootstrap node:
 
 ### Delegate routing node
 
-When IPFS nodes are unable to run Distributed Hash Table (DHT) logic on their own, they _delegate_ the task to a delegate routing node.  Publishing works with arbitrary CID codecs (compression/decompression technology), as the [js-delegate-content module](https://github.com/libp2p/js-libp2p-delegated-content-routing/blob/master/src/index.js#L127-L128) publishes CIDs at the block level rather than the IPLD or DAG level.
+When IPFS nodes are unable to run Distributed Hash Table (DHT) logic on their own, they _delegate_ the task to a delegate routing node.  Publishing works with arbitrary CID codecs (compression/decompression technology), as the [js-delegate-content module](https://github.com/libp2p/js-libp2p-delegated-content-routing/blob/master/src/index.ts) publishes CIDs at the block level rather than the IPLD or DAG level.
 
 Features of a delegate routing node:
 
@@ -116,7 +116,7 @@ Features include:
 - HTTP gateway with subdomain support for origin isolation between content roots.
 - Various [experimental features](https://github.com/ipfs/kubo/blob/master/docs/experimental-features.md)
 
-See [Working with Go](../reference/go/api/#working-with-go) and [CLI Quick Start](../how-to/command-line-quick-start.md)
+See [Working with Go](../reference/go/api.md#working-with-go) and [CLI Quick Start](../how-to/command-line-quick-start.md)
 
 ### JS-IPFS
 
