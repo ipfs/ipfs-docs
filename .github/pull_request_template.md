@@ -1,3 +1,14 @@
+
+<!-- 
+Please take a moment to read about the new GitHub Action
+!-->
+# Announcing the markdown-link-check GitHub Action
+
+The documentation team recently added a GitHub Action to check links on all PRs. To learn more about the action and how to check links locally before pushing, click [here](https://gist.github.com/ElPaisano/398b4fe36c19c7dcb31cf0220ff43476).
+<!-- 
+Feel free to delete this section after reading about the new link checker.
+!-->
+
 # Describe your changes
 <!-- 
 In a few sentences, described the changes made here, and why the changes are being made
