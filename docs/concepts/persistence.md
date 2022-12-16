@@ -105,4 +105,3 @@ Options in this category include:
 - [Powergate](https://docs.filecoin.io/build/powergate)
 - [ChainSafe Storage](https://storage.chainsafe.io)
 - [Fleek Storage](https://fleek.co/storage)
-- [4EVERLAND Bucket](https://www.4everland.org/bucket)
