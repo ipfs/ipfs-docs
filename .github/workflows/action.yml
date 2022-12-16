@@ -1,0 +1,35 @@
+name: Check Markdown links for modified files
+
+on: [pull_request]
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+    - id: checkout
+      uses: actions/checkout@master
+    - id: link-check
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        config-file: 'mlc_pull_req_config.json'
+        check-modified-files-only: 'yes'
+        use-verbose-mode: 'yes'
+        base-branch: 'main'
+        use-quiet-mode: 'yes'
+    - id: summary
+      run: |
+        echo '# markdown-link-check summary' >> $GITHUB_STEP_SUMMARY
+        echo >> $GITHUB_STEP_SUMMARY
+        echo '## Results: ' >> $GITHUB_STEP_SUMMARY     
+        echo 'To view the results of this GitHub action, do the following:' >> $GITHUB_STEP_SUMMARY    
+        echo '1. Click to the _Job summary generated at run-time_ at the bottom of this page.' >> $GITHUB_STEP_SUMMARY       
+        echo '2. Click the `>` next to _Run gaurav-nelson/github-action-markdown-link-check@v1_ ' >> $GITHUB_STEP_SUMMARY
+        echo '3. In the search field (upper right hand corner), type _MARKDOWN LINK CHECK_. The log jumps to the output of the markdown-link-check action.' >> $GITHUB_STEP_SUMMARY  
+        echo '4. Look through the log lines below the _=========================> MARKDOWN LINK CHECK <=========================_ line. ' >> $GITHUB_STEP_SUMMARY  
+        echo '   If a dead link was found, it, will be listed below the _ERROR_ line, along with the status code. Find the link in your markdown and fix it.' >> $GITHUB_STEP_SUMMARY  
+        echo '   **Example:**' >> $GITHUB_STEP_SUMMARY  
+        echo '   ``` ' >> $GITHUB_STEP_SUMMARY  
+        echo '   ERROR: 1 dead links found!' >> $GITHUB_STEP_SUMMARY  
+        echo '   [✖] https://givweueerervuvwbeiuv.com#nvruvwrveri → Status: 404' >> $GITHUB_STEP_SUMMARY  
+        echo '   ``` ' >> $GITHUB_STEP_SUMMARY  
+        echo '4. If the action incorrectly identified a link as broken, please help us improve this Github action by reporting any false negatives, false positives or any other issues by [opening a GH issue](https://github.com/ipfs/ipfs-docs/issues/new/choose). Please include the log output in the issue description. ' >> $GITHUB_STEP_SUMMARY
