@@ -104,6 +104,7 @@ module.exports = {
                     '/concepts/privacy-and-encryption',
                     '/concepts/nodes',
                     '/concepts/glossary',
+                    '/concepts/comparisons',
                     '/concepts/usage-ideas-examples',
                     '/concepts/faq'
                 ]
@@ -138,7 +139,7 @@ module.exports = {
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                    '/concepts/ipfs-gateway', 
+                    '/concepts/ipfs-gateway',
                     '/concepts/dnslink'
                 ]
               },
