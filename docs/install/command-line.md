@@ -37,8 +37,8 @@ Note the following:
 
 If you are running Kubo on a resource-constrained system (such as a Raspberry Pi), you should complete the following steps:
 
-  1. Install OpenSSL and rebuild Kubo manually with `make build GOTAGS=openssl`. See the [download and compile](https://github.com/ipfs/kubo/blob/v0.17.0/README.md#download-and-compile-ipfs) section for more information on compiling Kubo.
-  1. Initialize your daemon with the `lowpower` profile. This reduces daemon overhead on the system but may degrade performance of content discovery and data fetching.
+  1. Download and compile Kubo manually. See the [Kubo README](https://github.com/ipfs/kubo/blob/v0.17.0/README.md#download-and-compile-ipfs) section for more information.
+  1. Initialize your daemon with the `lowpower` profile. This reduces daemon overhead on the system but may degrade content discovery and data fetching performance.
   
   ```bash
   ipfs init --profile=lowpower
