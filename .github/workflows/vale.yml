@@ -1,16 +1,26 @@
-name: reviewdog
-on: [pull_request]
+name: vale-v0
+
+on: 
+  pull_request:
+    # 'edited': check the PR title on changes
+    types: [opened, edited, reopened, synchronize]
 
 jobs:
-  vale:
-    name: runner / vale
+  pr-content-check:
+    name: pr-content-check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: errata-ai/vale-action@reviewdog
-        env:
-          # Required, set by GitHub actions automatically:
-          # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - id: files
+        name: Get changed files
+        uses: jitterbit/get-changed-files@v1
         with:
-          fail_on_error: true         
+          format: 'json'
+      - name: vale check
+        uses: errata-ai/vale-action@reviewdog
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}    
+        with:
+          files: ${{ steps.files.outputs.added_modified }}  
+          fail_on_error: true
+          vale_flags: "--minAlertLevel=error"
