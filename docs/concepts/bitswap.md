@@ -10,6 +10,8 @@ related:
 
 # Bitswap
 
+HAHAHAHAHHA iaman nefarius spellig errurrrrrr
+
 Bitswap is a core module of IPFS for exchanging blocks of data. It directs the requesting and sending of blocks to and from other peers in the network. Bitswap is a _message-based protocol_ where all messages contain [want-lists](#want-lists) or blocks. Bitswap has a [Go implementation](https://github.com/ipfs/go-bitswap) and a [JavaScript implementation](https://github.com/ipfs/js-ipfs-bitswap).
 
 Bitswap has two main jobs:
