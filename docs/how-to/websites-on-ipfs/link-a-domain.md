@@ -125,7 +125,8 @@ Before we get started, you will need:
     a. Set the value to `dnslink=/ipfs/SITE_CID`, replacing `SITE_CID` with the CID of your website.
 1. Save your changes.
 
-You should now be able to visit your IPFS website at your Handshake domain! If your Handshake name is `yourname/`, you can visit your website at http://yourname/ (no dots, just yourname/!)
+You should now be able to visit your IPFS website at your Handshake domain! If your Handshake name is `yourname/`, you can visit your website at <!-- markdown-link-check-disable--> http://yourname/ 
+<!-- markdown-link-check-enable--> (no dots, just yourname/!)
 
 ### Subdomain
 
@@ -140,7 +141,9 @@ If you want to create your website on a subdomain rather than a bare TLD (e.g. `
    b. Set the value to `dnslink=/ipfs/SITE_CID`, replacing `SITE_CID` with the CID of your website.
 1. Save your changes.
 
-You should now be able to visit your IPFS website at your Handshake domain! If your Handshake name is `sub.yourname/`, you can visit your website at http://sub.yourname/
+You should now be able to visit your IPFS website at your Handshake domain! If your Handshake name is `sub.yourname/`, you can visit your website at
+<!-- markdown-link-check-disable--> http://sub.yourname/ 
+<!-- markdown-link-check-enable-->
 
 ::: tip
 If you prefer to use Handshake-powered DNSLink with your custom gateway, run [`ipfs daemon`](../../install/command-line.md) with config that has a Handshake resolver enabled for your domain: `ipfs config --json DNS.Resolvers '{ "yourname": "https://query.hdns.io/dns-query" }`. Learn how to run a self-hosted, site-specific DNSLink gateway from [gateway recipes in Kubo config docs](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes).
