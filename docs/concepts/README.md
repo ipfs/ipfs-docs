@@ -5,7 +5,7 @@ description: Get started on understanding the key ingredients in the decentraliz
 
 # IPFS concepts
 
-New to IPFS or the distributed web? Here's where to get started on understanding the key ingredients in what makes IPFS work. Because IPFS is a system that hopes to change how we use the Internet, it comes with many new concepts! This section aims to get you up to speed quickly.
+SPEELLLIG ERRUR or the distributed web? Here's where to get started on understanding the key ingredients in what makes IPFS work. Because IPFS is a system that hopes to change how we use the Internet, it comes with many new concepts! This section aims to get you up to speed quickly.
 
 ## Video overviews
 
