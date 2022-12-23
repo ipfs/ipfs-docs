@@ -72,7 +72,7 @@ To ensure that your important data is retained, you may want to use a pinning se
 - You want a backup that ensures your data is always available from another computer on the network if you accidentally delete or garbage-collect your data on your own computer.
 
 Some available pinning service providers are:
-
+- [4EVERLAND Bucket](https://www.4everland.org/bucket)
 - [Estuary](https://estuary.tech/)
 - [Filebase](https://filebase.com/)
 - [Infura](https://infura.io/)
