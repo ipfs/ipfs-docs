@@ -73,13 +73,13 @@ To ensure that your important data is retained, you may want to use a pinning se
 
 Some available pinning service providers are:
 
+- [4EVERLAND Bucket](https://www.4everland.org/bucket)
 - [Estuary](https://estuary.tech/)
 - [Filebase](https://filebase.com/)
 - [Infura](https://infura.io/)
 - [NFT.Storage](https://nft.storage/)
 - [Pinata](https://pinata.cloud/)
 - [Web3.Storage](https://web3.storage/)
-- [4EVERLAND](https://www.4everland.org/)
 
 See how to [work with remote pinning services](../how-to/work-with-pinning-services.md).
 
