@@ -69,7 +69,11 @@ To have your platform added to this list, please [open a PR to edit this page](h
 
 ### NFT.Storage
 
-See [nft.storage/PEERS](https://github.com/nftstorage/nft.storage/blob/main/PEERS).
+| Peer ID | Addresses |
+| ------- | --------- |
+|`12D3KooWCRscMgHgEo3ojm8ovzheydpvTEqsDtq7Vby38cMHrYjt`|`/dns4/nft-storage-am6.nft.dwebops.net/tcp/18402`|
+|`12D3KooWQtpvNvUYFzAo1cRYkydgk15JrMSHp6B6oujqgYSnvsVm`|`/dns4/nft-storage-dc13.nft.dwebops.net/tcp/18402`|
+|`12D3KooWQcgCwNCTYkyLXXQSZuL5ry1TzpM8PRe9dKddfsk1BxXZ`|`/dns4/nft-storage-sv15.nft.dwebops.net/tcp/18402`|
 
 ### Pinata
 
@@ -91,9 +95,6 @@ See [nft.storage/PEERS](https://github.com/nftstorage/nft.storage/blob/main/PEER
 |`QmUd6zHcbkbcs7SMxwLs48qZVX3vpcM8errYS7xEczwRMA`|`/dns/cluster2.fsn.dwebops.pub`|
 |`QmbVWZQhCGrS7DhgLqWbgvdmKN7JueKCREVanfnVpgyq8x`|`/dns/cluster3.fsn.dwebops.pub`|
 |`QmdnXwLrC8p1ueiq2Qya8joNvk3TVVDAut7PrikmZwubtR`|`/dns/cluster4.fsn.dwebops.pub`|
-|`12D3KooWCRscMgHgEo3ojm8ovzheydpvTEqsDtq7Vby38cMHrYjt`|`/dns4/nft-storage-am6.nft.dwebops.net/tcp/18402`|
-|`12D3KooWQtpvNvUYFzAo1cRYkydgk15JrMSHp6B6oujqgYSnvsVm`|`/dns4/nft-storage-dc13.nft.dwebops.net/tcp/18402`|
-|`12D3KooWQcgCwNCTYkyLXXQSZuL5ry1TzpM8PRe9dKddfsk1BxXZ`|`/dns4/nft-storage-sv15.nft.dwebops.net/tcp/18402`|
 
 ### Storj
 
