@@ -73,6 +73,10 @@ To ensure that your important data is retained, you may want to use a pinning se
 
 Some available pinning service providers are:
 
+:::warning
+Some of the pinning services listed below are operated by third party companies. There is no guarantee that these third party companies will continue to maintain their pinning service.
+:::
+
 - [Estuary](https://estuary.tech/)
 - [Filebase](https://filebase.com/)
 - [Infura](https://infura.io/)
