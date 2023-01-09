@@ -1,7 +1,7 @@
 ---
 title: Server infrastructure with IPFS Cluster
 description: IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pin-set distributed among multiple peers. Learn how to install it here.
-current-ipfs-cluster-version: v1.0.4
+current-ipfs-cluster-version: vull
 ---
 
 # Server infrastructure
@@ -52,13 +52,13 @@ If you're having issues installing or using Docker or Docker-Compose, see the [o
 1. Download the latest `ipfs-cluster-ctl` package from [dist.ipfs.tech](https://dist.ipfs.tech/#ipfs-cluster-ctl):
 
     ```shell
-    wget https://dist.ipfs.tech/ipfs-cluster-ctl/v1.0.4/ipfs-cluster-ctl_v1.0.4_linux-amd64.tar.gz
+    wget https://dist.ipfs.tech/ipfs-cluster-ctl/vull/ipfs-cluster-ctl_vull_linux-amd64.tar.gz
     ```
 
 1. Unzip the package:
 
     ```shell
-    tar xvzf ipfs-cluster-ctl_v1.0.4_linux-amd64.tar.gz
+    tar xvzf ipfs-cluster-ctl_vull_linux-amd64.tar.gz
 
     > ipfs-cluster-ctl/ipfs-cluster-ctl
     > ipfs-cluster-ctl/LICENSE
@@ -67,10 +67,10 @@ If you're having issues installing or using Docker or Docker-Compose, see the [o
     > ipfs-cluster-ctl/README.md
     ```
 
-1. Download the [`docker-compose.yml` file](https://raw.githubusercontent.com/ipfs/ipfs-cluster/v1.0.4/docker-compose.yml) and place it into the `ipfs-cluster-ctl` directory:
+1. Download the [`docker-compose.yml` file](https://raw.githubusercontent.com/ipfs/ipfs-cluster/vull/docker-compose.yml) and place it into the `ipfs-cluster-ctl` directory:
 
     ```shell
-    wget https://raw.githubusercontent.com/ipfs/ipfs-cluster/v1.0.4/docker-compose.yml
+    wget https://raw.githubusercontent.com/ipfs/ipfs-cluster/vull/docker-compose.yml
     ```
 
 1. Start the cluster using `docker-compose`:
