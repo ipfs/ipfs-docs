@@ -45,7 +45,7 @@ LikeCoin aims to fundamentally improve the way content is shared, moderated, and
 _&mdash; Kin Ko, Founder, LikeCoin_
 :::
 
-At the heart of the LikeCoin ecosystem is its decentralized metadata registry, written on [LikeCoin's own blockchain](https://github.com/likecoin/likecoin-chain). As the world's first data registry specifically recording the internet's digital creative content, it stores ISCN metadata for every item published or shared within Liker Land or associated with the LikeCoin button.
+At the heart of the LikeCoin ecosystem is its decentralized metadata registry, written on [LikeCoin's own blockchain](https://github.com/likecoin/likecoin-chain). As the world's first data registry specifically recording the Internet's digital creative content, it stores ISCN metadata for every item published or shared within Liker Land or associated with the LikeCoin button.
 
 But the LikeCoin team quickly realized that simply creating a system of record for ISCNs wasn't enough to fulfill their core goal of building a equitable publishing infrastructure. They also needed an efficient, decentralized, and censorship-resistant means to provide or reprovide the content that those ISCNs represent. The team found their solution in IPFS.
 
