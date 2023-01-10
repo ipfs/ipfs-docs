@@ -253,8 +253,6 @@ As the JS-IPFS implementation changes, some of these steps should be deemed cond
 4. The file has been added to the IPFS network and has given the file a CID.  You can share this CID with anyone, and they can use it on their IPFS node to obtain the content you uploaded.
 5. To view the file contents, navigate to the [webui](http://127.0.0.1:5002/webui) and provide the CID on the search bar. The UI will provide the file contents, similar to the following:
 
-![](../../images/jsipfs-add-webui.png)
-
 :::
 
 ::: tab ipfs-core id="add-ipfs-core"
