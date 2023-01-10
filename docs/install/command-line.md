@@ -1,10 +1,10 @@
 ---
-title: Kubo on the command line
+title: Kubo
 description: Using IPFS Kubo through the command-line allows you to do everything that IPFS Desktop can do, but at a more granular level, since you can specify which commands to run. Learn how to install it here.
 current-ipfs-version: v0.17.0
 ---
 
-# Install Kubo on the command line
+# Install IPFS Kubo
 
 This guide describes the available installation processes for IPFS Kubo, a Go-based implementation of the InterPlanetary File System (IPFS) protocol. Kubo was the first implementation of IPFS, and is the most widely used implementation today. Kubo allows you to do everything that IPFS Desktop can do, but at a more granular level, since you can specify which commands to run. Kubo has the following features:
 

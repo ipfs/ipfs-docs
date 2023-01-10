@@ -70,24 +70,14 @@ module.exports = {
         nav: require('./nav/en'),
         sidebar: [
           {
-            title: 'Install',
+            title: 'Getting Started',
             path: '/install/',
             children: [
               'install/ipfs-desktop',
               'install/ipfs-companion',
               'install/command-line',
-              ['install/ipfs-updater', 'Updater'],
+              'install/js-ipfs',
               'install/server-infrastructure'
-            ]
-          },
-          {
-            title: 'Basics',
-            path: '/basics/',
-            children: [
-                'basics/desktop-app',
-                'basics/go/command-line',
-                'basics/js/js-ipfs',
-                'basics/ipfs-implementations'
             ]
           },
           {
@@ -95,33 +85,32 @@ module.exports = {
             path: '/concepts/',
             children: [
               {
-                title: 'IPFS 101',
+                title: 'Overview',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
                     '/concepts/what-is-ipfs',
                     '/concepts/how-ipfs-works',
-                    '/concepts/privacy-and-encryption',
-                    '/concepts/nodes',
                     '/concepts/glossary',
                     '/concepts/comparisons',
-                    '/concepts/usage-ideas-examples',
-                    '/concepts/faq'
+                    '/concepts/ipfs-implementations',                    
+                    '/concepts/faq',
                 ]
               },
               {
-                title: 'Content-addressed data',
+                title: 'Ideas',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
                   '/concepts/content-addressing',
                   '/concepts/hashing',
                   '/concepts/immutability',
-                  '/concepts/persistence'
+                  '/concepts/persistence',
+                  '/concepts/privacy-and-encryption',
                 ]
               },
               {
-                title: 'Peer-to-peer sharing',
+                title: 'Technology',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
@@ -132,15 +121,8 @@ module.exports = {
                   '/concepts/ipns',
                   '/concepts/libp2p',
                   '/concepts/file-systems',
-                ]
-              },
-              {
-                title: 'Integrating with the Web',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                    '/concepts/ipfs-gateway',
-                    '/concepts/dnslink'
+                  '/concepts/ipfs-gateway',
+                  '/concepts/dnslink'
                 ]
               },
               {
@@ -152,59 +134,66 @@ module.exports = {
             ]
           },
           {
-            title: 'How-tos',
+            title: 'Guides',
             path: '/how-to/',
             children: [
               {
-                title: 'Quick start',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: ['/how-to/command-line-quick-start']
-              },
-              {
-                title: 'Customize your install',
+                title: 'Kubo',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/how-to/configure-node',
+                  '/how-to/command-line-quick-start',
                   '/how-to/modify-bootstrap-list',
                   '/how-to/nat-configuration',
                   '/how-to/default-profile',
+                  '/how-to/take-snapshot',
                   '/how-to/run-ipfs-inside-docker',
-                  [
-                    'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
-                    'Customize an IPFS repo'
-                  ],
-                  '/how-to/best-practices-for-ipfs-builders',
+                  '/how-to/work-with-blocks',                  
+                  '/how-to/pin-files',
+                  '/how-to/store-play-videos',
+                  '/how-to/host-git-repo',
+                  '/how-to/observe-peers',
+                  '/how-to/websites-on-ipfs/static-site-generators',
+                  '/how-to/websites-on-ipfs/redirects-and-custom-404s',
                   '/how-to/troubleshooting'
                 ]
               },
               {
-                title: 'Manage files',
+                title: 'js-ipfs',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
-                  '/how-to/work-with-blocks',
-                  '/how-to/pin-files',
+                  [
+                    'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
+                    'Customize an IPFS repo'
+                  ],
+                  'how-to/create-simple-chat-app',
+
+                ]
+              },
+              {
+                title: 'Best Practices',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/how-to/best-practices-for-ipfs-builders',
+                ]
+              },
+              {
+                title: 'Multiple',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/how-to/configure-node',                
                   '/how-to/work-with-pinning-services',
-                  '/how-to/take-snapshot',
-                  '/how-to/store-play-videos',
-                  '/how-to/host-git-repo',
-                  '/how-to/move-ipfs-installation/move-ipfs-installation'
-                ]
-              },
-              {
-                title: 'Work with peers',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/how-to/observe-peers',
+                  '/how-to/move-ipfs-installation/move-ipfs-installation',
                   '/how-to/exchange-files-between-nodes',
-                  '/how-to/peering-with-content-providers'
+                  '/how-to/peering-with-content-providers',
+                  '/how-to/publish-ipns'                 
                 ]
               },
               {
-                title: 'Websites on IPFS',
+                title: 'IPFS Desktop',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
@@ -217,28 +206,20 @@ module.exports = {
                 ]
               },
               {
+                title: 'Ecosystem',
+                sidebarDepth: 1,
+                collapsable: false,
+                children: [
+                  '/how-to/websites-on-ipfs/introducing-fleek',
+                ]
+              },
+              {
                 title: 'IPFS in the browser',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
                   'how-to/address-ipfs-on-web',
-                  'how-to/create-simple-chat-app',
-                  '/how-to/browser-tools-frameworks'
-                ]
-              },
-              {
-                title: 'IPNS and mutability',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
-                  '/how-to/publish-ipns'
-                ]
-              },
-              {
-                title: 'IPFS Companion',
-                sidebarDepth: 1,
-                collapsable: false,
-                children: [
+                  '/how-to/browser-tools-frameworks',
                   'how-to/companion-node-types',
                   'how-to/dnslink-companion',
                   'how-to/companion-window-ipfs',
@@ -246,7 +227,7 @@ module.exports = {
                 ]
               },
               {
-                title: 'IPFS & Blockchain Networks',
+                title: 'NFTs',
                 sidebarDepth: 1,
                 collapsable: false,
                 children: [
@@ -257,7 +238,7 @@ module.exports = {
             ]
           },
           {
-            title: 'API & CLI',
+            title: 'Reference',
             path: '/reference/',
             children: [
               '/reference/http/gateway',
@@ -268,18 +249,7 @@ module.exports = {
             ]
           },
           {
-            title: 'Case studies',
-            children: [
-              ['/concepts/case-study-arbol', 'Arbol'],
-              ['/concepts/case-study-audius', 'Audius'],
-              ['/concepts/case-study-fleek', 'Fleek'],
-              ['/concepts/case-study-likecoin', 'LikeCoin'],
-              ['/concepts/case-study-morpheus', 'Morpheus.Network'],
-              ['/concepts/case-study-snapshot', 'Snapshot']
-            ]
-          },
-          {
-            title: 'Community',
+            title: 'Contribute',
             path: '/community/',
 
             children: [
@@ -319,7 +289,7 @@ module.exports = {
             ]
           },
           {
-            title: 'Project',
+            title: 'Project History',
             path: '/project/',
             children: [
               'project/history',
