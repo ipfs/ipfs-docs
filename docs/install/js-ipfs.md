@@ -286,8 +286,6 @@ As the JS-IPFS implementation changes, some of these steps should be deemed cond
 1. The file has been added to the IPFS network and has given the file a CID. You can share this CID with anyone, and they can use it on their IPFS node to obtain the content you uploaded.
 1. If you take the CID and load it on the HTTP gateway, you will see the content `https://ipfs.io/ipfs/QmYt9ypyGsR1BKdaCGPdwdBgAiuXK5AYN2bGSNZov7YXuk`:
 
-![](../../images/jsipfs-add-gateway.png)
-
 :::
 
 ::::
