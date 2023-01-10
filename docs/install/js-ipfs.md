@@ -81,8 +81,6 @@ Alternatively, you can build the project from the source. See the [JS-IPFS GitHu
 
 3. You should be able to point to the [webpage](http://127.0.0.1:5002/webui) using the address output by the terminal `http://127.0.0.1:5002/webui`:
 
-    ![The JS-IPFS daemon showing the web-ui.](../../images/jsipfs-webui.png)
-
 4. If you are unable to connect to the API, ensure [cross-origin (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) requests are configured:
 
     ```bash
