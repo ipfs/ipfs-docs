@@ -32,7 +32,7 @@ To add and use a remote pinning service directly in IPFS, you'll first need to h
 
 ### IPFS Desktop or IPFS Web UI
 
-You can add your favorite pinning service(s) to IPFS Desktop/Web UI directly, enabling you to pin and unpin items from the Files screen in the same way you do with local pins.
+You can add your favorite pinning service(s) to IPFS Desktop/Web UI directly, enabling you to pin and unpin items from the Files screen in the same way you would add or remove local pins.
 
 #### Adding a new pinning service
 
