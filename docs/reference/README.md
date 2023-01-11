@@ -3,7 +3,7 @@ title: API & CLI
 description: API and CLI reference materials for IPFS, the InterPlanetary File System.
 ---
 
-# API & CLI reference
+# Reference
 
 Looking for user and developer references for IPFS? Find them here.
 
@@ -15,7 +15,7 @@ The [Gateway API](http/gateway.md) provides implementation-agnostic HTTP interfa
 
 Implementation and language specific interfaces can be used when [HTTP Gateway API](http/gateway.md) is not enough, or you need additional flexibility.
 
-### Kubo (go-ipfs)
+## Kubo 
 
 Kubo is the earliest and most widely used implementation of IPFS, written in Go.
 
@@ -31,7 +31,7 @@ Use it as:
   See [Go API reference for Kubo](go/api.md), including the Go CoreAPI, the Go embedded client, and a Go client for interacting with Kubo over HTTP RPC API.
 
 
-### JavaScript (js-ipfs)
+## Helia
 
 [API resources for js-ipfs](js/api.md), including the JS core API reference and the JS HTTP client library.
 

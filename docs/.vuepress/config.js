@@ -68,6 +68,15 @@ module.exports = {
           }
         },
         nav: require('./nav/en'),
+        nav: [
+          { text: 'Getting Started', link: '/install/' },
+          { text: 'Concepts', link: '/concepts/' },
+          { text: 'Guides', link: '/how-to/' },
+          { text: 'Reference', link: '/reference/' }, 
+          { text: 'Additional Resources', link: '/community/' },                  
+        ],
+        sidebar: 'auto'
+        /*
         sidebar: [
           {
             title: 'Getting Started',
@@ -238,7 +247,7 @@ module.exports = {
             ]
           },
           {
-            title: 'Reference',
+            title: 'Reference ',
             path: '/reference/',
             children: [
               '/reference/http/gateway',
@@ -307,6 +316,8 @@ module.exports = {
             ]
           }
         ]
+
+        */
       }
     }
   },
