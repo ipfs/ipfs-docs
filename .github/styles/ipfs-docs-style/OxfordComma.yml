@@ -1,0 +1,8 @@
+extends: existence
+message: "Use the Oxford comma in '%s'. Follow each list of three or more items with a comma."
+link: https://docs.ipfs.tech/community/contribute/grammar-formatting-and-style/#the-oxford-comma
+scope: sentence
+level: suggestion
+nonword: true
+tokens:
+  - '(?:[^\s,]+,){1,} \w+ (?:and|or) \w+[.?!]'

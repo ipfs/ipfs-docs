@@ -135,6 +135,7 @@ We'll need to bundle the dependencies to run the app. Let's do it:
 
 You should see something like this if all went well:
 
+<!-- markdown-link-check-disable -->  
 ```sh
 Starting up http-server, serving public
 Available on:
@@ -142,6 +143,7 @@ Available on:
   http://192.168.2.92:12345
 Hit CTRL-C to stop the server
 ```
+<!-- markdown-link-check-enable-->
 
 Now go to http://127.0.0.1:12345 in a modern browser and you're on!
 

@@ -93,7 +93,7 @@ These voting systems are used to calculate the results of a vote based on the vo
 
 ## How Snapshot uses IPFS
 
-Snapshot uses IPFS to make the whole voting process fully transparent and auditable. Every space, proposal, vote, and user action is added to IPFS and has a [content identifier (CID)](/concepts/content-addressing.md).
+Snapshot uses IPFS to make the whole voting process fully transparent and auditable. Every space, proposal, vote, and user action is added to IPFS and has a [content identifier (CID)](../concepts/content-addressing.md).
 
 Additionally, the Snapshot UI is also [available on IPFS](https://bafybeihzjoqahhgrhnsksyfubnlmjvkt66aliodeicywwtofodeuo2icde.ipfs.dweb.link/) and linked using the ENS name `shot.eth` which is accessible via any ENS resolution service, e.g. [shot.eth.limo](https://shot.eth.limo/)(see the `x-ipfs-path` and `X-Ipfs-Roots` headers when making an HTTP request.)
 
@@ -115,7 +115,7 @@ pineapple.js exposes a `pin` method that takes a JSON object and sends it to the
 
 ### Open access via IPFS Gateways
 
-After data is added to the IPFS network via pinning services, it is also made available for viewing by users via an [IPFS Gateway](/concepts/ipfs-gateway.md). Links to the signed messages for [proposals](https://snapshot.mypinata.cloud/ipfs/bafkreigva2y23hnepirhvup2widmawmjiih3kvvuaph3a7mrivkiqcvuki) and [votes](https://snapshot.mypinata.cloud/ipfs/bafkreibozdzgw5y5piburro6pxspw7yjcdaymj3fyqjl2rohsthnqfwc6e) are integrated into the Snapshot UI.
+After data is added to the IPFS network via pinning services, it is also made available for viewing by users via an [IPFS Gateway](../concepts/ipfs-gateway.md). Links to the signed messages for [proposals](https://snapshot.mypinata.cloud/ipfs/bafkreigva2y23hnepirhvup2widmawmjiih3kvvuaph3a7mrivkiqcvuki) and [votes](https://snapshot.mypinata.cloud/ipfs/bafkreibozdzgw5y5piburro6pxspw7yjcdaymj3fyqjl2rohsthnqfwc6e) are integrated into the Snapshot UI.
 
 ## IPFS benefits
 

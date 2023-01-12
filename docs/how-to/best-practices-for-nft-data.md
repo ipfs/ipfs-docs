@@ -166,12 +166,12 @@ Here's a quick recap of our recommendations:
 - Data persistence should be part of your platform's design. Running your own IPFS infrastructure or using a remote pinning service will keep your data online and accessible.
 
 
-[docs-cid]: /concepts/content-addressing
-[docs-mint-nfts]: /how-to/mint-nfts-with-ipfs
-[docs-minty-how-ipfs-helps]: /how-to/mint-nfts-with-ipfs/#how-ipfs-helps
-[docs-persistence]: /concepts/persistence/
-[docs-server-infra]: /install/server-infrastructure/
-[docs-gateway]: /concepts/ipfs-gateway/
+[docs-cid]: ../concepts/content-addressing.md
+[docs-mint-nfts]: ../how-to/mint-nfts-with-ipfs.md
+[docs-minty-how-ipfs-helps]: ../how-to/mint-nfts-with-ipfs.md#how-ipfs-helps
+[docs-persistence]: ../concepts/persistence.md
+[docs-server-infra]: ../install/server-infrastructure.md
+[docs-gateway]: ../concepts/ipfs-gateway.md
 
 [docs-multibase]: https://github.com/multiformats/multibase
 

@@ -19,5 +19,5 @@ should be enough.
 
 -->
 
-- [HTTP Gateway](/reference/http/gateway/): implementation-agnostic interface for retrieving [content-addressed](../concepts/glossary/#content-addressing) data from IPFS
-- [Kubo RPC API v0](/reference/kubo/rpc/): RPC for managing Kubo IPFS nodes
+- [HTTP Gateway](../../reference/http/gateway.md): implementation-agnostic interface for retrieving [content-addressed](../../concepts/glossary.md#content-addressing) data from IPFS
+- [Kubo RPC API v0](../../reference/kubo/rpc.md): RPC for managing Kubo IPFS nodes

@@ -31,10 +31,6 @@ Want to know the current state of your favorite IPFS feature? See the [current i
 
 Learn more about the exploratory research work and prototyping being done for inclusion in IPFS by exploring our [research repo on GitHub](https://github.com/ipfs/notes).
 
-## IPFS team org planning
-
-See how IPFS team planning, management and coordination happens, and learn how to take part in the weekly open call, by visiting the [IPFS team management GitHub repo](https://github.com/ipfs/team-mgmt).
-
 ## Related projects
 
 IPFS is a highly modular project that is itself made out of many different protocols and tools. Learn more about the [IPFS-related projects](related-projects.md) under the overall support of Protocol Labs.

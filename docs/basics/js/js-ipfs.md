@@ -5,7 +5,7 @@ description: "A simple walkthrough of how to perform basic IPFS operations using
 
 # IPFS in JavaScript
 
-This guide will walk you through the basics of using IPFS with JavaScript. JS-IPFS is one of multiple [IPFS implementations](../ipfs-implementations.md). You will learn how to install and spawn a node using the available libraries, and add, retrieve, read, and remove files. If you are unsure about the meaning of some terms, check out the [glossary](../concepts/glossary.md).
+This guide will walk you through the basics of using IPFS with JavaScript. JS-IPFS is one of multiple [IPFS implementations](../ipfs-implementations.md). You will learn how to install and spawn a node using the available libraries, and add, retrieve, read, and remove files. If you are unsure about the meaning of some terms, check out the [glossary](../../concepts/glossary.md).
 
 ::: tip Environment
 
@@ -13,7 +13,7 @@ All instructions and examples shown here were performed and tested on an M1 Mac.
 
 :::
 
-There are two ways to work with IPFS using JavaScript; the [JS-IPFS](../../reference/js/api/#js-ipfs) library or the [HTTP client](../../reference/js/api/#http-client). We'll show you how to use both in this guide.
+There are two ways to work with IPFS using JavaScript; the [JS-IPFS](../../reference/js/api.md#js-ipfs) library or the [HTTP client](../../reference/js/api.md#http-client). We'll show you how to use both in this guide.
 
 ## Install JS-IPFS
 
@@ -376,7 +376,7 @@ Pinning a file will save the file data save to the local IPFS node and ensure da
     pinned QmWcYcWY5vdDzBcAoLo3rYXQ2tLkjzu57vEePCvyhuwZRi
     ```
 
-By default, objects that you retrieve over IPFS are not pinned to your node. If you wish to prevent the files from being garbage collected, you need to pin them. You will notice that the pin you just added is a recursive pin, meaning it is a directory containing other objects. Check out the [pinning content](../concepts/persistence/##pinning-in-context) to learn more about pinning.
+By default, objects that you retrieve over IPFS are not pinned to your node. If you wish to prevent the files from being garbage collected, you need to pin them. You will notice that the pin you just added is a recursive pin, meaning it is a directory containing other objects. Check out the [pinning content](../../concepts/persistence.md#pinning-in-context) to learn more about pinning.
 
 ## Remove a file
 
@@ -424,7 +424,7 @@ Removing the content pin will remove a file from IPFS. In this section, we will 
     unpinned QmWcYcWY5vdDzBcAoLo3rYXQ2tLkjzu57vEePCvyhuwZRi
     ```
 
-1. `test.txt` file is now unpinned, but it has not been removed from our node completely. To remove it completely, run the [garbage collection](../../concepts/persistence##garbage-collection). The command will remove everything from your node that does not have a pin:
+1. `test.txt` file is now unpinned, but it has not been removed from our node completely. To remove it completely, run the [garbage collection](../../concepts/persistence.md#garbage-collection). The command will remove everything from your node that does not have a pin:
 
     ```shell
     jsipfs repo gc

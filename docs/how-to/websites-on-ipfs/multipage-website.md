@@ -5,7 +5,7 @@ description: Learn how to host a website with multiple pages and external assets
 
 # Multi-page website
 
-In this guide, you will learn how to host a website with multiple pages and external assets on IPFS. This tutorial is the second in a series of tutorials aimed at teaching web developers how to build websites and applications using IPFS. You don't need to have completed the previous tutorial to understand what's going on here, but if you're new to the IPFS ecosystem, it's a good idea to follow through the [single page website guide](/how-to/websites-on-ipfs/single-page-website) before you start this one. It will give you a solid foundation to work off.
+In this guide, you will learn how to host a website with multiple pages and external assets on IPFS. This tutorial is the second in a series of tutorials aimed at teaching web developers how to build websites and applications using IPFS. You don't need to have completed the previous tutorial to understand what's going on here, but if you're new to the IPFS ecosystem, it's a good idea to follow through the [single page website guide](../../how-to/websites-on-ipfs/single-page-website.md) before you start this one. It will give you a solid foundation to work off.
 
 ## Prerequisites
 
@@ -234,9 +234,9 @@ Instead of sharing the CID of your website, you publish the root CID of your web
 
     Now, just head back to the `https://gateway.ipfs.io/ipns/k51qzi...` link to view your updates!
 
-This is just the tip of the iceberg when it comes to IPNS. [Check out the IPNS page to learn more →](../../../concepts/ipns)
+This is just the tip of the iceberg when it comes to IPNS. [Check out the IPNS page to learn more →](../../concepts/ipns.md)
 
 ## Up next
 
-In the next tutorial, we'll look at [linking a domain name to your site!](/how-to/websites-on-ipfs/link-a-domain)
+In the next tutorial, we'll look at [linking a domain name to your site!](../../how-to/websites-on-ipfs/link-a-domain.md)
 
