@@ -9,44 +9,27 @@ The InterPlanetary File System (IPFS) is a composable suite of peer-to-peer/dist
 
 Because IPFS is open-source, anyone can implement the IPFS protocol.
 
-## [Getting Started](install/)
+## [Get Started](install/)
 
-This section includes guides that will teach you how to get up and running with various IPFS implementations and tools.
+New to IPFS and looking to dive in? Quickly get up and running with various IPFS implementations and tools using the quickstart tutorials in this section.
 
-### Implementations 
+## [Learn the Concepts](concepts/)
 
-- Kubo, the first Go implemenation of IPFS
-- Helia, the new JavaScript implementation of IPFS 
-- Ioro
+Want to learn more about the concepts, technology and philosophy underlying IPFS? Read more in this section.
 
-### Tools 
+## [Guides](guides/)
 
-- IPFS Desktop
-- IPFS Companion
+Are you an advanced IPFS user who wants to learn how to build advanced applications? You can find advanced tutorials involving various IPFS implementations like Kubo and Helia and tools like IPFS Desktopn in this section.
 
-## Concepts
+## [Reference](reference/)
 
-Want to know more about the decentralized web (DWeb) and how it's changing the internet? These resources will give you a clearer understanding of the DWeb movement, and how it's improving the world:
-
-- [What is IPFS](concepts/what-is-ipfs.md)
-- [Peer-to-peer sharing](concepts/dht.md)
-- [Content-addressed data](concepts/content-addressing.md)
-
-::: callout
-ProtoSchool's self-guided [interactive tutorials](https://proto.school/tutorials) are designed to introduce you to decentralized web concepts, protocols, and tools. Explore JS-IPFS APIs by completing browser-based coding challenges in ProtoSchool's [IPFS course](https://proto.school/course/ipfs), or explore code-free intros to essential DWeb concepts and related projects in the IPFS ecosystem.
-:::
-
-## Guides
-
-## Reference
+Are you wondering how to customize your installation, use the advanced functionality in, or connect with IPFS via HTTP. You can find reference
 
 ## See what others are building
 
 Are you looking for inspiration? You can find a huge collection of awesome community projects over at Awesome IPFS.
 
 [Check out Awesome IPFS now →](https://awesome.ipfs.tech/)
-
-![The Awesome IPFS homepage.](./images/awesome-ipfs.png =740x420)
 
 ## Join the IPFS community
 

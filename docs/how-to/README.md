@@ -23,6 +23,29 @@ See the site navigation menu for all our how-tos, organized by topic area, inclu
 
 ## Kubo 
 
+### [Add a file to IPFS using Kubo](add-code-flow.md)
+
+Learn how to Add a file to IPFS using Kubo
+
+### [Configure the datastore](datastores.md)
+### [Configure the libP2P network resource manager](libp2p-resource-management.md)
+### [Connect with Websockets](transports.md) 
+
+If you want `js-ipfs` nodes in web browsers to connect to your `kubo` node, you will need to turn on websocket support in your `kubo` node.
+
+### [Create API Bindings](implement-api-bindings.md)
+### [Deep dive into delegated routing](delegated-routing.md)
+### [How to file a GitHub Issue](github-issue-guide.md)
+### [Implement an API Client](implement-api-bindings.md)
+### [Install command completion](command-completion.md)
+### [Install plugins](plugins.md)
+### [Mount IPFS with FUSE](fuse.md)
+### [Set up an IPFS Gateway](gateway.md)
+### [Transfer a File](file-transfer.md)
+### [Troubleshoot Kubo](debug-guide.md)
+### [Use experimental features](experimental-features.md)
+### [Use HTTP/RPC clients](http-rpc-clients.md)
+### [Use Kubo environment variables](environment-variables.md)
 
 ## Helia 
 
