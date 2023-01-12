@@ -15,7 +15,7 @@ The [Gateway API](http/gateway.md) provides implementation-agnostic HTTP interfa
 
 Implementation and language specific interfaces can be used when [HTTP Gateway API](http/gateway.md) is not enough, or you need additional flexibility.
 
-## Kubo 
+## [Kubo](../reference/kubo/README.md)
 
 Kubo is the earliest and most widely used implementation of IPFS, written in Go.
 
