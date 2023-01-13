@@ -69,12 +69,40 @@ module.exports = {
         },
         //nav: require('./nav/en'),
         nav: [
-          { text: 'Getting Started', link: '/install/' },
-          { text: 'Concepts', link: '/concepts/' },
-          { text: 'Guides', link: '/how-to/' },
-          { text: 'Reference', link: '/reference/' }, 
-          { text: 'Additional Resources', link: '/community/' },                  
+          { 
+            text: 'Get Started', 
+            link: '/install/' 
+          },
+          { 
+            text: 'Learn', 
+            items: [
+              { text: 'Study the Concepts', link: '/concepts/' },
+              { text: 'Advanced Tutorials', link: '/how-to/' },
+              { text: 'Read the Specs', link: '/implement/specs/' }
+            ]
+          },
+          { 
+            text: 'Reference', 
+            items: [
+              { text: 'Kubo', link: '/reference/kubo/' },
+              { text: 'js-ipfs', link: '/reference/js/api' },
+              { text: 'HTTP Gateway', link: '/reference/http/gateway' },
+              { text: 'Ioro', link: 'https://iroh.computer/docs/' },
+              { text: 'IPFS Desktop', link: '/reference/desktop/' },
+            ]
+          },
+          { 
+            text: 'Additional Resources', 
+            items: [
+              { text: 'Get Involved with the Community', link: '/community/' },
+              { text: 'Project History', link: '/project/' }
+            ]
+          },               
         ],
+
+        //note that a custom sidebar does not seem to work with the nav w/ dropdown setup
+        sidebar: 'auto'
+        /*
         sidebar: {
           '/': 'auto',
           '/install/': 'auto',
@@ -207,8 +235,8 @@ module.exports = {
           }
         ]
         },
-        //sidebar: 'auto'
-        /*
+        //
+        
         sidebar: [
           {
             title: 'Getting Started',
