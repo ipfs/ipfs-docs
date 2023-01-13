@@ -20,15 +20,6 @@ Use IPFS Desktop to get acquainted with IPFS without needing to touch the termin
 |-------|---------|-------|----------|------|
 | ![Screenshot of the Files screen](https://gateway.ipfs.io/ipfs/QmRN82RPWHKuSuBadijTQuaCjFKAGaymt3aFBoG6Du9Vi3) | ![Screenshot of the Explore screen](https://gateway.ipfs.io/ipfs/Qmaerxh9UKf9F3YPKnV2cBEnPQoJdVmkswFdz7kNQGncKt) | ![Screenshot of the Peers screen](https://gateway.ipfs.io/ipfs/QmaVbBYsEBb34HMP1YWeErrS7X3TB6Y9t1iQ4sBRnTvSwa) | ![Screenshot of the Settings screen](https://gateway.ipfs.io/ipfs/Qmby5RuN7K9s5W9RVLdrQSE8gRKQ66EX8c39iC31DLAxN6) | ![Screenshot of Mac/Windows menus](https://gateway.ipfs.io/ipfs/QmbT2YtuNo17Qaq31FJWRZgRMY4E6N9cdfBwzZTFSHUoBP) |
 
-### Quick-install shortcuts
-
-When in doubt, pick one of package formats with built-in automatic update mechanism:
-
-- **Mac:** [ipfs-desktop-0.25.0-mac.dmg](https://github.com/ipfs-shipyard/ipfs-desktop/releases/download/v0.25.0/ipfs-desktop-0.25.0-mac.dmg)
-- **Windows:** [IPFS-Desktop-Setup-0.25.0.exe](https://github.com/ipfs-shipyard/ipfs-desktop/releases/download/v0.25.0/IPFS-Desktop-Setup-0.25.0.exe)
-- **Linux:**  [ipfs-desktop-0.25.0-linux-x86_64.AppImage](https://github.com/ipfs-shipyard/ipfs-desktop/releases/download/v0.25.0/ipfs-desktop-0.25.0-linux-x86_64.AppImage)
-  - If you prefer to manage updates on your own, see [other package formats](#install) below.
-
 ### Table of Contents
 
 - [IPFS Desktop](#ipfs-desktop)
