@@ -277,8 +277,19 @@ module.exports = {
             '/reference/http/gateway',
             '/reference/js/api',
             '/reference/go/api',
-            '/reference/kubo/cli',
-            '/reference/kubo/rpc'
+            {
+              title: 'Kubo CLI',
+              sidebarDepth: 1,
+              collapsable: true,
+              path: '/reference/kubo/cli'
+            },
+            {
+              title: 'Kubo RPC API',
+              sidebarDepth: 1,
+              collapsable: true,
+              path: '/reference/kubo/rpc'
+            },
+
           ],
           '/community/': [
             {
