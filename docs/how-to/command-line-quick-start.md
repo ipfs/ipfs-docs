@@ -1,9 +1,9 @@
 ---
-title: Command-line quick start
+title: Advanced Kubo Usage
 description: Quick-start guide for installing and getting started with Kubo IPFS from the command line.
 ---
 
-# Command-line quick start
+# Advanced Kubo Usage
 
 If you're command-line savvy and just want to get up and running with IPFS right away, follow this quick-start guide. Please note that this guide assumes that you'll be installing Kubo, the reference implementation written in Go.
 

@@ -1,5 +1,5 @@
 ---
-title: API & CLI
+title: Reference
 description: API and CLI reference materials for IPFS, the InterPlanetary File System.
 ---
 
