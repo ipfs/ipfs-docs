@@ -47,7 +47,7 @@ In essence, Snapshot allows projects and DAOs aiming for decentralization to pol
 
 Snapshot was originally built while Fabien, Snapshot's founder, was working for the automated market maker [Balancer](https://balancer.fi/). The goal was to create a voting platform that would be flexible enough to grant BAL tokens within [Balancer pools](https://docs.balancer.fi/products/balancer-pools) voting power. However, doing this on-chain turned out to be too computationally heavy to be feasible. That's when he realized that doing it off-chain with IPFS could provide them with the flexibility needed.
 
-While free ("gassless") voting was not one of the initial requirements for Balancer, it came as a serendipitous bonus of the off-chain design with IPFS.
+While free ("gasless") voting was not one of the initial requirements for Balancer, it came as a serendipitous bonus of the off-chain design with IPFS.
 
 Two weeks later, Fabien began generalizing his gas-efficient implementation using IPFS so that could be used by projects and DAOs beyond Balancer – and Snapshot was born.
 

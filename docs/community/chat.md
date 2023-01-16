@@ -13,7 +13,7 @@ Join the [IPFS Discord server](https://discord.gg/ipfs) for synchronous chat! [S
 
 ## Matrix
 
-Join the [Matrix space](https://matrix.to/#/#ipfs-space:ipfs.io). [Homeserver documentation is available on Notion](https://pl-strflt.notion.site/IPFS-Matrix-Homeserver-Documentation-31481e76843547b7ab5160a87eed2b9f).
+Join the [Matrix space](https://matrix.to/#/#ipfs-space:ipfs.io). [Home server documentation is available on Notion](https://pl-strflt.notion.site/IPFS-Matrix-Homeserver-Documentation-31481e76843547b7ab5160a87eed2b9f).
 
 ## Slack
 

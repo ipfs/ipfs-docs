@@ -31,7 +31,7 @@ The end goal of a walkthrough is for the reader to achieve a very particular fun
 
 #### Short length
 
-Since walkthroughs cover one particular function or process, they tend to be quite short. The estimated reading time of a walkthrough is somewhere between 2 and 10 minutes. Most of the time, the most critical content in a walkthrough is presented in a numbered list. Images and gifs can help the reader understand what they should be doing.
+Since walkthroughs cover one particular function or process, they tend to be quite short. The estimated reading time of a walkthrough is somewhere between 2 and 10 minutes. Most of the time, the most critical content in a walkthrough is presented in a numbered list. Images and GIFs can help the reader understand what they should be doing.
 
 If a walkthrough is converted into a video, that video should be no longer than 5 minutes.
 

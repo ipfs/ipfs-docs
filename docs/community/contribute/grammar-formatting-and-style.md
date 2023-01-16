@@ -212,7 +212,7 @@ List items end with a period `.`, or a colon `:` if the list item has a sub-list
    3. David Copperfield.
 2. J.R.R Tolkien non-fiction books:
    1. The Hobbit.
-   2. Silmarillion.
+   2. The Silmarillion.
    3. Letters from Father Christmas.
 
 ##### Unordered lists
