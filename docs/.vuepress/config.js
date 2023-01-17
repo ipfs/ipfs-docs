@@ -166,12 +166,7 @@ module.exports = {
                   '/concepts/dnslink'
               ]
             },
-            {
-              title: 'Further reading',
-              sidebarDepth: 1,
-              collapsable: true,
-              children: ['/concepts/further-reading/academic-papers']
-            }
+            '/concepts/further-reading/academic-papers'
           ],
           '/how-to/': [
             {
