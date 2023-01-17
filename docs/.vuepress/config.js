@@ -67,7 +67,6 @@ module.exports = {
             buttonText: 'Refresh'
           }
         },
-        nav: require('./nav/en'),
         nav: [
           { text: 'Get Started', link: '/install/' },
           { text: 'Concepts', link: '/concepts/' },
