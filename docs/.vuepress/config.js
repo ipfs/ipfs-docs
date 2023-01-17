@@ -67,23 +67,54 @@ module.exports = {
             buttonText: 'Refresh'
           }
         },
+        nav: require('./nav/en'),
         nav: [
           { text: 'Get Started', link: '/install/' },
           { text: 'Concepts', link: '/concepts/' },
           { text: 'Guides', link: '/how-to/' },
-          { text: 'Reference', link: '/reference/' }, 
-          { text: 'Community', link: '/community/' },   
-          { text: 'Project', link: '/project/' },                    
+          { text: 'Reference', link: '/reference/' },   
+          { text: 'Project', link: '/project/' },
+          { text: 'Case Studies', 
+            items: [
+              {text: 'Arbol', link : '/case-studies/case-study-arbol/'},
+              {text: 'Audius', link : '/case-studies/case-study-audius'},
+              {text: 'Fleek', link : '/case-studies/case-study-fleek'},
+              {text: 'LikeCoin', link : '/case-studies/case-study-likecoin'},
+              {text: 'Morpheus.Network', link : '/case-studies/case-study-morpheus'},
+              {text: 'Snapshot',link : '/case-studies/case-study-snapshot'},              
+            ]
+          }                  
         ],
 
         sidebar: {
           '/install/': [
-            '/install/ipfs-desktop',
-            '/install/ipfs-companion',
-            '/install/command-line',
-            ['/install/ipfs-updater', 'Kubo Updater'],
-            '/install/js-ipfs',
-            '/install/server-infrastructure'
+            {
+              title: 'Quickstarts',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
+                '/install/command-line',
+                ['/install/ipfs-updater', 'Kubo Updater'],
+                '/install/js-ipfs',
+                ['https://iroh.computer/docs/install/', "Iroh"],
+                '/install/ipfs-desktop',
+                '/install/ipfs-companion',
+                '/install/server-infrastructure'
+              ]
+            },
+            {
+              title: 'Basic Concepts',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
+                '/concepts/what-is-ipfs',
+                '/concepts/content-addressing',
+                '/concepts/hashing',
+                '/concepts/immutability',
+                '/concepts/persistence',
+                ['/concepts/', 'More Concepts'],
+              ]
+            },
           ],
           '/concepts/': [
             {
@@ -133,18 +164,6 @@ module.exports = {
               children: [
                   '/concepts/ipfs-gateway',
                   '/concepts/dnslink'
-              ]
-            },
-            {
-              title: 'Case Studies',
-              collapsable: true,
-              children: [
-                ['/concepts/case-study-arbol', 'Arbol'],
-                ['/concepts/case-study-audius', 'Audius'],
-                ['/concepts/case-study-fleek', 'Fleek'],
-                ['/concepts/case-study-likecoin', 'LikeCoin'],
-                ['/concepts/case-study-morpheus', 'Morpheus.Network'],
-                ['/concepts/case-study-snapshot', 'Snapshot']
               ]
             },
             {
@@ -276,7 +295,7 @@ module.exports = {
             },
 
           ],
-          '/community/': [
+          '/project/': [
             {
               title: 'Join the community',
               sidebarDepth: 2,
@@ -309,9 +328,7 @@ module.exports = {
                 '/community/contribute/code-persona',
                 '/community/contribute/contribution-tutorial'
               ]
-            }
-          ],
-          '/project/': [
+            },
                 '/project/history',
                 '/project/repository-guide',
                 '/project/related-projects',
@@ -325,13 +342,38 @@ module.exports = {
                   'Code of conduct'
                 ]
           ],
+          '/case-studies/' : [
+            {
+              title: 'Case Studies',
+              collapsable: false,
+              children: [
+                ['/case-studies/case-study-arbol', 'Arbol'],
+                ['/case-studies/case-study-audius', 'Audius'],
+                ['/case-studies/case-study-fleek', 'Fleek'],
+                ['/case-studies/case-study-likecoin', 'LikeCoin'],
+                ['/case-studies/case-study-morpheus', 'Morpheus.Network'],
+                ['/case-studies/case-study-snapshot', 'Snapshot']
+              ]
+            }
+          ],
           '/': [
             '/install/',
             '/concepts/',
             '/how-to/',
             '/reference/',
-            '/community/',
-            '/project/'
+            '/project/',
+            {
+              title: 'Case Studies',
+              collapsable: true,
+              children: [
+                ['/case-studies/case-study-arbol', 'Arbol'],
+                ['/case-studies/case-study-audius', 'Audius'],
+                ['/case-studies/case-study-fleek', 'Fleek'],
+                ['/case-studies/case-study-likecoin', 'LikeCoin'],
+                ['/case-studies/case-study-morpheus', 'Morpheus.Network'],
+                ['/case-studies/case-study-snapshot', 'Snapshot']
+              ]
+            },
           ]
         }
       }
