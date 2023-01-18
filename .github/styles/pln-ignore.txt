@@ -76,8 +76,6 @@ failover
 Filebase
 Filecoin
 filecoin
-Filecorgi
-filecorgi
 Filestore
 FlatFS
 flatfs
