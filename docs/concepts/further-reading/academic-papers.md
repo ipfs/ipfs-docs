@@ -31,7 +31,7 @@ Here are a few papers that are useful for understanding IPFS, whether it be unde
 
 **Freedman, Michael J., Freudenthal, Eric and Mazières, David**: _CoralCDN is a peer-to-peer content distribution network that allows a user to run a web site that offers high performance and meets huge demand, all for the price of a cheap broadband Internet connection. Volunteer sites that run CoralCDN automatically replicate content as a side effect of users accessing it. Publishing through CoralCDN is as simple as making a small change to the hostname in an object's URL; a peer-to-peer DNS layer transparently redirects browsers to nearby participating cache nodes, which in turn cooperate to minimize load on the origin web server. One of the system's key goals is to avoid creating hot spots that might dissuade volunteers and hurt performance. It achieves this through Coral, a latency-optimized hierarchical indexing infrastructure based on a novel abstraction called a distributed sloppy hash table or DSHT._
 
-## [Escaping the Evils of Centralized Control with self-certifying pathnames](http://www.sigops.org/ew-history/1998/papers/mazieres.ps)
+## [Escaping the Evils of Centralized Control with self-certifying pathnames](https://dl.acm.org/doi/abs/10.1145/319195.319213)
 
 (Association for Computing Machinery, 1998)
 
