@@ -40,12 +40,14 @@
 /guides/guides/install/ /install
 /how-to/host-single-page-site /how-to/websites-on-ipfs/single-page-website
 /how-to/troubleshoot-file-transfers /how-to/troubleshooting
+/how-to/run-ipfs-inside-docker /install/run-ipfs-inside-docker
 /install/command-line-quick-start/ /how-to/command-line-quick-start
 /introduction/ /concepts
 /introduction/faq/ /concepts/faq
 /introduction/how-ipfs-works/ /concepts/how-ipfs-works
 /introduction/overview/ /concepts/what-is-ipfs
 /introduction/usage/ /how-to/command-line-quick-start
+/install/ipfs-updater /how-to/ipfs-updater
 /install/recent-releases/ https://github.com/ipfs/kubo/releases
 /install/recent-releases/go-ipfs-0-5/ https://github.com/ipfs/kubo/releases 
 /install/recent-releases/go-ipfs-0-5/features/ https://github.com/ipfs/kubo/releases

@@ -89,30 +89,30 @@ module.exports = {
         sidebar: {
           '/install/': [
             {
-              title: 'Quickstarts',
-              sidebarDepth: 1,
-              collapsable: true,
-              children: [
-                '/install/command-line',
-                ['/install/ipfs-updater', 'Kubo Updater'],
-                '/install/js-ipfs',
-                ['https://iroh.computer/docs/install/', "Iroh"],
-                '/install/ipfs-desktop',
-                '/install/ipfs-companion',
-                '/install/server-infrastructure'
-              ]
-            },
-            {
               title: 'Basic Concepts',
               sidebarDepth: 1,
-              collapsable: true,
+              collapsable: false,
               children: [
                 '/concepts/what-is-ipfs',
                 '/concepts/content-addressing',
                 '/concepts/hashing',
                 '/concepts/immutability',
                 '/concepts/persistence',
-                ['/concepts/', 'More Concepts'],
+                ['/concepts/', 'More Concepts']
+              ]
+            },
+            {
+              title: 'Quickstarts',
+              sidebarDepth: 1,
+              collapsable: false,
+              children: [
+                ['/install/command-line','Kubo SDK for Go'],
+                ['/install/run-ipfs-inside-docker', 'Kubo CLI and Docker'],
+                ['/install/js-ipfs','js-ipfs SDK for JavaScript'],
+                ['https://iroh.computer/docs/install/', "Iroh SDK for Rust"],
+                ['/install/ipfs-desktop', 'IPFS Desktop App'],
+                ['/install/ipfs-companion', 'Companion Browser Extension'],
+                ['/install/server-infrastructure', 'IPFS Cluster']
               ]
             },
           ],
@@ -154,7 +154,7 @@ module.exports = {
                 ['https://ipld.io/docs/intro/primer/', 'IPLD' ],
                 '/concepts/ipns',
                 '/concepts/libp2p',
-                '/concepts/file-systems',
+                '/concepts/file-systems'
               ]
             },
             {
@@ -187,7 +187,7 @@ module.exports = {
                 '/how-to/modify-bootstrap-list',
                 '/how-to/nat-configuration',
                 '/how-to/default-profile',
-                '/how-to/run-ipfs-inside-docker',
+                ['/how-to/ipfs-updater', 'Update Kubo using ipfs-update'],
                 [
                   'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
                   'Customize an IPFS repo'
