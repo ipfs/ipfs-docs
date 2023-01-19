@@ -1,9 +1,9 @@
 ---
-title: "IPFS implementations"
+title: "IPFS Implementations"
 description: "There isn't one canonical IPFS implemetnation. Learn about the various IPFS implementations available for different usecases."
 ---
 
-# IPFS implementations
+# IPFS Implementations
 
 There isn't one canonical IPFS implementation. There is so much to explore in this space that it's ideal to have a plethora of implementations experimenting and optimizing for various usecases. Below is a list of IPFS implementations that we know of in name alphabetical order. If you're aware of more, please add!
 

@@ -1,9 +1,9 @@
 ---
-title: Academic papers
+title: Academic Papers
 description: Here are a few papers that are useful for understanding IPFS, whether it be understanding the IPFS specification itself or the background for the decentralized web, protocols, hashing, and so on.
 ---
 
-# Academic papers
+# Academic Papers
 
 Here are a few papers that are useful for understanding IPFS, whether it be understanding the IPFS spec itself or the background for the decentralized web, protocols, hashing, and so on.
 

@@ -87,20 +87,8 @@ module.exports = {
         ],
 
         sidebar: {
-          '/install/': [
-            {
-              title: 'Basic Concepts',
-              sidebarDepth: 1,
-              collapsable: false,
-              children: [
-                '/concepts/what-is-ipfs',
-                '/concepts/content-addressing',
-                '/concepts/hashing',
-                '/concepts/immutability',
-                '/concepts/persistence',
-                ['/concepts/', 'More Concepts']
-              ]
-            },
+          '/install/':  [
+            ['/concepts/what-is-ipfs','Basic Concepts'],
             {
               title: 'Install',
               sidebarDepth: 1,
@@ -118,33 +106,22 @@ module.exports = {
           ],
           '/concepts/': [
             {
-              title: 'IPFS 101',
+              title: 'Basic Concepts',
               sidebarDepth: 1,
               collapsable: true,
               children: [
                   '/concepts/what-is-ipfs',
                   '/concepts/how-ipfs-works',
-                  '/concepts/ipfs-implementations',  
+                  '/concepts/content-addressing',
+                  '/concepts/hashing',
+                  '/concepts/immutability',
+                  '/concepts/persistence', 
                   '/concepts/privacy-and-encryption',
-                  '/concepts/nodes',
-                  '/concepts/comparisons',
-                  '/concepts/usage-ideas-examples',
-                  '/concepts/faq'
+                  '/concepts/nodes'
               ]
             },
             {
-              title: 'Content-addressed data',
-              sidebarDepth: 1,
-              collapsable: true,
-              children: [
-                '/concepts/content-addressing',
-                '/concepts/hashing',
-                '/concepts/immutability',
-                '/concepts/persistence'
-              ]
-            },
-            {
-              title: 'Peer-to-peer sharing',
+              title: 'Subsystems and Components',
               sidebarDepth: 1,
               collapsable: true,
               children: [
@@ -154,30 +131,21 @@ module.exports = {
                 ['https://ipld.io/docs/intro/primer/', 'IPLD' ],
                 '/concepts/ipns',
                 '/concepts/libp2p',
-                '/concepts/file-systems'
+                '/concepts/file-systems',
+                '/concepts/ipfs-gateway',
+                '/concepts/dnslink'
               ]
             },
-            {
-              title: 'Integrating with the Web',
-              sidebarDepth: 1,
-              collapsable: true,
-              children: [
-                  '/concepts/ipfs-gateway',
-                  '/concepts/dnslink'
-              ]
-            },
+            '/concepts/ipfs-implementations', 
+            '/concepts/comparisons',
+            '/concepts/usage-ideas-examples',
+            '/concepts/faq',
+            '/concepts/glossary',
             '/concepts/further-reading/academic-papers'
           ],
           '/how-to/': [
-            {
-              title: 'Advanced Usage',
-              sidebarDepth: 1,
-              collapsable: true,
-              children: [
-                '/how-to/command-line-quick-start',
-                '/how-to/desktop-app'
-              ]
-            },
+            '/how-to/command-line-quick-start',
+            '/how-to/desktop-app',
             {
               title: 'Customize your install',
               sidebarDepth: 1,
