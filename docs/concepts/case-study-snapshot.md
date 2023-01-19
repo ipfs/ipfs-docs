@@ -103,7 +103,7 @@ To understand how Snapshot uses IPFS, it's useful to understand how the whole ar
 - **Logic tier:** The [snapshot-hub](https://github.com/snapshot-labs/snapshot-hub) node.js server that exposes a GraphQL API.
 - **Data tier:** A combination of a MySQL database for indexing and querying and IPFS as its storage layer for space configuration, proposals, user actions, and votes.
 
-> **Note:** Even though MySQL is used for querying, all data stored on MySQL is available on IPFS. [Tables in the database schema](https://github.com/snapshot-labs/snapshot-hub/blob/master/src/helpers/schema.sql) have an `ipfs` field holding the IPFS CID.
+> **Note:** Even though MySQL is used for querying, all data stored on MySQL is available on IPFS. Tables in the database schema have an `ipfs` field holding the IPFS CID.
 
 ![Snapshot architecture](./images/case-studies/img-snapshot-architecture.png)
 
