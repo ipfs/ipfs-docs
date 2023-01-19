@@ -102,16 +102,16 @@ module.exports = {
               ]
             },
             {
-              title: 'Quickstarts',
+              title: 'Install',
               sidebarDepth: 1,
               collapsable: false,
               children: [
-                ['/install/command-line','Kubo SDK for Go'],
-                ['/install/run-ipfs-inside-docker', 'Kubo CLI and Docker'],
-                ['/install/js-ipfs','js-ipfs SDK for JavaScript'],
-                ['https://iroh.computer/docs/install/', "Iroh SDK for Rust"],
+                ['/install/command-line','IPFS Kubo for Go'],
+                ['/install/run-ipfs-inside-docker', 'IPFS Kubo in Docker'],
+                ['/install/js-ipfs','IPFS for JavaScript'],
+                ['https://iroh.computer/docs/install/', "IPFS Iroh for Rust"],
                 ['/install/ipfs-desktop', 'IPFS Desktop App'],
-                ['/install/ipfs-companion', 'Companion Browser Extension'],
+                ['/install/ipfs-companion', 'IPFS Companion Browser Extension'],
                 ['/install/server-infrastructure', 'IPFS Cluster']
               ]
             },

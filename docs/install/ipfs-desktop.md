@@ -3,7 +3,7 @@ title: IPFS Desktop
 description: IPFS Desktop gives you all the power of IPFS in a convenient desktop app - a complete IPFS node, plus handy OS menu shortcuts and an all-in-one file manager, peer map, and content explorer.
 ---
 
-# IPFS Desktop
+# Install the IPFS Desktop App
 
 **IPFS Desktop bundles an IPFS node, file manager, peer manager, and content explorer into a single, easy-to-use application.**
 

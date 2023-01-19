@@ -1,11 +1,11 @@
 ---
-title: js-ipfs
+title: IPFS for JavaScript (js-ipfs)
 description: "A simple walkthrough of how to perform basic IPFS operations using the JavaScript implementation."
 ---
 
-# IPFS in JavaScript (js-ipfs)
+# Install IPFS for JavaScript (js-ipfs)
 
-This guide will walk you through the basics of using IPFS with JavaScript. JS-IPFS is one of multiple [IPFS implementations](../ipfs-implementations.md). You will learn how to install and spawn a node using the available libraries, and add, retrieve, read, and remove files. If you are unsure about the meaning of some terms, check out the [glossary](../../concepts/glossary.md).
+This guide will walk you through the basics of using JS-IPFS, an implementation of IPFS in JavaScript. JS-IPFS is one of multiple [IPFS implementations](../ipfs-implementations.md). You will learn how to install and spawn a node using the available libraries, and add, retrieve, read, and remove files. If you are unsure about the meaning of some terms, check out the [glossary](../../concepts/glossary.md).
 
 ::: tip Environment
 

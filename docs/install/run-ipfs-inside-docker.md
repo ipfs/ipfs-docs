@@ -1,9 +1,9 @@
 ---
-title: Run Kubo IPFS inside Docker
+title: Install IPFS Kubo inside Docker
 description: You can run IPFS inside Docker to simplify your deployment processes, and horizontally scale your IPFS infrastructure.
 ---
 
-# Run IPFS inside Docker
+# Install IPFS Kubo inside Docker
 
 You can run Kubo IPFS inside Docker to simplify your deployment processes, as well as horizontally scale your IPFS infrastructure.
 
