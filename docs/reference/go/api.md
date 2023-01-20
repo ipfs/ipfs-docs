@@ -1,9 +1,9 @@
 ---
-title: IPFS in Go
+title: Advanced Kubo Usage
 description: Developer resources for working in Go with IPFS, the InterPlanetary File System.
 ---
 
-# IPFS in Go
+# Advanced Kubo Usage
 
 ## Working with Go
 

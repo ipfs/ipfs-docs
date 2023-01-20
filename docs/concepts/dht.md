@@ -1,5 +1,5 @@
 ---
-title: Distributed Hash Tables (DHTs)
+title: Distributed Hash Tables (DHT)
 description: Learn what distributed hash tables (DHTs) are, how they store who has what data, and how they play a part in the overall lifecycle of IPFS.
 ---
 

@@ -14,7 +14,7 @@ _&mdash; Brett Shear, COO, Fleek_
 ## Overview
 
 ::: right
-<img src="./images/case-studies/logo-fleek.png" alt="Fleek logo" width="200">
+<img src="./images/logo-fleek.png" alt="Fleek logo" width="200">
 :::
 
 [Fleek](https://fleek.co/) is an easy-to-use service for hosting websites, storing and delivering files, and developing apps for the decentralized web (DWeb). As the next generation of the internet, the DWeb offers massive strides forward in terms of data autonomy, disaster and censorship resilience, performance, and speed — but for those who aren't yet familiar with it, using or building for the decentralized web can be time-consuming or difficult. Fleek's mission is to speed adoption of the DWeb by making it easier for everyone from dedicated developers to everyday internet users to create apps and store files in a decentralized paradigm, positioning them on the vanguard of a "low-code/no-code" movement of platforms, services, and development tools for users at all levels of coding experience.
@@ -62,7 +62,7 @@ In short, Fleek's portfolio offers wide-ranging functionality and a bridge betwe
 
 Fleek chose IPFS because it decentralizes two of the core aspects of the internet: file storage and data transfer. Combined with the inherent advantages of IPFS content addressing and IPFS's position as a fundamental technology in Filecoin, this opens up a host of benefits not available elsewhere:
 
-- **Data integrity in a peer-to-peer world:** Fleek uses IPFS in combination with encryption tools like Textile's, enabling them to offer a best-of-both-worlds paradigm where users get the benefits of client-side encryption (through user-owned keys) as well as the ability to share data directly without touching any third-party servers. Because the transport is encrypted by default, external watchers can't view it in transit, and IPFS's [content addressing](content-addressing.md) also ensures that the data a user receives when they make a request is cryptographically verified as the data they asked for.
+- **Data integrity in a peer-to-peer world:** Fleek uses IPFS in combination with encryption tools like Textile's, enabling them to offer a best-of-both-worlds paradigm where users get the benefits of client-side encryption (through user-owned keys) as well as the ability to share data directly without touching any third-party servers. Because the transport is encrypted by default, external watchers can't view it in transit, and IPFS's [content addressing](../concepts/content-addressing.md) also ensures that the data a user receives when they make a request is cryptographically verified as the data they asked for.
 - **Censorship and disaster resilience:** IPFS content addressing allows for multiple copies of the same content-addressed resource to exist as equivalent items in multiple locations worldwide. This can offer the potential for a degree of resilience against physical disaster or censorship unavailable on the legacy web.
 - **Integrated access to future storage and retrieval markets:** Because IPFS and Filecoin are so tightly integrated, building on IPFS will facilitate the ability to offer Fleek users a seamless way to access the Filecoin marketplace for their storage needs.
 
