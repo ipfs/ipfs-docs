@@ -1,29 +1,31 @@
 ---
-title: NAT Configuration and Port Forwarding
+title: Configure NAT and Port Forwarding
 description: Fix common connection issues by managing your routers NAT and forwarding ports so other IPFS nodes can interact with your node.
 ---
 
-# NAT Configuration and Port Forwarding
+# Configure NAT and Port Forwarding
 
-Connection issues with Kubo that arise as a result of NAT routers can be solved in a variety of ways, each of which is discussed in this guide. 
+A common issue for new users running IPFS Kubo, especially on home networks, is that their IPFS node is behind a [NAT (network address translation)](../concepts/glossary.md#nat) layer (such as a residential network router) experience very long wait times or high rate of request failure.
+Connection issues that arise as a result of a NAT can be solved with various router configurations, such as port forwarding, each of which is discussed in this guide. 
 
 
 ## Background 
 
-A common issue for new users running IPFS, especially on home networks, is that their IPFS node is behind a NAT (network address translation) layer, such as a router in a residential network, which leads to very long wait times or a high rate of request failure.
+IPFS nodes behind a NAT often have difficulty connecting to the rest of the nodes on the IPFS network. However, there are many benefits to a NAT, because it:
 
-This is because the rest of the nodes on the IPFS network have difficulty connecting to them through their NAT. The NAT allows many machines to share a single public address, and it is essential for the continued functioning of the IPv4 protocol, which would otherwise be unable to serve the needs of the modern networked population with its 32-bit address space.
+- Allows many machines to share a single public address
+- Is essential for the continued functioning of the IPv4 protocol, which would otherwise be unable to serve the needs of the modern networked population with its 32-bit address space.
 
 When you connect to your home WiFi, your computer gets an IPv4 address of something like `10.0.1.15`. This is part of a range of IP addresses reserved for internal use by private networks. When you make an outgoing connection to a public IP address, the router replaces your internal IP with its own public IP address. When data comes back from the other side, the router will translate back to the internal address.
 
-While the NAT is usually transparent for outgoing connections, listening for incoming connections requires some configuration. The router listens on a single public IP address, but any number of machines on the internal network could handle the request. To serve requests, your router must be configured to send certain traffic to a specific machine. 
+While NATs are generally transparent for outgoing connections, listening for incoming connections requires some configuration. The router listens on a single public IP address, but any number of machines on the internal network could handle the request. To serve requests, your router must be configured to send certain traffic to a specific machine. 
 
-## Solve Connection Issues
+## Configuration Options
 
-You can configure your router to allow these connections by doing one of the following:
+The appropriate configuration option for your router depends on your specific setup:
 
-- If your router supports them, enable [IPv6](#enable-ipv6) and [UPnP](#enable-upnp) to solve most connection issues
-- If IPv6 or UPnP are not avilable, [enable manual port forwarding](#enable-manual-port-forwarding)
+- If your router supports them, [enable IPv6](#enable-ipv6) or [enable UPnP](#enable-upnp) to solve most connection issues
+- If IPv6 or UPnP are not available, [enable manual port forwarding](#enable-manual-port-forwarding)
 
 ### Enable IPv6
 
@@ -35,6 +37,7 @@ If your router supports UPnP, IPFS will attempt to automatically allow inbound t
 
 <!--
 ### Enable DCUtR Holepunching 
+
 Not sure what to put here
 
 Is there a recommended repo or libp2p docs link that we can link to here that explains how to set this up for Kubo? 
@@ -54,12 +57,12 @@ Maybe https://docs.rs/libp2p/latest/libp2p/tutorials/hole_punching/index.html an
 If your router does not support UPNP and/or IPv6, or you want better reliability and performance than what DCUtR provides, set up manual port forwarding. Complete the following steps to enable manual port forwarding:
 
 1. [Open a port from the internet to your internal Kubo node](#open-a-port). 
-1. [Set `Swarm.AppendAnnounce` in the Kubo configuration file](#set-swarmappendannounce).
+1. [Update the Kubo Configuration](#update-the-kubo-configuration).
 1. [Restart your Kubo node](#restart-your-kubo-node). 
 
 First, open a port from the internet to your internal Kubo node.
 
-#### 1. Open a port 
+#### Open a port 
 
 :::tip
 Assuming you're not trying to expose your daemon's API to the public internet, opening port `4001`/`tcp` should be sufficient.
@@ -73,9 +76,11 @@ Each router has different options and solutions for port forwarding. Most router
 1. Set traffic to go through an outside port. `4001` is recommended if you are unsure.
 1. Reboot your IPFS node for the changes to take effect. Make sure to reboot the entire machine, not just the IPFS daemon.
 
+Now that you've opened a port from the internet to your internal Kubo node, update your Kubo configuration to set `Swarm.AppendAnnounce` as a list of addresses that other IPFS nodes will try to contact you at.
 
+#### Update the Kubo Configuration
 
-#### 1. Set `Swarm.AppendAnnounce` 
+In this step, you will update your Kubo configuration to set `Swarm.AppendAnnounce` as a list of addresses that other IPFS nodes will try to contact you at. This list lets other nodes on the network that the port forward you created in the previous step know that your node exists, and that these are the addresses at which you can be contacted at. To update your configuration:
 
 1. Open your Kubo configuration file. 
 
@@ -83,22 +88,49 @@ Each router has different options and solutions for port forwarding. Most router
    The default location for the config file is `~/.ipfs/config`. If you have set `$IPFS_PATH`, you can find your config file at `$IPFS_PATH/config`.
    :::
    
-1. Find the entry for `AppendAnnounce` in `Addresses` or create an entry for `AppendAnnounce` in `Addresses
+1. Find the entry for `AppendAnnounce` in `Addresses` or create an entry for `AppendAnnounce` in `Addresses`:
 
-```json
-"Addresses": {
-    "Swarm": [
-    "/ip4/0.0.0.0/tcp/4001",
-    "/ip6/::/tcp/4001",
-    "/ip4/0.0.0.0/udp/4001/quic",
-    "/ip6/::/udp/4001/quic"
+   ```json
+    "Addresses": {
+        "Swarm": [
+        "/ip4/0.0.0.0/tcp/4001",
+        "/ip6/::/tcp/4001",
+        "/ip4/0.0.0.0/udp/4001/quic",
+        "/ip6/::/udp/4001/quic"
+        ],
+        "Announce": [],
+        "AppendAnnounce": [],
+        "NoAnnounce": [],
+        "API": "/ip4/127.0.0.1/tcp/5001",
+        "Gateway": "/ip4/127.0.0.1/tcp/8080"
+    },
+    ``` 
+
+1. Update `AppendAnnounce`, where `<public-ip>` is your public IP address and `<port>` is the port number set in the previous step: 
+
+   ```json
+   "AppendAnnounce": [
+     "/ip4/<public-ip>/tcp/<port>",
+     "/ip4/<public-ip>/udp/<port>/quic",
+     "/ip4/<public-ip>udp/<port>/quic-v1",
+     "/ip4/<public-ip>/udp/<port>/quic-v1/webtransport",
     ],
-    "Announce": [],
-    "AppendAnnounce": [],
-    "NoAnnounce": [],
-    "API": "/ip4/127.0.0.1/tcp/5001",
-    "Gateway": "/ip4/127.0.0.1/tcp/8080"
-},
-```
+   ```
 
-#### 1. Restart your Kubo node
+   For example, if your public IP address is `1.2.3.4` and `12345` is the port you've choosen, `AppendAnnounce` would look like:
+
+   ```json
+   "AppendAnnounce": [
+     "/ip4/1.2.3.4/tcp/12345",
+     "/ip4/1.2.3.4/udp/12345/quic",
+     "/ip4/1.2.3.4/udp/12345/quic-v1",
+     "/ip4/1.2.3.4/udp/12345/quic-v1/webtransport",
+    ],
+   ```
+
+Now that you've updated your Kubo configuration, restart Kubo so that your node is reachable, and check 
+
+#### Restart your Kubo node
+
+1. Restart your Kubo node however you normally would (for example, by running `systemctl --user restart ipfs`). Once Kubo restarts, your node should be reachable. 
+1. Check that the outside port is indeed open by...
