@@ -130,7 +130,7 @@ module.exports = {
                 '/concepts/dnslink',
                 '/concepts/file-systems',
                 '/concepts/ipfs-gateway',
-                ['https://ipld.io/docs/intro/primer/', 'IPLD' ],
+                ['https://ipld.io/docs/intro/primer/', 'IPLD (InterPlanetaryLinkedData)' ],
                 '/concepts/ipns',
                 '/concepts/libp2p',
                 '/concepts/merkle-dag'
