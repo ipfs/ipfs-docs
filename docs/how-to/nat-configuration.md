@@ -25,10 +25,14 @@ While NATs are generally transparent for outgoing connections, listening for inc
 The appropriate configuration option for your router depends on your specific setup:
 
 - If your router supports them, [enable IPv6](#enable-ipv6) or [enable UPnP](#enable-upnp) to solve most connection issues
-- [Disable DCUtR holepunching](#disable-dcutr-holepunching), which is enabled by default as of Kubo v0.13
-- If IPv6 or UPnP are not available, [enable manual port forwarding](#enable-manual-port-forwarding)
+- [Use DCUtR holepunching](#use-dcutr-holepunching), which is enabled by default as of Kubo v0.13
+- If IPv6 or UPnP are not available, or DCUtR holepunching doesn't meet your performance and relaibility requirements, [enable manual port forwarding](#enable-manual-port-forwarding)
 
 ### Enable IPv6
+
+:::callout
+While enabling IPv6 can fix many connection issues, enabling it may not address all of your connection issues. For example,  your router might support IPv6, but might still be running a firewall that blocks inbound connections.
+:::
 
 If your router and internet service provider (ISP) support IPv6, enabling it will mitigate some connection issues. Most modern routers have a single option to enable IPv6. We are unable to give detailed information about each router's settings and preferences here. Search your router manufacturer's website for _IPv6_ for information on how to enable it.
 
@@ -37,56 +41,14 @@ If your router and internet service provider (ISP) support IPv6, enabling it wil
 If your router supports UPnP, IPFS will attempt to automatically allow inbound traffic to access your local content. Some home routers may need to be configured to explicitly enable UPnP. We are unable to give detailed information about each router's settings and preferences here. Search your router manufacturer's website for _UPnP_.
 
 
-### Disable DCUtR Holepunching 
+### Use DCUtR Holepunching
 
 As of Kubo v0.13, [DCUtR hole punching is enabled by default](https://github.com/ipfs/kubo/blob/master/docs/changelogs/v0.13.md#-relay-v2-client-with-auto-discovery-swarmrelayclient).
 
-In the current version of DCUtR holepunching:
+DCUtR holepunching has various drawbacks and tradeoffs. Currently, the connection signaling goes through a relay, which can cause an average latency of 5 seconds when opening a connection. Once a direct connection is established, latency is generally normal. Additionally, DCUtR holepunching does not have a 100% success rate and can fail. For a deeper dive into how holepunching works in Kubo, it's drawbacks, and more information on using DCUtR, see the [_Hole punching in libp2p - Overcoming Firewalls_ blog post](https://blog.ipfs.tech/2022-01-20-libp2p-hole-punching/). 
 
-- Performance is normal when a direct connection is established.
-- Performance is sub-optimal when someone connects to you, because all connections must go through a relay first, which adds an average delay of 5 seconds.
-- Connection success rate is sub-optimal when someone connects to you because different routers models react differently.
+Because of these drawbacks, you may want to use another solution, like manual port forwarding. To enable manual port forwarding, see the instructions below.
 
-For a deeper dive into how holepunching works in Kubo, it's drawbacks, and more information on using DCUtR, see the [blog post](https://blog.ipfs.tech/2022-01-20-libp2p-hole-punching/).
-
-Because of these drawbacks, you may want to disable DCUtR holepunching and use another solution, like manual port forwarding. To disable DCUtR holepunching, set [`Swarm.EnableHolePunching`]( https://github.com/ipfs/kubo/blob/master/docs/config.md#swarmenableholepunching) to `false`:
-
-1. Open your Kubo configuration file. 
-
-   :::tip
-   The default location for the config file is `~/.ipfs/config`. If you have set `$IPFS_PATH`, you can find your config file at `$IPFS_PATH/config`.
-   :::
-   
-1. Find the entry for `EnableHolePunching` in `Swarm` or create an entry for `EnableHolePunching` in `Swarm`, and set it to `false`:
-
-   ```json
-   "Swarm": {
-      "AddrFilters": null,
-      "DisableBandwidthMetrics": false,
-      "DisableNatPortMap": false,
-      "EnableHolePunching": false,
-      "RelayClient": {},
-      "RelayService": {},
-      "Transports": {
-         "Network": {},
-         "Security": {},
-         "Multiplexers": {}
-      },
-      "ConnMgr": {
-         "Type": "basic",
-         "LowWater": 600,
-         "HighWater": 900,
-         "GracePeriod": "20s"
-      },
-      "ResourceMgr": {}
-   },
-    ``` 
-
-1. Reboot your IPFS node for the changes to take effect. Make sure to reboot the entire machine, not just the IPFS daemon. Once Kubo restarts, your node should be reachable. 
-1. Check that the outside port is open.
-
-DCUtR holepunching is now disabled.
-   
 ### Enable manual port forwarding
 
 If your router does not support UPNP and/or IPv6, or you want better reliability and performance than what DCUtR provides, set up manual port forwarding. Complete the following steps to enable manual port forwarding:
