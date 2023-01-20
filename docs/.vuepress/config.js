@@ -76,12 +76,12 @@ module.exports = {
           { text: 'Project', link: '/project/' },
           { text: 'Case Studies', 
             items: [
-              {text: 'Arbol', link : '/case-studies/case-study-arbol/'},
-              {text: 'Audius', link : '/case-studies/case-study-audius'},
-              {text: 'Fleek', link : '/case-studies/case-study-fleek'},
-              {text: 'LikeCoin', link : '/case-studies/case-study-likecoin'},
-              {text: 'Morpheus.Network', link : '/case-studies/case-study-morpheus'},
-              {text: 'Snapshot',link : '/case-studies/case-study-snapshot'},              
+              {text: 'Arbol', link : '/case-studies/arbol/'},
+              {text: 'Audius', link : '/case-studies/audius'},
+              {text: 'Fleek', link : '/case-studies/fleek'},
+              {text: 'LikeCoin', link : '/case-studies/likecoin'},
+              {text: 'Morpheus.Network', link : '/case-studies/morpheus'},
+              {text: 'Snapshot',link : '/case-studies/snapshot'},              
             ]
           }                  
         ],
@@ -306,39 +306,7 @@ module.exports = {
             ],
           ],
           '/project/' : [
-            {
-              title: 'Join the community',
-              sidebarDepth: 2,
-              collapsable: true,
-              children: [
-                [
-                  'https://ipfs.us4.list-manage.com/subscribe?u=25473244c7d18b897f5a1ff6b&id=cad54b2230',
-                  'IPFS newsletter'
-                ],
-                '/community/contribute/ways-to-contribute',
-                ['https://discuss.ipfs.tech/', 'IPFS forums'],
-                '/community/chat',
-                ['https://proto.school/events', 'ProtoSchool workshops'],
-                ['https://www.meetup.com/members/249142444/', 'Meetups'],
-                '/community/social-media',
-                ['https://awesome.ipfs.tech', 'Awesome IPFS'],
-                [
-                  'https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqqsew',
-                  'YouTube'
-                ]
-              ]
-            },
-            {
-              title: 'Write the docs',
-              sidebarDepth: 1,
-              collapsable: true,
-              children: [
-                '/community/contribute/grammar-formatting-and-style',
-                '/community/contribute/writing-guide',
-                '/community/contribute/code-persona',
-                '/community/contribute/contribution-tutorial'
-              ]
-            },
+                '/community/',
                 '/project/history',
                 '/project/repository-guide',
                 '/project/related-projects',
@@ -357,12 +325,12 @@ module.exports = {
               title: 'Case Studies',
               collapsable: false,
               children: [
-                ['/case-studies/case-study-arbol', 'Arbol'],
-                ['/case-studies/case-study-audius', 'Audius'],
-                ['/case-studies/case-study-fleek', 'Fleek'],
-                ['/case-studies/case-study-likecoin', 'LikeCoin'],
-                ['/case-studies/case-study-morpheus', 'Morpheus.Network'],
-                ['/case-studies/case-study-snapshot', 'Snapshot']
+                ['/case-studies/arbol', 'Arbol'],
+                ['/case-studies/audius', 'Audius'],
+                ['/case-studies/fleek', 'Fleek'],
+                ['/case-studies/likecoin', 'LikeCoin'],
+                ['/case-studies/morpheus', 'Morpheus.Network'],
+                ['/case-studies/snapshot', 'Snapshot']
               ]
             }
           ],
@@ -376,12 +344,12 @@ module.exports = {
               title: 'Case Studies',
               collapsable: true,
               children: [
-                ['/case-studies/case-study-arbol', 'Arbol'],
-                ['/case-studies/case-study-audius', 'Audius'],
-                ['/case-studies/case-study-fleek', 'Fleek'],
-                ['/case-studies/case-study-likecoin', 'LikeCoin'],
-                ['/case-studies/case-study-morpheus', 'Morpheus.Network'],
-                ['/case-studies/case-study-snapshot', 'Snapshot']
+                ['/case-studies/arbol', 'Arbol'],
+                ['/case-studies/audius', 'Audius'],
+                ['/case-studies/fleek', 'Fleek'],
+                ['/case-studies/likecoin', 'LikeCoin'],
+                ['/case-studies/morpheus', 'Morpheus.Network'],
+                ['/case-studies/snapshot', 'Snapshot']
               ]
             },
           ]

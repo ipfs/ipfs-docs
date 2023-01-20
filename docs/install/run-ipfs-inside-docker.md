@@ -25,7 +25,7 @@ You can run Kubo IPFS inside Docker to simplify your deployment processes, as we
 
     ::: danger NEVER EXPOSE THE RPC API TO THE PUBLIC INTERNET
 
-    The API port provides admin-level access to your IPFS node.  See [RPC API docs](/reference/kubo/rpc.md) for more information.
+    The API port provides admin-level access to your IPFS node.  See [RPC API docs](../reference/kubo/rpc.md) for more information.
 
     :::
 
