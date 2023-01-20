@@ -1,5 +1,5 @@
 ---
-title: Merkle DAGs
+title: Merkle Directed Acyclic Graphs (DAG)
 description: Learn about Merkle Directed Acyclic Graphs (DAGs) and why they're important to IPFS.
 ---
 
