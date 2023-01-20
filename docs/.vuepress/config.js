@@ -125,15 +125,15 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
-                '/concepts/dht',
-                '/concepts/merkle-dag',
                 '/concepts/bitswap',
+                '/concepts/dht',
+                '/concepts/dnslink',
+                '/concepts/file-systems',
+                '/concepts/ipfs-gateway',
                 ['https://ipld.io/docs/intro/primer/', 'IPLD' ],
                 '/concepts/ipns',
                 '/concepts/libp2p',
-                '/concepts/file-systems',
-                '/concepts/ipfs-gateway',
-                '/concepts/dnslink'
+                '/concepts/merkle-dag'
               ]
             },
             '/concepts/ipfs-implementations', 
@@ -212,7 +212,7 @@ module.exports = {
               ]
             },
             {
-              title: 'IPNS and mutability',
+              title: 'IPNS',
               sidebarDepth: 1,
               collapsable: true,
               children: [
