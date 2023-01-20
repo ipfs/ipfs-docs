@@ -1,5 +1,5 @@
 ---
-title: IPNS (InterPlanetary Name System) and Mutability
+title: IPNS (InterPlanetary Name System)
 description: Learn about mutability in IPFS, InterPlanetary Name System (IPNS), and how it can be used in conjunction with IPFS.
 ---
 
