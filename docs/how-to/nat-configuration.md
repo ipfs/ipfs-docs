@@ -1,11 +1,11 @@
 ---
-title: Configure NAT and Port Forwarding
+title: Configure NAT and port forwarding
 description: Fix common connection issues by managing your routers NAT and forwarding ports so other IPFS nodes can interact with your node.
 ---
 
-# Configure NAT and Port Forwarding
+# Configure NAT and port forwarding
 
-A common issue for new users running IPFS Kubo, especially on home networks, is that their IPFS node is behind a [NAT (network address translation)](../concepts/glossary.md#nat) layer (such as a residential network router) experience very long wait times or high rate of request failure.
+A common issue for new users running IPFS Kubo, especially on home networks, is that their IPFS node is behind a [NAT (network address translation)](../concepts/glossary.md#nat) layer (such as a residential network router). This can cause users to experience very long wait times or a high rate of request failures.
 Connection issues that arise as a result of a NAT can be solved with various router configurations, such as port forwarding, each of which is discussed in this guide. 
 
 
@@ -20,18 +20,18 @@ When you connect to your home WiFi, your computer gets an IPv4 address of someth
 
 While NATs are generally transparent for outgoing connections, listening for incoming connections requires some configuration. The router listens on a single public IP address, but any number of machines on the internal network could handle the request. To serve requests, your router must be configured to send certain traffic to a specific machine. 
 
-## Configuration Options
+## Configuration options
 
 The appropriate configuration option for your router depends on your specific setup:
 
 - If your router supports them, [enable IPv6](#enable-ipv6) or [enable UPnP](#enable-upnp) to solve most connection issues
 - [Use DCUtR holepunching](#use-dcutr-holepunching), which is enabled by default as of Kubo v0.13
-- If IPv6 or UPnP are not available, or DCUtR holepunching doesn't meet your performance and relaibility requirements, [enable manual port forwarding](#enable-manual-port-forwarding)
+- If IPv6 or UPnP are not available, or DCUtR holepunching doesn't meet your performance and reliability requirements, [enable manual port forwarding](#enable-manual-port-forwarding)
 
 ### Enable IPv6
 
 :::callout
-While enabling IPv6 can fix many connection issues, enabling it may not address all of your connection issues. For example,  your router might support IPv6, but might still be running a firewall that blocks inbound connections.
+While enabling IPv6 can fix many connection issues, it may not address all of your connection issues. For example,  your router might support IPv6, but might still be running a firewall that blocks inbound connections.
 :::
 
 If your router and internet service provider (ISP) support IPv6, enabling it will mitigate some connection issues. Most modern routers have a single option to enable IPv6. We are unable to give detailed information about each router's settings and preferences here. Search your router manufacturer's website for _IPv6_ for information on how to enable it.
@@ -41,7 +41,7 @@ If your router and internet service provider (ISP) support IPv6, enabling it wil
 If your router supports UPnP, IPFS will attempt to automatically allow inbound traffic to access your local content. Some home routers may need to be configured to explicitly enable UPnP. We are unable to give detailed information about each router's settings and preferences here. Search your router manufacturer's website for _UPnP_.
 
 
-### Use DCUtR Holepunching
+### Use DCUtR holepunching
 
 As of Kubo v0.13, [DCUtR hole punching is enabled by default](https://github.com/ipfs/kubo/blob/master/docs/changelogs/v0.13.md#-relay-v2-client-with-auto-discovery-swarmrelayclient).
 
@@ -51,7 +51,7 @@ Because of these drawbacks, you may want to use another solution, like manual po
 
 ### Enable manual port forwarding
 
-If your router does not support UPNP and/or IPv6, or you want better reliability and performance than what DCUtR provides, set up manual port forwarding. Complete the following steps to enable manual port forwarding:
+If your router does not support UPnP and/or IPv6, or you want better reliability and performance than what DCUtR provides, set up manual port forwarding. Complete the following steps to enable manual port forwarding:
 
 1. [Open a port from the internet to your internal Kubo node](#open-a-port). 
 1. [Update the Kubo Configuration](#update-the-kubo-configuration).
@@ -72,11 +72,9 @@ Each router has different options and solutions for port forwarding. Most router
    :::
 1. Reboot your IPFS node for the changes to take effect. Make sure to reboot the entire machine, not just the IPFS daemon.
 
-Now that you've opened a port from the internet to your internal Kubo node, update your Kubo configuration to set `Swarm.AppendAnnounce` as a list of addresses that other IPFS nodes will try to contact you at.
+#### Update the Kubo configuration
 
-#### Update the Kubo Configuration
-
-In this step, you will update your Kubo configuration to set `Swarm.AppendAnnounce` as a list of addresses that other IPFS nodes will try to contact you at. This list lets other nodes on the network that the port forward you created in the previous step know that your node exists, and that these are the addresses at which you can be contacted at. To update your configuration:
+In this step, you will update your Kubo configuration to set `Swarm.AppendAnnounce` as a list of addresses that other IPFS nodes will try to contact you at. This list lets other nodes on the network know that the port forward you created in the previous step exists, and that these are the addresses at which you can be contacted at. To update your configuration:
 
 1. Open your Kubo configuration file. 
 
@@ -124,9 +122,9 @@ In this step, you will update your Kubo configuration to set `Swarm.AppendAnnoun
     ],
    ```
 
-Now that you've updated your Kubo configuration, restart Kubo so that your node is reachable, and check that the outside port is open.
-
 #### Restart your Kubo node
+
+Now that you've updated your Kubo configuration, restart Kubo so that your node is reachable, and check that the outside port is open.
 
 1. Reboot your IPFS node for the changes to take effect. Make sure to reboot the entire machine, not just the IPFS daemon. Once Kubo restarts, your node should be reachable. 
 1. Check that the outside port is open.
