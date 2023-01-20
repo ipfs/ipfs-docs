@@ -25,6 +25,7 @@ While NATs are generally transparent for outgoing connections, listening for inc
 The appropriate configuration option for your router depends on your specific setup:
 
 - If your router supports them, [enable IPv6](#enable-ipv6) or [enable UPnP](#enable-upnp) to solve most connection issues
+- [Disable DCUtR holepunching](#disable-dcutr-holepunching), which is enabled by default as of Kubo v0.13
 - If IPv6 or UPnP are not available, [enable manual port forwarding](#enable-manual-port-forwarding)
 
 ### Enable IPv6
@@ -35,23 +36,57 @@ If your router and internet service provider (ISP) support IPv6, enabling it wil
 
 If your router supports UPnP, IPFS will attempt to automatically allow inbound traffic to access your local content. Some home routers may need to be configured to explicitly enable UPnP. We are unable to give detailed information about each router's settings and preferences here. Search your router manufacturer's website for _UPnP_.
 
-<!--
-### Enable DCUtR Holepunching 
 
-Not sure what to put here
+### Disable DCUtR Holepunching 
 
-Is there a recommended repo or libp2p docs link that we can link to here that explains how to set this up for Kubo? 
+As of Kubo v0.13, [DCUtR hole punching is enabled by default](https://github.com/ipfs/kubo/blob/master/docs/changelogs/v0.13.md#-relay-v2-client-with-auto-discovery-swarmrelayclient).
 
-https://github.com/libp2p/specs/blob/master/relay/DCUtR.md doesn't seem right
+In the current version of DCUtR holepunching:
 
-https://docs.libp2p.io/concepts/nat/hole-punching/#phase-ii-hole-punching? seems to be mostly conceptual
+- Performance is normal when a direct connection is established.
+- Performance is sub-optimal when someone connects to you, because all connections must go through a relay first, which adds an average delay of 5 seconds.
+- Connection success rate is sub-optimal when someone connects to you because different routers models react differently.
 
-https://blog.ipfs.tech/2022-01-20-libp2p-hole-punching/ seems to just explain the theory
+For a deeper dive into how holepunching works in Kubo, it's drawbacks, and more information on using DCUtR, see the [blog post](https://blog.ipfs.tech/2022-01-20-libp2p-hole-punching/).
 
-Maybe https://docs.rs/libp2p/latest/libp2p/tutorials/hole_punching/index.html and tell the reader that they can follow this tutorial to set up DCUtR Holepunching using Rust? Not specific to Kubo but seems like its the best we've got right now?
-!-->
+Because of these drawbacks, you may want to disable DCUtR holepunching and use another solution, like manual port forwarding. To disable DCUtR holepunching, set [`Swarm.EnableHolePunching`]( https://github.com/ipfs/kubo/blob/master/docs/config.md#swarmenableholepunching) to `false`:
 
+1. Open your Kubo configuration file. 
 
+   :::tip
+   The default location for the config file is `~/.ipfs/config`. If you have set `$IPFS_PATH`, you can find your config file at `$IPFS_PATH/config`.
+   :::
+   
+1. Find the entry for `EnableHolePunching` in `Swarm` or create an entry for `EnableHolePunching` in `Swarm`, and set it to `false`:
+
+   ```json
+   "Swarm": {
+      "AddrFilters": null,
+      "DisableBandwidthMetrics": false,
+      "DisableNatPortMap": false,
+      "EnableHolePunching": false,
+      "RelayClient": {},
+      "RelayService": {},
+      "Transports": {
+         "Network": {},
+         "Security": {},
+         "Multiplexers": {}
+      },
+      "ConnMgr": {
+         "Type": "basic",
+         "LowWater": 600,
+         "HighWater": 900,
+         "GracePeriod": "20s"
+      },
+      "ResourceMgr": {}
+   },
+    ``` 
+
+1. Reboot your IPFS node for the changes to take effect. Make sure to reboot the entire machine, not just the IPFS daemon. Once Kubo restarts, your node should be reachable. 
+1. Check that the outside port is open.
+
+DCUtR holepunching is now disabled.
+   
 ### Enable manual port forwarding
 
 If your router does not support UPNP and/or IPv6, or you want better reliability and performance than what DCUtR provides, set up manual port forwarding. Complete the following steps to enable manual port forwarding:
@@ -64,16 +99,15 @@ First, open a port from the internet to your internal Kubo node.
 
 #### Open a port 
 
-:::tip
-Assuming you're not trying to expose your daemon's API to the public internet, opening port `4001`/`tcp` should be sufficient.
-:::
-
 Each router has different options and solutions for port forwarding. Most router manufacturers have guides for setting up port forwarding on their devices. In general, the steps are:
 
 1. Log into your router.
 1. Locate your routers port forwarding section.
 1. Enter the IP address of your IPFS node.
-1. Set traffic to go through an outside port. `4001` is recommended if you are unsure.
+1. Set traffic to go through an outside port. 
+   :::tip
+   If you are unsure of what port to use, `4001` is recommended.
+   :::
 1. Reboot your IPFS node for the changes to take effect. Make sure to reboot the entire machine, not just the IPFS daemon.
 
 Now that you've opened a port from the internet to your internal Kubo node, update your Kubo configuration to set `Swarm.AppendAnnounce` as a list of addresses that other IPFS nodes will try to contact you at.
@@ -117,7 +151,7 @@ In this step, you will update your Kubo configuration to set `Swarm.AppendAnnoun
     ],
    ```
 
-   For example, if your public IP address is `1.2.3.4` and `12345` is the port you've choosen, `AppendAnnounce` would look like:
+   For example, if your public IP address is `1.2.3.4` and `12345` is the port you've chosen, `AppendAnnounce` would look like:
 
    ```json
    "AppendAnnounce": [
@@ -128,9 +162,9 @@ In this step, you will update your Kubo configuration to set `Swarm.AppendAnnoun
     ],
    ```
 
-Now that you've updated your Kubo configuration, restart Kubo so that your node is reachable, and check 
+Now that you've updated your Kubo configuration, restart Kubo so that your node is reachable, and check that the outside port is open.
 
 #### Restart your Kubo node
 
-1. Restart your Kubo node however you normally would (for example, by running `systemctl --user restart ipfs`). Once Kubo restarts, your node should be reachable. 
-1. Check that the outside port is indeed open by...
+1. Reboot your IPFS node for the changes to take effect. Make sure to reboot the entire machine, not just the IPFS daemon. Once Kubo restarts, your node should be reachable. 
+1. Check that the outside port is open.
