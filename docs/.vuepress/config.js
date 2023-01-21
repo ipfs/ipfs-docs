@@ -306,7 +306,18 @@ module.exports = {
             ],
           ],
           '/project/' : [
-                '/community/',
+                ['/community/', 'Join the community'],
+                {
+                  title: 'Write the docs',
+                  sidebarDepth: 1,
+                  collapsable: true,
+                  children: [
+                    '/community/contribute/grammar-formatting-and-style',
+                    '/community/contribute/writing-guide',
+                    '/community/contribute/code-persona',
+                    '/community/contribute/contribution-tutorial'
+                  ]
+                },
                 '/project/history',
                 '/project/repository-guide',
                 '/project/related-projects',
