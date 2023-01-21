@@ -42,7 +42,7 @@ ipfs get QmZJ1xT1T9KYkHhgRhbv8D7mYrbemaXwYUkg7CeHdrk1Ye
 > 13 B / 13 B [=====================================================] 100.00% 1s
 ```
 
-If that worked and your node downloaded the file, then congratulations! You just used IPFS to move files across the internet! But, if that `ipfs get` command is hanging, with no output, read onwards.
+If that worked and your node downloaded the file, then congratulations! You just used IPFS to move files across the internet! But, if that `ipfs get` command is hanging, with no output, continue reading.
 
 ### Checking for existing connections
 

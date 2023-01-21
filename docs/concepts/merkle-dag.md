@@ -6,7 +6,7 @@ description: Learn about Merkle Directed Acyclic Graphs (DAGs) and why they're i
 # Merkle Directed Acyclic Graphs (DAGs)
 
 ::: callout
-Take a deep dive into this superpowered, content-addresed data structure in ProtoSchool's tutorial, [Merkle DAGs: Structuring Data for the Distributed Web](https://proto.school/merkle-dags).
+Take a deep dive into this super-powered, content-addressed data structure in ProtoSchool's tutorial, [Merkle DAGs: Structuring Data for the Distributed Web](https://proto.school/merkle-dags).
 :::
 
 A Merkle DAG is a DAG where each node has an identifier, and this is the result of hashing the node's contents — any opaque payload carried by the node and the list of identifiers of its children — using a cryptographic hash function like SHA256. This brings some important considerations:

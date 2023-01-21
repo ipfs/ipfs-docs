@@ -1,6 +1,6 @@
 ---
 title: "IPFS Implementations"
-description: "There isn't one canonical IPFS implemetnation. Learn about the various IPFS implementations available for different usecases."
+description: "There isn't just one canonical IPFS implementation. Learn about the various IPFS implementations available for different use cases."
 ---
 
 # IPFS Implementations

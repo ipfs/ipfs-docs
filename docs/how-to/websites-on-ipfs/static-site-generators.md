@@ -5,7 +5,7 @@ description:
 
 # Static-site generators
 
-Static-site generators like Hugo, Jekyll, Middleman, Nextjs, and VuePress are all incredibly popular platforms building websites quickly. This guide walks through how to integrate IPFS into each of these workflows.
+Static-site generators like Hugo, Jekyll, Middleman, Next.js, and VuePress are all incredibly popular platforms building websites quickly. This guide walks through how to integrate IPFS into each of these workflows.
 
 ## Hugo
 
@@ -37,7 +37,7 @@ vuepress build
 
 Output will be in `./.vuepress/dist` directory by default.
 
-Use a command to convert a static site to only use relative urls. In this example, we'll be using [all-relative](https://www.npmjs.com/package/all-relative)
+Use a command to convert a static site to only use relative URLs. In this example, we'll be using [all-relative](https://www.npmjs.com/package/all-relative)
 
 ```bash
 cd .vuepress/dist/
@@ -83,7 +83,7 @@ jekyll build
 
 Output will be in `./_site` by default.
 
-Use a command to convert a static site to only use relative urls. In this example, we'll be using [all-relative](https://www.npmjs.com/package/all-relative)
+Use a command to convert a static site to only use relative URLs. In this example, we'll be using [all-relative](https://www.npmjs.com/package/all-relative)
 
 ```bash
 cd _site/

@@ -68,7 +68,7 @@ You can get around that limitation by using IPNS, the [InterPlanetary Naming Sys
 
 You might have noticed `/ipns/` instead of `/ipfs/` in the updated links in the previous section.
 
-The IPNS is used for mutable content in the IPFS network. It's relatively easy to use, and will allow you to change your website without updating the dns record every time.
+The IPNS is used for mutable content in the IPFS network. It's relatively easy to use, and will allow you to change your website without updating the DNS record every time.
 
 To enable the IPNS for your content, run the following command, where `$SITE_CID` is the hash value from the first step.
 
@@ -79,9 +79,9 @@ Published to $PEER_ID: /ipfs/$SITE_CID
 
 You will need to note and save that value of `$PEER_ID` for the next steps.
 
-Load the urls `http://localhost:8080/ipns/$PEER_ID` and `http://gateway.ipfs.io/ipns/$PEER_ID` to confirm this step.
+Load the URLs `http://localhost:8080/ipns/$PEER_ID` and `http://gateway.ipfs.io/ipns/$PEER_ID` to confirm this step.
 
-Return to your registrar's control panel, change the DNS TXT record with the key of `your.domain` to `dnslink=/ipns/$PEER_ID`, wait for that record to propagate, and then try the urls `http://localhost:8080/ipns/your.domain` and `http://gateway.ipfs.io/ipns/your.domain`.
+Return to your registrar's control panel, change the DNS TXT record with the key of `your.domain` to `dnslink=/ipns/$PEER_ID`, wait for that record to propagate, and then try the URLs `http://localhost:8080/ipns/your.domain` and `http://gateway.ipfs.io/ipns/your.domain`.
 
 **Note:** When using IPNS to update websites, assets may be loaded from two different resolved hashes while the update propagates. This may result in outdated URLs or missing assets until the update has completely propagated.
 

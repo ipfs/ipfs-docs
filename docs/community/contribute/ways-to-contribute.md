@@ -9,7 +9,7 @@ So you want to contribute to IPFS and the ecosystem? Here is a quick listing of 
 
 ## Code
 
-IPFS and its sister-projects are big, with lots of code written in multiple languages. We always need help writing and maintaining code, but it can be daunting to just jump in. We use the label _Help Wanted_ on features or bugfixes that people can help out with. They are an excellent place for you to start contributing code.
+IPFS and its sister-projects are big, with lots of code written in multiple languages. We always need help writing and maintaining code, but it can be daunting to just jump in. We use the label _Help Wanted_ on features or bug fixes that people can help out with. They are an excellent place for you to start contributing code.
 
 The biggest and most active repositories we have today are:
 

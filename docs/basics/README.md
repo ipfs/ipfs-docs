@@ -21,4 +21,4 @@ If you're a bit more serious about IPFS and want to start poking around the comm
 
 ## Other implementations
 
-There are many other IPFS implementations than the onramps discussed above.  [Check them out here!](./ipfs-implementations.md)
+There are many other IPFS implementations than the on-ramps discussed above.  [Check them out here!](./ipfs-implementations.md)
