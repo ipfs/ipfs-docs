@@ -306,7 +306,7 @@ module.exports = {
             ],
           ],
           '/project/' : [
-                ['/community/', 'Join the community'],
+                ['/community/',  'Join the community'],
                 {
                   title: 'Write the docs',
                   sidebarDepth: 1,
