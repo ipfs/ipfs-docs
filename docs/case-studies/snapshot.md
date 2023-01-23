@@ -18,7 +18,7 @@ In this case study, you'll learn how [Snapshot](https://snapshot.org/) works and
 ## What is Snapshot
 
 ::: right
-<img src="./images/case-studies/logo-snapshot.png" alt="Snapshot logo" width="200">
+<img src="./images/logo-snapshot.png" alt="Snapshot logo" width="200">
 :::
 
 Snapshot is an open-source **voting platform** for Web3 projects, DAOs, and communities that uses IPFS as its main storage layer.
@@ -61,7 +61,7 @@ In Snapshot, all proposals and votes are associated with a **space,** where each
 
 The only requirement for using Snapshot is to have an ENS name. To create a space, you create an [ENS text record](https://docs.ens.domains/ens-improvement-proposals/ensip-5-text-records) with the key `snapshot` pointing to an IPFS CID containing the JSON configuration for the space. For example, GnosisDAO with the [gnosis.eth ENS name has the `snapshot`](https://app.ens.domains/name/gnosis.eth/details) text record set to [`ipfs://QmWUemB5QDr6Zkp2tqQRcEW1ZC7n4MiLaE6CFneVJUeYyD`](https://ipfs.io/ipfs/QmWUemB5QDr6Zkp2tqQRcEW1ZC7n4MiLaE6CFneVJUeYyD) which contains the JSON configuration for the space.
 
-![ENS configuration for Snapshot on IPFS](./images/case-studies/img-snapshot-ens-config.png)
+![ENS configuration for Snapshot on IPFS](./images/img-snapshot-ens-config.png)
 
 Each space configuration in Snapshot allows you to configure various **strategies** to determine:
 
@@ -89,7 +89,7 @@ To calculate the results of a vote, each proposal employs one of the following *
 
 These voting systems are used to calculate the results of a vote based on the voting power. For example, the [following proposal](https://snapshot.org/#/decrypt-media.eth/proposal/QmPDpQSZuokqGpzqtPbmLp1LTqDjbhd6vCeKaSmqEXM9KH)) in the [Decrypt Media](https://decrypt.co/) space, grants Decrypt NFT holders the right to choose a single topic for the content they will write next. Voting power for this proposal is relative to the number of Decrypt NFTs held by the voter at block number `12,811,388`.
 
-![Decrypt content proposal](./images/case-studies/img-snapshot-decrypt-proposal.png)
+![Decrypt content proposal](./images/img-snapshot-decrypt-proposal.png)
 
 ## How Snapshot uses IPFS
 
@@ -103,9 +103,9 @@ To understand how Snapshot uses IPFS, it's useful to understand how the whole ar
 - **Logic tier:** The [snapshot-hub](https://github.com/snapshot-labs/snapshot-hub) node.js server that exposes a GraphQL API.
 - **Data tier:** A combination of a MySQL database for indexing and querying and IPFS as its storage layer for space configuration, proposals, user actions, and votes.
 
-> **Note:** Even though MySQL is used for querying, all data stored on MySQL is available on IPFS. Tables in the database schema have an `ipfs` field holding the IPFS CID.
+> **Note:** Even though MySQL is used for querying, all data stored on MySQL is available on IPFS. [Tables in the database schema](https://github.com/snapshot-labs/snapshot-hub/blob/master/src/graphql/schema.gql) have an `ipfs` field holding the IPFS CID.
 
-![Snapshot architecture](./images/case-studies/img-snapshot-architecture.png)
+![Snapshot architecture](./images/img-snapshot-architecture.png)
 
 ### Uploading to IPFS pinning services with Pineapple
 

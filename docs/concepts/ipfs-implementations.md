@@ -1,9 +1,9 @@
 ---
-title: "IPFS implementations"
-description: "There isn't one canonical IPFS implementation. Learn about the various IPFS implementations available for different use cases."
+title: "IPFS Implementations"
+description: "There isn't just one canonical IPFS implementation. Learn about the various IPFS implementations available for different use cases."
 ---
 
-# IPFS implementations
+# IPFS Implementations
 
 There isn't one canonical IPFS implementation. There is so much to explore in this space that it's ideal to have a plethora of implementations experimenting and optimizing for various usecases. Below is a list of IPFS implementations that we know of in name alphabetical order. If you're aware of more, please add!
 
@@ -18,15 +18,15 @@ Relevant specifications are listed in [ipfs/specs](https://github.com/ipfs/specs
 | Agregore         | <https://github.com/AgregoreWeb/agregore-ipfs-daemon>                   | go, javascript         | Mobile friendly Kubo daemon.                                                                                             |
 | barge            | <https://github.com/application-research/estuary/tree/master/cmd/barge> | go                     | CLI tool with a git like workflow to upload deltas to estuary.                                                           |
 | Boost            | <https://github.com/filecoin-project/boost>                             | go                     | Daemon to get IPFS data in and out of a Filecoin storage provider.                                                       |
-| Elastic provider | <https://github.com/ipfs-elastic-provider/ipfs-elastic-provider>        | javascript, typescript | Scalable Cloud-Native implementation.                                                                                   |
+| Elastic provider | <https://github.com/ipfs-elastic-provider/ipfs-elastic-provider>        | javascript, typescript | Scallable Cloud-Native implementation.                                                                                   |
 | Estuary          | <https://github.com/application-research/estuary/>                      | go                     | Daemon oriented service to pin and onboard IPFS data into Filecoin.                                                      |
-| gomobile-ipfs    | <https://github.com/ipfs-shipyard/gomobile-ipfs>                        | go                     | Library oriented ipfs daemon to help embedding Kubo into a mobile app.                                                   |
-| ipfs cluster     | <https://github.com/ipfs/ipfs-cluster>                                  | go                     | CRDT / Raft consensus between some more less trusted nodes to allocate and synchronize a pinset on multiple IPFS nodes.  |
+| gomobile-ipfs    | <https://github.com/ipfs-shipyard/gomobile-ipfs>                        | go                     | Library oriented ipfs daemon to help embeding Kubo into a mobile app.                                                   |
+| ipfs cluster     | <https://github.com/ipfs/ipfs-cluster>                                  | go                     | CRDT / Raft consensus between some more less trusted nodes to allocate and synchronise a pinset on multiple IPFS nodes.  |
 | ipfs tiny        | <https://gitlab.com/librespacefoundation/ipfs-tiny>                     | c++                    | Tiny embeddable, os-independent IPFS implementation.                                                                     |
 | ipfs-embed       | <https://github.com/ipfs-rust/ipfs-embed>                               | rust                   | Small embeddable ipfs implementation.                                                                                    |
 | ipfs-lite        | <https://github.com/hsanjuan/ipfs-lite>                                 | go                     | Minimal library oriented ipfs daemon building on the same blocks as Kubo but with a minimal glue layer.                 |
 | ipfs-nucleus     | <https://github.com/peergos/ipfs-nucleus/>                              | go                     | Minimal IPFS replacement for P2P IPLD apps.                                                                              |
-| ipget            | <https://github.com/ipfs/ipget>                                         | go                     | Minimal wget inspired tool to download files from IPFS nodes over bitswap.                                              |
+| ipget            | <https://github.com/ipfs/ipget>                                         | go                     | Minimal wget insipired tool to download files from IPFS nodes over bitswap.                                              |
 | iroh             | <https://github.com/n0-computer/iroh>                                   | rust                   | Extreme-Efficiency oriented IPFS implementation.                                                                         |
 | js-ipfs          | <https://github.com/ipfs/js-ipfs>                                       | javascript, typescript | Javascript implementation targeting nodejs and browsers.                                                                 |
 | Kubo             | <https://github.com/ipfs/kubo>                                          | go                     | Generalist daemon oriented IPFS implementation with an extensive HTTP API.                                               |
