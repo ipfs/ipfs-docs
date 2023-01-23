@@ -30,7 +30,7 @@ If you plan to use Kubo as a package in your own Go application, you can take an
 
 - Use [kubo](https://github.com/ipfs/kubo) to run Kubo IPFS directly in your own process.
 - Use [kubo RPC client](https://github.com/ipfs/go-ipfs-http-client) to communicate with a Kubo IPFS daemon in a separate process via its HTTP RPC API (this is what Kubo does if a daemon is already running).
-- Use other Go packages to communicate with the HTTP RPC API directly. See the [RPC API reference](/reference/kubo/rpc/).
+- Use other Go packages to communicate with the HTTP RPC API directly. See the [RPC API reference](../../reference/kubo/rpc.md).
 
 ## Go CoreAPI
 
