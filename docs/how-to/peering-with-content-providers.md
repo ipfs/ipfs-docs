@@ -86,16 +86,6 @@ To have your platform added to this list, please [open a PR to edit this page](h
 |`QmPySsdmbczdZYBpbi2oq2WMJ8ErbfxtkG8Mo192UHkfGP`|`/dnsaddr/nyc1-2.hostnodes.pinata.cloud`|
 |`QmSarArpxemsPESa6FNkmuu9iSE1QWqPX2R3Aw6f5jq4D5`|`/dnsaddr/nyc1-3.hostnodes.pinata.cloud`|
 
-### Protocol Labs
-
-| Peer ID | Addresses |
-| ------- | --------- |
-|`QmUEMvxS2e7iDrereVYc5SWPauXPyNwxcy9BXZrC1QTcHE`|`/dns/cluster0.fsn.dwebops.pub`|
-|`QmNSYxZAiJHeLdkBg38roksAR9So7Y5eojks1yjEcUtZ7i`|`/dns/cluster1.fsn.dwebops.pub`|
-|`QmUd6zHcbkbcs7SMxwLs48qZVX3vpcM8errYS7xEczwRMA`|`/dns/cluster2.fsn.dwebops.pub`|
-|`QmbVWZQhCGrS7DhgLqWbgvdmKN7JueKCREVanfnVpgyq8x`|`/dns/cluster3.fsn.dwebops.pub`|
-|`QmdnXwLrC8p1ueiq2Qya8joNvk3TVVDAut7PrikmZwubtR`|`/dns/cluster4.fsn.dwebops.pub`|
-
 ### Storj
 
 | Peer ID | Addresses |
