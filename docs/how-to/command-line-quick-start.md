@@ -219,21 +219,21 @@ When you add files using the [CLI command `ipfs add ...`](../reference/kubo/cli.
 
 1. In the left sidebar menu, click **Files**. An empty directory displays, along with the following message:
 
-```plaintext
-No files here yet! Add files to your local IPFS node by clicking the Import button above.
-```
+    ```plaintext
+    No files here yet! Add files to your local IPFS node by clicking the Import button above.
+    ```
 
 1. Navigate back to your original terminal window
 
 1. Using the CID `<CID>` obtained when adding `meow.txt` to your node in the previous step, copy the files over to the MFS.
 
-  ```shell
-  ipfs files cp /ipfs/<CID>
-  ```
+    ```shell
+    ipfs files cp /ipfs/<CID>
+    ```
 
 1. Refresh **Files** to see `meow.txt`
 
-## IPFS Companion
+## Use IPFS Companion
 
 You can use IPFS Companion, a browser extension that simplifies access to IPFS resources and adds support for the IPFS protocol, to automatically redirect IPFS gateway requests to your local daemon so that you are not relying on remote gateways.
 
