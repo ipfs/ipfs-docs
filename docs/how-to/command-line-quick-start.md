@@ -1,178 +1,243 @@
 ---
-title: IPFS Kubo Tutorial
-description: Quick-start guide for installing and getting started with Kubo IPFS from the command line.
+title: Initialize a Kubo node and interact with the IPFS Network
+description: Initialize a Kubo node repository, take your node online, interact with the IPFS network, and view the web console on your local node using IPFS Desktop
 ---
 
-# IPFS Kubo Tutorial
+# Initialize a Kubo node and interact with the IPFS Network
 
-If you're command-line savvy and just want to get up and running with IPFS right away, follow this quick-start guide. Please note that this guide assumes that you'll be installing Kubo, the reference implementation written in Go.
-
-::: tip
-Don’t want to use the command line right now? Give the desktop-app implementation of IPFS a try. It also does all the steps listed on this page automatically, so you can run IPFS from the terminal later whenever you want. [Download IPFS Desktop now](https://github.com/ipfs/ipfs-desktop)
-:::
+In this tutorial, you will initialize an IPFS Kubo node repository, take your node online, interact with the IPFS network, and view the web console on your local node. If you run into any problems while following this guide, see [Troubleshooting](#troubleshooting).
 
 ## Prerequisites
 
-If you have not yet installed Kubo, follow the [install instructions](../install/command-line.md).
+If you have not yet installed Kubo, follow the [Kubo install guide](../install/command-line.md).
 
 ## Initialize the repository
 
-`ipfs` stores all its settings and internal data in a directory called _the repository._ Before using IPFS for the first time, you’ll need to initialize the repository with the `ipfs init` command:
+`ipfs` stores all its settings and internal data in a directory called _the repository._ Before using Kubo for the first time, you’ll need to initialize the repository. 
 
-::: warning
-Be careful with `sudo` on Unix platforms (including macOS)! If you run `sudo ipfs init`, the repository will be created for the `root` user instead of your local user account. IPFS doesn't need root privileges, so it's best to run all `ipfs` commands as a regular user!
+:::tip
+ - If you are running a Kubo node in a data center, you should initialize IPFS with the `server` profile. Doing so will prevent IPFS from creating data center-internal traffic trying to discover local nodes:
+
+    ```bash
+    ipfs init --profile server
+    ```
+ - Be careful using `sudo` on Unix platforms (including macOS)! Running `sudo ipfs init` will create the repository for the `root` user, instead of your local user account. Kubo doesn't require root privileges, so it's best to run all `ipfs` commands as a regular user!
 :::
 
-```bash
-ipfs init
+1. Open a terminal window.
 
-> initializing ipfs node at /Users/jbenet/.ipfs
-> generating 2048-bit RSA keypair...done
-> peer identity: Qmcpo2iLBikrdf1d6QU6vXuNb6P7hwrbNPW9kLAH8eG67z
-> to get started, enter:
->
->   ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme
-```
+1. Initialize the repository with the `ipfs init` command
 
-If you are running on a server in a data center, you should initialize IPFS with the `server` profile. Doing so will prevent IPFS from creating a lot of data center-internal traffic trying to discover local nodes:
+    ```bash
+    ipfs init
+    ```
 
-```bash
-ipfs init --profile server
-```
+   Output similar to the following displays:
 
-There are a whole host of other configuration options you may want to set — check [the full reference](https://github.com/ipfs/kubo/blob/master/docs/config.md) for more.
+    ```bash
+    > initializing ipfs node at /Users/jbenet/.ipfs
+    > generating 2048-bit RSA keypair...done
+    > peer identity: Qmcpo2iLBikrdf1d6QU6vXuNb6P7hwrbNPW9kLAH8eG67z
+    > to get started, enter:
+    >
+    >   ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme
+    ```
+    
+    :::tip
+    The hash next to `peer identity` is your node’s ID and will be different from the one shown in the above output. Other nodes on the network use `peer identity` to find and connect to you. 
+    
+    Run `ipfs id` to display the `peer identity` if you need it.
+    :::
 
-The hash after `peer identity:` is your node’s ID and will be different from the one shown in the above output. Other nodes on the network use it to find and connect to you. You can run `ipfs id` at any time to get it again if you need it.
 
-Now, try running the command suggested to you in the output of `ipfs init`. The one that looks like `ipfs cat /ipfs/<HASH>/readme`.
 
-You should see something like this:
+2. Now, try running the command suggested to you in the output of `ipfs init` (i.e. `ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme`):
 
-```
-Hello and Welcome to IPFS!
+   ```bash
+   ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme
+   ```
 
-██╗██████╗ ███████╗███████╗
-██║██╔══██╗██╔════╝██╔════╝
-██║██████╔╝█████╗  ███████╗
-██║██╔═══╝ ██╔══╝  ╚════██║
-██║██║     ██║     ███████║
-╚═╝╚═╝     ╚═╝     ╚══════╝
+    You should see something like this:
 
-If you see this, you have successfully installed
-IPFS and are now interfacing with the ipfs merkledag!
+    ```
+    Hello and Welcome to IPFS!
 
- -------------------------------------------------------
-| Warning:                                              |
-|   This is alpha software. use at your own discretion! |
-|   Much is missing or lacking polish. There are bugs.  |
-|   Not yet secure. Read the security notes for more.   |
- -------------------------------------------------------
+    ██╗██████╗ ███████╗███████╗
+    ██║██╔══██╗██╔════╝██╔════╝
+    ██║██████╔╝█████╗  ███████╗
+    ██║██╔═══╝ ██╔══╝  ╚════██║
+    ██║██║     ██║     ███████║
+    ╚═╝╚═╝     ╚═╝     ╚══════╝
 
-Check out some of the other files in this directory:
+    If you see this, you have successfully installed
+    IPFS and are now interfacing with the ipfs merkledag!
 
-  ./about
-  ./help
-  ./quick-start     <-- usage examples
-  ./readme          <-- this file
-  ./security-notes
-```
+    -------------------------------------------------------
+    | Warning:                                              |
+    |   This is alpha software. use at your own discretion! |
+    |   Much is missing or lacking polish. There are bugs.  |
+    |   Not yet secure. Read the security notes for more.   |
+    -------------------------------------------------------
 
-You can explore other objects in the repository. In particular, the `quick-start` directory which shows example commands to try:
+    Check out some of the other files in this directory:
 
-```bash
-ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/quick-start
-```
+      ./about
+      ./help
+      ./quick-start     <-- usage examples
+      ./readme          <-- this file
+      ./security-notes
+    ```
+
+1. The respository's `quick-start` directory shows other example commands to try. To display the contents of `quick-start, run:
+
+    ```bash
+    ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/quick-start
+    ```
+
+   :::tip
+   There are a whole host of other configuration options you can set — see the [the full reference](https://github.com/ipfs/kubo/blob/master/docs/config.md) for more.
+   :::
 
 ## Take your node online
 
-Once you're ready to join your node to the public network, run the ipfs daemon in another terminal and wait for all three lines below to appear to know that your node is ready:
+Next, take your node online and interact with the IPFS network:
 
-```bash
-ipfs daemon
+1. Open another terminal window. 
 
-> Initializing daemon...
-> API server listening on /ip4/127.0.0.1/tcp/5001
-> Gateway server listening on /ip4/127.0.0.1/tcp/8080
-```
+2. Start the IPFS daemon in the new terminal window:
 
-Make a note of the TCP ports you receive. If they are different, use yours in the commands below.
+    ```bash
+    ipfs daemon
+    ```
 
-::: danger NEVER EXPOSE THE RPC API TO THE PUBLIC INTERNET
+   After a few moments, output like the following displays, and your node is ready:
 
-The API port provides admin-level access to your Kubo IPFS node.  See [RPC API v0 docs](../reference/kubo/rpc.md) for more information.
+    ```bash
+    > Initializing daemon...
+    > API server listening on /ip4/127.0.0.1/tcp/5001
+    > Gateway server listening on /ip4/127.0.0.1/tcp/8080
+    ```
 
-:::
+    Make a note of the TCP ports in the output. If they are different, use yours in the commands below.
 
-Now, switch back to your original terminal. If you’re connected to the network, you should be able to see the IPFS addresses of your peers when you run:
+    ::: danger NEVER EXPOSE THE RPC API TO THE PUBLIC INTERNET
 
-```bash
-ipfs swarm peers
+    The API port provides admin-level access to your Kubo IPFS node.  See [RPC API v0 docs](../reference/kubo/rpc.md) for more information.
 
-> /ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
-> /ip4/104.236.151.122/tcp/4001/p2p/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx
-> /ip4/134.121.64.93/tcp/1035/p2p/QmWHyrPWQnsz1wxHR219ooJDYTvxJPyZuDUPSDpdsAovN5
-> /ip4/178.62.8.190/tcp/4002/p2p/QmdXzZ25cyzSF99csCQmmPZ1NTbWTe8qtKFaZKpZQPdTFB
-```
+    :::
 
-These are a combination of `<transport address>/p2p/<hash-of-public-key>`.
+1. Switch back to your original terminal window. 
 
-Now, you should be able to get objects from the network. Try:
+1. If you’re connected to the network, run `ipfs swarm peers` to see the IPFS addresses of your peers:
 
-```bash
-ipfs cat /ipfs/QmSgvgwxZGaBLqkGyWemEDqikCqU52XxsYLKtdy3vGZ8uq > ~/Desktop/spaceship-launch.jpg
-```
+    ```bash
+    ipfs swarm peers
+    ```
 
-Using the above command, IPFS searches the network for the CID `QmSgv...` and writes the data into a file called `spaceship-launch.jpg` on your Desktop.
+    Output similar to the following displays:
 
-Next, try sending objects to the network, and then viewing it in your favorite browser. The example below uses `curl` as the browser, but you can open the IPFS URL in other browsers as well:
+    ```bash
+    > /ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
+    > /ip4/104.236.151.122/tcp/4001/p2p/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx
+    > /ip4/134.121.64.93/tcp/1035/p2p/QmWHyrPWQnsz1wxHR219ooJDYTvxJPyZuDUPSDpdsAovN5
+    > /ip4/178.62.8.190/tcp/4002/p2p/QmdXzZ25cyzSF99csCQmmPZ1NTbWTe8qtKFaZKpZQPdTFB
+    ```
 
-```bash
-hash=`echo "I <3 IPFS -$(whoami)" | ipfs add -q`
-curl "https://ipfs.io/ipfs/$hash"
+    The addresses displayed are composed of a `<transport address>` (i.e. `/ip4/104.131.131.82/tcp/4001`) and a `<hash-of-public-key>` (i.e. `QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx`), resulting in an address of the form `<transport address>/p2p/<hash-of-public-key>`.
 
-> I <3 IPFS -<your username>
-```
+1. Now, fetch a cool picture of a spaceship launch from the netwok using `ipfs cat`:
 
-Cool, huh? The gateway served a file _from your computer_. The gateway queried the Distributed hash table (DHT), found your machine, requested the file, your computer sent it to the gateway, and the gateway sent it to your browser.
+    ```bash
+    ipfs cat /ipfs/QmSgvgwxZGaBLqkGyWemEDqikCqU52XxsYLKtdy3vGZ8uq > ~/Desktop/spaceship-launch.jpg
+    ```
 
-Depending on the state of the network, `curl` may take a while. The public gateways may be overloaded or having a hard time reaching you.
+   When the above command runs, Kubo searches the IPFS network for the CID specified (`QmSgv...`) and writes the data into a file called `spaceship-launch.jpg`.
 
-You can also check it out at your own local gateway:
+1. Verify that a photo of a spaceship launch called `spaceship-launch.jpg` is located in your `~/Desktop`.
 
-```bash
-curl "http://127.0.0.1:8080/ipfs/$hash"
+1. Next, create a file to add to your node:
 
-> I <3 IPFS -<your username>
-```
+   ```bash
+   echo "meow" > meow.txt
+   ```
 
-By default, your gateway is not exposed to the world. It only works locally.
+1. Add `meow.txt` using `ipfs add`:
 
-## Web console
+   ```bash
+   ipfs add meow.txt
+   ```
+  
+   Output similar to the following displays:
 
-You can view the web console on your local node by going to `localhost:5001/webui`. This should bring up a console like this:
+   ```bash
+   > added QmabZ1pL9npKXJg8JGdMwQMJo2NCVy9yDVYjhiHK4LTJQH meow.txt
+   ```
+
+   Make note of the CID (i.e. `QmabZ1..`), as you'll need it in the next step.
+
+1. View the objects by specifying the CID `<CID>` returned in the previous step:
+
+    :::tip
+    The example below uses `curl` as the browser, but you can open the IPFS url in other browsers. Depending on the state of the network, `curl` may take a while due to public gateways being overloaded or having a hard time reaching you.
+    :::
+
+    ```bash
+    curl "https://ipfs.io/ipfs/<CID>"
+    ```
+
+    Output like the following displays:
+
+    ```bash
+    > meow
+    ```
+
+    In this step, the gateway served a file _from your computer_. The gateway queried the distributed hash table (DHT), found your machine, requested the file, your computer sent it to the gateway, and the gateway sent it to your browser.
+
+1. View the objects on your own local gateway:
+
+    ```bash
+    curl "http://127.0.0.1:8080/ipfs/<CID>"
+    ```
+
+    ```bash
+    > meow
+    ```
+
+    By default, your gateway is not exposed to the world. It only works locally.
+
+## Interact with the node using the web console
+
+You can view the web console for your local node by navigating to `localhost:5001/webui`. 
 
 ![Web console connection view](./images/command-line-quick-start/webui-connection.png)
 
-The web console shows files that are in your [Mutable File System (MFS)](../concepts/file-systems.md#mutable-file-system-mfs). MFS is a tool built into the web console that helps you navigate IPFS files in the same way you would a name-based file system.
+The web console shows files that are in your [Mutable File System (MFS)](../concepts/file-systems.md#mutable-file-system-mfs). MFS is a tool built into the web console that helps you navigate IPFS files in the same way you would a standard, name-based file system.
 
 When you add files using the [CLI command `ipfs add ...`](../reference/kubo/cli.md#ipfs-add), these files are not automatically available within the MFS. To view files in IPFS Desktop that you added using the CLI, you must copy the files over to the MFS:
 
-```shell
-ipfs files cp /ipfs/<ipfs-CID>
+1. Enter `localhost:5001/webui` into your browser to view the web console.
+
+1. In the left sidebar menu, click **Files**. An empty directory displays, along with the following message:
+
+```plaintext
+No files here yet! Add files to your local IPFS node by clicking the Import button above.
 ```
+
+1. Navigate back to your original terminal window
+
+1. Using the CID `<CID>` obtained when adding `meow.txt` to your node in the previous step, copy the files over to the MFS.
+
+  ```shell
+  ipfs files cp /ipfs/<CID>
+  ```
+
+1. Refresh **Files** to see `meow.txt`
 
 ## IPFS Companion
 
-While we are at it, [IPFS Companion](https://github.com/ipfs/ipfs-desktop#ipfs-companion) is a browser extension that simplifies access to IPFS resources and adds support for the IPFS protocol.
+You can use IPFS Companion, a browser extension that simplifies access to IPFS resources and adds support for the IPFS protocol, to automatically redirect IPFS gateway requests to your local daemon so that you are not relying on remote gateways.
 
-It will automatically redirect IPFS gateway requests to your local daemon so that you are not relying on or trusting remote gateways.
-
-It runs in Firefox (desktop and Android) and various Chromium-based browsers such as Google Chrome or [Brave](https://brave.com).
-[Check out its features](https://github.com/ipfs/ipfs-companion#features) and install it today!
-
-- [Direct download](https://github.com/ipfs/ipfs-companion#install)
-- [Install from Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/ipfs-companion/)
-- [Install from Chrome Store](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch)
+For more information on IPFS companion, including how to install it, see the [IPFS Companion quickstart](../install/ipfs-companion.md).
 
 ## Troubleshooting
 
