@@ -8,15 +8,36 @@ current-ipfs-cluster-version: v1.0.4
 
 If you want to install IPFS in a server environment and offer IPFS as a service, you should look at [IPFS Cluster](https://cluster.ipfs.io/) as a way to scale your IPFS deployment beyond a single IPFS daemon. IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pin-set distributed among multiple peers. This makes it significantly easier to manage multiple IPFS nodes and ensure that data is available across an internal network.
 
-<!-- markdown-link-check-disable -->
-@[youtube](-SYDlid7Nqs)
-<!-- markdown-link-check-enable-->
+IPFS Cluster is a distributed application that works as a sidecar to IPFS peers, maintaining a global cluster pinset and intelligently allocating its items to the IPFS peers. This makes it significantly easier to manage multiple IPFS nodes and ensure that data is available across an internal network. IPFS Cluster powers large IPFS storage services like [nft.storage](https://nft.storage/) and [web3.storage](https://web3.storage/). 
 
 :::tip
 As a Kubernetes user, you can use a Kubernetes operator for IPFS called [IPFS operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) to easily create and manage clusters consisting of hundreds of peers.
 The IPFS operator is in active development and not yet recommended for production use cases. If the operator is something you would like to include in your infrastructure, 
 check out the [official documentation](https://ipfs-operator.readthedocs.io/) and [operator source code](https://github.com/redhat-et/ipfs-operator) for instructions and the latest progress.
 :::
+
+## Features 
+
+IPFS Cluster has the following features:
+
+- _Easy to run_: Runs independently from IPFS and the IPFS daemon’s API.
+- _Handles replication of millions of pins to hundreds of IPFS daemons:_ Tracks pin lifetime asynchronously, asks IPFS to pin things at a sustainable rate and retries pinning in case of failures.
+- _Clever pinning prioritization:_ New pins are prioritized over pin requests that are old or have repeatedly failed to pin.
+- _Ingest pins at scale:_ Pins can be added at a rate hundreds of pins per second into the cluster from that moment they are tracked and managed by the cluster peers.
+- _Balanced allocation:_ Distributes pins evenly among peers in different groups and subgroups (i.e regions, availability zones), ultimately choosing those with most free storage space available.
+- _API and CLI_: Provides a command-line client and a fully featured Cluster HTTP REST API.
+_No central server to manage:_ Cluster peers form a distributed network and maintain a global, replicated, conflict-free list of pins.
+- _Baked-in permissions:_ The embedded permission model supports peers with permissions to change the cluster pinset and peers which store content as instructed but that cannot modify the pinset.
+- _Name your pins:_ Supports custom replication factors, names and metadata for every pin.
+- _Multi-peer add:_ Ingests IPFS content to multiple daemons directly.
+- _CAR import support:_ Directly imports CAR-archived content using custom DAGs.
+- _IPFS proxy API:_ Cluster peers provide an additional IPFS proxy API that behaves exactly like the IPFS daemon’s API does.
+- _Integration-ready:_ Cluster peers can be programmatically launched and controlled using Go and Javascript clients for its API.
+- _Powered by [libp2p](https://libp2p.io/):_ Built on libp2p, the battle-tested, next-generation p2p networking library used by IPFS, Filecoin and Ethereum V2.
+
+<!-- markdown-link-check-disable -->
+@[youtube](-SYDlid7Nqs)
+<!-- markdown-link-check-enable-->
 
 ## Create a local cluster
 
