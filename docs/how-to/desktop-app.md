@@ -1,9 +1,9 @@
 ---
-title: "Desktop app"
+title: "IPFS Desktop Tutorial"
 description: "A simple walkthrough of the basic functions of the IPFS desktop app."
 ---
 
-# IPFS Desktop app basics
+# IPFS Desktop Tutorial
 
 This guide will walk you through the basics of IPFS Desktop and teach you how to add, remove, and download a file using IPFS. This guide will only cover the basics and will avoid talking about more complex concepts.
 

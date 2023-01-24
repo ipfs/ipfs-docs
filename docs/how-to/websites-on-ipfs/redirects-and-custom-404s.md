@@ -78,7 +78,7 @@ For more detailed information about supported features, check out the [`_redirec
 
 ### Catch all and PWA/SPA support
 
-The `200` status will be treated as a rewrite, returning OK without changing the URL shown in the browser. This staus code can be used to build [Progressive Web Apps](https://en.wikipedia.org/wiki/Progressive_web_app) and [Single Page Applications](https://en.wikipedia.org/wiki/Single-page_application).
+The `200` status will be treated as a rewrite, returning OK without changing the URL shown in the browser. This status code can be used to build [Progressive Web Apps](https://en.wikipedia.org/wiki/Progressive_web_app) and [Single Page Applications](https://en.wikipedia.org/wiki/Single-page_application).
 
 ```plaintext
 /app/* /app/index.html 200

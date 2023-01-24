@@ -1,0 +1,26 @@
+name: vale-v0
+
+on: 
+  pull_request:
+    # 'edited': check the PR title on changes
+    types: [opened, edited, reopened, synchronize]
+
+jobs:
+  pr-content-check:
+    name: pr-content-check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - id: files
+        name: Get changed files
+        uses: jitterbit/get-changed-files@v1
+        with:
+          format: 'json'
+      - name: vale check
+        uses: errata-ai/vale-action@reviewdog
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}    
+        with:
+          files: ${{ steps.files.outputs.added_modified }}  
+          fail_on_error: true
+          vale_flags: "--minAlertLevel=error"

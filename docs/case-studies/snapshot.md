@@ -18,7 +18,7 @@ In this case study, you'll learn how [Snapshot](https://snapshot.org/) works and
 ## What is Snapshot
 
 ::: right
-<img src="./images/case-studies/logo-snapshot.png" alt="Snapshot logo" width="200">
+<img src="./images/logo-snapshot.png" alt="Snapshot logo" width="200">
 :::
 
 Snapshot is an open-source **voting platform** for Web3 projects, DAOs, and communities that uses IPFS as its main storage layer.
@@ -47,7 +47,7 @@ In essence, Snapshot allows projects and DAOs aiming for decentralization to pol
 
 Snapshot was originally built while Fabien, Snapshot's founder, was working for the automated market maker [Balancer](https://balancer.fi/). The goal was to create a voting platform that would be flexible enough to grant BAL tokens within [Balancer pools](https://docs.balancer.fi/products/balancer-pools) voting power. However, doing this on-chain turned out to be too computationally heavy to be feasible. That's when he realized that doing it off-chain with IPFS could provide them with the flexibility needed.
 
-While free ("gassless") voting was not one of the initial requirements for Balancer, it came as a serendipitous bonus of the off-chain design with IPFS.
+While free ("gasless") voting was not one of the initial requirements for Balancer, it came as a serendipitous bonus of the off-chain design with IPFS.
 
 Two weeks later, Fabien began generalizing his gas-efficient implementation using IPFS so that could be used by projects and DAOs beyond Balancer – and Snapshot was born.
 
@@ -61,7 +61,7 @@ In Snapshot, all proposals and votes are associated with a **space,** where each
 
 The only requirement for using Snapshot is to have an ENS name. To create a space, you create an [ENS text record](https://docs.ens.domains/ens-improvement-proposals/ensip-5-text-records) with the key `snapshot` pointing to an IPFS CID containing the JSON configuration for the space. For example, GnosisDAO with the [gnosis.eth ENS name has the `snapshot`](https://app.ens.domains/name/gnosis.eth/details) text record set to [`ipfs://QmWUemB5QDr6Zkp2tqQRcEW1ZC7n4MiLaE6CFneVJUeYyD`](https://ipfs.io/ipfs/QmWUemB5QDr6Zkp2tqQRcEW1ZC7n4MiLaE6CFneVJUeYyD) which contains the JSON configuration for the space.
 
-![ENS configuration for Snapshot on IPFS](./images/case-studies/img-snapshot-ens-config.png)
+![ENS configuration for Snapshot on IPFS](./images/img-snapshot-ens-config.png)
 
 Each space configuration in Snapshot allows you to configure various **strategies** to determine:
 
@@ -89,11 +89,11 @@ To calculate the results of a vote, each proposal employs one of the following *
 
 These voting systems are used to calculate the results of a vote based on the voting power. For example, the [following proposal](https://snapshot.org/#/decrypt-media.eth/proposal/QmPDpQSZuokqGpzqtPbmLp1LTqDjbhd6vCeKaSmqEXM9KH)) in the [Decrypt Media](https://decrypt.co/) space, grants Decrypt NFT holders the right to choose a single topic for the content they will write next. Voting power for this proposal is relative to the number of Decrypt NFTs held by the voter at block number `12,811,388`.
 
-![Decrypt content proposal](./images/case-studies/img-snapshot-decrypt-proposal.png)
+![Decrypt content proposal](./images/img-snapshot-decrypt-proposal.png)
 
 ## How Snapshot uses IPFS
 
-Snapshot uses IPFS to make the whole voting process fully transparent and auditable. Every space, proposal, vote, and user action is added to IPFS and has a [content identifier (CID)](/concepts/content-addressing.md).
+Snapshot uses IPFS to make the whole voting process fully transparent and auditable. Every space, proposal, vote, and user action is added to IPFS and has a [content identifier (CID)](../concepts/content-addressing.md).
 
 Additionally, the Snapshot UI is also [available on IPFS](https://bafybeihzjoqahhgrhnsksyfubnlmjvkt66aliodeicywwtofodeuo2icde.ipfs.dweb.link/) and linked using the ENS name `shot.eth` which is accessible via any ENS resolution service, e.g. [shot.eth.limo](https://shot.eth.limo/)(see the `x-ipfs-path` and `X-Ipfs-Roots` headers when making an HTTP request.)
 
@@ -103,9 +103,9 @@ To understand how Snapshot uses IPFS, it's useful to understand how the whole ar
 - **Logic tier:** The [snapshot-hub](https://github.com/snapshot-labs/snapshot-hub) node.js server that exposes a GraphQL API.
 - **Data tier:** A combination of a MySQL database for indexing and querying and IPFS as its storage layer for space configuration, proposals, user actions, and votes.
 
-> **Note:** Even though MySQL is used for querying, all data stored on MySQL is available on IPFS. [Tables in the database schema](https://github.com/snapshot-labs/snapshot-hub/blob/master/src/helpers/schema.sql) have an `ipfs` field holding the IPFS CID.
+> **Note:** Even though MySQL is used for querying, all data stored on MySQL is available on IPFS. [Tables in the database schema](https://github.com/snapshot-labs/snapshot-hub/blob/master/src/graphql/schema.gql) have an `ipfs` field holding the IPFS CID.
 
-![Snapshot architecture](./images/case-studies/img-snapshot-architecture.png)
+![Snapshot architecture](./images/img-snapshot-architecture.png)
 
 ### Uploading to IPFS pinning services with Pineapple
 
@@ -115,7 +115,7 @@ pineapple.js exposes a `pin` method that takes a JSON object and sends it to the
 
 ### Open access via IPFS Gateways
 
-After data is added to the IPFS network via pinning services, it is also made available for viewing by users via an [IPFS Gateway](/concepts/ipfs-gateway.md). Links to the signed messages for [proposals](https://snapshot.mypinata.cloud/ipfs/bafkreigva2y23hnepirhvup2widmawmjiih3kvvuaph3a7mrivkiqcvuki) and [votes](https://snapshot.mypinata.cloud/ipfs/bafkreibozdzgw5y5piburro6pxspw7yjcdaymj3fyqjl2rohsthnqfwc6e) are integrated into the Snapshot UI.
+After data is added to the IPFS network via pinning services, it is also made available for viewing by users via an [IPFS Gateway](../concepts/ipfs-gateway.md). Links to the signed messages for [proposals](https://snapshot.mypinata.cloud/ipfs/bafkreigva2y23hnepirhvup2widmawmjiih3kvvuaph3a7mrivkiqcvuki) and [votes](https://snapshot.mypinata.cloud/ipfs/bafkreibozdzgw5y5piburro6pxspw7yjcdaymj3fyqjl2rohsthnqfwc6e) are integrated into the Snapshot UI.
 
 ## IPFS benefits
 

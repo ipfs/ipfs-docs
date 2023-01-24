@@ -1,28 +1,34 @@
 ---
-title: Server infrastructure with IPFS Cluster
+title: IPFS Cluster
 description: IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pin-set distributed among multiple peers. Learn how to install it here.
 current-ipfs-cluster-version: v1.0.4
 ---
 
-# Server infrastructure
+# Set up server infrastructure with IPFS Cluster
 
 If you want to install IPFS in a server environment and offer IPFS as a service, you should look at [IPFS Cluster](https://cluster.ipfs.io/) as a way to scale your IPFS deployment beyond a single IPFS daemon. IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pin-set distributed among multiple peers. This makes it significantly easier to manage multiple IPFS nodes and ensure that data is available across an internal network.
 
+<!-- markdown-link-check-disable -->
 @[youtube](-SYDlid7Nqs)
+<!-- markdown-link-check-enable-->
 
-::: tip
-As a Kubernetes user, you can use a Kubernetes operator for IPFS called [IPFS operator] (https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) to easily create and manage clusters consisting of hundreds of peers.
+:::tip
+As a Kubernetes user, you can use a Kubernetes operator for IPFS called [IPFS operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) to easily create and manage clusters consisting of hundreds of peers.
 The IPFS operator is in active development and not yet recommended for production use cases. If the operator is something you would like to include in your infrastructure, 
 check out the [official documentation](https://ipfs-operator.readthedocs.io/) and [operator source code](https://github.com/redhat-et/ipfs-operator) for instructions and the latest progress.
 :::
 
 ## Create a local cluster
 
-To see if IPFS Cluster is suitable for your project, follow this quick start guide and spin up a local IPFS Cluster instance. At the end of this guide, you will have a solid understanding of how IPFS Cluster is set up and how to interact with it. If you'd rather create a production-ready cluster, take a look at the [official IPFS Cluster documentation →](https://cluster.ipfs.io/)
+To see if IPFS Cluster is suitable for your project, follow this quick start guide and spin up a local IPFS Cluster instance. At the end of this guide, you will have a solid understanding of how IPFS Cluster is set up and how to interact with it. To create a local cluster, complete the prerequisites. Then, follow the procedure.
+
+:::tip
+If you'd rather create a production-ready cluster, take a look at the [official IPFS Cluster documentation →](https://cluster.ipfs.io/)
+:::
 
 ### Prerequisites
 
-You must have both [Docker](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) installed. Check that they're both installed properly by asking for their version:
+You must have both [Docker](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) installed. Check that they're both installed properly by checking the version:
 
 ```shell
 docker version
@@ -39,9 +45,9 @@ docker-compose version
 > ...
 ```
 
-If you're having issues here, head over to the [official Docker documentation to fix your problem →](https://docs.docker.com/)
+If you're having issues installing or using Docker or Docker-Compose, see the [official documentation →](https://docs.docker.com/).
 
-### Steps
+### Procedure
 
 1. Download the latest `ipfs-cluster-ctl` package from [dist.ipfs.tech](https://dist.ipfs.tech/#ipfs-cluster-ctl):
 
@@ -67,7 +73,11 @@ If you're having issues here, head over to the [official Docker documentation to
     wget https://raw.githubusercontent.com/ipfs/ipfs-cluster/v1.0.4/docker-compose.yml
     ```
 
-1. Start the cluster using `docker-compose`. You may have to run as root:
+1. Start the cluster using `docker-compose`:
+
+   :::callout
+   Depending on your system permissions, you may have to run the command as a root user.
+   :::
 
     ```shell
     docker-compose up
@@ -78,14 +88,16 @@ If you're having issues here, head over to the [official Docker documentation to
     > Recreating cluster2 ... done
     > ...
     ```
+    
+    :::warning
 
-You may see some errors like:
+    Errors such as the following may display:
 
     ```shell
     cluster2    | 2020-10-27T15:20:15.116Z  ERROR   ipfshttp    error posting to IPFS:Post "http://172.18.0.2:5001/api/v0/pin/ls?type=recursive": dial tcp 172.18.0.2:5001: connect: connection refused
     ```
 
-You can safely ignore these for now. They're showing because some of the IPFS nodes within the cluster haven't finished spinning up yet. Everything should have loaded after a couple of minutes:
+    You can safely ignore these errors for now. They're showing because some of the IPFS nodes within the cluster haven't finished spinning up yet. Everything should have loaded after a couple of minutes:
 
     ```shell
     > ipfs1       | API server listening on /ip4/0.0.0.0/tcp/5001
@@ -93,8 +105,13 @@ You can safely ignore these for now. They're showing because some of the IPFS no
     > ipfs1       | Gateway (readonly) server listening on /ip4/0.0.0.0/tcp/8080
     > ipfs1       | Daemon is ready
     ```
+    :::
 
-1. You can now interact with your cluster. In a new terminal, navigate to the `ipfs-cluster-ctl` directory and list the peers within the cluster:
+1. Open a new terminal window.
+
+1. You can now interact with your cluster. In a new terminal window, navigate to the `ipfs-cluster-ctl` directory.
+ 
+1. List the peers within the cluster:
 
     ```shell
     ./ipfs-cluster-ctl peers ls
@@ -136,9 +153,13 @@ You can safely ignore these for now. They're showing because some of the IPFS no
     > > cluster1             : PINNED | 2020-10-27T15:42:39.984842325Z
     ```
 
-This shows us that `QmdzvHZ...` is pinned across the three IPFS nodes within our cluster.
+   The output shows that `QmdzvHZ...` is pinned across the three IPFS nodes within our cluster.
 
-1. When you're finished playing around, kill the cluster. You may have to run this as root:
+1. When you're finished playing around, kill the cluster:
+
+   :::callout
+   Depending on your system permissions, you may have to run the command as a root user.
+   :::
 
     ```shell
     docker-compose kill
@@ -151,7 +172,7 @@ This shows us that `QmdzvHZ...` is pinned across the three IPFS nodes within our
     > Killing ipfs2    ... done
     ```
 
-The terminal running the `ipfs-cluster-ctl` daemon will close any open connections:
+   The terminal running the `ipfs-cluster-ctl` daemon will close any open connections:
 
     ```shell
     > ...

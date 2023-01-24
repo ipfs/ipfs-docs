@@ -98,7 +98,7 @@ func Endpoints(name string, cmd *cmds.Command) (endpoints []*Endpoint) {
 	var arguments []*Argument
 	var options []*Argument
 
-	ignore := cmd.Run == nil || IgnoreEndpoints[name]
+	ignore := cmd.Run == nil || IgnoreEndpoints[name] || cmd.NoRemote
 	if !ignore { // Extract arguments, options...
 		for _, arg := range cmd.Arguments {
 			argType := "string"

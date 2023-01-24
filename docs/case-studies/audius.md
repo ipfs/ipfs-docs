@@ -18,7 +18,7 @@ _&mdash; Hareesh Nagaraj, Senior Engineer, Audius_
 ## Overview
 
 ::: right
-<img src="./images/case-studies/logo-audius.png" alt="Audius logo" width="100">
+<img src="./images/logo-audius.png" alt="Audius logo" width="100">
 :::
 
 **[Audius](https://audius.co/)** is a music and audio sharing platform designed to provide artists a direct link with their listeners. Using decentralized technology, Audius is able to ensure artists’ rights to and control of their own music, and provide a censorship-resistant platform for expression and distribution of artistic works and compositions. To create a user-owned and operated platform, it was key to have a distributed cloud storage network as the basis for the system. Audius uses IPFS as the core decentralized storage component in their mission to give everyone the freedom to share, monetize and listen to any audio.
@@ -109,7 +109,7 @@ Audius uses the following IPFS implementations with no modification:
 - [`ipfs-http-client`](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client)
   - _Creator node is a Node.js-based service and heavily uses this client to interact with dedicated IPFS nodes_
 
-For streaming, the Audius team uses HTTP Livestreaming (HLS) on top of the IPFS core implementation. The client pre-fetches the segments as the listener streams them using HLS.
+For streaming, the Audius team uses HTTP Live Streaming (HLS) on top of the IPFS core implementation. The client pre-fetches the segments as the listener streams them using HLS.
 
 ## Audius + IPFS: the future
 

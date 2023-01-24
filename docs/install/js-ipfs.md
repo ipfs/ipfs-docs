@@ -1,11 +1,11 @@
 ---
-title: IPFS in JavaScript
+title: IPFS for JavaScript (js-ipfs)
 description: "A simple walkthrough of how to perform basic IPFS operations using the JavaScript implementation."
 ---
 
-# IPFS in JavaScript
+# Install IPFS for JavaScript (js-ipfs)
 
-This guide will walk you through the basics of using IPFS with JavaScript. JS-IPFS is one of multiple [IPFS implementations](../ipfs-implementations.md). You will learn how to install and spawn a node using the available libraries, and add, retrieve, read, and remove files. If you are unsure about the meaning of some terms, check out the [glossary](../../concepts/glossary.md).
+This guide will walk you through the basics of using JS-IPFS, an implementation of IPFS in JavaScript. JS-IPFS is one of multiple [IPFS implementations](../concepts/ipfs-implementations.md). You will learn how to install and spawn a node using the available libraries, and add, retrieve, read, and remove files. If you are unsure about the meaning of some terms, check out the [glossary](../concepts/glossary.md).
 
 ::: tip Environment
 
@@ -13,7 +13,7 @@ All instructions and examples shown here were performed and tested on an M1 Mac.
 
 :::
 
-There are two ways to work with IPFS using JavaScript; the [JS-IPFS](../../reference/js/api.md#js-ipfs) library or the [HTTP client](../../reference/js/api.md#http-client). We'll show you how to use both in this guide.
+There are two ways to work with IPFS using JavaScript; the [JS-IPFS](../reference/js/api.md#js-ipfs) library or the [HTTP client](../reference/js/api.md#http-client). We'll show you how to use both in this guide.
 
 ## Install JS-IPFS
 
@@ -80,8 +80,6 @@ Alternatively, you can build the project from the source. See the [JS-IPFS GitHu
     ```
 
 3. You should be able to point to the [webpage](http://127.0.0.1:5002/webui) using the address output by the terminal `http://127.0.0.1:5002/webui`:
-
-    ![The JS-IPFS daemon showing the web-ui.](../../images/jsipfs-webui.png)
 
 4. If you are unable to connect to the API, ensure [cross-origin (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) requests are configured:
 
@@ -158,7 +156,7 @@ Create a simple Node.js application to host the logic that will allow you to use
 
 ### Connect to IPFS
 
-The JS-IPFS implementation is split into several Node.js modules. The following section shows examples of using the HTTP client to connect to IPFS. For more information on the different modules, examine the [API Packages table](../../reference/js/api.md##packages)
+The JS-IPFS implementation is split into several Node.js modules. The following section shows examples of using the HTTP client to connect to IPFS. For more information on the different modules, examine the [API Packages table](../reference/js/api.md##packages)
 
 :::: tabs
 
@@ -255,8 +253,6 @@ As the JS-IPFS implementation changes, some of these steps should be deemed cond
 4. The file has been added to the IPFS network and has given the file a CID.  You can share this CID with anyone, and they can use it on their IPFS node to obtain the content you uploaded.
 5. To view the file contents, navigate to the [webui](http://127.0.0.1:5002/webui) and provide the CID on the search bar. The UI will provide the file contents, similar to the following:
 
-![](../../images/jsipfs-add-webui.png)
-
 :::
 
 ::: tab ipfs-core id="add-ipfs-core"
@@ -289,8 +285,6 @@ As the JS-IPFS implementation changes, some of these steps should be deemed cond
 
 1. The file has been added to the IPFS network and has given the file a CID. You can share this CID with anyone, and they can use it on their IPFS node to obtain the content you uploaded.
 1. If you take the CID and load it on the HTTP gateway, you will see the content `https://ipfs.io/ipfs/QmYt9ypyGsR1BKdaCGPdwdBgAiuXK5AYN2bGSNZov7YXuk`:
-
-![](../../images/jsipfs-add-gateway.png)
 
 :::
 
@@ -376,7 +370,7 @@ Pinning a file will save the file data save to the local IPFS node and ensure da
     pinned QmWcYcWY5vdDzBcAoLo3rYXQ2tLkjzu57vEePCvyhuwZRi
     ```
 
-By default, objects that you retrieve over IPFS are not pinned to your node. If you wish to prevent the files from being garbage collected, you need to pin them. You will notice that the pin you just added is a recursive pin, meaning it is a directory containing other objects. Check out the [pinning content](../../concepts/persistence.md#pinning-in-context) to learn more about pinning.
+By default, objects that you retrieve over IPFS are not pinned to your node. If you wish to prevent the files from being garbage collected, you need to pin them. You will notice that the pin you just added is a recursive pin, meaning it is a directory containing other objects. Check out the [pinning content](../concepts/persistence.md#pinning-in-context) to learn more about pinning.
 
 ## Remove a file
 
@@ -424,7 +418,7 @@ Removing the content pin will remove a file from IPFS. In this section, we will 
     unpinned QmWcYcWY5vdDzBcAoLo3rYXQ2tLkjzu57vEePCvyhuwZRi
     ```
 
-1. `test.txt` file is now unpinned, but it has not been removed from our node completely. To remove it completely, run the [garbage collection](../../concepts/persistence.md#garbage-collection). The command will remove everything from your node that does not have a pin:
+1. `test.txt` file is now unpinned, but it has not been removed from our node completely. To remove it completely, run the [garbage collection](../concepts/persistence.md#garbage-collection). The command will remove everything from your node that does not have a pin:
 
     ```shell
     jsipfs repo gc

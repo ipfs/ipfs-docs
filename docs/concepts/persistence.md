@@ -73,6 +73,11 @@ To ensure that your important data is retained, you may want to use a pinning se
 
 Some available pinning service providers are:
 
+:::warning
+Some of the pinning services listed below are operated by third party companies. There is no guarantee that these third party companies will continue to maintain their pinning service. It is strongly recommended that you thoroughly research a pinning service before using it to host your data.
+:::
+
+- [4EVERLAND Bucket](https://www.4everland.org/bucket/)
 - [Estuary](https://estuary.tech/)
 - [Filebase](https://filebase.com/)
 - [Infura](https://infura.io/)
@@ -88,7 +93,7 @@ Storing data using a personal IPFS node is easy, but it can be inconvenient sinc
 
 ### Storing data with Filecoin
 
-[Filecoin](https://filecoin.io) is a decentralized storage network in which storage providers rent their storage space to clients. The client and the storage provider agree on how much data will be stored, for how long, and at what cost. This agreement is called a _deal_. Once both parties agree to a deal, the client sends the data to the storage provider, who periodically verifies that they are correctly storing the data. When the client wants the data back, they send a request to the storage provider, who initiates the data transfer back to the client. For more information on how Filecoin works, head over to the [official Filecoin documentation →](https://docs.filecoin.io/about-filecoin/how-filecoin-works/)
+[Filecoin](https://filecoin.io) is a decentralized storage network in which storage providers rent their storage space to clients. The client and the storage provider agree on how much data will be stored, for how long, and at what cost. This agreement is called a _deal_. Once both parties agree to a deal, the client sends the data to the storage provider, who periodically verifies that they are correctly storing the data. When the client wants the data back, they send a request to the storage provider, who initiates the data transfer back to the client. For more information on how Filecoin works, head over to the [official Filecoin documentation →](https://docs.filecoin.io/about/basics/how-filecoin-works/)
 
 Filecoin provides users with a dependable, long-term storage solution. However, there are some limitations to consider. The retrieval process is not always as fast as an IPFS pinning service, and the minimum file size accepted by a Filecoin storage provider can be several GiB. Also, the process for creating a storage deal may seem complicated to new users who aren't familiar with blockchain transactions or simply aren't comfortable working within a command line.
 
@@ -101,6 +106,6 @@ Options in this category include:
 - [Web3.Storage](https://Web3.Storage)
 - [NFT.storage](https://nft.storage/)
 - [Estuary](https://estuary.tech)
-- [Powergate](https://docs.filecoin.io/build/powergate)
+- [Powergate](https://docs.filecoin.io/build/tools/powergate/)
 - [ChainSafe Storage](https://storage.chainsafe.io)
 - [Fleek Storage](https://fleek.co/storage)

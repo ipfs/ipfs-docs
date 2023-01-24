@@ -39,7 +39,7 @@ After installing you can run:
 > http-api-docs
 ```
 
-This should spit out a Markdown document. This is exactly the `api.md` documentation at https://github.com/ipfs/ipfs-docs/blob/master/docs/reference/http/api.md, so you can redirect the output to just overwrite that file.
+This should spit out a Markdown document. This is exactly the `rpc.md` documentation at https://github.com/ipfs/ipfs-docs/blob/master/docs/reference/kubo/rpc.md, so you can redirect the output to just overwrite that file.
 
 ## Captain
 

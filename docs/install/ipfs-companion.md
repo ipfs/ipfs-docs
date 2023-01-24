@@ -3,7 +3,7 @@ title: IPFS Companion
 description: The IPFS Companion browser extension allows you to interact with your IPFS node and the extended IPFS network through your browser. Learn how to install it here.
 ---
 
-# IPFS Companion
+# Install the IPFS Companion Browser Extension
 
 IPFS Companion allows you to interact with your IPFS node and the extended IPFS network through your browser. The add-on is available for Brave, Chrome, Edge, Firefox, and Opera. It enables support for `ipfs://` addresses, automatically loads websites and file paths from an IPFS gateway, allows you to easily import and share a file with IPFS, and more.
 
@@ -33,7 +33,7 @@ IPFS Companion detects and tests requests for IPFS-like paths, such as `/ipfs/{c
 
 ### Detect DNSLink-enabled URLs
 
-IPFS Companion detects DNSLink info in the DNS records of websites. DNSLink is a simple protocol that links content and serviceability from DNS and leverages the DNS distributed architecture. See [Glossary > DNSLink](../../concepts/glossary.md#dnslink). If a site uses DNSLink, IPFS Companion redirects the HTTP request to your local gateway:
+IPFS Companion detects DNSLink info in the DNS records of websites. DNSLink is a simple protocol that links content and serviceability from DNS and leverages the DNS distributed architecture. See [Glossary > DNSLink](../concepts/glossary.md#dnslink). If a site uses DNSLink, IPFS Companion redirects the HTTP request to your local gateway:
 
 > `http://docs.ipfs.tech`  
 > → `http://localhost:8080/ipns/docs.ipfs.tech` → `http://docs.ipfs.tech.ipns.localhost:8080/`

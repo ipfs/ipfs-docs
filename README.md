@@ -123,7 +123,7 @@ Everyone has an opinion when it comes to documentation, and **that's a good thin
 
 ### Pull requests welcome
 
-Feel free to submit pull requests with any changes you'd like to see. If you're simply changing a typo or editing a styling bug, you can add `ciskip` to the title of your pull request to stop Filecorgi from running. Once merged, the website is updated automatically within 5-10 minutes.
+Feel free to submit pull requests with any changes you'd like to see. We will review and approve, or leave change requests, as soon as we are able.
 
 ## Style and configuration guide
 

@@ -1,27 +1,29 @@
 ---
-title: IPNS (InterPlanetary Name System) and Mutability
+title: IPNS (InterPlanetary Name System)
 description: Learn about mutability in IPFS, InterPlanetary Name System (IPNS), and how it can be used in conjunction with IPFS.
 ---
 
 # InterPlanetary Name System (IPNS)
 
-- [Mutability in IPFS](#mutability-in-ipfs)
-- [How IPNS works](#how-ipns-works)
-  - [Anatomy of an IPNS name](#anatomy-of-an-ipns-name)
-    - [How IPNS names relate to content paths](#how-ipns-names-relate-to-content-paths)
-  - [IPNS names are self-certifying](#ipns-names-are-self-certifying)
-  - [Common IPNS operations](#common-ipns-operations)
-  - [IPNS is transport agnostic](#ipns-is-transport-agnostic)
-    - [IPNS over the DHT](#ipns-over-the-dht)
-    - [IPNS over PubSub](#ipns-over-pubsub)
-      - [Publishing IPNS records over PubSub lifecycle](#publishing-ipns-records-over-pubsub-lifecycle)
-  - [Tradeoffs between consistency vs. availability](#tradeoffs-between-consistency-vs-availability)
-    - [IPNS record validity](#ipns-record-validity)
-    - [Practical considerations](#practical-considerations)
-- [IPNS in practice](#ipns-in-practice)
-  - [Resolving IPNS names using IPFS gateways](#resolving-ipns-names-using-ipfs-gateways)
-  - [Publishing IPNS names](#publishing-ipns-names)
-- [Alternatives to IPNS](#alternatives-to-ipns)
+- [InterPlanetary Name System (IPNS)](#interplanetary-name-system-ipns)
+  - [Mutability in IPFS](#mutability-in-ipfs)
+  - [How IPNS works](#how-ipns-works)
+    - [Anatomy of an IPNS name](#anatomy-of-an-ipns-name)
+      - [How IPNS names relate to content paths](#how-ipns-names-relate-to-content-paths)
+    - [IPNS names are self-certifying](#ipns-names-are-self-certifying)
+    - [Common IPNS operations](#common-ipns-operations)
+    - [IPNS is transport agnostic](#ipns-is-transport-agnostic)
+      - [IPNS over the DHT](#ipns-over-the-dht)
+      - [IPNS over PubSub](#ipns-over-pubsub)
+        - [Publishing IPNS records over PubSub lifecycle](#publishing-ipns-records-over-pubsub-lifecycle)
+    - [Tradeoffs between consistency vs. availability](#tradeoffs-between-consistency-vs-availability)
+      - [IPNS record validity](#ipns-record-validity)
+      - [Practical considerations](#practical-considerations)
+  - [IPNS in practice](#ipns-in-practice)
+    - [Resolving IPNS names using IPFS gateways](#resolving-ipns-names-using-ipfs-gateways)
+    - [Publishing IPNS names](#publishing-ipns-names)
+  - [Alternatives to IPNS](#alternatives-to-ipns)
+  - [Further Resources](#further-resources)
 
 ## Mutability in IPFS
 
@@ -177,7 +179,7 @@ One of the most important things to consider with IPNS names is **how frequently
 
 Practically, two levers within your control determine where your IPNS name is on the spectrum between consistency and availability:
 
-- **IPNS record validity:** longer validity will veer towards availability. Moreover, longer validity will reduce the dependence on the keyholder (which for most purposes is stored on a single machine and rare shared) since the record can continue to persist without requiring the private key holder to sign a new record. Another benefit of a longer validity is that the transport can be delegated to other nodes or services (such as [w3name](https://staging.web3.storage/docs/how-tos/w3name/)), without compromising the private key.
+- **IPNS record validity:** longer validity will veer towards availability. Moreover, longer validity will reduce the dependence on the key holder (which for most purposes is stored on a single machine and rare shared) since the record can continue to persist without requiring the private key holder to sign a new record. Another benefit of a longer validity is that the transport can be delegated to other nodes or services (such as [w3name](https://staging.web3.storage/docs/how-tos/w3name/)), without compromising the private key.
 - **Transport mechanism:** the DHT veers towards consistency while PubSub veers towards availability. However, with Kubo, IPNS names are always published to the DHT, while PubSub is opt-in. For most purposes, enabling PubSub is a net gain unless you hit the upper limit of connections as a result of too many PubSub subscriptions.
 
 ## IPNS in practice
