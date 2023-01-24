@@ -37,7 +37,6 @@ Note the following:
 
 If you are running Kubo on a resource-constrained system (such as a Raspberry Pi), you should complete the following steps:
 
-  1. Download and compile Kubo manually. See the [Kubo README](https://github.com/ipfs/kubo/blob/v0.17.0/README.md#download-and-compile-ipfs) section for more information.
   1. Initialize your daemon with the `lowpower` profile. This reduces daemon overhead on the system but may degrade content discovery and data fetching performance.
   
   ```bash
