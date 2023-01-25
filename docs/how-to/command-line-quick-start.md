@@ -223,15 +223,21 @@ When you add files using the [CLI command `ipfs add ...`](../reference/kubo/cli.
     No files here yet! Add files to your local IPFS node by clicking the Import button above.
     ```
 
-1. Navigate back to your original terminal window
+1. Navigate back to your original terminal window.
 
 1. Using the CID `<CID>` obtained when adding `meow.txt` to your node in the previous step, copy the files over to the MFS.
 
     ```shell
-    ipfs files cp /ipfs/<CID>
+    ipfs files cp /ipfs/<CID> /meow.txt
     ```
 
-1. Refresh **Files** to see `meow.txt`
+    For example, if the `<CID>` of `meow.txt` is `QmabZ1pL9npKXJg8JGdMwQMJo2NCVy9yDVYjhiHK4LTJQH`, it would be coopied to the MFS with:
+
+    ```shell
+    ipfs files cp /ipfs/QmabZ1pL9npKXJg8JGdMwQMJo2NCVy9yDVYjhiHK4LTJQH /meow.txt
+    ```
+
+1. In your browser, refresh the **Files** page. The list of files displays `meow.txt`.
 
 ## Use IPFS Companion with Kubo
 

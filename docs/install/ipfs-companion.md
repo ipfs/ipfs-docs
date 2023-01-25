@@ -9,13 +9,13 @@ IPFS Companion allows you to interact with your IPFS node and the extended IPFS 
 
 ## Prerequsities
 
-In its standard configuration, IPFS Companion talks to your computer's local IPFS node to work its browser magic, so you'll need to have an IPFS node installed and running on your computer.
+For its full functionality to be enabled, IPFS Companion requires a local IPFS node. As such, it is recommended that you have an IPFS node installed and running on your computer. Any one of the following will satisfy the requirement:
 
-Install one of the following if you've not already done so:
+- [Install IPFS Desktop](../install/ipfs-desktop.md)
+- [Install IPFS Kubo for Go](../install/command-line.md)
+- [Install IPFS for JavaScript](../install/js-ipfs.md)
 
-- [IPFS Desktop](../install/ipfs-desktop.md)
-- [IPFS Kubo for Go](../install/command-line.md)
-- [IPFS for JavaScript](../install/js-ipfs.md)
+You can still use IPFS Companion without a local node running, although you will lose some functionality, such as the ability to load websites with DNSLink via a gateway.
 
 ## Install
 
