@@ -233,7 +233,7 @@ When you add files using the [CLI command `ipfs add ...`](../reference/kubo/cli.
 
 1. Refresh **Files** to see `meow.txt`
 
-## Use IPFS Companion
+## Use IPFS Companion with Kubo
 
 You can use IPFS Companion, a browser extension that simplifies access to IPFS resources and adds support for the IPFS protocol, to automatically redirect IPFS gateway requests to your local daemon so that you are not relying on remote gateways.
 
