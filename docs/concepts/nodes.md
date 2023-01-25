@@ -75,7 +75,7 @@ Both Kubo and JS-IPFS nodes use bootstrap nodes to initially enter the DHT.
 Features of a bootstrap node:
 
 - All default bootstrap nodes are part of the public DHT.
-- The list of bootstrap nodes a or JS-IPFS node connects to is configurable in their config files.
+- The list of bootstrap nodes a JS-IPFS node connects to is configurable in their config files.
 
 Limitations of a bootstrap node:
 
