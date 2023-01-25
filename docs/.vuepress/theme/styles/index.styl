@@ -86,8 +86,19 @@ section.tabs-component-panel::before {
     margin-top: -10em;
 }
 
-.nav-links{
-    margin-right: 10%;
-	margin-left: 10%;
-	float: left;
+@media (min-width: 1060px) {
+	.nav-links{
+		margin-right: 10%;
+		margin-left: 10%;
+		float: left;
+	}
+}
+
+@media (max-width: 720px) {
+	.sidebar-links{
+		visibility: hidden;
+	}
+	.sidebar{
+		width: 30%;
+	}
 }
