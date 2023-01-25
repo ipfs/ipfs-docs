@@ -5,9 +5,9 @@ description: The home page for developer documentation for IPFS, the InterPlanet
 
 # Welcome to the IPFS docs
 
-The InterPlanetary File System (IPFS) is a decentralized file system for building the next generation of the internet. [Filecoin](https://filecoin.io) and many popular Web3 projects are built on IPFS. Some call it the hard drive for blockchain and Web3, though its power extends much further.
+The InterPlanetary File System (IPFS) is a set of composable, peer-to-peer protocols for addressing, routing, and transferring [content-addressed](concepts/glossary.md#content-addressing) data in a decentralized file system. Popular Web3 projects like [Filecoin](https://filecoin.io), and many others, are built on top of IPFS.
 
-While IPFS is a file system, it is _not_ a storage solution. IPFS is a set of composable, peer-to-peer protocols for addressing, routing, and transferring [content-addressed](concepts/glossary.md#content-addressing) data.
+While IPFS is a file system, it is _not_ a storage system. Instead, IPFS can be thought of as both the protocol implementations of IPFS (such as [Kubo](concepts/glossary.md#kubo)) and as the decentralized network comprised of the individual [nodes](concepts/glossary.md#node) that are running protocol implementations. 
 
 ## Get started
 
