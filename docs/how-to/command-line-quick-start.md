@@ -122,7 +122,7 @@ Next, take your node online and interact with the IPFS network:
 
     ::: danger NEVER EXPOSE THE RPC API TO THE PUBLIC INTERNET
 
-    The API port provides admin-level access to your Kubo IPFS node.  See [RPC API v0 docs](../reference/kubo/rpc.md) for more information.
+    The API port (by default `5001`) provides admin-level access to your Kubo IPFS node.  See [RPC API v0 docs](../reference/kubo/rpc.md) for more information.
 
     :::
 
