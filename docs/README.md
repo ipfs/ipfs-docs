@@ -5,7 +5,7 @@ description: The home page for developer documentation for IPFS, the InterPlanet
 
 # Welcome to the IPFS docs
 
-The InterPlanetary File System (IPFS) is a set of composable, peer-to-peer protocols for addressing, routing, and transferring [content-addressed](concepts/glossary.md#content-addressing) data in a decentralized file system. Many popular Web3 projects are built on IPFS, check out the [ecosystem directory](https://ecosystem.ipfs.tech) for a list of some of these projects.
+The InterPlanetary File System (IPFS) is a set of composable, peer-to-peer protocols for addressing, routing, and transferring [content-addressed](concepts/glossary.md#content-addressing) data in a decentralized file system. Many popular Web3 projects are built on IPFS - see the [ecosystem directory](https://ecosystem.ipfs.tech) for a list of some of these projects.
 
 While IPFS is a file system, it is _not_ a storage system. Instead, IPFS can be thought of as both the protocol implementations of IPFS (such as [Kubo](concepts/glossary.md#kubo)) and as the decentralized network comprised of the individual [nodes](concepts/glossary.md#node) that are running protocol implementations.
 
