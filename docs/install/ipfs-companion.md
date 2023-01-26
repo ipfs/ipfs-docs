@@ -7,7 +7,7 @@ description: The IPFS Companion browser extension allows you to interact with yo
 
 IPFS Companion allows you to interact with your IPFS node and the extended IPFS network through your browser. The add-on is available for Brave, Chrome, Edge, Firefox, and Opera. It enables support for `ipfs://` addresses, automatically loads websites and file paths from an IPFS gateway, allows you to easily import and share a file with IPFS, and more.
 
-## Prerequsities
+## Prerequisites
 
 For its full functionality to be enabled, IPFS Companion requires a local IPFS node. As such, it is recommended that you have an IPFS node installed and running on your computer. Any one of the following will satisfy the requirement:
 

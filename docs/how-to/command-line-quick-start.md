@@ -88,7 +88,7 @@ If you have not yet installed Kubo, follow the [Kubo install guide](../install/c
       ./security-notes
     ```
 
-1. The respository's `quick-start` directory shows other example commands to try. To display the contents of `quick-start, run:
+1. The `quick-start` directory shows other example commands to try. To display the contents of `quick-start, run:
 
     ```bash
     ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/quick-start
@@ -145,7 +145,7 @@ Next, take your node online and interact with the IPFS network:
 
     The addresses displayed are composed of a `<transport address>` (i.e. `/ip4/104.131.131.82/tcp/4001`) and a `<hash-of-public-key>` (i.e. `QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx`), resulting in an address of the form `<transport address>/p2p/<hash-of-public-key>`.
 
-1. Now, fetch a cool picture of a spaceship launch from the netwok using `ipfs cat`:
+1. Now, fetch a cool picture of a spaceship launch from the network using `ipfs cat`:
 
     ```bash
     ipfs cat /ipfs/QmSgvgwxZGaBLqkGyWemEDqikCqU52XxsYLKtdy3vGZ8uq > ~/Desktop/spaceship-launch.jpg
@@ -178,7 +178,7 @@ Next, take your node online and interact with the IPFS network:
 1. View the objects by specifying the CID `<CID>` returned in the previous step:
 
     :::tip
-    The example below uses `curl` as the browser, but you can open the IPFS url in other browsers. Depending on the state of the network, `curl` may take a while due to public gateways being overloaded or having a hard time reaching you.
+    The example below uses `curl` as the browser, but you can open the IPFS address in other browsers. Depending on the state of the network, `curl` may take a while due to public gateways being overloaded or having a hard time reaching you.
     :::
 
     ```bash
@@ -231,7 +231,7 @@ When you add files using the [CLI command `ipfs add ...`](../reference/kubo/cli.
     ipfs files cp /ipfs/<CID> /meow.txt
     ```
 
-    For example, if the `<CID>` of `meow.txt` is `QmabZ1pL9npKXJg8JGdMwQMJo2NCVy9yDVYjhiHK4LTJQH`, it would be coopied to the MFS with:
+    For example, if the `<CID>` of `meow.txt` is `QmabZ1pL9npKXJg8JGdMwQMJo2NCVy9yDVYjhiHK4LTJQH`, it would be copied to the MFS with:
 
     ```shell
     ipfs files cp /ipfs/QmabZ1pL9npKXJg8JGdMwQMJo2NCVy9yDVYjhiHK4LTJQH /meow.txt
