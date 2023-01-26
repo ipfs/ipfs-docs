@@ -105,12 +105,6 @@ module.exports = {
               children: [
                   '/concepts/what-is-ipfs',
                   '/concepts/how-ipfs-works',
-                  '/concepts/content-addressing',
-                  '/concepts/hashing',
-                  '/concepts/immutability',
-                  '/concepts/persistence',
-                  '/concepts/privacy-and-encryption',
-                  '/concepts/nodes'
               ]
             },
             {
