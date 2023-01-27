@@ -144,13 +144,13 @@ module.exports = {
             '/concepts/further-reading/academic-papers'
           ],
           '/how-to/': [
-            '/how-to/command-line-quick-start',
             '/how-to/desktop-app',
             {
-              title: 'Customize your install',
+              title: 'IPFS Kubo Tutorials',
               sidebarDepth: 1,
               collapsable: true,
               children: [
+                '/how-to/command-line-quick-start',
                 '/how-to/configure-node',
                 '/how-to/modify-bootstrap-list',
                 '/how-to/nat-configuration',
