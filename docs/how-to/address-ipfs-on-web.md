@@ -60,8 +60,9 @@ User agents that support IPFS, such as a browser with [ipfs-companion](https://d
 In the most basic scheme, a URL path used for content addressing is effectively a resource name without a canonical location. The HTTP server provides the location part, which makes it possible for browsers to interpret an IPFS content path as relative to the current server and just work without a need for any conversion:
 
 ```plaintext
-https://<gateway-host>.tld/ipfs/<cid>/path/to/resource
-https://<gateway-host>.tld/ipns/<ipnsid_or_dnslink>/path/to/resource
+https://ipfs.io/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
+https://ipfs.io/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html
+https://ipfs.io/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
 ```
 
 ::: danger
@@ -73,9 +74,8 @@ When in doubt, use [subdomain gateway](#subdomain-gateway).
 Examples:
 
 ```plaintext
-https://ipfs.io/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
-https://ipfs.io/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html
-https://ipfs.io/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
+https://<gateway-host>.tld/ipfs/<cid>/path/to/resource
+https://<gateway-host>.tld/ipns/<ipnsid_or_dnslink>/path/to/resource
 ```
 
 ## Subdomain gateway
