@@ -5,6 +5,13 @@ description: "There isn't just one canonical IPFS implementation. Learn about th
 
 # IPFS Implementations
 
+:::warning js-ipfs being discontinued
+Development of the [js-ipfs project](https://github.com/ipfs/js-ipfs) is being discontinued to focus on [Helia](https://github.com/ipfs/helia), a leaner, more modular, modern implementation of IPFS in JavaScript slated for release in 2023. To learn more about Helia and the current state of IPFS in JS, see the [blog post](https://blog.ipfs.tech/state-of-ipfs-in-js/). 
+
+Because of this, js-ipfs tutorials may be out of date, and will eventually be archived.
+
+:::
+
 There isn't one canonical IPFS implementation. There is so much to explore in this space that it's ideal to have a plethora of implementations experimenting and optimizing for various usecases. Below is a list of IPFS implementations that we know of in name alphabetical order. If you're aware of more, please add!
 
 ::: tip

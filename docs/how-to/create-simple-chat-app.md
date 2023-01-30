@@ -5,6 +5,13 @@ description: "Learn how to deploy a minimal chat app entirely in the browser usi
 
 # Create a simple chat app
 
+:::warning js-ipfs being discontinued
+Development of the [js-ipfs project](https://github.com/ipfs/js-ipfs) is being discontinued to focus on [Helia](https://github.com/ipfs/helia), a leaner, more modular, modern implementation of IPFS in JavaScript slated for release in 2023. To learn more about Helia and the current state of IPFS in JS, see the [blog post](https://blog.ipfs.tech/state-of-ipfs-in-js/). 
+
+Because of this, js-ipfs tutorials may be out of date, and will eventually be archived.
+
+:::
+
 This how-to demonstrates a minimal chat app in [js-ipfs](../reference/js/api.md#js-ipfs) entirely in the browser.
 
 Here’s a quick demo of the app:
