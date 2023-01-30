@@ -27,10 +27,9 @@ Because of this, js-ipfs tutorials may be out of date, and will eventually be ar
 :::
 
 
-- [Kubo for Go](https://github.com/ipfs/kubo): The reference implementation written in Go.
-- [js-ipfs for JavaScript](https://github.com/ipfs/js-ipfs): The JavaScript implementation of IPFS.
-- [Iroh for Rust](https://github.com/n0-computer/iroh): The Rust implementation of IPFS.
-- [Helia for JavaScript](https://github.com/ipfs/helia): Pre-alpha, lean, modular implementation of IPFS in JavaScript.
+- [Kubo](https://github.com/ipfs/kubo): The reference implementation written in Go.
+- [js-ipfs](https://github.com/ipfs/js-ipfs): The JavaScript implementation of IPFS.
+- [rust-ipfs](https://github.com/rs-ipfs/rust-ipfs): Alpha implementation in Rust.
 - [Other implementations](https://github.com/ipfs/ipfs#protocol-implementations): Up-to-date links to all other protocol implementations.
 
 ### Client implementations
@@ -39,19 +38,19 @@ Because of this, js-ipfs tutorials may be out of date, and will eventually be ar
 
 ### Underlying components
 
-- [libp2p](https://github.com/libp2p):
-  - [go-libp2p](https://github.com/libp2p/go-libp2p): Reference libp2p implementation in Go.
-  - [js-libp2p](https://github.com/libp2p/js-libp2p): The JavaScript implementation of the libp2p networking stack.
-  - [rust-libp2p](https://github.com/libp2p/rust-libp2p): The Rust implementation of the libp2p networking stack.
-- [IPLD](https://github.com/ipld):
-  - [go-ipld](https://github.com/ipld/go-ipld): Entry-point repo for Go IPLD development.
-  - [js-ipld](https://github.com/ipld/js-ipld): The JavaScript Implementation of IPLD.
-  - [IPLD specifications](https://github.com/ipld/specs): The set of specifications that make up IPLD.
-- [Multiformats](https://github.com/multiformats):
-  - [Multiaddr](https://github.com/multiformats/multiaddr): Composable and future-proof network addresses.
-  - [Multibase](https://github.com/multiformats/multibase): Self-identifying base encodings.
-  - [Multicodec](https://github.com/multiformats/multicodec): Compact, self-describing codecs.
-  - [Multihash](https://github.com/multiformats/multihash): Self-describing hashes for future-proofing.
+| Subsystem  | Go                                                                  | JavaScript                     | Rust                            |
+|------------|---------------------------------------------------------------------------------------|-------------------------------------------------|------------------------------------------------|
+| [LibP2P](https://github.com/libp2p)     | [ go-libp2p ]( https://github.com/libp2p/go-libp2p )                                  | [js-libp2p](https://github.com/libp2p/js-libp2p)             | [rust-libp2p](https://github.com/libp2p/rust-libp2p)          |
+| [IPLD](https://github.com/ipld)       | [ go-ipld ]( https://github.com/ipld/go-ipld ), [go-ipld-prime](https://github.com/ipld/go-ipld-prime) | [js-ipld](https://github.com/ipld/js-ipld)                 | [libipld](https://github.com/ipld/libipld)                |
+| IPNS       | [go-ipns](https://github.com/ipfs/go-ipns)                                                       | [js-ipns](https://github.com/ipfs/js-ipns)                 | [rust-ipns](https://lib.rs/crates/rust-ipns)                |
+| [Multiaddr](https://github.com/multiformats/multiaddr)  | [go-multiaddr](https://github.com/multiformats/go-multiaddr)                                          | [js-multiaddr](https://github.com/multiformats/js-multiaddr)    | [rust-multiaddr](https://github.com/multiformats/rust-multiaddr) |
+| [Multicodec](https://github.com/multiformats/multicodec) | [go-multicodec](https://github.com/multiformats/go-multicodec)                                         | [js-multiformats](https://github.com/multiformats/js-multiformats) | N/A                                            |
+| [Multihash](https://github.com/multiformats/multihash)  | [go-multihash](https://github.com/multiformats/go-multihash)                                          | [js-multiformats](https://github.com/multiformats/js-multiformats) | [rust-multihash](https://github.com/multiformats/rust-multihash) |
+| [Multibase](https://github.com/multiformats/multibase)  | [go-multibase](https://github.com/multiformats/go-multibase)                                          | [js-multiformats](https://github.com/multiformats/js-multiformats) | [rust-multibase](https://github.com/multiformats/rust-multibase) |
+| CID        | N/A                                                                                   | [js-multiformats](https://github.com/multiformats/js-multiformats) | [rust-cid](https://github.com/multiformats/rust-cid)       |
+
+
+
 
 ### IPFS tools and products
 
