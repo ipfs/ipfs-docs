@@ -69,13 +69,24 @@ $ ipfs cid format -v 1 -b base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 ```
 
-JavaScript users can also leverage the `toV1()` method provided by the [`cids`](https://www.npmjs.com/package/cids) library:
-```js
-const CID = require('cids')
-new CID('QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR').toV1().toString('base32')
-// → bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
-```
+### Interactive v0 to v1 example
 
+The following example shows how to use the `multiformats` npm package to convert between CID versions and base representations:
+
+
+<iframe src="https://codesandbox.io/embed/converting-cid-versions-xrvqop?autoresize=1&fontsize=14&theme=dark&view=editor"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="converting cid versions"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+<iframe src="https://codesandbox.io/embed/converting-cid-versions-xrvqop?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="converting cid versions"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
 ### Text to binary
 
 A CID can be represented as both text and as a stream of bytes. The latter may be a better choice when speed and storage efficiency are considerations.
