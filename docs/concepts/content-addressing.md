@@ -60,46 +60,40 @@ Check out ProtoSchool's [Anatomy of a CID](https://proto.school/anatomy-of-a-cid
 Converting a CID from v0 to v1 enables it to be represented in multibase encodings.
 The default for CIDv1 is the case-insensitive `base32`, but use of the shorter `base36` is encouraged for IPNS names to ensure same text representation on [subdomains](../how-to/address-ipfs-on-web.md#subdomain-gateway).
 
-### v0 to v1
+### With Kubo
 
-The built-in `ipfs cid format` command can be used from the command line:
+The [`ipfs cid format` command in Kubo](/reference/kubo/cli/#ipfs-cid-format) can be used from the command line:
 
 ```
 $ ipfs cid format -v 1 -b base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 ```
 
-### Interactive v0 to v1 example
+### Programatically with TypeScript/JavaScript
 
-The following example shows how to use the `multiformats` npm package to convert between CID versions and base representations:
+The [`multiformats` npm package](https://www.npmjs.com/package/multiformats) can be used to convert between CID versions, base representations, and access the binary representation:
 
-
-<iframe src="https://codesandbox.io/embed/converting-cid-versions-xrvqop?autoresize=1&fontsize=14&theme=dark&view=editor"
+<iframe src="https://codesandbox.io/embed/working-with-cids-xrvqop?autoresize=1&fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="converting cid versions"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     title="Converting between CID versions"
+     allow=""
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-<iframe src="https://codesandbox.io/embed/converting-cid-versions-xrvqop?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="converting cid versions"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
+
 ### Text to binary
 
 A CID can be represented as both text and as a stream of bytes. The latter may be a better choice when speed and storage efficiency are considerations.
 
-To convert a CIDv1 from text to binary form, simply read the first character
+To convert a CIDv1 from string to binary form, read the first character
 and then decode the remainder using the encoding specified in the [multibase table](https://github.com/multiformats/multibase#multibase-table).
 
-JS users can leverage the [`cids`](https://www.npmjs.com/package/cids) library to get a binary version as `Uint8Array`:
+With JavsScript and TypeScript you can use the [`multiformats` npm package](https://www.npmjs.com/package/multiformats) to get a binary version as [`Uint8Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array):
 
 
 ```js
-const CID = require('cids')
-new CID('bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi').bytes
+import { CID } from "multiformats";
+CID.parse("bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi").bytes
 // → Uint8Array [ 1, 112,  18,  32, 195, 196, 115,  62, ... ]
 ```
 
