@@ -120,6 +120,14 @@ See [Working with Go](../reference/go/api.md#working-with-go) and [CLI Quick Sta
 
 ### JS-IPFS
 
+:::warning 
+### js-ipfs being discontinued
+Development of the [js-ipfs project](https://github.com/ipfs/js-ipfs) is being discontinued to focus on [Helia](https://github.com/ipfs/helia), a leaner, more modular, modern implementation of IPFS in JavaScript scheduled for release in 2023. To learn more about Helia and the current state of IPFS in JS, see the [blog post](https://blog.ipfs.tech/state-of-ipfs-in-js/). 
+
+Because of this, js-ipfs tutorials may be out of date, and will eventually be archived.
+
+:::
+
 An implementation of IPFS written entirely in JavaScript. It runs in a browser, a Service Worker, Electron and Node.js. Capabilities depend on the runtime.
 
 More at [js.ipfs.io](https://js.ipfs.io) and [Github](https://github.com/ipfs/js-ipfs#readme).
