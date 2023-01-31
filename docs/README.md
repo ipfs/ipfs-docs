@@ -22,6 +22,12 @@ Check out these docs to get started with IPFS:
 
 <abbr title="too long; didn't read">TL;DR</abbr>? [Glossary](concepts/glossary.md) provides short definitions of IPFS terms and concepts.
 
+:::callout
+## Looking for developer support?
+
+Are you developing with IPFS implementations and tools, and looking for technical support from IPFS experts? For the fastest possible assistance and resolution of your support needs, see the [Support section](community/README.md#technical-support-and-help).
+:::
+
 
 ## Download IPFS tools
 

@@ -1,6 +1,12 @@
 <template>
   <div class="feedback">
     <h3>{{ titleTxt }}</h3>
+    <p> 
+    Looking for technical support from IPFS experts? 
+    For the fastest assistance, 
+    see the 
+    <a href="/community/#technical-support-and-help">Support section</a>.
+     </p>
     <div v-if="!voteSubmitted" class="feedback-actions">
       <button
         class="btn btn-primary"

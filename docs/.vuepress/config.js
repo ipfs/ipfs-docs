@@ -261,37 +261,11 @@ module.exports = {
           '/community/': [
             {
               title: 'Join the community',
-              sidebarDepth: 2,
+              sidebarDepth: 0,
               collapsable: true,
-              children: [
-                [
-                  'https://ipfs.us4.list-manage.com/subscribe?u=25473244c7d18b897f5a1ff6b&id=cad54b2230',
-                  'IPFS newsletter'
-                ],
-                '/community/contribute/ways-to-contribute',
-                ['https://discuss.ipfs.tech/', 'IPFS forums'],
-                '/community/chat',
-                ['https://proto.school/events', 'ProtoSchool workshops'],
-                ['https://www.meetup.com/members/249142444/', 'Meetups'],
-                '/community/social-media',
-                ['https://awesome.ipfs.tech', 'Awesome IPFS'],
-                [
-                  'https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqqsew',
-                  'YouTube'
-                ]
-              ]
+              children: 'auto',
             },
-            {
-              title: 'Write the docs',
-              sidebarDepth: 1,
-              collapsable: true,
-              children: [
-                '/community/contribute/grammar-formatting-and-style',
-                '/community/contribute/writing-guide',
-                '/community/contribute/code-persona',
-                '/community/contribute/contribution-tutorial'
-              ]
-            },
+            '/community/contribute/ways-to-contribute',
             '/project/history',
             '/project/repository-guide',
             '/project/related-projects',
@@ -307,17 +281,7 @@ module.exports = {
           ],
           '/project/' : [
                 ['/community/',  'Join the community'],
-                {
-                  title: 'Write the docs',
-                  sidebarDepth: 1,
-                  collapsable: true,
-                  children: [
-                    '/community/contribute/grammar-formatting-and-style',
-                    '/community/contribute/writing-guide',
-                    '/community/contribute/code-persona',
-                    '/community/contribute/contribution-tutorial'
-                  ]
-                },
+                '/community/contribute/ways-to-contribute',
                 '/project/history',
                 '/project/repository-guide',
                 '/project/related-projects',
