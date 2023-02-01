@@ -261,19 +261,32 @@ module.exports = {
           '/community/': [
             {
               title: 'Join the community',
-              sidebarDepth: 0,
+              sidebarDepth: 2,
               collapsable: true,
               children: 'auto',
             },
-            '/community/contribute/ways-to-contribute',
+            {
+              title: 'Ways to contribute',
+              sidebarDepth: 2,
+              collapsable: true,
+              path: '/community/contribute/ways-to-contribute',
+            },
+            {
+              title: 'Write the docs',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
+                '/community/contribute/grammar-formatting-and-style',
+                '/community/contribute/writing-guide',
+                '/community/contribute/code-persona',
+                '/community/contribute/contribution-tutorial'
+              ]
+            },
             '/project/history',
             '/project/repository-guide',
             '/project/related-projects',
             '/project/implementation-status',
-            ['https://github.com/ipfs/roadmap', 'Roadmap'],
             ['https://github.com/ipfs/specs', 'Specifications'],
-            ['https://github.com/ipfs/research', 'Research'],
-            ['https://github.com/ipfs/team-mgmt', 'Team org planning'],
             [
               'https://github.com/ipfs/community/blob/master/code-of-conduct.md',
               'Code of conduct'
@@ -281,15 +294,28 @@ module.exports = {
           ],
           '/project/' : [
                 ['/community/',  'Join the community'],
-                '/community/contribute/ways-to-contribute',
+                {
+                  title: 'Ways to contribute',
+                  sidebarDepth: 2,
+                  collapsable: true,
+                  path: '/community/contribute/ways-to-contribute',
+                },
+                {
+                  title: 'Write the docs',
+                  sidebarDepth: 1,
+                  collapsable: true,
+                  children: [
+                    '/community/contribute/grammar-formatting-and-style',
+                    '/community/contribute/writing-guide',
+                    '/community/contribute/code-persona',
+                    '/community/contribute/contribution-tutorial'
+                  ]
+                },
                 '/project/history',
                 '/project/repository-guide',
                 '/project/related-projects',
                 '/project/implementation-status',
-                ['https://github.com/ipfs/roadmap', 'Roadmap'],
                 ['https://github.com/ipfs/specs', 'Specifications'],
-                ['https://github.com/ipfs/research', 'Research'],
-                ['https://github.com/ipfs/team-mgmt', 'Team org planning'],
                 [
                   'https://github.com/ipfs/community/blob/master/code-of-conduct.md',
                   'Code of conduct'
@@ -309,25 +335,7 @@ module.exports = {
               ]
             }
           ],
-          '/': [
-            '/install/',
-            '/concepts/',
-            '/how-to/',
-            '/reference/',
-            '/project/',
-            {
-              title: 'Case Studies',
-              collapsable: true,
-              children: [
-                ['/case-studies/arbol', 'Arbol'],
-                ['/case-studies/audius', 'Audius'],
-                ['/case-studies/fleek', 'Fleek'],
-                ['/case-studies/likecoin', 'LikeCoin'],
-                ['/case-studies/morpheus', 'Morpheus.Network'],
-                ['/case-studies/snapshot', 'Snapshot']
-              ]
-            },
-          ]
+          '/': `auto`
         }
       }
     }

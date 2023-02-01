@@ -5,6 +5,10 @@ description: Find out how to create interesting code examples and keep the IPFS 
 
 # Code persona
 
+:::callout
+Looking for other ways to contribute to the IPFS ecosystem? See [other ways to contribute](../contribute/ways-to-contribute.md).
+:::
+
 Docs can be confusing, especially for increasingly complex topics like IPFS. There are lots of moving parts, and it's easy to get confused. Example use-cases and code-blocks often serve to make things easier to understand and allows for a more _hands-on_ experience. However, examples that come from different use-cases and projects make it harder for the reader to understand the topic. The solution is to create a _theme_ for all samples to be based off.
 
 Having a single theme keeps code examples self-contained and consistent. It doesn't make the problems any less complicated or less technical, but it makes the reader need to _think_ less. The reader doesn't have to spend time continually re-visualizing the larger project at hand if the main project is something they're already familiar with.

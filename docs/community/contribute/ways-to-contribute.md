@@ -27,21 +27,25 @@ If you want to start contributing to the core of IPFS, those repositories are a 
 
 ## Documentation
 
-IPFS is a huge project and undertaking, and with lots of code comes the need for lots of good documentation! However, we need a lot more help to write the awesome docs the project needs. If writing technical documentation is your area, we'd absolutely love your help!
+IPFS is a huge project and undertaking, and with lots of code comes the need for lots of good documentation! However, we need a lot more help to write the awesome docs the project needs. If writing technical documentation is your area, we'd absolutely love your help! Before contributing to the IPFS docs, please read these quick guides:
 
-Before contributing to the IPFS docs, please read these quick guides; they'll save you time and help keep the docs accurate and consistent!
+### [Style and formatting guide](grammar-formatting-and-style.md)
+Grammar, syntax and formatting rules for writing IPFS documentation.
 
-1. [Style and formatting guide](grammar-formatting-and-style.md)
-2. [Writing guide](writing-guide.md)
-3. [Code persona](code-persona.md)
+### [Writing guide](writing-guide.md)
+How to structure your writing and choose the correct tone for your audience.
 
+### [Code persona](code-persona.md)
+Information on creating a theme for all documentation examples and code samples.
+
+### [Contribution tutorial](contribution-tutorial.md)
 If you have never contributed to an open-source project before or just need a refresher, take a look at the [contribution tutorial](contribution-tutorial.md).
 
 ## Support
 
 IPFS already has lots of users and curious people experimenting and using IPFS in their applications. These users sometimes get stuck or have questions that need answering. If you've contributed something with code or documentation, the chances are that you can probably help a lot of people with their questions.
 
-The [IPFS forum](https://discuss.ipfs.tech/) is the best place to go if you're looking for support.
+See the [IPFS forum](https://discuss.ipfs.tech/) for more information.
 
 ## Testing
 

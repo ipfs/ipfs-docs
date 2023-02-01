@@ -5,6 +5,10 @@ description: Learn the syntax and formatting rules for writing documentation for
 
 # Grammar, formatting, and style
 
+:::callout
+Looking for other ways to contribute to the IPFS ecosystem? See [other ways to contribute](../contribute/ways-to-contribute.md).
+:::
+
 This page details the syntax and formatting rules for writing IPFS documentation. For more conceptual ideas of writing, check out the [writing guide](writing-guide.md).
 
 ## Grammar and spelling
