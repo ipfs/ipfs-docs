@@ -94,6 +94,7 @@ GUIs
 Hackathon
 hackathons
 Hareesh
+Helia
 homebrew
 hostname
 HTML
