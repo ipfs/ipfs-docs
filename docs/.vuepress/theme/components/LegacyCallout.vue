@@ -1,7 +1,7 @@
 <template>
   <div class="legacy-callout">
     <p>
-      <b>Help us improve this page!</b>
+      <b>Help us improve this site!</b>
     </p>
     <section>
       <div class="block">
@@ -11,7 +11,7 @@
               href="https://github.com/ipfs/ipfs-docs/issues/new?assignees=&labels=OKR+3%3A+Content+Improvement%2C+docs-ipfs&template=content-request.md&title=%5BCONTENT+REQUEST%5D+%28add+your+title+here%21%29"
               target="_blank"
               rel="noopener noreferrer"
-              >Suggest new content on this page</a
+              >Suggest new content</a
             >
           </li>
         </ul>
@@ -23,7 +23,7 @@
               href="https://github.com/ipfs/ipfs-docs/issues/new?assignees=&labels=OKR+3%3A+Content+Improvement%2C+docs-ipfs&template=documentation-issue.md&title=%5BDOCS+ISSUE%5D+%28add+your+title+here%21%29"
               target="_blank"
               rel="noopener noreferrer"
-              >Give feedback on this page</a
+              >Give general feedback</a
             >
           </li>
         </ul>
