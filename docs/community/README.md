@@ -49,7 +49,7 @@ Please following these general guidelines when asking for help:
   - _This seems impossible because..._
   - _I've tried A, B and C to fix X, but..._
 - When asking for help with one of the IPFS libraries, include the name of the exact package and version of the package/library.
-- When sharing bits of code, [use markdown](community/contribute/grammar-formatting-and-style.md#style) to format code blocks so that they are easier to read.
+- When sharing bits of code, [use markdown](../community/contribute/grammar-formatting-and-style.md#style) to format code blocks so that they are easier to read.
 - Ensure that you've read the forum [FAQ](https://discuss.ipfs.tech/faq) and [Terms of Service](https://discuss.ipfs.tech/tos).
 - Screenshots of errors are often helpful.
 
