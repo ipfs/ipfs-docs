@@ -28,10 +28,18 @@ Relevant specifications are listed in [ipfs/specs](https://github.com/ipfs/specs
 | ipfs-nucleus     | <https://github.com/peergos/ipfs-nucleus/>                              | go                     | Minimal IPFS replacement for P2P IPLD apps.                                                                              |
 | ipget            | <https://github.com/ipfs/ipget>                                         | go                     | Minimal wget insipired tool to download files from IPFS nodes over bitswap.                                              |
 | iroh             | <https://github.com/n0-computer/iroh>                                   | rust                   | Extreme-Efficiency oriented IPFS implementation.                                                                         |
-| js-ipfs          | <https://github.com/ipfs/js-ipfs>                                       | javascript, typescript | Javascript implementation targeting nodejs and browsers.                                                                 |
+| js-ipfs          | <https://github.com/ipfs/js-ipfs>                                       | javascript, typescript | Javascript implementation targeting nodejs and browsers.  [**Development of js-ipfs is being discontinued**](#js-ipfs-being-discontinued).                                                                |
 | Kubo             | <https://github.com/ipfs/kubo>                                          | go                     | Generalist daemon oriented IPFS implementation with an extensive HTTP API.                                               |
 | Linux2ipfs       | <https://github.com/Jorropo/linux2ipfs>                                 | go                     | Small pipeline and extreme-performance oriented implementation to upload files and deltas to pinning services very fast. |
 | Lotus            | <https://github.com/filecoin-project/lotus>                             | go                     | Filecoin node handling consensus, storage providing, making storage deals, importing data, ...                           |
 | py-ipfs          | <https://github.com/ipfs-shipyard/py-ipfs>                              | python                 | Python IPFS implementation.                                                                                              |
 | rust-ipfs        | <https://github.com/rs-ipfs/rust-ipfs>                                  | rust                   | Rust IPFS implementation.                                                                                                |
 | whypfs           | <https://github.com/whyrusleeping/whypfs>                               | go                     | Daemon based on the same building blocks as Kubo but with some options tweaking for more performance.                    |
+
+:::warning 
+### js-ipfs being discontinued
+Development of the [js-ipfs project](https://github.com/ipfs/js-ipfs) is being discontinued to focus on [Helia](https://github.com/ipfs/helia), a leaner, more modular, modern implementation of IPFS in JavaScript scheduled for release in 2023. To learn more about Helia and the current state of IPFS in JS, see the [blog post](https://blog.ipfs.tech/state-of-ipfs-in-js/). 
+
+Because of this, js-ipfs tutorials may be out of date, and will eventually be archived.
+
+:::

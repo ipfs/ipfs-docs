@@ -5,6 +5,14 @@ description: "A simple walkthrough of how to perform basic IPFS operations using
 
 # Install IPFS for JavaScript (js-ipfs)
 
+:::warning 
+### js-ipfs being discontinued
+Development of the [js-ipfs project](https://github.com/ipfs/js-ipfs) is being discontinued to focus on [Helia](https://github.com/ipfs/helia), a leaner, more modular, modern implementation of IPFS in JavaScript scheduled for release in 2023. To learn more about Helia and the current state of IPFS in JS, see the [blog post](https://blog.ipfs.tech/state-of-ipfs-in-js/). 
+
+Because of this, js-ipfs tutorials may be out of date, and will eventually be archived.
+
+:::
+
 This guide will walk you through the basics of using JS-IPFS, an implementation of IPFS in JavaScript. JS-IPFS is one of multiple [IPFS implementations](../concepts/ipfs-implementations.md). You will learn how to install and spawn a node using the available libraries, and add, retrieve, read, and remove files. If you are unsure about the meaning of some terms, check out the [glossary](../concepts/glossary.md).
 
 ::: tip Environment

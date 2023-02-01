@@ -14,6 +14,14 @@ There are three main JavaScript libraries for working with IPFS in JavaScript: `
 
 ### JS-IPFS
 
+:::warning 
+### js-ipfs being discontinued
+Development of the [js-ipfs project](https://github.com/ipfs/js-ipfs) is being discontinued to focus on [Helia](https://github.com/ipfs/helia), a leaner, more modular, modern implementation of IPFS in JavaScript scheduled for release in 2023. To learn more about Helia and the current state of IPFS in JS, see the [blog post](https://blog.ipfs.tech/state-of-ipfs-in-js/). 
+
+Because of this, js-ipfs tutorials may be out of date, and will eventually be archived.
+
+:::
+
 [JS-IPFS](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs) is a full implementation of IPFS, similar to [Kubo (Go-IPFS)](https://github.com/ipfs/kubo). You can use it either as a command-line application or as a library to start an IPFS node directly in your program, as JS implementation is available as two Node.js packages, `ipfs-core` and `ipfs`.
 
 - [ipfs-core](https://www.npmjs.com/package/ipfs-core) includes the core IPFS API and is intended to be used to run an IPFS node as part of your application without the need to start external processes or manage API ports and servers.
