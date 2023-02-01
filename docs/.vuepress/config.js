@@ -263,24 +263,9 @@ module.exports = {
               title: 'Join the community',
               sidebarDepth: 2,
               collapsable: true,
-              children: [
-                [
-                  'https://ipfs.us4.list-manage.com/subscribe?u=25473244c7d18b897f5a1ff6b&id=cad54b2230',
-                  'IPFS newsletter'
-                ],
-                '/community/contribute/ways-to-contribute',
-                ['https://discuss.ipfs.tech/', 'IPFS forums'],
-                '/community/chat',
-                ['https://proto.school/events', 'ProtoSchool workshops'],
-                ['https://www.meetup.com/members/249142444/', 'Meetups'],
-                '/community/social-media',
-                ['https://awesome.ipfs.tech', 'Awesome IPFS'],
-                [
-                  'https://www.youtube.com/channel/UCdjsUXJ3QawK4O5L1kqqsew',
-                  'YouTube'
-                ]
-              ]
+              children: 'auto'
             },
+            '/community/contribute/ways-to-contribute',
             {
               title: 'Write the docs',
               sidebarDepth: 1,
@@ -296,10 +281,8 @@ module.exports = {
             '/project/repository-guide',
             '/project/related-projects',
             '/project/implementation-status',
-            ['https://github.com/ipfs/roadmap', 'Roadmap'],
             ['https://github.com/ipfs/specs', 'Specifications'],
-            ['https://github.com/ipfs/research', 'Research'],
-            ['https://github.com/ipfs/team-mgmt', 'Team org planning'],
+            ['https://github.com/ipfs/notes', 'Research'],
             [
               'https://github.com/ipfs/community/blob/master/code-of-conduct.md',
               'Code of conduct'
@@ -307,6 +290,7 @@ module.exports = {
           ],
           '/project/' : [
                 ['/community/',  'Join the community'],
+                '/community/contribute/ways-to-contribute',
                 {
                   title: 'Write the docs',
                   sidebarDepth: 1,
@@ -322,10 +306,8 @@ module.exports = {
                 '/project/repository-guide',
                 '/project/related-projects',
                 '/project/implementation-status',
-                ['https://github.com/ipfs/roadmap', 'Roadmap'],
                 ['https://github.com/ipfs/specs', 'Specifications'],
-                ['https://github.com/ipfs/research', 'Research'],
-                ['https://github.com/ipfs/team-mgmt', 'Team org planning'],
+                ['https://github.com/ipfs/notes', 'Research'],
                 [
                   'https://github.com/ipfs/community/blob/master/code-of-conduct.md',
                   'Code of conduct'
