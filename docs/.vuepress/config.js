@@ -335,7 +335,25 @@ module.exports = {
               ]
             }
           ],
-          '/': `auto`
+          '/': [
+            '/install/',
+            '/concepts/',
+            '/how-to/',
+            '/reference/',
+            '/project/',
+            {
+              title: 'Case Studies',
+              collapsable: true,
+              children: [
+                ['/case-studies/arbol', 'Arbol'],
+                ['/case-studies/audius', 'Audius'],
+                ['/case-studies/fleek', 'Fleek'],
+                ['/case-studies/likecoin', 'LikeCoin'],
+                ['/case-studies/morpheus', 'Morpheus.Network'],
+                ['/case-studies/snapshot', 'Snapshot']
+              ]
+            },
+          ]
         }
       }
     }
