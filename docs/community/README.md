@@ -8,7 +8,12 @@ sidebarDepth: 3
 
 IPFS is home to a vibrant, diverse community of thousands of contributors and participants from all over the globe! Here's how to get help, support, or just hang out with other folks who are helping to build the distributed web.
 
-- Developing on IPFS and looking for expert advice and assitance? [Get technical support and help in the IPFS forum](#get-technical-support-and-help).
+
+:::callout
+The IPFS community believes that our mission is best served in an environment that is friendly, safe, and accepting, and free from intimidation or harassment. To that end, we ask that everyone involved in IPFS read and respect our [code of conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md). Please contact [abuse@ipfs.io](mailto:abuse@ipfs.io) if you need to report a problem or address a grievance related to an abuse report.
+:::
+
+- [Get technical support and help in the IPFS forum](#get-technical-support-and-help) as you develop on IPFS.
 - Get involved with the community through [apps like Discord and Slack](#chat), regularly occurring [community events such as demos and triage sessions](#community-events-calendar), and [the IPFS forum](#ipfs-forums).
 - Stay informed and up to date on the latest developments in the IPFS ecosystem with [social media](#social-media) and [the IPFS newsletter](#ipfs-newsletter).
 - Navigate the IPFS ecosystem using [the ecosystem directory](#ecosystem-directory) and [Awesome IPFS](#awesome-ipfs).
