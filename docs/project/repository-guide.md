@@ -26,11 +26,10 @@ Because of this, js-ipfs tutorials may be out of date, and will eventually be ar
 
 :::
 
-
 - [Kubo](https://github.com/ipfs/kubo): The reference implementation written in Go.
 - [js-ipfs](https://github.com/ipfs/js-ipfs): The JavaScript implementation of IPFS.
 - [rust-ipfs](https://github.com/rs-ipfs/rust-ipfs): Alpha implementation in Rust.
-- [Other implementations](https://github.com/ipfs/ipfs#protocol-implementations): Up-to-date links to all other protocol implementations.
+- [Other implementations](../concepts/ipfs-implementations.md): Up-to-date links to all other protocol implementations.
 
 ### Client implementations
 
