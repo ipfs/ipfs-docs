@@ -259,12 +259,7 @@ module.exports = {
 
           ],
           '/community/': [
-            {
-              title: 'Join the community',
-              sidebarDepth: 2,
-              collapsable: true,
-              children: 'auto'
-            },
+            ['/community/', 'Join the community'],
             '/community/contribute/ways-to-contribute',
             {
               title: 'Write the docs',

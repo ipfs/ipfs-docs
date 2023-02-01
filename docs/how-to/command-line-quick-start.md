@@ -265,4 +265,4 @@ You need to install and set up FUSE in order to mount the file system. For more 
 
 ### Further help
 
-The IPFS community is friendly and able to help! Get support from other IPFS developers in the official [IPFS forums](https://discuss.ipfs.tech/), or join [community chat channels](../community/chat.md).
+The IPFS community is friendly and able to help! [Get support from other IPFS developers in the IPFS forum](../community/README.md#get-technical-support-and-help), or join [community chat channels](../community/README.md#chat).
