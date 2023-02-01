@@ -5,7 +5,10 @@
         editLinkText
       }}</a>
       <span v-if="$site.themeConfig.feedbackWidget.docsRepoIssue">
-        on GitHub.
+        on GitHub or
+        <a :href="openIssueLink" target="_blank" rel="noopener noreferrer"
+          >open an issue</a
+        >
       </span>
     </div>
   </div>

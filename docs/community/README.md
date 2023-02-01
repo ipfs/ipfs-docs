@@ -22,7 +22,7 @@ To post in the IPFS forum, you'll need a (free) IPFS forum account if you don't 
 ### 1. Check to see if the issue you've encountered has already been discussed
 
 1. Navigate to [the Help category of the IPFS forum](https://discuss.ipfs.tech/c/help/13).
-1. In the upper right hand corner, click the search icon (a blue maginifying glass). The forum search bar opens.
+1. In the upper right hand corner, click the search icon (a blue magnifying glass). The forum search bar opens.
 1. In the search bar, type a term related to the issue you are trying to solve. Options to either search the Help category or search all forum topics and posts display.
 1. Below the search bar, click the option to search for the term in the Help channel. Alternatively, you can search across all topics and posts. A list of forum posts related to your search displays.
 1. Search through the list of posts returned. If you don't find the answer or help you're looking for, [follow the general guidelines for getting useful answers to your questions](#2-follow-the-guidelines-for-getting-useful-answers-to-your-questions).
@@ -44,7 +44,7 @@ Please following these general guidelines when asking for help:
 
 ### 3. Create a forum post in the Help section
 
-Keeping in mind [the general guidlines above](#_2-follow-the-guidelines-for-getting-useful-answers-to-your-questions), do the following:
+Keeping in mind [the general guidelines above](#_2-follow-the-guidelines-for-getting-useful-answers-to-your-questions), do the following:
 
 1. In [the Help category of the forum](https://discuss.ipfs.tech/c/help/13), hover over the large blue circle with a `+` symbol in the center. The text **New Topic** displays.
 1. Click **New Topic**.  The **Create a new Topic** modal opens.
