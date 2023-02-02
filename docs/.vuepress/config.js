@@ -277,7 +277,11 @@ module.exports = {
             '/project/related-projects',
             '/project/implementation-status',
             ['https://github.com/ipfs/specs', 'Specifications'],
-            ['https://github.com/ipfs/notes', 'Research'],
+            ['/concepts/further-reading/academic-papers', 'Research'],
+            [
+              'https://github.com/ipfs/community/blob/master/code-of-conduct.md',
+              'Code of conduct'
+            ],
           ],
           '/project/' : [
                 ['/community/',  'Join the community'],
@@ -298,7 +302,11 @@ module.exports = {
                 '/project/related-projects',
                 '/project/implementation-status',
                 ['https://github.com/ipfs/specs', 'Specifications'],
-                ['https://github.com/ipfs/notes', 'Research'],
+                ['/concepts/further-reading/academic-papers', 'Research'],
+                [
+                  'https://github.com/ipfs/community/blob/master/code-of-conduct.md',
+                  'Code of conduct'
+                ],
           ],
           '/case-studies/' : [
             {
