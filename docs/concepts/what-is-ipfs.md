@@ -1,89 +1,86 @@
 ---
 title: What is IPFS?
-description: Learn about IPFS, the InterPlanetary File System, how it works, and why it's important to the future of the internet.
+description:  Learn about the problems that IPFS addresses, what IPFS is and isn't, and how the different subsystems that IPFS is comprised of work.
 ---
 
 # What is IPFS?
 
-Let's just start with a one-line definition of IPFS:
+IPFS is a modular suite of protocols and standards for organizing and moving data, designed from the ground up with the principles of <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined>content addressing</VueCustomTooltip> and peer-to-peer networking. 
 
-**IPFS is a distributed system for storing and accessing files, websites, applications, and data.**
+In this conceptual guide, you'll learn:
 
-What does that mean, exactly? Let's say you're doing some research on aardvarks. (Just roll with it; aardvarks are cool! Did you know they can tunnel 3 feet in only 5 minutes?) You might start by visiting the Wikipedia page on aardvarks at:
+- [What IPFS is and isn't](#what-ipfs-isnt)
+- [Problems that IPFS addresses](#problems-that-ipfs-addresses)
 
-```
-https://en.wikipedia.org/wiki/Aardvark
-```
+## Definining IPFS
 
-When you put that URL in your browser's address bar, your computer asks one of Wikipedia's computers, which might be somewhere on the other side of the country (or even the planet), for the aardvark page.
+The term _IPFS_ can refer to multiple concepts:
 
-However, that's not the only option for meeting your aardvark needs! There's a mirror of Wikipedia stored on IPFS, and you could use that instead. If you use IPFS, your computer asks to get the aardvark page like this:
+- Software that implements the IPFS protocol specification (like <VueCustomTooltip label="The first implementation of IPFS, written in Go." underlined>Kubo</VueCustomTooltip>) 
+- A decentralized network comprised of <VueCustomTooltip label="Computers participating in an IPFS network by running an IPFS implementation. Also referred to as peers" underlined>IPFS nodes</VueCustomTooltip>.
+- A modular suite of protocols and standards for organizing and moving content-addressed data.
 
-```
-/ipfs/bafybeiaysi4s6lnjev27ln5icwm6tueaw2vdykrtjkwiphwekaywqhcjze/wiki/Aardvark
-```
+### What IPFS _isn't_
 
-:::tip
-The easiest way to view the above link is by opening it in your browser through an _IPFS Gateway_. Simply add `https://ipfs.io` to the start of the above link and you'll be able to [view the page →](https://ipfs.io/ipfs/bafybeiaysi4s6lnjev27ln5icwm6tueaw2vdykrtjkwiphwekaywqhcjze/wiki/Aardvark)
+While IPFS shares similarities with, and is often used in architectures with the systems described below, IPFS is _not_:
+
+- _A <VueCustomTooltip label="A list of records, known as blocks, linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data." underlined multiline is-medium>blockchain</VueCustomTooltip>_: While IPFS and blockchains do share some concepts and technologies (the use of <VueCustomTooltip label="A function that takes some arbitrary input (content) and returns a fixed-length value. The exact same input data will always generate the same hash as output. There are numerous hash algorithms." underlined multiline is-medium>cryptographic hashes</VueCustomTooltip>, decentralization, verifiability of data, etc.), and IPFS is is used for [verifiable off-chain storage](#verifiable-off-chain-storage), IPFS is not a blockchain.
+- A _storage system, network or provider_: Rather, IPFS  provides a modular suite of protocols and standards for organizing and moving content-addressed data, which many storage solutions and other applications use as a fundamental part of their architecture.
+- _A <VueCustomTooltip label="An organization that provides its users with on-demand computing resources, such as databases and storage, over the internet." underlined multiline is-medium>cloud service provider</VueCustomTooltip>_: IPFS can be deployed on and complement cloud infrastructure, but it in of itself is not a cloud service provider.
+
+:::callout
+**Learn more**
+- To learn how IPFS is used by storage networks and other applications, see the [usage ideas and examples](../concepts/usage-ideas-examples.md).
+- Looking for a deeper dive on IPFS compared to other similar technologies? See the [IPFS Comparisons page](../concepts/comparisons.md).
 :::
 
-IPFS knows how to find that sweet, sweet aardvark information by its [contents](content-addressing.md), not its location (more on that, which is called content addressing, below). The IPFS-ified version of the aardvark info is represented by that string of numbers in the middle of the URL (`baf…`), and instead of asking one of Wikipedia's computers for the page, your computer uses IPFS to ask lots of computers around the world to share the page with you. It can get your aardvark info from anyone who has it, not just Wikipedia.
+## Problems that IPFS addresses
 
-And, when you use IPFS, you don't just download files from someone else — your computer also helps distribute them. When your friend a few blocks away needs the same Wikipedia page, they might be as likely to get it from you as they would from your neighbor or anyone else using IPFS.
+IPFS seeks to address problems with the current web and existing data representation / routing / transfer protocols like <VueCustomTooltip label="A protocol for transferring data over the internet, mainly used for web browsing. It enables communication between a client (e.g. a web browser) and a server, where the client sends a request and the server returns a response with the requested information." underlined multiline is-medium>HTTP</VueCustomTooltip> including:
 
-IPFS makes this possible for not only web pages but also any kind of file a computer might store, whether it's a document, an email, or even a database record.
+- [Centralization](#centralization)
+- [Performance](#performance)
+- [Scalability](#scalablity)
+- [Link rot](#link-rot)
+- [Security](#security)
+- [Data sovereignty and ownership](#data-sovereignty)
+- [Verifiable off-chain storage](#verifiable-off-chain-storage)
+- [Local-first software](#local-first-software)
+- [Vendor lock-in](#vendor-lock-in)
 
-## Decentralization
+### Centralization
 
-Making it possible to download a file from many locations that aren't managed by one organization:
+IPFS is an open-source, decentralized system that eliminates the need for a central authority, making it more resilient and censorship-resistant than traditional centralized systems. No single entity or person controls, manages or owns IPFS; rather, it is a community-maintained project with multiple implementations of the protocol, multiple tools and apps leveraging that protocol, and multiple users and organizations contributing to it's design and development.
 
-- **Supports a resilient internet.** If someone attacks Wikipedia's web servers or an engineer at Wikipedia makes a big mistake that causes their servers to catch fire, you can still get the same webpages from somewhere else.
-- **Makes it harder to censor content.** Because files on IPFS can come from many places, it's harder for anyone (whether they're states, corporations, or someone else) to block things. We hope IPFS can help provide ways to circumvent actions like these when they happen.
-- **Can speed up the web when you're far away or disconnected.** If you can retrieve a file from someone nearby instead of hundreds or thousands of miles away, you can often get it faster. This is especially valuable if your community is networked locally but doesn't have a good connection to the wider internet. (Well-funded organizations with technical expertise do this today by using multiple data centers or CDNs — [content distribution networks](https://en.wikipedia.org/wiki/Content_delivery_network). IPFS hopes to make this possible for everyone.)
+### Performance
 
-That last point is actually where IPFS gets its full name: the **InterPlanetary File System**. We're striving to build a system that works across places as disconnected or as far apart as planets. While that's an idealistic goal, it keeps us working and thinking hard, and almost everything we create in pursuit of that goal is also useful here at home.
+IPFS provides faster access to data by storing it at multiple locations, and allowing users to access it from the nearest location using content addressing instead of <VueCustomTooltip label="Data identified and linked to by it's location. An example is HTTP." underlined>location-based addressing</VueCustomTooltip>. In other words, because data can be addressed based on it's contents, a node on the network can fetch that data from _any_ other node in the netork that has the data; thus, performance issues like latency are reduced. 
 
-## Content addressing
+### Scalability
 
-::: callout
-For a beginner-friendly primer on why cryptographic hashing and content addressing matter, take a look at ProtoSchool's tutorial, [Content Addressing on the Decentralized Web](https://proto.school/content-addressing).
-:::
+IPFS has no single point of failure, and users do not need to trust each other. In other words, the failure of a single or even multiple nodes in the network does not affect the functioning of the entire network, and 
 
-What about that link to the aardvark page above? It looked a little unusual:
+### Link rot
 
-```
-/ipfs/bafybeiaysi4s6lnjev27ln5icwm6tueaw2vdykrtjkwiphwekaywqhcjze/wiki/Aardvark
-```
+IPFS eliminates the problem of broken links by allowing data to be addressed by its content, rather than by its location.
 
-That jumble of letters after `/ipfs/` is called a [_content identifier_](content-addressing.md) and it’s how IPFS can get content from multiple places.
+### Security
 
-Traditional URLs and file paths such as…
+IPFS uses <VueCustomTooltip label="A function that takes some arbitrary input (content) and returns a fixed-length value. The exact same input data will always generate the same hash as output. There are numerous hash algorithms." underlined multiline is-medium>cryptographic hashes</VueCustomTooltip> to ensure the authenticity and integrity of files, making it difficult for malicious actors to tamper with or delete files.
 
-- `https://en.wikipedia.org/wiki/Aardvark`
-- `/Users/Alice/Documents/term_paper.doc`
-- `C:\Users\Joe\My Documents\project_sprint_presentation.ppt`
+### Data sovereignty 
 
-…identify a file by _where it's located_ — what computer it's on and where on that computer's hard drive it is. That doesn't work if the file is in many places, though, like your neighbor's computer and your friend's across town.
+IPFS protects <VueCustomTooltip label="The idea that individuals or organizations have control over their own data and the ability to determine who can access and use it." underlined multiline is-medium>data sovereignty</VueCustomTooltip> by enabling users to store and access data directly on a decentralized network of nodes, rather than centralized, third-party servers. This eliminates the need for intermediaries to control and manage data, giving users full control and ownership over their data.
 
-Instead of being location-based, IPFS addresses a file by _what's in it_, or by its _content_. The content identifier above is a _cryptographic hash_ of the content at that address. The hash is unique to the content that it came from, even though it may look short compared to the original content. It also allows you to verify that you got what you asked for — bad actors can't just hand you content that doesn't match. (If hashes are new to you, check out [the concept guide on hashes](hashing.md) for an introduction.)
+### Verifiable off-chain storage
 
-::: tip NOTE
-Why do we say "content" instead of "files" or "web pages" here? Because a content identifier can point to many different types of data, such as a single small file, a piece of a larger file, or metadata. (In case you don't know, metadata is "data about the data." You use metadata when you access the date, location, or file size of your digital pictures, for example.) So, an individual IPFS address can refer to the metadata of just a single piece of a file, a whole file, a directory, a whole website, or any other kind of content. For more on this, check out our guide to [how IPFS works](how-ipfs-works.md).
-:::
+IPFS enables verifiable <VueCustomTooltip label="Storage outside of a blockchain for data processed by the blockchain. Used to store large amounts of data that would be inefficient to store directly on a blockchain, improving scalability and efficiency." underlined multiline is-medium>off-chain storage</VueCustomTooltip> by linking the off-chain data to an IPFS content-addressed data identifier (a <VueCustomTooltip label="An address used to point to data in IPFS, based on the content itself, as opposed to the location." underlined multiline is-medium>Content IDentifier (CID)</VueCustomTooltip>, explained in [How IPFS works](#content-identifier-cid)), which is stored on the IPFS network. This identifier contains a cryptographic hash of the data, allowing anyone to verify the integrity of the data without having to retrieve the data.
 
-Because the address of a file in IPFS is created from the content itself, links in IPFS can't be changed. For example ...
+### Local-first software
 
-- If the text on a web page is changed, the new version gets a new, different address.
-- Content can't be moved to a different address. On today's internet, a company could reorganize content on their website and move a page at `http://mycompany.com/what_we_do` to `http://mycompany.com/services`. In IPFS, the old link you have would still point to the same old content.
+IPFS benefits <VueCustomTooltip label="Software in which data is stored and processed locally, and is then synchronized and shared with other devices when a network connection is available. By keeping data local, local-first software reduces dependency on internet connectivity, and emphasizes data sovereignty and privacy." underlined multiline is-medium>local-first software</VueCustomTooltip> by providing a performant, decentralized, peer-to-peer data addressing, routing, and transfer protocol that prioritizes data storage and processing on individual devices. With IPFS, data can be stored, verified and processed locally, and then synchronized and shared with other IPFS nodes when a network connection is available.
 
-Of course, people want to update and change content all the time and don't want to send new links every time they do it. This is entirely possible in an IPFS world, but explaining it requires a little more info than what's within the scope of this IPFS introduction. Check out the concept guides on [IPNS](ipns.md), the [Mutable File System (MFS)](file-systems.md#mutable-file-system-mfs), and [DNSLink](dnslink.md) to learn more about how changing content can work in a content-addressed, distributed system.
+### Vendor lock-in
 
-It's important to remember in all of these situations, using IPFS is participatory and collaborative. If nobody using IPFS has the content identified by a given address available for others to access, you won't be able to get it. On the other hand, content can't be removed from IPFS as long as _someone_ is interested enough to make it available, whether that person is the original author or not. Note that this is similar to the current web, where it is also impossible to remove content that's been copied across an unknowable number of websites; the difference with IPFS is that you are always able to find those copies.
+IPFS prevents <VueCustomTooltip label="When a user is forced to continue using a product (such as a cloud computing service), because switching to another vendor is impractical, costly, legally constrained, or technically non-trivial / incompatible." underlined multiline is-medium>vendor lock-in</VueCustomTooltip> , as users have sovereignty over their data and infrastructure. In addition, because IPFS is open-source, community-maintained and modular, users are not obligated to use a particular subsystem (described in [How IPFS works](#how-ipfs-works)). Instead, users can customize IPFS to accomodate their preferred technologies, needs and values.
 
-## Participation
-
-While there's lots of complex technology in IPFS, the fundamental ideas are about changing how networks of people and computers communicate. Today's World Wide Web is structured on _ownership_ and _access_, meaning that you get files from whoever owns them — if they choose to grant you access. IPFS is based on the ideas of _possession_ and _participation_, where many people _possess_ each others' files and _participate_ in making them available.
-
-That means IPFS only works well when people are actively participating. If you use your computer to share files using IPFS, but then you turn your computer off, other people won't be able to get those files from you anymore. But if you or others make sure that copies of those files are stored on more than one computer that's powered on and running IPFS, those files will be more reliably available to other IPFS users who want them. This happens to some extent automatically: by default, your computer shares a file with others for a limited time after you've downloaded it using IPFS. You can also make content available more permanently by _pinning_ it, which saves it to your computer and makes it available on the IPFS network until you decide to _unpin_ it. (You can learn more about this in our [guide to persistence and pinning](persistence.md).)
-
-If you want to make sure one of your own files is permanently shared on the internet today, you might use a for-pay file-sharing service like Dropbox. Some people have begun offering similar services based on IPFS called _pinning services_. But since IPFS makes this kind of sharing a built-in feature, you can also collaborate with friends or partner with institutions (for example, museums and libraries might work together) to share each others' files. We hope IPFS can be the low-level tool that allows a rich fabric of communities, business, and cooperative organizations to all form a distributed web that is much more reliable, robust, and equitable than the one we have today.
