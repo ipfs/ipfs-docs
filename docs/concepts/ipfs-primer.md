@@ -1,16 +1,16 @@
 ---
 title: "Basic Concepts"
-description: "Lorem ipsum."
+description: "This page gives a high-level overview of what IPFS is and how it works."
 sidebarDepth: 3
 ---
 
 # What is IPFS?
 
-The InterPlanetary File System (IPFS) is a set of composable, peer-to-peer protocols for addressing, routing, and transferring <VueCustomTooltip label="A way to store information so a device can retrieve the data based on its content, not its location." underlined>content-addressed data</VueCustomTooltip> in a decentralized file system. 
+IPFS is a modular suite of protocols and standards for organizing and moving data, designed from the ground up with the principles of <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined>content addressing</VueCustomTooltip> and peer-to-peer networking.
 
-IPFS can be thought of as both the implementations of the IPFS protocols (like <VueCustomTooltip label="The earliest and most widely used implementation of IPFS, written in Go." underlined>Kubo</VueCustomTooltip>) and the decentralized network comprised of the individual <VueCustomTooltip label="Programs that implement the IPFS protocol and participate in the IPFS network." underlined>nodes</VueCustomTooltip> that are running protocol implementations. IPFS _is not_ a <VueCustomTooltip label="A list of records, known as blocks, linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data." underlined multiline is-medium>blockchain</VueCustomTooltip>.
+IPFS can be thought of as both the implementations of the IPFS specs (like <VueCustomTooltip label="The earliest and most widely used implementation of IPFS, written in Go." underlined>Kubo</VueCustomTooltip>) and the decentralized network comprised of <VueCustomTooltip label="Computers participating in the IPFS network by running an IPFS implementation ." underlined>IPFS nodes</VueCustomTooltip>. IPFS _is not_ a blockchain.
 
-In this conceptual guide, you'll learn about the problems that IPFS addresses, and the subsystems that IPFS uses to address, route, and transfer content-addressed data.
+In this conceptual guide, you'll learn about the problems that IPFS addresses and how the different subsystems that IPFS is comprised of work.
 
 - [Problems that IPFS addresses](#problems-that-ipfs-addresses)
 - [How IPFS represents data](#how-ipfs-represents-data)
