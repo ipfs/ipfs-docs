@@ -5,17 +5,18 @@ description: "There isn't just one canonical IPFS implementation. Learn about th
 
 # IPFS Implementations
 
-There isn't one canonical IPFS implementation. There is so much to explore in this space that it's ideal to have a plethora of implementations experimenting and optimizing for various usecases. Below is a list of IPFS implementations that we know of in name alphabetical order. If you're aware of more, please add!
+IPFS is an open-source project that encourages the development of multiple implementations of the protocol, each of which seeks to optimize for various use cases. Below is non-exhaustive list of IPFS implementations, grouped by development and maintenance status ([active](#actively-maintained) and [inactive](#inactive)) and ordered alphabetically. If you're aware of more implementations, [edit this page in GitHub](https://github.com/ipfs/ipfs-docs/edit/main/docs/concepts/ipfs-implementations.md) or [open an issue](https://github.com/ipfs/ipfs-docs/issues/new?assignees=&labels=need%2Ftriage&template=open_an_issue.md&title=IPFS%20Implementations) to have the list updated. 
 
 ::: tip
 Looking into implementing IPFS yourself?
-Relevant specifications are listed in [ipfs/specs](https://github.com/ipfs/specs/).
+See the official [IPFS Specifications](https://github.com/ipfs/specs/).
 :::
 
 ## Actively maintained
 
 | Name             | URL                                                                     | Language(s)            | What it's trying to do                                                                                                   |
 |------------------|-------------------------------------------------------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| auspinner        | <https://github.com/2color/auspinner>                                   | go                     | CLI tool to deal with the pinning service API and upload files through bitswap.                                          |
 | barge            | <https://github.com/application-research/barge>                         | go                     | CLI tool with a git like workflow to upload deltas to estuary.                                                           |
 | Boost            | <https://github.com/filecoin-project/boost>                             | go                     | Daemon to get IPFS data in and out of a Filecoin storage provider.                                                       |
 | Elastic provider | <https://github.com/ipfs-elastic-provider/ipfs-elastic-provider>        | javascript, typescript | Scallable Cloud-Native implementation.                                                                                   |
@@ -31,11 +32,17 @@ Relevant specifications are listed in [ipfs/specs](https://github.com/ipfs/specs
 | Lotus            | <https://github.com/filecoin-project/lotus>                             | go                     | Filecoin node handling consensus, storage providing, making storage deals, importing data, ...                           |
 | whypfs           | <https://github.com/whyrusleeping/whypfs>                               | go                     | Daemon based on the same building blocks as Kubo but with some options tweaking for more performance.                    |
 
+:::warning 
+### js-ipfs being discontinued
+Development of the [js-ipfs project](https://github.com/ipfs/js-ipfs) is being discontinued to focus on [Helia](https://github.com/ipfs/helia), a leaner, more modular, modern implementation of IPFS in JavaScript scheduled for release in 2023. To learn more about Helia and the current state of IPFS in JS, see the [blog post](https://blog.ipfs.tech/state-of-ipfs-in-js/). 
+
+Because of this, js-ipfs tutorials may be out of date, and will eventually be archived.
+:::
+
 ## Inactive
 
 | Name             | URL                                                                     | Language(s)            | What it's trying to do                                                                                                   |
 |------------------|-------------------------------------------------------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| auspinner        | <https://github.com/2color/auspinner>                                   | go                     | CLI tool to deal with the pinning service API and upload files through bitswap.                                          |
 | Agregore         | <https://github.com/AgregoreWeb/agregore-ipfs-daemon>                   | go, javascript         | Mobile friendly Kubo daemon.                                                                                             |
 | ipfs tiny        | <https://gitlab.com/librespacefoundation/ipfs-tiny>                     | c++                    | Tiny embeddable, os-independent IPFS implementation.                                                                     |
 | ipget            | <https://github.com/ipfs/ipget>                                         | go                     | Minimal wget inspired tool to download files from IPFS nodes over bitswap.                                              |
@@ -43,10 +50,3 @@ Relevant specifications are listed in [ipfs/specs](https://github.com/ipfs/specs
 | py-ipfs          | <https://github.com/ipfs-shipyard/py-ipfs>                              | python                 | Python IPFS implementation.                                                                                              |
 | rust-ipfs        | <https://github.com/rs-ipfs/rust-ipfs>                                  | rust                   | Rust IPFS implementation.                                                                                                |
 | whypfs           | <https://github.com/whyrusleeping/whypfs>                               | go                     | Daemon based on the same building blocks as Kubo but with some options tweaking for more performance.                    |
-
-:::warning 
-### js-ipfs being discontinued
-Development of the [js-ipfs project](https://github.com/ipfs/js-ipfs) is being discontinued to focus on [Helia](https://github.com/ipfs/helia), a leaner, more modular, modern implementation of IPFS in JavaScript scheduled for release in 2023. To learn more about Helia and the current state of IPFS in JS, see the [blog post](https://blog.ipfs.tech/state-of-ipfs-in-js/). 
-
-Because of this, js-ipfs tutorials may be out of date, and will eventually be archived.
-:::
