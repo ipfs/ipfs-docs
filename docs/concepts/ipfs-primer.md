@@ -31,7 +31,7 @@ IPFS seeks to address problems with the current web and existing data representa
 
 ### Centralization
 
-IPFS is an open-source, decentralized system that eliminates the need for a central authority, making it more resilient and censorship-resistant than traditional centralized systems.
+IPFS is an open-source, decentralized system that eliminates the need for a central authority, making it more resilient and censorship-resistant than traditional centralized systems. No single entity or person controls, manages or owns IPFS; rather, it is a community-maintained project with multiple implementations of the protocol, multiple tools and apps leveraging that protocol, and multiple users and organizations contributing to it's design and development.
 
 ### Performance
 
@@ -63,7 +63,7 @@ IPFS benefits <VueCustomTooltip label="Software in which data is stored and proc
 
 ### Vendor lock-in
 
-Lorem ipsum... 
+IPFS prevents <VueCustomTooltip label="When a user is forced to continue using a product (such as a cloud computing service), because switching to another vendor is impractical, costly, legally constrained, or technically non-trivial / incompatible." underlined multiline is-medium>vendor lock-in</VueCustomTooltip> , as users have sovereignty over their data and infrastructure. In addition, because IPFS is open-source, community-maintained and modular, users are not obligated to use a particular subsystem (described in [How IPFS works](#how-ipfs-works)). Instead, users can customize IPFS to accomodate their preferred technologies, needs and values.
 
 ## How IPFS works
 
@@ -134,7 +134,17 @@ While [the subsystems described above](#how-ipfs-represents-data) handle the rep
 
 #### Kademlia Distributed Hash Table (DHT)
 
-Lorem ipsum...
+IPFS uses Kademlia, a <VueCustomTooltip label="A decentralized data store that maps data based on key-value pairs." underlined multiline is-left>Distributed Hash Table (DHT)</VueCustomTooltip> designed for decentralized peer-to-peer computer networks. Kademlia is used to map what the user is looking for to the peer that is storing the matching content. The Kademlia DHT can be thought as a huge table that stores information on who has what data, and where that data might be located. The Kademlia DHT provides IPFS with:
+
+- A catalog and a navigation system for data on the IPFS network
+- Logic for handling undialable peers
+- Logic for refreshing the list of peers
+- Logic for dropping peers from the DHT if they are inactive or not offline
+
+:::callout
+**Learn more**
+Want to learn more about Kademlia and DHTs? See the [the Distributed Hash Tables (DHTs) conceptual guide](../concepts/dht.md#kademlia).
+:::
 
 #### Bitswap
 
