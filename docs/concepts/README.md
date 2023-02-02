@@ -7,6 +7,10 @@ description: Get started on understanding the key ingredients in the decentraliz
 
 New to IPFS or the distributed web? Here's where to get started on understanding the key ingredients in what makes IPFS work. Because IPFS is a system that hopes to change how we use the Internet, it comes with many new concepts! This section aims to get you up to speed quickly.
 
+## Learn the basics
+
+Understand the problems IPFS solves and get a high-level overview of how IPFS works with this [one-page introduction](../concepts/ipfs-primer.md).
+
 ## Video overviews
 
 Want the basics in theater mode? Check out these helpful videos for an overview of how IPFS works with files and the overall data lifecycle in the d-web.
@@ -26,15 +30,6 @@ Want the basics in theater mode? Check out these helpful videos for an overview 
 Check out ResNetLab on Tour for complete tutorials on IPFS and the Web 3.0 stack:
 
 - [ResNetLab on Tour 2021](https://research.protocol.ai/tutorials/resnetlab-on-tour/)
-
-## IPFS 101
-
-Get the basic concepts of IPFS in one place, including:
-
-- [What is IPFS?](what-is-ipfs.md)
-- [How IPFS works](how-ipfs-works.md)
-- [Glossary](glossary.md)
-- [FAQ](faq.md)
 
 ## Examples and case studies
 
