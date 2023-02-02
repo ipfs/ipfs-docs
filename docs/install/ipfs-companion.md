@@ -7,17 +7,24 @@ description: The IPFS Companion browser extension allows you to interact with yo
 
 IPFS Companion allows you to interact with your IPFS node and the extended IPFS network through your browser. The add-on is available for Brave, Chrome, Edge, Firefox, and Opera. It enables support for `ipfs://` addresses, automatically loads websites and file paths from an IPFS gateway, allows you to easily import and share a file with IPFS, and more.
 
-IPFS Companion works in tandem with an IPFS node running on your local machine, so make sure you have a [node installed](ipfs-desktop.md) before installing this add-on.
+## Prerequisites
+
+For its full functionality to be enabled, IPFS Companion requires a local IPFS node. As such, it is recommended that you have an IPFS node installed and running on your computer. Any one of the following will satisfy the requirement:
+
+- [Install IPFS Desktop](../install/ipfs-desktop.md)
+- [Install IPFS Kubo for Go](../install/command-line.md)
+- [Install IPFS for JavaScript](../install/js-ipfs.md)
+
+You can still use IPFS Companion without a local node running, although you will lose some functionality, such as the ability to load websites with DNSLink via a gateway.
 
 ## Install
 
-The easiest way to install IPFS Companion is through your browser's add-on store:
+The easiest way to install IPFS Companion is through your browser's specific extensions and add-ons store:
 
 | [Firefox](https://www.mozilla.org/firefox/new/) \| [Firefox for Android](https://play.google.com/store/apps/details?id=org.mozilla.firefox)          | [Chrome](https://www.google.com/chrome/) \| [Brave](https://brave.com/) \| [Opera](https://www.opera.com/) \| [Edge](https://www.microsoftedgeinsider.com/)                                    |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [![Install From AMO](https://ipfs.io/ipfs/QmWNa64XjA78QvK3zG2593bSMizkDXXcubDHjnRDYUivqt)](https://addons.mozilla.org/firefox/addon/ipfs-companion/) | [![Install from Chrome Store](https://ipfs.io/ipfs/QmU4Qm5YEKy5yHmdAgU2fD7PjZLgrYTUUbxTydqG2QK3TT)](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch) |
 
-Make sure you have [IPFS installed](https://ipfs.io/#install) on your computer as well. Because IPFS Companion (in its standard configuration) talks to your computer's local IPFS node to work its browser magic, you'll need to have IPFS running on your computer, too.
 
 ## Features
 

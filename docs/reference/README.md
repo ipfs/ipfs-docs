@@ -33,6 +33,14 @@ Use it as:
 
 ### JavaScript (js-ipfs)
 
+:::warning 
+### js-ipfs being discontinued
+Development of the [js-ipfs project](https://github.com/ipfs/js-ipfs) is being discontinued to focus on [Helia](https://github.com/ipfs/helia), a leaner, more modular, modern implementation of IPFS in JavaScript scheduled for release in 2023. To learn more about Helia and the current state of IPFS in JS, see the [blog post](https://blog.ipfs.tech/state-of-ipfs-in-js/). 
+
+Because of this, js-ipfs tutorials may be out of date, and will eventually be archived.
+
+:::
+
 [API resources for js-ipfs](js/api.md), including the JS core API reference and the JS HTTP client library.
 
 Explore the Mutable File System, Regular Files API, and DAG API through ProtoSchool's [coding challenges](https://proto.school/course/ipfs).
