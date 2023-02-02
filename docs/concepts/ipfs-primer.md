@@ -59,7 +59,7 @@ IPFS enables verifiable <VueCustomTooltip label="Storage outside of a blockchain
 
 ### Local-first software
 
-IPFS benefits <VueCustomTooltip label="Software in which data is stored and processed locally, and is then synchronized and shared with other devices when a network connection is available. By keeping data local, local-first software reduces dependency on internet connectivity, and emphasizes data sovereignty and privacy." underlined multiline is-medium>local-first software</VueCustomTooltip> by providing a performant, decentralized, peer-to-peer data addressing, routing, and transfer protcol that prioritizes data storage and processing on individual devices. With IPFS, data can be stored, verified and processed locally, and then synchronized and shared with other IPFS nodes when a network connection is available.
+IPFS benefits <VueCustomTooltip label="Software in which data is stored and processed locally, and is then synchronized and shared with other devices when a network connection is available. By keeping data local, local-first software reduces dependency on internet connectivity, and emphasizes data sovereignty and privacy." underlined multiline is-medium>local-first software</VueCustomTooltip> by providing a performant, decentralized, peer-to-peer data addressing, routing, and transfer protocol that prioritizes data storage and processing on individual devices. With IPFS, data can be stored, verified and processed locally, and then synchronized and shared with other IPFS nodes when a network connection is available.
 
 ### Vendor lock-in
 
