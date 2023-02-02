@@ -23,7 +23,7 @@ The IPFS community believes that our mission is best served in an environment th
 Are you developing with IPFS implementations and tools, and looking for technical support from IPFS experts? For the fastest possible assistance and resolution of your support needs, do the following:
 
 1. [Check to see if the problem / issue you've encountered has already been discussed](#_1-check-to-see-if-the-issue-you-ve-encountered-has-already-been-discussed).
-2. If the your problem / issue has not been discussed or solved in the forum, [follow the general guidelines for getting useful answers to your questions](#_2-follow-the-guidelines-for-getting-useful-answers-to-your-questions). 
+2. If your problem / issue has not been discussed or solved in the forum, [follow the general guidelines for getting useful answers to your questions](#_2-follow-the-guidelines-for-getting-useful-answers-to-your-questions). 
 3. [Create a forum post in the Help section](#_3-create-a-forum-post-in-the-help-section).
 
 :::tip 
