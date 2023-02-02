@@ -31,7 +31,7 @@ Relevant specifications are listed in [ipfs/specs](https://github.com/ipfs/specs
 | Lotus            | <https://github.com/filecoin-project/lotus>                             | go                     | Filecoin node handling consensus, storage providing, making storage deals, importing data, ...                           |
 | whypfs           | <https://github.com/whyrusleeping/whypfs>                               | go                     | Daemon based on the same building blocks as Kubo but with some options tweaking for more performance.                    |
 
-## Legacy
+## Inactive
 
 | Name             | URL                                                                     | Language(s)            | What it's trying to do                                                                                                   |
 |------------------|-------------------------------------------------------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
