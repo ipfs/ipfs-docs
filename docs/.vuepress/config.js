@@ -336,6 +336,7 @@ module.exports = {
   plugins: [
     [require('./plugins/vuepress-plugin-speedcurve'), { id: SPEEDCURVE_ID }],
     '@vuepress/plugin-back-to-top',
+    ['@adamdehaven/vuepress-plugin-custom-tooltip'],
     [
       '@vuepress/google-analytics',
       {
