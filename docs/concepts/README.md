@@ -9,7 +9,10 @@ New to IPFS or the distributed web? Here's where to get started on understanding
 
 ## Learn the basics
 
-Understand the problems IPFS solves and get a high-level overview of how IPFS works with this [one-page introduction](../concepts/ipfs-primer.md).
+Understand the basics of IPFS, the problems it solves and get a high-level overview of how IPFS works with this two-part introduction.
+
+- [What is IPFS?](../concepts/what-is-ipfs.md)
+- [How IPFS works](../concepts//how-ipfs-works.md)
 
 ## Video overviews
 

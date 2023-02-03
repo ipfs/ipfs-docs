@@ -7,9 +7,13 @@ description:  Learn about the problems that IPFS addresses, what IPFS is and isn
 
 IPFS is a modular suite of protocols and standards for organizing and moving data, designed from the ground up with the principles of <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined>content addressing</VueCustomTooltip> and peer-to-peer networking. 
 
+:::callout
+This guide is part 1 of a 2-part introduction to the basic concepts of IPFS. For the second part, which covers how the different subsystems that IPFS is comprised of work and how they work, see [How IPFS works](../concepts//how-ipfs-works.md).
+:::
+
 In this conceptual guide, you'll learn:
 
-- [What IPFS is and isn't](#what-ipfs-isnt)
+- [What IPFS is and isn't](#definining-ipfs)
 - [Problems that IPFS addresses](#problems-that-ipfs-addresses)
 
 ## Definining IPFS
