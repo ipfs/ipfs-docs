@@ -1,0 +1,325 @@
+{
+  // Example markdownlint JSON(C) configuration with all properties set to their default value
+
+  // Default state for all rules
+  "default": false,
+
+  // Path to configuration file to extend
+  "extends": null,
+
+  // MD001/heading-increment/header-increment - Heading levels should only increment by one level at a time
+  // Enforces bullet 1 of https://docs.ipfs.tech/community/contribute/grammar-formatting-and-style/#titles
+  "MD001": true,
+
+  // MD003/heading-style/header-style - Heading style
+  // Pretty sure we do this implicitly
+  // Enforces a heading style like the following
+  //
+  // # Title
+  // ## Subheading
+  "MD003": {
+    // Heading style
+    "style": "atx"
+  },
+
+  // MD004/ul-style - Unordered list style
+  // Enforces https://docs.ipfs.tech/community/contribute/grammar-formatting-and-style/#unordered-lists
+  "MD004": {
+    // List style
+    "style": "dash"
+  },
+
+  // MD005/list-indent - Inconsistent indentation for list items at the same level
+  // Seems implicitly related to https://docs.ipfs.tech/community/contribute/grammar-formatting-and-style/#unordered-lists
+  "MD005": true,
+
+  // MD007/ul-indent - Unordered list indentation
+  // Pretty sure we enforce 2 spaces indnetation
+  "MD007": {
+    // Spaces for indent
+    "indent": 2,
+    // Whether to indent the first level of the list
+    "start_indented": false,
+    // Spaces for first level indent (when start_indented is set)
+    "start_indent": 2
+  },
+
+  // MD009/no-trailing-spaces - Trailing spaces
+  // Seems like something good to have
+  "MD009": {
+    // Spaces for line break
+    "br_spaces": 2,
+    // Allow spaces for empty lines in list items
+    "list_item_empty_lines": false,
+    // Include unnecessary breaks
+    "strict": false
+  },
+
+  // MD010/no-hard-tabs - Hard tabs
+  // Not sure if we want to enforce this, seems like it would be a good idea?
+  "MD010": false,
+
+  // MD011/no-reversed-links - Reversed link syntax
+  // Seems obvious, probably good to enforce
+  "MD011": true,
+
+  // MD012/no-multiple-blanks - Multiple consecutive blank lines
+  // Seems obvious, probably good to enforce
+  "MD012": true,
+
+  // MD013/line-length - Line length
+  // Very much unsure on this one
+  "MD013": {
+    // Number of characters
+    "line_length": 80,
+    // Number of characters for headings
+    "heading_line_length": 80,
+    // Number of characters for code blocks
+    "code_block_line_length": 80,
+    // Include code blocks
+    "code_blocks": true,
+    // Include tables
+    "tables": true,
+    // Include headings
+    "headings": true,
+    // Include headings
+    "headers": true,
+    // Strict length checking
+    "strict": false,
+    // Stern length checking
+    "stern": false
+  },
+
+  // MD014/commands-show-output - Dollar signs used before commands without showing output
+  // Seems obvious, probably good to enforce
+  "MD014": true,
+
+  // MD018/no-missing-space-atx - No space after hash on atx style heading
+  // Seems to be something we already do anyways
+  "MD018": true,
+
+  // MD019/no-multiple-space-atx - Multiple spaces after hash on atx style heading
+  // Seems to be something we already do anyways
+  "MD019": true,
+
+  // MD020/no-missing-space-closed-atx - No space inside hashes on closed atx style heading
+  // Seems irrelvant since we are using atxc headings
+  "MD020": false,
+
+  // MD021/no-multiple-space-closed-atx - Multiple spaces inside hashes on closed atx style heading
+  // Seems irrelvant since we are using atxc headings
+  "MD021": false,
+
+  // MD022/blanks-around-headings/blanks-around-headers - Headings should be surrounded by blank lines
+  // Seems to be something we already do anyways
+  "MD022": {
+    // Blank lines above heading
+    "lines_above": 1,
+    // Blank lines below heading
+    "lines_below": 1
+  },
+
+  // MD023/heading-start-left/header-start-left - Headings must start at the beginning of the line
+  // Seems to be something we already do anyways
+  "MD023": true,
+
+  // MD024/no-duplicate-heading/no-duplicate-header - Multiple headings with the same content
+  // Seems to be a good practice 
+  "MD024": {
+    // Only check sibling headings
+    // Added this in case we start doing changelogs
+    "siblings_only": true
+  },
+
+  // MD025/single-title/single-h1 - Multiple top-level headings in the same document
+  // Enforces bullet 2 of https://docs.ipfs.tech/community/contribute/grammar-formatting-and-style/#titles
+  "MD025": {
+    // Heading level
+    "level": 1,
+    // RegExp for matching title in front matter
+    "front_matter_title": "^\\s*title\\s*[:=]"
+  },
+
+  // MD026/no-trailing-punctuation - Trailing punctuation in heading
+  // Enforces bullet 3 of https://docs.ipfs.tech/community/contribute/grammar-formatting-and-style/#titles
+  "MD026": {
+    // Punctuation characters
+    "punctuation": ".,;:!。，；：！"
+  },
+
+  // MD027/no-multiple-space-blockquote - Multiple spaces after blockquote symbol
+  // Seems like a good practice
+  "MD027": true,
+
+  // MD028/no-blanks-blockquote - Blank line inside blockquote
+  // Seems like a good practice
+  "MD028": true,
+
+  // MD029/ol-prefix - Ordered list item prefix
+  // Pretty sure we enforce this without calling it out
+  //
+  // 1.
+  // 1.
+  // 1.
+  "MD029": {
+    // List style
+    "style": "one"
+  },
+
+  // MD030/list-marker-space - Spaces after list markers
+  // Seems like we already do this
+  "MD030": {
+    // Spaces for single-line unordered list items
+    "ul_single": 1,
+    // Spaces for single-line ordered list items
+    "ol_single": 1,
+    // Spaces for multi-line unordered list items
+    "ul_multi": 1,
+    // Spaces for multi-line ordered list items
+    "ol_multi": 1
+  },
+
+  // MD031/blanks-around-fences - Fenced code blocks should be surrounded by blank lines
+  // Seems like a good practice / we already do this
+  "MD031": {
+    // Include list items
+    "list_items": true
+  },
+
+  // MD032/blanks-around-lists - Lists should be surrounded by blank lines
+  // Seems like a good practice / we already do this
+  "MD032": true,
+
+  // MD033/no-inline-html - Inline HTML
+  // Not sure about this one - do we need to allow any html elements?
+
+  "MD033": {
+    // Allowed elements
+    "allowed_elements": []
+  },
+
+  // MD034/no-bare-urls - Bare URL used
+  // Pretty sure we don't enforce this, but I think it would be a good idea
+  // TODO remove all bare URLS from docs
+  // We should not have bare urls in the docs
+  // Once done, set this to true
+  "MD034": false,
+
+  // MD035/hr-style - Horizontal rule style
+  // Not sure if this matters
+  "MD035": {
+    // Horizontal rule style
+    "style": "consistent"
+  },
+
+  // MD036/no-emphasis-as-heading/no-emphasis-as-header - Emphasis used instead of a heading
+  // Seems like a good rule to have in place
+  "MD036": {
+    // Punctuation characters
+    "punctuation": ".,;:!?。，；：！？"
+  },
+
+  // MD037/no-space-in-emphasis - Spaces inside emphasis markers
+  // Seems like a good rule to have in place
+  "MD037": true,
+
+  // MD038/no-space-in-code - Spaces inside code span elements
+  // Seems like a good rule to have in place
+  "MD038": true,
+
+  // MD039/no-space-in-links - Spaces inside link text
+  // Seems like a good rule to have in place
+  "MD039": true,
+
+  // MD040/fenced-code-language - Fenced code blocks should have a language specified
+  // Seems like we already do this
+  "MD040": true,
+
+  // MD041/first-line-heading/first-line-h1 - First line in a file should be a top-level heading
+  // Enforces https://docs.ipfs.tech/community/contribute/grammar-formatting-and-style/#titles
+  "MD041": {
+    // Heading level
+    "level": 1,
+    // RegExp for matching title in front matter
+    "front_matter_title": "^\\s*title\\s*[:=]"
+  },
+
+  // MD042/no-empty-links - No empty links
+  // Seems like a good rule to have in place
+  "MD042": true,
+
+  // MD043/required-headings/required-headers - Required heading structure
+  // TODO 
+  // We may want to utilize this rule, not sure what the struct would be
+  "MD043": {
+    // List of headings
+    "headings": [],
+    // List of headings
+    "headers": []
+  },
+
+  // MD044/proper-names - Proper names should have the correct capitalization
+  // TODO
+  // Determine if we want to use this, 
+  // Could be use for things like JavaScript, Python, LibP2P, etc.
+  // May cause issues
+  "MD044": {
+    // List of proper names
+    "names": [],
+    // Include code blocks
+    "code_blocks": false,
+    // Include HTML elements
+    "html_elements": false
+  },
+
+  // MD045/no-alt-text - Images should have alternate text (alt text)
+  // Enforces https://docs.ipfs.tech/community/contribute/grammar-formatting-and-style/#alt-text
+  "MD045": true,
+
+  // MD046/code-block-style - Code block style
+  // Seems like we already enforce this
+  "MD046": {
+    // Block style
+    "style": "fenced"
+  },
+
+  // MD047/single-trailing-newline - Files should end with a single newline character
+  // Not sure if we enforce this, but seems like a good practice
+  "MD047": true,
+
+  // MD048/code-fence-style - Code fence style
+  // Seems like we already enforce this
+  "MD048": {
+    // Code fence style
+    "style": "backtick"
+  },
+
+  // MD049/emphasis-style - Emphasis style should be consistent
+  // Enforces https://docs.ipfs.tech/community/contribute/grammar-formatting-and-style/#italics
+  "MD049": {
+    // Emphasis style should be consistent
+    "style": "underscore"
+  },
+
+  // MD050/strong-style - Strong style should be consistent
+  // Enforces https://docs.ipfs.tech/community/contribute/grammar-formatting-and-style/#bold-text
+  "MD050": {
+    // Strong style should be consistent
+    "style": "asterisk"
+  },
+
+  // MD051/link-fragments - Link fragments should be valid
+  // Seems like a good rule, markdow-link-check should also catch this
+  "MD051": true,
+
+  // MD052/reference-links-images - Reference links and images should use a label that is defined
+  "MD052": true,
+
+  // MD053/link-image-reference-definitions - Link and image reference definitions should be needed
+  "MD053": {
+    // Ignored definitions
+    "ignored_definitions": [
+      "//"
+    ]
+  }
+}
