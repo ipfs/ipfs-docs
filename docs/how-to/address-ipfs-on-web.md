@@ -74,6 +74,7 @@ Example:
 
 ```plaintext
 https://ipfs.io/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
+https://ipfs.io/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html
 ```
 
 ### Using IPNS
@@ -86,7 +87,7 @@ https://<gateway-host>.tld/ipns/<ipnsid>/path/to/resource
 Example:
 
 ```plaintext
-https://ipfs.io/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html
+
 ```
 
 ### Using DNSLink
