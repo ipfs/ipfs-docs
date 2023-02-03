@@ -69,66 +69,73 @@ $ ipfs cid format -v 1 -b base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 ```
 
-JavaScript users can also leverage the `toV1()` method provided by the [`cids`](https://www.npmjs.com/package/cids) library:
-```js
-const CID = require('cids')
-new CID('QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR').toV1().toString('base32')
-// → bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
-```
-
-### Text to binary
-
-A CID can be represented as both text and as a stream of bytes. The latter may be a better choice when speed and storage efficiency are considerations.
-
-To convert a CIDv1 from text to binary form, simply read the first character
-and then decode the remainder using the encoding specified in the [multibase table](https://github.com/multiformats/multibase#multibase-table).
-
-JS users can leverage the [`cids`](https://www.npmjs.com/package/cids) library to get a binary version as `Uint8Array`:
-
+JavaScript users can also leverage the `toV1()` method provided by the [`multiformats`](https://www.npmjs.com/package/multiformats) library:
 
 ```js
-const CID = require('cids')
-new CID('bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi').bytes
-// → Uint8Array [ 1, 112,  18,  32, 195, 196, 115,  62, ... ]
+const v0 = CID.parse('QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n')
+v0.toString()
+//> 'QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n'
+v0.toV1().toString()
+//> 'bafybeihdwdcefgh4dqkjv67uzcmw7ojee6xedzdetojuzjevtenxquvyku'
 ```
 
-::: warning Be mindful about parsing CIDs correctly. Avoid shortcuts.
+### v1 to v0 
 
-Unless you are the one who imported the data to IPFS, the length of a CID is not deterministic and depends on the length of the multihash inside of it.
+Given a CID v1, JS users can convert back to v0 using the `toV0()` method provided by the [`multiformats`](https://www.npmjs.com/package/multiformats) library:
 
-To illustrate, passing a custom hash function will produce CIDs of varying lengths:
-
+```js
+const v1 = CID.parse('bafybeihdwdcefgh4dqkjv67uzcmw7ojee6xedzdetojuzjevtenxquvyku')
+v1.toString()
+//> 'bafybeihdwdcefgh4dqkjv67uzcmw7ojee6xedzdetojuzjevtenxquvyku'
+v1.toV0().toString()
+//> 'QmdfTbBqBPQ7VNxZEYEj14VmRuZBkqFbiwReogJgS1zR1n'
 ```
-$ ipfs add --cid-version 1 --hash sha2-256    -nq cat.jpg | wc -c
-60
-$ ipfs add --cid-version 1 --hash blake2b-256 -nq cat.jpg | wc -c
-63
-$ ipfs add --cid-version 1 --hash sha3-512    -nq cat.jpg | wc -c
-111
+
+:::callout
+**See CID conversion in action**
+See the [interactive code sandbox](#codesandbox-converting-between-cid-versions-and-encodings) for an example JS application that converts between CID versions and ecnodings.
+:::
+
+### Converting between CID base encodings
+
+A CID can be encoded using any of the encodings specified in the [multibase table](https://github.com/multiformats/multibase#multibase-table). The use of different encodings can impact speed and storage efficiency.
+
+To convert a CIDv1 `cidV1` from one encoding to another, use the `toString()` method. By default, `toString()` will return the `base32` string representation of the CID, but you can use other string representations:
+
+```js
+const cidV1StringBase32 = cidV1.toString();
 ```
+
+The following example returns the base256 emoji encoding of the CID:
+```js
+const cidV1StringBase256 = cidV1.toString(base256emoji);
+```
+
+Using `.bytes`, the following example returns the raw bytes of the CID:
+
+```js
+const cidV1Bytes = cidV1.bytes
+```
+
+:::callout
+**See CID conversion in action**
+See the [interactive code sandbox](#codesandbox-converting-between-cid-versions-and-encodings) for an example JS application that converts between CID versions and ecnodings.
 :::
 
 
 ### CID to hex
 
 Sometimes, a [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) representation of raw bytes is preferred for debug purposes.
-To get the hex for raw `.bytes` of an entire CID, one can use built-in support for `base16` encoding and skip the `f` (multibase prefix):
+To get the hex for raw `.bytes` of a CIDv1 `cidV1`, use `base16` encoding:
 
-```javascript
-> cid.toString('base16')
-'f01701220c3c4733ec8affd06cf9e9ff50ffc6bcd2ec85a6170004bb709669c31de94391a'
-
-> cid.toString('base16').substring(1)
-'01701220c3c4733ec8affd06cf9e9ff50ffc6bcd2ec85a6170004bb709669c31de94391a' // "cid as hex"
+```js
+const cidV1StringBase256 = cidV1.toString(base16);
 ```
 
-To convert back to a CIDv1, prepend the hex value with `f` ([multibase prefix](https://github.com/multiformats/multibase#multibase-table) for lowercase base16).
-Use it as-is (it is a [valid CID](https://ipfs.io/ipfs/f01701220c3c4733ec8affd06cf9e9ff50ffc6bcd2ec85a6170004bb709669c31de94391a)), or convert to a different multibase by passing it as an argument to `toString`:
-
-```javascript
-> new CID('f' +'01701220c3c4733ec8affd06cf9e9ff50ffc6bcd2ec85a6170004bb709669c31de94391a').toString('base32')
-// → bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
-```
+:::callout
+**See CID conversion in action**
+See the [interactive code sandbox](#codesandbox-converting-between-cid-versions-and-encodings) for an example JS application that converts between CID versions and ecnodings.
+:::
 
 ::: tip
 [Subdomain gateways](../how-to/address-ipfs-on-web.md#subdomain-gateway) convert paths with custom bases like base16 to base32 or base36, in an effort to fit a CID in a DNS label:
@@ -137,6 +144,17 @@ Use it as-is (it is a [valid CID](https://ipfs.io/ipfs/f01701220c3c4733ec8affd06
   → [bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi.ipfs.dweb.link](https://bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi.ipfs.dweb.link/)
 :::
 
+
+### CodeSandbox: Converting between CID versions and encodings
+
+For a hand-on, interactive application that converts between CID versions and encodings, use the CodeSandbox below.
+
+<iframe src="https://codesandbox.io/embed/converting-between-cid-versions-xrvqop?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Converting between CID versions"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
 
 ## Further resources
 
