@@ -57,11 +57,48 @@ User agents that support IPFS, such as a browser with [ipfs-companion](https://d
 
 ## Path gateway
 
-In the most basic scheme, a URL path used for content addressing is effectively a resource name without a canonical location. The HTTP server provides the location part, which makes it possible for browsers to interpret an IPFS content path as relative to the current server and just work without a need for any conversion:
+In the most basic scheme, a URL path used for content addressing is effectively a resource name without a canonical location. The HTTP server provides the location part, which makes it possible for browsers to interpret an IPFS content path as relative to the current server and just work without a need for any conversion. Given a gateway host address (such as `ipfs.io`) and a path to the resource, (`/path/to/resource`), a [CID](../concepts/content-addressing.md) (`<cid>`), IPNS ID (`<ipnsid>`) or [DNSLink](../concepts/dnslink/) (`<dnslink>`) can all be used.
+
+- [Using a CID](#using-a-cid)
+- [Using IPNS](#using-ipns)
+- [Using DNSLink](#using-dnslink)
+
+### Using a CID
+Given a CID `<cid>`, a URL path can be constructed as follows:
+
+```plaintext
+https://<gateway-host>.tld/ipfs/<cid>/path/to/resource
+```
+
+Example:
 
 ```plaintext
 https://ipfs.io/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
+```
+
+### Using IPNS
+Given an IPNS `<ipnsid>`, a URL path can be constructed as follows:
+
+```plaintext
+https://<gateway-host>.tld/ipns/<ipnsid>/path/to/resource
+```
+
+Example:
+
+```plaintext
 https://ipfs.io/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html
+```
+
+### Using DNSLink
+Given a DNSLink `<dnslink>`, a URL path can be constructed as follows:
+
+```plaintext
+https://<gateway-host>.tld/ipns/<dnslink>/path/to/resource
+```
+
+Example:
+
+```plaintext
 https://ipfs.io/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
 ```
 
@@ -70,13 +107,6 @@ In this scheme, all pages share a [single origin](https://en.wikipedia.org/wiki/
 
 When in doubt, use [subdomain gateway](#subdomain-gateway).
 :::
-
-Examples:
-
-```plaintext
-https://<gateway-host>.tld/ipfs/<cid>/path/to/resource
-https://<gateway-host>.tld/ipns/<ipnsid_or_dnslink>/path/to/resource
-```
 
 ## Subdomain gateway
 
