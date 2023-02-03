@@ -93,7 +93,7 @@ v1.toV0().toString()
 
 :::callout
 **See CID conversion in action**
-See the [interactive code sandbox](#codesandbox-converting-between-cid-versions-and-encodings) for an example JS application that converts between CID versions and ecnodings.
+See the [interactive code sandbox](#codesandbox-converting-between-cid-versions-and-encodings) for an example JS application that converts between CID versions and encodings.
 :::
 
 ### Converting between CID base encodings
@@ -119,7 +119,7 @@ const cidV1Bytes = cidV1.bytes
 
 :::callout
 **See CID conversion in action**
-See the [interactive code sandbox](#codesandbox-converting-between-cid-versions-and-encodings) for an example JS application that converts between CID versions and ecnodings.
+See the [interactive code sandbox](#codesandbox-converting-between-cid-versions-and-encodings) for an example JS application that converts between CID versions and encodings.
 :::
 
 
@@ -134,7 +134,7 @@ const cidV1StringBase256 = cidV1.toString(base16);
 
 :::callout
 **See CID conversion in action**
-See the [interactive code sandbox](#codesandbox-converting-between-cid-versions-and-encodings) for an example JS application that converts between CID versions and ecnodings.
+See the [interactive code sandbox](#codesandbox-converting-between-cid-versions-and-encodings) for an example JS application that converts between CID versions and encodings.
 :::
 
 ::: tip
