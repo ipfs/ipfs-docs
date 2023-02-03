@@ -87,7 +87,7 @@ https://<gateway-host>.tld/ipns/<ipnsid>/path/to/resource
 Example:
 
 ```plaintext
-
+https://ipfs.io/ipns/k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8
 ```
 
 ### Using DNSLink
