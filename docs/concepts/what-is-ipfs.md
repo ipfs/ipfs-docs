@@ -8,7 +8,7 @@ description:  Learn about the problems that IPFS addresses, what IPFS is and isn
 IPFS is a modular suite of protocols and standards for organizing and moving data, designed from the ground up with the principles of <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined>content addressing</VueCustomTooltip> and peer-to-peer networking. 
 
 :::callout
-This guide is part 1 of a 2-part introduction to the basic concepts of IPFS. For the second part, which covers how the different subsystems that IPFS is comprised of work and how they work, see [How IPFS works](../concepts//how-ipfs-works.md).
+This guide is part 1 of a 2-part introduction to the basic concepts of IPFS. See the second part: [**How IPFS Works**](../concepts//how-ipfs-works.md), which covers how the different subsystems that IPFS is comprised and how they work.
 :::
 
 In this conceptual guide, you'll learn:
@@ -21,7 +21,7 @@ In this conceptual guide, you'll learn:
 The term _IPFS_ can refer to multiple concepts:
 
 - Software that implements the IPFS protocol specification (like <VueCustomTooltip label="The first implementation of IPFS, written in Go." underlined>Kubo</VueCustomTooltip>) 
-- A decentralized network comprised of <VueCustomTooltip label="Computers participating in an IPFS network by running an IPFS implementation. Also referred to as peers" underlined>IPFS nodes</VueCustomTooltip>.
+- A decentralized network comprised of <VueCustomTooltip label="Computers participating in an IPFS network by running an IPFS implementation. Also referred to as peers" underlined>IPFS nodes</VueCustomTooltip> that anyone can join.
 - A modular suite of protocols and standards for organizing and moving content-addressed data.
 
 ### What IPFS _isn't_
@@ -29,7 +29,7 @@ The term _IPFS_ can refer to multiple concepts:
 While IPFS shares similarities with, and is often used in architectures with the systems described below, IPFS is _not_:
 
 - _A <VueCustomTooltip label="A list of records, known as blocks, linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data." underlined multiline is-medium>blockchain</VueCustomTooltip>_: While IPFS and blockchains do share some concepts and technologies (the use of <VueCustomTooltip label="A function that takes some arbitrary input (content) and returns a fixed-length value. The exact same input data will always generate the same hash as output. There are numerous hash algorithms." underlined multiline is-medium>cryptographic hashes</VueCustomTooltip>, decentralization, verifiability of data, etc.), and IPFS is is used for [verifiable off-chain storage](#verifiable-off-chain-storage), IPFS is not a blockchain.
-- A _storage system, network or provider_: Rather, IPFS  provides a modular suite of protocols and standards for organizing and moving content-addressed data, which many storage solutions and other applications use as a fundamental part of their architecture.
+- A _storage provider_: Rather, IPFS  provides a modular suite of protocols and standards for organizing and moving content-addressed data, which many storage solutions and other applications use as a fundamental part of their architecture.
 - _A <VueCustomTooltip label="An organization that provides its users with on-demand computing resources, such as databases and storage, over the internet." underlined multiline is-medium>cloud service provider</VueCustomTooltip>_: IPFS can be deployed on and complement cloud infrastructure, but it in of itself is not a cloud service provider.
 
 :::callout
@@ -60,7 +60,7 @@ IPFS is an open-source, decentralized system that eliminates the need for a cent
 
 IPFS provides faster access to data by storing it at multiple locations, and allowing users to access it from the nearest location using content addressing instead of <VueCustomTooltip label="Data identified and linked to by it's location. An example is HTTP." underlined>location-based addressing</VueCustomTooltip>. In other words, because data can be addressed based on it's contents, a node on the network can fetch that data from _any_ other node in the netork that has the data; thus, performance issues like latency are reduced. 
 
-### Scalability
+### Resilience 
 
 IPFS has no single point of failure, and users do not need to trust each other. In other words, the failure of a single or even multiple nodes in the network does not affect the functioning of the entire network, and 
 
@@ -78,7 +78,7 @@ IPFS protects <VueCustomTooltip label="The idea that individuals or organization
 
 ### Verifiable off-chain storage
 
-IPFS enables verifiable <VueCustomTooltip label="Storage outside of a blockchain for data processed by the blockchain. Used to store large amounts of data that would be inefficient to store directly on a blockchain, improving scalability and efficiency." underlined multiline is-medium>off-chain storage</VueCustomTooltip> by linking the off-chain data to an IPFS content-addressed data identifier (a <VueCustomTooltip label="An address used to point to data in IPFS, based on the content itself, as opposed to the location." underlined multiline is-medium>Content IDentifier (CID)</VueCustomTooltip>, explained in [How IPFS works](#content-identifier-cid)), which is stored on the IPFS network. This identifier contains a cryptographic hash of the data, allowing anyone to verify the integrity of the data without having to retrieve the data.
+IPFS enables verifiable <VueCustomTooltip label="Storage outside of a blockchain for data processed by the blockchain. Used to store large amounts of data that would be infeasible to store directly on a blockchain, improving scalability and efficiency." underlined multiline is-medium>off-chain storage</VueCustomTooltip> by creating a link between blockchain state and content-addressed published to IPFS. This works by storing a <VueCustomTooltip label="An address used to point to data in IPFS, based on the content itself, as opposed to the location." underlined multiline is-medium>Content IDentifier (CID)</VueCustomTooltip>(explained in [How IPFS works](#content-identifier-cid)) in a smart contract. 
 
 ### Local-first software
 
