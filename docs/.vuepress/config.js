@@ -17,9 +17,6 @@ module.exports = {
   markdown: {
     pageSuffix,
     extendMarkdown: md => {
-      md.set({
-        breaks: true
-      })
       md.use(require('markdown-it-video'))
       md.use(require('markdown-it-footnote'))
       md.use(require('markdown-it-task-lists'))
@@ -72,18 +69,18 @@ module.exports = {
           { text: 'Get Started', link: '/install/' },
           { text: 'Concepts', link: '/concepts/' },
           { text: 'Guides', link: '/how-to/' },
-          { text: 'Reference', link: '/reference/' },   
+          { text: 'Reference', link: '/reference/' },
           { text: 'Project', link: '/project/' },
-          { text: 'Case Studies', 
+          { text: 'Case Studies',
             items: [
               {text: 'Arbol', link : '/case-studies/arbol/'},
               {text: 'Audius', link : '/case-studies/audius'},
               {text: 'Fleek', link : '/case-studies/fleek'},
               {text: 'LikeCoin', link : '/case-studies/likecoin'},
               {text: 'Morpheus.Network', link : '/case-studies/morpheus'},
-              {text: 'Snapshot',link : '/case-studies/snapshot'},              
+              {text: 'Snapshot',link : '/case-studies/snapshot'},
             ]
-          }                  
+          }
         ],
 
         sidebar: {
@@ -115,7 +112,7 @@ module.exports = {
                   '/concepts/content-addressing',
                   '/concepts/hashing',
                   '/concepts/immutability',
-                  '/concepts/persistence', 
+                  '/concepts/persistence',
                   '/concepts/privacy-and-encryption',
                   '/concepts/nodes'
               ]
@@ -136,7 +133,7 @@ module.exports = {
                 '/concepts/merkle-dag'
               ]
             },
-            '/concepts/ipfs-implementations', 
+            '/concepts/ipfs-implementations',
             '/concepts/comparisons',
             '/concepts/usage-ideas-examples',
             '/concepts/faq',
