@@ -46,9 +46,9 @@ IPFS seeks to address problems with the current web and existing data representa
 - [Performance](#performance)
 - [Scalability](#scalablity)
 - [Link rot](#link-rot)
-- [Security](#security)
+- [Verifiability](#verifiability)
 - [Data sovereignty and ownership](#data-sovereignty)
-- [Verifiable off-chain storage](#verifiable-off-chain-storage)
+- [Off-chain storage](#off-chain-storage)
 - [Local-first software](#local-first-software)
 - [Vendor lock-in](#vendor-lock-in)
 
@@ -58,7 +58,7 @@ IPFS is an open-source, decentralized system that eliminates the need for a cent
 
 ### Performance
 
-IPFS provides faster access to data by storing it at multiple locations, and allowing users to access it from the nearest location using content addressing instead of <VueCustomTooltip label="Data identified and linked to by it's location. An example is HTTP." underlined>location-based addressing</VueCustomTooltip>. In other words, because data can be addressed based on it's contents, a node on the network can fetch that data from _any_ other node in the netork that has the data; thus, performance issues like latency are reduced. 
+IPFS provides faster access to data by enabling it to be replicated to and retreived from multiple locations, and allowing users to access data from the nearest location using content addressing instead of <VueCustomTooltip label="Data identified and linked to by it's location. An example is HTTP." underlined>location-based addressing</VueCustomTooltip>. In other words, because data can be addressed based on it's contents, a node on the network can fetch that data from _any_ other node in the netork that has the data; thus, performance issues like latency are reduced. 
 
 ### Resilience 
 
@@ -68,15 +68,15 @@ IPFS has no single point of failure, and users do not need to trust each other. 
 
 IPFS eliminates the problem of broken links by allowing data to be addressed by its content, rather than by its location.
 
-### Security
+### Verifiability
 
-IPFS uses <VueCustomTooltip label="A function that takes some arbitrary input (content) and returns a fixed-length value. The exact same input data will always generate the same hash as output. There are numerous hash algorithms." underlined multiline is-medium>cryptographic hashes</VueCustomTooltip> to ensure the authenticity and integrity of files, making it difficult for malicious actors to tamper with or delete files.
+IPFS uses <VueCustomTooltip label="A function that takes some arbitrary input (content) and returns a fixed-length value. The exact same input data will always generate the same hash as output. There are numerous hash algorithms." underlined multiline is-medium>cryptographic hashes</VueCustomTooltip> to verify the authenticity and integrity of files, making it difficult for malicious actors to tamper with or delete files.
 
 ### Data sovereignty 
 
 IPFS protects <VueCustomTooltip label="The idea that individuals or organizations have control over their own data and the ability to determine who can access and use it." underlined multiline is-medium>data sovereignty</VueCustomTooltip> by enabling users to store and access data directly on a decentralized network of nodes, rather than centralized, third-party servers. This eliminates the need for intermediaries to control and manage data, giving users full control and ownership over their data.
 
-### Verifiable off-chain storage
+### Off-chain storage
 
 IPFS enables verifiable <VueCustomTooltip label="Storage outside of a blockchain for data processed by the blockchain. Used to store large amounts of data that would be infeasible to store directly on a blockchain, improving scalability and efficiency." underlined multiline is-medium>off-chain storage</VueCustomTooltip> by creating a link between blockchain state and content-addressed published to IPFS. This works by storing a <VueCustomTooltip label="An address used to point to data in IPFS, based on the content itself, as opposed to the location." underlined multiline is-medium>Content IDentifier (CID)</VueCustomTooltip>(explained in [How IPFS works](#content-identifier-cid)) in a smart contract. 
 
@@ -86,5 +86,5 @@ IPFS benefits <VueCustomTooltip label="Software in which data is stored and proc
 
 ### Vendor lock-in
 
-IPFS prevents <VueCustomTooltip label="When a user is forced to continue using a product (such as a cloud computing service), because switching to another vendor is impractical, costly, legally constrained, or technically non-trivial / incompatible." underlined multiline is-medium>vendor lock-in</VueCustomTooltip> , as users have sovereignty over their data and infrastructure. In addition, because IPFS is open-source, community-maintained and modular, users are not obligated to use a particular subsystem (described in [How IPFS works](#how-ipfs-works)). Instead, users can customize IPFS to accomodate their preferred technologies, needs and values.
+IPFS prevents <VueCustomTooltip label="When a user is forced to continue using a product (such as a cloud computing service), because switching to another vendor is impractical, costly, legally constrained, or technically non-trivial / incompatible." underlined multiline is-medium>vendor lock-in</VueCustomTooltip> , as users have sovereignty over their data and infrastructure. This is enabled by content-addressing, which decouples the data from a single location or infrastructure provider. Unlike traditional cloud vendors, IPFS enables you to change data storage locations without changing things like APIs and data management. In addition, because IPFS is open-source, community-maintained and modular, users are not obligated to use a particular subsystem (described in [How IPFS works](#how-ipfs-works)). Instead, users can customize IPFS to accomodate their preferred technologies, needs and values.
 
