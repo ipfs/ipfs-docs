@@ -5,10 +5,10 @@ description:  Learn about the problems that IPFS addresses, what IPFS is and isn
 
 # What is IPFS?
 
-IPFS is a modular suite of protocols and standards for organizing and moving data, designed from the ground up with the principles of <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined>content addressing</VueCustomTooltip> and peer-to-peer networking. 
+IPFS is a modular suite of <VueCustomTooltip label="A set of standards, rules or procedures for transmitting data between computers, including how the information will be structured and how each computer will send and receive it. Notable examples include TCP/IP, HTTP/S, SMTP, and DNS." underlined multiline is-medium is-bottom>protocols</VueCustomTooltip> for organizing and moving data, designed from the ground up with the principles of <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>content addressing</VueCustomTooltip> and <VueCustomTooltip label="A network of computers model in which each party has equivalent capabilities and can initiate a communication session." underlined multiline is-medium>peer-to-peer networking</VueCustomTooltip>. Because IPFS is <VueCustomTooltip label="Software released under a license that grants users the rights to use, study, change, and distribute the software and its source code to anyone and for any purpose. Open-source software is often developed in a collaborative public manner that encourages contributions from users." underlined multiline is-medium>open-source</VueCustomTooltip>, there are multiple <VueCustomTooltip label="Software, written in any programming language, with functionality to process and transmit content-addressed data as specified by the IPFS protocol. Some implementations are optimized for specific use cases or devices, or use different subsystems to handle content-addressed data." underlined multiline is-medium>implementations</VueCustomTooltip> of IPFS. 
 
 :::callout
-This guide is part 1 of a 2-part introduction to the basic concepts of IPFS. See the second part: [**How IPFS Works**](../concepts//how-ipfs-works.md), which covers how the different subsystems that IPFS is comprised and how they work.
+This guide is part 1 of a 2-part introduction to [the basic concepts of IPFS](../concepts/README.md#learn-the-basics). The second part, [**How IPFS Works**](../concepts//how-ipfs-works.md), covers the different subsystems that IPFS is comprised of and how each one works.
 :::
 
 In this conceptual guide, you'll learn:
@@ -20,15 +20,15 @@ In this conceptual guide, you'll learn:
 
 The term _IPFS_ can refer to multiple concepts:
 
-- Software that implements the IPFS protocol specification (like <VueCustomTooltip label="The first implementation of IPFS, written in Go." underlined>Kubo</VueCustomTooltip>) 
-- A decentralized network comprised of <VueCustomTooltip label="Computers participating in an IPFS network by running an IPFS implementation. Also referred to as peers" underlined>IPFS nodes</VueCustomTooltip> that anyone can join.
+- Software that implements the IPFS protocol specification (like <VueCustomTooltip label="The first implementation of IPFS, written in Go." underlined multiline>Kubo</VueCustomTooltip>) 
+- A 
+<VueCustomTooltip label="A network of computers in which multiple servers act as a single processing point, without having a central server to manage network activity." underlined multiline is-medium>decentralized network</VueCustomTooltip> comprised of <VueCustomTooltip label="Computers participating in an IPFS network by running an IPFS implementation. Also referred to as peers" underlined multiline>IPFS nodes</VueCustomTooltip> that anyone can join.
 - A modular suite of protocols and standards for organizing and moving content-addressed data.
 
 ### What IPFS _isn't_
 
 While IPFS shares similarities with, and is often used in architectures with the systems described below, IPFS is _not_:
 
-[verifiable off-chain storage](#off-chain-storage)
 - A _storage provider_: Rather, IPFS  provides a modular suite of protocols and standards for organizing and moving content-addressed data, which many storage solutions and other applications use as a fundamental part of their architecture.
 - _A <VueCustomTooltip label="An organization that provides its users with on-demand computing resources, such as databases and storage, over the internet." underlined multiline is-medium>cloud service provider</VueCustomTooltip>_: IPFS can be deployed on and complement cloud infrastructure, but it in of itself is not a cloud service provider.
 
@@ -58,15 +58,15 @@ IPFS is an open-source, decentralized system that eliminates the need for a cent
 
 ### Performance
 
-IPFS provides faster access to data by enabling it to be replicated to and retreived from multiple locations, and allowing users to access data from the nearest location using content addressing instead of <VueCustomTooltip label="Data identified and linked to by it's location. An example is HTTP." underlined>location-based addressing</VueCustomTooltip>. In other words, because data can be addressed based on it's contents, a node on the network can fetch that data from _any_ other node in the netork that has the data; thus, performance issues like latency are reduced. 
+IPFS provides faster access to data by enabling it to be replicated to and retreived from multiple locations, and allowing users to access data from the nearest location using content addressing instead of <VueCustomTooltip label="Data identified and linked to by it's location. An example is HTTP." underlined multiline>location-based addressing</VueCustomTooltip>. In other words, because data can be addressed based on it's contents, a node on the network can fetch that data from _any_ other node in the netork that has the data; thus, performance issues like latency are reduced. 
 
 ### Resilience 
 
-IPFS has no single point of failure, and users do not need to trust each other. In other words, the failure of a single or even multiple nodes in the network does not affect the functioning of the entire network, and 
+IPFS has no single point of failure, and users do not need to trust each other. In other words, the failure of a single or even multiple nodes in the network does not affect the functioning of the entire network, and an IPFS node can fetch data from the network as long as at least one other node in the network has that data, regardless of its location.
 
 ### Link rot
 
-IPFS eliminates the problem of <VueCustomTooltip label="The tendency for hyperlinks over time to cease pointing to their targeted file, web page, or server due to relocation of the resource to a new address, or the resource becoming permanently unavailable." underlined>link rot</VueCustomTooltip> by allowing data to be addressed by its content, rather than by its location. So, in other words, content in IPFS is still reachable regardless of its location, and does not depend on specific servers being available.
+IPFS eliminates the problem of <VueCustomTooltip label="The tendency for hyperlinks over time to cease pointing to their targeted file, web page, or server due to relocation of the resource to a new address, or the resource becoming permanently unavailable." underlined multiline>link rot</VueCustomTooltip> by allowing data to be addressed by its content, rather than by its location. So, in other words, content in IPFS is still reachable regardless of its location, and does not depend on specific servers being available.
 
 ### Verifiability
 
@@ -88,3 +88,9 @@ IPFS benefits <VueCustomTooltip label="Software in which data is stored and proc
 
 IPFS prevents <VueCustomTooltip label="When a user is forced to continue using a product (such as a cloud computing service), because switching to another vendor is impractical, costly, legally constrained, or technically non-trivial / incompatible." underlined multiline is-medium>vendor lock-in</VueCustomTooltip> , as users have sovereignty over their data and infrastructure. This is enabled by content-addressing, which decouples the data from a single location or infrastructure provider. Unlike traditional cloud vendors, IPFS enables you to change data storage locations without changing things like APIs and data management. In addition, because IPFS is open-source, community-maintained and modular, users are not obligated to use a particular subsystem (described in [How IPFS works](#how-ipfs-works)). Instead, users can customize IPFS to accomodate their preferred technologies, needs and values.
 
+## Further reading
+
+- New to IPFS and wanting to dive deeper into the different subsystems that IPFS is comprised of and how each one works? See part 2, [**How IPFS Works**](../concepts//how-ipfs-works.md), of the [introduction to the basic concepts of IPFS](../concepts/README.md#learn-the-basics)
+- Are you looking for a list of implementations of the IPFS protocol, as well as more information on each implementation? See the [IPFS Implementations page](../concepts/ipfs-implementations.md).
+- Do you want to learn how IPFS is used by storage networks and other applications, or looking for inspiration for your own IPFS application? See the [usage ideas and examples](../concepts/usage-ideas-examples.md).
+- Are you interested in comparing IPFS to other similar technologies? See the [IPFS Comparisons page](../concepts/comparisons.md).
