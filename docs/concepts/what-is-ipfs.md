@@ -28,7 +28,7 @@ The term _IPFS_ can refer to multiple concepts:
 
 While IPFS shares similarities with, and is often used in architectures with the systems described below, IPFS is _not_:
 
-- _A <VueCustomTooltip label="A list of records, known as blocks, linked using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data." underlined multiline is-medium>blockchain</VueCustomTooltip>_: While IPFS and blockchains do share some concepts and technologies (the use of <VueCustomTooltip label="A function that takes some arbitrary input (content) and returns a fixed-length value. The exact same input data will always generate the same hash as output. There are numerous hash algorithms." underlined multiline is-medium>cryptographic hashes</VueCustomTooltip>, decentralization, verifiability of data, etc.), and IPFS is is used for [verifiable off-chain storage](#verifiable-off-chain-storage), IPFS is not a blockchain.
+[verifiable off-chain storage](#off-chain-storage)
 - A _storage provider_: Rather, IPFS  provides a modular suite of protocols and standards for organizing and moving content-addressed data, which many storage solutions and other applications use as a fundamental part of their architecture.
 - _A <VueCustomTooltip label="An organization that provides its users with on-demand computing resources, such as databases and storage, over the internet." underlined multiline is-medium>cloud service provider</VueCustomTooltip>_: IPFS can be deployed on and complement cloud infrastructure, but it in of itself is not a cloud service provider.
 
@@ -66,7 +66,7 @@ IPFS has no single point of failure, and users do not need to trust each other. 
 
 ### Link rot
 
-IPFS eliminates the problem of broken links by allowing data to be addressed by its content, rather than by its location.
+IPFS eliminates the problem of <VueCustomTooltip label="The tendency for hyperlinks over time to cease pointing to their targeted file, web page, or server due to relocation of the resource to a new address, or the resource becoming permanently unavailable." underlined>link rot</VueCustomTooltip> by allowing data to be addressed by its content, rather than by its location. So, in other words, content in IPFS is still reachable regardless of its location, and does not depend on specific servers being available.
 
 ### Verifiability
 
