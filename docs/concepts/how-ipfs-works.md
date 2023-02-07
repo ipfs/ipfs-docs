@@ -92,7 +92,7 @@ Want to learn more about Kademlia and DHTs? See the [the Distributed Hash Tables
 
 ### Bitswap
 
-IPFS nodes use Bitswap, a <VueCustomTooltip label="Unlike a request-response protocol, all nodes in the system receive every message transmitted, and decide whether the message received should be immediately discarded, stored or processed." underlined>message-based protocol</VueCustomTooltip>, to fetch and send blocks of data. The process is as follows:
+IPFS nodes use Bitswap, a <VueCustomTooltip label="Unlike a request-response protocol, all nodes in the system receive every message transmitted, and decide whether the message received should be immediately discarded, stored or processed." underlined multiline is-medium>message-based protocol</VueCustomTooltip>, to fetch and send blocks of data. The process is as follows:
 
 1. Requesting nodes broadcast a <VueCustomTooltip label="A list of the CIDs of data blocks that an IPFS node wants to receive from peers in the network." underlined>wantlist</VueCustomTooltip> message to peers in the network.
 1. Peers receiving the wantlist eventually process and respond to the requester with one of the following:
