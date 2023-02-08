@@ -78,7 +78,7 @@ For installation instructions for your operating system, select the appropriate 
 1. Unzip the file to a sensible location, such as `~\Apps\kubo_v0.18.1`.
 
    ```powershell
-   Expand-Archive -Path kubo_v0.18.1.zip -DestinationPath ~\Apps\kubo_v0.18.1
+   Expand-Archive -Path kubo_v0.18.1_windows-amd64 -DestinationPath ~\Apps\kubo_v0.18.1
    ```
 
 1. Move into the `kubo_v0.18.1` folder
