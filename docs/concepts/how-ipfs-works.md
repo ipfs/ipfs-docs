@@ -5,7 +5,7 @@ description: Learn how the InterPlanetary File System (IPFS) works and why it's 
 
 # How IPFS works
 
-Data in IPFS is addressed by its contents (content addressing), rather than a location such as a server address (location addressing). Various subsystems in IPFS are responsible for addressing, routing, and transferring content-addressed data.
+Data in IPFS is addressed by its contents (<VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>content addressing</VueCustomTooltip>), rather than a location, such as a server address (location addressing). Various subsystems in IPFS are responsible for addressing, routing, and transferring content-addressed data.
 
 
 :::callout
@@ -108,7 +108,15 @@ Peers also store wantlists, so that if a peer receives requested blocks at a lat
 
 ### mDNS
 
-Lorem ipsum...
+To quickly and efficiently discover peers, IPFS uses Multicast Domain Name System (mDNS), a type of <VueCustomTooltip label="A system in which human-readable internet domain names are mapped to IP addresses. The Domain Name System has been an essential component of the internet since 1985." underlined multiline is-medium>DNS</VueCustomTooltip> protocol that resolves human-readable internet domain names to IP names without the use of a <VueCustomTooltip label="Any computer application that implements a system in which human-readable internet domain names are mapped to IP addresses (DNS)." underlined multiline is-medium>name server</VueCustomTooltip>. The process for peer discovery is as follows:
+
+1. Given a peer ID, a node broadcasts a query message to multiple peers in the network, asking that the peer having the given peer ID to identify itself.
+2. The peer with the given peer ID then broadcasts a message with its IP address to other peers on the network.
+
+
+
+
+
 
 ### Delegated routing over HTTP
 
