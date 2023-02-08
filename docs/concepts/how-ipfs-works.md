@@ -5,13 +5,14 @@ description: Learn how the InterPlanetary File System (IPFS) works and why it's 
 
 # How IPFS works
 
-Data in IPFS is addressed by its contents (<VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>content addressing</VueCustomTooltip>), rather than a location, such as a server address (location addressing). Various subsystems in IPFS are responsible for addressing, routing, and transferring content-addressed data.
+Data in <VueCustomTooltip label="InterPlanetary File System"  abbreviation is-small>IPFS</VueCustomTooltip> is addressed by its contents (<VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>content addressing</VueCustomTooltip>), rather than a location, such as a server address (location addressing). Various subsystems in IPFS are responsible for addressing, routing, and transferring content-addressed data.
 
 
 :::callout
-This guide is part 2 of a 2-part introduction to the basic concepts of IPFS. For the first part, what IPFS is and the problems it addresses, see [What is IPFS?](../concepts/what-is-ipfs.md).
+This guide is part 2 of a 2-part introduction to [the basic concepts of IPFS](../concepts/README.md#learn-the-basics). The first part, [IPFS and the problems it solves](../concepts/what-is-ipfs.md) defines what IPFS is and isn't, and problems it addresses. 
 :::
-In this conceptual guide, you'll learn about the different subsystems that IPFS is comprised of work and how they work.
+
+In this conceptual guide, you'll learn about the different subsystems that IPFS is comprised of, and how they work.
 
 ## How IPFS represents data
 
@@ -71,10 +72,10 @@ IPFS uses Content Addressable aRchive (CAR) files to store and transfer a serial
 
 While [the subsystems described above](#how-ipfs-represents-data) handle the representation of data, IPFS needs to route the data between <VueCustomTooltip label="Programs that implement the IPFS protocol and participate in the IPFS network. Also referred to as a peer." underlined>nodes</VueCustomTooltip> in the network. In other words, a node cannot simply find data in the network with a CID alone; it requires information about the IP addresses and ports of its <VueCustomTooltip label="Programs that implement the IPFS protocol and participate in the IPFS network. Also referred to as a node." underlined multiline is-left>peers</VueCustomTooltip>  on the network. To handle the routing of data, IPFS uses the following subsystems:
 
-- [Kademlia Distributed Hash Table (DHT)]()
-- [Bitswap]()
-- [mDNS]()
-- [Delegated routing over HTTP]()
+- [Kademlia Distributed Hash Table (DHT)](#kademlia-distributed-hash-table-dht)
+- [Bitswap](#bitswap)
+- [mDNS](#mdns)
+- [Delegated routing over HTTP](#delegated-routing-over-http)
 
 ### Kademlia Distributed Hash Table (DHT)
 
@@ -111,33 +112,38 @@ Peers also store wantlists, so that if a peer receives requested blocks at a lat
 To quickly and efficiently discover peers, IPFS uses Multicast Domain Name System (mDNS), a type of <VueCustomTooltip label="A system in which human-readable internet domain names are mapped to IP addresses. The Domain Name System has been an essential component of the internet since 1985." underlined multiline is-medium>DNS</VueCustomTooltip> protocol that resolves human-readable internet domain names to IP names without the use of a <VueCustomTooltip label="Any computer application that implements a system in which human-readable internet domain names are mapped to IP addresses (DNS)." underlined multiline is-medium>name server</VueCustomTooltip>. The process for peer discovery is as follows:
 
 1. Given a peer ID, a node broadcasts a query message to multiple peers in the network, asking that the peer having the given peer ID to identify itself.
-2. The peer with the given peer ID then broadcasts a message with its IP address to other peers on the network.
+2. The peer with the given peer ID then broadcasts a message with its IP address to other peers on the network, which can then use that information to update their own mDNS records.
 
+The use of mDNS in IPFS has several benefits that make it a clear choice for peer discovery over traditional DNS:
 
-
-
-
+- Nodes can broadcast messages requesting and reporting address information to multiple peers, increasing speed and efficiency of peer discovery
+- Nodes do not rely on a centralized name server to discover other peers, improving network resilience, decentralization and censorship resistance
 
 ### Delegated routing over HTTP
 
-Lorem ipsum...
+Because IPFS is an open-source protocol with multiple implementations, an IPFS node is not required to implement full routing functionality itself. Instead, an IPFS node can request that a <VueCustomTooltip label="An IPFS node that perform tasks on behalf of network peers using the IPFS HTTP API." underlined multiline is-medium>delegated router</VueCustomTooltip> perform a routing task for it. For example, if an IPFS node does not implement the DHT, a delegated router can search the DHT for peers on its behalf. The main benefit of delegated routing is that nodes are not required to implement routing functionality themselves if they do not wish to, or do not have the computing resources to do so.
 
 ## How IPFS transfers data
 
 In addition to [routing data](#how-ipfs-routes-data), nodes in the IPFS network must efficiently distribute and deliver the content addressed data, taking into account that there are some nodes in the network who already have a copy of the data, and other nodes who do not have a copy of the data, but want one. To handle the transfer of data, IPFS uses the following subsystems:
 
-- [Bitswap]()
-- [IPFS HTTP Gateways]()
+- [IPFS HTTP Gateways](#ipfs-http-gateways)
 - [GraphSync]()
 - [Sneakernet]()
 
-### Bitswap
-
-Lorem ipsum...
-
 ### IPFS HTTP Gateways
 
-Lorem ipsum...
+HTTP Gateways allow applications that do not support or implement the IPFS protocol to interact with nodes on the IPFS network. There are multiple types of HTTP gateways, each optimized for specific tasks, and other factors like security and performance. Examples include:
+
+- _<VueCustomTooltip label="An IPFS HTTP Gateway that can fetch data from the IPFS network using the HTTP GET method." underlined multiline is-small is-right>Read-only</VueCustomTooltip>_
+- _<VueCustomTooltip label="An IPFS HTTP Gateway that can write data to the IPFS network using the HTTP POST, PUT and DELETE methods." underlined multiline is-small is-right>Writeable</VueCustomTooltip>_
+- _<VueCustomTooltip label="An IPFS HTTP Gateway that can limit access to and from data on the IPFS network by acting as a reverse proxy." underlined multiline is-small is-right>Authentication</VueCustomTooltip>_
+
+Additionally, there are multiple types of gateway providers:
+
+- _<VueCustomTooltip label="An IPFS HTTP Gateway hosted as a local service i.e. at localhost:8080 on your local machine." underlined multiline is-small is-right>Local gateway</VueCustomTooltip>_
+- _<VueCustomTooltip label="An IPFS HTTP Gateway hosted within a private network that handles access to the IPFS network for multiple computers within the private network, and may be configured to limit access to requests from specific domains." underlined multiline is-small is-right>Private gateway</VueCustomTooltip>_
+- _<VueCustomTooltip label="An IPFS HTTP Gateway hosted and operated by a third-party, such as Protocol Labs." underlined multiline is-small is-right>Public gateway</VueCustomTooltip>_
 
 ### GraphSync
 
@@ -147,6 +153,6 @@ Lorem ipsum...
 
 Lorem ipsum...
 
-## Learn more 
+## Further reading
 
 Lorem ipsum...

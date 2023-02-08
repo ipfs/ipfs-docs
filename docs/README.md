@@ -13,7 +13,7 @@ While IPFS is a file system, it is _not_ a storage system. Instead, IPFS can be 
 
 Check out these docs to get started with IPFS:
 
-- [What is IPFS?](concepts/what-is-ipfs.md#what-is-ipfs)
+- [IPFS and the problems it solves](concepts/what-is-ipfs.md#what-is-ipfs)
 - [Key concepts](concepts/README.md)
 - [Case studies](concepts/README.md#examples-and-case-studies)
 - [How-to guides](how-to/README.md)
@@ -41,7 +41,7 @@ Protect yourself from single-point-of-failure risks and benefit from decentraliz
 
 Want to know more about the decentralized web (DWeb) and how it's changing the internet? These resources will give you a clearer understanding of the DWeb movement, and how it's improving the world:
 
-- [What is IPFS](concepts/what-is-ipfs.md)
+- [IPFS and the problems it solves](concepts/what-is-ipfs.md)
 - [Peer-to-peer sharing](concepts/dht.md)
 - [Content-addressed data](concepts/content-addressing.md)
 

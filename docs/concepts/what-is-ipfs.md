@@ -1,14 +1,14 @@
 ---
-title: What is IPFS?
-description:  Learn about the problems that IPFS addresses, what IPFS is and isn't, and how the different subsystems that IPFS is comprised of work.
+title: IPFS and the problems it solves
+description:  Learn what IPFS is and isn't, and the problems that IPFS addresses.
 ---
 
-# What is IPFS?
+# IPFS and the problems it solves
 
 IPFS is a modular suite of <VueCustomTooltip label="A set of standards, rules or procedures for transmitting data between computers, including how the information will be structured and how each computer will send and receive it. Notable examples include TCP/IP, HTTP/S, SMTP, and DNS." underlined multiline is-medium is-bottom>protocols</VueCustomTooltip> for organizing and moving data, designed from the ground up with the principles of <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>content addressing</VueCustomTooltip> and <VueCustomTooltip label="A network of computers model in which each party has equivalent capabilities and can initiate a communication session." underlined multiline is-medium>peer-to-peer networking</VueCustomTooltip>. Because IPFS is <VueCustomTooltip label="Software released under a license that grants users the rights to use, study, change, and distribute the software and its source code to anyone and for any purpose. Open-source software is often developed in a collaborative public manner that encourages contributions from users." underlined multiline is-medium>open-source</VueCustomTooltip>, there are multiple <VueCustomTooltip label="Software, written in any programming language, with functionality to process and transmit content-addressed data as specified by the IPFS protocol. Some implementations are optimized for specific use cases or devices, or use different subsystems to handle content-addressed data." underlined multiline is-medium>implementations</VueCustomTooltip> of IPFS. 
 
 :::callout
-This guide is part 1 of a 2-part introduction to [the basic concepts of IPFS](../concepts/README.md#learn-the-basics). The second part, [**How IPFS Works**](../concepts//how-ipfs-works.md), covers the different subsystems that IPFS is comprised of and how each one works.
+This guide is part 1 of a 2-part introduction to [the basic concepts of IPFS](../concepts/README.md#learn-the-basics). The second part, [**How IPFS Works**](../concepts/how-ipfs-works.md), covers the different subsystems that IPFS is comprised of and how each one works.
 :::
 
 In this conceptual guide, you'll learn:
