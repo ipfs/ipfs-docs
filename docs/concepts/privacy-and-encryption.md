@@ -77,13 +77,13 @@ If your privacy concerns are less about the potential for monitoring and more ab
 While today's encryption might seem bulletproof _right now_, there is no guarantee that it won't be broken at some point in the future. Future breakthroughs in computing might allow going back and decrypting older content that's been put on a public network, such as IPFS. If you want to guard against this potential attack vector, using IPFS hybrid-private networks — in which nodes sit behind connection gates that check request ACLs before giving a node a request — is a potential design direction. For more details, [this article from Pinata](https://medium.com/pinata/dedicated-ipfs-networks-c692d53f938d) may be helpful.
 :::
 
-If you're curious about implementing encryption with IPFS on a large scale, you may enjoy reading [this case study on Fleek, a fast-growing IPFS file hosting and delivery service](case-study-fleek.md).
+If you're curious about implementing encryption with IPFS on a large scale, you may enjoy reading [this case study on Fleek, a fast-growing IPFS file hosting and delivery service](../case-studies/fleek.md).
 
 #### Encryption-based projects using IPFS
 
 - [Ceramic](https://ceramic.network/)
 - [Fission.codes](https://fission.codes/)
-- [Fleek](case-study-fleek.md)
+- [Fleek](../case-studies/fleek.md)
 - [Lit Protocol](https://litprotocol.com/)
 - [OrbitDB](https://github.com/orbitdb)
 - [Peergos](https://peergos.org/)
@@ -93,5 +93,5 @@ If you're curious about implementing encryption with IPFS on a large scale, you 
 
 [Private IPFS networks](https://github.com/ipfs/kubo/blob/release-v0.9.0/docs/experimental-features.md#private-networks) provide full protection from public monitoring but can lack the scale benefits provided by the public IPFS network. A private network operates identically to the public one, but with one critical difference: it can only be accessed by nodes that have been given access, and it will only ever scale to those nodes. This means that the benefits of the public IPFS network's massive scale, such as geographic resiliency and speedy retrieval of high-demand content, won't be realized unless the private network is explicitly designed and scaled with this in mind.
 
-Running a private network can be a great option for corporate implementations of IPFS — for one example, see [this case study on Morpheus.Network](case-study-morpheus.md) — because the network's topology can be specified and built exactly as desired.
+Running a private network can be a great option for corporate implementations of IPFS — for one example, see [this case study on Morpheus.Network](../case-studies/morpheus.md) — because the network's topology can be specified and built exactly as desired.
 
