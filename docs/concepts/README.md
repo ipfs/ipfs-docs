@@ -39,12 +39,12 @@ Check out ResNetLab on Tour for complete tutorials on IPFS and the Web 3.0 stack
 Get inspired by usage ideas, explore examples of IPFS implemented in the wild, and dig deeper with case studies on applications and projects in which IPFS plays a crucial role.
 
 - [Usage ideas & examples](usage-ideas-examples.md)
-- [Case study: Arbol](case-study-arbol.md)
-- [Case study: Audius](case-study-audius.md)
-- [Case study: Fleek](case-study-fleek.md)
-- [Case study: LikeCoin](case-study-likecoin.md)
-- [Case study: Morpheus.Network](case-study-morpheus.md)
-- [Case study: Snapshot](case-study-snapshot.md)
+- [Case study: Arbol](../case-studies/arbol.md)
+- [Case study: Audius](../case-studies/audius.md)
+- [Case study: Fleek](../case-studies/fleek.md)
+- [Case study: LikeCoin](../case-studies/likecoin.md)
+- [Case study: Morpheus.Network](../case-studies/morpheus.md)
+- [Case study: Snapshot](../case-studies/snapshot.md)
 
 ## Content-addressed storage
 
