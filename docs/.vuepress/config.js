@@ -99,12 +99,18 @@ module.exports = {
           ],
           '/concepts/': [
             {
-              title: 'Basic Concepts',
+              title: 'Basics',
               sidebarDepth: 1,
               collapsable: true,
               children: [
                   '/concepts/what-is-ipfs',
                   '/concepts/how-ipfs-works',
+                  '/concepts/content-addressing',
+                  '/concepts/hashing',
+                  '/concepts/immutability',
+                  '/concepts/persistence',
+                  '/concepts/privacy-and-encryption',
+                  '/concepts/nodes',
               ]
             },
             {

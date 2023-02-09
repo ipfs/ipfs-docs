@@ -116,8 +116,8 @@ To quickly and efficiently discover peers, IPFS uses Multicast Domain Name Syste
 
 The use of mDNS in IPFS has several benefits that make it a clear choice for peer discovery over traditional DNS:
 
-- Nodes can broadcast messages requesting and reporting address information to multiple peers, increasing speed and efficiency of peer discovery
-- Nodes do not rely on a centralized name server to discover other peers, improving network resilience, decentralization and censorship resistance
+- Nodes can broadcast messages requesting and reporting address information to multiple peers, increasing speed and efficiency of peer discovery.
+- Nodes do not rely on a centralized name server to discover other peers, improving network resilience, decentralization and censorship resistance.
 
 ### Delegated routing over HTTP
 
@@ -128,8 +128,8 @@ Because IPFS is an open-source protocol with multiple implementations, an IPFS n
 In addition to [routing data](#how-ipfs-routes-data), nodes in the IPFS network must efficiently distribute and deliver the content addressed data, taking into account that there are some nodes in the network who already have a copy of the data, and other nodes who do not have a copy of the data, but want one. To handle the transfer of data, IPFS uses the following subsystems:
 
 - [IPFS HTTP Gateways](#ipfs-http-gateways)
-- [GraphSync]()
-- [Sneakernet]()
+- [GraphSync](#graphsync)
+- [Sneakernet](#sneakernet)
 
 ### IPFS HTTP Gateways
 
@@ -147,14 +147,17 @@ Additionally, there are multiple types of gateway providers:
 
 ### GraphSync
 
-Lorem ipsum...
+Graphsync is an alternative to the [Bitswap](#bitswap) protocol for the fetching and sending of block in IPFS. Unlike Bitswap, which exchanges data block by block, Graphsync allows for a more precise and efficient exchange of data using <VueCustomTooltip label="A set of specifications in support of decentralized, content-addressable data structures for the web." underlined multiline is-medium>IPLD</VueCustomTooltip> <VueCustomTooltip label="Expressions in IPLD for efficient traversal and selection of a subset of nodes in a Merkle DAG." underlined multiline is-medium>selectors</VueCustomTooltip> to select a specific subset of blocks for download. Additionally, Graphsync is a <VueCustomTooltip label="A basic protocol for communication between computers, in which a requester sends a request message to a replier system, which processes the request and returns a message in response." underlined multiline is-medium>request-response protocol</VueCustomTooltip> between two IPFS nodes, so requests for data are not broadcast to the entire network. Because of this, a node must know that a peer that it is sending a request to actually has the requested data. Otherwise, the peer will simply respond that it does not have the requested data, and the node will have to request that data from other peers. Graphsync is quick and efficient alternative to Bitswap when:
+
+- Quick and efficient transfer of large amounts of data between a node and its peer is required.
+- A node knows that the peer it is requesting data from actually has the data.
 
 ### Sneakernet
 
 For use cases where transfer of data over a network connection is not an option, IPFS supports the use of <VueCustomTooltip label="An informal term for the transfer of data between computers through removable devices (hard drives, flash drives, optical disks, etc.), which are physically transported between computers, as opposed to transferring the data over the network." underlined multiline is-small is-right>sneakernet</VueCustomTooltip> to transfer content-addressed data between IPFS nodes. Sneakernets are a great option for data transfer in the following situations:
 
-- Computer network maintenance is prohibitively expensive.
-- Manual inspection of data for things like re-classification of information is necessary, such as a high-security environment.
+- Computer network maintenance is impractical or expensive.
+- Manual inspection of data for things like re-classification of information is necessary, such as in a high-security environment.
 - Data needs to be shared between networks with different security requirements.
 - Bandwidth limitations make data transfer impractical.
 - A particular system is incompatible or unable to connect with the local network, or is not on the same network. 
@@ -165,4 +168,8 @@ Using IPFS, data transferred via sneakernet is [verifiable](../concepts/what-is-
 
 ## Further reading
 
-Lorem ipsum...
+- Are you looking for a deep dive into the design, architecture and theory of IPFS? See the [original IPFS whitepaper](../concepts/further-reading/academic-papers.md#ipfs---content-addressed-versioned-p2p-file-system).
+- Dive deeper into the related concepts of [immutability](../concepts/immutability.md), [hashing](../concepts/hashing.md), [content-addressing and CIDs](../concepts/content-addressing.md).
+- Learn about [IPFS pinning, along with the differences between persistence, permanence, and pinning](../concepts/persistence.md).
+- Understand [privacy and encryption in IPFS](../concepts/privacy-and-encryption.md).
+- Learn more about [IPFS nodes, including the different types](../concepts/nodes.md).
