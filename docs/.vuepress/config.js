@@ -109,7 +109,13 @@ module.exports = {
               children: [
                   '/concepts/what-is-ipfs',
                   '/concepts/how-ipfs-works',
-                  '/concepts/content-addressing',
+              ]
+            },
+            {
+              title: 'Ideas and Theory',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
                   '/concepts/hashing',
                   '/concepts/immutability',
                   '/concepts/persistence',
@@ -122,6 +128,7 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
+                '/concepts/content-addressing',
                 '/concepts/bitswap',
                 '/concepts/dht',
                 '/concepts/dnslink',
@@ -157,6 +164,7 @@ module.exports = {
                   'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
                   'Customize an IPFS repo'
                 ],
+                '/how-to/kubo-garbage-collection',
                 '/how-to/best-practices-for-ipfs-builders',
                 '/how-to/troubleshooting'
               ]
@@ -234,6 +242,14 @@ module.exports = {
               children: [
                 '/how-to/mint-nfts-with-ipfs',
                 '/how-to/best-practices-for-nft-data'
+              ]
+            },
+            {
+              title: 'Best Practices',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
+                ['/how-to/privacy-best-practices', 'Privacy and Encryption'],
               ]
             }
           ],
