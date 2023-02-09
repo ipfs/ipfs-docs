@@ -151,7 +151,17 @@ Lorem ipsum...
 
 ### Sneakernet
 
-Lorem ipsum...
+For use cases where transfer of data over a network connection is not an option, IPFS supports the use of <VueCustomTooltip label="An informal term for the transfer of data between computers through removable devices (hard drives, flash drives, optical disks, etc.), which are physically transported between computers, as opposed to transferring the data over the network." underlined multiline is-small is-right>sneakernet</VueCustomTooltip> to transfer content-addressed data between IPFS nodes. Sneakernets are a great option for data transfer in the following situations:
+
+- Computer network maintenance is prohibitively expensive.
+- Manual inspection of data for things like re-classification of information is necessary, such as a high-security environment.
+- Data needs to be shared between networks with different security requirements.
+- Bandwidth limitations make data transfer impractical.
+- A particular system is incompatible or unable to connect with the local network, or is not on the same network. 
+- Censorship circumvention is necessary.
+- Data needs to be made available in places that don't have direct connections to a network.
+
+Using IPFS, data transferred via sneakernet is [verifiable](../concepts/what-is-ipfs.md#verifiability) and will have the same CID on both sides of the air gap.
 
 ## Further reading
 
