@@ -13,8 +13,7 @@ While IPFS is a file system, it is _not_ a storage system. Instead, IPFS can be 
 
 Check out these docs to get started with IPFS:
 
-- [IPFS and the problems it solves](concepts/what-is-ipfs.md#what-is-ipfs)
-- [Key concepts](concepts/README.md)
+- [Learn the basics](concepts/README.md#learn-the-basics)
 - [Case studies](concepts/README.md#examples-and-case-studies)
 - [How-to guides](how-to/README.md)
 - [API and CLI references](reference/README.md)

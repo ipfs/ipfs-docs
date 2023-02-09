@@ -90,7 +90,7 @@ IPFS prevents <VueCustomTooltip label="When a user is forced to continue using a
 
 ## Further reading
 
-- New to IPFS and wanting to dive deeper into the different subsystems that IPFS is comprised of and how each one works? See part 2, [**How IPFS Works**](../concepts//how-ipfs-works.md), of the [introduction to the basic concepts of IPFS](../concepts/README.md#learn-the-basics)
+- New to IPFS and wanting to dive deeper into the different subsystems that IPFS is comprised of and how each one works? See part 2, [**How IPFS Works**](../concepts/how-ipfs-works.md), of the [introduction to the basic concepts of IPFS](../concepts/README.md#learn-the-basics)
 - Are you looking for a list of implementations of the IPFS protocol, as well as more information on each implementation? See the [IPFS Implementations page](../concepts/ipfs-implementations.md).
 - Do you want to learn how IPFS is used by storage networks and other applications, or looking for inspiration for your own IPFS application? See the [usage ideas and examples](../concepts/usage-ideas-examples.md).
 - Are you interested in comparing IPFS to other similar technologies? See the [IPFS Comparisons page](../concepts/comparisons.md).
