@@ -18,6 +18,7 @@ Understand the basics of IPFS, the problems it solves and get a high-level overv
 
 Want the basics in theater mode? Check out these helpful videos for an overview of how IPFS works with files and the overall data lifecycle in the d-web.
 
+<!-- markdown-link-check-disable -->
 @[youtube](Z5zNPwMDYGg)
 
 - [Understanding how IPFS deals with files (IPFS Camp 2019)](https://youtu.be/Z5zNPwMDYGg)
@@ -29,7 +30,7 @@ Want the basics in theater mode? Check out these helpful videos for an overview 
 @[youtube](J-drqD2UebM)
 
 - [IPFS: A Whiteboard Overview](https://www.youtube.com/watch?v=J-drqD2UebM)
-
+<!-- markdown-link-check-enable-->
 Check out ResNetLab on Tour for complete tutorials on IPFS and the Web 3.0 stack:
 
 - [ResNetLab on Tour 2021](https://research.protocol.ai/tutorials/resnetlab-on-tour/)

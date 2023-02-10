@@ -9,7 +9,7 @@ You can update IPFS Content IDentifiers (CIDs) by creating a pointer to IPNS or 
 
 ## Using IPNS to create pointers to CIDs
 
-To avoid the pitfalls of immutability and ensure that CIDs accurately reflect the current state of content, developers can use IPNS to create pointers to CIDs that can be updated. Instead of updating the CID itself, developers can update the IPNS address, which points to the current CID. This allows users to reference a stable, fixed IPNS address while still being able to access the latest version of the content. Learn more about IPNS [here](ipns.md).
+To avoid the pitfalls of immutability and ensure that CIDs accurately reflect the current state of content, developers can use IPNS to create pointers to CIDs that can be updated. Instead of updating the CID itself, developers can update the IPNS address, which points to the current CID. This allows users to reference a stable, fixed IPNS address while still being able to access the latest version of the content. Learn more about IPNS [here](../concepts/ipns.md).
 
 ## Using smart contracts to manage CIDs
 
