@@ -1,6 +1,6 @@
 ---
 title: Immutability
-sidebarDepth: 1
+sidebarDepth: 0
 issueUrl: https://github.com/ipfs/docs/issues/386
 description: Learn about the concept of data immutability and how it's critical to how IPFS works.
 related:
