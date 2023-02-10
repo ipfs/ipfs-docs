@@ -39,7 +39,7 @@ We're adding more documentation all the time and making ongoing revisions to exi
 
 ## Subsystems and components
 
-- [Content IDentifiers (CIDs)](content-addressing.md)
+- [Content Identifiers (CIDs)](content-addressing.md)
 - [Bitswap](bitswap.md)
 - [Distributed Hash Tables (DHTs)](dht.md)
 - [DNSLink](dnslink.md)

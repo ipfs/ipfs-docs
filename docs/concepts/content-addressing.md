@@ -1,11 +1,11 @@
 ---
-title: Content IDentifiers (CIDs)
+title: Content Identifiers (CIDs)
 description: Learn about how content addressing works and how content identifiers, or CIDs, play a crucial role in IPFS.
 ---
 
-# Content IDentifiers (CIDs)
+# Content Identifiers (CIDs)
 
-As described in [IPFS and the problems it solves](../concepts/what-is-ipfs.md), IPFS is a modular suite of protocols purpose built for the organization and movement of <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>content-addressed data</VueCustomTooltip>. In this guide, you'll learn more about the fundamentals of content-addressing in IPFS and how IPFS uses Content IDentifiers (CIDs) to handle content-addressed data.
+As described in [IPFS and the problems it solves](../concepts/what-is-ipfs.md), IPFS is a modular suite of protocols purpose built for the organization and movement of <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>content-addressed data</VueCustomTooltip>. In this guide, you'll learn more about the fundamentals of content-addressing in IPFS and how IPFS uses Content Identifiers (CIDs) to handle content-addressed data.
 
 ## What is a CID?
 
@@ -18,7 +18,22 @@ CIDs are based on the content’s [cryptographic hash](hashing.md). That means:
 
 IPFS uses the `sha-256` hashing algorithm by default, but there is support for many other algorithms. The [Multihash](https://multiformats.io/multihash/) project represents the work for this, with the aim of future-proofing applications' use of hashes and allowing multiple hash functions to coexist. (If you're curious about how hash types in IPFS are decided upon, you may wish to keep an eye on [this forum discussion](https://discuss.ipfs.tech/t/who-decides-what-hashing-algorithms-ipfs-allows/6742).)
 
-## Content Identifiers are not file hashes
+## How CIDs are created
+
+CIDs contain the hash and the codec of the data. In general, the CID is generated for each block by:
+
+1. Computing a cryptographic hash of the block's data.
+1. Combining that hash with codec information about the block using the following <VueCustomTooltip label="A collection of interoperable, extensible protocols for making data self-describable." underlined multiline is-medium>multiformats</VueCustomTooltip>. 
+   - <VueCustomTooltip label="A protocol for differentiating outputs from various well-established hash function." underlined multiline is-medium>Multihash</VueCustomTooltip> for information on the algorithm used to hash the data.
+   - <VueCustomTooltip label="A protocol for differentiating the format of the target data." underlined multiline is-medium>Multicodec</VueCustomTooltip> for information on how to interpret the hashed data after it has been fetched.
+   - <VueCustomTooltip label="A protocol for differentiating the encoding of base-encoded (e.g., base32, base36, base64, base58, etc.) binary data appearing in text." underlined multiline is-medium>Multibase</VueCustomTooltip> for information on how the hashed data is encoded.
+
+:::callout
+**CIDs will not match the hash of the data**
+While a data block's CID is constructed using the cryptographic hash of the data block, a CID contains additional information (described above) that the hash does not. For further information, see [CIDs are not file hashes](#cids-are-not-file-hashes) below.
+:::
+
+## CIDs are not file hashes
 
 Hash functions are widely used to check for file integrity. Because IPFS splits content into blocks and verifies them through [directed acyclic graphs (DAGs)](../concepts/merkle-dag.md), SHA file hashes won't match CIDs. Here's an example of what will happen if you try to do that.
 

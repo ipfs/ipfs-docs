@@ -177,7 +177,6 @@ module.exports = {
                 '/how-to/store-play-videos',
                 '/how-to/host-git-repo',
                 '/how-to/move-ipfs-installation/move-ipfs-installation',
-                '/how-to/updating-cids', 
               ]
             },
             {
@@ -238,16 +237,15 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/mint-nfts-with-ipfs',
-
+                '/how-to/best-practices-for-nft-data'         
               ]
             },
             {
-              title: 'Best Practices',
+              title: 'Privacy and Encryption',
               sidebarDepth: 1,
               collapsable: true,
               children: [
                 ['/how-to/privacy-best-practices', 'Privacy and Encryption'], 
-                '/how-to/best-practices-for-nft-data'         
               ]
             }
           ],

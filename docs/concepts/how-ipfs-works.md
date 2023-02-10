@@ -24,18 +24,7 @@ IPFS represents data as content-addressed <VueCustomTooltip label="The term for 
 
 ### Content IDentifier (CID)
 
-In IPFS, data is chunked into <VueCustomTooltip label="The term for a single unit of data in IPFS." underlined multiline is-medium>blocks</VueCustomTooltip>, which are assigned a unique identifier called a <VueCustomTooltip label="An address used to point to data in IPFS, based on the content itself, as opposed to the location." underlined multiline is-medium>Content IDentifier (CID)</VueCustomTooltip>. In general, the CID is generated for each block by:
-
-1. Computing a cryptographic hash of the block's data.
-1. Combining that hash with other information about the block using the following <VueCustomTooltip label="A collection of interoperable, extensible protocols for making data self-describable." underlined multiline is-medium>multiformats</VueCustomTooltip>. 
-   - <VueCustomTooltip label="A protocol for differentiating outputs from various well-established hash function." underlined multiline is-medium>Multihash</VueCustomTooltip> for information on the algorithm used to hash the data.
-   - <VueCustomTooltip label="A protocol for differentiating the format of the target data." underlined multiline is-medium>Multicodec</VueCustomTooltip> for information on how to interpret the hashed data after it has been fetched.
-   - <VueCustomTooltip label="A protocol for differentiating the encoding of base-encoded (e.g., base32, base36, base64, base58, etc.) binary data appearing in text." underlined multiline is-medium>Multibase</VueCustomTooltip> for information on how the hashed data is encoded.
-
-:::callout
-**CIDs will not match the hash of the data**
-While a data block's CID is constructed using the cryptographic hash of the data block, a CID contains additional information (described above) that the has does not.
-:::
+In IPFS, data is chunked into <VueCustomTooltip label="The term for a single unit of data in IPFS." underlined multiline is-medium>blocks</VueCustomTooltip>, which are assigned a unique identifier called a <VueCustomTooltip label="An address used to point to data in IPFS, based on the content itself, as opposed to the location." underlined multiline is-medium>Content IDentifier (CID)</VueCustomTooltip>.  In general, the CID is computed by combining the hash of the data with it's <VueCustomTooltip label="Software capable of encoding and/or decoding data." underlined multiline is-medium>codec</VueCustomTooltip>. The codec is generated using <VueCustomTooltip label="A collection of interoperable, extensible protocols for making data self-describable." underlined multiline is-medium>multiformats</VueCustomTooltip>. 
 
 CIDs are unique to the data from which they were computed, which provides IPFS with the following benefits:
 - Data can fetched based on it's content, rather than it's location. 
@@ -43,21 +32,21 @@ CIDs are unique to the data from which they were computed, which provides IPFS w
 
 :::callout
 **Learn more**
-The CID protocol has two versions, v0 and v1. Currently, v1 is the preferred version. Each version computes the CID in a slightly different way, Learn more in [the CID deep dive](../concepts/content-addressing.md#cid-versions).
+Learn more about about the concepts behind CIDs described here with the [the CID deep dive](../concepts/content-addressing.md#cid-versions).
 :::
 
 
 ### InterPlanetary Linked Data (IPLD)
 
-IPFS uses <VueCustomTooltip label="A set of specifications in support of decentralized, content-addressable data structures for the web." underlined multiline is-medium>InterPlanetary Linked Data (IPLD)</VueCustomTooltip> to work with CIDs and content-addressed data. IPFS uses IPLD to structure, serialize, traverse and link content-addressed data. The IPLD linking mechanism allows IPFS to represent complex relationships between data, such as file directories and other hierarchical structures, using a <VueCustomTooltip label="Data structured as a graph whose nodes are directionally related to each other and don’t form a directional closed loop." underlined multiline is-medium>Directed Acyclic Graph (DAG)</VueCustomTooltip> called a <VueCustomTooltip label="A special type of DAG where each node has a unique identifier that is a hash of the node's contents." underlined multiline is-medium>Merkle DAG</VueCustomTooltip>. 
+IPFS uses <VueCustomTooltip label="A set of specifications in support of decentralized, content-addressable data structures for the web." underlined multiline is-medium>InterPlanetary Linked Data (IPLD)</VueCustomTooltip> to work with CIDs and content-addressed data. IPFS uses IPLD to structure, serialize, traverse and link any type of content-addressed data. These IPLD mechanisms allows IPFS to represent relationships between content-addressed data, such as file directories and other hierarchical structures, using a <VueCustomTooltip label="Data structured as a graph whose nodes are directionally related to each other and don’t form a directional closed loop." underlined multiline is-medium>Directed Acyclic Graph (DAG)</VueCustomTooltip> called a <VueCustomTooltip label="A special type of DAG where each node has a unique identifier that is a hash of the node's contents." underlined multiline is-medium>Merkle DAG</VueCustomTooltip>. 
 
 IPLD provides IPFS with the following benefits:
 
-- Functionality to structure, serialize, traverse and link content-addressed data
+- The ability to represent arbitrary data, as well as files and directories.
+- functionality to structure, serialize, traverse and link content-addressed data
 - Interoperable protocols
 - Easy upgradeability
 - Backwards compatibility
-- A single namespace for all hash-based protocols
 
 :::callout
 **Learn more**
