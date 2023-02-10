@@ -1,5 +1,5 @@
 ---
-title: 'IPFS Comparisons'
+title: 'IPFS comparisons'
 description: Comparing IPFS to other solutions.
 ---
 
