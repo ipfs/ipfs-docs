@@ -108,7 +108,7 @@ module.exports = {
               ]
             },
             {
-              title: 'Ideas and Theory',
+              title: 'Ideas and theory',
               sidebarDepth: 1,
               collapsable: true,
               children: [
@@ -120,7 +120,7 @@ module.exports = {
               ]
             },
             {
-              title: 'Subsystems and Components',
+              title: 'Subsystems and components',
               sidebarDepth: 1,
               collapsable: true,
               children: [

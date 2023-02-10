@@ -3,9 +3,7 @@ title: 'IPFS Comparisons'
 description: Comparing IPFS to other solutions.
 ---
 
-# IPFS Comparisons
-
-## How is IPFS different from other solutions?
+# IPFS comparisons
 
 IPFS is a general-purpose file system that uses a distributed hash table (DHT) to route and transfer content-addressed data. This sets it apart from other solutions with a more specific focus or use of a specific data storage mechanism. For example:
 
