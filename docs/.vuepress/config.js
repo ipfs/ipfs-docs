@@ -162,8 +162,7 @@ module.exports = {
                   'Customize an IPFS repo'
                 ],
                 '/how-to/kubo-garbage-collection',
-                '/how-to/best-practices-for-ipfs-builders',
-                '/how-to/troubleshooting'
+                '/how-to/troubleshooting',   
               ]
             },
             {
@@ -177,7 +176,8 @@ module.exports = {
                 '/how-to/take-snapshot',
                 '/how-to/store-play-videos',
                 '/how-to/host-git-repo',
-                '/how-to/move-ipfs-installation/move-ipfs-installation'
+                '/how-to/move-ipfs-installation/move-ipfs-installation',
+                '/how-to/updating-cids', 
               ]
             },
             {
@@ -238,7 +238,7 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/mint-nfts-with-ipfs',
-                '/how-to/best-practices-for-nft-data'
+
               ]
             },
             {
@@ -246,7 +246,8 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
-                ['/how-to/privacy-best-practices', 'Privacy and Encryption'],
+                ['/how-to/privacy-best-practices', 'Privacy and Encryption'], 
+                '/how-to/best-practices-for-nft-data'         
               ]
             }
           ],
