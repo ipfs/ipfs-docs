@@ -1,6 +1,6 @@
-/basics/ /install/
 /basics/desktop-app /how-to/desktop-app
-/basics/go/command-line-quick-start /how-to/command-line-quick-start
+/basics/go/ /install/command-line
+/basics/go/command-line /how-to/kubo-basic-cli
 /basics/js/js-ipfs /install/js-ipfs
 /basics/ipfs-implementations /concepts/ipfs-implementations
 /community/chat /community

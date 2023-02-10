@@ -147,6 +147,7 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
+                '/how-to/kubo-basic-cli',
                 '/how-to/command-line-quick-start',
                 '/how-to/configure-node',
                 '/how-to/modify-bootstrap-list',
