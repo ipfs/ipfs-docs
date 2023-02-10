@@ -13,10 +13,10 @@ This guide is part 1 of a 2-part introduction to [the basic concepts of IPFS](..
 
 In this conceptual guide, you'll learn:
 
-- [What IPFS is and isn't](#definining-ipfs)
+- [What IPFS is and isn't](#defining-ipfs)
 - [Problems that IPFS addresses](#problems-that-ipfs-addresses)
 
-## Definining IPFS
+## Defining IPFS
 
 The term _IPFS_ can refer to multiple concepts:
 
@@ -58,7 +58,7 @@ IPFS is an open-source, decentralized system that eliminates the need for a cent
 
 ### Performance
 
-IPFS provides faster access to data by enabling it to be replicated to and retreived from multiple locations, and allowing users to access data from the nearest location using content addressing instead of <VueCustomTooltip label="Data identified and linked to by it's location. An example is HTTP." underlined multiline>location-based addressing</VueCustomTooltip>. In other words, because data can be addressed based on it's contents, a node on the network can fetch that data from _any_ other node in the netork that has the data; thus, performance issues like latency are reduced. 
+IPFS provides faster access to data by enabling it to be replicated to and retreived from multiple locations, and allowing users to access data from the nearest location using content addressing instead of <VueCustomTooltip label="Data identified and linked to by it's location. An example is HTTP." underlined multiline>location-based addressing</VueCustomTooltip>. In other words, because data can be addressed based on it's contents, a node on the network can fetch that data from _any_ other node in the network that has the data; thus, performance issues like latency are reduced. 
 
 ### Resilience 
 
