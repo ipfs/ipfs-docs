@@ -213,3 +213,5 @@ wantlists
 requesters
 [Ss]neakernet
 Sneakernets
+upgradeability
+performant
