@@ -58,7 +58,7 @@ IPFS is an open-source, decentralized system that eliminates the need for a cent
 
 ### Performance
 
-IPFS provides faster access to data by enabling it to be replicated to and retreived from multiple locations, and allowing users to access data from the nearest location using content addressing instead of <VueCustomTooltip label="Data identified and linked to by it's location. An example is HTTP." underlined multiline>location-based addressing</VueCustomTooltip>. In other words, because data can be addressed based on it's contents, a node on the network can fetch that data from _any_ other node in the network that has the data; thus, performance issues like latency are reduced. 
+IPFS provides faster access to data by enabling it to be replicated to and retrieved from multiple locations, and allowing users to access data from the nearest location using content addressing instead of <VueCustomTooltip label="Data identified and linked to by it's location. An example is HTTP." underlined multiline>location-based addressing</VueCustomTooltip>. In other words, because data can be addressed based on it's contents, a node on the network can fetch that data from _any_ other node in the network that has the data; thus, performance issues like latency are reduced. 
 
 ### Resilience 
 
