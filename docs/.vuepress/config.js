@@ -83,6 +83,14 @@ module.exports = {
           '/install/':  [
             ['/concepts/what-is-ipfs','Basic Concepts'],
             {
+              title: 'Quickstart',
+              sidebarDepth: 1,
+              collapsable: false,
+              children: [
+                ['/quickstart/publish','Publish to IPFS'],
+              ]
+            },
+            {
               title: 'Install',
               sidebarDepth: 1,
               collapsable: false,
