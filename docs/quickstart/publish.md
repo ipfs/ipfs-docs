@@ -20,6 +20,8 @@ In this guide, you will use the web3.storage UI to upload the file. If you prefe
 - A free [web3.storage](https://web3.storage/) account.
 - The [following image](/images/welcome-to-IPFS.jpg), downloaded and saved on your computer:
 
+![image](/images/welcome-to-IPFS.jpg)
+
 ## 1. Sign in to web3.storage
 
 Start by signing into your account on web3.storage:
@@ -50,11 +52,11 @@ If you close the upload tab you should also be able to see a shortened Content I
 
 Congratulations, you have successfully **pinned** a file to IPFS!
 
-The full CID for the file is: `bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4`
-
 ### What's a CID
 
 Let's unpack what just happened. In IPFS, every file and directory is identified with a CID. The generated CID serves as the permanent address of the file and can be used by anyone to find it on the IPFS network.
+
+The CID for your uploaded image is: `bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4`
 
 ### What happens when you pin a file
 
@@ -64,6 +66,14 @@ When you uploaded and pinned the file to web3.storage you performed two actions:
 2. **providing:** The content-addressable representation of the file was persisted on one of web3.storage's IPFS nodes (servers running an IPFS node) and made publicly available to the IPFS network.
 
 ## Fetching the CID from multiple gateways
+
+IPFS Gateways are like bridges that give access to the IPFS Network using HTTP.
+
+![gateway diagram](./images/gateway.png)
+
+- [https://ipfs.io/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4](https://ipfs.io/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4)
+- [https://cloudflare-ipfs.com/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4](https://cloudflare-ipfs.com/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4)
+- [https://gateway.pinata.cloud/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4](https://gateway.pinata.cloud/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4)
 
 ## The lifecycle of data in IPFS
 
