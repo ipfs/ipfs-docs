@@ -18,10 +18,30 @@ In this guide, you will use the web3.storage UI to upload the file. If you prefe
 ## Prerequisites
 
 - A free [web3.storage](https://web3.storage/) account.
-- The following image, downloaded and saved on your computer: ![following image](./images/earth-image.jpg)
+- The following image, downloaded and saved on your computer: ![following image](/images/welcome-to-IPFS.jpg)
 
 ## 1. Sign in to web3.storage
 
 Start by signing into your account on web3.storage:
 
-![asfsaf](./images/login-web3-storage.png)
+![web3.storage login window](./images/login-web3-storage.png)
+
+
+## 2. Open the Upload files tab
+
+After logging in, click on **Upload files** button to open the upload tab:
+
+![web3.storage upload button](./images/web3-upload-button.png)
+
+It should look as follows:
+
+![web3.storage upload tab](./images/web3-upload-tab.png)
+
+## 3. Upload the file
+
+Either drag the [image file](/images/welcome-to-IPFS.jpg) to the dashed rectangle or click on the dashed rectangle to select the [image](/images/welcome-to-IPFS.jpg) file.
+
+
+Once the file has been successfully uploaded you should see the following:
+
+![web3.storage file uploaded](images/web3-file-uploaded.png)
