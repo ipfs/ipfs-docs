@@ -19,7 +19,20 @@ It should be noted that while these are the key responsibilities,  IPFS's functi
 This guide is part 2 of a 2-part introduction to [the basic concepts of IPFS](../concepts/README.md#learn-the-basics). The first part, [IPFS and the problems it solves](../concepts/what-is-ipfs.md) defines what IPFS is and isn't, and problems it addresses. 
 :::
 
-In this conceptual guide, you'll learn about the different subsystems that IPFS is comprised of, and how they work.
+In this conceptual guide, you'll learn about the major subsystems that IPFS is comprised of, and how they work. All IPFS subsystems, ordered by purpose are listed below, with links to the major subsystems discussed in this guide.
+
+| Purpose | Subsystem |
+| ------- | --------- |
+| Representing and organizing the data | UnixFS, DAG-CBOR, DAG-JSON IPLD, MFS |
+| Transferring data | Bitswap, HTTP Gateways, Sneakernet, Graphsync, and more in development |
+| Content routing, linking between CID and IP addresses | Kademlia DHT, Delegated routing over HTTP, Bitswap, mDNS |
+| Addressing for data and peers | Multiformats (CIDs, multiaddr) |
+| Bridging between IPFS and HTTP | IPFS Gateways, Pinning API Spec |
+| Peer-to-peer connectivity | Libp2p (TCP, QUIC, WebRTC, WebTransport) |
+| Mutability and dynamic Naming | IPNS (Interplanetary Naming System), DNSLink |
+
+
+
 
 ## How IPFS represents data
 
@@ -50,10 +63,10 @@ IPFS uses <VueCustomTooltip label="A set of specifications in support of decentr
 IPLD provides IPFS with the following benefits:
 
 - The ability to represent arbitrary data, as well as files and directories.
-- functionality to structure, serialize, traverse and link content-addressed data
-- Interoperable protocols
-- Easy upgradeability
-- Backwards compatibility
+- Functionality to structure, serialize, traverse and link content-addressed data.
+- Interoperable protocols.
+- Easy upgradeability.
+- Backwards compatibility.
 
 :::callout
 **Learn more**
@@ -66,7 +79,7 @@ IPFS uses Content Addressable aRchive (CAR) files to store and transfer a serial
 
 ## How content routing works in IPFS
 
-Content routing refers to how IPFS determines where to find a given CID on the network, specifically, which network peers are providing the CIDs you are looking for. In other words, a node cannot simply find data in the network with a CID alone; it requires information about the IP addresses and ports of its <VueCustomTooltip label="Programs that implement the IPFS protocol and participate in the IPFS network. Also referred to as a node." underlined multiline is-left>peers</VueCustomTooltip> on the network. To handle the routing of data, IPFS uses the following subsystems:
+_Content routing_ refers to the way in which IPFS determines where to find a given CID on the network; specifically, which network peers are providing the CIDs you are requesting. In other words, a node cannot simply find data in the network with a CID alone; it requires information about the IP addresses and ports of its <VueCustomTooltip label="Programs that implement the IPFS protocol and participate in the IPFS network. Also referred to as a node." underlined multiline is-left>peers</VueCustomTooltip> on the network. To route content, IPFS uses the following subsystems:
 
 - [Kademlia Distributed Hash Table (DHT)](#kademlia-distributed-hash-table-dht)
 - [Bitswap](#bitswap)
@@ -75,12 +88,7 @@ Content routing refers to how IPFS determines where to find a given CID on the n
 
 ### Kademlia Distributed Hash Table (DHT)
 
-IPFS uses Kademlia, a <VueCustomTooltip label="A decentralized data store that maps data based on key-value pairs." underlined multiline is-left>Distributed Hash Table (DHT)</VueCustomTooltip> designed for decentralized peer-to-peer computer networks. Kademlia is used to map what the user is looking for to the peer that is storing the matching content. The Kademlia DHT can be thought of as a large table distributed across many nodes that stores information on who has what data, and where that data might be located. The Kademlia DHT provides IPFS with:
-
-- A catalog and a navigation system for data on the IPFS network
-- Logic for handling undialable peers
-- Logic for refreshing the list of peers
-- Logic for dropping peers from the DHT if they are inactive or not offline
+IPFS uses Kademlia, a <VueCustomTooltip label="A decentralized data store that maps data based on key-value pairs." underlined multiline is-left>Distributed Hash Table (DHT)</VueCustomTooltip> designed for decentralized peer-to-peer computer networks. Kademlia is used to map what the user is looking for to the peer that is storing the matching content. The Kademlia DHT can be thought of as a large table distributed across many nodes that stores information on who has what data, and where that data might be located. 
 
 :::callout
 **Learn more**
@@ -89,15 +97,9 @@ Want to learn more about Kademlia and DHTs? See the [the Distributed Hash Tables
 
 ### Bitswap
 
-IPFS nodes use Bitswap, a <VueCustomTooltip label="Unlike a request-response protocol, all nodes in the system receive every message transmitted, and decide whether the message received should be immediately discarded, stored or processed." underlined multiline is-medium>message-based protocol</VueCustomTooltip>, to fetch and send blocks of data. The process is as follows:
+IPFS nodes use Bitswap, a <VueCustomTooltip label="Unlike a request-response protocol, all nodes in the system receive every message transmitted, and decide whether the message received should be immediately discarded, stored or processed." underlined multiline is-medium>message-based protocol</VueCustomTooltip>, to fetch, route and transfer blocks of data.
 
-1. Requesting nodes broadcast a <VueCustomTooltip label="A list of the CIDs of data blocks that an IPFS node wants to receive from peers in the network." underlined>wantlist</VueCustomTooltip> message to peers in the network.
-1. Peers receiving the wantlist eventually process and respond to the requester with one of the following:
-   - A _have_ message, indicating the peer has a CID requested.
-   - A _don't-have_ message, indicating the peer DOES NOT have a requested CID.
-1. The requester sends a _want-block_ message to peers that responded with a _have_ message, which requests that the peer send the block of data specified by the requesters wantlist.
-1. Peers send the block to the requester.
-1. As soon as the requesting node receives the wanted block, it broadcasts a message to peers that it no longer needs the requested block.
+
 
 :::callout
 Peers also store wantlists, so that if a peer receives requested blocks at a later time, it can then send them to the node that originally requested the data blocks. 
