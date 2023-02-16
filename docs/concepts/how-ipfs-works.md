@@ -5,7 +5,14 @@ description: Learn how the InterPlanetary File System (IPFS) works and why it's 
 
 # How IPFS works
 
-Data in <VueCustomTooltip label="InterPlanetary File System"  abbreviation is-small>IPFS</VueCustomTooltip> is addressed by its contents (<VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>content addressing</VueCustomTooltip>), rather than a location, such as a server address (location addressing). Various subsystems in IPFS are responsible for addressing, routing, and transferring content-addressed data.
+Data in <VueCustomTooltip label="InterPlanetary File System"  abbreviation is-small>IPFS</VueCustomTooltip> is addressed by its contents (<VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>content addressing</VueCustomTooltip>), rather than a location, such as an IP address (location addressing). 
+
+The three key responsibilities of the IPFS subsystems: 
+- **Representing and addressing data**
+- **Routing data**
+- **Transferring data**
+
+It should be noted that while these are the key responsibilities,  IPFS's functionality spans beyond these three. 
 
 
 :::callout
@@ -57,9 +64,9 @@ Want to learn more about IPLD? See [the official docs](https://ipld.io/docs/intr
 
 IPFS uses Content Addressable aRchive (CAR) files to store and transfer a serialized archive of IPLD content-addressed data. CAR files are similar to TAR files, in that they that are designed for storing collections of content addressed data.
 
-## How IPFS routes data
+## How content routing works in IPFS
 
-While [the subsystems described above](#how-ipfs-represents-data) handle the representation of data, IPFS needs to route the data between <VueCustomTooltip label="Programs that implement the IPFS protocol and participate in the IPFS network. Also referred to as a peer." underlined>nodes</VueCustomTooltip> in the network. In other words, a node cannot simply find data in the network with a CID alone; it requires information about the IP addresses and ports of its <VueCustomTooltip label="Programs that implement the IPFS protocol and participate in the IPFS network. Also referred to as a node." underlined multiline is-left>peers</VueCustomTooltip>  on the network. To handle the routing of data, IPFS uses the following subsystems:
+Content routing refers to how IPFS determines where to find a given CID on the network, specifically, which network peers are providing the CIDs you are looking for. In other words, a node cannot simply find data in the network with a CID alone; it requires information about the IP addresses and ports of its <VueCustomTooltip label="Programs that implement the IPFS protocol and participate in the IPFS network. Also referred to as a node." underlined multiline is-left>peers</VueCustomTooltip> on the network. To handle the routing of data, IPFS uses the following subsystems:
 
 - [Kademlia Distributed Hash Table (DHT)](#kademlia-distributed-hash-table-dht)
 - [Bitswap](#bitswap)
@@ -68,7 +75,7 @@ While [the subsystems described above](#how-ipfs-represents-data) handle the rep
 
 ### Kademlia Distributed Hash Table (DHT)
 
-IPFS uses Kademlia, a <VueCustomTooltip label="A decentralized data store that maps data based on key-value pairs." underlined multiline is-left>Distributed Hash Table (DHT)</VueCustomTooltip> designed for decentralized peer-to-peer computer networks. Kademlia is used to map what the user is looking for to the peer that is storing the matching content. The Kademlia DHT can be thought as a huge table that stores information on who has what data, and where that data might be located. The Kademlia DHT provides IPFS with:
+IPFS uses Kademlia, a <VueCustomTooltip label="A decentralized data store that maps data based on key-value pairs." underlined multiline is-left>Distributed Hash Table (DHT)</VueCustomTooltip> designed for decentralized peer-to-peer computer networks. Kademlia is used to map what the user is looking for to the peer that is storing the matching content. The Kademlia DHT can be thought of as a large table distributed across many nodes that stores information on who has what data, and where that data might be located. The Kademlia DHT provides IPFS with:
 
 - A catalog and a navigation system for data on the IPFS network
 - Logic for handling undialable peers
@@ -110,7 +117,7 @@ The use of mDNS in IPFS has several benefits that make it a clear choice for pee
 
 ### Delegated routing over HTTP
 
-Because IPFS is an open-source protocol with multiple implementations, an IPFS node is not required to implement full routing functionality itself. Instead, an IPFS node can request that a <VueCustomTooltip label="An IPFS node that perform tasks on behalf of network peers using the IPFS HTTP API." underlined multiline is-medium>delegated router</VueCustomTooltip> perform a routing task for it. For example, if an IPFS node does not implement the DHT, a delegated router can search the DHT for peers on its behalf. The main benefit of delegated routing is that nodes are not required to implement routing functionality themselves if they do not wish to, or do not have the computing resources to do so.
+Delegated content routing is a mechanism for IPFS implementations to use for offloading content routing to another process/server using an HTTP API. For example, if an IPFS node does not implement the DHT, a delegated router can search the DHT for peers on its behalf. The main benefit of delegated routing is that nodes are not required to implement routing functionality themselves if they do not wish to, or do not have the computing resources to do so.
 
 ## How IPFS transfers data
 
@@ -122,7 +129,7 @@ In addition to [routing data](#how-ipfs-routes-data), nodes in the IPFS network 
 
 ### IPFS HTTP Gateways
 
-HTTP Gateways allow applications that do not support or implement the IPFS protocol to interact with nodes on the IPFS network. There are multiple types of HTTP gateways, each optimized for specific tasks, and other factors like security and performance. Examples include:
+HTTP Gateways allow applications that do not support or implement all IPFS subsystems to fetch data from the IPFS network using an HTTP interface. In its simplest form, a gateway is an IPFS Node that also exposes an [HTTP Gateway API](https://github.com/ipfs/specs/blob/main/http-gateways/README.md)"
 
 - _<VueCustomTooltip label="An IPFS HTTP Gateway that can fetch data from the IPFS network using the HTTP GET method." underlined multiline is-small is-right>Read-only</VueCustomTooltip>_
 - _<VueCustomTooltip label="An IPFS HTTP Gateway that can write data to the IPFS network using the HTTP POST, PUT and DELETE methods." underlined multiline is-small is-right>Writeable</VueCustomTooltip>_
