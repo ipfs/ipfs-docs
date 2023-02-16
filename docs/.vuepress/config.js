@@ -104,6 +104,7 @@ module.exports = {
               collapsable: true,
               children: [
                   '/concepts/what-is-ipfs',
+                  '/concepts/ipfs-solves',
                   '/concepts/how-ipfs-works',
               ]
             },

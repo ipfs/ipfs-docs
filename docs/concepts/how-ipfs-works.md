@@ -5,36 +5,35 @@ description: Learn how the InterPlanetary File System (IPFS) works and why it's 
 
 # How IPFS works
 
-Data in <VueCustomTooltip label="InterPlanetary File System"  abbreviation is-small>IPFS</VueCustomTooltip> is addressed by its contents (<VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>content addressing</VueCustomTooltip>), rather than a location, such as an IP address (location addressing). 
-
-The three key responsibilities of the IPFS subsystems: 
+ In this conceptual guide, you'll learn about the major subsystems that <VueCustomTooltip label="InterPlanetary File System"  abbreviation is-small>IPFS</VueCustomTooltip> is comprised of, and how they work. The three key responsibilities of the IPFS subsystems are: 
 - **Representing and addressing data**
 - **Routing data**
 - **Transferring data**
 
-It should be noted that while these are the key responsibilities,  IPFS's functionality spans beyond these three. 
+While these are the key responsibilities, IPFS's functionality spans beyond these three. 
 
+Data in IPFS is addressed by its contents (<VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>content addressing</VueCustomTooltip>), rather than a location, such as an IP address (location addressing).
 
 :::callout
-This guide is part 2 of a 2-part introduction to [the basic concepts of IPFS](../concepts/README.md#learn-the-basics). The first part, [IPFS and the problems it solves](../concepts/what-is-ipfs.md) defines what IPFS is and isn't, and problems it addresses. 
+This guide is part 2 of a 3-part introduction to [the basic concepts of IPFS](../concepts/README.md#learn-the-basics). The first part, [What IPFS is and isn't](../concepts/what-is-ipfs.md), defines IPFS, while the second part, [**IPFS and the problems it solves**](../concepts/ipfs-solves.md), covers the problems with the internet and current protocols like HTTP that IPFS solves.
 :::
 
-In this conceptual guide, you'll learn about the major subsystems that IPFS is comprised of, and how they work. All IPFS subsystems, ordered by purpose are listed below, with links to the major subsystems discussed in this guide.
+## Subsystems overview
+
+All IPFS subsystems, ordered by purpose, are listed below, with links to the major subsystems discussed in this guide.
 
 | Purpose | Subsystem |
 | ------- | --------- |
-| Representing and organizing the data | UnixFS, DAG-CBOR, DAG-JSON IPLD, MFS |
-| Transferring data | Bitswap, HTTP Gateways, Sneakernet, Graphsync, and more in development |
-| Content routing, linking between CID and IP addresses | Kademlia DHT, Delegated routing over HTTP, Bitswap, mDNS |
-| Addressing for data and peers | Multiformats (CIDs, multiaddr) |
-| Bridging between IPFS and HTTP | IPFS Gateways, Pinning API Spec |
+| Representing and organizing the data | [CIDs](#content-identifier-cid), [IPLD, UnixFS](#interplanetary-linked-data-ipld), MFS, DAG-CBOR, DAG-JSON, [CAR files](#content-addressable-archive-car-files) |
+| Content routing, linking between CID and IP addresses | [Kademlia DHT](#kademlia-distributed-hash-table-dht), [Delegated routing over HTTP](#delegated-routing-over-http), [Bitswap](#bitswap-for-content-routing), [mDNS](#mdns) |
+| Transferring data | [Bitswap](#bitswap-for-data-transfer), [HTTP Gateways](#ipfs-http-gateways), [Sneakernet](#sneakernet), Graphsync, more in development |
+| Addressing for data and peers | [Multiformats](#content-identifier-cid) |
+| Bridging between IPFS and HTTP | [IPFS Gateways](#ipfs-http-gateways), Pinning API Spec |
 | Peer-to-peer connectivity | Libp2p (TCP, QUIC, WebRTC, WebTransport) |
-| Mutability and dynamic Naming | IPNS (Interplanetary Naming System), DNSLink |
+| Mutability and dynamic naming | IPNS (Interplanetary Naming System), DNSLink |
 
 
-
-
-## How IPFS represents data
+## How IPFS represents and addresses data
 
 IPFS represents data as content-addressed <VueCustomTooltip label="The term for a single unit of data in IPFS." underlined multiline is-medium>blocks</VueCustomTooltip>, and operates on those data blocks using the following subsystems:
 
@@ -44,7 +43,7 @@ IPFS represents data as content-addressed <VueCustomTooltip label="The term for 
 
 ### Content IDentifier (CID)
 
-In IPFS, data is chunked into <VueCustomTooltip label="The term for a single unit of data in IPFS." underlined multiline is-medium>blocks</VueCustomTooltip>, which are assigned a unique identifier called a <VueCustomTooltip label="An address used to point to data in IPFS, based on the content itself, as opposed to the location." underlined multiline is-medium>Content IDentifier (CID)</VueCustomTooltip>.  In general, the CID is computed by combining the hash of the data with it's <VueCustomTooltip label="Software capable of encoding and/or decoding data." underlined multiline is-medium>codec</VueCustomTooltip>. The codec is generated using <VueCustomTooltip label="A collection of interoperable, extensible protocols for making data self-describable." underlined multiline is-medium>multiformats</VueCustomTooltip>. 
+In IPFS, data is chunked into <VueCustomTooltip label="The term for a single unit of data in IPFS." underlined multiline is-medium>blocks</VueCustomTooltip>, which are assigned a unique identifier called a <VueCustomTooltip label="An address used to point to data in IPFS, based on the content itself, as opposed to the location." underlined multiline is-medium>Content IDentifier (CID)</VueCustomTooltip>.  In general, the CID is computed by combining the hash of the data with it's <VueCustomTooltip label="Software capable of encoding and/or decoding data." underlined multiline is-medium>codec</VueCustomTooltip>. The codec is generated using <VueCustomTooltip label="A collection of interoperable, extensible protocols for making data self-describable." underlined multiline is-medium>Multiformats</VueCustomTooltip>. 
 
 CIDs are unique to the data from which they were computed, which provides IPFS with the following benefits:
 - Data can fetched based on it's content, rather than it's location. 
@@ -52,18 +51,18 @@ CIDs are unique to the data from which they were computed, which provides IPFS w
 
 :::callout
 **Learn more**
-Learn more about about the concepts behind CIDs described here with the [the CID deep dive](../concepts/content-addressing.md#cid-versions).
+Learn more about the concepts behind CIDs described here with the [the CID deep dive](../concepts/content-addressing.md#cid-versions).
 :::
 
 
 ### InterPlanetary Linked Data (IPLD)
 
-IPFS uses <VueCustomTooltip label="A set of specifications in support of decentralized, content-addressable data structures for the web." underlined multiline is-medium>InterPlanetary Linked Data (IPLD)</VueCustomTooltip> to work with CIDs and content-addressed data. IPFS uses IPLD to structure, serialize, traverse and link any type of content-addressed data. These IPLD mechanisms allows IPFS to represent relationships between content-addressed data, such as file directories and other hierarchical structures, using a <VueCustomTooltip label="Data structured as a graph whose nodes are directionally related to each other and don’t form a directional closed loop." underlined multiline is-medium>Directed Acyclic Graph (DAG)</VueCustomTooltip> called a <VueCustomTooltip label="A special type of DAG where each node has a unique identifier that is a hash of the node's contents." underlined multiline is-medium>Merkle DAG</VueCustomTooltip>. 
+IPFS uses <VueCustomTooltip label="A set of specifications in support of decentralized, content-addressable data structures for the web." underlined multiline is-medium>InterPlanetary Linked Data (IPLD)</VueCustomTooltip> to work with CIDs and content-addressed data. IPFS uses IPLD to represent relationships between content-addressed data, such as file directories and other hierarchical structures, using a <VueCustomTooltip label="Data structured as a graph whose nodes are directionally related to each other and don’t form a directional closed loop." underlined multiline is-medium>Directed Acyclic Graph (DAG)</VueCustomTooltip> called a <VueCustomTooltip label="A special type of DAG where each node has a unique identifier that is a hash of the node's contents." underlined multiline is-medium>Merkle DAG</VueCustomTooltip>. Using IPLD for the general functionality, IPFS is able provide a more tailored, specific mechanism for representing and addressing files, directories, and their symlinks, called [UnixFS](../concepts/file-systems.md#unix-file-system-unixfs). With UnixFS, IPFS can <VueCustomTooltip label="When an object is added to IPFS, it is split up into smaller parts, each part is hashed, and a CID is created for each part." underlined multiline is-medium>chunk</VueCustomTooltip> and link data too big to fit in a single block, and use the chunked representation to store and manage the data.
 
 IPLD provides IPFS with the following benefits:
 
-- The ability to represent arbitrary data, as well as files and directories.
-- Functionality to structure, serialize, traverse and link content-addressed data.
+- The ability to represent and work with arbitrary data, whether that data is standard files and directories, linked data, a Merkle DAG, or another data type.
+- Base functionality to structure, serialize, traverse and link content-addressed data, which can be leveraged by abstractions like UnixFS for more specific use cases.
 - Interoperable protocols.
 - Easy upgradeability.
 - Backwards compatibility.
@@ -82,7 +81,7 @@ IPFS uses Content Addressable aRchive (CAR) files to store and transfer a serial
 _Content routing_ refers to the way in which IPFS determines where to find a given CID on the network; specifically, which network peers are providing the CIDs you are requesting. In other words, a node cannot simply find data in the network with a CID alone; it requires information about the IP addresses and ports of its <VueCustomTooltip label="Programs that implement the IPFS protocol and participate in the IPFS network. Also referred to as a node." underlined multiline is-left>peers</VueCustomTooltip> on the network. To route content, IPFS uses the following subsystems:
 
 - [Kademlia Distributed Hash Table (DHT)](#kademlia-distributed-hash-table-dht)
-- [Bitswap](#bitswap)
+- [Bitswap](#bitswap-for-content-routing)
 - [mDNS](#mdns)
 - [Delegated routing over HTTP](#delegated-routing-over-http)
 
@@ -92,17 +91,18 @@ IPFS uses Kademlia, a <VueCustomTooltip label="A decentralized data store that m
 
 :::callout
 **Learn more**
+
 Want to learn more about Kademlia and DHTs? See the [the Distributed Hash Tables (DHTs) conceptual guide](../concepts/dht.md#kademlia).
 :::
 
-### Bitswap
+### Bitswap (for content routing)
 
-IPFS nodes use Bitswap, a <VueCustomTooltip label="Unlike a request-response protocol, all nodes in the system receive every message transmitted, and decide whether the message received should be immediately discarded, stored or processed." underlined multiline is-medium>message-based protocol</VueCustomTooltip>, to fetch, route and transfer blocks of data.
-
-
+IPFS nodes use Bitswap, a <VueCustomTooltip label="Unlike a request-response protocol, all nodes in the system receive every message transmitted, and decide whether the message received should be immediately discarded, stored or processed." underlined multiline is-medium>message-based</VueCustomTooltip>,  <VueCustomTooltip label="A network of computers model in which each party has equivalent capabilities and can initiate a communication session." underlined multiline is-medium>peer-to-peer network</VueCustomTooltip> protocol for the transfer of data, that is _also_ used for routing data. With Bitswap, an IPFS node can ask any of the peers that it is connected to if they have any of the CIDs that node is looking for, all without traversing the [DHT](#kademlia-distributed-hash-table-dht). Peers also store wantlists, so that if a peer receives the requested data at a later time, it can then send it to the node that originally requested.
 
 :::callout
-Peers also store wantlists, so that if a peer receives requested blocks at a later time, it can then send them to the node that originally requested the data blocks. 
+**Learn more**
+
+Want learn more about Bitswap? See the [Bitswap deep dive](../concepts/bitswap.md).
 :::
 
 ### mDNS
@@ -119,36 +119,35 @@ The use of mDNS in IPFS has several benefits that make it a clear choice for pee
 
 ### Delegated routing over HTTP
 
-Delegated content routing is a mechanism for IPFS implementations to use for offloading content routing to another process/server using an HTTP API. For example, if an IPFS node does not implement the DHT, a delegated router can search the DHT for peers on its behalf. The main benefit of delegated routing is that nodes are not required to implement routing functionality themselves if they do not wish to, or do not have the computing resources to do so.
+Delegated content routing is a mechanism for IPFS implementations to use for offloading content routing to another process/server using an HTTP API. For example, if an IPFS node does not implement the DHT, a delegated router can search the DHT for peers on its behalf. The main benefit of delegated routing is that nodes are not required to implement routing functionality themselves if they do not have the computing resources to do so, or wish to build an IPFS system with a custom backend for routing. Thus, delegated routing over HTTPS provides IPFS nodes with a standard interface that allows more flexibility in terms of how content routing works. 
 
 ## How IPFS transfers data
 
-In addition to [routing data](#how-ipfs-routes-data), nodes in the IPFS network must efficiently distribute and deliver the content addressed data, taking into account that there are some nodes in the network who already have a copy of the data, and other nodes who do not have a copy of the data, but want one. To handle the transfer of data, IPFS uses the following subsystems:
+In addition to [routing data](#how-content-routing-works-in-ipfs), nodes in the IPFS network must efficiently distribute and deliver the content addressed data, taking into account that there are some nodes in the network who already have a copy of the data, and other nodes who do not have a copy of the data, but want one. To handle the transfer of data, IPFS uses the following subsystems:
 
+- [Bitswap](#bitswap-for-data-transfer)
 - [IPFS HTTP Gateways](#ipfs-http-gateways)
-- [GraphSync](#graphsync)
 - [Sneakernet](#sneakernet)
+
+### Bitswap (for data transfer)
+
+As discussed in [How content routing works in IPFS](#bitswap-for-content-routing), IPFS nodes use Bitswap, a <VueCustomTooltip label="Unlike a request-response protocol, all nodes in the system receive every message transmitted, and decide whether the message received should be immediately discarded, stored or processed." underlined multiline is-medium>message-based</VueCustomTooltip>,  <VueCustomTooltip label="A network of computers model in which each party has equivalent capabilities and can initiate a communication session." underlined multiline is-medium>peer-to-peer network</VueCustomTooltip> protocol for both content routing and the transfer of data. With Bitswap, any peers that an IPFS node is connected to can transfer requested blocks directly to that node without needing to traverse the [DHT](#kademlia-distributed-hash-table-dht). Peers also store wantlists, so that if a peer receives requested data at a later time, it can then transfer it to the node that originally requested.
+
+:::callout
+**Learn more**
+
+Want learn more about Bitswap? See the [Bitswap deep dive](../concepts/bitswap.md).
+:::
 
 ### IPFS HTTP Gateways
 
-HTTP Gateways allow applications that do not support or implement all IPFS subsystems to fetch data from the IPFS network using an HTTP interface. In its simplest form, a gateway is an IPFS Node that also exposes an [HTTP Gateway API](https://github.com/ipfs/specs/blob/main/http-gateways/README.md)"
+HTTP Gateways allow applications that do not support or implement all IPFS subsystems to fetch data from the IPFS network using an HTTP interface. In its simplest form, a gateway is an IPFS Node that also exposes an [HTTP Gateway API](https://github.com/ipfs/specs/blob/main/http-gateways/README.md).
 
-- _<VueCustomTooltip label="An IPFS HTTP Gateway that can fetch data from the IPFS network using the HTTP GET method." underlined multiline is-small is-right>Read-only</VueCustomTooltip>_
-- _<VueCustomTooltip label="An IPFS HTTP Gateway that can write data to the IPFS network using the HTTP POST, PUT and DELETE methods." underlined multiline is-small is-right>Writeable</VueCustomTooltip>_
-- _<VueCustomTooltip label="An IPFS HTTP Gateway that can limit access to and from data on the IPFS network by acting as a reverse proxy." underlined multiline is-small is-right>Authentication</VueCustomTooltip>_
+:::callout
+**Learn more**
 
-Additionally, there are multiple types of gateway providers:
-
-- _<VueCustomTooltip label="An IPFS HTTP Gateway hosted as a local service i.e. at localhost:8080 on your local machine." underlined multiline is-small is-right>Local gateway</VueCustomTooltip>_
-- _<VueCustomTooltip label="An IPFS HTTP Gateway hosted within a private network that handles access to the IPFS network for multiple computers within the private network, and may be configured to limit access to requests from specific domains." underlined multiline is-small is-right>Private gateway</VueCustomTooltip>_
-- _<VueCustomTooltip label="An IPFS HTTP Gateway hosted and operated by a third-party, such as Protocol Labs." underlined multiline is-small is-right>Public gateway</VueCustomTooltip>_
-
-### GraphSync
-
-Graphsync is an alternative to the [Bitswap](#bitswap) protocol for the fetching and sending of block in IPFS. Unlike Bitswap, which exchanges data block by block, Graphsync allows for a more precise and efficient exchange of data using <VueCustomTooltip label="A set of specifications in support of decentralized, content-addressable data structures for the web." underlined multiline is-medium>IPLD</VueCustomTooltip> <VueCustomTooltip label="Expressions in IPLD for efficient traversal and selection of a subset of nodes in a Merkle DAG." underlined multiline is-medium>selectors</VueCustomTooltip> to select a specific subset of blocks for download. Additionally, Graphsync is a <VueCustomTooltip label="A basic protocol for communication between computers, in which a requester sends a request message to a replier system, which processes the request and returns a message in response." underlined multiline is-medium>request-response protocol</VueCustomTooltip> between two IPFS nodes, so requests for data are not broadcast to the entire network. Because of this, a node must know that a peer that it is sending a request to actually has the requested data. Otherwise, the peer will simply respond that it does not have the requested data, and the node will have to request that data from other peers. Graphsync is quick and efficient alternative to Bitswap when:
-
-- Quick and efficient transfer of large amounts of data between a node and its peer is required.
-- A node knows that the peer it is requesting data from actually has the data.
+Want learn more about IPFS Gateways? See the [IPFS Gateway conceptual guide](../concepts/ipfs-gateway.md).
+:::
 
 ### Sneakernet
 
