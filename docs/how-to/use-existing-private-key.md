@@ -63,7 +63,7 @@ Using pre-generated private keys with JavaScript is straight-forward:
 import IPFS from 'ipfs'
 
 const myExistingPrivateKey = 'my-private-key'
-const ipfs = await IPFS.create({ privateKey: myExistingPrivateKey })
+const ipfs = await IPFS.create({ init: { privateKey: myExistingPrivateKey } })
 ```
 
 ### Go
