@@ -5,7 +5,11 @@ description: There are several different ways you can install and interact with 
 
 # Get Started
 
-IPFS is a collection of protocols, packages, and specifications that allow computers to send and receive data. Because of this, users can pick and choose which packages to install when using IPFS. And like shoe sizes, there is no _one-size-fits-all_ solution. A developer building network applications will install a different set of tools than someone who wants to store files on IPFS. Pick the one that best suits what you're here to do.
+IPFS is a collection of protocols, packages, and specifications that allow computers to send and receive data. Because of this, users can interact with and use IPFS in many different ways. A developer building network applications will use a different set of tools to interact with IPFS than than someone who wants to store files on IPFS. Pick the one that best suits what you're here to do.
+
+## Publish files to IPFS
+
+Are you wanting to quickly and easily publish content to IPFS without using complex tools? See the [Publish to IPFS quickstart](../quickstart/publish.md), where you'll learn about pinning services and the lifecycle of content-addressed data in IPFS by publishing and pinning a file to the IPFS network.
 
 ## IPFS Desktop
 

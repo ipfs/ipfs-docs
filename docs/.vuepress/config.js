@@ -4,6 +4,16 @@ const DEPLOY_DOMAIN = 'https://docs.ipfs.tech'
 const SPEEDCURVE_ID = process.env.SPEEDCURVE_ID || ''
 const pageSuffix = '/'
 
+const installMenuChildren = [
+  ['/install/command-line','IPFS Kubo for Go'],
+  ['/install/run-ipfs-inside-docker', 'IPFS Kubo in Docker'],
+  ['/install/js-ipfs','IPFS for JavaScript'],
+  ['https://iroh.computer/docs/install/', "IPFS Iroh for Rust"],
+  ['/install/ipfs-desktop', 'IPFS Desktop App'],
+  ['/install/ipfs-companion', 'IPFS Companion Browser Extension'],
+  ['/install/server-infrastructure', 'IPFS Cluster']
+]
+
 module.exports = {
   base: '/',
   head: require('./head'),
@@ -94,15 +104,24 @@ module.exports = {
               title: 'Install',
               sidebarDepth: 1,
               collapsable: false,
+              children: installMenuChildren
+            },
+          ],
+          '/quickstart/':  [
+            ['/concepts/what-is-ipfs','Basic Concepts'],
+            {
+              title: 'Quickstart',
+              sidebarDepth: 1,
+              collapsable: false,
               children: [
-                ['/install/command-line','IPFS Kubo for Go'],
-                ['/install/run-ipfs-inside-docker', 'IPFS Kubo in Docker'],
-                ['/install/js-ipfs','IPFS for JavaScript'],
-                ['https://iroh.computer/docs/install/', "IPFS Iroh for Rust"],
-                ['/install/ipfs-desktop', 'IPFS Desktop App'],
-                ['/install/ipfs-companion', 'IPFS Companion Browser Extension'],
-                ['/install/server-infrastructure', 'IPFS Cluster']
+                ['/quickstart/publish','Publish to IPFS'],
               ]
+            },
+            {
+              title: 'Install',
+              sidebarDepth: 1,
+              collapsable: false,
+              children: installMenuChildren
             },
           ],
           '/concepts/': [
