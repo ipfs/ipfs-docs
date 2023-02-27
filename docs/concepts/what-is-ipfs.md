@@ -1,5 +1,5 @@
 ---
-title: What IPFS is and isn't
+title: What is IPFS?
 description:  Learn what IPFS is and isn't.
 ---
 
@@ -17,7 +17,7 @@ In this conceptual guide, you'll learn what IPFS is and isn't.
 
 The term _IPFS_ can refer to multiple concepts:
 
-- Software that implements the IPFS protocol specification (like <VueCustomTooltip label="The first implementation of IPFS, written in Go." underlined multiline>Kubo</VueCustomTooltip>) 
+- Software that implements the IPFS protocol specifications (like <VueCustomTooltip label="The first implementation of IPFS, written in Go." underlined multiline>Kubo</VueCustomTooltip>) 
 - A 
 <VueCustomTooltip label="A network of computers in which multiple servers act as a single processing point, without having a central server to manage network activity." underlined multiline is-medium>decentralized network</VueCustomTooltip> comprised of <VueCustomTooltip label="Computers participating in an IPFS network by running an IPFS implementation. Also referred to as peers" underlined multiline>IPFS nodes</VueCustomTooltip> that anyone can join.
 - A modular suite of protocols and standards for organizing and moving content-addressed data.
