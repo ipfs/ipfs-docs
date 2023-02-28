@@ -29,7 +29,7 @@ All IPFS subsystems, ordered by purpose, are listed below, with links to the maj
 | Transferring data | [Bitswap](#bitswap-for-data-transfer), [HTTP Gateways](#ipfs-http-gateways), [Sneakernet](#sneakernet), Graphsync, more in development |
 | Addressing for data and peers | [Multiformats](#content-identifier-cid) |
 | Bridging between IPFS and HTTP | [IPFS Gateways](#ipfs-http-gateways), Pinning API Spec |
-| Peer-to-peer connectivity | Libp2p (TCP, QUIC, WebRTC, WebTransport) |
+| Peer-to-peer connectivity | libp2p (TCP, QUIC, WebRTC, WebTransport) |
 | Mutability and dynamic naming | IPNS (Interplanetary Naming System), DNSLink |
 
 
@@ -87,23 +87,28 @@ _Content routing_ refers to the way in which IPFS determines where to find a giv
 
 ### Kademlia Distributed Hash Table (DHT)
 
-IPFS uses Kademlia, a <VueCustomTooltip label="A decentralized data store that maps data based on key-value pairs." underlined multiline is-left>Distributed Hash Table (DHT)</VueCustomTooltip> designed for decentralized peer-to-peer computer networks. Kademlia is used to map what the user is looking for to the peer that is storing the matching content. The Kademlia DHT can be thought of as a large table distributed across many nodes that stores information on who has what data, and where that data might be located. Kademlia gives IPFS the ability to store <VueCustomTooltip label="A unique identifier for a peer in the Kademlia DHT." underlined multiline is-left>peer IDs</VueCustomTooltip> as a record key and peer ID value pair without a central server, improving fault-tolerance and scalability. By using the logical <VueCustomTooltip label="A logical operator which is true when either of the operands are true (i.e. one is false and the other one is true), but both operands are not true and not false." underlined multiline is-left>"exclusive or" (XOR)</VueCustomTooltip> function to group peers with similar peer IDs, Kademlia provides a highly efficient, self-organizing system for finding peers in the IPFS network without a large amount of lookups, even in peer-to-peer networks with many nodes.
+IPFS uses Kademlia, a <VueCustomTooltip label="A decentralized data store that maps data based on key-value pairs." underlined multiline is-left>Distributed Hash Table (DHT)</VueCustomTooltip> designed for decentralized peer-to-peer computer networks. Kademlia is used to map what the user is looking for to the peer that is storing the matching content. The Kademlia DHT can be thought of as a large table distributed across many nodes that stores information on who has what data, and where that data might be located. Kademlia gives IPFS the ability to store <VueCustomTooltip label="A unique identifier for a peer in the Kademlia DHT." underlined multiline is-left>peer IDs</VueCustomTooltip> as a record key and peer ID value pair without a central server, improving fault-tolerance and scalability. By using the logical <VueCustomTooltip label="A logical operator which is true when either of the operands are true (i.e. one is false and the other one is true), but both operands are not true and not false." underlined multiline is-left>"exclusive or" (XOR)</VueCustomTooltip> function to group peers with similar peer IDs, Kademlia provides a highly efficient, self-organizing system for finding peers in the IPFS network without a large amount of lookups, even in peer-to-peer networks with many nodes. Kademlia uses <VueCustomTooltip label="Short for “library peer-to-peer”, libp2p is a collection of protocols, specifications, and libraries that faciliate connectivity between nodes in a peer-to-peer network." underlined multiline is-left> [libp2p](../concepts/libp2p.md)</VueCustomTooltip> to establish connectivity. 
 
 :::callout
 **Learn more**
 
-Want to learn more about Kademlia and DHTs? See the [the Distributed Hash Tables (DHTs) conceptual guide](../concepts/dht.md#kademlia).
+Want to learn more about Kademlia and DHTs? See the [Distributed Hash Tables (DHTs) conceptual guide](../concepts/dht.md#kademlia).
 :::
 
 ### Bitswap (for content routing)
 
-IPFS nodes use Bitswap, a <VueCustomTooltip label="Unlike a request-response protocol, all nodes in the system receive every message transmitted, and decide whether the message received should be immediately discarded, stored or processed." underlined multiline is-medium>message-based</VueCustomTooltip>,  <VueCustomTooltip label="A network of computers model in which each party has equivalent capabilities and can initiate a communication session." underlined multiline is-medium>peer-to-peer network</VueCustomTooltip> protocol for the transfer of data, that is _also_ used for routing data. With Bitswap, an IPFS node can ask any of the peers that it is connected to if they have any of the CIDs that node is looking for, all without traversing the [DHT](#kademlia-distributed-hash-table-dht). Peers also store wantlists, so that if a peer receives the requested data at a later time, it can then send it to the node that originally requested.
+IPFS nodes use Bitswap, a <VueCustomTooltip label="Unlike a request-response protocol, all nodes in the system receive every message transmitted, and decide whether the message received should be immediately discarded, stored or processed." underlined multiline is-medium>message-based</VueCustomTooltip>,  <VueCustomTooltip label="A network of computers model in which each party has equivalent capabilities and can initiate a communication session." underlined multiline is-medium>peer-to-peer network</VueCustomTooltip> protocol for the transfer of data, that is _also_ used for routing data. With Bitswap, an IPFS node can ask any of the peers that it is connected to if they have any of the CIDs that node is looking for, all without traversing the [Kademlia DHT](#kademlia-distributed-hash-table-dht). Peers also store wantlists, so that if a peer receives the requested data at a later time, it can then send it to the node that originally requested. Like Kademlia, Bitswap uses <VueCustomTooltip label="Short for “library peer-to-peer”, libp2p is a collection of protocols, specifications, and libraries that faciliate connectivity between nodes in a peer-to-peer network." underlined multiline is-left> [libp2p](../concepts/libp2p.md)</VueCustomTooltip> to establish connectivity. 
 
 :::callout
 **Learn more**
 
-Want learn more about Bitswap? See the [Bitswap deep dive](../concepts/bitswap.md).
+Want to learn more about Bitswap? See the [Bitswap deep dive](../concepts/bitswap.md).
+
 :::
+
+### Delegated routing over HTTP
+
+Delegated content routing is a mechanism for IPFS implementations to use for offloading content routing to another process/server using an HTTP API. For example, if an IPFS node does not implement the DHT, a delegated router can search the DHT for peers on its behalf. The main benefit of delegated routing is that nodes are not required to implement routing functionality themselves if they do not have the computing resources to do so, or wish to build an IPFS system with a custom backend for routing. Thus, delegated routing over HTTPS provides IPFS nodes with a standard interface that allows more flexibility in terms of how content routing works. For further information, see the [Delegated Content Routing HTTP API spec](https://github.com/ipfs/specs/blob/main/routing/DELEGATED_CONTENT_ROUTING_HTTP.md).
 
 ### mDNS
 
@@ -116,10 +121,6 @@ The use of mDNS in IPFS has several benefits that make it a clear choice for pee
 
 - Nodes can broadcast messages requesting and reporting address information to multiple peers, increasing speed and efficiency of peer discovery.
 - Nodes do not rely on a centralized name server to discover other peers, improving network resilience, decentralization and censorship resistance.
-
-### Delegated routing over HTTP
-
-Delegated content routing is a mechanism for IPFS implementations to use for offloading content routing to another process/server using an HTTP API. For example, if an IPFS node does not implement the DHT, a delegated router can search the DHT for peers on its behalf. The main benefit of delegated routing is that nodes are not required to implement routing functionality themselves if they do not have the computing resources to do so, or wish to build an IPFS system with a custom backend for routing. Thus, delegated routing over HTTPS provides IPFS nodes with a standard interface that allows more flexibility in terms of how content routing works. 
 
 ## How IPFS transfers data
 
@@ -151,17 +152,7 @@ Want learn more about IPFS Gateways? See the [IPFS Gateway conceptual guide](../
 
 ### Sneakernet
 
-For use cases where transfer of data over a network connection is not an option, IPFS supports the use of <VueCustomTooltip label="An informal term for the transfer of data between computers through removable devices (hard drives, flash drives, optical disks, etc.), which are physically transported between computers, as opposed to transferring the data over the network." underlined multiline is-small is-right>sneakernet</VueCustomTooltip> to transfer content-addressed data between IPFS nodes. Sneakernets are a great option for data transfer in the following situations:
-
-- Computer network maintenance is impractical or expensive.
-- Manual inspection of data for things like re-classification of information is necessary, such as in a high-security environment.
-- Data needs to be shared between networks with different security requirements.
-- Bandwidth limitations make data transfer impractical.
-- A particular system is incompatible or unable to connect with the local network, or is not on the same network. 
-- Censorship circumvention is necessary.
-- Data needs to be made available in places that don't have direct connections to a network.
-
-Using IPFS, data transferred via sneakernet is [verifiable](../concepts/what-is-ipfs.md#verifiability) and will have the same CID on both sides of the air gap.
+For use cases where transfer of data over a network connection is not an option, IPFS supports the use of <VueCustomTooltip label="An informal term for the transfer of data between computers through removable devices (hard drives, flash drives, optical disks, etc.), which are physically transported between computers, as opposed to transferring the data over the network." underlined multiline is-small is-right>sneakernet</VueCustomTooltip> to transfer content-addressed data between IPFS nodes. Using IPFS, CAR files (discussed in [How IPFS represents and addresses data](#content-addressable-archive-car-files)) can be transferred between two network drives without any network connectivity. Because of IPFS, the data is [verifiable](../concepts/what-is-ipfs.md#verifiability) and will have the same CID on both sides of the air gap.
 
 ## Further reading
 

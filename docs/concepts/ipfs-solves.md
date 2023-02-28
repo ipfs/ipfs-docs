@@ -7,11 +7,11 @@ description:  Learn about the problems that IPFS solves.
 
 IPFS seeks to address problems with the current web and existing data representation / routing / transfer protocols like <VueCustomTooltip label="A protocol for transferring data over the internet, mainly used for web browsing. It enables communication between a client (e.g. a web browser) and a server, where the client sends a request and the server returns a response with the requested information." underlined multiline is-medium>HTTP</VueCustomTooltip> including:
 
+- [Verifiability](#verifiability)
+- [Resilience](#resilience)
 - [Centralization](#centralization)
 - [Performance](#performance)
-- [Resilience](#resilience)
 - [Link rot](#link-rot)
-- [Verifiability](#verifiability)
 - [Data sovereignty and ownership](#data-sovereignty)
 - [Off-chain storage](#off-chain-storage)
 - [Local-first software](#local-first-software)
@@ -23,25 +23,25 @@ In this guide, you'll learn about each of the problems that IPFS solves.
 This guide is part 2 of a 3-part introduction to [the basic concepts of IPFS](../concepts/README.md#learn-the-basics). The third part, [**How IPFS Works**](../concepts/how-ipfs-works.md), covers the different subsystems that IPFS is comprised of and how each one works.
 :::
 
-## Centralization
+## Verifiability
 
-IPFS is an open-source, decentralized system that eliminates the need for a central authority, making it more resilient and censorship-resistant than traditional centralized systems. No single entity or person controls, manages or owns IPFS; rather, it is a community-maintained project with multiple implementations of the protocol, multiple tools and apps leveraging that protocol, and multiple users and organizations contributing to it's design and development.
-
-## Performance
-
-IPFS provides faster access to data by enabling it to be replicated to and retrieved from multiple locations, and allowing users to access data from the nearest location using content addressing instead of <VueCustomTooltip label="Data identified and linked to by it's location. An example is HTTP." underlined multiline>location-based addressing</VueCustomTooltip>. In other words, because data can be addressed based on it's contents, a node on the network can fetch that data from _any_ other node in the network that has the data; thus, performance issues like latency are reduced. 
+IPFS uses <VueCustomTooltip label="A function that takes some arbitrary input (content) and returns a fixed-length value. The exact same input data will always generate the same hash as output. There are numerous hash algorithms." underlined multiline is-medium>cryptographic hashes</VueCustomTooltip> to verify the authenticity and integrity of files, making it difficult for malicious actors to tamper with or delete files.
 
 ## Resilience 
 
 IPFS has no single point of failure, and users do not need to trust each other. In other words, the failure of a single or even multiple nodes in the network does not affect the functioning of the entire network, and an IPFS node can fetch data from the network as long as at least one other node in the network has that data, regardless of its location.
 
+## Centralization
+
+IPFS is an open, distributed and participatory network that reduces data silos from centralized servers, making IPFS more resilient than traditional systems. No single entity or person controls, manages or owns IPFS; rather, it is a community-maintained project with multiple implementations of the protocol, multiple tools and apps leveraging that protocol, and multiple users and organizations contributing to it's design and development.
+
+## Performance
+
+IPFS provides faster access to data by enabling it to be replicated to and retrieved from multiple locations, and allowing users to access data from the nearest location using content addressing instead of <VueCustomTooltip label="Data identified and linked to by it's location. An example is HTTP." underlined multiline>location-based addressing</VueCustomTooltip>. In other words, because data can be addressed based on it's contents, a node on the network can fetch that data from _any_ other node in the network that has the data; thus, performance issues like latency are reduced. 
+
 ## Link rot
 
 IPFS eliminates the problem of <VueCustomTooltip label="The tendency for hyperlinks over time to cease pointing to their targeted file, web page, or server due to relocation of the resource to a new address, or the resource becoming permanently unavailable." underlined multiline>link rot</VueCustomTooltip> by allowing data to be addressed by its content, rather than by its location. So, in other words, content in IPFS is still reachable regardless of its location, and does not depend on specific servers being available.
-
-## Verifiability
-
-IPFS uses <VueCustomTooltip label="A function that takes some arbitrary input (content) and returns a fixed-length value. The exact same input data will always generate the same hash as output. There are numerous hash algorithms." underlined multiline is-medium>cryptographic hashes</VueCustomTooltip> to verify the authenticity and integrity of files, making it difficult for malicious actors to tamper with or delete files.
 
 ## Data sovereignty 
 

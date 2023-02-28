@@ -215,3 +215,6 @@ requesters
 Sneakernets
 upgradeability
 performant
+sneakernet
+Sneakernet
+Bitswap
