@@ -108,7 +108,14 @@ Want to learn more about Bitswap? See the [Bitswap deep dive](../concepts/bitswa
 
 ### Delegated routing over HTTP
 
-Delegated content routing is a mechanism for IPFS implementations to use for offloading content routing to another process/server using an HTTP API. For example, if an IPFS node does not implement the DHT, a delegated router can search the DHT for peers on its behalf. The main benefit of delegated routing is that nodes are not required to implement routing functionality themselves if they do not have the computing resources to do so, or wish to build an IPFS system with a custom backend for routing. Thus, delegated routing over HTTPS provides IPFS nodes with a standard interface that allows more flexibility in terms of how content routing works. For further information, see the [Delegated Content Routing HTTP API spec](https://github.com/ipfs/specs/blob/main/routing/DELEGATED_CONTENT_ROUTING_HTTP.md).
+Delegated content routing is a mechanism for IPFS implementations to use for offloading content routing to another process/server using an HTTP API. For example, if an IPFS node does not implement the DHT, a delegated router can search the DHT for peers on its behalf. The main benefit of delegated routing is that nodes are not required to implement routing functionality themselves if they do not have the computing resources to do so, or wish to build an IPFS system with a custom backend for routing. So, delegated routing over HTTPS provides IPFS nodes with a standard interface that allows more flexibility in terms of how content routing works. 
+
+:::callout
+**Learn more**
+
+For further information, see the [Delegated Content Routing HTTP API spec](https://github.com/ipfs/specs/blob/main/routing/DELEGATED_CONTENT_ROUTING_HTTP.md)..
+
+:::
 
 ### mDNS
 
