@@ -14,7 +14,7 @@ In this quickstart guide, you will learn about [pinning services](../concepts/pe
 Pinning a file to IPFS is how content is published to IPFS. Any given file represented by a CID can be pinned to multiple IPFS nodes to increase the redundancy and resilience of the file on the network. Pinning services are like hosting services that run an IPFS node for you and ensure that your files are available to the IPFS network.
 
 :::callout
-It's worth noting that data pinned to the IPFS network is public by default and retrievable by anyone. Make sure to avoid publishing private data or take the necessary measures to adequately encrypt it before publishing.
+Data pinned to the IPFS network is public by default and retrievable by anyone. Make sure to avoid publishing private data or take the necessary measures to adequately encrypt it before publishing.
 :::
 ## Prerequisites
 
@@ -53,11 +53,11 @@ Let's unpack what just happened, by looking at CIDs, and how they fits into the 
 
 ## What's a CID?
 
-In IPFS, every file and directory is identified with a Content Identifier ([CID](../concepts/content-addressing.md)). The generated CID serves as the **permanent address** of the file and can be used by anyone to find it on the IPFS network.
+In IPFS, every file and directory is identified with a Content Identifier ([CID](../concepts/content-addressing.md)). The CID serves as the **permanent address** of the file and can be used by anyone to find it on the IPFS network.
 
-For a file to be published to IPFS (like the image used in this guide), it has to be transformed into a content-addressable representation which generates a CID by hashing the guts of the file
+When a file is published to IPFS (like the image used in this guide), it's first transformed into a content-addressable representation by which the file is split into smaller chunks which linked and hashed to produce the CID.
 
-The CID for your uploaded image is:
+The CID for the uploaded image is:
 
 ```plaintext
 bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4
@@ -65,19 +65,17 @@ bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4
 
 You can now share the CID and anyone should be able to fetch it.
 
-:::callout
-Note that the transformation into a content-addressable representation can be a local operation that doesn't require any network connectivity. With web3.storage, this transformation happens on the client-side (in the browser.)
-:::
+> **Note:** the transformation into a content-addressable representation is a local operation that doesn't require any network connectivity. With web3.storage, this transformation happens on the client-side (in the browser.)
 
 ## The lifecycle of data in IPFS
 
-To understand what happened when you pinned the file, it's helpful to understand the lifecycle of data in IPFS, which can be summarised as follows:
+To understand what happens when you pin a file, it's helpful to understand the lifecycle of data in IPFS, which can be summarised as follows:
 
-1. **Content-addressable representation**: The file is transformed into a content-addressable representation known as a [Merkle DAG](../concepts/merkle-dag.md). For this guide, the full details are not important. The basic idea is that this representation makes files and directories **content-addressable** via CIDs by chunking files into smaller blocks** and calculating their hashes.
+1. **Content-addressable representation**: The file is transformed into a content-addressable representation with a CID. For this guide, the full details are not important. The basic idea is that this representation makes files and directories **content-addressable** via CIDs by chunking files into smaller blocks**, calculating their hashes, and constructing a [Merkle DAG](../concepts/merkle-dag.md).
 2. **Pinning:** refers to the stage where the blocks of the CID are saved on an IPFS node (or multiple nodes), in this case web3.storage. Since saving is not enough for the CID to be retrieveable, pinning typically refers to two things:
    - **Advertising:** Making it discoverable to the IPFS network by advertising a record linking between the CID and the server's IP address to the network. This advertising stage is a continuous process that repeats. 
-   - **Providing:** The content-addressable representation of the file is persisted on one of web3.storage's IPFS nodes (servers running an IPFS node) and made publicly available to the IPFS network.
-3. **Fetching:** 
+   - **Providing:** The content-addressable representation of the CID is persisted on one of web3.storage's IPFS nodes (servers running an IPFS node) and made publicly available to the IPFS network.
+3. **Fetching:** refers to step where another node in the IPFS network fetches the blocks of the CID and constructing the DAG locally essentially replicating the file.
 4. **Deleting**
 
 ## Fetching your published file
