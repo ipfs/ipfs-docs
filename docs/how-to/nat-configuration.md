@@ -106,7 +106,7 @@ In this step, you will update your Kubo configuration to set `Swarm.AppendAnnoun
    "AppendAnnounce": [
      "/ip4/<public-ip>/tcp/<port>",
      "/ip4/<public-ip>/udp/<port>/quic",
-     "/ip4/<public-ip>udp/<port>/quic-v1",
+     "/ip4/<public-ip>/udp/<port>/quic-v1",
      "/ip4/<public-ip>/udp/<port>/quic-v1/webtransport",
     ],
    ```
