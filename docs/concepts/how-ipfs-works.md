@@ -5,86 +5,160 @@ description: Learn how the InterPlanetary File System (IPFS) works and why it's 
 
 # How IPFS works
 
-::: tip
-Want to see a video recap of how IPFS works with files in general? Check out this content from IPFS Camp 2019! [Core Course: How IPFS Deals With Files](https://www.youtube.com/watch?v=Z5zNPwMDYGg)
+ In this conceptual guide, you'll learn about the major subsystems that <VueCustomTooltip label="InterPlanetary File System"  abbreviation is-small>IPFS</VueCustomTooltip> is comprised of, and how they work. The three key responsibilities of the IPFS subsystems are: 
+- **Representing and addressing data**
+- **Routing data**
+- **Transferring data**
+
+While these are the key responsibilities, IPFS's functionality spans beyond these three. 
+
+Data in IPFS is addressed by its contents (<VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>content addressing</VueCustomTooltip>), rather than a location, such as an IP address (location addressing).
+
+:::callout
+This guide is part 2 of a 3-part introduction to [the basic concepts of IPFS](../concepts/README.md#learn-the-basics). The first part, [What IPFS is and isn't](../concepts/what-is-ipfs.md), defines IPFS, while the second part, [**IPFS and the problems it solves**](../concepts/ipfs-solves.md), covers the problems with the internet and current protocols like HTTP that IPFS solves.
 :::
 
-IPFS is a peer-to-peer (p2p) storage network. Content is accessible through peers located anywhere in the world, that might relay information, store it, or do both. IPFS knows how to find what you ask for using its content address rather than its location.
+## Subsystems overview
 
-There are three fundamental principles to understanding IPFS:
+All IPFS subsystems, ordered by purpose, are listed below, with links to the major subsystems discussed in this guide.
 
-1. Unique identification via content addressing
-2. Content linking via directed acyclic graphs (DAGs)
-3. Content discovery via distributed hash tables (DHTs)
+| Purpose | Subsystem |
+| ------- | --------- |
+| Representing and organizing the data | [CIDs](#content-identifier-cid), [IPLD, UnixFS](#interplanetary-linked-data-ipld), MFS, DAG-CBOR, DAG-JSON, [CAR files](#content-addressable-archive-car-files) |
+| Content routing, linking between CID and IP addresses | [Kademlia DHT](#kademlia-distributed-hash-table-dht), [Delegated routing over HTTP](#delegated-routing-over-http), [Bitswap](#bitswap-for-content-routing), [mDNS](#mdns) |
+| Transferring data | [Bitswap](#bitswap-for-data-transfer), [HTTP Gateways](#ipfs-http-gateways), [Sneakernet](#sneakernet), Graphsync, more in development |
+| Addressing for data and peers | [Multiformats](#content-identifier-cid) |
+| Bridging between IPFS and HTTP | [IPFS Gateways](#ipfs-http-gateways), Pinning API Spec |
+| Peer-to-peer connectivity | libp2p (TCP, QUIC, WebRTC, WebTransport) |
+| Mutability and dynamic naming | IPNS (Interplanetary Naming System), DNSLink |
 
-These three principles build upon each other to enable the IPFS ecosystem. Let's start with _content addressing_ and the unique identification of content.
 
-## Content addressing
+## How IPFS represents and addresses data
 
-IPFS uses _content addressing_ to identify content by what's in it rather than by where it's located. Looking for an item by content is something you already do all the time. For example, when you look for a book in the library, you often ask for it by the title; that's content addressing because you're asking for _what_ it is. If you were using location addressing to find that book, you'd ask for it by _where_ it is: "I want the book that's on the second floor, first stack, third shelf from the bottom, four books from the left." If someone moved that book, you'd be out of luck!
+IPFS represents data as content-addressed <VueCustomTooltip label="The term for a single unit of data in IPFS." underlined multiline is-medium>blocks</VueCustomTooltip>, and operates on those data blocks using the following subsystems:
 
-That problem exists for the internet and on your computer! Right now, content is found by location, such as:
+- [Content Identifier (CID)](#content-identifier-cid)
+- [InterPlanetary Linked Data (IPLD)](#interplanetary-linked-data-ipld)
+- [Content Addressable aRchive (CAR) files](#content-addressable-archive-car-files)
 
-- `https://en.wikipedia.org/wiki/Aardvark`
-- `/Users/Alice/Documents/term_paper.doc`
-- `C:\Users\Joe\My Documents\project_sprint_presentation.ppt`
+### Content Identifier (CID)
 
-By contrast, every piece of content that uses the IPFS protocol has a [_content identifier_](content-addressing.md), or CID, that is its _hash_. The hash is unique to the content that it came from, even though it may look short compared to the original content. If hashes are new to you, check out our [guide to cryptographic hashing](hashing.md) for an introduction.
+In IPFS, data is chunked into <VueCustomTooltip label="The term for a single unit of data in IPFS." underlined multiline is-medium>blocks</VueCustomTooltip>, which are assigned a unique identifier called a <VueCustomTooltip label="An address used to point to data in IPFS, based on the content itself, as opposed to the location." underlined multiline is-medium>Content Identifier (CID)</VueCustomTooltip>.  In general, the CID is computed by combining the hash of the data with it's <VueCustomTooltip label="Software capable of encoding and/or decoding data." underlined multiline is-medium>codec</VueCustomTooltip>. The codec is generated using <VueCustomTooltip label="A collection of interoperable, extensible protocols for making data self-describable." underlined multiline is-medium>Multiformats</VueCustomTooltip>.
 
-Many distributed systems use content addressing through hashes as a means for not just identifying content, but also linking it together — everything from the commits that back your code to the blockchains that run cryptocurrencies leverage this strategy. However, the underlying data structures in these systems are not necessarily interoperable.
+CIDs are unique to the data from which they were computed, which provides IPFS with the following benefits:
+- Data can fetched based on it's content, rather than it's location. 
+- The CID of the data received can be computed and compared to the CID requested, to verify that the data is what was requested.
 
-This is where the [Interplanetary Linked Data (IPLD) project](https://ipld.io/) comes in. IPLD translates between hash-linked data structures, allowing for the unification of the data across distributed systems. IPLD provides libraries for combining pluggable modules (parsers for each possible type of IPLD node) to resolve a path, selector, or query across many linked nodes, allowing you to explore data regardless of the underlying protocol. IPLD provides a way to translate between content-addressable data structures: _"Oh, you use Git-style, no worries, I can follow those links. Oh, you use Ethereum, I got you, I can follow those links too!"_
-
-IPFS follows particular data-structure preferences and conventions. The IPFS protocol uses those conventions and IPLD to get from raw content to an IPFS address that uniquely identifies content on the IPFS network.
-
-The next section explores how links between content are embedded within that content address through a DAG data structure.
-
-## Directed acyclic graphs (DAGs)
-
-IPFS and many other distributed systems take advantage of a data structure called [directed acyclic graphs](https://en.wikipedia.org/wiki/Directed_acyclic_graph), or DAGs. Specifically, they use _Merkle DAGs_, where each node has a unique identifier that is a hash of the node's contents. Sound familiar? This refers back to the _CID_ concept that we covered in the previous section. Put another way: identifying a data object (like a Merkle DAG node) by the value of its hash _is content addressing_. Check out our [guide to Merkle DAGs](merkle-dag.md) for a more in-depth treatment of this topic.
-
-IPFS uses a Merkle DAG that is optimized for representing directories and files, but you can structure a Merkle DAG in many different ways. For example, Git uses a Merkle DAG that has many versions of your repo inside of it.
-
-To build a Merkle DAG representation of your content, IPFS often first splits it into _blocks_. Splitting it into blocks means that different parts of the file can come from different sources and be authenticated quickly. (If you've ever used BitTorrent, you may have noticed that when you download a file, BitTorrent can fetch it from multiple peers at once; this is the same idea.)
-
-::: tip
-It's easy to see a Merkle DAG representation of a file of your choice using the [DAG Builder visualizer](https://dag.ipfs.io/).
+:::callout
+**Learn more**
+Learn more about the concepts behind CIDs described here with the [the CID deep dive](../concepts/content-addressing.md#cid-versions).
 :::
 
-Merkle DAGs are a bit of a ["turtles all the way down"](https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Turtles_all_the_way_down.html) scenario; that is, _everything_ has a CID. Let's say you have a file, and its CID identifies it. What if that file is in a folder with several other files? Those files will have CIDs too. What about that folder's CID? It would be a hash of the CIDs from the files underneath (i.e., the folder's content). In turn, those files are made up of blocks, and each of those blocks has a CID. You can see how a file system on your computer could be represented as a DAG. You can also see, hopefully, how Merkle DAG graphs start to form. For a visual exploration of this concept, take a look at the [IPLD Explorer](https://explore.ipld.io/#/explore/QmSnuWmxptJZdLJpKRarxBMS2Ju2oANVrgbr2xWbie9b2D).
 
-Another useful feature of Merkle DAGs and breaking content into blocks is that if you have two similar files, they can share parts of the Merkle DAG, i.e., parts of different Merkle DAGs can reference the same subset of data. For example, if you update a website, only updated files receive new content addresses. Your old version and your new version can refer to the same blocks for everything else. This can make transferring versions of large datasets (such as genomics research or weather data) more efficient because you only need to transfer the parts that are new or changed, instead of creating entirely new files each time.
+### InterPlanetary Linked Data (IPLD)
 
-So, to recap, IPFS lets you give CIDs to content and link that content together in a Merkle DAG. Now let's move on to the last piece: how you find and move content.
+IPFS uses <VueCustomTooltip label="A set of specifications in support of decentralized, content-addressable data structures for the web." underlined multiline is-medium>InterPlanetary Linked Data (IPLD)</VueCustomTooltip> to work with CIDs and content-addressed data. IPFS uses IPLD to represent relationships between content-addressed data, such as file directories and other hierarchical structures, using a <VueCustomTooltip label="Data structured as a graph whose nodes are directionally related to each other and don’t form a directional closed loop." underlined multiline is-medium>Directed Acyclic Graph (DAG)</VueCustomTooltip> called a <VueCustomTooltip label="A special type of DAG where each node has a unique identifier that is a hash of the node's contents." underlined multiline is-medium>Merkle DAG</VueCustomTooltip>. Using IPLD for the general functionality, IPFS is able provide a more tailored, specific mechanism for representing and addressing files, directories, and their symlinks, called [UnixFS](../concepts/file-systems.md#unix-file-system-unixfs). With UnixFS, IPFS can <VueCustomTooltip label="When an object is added to IPFS, it is split up into smaller parts, each part is hashed, and a CID is created for each part." underlined multiline is-medium>chunk</VueCustomTooltip> and link data too big to fit in a single block, and use the chunked representation to store and manage the data.
 
-## Distributed hash tables (DHTs)
+IPLD provides IPFS with the following benefits:
 
-To find which peers are hosting the content you're after (_discovery_), IPFS uses a [distributed hash table](dht.md), or DHT. A hash table is a database of keys to values. A _distributed_ hash table is one where the table is split across all the peers in a distributed network. To find content, you ask these peers.
+- The ability to represent and work with arbitrary data, whether that data is standard files and directories, linked data, a Merkle DAG, or another data type.
+- Base functionality to structure, serialize, traverse and link content-addressed data, which can be leveraged by abstractions like UnixFS for more specific use cases.
+- Interoperable protocols.
+- Easy upgradeability.
+- Backwards compatibility.
 
-The [libp2p project](https://libp2p.io/) is the part of the IPFS ecosystem that provides the DHT and handles peers connecting and talking to each other. (Note that, as with IPLD, libp2p can also be used as a tool for other distributed systems, not just IPFS.)
+:::callout
+**Learn more**
+Want to learn more about IPLD? See [the official docs](https://ipld.io/docs/intro/primer/).
+:::
 
-Once you know where your content is (or, more precisely, which peers are storing each of the blocks that make up the content you're after), you use the DHT again to find the current location of those peers (_routing_). So, to get to the content, use libp2p to query the DHT twice.
+### Content Addressable aRchive (CAR) files
 
-You've discovered your content, and you've found the current location(s) of that content. Now, you need to connect to that content and get it (_exchange_). To request blocks from and send blocks to other peers, IPFS currently uses a module called [_Bitswap_](https://github.com/ipfs/specs/blob/master/BITSWAP.md). Bitswap allows you to connect to the peer or peers that have the content you want, send them your _wantlist_ (a list of all the blocks you're interested in), and have them send you the blocks you requested. Once those blocks arrive, you can verify them by hashing their content to get CIDs and compare them to the CIDs that you requested. These CIDs also allow you to deduplicate blocks if needed.
+IPFS uses Content Addressable aRchive (CAR) files to store and transfer a serialized archive of IPLD content-addressed data. CAR files are similar to TAR files, in that they that are designed for storing collections of content addressed data.
 
-There are [other content replication protocols under discussion](https://github.com/ipfs/camp/blob/master/DEEP_DIVES/24-replication-protocol.md) as well, the most developed of which is [_Graphsync_](https://github.com/ipld/ipld/blob/master/specs/transport/graphsync/index.md). There's also a proposal under discussion to [extend the Bitswap protocol](https://github.com/ipfs/go-bitswap/issues/186) to add functionality around requests and responses.
+## How content routing works in IPFS
 
-## SHA file hashes won't match Content IDs
+_Content routing_ refers to the way in which IPFS determines where to find a given CID on the network; specifically, which network peers are providing the CIDs you are requesting. In other words, a node cannot simply find data in the network with a CID alone; it requires information about the IP addresses and ports of its <VueCustomTooltip label="Programs that implement the IPFS protocol and participate in the IPFS network. Also referred to as a node." underlined multiline is-left>peers</VueCustomTooltip> on the network. To route content, IPFS uses the following subsystems:
 
-You may be used to verifying the integrity of a file by matching SHA hashes, but SHA hashes won't match CIDs. Because IPFS splits a file into blocks, each block has its own CID, including separate CIDs for any parent nodes.
+- [Kademlia Distributed Hash Table (DHT)](#kademlia-distributed-hash-table-dht)
+- [Bitswap](#bitswap-for-content-routing)
+- [mDNS](#mdns)
+- [Delegated routing over HTTP](#delegated-routing-over-http)
 
-The DAG keeps track of all the content stored in IPFS as blocks, not files, and Merkle DAGs are self-verified structures. To learn more about DAGs, see [directed acyclic graph (DAG)](../concepts/merkle-dag.md).
+### Kademlia Distributed Hash Table (DHT)
 
-For a detailed example of what happens when you try to compare SHA hashes with CIDs, see [Content Identifiers are not hashes](../concepts/hashing.md#content-identifiers-are-not-file-hashes).
+IPFS uses Kademlia, a <VueCustomTooltip label="A decentralized data store that maps data based on key-value pairs." underlined multiline is-left>Distributed Hash Table (DHT)</VueCustomTooltip> designed for decentralized peer-to-peer networks. Kademlia helps you find peers in the IPFS network storing the data you are seeking. The Kademlia DHT can be thought of as a large table distributed across many nodes that stores information about which peers (IPs) have which data (CIDs). Kademlia provides a highly efficient, self-organizing system that withstands node churn. Kademlia uses <VueCustomTooltip label="Short for “library peer-to-peer”, libp2p is a collection of protocols, specifications, and libraries that faciliate connectivity between nodes in a peer-to-peer network." underlined multiline is-left> [libp2p](../concepts/libp2p.md)</VueCustomTooltip> to establish connectivity.
 
-### Libp2p
+:::callout
+**Learn more**
 
-What makes libp2p especially useful for peer-to-peer connections is _connection multiplexing_. Traditionally, every service in a system opens a different connection to communicate with other services of the same kind remotely. Using IPFS, you open just one connection, and you multiplex everything on that. For everything your peers need to talk to each other about, you send a little bit of each thing, and the other end knows how to sort those chunks where they belong.
+Want to learn more about Kademlia and DHTs? See the [Distributed Hash Tables (DHTs) conceptual guide](../concepts/dht.md#kademlia).
+:::
 
-This is useful because establishing connections is usually hard to set up and expensive to maintain. With multiplexing, once you have that connection, you can do whatever you need on it.
+### Bitswap (for content routing)
 
-## A modular paradigm
+IPFS nodes use Bitswap, a <VueCustomTooltip label="Unlike a request-response protocol, all nodes in the system receive every message transmitted, and decide whether the message received should be immediately discarded, stored or processed." underlined multiline is-medium>message-based</VueCustomTooltip>,  <VueCustomTooltip label="A network of computers model in which each party has equivalent capabilities and can initiate a communication session." underlined multiline is-medium>peer-to-peer network</VueCustomTooltip> protocol for the transfer of data, that is _also_ used for routing data. With Bitswap, an IPFS node can ask any of the peers that it is connected to if they have any of the CIDs that node is looking for, all without traversing the [Kademlia DHT](#kademlia-distributed-hash-table-dht). Peers also store wantlists, so that if a peer receives the requested data at a later time, it can then send it to the node that originally requested. Like Kademlia, Bitswap uses <VueCustomTooltip label="Short for “library peer-to-peer”, libp2p is a collection of protocols, specifications, and libraries that faciliate connectivity between nodes in a peer-to-peer network." underlined multiline is-left> [libp2p](../concepts/libp2p.md)</VueCustomTooltip> to establish connectivity. 
 
-As you may have noticed from this discussion, the IPFS ecosystem is made up of many modular libraries that support specific parts of any distributed system. You can certainly use any part of the stack independently or combine them in novel ways.
+:::callout
+**Learn more**
 
-The IPFS ecosystem gives CIDs to content and links that content together by generating IPLD Merkle DAGs. You can discover content using a DHT that's provided by libp2p, open a connection to any provider of that content, and download it using a multiplexed connection. All of this is held together by the middle of the stack, which is linked, unique identifiers; that's the essential part that IPFS is built on.
+Want to learn more about Bitswap? See the [Bitswap deep dive](../concepts/bitswap.md).
+
+:::
+
+### Delegated routing over HTTP
+
+Delegated content routing is a mechanism for IPFS implementations to use for offloading content routing to another process/server using an HTTP API. For example, if an IPFS node does not implement the DHT, a delegated router can search the DHT for peers on its behalf. The main benefit of delegated routing is that nodes are not required to implement routing functionality themselves if they do not have the computing resources to do so, or wish to build an IPFS system with a custom backend for routing. So, delegated routing over HTTPS provides IPFS nodes with a standard interface that allows more flexibility in terms of how content routing works. 
+
+:::callout
+**Learn more**
+
+For further information, see the [Delegated Content Routing HTTP API spec](https://github.com/ipfs/specs/blob/main/routing/DELEGATED_CONTENT_ROUTING_HTTP.md)..
+
+:::
+
+### mDNS
+
+To quickly and efficiently discover peers in local networks, IPFS uses Multicast Domain Name System (mDNS), a type of <VueCustomTooltip label="A system in which human-readable internet domain names are mapped to IP addresses." underlined multiline is-medium>DNS</VueCustomTooltip> protocol that resolves human-readable internet domain names to IP names without the use of a <VueCustomTooltip label="Any computer application that implements a system in which human-readable internet domain names are mapped to IP addresses (DNS)." underlined multiline is-medium>name server</VueCustomTooltip>.
+
+The use of mDNS enables quick and efficient discovery of IPFS nodes in local networks without any coordination, e.g., without internet connectivity or access to [bootstrap nodes](./nodes.md#bootstrap).
+
+## How IPFS transfers data
+
+In addition to [routing data](#how-content-routing-works-in-ipfs), nodes in the IPFS network must efficiently distribute and deliver the content addressed data, taking into account that there are some nodes in the network who already have a copy of the data, and other nodes who do not have a copy of the data, but want one. To handle the transfer of data, IPFS uses the following subsystems:
+
+- [Bitswap](#bitswap-for-data-transfer)
+- [IPFS HTTP Gateways](#ipfs-http-gateways)
+- [Sneakernet](#sneakernet)
+
+### Bitswap (for data transfer)
+
+As discussed in [How content routing works in IPFS](#bitswap-for-content-routing), IPFS nodes use Bitswap, a <VueCustomTooltip label="Unlike a request-response protocol, all nodes in the system receive every message transmitted, and decide whether the message received should be immediately discarded, stored or processed." underlined multiline is-medium>message-based</VueCustomTooltip>,  <VueCustomTooltip label="A network of computers model in which each party has equivalent capabilities and can initiate a communication session." underlined multiline is-medium>peer-to-peer network</VueCustomTooltip> protocol for both content routing and the transfer of data. With Bitswap, any peers that an IPFS node is connected to can transfer requested blocks directly to that node without needing to traverse the [DHT](#kademlia-distributed-hash-table-dht). Peers also store wantlists, so that if a peer receives requested data at a later time, it can then transfer it to the node that originally requested.
+
+:::callout
+**Learn more**
+
+Want learn more about Bitswap? See the [Bitswap deep dive](../concepts/bitswap.md).
+:::
+
+### IPFS HTTP Gateways
+
+HTTP Gateways allow applications that do not support or implement all IPFS subsystems to fetch data from the IPFS network using an HTTP interface. In its simplest form, a gateway is an IPFS Node that also exposes an [HTTP Gateway API](https://github.com/ipfs/specs/blob/main/http-gateways/README.md).
+
+:::callout
+**Learn more**
+
+Want learn more about IPFS Gateways? See the [IPFS Gateway conceptual guide](../concepts/ipfs-gateway.md).
+:::
+
+### Sneakernet
+
+For use cases where transfer of data over a network connection is not an option, IPFS supports the use of <VueCustomTooltip label="An informal term for the transfer of data between computers through removable devices (hard drives, flash drives, optical disks, etc.), which are physically transported between computers, as opposed to transferring the data over the network." underlined multiline is-small is-right>sneakernet</VueCustomTooltip> to transfer content-addressed data between IPFS nodes. Using IPFS, CAR files (discussed in [How IPFS represents and addresses data](#content-addressable-archive-car-files)) can be transferred between two network drives without any network connectivity. Because of IPFS, the data is [verifiable](../concepts/what-is-ipfs.md#verifiability) and will have the same CID on both sides of the air gap.
+
+## Further reading
+
+- Are you looking for a deep dive into the design, architecture and theory of IPFS? See the [original IPFS whitepaper](../concepts/further-reading/academic-papers.md#ipfs---content-addressed-versioned-p2p-file-system).
+- Dive deeper into the related concepts of [immutability](../concepts/immutability.md), [hashing](../concepts/hashing.md), [content-addressing and CIDs](../concepts/content-addressing.md).
+- Learn about [IPFS pinning, along with the differences between persistence, permanence, and pinning](../concepts/persistence.md).
+- Understand [privacy and encryption in IPFS](../concepts/privacy-and-encryption.md).
+- Learn more about [IPFS nodes, including the different types](../concepts/nodes.md).

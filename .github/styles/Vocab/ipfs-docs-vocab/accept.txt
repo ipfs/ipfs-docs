@@ -43,6 +43,7 @@
 [Mm]ulticodec
 [Mm]ultiformats
 [Mm]ultihash
+[Mm]ulticast
 [Nn]amespace
 [Pp]reload
 [Pp]ub[Ss]ub
@@ -66,6 +67,7 @@ Browserify
 callouts?
 CAs?
 CDNs?
+CIDs
 Certbot
 CNAMEs?
 codec
@@ -136,6 +138,8 @@ Metamask
 Minty('s)?
 Mojitos
 multipage
+multihashes
+multihash
 Nagaraj
 Nakamoto('s)?
 Namebase
@@ -203,3 +207,14 @@ whitepaper
 WiFi
 WS
 ^WSS$
+youtube
+upgradeability
+wantlists
+requesters
+[Ss]neakernet
+Sneakernets
+upgradeability
+performant
+sneakernet
+Sneakernet
+Bitswap

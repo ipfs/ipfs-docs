@@ -99,25 +99,33 @@ module.exports = {
           ],
           '/concepts/': [
             {
-              title: 'Basic Concepts',
+              title: 'Basics',
               sidebarDepth: 1,
               collapsable: true,
               children: [
                   '/concepts/what-is-ipfs',
+                  '/concepts/ipfs-solves',
                   '/concepts/how-ipfs-works',
-                  '/concepts/content-addressing',
+              ]
+            },
+            {
+              title: 'Ideas and theory',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
                   '/concepts/hashing',
                   '/concepts/immutability',
                   '/concepts/persistence',
                   '/concepts/privacy-and-encryption',
-                  '/concepts/nodes'
+                  '/concepts/nodes',
               ]
             },
             {
-              title: 'Subsystems and Components',
+              title: 'Subsystems and components',
               sidebarDepth: 1,
               collapsable: true,
               children: [
+                '/concepts/content-addressing',
                 '/concepts/bitswap',
                 '/concepts/dht',
                 '/concepts/dnslink',
@@ -154,8 +162,8 @@ module.exports = {
                   'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
                   'Customize an IPFS repo'
                 ],
-                '/how-to/best-practices-for-ipfs-builders',
-                '/how-to/troubleshooting'
+                '/how-to/kubo-garbage-collection',
+                '/how-to/troubleshooting',   
               ]
             },
             {
@@ -169,7 +177,7 @@ module.exports = {
                 '/how-to/take-snapshot',
                 '/how-to/store-play-videos',
                 '/how-to/host-git-repo',
-                '/how-to/move-ipfs-installation/move-ipfs-installation'
+                '/how-to/move-ipfs-installation/move-ipfs-installation',
               ]
             },
             {
@@ -230,7 +238,15 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/mint-nfts-with-ipfs',
-                '/how-to/best-practices-for-nft-data'
+                '/how-to/best-practices-for-nft-data'         
+              ]
+            },
+            {
+              title: 'Privacy and Encryption',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
+                ['/how-to/privacy-best-practices', 'Privacy and Encryption'], 
               ]
             }
           ],
@@ -342,6 +358,7 @@ module.exports = {
   plugins: [
     [require('./plugins/vuepress-plugin-speedcurve'), { id: SPEEDCURVE_ID }],
     '@vuepress/plugin-back-to-top',
+    ['@adamdehaven/vuepress-plugin-custom-tooltip'],
     [
       '@vuepress/google-analytics',
       {

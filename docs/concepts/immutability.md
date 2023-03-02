@@ -12,8 +12,6 @@ related:
 
 # Immutability
 
-## Overview
-
 An immutable object is an object whose state cannot be altered or modified once created. Once a file is added to the IPFS network, the content of that file cannot be changed without altering the [content identifier (CID)](../concepts/content-addressing.md) of the file. This feature is excellent for storing data that does not need to change. However, when it comes to content that needs to be altered or updated, immutability becomes a problem. This page discusses how to keep a mutable _state_ built from immutable building blocks.
 
 A CID is an _absolute_ pointer to content. No matter when we request a CID, the CID value will always be the same. This is part of the content's architecture and cannot be changed. To manage _immutable_ files in a _mutable_ system, we need to add another layer that sits on top of CIDs.
@@ -54,9 +52,9 @@ If we change the content of `B` to `IPFS!`, all the upstream paths will change a
 
 Again, node `B` does not change. It will always refer to the same content, `world`. Node `A` also appears in the new DAG. This does not necessarily mean we copied the memory/buffer that contained the `hello` string into our new message; that would imply the location-addressed paradigm that focuses on the _where_ and not the _what_. In a content-addressed system, any time someone writes the string `hello` it will always have CID `A`, regardless of whether we copied the string from a previous location or we wrote it from scratch.
 
-### Website explanation
+## Example
 
-Here we have a website that displays two headers called `header_1` and `header_2`. The content of the headers is supplied from the variables `string_1` and `string_2`.
+In this example, we have a website that displays two headers called `header_1` and `header_2`. The content of the headers is supplied from the variables `string_1` and `string_2`.
 
 ```html
 <body>
@@ -100,41 +98,3 @@ This process is essentially what the [InterPlantery Naming Service (IPNS)](../co
 |  User  | ---> | docs.ipfs.tech | ---> | bafybeigsddxhokzs3swgx6mss5i3gm6jqzv5b45e2xybqg7dr3jmsykrku |
 +--------+      +----------------+      +-------------------------------------------------------------+
 ```
-
-## Updating CIDs
-
-### Using IPNS to create pointers to CIDs
-
-To avoid the pitfalls of immutability and ensure that CIDs accurately reflect the current state of content, developers can use IPNS to create pointers to CIDs that can be updated. Instead of updating the CID itself, developers can update the IPNS address, which points to the current CID. This allows users to reference a stable, fixed IPNS address while still being able to access the latest version of the content. Learn more about IPNS [here](ipns.md).
-
-### Using smart contracts to manage CIDs
-
-Another approach is to use smart contract logic to manage the CIDs in an application. For example, if your application receives a CID from a smart contract, you can use smart contract functions to update the CID given to users. This allows you to change the CID without breaking the integrity of the content.
-
-First, you will need a smart contract that manages the CID for the content you want to update. This contract should have a function that constructs the `tokenURI` for the content, using the `baseURI` stored in the contract's storage. For example:
-
-```py
-def tokenURI(this, tokenID: uint256) -> string:
-    return this.baseURI + str(tokenID) + ".json"
-```
-
-This function returns a `tokenURI`. It will look something along the lines of `ipfs://Qmfoo/1234.json`, where _1234_ is the `tokenID` for the content.
-
-Next, you will need to add a setter function to the contract that allows the `baseURI` to be updated. This function should only be accessible to the contract owner to ensure that only authorized users can update the CID. For example:
-
-```py
-def setBaseURI(this, newBaseURI: string):
-    require(msg.sender == this.owner)
-    this.baseURI = newBaseURI
-```
-
-To use this function, you can call it from your contract's code or interact with it using a tool like Remix.
-For example, to update the `baseURI` to `ipfs://Qmbar/`, you could use the following code:
-
-```shell
-contract.setBaseURI("ipfs://Qmbar/")
-```
-
-This will update the `baseURI` in the contract's storage, and the `tokenURI` function will now return `ipfs://Qmbar/1234.json` instead of `ipfs://Qmfoo/1234.json`.
-
-This is one way you can use smart contract logic to manage CIDs, without changing the CID itself. This allows you to ensure that the CID accurately reflects the current state of the content and enables users to access the latest version of the content using a stable, fixed `tokenURI`.

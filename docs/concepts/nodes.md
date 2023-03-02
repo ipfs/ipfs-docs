@@ -1,6 +1,7 @@
 ---
 title: "Nodes"
 description: "Participants in the IPFS network are called nodes. Nodes are the most important aspect of IPFS - without nodes running the IPFS daemon, there would be no  IPFS network. This page discusses what nodes are, current IPFS implementations, and the types of services different nodes can offer."
+sidebarDepth: 2
 ---
 
 # Nodes
@@ -33,7 +34,7 @@ There are different types of IPFS nodes. And depending on the use-case, a single
 
 Use to make a UnixFS DAG publicly available by calling `ipfs refs -r <CID>` on a randomly chosen preload node's HTTP API. This puts the CID in the preload nodes' wantlist, causing it to fetch the data from the user. Other nodes requesting the content can then resolve it from the preload node using bitswap, as the data is now present in the preload node’s blockstore.
 
-Features of a preload node:
+#### Features of a preload node
 
 - They are Kubo nodes with API ports exposed. Some HTTP API commands are accessible.
 - Used by JS-IPFS nodes running in browser contexts.
@@ -42,7 +43,7 @@ Features of a preload node:
 - Preload nodes are in the default JS-IPFS configuration as bootstrap nodes, so they will maintain libp2p swarm connections to them at all times.
     - They are configured as regular bootstrap nodes, but as a convention have the string 'preload' in their `/dnsaddr` multiaddrs.
 
-Limitations of a preload node:
+#### Limitations of a preload node:
 
 - Default preload nodes provided by Protocol Labs garbage collect every hour, so preloaded content only survives for that long. However, this is configurable. You can run nodes with customized policies.
 - Requires client to be smart about what gets preloaded: recursive preload of a big DAG.
@@ -52,7 +53,7 @@ Limitations of a preload node:
 
 If an IPFS node deems itself unreachable by the public internet, IPFS nodes may choose to use a relay node as a kind of VPN in an attempt to reach the unreachable node.
 
-Features of a relay node:
+#### Features of a relay node
 
 - Implements either [v1](https://github.com/libp2p/specs/blob/master/relay/circuit-v1.md) or [v2](https://github.com/libp2p/specs/blob/master/relay/circuit-v2.md) of the Circuit Relay protocol.
 - Can be either Kubo or JS-IPFS nodes; however there are standalone implementations as well:
@@ -61,7 +62,7 @@ Features of a relay node:
 - They're used by both Kubo and JS-IPFS nodes.
     - JS-IPFS nodes can also use relay nodes to overcome the lack of transport compatibility within the JS-IPFS implementation. A browser node with WebSockets/webRTC transports can talk with a Kubo node that only communicates through TCP using a relay that supports both transports. This is not enabled by default and needs to be set up.
 
-Limitations of relay nodes:
+#### Limitations of relay nodes:
 - v1 relays can be used by anyone without any limits, unless [go-libp2p-relay-daemon](https://github.com/libp2p/go-libp2p-relay-daemon) is used with ACLs (Access Control Lists) set up.
 - v2 relays are "limited relays" that are designed to be used for [Direct Connection Upgrade through Relay](https://github.com/libp2p/specs/blob/master/relay/DCUtR.md) (aka hole punching).
 - Not configurable in Kubo; uses a preset list of relays
@@ -72,12 +73,12 @@ See [p2p-circuit relay](https://github.com/libp2p/specs/tree/master/relay)
 
 Both Kubo and JS-IPFS nodes use bootstrap nodes to initially enter the DHT.
 
-Features of a bootstrap node:
+#### Features of a bootstrap node:
 
 - All default bootstrap nodes are part of the public DHT.
 - The list of bootstrap nodes a JS-IPFS node connects to is configurable in their config files.
 
-Limitations of a bootstrap node:
+#### Limitations of a bootstrap node:
 
 - If an IPFS node only has one bootstrap node listed in that configuration and that bootstrap node goes offline, the IPFS node will lose access to the public DHT if it were to restart.
 
@@ -87,7 +88,7 @@ Limitations of a bootstrap node:
 
 When IPFS nodes are unable to run Distributed Hash Table (DHT) logic on their own, they _delegate_ the task to a delegate routing node.  Publishing works with arbitrary CID codecs (compression/decompression technology), as the [js-delegate-content module](https://github.com/libp2p/js-libp2p-delegated-content-routing/blob/master/src/index.ts) publishes CIDs at the block level rather than the IPLD or DAG level.
 
-Features of a delegate routing node:
+#### Features of a delegate routing node:
 
 - They are Kubo nodes with their API ports exposed and some API commands accessible under `/api/v0`.
 - Usable by both Kubo and JS-IPFS nodes.
@@ -96,7 +97,7 @@ Features of a delegate routing node:
 - Delegate routing nodes are in the default JS-IPFS configuration as bootstrap nodes, so they will maintain libp2p swarm connections to them at all times.
  - They are configured as regular bootstrap nodes, but have the string 'preload' in their multiaddrs.
 
-Limitations of a delegate routing node:
+#### Limitations of a delegate routing node:
 
 - On default delegate nodes provided by Protocol Labs, the garbage collection happens every hour, so provided content only survives for that long. If the uploading JS-IPFS node is still running, it will issue periodic re-provides using the same publishing mechanic, which extends the life of the content on the DHT.
 
@@ -121,7 +122,7 @@ See [Working with Go](../reference/go/api.md#working-with-go) and [CLI Quick Sta
 ### JS-IPFS
 
 :::warning 
-### js-ipfs being discontinued
+#### js-ipfs being discontinued
 Development of the [js-ipfs project](https://github.com/ipfs/js-ipfs) is being discontinued to focus on [Helia](https://github.com/ipfs/helia), a leaner, more modular, modern implementation of IPFS in JavaScript scheduled for release in 2023. To learn more about Helia and the current state of IPFS in JS, see the [blog post](https://blog.ipfs.tech/state-of-ipfs-in-js/). 
 
 Because of this, js-ipfs tutorials may be out of date, and will eventually be archived.

@@ -1,5 +1,5 @@
 ---
-title: Usage ideas & examples
+title: Usage ideas and examples
 sidebarDepth: 0
 description: Explore some helpful use cases, ideas, and examples for the InterPlanetary File System (IPFS).
 ---

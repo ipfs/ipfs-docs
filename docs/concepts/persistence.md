@@ -21,37 +21,6 @@ To ensure that data _persists_ on IPFS, and is not deleted during garbage collec
 
 [Garbage collection](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>) is a form of automatic resource management widely used in software development. The garbage collector attempts to reclaim memory occupied by objects that are no longer in use. IPFS uses garbage collection to free disk space on your IPFS node by deleting data that it thinks is no longer needed.
 
-The IPFS garbage collector is configured in the `Datastore`section of [the Kubo config file](https://github.com/ipfs/kubo/blob/master/docs/config.md). The important settings related to the garbage collector are:
-
-- `StorageGCWatermark`: The percentage of the `StorageMax` value at which a garbage collection will be triggered automatically, if the daemon is running with automatic garbage collection enabled. The default is 90`.
-
-- `GCPeriod`: Specify how frequently garbage collection should run. Only used if automatic garbage collection is enabled. The default is 1 hour.
-
-To manually start garbage collection, [run `ipfs repo gc`](../reference/kubo/cli.md#ipfs-repo-gc):
-
-```bash
-ipfs repo gc
-
-> removed QmPZhyTu8D7NqR5NvgkgNYsSYD4CNjnyuFejB8i23itJvA
-> removed QmSYQFVAZgEnpa6NxiW5agyj3XU9VR4CbERShXiLhuPPPE
-> removed QmS6SJXApoi59hqD8Naktgakc6UNHK1XDhqhtMg9sBhY8g
-```
-
-To enable automatic garbage collection use `--enable-gc` when starting the IPFS daemon:
-
-```bash
-ipfs daemon --enable-gc
-
-> Initializing daemon...
-> Kubo version: 0.9.0
-> Repo version: 10
-> ...
-```
-
-::: tip
-If you use IPFS Desktop, you can trigger garbage collection by clicking on the taskbar icon of the IPFS Desktop application and selecting **Advanced** → **Run Garbage Collector**.
-:::
-
 ## Pinning in context
 
 An IPFS node can protect data from garbage collection based on different kinds of user events:
