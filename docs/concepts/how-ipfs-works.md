@@ -119,15 +119,9 @@ For further information, see the [Delegated Content Routing HTTP API spec](https
 
 ### mDNS
 
-To quickly and efficiently discover peers in local networks, IPFS uses Multicast Domain Name System (mDNS), a type of <VueCustomTooltip label="A system in which human-readable internet domain names are mapped to IP addresses." underlined multiline is-medium>DNS</VueCustomTooltip> protocol that resolves human-readable internet domain names to IP names without the use of a <VueCustomTooltip label="Any computer application that implements a system in which human-readable internet domain names are mapped to IP addresses (DNS)." underlined multiline is-medium>name server</VueCustomTooltip>. The process for peer discovery is as follows:
+To quickly and efficiently discover peers in local networks, IPFS uses Multicast Domain Name System (mDNS), a type of <VueCustomTooltip label="A system in which human-readable internet domain names are mapped to IP addresses." underlined multiline is-medium>DNS</VueCustomTooltip> protocol that resolves human-readable internet domain names to IP names without the use of a <VueCustomTooltip label="Any computer application that implements a system in which human-readable internet domain names are mapped to IP addresses (DNS)." underlined multiline is-medium>name server</VueCustomTooltip>.
 
-1. Given a peer ID, a node broadcasts a query message to multiple peers in the network, asking that the peer having the given peer ID to identify itself.
-2. The peer with the given peer ID then broadcasts a message with its IP address to other peers on the network, which can then use that information to update their own mDNS records.
-
-The use of mDNS in IPFS has several benefits that make it a clear choice for peer discovery over traditional DNS:
-
-- Nodes can broadcast messages requesting and reporting address information to multiple peers, increasing speed and efficiency of peer discovery.
-- Nodes do not rely on a centralized name server to discover other peers, improving network resilience, decentralization and censorship resistance.
+The use of mDNS enables quick and efficient discovery of IPFS nodes in local networks without any coordination, e.g., without internet connectivity or access to [bootstrap nodes](./nodes.md#bootstrap).
 
 ## How IPFS transfers data
 
