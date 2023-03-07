@@ -30,7 +30,7 @@ Are you developing with IPFS implementations and tools, and looking for technica
 
 - Install and set up various IPFS implementations and tools in [Get Started](./install/README.md).
 - Get inspired with [IPFS usage ideas and examples](#examples-and-case-studies).
-- Find reference material for IPFS implementations, tools and the HTTP API in the [API and CLI references](./reference/reference/README.md).
+- Find reference material for IPFS implementations, tools and the HTTP API in the [API and CLI references](./reference/README.md).
 - Learn by doing with the hands-on guides available in the [How-to guides](./how-to/README.md).
 
 
