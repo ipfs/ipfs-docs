@@ -7,59 +7,33 @@ description: The home page for developer documentation for IPFS, the InterPlanet
 
 The InterPlanetary File System (IPFS) is a set of composable, peer-to-peer protocols for addressing, routing, and transferring [content-addressed](concepts/glossary.md#content-addressing) data in a decentralized file system. Many popular Web3 projects are built on IPFS - see the [ecosystem directory](https://ecosystem.ipfs.tech) for a list of some of these projects.
 
-While IPFS is a file system, it is _not_ a storage system. Instead, IPFS can be thought of as both the protocol implementations of IPFS (such as [Kubo](concepts/glossary.md#kubo)) and as the decentralized network comprised of the individual [nodes](concepts/glossary.md#node) that are running protocol implementations.
+## Learn
 
-## Get started
-
-Check out these docs to get started with IPFS:
-
-- [Learn the basics](concepts/README.md#learn-the-basics)
-- [Case studies](concepts/README.md#examples-and-case-studies)
-- [How-to guides](how-to/README.md)
-- [API and CLI references](reference/README.md)
-- [Install IPFS](install/README.md)
-
-<abbr title="too long; didn't read">TL;DR</abbr>? [Glossary](concepts/glossary.md) provides short definitions of IPFS terms and concepts.
-
-
-## Download IPFS tools
-
-These tools can help you use and build on IPFS more quickly and efficiently — give them a try today!
-
-| [Browser Companion](https://github.com/ipfs-shipyard/ipfs-companion)            | [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop)                                          | [IPLD Explorer](https://explore.ipld.io/)                           |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
-| ![The IPFS browser companion in Firefox.](./images/ipfs-companion.png) | ![The IPFS desktop app running on MacOS with the status tab open.](./images/ipfs-desktop.png) | ![The IPLD Explorer homepage.](./images/ipld-explorer.png) |
-
-## Host your website on IPFS
-
-Protect yourself from single-point-of-failure risks and benefit from decentralized infrastructure by hosting your static website using IPFS. If you're new to IPFS, this is an excellent place to start learning how to build on the decentralized web.
-
-[Start the tutorial →](how-to/websites-on-ipfs/single-page-website.md)
-
-## Learn about the decentralized web
-
-Want to know more about the decentralized web (DWeb) and how it's changing the internet? These resources will give you a clearer understanding of the DWeb movement, and how it's improving the world:
-
-- [IPFS and the problems it solves](concepts/what-is-ipfs.md)
-- [Peer-to-peer sharing](concepts/dht.md)
-- [Content-addressed data](concepts/content-addressing.md)
-
-[See more guides in the Concepts section →](concepts/README.md)
-
-::: callout
-ProtoSchool's self-guided [interactive tutorials](https://proto.school/tutorials) are designed to introduce you to decentralized web concepts, protocols, and tools. Explore JS-IPFS APIs by completing browser-based coding challenges in ProtoSchool's [IPFS course](https://proto.school/course/ipfs), or explore code-free intros to essential DWeb concepts and related projects in the IPFS ecosystem.
+:::tip
+New to IPFS? Start with
+[the 3-page Basic Concepts](./concepts/README.md#learn-the-basics).
 :::
 
-## See what others are building
+- Learn what IPFS is and isn't, the problems it solves, the different subsystems that it is comprised of and how each one works in [the Basic Concepts](./concepts/README.md#learn-the-basics).
+- Dive into ideas like hashing, immutability, persistence (and more) that underlie IPFS in [Ideas and theory](./concepts/README.md#ideas-and-theory).
+- Learn more about the subsystems that IPFS is comprised of in [Subsystems and components](./concepts/README.md#subsystems-and-components)
+- Get an [overview of IPFS implementations](./concepts/ipfs-implementations.md).
+- [Compare IPFS to other similar systems](./concepts/comparisons.md).
+- Understand the project history, ecosystem status and more in the [Project section](./project/README.md).
+- See how other software systems leverage IPFS in the [Case Studies section](./case-studies/arbol.md).
 
-Are you looking for inspiration? You can find a huge collection of awesome community projects over at Awesome IPFS.
+## Develop
 
-[Check out Awesome IPFS now →](https://awesome.ipfs.tech/)
+:::tip
+Are you developing with IPFS implementations and tools, and looking for technical support from IPFS experts? For the fastest possible assistance and resolution of your support needs, see the [guide to getting technical help and support](./community/README.md#get-technical-support-and-help).
+:::
 
-![The Awesome IPFS homepage.](./images/awesome-ipfs.png =740x420)
+- Install and set up various IPFS implementations and tools in [Get Started](./install/README.md).
+- Get inspired with [IPFS usage ideas and examples](#examples-and-case-studies).
+- Find reference material for IPFS implementations, tools and the HTTP API in the [API and CLI references](./reference/README.md).
+- Learn by doing with the hands-on guides available in the [How-to guides](./how-to/README.md).
 
-## Be part of the IPFS community
 
-IPFS has a bustling community of designers, developers, writers, and activists who are all helping to improve the project. You can join in by attending a local meetup, helping out at a conference, chatting online through [Discord](https://discord.com/invite/KKucsCpZmY), or joining a discussion in [the IPFS forum](https://discuss.ipfs.tech/).
+## Join the IPFS community
 
-[Find out more in the Community section →](community/README.md)
+IPFS has a bustling community of designers, developers, writers, and activists who are all helping to improve the project. Find out about the events and resources available, and how to get involved in the [Community section](./community/README.md)
