@@ -7,9 +7,9 @@ description: Get started on understanding the key ingredients in the decentraliz
 
 Welcome to the Concepts section of the InterPlanetary File System (IPFS) docs. Here, you can:
 
-- Learn what IPFS is and isn't, the problems it solves, the different subsystems that it is comprised of and how each one works in [the 3-page Basic Concepts](#learn-the-basics).
+- Learn what IPFS is and isn't, the problems it solves, the different subsystems that it is composed of and how each one works in [the 3-page Basic Concepts](#learn-the-basics).
 - Dive into ideas like hashing, immutability, persistence (and more) that underlie IPFS in [Ideas and theory](#ideas-and-theory)
-- Learn more about the subsystems that IPFS is comprised of in [Subsystems and components](#subsystems-and-components)
+- Learn more about the subsystems that IPFS is composed of in [Subsystems and components](#subsystems-and-components)
 - Get an [overview of IPFS implementations](../concepts/ipfs-implementations.md).
 - [Compare IPFS to other similar systems](../concepts/comparisons.md).
 - Get answers to common questions about IPFS in [the FAQ](../concepts/faq.md).
