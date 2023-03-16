@@ -21,6 +21,7 @@ See the official [IPFS Specifications](https://github.com/ipfs/specs/).
 | ipfs cluster     | <https://github.com/ipfs/ipfs-cluster>                                  | go                     | Orchestration for multiple Kubo nodes via CRDT / Raft consensus|
 | iroh             | <https://github.com/n0-computer/iroh>                                   | rust                   | Extreme-efficiency oriented IPFS implementation.                                                                         |
 | Kubo             | <https://github.com/ipfs/kubo>                                          | go                     | Generalist daemon oriented IPFS implementation with an extensive HTTP API.                                               |
+| Lotus            | <https://github.com/filecoin-project/lotus>                             | go                     | Filecoin node handling consensus, storage providing, making storage deals, importing data, ...                           |
 
 ## Lite or Experimental
 
@@ -30,11 +31,11 @@ See the official [IPFS Specifications](https://github.com/ipfs/specs/).
 | barge            | <https://github.com/application-research/barge>                         | go                     | CLI tool with a git like workflow to upload deltas to estuary.                                                           |
 | Boost            | <https://github.com/filecoin-project/boost>                             | go                     | Daemon to get IPFS data in and out of a Filecoin storage provider.                                                       |
 | gomobile-ipfs    | <https://github.com/ipfs-shipyard/gomobile-ipfs>                        | go                     | Library oriented ipfs daemon to help embeding Kubo into a mobile app.                                                   |
+| helia    | <https://github.com/ipfs/helia>                        | javascript                     | A lean, modular, and modern implementation of IPFS for the prolific JS and browser environments, currently pre-alpha but intended to replace js-ipfs |
 | ipfs-embed       | <https://github.com/ipfs-rust/ipfs-embed>                               | rust                   | Small embeddable ipfs implementation.                                                                                    |
 | ipfs-lite        | <https://github.com/hsanjuan/ipfs-lite>                                 | go                     | Minimal library oriented ipfs daemon building on the same blocks as Kubo but with a minimal glue layer.                 |
 | ipfs-nucleus     | <https://github.com/peergos/ipfs-nucleus/>                              | go                     | Minimal IPFS replacement for P2P IPLD apps.                                                                              |
 | js-ipfs          | <https://github.com/ipfs/js-ipfs>                                       | javascript, typescript | Javascript implementation targeting nodejs and browsers.  [**Development of js-ipfs is being discontinued**](#js-ipfs-being-discontinued).                                                                |
-| Lotus            | <https://github.com/filecoin-project/lotus>                             | go                     | Filecoin node handling consensus, storage providing, making storage deals, importing data, ...                           |
 | whypfs           | <https://github.com/whyrusleeping/whypfs>                               | go                     | Daemon based on the same building blocks as Kubo but with some options tweaking for more performance.                    |
 
 :::warning 
