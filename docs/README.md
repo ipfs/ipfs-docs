@@ -14,9 +14,9 @@ New to IPFS? Start with
 [the 3-page Basic Concepts](./concepts/README.md#learn-the-basics).
 :::
 
-- Learn what IPFS is and isn't, the problems it solves, the different subsystems that it is comprised of and how each one works in [the Basic Concepts](./concepts/README.md#learn-the-basics).
+- Learn what IPFS is and isn't, the problems it solves, the different subsystems that it is composed of and how each one works in [the Basic Concepts](./concepts/README.md#learn-the-basics).
 - Dive into ideas like hashing, immutability, persistence (and more) that underlie IPFS in [Ideas and theory](./concepts/README.md#ideas-and-theory).
-- Learn more about the subsystems that IPFS is comprised of in [Subsystems and components](./concepts/README.md#subsystems-and-components)
+- Learn more about the subsystems that IPFS is composed of in [Subsystems and components](./concepts/README.md#subsystems-and-components)
 - Get an [overview of IPFS implementations](./concepts/ipfs-implementations.md).
 - [Compare IPFS to other similar systems](./concepts/comparisons.md).
 - Understand the project history, ecosystem status and more in the [Project section](./project/README.md).

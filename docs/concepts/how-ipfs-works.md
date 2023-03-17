@@ -5,7 +5,7 @@ description: Learn how the InterPlanetary File System (IPFS) works and why it's 
 
 # How IPFS works
 
- In this conceptual guide, you'll learn about the major subsystems that <VueCustomTooltip label="InterPlanetary File System"  abbreviation is-small>IPFS</VueCustomTooltip> is comprised of, and how they work. The three key responsibilities of the IPFS subsystems are: 
+ In this conceptual guide, you'll learn about the major subsystems that <VueCustomTooltip label="InterPlanetary File System"  abbreviation is-small>IPFS</VueCustomTooltip> is composed of, and how they work. The three key responsibilities of the IPFS subsystems are: 
 - **Representing and addressing data**
 - **Routing data**
 - **Transferring data**
