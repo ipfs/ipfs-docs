@@ -4,6 +4,8 @@ set -eu
 BRANCH=bump-documentation-to-latest-versions
 LATEST_IPFS_TAG=$INPUT_LATEST_IPFS_TAG
 
+git config --global --add safe.directory "$PWD"
+
 echo "The latest Kubo tag is ${LATEST_IPFS_TAG}"
 
 ROOT=`pwd`
