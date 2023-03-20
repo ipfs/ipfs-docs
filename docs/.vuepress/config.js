@@ -222,6 +222,14 @@ module.exports = {
               ]
             },
             {
+              title: 'IPFS Gateway',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
+                '/how-to/publish-ipns'
+              ]
+            },
+            {
               title: 'IPFS Companion',
               sidebarDepth: 1,
               collapsable: true,

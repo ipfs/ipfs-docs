@@ -11,25 +11,23 @@ related:
 
 # IPFS Gateway
 
-This document discusses:
+An _IPFS gateway_ provides an HTTP-based service that allows IPFS-incompatible browsers and tools to access IPFS content. For example, errors occur when a browser or a tool like [Curl](https://curl.haxx.se/) or [Wget](https://www.gnu.org/software/wget/) that does not support IPFS attempts access to IPFS content using canonical addressing like `ipfs://{CID}/{optional path to resource}`. While tools like [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) resolve these content access errors, not every user has permission or abilities to alter their system to work with IPFS. As such, there are multiple gateway types and <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>gateway providers</VueCustomTooltip> available so that applications of all kinds can interface with IPFS using HTTP.
 
+This page discusses:
+
+- The IPFS gateway request lifecycle
 - The several types of gateways.
 - Gateway role in the use of IPFS.
-- Appropriate situations for the use of gateways.
-- Situations when you should avoid the use of gateways.
-- Implementation guidelines.
 
-You should read this document if you want to:
+## Gateway request lifecycle
 
-- Understand, at a conceptual level, how gateways fit into the overall use of IPFS.
-- Decide whether and what type of gateways to employ for your use case.
-- Understand, at a conceptual level, how to deploy gateways for your use case.
+When a request for a CID reaches an IPFS gateway, the gateway first checks whether the CID is cached locally. At this point:
 
-## Overview
+- **If the CID is cached locally**, the gateway responds with the content referred to by the CID, and the lifecycle is complete.
 
-IPFS deployment seeks to include native support of IPFS in all popular browsers and tools. Gateways provide workarounds for applications that do not yet support IPFS natively. For example, errors occur when a browser that does not support IPFS attempts access to IPFS content in the canonical form of `ipfs://{CID}/{optional path to resource}`. Other tools that rely solely on HTTP encounter similar errors in accessing IPFS content in canonical form, such as [Curl](https://curl.haxx.se/) and [Wget](https://www.gnu.org/software/wget/).
+- **If the CID is not in the local cache**, the gateway will attempt to retrive it from the network.
 
-Tools like [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) resolve these content access errors. However, not every user has permission to alter — or be capable of altering — their computer configuration. IPFS gateways provide an HTTP-based service that allows IPFS-ignorant browsers and tools to access IPFS content.
+In the event where th CID is not in the cache, 
 
 ## Gateway providers
 
@@ -50,22 +48,18 @@ A gateway behind a firewall represents just one potential location for a private
 Public gateway operators include:
 
 - Protocol Labs, which deploys the public gateway `https://ipfs.io`.
-- Third-party public gateways. E.g., `https://cf-ipfs.com`.
+- Third-party public gateways such as `https://cf-ipfs.com`.
 
 Protocol Labs maintains a [list of public gateways](https://ipfs.github.io/public-gateway-checker/) and their status.
 
-![A list of public gateways and their status, available on IPFS](./images/ipfs-gateways/public-gateway-checker.png)
-
 ## Gateway types
 
-Categorizing gateways involves several dimensions:
+There are multiple gateway types, each with specific use case, security, performance, and functional implications.
 
 - [Read/write support](#read-only-and-writeable-gateways)
 - [Authentication support](#authenticated-gateways)
 - [Resolution style](#resolution-style)
 - [Service](#gateway-services)
-
-Choosing the form of gateway usage has security, performance, and other functional implications.
 
 ### Read-only and writeable gateways
 
