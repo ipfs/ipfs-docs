@@ -226,7 +226,7 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
-                '/how-to/publish-ipns'
+                '/how-to/gateway-troubleshooting'
               ]
             },
             {

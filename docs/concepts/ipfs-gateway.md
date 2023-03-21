@@ -11,7 +11,7 @@ related:
 
 # IPFS Gateway
 
-An _IPFS gateway_ provides an HTTP-based service that allows IPFS-incompatible browsers and tools to access IPFS content. For example, errors occur when a browser or a tool like [Curl](https://curl.haxx.se/) or [Wget](https://www.gnu.org/software/wget/) that does not support IPFS attempts access to IPFS content using canonical addressing like `ipfs://{CID}/{optional path to resource}`. While tools like [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) resolve these content access errors, not every user has permission or abilities to alter their system to work with IPFS. As such, there are multiple gateway types and <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>gateway providers</VueCustomTooltip> available so that applications of all kinds can interface with IPFS using HTTP.
+An _IPFS gateway_ provides an HTTP-based service that allows IPFS-incompatible browsers, tools and software to access IPFS content. For example, errors occur when a browser or a tool like [Curl](https://curl.haxx.se/) or [Wget](https://www.gnu.org/software/wget/) that does not support IPFS attempts access to IPFS content using canonical addressing like `ipfs://{CID}/{optional path to resource}`. While tools like [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) resolve these content access errors, not every user has permission or abilities to alter their system to work with IPFS. As such, there are multiple gateway types and <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>gateway providers</VueCustomTooltip> available so that applications of all kinds can interface with IPFS using HTTP.
 
 This page discusses:
 
@@ -21,16 +21,33 @@ This page discusses:
 
 ## Gateway request lifecycle
 
-When a request for a CID reaches an IPFS gateway, the gateway first checks whether the CID is cached locally. At this point:
+When a client request for a CID reaches an IPFS gateway, the gateway first checks whether the CID is cached locally. At this point, one of the following occurs:
 
 - **If the CID is cached locally**, the gateway responds with the content referred to by the CID, and the lifecycle is complete.
 
 - **If the CID is not in the local cache**, the gateway will attempt to retrive it from the network.
 
-In the event where th CID is not in the cache, 
+The CID retrieval process is composed of two parts, content discovery / routing and content retrieval:
+
+1. In the **content discovery / routing** step, the gateway will determine <VueCustomTooltip label="An IPFS network peer that can provide data specified by a particular CID upon request." underlined multiline>provider</VueCustomTooltip>  location; that is, _where_ the data specified by the CID can be found:
+
+   - Asking peers that it is directly connected to if they have the data specified by the CID.
+   - Query the DHT for the IDs and network addresses of peers that have the data specified by the CID.
+
+2. Next, the gateway performs **content retrival**, which can be broken into three substeps:
+
+   1. The gateway connects to the provider.
+   1. The gateway fetches the CIDs content.
+   1. The gateway streams the content to the client.
+
+:::callout
+**Learn more**
+
+Dive deeper into content discovery, routing, retrieval and the subsystems involved in each part of the process in [How IPFS works](./how-ipfs-works.md).
+:::
 
 ## Gateway providers
-
+ 
 Regardless of who deploys a gateway and where, any IPFS gateway resolves access to any requested IPFS [content identifier](content-addressing.md). Therefore, for best performance, when you need the service of a gateway, you should use the one closest to you.
 
 ### Your local gateway
