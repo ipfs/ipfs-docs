@@ -226,6 +226,7 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
+                '/how-to/gateway-best-practices',
                 '/how-to/gateway-troubleshooting'
               ]
             },
