@@ -251,6 +251,7 @@ module.exports = {
             }
           ],
           '/reference/': [
+            '/reference/diagnostic-tools',
             '/reference/http/gateway',
             '/reference/js/api',
             '/reference/go/api',
