@@ -38,10 +38,6 @@ The IPFS ecosystem contains various open-source tools for the investigation, dia
 Learn more about CID concepts, including components and versions in the [content addressing concepts guide](../concepts/content-addressing.md).
 :::
 
-## IPFS Gateway Checker
-
-IPFS [Gateway Checker]() provides status information for public IPFS gateways. This information is useful in deciding on which public gateway provider to use, or troubleshooting problems with your current public gateway provider.
-
 ## DAG builder visualiser
 
 [DAG builder visualiser](https://dag.ipfs.tech/) allows you to upload a CAR file and visualize it as a DAG. You can toggle parameters that determine how the DAG will be visualized, such as typ (Balanced, Trickle, Flat) and max amount of children.
