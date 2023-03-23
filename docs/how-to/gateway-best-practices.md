@@ -34,7 +34,7 @@ If you are running an IPFS node that is also configured as an IPFS gateway, each
   - Use a service like [Cloudflare workers](https://workers.cloudflare.com/) or [Fastly Compute@Edge](https://www.fastly.com/products/edge-compute) to implement a lightweight reverse proxy to a gateway.
 - Set up [peering](./peering-with-content-providers.md) with the pinning services that pin your CIDs.
 - Make sure that your node is publicly reachable.
-   - You can check reachability `ipfs id` and checking for the `/ipfs/kad/1.0.0` value in the list of protocols (or, in one command, by running `ipfs id | grep ipfs\/kad`).
+   - You can check the reachability of your node by running `ipfs id` and checking for the `/ipfs/kad/1.0.0` value in the list of protocols (or, in one command, by running `ipfs id | grep ipfs\/kad`).
    - If your node is not reachable because you are behind NAT, see the [NAT configuration](https://docs.ipfs.tech/how-to/nat-configuration/#ipv6) docs.
 - Ensure that you are correctly returning HTTP cache headers to the client if the IPFS gateway node is behind a reverse proxy. Pay extra attention to `Etag`, `Cache-Control`, and `Last-Modified headers`. Consider leveraging the list of CIDs in `X-Ipfs-Roots` for smarter HTTP caching strategies.
 - Put a CDN like Cloudflare in front of the IPFS gateway.
@@ -43,7 +43,6 @@ If you are running an IPFS node that is also configured as an IPFS gateway, each
 - Monitor disk I/O and make sure that no other processes are causing disk I/O bottlenecks with a tool like [iotop](https://linux.die.net/man/1/iotop) or [iostat](https://linux.die.net/man/1/iostat).
 
 
-Using this remote pinning API, you can implement pinning to multiple services (opens new window)as part of your workflow for uploading immutable data to IPFS.
 
 
 
@@ -69,11 +68,20 @@ Similarly, the use of DNSLink resolution with `Alias` forces requests through th
 
 Trusting a specific gateway, in turn, requires you to trust the gateway's issuing Certificate Authorities and the security of the public key infrastructure employed by that gateway. Compromised certificate authorities or public-key infrastructure implementations may undermine the trustworthiness of the gateway.
 
-## Violation of same-origin policy
+## Use subdomain gateway resolution for origin isolation
 
 To prevent one website from improperly accessing HTTP session data associated with a different website, the [same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy) permits script access only to pages that share a common domain name and port.
 
-Consider two web pages stored in IPFS: `ipfs://{CID A}/{webpage A}` and `ipfs://{CID B}/{webpage B}`. Code on `webpage A` should not access data from `webpage B`, as they do not share the same content ID (origin).
+Consider two CIDs each representing a different website accessed with the path resolution style: 
+ - `https://ipfs.io/{CID A}/{website A}`
+ - `https://ipfs.io/{CID B}/{website B}`. 
+ 
+Because their origin (hostname and port) are the same, the same-origin policy does not apply. 
+
+To ensure the security provided by the same-origin policy, use the subdomain gateway:
+```bash
+https://{CID A}.ipfs.{gatewayURL}/{website A}
+https://{CID B}.ipfs.{gatewayURL}/{website B}
 
 A browser employing one gateway to access both sites, however, might not enforce that security policy. From that browser's perspective, both pages share a common origin: the gateway as identified in the URL `https://{gatewayURL}/...`.
 

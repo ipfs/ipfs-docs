@@ -5,7 +5,7 @@ description: Learn how to troubleshoot common issues with IPFS HTTP Gateways
 
 # Troubleshooting HTTP Gateways
 
-IPFS HTTP Gateways (GWs) provide an HTTP-based service that allows IPFS-incompatible browsers, tools and software to access IPFS content. When using HTTP GWs , developers may need to troubleshoot issues like a:
+IPFS HTTP Gateways are an HTTP-based service allowing browsers, tools and software to retrieve IPFS content with HTTP. When using HTTP Gateways, developers may need to troubleshoot issues like a:
 
 - CID not being retrievable via public IPFS gateways.
 - CID being slow to load.
@@ -18,7 +18,7 @@ In general, slow retrieval or timeouts while fetching a CID from an IPFS gateway
 
 - The gateway itself.
 - The provider of the CID might be unreachable or down.
-- You (or the provider) are not providing your CIDs to the IPFS network via the DHT, so it is not discoverable.
+- You (or the provider) are not providing your CIDs to the IPFS network via the DHT or the network indexer, so it is not discoverable.
 - Network latency between the client and the gateway, or the gateway and the provider.
 
 :::
@@ -60,7 +60,7 @@ This procedure assumes that you have the latest version of kubo installed. To de
 1. Using kubo, determine if any peers are advertising the `<CID>` you are requesting:
 
    ```shell
-   ipfs dht findprovs <CID>
+   ipfs routing findprovs <CID>
    ```
 
    **If providers are found in DHT**, their Peer IDs are returned. Example output:
