@@ -7,22 +7,17 @@ description: Learn best practices for working with IPFS HTTP Gateways
 
 Various best practices for the use of IPFS gateways are listed below. To learn more about the concepts behind IPFS gateways, including how they work, available providers, types and FAQs, see [IPFS Gateway](../concepts/ipfs-gateway.md). For troubleshooting information, see [Troubleshooting](./gateway-troubleshooting.md).
 
-## When not to use a gateway
+## Selecting a gateway type to use
 
-### Delay-sensitive applications
+The preferred form of gateway access varies depending on the nature of the targeted content. Learn more about each gateway type and how it works [here](../concepts/ipfs-gateway.md#gateway-types).
 
-Any gateway introduces a delay in completing desired actions because the gateway acts as an intermediary between the source of the request and the IPFS node or nodes capable of returning the desired content. If the serving gateway cached the requested content earlier (e.g., due to previous requests), then the cache eliminates this delay.
+| Target                                          | Preferred gateway type | Canonical form of access <br> features & considerations                                                                                                                                                                                                                                                                     |
+| ----------------------------------------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Current version of <br>potentially mutable root | IPNS subdomain         | `https://{IPNS identifier}.ipns.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> + suitable for both domain IPNS names (`{domain.tld}`) and hash IPNS names                                                                               |
+|                                                 | IPFS DNSLink           | `https://{example.com}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> – requires DNS update to propagate change to root content <br> • DNSLink, not user/app, specifies the gateway to use, opening up potential gateway trust and congestion issues |
+| Immutable root or <br> content                  | IPFS subdomain         | `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing                                                                                                                                                                           |
 
-Overuse of a gateway also introduces delays due to queuing of requests.
-
-When dealing with delay-sensitive processes, you should aim to use a native IPFS node within the app (fastest), or as a local service daemon (almost as fast). Failing that, use a gateway installed as a local service. Note that when an IPFS node runs locally, it includes a gateway at `http://127.0.0.1:8080`.
-
-All time-insensitive processes can be routed through public/private gateways.
-
-### End-to-end cryptographic validation required
-
-Because of third-party gateway vulnerabilities, apps requiring end-to-end validation of content read/write should avoid gateways when possible. If the app must employ an external gateway, such apps should use `ipfs.io` or a trusted third-party.
-
+Any form of gateway provides a bridge for apps without native support of IPFS. Better performance and security results from native IPFS implementation within an app.
 
 ## Self-hosting a gateway 
 
@@ -43,20 +38,6 @@ If you are running an IPFS node that is also configured as an IPFS gateway, each
 - Monitor disk I/O and make sure that no other processes are causing disk I/O bottlenecks with a tool like [iotop](https://linux.die.net/man/1/iotop) or [iostat](https://linux.die.net/man/1/iostat).
 
 
-
-
-
-## Selecting a gateway type to use
-
-The preferred form of gateway access varies depending on the nature of the targeted content. Learn more about each gateway type and how it works [here](../concepts/ipfs-gateway.md#gateway-types).
-
-| Target                                          | Preferred gateway type | Canonical form of access <br> features & considerations                                                                                                                                                                                                                                                                     |
-| ----------------------------------------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Current version of <br>potentially mutable root | IPNS subdomain         | `https://{IPNS identifier}.ipns.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> + suitable for both domain IPNS names (`{domain.tld}`) and hash IPNS names                                                                               |
-|                                                 | IPFS DNSLink           | `https://{example.com}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> – requires DNS update to propagate change to root content <br> • DNSLink, not user/app, specifies the gateway to use, opening up potential gateway trust and congestion issues |
-| Immutable root or <br> content                  | IPFS subdomain         | `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing                                                                                                                                                                           |
-
-Any form of gateway provides a bridge for apps without native support of IPFS. Better performance and security results from native IPFS implementation within an app.
 
 ## Avoiding centralization
 

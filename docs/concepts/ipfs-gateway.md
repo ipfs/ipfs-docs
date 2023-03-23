@@ -34,7 +34,7 @@ The CID retrieval process is composed of two parts, content discovery / routing 
    - Asking peers that it is directly connected to if they have the data specified by the CID.
    - Query the DHT for the IDs and network addresses of peers that have the data specified by the CID.
 
-2. Next, the gateway performs **content retrieval**, which can be broken into three substeps:
+2. Next, the gateway performs **content retrieval**, which can be broken into the following steps:
 
    1. The gateway connects to the provider.
    1. The gateway fetches the CIDs content.
@@ -71,16 +71,20 @@ Protocol Labs maintains a [list of public gateways](https://ipfs.github.io/publi
 
 ## Gateway types
 
+:::warning
+[Path resolution style gateways](#path) do not provide origin isolation.
+:::
+
 There are multiple gateway types, each with specific use case, security, performance, and functional implications.
 
-- [Read/write support](#read-only-and-writeable-gateways)
+- [Read support](#read-only-gateways)
 - [Authentication support](#authenticated-gateways)
 - [Resolution style](#resolution-style)
 - [Service](#gateway-services)
 
-### Read-only and writeable gateways
+### Read-only gateways
 
-The examples discussed in the earlier sections above illustrated the use of read-only HTTP gateways to fetch content from IPFS via an HTTP GET method. _Writeable_ HTTP gateways also support `POST`, `PUT`, and `DELETE` methods.
+_Read-only gateways_ are the simplest kind of gateway. This gateway type provides a way to fetch IPFS content using the HTTP GET method. 
 
 ### Authenticated gateways
 
