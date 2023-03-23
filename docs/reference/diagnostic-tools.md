@@ -1,6 +1,6 @@
 ---
 title:  Diagnostic tools
-description: Hands-on guides to using and developing with IPFS to build decentralized web apps and services.
+description: Diagnostic tools to assist with debugging, troubleshooting, and developing with IPFS.
 ---
 
 # Diagnostic tools
