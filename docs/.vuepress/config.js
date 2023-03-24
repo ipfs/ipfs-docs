@@ -361,12 +361,6 @@ module.exports = {
     '@vuepress/plugin-back-to-top',
     ['@adamdehaven/vuepress-plugin-custom-tooltip'],
     [
-      '@vuepress/google-analytics',
-      {
-        ga: 'UA-96910779-15'
-      }
-    ],
-    [
       'vuepress-plugin-clean-urls',
       {
         normalSuffix: pageSuffix,
