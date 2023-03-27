@@ -40,7 +40,7 @@ Learn more about CID concepts, including components and versions in the [content
 
 ## IPFS Gateway Checker
 
-IPFS [Gateway Checker]() provides status information for public IPFS gateways. This information is useful in deciding on which public gateway provider to use, or troubleshooting problems with your current public gateway provider.
+IPFS [Gateway Checker](https://ipfs.github.io/public-gateway-checker/) provides status information for public IPFS gateways. This information is useful in deciding on which public gateway provider to use, or troubleshooting problems with your current public gateway provider.
 
 ## DAG builder visualiser
 
