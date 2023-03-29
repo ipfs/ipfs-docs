@@ -46,7 +46,7 @@ IPFS represents data as content-addressed <VueCustomTooltip label="The term for 
 In IPFS, data is chunked into <VueCustomTooltip label="The term for a single unit of data in IPFS." underlined multiline is-medium>blocks</VueCustomTooltip>, which are assigned a unique identifier called a <VueCustomTooltip label="An address used to point to data in IPFS, based on the content itself, as opposed to the location." underlined multiline is-medium>Content Identifier (CID)</VueCustomTooltip>.  In general, the CID is computed by combining the hash of the data with it's <VueCustomTooltip label="Software capable of encoding and/or decoding data." underlined multiline is-medium>codec</VueCustomTooltip>. The codec is generated using <VueCustomTooltip label="A collection of interoperable, extensible protocols for making data self-describable." underlined multiline is-medium>Multiformats</VueCustomTooltip>.
 
 CIDs are unique to the data from which they were computed, which provides IPFS with the following benefits:
-- Data can fetched based on it's content, rather than it's location. 
+- Data can be fetched based on it's content, rather than it's location. 
 - The CID of the data received can be computed and compared to the CID requested, to verify that the data is what was requested.
 
 :::callout
