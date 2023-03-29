@@ -1,5 +1,5 @@
 ---
-title:  Diagnostic tools
+title: Diagnostic tools
 description: Diagnostic tools to assist with debugging, troubleshooting, and developing with IPFS.
 ---
 
@@ -40,7 +40,11 @@ Learn more about CID concepts, including components and versions in the [content
 
 ## IPFS Gateway Checker
 
-IPFS [Gateway Checker]() provides status information for public IPFS gateways. This information is useful in deciding on which public gateway provider to use, or troubleshooting problems with your current public gateway provider.
+:::warning
+Community-operated IPFS HTTP Gateways may be abused for phishing, which will generally raise a browser alert. Before using a community-operated gateway, you can inspect the URL with a tool like [Google's Safe Browsing site status](https://transparencyreport.google.com/safe-browsing/search).
+:::
+
+IPFS [Gateway Checker](https://ipfs.github.io/public-gateway-checker/) provides status information for public IPFS gateways. This information is useful in deciding on which public gateway provider to use, or troubleshooting problems with your current public gateway provider.
 
 ## DAG builder visualiser
 
