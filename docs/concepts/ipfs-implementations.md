@@ -22,6 +22,7 @@ See the official [IPFS Specifications](https://github.com/ipfs/specs/).
 | iroh             | <https://github.com/n0-computer/iroh>                                   | rust                   | Extreme-efficiency oriented IPFS implementation.                                                                         |
 | Kubo             | <https://github.com/ipfs/kubo>                                          | go                     | Generalist daemon oriented IPFS implementation with an extensive HTTP API.                                               |
 | Lotus            | <https://github.com/filecoin-project/lotus>                             | go                     | Filecoin node handling consensus, storage providing, making storage deals, importing data, ...                           |
+| Nabu             | <https://github.com/peergos/nabu>                                       | java                   | A minimalistic, fast and embeddable IPFS implementation.                           |
 
 ## Lite or Experimental
 
