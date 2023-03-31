@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">
-<h3> IPFS powers the distributed web </h3>
+<h3> IPFS is an open system to manage data without a central server </h3>
 <br>
 
 [![Made by icon.](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](https://protocol.ai/)
