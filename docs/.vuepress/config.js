@@ -98,6 +98,7 @@ module.exports = {
               collapsable: false,
               children: [
                 ['/quickstart/publish','Publish with IPFS'],
+                ['/quickstart/retrieve','Retrieve with IPFS'],
               ]
             },
             {
@@ -115,6 +116,7 @@ module.exports = {
               collapsable: false,
               children: [
                 ['/quickstart/publish','Publish with IPFS'],
+                ['/quickstart/retrieve','Retrieve with IPFS'],
               ]
             },
             {

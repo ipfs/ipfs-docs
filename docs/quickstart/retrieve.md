@@ -7,7 +7,9 @@ description: 'learn about the different ways that CIDs can be fetched from the o
 
 In this quick start, you will learn the different approaches to retrieving CIDs from the IPFS network and how to pick the most appropriate method for your purpose.
 
-You will fetch the image that was pinned in the [publishing with a pinning service quickstart guide](./publish.md) which has the CID: `bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4`.
+You will fetch the image that was pinned in the [publishing with a pinning service quickstart guide](./publish.md) which has the following CID: `bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4`.
+
+> **Note:** The CID you will retrieve is actually a folder containing a single image file. The reason is that when files are added to IPFS, the filename is not stored by default. To retain the filename, it's common to wrap the file in a directory. In such instances, you end up with two CIDs, one for the file and another for the directory containing the file.
 
 ## IPFS retrieval methods
 
@@ -67,3 +69,5 @@ To fetch the CID using an IPFS gateway is as simple as loading one of the follow
 - [https://ipfs.io/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4](https://ipfs.io/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4)
 - [https://cloudflare-ipfs.com/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4](https://cloudflare-ipfs.com/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4)
 - [https://gateway.pinata.cloud/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4](https://gateway.pinata.cloud/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4)
+
+## Summary and next steps
