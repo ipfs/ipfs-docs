@@ -97,7 +97,7 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: false,
               children: [
-                ['/quickstart/publish','Publish to IPFS'],
+                ['/quickstart/publish','Publish with IPFS'],
               ]
             },
             {
@@ -114,7 +114,7 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: false,
               children: [
-                ['/quickstart/publish','Publish to IPFS'],
+                ['/quickstart/publish','Publish with IPFS'],
               ]
             },
             {
@@ -140,6 +140,7 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
+                  '/concepts/lifecycle',
                   '/concepts/hashing',
                   '/concepts/immutability',
                   '/concepts/persistence',

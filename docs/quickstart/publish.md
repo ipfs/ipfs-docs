@@ -1,11 +1,11 @@
 ---
-title: 'Publish a file to IPFS'
-description: 'learn about pinning services and the lifecycle of content-addressed data in IPFS by pinning a file to the IPFS network'
+title: 'Publishing a file with IPFS using a pinning service'
+description: 'learn how to publish content with IPFS by pinning a file to a pinning service'
 ---
 
-# Publish a file to IPFS with a pinning service
+# Publish a file with IPFS
 
-In this quickstart guide, you will learn about [pinning services](../concepts/persistence.md#pinning-in-context) and the lifecycle of content-addressed data in IPFS by pinning a file to the IPFS network using a pinning service called [web3.storage](https://web3.storage/). By the end of this guide, you should have a better understanding of how content addressing and CIDs work from a high level.
+In this quickstart guide, you will learn about [pinning services](../concepts/persistence.md#pinning-in-context) and how to use them to publish content-addressed data with IPFS. To do so, you will upload the file to a pinning service called [web3.storage](https://web3.storage/). By the end of this guide, you should have a better understanding of how content addressing and CIDs work from a high level.
 
 > **Note:** The web3.storage pinning service was chosen purely for demonstration purposes, and is one of many [pinning services](../concepts/persistence.md#pinning-in-context) you can choose from. While each pinning services has different SDKs and APIs, their fundamental role is the same - to store files and make them available to the IPFS network. In fact, one of the main benefits of IPFS is that files can be pinned to multiple pinning services, thereby reducing vendor lock-in.
 
@@ -15,17 +15,17 @@ In this quickstart guide, you will learn about [pinning services](../concepts/pe
 - [Prerequisites](#prerequisites)
 - [Uploading and pinning a file](#uploading-and-pinning-a-file)
 - [What's a CID?](#whats-a-cid)
-- [The lifecycle of data in IPFS](#the-lifecycle-of-data-in-ipfs)
-- [Fetching your published CID](#fetching-your-published-cid)
-  - [Verified vs. trusted CID retrieval](#verified-vs-trusted-cid-retrieval)
-  - [Using an IPFS Node](#using-an-ipfs-node)
-  - [Fetching the CID with an IPFS Gateway](#fetching-the-cid-with-an-ipfs-gateway)
-- [Conclusion](#conclusion)
-- [Next steps](#next-steps)
+- [Summary and next steps](#summary-and-next-steps)
 
 ## What is pinning?
 
-Pinning a file to IPFS is how content is published to IPFS. Any given file represented by a CID can be pinned to multiple IPFS nodes to increase the redundancy and resilience of the file on the network. Pinning services are like hosting services that run an IPFS node for you and ensure that your files are available to the IPFS network.
+Pinning refers to the process of ensuring that a particular piece of content is retrievable with IPFS. In other words, pinning is equivalent to storing a file on a computer or server that is connected to the internet, thereby making it available to the rest of the IPFS network.
+
+Pinning can be done at various levels, from individual files to entire directories that are addressed by a CID. You can also pin CIDs to multiple IPFS nodes to increase the redundancy and resilience of the file on the network.
+
+### Pinning services
+
+[Pinning services](../concepts/persistence/#pinning-services) are like hosting services that run an IPFS node for you and ensure that your files are available to the IPFS network.
 
 :::callout
 Data pinned to the IPFS network is public by default and retrievable by anyone. Make sure to avoid publishing private data or take the necessary measures to adequately encrypt it before publishing.
@@ -64,13 +64,13 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 
 Congratulations, you have successfully **pinned** a file to IPFS! 🎉
 
-Let's unpack what just happened, by looking at CIDs, and how they fits into the lifecycle of data in IPFS
+Let's unpack what just happened, by looking at CIDs.
 
 ## What's a CID?
 
 In IPFS, every file and directory is identified with a Content Identifier ([CID](../concepts/content-addressing.md)). The CID serves as the **permanent address** of the file and can be used by anyone to find it on the IPFS network.
 
-When a file is published to IPFS (like the image used in this guide), it's first transformed into a content-addressable representation by which the file is split into smaller chunks (if above ~1MB) which are linked and hashed to produce the CID.
+When a file is first added to an IPFS node (like the image used in this guide), it's first transformed into a content-addressable representation by which the file is split into smaller chunks (if above ~1MB) which are linked and hashed to produce the CID.
 
 The CID for the uploaded image is:
 
@@ -78,92 +78,33 @@ The CID for the uploaded image is:
 bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4
 ```
 
-You can now share the CID and anyone should be able to fetch it.
+You can now share the CID with anyone and they can fetch the file using IPFS.
 
 To dive deeper into the anatomy of the CID, check out the [CID inspector](https://cid.ipfs.tech/#bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4)
 
 > **Note:** the transformation into a content-addressable representation is a local operation that doesn't require any network connectivity. With web3.storage, this transformation happens on the client-side (in the browser.)
 
-## The lifecycle of data in IPFS
+## Retrieving with a gateway
 
-To understand what happens when you pin a file, it's helpful to understand the lifecycle of data in IPFS, which can be summarised as follows:
+Now that your file is pinned to a pinning service, you will fetch it using an IPFS gateway. An [**IPFS Gateway**](/concepts/ipfs-gateway/) is an HTTP interface that serves as a bridge to the IPFS network. In other words, it allows fetching CIDs from IPFS with HTTP.
 
-1. **Content-addressable representation**: The file is transformed into a content-addressable representation with a CID. For this guide, the full details are not important. The basic idea is that this representation makes files and directories **content-addressable** via CIDs by chunking files into smaller blocks\*\*, calculating their hashes, and constructing a [Merkle DAG](../concepts/merkle-dag.md).
-2. **Pinning:** refers to the stage where the blocks of the CID are saved on an IPFS node (or multiple nodes), in this case, web3.storage. Since saving is not enough for the CID to be retrievable, pinning typically refers to two things:
-   - **Advertising:** Making it discoverable to the IPFS network by advertising a record linking between the CID and the server's IP address to <VueCustomTooltip label="Distributed Hash Table: a decentralized data store that maps data based on key-value pairs." underlined multiline is-left>the DHT</VueCustomTooltip>. This advertising stage is a continuous process that repeats typically every 12 hours.
-   - **Providing:** The content-addressable representation of the CID is persisted on one of web3.storage's IPFS nodes (servers running an IPFS node) and made publicly available to the IPFS network.
-3. **Retrieval:** refers to when an IPFS node fetches the blocks of the CID and constructs the Merkle DAG. This usually involves several steps:
-   - **Block fetching:** An IPFS node fetches the blocks of the Merkle DAG (of the file or folder) from providers.
-   - **Verifying** the IPFS node verifies the blocks fetched by hashing them and ensuring the resulting hash is correct. Note that blocks can come from any node in the network and this type of retrieval is _trustless_.
-   - **File access:** once all the blocks are present, the Merkle DAG can be constructed making the CID successfully replicated and accessible.
-4. **Deleting:** refers to the deletion of a CID from a node. Deletion is always a local operation. If a CID has been replicated by other nodes, it will continue to be available on the IPFS network.
+Pinning services typically offer an IPFS gateway as a way to easily retrieve your CIDs, for example, Web3.storage operates the [w3s.link](https://w3s.link) gateway, with which you can retrieve the uploaded CID.
 
-Note that once the CID is replicated, it is typically advertised by default, even if it isn't explicitly pinned.
+To retrieve the CID, open the following URL:
+[bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4.ipfs.w3s.link](https://bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4.ipfs.w3s.link/)
 
-## Fetching your published CID
+> **Note:** When pinning a file to IPFS, the filename is not stored by default. To ensure the filename is retained, it's common to wrap the file in a directory. In such instances, both the file and the directory will have unique CIDs. Web3.storage wraps files in a directory by default, which is why you see a directory listing with the file `welcome-to-IPFS.jpg` followed by a shorthand CID: `bafk…beom` of the file.
 
-Now that the file is published and you have a CID, you will learn how it can be fetched from the IPFS network.
+## Summary and next steps
 
-There are two primary ways to retrieve files (and directories) published with IPFS:
+In this quickstart guide, you learned about [pinning services](../concepts/persistence.md#pinning-in-context), and how to use them to publish content-addressed data with IPFS. You also learned how CIDs address files and directories in IPFS by uploading a file to a pinning service called [web3.storage](https://web3.storage/).
 
-- [**IPFS node**](/concepts/nodes/) by installing one of the IPFS implementations, e.g. [Kubo](/concepts/nodes/#kubo) on your computer which allows you to fetch and verify CIDs from other nodes in the IPFS network.
-- [**IPFS Gateway**](/concepts/ipfs-gateway/) HTTP interface to the IPFS network that allows fetching data from IPFS with HTTP. Pinning services typically offer an IPFS gateway as a way to easily retrieve your CIDs.
+Pinning services provide a convenient alternative to running IPFS nodes and infrastructure. However, the two are not mutually exclusive; you can combine a pinning service with an IPFS node on your computer to increase the resilience of your CIDs.
 
-The first option allows you to speak the suit of IPFS protocols. The latter serves as a bridge in situations where you might be constrained to using HTTP, such as in web apps where your app users may not be running an IPFS node.
+Check out [the lifecycle of data in IPFS](../concepts/lifecycle.md) to learn more about how publishing by pinning fits into the full lifecycle of data in IPFS.
 
-IPFS Gateways, in their most basic form, are typically IPFS nodes that are hosted by someone else and expose an HTTP interface to fetch CIDs:
+As a next step, try fetching the pinned file, by following the [retrieval quickstart](./retrieve.md).
 
-![gateway diagram](./images/gateway.png)
+If you prefer programmatically uploading with JavaScript or Go, check out the [Web3.storage docs](https://web3.storage/docs/how-tos/store/).
 
-### Verified vs. trusted CID retrieval
-
-Another thing to consider when considering the two approaches is _verification_. By default, an IPFS node hashes each block and ensures that when the file is constructed from the blocks (into a Merkle DAG), it results in the CID you requested. However, with IPFS Gateways, verification is optional.
-
-Non-verified retrieval is also commonly referred to as trusted retrieval because you're trusting the gateway to return the correct response without calculating the hash.
-
-While verification is almost always recommended, in reality, there are situations where trusted retrieval is the pragmatic choice, like when embedding images on a website.
-
-### Fetching the CID with Kubo
-
-To fetch the CID with [Kubo](/install/command-line/), you need to first ensure that the Kubo daemon is installed and running:
-
-```bash
-$ ipfs daemon
-```
-
-To fetch the file, run the [`ipfs get [CID]`](/reference/kubo/cli/#ipfs-get) command:
-
-```bash
-$ ipfs get bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4
-```
-
-The output should look as follows:
-
-```bash
-Saving file(s) to bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4
- 647.61 KiB / 647.61 KiB [========================================================================================================================] 100.00% 0s
-```
-
-A new folder with the same name as the CID was created:
-
-```bash
-$ ls bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4/
-welcome-to-IPFS.jpg
-```
-
-Congratulations, you have successfully fetched the CID.
-
-### Fetching the CID with an IPFS Gateway
-
-TODO
-
-- [https://ipfs.io/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4](https://ipfs.io/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4)
-- [https://cloudflare-ipfs.com/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4](https://cloudflare-ipfs.com/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4)
-- [https://gateway.pinata.cloud/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4](https://gateway.pinata.cloud/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4)
-
-## Conclusion
-
-## Next steps
-
-- If you prefer uploading with JavaScript or Go, check out the [Web3.storage docs](https://web3.storage/docs/how-tos/store/).
-- Try out [Filebase](https://filebase.com/), a pinning service that offers an [AWS S3-compatible API for pinning](https://docs.filebase.com/getting-started/s3-api-getting-started-guide), so you can use any S3-compatible SDK, e.g. [aws-sdk](https://www.npmjs.com/package/aws-sdk), and [many](https://github.com/s3tools/s3cmd) more.
+Alternatively, try out [Filebase](https://filebase.com/), a pinning service that offers an [AWS S3-compatible API for pinning](https://docs.filebase.com/getting-started/s3-api-getting-started-guide), so you can use any S3-compatible SDK, e.g. [aws-sdk](https://www.npmjs.com/package/aws-sdk), and [many](https://github.com/s3tools/s3cmd) more.
