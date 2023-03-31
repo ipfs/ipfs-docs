@@ -28,7 +28,7 @@ The CID you will retrieve is actually a folder containing a single image file. T
 There are two primary ways to retrieve files and directories published to IPFS:
 
 - Use an [**IPFS node**](../concepts/nodes.md) by installing one of the IPFS implementations, e.g. [Kubo](../concepts/nodes.md#kubo) on your computer. This allows you to fetch and verify CIDs from other nodes in the IPFS network.
-- Use an [**IPFS Gateway**](/concepts/ipfs-gateway/), an HTTP interface with the IPFS network that allows you to fetch data from IPFS using HTTP. Pinning services typically offer an IPFS gateway as a way to easily retrieve your CIDs.
+- Use an [**IPFS Gateway**](../concepts/ipfs-gateway.md), an HTTP interface with the IPFS network that allows you to fetch data from IPFS using HTTP. Pinning services typically offer an IPFS gateway as a way to easily retrieve your CIDs.
 
 The **node** option allows you access to the full suite of IPFS protocols. The **Gateway** option serves as a bridge in situations where you might be constrained to using HTTP, such as in web apps where your app users may not be running an IPFS node.
 
@@ -46,7 +46,7 @@ While verification is almost always recommended, in reality, there are situation
 
 ## Fetching the CID with Kubo
 
-To fetch the CID with [Kubo](/install/command-line/), complete the steps below:
+To fetch the CID with [Kubo](../install/command-line.md), complete the steps below:
 
 1. Ensure that the Kubo daemon is installed and running:
 
@@ -54,7 +54,7 @@ To fetch the CID with [Kubo](/install/command-line/), complete the steps below:
     $ ipfs daemon
     ```
 
-2. To fetch the file, run the [`ipfs get [CID]`](/reference/kubo/cli/#ipfs-get) command:
+2. To fetch the file, run the [`ipfs get [CID]`](../reference/kubo/cli.md#ipfs-get) command:
 
     ```bash
     $ ipfs get bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4

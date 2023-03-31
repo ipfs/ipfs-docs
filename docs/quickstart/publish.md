@@ -28,7 +28,7 @@ Pinning can be done at various levels, from individual files to entire directori
 
 ### Pinning services
 
-[Pinning services](../concepts/persistence/#pinning-services) are similar to hosting services, in that they run an IPFS node for you and ensure that your files are available to the IPFS network.
+[Pinning services](../concepts/persistence.md#pinning-services) are similar to hosting services, in that they run an IPFS node for you and ensure that your files are available to the IPFS network.
 
 :::callout
 Data pinned to the IPFS network is public by default and retrievable by anyone. Avoid publishing private data or adequately encrypt it before publishing.
@@ -37,9 +37,9 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 ## Prerequisites
 
 - A free [web3.storage](https://web3.storage/) account.
-- The [following image](/images/welcome-to-IPFS.jpg), downloaded and saved on your computer:
+- The [following image](../quickstart/images/welcome-to-IPFS.jpg), downloaded and saved on your computer:
 
-![image](/images/welcome-to-IPFS.jpg)
+![image](../quickstart/images/welcome-to-IPFS.jpg)
 
 ## Uploading and pinning a file
 
@@ -51,7 +51,7 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 
    ![web3.storage upload button](./images/web3-upload-button.png)
 
-1. Upload and pin the file by doing either dragging the [image file](/images/welcome-to-IPFS.jpg) to the dashed rectangle labeled **Drag and drop your files here**, or clicking on the dashed rectangle to select the [image](/images/welcome-to-IPFS.jpg) file.
+1. Upload and pin the file by doing either dragging the [image file](../quickstart/images/welcome-to-IPFS.jpg) to the dashed rectangle labeled **Drag and drop your files here**, or clicking on the dashed rectangle to select the [image](../quickstart/images/welcome-to-IPFS.jpg) file.
 
    ![web3.storage upload tab](./images/web3-upload-tab.png)
 
@@ -89,7 +89,7 @@ The transformation into a content-addressable representation is a local operatio
 
 ## Retrieving with a gateway
 
-Now that your file is pinned to a pinning service, you will fetch it using an IPFS gateway. An [**IPFS Gateway**](/concepts/ipfs-gateway/) is an HTTP interface that serves as a bridge to the IPFS network. In other words, it allows you to fetch CIDs from IPFS using HTTP.
+Now that your file is pinned to a pinning service, you will fetch it using an IPFS gateway. An [**IPFS Gateway**](../concepts/ipfs-gateway.md) is an HTTP interface that serves as a bridge to the IPFS network. In other words, it allows you to fetch CIDs from IPFS using HTTP.
 
 Pinning services typically offer an IPFS gateway as a way to easily retrieve your CIDs. For example, Web3.storage operates the [w3s.link](https://w3s.link) gateway, from which you can retrieve the uploaded CID.
 
