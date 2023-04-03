@@ -1,7 +1,6 @@
 ---
-title: 'Publishing a file with IPFS using a pinning service'
+title: 'Publish a file with IPFS using a pinning service'
 description: 'Learn how to publish content with IPFS by pinning a file to a pinning service.'
-sidebarDepth: 0
 ---
 
 # Publish a file with IPFS

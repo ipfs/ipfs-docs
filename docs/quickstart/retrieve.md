@@ -1,7 +1,6 @@
 ---
 title: 'Retrieval with IPFS'
 description: 'Learn about the different ways that CIDs can be fetched from the other peers in the IPFS network'
-sidebarDepth: 0
 ---
 
 # Retrieving a CID with IPFS
