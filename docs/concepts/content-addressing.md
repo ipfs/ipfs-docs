@@ -5,7 +5,7 @@ description: Learn about how content addressing works and how content identifier
 
 # Content Identifiers (CIDs)
 
-As described in [IPFS and the problems it solves](../concepts/what-is-ipfs.md), IPFS is a modular suite of protocols purpose built for the organization and movement of <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>content-addressed data</VueCustomTooltip>. In this guide, you'll learn more about the fundamentals of content-addressing in IPFS and how IPFS uses Content Identifiers (CIDs) to handle content-addressed data.
+As described in [IPFS and the problems it solves](../concepts/what-is-ipfs.md), IPFS is a modular suite of protocols purpose built for the organization and transfer of <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>content-addressed data</VueCustomTooltip>. In this guide, you'll learn more about the fundamentals of content-addressing in IPFS and how IPFS uses Content Identifiers (CIDs) to handle content-addressed data.
 
 ## What is a CID?
 
@@ -33,7 +33,7 @@ CIDs contain the hash and the codec of the data. A CID can be represented in str
 While a data block's CID is constructed using the cryptographic hash of the data block, a CID contains additional information (described above) that the hash does not. For further information, see [CIDs are not file hashes](#cids-are-not-file-hashes) below.
 :::
 
-For a break-down of an actual CID, see [this example with the IPFS CID inspector](https://cid.ipfs.tech/#QmcRD4wkPPi6dig81r5sLj9Zm1gDCL4zgpEj9CfuRrGbzF).
+For a break-down of an actual CID, see [this example with the IPFS CID inspector](https://cid.ipfs.tech/#bafybeigrf2dwtpjkiovnigysyto3d55opf6qkdikx6d65onrqnfzwgdkfa).
 
 ## CIDs are not file hashes
 
