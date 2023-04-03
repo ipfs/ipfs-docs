@@ -13,10 +13,12 @@ The web3.storage pinning service was chosen purely for demonstration purposes, a
 
 ## Contents <!-- omit from toc -->
 
-- [Pinning overview](#overview)
+- [Overview](#overview)
+- [Pinning services](#pinning-services)
 - [Prerequisites](#prerequisites)
 - [Uploading and pinning a file](#uploading-and-pinning-a-file)
 - [CIDs explained](#cids-explained)
+- [Retrieving with a gateway](#retrieving-with-a-gateway)
 - [Summary and next steps](#summary-and-next-steps)
 
 ## Overview
@@ -25,7 +27,7 @@ _Pinning_ refers to the process of ensuring that a particular piece of content i
 
 Pinning can be done at various levels, from individual files to entire directories that are addressed by a CID. You can also pin CIDs to multiple IPFS nodes to increase the redundancy and resilience of the file on the network.
 
-### Pinning services
+## Pinning services
 
 [Pinning services](../concepts/persistence.md#pinning-services) are similar to hosting services, in that they run an IPFS node for you and ensure that your files are available to the IPFS network.
 
@@ -40,7 +42,7 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 
 ![image](../quickstart/images/welcome-to-IPFS.jpg)
 
-## Uploading and pinning a file
+## Upload and pin a file
 
 1. Sign into your account on web3.storage.
 

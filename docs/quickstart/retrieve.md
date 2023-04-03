@@ -13,9 +13,8 @@ You will fetch the image that was pinned in the [publishing with a pinning servi
 The CID you will retrieve is actually a folder containing a single image file. The reason for this that when files are added to IPFS, the filename is not stored by default. To retain the filename, it's a common practice to wrap the file in a directory. In such instances, you end up with two CIDs - one for the file and another for the directory containing the file.
 :::
 
-## Contents 
+## Contents <!-- omit from toc -->
 
-- [Retrieving a CID with IPFS](#retrieving-a-cid-with-ipfs)
 - [IPFS retrieval methods](#ipfs-retrieval-methods)
 - [Verified vs. trusted CID retrieval](#verified-vs-trusted-cid-retrieval)
 - [Fetching the CID with Kubo](#fetching-the-cid-with-kubo)
@@ -49,29 +48,29 @@ To fetch the CID with [Kubo](../install/command-line.md), complete the steps bel
 
 1. Ensure that the Kubo daemon is installed and running:
 
-    ```bash
-    $ ipfs daemon
-    ```
+   ```bash
+   $ ipfs daemon
+   ```
 
 2. To fetch the file, run the [`ipfs get [CID]`](../reference/kubo/cli.md#ipfs-get) command:
 
-    ```bash
-    $ ipfs get bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4
-    ```
+   ```bash
+   $ ipfs get bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4
+   ```
 
-    The output should look as follows:
+   The output should look as follows:
 
-    ```bash
-    Saving file(s) to bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4
-    647.61 KiB / 647.61 KiB [========================================================================================================================] 100.00% 0s
-    ```
+   ```bash
+   Saving file(s) to bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4
+   647.61 KiB / 647.61 KiB [========================================================================================================================] 100.00% 0s
+   ```
 
-    A new folder with the same name as the CID was created:
+   A new folder with the same name as the CID was created:
 
-    ```bash
-    $ ls bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4/
-    welcome-to-IPFS.jpg
-    ```
+   ```bash
+   $ ls bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4/
+   welcome-to-IPFS.jpg
+   ```
 
 Congratulations, you have successfully fetched the CID.
 
