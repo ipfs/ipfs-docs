@@ -21,6 +21,10 @@ This page discusses:
 
 ## Gateway request lifecycle
 
+:::callout
+This section uses the _default_ gateway request lifecycle of [IPFS Kubo](https://github.com/ipfs/kubo) to introduce the basic concepts in the lifecycle. However, some gateways only serve content that they have and/or want to provide. For example, a Kubo gateway with `NoFetch` enabled will not attempt to retrieve content from the network.
+:::
+
 When a client request for a CID reaches an IPFS gateway, the gateway first checks whether the CID is cached locally. At this point, one of the following occurs:
 
 - **If the CID is cached locally**, the gateway responds with the content referred to by the CID, and the lifecycle is complete.
@@ -41,9 +45,8 @@ The CID retrieval process is composed of two parts, content discovery / routing 
    1. The gateway streams the content to the client.
 
 :::callout
-**Learn more**
-
-Dive deeper into content discovery, routing, retrieval and the subsystems involved in each part of the process in [How IPFS works](./how-ipfs-works.md).
+- Learn more about content discovery, routing, retrieval and the subsystems involved in each part of the process in [How IPFS works](./how-ipfs-works.md).
+- Dive into the technical specifications for gateways in the [IPFS HTTP Gateways specification](https://specs.ipfs.tech/http-gateways/) page.
 :::
 
 ## Gateway providers
@@ -158,6 +161,10 @@ Currently HTTP gateways may access both IPFS and IPNS services:
 
 For more information on working with gateways, see [best practices](../how-to/gateway-best-practices.md) and [troubleshooting](../how-to/gateway-troubleshooting.md).
 
+## Implementing using the spec
+
+If you would like to read the technical specifications for the various gateway types, and learn more about how to implement a gateway, see the [IPFS HTTP Gateways specification](https://specs.ipfs.tech/http-gateways/) page for more information.
+
 ## Frequently asked questions (FAQs)
 
 ### What is the ipfs.io gateway?
@@ -204,4 +211,4 @@ No. The ipfs.io gateway is one of many portals used to view content stored by th
 
 - [A Practical Explainer for IPFS Gateways – Part 1](https://blog.ipfs.tech/2022-06-09-practical-explainer-ipfs-gateways-1/), [Part 2](https://blog.ipfs.tech/2022-06-30-practical-explainer-ipfs-gateways-2/)
 - [Kubo: Gateway configuration options](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway)
-- [Gateway specifications](https://github.com/ipfs/specs/blob/main/http-gateways/#readme)
+- [IPFS HTTP Gateways specification](https://specs.ipfs.tech/http-gateways/) 
