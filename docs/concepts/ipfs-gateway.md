@@ -65,7 +65,7 @@ A gateway behind a firewall represents just one potential location for a private
 Public gateway operators include:
 
 - Protocol Labs, which deploys the public gateway `https://ipfs.io`.
-- Third-party public gateways such as `https://cf-ipfs.com`.
+- Third-party public gateways, such as `https://cf-ipfs.com`.
 
 Protocol Labs maintains a [list of public gateways](https://ipfs.github.io/public-gateway-checker/) and their status.
 
