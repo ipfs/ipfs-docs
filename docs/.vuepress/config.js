@@ -484,7 +484,7 @@ module.exports = {
     [
       '@vuepress/search',
       {
-        searchMaxSuggestions: 10
+        searchMaxSuggestions: 1
       }
     ],
     'vuepress-plugin-chunkload-redirect',
