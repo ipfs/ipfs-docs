@@ -58,12 +58,10 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 
 ## Upload and pin a file
 
-1. Create a space for your files, and register it.
+1. Create a space for your files.
 
-   ```
-   w3 space create Pictures
-   w3 space register
-   ```
+   ```shell
+    w3 space create Pictures
 
 1. Upload your file.
 
