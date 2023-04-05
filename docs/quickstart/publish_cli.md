@@ -1,9 +1,9 @@
 ---
-title: 'Publish a file with IPFS using a pinning service in a CLI'
-description: 'Learn how to publish content with IPFS by pinning a file to a pinning service using a CLI.'
+title: 'Publish using the command line'
+description: 'Learn how to publish content with IPFS by pinning a file to a pinning service using the command line.'
 ---
 
-# Publish a file with IPFS
+# Publish a file with IPFS using the command line
 
 Similar to the [Publish a file with IPFS](./publish.md) quickstart, this guide will teach you about [pinning services](../concepts/persistence.md#pinning-in-context) and how to use them to publish content-addressed data with IPFS. However, instead of using the [Web3 UI used in the related guide](./publish.md#upload-and-pin-a-file) , you will upload the file to[web3.storage](https://web3.storage/) using the [w3 command line interface](https://github.com/web3-storage/w3cli). By the end of this guide, you should have a better understanding of how content addressing and CIDs work from a high level, as well as how to use the w3 command line interface to publish data to IPFS.
 
@@ -46,15 +46,14 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 ## Install and register to w3
 
 1. Install the [w3 command line interface](https://github.com/web3-storage/w3cli).
-   ```
+
+   ```shell
    npm install -g @web3-storage/w3cli
-   ```
 
 1. Authorize the w3 tool to act on behalf of the account associated with your email address `<your@email.com>`:
 
-   ```
+   ```shell
    w3 authorize <your@email.com>
-   ```
 
 ## Upload and pin a file
 
@@ -65,7 +64,7 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 
 1. Upload your file.
 
-   ```
+   ```shell
    w3 up welcome-to-IPFS.jpg
    ```
 
