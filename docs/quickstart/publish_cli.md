@@ -5,7 +5,7 @@ description: 'Learn how to publish content with IPFS by pinning a file to a pinn
 
 # Publish a file with IPFS
 
-In this quickstart guide, you will learn about [pinning services](../concepts/persistence.md#pinning-in-context) and how to use them to publish content-addressed data with IPFS. To learn the process, you will upload the file to a pinning service called [web3.storage](https://web3.storage/). By the end of this guide, you should have a better understanding of how content addressing and CIDs work from a high level.
+Similar to the [Publish a file with IPFS](./publish.md) quickstart, this guide will teach you about [pinning services](../concepts/persistence.md#pinning-in-context) and how to use them to publish content-addressed data with IPFS. However, instead of using the [Web3 UI used in the related guide](./publish.md#upload-and-pin-a-file) , you will upload the file to[web3.storage](https://web3.storage/) using the [w3 command line interface](https://github.com/web3-storage/w3cli). By the end of this guide, you should have a better understanding of how content addressing and CIDs work from a high level, as well as how to use the w3 command line interface to publish data to IPFS.
 
 :::callout
 The web3.storage pinning service was chosen purely for demonstration purposes, and is one of many [pinning services](../concepts/persistence.md#pinning-in-context) you can choose from. While each pinning services has different SDKs and APIs, their fundamental role is the same - to store files and make them available to the IPFS network. In fact, one of the main benefits of IPFS is that files can be pinned to multiple pinning services, thereby reducing vendor lock-in.
@@ -37,23 +37,23 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 
 ## Prerequisites
 
-- A unix-like terminal
-- Node.js installed to the terminal environment
+- A unix-like terminal.
+- Node.js installed in the terminal environment.
 - The [following image](../quickstart/images/welcome-to-IPFS.jpg), downloaded and saved on your computer:
 
 ![image](../quickstart/images/welcome-to-IPFS.jpg)
 
 ## Install and register to w3
 
-1. Install the w3 cli tool.
+1. Install the [w3 command line interface](https://github.com/web3-storage/w3cli).
    ```
    npm install -g @web3-storage/w3cli
    ```
 
-1. Register to w3 using your email.
+1. Authorize the w3 tool to act on behalf of the account associated with your email address `<your@email.com>`:
 
    ```
-   w3 authorize your@email.com
+   w3 authorize <your@email.com>
    ```
 
 ## Upload and pin a file
@@ -71,7 +71,7 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
    w3 up welcome-to-IPFS.jpg
    ```
 
-Congratulations, you have successfully **pinned** a file to IPFS! 🎉
+Congratulations, you have successfully **pinned** a file to IPFS using the w3 cli! 🎉
 
 Let's unpack what just happened, by looking at CIDs.
 
