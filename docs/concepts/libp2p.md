@@ -83,7 +83,7 @@ See the [libp2p documentation](https://docs.libp2p.io/concepts/secure-comm/overv
 
 _Stream multiplexing_, often abbreviated as _stream muxing_, is a technique for sharing a single connection between multiple protocols. This reduces the resource overhead and latency associated with frequent connection establishment.
 
-In IPFS, libp2p's stream multiplexer allows many streams to flow over a single connection. IPFS currently uses libp2p's two stream muxers, [mplex](https://docs.libp2p.io/concepts/multiplex/mplex) and [yamux](https://docs.libp2p.io/concepts/multiplex/yamux). However, many of the [transports](##transports) available in the libp2p stack come with native streams, such as QUIC, WebTransport, and WebRTC. In the case of these transports, the underlying connection does not need to perform stream multiplexing, as the protocol already provides it.
+In IPFS, libp2p's stream multiplexer allows many streams to flow over a single connection. IPFS currently uses libp2p's two stream muxers, [mplex](https://docs.libp2p.io/concepts/multiplex/mplex) and [yamux](https://docs.libp2p.io/concepts/multiplex/yamux). However, many of the [transports](#transports) available in the libp2p stack come with native streams, such as QUIC, WebTransport, and WebRTC. In the case of these transports, the underlying connection does not need to perform stream multiplexing, as the protocol already provides it.
 
 See the [libp2p documentation](https://docs.libp2p.io/concepts/multiplex/overview/) to learn more about stream multiplexing in libp2p.
 
