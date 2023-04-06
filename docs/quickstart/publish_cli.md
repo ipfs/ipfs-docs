@@ -5,7 +5,7 @@ description: 'Learn how to publish content with IPFS by pinning a file to a pinn
 
 # Publish a file with IPFS using the command line
 
-Similar to the [Publish a file with IPFS](./publish.md) quickstart, this guide will teach you about [pinning services](../concepts/persistence.md#pinning-in-context) and how to use them to publish content-addressed data with IPFS. However, instead of using the [Web3 UI used in the related guide](./publish.md#upload-and-pin-a-file) , you will upload the file to[web3.storage](https://web3.storage/) using the [w3 command line interface](https://github.com/web3-storage/w3cli). By the end of this guide, you should have a better understanding of how content addressing and CIDs work from a high level, as well as how to use the w3 command line interface to publish data to IPFS.
+Similar to the [Publish a file with IPFS](./publish.md) quickstart, this guide will teach you about [pinning services](../concepts/persistence.md#pinning-in-context) and how to use them to publish content-addressed data with IPFS. However, instead of using the [Web3 UI used in the related guide](./publish.md#upload-and-pin-a-file) , you will upload the file to [web3.storage](https://web3.storage/) using the [w3 command line interface](https://github.com/web3-storage/w3cli). By the end of this guide, you should have a better understanding of how content addressing and CIDs work from a high level, as well as how to use the w3 command line interface to publish data to IPFS.
 
 :::callout
 The web3.storage pinning service was chosen purely for demonstration purposes, and is one of many [pinning services](../concepts/persistence.md#pinning-in-context) you can choose from. While each pinning services has different SDKs and APIs, their fundamental role is the same - to store files and make them available to the IPFS network. In fact, one of the main benefits of IPFS is that files can be pinned to multiple pinning services, thereby reducing vendor lock-in.
@@ -86,7 +86,7 @@ bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4
 
 You can now share the CID with anyone and they can fetch the file using IPFS.
 
-To dive deeper into the anatomy of the CID, check out the [CID inspector](https://cid.ipfs.tech/#bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4)
+To dive deeper into the anatomy of the CID, check out the [CID inspector](https://cid.ipfs.tech/#bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4).
 
 :::callout
 The transformation into a content-addressable representation is a local operation that doesn't require any network connectivity. With web3.storage, this transformation happens client-side (in the browser).
