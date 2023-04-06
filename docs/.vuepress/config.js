@@ -98,8 +98,8 @@ module.exports = {
               collapsable: false,
               children: [
                 ['/quickstart/publish','Publish with IPFS (UI)'],
-                ['/quickstart/retrieve','Retrieve with IPFS'],
                 ['/quickstart/publish_cli', 'Publish with IPFS (command line)' ]
+                ['/quickstart/retrieve','Retrieve with IPFS'],
               ]
             },
             {
@@ -116,8 +116,10 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: false,
               children: [
-                ['/quickstart/publish','Publish with IPFS'],
+                ['/quickstart/publish','Publish with IPFS (UI)'],
+                ['/quickstart/publish_cli', 'Publish with IPFS (command line)' ]
                 ['/quickstart/retrieve','Retrieve with IPFS'],
+                
               ]
             },
             {
