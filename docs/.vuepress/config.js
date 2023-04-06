@@ -162,6 +162,7 @@ module.exports = {
                 '/concepts/file-systems',
                 '/concepts/ipfs-gateway',
                 ['https://ipld.io/docs/intro/primer/', 'IPLD (InterPlanetaryLinkedData)' ],
+                '/concepts/ipni',
                 '/concepts/ipns',
                 '/concepts/libp2p',
                 '/concepts/merkle-dag'
