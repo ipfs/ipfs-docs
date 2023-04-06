@@ -401,4 +401,7 @@ For example, Brave RPC API runs on port 45001, so the CLI can talk to the Brave 
 
 ## Next steps
 
-Now that you've installed IPFS Kubo, check out the [IPFS Kubo Tutorial in Guides](../how-to/command-line-quick-start.md), which will guide you through taking a Kubo node online and interacting with the network.
+Now that you've installed IPFS Kubo:
+
+- Check out the [IPFS Kubo Tutorial in Guides](../how-to/command-line-quick-start.md), which will guide you through taking a Kubo node online and interacting with the network.
+- Learn how to quickly install, uninstall, upgrade and downgrade Kubo using [ipfs-update](../how-to/ipfs-updater.md).

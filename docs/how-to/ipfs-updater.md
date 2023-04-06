@@ -1,18 +1,20 @@
 ---
-title: IPFS updater
-description: The IPFS updater is a command-line tool originally used to help users update their IPFS version. Learn how to install, upgrade, and downgrade Kubo using the IPFS updater.
+title: Using ipfs-update
+description: This page provides installation and usage guidance for ipfs-update, a command-line utility that can be used to install, uninstall, dowgrade and upgrade IPFS Kubo.
 current-ipfs-updater-version: v1.9.0
 ---
 
 # ipfs-update
 
-The ipfs-update tool is a command-line utility that can be used to install and update Kubo. The easiest way to install ipfs-update is by using the pre-built binaries, detailed below. See the [project repository](https://github.com/ipfs/ipfs-update#from-source) if you'd prefer to build it from source.
+The ipfs-update tool is a command-line utility that can be used to install, uninstall, dowgrade and upgrade IPFS [Kubo](../install/command-line.md). 
+
+:::callout
+See the [project repository](https://github.com/ipfs/ipfs-update#from-source) if you'd prefer to build ipfs-update from source.
+:::
 
 ## Install ipfs-update
 
-
-You can download pre-built binaries from [`dist.ipfs.tech`](https://dist.ipfs.tech/#ipfs-update). Binaries are also available from the [IPFS Update GitHub release page](https://github.com/ipfs/ipfs-update/releases).
-
+The ipfs-update tool can be downloaded using pre-built binaries from [`dist.ipfs.tech`](https://dist.ipfs.tech/#ipfs-update). Binaries are also available from the [IPFS Update GitHub release page](https://github.com/ipfs/ipfs-update/releases).
 
 :::: tabs
 
@@ -42,8 +44,6 @@ You can download pre-built binaries from [`dist.ipfs.tech`](https://dist.ipfs.te
 
    ```powershell
    .\ipfs-update.exe --version
-
-   > ipfs-update version 1.9.0
    ```
 
    At this point, ipfs-update is usable. However, it's strongly recommended that you first add `ipfs-update.exe` to your `PATH` using the following steps:
@@ -52,18 +52,12 @@ You can download pre-built binaries from [`dist.ipfs.tech`](https://dist.ipfs.te
 
    ```powershell
    pwd
-
-   > Path
-   > ----
-   > C:\Users\<username>\Apps\ipfs-update_v1.9.0\ipfs-update
    ```
 
 1. Check if a profile file for PowerShell already exists:
 
    ```powershell
    Test-Path $profile
-
-   > false
    ```
 
    If a profile already file exists, skip the next step and proceed to step 8.
@@ -72,10 +66,6 @@ You can download pre-built binaries from [`dist.ipfs.tech`](https://dist.ipfs.te
 
    ```powershell
    New-Item -path $profile -type file –force
-
-   > Mode                LastWriteTime         Length Name
-   > ----                -------------         ------ ----
-   > -a----        11/5/2020   6:38 PM              0 Microsoft.PowerShell_profile.ps1
    ```
 
 1. Add the address copied in step 5 to PowerShell's `PATH` by adding it to the end of the `Microsoft.PowerShell_profile.ps1` file stored in `Documents\WindowsPowerShell`:
@@ -91,13 +81,11 @@ You can download pre-built binaries from [`dist.ipfs.tech`](https://dist.ipfs.te
 
    ```powershell
    ipfs-update --version
-
-   > ipfs-update version 1.9.0
    ```
 
-   :::tip
-   If an error occurs on the next startup of PowerShell while loading the profile file, change the PowerShell `ExecutionPolicy` to `Unrestricted`, as described in the [Microsoft PowerShell documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7).
-   :::
+      :::tip
+      If an error occurs on the next startup of PowerShell while loading the profile file, change the PowerShell `ExecutionPolicy` to `Unrestricted`, as described in the [Microsoft PowerShell documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7).
+      :::
 
 
 :::
@@ -116,9 +104,6 @@ You can download pre-built binaries from [`dist.ipfs.tech`](https://dist.ipfs.te
 
    ```bash
    tar -xvzf ipfs-update_v1.9.0_darwin-amd64.tar.gz
-
-   > x ipfs-update/install.sh
-   > x ipfs-update/ipfs-update
    ```
 
 1. Move into the `ipfs-update` folder 
@@ -131,16 +116,12 @@ You can download pre-built binaries from [`dist.ipfs.tech`](https://dist.ipfs.te
 
    ```bash
    sudo bash install.sh
-
-   > installed /usr/local/bin/ipfs-update
    ```
 
 4. Check that `ipfs-update` installed properly:
 
    ```bash
    ipfs-update --version
-
-   > ipfs-update version 1.9.0
    ```
 
 :::
@@ -159,9 +140,6 @@ You can download pre-built binaries from [`dist.ipfs.tech`](https://dist.ipfs.te
 
    ```bash
    tar -xvzf ipfs-update_v1.9.0_linux-amd64.tar.gz
-
-   > x ipfs-update/install.sh
-   > x ipfs-update/ipfs-update
    ```
 
 1. Move into the `ipfs-update` folder:
@@ -174,43 +152,42 @@ You can download pre-built binaries from [`dist.ipfs.tech`](https://dist.ipfs.te
    
    ```bash
    sudo bash install.sh
-
-   > installed /usr/local/bin/ipfs-update
    ```
 
 4. Test that `ipfs-update` has installed correctly:
 
    ```bash
    ipfs-update --version
-
-   > ipfs-update version 1.9.0
    ```
 
 :::
 
 ::::
 
-## Install IPFS
+## Install Kubo
 
-The ipfs-update tool can be used to install Kubo. 
+The ipfs-update tool can be used to install Kubo. You can install the latest version, or specify a specific version.
 
-- To install a specific Kubo `<version-number>`, run:
+### Latest version 
 
-  ```bash
-  ipfs-update install <version-number>
-  ```
+To install the latest release of Kubo, use the `latest` tag:
 
-- To install the latest release of Kubo, use the `latest` tag:
+```bash
+ipfs-update install latest
+```
 
-  ```bash
-  ipfs-update install latest
-  ```
+### Specific version
+To install a specific Kubo `<version-number>`, run:
+
+```bash
+ipfs-update install <version-number>
+```
 
 :::tip
 When `ipfs-update install` is run and a version of IPFS is already installed, that version is _stashed_ and can be reverted to later.
 :::
 
-## Downgrade IPFS
+## Roll-back Kubo version
 
 Use the `revert` function to roll-back to a previous version of Kubo:
 
@@ -218,11 +195,15 @@ Use the `revert` function to roll-back to a previous version of Kubo:
 ipfs-update revert
 ```
 
-`ipfs-update revert` reverts to the previously installed version of Kubo. This is useful if the newly installed version has issues and you would like to switch back to your older stable installation.
+The `revert` function is useful if a newly installed version needs to be reverted to a more stable version, or you want to test or use older versions of Kubo.
 
-## Uninstall updater
+## Uninstall ipfs-update
 
 To uninstall IPFS Update, delete the binary and `ipfs-update` from your `PATH` variable.
+
+:::: tabs
+
+::: tab windows id="uninstall-ipfs-update-windows"
 
 ### Windows
 
@@ -230,8 +211,6 @@ To uninstall IPFS Update, delete the binary and `ipfs-update` from your `PATH` v
 
    ```powershell
    gci -recurse -filter ipfs-update.exe -File -ErrorAction SilentlyContinue
-
-   > Directory: C:\Users\<username>\Apps\ipfs-update_v1.9.0\ipfs-update
    ```
 
 2. Remove the `ipfs-update` directory:
@@ -240,16 +219,22 @@ To uninstall IPFS Update, delete the binary and `ipfs-update` from your `PATH` v
    Remove-Item -Recurse -Force C:\Users\<username>\Apps\ipfs-update_v1.9.0
    ```
 
-3. Delete the `ipfs-update` directory from the `PATH` variable. This process differs between Windows installations, so please check the [Microsoft documentation for details](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=msvc-160).
+3. Delete the `ipfs-update` directory from the `PATH` variable. 
 
-### Linux & macOS
+      :::tip
+      This process differs between Windows installations, so please check the [Microsoft documentation for details](https://docs.microsoft.com/en-us/cpp/build/setting-the-path-and-environment-variables-for-command-line-builds?view=msvc-160).
+      :::
+
+:::
+
+::: tab macOS id="uninstall-ipfs-update-macos"
+
+### MacOS
 
 1. Find the location of the `ipfs-update` file:
 
    ```bash
    sudo find / -name ipfs-update
-
-   /usr/local/bin/ipfs-update
    ```
 
 2. Remove the file:
@@ -257,3 +242,25 @@ To uninstall IPFS Update, delete the binary and `ipfs-update` from your `PATH` v
    ```bash
    sudo rm /usr/local/bin/ipfs-update
    ```
+
+:::
+
+::: tab linux id="uninstall-ipfs-update-linux"
+
+### Linux
+
+1. Find the location of the `ipfs-update` file:
+
+   ```bash
+   sudo find / -name ipfs-update
+   ```
+
+2. Remove the file:
+
+   ```bash
+   sudo rm /usr/local/bin/ipfs-update
+   ```
+
+:::
+
+::::
