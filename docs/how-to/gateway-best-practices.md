@@ -45,10 +45,6 @@ Use of a gateway requires location-based addressing: `https://{gatewayURL}/ipfs/
 
 Similarly, the use of DNSLink resolution with `Alias` forces requests through the domain's chosen gateway, as specified in the `dnslink={value}` string within the DNS TXT record. If the specified gateway becomes overloaded, goes offline, or becomes compromised, all traffic with that content becomes deleted, disabled, or suspect.
 
-## Misplaced trust
-
-Trusting a specific gateway, in turn, requires you to trust the gateway's issuing Certificate Authorities and the security of the public key infrastructure employed by that gateway. Compromised certificate authorities or public-key infrastructure implementations may undermine the trustworthiness of the gateway.
-
 ## Use subdomain gateway resolution for origin isolation
 
 To prevent one website from improperly accessing HTTP session data associated with a different website, the [same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy) permits script access only to pages that share a common domain name and port.
