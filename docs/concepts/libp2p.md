@@ -1,5 +1,5 @@
 ---
-title: Libp2p
+title: libp2p
 sidebarDepth: 0
 description: Learn about the Libp2p protocol and why it's an important ingredient in how IPFS works.
 related:
@@ -9,68 +9,71 @@ related:
   'Examples of Libp2p key features': https://docs.libp2p.io/guides/
 ---
 
-# Libp2p
+# libp2p
 
-[Libp2p](https://libp2p.io/) is a modular system of _protocols_, _specifications_, and _libraries_ that enable the development of peer-to-peer network applications. Libp2p began as part of the IPFS project and is still an essential component of IPFS. As the network layer for IPFS, Libp2p provides flexible solutions for essential peer-to-peer elements like transport, security, peer routing, and content discovery. Libp2p has implementations in [Go](https://github.com/libp2p/go-libp2p), [JavaScript](https://github.com/libp2p/js-libp2p), [Rust](https://github.com/libp2p/rust-libp2p), [Python](https://github.com/libp2p/py-libp2p), and [C++](https://github.com/soramitsu/libp2p).
+Libp2p, (short for “library peer-to-peer”) is a peer-to-peer (P2P) networking framework that enables the development of P2P applications. It consists of a collection of protocols, specifications, and libraries that facilitate P2P communication between network participants or, in other words, peers.
 
-::: callout
-libp2p's superpower is its modularity. Learn more in ProtoSchool's [Introduction to libp2p](https://proto.school/introduction-to-libp2p) tutorial.
-:::
+## P2P basics
 
-## Peer-to-peer network applications
+P2P networks are _decentralized_, meaning that participants communicate directly with one another on equal footing. More specifically:
 
-A [peer-to-peer network](https://docs.libp2p.io/reference/glossary/#peer-to-peer-p2p) is one in which the players, known as _"peers"_, communicate with each other directly as equal participants. This is in direct contrast to the traditional [client-server model](https://docs.libp2p.io/reference/glossary/#client-server), where a privileged central server may provide services to many client programs on the network. These client programs usually do not communicate with each other; they communicate only with the central server.
+ - P2P networks do not require a privileged set of servers that behave differently from their clients, as in the predominant client-server model.
+ - No central server or authority controls the network.
+ 
 
-Someone using Libp2p for the network layer of their peer-to-peer application is instantly freed up to focus on their own unique tasks, knowing that Libp2p handles a lot of [tasks in a decentralized system](https://hub.packtpub.com/libp2p-the-modular-p2p-network-stack-by-ipfs-for-better-decentralized-computing/). At the same time, they can customize Libp2p regarding key elements like transport, identity, and security. Some applications using Libp2p are [Filecoin](https://filecoin.io/), and [Parity](https://www.parity.io/why-libp2p/).
+P2P networks can take many forms, including file-sharing systems like BitTorrent, blockchain networks like Bitcoin and Ethereum, and decentralized communication standards like Matrix. These systems all have different challenges and tradeoffs,
+but they share the goal of improving upon the traditional client-server networking model.
 
-### Features of Libp2p
+## Background of libp2p and IPFS
 
-#### [Addressing](https://docs.libp2p.io/concepts/addressing/)
+Libp2p was initially developed as the wire protocol for the IPFS project, but has since phased out into a broader networking stack that a wide range of other projects use as a networking layer. It provides a set of specifications that can be adapted to support various protocols, allowing developers to create libp2p applications that can operate in multiple runtimes and networking environments.
 
-Libp2p works with a lot of different addressing schemes in a consistent way. A multiaddress (abbreviated [multiaddr](https://github.com/multiformats/multiaddr)) encodes multiple layers of addressing information into a single "future-proof" path structure. For example, `/ipv4/171.113.242.172/udp/162` indicates the use of the IPv4 protocol with the address 171.113.242.172, along with sending UDP packets to port 162.
+Discovering and connecting with other peers is a key challenge in P2P networking. Before libp2p, each P2P application had to develop its own solution, leading to a lack of reusable, well-documented P2P protocols. The IPFS team looked at existing research and networking applications for inspiration, but found few code implementations that were usable and adaptable. Existing implementations had problems like:
 
-#### [Transport](https://docs.libp2p.io/concepts/transports/overview/)
+- Minimal documentation.
+- Restrictive licensing.
+- Outdated code.
+- No point of contact.
+- Being closed source, deprecated, or lacked specifications.
+- Unfriendly APIs.
+- Tight coupling with specific use cases. 
+- Lack of upgradeability. 
 
-The technology used to move your data from one machine to another. Transports are defined in terms of two core operations, _listening_ and _dialing_. Listening means that you can accept incoming connections from other peers. _Dialing_ is the process of opening an outgoing connection to a listening peer. One of Libp2p's core requirements is to be _transport agnostic_, meaning the decision of what transport protocol to use is up to an application's developer (who may decide to support many different _transports_ at the same time).
+As a result, developers often had to reinvent the wheel each time they needed P2P protocols rather than being able to reuse existing solutions.
 
-#### [Security](https://docs.libp2p.io/concepts/secure-comm/overview/)
+Libp2p was designed to address these limitations.
 
-Libp2p supports upgrading a transport connection into a securely encrypted channel. You can then trust the identity of the peer you're communicating with and that no third-party can read the conversation or alter it in-flight. The current default is [TLS 1.3](https://www.ietf.org/blog/tls13/) as of IPFS 0.7. The previous default of [SECIO](https://docs.libp2p.io/concepts/secure-comm/overview) is now deprecated and disabled by default (see [this blog post](https://blog.ipfs.tech/2020-08-07-deprecating-secio/) for more information).
+## Features
 
-#### [Peer identity](https://docs.libp2p.io/concepts/fundamentals/peers/#peer-id)
+The features of Libp2p are listed below. For more information on each feature, click the link to navigate to the appropriate page in the [official Libp2p documentation](https://docs.libp2p.io).
 
-A Peer Identity ([often written _PeerId_](https://docs.libp2p.io/reference/glossary/#peerid)) is a unique reference to a specific peer on the peer-to-peer network. Each Libp2p peer has a private key, which it keeps secret from all other peers, and a corresponding public key, which is shared with other peers. The PeerId is a [cryptographic hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function) of a peer's public key. PeerIds are encoded using the [multihash](https://docs.libp2p.io/reference/glossary/#multihash) format.
+- [Flexible addressing](https://docs.libp2p.io/concepts/addressing/)
 
-#### [Peer routing](https://docs.libp2p.io/introduction/#peer-routing)
+- [Transport agnostic](https://docs.libp2p.io/concepts/transports/overview/)
 
-Peer Routing is the process of discovering peer addresses by using the knowledge of other peers. In a peer routing system, a peer can either give us the address we need if they have it or else send our inquiry to another peer who's more likely to have the answer. Peer Routing in Libp2p uses a [distributed hash table](https://docs.libp2p.io/reference/glossary/#dht) to iteratively route requests closer to the desired PeerId using the [Kademlia](https://en.wikipedia.org/wiki/Kademlia) routing algorithm.
+- [Customizable security](https://docs.libp2p.io/concepts/secure-comm/overview/)
 
-#### [Content discovery](https://docs.libp2p.io/concepts/introduction/overview/#content-discovery)
+- [Peer identity](https://docs.libp2p.io/concepts/fundamentals/peers/#peer-id)
 
-In Content discovery, you ask for some specific piece of data, but you don't care who sends it since you're able to verify its integrity. Libp2p provides a [content routing interface](https://github.com/libp2p/interface-content-routing) for this purpose, with the primary stable implementation using the same [Kademlia](https://en.wikipedia.org/wiki/Kademlia)-based DHT as used in peer routing.
+- [Peer routing](https://docs.libp2p.io/introduction/#peer-routing)
 
-#### [NAT traversal](https://docs.libp2p.io/concepts/nat/)
+- [Content discovery](https://docs.libp2p.io/concepts/introduction/overview/#content-discovery)
 
-Network Address Translation (NAT) allows you to move traffic seamlessly between network boundaries. NAT maps an address from one address space to another. While NAT is usually transparent for outgoing connections, listening for incoming connections requires some configuration. Libp2p has the following main approaches to NAT traversal available: [Automatic router configuration](https://docs.libp2p.io/concepts/nat/#automatic-router-configuration), [Hole punching (STUN)](https://docs.libp2p.io/concepts/nat/#hole-punching-stun), [AutoNAT](https://docs.libp2p.io/concepts/nat/#autonat), and [Circuit Relay (TURN)](https://docs.libp2p.io/concepts/nat/#circuit-relay-turn).
+- [NAT traversal](https://docs.libp2p.io/concepts/nat/)
 
-#### [Protocol](https://docs.libp2p.io/concepts/fundamentals/protocols)
+### Publish/subscribe
 
-These are the protocols built with Libp2p itself, using core Libp2p abstractions like [transport](https://docs.libp2p.io/concepts/transports/overview), [peer identity](https://docs.libp2p.io/reference/glossary/#peerid), and [addressing](https://docs.libp2p.io/concepts/addressing/). Each Libp2p protocol has a unique string identifier used in the [protocol negotiation](https://docs.libp2p.io/concepts/protocols/#protocol-negotiation) process when connections are first opened. The core Libp2p protocols are [Ping](https://docs.libp2p.io/concepts/protocols/#ping), [Identify](https://docs.libp2p.io/concepts/protocols/#identify), [secio](https://docs.libp2p.io/concepts/protocols/#secio), [kad-dht](https://docs.libp2p.io/concepts/protocols/#kad-dht), and [Circuit Relay](https://docs.libp2p.io/concepts/protocols/#circuit-relay).
+_Publish/Subscribe_ (PubSub) is a messaging model where peers congregate around topics of interest and exchange messages accordingly. In IPFS, libp2p's PubSub system allows peers to easily join and communicate on topics in real time, providing a scalable and fault-tolerant solution for P2P communication.
 
-#### [Stream multiplexing](https://docs.libp2p.io/concepts/stream-multiplexing/)
+One of the key challenges in P2P-based PubSub systems is the prompt and efficient delivery of messages to all subscribers, especially in large and dynamic networks. To overcome these challenges, IPFS utilizes libp2p's _GossipSub_ protocol, which operates by "gossiping" with peers about the messages they have received, enabling an efficient message delivery network.
 
-Often abbreviated as _stream muxing_, this allows multiple independent logical streams to all share a common underlying transport medium. Libp2p's stream multiplexer sits "above" the transport stack and allows many streams to flow over a single TCP port or other raw transport connection. The current stream multiplexing implementations are [mplex](https://docs.libp2p.io/concepts/stream-multiplexing/#mplex), [yamux](https://docs.libp2p.io/concepts/stream-multiplexing/#yamux), [quic](https://docs.libp2p.io/concepts/stream-multiplexing/#quic), [spdy](https://docs.libp2p.io/concepts/stream-multiplexing/#spdy), and [muxado](https://docs.libp2p.io/concepts/stream-multiplexing/#muxado).
-
-#### [Publish and subscribe](https://docs.libp2p.io/concepts/pubsub/overview/)
-
-Often abbreviated as _pub-sub_, this is a system where peers congregate around topics they are interested in. Peers interested in a topic are said to be subscribed to that topic. Peers send messages to topics, which get delivered to all peers subscribed to the topic. Example uses of pub-sub are chat rooms and file sharing. For more detail and a discussion of other pub-sub designs, see the [gossipsub specification](https://github.com/libp2p/specs/blob/master/pubsub/gossipsub/README.md).
+Check out the [libp2p documentation](https://docs.libp2p.io/concepts/pubsub/overview/) to learn more about PubSub in libp2p.
 
 ## Additional resources
 
-- [What is Libp2p?](https://docs.libp2p.io/introduction/#what-is-libp2p)
-- [Introduction to Libp2p](https://www.youtube.com/embed/CRe_oDtfRLw)
-- [Getting started with Libp2p](https://docs.libp2p.io/guides/)
-- [The Libp2p glossary](https://docs.libp2p.io/reference/glossary/)
-- [The Libp2p specification](https://github.com/libp2p/specs)
-- [ResNetLab on Tour - Content Routing](https://research.protocol.ai/tutorials/resnetlab-on-tour/content-routing/)
-- [ResNetLab on Tour - Content Exchange](https://research.protocol.ai/tutorials/resnetlab-on-tour/content-exchange/)
+- [The libp2p documentation](https://docs.libp2p.io/)
+- [The libp2p website](https://libp2p.io/)
+- [The libp2p connectivity site](https://connectivity.libp2p.io/)
+- [The libp2p YouTube channel to Libp2p](https://www.youtube.com/@libp2p630)
+- [The libp2p technical specifications](https://github.com/libp2p/specs)
+- [Protocol Labs Research - ResNetLab on Tour](https://research.protocol.ai/tutorials/resnetlab-on-tour/)
