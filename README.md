@@ -139,18 +139,11 @@ When opening a pull request, CI scripts will run against your feature branch to 
 
 The CI/CD production workflow builds on the `main` branch and deploys the documentation site on [fleek](https://fleek.co/). The site reflects the latest commit on `main`.
 
-### Translation
-
-Please stay tuned on the steps to translate the documentation.
-
 ## Primary maintainers
 
-- [@TMoMoreau](https://github.com/TMoMoreau): Primary contact, technical writing(engineering)
-- [@johnnymatthews](https://github.com/johnnymatthews): Project leadership & organization
-- [@cwaring](https://github.com/cwaring): Development support
+- [@ElPaisano](https://github.com/ElPaisano): Primary contact, technical writing
+- [@johnnymatthews](https://github.com/johnnymatthews): Primary contact, technical writing
 - [@2color](https://github.com/2color): Developer relations & technical writing(ecosystem)
-- [@DannyS03](https://github.com/DannyS03): Technical writing(engineering) 
-- [@jennijuju](https://github.com/jennijuju): Management and supervision
 
 ## License
 
