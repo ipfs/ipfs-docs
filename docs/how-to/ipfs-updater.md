@@ -6,7 +6,7 @@ current-ipfs-updater-version: v1.9.0
 
 # ipfs-update
 
-The ipfs-update tool is a command-line utility that can be used to install, uninstall, dowgrade and upgrade IPFS [Kubo](../install/command-line.md). 
+The ipfs-update tool is a command-line utility that can be used to install, uninstall, downgrade and upgrade IPFS [Kubo](../install/command-line.md). 
 
 :::callout
 See the [project repository](https://github.com/ipfs/ipfs-update#from-source) if you'd prefer to build ipfs-update from source.
