@@ -384,10 +384,12 @@ module.exports = {
           ]
         }
       }
-    }
+    },
+    searchMaxSuggestions: 0
   },
   plugins: [
     [require('./plugins/vuepress-plugin-speedcurve'), { id: SPEEDCURVE_ID }],
+    [require('./plugins/vuepress-plugin-search')],
     '@vuepress/plugin-back-to-top',
     ['@adamdehaven/vuepress-plugin-custom-tooltip'],
     [
@@ -479,12 +481,6 @@ module.exports = {
       {
         type: 'left',
         defaultTitle: ''
-      }
-    ],
-    [
-      '@vuepress/search',
-      {
-        searchMaxSuggestions: 1
       }
     ],
     'vuepress-plugin-chunkload-redirect',
