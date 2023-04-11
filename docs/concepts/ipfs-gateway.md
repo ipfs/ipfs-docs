@@ -11,28 +11,46 @@ related:
 
 # IPFS Gateway
 
-This document discusses:
+An _IPFS gateway_ provides an HTTP-based service that allows HTTP-incompatible browsers, tools and software to access IPFS content. For example, some browsers or tools like [Curl](https://curl.haxx.se/) or [Wget](https://www.gnu.org/software/wget/) don't support IPFS natively and cannot access to IPFS content using canonical addressing like `ipfs://{CID}/{optional path to resource}`. While tools like [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) add browser support for native IPFS URLs, this is not always an option. As such, there are multiple gateway types and <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>gateway providers</VueCustomTooltip> available so that applications of all kinds can interface with IPFS using HTTP.
 
+This page discusses:
+
+- The IPFS gateway request lifecycle
 - The several types of gateways.
 - Gateway role in the use of IPFS.
-- Appropriate situations for the use of gateways.
-- Situations when you should avoid the use of gateways.
-- Implementation guidelines.
 
-You should read this document if you want to:
+## Gateway request lifecycle
 
-- Understand, at a conceptual level, how gateways fit into the overall use of IPFS.
-- Decide whether and what type of gateways to employ for your use case.
-- Understand, at a conceptual level, how to deploy gateways for your use case.
+:::callout
+This section uses the _default_ gateway request lifecycle of [IPFS Kubo](https://github.com/ipfs/kubo) to introduce the basic concepts in the lifecycle. However, some gateways only serve content that they have and/or want to provide. For example, a Kubo gateway with `NoFetch` enabled will not attempt to retrieve content from the network.
+:::
 
-## Overview
+When a client request for a CID reaches an IPFS gateway, the gateway first checks whether the CID is cached locally. At this point, one of the following occurs:
 
-IPFS deployment seeks to include native support of IPFS in all popular browsers and tools. Gateways provide workarounds for applications that do not yet support IPFS natively. For example, errors occur when a browser that does not support IPFS attempts access to IPFS content in the canonical form of `ipfs://{CID}/{optional path to resource}`. Other tools that rely solely on HTTP encounter similar errors in accessing IPFS content in canonical form, such as [Curl](https://curl.haxx.se/) and [Wget](https://www.gnu.org/software/wget/).
+- **If the CID is cached locally**, the gateway responds with the content referred to by the CID, and the lifecycle is complete.
 
-Tools like [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) resolve these content access errors. However, not every user has permission to alter — or be capable of altering — their computer configuration. IPFS gateways provide an HTTP-based service that allows IPFS-ignorant browsers and tools to access IPFS content.
+- **If the CID is not in the local cache**, the gateway will attempt to retrieve it from the network.
+
+The CID retrieval process is composed of two parts, content discovery / routing and content retrieval:
+
+1. In the **content discovery / routing** step, the gateway will determine <VueCustomTooltip label="An IPFS network peer that can provide data specified by a particular CID upon request." underlined multiline>provider</VueCustomTooltip>  location; that is, _where_ the data specified by the CID can be found:
+
+   - Asking peers that it is directly connected to if they have the data specified by the CID.
+   - Query the DHT for the IDs and network addresses of peers that have the data specified by the CID.
+
+2. Next, the gateway performs **content retrieval**, which can be broken into the following steps:
+
+   1. The gateway connects to the provider.
+   1. The gateway fetches the CIDs content.
+   1. The gateway streams the content to the client.
+
+:::callout
+- Learn more about content discovery, routing, retrieval and the subsystems involved in each part of the process in [How IPFS works](./how-ipfs-works.md).
+- Dive into the technical specifications for gateways in the [IPFS HTTP Gateways specification](https://specs.ipfs.tech/http-gateways/) page.
+:::
 
 ## Gateway providers
-
+ 
 Regardless of who deploys a gateway and where, any IPFS gateway resolves access to any requested IPFS [content identifier](content-addressing.md). Therefore, for best performance, when you need the service of a gateway, you should use the one closest to you.
 
 ### Your local gateway
@@ -50,26 +68,26 @@ A gateway behind a firewall represents just one potential location for a private
 Public gateway operators include:
 
 - Protocol Labs, which deploys the public gateway `https://ipfs.io`.
-- Third-party public gateways. E.g., `https://cf-ipfs.com`.
+- Third-party public gateways, such as `https://cf-ipfs.com`.
 
 Protocol Labs maintains a [list of public gateways](https://ipfs.github.io/public-gateway-checker/) and their status.
 
-![A list of public gateways and their status, available on IPFS](./images/ipfs-gateways/public-gateway-checker.png)
-
 ## Gateway types
 
-Categorizing gateways involves several dimensions:
+:::warning
+[Path resolution style gateways](#path) do not provide origin isolation.
+:::
 
-- [Read/write support](#read-only-and-writeable-gateways)
+There are multiple gateway types, each with specific use case, security, performance, and functional implications.
+
+- [Read support](#read-only-gateways)
 - [Authentication support](#authenticated-gateways)
 - [Resolution style](#resolution-style)
 - [Service](#gateway-services)
 
-Choosing the form of gateway usage has security, performance, and other functional implications.
+### Read-only gateways
 
-### Read-only and writeable gateways
-
-The examples discussed in the earlier sections above illustrated the use of read-only HTTP gateways to fetch content from IPFS via an HTTP GET method. _Writeable_ HTTP gateways also support `POST`, `PUT`, and `DELETE` methods.
+_Read-only gateways_ are the simplest kind of gateway. This gateway type provides a way to fetch IPFS content using the HTTP GET method. 
 
 ### Authenticated gateways
 
@@ -139,98 +157,13 @@ Currently HTTP gateways may access both IPFS and IPNS services:
 | IPNS    | subdomain | `https://{IPNS identifier}.ipns.{gatewayURL}/{optional path to resource}`                                                                                                                     |
 | IPNS    | DNSLink   | Useful when IPNS identifier is a domain: <br>`https://{example.com}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{example.com}/{optional path to resource}` |
 
-### Which type to use
+## Working with gateways
 
-The preferred form of gateway access varies depending on the nature of the targeted content.
+For more information on working with gateways, see [best practices](../how-to/gateway-best-practices.md) and [troubleshooting](../how-to/gateway-troubleshooting.md).
 
-| Target                                          | Preferred gateway type | Canonical form of access <br> features & considerations                                                                                                                                                                                                                                                                     |
-| ----------------------------------------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Current version of <br>potentially mutable root | IPNS subdomain         | `https://{IPNS identifier}.ipns.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> + suitable for both domain IPNS names (`{domain.tld}`) and hash IPNS names                                                                               |
-|                                                 | IPFS DNSLink           | `https://{example.com}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing <br> – requires DNS update to propagate change to root content <br> • DNSLink, not user/app, specifies the gateway to use, opening up potential gateway trust and congestion issues |
-| Immutable root or <br> content                  | IPFS subdomain         | `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}` <br> + supports cross-origin security <br> + supports cross-origin resource sharing                                                                                                                                                                           |
+## Implementing using the spec
 
-Any form of gateway provides a bridge for apps without native support of IPFS. Better performance and security results from native IPFS implementation within an app.
-
-## When not to use a gateway
-
-### Delay-sensitive applications
-
-Any gateway introduces a delay in completing desired actions because the gateway acts as an intermediary between the source of the request and the IPFS node or nodes capable of returning the desired content. If the serving gateway cached the requested content earlier (e.g., due to previous requests), then the cache eliminates this delay.
-
-Overuse of a gateway also introduces delays due to queuing of requests.
-
-When dealing with delay-sensitive processes, you should aim to use a native IPFS node within the app (fastest), or as a local service daemon (almost as fast). Failing that, use a gateway installed as a local service. Note that when an IPFS node runs locally, it includes a gateway at `http://127.0.0.1:8080`.
-
-All time-insensitive processes can be routed through public/private gateways.
-
-### End-to-end cryptographic validation required
-
-Because of third-party gateway vulnerabilities, apps requiring end-to-end validation of content read/write should avoid gateways when possible. If the app must employ an external gateway, such apps should use `ipfs.io` or a trusted third-party.
-
-## Limitations and potential workarounds
-
-### Centralization
-
-Use of a gateway requires location-based addressing: `https://{gatewayURL}/ipfs/{CID}/{etc}` All too easily, the gateway URL can become the handle by which users identify the content; i.e., the uniform reference locator (URL) equates (improperly) to the uniform reference identifier (URI). Now imagine that the gateway goes offline or cannot be reached from a different user's location because of firewalls. At this moment, content improperly identified by that gateway-based URL also appears unreachable, defeating a key benefit of IPFS: decentralization.
-
-Similarly, the use of DNSLink resolution with `Alias` forces requests through the domain's chosen gateway, as specified in the `dnslink={value}` string within the DNS TXT record. If the specified gateway becomes overloaded, goes offline, or becomes compromised, all traffic with that content becomes deleted, disabled, or suspect.
-
-### Misplaced trust
-
-Trusting a specific gateway, in turn, requires you to trust the gateway's issuing Certificate Authorities and the security of the public key infrastructure employed by that gateway. Compromised certificate authorities or public-key infrastructure implementations may undermine the trustworthiness of the gateway.
-
-### Violation of same-origin policy
-
-To prevent one website from improperly accessing HTTP session data associated with a different website, the [same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy) permits script access only to pages that share a common domain name and port.
-
-Consider two web pages stored in IPFS: `ipfs://{CID A}/{webpage A}` and `ipfs://{CID B}/{webpage B}`. Code on `webpage A` should not access data from `webpage B`, as they do not share the same content ID (origin).
-
-A browser employing one gateway to access both sites, however, might not enforce that security policy. From that browser's perspective, both webpages share a common origin: the gateway as identified in the URL `https://{gatewayURL}/...`.
-
-The use of subdomain gateways avoids violating the same-origin policy. In this situation, the gateway's reference to the two webpages becomes:
-
-```bash
-https://{CID A}.ipfs.{gatewayURL}/{webpage A}
-https://{CID B}.ipfs.{gatewayURL}/{webpage B}
-```
-
-These pages do not share the same origin. Similarly, the use of DNSLink gateway avoids violating the same-origin policy. The [IPFS public gateway checker](https://ipfs.github.io/public-gateway-checker/) identifies those public gateways that avoid violating the same-origin policy.
-
-### Cross-origin resource sharing (CORS)
-
-[CORS](https://web.archive.org/web/20200418003728/https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#The_HTTP_response_headers) allows a webpage to permit access to specified data by pages with a different origin. The [IPFS public gateway checker](https://ipfs.github.io/public-gateway-checker/) identifies those public gateways that support CORS.
-
-### Gateway man-in-the-middle vulnerability
-
-Employing a public or private HTTP gateway sacrifices end-to-end cryptographic validation of the delivery of the correct content. Consider the case of a browser fetching content with the URL `https://ExampleGateway.com/ipfs/{cid}`. A compromised `ExampleGateway.com` provides man-in-the-middle vulnerabilities, including:
-
-- Substituting false content in place of the actual content retrieved via the CID.
-- Diverting a copy of the query and response, as well as the IP address of the querying browser, to a third party.
-
-A compromised writeable gateway may inject falsified content into the IPFS network, returning a CID which the user believes to refer to the true content. For example:
-
-1. Alice posts a balance of `123.54` to a compromised writable gateway.
-1. The gateway is currently storing a balance of `0.00`, so it returns the CID of the falsified content to Alice.
-1. Alice gives the falsified content CID to Bob.
-1. Bob fetches the content with this CID and cryptographically validates the balance of `0.00`.
-
-To partially address this exposure, you may wish to use the public gateway [cf-ipfs.com](https://cf-ipfs.com) as an independent, trusted reference with both same-origin policy and CORS support.
-
-### Assumed filenames when downloading files
-
-When downloading files, browsers will usually guess a file's filename by looking at the last component of the path, e.g., `https://{domainName/tld}/{path}/userManual.pdf` downloads a file stored locally with the name `userManual.pdf`. Unfortunately, when linking directly to a file with no containing directory in IPFS, the CID becomes the final component. Storing the downloaded file with the filename set to the CID fails the human-friendly design test.
-
-To work around this issue, you can add a `?filename={filename.ext}` parameter to your query string to preemptively specify a name for the locally-stored downloaded file:
-
-| Style     | Query                                                                                                                                                     |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Path      | `https://{gatewayURL}/ipfs/{CID}/{optional path to resource}?filename={filename.ext}`                                                                     |
-| Subdomain | `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}?filename={filename.ext}`                                                                     |
-| DNSLink   | `https://{example.com}/{optional path to resource}` or <br> `https://{gatewayURL}/ipns/{example.com}/{optional path to resource}?filename={filename.ext}` |
-
-### Stale caches
-
-A gateway may cache DNSLinks from DNS TXT records, which default to a one-hour lifetime. After content changes, cached DNSLinks continue to refer to the now-obsolete CID. To limit the delivery of obsolete cached content, the domain operator should change the DNS record's time-to-live parameter to a minute `60`.
+If you would like to read the technical specifications for the various gateway types, and learn more about how to implement a gateway, see the [IPFS HTTP Gateways specification](https://specs.ipfs.tech/http-gateways/) page for more information.
 
 ## Frequently asked questions (FAQs)
 
@@ -278,4 +211,4 @@ No. The ipfs.io gateway is one of many portals used to view content stored by th
 
 - [A Practical Explainer for IPFS Gateways – Part 1](https://blog.ipfs.tech/2022-06-09-practical-explainer-ipfs-gateways-1/), [Part 2](https://blog.ipfs.tech/2022-06-30-practical-explainer-ipfs-gateways-2/)
 - [Kubo: Gateway configuration options](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway)
-- [Gateway specifications](https://github.com/ipfs/specs/blob/main/http-gateways/#readme)
+- [IPFS HTTP Gateways specification](https://specs.ipfs.tech/http-gateways/) 

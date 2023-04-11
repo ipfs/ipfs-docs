@@ -255,6 +255,15 @@ module.exports = {
               ]
             },
             {
+              title: 'IPFS Gateway',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
+                '/how-to/gateway-best-practices',
+                '/how-to/gateway-troubleshooting'
+              ]
+            },
+            {
               title: 'IPFS Companion',
               sidebarDepth: 1,
               collapsable: true,
