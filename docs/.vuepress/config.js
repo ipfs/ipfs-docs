@@ -190,7 +190,7 @@ module.exports = {
                 '/how-to/modify-bootstrap-list',
                 '/how-to/nat-configuration',
                 '/how-to/default-profile',
-                ['/how-to/ipfs-updater', 'Update Kubo using ipfs-update'],
+                '/how-to/ipfs-updater', 
                 [
                   'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
                   'Customize an IPFS repo'
