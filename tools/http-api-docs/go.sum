@@ -499,8 +499,9 @@ github.com/ipfs/go-blockservice v0.1.4/go.mod h1:OTZhFpkgY48kNzbgyvcexW9cHrpjBYI
 github.com/ipfs/go-blockservice v0.2.1/go.mod h1:k6SiwmgyYgs4M/qt+ww6amPeUH9EISLRBnvUurKJhi8=
 github.com/ipfs/go-blockservice v0.3.0/go.mod h1:P5ppi8IHDC7O+pA0AlGTF09jruB2h+oP3wVVaZl8sfk=
 github.com/ipfs/go-blockservice v0.4.0/go.mod h1:kRjO3wlGW9mS1aKuiCeGhx9K1DagQ10ACpVO59qgAx4=
-github.com/ipfs/go-blockservice v0.5.0 h1:B2mwhhhVQl2ntW2EIpaWPwSCxSuqr5fFA93Ms4bYLEY=
 github.com/ipfs/go-blockservice v0.5.0/go.mod h1:W6brZ5k20AehbmERplmERn8o2Ni3ZZubvAxaIUeaT6w=
+github.com/ipfs/go-blockservice v0.5.1 h1:9pAtkyKAz/skdHTh0kH8VulzWp+qmSDD0aI17TYP/s0=
+github.com/ipfs/go-blockservice v0.5.1/go.mod h1:VpMblFEqG67A/H2sHKAemeH9vlURVavlysbdUI632yk=
 github.com/ipfs/go-cid v0.0.1/go.mod h1:GHWU/WuQdMPmIosc4Yn1bcCT7dSeX4lBafM7iqUPQvM=
 github.com/ipfs/go-cid v0.0.2/go.mod h1:GHWU/WuQdMPmIosc4Yn1bcCT7dSeX4lBafM7iqUPQvM=
 github.com/ipfs/go-cid v0.0.3/go.mod h1:GHWU/WuQdMPmIosc4Yn1bcCT7dSeX4lBafM7iqUPQvM=
@@ -697,8 +698,8 @@ github.com/ipfs/interface-go-ipfs-core v0.9.0/go.mod h1:F3EcmDy53GFkF0H3iEJpfJC3
 github.com/ipfs/interface-go-ipfs-core v0.10.0/go.mod h1:F3EcmDy53GFkF0H3iEJpfJC320fZ/4G60eftnItrrJ0=
 github.com/ipfs/interface-go-ipfs-core v0.11.0 h1:n1tplrwsz7oZXkpkZM5a3MDBxksMfSQ103ej4e+l7NA=
 github.com/ipfs/interface-go-ipfs-core v0.11.0/go.mod h1:xmnoccUXY7N/Q8AIx0vFqgW926/FAZ8+do/1NTEHKsU=
-github.com/ipfs/kubo v0.19.0 h1:5B58RXikTqs9six7FweQSzo6WvBKiP2MVwYCvJomV7k=
-github.com/ipfs/kubo v0.19.0/go.mod h1:OqX4B1YWKWCvi9T/sKDfTBMAKbVi6yVIXAii6/nr1Dc=
+github.com/ipfs/kubo v0.19.1 h1:jQmwct9gurfZcpShmfwZf/0CXSgxgTVWJxx//l4Ob3M=
+github.com/ipfs/kubo v0.19.1/go.mod h1:jD1cb+H5ax9EzxLflHG8dz5LHfuAMO+r00/h3MwYkd4=
 github.com/ipld/edelweiss v0.2.0 h1:KfAZBP8eeJtrLxLhi7r3N0cBCo7JmwSRhOJp3WSpNjk=
 github.com/ipld/edelweiss v0.2.0/go.mod h1:FJAzJRCep4iI8FOFlRriN9n0b7OuX3T/S9++NpBDmA4=
 github.com/ipld/go-car v0.5.0 h1:kcCEa3CvYMs0iE5BzD5sV7O2EwMiCIp3uF8tA6APQT8=
@@ -840,8 +841,8 @@ github.com/libp2p/go-libp2p v0.23.2/go.mod h1:s9DEa5NLR4g+LZS+md5uGU4emjMWFiqkZr
 github.com/libp2p/go-libp2p v0.23.4/go.mod h1:s9DEa5NLR4g+LZS+md5uGU4emjMWFiqkZr6hBTY8UxI=
 github.com/libp2p/go-libp2p v0.25.0/go.mod h1:vXHmFpcfl+xIGN4qW58Bw3a0/SKGAesr5/T4IuJHE3o=
 github.com/libp2p/go-libp2p v0.25.1/go.mod h1:xnK9/1d9+jeQCVvi/f1g12KqtVi/jP/SijtKV1hML3g=
-github.com/libp2p/go-libp2p v0.26.3 h1:6g/psubqwdaBqNNoidbRKSTBEYgaOuKBhHl8Q5tO+PM=
-github.com/libp2p/go-libp2p v0.26.3/go.mod h1:x75BN32YbwuY0Awm2Uix4d4KOz+/4piInkp4Wr3yOo8=
+github.com/libp2p/go-libp2p v0.26.4 h1:VA9ChjN0n1BwwfU/dqx4Zj9ezXtIxGk8FyJPwFONqxs=
+github.com/libp2p/go-libp2p v0.26.4/go.mod h1:x75BN32YbwuY0Awm2Uix4d4KOz+/4piInkp4Wr3yOo8=
 github.com/libp2p/go-libp2p-asn-util v0.2.0 h1:rg3+Os8jbnO5DxkC7K/Utdi+DkY3q/d1/1q+8WeNAsw=
 github.com/libp2p/go-libp2p-asn-util v0.2.0/go.mod h1:WoaWxbHKBymSN41hWSq/lGKJEca7TNm58+gGJi2WsLI=
 github.com/libp2p/go-libp2p-autonat v0.1.0/go.mod h1:1tLf2yXxiE/oKGtDwPYWTSYG3PtvYlJmg7NeVtPRqH8=
@@ -930,8 +931,8 @@ github.com/libp2p/go-libp2p-record v0.1.0/go.mod h1:ujNc8iuE5dlKWVy6wuL6dd58t0n7
 github.com/libp2p/go-libp2p-record v0.2.0 h1:oiNUOCWno2BFuxt3my4i1frNrt7PerzB3queqa1NkQ0=
 github.com/libp2p/go-libp2p-record v0.2.0/go.mod h1:I+3zMkvvg5m2OcSdoL0KPljyJyvNDFGKX7QdlpYUcwk=
 github.com/libp2p/go-libp2p-routing-helpers v0.4.0/go.mod h1:dYEAgkVhqho3/YKxfOEGdFMIcWfAFNlZX8iAIihYA2E=
-github.com/libp2p/go-libp2p-routing-helpers v0.6.1 h1:tI3rHOf/FDQsxC2pHBaOZiqPJ0MZYyzGAf4V45xla4U=
-github.com/libp2p/go-libp2p-routing-helpers v0.6.1/go.mod h1:R289GUxUMzRXIbWGSuUUTPrlVJZ3Y/pPz495+qgXJX8=
+github.com/libp2p/go-libp2p-routing-helpers v0.6.2 h1:u6SWfX+3LoqqTAFxWVl79RkcIDE3Zsay5d+JohlEBaE=
+github.com/libp2p/go-libp2p-routing-helpers v0.6.2/go.mod h1:R289GUxUMzRXIbWGSuUUTPrlVJZ3Y/pPz495+qgXJX8=
 github.com/libp2p/go-libp2p-secio v0.1.0/go.mod h1:tMJo2w7h3+wN4pgU2LSYeiKPrfqBgkOsdiKK77hE7c8=
 github.com/libp2p/go-libp2p-secio v0.2.0/go.mod h1:2JdZepB8J5V9mBp79BmwsaPQhRPNN2NrnB2lKQcdy6g=
 github.com/libp2p/go-libp2p-secio v0.2.1/go.mod h1:cWtZpILJqkqrSkiYcDBh5lA3wbT2Q+hz3rJQq3iftD8=
