@@ -1,11 +1,11 @@
 ---
 title: Diagnostic tools
-description: Diagnostic tools to assist with debugging, troubleshooting, and developing with IPFS.
+description: Diagnostic tools for debugging, troubleshooting, and developing with IPFS.
 ---
 
 # Diagnostic tools
 
-The IPFS ecosystem contains various open-source tools for the investigation, diagnosis and troubleshooting of common issues that occur when using an IPFS implementation or tool. Tools along with a summary of functionality are listed below.
+Here are several tools you can use to investigate and diagnose common issues with IPFS. 
 
 ## IPLD Explorer
 
