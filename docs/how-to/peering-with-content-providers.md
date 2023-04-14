@@ -40,6 +40,10 @@ If you're running a public IPFS gateway, you may see improved performance for po
 
 To have your platform added to this list, please [open a PR to edit this page](https://github.com/ipfs/ipfs-docs/edit/main/docs/how-to/peering-with-content-providers.md) and add yourself to the list in alphabetical order.
 
+:::warning
+The list of content providers on this page is provided for informational purposes only. Protocol Labs does not endorse or guarantee any of the content providers listed here, nor does it have any control over their operations or services. Users should exercise their own discretion and conduct their own due diligence when selecting and interacting with content providers. 
+:::
+
 ### Cloudflare
 
 | Peer ID                                          | Addresses                                      |
