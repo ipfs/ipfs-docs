@@ -23,10 +23,6 @@ Want to know how it all began? Learn the [history of the IPFS project](history.m
 
 IPFS is a big project, which means there are a lot of GitHub repos. If you're new to IPFS or just want a sense of what to check out first, use this quick guide to the most important and most frequently used [IPFS repositories](repository-guide.md).
 
-## Implementation status
-
-Want to know the current state of your favorite IPFS feature? See the [current implementation status](implementation-status.md) for Kubo and js-ipfs, listed by commands and endpoints.
-
 ## IPFS specifications
 
 [Technical specifications](https://github.com/ipfs/specs) for the IPFS protocol and its associated subsystems.
