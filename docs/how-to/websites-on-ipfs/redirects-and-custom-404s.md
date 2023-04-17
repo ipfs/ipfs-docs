@@ -71,7 +71,7 @@ IPFS hosting supports only a subset of pre-existing standards supported by [Clou
 There is no overwrite/shadowing: the file is evaluated only when requested path is not found in a [DAG](../../concepts/glossary.md#dag).
 
 ::: tip
-For more detailed information about supported features, check out the [`_redirects` file specification](https://github.com/ipfs/specs/blob/main/http-gateways/REDIRECTS_FILE.md).
+For more detailed information about supported features, check out the [`_redirects` file specification](https://specs.ipfs.tech/http-gateways/web-redirects-file/).
 :::
 
 ## Examples
