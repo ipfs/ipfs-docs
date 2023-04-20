@@ -7,12 +7,11 @@ description: Optimize retrieval speed by making direct connections to large cont
 
 IPFS allows you to request data from any IPFS node with a copy using the data's [CID][cid-explainer] or content identifier. This process usually involves a lookup on the [distributed hash table][dht-explainer] and may also require establishing new connections to the nodes storing the content.
 
-If you're running an IPFS node that serves many requests, like a public HTTP gateway, for example, you may be able to speed up queries by maintaining long-lived connections to nodes that provide a large volume of data.
+If you're running an IPFS node that serves many requests, such as a public HTTP gateway, you may be able to speed up queries by maintaining long-lived connections to nodes that provide many CIDs.
 
 Prioritizing connections to certain peers is called **Peering**, and you can tell IPFS which peers to prioritize by editing the [`Peering` configuration][docs-peering-config] in your IPFS config file.
 
-To _peer_ with nodes from Cloudflare, you could update your config to include a `Peering` section like that consists of the ID and addresses for their node:
-
+To _peer_ with nodes from Cloudflare, for example, update your config to include a `Peering` section like this:
 ```json
 {
   "Peering": {
@@ -34,11 +33,15 @@ Peering is most helpful for nodes that have a lot of concurrent connections sinc
 
 ## Content provider list
 
-Below is a community-maintained list of platforms that provide a lot of content to the IPFS network.
+Below is a community-maintained list of nodes that provide a lot of content to the IPFS network.
 
 If you're running a public IPFS gateway, you may see improved performance for popular queries by adding these nodes to your [Peering configuration][docs-peering-config].
 
-To have your platform added to this list, please [open a PR to edit this page](https://github.com/ipfs/ipfs-docs/edit/main/docs/how-to/peering-with-content-providers.md) and add yourself to the list in alphabetical order.
+To add add your platform to this list, please [open a PR to edit this page](https://github.com/ipfs/ipfs-docs/edit/main/docs/how-to/peering-with-content-providers.md) and add yourself to the list in alphabetical order.
+
+:::warning
+This list is provided for informational purposes only. The IPFS Project does not endorse or guarantee any of the content providers listed here, nor does it have any control over their operations or services. Users should exercise their own discretion and conduct their own due diligence when selecting and interacting with content providers. 
+:::
 
 ### Cloudflare
 
