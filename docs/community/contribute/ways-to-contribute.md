@@ -22,7 +22,7 @@ The biggest and most active repositories we have today are:
 - [libp2p/go-libp2p](https://github.com/libp2p/go-libp2p)
 - [libp2p/js-libp2p](https://github.com/libp2p/js-libp2p)
 
-If you want to start contributing to the core of IPFS, those repositories are a great place to start. But the _Help Wanted_ label exists in all of our repositories across the Github organizations:
+If you want to start contributing to the core of IPFS, those repositories are a great place to start. But the _Help Wanted_ label exists in all of our repositories across the GitHub organizations:
 
 - [IPFS](https://github.com/ipfs)
 - [libp2p](https://github.com/libp2p)
