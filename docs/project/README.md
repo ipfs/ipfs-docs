@@ -10,7 +10,7 @@ Looking to get further involved with the vibrant IPFS community and ecosystem? C
 ## IPFS community and ecosystem
 
 :::callout
-The IPFS community believes that our mission is best served in an environment that is friendly, safe, and accepting, and free from intimidation or harassment. To that end, we ask that everyone involved in IPFS read and respect our [code of conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md). Please contact [abuse@ipfs.io](mailto:abuse@ipfs.io) if you need to report a problem or address a grievance related to an abuse report.
+The IPFS community believes that our mission is best served in an environment that is friendly, safe, and accepting, and free from intimidation or harassment. To that end, we ask that everyone involved in IPFS read and respect our [code of conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md). Please contact [abuse@ipfs.tech](mailto:abuse@ipfs.tech) if you need to report a problem or address a grievance related to an abuse report.
 :::
 
 The community and ecosystem around the IPFS project is large, diverse, and abounds with opportunities for involvement. Learn more in the [Community section](../community/README.md).
