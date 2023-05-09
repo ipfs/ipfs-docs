@@ -178,6 +178,7 @@ module.exports = {
                 '/how-to/store-play-videos',
                 '/how-to/host-git-repo',
                 '/how-to/move-ipfs-installation/move-ipfs-installation',
+                '/how-to/process-files-for-web-and-store-on-ipfs',
               ]
             },
             {
@@ -247,6 +248,15 @@ module.exports = {
               collapsable: true,
               children: [
                 ['/how-to/privacy-best-practices', 'Privacy and Encryption'], 
+              ]
+            },
+            {
+              title: 'Websites for uploading to IPFS',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
+                ['/how-to/web3storage', 'web3.storage'], 
+                ['/how-to/niiifty', 'NIIIFTY'], 
               ]
             }
           ],
