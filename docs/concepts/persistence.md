@@ -53,6 +53,7 @@ Some of the pinning services listed below are operated by third party companies.
 - [NFT.Storage](https://nft.storage/)
 - [Pinata](https://pinata.cloud/)
 - [Web3.Storage](https://web3.storage/)
+- [Kriptonio](https://kriptonio.com/)
 
 See how to [work with remote pinning services](../how-to/work-with-pinning-services.md).
 
