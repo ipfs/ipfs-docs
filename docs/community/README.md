@@ -10,7 +10,7 @@ IPFS is home to a vibrant, diverse community of thousands of contributors and pa
 
 
 :::callout
-The IPFS community believes that our mission is best served in an environment that is friendly, safe, and accepting, and free from intimidation or harassment. To that end, we ask that everyone involved in IPFS read and respect our [code of conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md). Please contact [abuse@ipfs.io](mailto:abuse@ipfs.io) if you need to report a problem or address a grievance related to an abuse report.
+The IPFS community believes that our mission is best served in an environment that is friendly, safe, and accepting, and free from intimidation or harassment. To that end, we ask that everyone involved in IPFS read and respect our [code of conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md). Please contact [abuse@ipfs.tech](mailto:abuse@ipfs.tech) if you need to report a problem or address a grievance related to an abuse report.
 :::
 
 - [Get technical support and help in the IPFS forum](#get-technical-support-and-help) as you develop on IPFS.
