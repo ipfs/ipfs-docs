@@ -328,7 +328,6 @@ module.exports = {
             '/project/history',
             '/project/repository-guide',
             '/project/related-projects',
-            '/project/implementation-status',
             ['https://github.com/ipfs/specs', 'Specifications'],
             ['/concepts/further-reading/academic-papers', 'Research'],
             [
@@ -353,7 +352,6 @@ module.exports = {
                 '/project/history',
                 '/project/repository-guide',
                 '/project/related-projects',
-                '/project/implementation-status',
                 ['https://github.com/ipfs/specs', 'Specifications'],
                 ['/concepts/further-reading/academic-papers', 'Research'],
                 [
