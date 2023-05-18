@@ -5,26 +5,57 @@ description: Learn about mutability in IPFS, InterPlanetary Name System (IPNS), 
 
 # IPNI (InterPlanetary Network Indexer)
 
-The [InterPlanetary Network Indexer](https://github.com/ipni), also referred to as _Network Indexer_, _indexer_ and _IPNI_, enables quick and efficient search of content-addressable data available on the InterPlanetary File System (IPFS) and Filecoin networks. 
+[InterPlanetary Network Indexer (IPNI)](https://github.com/ipni), also referred to as _Network Indexer_, _indexer_ and _IPNI_, enables quick and efficient search of content-addressable data available on the InterPlanetary File System (IPFS) and Filecoin networks.
 
-Lotus, and Boost publish the content IDs (CIDs)
-Using IPNI, IPFS nodes can publish the content IDs (CIDs) of their data to an indexer, and clients can query the indexer to learn where to retrieve the content associated with those CIDs. 
+Using IPNI, IPFS nodes can publish the content IDs (CIDs) of their data to an indexer, and clients can query the indexer to learn where to retrieve the content associated with those CIDs.
+To publish CIDs, IPNI uses:
 
-IPNI is designed to improve the performance and efficiency of IPFS by providing an additional alternate method of content routing to the [Kademlia Distributed Hash Table (DHT)](../concepts/dht.md#kademlia) used by IPFS.
+- [Lotus](https://lotus.filecoin.io/), the reference implementation for the [Filecoin network](https://docs.filecoin.io/).
+- [Boost](https://boost.filecoin.io/), a tool for Filecoin storage providers to manage Filecoin data onboarding and retrieval.
 
-## Design rationale 
+IPNI is designed to improve the performance and efficiency of IPFS by providing an alternate method of content routing to the [Kademlia Distributed Hash Table (DHT)](../concepts/dht.md#kademlia).
 
-The Network Indexer was created as an alternate Content Routing system to the Kadmelia DHT used by IPFS. The DHT is a key component of the IPFS ecosystem, but the scale and speed of the InterPlanetary Network Indexer is addressing a magnitude more content lookups by supporting Filecoin lookups. 
+:::callout
+For a deeper dive into the technical specification for IPNI, see [https://github.com/ipni/specs/blob/main/IPNI.md](https://github.com/ipni/specs/blob/main/IPNI.md).
+:::
 
-For CDN speed retrievals of unsealed Filecoin data and IPFS pinned data a reliable distributed index of all data and the peer associated with that data will have to be maintained geographically near to the lookups being looked up in order to support lookups that can't be fulfilled quickly enough via DHT. 
+## Design rationale
+
+To support retrievals of unsealed Filecoin and IPFS pinned data with a speed comparable to a CDN, a reliable, distributed index of all data and its associated peer must be maintained geographically near the lookups. This is necessary to fulfill lookups that cannot be quickly fulfilled using the DHT.
+
+With this in mind, the Network Indexer was created as an alternative content routing system to the Kadmelia DHT used by IPFS. While the DHT is a key component of the IPFS ecosystem, IPNI can support content routing at a much larger scale and speed using Lotus and Boost.
 
 ### How IPNI benefits IPFS
 
 The indexer offers several benefits to IPFS, including:
 
-- Faster data retrieval: By maintaining an additional layer of information on top of the DHT, the indexer can help speed up data location and retrieval in IPFS.
-- Reduced resource consumption: The indexer can help reduce the amount of bandwidth and processing power needed to locate and retrieve data, improving the performance of individual nodes and the overall network.
-- Improved scalability: With the indexer, IPFS can better handle growth in user base and data volume, allowing it to scale more effectively and support larger networks.
+- **Faster data retrieval**: By maintaining an additional layer of information on top of the DHT, the indexer can help speed up data location and retrieval in IPFS.
+- **Reduced resource consumption**: The indexer can help reduce the amount of bandwidth and processing power needed to locate and retrieve data, improving the performance of individual nodes and the overall network.
+- **Improved scalability**: With the indexer, IPFS can better handle growth in user base and data volume, allowing it to scale more effectively and support larger networks.
+
+## The IPNI ecosystem
+
+The IPNI ecosystem consists of three main actors:
+
+1. **IPNI provider nodes** - IPFS peers that advertise content to the IPNI.
+1. **IPNI nodes** - Nodes that ingest announcements about the content-addressable data, and service lookup queries
+1. **Retrieval clients** - Peers that find content via indexer nodes and fetch it from the providers.
+
+### IPNI provider nodes
+
+_IPNI Provider nodes_ are responsible for cataloging and maintaining the latest list of content they host, as well as the protocols over which the content can be retrieved. The list of content is represented as a chain of immutable "advertisements" that are signed by the content provider's identity. Each advertisement can represent either the addition or removal of content. This property, combined with the chaining of advertisement entries, effectively captures a "diff" of content hosted by the provider over time. When a change in content occurs, the advertisement chain is updated as follows:
+
+1. The provider captures the change as a new advertisement.
+1. The provider announces its existence to the network.
+1. An IPNI node receives and stores the advertisement.
+
+### IPNI Nodes
+
+_IPNI nodes_ are responsible for continuously listening to provider announcements. Once they receive an _announce message_, they fetch and parse the advertisement to construct the current list of content hosted by the provider. Because the advertisements themselves are immutable, IPNI nodes can recognize known advertisements and only parse ones they've not seen before. This allows IPNI nodes to handle and scale with very long ad chains, as long as they continuously listen for advertisements and keep up with the latest.
+
+### Retrieval clients
+
+Once advertisements are processed, _retrieval clients_ can look up the resulting index records via a query to an API exposed by IPNI nodes. Given a Content Identifier (CID) or multihash, the API provides a list of index records corresponding to it. Each index record captures the identity of the content provider, its address, and the protocols over which the data can be retrieved from that provider. A _retrieval client_ can then further filter the providers list, e.g., by protocol, and retrieve the content directly from the providers.
 
 ## How IPNI is used by IPFS
 
@@ -34,37 +65,13 @@ When a user searches for a piece of data using a CID or multihash, the indexer i
 
 By providing this additional layer of information, the indexer helps to speed up data location and retrieval, reduce resource consumption, and improve the overall scalability of IPFS.
 
-### The IPNI Ecosystem
+## Example application
 
-The IPNI ecosystem consists of three main actors:
-
-1. **IPNI provider nodes** - IPFS peers that advertise content to the IPNI.
-2. **IPNI nodes** - Nodes that ingest announcements about the content-addressable data, and service lookup queries
-3. **Retrieval clients** - Peers that find content via indexer nodes and fetch it from the providers.
-
-#### IPNI Provider nodes
-
-IPNI providers are responsible for cataloging and maintaining the latest list of content they host, along with the protocols over which the content is retrievable. The list of content is represented as a chain of _advertisements_, signed by the content provider's identity and are immutable. An advertisement can either represent the addition or removal of content. This property, combined with the chaining of advertisement entries, effectively captures a "diff" of content hosted by the provider over time. When a change in content occurs:
-
-1. The provider captures the change as a new advertisement.
-1. The provider announces its existence to the network.
-1. An IPNI node receives and stores the advertisement.
-
-#### IPNI Nodes
-
-IPNI nodes are responsible for continuously listening to provider announcements. Once they receive an _announce message_, they fetch and parse the advertisement to construct the current list of content hosted by the provider. Because the advertisements themselves are immutable, IPNI nodes can recognize known advertisements and only parse ones they've not seen before. This allows IPNI nodes to handle and scale with very long ad chains, as long as they continuously listen for advertisements and keep up with the latest.
-
-#### Retrieval Clients
-
-Once advertisements are processed, retrieval clients can look up the resulting index records via a query to an API exposed by IPNI nodes. Given a Content Identifier (CID) or multihash, the API provides a list of index records corresponding to it. Each index record captures the identity of the content provider, its address, and the protocols over which the data can be retrieved from that provider. A _retrieval client_ can then further filter the providers list, e.g., by protocol, and retrieve the content directly from the providers.
-
-## Example
-
-To demonstrate the practical application and useage of IPNI, this section will walk through a hands-on example involving the `cid.contact` indexer tool. The `cid.contact` tool leverages IPNI to return provider record information for a given CID.
+To demonstrate the practical application and usage of IPNI, this section will walk through a hands-on example involving the `cid.contact` indexer tool. The `cid.contact` tool leverages IPNI to return provider record information for a given CID.
 
 1. Open a browser.
 
-1. In the search field, search for the URL below. 
+1. In the search field, search for the URL below.
 
    ```plaintext
    https://cid.contact/cid/bafybeigvgzoolc3drupxhlevdp2ugqcrbcsqfmcek2zxiw5wctk3xjpjwy
@@ -206,10 +213,9 @@ To demonstrate the practical application and useage of IPNI, this section will w
     }
     ```
 
-
 ### Response explained
 
-This response returns multiple provider records, which inidcates that the data identified by this CID was found at multiple providers. For example, the first provider is specified by the followjng record:
+This response returns multiple provider records, which indicates that the data identified by this CID was found at multiple providers. For example, the first provider is specified by the following record:
 
 ```json
 {
@@ -235,13 +241,42 @@ Additional information is also included:
 
 ## Glossary
 
-- **Advertisement**: A record available from a publisher that contains, a link to a chain of multihash blocks, the CID of the previous advertisement, and provider-specific content metadata that is referenced by all the multihashes in the linked multihash blocks. The provider data is identified by a key called a _context ID_.
-- **Announce Message**: A message that informs indexers about the availability of an advertisement. This is usually sent via _gossip pubsub_, but can also be sent via HTTP. An announce message contains the advertisement CID it is announcing, which allows indexers to ignore the announcement if they have already indexed the advertisement. The publisher's address is included in the announcement to tell indexers where to retrieve the advertisement from.
-- **Context ID**: A key that, for a provider, uniquely identifies content metadata. This allows content metadata to be updated or deleted on the indexer without having to refer to it using the multihashes that map to it.
-- **Gossip Pubsub**: Publish/subscribe communications over a libpp2p gossip mesh. This is used by publishers to broadcast Announce Messages to all indexers that are subscribed to the topic that the announce message is sent on. For production publishers and indexers, this topic is `/indexer/ingest/mainnet`.
-- **Indexer**: A network node that keeps mappings of multihashes and CIDs to provider records.
-- **Metadata**: Provider-specific data that a retrieval client gets from an indexer query and passed to the provider when retrieving content. This metadata is used by the provider to identify and find specific content and deliver that content via the protocol.
-- **Provider**: The node from which content can be retrieved by a retrieval client. When multihashes are looked up on an indexer, the responses contain provider that provide the content referenced by the multihashes. A provider is identified by a libp2p peer ID.
-- **Publisher**: The node that publishes advertisements and index data to an indexer. It is usually, but not always, the same as the data provider. A publisher is identified by a libp2p peer ID.
-- **Retrieval Client**: A node that queries an indexer to find where content is available, and retrieves that content from a provider.
-- **Sync**:  Operation that synchronizes the content indexed by an indexer with the content published by a publisher. A Sync in initiated when an indexer receives and Announce Message, by an administrative command to sync with a publisher, or by the indexer when there have been no updates for a provider for some period of time (24 hours by default).
+### Advertisement 
+
+A record available from a publisher that contains, a link to a chain of multihash blocks, the CID of the previous advertisement, and provider-specific content metadata that is referenced by all the multihashes in the linked multihash blocks. The provider data is identified by a key called a _context ID_.
+
+### Announce Message 
+
+A message that informs indexers about the availability of an advertisement. This is usually sent via _gossip pubsub_, but can also be sent via HTTP. An announce message contains the advertisement CID it is announcing, which allows indexers to ignore the announcement if they have already indexed the advertisement. The publisher's address is included in the announcement to tell indexers where to retrieve the advertisement from.
+
+### Context ID 
+
+A key that, for a provider, uniquely identifies content metadata. This allows content metadata to be updated or deleted on the indexer without having to refer to it using the multihashes that map to it.
+
+### Gossip Pubsub 
+
+Publish/subscribe communications over a libp2p gossip mesh. This is used by publishers to broadcast Announce Messages to all indexers that are subscribed to the topic that the announce message is sent on. For production publishers and indexers, this topic is `/indexer/ingest/mainnet`.
+
+### Indexer 
+
+A network node that keeps mappings of multihashes and CIDs to provider records.
+
+### Metadata 
+
+Provider-specific data that a retrieval client gets from an indexer query and passed to the provider when retrieving content. This metadata is used by the provider to identify and find specific content and deliver that content via the protocol.
+
+### Provider 
+
+The node from which content can be retrieved by a retrieval client. When multihashes are looked up on an indexer, the responses contain provider that provide the content referenced by the multihashes. A provider is identified by a libp2p peer ID.
+
+### Publisher 
+
+The node that publishes advertisements and index data to an indexer. It is usually, but not always, the same as the data provider. A publisher is identified by a libp2p peer ID.
+
+### Retrieval Client 
+
+A node that queries an indexer to find where content is available, and retrieves that content from a provider.
+
+### Sync 
+
+Operation that synchronizes the content indexed by an indexer with the content published by a publisher. A Sync in initiated when an indexer receives and Announce Message, by an administrative command to sync with a publisher, or by the indexer when there have been no updates for a provider for some period of time (24 hours by default).
