@@ -1,6 +1,6 @@
 ---
 title: Usage ideas and examples
-sidebarDepth: 0
+sidebarDepth: 1
 description: Explore some helpful use cases, ideas, and examples for the InterPlanetary File System (IPFS).
 ---
 
@@ -96,6 +96,10 @@ Let your users stream from each other to remove the need for a server without ov
 
 The robotics company [KODA](https://www.koda9.com/) is developing the world's first decentralized robot dog called [Koda-9](https://www.whipsaw.com/thinking/new-era-of-household-robots/). It uses IPFS to store user data, such as security footage.
 
+### IIIF-formattted data
+
+[NIIIFTY](https://niiifty.com) is a platform built using [web3.storage](../how-to/web3storage.md) that simplifies the sharing of [IIIF-formatted](https://iiif.io) high-resolution images, 3D models, and audiovisual content via IPFS. View the [documentation](https://niiifty.com/docs) for how to set up your own NIIIFTY instance.
+
 ## IPFS as infrastructure
 
 Using IPFS allows you to abstract away a lot of the complexity of coordination between machines. No matter your architecture IPFS handles load balancing, de-duplication, caching, and high availability out-of-the-box. It's highly modular design also means you can easily customize it to your need.
@@ -121,6 +125,10 @@ Netflix is on its way to using IPFS to [synchronize their Docker containers worl
 ### Efficient network factories
 
 [Actyx](https://www.actyx.com/) is helping the manufacturers to upgrade their plants to the [_Industry 4.0_](https://en.wikipedia.org/wiki/Industry_4.0) era, meaning connecting the machines together for better performance, tolerance to failure, and flexibility. Actyx built a custom operating system on top of IPFS they deploy on all machines, so they emit metrics, receive orders, sync up information, and compute their next move locally.
+
+### Decentralized storage
+
+The [web3.storage](https://web3.storage) platform provides an IPFS-based storage service to safely secure and make your data available - giving developers the power of decentralized storage and content addressing via simple client libraries or an HTTP API.
 
 ## Lower your storage usage
 

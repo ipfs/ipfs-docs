@@ -250,15 +250,6 @@ module.exports = {
                 ['/how-to/privacy-best-practices', 'Privacy and Encryption'], 
               ]
             },
-            {
-              title: 'Websites for uploading to IPFS',
-              sidebarDepth: 1,
-              collapsable: true,
-              children: [
-                ['/how-to/web3storage', 'web3.storage'], 
-                ['/how-to/niiifty', 'NIIIFTY'], 
-              ]
-            }
           ],
           '/reference/': [
             '/reference/http/gateway',
