@@ -15,7 +15,7 @@ While these are the key responsibilities, IPFS's functionality spans beyond thes
 Data in IPFS is addressed by its contents (<VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>content addressing</VueCustomTooltip>), rather than a location, such as an IP address (location addressing).
 
 :::callout
-This guide is part 3 of a 3-part introduction to [the basic concepts of IPFS](../concepts/README.md#learn-the-basics). The first part, [What IPFS is and isn't](../concepts/what-is-ipfs.md), defines IPFS, while the second part, [**IPFS and the problems it solves**](../concepts/ipfs-solves.md), covers the problems with the internet and current protocols like HTTP that IPFS solves. This third part, [**How IPFS works**](../concepts/how-ipfs-works.md), covers the major subsystems of IPFS and how they work.
+This guide is part 3 of a 3-part introduction to [the basic concepts of IPFS](../concepts/README.md#learn-the-basics). The first part, [What IPFS is and isn't](../concepts/what-is-ipfs.md), defines IPFS, while the second part, [**IPFS and the problems it solves**](../concepts/ipfs-solves.md), covers the problems with the internet and current protocols like HTTP that IPFS solves. 
 :::
 
 ## Subsystems overview
