@@ -112,6 +112,12 @@ See [web3.storage/PEERS](https://github.com/web3-storage/web3.storage/blob/main/
 |`12D3KooWGASC2jm3pmohEJXUhuStkxDitPgzvs4qMuFPaiD9x1BA`|`/ip4/78.46.108.24`|
 |`12D3KooWRbWZN3GvLf9CHmozq4vnTzDD4EEoiqtRJxg5FV6Gfjmm`|`/ip4/65.109.19.136`|
 
+### 4EVERLAND
+
+| Peer ID | Addresses |
+| ------- | --------- |
+|`12D3KooWQ85aSCFwFkByr5e3pUCQeuheVhobVxGSSs1DrRQHGv1t`|`/dnsaddr/node-1.ipfs.4everland.net`|
+
 [dht-explainer]: ../concepts/how-ipfs-works.md#distributed-hash-tables-dhts
 [cid-explainer]: ../concepts/content-addressing.md
 [docs-peering-config]: ../how-to/configure-node.md
