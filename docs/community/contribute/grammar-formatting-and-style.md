@@ -149,7 +149,7 @@ In the wise words of Winnie the Pooh _"People say nothing is impossible, but I d
 
 #### Code blocks
 
-Tag code blocks with the syntax of the core they are presenting:
+Tag code blocks with the syntax of the code they are presenting:
 
 ````markdown
     ```javascript
