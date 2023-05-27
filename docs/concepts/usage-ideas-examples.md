@@ -1,6 +1,6 @@
 ---
 title: Usage ideas and examples
-sidebarDepth: 1
+sidebarDepth: 0
 description: Explore some helpful use cases, ideas, and examples for the InterPlanetary File System (IPFS).
 ---
 
@@ -80,6 +80,10 @@ On some heavy analysis, you can benefit from parallelizing calculations on sever
 
 There is an existing [IPFS devgrant](https://github.com/ipfs/devgrants) to host [OpenStreetMaps assets on IPFS](https://github.com/ipfs/devgrants/blob/8233f7df4a219122bcf31eaea289d654406e4443/targeted-grants/open-street-map-ipfs.md). In the long run, this could mean faster synchronization for apps using this scheme and lower bandwidth requirements for servers.
 
+### P2P video streaming platform
+
+[Blust.tv](http://www.blust.tv/) wants to use IPFS to distribute movies when requested by its users. By adding their proprietary _secret-sauce_, they will facilitate the legal streaming of videos over P2P networks.
+
 ### Help host important data
 
 Thanks to recent improvements with IPFS Cluster, you can call for help to store your data without having to trust other nodes won't alter the data. With [collaborative mode](https://ipfscluster.io/documentation/collaborative), you can [replicate Pacman packages or COVID-19-related papers](https://collab.ipfscluster.io/) without needing to know the intricacies of IPFS.
@@ -91,10 +95,6 @@ Let your users stream from each other to remove the need for a server without ov
 ### Decentralized robots
 
 The robotics company [KODA](https://www.koda9.com/) is developing the world's first decentralized robot dog called [Koda-9](https://www.whipsaw.com/thinking/new-era-of-household-robots/). It uses IPFS to store user data, such as security footage.
-
-### IIIF-formattted data
-
-[NIIIFTY](https://niiifty.com) is a platform built using [web3.storage](#decentralized-storage) that simplifies the sharing of [IIIF-formatted](https://iiif.io) high-resolution images, 3D models, and audiovisual content via IPFS. View the [documentation](https://niiifty.com/docs) for how to set up your own NIIIFTY instance.
 
 ## IPFS as infrastructure
 
@@ -121,10 +121,6 @@ Netflix is on its way to using IPFS to [synchronize their Docker containers worl
 ### Efficient network factories
 
 [Actyx](https://www.actyx.com/) is helping the manufacturers to upgrade their plants to the [_Industry 4.0_](https://en.wikipedia.org/wiki/Industry_4.0) era, meaning connecting the machines together for better performance, tolerance to failure, and flexibility. Actyx built a custom operating system on top of IPFS they deploy on all machines, so they emit metrics, receive orders, sync up information, and compute their next move locally.
-
-### Decentralized storage
-
-The [web3.storage](https://web3.storage) platform provides an IPFS-based storage service to safely secure and make your data available - giving developers the power of decentralized storage and content addressing via simple client libraries or an HTTP API.
 
 ## Lower your storage usage
 
@@ -269,6 +265,10 @@ The weather risk marketplace [Arbol](https://www.arbolmarket.com/) relies on blo
 ## Decentralized Identity
 
 [Decentralized Identity](https://en.wikipedia.org/wiki/Decentralized_Identifiers) is the concept of storing all your personal data on your devices rather than let every service you use store a partial copy of it. You having control of your data means that you decide which app has access to what, that you only fill in your information once, and that you can revoke access. Decentralized identity is a hot topic, and IPFS is one of the core technologies a lot of engineers build around. The identity wallet [Nomios](https://nomios.io/) shared [some thoughts](https://docs.google.com/presentation/d/1HbydOI0w-T_FY23zCACAyHmzDq1ZvyG2tklpPSm6OQQ/edit#slide=id.g5c88e8f60d_0_11) about decentralized identity general during the [IPFS Camp 2019](https://github.com/ipfs/camp).
+
+### Element
+
+[Element](https://element-did.com) is an open-source project that combines the content addressing and the interactiveness of Ethereum smart contracts to provide a tool for managing identity.
 
 ### 3ID Connect
 
