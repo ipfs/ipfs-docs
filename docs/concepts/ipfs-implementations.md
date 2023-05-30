@@ -8,8 +8,10 @@ description: "There isn't just one canonical IPFS implementation. Learn about th
 IPFS is an open-source project that encourages the development of multiple implementations of the protocol, each of which seeks to optimize for various use cases. Below is non-exhaustive list of IPFS implementations, grouped by development and maintenance status ([Popular](#popular), [Lite or Experimental](#lite-or-experimental) and [Inactive](#inactive)) and ordered alphabetically. To propose additions or edits, [edit this page in GitHub](https://github.com/ipfs/ipfs-docs/edit/main/docs/concepts/ipfs-implementations.md) or [open an issue](https://github.com/ipfs/ipfs-docs/issues/new?assignees=&labels=need%2Ftriage&template=open_an_issue.md&title=IPFS%20Implementations).
 
 ::: tip
-Looking into implementing IPFS yourself?
-See the official [IPFS Specifications](https://github.com/ipfs/specs/).
+Looking for an easy, user-friendly way to get started with IPFS? Try any of the options listed below:
+
+- [IPFS Desktop](../install/ipfs-desktop.md), a single application that bundles an IPFS node, file manager, peer manager, and content explorer.
+- [IPFS Companion Browser Extension](../install/ipfs-companion.md), a browser add-on that allows you to interact with your IPFS node and the extended IPFS network through your browser.
 :::
 
 ## Popular
@@ -30,13 +32,16 @@ See the official [IPFS Specifications](https://github.com/ipfs/specs/).
 |------------------|-------------------------------------------------------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | auspinner        | <https://github.com/2color/auspinner>                                   | go                     | CLI tool to deal with the pinning service API and upload files through bitswap.                                          |
 | barge            | <https://github.com/application-research/barge>                         | go                     | CLI tool with a git like workflow to upload deltas to estuary.                                                           |
-| Boost            | <https://github.com/filecoin-project/boost>                             | go                     | Daemon to get IPFS data in and out of a Filecoin storage provider.                                                       |
+| boost            | <https://github.com/filecoin-project/boost>                             | go                     | Daemon to get IPFS data in and out of a Filecoin storage provider.                                                       |
+| boxo            | <https://github.com/ipfs/boxo>                             | go                     | A component library for building IPFS applications and implementations in Go.                                                       |
+| durin            | <https://github.com/ipfs/boxo>                             | go                     | An iOS and Android app for exploring IPFS functionality and use-cases.                                                     |
 | gomobile-ipfs    | <https://github.com/ipfs-shipyard/gomobile-ipfs>                        | go                     | Library oriented ipfs daemon to help embeding Kubo into a mobile app.                                                   |
 | helia    | <https://github.com/ipfs/helia>                        | javascript                     | A lean, modular, and modern implementation of IPFS for the prolific JS and browser environments, currently pre-alpha but intended to replace js-ipfs |
 | ipfs-embed       | <https://github.com/ipfs-rust/ipfs-embed>                               | rust                   | Small embeddable ipfs implementation.                                                                                    |
 | ipfs-lite        | <https://github.com/hsanjuan/ipfs-lite>                                 | go                     | Minimal library oriented ipfs daemon building on the same blocks as Kubo but with a minimal glue layer.                 |
 | ipfs-nucleus     | <https://github.com/peergos/ipfs-nucleus/>                              | go                     | Minimal IPFS replacement for P2P IPLD apps.                                                                              |
 | js-ipfs          | <https://github.com/ipfs/js-ipfs>                                       | javascript, typescript | Javascript implementation targeting nodejs and browsers.  [**Development of js-ipfs is being discontinued**](#js-ipfs-being-discontinued).                                                                |
+| Reasonable Interplanetary BlockStore (RIBS)       | <https://github.com/lotus-web3/ribs>                               | go                     | A Filecoin-native IPFS and IPLD blockstore designed for seamless integration with Filecoin.                  |
 | whypfs           | <https://github.com/whyrusleeping/whypfs>                               | go                     | Daemon based on the same building blocks as Kubo but with some options tweaking for more performance.                    |
 
 :::warning 
