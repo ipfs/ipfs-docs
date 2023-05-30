@@ -107,7 +107,7 @@ In this step, you will update your Kubo configuration to set `Swarm.AppendAnnoun
      "/ip4/<public-ip>/tcp/<port>",
      "/ip4/<public-ip>/udp/<port>/quic",
      "/ip4/<public-ip>/udp/<port>/quic-v1",
-     "/ip4/<public-ip>/udp/<port>/quic-v1/webtransport",
+     "/ip4/<public-ip>/udp/<port>/quic-v1/webtransport"
     ],
    ```
 
@@ -118,7 +118,7 @@ In this step, you will update your Kubo configuration to set `Swarm.AppendAnnoun
      "/ip4/1.2.3.4/tcp/12345",
      "/ip4/1.2.3.4/udp/12345/quic",
      "/ip4/1.2.3.4/udp/12345/quic-v1",
-     "/ip4/1.2.3.4/udp/12345/quic-v1/webtransport",
+     "/ip4/1.2.3.4/udp/12345/quic-v1/webtransport"
     ],
    ```
 
