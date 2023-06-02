@@ -39,7 +39,7 @@ Looking for an easy, user-friendly way to get started with IPFS? Try any of the 
 | barge            | <https://github.com/application-research/barge>                         | go                     | CLI tool with a git like workflow to upload deltas to estuary.                                                           |
 | durin            | <https://github.com/ipfs-shipyard/Durin>                             | N/A                     | An iOS and Android app for exploring IPFS functionality and use-cases.                                                     |
 | gomobile-ipfs    | <https://github.com/ipfs-shipyard/gomobile-ipfs>                        | go                     | Library oriented ipfs daemon to help embeding Kubo into a mobile app.                                                   |
-| homestar | <https://github.com/ipvm-wg/homestar/>  | N/A | The core, Rust-based implementation and runtime of [IPVM](https://github.com/ipvm-wg).
+| homestar | <https://github.com/ipvm-wg/homestar/>  | Rust | The core implementation and runtime of [IPVM](https://github.com/ipvm-wg).
 | ipfs-embed       | <https://github.com/ipfs-rust/ipfs-embed>                               | rust                   | Small embeddable ipfs implementation.                                                                                    |
 | ipfs-lite        | <https://github.com/hsanjuan/ipfs-lite>                                 | go                     | Minimal library oriented ipfs daemon building on the same blocks as Kubo but with a minimal glue layer.                 |
 | ipfs-nucleus     | <https://github.com/peergos/ipfs-nucleus/>                              | go                     | Minimal IPFS replacement for P2P IPLD apps.                   
