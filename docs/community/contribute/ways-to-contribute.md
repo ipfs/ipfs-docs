@@ -63,12 +63,6 @@ With lots of code come lots of Github Issues. We need YOU to help with organizin
 
 We currently don't have a single place for this. If you'd like to start it, please let us know.
 
-## Community
-
-If interacting with people is your favorite thing to do in this world, IPFS and co. are always happy to help you organize events and/or workshops to teach IPFS.
-
-We have a [repository for organizing community events](https://github.com/ipfs/community) and would love your help to have meetups in more locations or make the existing ones more regular.
-
 ## Applications
 
 IPFS is designed for others to build applications around it! Building applications and services using IPFS is an excellent way to find use cases where IPFS doesn't yet do a perfect job or uncover bugs and inefficiencies.
