@@ -113,7 +113,7 @@ Delegated content routing is a mechanism for IPFS implementations to use for off
 :::callout
 **Learn more**
 
-For further information, see the [Delegated Content Routing HTTP API spec](https://github.com/ipfs/specs/blob/main/routing/DELEGATED_CONTENT_ROUTING_HTTP.md)..
+For further information, see the [Delegated Content Routing HTTP API spec](https://specs.ipfs.tech/ipips/ipip-0337/)..
 
 :::
 
