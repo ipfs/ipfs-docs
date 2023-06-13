@@ -242,7 +242,6 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/address-ipfs-on-web',
-                '/how-to/create-simple-chat-app',
                 '/how-to/browser-tools-frameworks'
               ]
             },
