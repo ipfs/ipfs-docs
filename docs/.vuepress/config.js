@@ -220,7 +220,6 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/observe-peers',
-                '/how-to/exchange-files-between-nodes',
                 '/how-to/peering-with-content-providers'
               ]
             },
