@@ -58,7 +58,7 @@ Both Kubo and Helia _nodes_ use bootstrap _nodes_ to initially enter the DHT.
 #### Features of a bootstrap node:
 
 - All default bootstrap _nodes_ are part of the public DHT.
-- The list of bootstrap _nodes_ a Helia _node_ connects to is configurable in their config files.
+- The list of bootstrap _nodes_ a Helia _node_ connects to is controlled by configuring [libp2p's peerDiscovery option](https://github.com/libp2p/js-libp2p/blob/master/doc/CONFIGURATION.md#peer-discovery).
 
 #### Limitations of a bootstrap node:
 
