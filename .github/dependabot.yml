@@ -21,3 +21,7 @@ updates:
     open-pull-requests-limit: 0 # Disable dependabot for go deps, we want them rock solid
     ignore:
       - dependency-name: "go-ipfs" # explicit ignore just in case, because this is handled by  .github/workflows/update-on-new-ipfs-tag.yml
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
