@@ -86,6 +86,6 @@ When IPFS nodes are unable to run Distributed Hash Table (DHT) logic on their ow
 
 ## Implementations
 
-Protocol Labs manages two implementations of the IPFS spec: Kubo and Kubo. These implementations use specific types of _nodes_ to perform server, browser, and other client functions.
+Protocol Labs manages two implementations of the IPFS spec: Kubo and Helia. These implementations use specific types of _nodes_ to perform server, browser, and other client functions.
 
 [Read more about our implementations](./ipfs-implementations.md)
