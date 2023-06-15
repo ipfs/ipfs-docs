@@ -1,6 +1,6 @@
 ---
 title: Publishing IPNS names
-description: Learn how to publish IPNS names with Kubo and js-ipfs
+description: Learn how to publish IPNS names with Kubo
 ---
 
 # Publishing IPNS names

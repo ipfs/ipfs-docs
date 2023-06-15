@@ -10,7 +10,7 @@ IPFS is a great fit for storing and addressing data for NFTs, or non-fungible to
 
 Since an NFT can't be easily changed after it's been created, it's a good idea to think about how the data for your NFTs is stored, addressed, and made persistent over time. That's why we'll be getting into the specifics of [how to prepare your NFT metadata](#metadata), and we'll also look at [the different kinds of links to IPFS content](#types-of-ipfs-links-and-when-to-use-them) and when you should use each one. Finally, we'll see why [making a plan for your data's persistence](#persistence-and-availability) is important for a good user experience. By following these recommendations, you can help ensure a long and healthy future for your NFT data.
 
-This guide is aimed at developers building NFT platforms and other tools, and it's focused on how to format your data and link to it for the best long-term results. If you're looking for details about smart contract interactions and how token minting works, head over to our [guide to minting NFTs with IPFS][docs-mint-nfts], where we go over the whole process from end-to-end using an Ethereum test network.
+This guide is aimed at developers building NFT platforms and other tools, and it's focused on how to format your data and link to it for the best long-term results. 
 
 If you're interested in a deeper dive in the world of NFT best practices and NFT development in general, head over to [NFT School](https://nftschool.dev) for concept guides, tutorials, and how-tos.
 
@@ -147,8 +147,6 @@ You can also use a service from [Protocol Labs](https://protocol.ai) called [nft
 
 To learn more about persistence and pinning, including how to work with remote pinning services, see our [overview of persistence, permanence, and pinning][docs-persistence].
 
-For an example application that integrates with a remote pinning service for NFT data storage, see our [guide to minting NFTs with IPFS][docs-mint-nfts].
-
 ## Summary
 
 IPFS allows NFTs to represent data of any size and format in a secure, verifiable, and distributed way that can stand the test of time. 
@@ -167,8 +165,6 @@ Here's a quick recap of our recommendations:
 
 
 [docs-cid]: ../concepts/content-addressing.md
-[docs-mint-nfts]: ../how-to/mint-nfts-with-ipfs.md
-[docs-minty-how-ipfs-helps]: ../how-to/mint-nfts-with-ipfs.md#how-ipfs-helps
 [docs-persistence]: ../concepts/persistence.md
 [docs-server-infra]: ../install/server-infrastructure.md
 [docs-gateway]: ../concepts/ipfs-gateway.md
