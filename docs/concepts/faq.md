@@ -7,9 +7,10 @@ description: Explore frequently asked questions about IPFS, the InterPlanetary F
 
 ## What is IPFS?
 
-IPFS stands for the InterPlanetary File System — a peer-to-peer network for storing and accessing files, websites, applications, and data in a distributed file system.
+The InterPlanetary File System (IPFS) is a set of composable, peer-to-peer protocols for addressing, routing, and transferring [content-addressed](concepts/glossary.md#content-addressing) data in a decentralized file system. Many popular Web3 projects are built on IPFS - see the [ecosystem directory](https://ecosystem.ipfs.tech) for a list of some of these projects.
 
-To learn more, see the ["What is IPFS?"](what-is-ipfs.md) guide.
+New to IPFS? Start with
+[the 3-page Basic Concepts](./concepts/README.md#learn-the-basics).
 
 ## IPFS in action
 
@@ -33,6 +34,20 @@ When you add a file to IPFS, IPFS splits it into smaller blocks. IPFS hashes eac
 ### How do I start contributing to IPFS?
 
 There are a lot of ways you can contribute to IPFS, whether you're interested in helping with either of the core implementations, applications like IPFS Desktop, writing or editing documentation, doing UX, or whatever you enjoy working on. [Get all the details on where to get started here.](../community/contribute/ways-to-contribute.md)
+
+### What is an implementation
+
+An IPFS implementation is any software with basic functionality for interaction with other IPFS implementations. An implementation:
+
+- Supports addressability using CIDs.
+
+- Exposes operations like retrieval, provisioning and indexing on resources using CIDs. The operations that an implementation may support are open-ended, but this requirement should cover any interaction which the implementation exposes to other IPFS implementations.
+
+- Verifies that the CIDs it resolves match the resources they address, at least when it has access to the resources bytes. However, implementations may relax this requirement in controlled environments in which it is possible to ascertain that verification has happened elsewhere in a trusted part of the system.
+
+There are already many IPFS implementations, including [Kubo](../install/command-line.md), [Helia](../install/js-ipfs.md), and [more](../concepts/ipfs-implementations.md).
+
+You can also create your own IPFS implementation. 
 
 ## IPFS and Filecoin
 
