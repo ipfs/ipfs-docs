@@ -16,11 +16,12 @@ jobs:
         env:
           ENDPOINT: repos/${{ github.repository }}/pulls/${{ github.event.number }}/files
           SELECTOR: map(select(.status != "removed")) | map(.filename)
-        run: echo "added_modified=$(gh api "$ENDPOINT" --jq "$SELECTOR")"
+          GITHUB_TOKEN: ${{ github.token }}
+        run: echo "added_modified=$(gh api "$ENDPOINT" --jq "$SELECTOR")" >> $GITHUB_OUTPUT
       - name: vale check
         uses: errata-ai/vale-action@reviewdog
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ github.token }}
         with:
           files: ${{ steps.files.outputs.added_modified }}
           fail_on_error: true
