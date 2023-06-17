@@ -5,7 +5,7 @@ description: Learn about the available node types in IPFS Companion.
 
 # Understand node types in IPFS Companion
 
-IPFS Companion's preferences screen allows you to choose from several different node types. The available types you'll see in your Companion preferences depends on the browser you're using (i.e. Firefox, Chrome, Brave), but the full list is as follows:
+IPFS Companion's preferences screen allows you to choose from different node types. The available types you'll see in your Companion preferences depends on the browser you're using (i.e. Firefox, Chrome, Brave), but the full list is as follows:
 
 [[toc]]
 
@@ -67,11 +67,25 @@ This node type offers the same benefits as an [external](#external) node, with a
 
 ## Embedded
 
+::: warning DEPRECATED
+
+js-ipfs has been deprecated in favor of [Helia](https://github.com/ipfs/helia) and will be removed in a future release of IPFS Companion. Improvements to Helia are ongoing, and we hope to have it ready for use in IPFS Companion once critical features like [webRTC Streams](https://github.com/w3c/webextensions/issues/72) are available in Chrome Manifest V3.
+
+:::
+
 An _embedded_ node is a js-ipfs instance running in the browser in-memory, without the need for any external software.
 
 ::: warning
 
 This node type is only for development and experimentation. Most users should use [external](#external) or [native](#native) node types instead.
+
+:::
+
+::: warning Deprecation Notice for Chrome Manifest V3
+
+Chrome Manifest V3 is the new version of the Chrome extension platform that IPFS Companion will support in the near future ([tracking issue](https://github.com/ipfs/ipfs-companion/issues/1152)). The embedded node type is not available in Chrome MV3 and will be removed from the extension in a future release.
+
+If you're using the embedded node type in Chrome, please switch to the external node type instead.
 
 :::
 
@@ -86,12 +100,6 @@ Please note that there are some limitations when running an embedded js-ipfs ins
   - Lack of connection closing ([ipfs/js-ipfs#962](https://github.com/ipfs/js-ipfs/issues/962))
   - Missing relay discovery ([js-ipfs/v0.29.x/examples/circuit-relaying](https://github.com/ipfs/js-ipfs/tree/v0.29.3/examples/circuit-relaying))
 - An embedded node _does not run_ when an external node is selected; every time you switch back to the embedded node, a new instance is created on demand, and it can take a few seconds for a newly running node to find peers.
-
-### Embedded + `chrome.sockets` (deprecated)
-
-::: warning
-This node type has been deprecated and is no longer supported by Chromium browsers. While this option still appears in IPFS Companion preferences, users of this node type are strongly urged to migrate to a different node type.
-:::
 
 ## Public
 
