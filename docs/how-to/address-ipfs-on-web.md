@@ -129,7 +129,7 @@ https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.localho
 
 [Kubo](https://dist.ipfs.tech/#kubo) provides native support for subdomain gateways on hostnames defined in the [`Gateway.PublicGateways`](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewaypublicgateways) configuration map.
 
-Learn more about daemon configuration for hosting a public gateway:
+Learn more about Kubo configuration for hosting a public gateway:
 
 - [`Gateway.PublicGateways` docs](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewaypublicgateways) for defining gateway behavior on specified hostnames
 - [`Gateway` recipes](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes) with ready to use one-liners for most common use cases
@@ -190,7 +190,7 @@ k2k4r8jl0yz8qjgqbmc2cdu5hkqek5rj6flgnlkyywynci20j0iuyfuj
 
 ## DNSLink gateway
 
-The gateway provided by the IPFS daemon understands the `Host` header present in HTTP requests and will check if [DNSLink](../concepts/dnslink.md) exists for a specified [domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name).
+The gateway provided by Kubo understands the `Host` header present in HTTP requests and will check if [DNSLink](../concepts/dnslink.md) exists for a specified [domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name).
 If DNSLink is present, the gateway will return content from a path resolved via DNS TXT record.
 This type of gateway provides full [origin isolation](https://en.wikipedia.org/wiki/Same-origin_policy).
 
@@ -262,7 +262,7 @@ Discussions around IPFS addressing have been going on since [@jbenet](https://gi
 
 [IPFS Companion](https://github.com/ipfs/ipfs-companion#readme) is a browser extension that simplifies access to IPFS resources.
 
-It provides support for native URLs and will automatically redirect IPFS gateway requests to your local daemon so that you are not relying on or trusting remote gateways.
+It provides support for native URLs and will automatically redirect IPFS gateway requests to your local Kubo daemon so that you are not relying on or trusting remote gateways.
 
 ### Shared d-web namespace
 
