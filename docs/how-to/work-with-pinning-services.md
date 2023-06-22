@@ -19,7 +19,8 @@ There are a number of commercial pinning services that make it easy for you to p
 
 However, you don't need to learn new commands or tools if your pinning service of choice supports the vendor-agnostic [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/) specification. Those services are supported within IPFS itself through the command line: `ipfs pin remote --help`.
 
-As of January 2021, [Pinata](https://pinata.cloud/) supports the [IPFS Pinning Service API endpoint](https://pinata.cloud/documentation#PinningServicesAPI), with more pinning services on the way! [Learn how to create your own →](#create-your-own-pinning-service)
+As of June 2023, [Filebase](https://filebase.com) and [Pinata](https://pinata.cloud/) support the IPFS Pinning Service API endpoint, with more pinning services on the way! [Learn how to create your own](#create-your-own-pinning-service).
+[Learn how to create your own →](#create-your-own-pinning-service)
 
 ## Use an existing pinning service
 
@@ -56,9 +57,9 @@ In the next screen, you’ll be asked for a few other details:
 - Your **secret access token**. This is the unique token provided to you by the pinning service — check its documentation for more info.
   _To illustrate, example below shows which value should be copied from [pinata.cloud/keys](https://pinata.cloud/keys)_
   > ![Pinata secret access token](./images/work-with-pinning-services/add-service-pinata-token.jpg)
-
-_Note: Since some dashboards look different on the surface, this is an illustration example showing which values should be copied from [console.filebase.com/keys](https://console.filebase.com/keys)._
-  > ![Filebase secret access token](./images/work-with-pinning-services/add-service-filebase-token.png)
+    _Note: Since some dashboards look different on the surface, this is an illustration example showing which values should be copied from 
+   [console.filebase.com/keys](https://console.filebase.com/keys)._
+    > ![Filebase secret access token](./images/work-with-pinning-services/add-service-filebase-token.png)
 
 After you hit **Save**, you’ll see your new pinning service added to the **Pinning Services** section of your **Settings** screen.
 
