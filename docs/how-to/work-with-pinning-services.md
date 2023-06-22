@@ -38,7 +38,7 @@ You can add your favorite pinning service(s) to IPFS Desktop/Web UI directly, en
 
 To add a new pinning service, open up IPFS Desktop or Web UI, navigate to the **Pinning Services** section of the **Settings** screen, and click the **Add Service** button:
 
-> ![The Desktop/Web UI Settings screen, ready for adding a new pinning service](./images/work-with-pinning-services/add-service.jpg)
+> ![The Desktop/Web UI Settings screen, ready for adding a new pinning service](./images/work-with-pinning-services/add-service-picker.jpg)
 
 Then, select your chosen pinning service from the modal that pops up. If the pinning service you'd like to add isn't listed in that modal, don't worry — you can add any remote pinning service that supports the IPFS Pinning Service API by clicking the **Add a custom one** link.
 
