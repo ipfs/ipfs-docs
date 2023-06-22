@@ -15,7 +15,7 @@ If you've got just one local IPFS node that's always running, local pinning may 
 - You don't have all the disk space you need on your local node.
 - You run more than one IPFS node, and would like to use one of them as a "personal pinning service" as your preferred location for permanent storage.
 
-There are a number of commercial pinning services that make it easy for you to purchase pinning capacity for your important files, some of which include Pinata, Temporal, Crust, Infura, and others. Each of these third-party services has its own unique interface for pinning files and managing those pins; this could include a GUI, an API, CLI commands, or other tooling.
+There are a number of commercial pinning services that make it easy for you to purchase pinning capacity for your important files. Some of the notable services include [Pinata](https://pinata.cloud/), [Filebase](https://filebase.com/), [Temporal](https://temporal.cloud/), [Crust](https://crust.network/), [Infura](https://infura.io/), and others. Each of these third-party services has its own unique interface for pinning files and managing those pins; this could include a GUI, an API, CLI commands, or other tooling.
 
 However, you don't need to learn new commands or tools if your pinning service of choice supports the vendor-agnostic [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/) specification. Those services are supported within IPFS itself through the command line: `ipfs pin remote --help`.
 
@@ -56,6 +56,9 @@ In the next screen, you’ll be asked for a few other details:
 - Your **secret access token**. This is the unique token provided to you by the pinning service — check its documentation for more info.
   _To illustrate, example below shows which value should be copied from [pinata.cloud/keys](https://pinata.cloud/keys)_
   > ![Pinata secret access token](./images/work-with-pinning-services/add-service-pinata-token.jpg)
+
+_Note: Since some dashboards look different on the surface, this is an illustration example showing which values should be copied from [console.filebase.com/keys](https://console.filebase.com/keys)._
+  > ![Filebase secret access token](./images/work-with-pinning-services/add-service-filebase-token.png)
 
 After you hit **Save**, you’ll see your new pinning service added to the **Pinning Services** section of your **Settings** screen.
 
@@ -129,3 +132,4 @@ You may also wish to read continuing details on how the API is evolving in the [
 :::
 
 If you'd like to make your custom pinning service available to every IPFS user, we welcome your submissions. Once you're ready to open the doors to the public, make a PR against the [IPFS Web UI GitHub repo](https://github.com/ipfs-shipyard/ipfs-webui) in order to add it to the default list of pinning services that are displayed in the Desktop/Web UI Settings screen, and one of the core maintainers will be in touch.
+
