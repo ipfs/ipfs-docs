@@ -138,7 +138,7 @@ As discussed in [How content routing works in IPFS](#bitswap-for-content-routing
 :::callout
 **Learn more**
 
-Want learn more about Bitswap? See the [Bitswap deep dive](../concepts/bitswap.md).
+Want to learn more about Bitswap? See the [Bitswap deep dive](../concepts/bitswap.md).
 :::
 
 ### IPFS HTTP Gateways
@@ -148,7 +148,7 @@ HTTP Gateways allow applications that do not support or implement all IPFS subsy
 :::callout
 **Learn more**
 
-Want learn more about IPFS Gateways? See the [IPFS Gateway conceptual guide](../concepts/ipfs-gateway.md).
+Want to learn more about IPFS Gateways? See the [IPFS Gateway conceptual guide](../concepts/ipfs-gateway.md).
 :::
 
 ### Sneakernet
