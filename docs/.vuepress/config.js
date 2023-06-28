@@ -278,7 +278,6 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
-                '/how-to/mint-nfts-with-ipfs',
                 '/how-to/best-practices-for-nft-data'         
               ]
             },

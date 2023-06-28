@@ -117,7 +117,7 @@ The main implication of this difference is that IPNS operations (publishing and 
 
 #### IPNS over the DHT
 
-The DHT is the default transport mechanism for IPNS records in most IPFS implementations, e.g. Kubo, and js-ipfs.
+The DHT is the default transport mechanism for IPNS records in many IPFS implementations.
 
 Due to the ephemeral nature of the DHT, peers forget records after 24 hours. This applies to any record in the DHT, irrespective of the `validity` (also referred to as `lifetime`) field in the IPNS record.
 
