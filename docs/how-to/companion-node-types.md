@@ -83,7 +83,7 @@ This node type is only for development and experimentation. Most users should us
 
 ::: warning Deprecation Notice for Chrome Manifest V3
 
-Chrome Manifest V3 is the new version of the Chrome extension platform that IPFS Companion will support in the near future ([tracking issue](https://github.com/ipfs/ipfs-companion/issues/1152)). The embedded node type is not available in Chrome MV3 and will be removed from the extension in a future release.
+Chrome Manifest V3 is the new version of the Chrome extension platform that IPFS Companion will support in the near future. Currently, the embedded node type is unavailable in Chrome MV3 and will be removed from the extension in a future release. For further information, see the [tracking issue in GitHub](https://github.com/ipfs/ipfs-companion/issues/1152).
 
 If you're using the embedded node type in Chrome, please switch to the external node type instead.
 
