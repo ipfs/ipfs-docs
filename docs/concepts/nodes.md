@@ -36,17 +36,16 @@ If an IPFS node deems itself unreachable by the public internet, IPFS nodes may 
 
 #### Features of a relay node
 
-- Implements either [v1](https://github.com/libp2p/specs/blob/master/relay/circuit-v1.md) or [v2](https://github.com/libp2p/specs/blob/master/relay/circuit-v2.md) of the Circuit Relay protocol.
+- Implements [v2](https://github.com/libp2p/specs/blob/master/relay/circuit-v2.md) of the Circuit Relay protocol.
 - Can be either Kubo or Helia nodes; however there are standalone implementations as well:
-  - [js-libp2p/circuit-relay](https://github.com/libp2p/js-libp2p/blob/master/doc/CONFIGURATION.md#setup-with-relay) (supports circuit v1 & v2) TODO_JS_IPFS_DEPRECATION - CONFIRM that js-libp2p still supports relay v1?
-  - [go-libp2p-relay-daemon](https://github.com/libp2p/go-libp2p-relay-daemon) (supports circuit v1 & v2)
+  - [js-libp2p/circuit-relay](https://github.com/libp2p/js-libp2p/blob/master/doc/CONFIGURATION.md#setup-with-relay)
+  - [go-libp2p-relay-daemon](https://github.com/libp2p/go-libp2p-relay-daemon)
 - They're used by both Kubo and Helia nodes.
     - A Helia _node_ in the browser can't talk TCP, so a relay can help increase the number of _peers_ that can be communicated with. A Helia _node_ with browser-supported [transports](https://github.com/libp2p/js-libp2p/blob/master/doc/CONFIGURATION.md#transport) can talk with a Kubo _peer_ with no overlapping transports using a relay _peer_ if that relay supports one transport from each other _peer_:
       1. At least one browser-supported transport (appropriate transports are [enabled by default in Helia browser _nodes_](https://github.com/ipfs/helia/blob/d2a928aa1590d5aa642c4c6747d5282f665af43f/packages/helia/src/utils/libp2p-defaults.browser.ts))
       2. At least one Kubo _peer_ supported transport.
 
 #### Limitations of relay nodes:
-- v1 relays can be used by anyone without any limits, unless [go-libp2p-relay-daemon](https://github.com/libp2p/go-libp2p-relay-daemon) is used with ACLs (Access Control Lists) set up.
 - v2 relays are "limited relays" that are designed to be used for [Direct Connection Upgrade through Relay](https://github.com/libp2p/specs/blob/master/relay/DCUtR.md) (aka hole punching).
 - Not configurable in Kubo; uses a preset list of relays
 
