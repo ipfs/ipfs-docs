@@ -7,10 +7,10 @@ description: Explore frequently asked questions about IPFS, the InterPlanetary F
 
 ## What is IPFS?
 
-The InterPlanetary File System (IPFS) is a set of composable, peer-to-peer protocols for addressing, routing, and transferring [content-addressed](concepts/glossary.md#content-addressing) data in a decentralized file system. Many popular Web3 projects are built on IPFS - see the [ecosystem directory](https://ecosystem.ipfs.tech) for a list of some of these projects.
+The InterPlanetary File System (IPFS) is a set of composable, peer-to-peer protocols for addressing, routing, and transferring [content-addressed](../concepts/glossary.md#content-addressing) data in a decentralized file system. Many popular Web3 projects are built on IPFS - see the [ecosystem directory](https://ecosystem.ipfs.tech) for a list of some of these projects.
 
 New to IPFS? Start with
-[the 3-page Basic Concepts](./concepts/README.md#learn-the-basics).
+[the 3-page Basic Concepts](../concepts/README.md#learn-the-basics).
 
 ## IPFS in action
 
