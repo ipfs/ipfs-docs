@@ -228,6 +228,10 @@ The sharding technique used for [sharding](#sharding) big UnixFS directories. It
 
 A Cryptographic Hash is a function that takes some arbitrary input (content) and returns a fixed-length value. The exact same input data will always generate the same hash as output. There are numerous hash algorithms. [More about Hash](hashing.md)
 
+### Helia
+
+A lean, modular, and modern implementation of IPFS for the JS and browser environments. Superseded [js-ipfs](#js-ipfs). Learn more at [https://github.com/ipfs/helia](https://github.com/ipfs/helia).
+
 ### Hole punching
 
 A  technique for [NAT](#nat) or firewall traversal that relies on coordinated simultaneous connections.  Used when port forwarding is not possible. [See DCUtR](#dcutr)
@@ -250,7 +254,7 @@ The InterPlanetary Name System (IPNS) is a system for creating and updating muta
 
 ### JS-IPFS
 
-An implementation of IPFS written entirely in JavaScript. It runs in a Browser, a Service Worker, Electron and Node.js.  See [Nodes > JS-IPFS](../concepts/nodes.md#js-ipfs)
+An [implementation of IPFS written entirely in JavaScript](https://github.com/ipfs/js-ipfs). It runs in a browser, a service worker, Electron and Node.js. Deprecated and superseded by [Helia](#helia).
 
 ### JSON
 
@@ -316,11 +320,11 @@ Multicodec is an identifier indicating the format of the target content. It help
 
 ### Multihash
 
-Multihash is a protocol for differentiating outputs from various well-established hash functions, addressing size and encoding considerations. It is useful to write applications that future-proof their use of hashes, and it allows multiple hash functions to coexist. [More about Multihash](https://multiformats.io/multihash/).
+Multihash is a protocol for differentiating outputs from various well-established hash functions, addressing size and encoding considerations. It is useful to write applications that future-proof their use of hashes, and it allows multiple hash functions to coexist. [More about Multihash](https://github.com/multiformats/multihash).
 
 ### Multiformats
 
-The Multiformats project is a collection of protocols that aim to future-proof systems today. A key element is enhancing format values with self-description. This allows for interoperability, protocol agility, and promotes extensibility. [More about Multiformats](https://multiformats.io/) and [Multihash](https://multiformats.io/multihash/)
+The Multiformats project is a collection of protocols that aim to future-proof systems today. A key element is enhancing format values with self-description. This allows for interoperability, protocol agility, and promotes extensibility. [More about Multiformats](https://multiformats.io/) and [Multihash](https://github.com/multiformats/multihash)
 
 ## N
 

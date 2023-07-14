@@ -117,7 +117,7 @@ The main implication of this difference is that IPNS operations (publishing and 
 
 #### IPNS over the DHT
 
-The DHT is the default transport mechanism for IPNS records in most IPFS implementations, e.g. Kubo, and js-ipfs.
+The DHT is the default transport mechanism for IPNS records in many IPFS implementations.
 
 Due to the ephemeral nature of the DHT, peers forget records after 24 hours. This applies to any record in the DHT, irrespective of the `validity` (also referred to as `lifetime`) field in the IPNS record.
 
@@ -190,10 +190,6 @@ IPNS names can be resolved by [IPFS gateways](ipfs-gateway.md) in a _trusted_ fa
 
 - Path resolution: `https://ipfs.io/ipns/{ipns-name}`
 - Subdomain resolution: `https://{ipns-name}.ipns.dweb.link`
-
-For example:
-
-- [https://ipfs.io/ipns/k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8](https://ipfs.io/ipns/k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8)
 
 > **Note** IPNS resolution via an IPFS gateway is **trusted** (in the sense of trusting the gateway) which means you delegate IPNS resolution to the gateway without any means to verify the authenticity response you get, i.e the content path and signature of the IPNS record.
 
