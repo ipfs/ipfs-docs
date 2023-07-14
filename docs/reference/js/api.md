@@ -5,7 +5,7 @@ description: Developer resources for working in JavaScript with IPFS, the InterP
 
 # IPFS in JavaScript
 
-Developers can get started with IPFS in JavaScript using Helia, a lean, modular, and modern implementation of IPFS for the JS and browser environments. Helia supereded [js-ipfs](https://github.com/ipfs/js-ipfs), which was the first JS implementation. Learn more at [https://github.com/ipfs/helia](https://github.com/ipfs/helia).
+Developers can get started with IPFS in JavaScript using Helia, a lean, modular, and modern implementation of IPFS for the JS and browser environments. Helia superseded [js-ipfs](https://github.com/ipfs/js-ipfs), which was the first JS implementation. Learn more at [https://github.com/ipfs/helia](https://github.com/ipfs/helia).
 
 ## Hands-on examples
 

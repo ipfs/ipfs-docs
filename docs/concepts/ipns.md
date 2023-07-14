@@ -191,10 +191,6 @@ IPNS names can be resolved by [IPFS gateways](ipfs-gateway.md) in a _trusted_ fa
 - Path resolution: `https://ipfs.io/ipns/{ipns-name}`
 - Subdomain resolution: `https://{ipns-name}.ipns.dweb.link`
 
-For example:
-
-- [https://ipfs.io/ipns/k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8](https://ipfs.io/ipns/k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8)
-
 > **Note** IPNS resolution via an IPFS gateway is **trusted** (in the sense of trusting the gateway) which means you delegate IPNS resolution to the gateway without any means to verify the authenticity response you get, i.e the content path and signature of the IPNS record.
 
 <!-- ### Third-party providing/publishing w3name -->
