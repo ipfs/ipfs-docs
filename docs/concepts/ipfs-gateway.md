@@ -71,6 +71,7 @@ Public gateway operators include:
 - Third-party public gateways, such as `https://cf-ipfs.com`.
 
 Protocol Labs maintains a [list of public gateways](https://ipfs.github.io/public-gateway-checker/) and their status.
+[Web3IMG](https://web3img.com) maintains a [list of public gateways](https://bestipfs.net).
 
 ## Gateway types
 
