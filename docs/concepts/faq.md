@@ -49,7 +49,7 @@ An IPFS implementation is any software with basic functionality for interaction 
 
 - Verifies that the CIDs it resolves match the resources they address, at least when it has access to the resources bytes. However, implementations may relax this requirement in controlled environments in which it is possible to ascertain that verification has happened elsewhere in a trusted part of the system.
 
-There are already many IPFS implementations, including [Kubo](../install/command-line.md), [Helia](../install/js-ipfs.md), and [more](../concepts/ipfs-implementations.md).
+There are already many IPFS implementations, including [Kubo](../install/command-line.md), [Helia](https://github.com/ipfs/helia), and [more](../concepts/ipfs-implementations.md).
 
 You can also create your own IPFS implementation. 
 
