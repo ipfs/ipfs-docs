@@ -15,6 +15,11 @@ const installMenuChildren = [
 ]
 
 module.exports = {
+  configureWebpack: {
+    output: {
+      hashFunction: "sha256"
+    }
+  },
   base: '/',
   head: require('./head'),
   locales: {
