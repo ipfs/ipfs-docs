@@ -9,8 +9,6 @@ IPFS Companion's preferences screen allows you to choose from different node typ
 
 [[toc]]
 
-![Screenshot of node type selector in Companion preferences](./images/node-type-switch.png)
-
 **If you're already running a local IPFS node, choose _External_.** If not, do one of the following:
 
 - [Install](../install/README.md) and run IPFS as an [external node](#external) (recommended).

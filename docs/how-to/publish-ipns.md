@@ -5,9 +5,10 @@ description: Learn how to publish IPNS names with Kubo
 
 # Publishing IPNS names
 
-IPNS names can be published programmatically.
+IPNS names can be published programmatically. 
 
-- [Publishing IPNS names with Kubo](#publishing-ipns-names-with-kubo)
+- [Using Kubo (Go)](#publishing-ipns-names-with-kubo)
+- [Using helia-ipns (JavaScript)](#publishing-ipns-names-with-helia-ipns)
 
 ## Publishing IPNS names with Kubo
 
@@ -101,3 +102,6 @@ ipfs name publish --key=SecondKey /ipfs/bafybeicklkqcnlvtiscr2hzkubjwnwjinvskffn
 
 > Published to k51qzi5uqu5dh5kbbff1ucw3ksphpy3vxx4en4dbtfh90pvw4mzd8nfm5r5fnl: /ipfs/bafybeicklkqcnlvtiscr2hzkubjwnwjinvskffn4xorqeduft3wq7vm5u4
 ```
+## Publishing IPNS names with helia-ipns
+
+Learn more about using IPNS with JavaScript at the [helia-ipns](https://github.com/ipfs/helia-ipns) repository.
