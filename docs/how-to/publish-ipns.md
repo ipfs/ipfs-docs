@@ -5,7 +5,7 @@ description: Learn how to publish IPNS names with Kubo
 
 # Publishing IPNS names
 
-IPNS names can be published programmatically. 
+IPNS names can be published programmatically.
 
 - [Using Kubo (Go)](#publishing-ipns-names-with-kubo)
 - [Using helia-ipns (JavaScript)](#publishing-ipns-names-with-helia-ipns)
