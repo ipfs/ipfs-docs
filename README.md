@@ -60,12 +60,6 @@ To build the site locally, follow the steps below.
    npm install
    ```
 
-1. Set `NODE_OPTIONS`:
-
-   ```bash
-   export NODE_OPTIONS=--openssl-legacy-provider
-   ```
-
 1. Boot up the application in _dev mode_:
 
    ```bash
