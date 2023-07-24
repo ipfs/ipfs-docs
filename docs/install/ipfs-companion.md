@@ -13,7 +13,7 @@ For its full functionality to be enabled, IPFS Companion requires a local IPFS n
 
 - [Install IPFS Desktop](../install/ipfs-desktop.md)
 - [Install IPFS Kubo for Go](../install/command-line.md)
-- [Install IPFS for JavaScript](../install/js-ipfs.md)
+- [Install IPFS Helia for JavaScript](../install/js-ipfs.md)
 
 ## Install
 
