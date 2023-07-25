@@ -48,22 +48,27 @@ To build the site locally, follow the steps below.
    git clone https://github.com/ipfs/ipfs-docs.git
    ```
 
-2. Move into the `ipfs-docs` folder and install the NPM dependencies:
+1. Move into the `ipfs-docs` folder:
 
    ```bash
    cd ipfs-docs
+   ```
+   
+1. Install the NPM dependencies:
+
+   ```bash
    npm install
    ```
 
-3. Boot up the application in _dev mode_:
+1. Boot up the application in _dev mode_:
 
    ```bash
    npm start
    ```
 
-4. Open [localhost:8080](http://localhost:8080) in your browser.
-5. Close the local server with `CTRL` + `c`.
-6. To restart the local server, run `npm start` from within the `ipfs-docs` folder.
+1. Open [localhost:8080](http://localhost:8080) in your browser.
+1. Close the local server with `CTRL` + `c`.
+1. To restart the local server, run `npm start` from within the `ipfs-docs` folder.
 
 ### Troubleshooting
 

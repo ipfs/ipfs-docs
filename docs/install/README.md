@@ -21,6 +21,10 @@ For long-term storage, users can use the Filecoin network! Filecoin is a peer-to
 
 Want to build decentralized applications and store your application data on IPFS? You'll likely want to install the command-line version of IPFS. There's no GUI to deal with, just raw input and output through your terminal. [Find out more →](./command-line.md)
 
+## IPFS Helia
+
+[Helia](https://github.com/ipfs/helia) is a new implementation of IPFS in JavaScript that is designed to be more modular and lightweight than the deprecated [js-ipfs project](https://github.com/ipfs/js-ipfs). To get started with a hands-on example, see [Helia 101](https://github.com/ipfs-examples/helia-examples/blob/main/examples/helia-101/README.md) in [ipfs-examples/helia-examples](https://github.com/ipfs-examples/helia-examples/tree/main).
+
 ## IPFS Cluster
 
 Planning to set up several IPFS nodes within one network? You'll want to take a look at installing [IPFS Cluster →](./server-infrastructure.md)

@@ -63,7 +63,7 @@ Both Kubo and Helia _nodes_ use bootstrap _nodes_ to initially enter the DHT.
 #### Limitations of a bootstrap node:
 
 - If an IPFS _node_ only has one bootstrap _node_ listed in that configuration and that bootstrap node goes offline, the IPFS node will lose access to the public DHT if it were to restart.
-  - Note that you should be able to configure your _peer_ store in your implementation to cache healthy connectable _peers_ so you can connect to them again after a restart, instead of bootstrap _nodes_. [Kubo recently added support for this](https://github.com/ipfs/kubo/pull/8856).
+- You can configure your _peer_ store in your implementation to cache healthy connectable _peers_ so that you can connect to them again after a restart, instead of bootstrap _nodes_. [Issue 8856 in the Kubo repository](https://github.com/ipfs/kubo/pull/8856), which addressed this, provides further information and context.
 
 [More about Bootstrapping](../how-to/modify-bootstrap-list.md)
 

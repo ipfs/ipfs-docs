@@ -5,5 +5,8 @@ description: IPFS nodes can be customzied using the configuration file. The defa
 
 # Configure a node
 
-IPFS is configured through a json formatted text file, located by default at `~/.ipfs/config`. Implementation-specific information can be found within the [Kubo](https://github.com/ipfs/kubo/blob/master/docs/config.md) and [js-ipfs](https://github.com/ipfs/js-ipfs/blob/master/docs/CONFIG.md) repositories. It is read once at node instantiation, either for an offline command, or when starting the daemon. Commands that execute on a running daemon do not read the config file at runtime.
+Node configuration varies between implementations.
+
+- For Kubo, see [config.md](https://github.com/ipfs/kubo/blob/master/docs/config.md). 
+- For Helia, see the [HeliaInit](https://ipfs.github.io/helia/interfaces/helia.HeliaInit.html) document. Note that, unlike the deprecated js-ipfs implementation, you must configure your node directly - see the [Helia example](https://github.com/ipfs/helia/wiki/Migrating-from-js-IPFS#config).
 

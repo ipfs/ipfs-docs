@@ -197,7 +197,7 @@ IPNS names can be resolved by [IPFS gateways](ipfs-gateway.md) in a _trusted_ fa
 
 ### Publishing IPNS names
 
-See the following guide on [publishing IPNS names with Kubo and js-ipfs](../how-to/publish-ipns.md).
+See the following guide on [publishing IPNS names with Kubo and Helia](../how-to/publish-ipns.md).
 
 ## Alternatives to IPNS
 

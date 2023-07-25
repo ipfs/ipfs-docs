@@ -7,7 +7,7 @@ const pageSuffix = '/'
 const installMenuChildren = [
   ['/install/command-line','IPFS Kubo for Go'],
   ['/install/run-ipfs-inside-docker', 'IPFS Kubo in Docker'],
-  ['/install/js-ipfs','IPFS for JavaScript'],
+  ['https://github.com/ipfs/helia','IPFS Helia for JavaScript'],
   ['https://iroh.computer/docs/install/', "IPFS Iroh for Rust"],
   ['/install/ipfs-desktop', 'IPFS Desktop App'],
   ['/install/ipfs-companion', 'IPFS Companion Browser Extension'],
@@ -15,6 +15,11 @@ const installMenuChildren = [
 ]
 
 module.exports = {
+  configureWebpack: {
+    output: {
+      hashFunction: "sha256"
+    }
+  },
   base: '/',
   head: require('./head'),
   locales: {

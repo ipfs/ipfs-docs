@@ -60,7 +60,7 @@ Keeping in mind [the general guidelines above](#_2-follow-the-guidelines-for-get
 1. In [the Help category of the forum](https://discuss.ipfs.tech/c/help/13), hover over the large blue circle with a `+` symbol in the center. The text **New Topic** displays.
 1. Click **New Topic**.  The **Create a new Topic** modal opens.
 1. In the title field, describe what the discussion is one brief sentence.
-1. Add any optional tags that help describe what subcategory the issue is in. Samples options include `go-ipfs` and `js-ipfs`.
+1. Add any optional tags that help describe what subcategory the issue is in. Samples options include `kubo` and `helia`.
 1. Following the guidelines above, describe your issue / problem in the main text field. You can use Markdown, BBCode or HTML for formatting, and include images.
 1. Click **Create Topic**. Your topic is has been created in the forum!
 

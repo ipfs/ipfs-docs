@@ -26,6 +26,10 @@ The quickest way to get IPFS up and running on your machine is by installing [IP
 
 For installing and initializing IPFS from the command line, check out the [command-line quick start](../how-to/command-line-quick-start.md) guide.
 
+### How do I learn more about IPFS standards and specifications?
+
+You can learn more about IPFS design standards and architectural specifications at [specs.ipfs.tech](https://specs.ipfs.tech/). The IPFS Standards website documents these standards and specifications with the goal of fostering interoperability between independent implementations of the IPFS stack through Internet-grade specifications and test suites. 
+
 ### Why doesn't my SHA hash match my CID?
 When you add a file to IPFS, IPFS splits it into smaller blocks. IPFS hashes each of these pieces individually, building a [Merkle Directed Acyclic Graphs (DAGs)](../concepts/merkle-dag.md) and resulting in an overall different hash.
 
@@ -45,9 +49,19 @@ An IPFS implementation is any software with basic functionality for interaction 
 
 - Verifies that the CIDs it resolves match the resources they address, at least when it has access to the resources bytes. However, implementations may relax this requirement in controlled environments in which it is possible to ascertain that verification has happened elsewhere in a trusted part of the system.
 
-There are already many IPFS implementations, including [Kubo](../install/command-line.md), [Helia](../install/js-ipfs.md), and [more](../concepts/ipfs-implementations.md).
+There are already many IPFS implementations, including [Kubo](../install/command-line.md), [Helia](https://github.com/ipfs/helia), and [more](../concepts/ipfs-implementations.md).
 
 You can also create your own IPFS implementation. 
+
+### I am creating an implementation, how do I get started?
+
+If you want to develop an IPFS implementation or are already working on one, the IPFS design standards and architectural specifications at [specs.ipfs.tech](https://specs.ipfs.tech/) are a great resource. In particular, the following resources are great starting points:
+
+- [IPFS Principles](https://specs.ipfs.tech/architecture/principles/) provides context and details around the core IPFS principles of content-addressing and transport-agnosticism. The document defines what is or is not an IPFS implementation.
+- The [Meta](https://specs.ipfs.tech/meta/) section describes important non-technical information for contributors, like the core project values, the governance model, how to produce documents, and more. 
+- [InterPlanetary Improvement Proposals (IPIPs)](https://specs.ipfs.tech/meta/ipip-process/) are a focused, transparent, community-driven process for protocol design discussions. They are not changes to the specification itself, but their approval leads to a change in the specification.
+
+In addition to these core documents, `specs.ipfs.tech` documents standards for IPFS subsystems such as the [InterPlanetary Naming System](https://specs.ipfs.tech/http-gateways/) and [HTTP Gateways](https://specs.ipfs.tech/http-gateways/).
 
 ## IPFS and Filecoin
 

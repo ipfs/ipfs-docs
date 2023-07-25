@@ -230,7 +230,7 @@ A Cryptographic Hash is a function that takes some arbitrary input (content) and
 
 ### Helia
 
-A lean, modular, and modern implementation of IPFS for the JS and browser environments. Superseded [js-ipfs](#js-ipfs). Learn more at [https://github.com/ipfs/helia](https://github.com/ipfs/helia).
+A lean, modular, and modern implementation of IPFS for the JS and browser environments that supersedes [js-ipfs](#js-ipfs). Learn more at [https://github.com/ipfs/helia](https://github.com/ipfs/helia).
 
 ### Hole punching
 
