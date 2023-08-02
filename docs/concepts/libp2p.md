@@ -55,7 +55,7 @@ The features of Libp2p are listed below. For more information on each feature, c
 
 - [Peer identity](https://docs.libp2p.io/concepts/fundamentals/peers/#peer-id)
 
-- [Peer routing](https://docs.libp2p.io/introduction/#peer-routing)
+- [Peer routing](https://docs.libp2p.io/concepts/appendix/glossary/#peer-routing)
 
 - [Content discovery](https://docs.libp2p.io/concepts/introduction/overview/#content-discovery)
 
