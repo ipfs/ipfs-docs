@@ -356,7 +356,7 @@ In system architecture, a Peer is an equal player in the peer-to-peer model of d
 
 ### Peer routing
 
-Peer routing is the process of discovering the network _route_ or address for a peer in the network, given the peer’s ID. It may also include _ambient_ discovery of local peers. The primary peer routing mechanism in IPFS uses a distributed hash table to locate peers, taking advantage of the [Kademlia routing algorithm](concepts/dht.md#lookup-algorithm) to efficiently locate peers.
+Peer routing is the process of discovering the network _route_ or address for a peer in the network, given the peer’s ID. It may also include _ambient_ discovery of local peers. The primary peer routing mechanism in IPFS uses a distributed hash table to locate peers, taking advantage of the [Kademlia routing algorithm](dht.md#lookup-algorithm) to efficiently locate peers.
 
 ### Peer ID
 
