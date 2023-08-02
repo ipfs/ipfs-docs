@@ -354,6 +354,10 @@ A Path/Address is the method within IPFS of referencing content on the web. Addr
 
 In system architecture, a Peer is an equal player in the peer-to-peer model of decentralization, as opposed to the client-server model of centralization. [See also Peer as Node](#node)
 
+### Peer routing
+
+Peer routing is the process of discovering the network _route_ or address for a peer in the network, given the peer’s ID. It may also include _ambient_ discovery of local peers. The primary peer routing mechanism in IPFS uses a distributed hash table to locate peers, taking advantage of the [Kademlia routing algorithm](concepts/dht.md#lookup-algorithm) to efficiently locate peers.
+
 ### Peer ID
 
 A Peer ID is how each unique IPFS node is identified on the network. The Peer ID is created when the IPFS node is initialized and is essentially a cryptographic hash of the node's public key. [More about Peer ID](dht.md#peer-ids)
