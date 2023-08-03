@@ -147,6 +147,12 @@ For installation instructions for your operating system, select the appropriate 
 
 ### macOS
 
+#### Installing with the help of the brew package manager
+```bash
+brew install kubo
+```
+
+#### Installing with the help of the binary package 
 1. Decide which macOS binary to download from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) by determining whether your system uses an Apple or Intel CPU. On most macOS systems, you can find systems specs by doing the following:
 
    1. In the upper left hand corner of your screen, click the "Apple" icon.
