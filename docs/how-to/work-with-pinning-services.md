@@ -15,11 +15,19 @@ If you've got just one local IPFS node that's always running, local pinning may 
 - You don't have all the disk space you need on your local node.
 - You run more than one IPFS node, and would like to use one of them as a "personal pinning service" as your preferred location for permanent storage.
 
-There are a number of commercial pinning services that make it easy for you to purchase pinning capacity for your important files, some of which include Pinata, Temporal, Crust, Infura, and others. Each of these third-party services has its own unique interface for pinning files and managing those pins; this could include a GUI, an API, CLI commands, or other tooling.
+Third-party pinning services allow you to purchase pinning capacity for important data. Each service has its own approach to pinning data and managing pins, so users should do their research to ensure that the service meets their particular needs. Service providers include, but are not limited to:
+
+- [Pinata](https://pinata.cloud/)
+- [Filebase](https://filebase.com/)
+- [Temporal](https://temporal.cloud/)
+- [Crust](https://crust.network/)
+- [Infura](https://infura.io/)
 
 However, you don't need to learn new commands or tools if your pinning service of choice supports the vendor-agnostic [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/) specification. Those services are supported within IPFS itself through the command line: `ipfs pin remote --help`.
 
-As of January 2021, [Pinata](https://pinata.cloud/) supports the [IPFS Pinning Service API endpoint](https://pinata.cloud/documentation#PinningServicesAPI), with more pinning services on the way! [Learn how to create your own →](#create-your-own-pinning-service)
+As of June 2023, [Filebase](https://filebase.com) and [Pinata](https://pinata.cloud/) support the [IPFS Pinning Service API endpoint](https://github.com/ipfs/pinning-services-api-spec).
+
+You can also [create your own pinning service](#create-your-own-pinning-service).
 
 ## Use an existing pinning service
 
@@ -53,11 +61,22 @@ In the next screen, you’ll be asked for a few other details:
 - A **nickname** for this service. This can be helpful if, for example, you want to add two accounts from the same service.
 - The URL for your service's **API endpoint**.
   _Note: This field only appears if you've selected a custom pinning service!_
-- Your **secret access token**. This is the unique token provided to you by the pinning service — check its documentation for more info.
-  _To illustrate, example below shows which value should be copied from [pinata.cloud/keys](https://pinata.cloud/keys)_
-  > ![Pinata secret access token](./images/work-with-pinning-services/add-service-pinata-token.jpg)
+- You **secret access token**: The unique token provided to you by the pinning service — see the specific pinning service documentation for more info.
 
-After you hit **Save**, you’ll see your new pinning service added to the **Pinning Services** section of your **Settings** screen.
+##### Pinata example
+
+Consider the following example, which illustrates which values from [pinata.cloud/keys] are copied into the Pinata pinning service UI:
+
+![Pinata secret access token](./images/work-with-pinning-services/add-service-pinata-token.jpg)
+
+##### Filebase example
+
+Consider the following example, which demostrates the process for Filebase using
+[console.filebase.com/keys](https://console.filebase.com/keys).
+
+![Filebase secret access token](./images/work-with-pinning-services/add-service-filebase-token.png)
+
+After you click **Save**, your new pinning service is added to the **Pinning Services** section of your **Settings** screen.
 
 > ![Desktop/Web UI Settings screen with a new pinning service added](./images/work-with-pinning-services/added-service.jpg)
 
@@ -129,3 +148,4 @@ You may also wish to read continuing details on how the API is evolving in the [
 :::
 
 If you'd like to make your custom pinning service available to every IPFS user, we welcome your submissions. Once you're ready to open the doors to the public, make a PR against the [IPFS Web UI GitHub repo](https://github.com/ipfs-shipyard/ipfs-webui) in order to add it to the default list of pinning services that are displayed in the Desktop/Web UI Settings screen, and one of the core maintainers will be in touch.
+
