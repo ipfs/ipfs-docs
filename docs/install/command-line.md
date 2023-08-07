@@ -103,7 +103,7 @@ For installation instructions for your operating system, select the appropriate 
    $GO_IPFS_LOCATION = pwd
    ```
 
-1. Create a powershell profile:
+1. Create a PowerShell profile:
 
    ```powershell
    if (!(Test-Path -Path $PROFILE)) { New-Item -ItemType File -Path $PROFILE -Force }
@@ -147,66 +147,16 @@ For installation instructions for your operating system, select the appropriate 
 
 ### macOS
 
-1. Decide which macOS binary to download from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) by determining whether your system uses an Apple or Intel CPU. On most macOS systems, you can find systems specs by doing the following:
+::: 
+This installation method supports both Intel and Apple Silicon hardware.
+:::
 
-   1. In the upper left hand corner of your screen, click the "Apple" icon.
-   1. In the drop-down menu displayed, select _About this Mac_.
-   1. A window with information about your Mac is displayed.
-      - If your system uses Apple Silicon, the specific chip displays, such as _Apple M1 Pro_.
-      - If your system uses an Intel CPU, the specific processor displays, such as _2.3 GHz 8-Core Intel Core i9_.
+1. Navigate to a terminal.
 
+1. Use `brew` to install Kubo:
 
-1. Download the appropriate macOS binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo) based on your hardware. For example:
-
-   ```bash
-   curl -O https://dist.ipfs.tech/kubo/v0.21.0/kubo_v0.21.0_darwin-amd64.tar.gz
-   ```
-
-   > :warning:
-   > Ensure that you download and install the appropriate binary, as the binary for an Intel-based system won't work on a system with Apple Silicon, and vice-versa.
-
-   - _If you are using hardware with Apple Silicon, download the `darwin-arm64` binary._ For example, to download the IPFS binary for `Kubo v0.21.0` for an Apple-based system, run the following command:
-
-     ```bash
-     curl -O https://dist.ipfs.tech/kubo/v0.21.0/kubo_v0.21.0_darwin-arm64.tar.gz
-     ```
-
-   - _If you are using hardware with an Intel Processor, download the `darwin-amd64` binary._ For example, to download the IPFS binary for `Kubo v0.21.0` for an Intel-based system, run the following command:
-
-     ```bash
-     curl -O https://dist.ipfs.tech/kubo/v0.21.0/kubo_v0.21.0_darwin-amd64.tar.gz
-     ```
-
-1. Unzip the file. For example, to unzip `Kubo v0.21.0` for an Intel-based system:
-
-   ```bash
-   tar -xvzf kubo_v0.21.0_darwin-amd64.tar.gz
-   ```
-
-   The following output displays:
-
-   ```bash
-   x kubo/
-   x kubo/ipfs
-   x kubo/install.sh
-   ```
-
-1. Navigate to the `kubo` directory:
-
-   ```bash
-   cd kubo
-   ```
-
-1. Run the install script:
-
-   ```bash
-   sudo bash install.sh
-   ```
-
-   On successful install, the following displays:
-
-   ```bash
-   > Moved ./ipfs to /usr/local/bin
+   ```shell
+   brew install ipfs
    ```
 
 1. Confirm your Kubo installation:
@@ -221,7 +171,7 @@ For installation instructions for your operating system, select the appropriate 
    > ipfs version 0.21.0
    ```
 
-:::
+
 
 ::: tab linux id="install-kubo-linux"
 
@@ -389,7 +339,7 @@ When an IPFS command executes without parameters, the CLI client checks whether 
 
 - If an `$IPFS_PATH` is in the default location (for example, `~/.ipfs` on Linux), then it works automatically and the IPFS CLI client talks to the locally running `ipfs` daemon without any extra configuration.
 
-- If an `$IPFS_PATH` isn't in the default location, use the `--api <rpc-api-addr>` command-line argument. Alternatively, you can set the environment variable to `IPFS_PATH`. `IPFS_PATH` will point to a directory with the api file with the existing `ipfs` daemon instance.
+- If an `$IPFS_PATH` isn't in the default location, use the `--api <rpc-api-addr>` command-line argument. Alternatively, you can set the environment variable to `IPFS_PATH`. `IPFS_PATH` will point to a directory with the API file with the existing `ipfs` daemon instance.
 
 #### Most common examples
 
