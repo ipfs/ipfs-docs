@@ -45,7 +45,7 @@ Here are a few papers that are useful for understanding IPFS, whether it be unde
 
 ## [IPFS - the perspective storage infrastructure for scientific data](https://zenodo.org/record/4742585)
 
-> Presentation slides for **IPFS Introductory Webinar** made as proof of side activity of [ExPaNDs](https://expands.eu/) project on [Elettra Sincrotrone Trieste](https://elettra.eu/) 24/09/2020. Based on [PaNdata Continuum](https://pan-data.eu/sites/pan-data.eu/files/PaNdataODI-D6.1.pdf) ontology.
+> Presentation slides for **IPFS Introductory Webinar** made as proof of side activity of [ExPaNDs](https://expands.eu/) project on [Elettra Sincrotrone Trieste](https://www.elettra.eu/) 24/09/2020. Based on [PaNdata Continuum](http://pan-data.eu/sites/pan-data.eu/files/PaNdataODI-D6.2.pdf) ontology.
 
 **Vukolov, Andrey**: _The presentation describes in an academic manner the advantages of IPFS as a data identification and storage system with built-in basic provenance._
 
