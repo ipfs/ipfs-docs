@@ -15,7 +15,7 @@ The [Gateway API](http/gateway.md) provides implementation-agnostic HTTP interfa
 
 Implementation and language specific interfaces can be used when [HTTP Gateway API](http/gateway.md) is not enough, or you need additional flexibility.
 
-### Kubo (go-ipfs)
+### Kubo 
 
 Kubo is the earliest and most widely used implementation of IPFS, written in Go.
 
@@ -31,16 +31,16 @@ Use it as:
   See [Go API reference for Kubo](go/api.md), including the Go CoreAPI, the Go embedded client, and a Go client for interacting with Kubo over HTTP RPC API.
 
 
-### JavaScript (js-ipfs)
+### Helia 
+
+Helia is the next generation IPFS JavaScript implementation that applies lessons learned from [js-ipfs](https://github.com/ipfs/js-ipfs) to create a more modern, modular, and efficient codebase. 
+
+Learn more about Helia in the [official GitHub repository](https://github.com/ipfs/helia). If you'd like to quickly get started developing with Helia, see the [Helia examples repository](https://github.com/ipfs-examples/helia-examples).
 
 :::warning 
-### js-ipfs being discontinued
-Development of the [js-ipfs project](https://github.com/ipfs/js-ipfs) is being discontinued to focus on [Helia](https://github.com/ipfs/helia), a leaner, more modular, modern implementation of IPFS in JavaScript scheduled for release in 2023. To learn more about Helia and the current state of IPFS in JS, see the [blog post](https://blog.ipfs.tech/state-of-ipfs-in-js/). 
+### js-ipfs project discontinued
+Development of the [js-ipfs project](https://github.com/ipfs/js-ipfs) has been discontinued in favor of [Helia](https://github.com/ipfs/helia). 
 
-Because of this, js-ipfs tutorials may be out of date, and will eventually be archived.
+Because of this, js-ipfs content may be out of date, and will eventually be archived.
 
 :::
-
-[API resources for js-ipfs](js/api.md), including the JS core API reference and the JS HTTP client library.
-
-Explore the Mutable File System, Regular Files API, and DAG API through ProtoSchool's [coding challenges](https://proto.school/course/ipfs).
