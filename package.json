@@ -46,12 +46,8 @@
     "useTabs": false
   },
   "lint-staged": {
-    "*.{js,json,css,less,scss,html,md,vue}": [
-      "prettier --write"
-    ],
-    "*.styl": [
-      "stylus-supremacy format --replace"
-    ]
+    "*.{js,json,css,less,scss,html,md,vue}": ["prettier --write"],
+    "*.styl": ["stylus-supremacy format --replace"]
   },
   "husky": {
     "hooks": {
@@ -63,7 +59,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format:styles": "stylus-supremacy format ./docs/.vuepress/**/*.styl --replace",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "NODE_OPTIONS=--openssl-legacy-provider vuepress build docs"
   },
   "dependencies": {
     "@adamdehaven/vuepress-plugin-custom-tooltip": "^1.4.3",
