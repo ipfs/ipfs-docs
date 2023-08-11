@@ -124,7 +124,7 @@ Netflix is on its way to using IPFS to [synchronize their Docker containers worl
 
 ### Decentralized storage
 
-The [web3.storage](https://web3.storage) platform provides an IPFS-based storage service to safely secure and make your data available - giving developers the power of decentralized storage and content addressing via simple client libraries or an HTTP API.
+The [web3.storage](https://web3.storage) platform provides an IPFS-based storage service to safely secure and make your data available - giving developers the power of decentralized storage and content addressing via simple client libraries or an HTTP API. Similarly, the [Spheron Network](https://spheron.network) also provides an IPFS-based storage service.
 
 ## Lower your storage usage
 
@@ -152,6 +152,10 @@ If you are currently using MongoDB, you might be more comfortable with [ThreadDB
 
 [Fleek.co](https://fleek.co/) allows you to effortlessly build sites & apps on IPFS. The workflow is similar to that of Netlify: developers can link their website or a web app hosted on GitHub to Fleek and have it automatically built and deployed on IPFS whenever a change is made to a specific branch. Fleek also comes with Ethereum Name Service (ENS) and domain name integration and plan to enable many more ways to deploy soon: more Git providers, deploy via command-line interface, drag & drop a folder, via API, etc.
 
+### Deploy your website on IPFS with Spheron
+
+[Spheron Network](https://spheron.network/) facilitates the seamless deployment of websites on IPFS and Filecoin. It offers developers the convenience of linking their websites or web applications hosted on platforms such as GitHub, Gitlab, and Bitbucket to the Spheron Network. Subsequently, any modifications made to a designated branch will trigger an automatic build and deployment on IPFS. In addition to this, Spheron incorporates integration features for the Ethereum Name Service (ENS) and other domain name services. The platform is poised to introduce an expanded array of deployment methods, including through a command-line interface, API, and SDK, among others.
+
 ### Ethereum and Solidity specific applications
 
 [Embark](https://framework.embarklabs.io/) is an all-in-one developer platform for building and deploying decentralized applications. It currently integrates with Ethereum blockchains, decentralized storage like IPFS, and decentralized communication platforms like Whisper and Orbit.
@@ -162,7 +166,7 @@ Several plugins exist to decentralize your website built with popular static-sit
 
 ## Build a dApp
 
-There are many available frameworks to build decentralized apps on IPFS. [Fission](https://fission.codes/), [Fleek](https://fleek.co/), and [Textile](https://textile.io/) are great examples.
+There are many available frameworks to build decentralized apps on IPFS. [Fission](https://fission.codes/), [Fleek](https://fleek.co/), [Spheron](https://spheron.network/), and [Textile](https://textile.io/) are great examples.
 
 ### SecureMyState
 
