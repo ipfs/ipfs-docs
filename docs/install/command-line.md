@@ -147,11 +147,7 @@ For installation instructions for your operating system, select the appropriate 
 
 ### macOS
 
-::: callout
-The `brew` installation method supports both Intel and Apple Silicon hardware.
-
-If you prefer a manual installation, `darwin-amd64` (Intel) and `darwin-arm64` (Apple Silicon) artifacts available [here](https://dist.ipfs.tech/kubo/v0.21.0/).
-:::
+> The `brew` installation method supports both Intel and Apple Silicon hardware. If you prefer a manual installation, `darwin-amd64` (Intel) and `darwin-arm64` (Apple Silicon) artifacts available [here](https://dist.ipfs.tech/kubo/v0.21.0/).
 
 1. Navigate to a terminal.
 
