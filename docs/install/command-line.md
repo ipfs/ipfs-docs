@@ -150,7 +150,7 @@ For installation instructions for your operating system, select the appropriate 
 ::: 
 The `brew` installation method supports both Intel and Apple Silicon hardware.
 
-If you prefer a manuall installation, `darwin-amd64` (Intel) and `darwin-arm64` (Apple Silicon) artifacts are provided at https://dist.ipfs.tech/kubo/v0.21.0/
+If you prefer a manual installation, `darwin-amd64` (Intel) and `darwin-arm64` (Apple Silicon) artifacts are available at https://dist.ipfs.tech/kubo/v0.21.0/
 
 :::
 
@@ -342,7 +342,7 @@ When an IPFS command executes without parameters, the CLI client checks whether 
 
 - If an `$IPFS_PATH` is in the default location (for example, `~/.ipfs` on Linux), then it works automatically and the IPFS CLI client talks to the locally running `ipfs` daemon without any extra configuration.
 
-- If an `$IPFS_PATH` isn't in the default location, use the `--api <rpc-api-addr>` command-line argument. Alternatively, you can set the environment variable to `IPFS_PATH`. `IPFS_PATH` will point to a directory with the `$IPFS_PATH/api` file pointing at Kubo RPC of the existing `ipfs` daemon instance.
+- If an `$IPFS_PATH` isn't in the default location, use the `--api <rpc-api-addr>` command-line argument. Alternatively, you can set the environment variable to `IPFS_PATH`. `IPFS_PATH` will point to a directory with the `$IPFS_PATH/api` file pointing at the Kubo RPC of the existing `ipfs` daemon instance.
 
 #### Most common examples
 
