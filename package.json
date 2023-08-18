@@ -20,7 +20,14 @@
     "markdown-it-imsize": "^2.0.1",
     "markdown-it-task-lists": "^2.1.1",
     "markdown-it-video": "^0.6.3",
+<<<<<<< HEAD
     "prettier": "^3.0.2",
+=======
+    "markdown-link-check": "^3.11.2",
+    "markdownlint-cli2": "^0.8.1",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.8.8",
+>>>>>>> 98812899 (test)
     "stylus-supremacy": "^2.17.3",
     "vuepress": "^1.9.10",
     "vuepress-plugin-canonical": "^1.0.0",
@@ -63,8 +70,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format:styles": "stylus-supremacy format ./docs/.vuepress/**/*.styl --replace",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "NODE_OPTIONS=--openssl-legacy-provider vuepress build docs"
+    "docs:build": "NODE_OPTIONS=--openssl-legacy-provider vuepress build docs",
+    "md-lint": "sh pre-commit-lint.sh"
   },
+  "pre-commit": "md-lint",
   "dependencies": {
     "@adamdehaven/vuepress-plugin-custom-tooltip": "^1.4.3",
     "vue-tabs-component": "^1.5.0",
