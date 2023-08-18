@@ -39,7 +39,7 @@ if [ ${#mdFileList} -gt 0 ]; then
     echo $regularBar
     echo "${bold}Link check${normal}"
     echo $regularBar
-    npx markdown-link-check --config .mdlinkcheck-config.json -q -p $mdFileList "$@"
+    npx markdown-link-check --config .mdlc.json -q -p $mdFileList "$@"
     linksPassed=$?
 
     echo " "

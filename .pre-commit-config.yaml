@@ -1,0 +1,11 @@
+repos:
+  - repo: https://github.com/errata-ai/vale
+    rev: 5df0693
+    hooks:
+      - id: vale
+        name: SYNC VALE STYLES AND DICTIONARY
+        pass_filenames: false
+        args: [sync]
+      - id: vale
+        name: RUN VALE LINTER
+        files: '\.md$'
