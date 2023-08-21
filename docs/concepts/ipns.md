@@ -33,7 +33,9 @@ Yet, there are many situations where content-addressed data needs to be regularl
 
 The InterPlanetary Name System (IPNS) is a system for creating such mutable pointers to CIDs known as **names** or **IPNS names**. IPNS names can be thought of as links that can be updated over time, while retaining the verifiability of content addressing.
 
-> **Note:** Technically, an IPNS name can point to an arbitrary content path (`/ipfs/` or `/ipns/`), including another IPNS name or DNSLink path. However, it most commonly points to a fully resolved and immutable path, i.e. `/ipfs/[CID]`.
+::: callout
+An IPNS name can point to any arbitrary content path (`/ipfs/` or `/ipns/`), *including another IPNS name or DNSLink path*. However, it most commonly points to a fully resolved and immutable path, i.e. `/ipfs/[CID]`.
+:::
 
 ## How IPNS works
 
@@ -201,7 +203,7 @@ See the following guide on [publishing IPNS names with Kubo and Helia](../how-to
 
 ## Alternatives to IPNS
 
-IPNS is not the only way to create mutable addresses on IPFS. You can also use [DNSLink](dnslink.md), which is currently much faster than IPNS and also uses human-readable names. Other community members are exploring ways to use blockchains to store common name records.
+IPNS is not the only way to create mutable addresses on IPFS. You can also use [DNSLink](dnslink.md), which is currently much faster than IPNS, uses human-readable names, and can also point to IPNS names. Other community members are exploring ways to use blockchains to store common name records.
 
 ## Further Resources
 

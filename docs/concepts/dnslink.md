@@ -5,7 +5,7 @@ description: Learn how to map IPFS content to DNS names using DNSLink.
 
 # DNSLink
 
-DNSLink uses [DNS `TXT` records](https://en.wikipedia.org/wiki/TXT_record) to map a DNS name, like [`en.wikipedia-on-ipfs.org`](https://en.wikipedia-on-ipfs.org), to an IPFS address. Because you can edit your DNS records, you can use them to always point to the latest version of an object in IPFS. Since DNSLink uses DNS records, you can assign names, paths, and sub-domains that are easy to type, read, and remember.
+DNSLink uses [DNS `TXT` records](https://en.wikipedia.org/wiki/TXT_record) to map a DNS name, such as [`en.wikipedia-on-ipfs.org`](https://en.wikipedia-on-ipfs.org), to either an IPFS address or an [IPNS](../concepts/ipns.md) name. Because you can edit your DNS records, you can use them to always point to the latest version of an object in IPFS. Since DNSLink uses DNS records, you can assign names, paths, and sub-domains that are easy to type, read, and remember.
 
 A DNSLink address looks like an [IPNS](ipns.md) address, but it uses a DNS name in place of a hashed public key:
 
