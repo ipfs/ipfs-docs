@@ -218,8 +218,8 @@ Some core pieces of the web are still centralized, making it more prone to break
 
 Bluesky is a decentralized social media protocol built on [IPLD](../concepts/ipld.md) that originated as a Twitter project but is now independent.
 The protocol uses a federated architecture with cryptographic IDs and content addressing to make data portable between servers.
-User data is then stored in repositories using IPLD and content addressing for portability between servers.
-The protocol specifies clients, servers, DIDs, data repos, and aggregators to enable a federated social network.
+User data is stored in repositories using IPLD and content addressing.
+The protocol specifies clients, servers, decentralized identities (DIDs), data repositories, and aggregators to enable a federated social network.
 
 Learn more from the [IPFS Camp 2022 talk](https://www.youtube.com/watch?v=jGbBZbl-V8Y&list=PLuhRWgmPaHtRP0kfWyDuod_kVHE-5dGGL&index=7).
 
@@ -247,7 +247,7 @@ Textile.io is building the [Powergate](https://blog.textile.io/filecoin-develope
 
 ### Exchange Internet-of-Things data
 
-[IOTA](https://www.iota.org/) is a foundation maintaining _the Tangle_, a blockchain-like network with zero fees. Their vision is to automate the exchange of data between sensors, machines, and other devices, for free or sold by the provider. IOTA [announced](https://docs.iota.org/docs/blueprints/0.1/tangle-data-storage/overview) that data can now be hosted on IPFS, [as shown in this demo](https://ipfs.iota.org/).
+[IOTA](https://www.iota.org/) is a foundation maintaining _the Tangle_, a blockchain-like network with zero fees. Their vision is to automate the exchange of data between sensors, machines, and other devices, for free or sold by the provider. IOTA [announced](https://wiki.iota.org/legacy) that data can now be hosted on IPFS. The demo for this is no longer maintained.
 
 ### Send crypto to human-readable addresses
 
@@ -271,7 +271,7 @@ With IPFS and a blockchain, you can prove ownership of a file at a certain time 
 
 ### Proof of _humanness_
 
-[Idena](https://idena.io/) is a blockchain to prove that you are human (which is distinct from DID). It uses IPFS under the hood.
+[Idena](https://idena.io/) is a blockchain to prove that you are human, distinct from a decentralized identity (DID). It uses IPFS under the hood.
 
 ### Build Smart City apps
 
