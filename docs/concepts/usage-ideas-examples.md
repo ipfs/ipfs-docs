@@ -216,7 +216,7 @@ Some core pieces of the web are still centralized, making it more prone to break
 
 ### Bluesky
 
-Blue Sky is a decentralized social media protocol built on [IPLD](../concepts/ipld.md) that originated as a Twitter project but is now independent.
+Bluesky is a decentralized social media protocol built on [IPLD](../concepts/ipld.md) that originated as a Twitter project but is now independent.
 The protocol uses a federated architecture with cryptographic IDs and content addressing to make data portable between servers.
 User data is then stored in repositories using IPLD and content addressing for portability between servers.
 The protocol specifies clients, servers, DIDs, data repos, and aggregators to enable a federated social network.
