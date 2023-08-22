@@ -134,6 +134,11 @@ By storing identical data only once on your node, storage-constrained projects a
 
 By decentralizing your data, you increase availability if your server runs into an issue, your ISP is unhappy with what you publish, or a hostile government issues a take-down order. You will also decrease the load time for your swarm-connected users and natively enable your app to work offline or on local networks. Depending on your app, your users can also reduce their storage requirements and download time thanks to native de-duplication and caching.
 
+### Tableland
+
+[Tableland](https://tableland.xyz/) is an indexed, networked, SQL-compatible database that combines blockchain for access control with a decentralized network of nodes running SQLite. This architecture provides fast, mutable tables with verifiable integrity.
+Tables in Tableland are NFTs, so they can be owned, traded, and permissions controlled programmatically. Learn more about Tableland in [the talk from IPFS camp 2022](https://www.youtube.com/watch?v=KJdYaNUofCc&list=PLuhRWgmPaHtRP0kfWyDuod_kVHE-5dGGL&index=3).
+
 ### Decentralized database
 
 [OrbitDB](https://github.com/orbitdb/orbit-db) is a serverless, distributed, peer-to-peer database. OrbitDB uses IPFS as its data storage and IPFS Pubsub to automatically sync databases with peers. It's an eventually consistent database that uses CRDTs for conflict-free database merges, making OrbitDB an excellent choice for decentralized apps (dApps), blockchain applications, and offline-first web applications. There are Go and Javascript implementations available.
@@ -163,6 +168,11 @@ Several plugins exist to decentralize your website built with popular static-sit
 ## Build a dApp
 
 There are many available frameworks to build decentralized apps on IPFS. [Fission](https://fission.codes/), [Fleek](https://fleek.co/), and [Textile](https://textile.io/) are great examples.
+
+### WebNative SDK
+
+Fission created the [WebNative SDK](https://guide.fission.codes/developers/webnative) to make building apps easier for front-end developers. The SDK uses technologies like decentralized identities (DIDs), encryption, and IPFS for portable user identities and data, avoiding vendor lock-in.
+For more information, see the [talk from IPFS camp 2022](https://www.youtube.com/watch?v=HnhJYH4mL_I&list=PLuhRWgmPaHtRP0kfWyDuod_kVHE-5dGGL&index=2).
 
 ### SecureMyState
 
@@ -203,6 +213,15 @@ In a recent update, Wolfram let users store their computation or assets on IPFS.
 ## Decentralize the Web itself
 
 Some core pieces of the web are still centralized, making it more prone to breaking or being censored. IPFS can help and make the web more resilient.
+
+### Bluesky
+
+Blue Sky is a decentralized social media protocol built on [IPLD](../concepts/ipld.md) that originated as a Twitter project but is now independent.
+The protocol uses a federated architecture with cryptographic IDs and content addressing to make data portable between servers.
+User data is then stored in repositories using IPLD and content addressing for portability between servers.
+The protocol specifies clients, servers, DIDs, data repos, and aggregators to enable a federated social network.
+
+Learn more from the [IPFS Camp 2022 talk](https://www.youtube.com/watch?v=jGbBZbl-V8Y&list=PLuhRWgmPaHtRP0kfWyDuod_kVHE-5dGGL&index=7).
 
 ### Decentralized DNS
 
