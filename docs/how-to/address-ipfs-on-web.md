@@ -5,17 +5,17 @@ description: Hands-on guides to using and developing with IPFS to build decentra
 
 # Address IPFS on the web
 
-How to link to content on IPFS.
+How to link to content on IPFS with HTTP URL:
 
 ```shell
 https://ipfs.io/ipfs/<CID>
 # e.g
-https://ipfs.io/ipfs/Qme7ss3ARVgxv6rXqVPiikMJ8u2NLgmgszg13pYrDKEoiu
+https://ipfs.io/ipfs/bafybeihkoviema7g3gxyt6la7vd5ho32ictqbilu3wnlo3rs7ewhnp7lly
 ```
 
-Browsers that support IPFS can redirect these requests to your local IPFS node, while those that don't can fetch the resource from the ipfs.io gateway.
+Clients that support IPFS can ignore HTTP details and retrieve data natively, while those that don't can fetch the resource from HTTP server at `ipfs.io` gateway.
 
-You can swap out `ipfs.io` for your own http-to-ipfs gateway, but you are then obliged to keep that gateway running _forever_. If your gateway goes down, users with IPFS aware tools will still be able to fetch the content from the IPFS network as long as any node still hosts it, but for those without, the link will be broken. Don't do that.
+Thanks to CID, one can swap out `ipfs.io` for [self-hosted local gateway](https://docs.ipfs.io/install/). When `ipfs.io` or any other [public gateway](https://ipfs.github.io/public-gateway-checker/) goes down, IPFS aware clients will still be able to fetch the content from the IPFS network as long as at least one node still provides the data behind the CID to the network.
 
 ## Dweb addressing in brief
 
@@ -23,9 +23,9 @@ You can swap out `ipfs.io` for your own http-to-ipfs gateway, but you are then o
 - The first component is the protocol, which tells you how to interpret everything after it.
 - Content referenced by a hash might have named links. (For example, a Git commit has a link named `parent`, which is really just a pointer to the hash of another Git commit.) Everything after the CID in an IPFS address is those named links.
 - Since these addresses aren’t URLs, using them in a web browser requires reformatting them slightly:
-    - Through an HTTP gateway, as `http://<gateway host>/<IPFS address>`
-    - Through the gateway subdomain (more secure, harder to set up): `http://<cid>.ipfs.<gateway host>/<path>`, so the protocol and CID are subdomains.
-    - Through custom URL protocols like `ipfs://<CID>/<path>`, `ipns://<peer ID>/<path>`, and `dweb://<IPFS address>`
+    - Through a [path gateway](#path-gateway), as `https://<gateway-host>/ipfs/<cid>/<path>`
+    - Through a [subdomain gateway](#subdomain-gateway) (more secure, harder to set up): `https://<cid>.ipfs.<gateway-host>/<path>`, for hosting websites with Origin isolation
+    - Through native protocol handlers like `ipfs://<cid>/<path>`, `ipns://<ipns-name>/<path>`, when we don't want to hard-code a specific HTTP gateway in the URI
 
 ## HTTP gateways
 
@@ -37,22 +37,14 @@ HTTP gateways have worked well since 2015, but they come with a significant set 
 
 ### Protocol upgrade
 
-Tools and browser extensions should detect IPFS content paths and resolve them directly over IPFS protocol. They should use HTTP gateway only as a fallback when no native implementation is available in order to ensure a smooth, backward-compatible transition.
+Long term, deserialized responses returned by a public HTTP gateway aim to be used only as a fallback when no native implementation of IPFS is available.
+
+IPFS clients, user agents, tools and extensions should detect CIDs in URLs, DNSlinks or IPFS content paths and resolve them directly over IPFS protocol (ensuring the retrieved data match the expected hash). 
 
 ::: tip
-Use relative or absolute URLs that include content-addressed paths. This will take advantage of content addressing today while ensuring backward compatibility with the legacy web.
 
-For example, a website can load static assets from content-addressed paths:
+An example of user agent that support IPFS natively is [Brave](https://brave.com/ipfs-support/) or a regular web browser with [IPFS Companion](https://docs.ipfs.tech/install/ipfs-companion/) extension installed next to IPFS node such as [IPFS Desktop](https://docs.ipfs.tech/install/ipfs-desktop/).
 
-```
-<link rel="stylesheet" href="https://example.com/ipfs/QmNrgEMcUygbKzZeZgYFosdd27VE9KnWbyUD73bKZJ3bGi?filename=style.css">
-```
-
-```
-<link rel="stylesheet" href="/ipfs/QmNrgEMcUygbKzZeZgYFosdd27VE9KnWbyUD73bKZJ3bGi?filename=style.css">
-```
-
-User agents that support IPFS, such as a browser with [ipfs-companion](https://docs.ipfs.tech/install/ipfs-companion/), may recognize the `/ipfs/<CID>` content path and load the related asset over IPFS instead of HTTP. User agents without IPFS support still get the correct data from the original HTTP server.
 :::
 
 ## Path gateway
@@ -78,10 +70,10 @@ https://ipfs.io/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.ht
 ```
 
 ### Using IPNS
-Given an IPNS `<ipnsid>`, a URL path can be constructed as follows:
+Given an [IPNS Name](https://specs.ipfs.tech/ipns/ipns-record/#ipns-name) `<ipns-name>`, a URL path can be constructed as follows:
 
 ```plaintext
-https://<gateway-host>.tld/ipns/<ipnsid>/path/to/resource
+https://<gateway-host>.tld/ipns/<ipns-name>/path/to/resource
 ```
 
 Example:
@@ -91,7 +83,7 @@ https://ipfs.io/ipns/k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv
 ```
 
 ### Using DNSLink
-Given a DNSLink `<dnslink>`, a URL path can be constructed as follows:
+Given a `<dnslink>` (DNS name with [DNSLink](https://dnslink.dev/) TXT record), a URL path can be constructed as follows:
 
 ```plaintext
 https://<gateway-host>.tld/ipns/<dnslink>/path/to/resource
@@ -125,7 +117,7 @@ https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.cf-ipfs
 https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.localhost:8080/wiki/
 ```
 
-#### Native support in Kubo 0.5+
+#### Native support in Kubo
 
 [Kubo](https://dist.ipfs.tech/#kubo) provides native support for subdomain gateways on hostnames defined in the [`Gateway.PublicGateways`](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewaypublicgateways) configuration map.
 
