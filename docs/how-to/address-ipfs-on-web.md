@@ -1,61 +1,83 @@
 ---
-title: Address IPFS on the Web
+title: Address IPFS on the web
 description: Hands-on guides to using and developing with IPFS to build decentralized web apps and services.
 ---
 
 # Address IPFS on the web
 
-How to link to content on IPFS with HTTP URL:
+This page describes how to address a node in the IPFS network. Clients that support the IPFS protocol can ignore HTTP details and retrieve data natively, while those that don't can fetch the resource from HTTP server at `ipfs.io` gateway, as long as they have the content identifier (CID).
+When `ipfs.io` or any other [public gateway](https://ipfs.github.io/public-gateway-checker/) goes down, IPFS aware clients will still be able to fetch the content from the IPFS network as long as at least one node still provides the data behind the CID to the network:
+
+Addresses using a gateway use the following form, where `<gateway>` is the gateway address, and `<CID>` is the content identifier
 
 ```shell
-https://ipfs.io/ipfs/<CID>
-# e.g
+https://<gateway>/ipfs/<CID>
+```
+
+For example:
+
+```shell
 https://ipfs.io/ipfs/bafybeihkoviema7g3gxyt6la7vd5ho32ictqbilu3wnlo3rs7ewhnp7lly
 ```
 
-Clients that support IPFS can ignore HTTP details and retrieve data natively, while those that don't can fetch the resource from HTTP server at `ipfs.io` gateway.
+A [self-hosted local gateway](https://docs.ipfs.io/install/) can also be used, instead of `ipfs.io`. 
 
-Thanks to CID, one can swap out `ipfs.io` for [self-hosted local gateway](https://docs.ipfs.io/install/). When `ipfs.io` or any other [public gateway](https://ipfs.github.io/public-gateway-checker/) goes down, IPFS aware clients will still be able to fetch the content from the IPFS network as long as at least one node still provides the data behind the CID to the network.
+## IPFS addressing in brief
 
-## Dweb addressing in brief
+In IPFS, content addresses are path-like; that is, the addresses are components separated by slashes. The first component is the protocol, which tells you how to interpret everything after it.
 
-- In IPFS, addresses (for content) are path-like; they are components separated by slashes.
-- The first component is the protocol, which tells you how to interpret everything after it.
-- Content referenced by a hash might have named links. (For example, a Git commit has a link named `parent`, which is really just a pointer to the hash of another Git commit.) Everything after the CID in an IPFS address is those named links.
-- Since these addresses aren’t URLs, using them in a web browser requires reformatting them slightly:
-    - Through a [path gateway](#path-gateway), as `https://<gateway-host>/ipfs/<cid>/<path>`
-    - Through a [subdomain gateway](#subdomain-gateway) (more secure, harder to set up): `https://<cid>.ipfs.<gateway-host>/<path>`, for hosting websites with Origin isolation
-    - Through native protocol handlers like `ipfs://<cid>/<path>`, `ipns://<ipns-name>/<path>`, when we don't want to hard-code a specific HTTP gateway in the URI
+Content referenced by a hash may have named links. For example, a Git commit has a link named `parent`, which is really just a pointer to the hash of another Git commit. Components in an IPFS address after the CID are the named links.
+
+Since content addresses aren’t URLs, using them in a web browser requires reformatting. The options for this are:
+
+1. A [path gateway](#path-gateway)
+   
+   ```shell
+   https://<gateway-host>/ipfs/<cid>/<path>
+   ```
+ 
+2. A [subdomain gateway](#subdomain-gateway), for hosting websites with origin isolation. This is more secure, but harder to set up.  
+
+   ```shell
+   https://<cid>.ipfs.<gateway-host>/<path> 
+   ```
+   
+3. Native protocol handlers, when you don't want to hard-code a specific HTTP gateway in the URI:
+
+   ```shell
+   ipfs://<cid>/<path>
+   ```
+   
+   ```shell
+   ipns://<ipns-name>/<path>
+   ```
 
 ## HTTP gateways
 
-Gateways are provided strictly for convenience: in other words, they help tools that speak HTTP but do not speak distributed protocols (such as IPFS) to communicate. They are the first stage of the upgrade path for the web. [More information about IPFS Gateways](../concepts/ipfs-gateway.md).
+HTTP gateways allow tools that "speak" HTTP but do not speak "IPFS" to communicate. They are the first stage of the upgrade path for the web. [More information about IPFS Gateways](../concepts/ipfs-gateway.md). 
 
-### Centralization
-
-HTTP gateways have worked well since 2015, but they come with a significant set of limitations related both to the centralized nature of HTTP and some of HTTP's semantics. Location-based addressing of a gateway depends on both DNS and HTTPS/TLS, which relies on trust in [certificate authorities](https://en.wikipedia.org/wiki/Certificate_authority) (CAs) and [public key infrastructure](https://en.wikipedia.org/wiki/Public_key_infrastructure) (PKI). In the long term, these issues should be mitigated by the use of opportunistic protocol upgrade schemes.
+One downside of HTTP gateways is centralization. Location-based addressing of a gateway depends on both DNS and HTTPS/TLS, which relies on trust in [certificate authorities](https://en.wikipedia.org/wiki/Certificate_authority) (CAs) and [public key infrastructure](https://en.wikipedia.org/wiki/Public_key_infrastructure) (PKI). In the long term, these issues should be mitigated by the use of opportunistic protocol upgrade schemes.
 
 ### Protocol upgrade
 
-Long term, deserialized responses returned by a public HTTP gateway aim to be used only as a fallback when no native implementation of IPFS is available.
+Long term, deserialized responses returned by a public HTTP gateway are used only as a fallback when no native implementation of IPFS is available.
 
-IPFS clients, user agents, tools and extensions should detect CIDs in URLs, DNSlinks or IPFS content paths and resolve them directly over IPFS protocol (ensuring the retrieved data match the expected hash). 
+IPFS clients, user agents, tools and extensions should detect CIDs in URLs, DNSlinks or IPFS content paths and resolve them directly over the IPFS protocol. This ensures that the retrieved data matches the expected hash. 
 
-::: tip
+Examples of user agents that support IPFS natively are:
 
-An example of user agent that support IPFS natively is [Brave](https://brave.com/ipfs-support/) or a regular web browser with [IPFS Companion](https://docs.ipfs.tech/install/ipfs-companion/) extension installed next to IPFS node such as [IPFS Desktop](https://docs.ipfs.tech/install/ipfs-desktop/).
-
-:::
+- [Brave](https://brave.com/ipfs-support/)
+- A standard web browser with [IPFS Companion](https://docs.ipfs.tech/install/ipfs-companion/) installed next to an IPFS node, such as [IPFS Desktop](https://docs.ipfs.tech/install/ipfs-desktop/)
 
 ## Path gateway
 
-In the most basic scheme, a URL path used for content addressing is effectively a resource name without a canonical location. The HTTP server provides the location part, which makes it possible for browsers to interpret an IPFS content path as relative to the current server and just work without a need for any conversion. Given a gateway host address (such as `ipfs.io`) and a path to the resource, (`/path/to/resource`), a [CID](../concepts/content-addressing.md) (`<cid>`), IPNS ID (`<ipnsid>`) or [DNSLink](../concepts/dnslink/) (`<dnslink>`) can all be used.
+A path gateway is the most basic scheme. In this scheme, a URL path used for content addressing is effectively a resource name without a canonical location. The HTTP server provides the location part, which makes it possible for browsers to interpret an IPFS content path relative to the current server and work without need for any conversion. Given a gateway host address (i.e. `ipfs.io`), and a path to the resource, (i.e `/path/to/resource`), a [CID](../concepts/content-addressing.md) (`<cid>`), IPNS ID (`<ipnsid>`) or [DNSLink](../concepts/dnslink.md) (`<dnslink>`) can all be used.
 
-- [Using a CID](#using-a-cid)
-- [Using IPNS](#using-ipns)
-- [Using DNSLink](#using-dnslink)
+[Using a CID](#cid)
+[Using IPNS](#ipns)
+[Using DNSLink](#dnslink)
 
-### Using a CID
+### CID
 Given a CID `<cid>`, a URL path can be constructed as follows:
 
 ```plaintext
@@ -69,8 +91,8 @@ https://ipfs.io/ipfs/bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq
 https://ipfs.io/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html
 ```
 
-### Using IPNS
-Given an [IPNS Name](https://specs.ipfs.tech/ipns/ipns-record/#ipns-name) `<ipns-name>`, a URL path can be constructed as follows:
+### IPNS
+Given an [IPNS name](https://specs.ipfs.tech/ipns/ipns-record/#ipns-name) `<ipns-name>`, a URL path can be constructed as follows:
 
 ```plaintext
 https://<gateway-host>.tld/ipns/<ipns-name>/path/to/resource
@@ -82,8 +104,8 @@ Example:
 https://ipfs.io/ipns/k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8
 ```
 
-### Using DNSLink
-Given a `<dnslink>` (DNS name with [DNSLink](https://dnslink.dev/) TXT record), a URL path can be constructed as follows:
+### DNSLink
+Given a DNS name with a [DNSLink](https://dnslink.dev/) text record `<dnslink>`, a URL path can be constructed as follows:
 
 ```plaintext
 https://<gateway-host>.tld/ipns/<dnslink>/path/to/resource
@@ -96,20 +118,20 @@ https://ipfs.io/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
 ```
 
 ::: danger
-In this scheme, all pages share a [single origin](https://en.wikipedia.org/wiki/Same-origin_policy), which means this type of gateway should be used only when site isolation does not matter (static content without cookies, local storage, or Web APIs that require user permission).
+In this scheme, all pages share a [single origin](https://en.wikipedia.org/wiki/Same-origin_policy). As such, this type of gateway should only be used when site isolation does not matter. Examples include static content without cookies, local storage, or APIs that require user permission.
 
-When in doubt, use [subdomain gateway](#subdomain-gateway).
+When in doubt, use a [subdomain gateway](#subdomain-gateway).
 :::
 
 ## Subdomain gateway
 
-When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) is needed, [CIDv1](../concepts/content-addressing.md#identifier-formats) in case-insensitive encoding such as Base32 or Base36 should be used in the subdomain:
+When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) is needed, a [CIDv1](../concepts/content-addressing.md#identifier-formats) in a case-insensitive encoding such as Base32 or Base36 should be used in the subdomain:
 
 ```plaintext
 https://<cidv1b32>.ipfs.<gateway-host>.tld/path/to/resource
 ```
 
-Example:
+Examples:
 
 ```plaintext
 https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.dweb.link/wiki/
@@ -123,13 +145,13 @@ https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.localho
 
 Learn more about Kubo configuration for hosting a public gateway:
 
-- [`Gateway.PublicGateways` docs](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewaypublicgateways) for defining gateway behavior on specified hostnames
+- [`Gateway.PublicGateways`](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewaypublicgateways) for defining gateway behavior on specified hostnames
 - [`Gateway` recipes](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes) with ready to use one-liners for most common use cases
 
 ::: warning Known issues
 
-- Some browsers and other user agents force lowercase for the authority part of URLs, breaking case-sensitive CIDs before the HTTP gateway has a chance to read them
-- DNS label length is limited to 63 characters ([RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034#page-7))
+1. Some browsers and other user agents force lowercase for the authority part of URLs, breaking case-sensitive CIDs before the HTTP gateway has a chance to read them.
+1. DNS label length is limited to 63 characters ([RFC 1034](https://datatracker.ietf.org/doc/html/rfc1034#page-7))
 
 Due to these limitations, the use of short, case-insensitive CIDv1 in a subdomain context is advised.
 Base32 is the safe default; the less-popular Base36 can be used for longer ED25519 libp2p keys.
@@ -140,43 +162,51 @@ See the next section to learn how to convert an existing CIDv0 to a DNS-safe rep
 
 #### CID conversion for subdomains
 
-If you have content identified by an older CIDv0, there are easy ways to safely represent it as CIDv1 for use in subdomains and other case-insensitive contexts.
+If you have content identified by an older CIDv0, there are an automatic and a manual option to safely represent it as CIDv1 for use in subdomains and other case-insensitive contexts.
 
-#### Automatic — leverage the gateway in Kubo
+- [Automatic](#automatic--leverage-the-gateway-in-kubo)
+- [Manual](#manual--use-cidipfsio-or-the-command-line)
 
-**TL;DR:** Using a subdomain gateway as a drop-in replacement for a path one removes the need for manual CID conversion.
+##### Automatic — leverage the gateway in Kubo
 
-Request for a content path sent to the gateway domain will return an HTTP 301 redirect to a correct subdomain version, taking care of any necessary encoding conversion if needed:
+Using a subdomain gateway as a drop-in replacement for a path one removes the need for manual CID conversion.
+
+Requests for a content path sent to the gateway domain will return an HTTP 301 redirect to a correct subdomain version, taking care of any necessary encoding conversion if needed:
 
 ```plaintext
 https://<gateway-host>.tld/ipfs/<cid> -> https://<cidv1>.ipfs.<gateway-host>.tld/
 ```
 
-To illustrate, opening the CIDv0 resource at [`https://dweb.link/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html`](https://dweb.link/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html)
+For example, opening the CIDv0 resource at [`https://dweb.link/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html`](https://dweb.link/ipfs/QmT5NvUtoM5nWFfrQdVrFtvGfKFmG7AHE8P34isapyhCxX/wiki/Mars.html)
 returns a redirect to a CIDv1 representation at [`https://bafybeicgmdpvw4duutrmdxl4a7gc52sxyuk7nz5gby77afwdteh3jc5bqa.ipfs.dweb.link/wiki/Mars.html`](https://bafybeicgmdpvw4duutrmdxl4a7gc52sxyuk7nz5gby77afwdteh3jc5bqa.ipfs.dweb.link/wiki/Mars.html).
 
-The gateway takes care of converting the CID to case-insensitive encoding.
+The gateway converts the CID to case-insensitive encoding.
 The multihash in CIDv1 is the same as in the original CIDv0.
 
 #### Manual — use cid.ipfs.io or the command line
 
-One can also do the conversion manually.
+The conversion can also be done manually.
 
-To convert a CID to Base32 ([RFC4648](https://datatracker.ietf.org/doc/html/rfc4648#section-6), no padding) use [cid.ipfs.io](https://cid.ipfs.io) or the command line:
+To convert a CID to Base32 with no padding ([RFC4648](https://datatracker.ietf.org/doc/html/rfc4648#section-6)), use [cid.ipfs.io](https://cid.ipfs.io), or the command line. Below is an example using the command line:
 
-```shell-session
-$ ipfs cid base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
+```shell
+ipfs cid base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
+```
+
+The output of this is:
+
+```shell
 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 ```
 
-PeerIDs can be represented as [CID with `libp2p-key` multicodec](https://github.com/libp2p/specs/blob/master/RFC/0001-text-peerid-cid.md).
+PeerIDs can be represented as a [CID with `libp2p-key` multicodec](https://github.com/libp2p/specs/blob/master/RFC/0001-text-peerid-cid.md).
 Base36 is suggested as a safer default for longer keys:
 
-```shell-session
-$ ipfs key list -l --ipns-base base36
+```shell
+ipfs key list -l --ipns-base base36
 k51qzi5uqu5dh9ihj4p2v5sl3hxvv27ryx2w0xrsv6jmmqi91t9xp8p9kaipc2 self
 
-$ ipfs cid format -v 1 -b base36 --codec libp2p-key QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN
+ipfs cid format -v 1 -b base36 --codec libp2p-key QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN
 k2k4r8jl0yz8qjgqbmc2cdu5hkqek5rj6flgnlkyywynci20j0iuyfuj
 ```
 
@@ -186,24 +216,24 @@ The gateway provided by Kubo understands the `Host` header present in HTTP reque
 If DNSLink is present, the gateway will return content from a path resolved via DNS TXT record.
 This type of gateway provides full [origin isolation](https://en.wikipedia.org/wiki/Same-origin_policy).
 
-Example: [https://docs.ipfs.tech](https://docs.ipfs.tech) (this website)
+An example is this website, [https://docs.ipfs.tech](https://docs.ipfs.tech).
 
 ::: tip
-For a complete DNSLink guide, including tutorials, usage examples, and FAQs, check out [dnslink.io](https://dnslink.io).
+For a complete DNSLink guide, including tutorials, usage examples, and FAQs, see [dnslink.io](https://dnslink.io).
 :::
 
 ## Native URLs
+
+The native address format is the same as a [subdomain gateway](https://docs.ipfs.tech/how-to/address-ipfs-on-web/#subdomain-gateway) HTTP URL, but with two differences:
+
+- The protocol scheme is replaced by the `ipfs` or `ipns` namespace
+- The location-based authority component (the gateway host and port) is replaced with a CID
 
 ```plaintext
 ipfs://{cid}/path/to/subresource/cat.jpg
 ```
 
-The native address format is the same as a [subdomain gateway](https://docs.ipfs.tech/how-to/address-ipfs-on-web/#subdomain-gateway) HTTP URL, but with:
-
-- protocol scheme replaced by `ipfs` or `ipns` namespace
-- location-based authority component (gateway host+port) replaced with content-addressed one in the form of a unique content identifier (CID)
-
-For example:
+Examples:
 
 ```plaintext
 ipfs://{cidv1}
@@ -220,7 +250,7 @@ Our main goal here is to reuse existing standards that maximize interoperability
 :::
 
 
-The first element after the double slash is an opaque identifier representing the content root. It is interpreted as an authority component used for origin calculation, which provides necessary isolation between security contexts of different content trees.
+The first element after the double slash is an identifier representing the content root. It is interpreted as an authority component used for origin calculation, which provides necessary isolation between security contexts of different content trees.
 
 Example:
 
@@ -228,27 +258,28 @@ Example:
 ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_van_Gogh.html
 ```
 
-::: warning Avoid case-sensitive CID in ipfs://
+::: warning Avoid case-sensitive CID 
 Some user agents will force-lowercase the CID component of URL-like address.
-To ensure interop with existing libraries and software, use case-insensitive CID encoding. Use of CIDv1 in Base32 or Base36 is advised.
+To ensure interopability with existing libraries and software, use case-insensitive CID encoding. Use of CIDv1 in Base32 or Base36 is advised.
 :::
 
 ### Turning native address to a canonical content path
 
 Every "URL" address can be turned back into a content path with ease:
 
-> `ipfs://{immutable-root}/path/to/resourceA` → `/ipfs/{immutable-root}/path/to/resourceA`  
-> `ipns://{mutable-root}/path/to/resourceB` → `/ipns/{mutable-root}/path/to/resourceB`
+Examples:
+- `ipfs://{immutable-root}/path/to/resourceA` converts to `/ipfs/{immutable-root}/path/to/resourceA`  
+- `ipns://{mutable-root}/path/to/resourceB` converts to `/ipns/{mutable-root}/path/to/resourceB`
 
 ## Further resources
 
 ### Technical specification for implementers
 
-The best and most up-to-date source of truth about IPFS addressing can be found in [the IPFS in-web-browsers repo](https://github.com/ipfs/in-web-browsers/blob/master/ADDRESSING.md).
+See the [IPFS in-web-browsers repository](https://github.com/ipfs/in-web-browsers/blob/master/ADDRESSING.md).
 
 ### Background on address scheme discussions
 
-Discussions around IPFS addressing have been going on since [@jbenet](https://github.com/jbenet) published the [IPFS whitepaper](https://ipfs.io/ipfs/QmR7GSQM93Cx5eAg6a6yRzNde1FQv7uL6X1o4k7zrJa3LX/ipfs.draft3.pdf), with a number of other approaches being proposed. This long-standing design discussion includes many lengthy GitHub issue threads, but a good summary can be found in [this PR](https://github.com/ipfs/specs/pull/152).
+Discussions around IPFS addressing have been ongoing since [@jbenet](https://github.com/jbenet) published the [IPFS whitepaper](https://ipfs.io/ipfs/QmR7GSQM93Cx5eAg6a6yRzNde1FQv7uL6X1o4k7zrJa3LX/ipfs.draft3.pdf), with a number of other approaches being proposed. This long-standing design discussion includes many lengthy GitHub issue threads, but a good summary can be found in [this PR](https://github.com/ipfs/specs/pull/152).
 
 ### IPFS Companion
 
@@ -256,9 +287,9 @@ Discussions around IPFS addressing have been going on since [@jbenet](https://gi
 
 It provides support for native URLs and will automatically redirect IPFS gateway requests to your local Kubo daemon so that you are not relying on or trusting remote gateways.
 
-### Shared d-web namespace
+### Shared dWeb namespace
 
-This concept isn't yet built but may be explored and experimented with in the future. The distributed web community is exploring the idea of a shared `dweb` namespace to remove the complexity of addressing IPFS and other content-addressed protocols. Currently investigated approaches include:
+This concept isn't yet built, but may be explored and experimented with in the future. The distributed web community is exploring the idea of a shared `dweb` namespace to remove the complexity of addressing IPFS and other content-addressed protocols. Approaches currently being investigated are:
 
 - `dweb://` protocol handler ([arewedistributedyet/issues/28](https://github.com/arewedistributedyet/arewedistributedyet/issues/28))
 - `.dweb` special-use top-level domain name ([arewedistributedyet/issues/34](https://github.com/arewedistributedyet/arewedistributedyet/issues/34))
