@@ -62,7 +62,7 @@ One downside of HTTP gateways is centralization. Location-based addressing of a 
 
 Long term, deserialized responses returned by a public HTTP gateway are used only as a fallback when no native implementation of IPFS is available.
 
-IPFS clients, user agents, tools and extensions should detect CIDs in URLs, DNSlinks or IPFS content paths and resolve them directly over the IPFS protocol. This ensures that the retrieved data matches the expected hash. 
+IPFS clients, user agents, tools and extensions should detect CIDs in URLs, DNSLinks or IPFS content paths and resolve them directly over the IPFS protocol. This ensures that the retrieved data matches the expected hash. 
 
 Examples of user agents that support IPFS natively are:
 
@@ -260,7 +260,7 @@ ipfs://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq/wiki/Vincent_
 
 ::: warning Avoid case-sensitive CID 
 Some user agents will force-lowercase the CID component of URL-like address.
-To ensure interopability with existing libraries and software, use case-insensitive CID encoding. Use of CIDv1 in Base32 or Base36 is advised.
+To ensure interoperability with existing libraries and software, use case-insensitive CID encoding. Use of CIDv1 in Base32 or Base36 is advised.
 :::
 
 ### Turning native address to a canonical content path
