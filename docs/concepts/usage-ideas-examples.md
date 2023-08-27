@@ -154,7 +154,7 @@ If you are currently using MongoDB, you might be more comfortable with [ThreadDB
 
 ### Deploy your website on IPFS with Spheron
 
-[Spheron Network](https://spheron.network/) facilitates the seamless deployment of websites on IPFS and Filecoin. It offers developers the convenience of linking their websites or web applications hosted on platforms such as GitHub, Gitlab, and Bitbucket to the Spheron Network. Subsequently, any modifications made to a designated branch will trigger an automatic build and deployment on IPFS. In addition to this, Spheron incorporates integration features for the Ethereum Name Service (ENS) and other domain name services. The platform is poised to introduce an expanded array of deployment methods, including through a command-line interface, API, and SDK, among others.
+[Spheron Network](https://spheron.network/) facilitates the seamless deployment of websites on IPFS and Filecoin. It offers developers the convenience of linking their websites or web applications hosted on platforms such as GitHub, Gitlab, and Bitbucket to the Spheron Network. Subsequently, any modifications made to a designated branch will trigger an automatic build and deployment on IPFS. In addition to this, Spheron incorporates integration features for the Ethereum Name Service (ENS) and other domain name services. The platform is poised to introduce an expanded array of deployment methods, including a command-line interface, API, and SDK.
 
 ### Ethereum and Solidity specific applications
 
