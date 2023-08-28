@@ -1,0 +1,3 @@
+[submodule "vale"]
+	path = vale
+	url = https://github.com/errata-ai/vale.git

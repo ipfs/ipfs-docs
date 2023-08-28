@@ -32,7 +32,8 @@ if [ ${#mdFileList} -gt 0 ]; then
     echo $regularBar
     echo "${bold}Spelling and writing style check${normal}"
     echo $regularBar
-    pre-commit run
+    vale sync
+    vale --config='.vale.ini' $mdFileList "$@"
     spellPassed=$?
 
     echo " "
@@ -46,7 +47,7 @@ if [ ${#mdFileList} -gt 0 ]; then
     echo $regularBar
     echo "${bold}Formatting check${normal}"
     echo $regularBar
-    npx markdownlint-cli2 $mdFileList "$@"
+    npx markdownlint-cli2 --fix $mdFileList "$@"
     formatPassed=$?
 
     errorDescr=""
