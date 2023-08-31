@@ -1,96 +1,148 @@
 ---
 title: Work with pinning services
-description: Learn how to use or create remote pinning services with IPFS, the InterPlanetary File System.
+description: Learn how to use or create remote pinning services with IPFS.
 ---
-
 
 # Work with remote pinning services
 
-Depending on how you use IPFS, you might find it helpful to use a **remote pinning service** instead of, or in addition to, pinning files on your local IPFS node. Whether it happens remotely or locally, **pinning** an item in IPFS identifies it as something you always wish to keep available, exempting it from the routine _garbage collection_ that IPFS does on infrequently-used items in order to efficiently manage storage space. [Learn more about local pinning →](pin-files.md)
+**Pinning** in IPFS is a process that ensures that the pinned data is exempt from routine [garbage collection](../concepts/persistence.md#garbage-collection) and is therefore always available. In addition to [locally pinning files](../how-to/pin-files.md), you can use a **remote pinning service**, which abstracts this responsibility away from a local, individual node.
+The appropriate solution depends on your particular use case.
 
-If you've got just one local IPFS node that's always running, local pinning may be all you need to ensure your important items are persisted and never garbage-collected. However, using a remote pinning service — or creating your own — might be useful to you if:
 
-- Your local node isn't always online, but you need items to be consistently available.
-- You'd like to keep a persistent backup of your local node's files somewhere else.
-- You don't have all the disk space you need on your local node.
-- You run more than one IPFS node, and would like to use one of them as a "personal pinning service" as your preferred location for permanent storage.
+1. Determine whether to [use an existing service](#when-to-use-a-remote-pinning-service) or [create your own](#when-to-create-your-own-service).
+1. Follow the appropriate steps:
+   - [Use an existing service](#use-a-third-party-pinning-service)
+   - [Create your own service](#create-your-own-pinning-service)
 
-There are a number of commercial pinning services that make it easy for you to purchase pinning capacity for your important files, some of which include Pinata, Temporal, Crust, Infura, and others. Each of these third-party services has its own unique interface for pinning files and managing those pins; this could include a GUI, an API, CLI commands, or other tooling.
+## When to use a remote pinning service
 
-However, you don't need to learn new commands or tools if your pinning service of choice supports the vendor-agnostic [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/) specification. Those services are supported within IPFS itself through the command line: `ipfs pin remote --help`.
+If you have one local IPFS node that's always running, local pinning ensures that important data is persisted and never garbage collected. On the other hand, if your architecture is more complex, an existing or custom remote pinning service may be useful, especially if:
 
-As of January 2021, [Pinata](https://pinata.cloud/) supports the [IPFS Pinning Service API endpoint](https://pinata.cloud/documentation#PinningServicesAPI), with more pinning services on the way! [Learn how to create your own →](#create-your-own-pinning-service)
+- Your local node isn't always online, but data must be consistently available.
+- You require a persistent backup of your local node's files.
+- Your local node does not have enough disk space.
+- You run more than one IPFS node, and would like to use one or more of those nodes as your preferred location for permanent storage.
 
-## Use an existing pinning service
+If you've decided that an existing service is right for you, learn [how to use an existing service](#use-a-third-party-pinning-service)
 
-There are two methods to add an existing pinning service to your IPFS installation:
+## When to create your own service 
 
-- [IPFS Desktop or IPFS Web UI](#ipfs-desktop-or-ipfs-web-ui)
-- [IPFS CLI](#ipfs-cli)
+If existing third-party pinning services don't meet your needs, you can create your own. Any remote pinning service compatible with the [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec) can be added as a custom pinning service. This might be useful in circumstances like:
+
+- Designating your own IPFS node(s) as the preferred location for permanent storage.
+- Running a private pinning service for friends, as a business, as a public service, etc.
+
+::: warning
+Your service must use the [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec) in order to be interoperable with clients using [`ipfs pin remote`](../reference/kubo/cli.md#ipfs-pin-remote) commands.
+::: 
+
+If you've decided that creating your own pinning service is right for you, learn [how to create your own pinning service](#create-your-own-pinning-service).
+
+## Use a third-party pinning service
+
+Third-party pinning services allow you to purchase pinning capacity for important data. Each service has its own approach to pinning data and managing pins, so users should do their research to ensure that the service meets their particular needs. Service providers include, but are not limited to:
+
+- [Pinata](https://pinata.cloud/)
+- [Filebase](https://filebase.com/)
+- [Temporal](https://temporal.cloud/)
+- [Crust](https://crust.network/)
+- [Infura](https://infura.io/)
+
+::: callout 
+As of June 2023, [Filebase](https://filebase.com) and [Pinata](https://pinata.cloud/) support the [IPFS Pinning Service API endpoint](https://github.com/ipfs/pinning-services-api-spec).
+::: 
 
 To add and use a remote pinning service directly in IPFS, you'll first need to have an account with that service.
 
+The method by which you add a remote pinning service depends on the way in which you are using IPFS:
+
+- [IPFS Desktop or IPFS Web UI](#ipfs-desktop-or-ipfs-web-ui)
+- [IPFS Kubo](#ipfs-kubo)
+
 ### IPFS Desktop or IPFS Web UI
 
-You can add your favorite pinning service(s) to IPFS Desktop/Web UI directly, enabling you to pin and unpin items from the Files screen in the same way you would add or remove local pins.
+You can add your favorite pinning service(s) to [IPFS Desktop](../install/ipfs-desktop.md) or [Web UI](https://github.com/ipfs/ipfs-webui) directly, enabling you to pin and unpin items via a UI similar to how you would add or remove local pins.
 
-#### Adding a new pinning service
+First, [add the pinning service](#add-a-pinning-service-in-the-ui). Then, you can [use it](#use-a-pinning-service-in-the-ui). 
 
-To add a new pinning service, open up IPFS Desktop or Web UI, navigate to the **Pinning Services** section of the **Settings** screen, and click the **Add Service** button:
+#### Add a pinning service in the UI
 
-> ![The Desktop/Web UI Settings screen, ready for adding a new pinning service](./images/work-with-pinning-services/add-service.jpg)
+To add a new pinning service to IPFS Desktop or Web UI:
 
-Then, select your chosen pinning service from the modal that pops up. If the pinning service you'd like to add isn't listed in that modal, don't worry — you can add any remote pinning service that supports the IPFS Pinning Service API by clicking the **Add a custom one** link.
+1. Start IPFS Desktop or Web UI
+1. In **Settings** , navigate to **Pinning Services**.
+1. Click the **Add Service** button.
 
-> ![Desktop/Web UI modal for selecting a pinning service to add](./images/work-with-pinning-services/add-service-picker.jpg)
+   ![The Desktop/Web UI Settings screen, ready for adding a new pinning service](./images/work-with-pinning-services/add-service.jpg)
 
-In the next screen, you’ll be asked for a few other details:
+1. In the pop up, select your chosen pinning service. 
 
-| Preconfigured service (e.g., Pinata)                                                    | Custom service                                                                                                 |
-| ----                                                                                           | ----                                                                                                           |
-| ![Adding Pinata in Desktop/Web UI](./images/work-with-pinning-services/add-service-pinata.jpg) | ![Adding custom pinning service in Desktop/Web UI](./images/work-with-pinning-services/add-service-custom.jpg) |
+   If the pinning service you'd like to use isn't listed in that modal, click **Add a custom one** to add any remote pinning service that supports the [IPFS Pinning Service API spec](https://github.com/ipfs/pinning-services-api-spec#adoption).
 
-- A **nickname** for this service. This can be helpful if, for example, you want to add two accounts from the same service.
-- The URL for your service's **API endpoint**.
-  _Note: This field only appears if you've selected a custom pinning service!_
-- Your **secret access token**. This is the unique token provided to you by the pinning service — check its documentation for more info.
-  _To illustrate, example below shows which value should be copied from [pinata.cloud/keys](https://pinata.cloud/keys)_
-  > ![Pinata secret access token](./images/work-with-pinning-services/add-service-pinata-token.jpg)
+   ![Desktop/Web UI modal for selecting a pinning service to add](./images/work-with-pinning-services/add-service-picker.jpg)
 
-After you hit **Save**, you’ll see your new pinning service added to the **Pinning Services** section of your **Settings** screen.
+1. Next, enter the following information:
 
-> ![Desktop/Web UI Settings screen with a new pinning service added](./images/work-with-pinning-services/added-service.jpg)
+    - A **nickname** for this service. This can be helpful if, for example, you want to add two accounts from the same service.
+    - Your service's **API endpoint URL**. This field only appears if you've selected a custom pinning service.
+    - You **secret access token**, provided to you by the pinning service. See the your specific pinning service documentation for more info.
 
-#### Using a pinning service
+    Example using Pinata and [pinata.cloud/keys](https://app.pinata.cloud/keys):
+    ![Pinata secret access token](./images/work-with-pinning-services/add-service-pinata-token.jpg)
 
-Now that you’re set up, you can pin or unpin files to your new pinning service directly from the Files screen. Just right-click any file or click the **three dots** action icon in the files list, and select **Set pinning**:
+    Example using Filebase and [console.filebase.com/keys](https://console.filebase.com/keys):
+    ![Filebase secret access token](./images/work-with-pinning-services/add-service-filebase-token.png)
 
-> ![Desktop/Web UI Files screen with the action menu open and "Set pinning" visible](./images/work-with-pinning-services/set-pinning.jpg)
+    Comparison between an existing third-party service and a custom service:
+    | Third-party service (e.g., Pinata)                                                    | Custom service                                                                                                 |
+    | ----                                                                                           | ----                                                                                                           |
+    | ![Adding Pinata in Desktop/Web UI](./images/work-with-pinning-services/add-service-pinata.jpg) | ![Adding custom pinning service in Desktop/Web UI](./images/work-with-pinning-services/add-service-custom.jpg) |   
 
-### IPFS CLI
+1. Click **Save**. Your new pinning service is added to the **Pinning Services** section of your **Settings** screen.
 
-Command-line users benefit from `ipfs pin remote` commands, which simplify remote pinning operations. The built-in pinning service API client executes all the necessary remote calls under the hood.
+   ![Desktop/Web UI Settings screen with a new pinning service added](./images/work-with-pinning-services/added-service.jpg)
 
-#### Adding a new pinning service
+#### Use a pinning service in the UI
 
-To add a new pinning service, use the following command:
+Once you've [added a pinning service](#add-a-pinning-service-in-the-ui), you can quickly pin or unpin files to your new pinning service directly from the UI.
 
-```shell
-$ ipfs pin remote service add nickname https://my-pin-service.example.com/api-endpoint myAccessToken
-```
+To pin a file in the UI:
+1. Navigate to the **Files** screen.
+1. Right-click any file or click the **three dots** action icon in the files list
+1. Select **Set pinning**:
 
-- `nickname` is a unique name for this particular instantiation of a pinning service. This can be helpful if, for example, you want to add two accounts from the same service.
-- `https://my-pin-service.example.com/api-endpoint` is the endpoint supplied to you by the pinning service. Check the service's documentation for more info.
-- `myAccessToken` is the unique secret token provided to you by the pinning service. Check the service's documentation for more info.
+   ![Desktop/Web UI Files screen with the action menu open and "Set pinning" visible](./images/work-with-pinning-services/set-pinning.jpg)
 
-#### Using a pinning service
+### IPFS Kubo
 
-Here are a few CLI commands to get you started. In all examples, replace `nickname` with the unique name you gave the pinning service when you added it.
+IPFS Kubo provides the [`ipfs pin remote`](../reference/kubo/cli.md#ipfs-pin-remote) command to simplify remote pinning operations. The built-in pinning service API client executes all the necessary remote calls.
+
+To use a remote pinning service with Kubo
+
+#### Adding a new pinning service to Kubo
+
+To add a new pinning service:
+
+1. Open a terminal.
+1. Use the [`pin remote service add`](https://docs.ipfs.tech/reference/kubo/cli/#ipfs-pin-remote-service-add) command to add the service:
+    - Give the service a `<nickname>` For example, this can be helpful if you want to add two accounts from the same service.
+    - Add an `<endpoint>`, which is supplied to you by the pinning service. Example: `https://my-pin-service.example.com/api-endpoint` 
+    - Add an `<accessToken>`. This is the unique secret token provided to you by the pinning service. Check the service's documentation for more info.
+
+    ```shell
+    ipfs pin remote service add <nickname> <endpoint> <accessToken>
+    ```
+
+Success. You can now [use the pinning service](#use-a-pinning-service-in-kubo).
+
+#### Use a pinning service in Kubo
+
+The following section describes various commands that allow you to use an added pinning service in Kubo. In each example, replace `<nickname>` with the unique name you gave the pinning service when you added it.
 
 To pin a CID under a human-readable name:
 
 ```shell
-$ ipfs pin remote add --service=nickname --name=war-and-peace.txt bafybeib32tuqzs2wrc52rdt56cz73sqe3qu2deqdudssspnu4gbezmhig4
+$ ipfs pin remote add --service=<nickname> --name=war-and-peace.txt bafybeib32tuqzs2wrc52rdt56cz73sqe3qu2deqdudssspnu4gbezmhig4
 ```
 
 To list successful pins:
@@ -99,7 +151,7 @@ To list successful pins:
 $ ipfs pin remote ls --service=nickname
 ```
 
-To list all "pending" pins:
+To list pending pins:
 
 ```shell
 $ ipfs pin remote ls --service=nickname --status=queued,pinning,failed
@@ -113,19 +165,29 @@ $ ipfs pin remote --help
 
 ## Create your own pinning service
 
-Obviously you aren't limited to a static list of pre-approved services. Any remote pinning service compatible with the [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec) can be added as a custom pinning service — which also means that you can create your own! This might be useful in circumstances like:
+If you're interested in creating your own pinning service for personal or shared use, you have two options:
 
-- Designating one of your own IPFS nodes to be a _personal pinning service_ as a preferred location for permanent storage.
-- Running a private pinning service for your friends or company.
-- Starting your own commercial pinning service.
+1. [Generate a client and server from the OpenAPI spec](https://github.com/ipfs/pinning-services-api-spec#code-generation)
 
-As noted above, your service must use the [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec) in order to be interoperable with client behind `ipfs pin remote` commands.
+1. [Reuse an existing solution](https://github.com/ipfs/pinning-services-api-spec#adoption) to reduce development time. 
+
+Learn more about the [Pinning Service API Spec](https://github.com/ipfs/pinning-services-api-spec).
 
 
-::: tip
-If you're interested in creating your own pinning service for your own personal or shared use, you can [generate client and server from the OpenAPI spec](https://github.com/ipfs/pinning-services-api-spec#code-generation), reducing the development time, or [reuse an existing solution](https://github.com/ipfs/pinning-services-api-spec#adoption)
+::: callout
 
-You may also wish to read continuing details on how the API is evolving in the [Pinning Service API Spec GitHub repo](https://github.com/ipfs/pinning-services-api-spec), and be part of the discussion on its further development!
+**Make your pinning service available to the community**
+
+If you'd like to make your custom pinning service available to all IPFS users, we welcome your submissions. 
+
+First, make sure your service works correctly by running and passing [pinning-service-compliance](https://github.com/ipfs-shipyard/pinning-service-compliance) test suite.
+
+Once you're ready to open the doors to the public, create a pull request against the [IPFS Web UI GitHub repository](https://github.com/ipfs-shipyard/ipfs-webui) in order to add it to the default list of pinning services that are displayed in the IPFS Desktop/Web UI Settings screen, and one of the core maintainers will be in touch.
+
 :::
 
-If you'd like to make your custom pinning service available to every IPFS user, we welcome your submissions. Once you're ready to open the doors to the public, make a PR against the [IPFS Web UI GitHub repo](https://github.com/ipfs-shipyard/ipfs-webui) in order to add it to the default list of pinning services that are displayed in the Desktop/Web UI Settings screen, and one of the core maintainers will be in touch.
+
+## Other options
+
+Pinning services that implement the the vendor-agnostic [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/) specification are supported directly in IPFS Kubo itself. To learn more, run the `ipfs pin remote --help` command.
+

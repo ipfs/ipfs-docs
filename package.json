@@ -59,7 +59,7 @@
     }
   },
   "scripts": {
-    "start": "npm run docs:dev",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider npm run docs:dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format:styles": "stylus-supremacy format ./docs/.vuepress/**/*.styl --replace",
     "docs:dev": "vuepress dev docs",
