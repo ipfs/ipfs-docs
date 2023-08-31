@@ -8,19 +8,18 @@ description: Learn how to use or create remote pinning services with IPFS.
 **Pinning** in IPFS is a process that ensures that the pinned data is exempt from routine [garbage collection](../concepts/persistence.md#garbage-collection) and is therefore always available. In addition to [locally pinning files](../how-to/pin-files.md), you can use a **remote pinning service**, which abstracts this responsibility away from a local, individual node.
 The appropriate solution depends on your particular use case.
 
-If you decided you need a remote pinning service:
 
-1. Determine whether to you [use an existing service](#when-to-use-a-remote-pinning-service) or [create your own](#when-to-create-your-own-service).
+1. Determine whether to [use an existing service](#when-to-use-a-remote-pinning-service) or [create your own](#when-to-create-your-own-service).
 1. Follow the appropriate steps:
    - [Use an existing service](#use-a-third-party-pinning-service)
    - [Create your own service](#create-your-own-pinning-service)
 
 ## When to use a remote pinning service
 
-If you only have one local IPFS node that's always running, local pinning ensures that important data is persisted and never garbage collected. On the other hand, if your architecture is more complex, an existing or custom remote pinning service may be useful, especially if:
+If you have one local IPFS node that's always running, local pinning ensures that important data is persisted and never garbage collected. On the other hand, if your architecture is more complex, an existing or custom remote pinning service may be useful, especially if:
 
 - Your local node isn't always online, but data must be consistently available.
-- You'd require a persistent backup of your local node's files.
+- You require a persistent backup of your local node's files.
 - Your local node does not have enough disk space.
 - You run more than one IPFS node, and would like to use one or more of those nodes as your preferred location for permanent storage.
 
@@ -37,7 +36,7 @@ If existing third-party pinning services don't meet your needs, you can create y
 Your service must use the [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec) in order to be interoperable with clients using [`ipfs pin remote`](../reference/kubo/cli.md#ipfs-pin-remote) commands.
 ::: 
 
-If you've decided that an existing service is right for you, learn [how to create your own pinning service](#create-your-own-pinning-service).
+If you've decided that creating your own pinning service is right for you, learn [how to create your own pinning service](#create-your-own-pinning-service).
 
 ## Use a third-party pinning service
 
@@ -172,14 +171,18 @@ If you're interested in creating your own pinning service for personal or shared
 
 1. [Reuse an existing solution](https://github.com/ipfs/pinning-services-api-spec#adoption) to reduce development time. 
 
-Learn more about the Pinning Service Spec](https://github.com/ipfs/pinning-services-api-spec).
+Learn more about the [Pinning Service API Spec](https://github.com/ipfs/pinning-services-api-spec).
 
 
 ::: callout
 
 **Make your pinning service available to the community**
 
-If you'd like to make your custom pinning service available to all IPFS users, we welcome your submissions. Once you're ready to open the doors to the public, create a pull request against the [IPFS Web UI GitHub repository](https://github.com/ipfs-shipyard/ipfs-webui) in order to add it to the default list of pinning services that are displayed in the Desktop/Web UI Settings screen, and one of the core maintainers will be in touch.
+If you'd like to make your custom pinning service available to all IPFS users, we welcome your submissions. 
+
+First, make sure your service works correctly by running and passing [pinning-service-compliance](https://github.com/ipfs-shipyard/pinning-service-compliance) test suite.
+
+Once you're ready to open the doors to the public, create a pull request against the [IPFS Web UI GitHub repository](https://github.com/ipfs-shipyard/ipfs-webui) in order to add it to the default list of pinning services that are displayed in the IPFS Desktop/Web UI Settings screen, and one of the core maintainers will be in touch.
 
 :::
 
