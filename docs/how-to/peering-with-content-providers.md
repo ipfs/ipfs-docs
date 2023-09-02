@@ -118,6 +118,13 @@ See [web3.storage/PEERS](https://github.com/web3-storage/web3.storage/blob/main/
 | ------- | --------- |
 |`12D3KooWQ85aSCFwFkByr5e3pUCQeuheVhobVxGSSs1DrRQHGv1t`|`/dnsaddr/node-1.ipfs.4everland.net`|
 
+### StorryTV
+
+| Peer ID | Addresses |
+| ------- | --------- |
+|`bafzaajaiaejca3eporu7skzkukuie5nopngnubidqmnf57fl3qet7angukq234qj`|`/dnsaddr/peer.ipfs.storry.tv`|
+|`bafzaajaiaejcajedrki5t7qmgxzhwr24pfxb5cwrdf5d7rktguqurqztxsbffbvh`|`/dnsaddr/peer2.ipfs.storry.tv`|
+
 [dht-explainer]: ../concepts/how-ipfs-works.md#distributed-hash-tables-dhts
 [cid-explainer]: ../concepts/content-addressing.md
 [docs-peering-config]: ../how-to/configure-node.md
