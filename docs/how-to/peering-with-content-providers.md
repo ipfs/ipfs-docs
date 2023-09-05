@@ -112,6 +112,14 @@ See [web3.storage/PEERS](https://github.com/web3-storage/web3.storage/blob/main/
 |`12D3KooWGASC2jm3pmohEJXUhuStkxDitPgzvs4qMuFPaiD9x1BA`|`/ip4/78.46.108.24`|
 |`12D3KooWRbWZN3GvLf9CHmozq4vnTzDD4EEoiqtRJxg5FV6Gfjmm`|`/ip4/65.109.19.136`|
 
+### Spheron Network
+
+| Peer ID | Addresses |
+| ------- | --------- |
+|`12D3KooWFdciAga3zq3TZdrmDospFNrWRALe6VM6JpoKGEfVrqEi`|`/ip4/5.199.162.230`|
+|`12D3KooWBCzniwFvfS67HyZsJtiehd7RHtcKanGGCd8h6bjVWnkb`|`/ip4/5.199.168.17`|
+|`12D3KooWNbvFFq8kzS3eMonQYEmFyWTHboMZnHKr4XnN53gJKqhH`|`/ip4/5.199.162.220`|
+
 ### 4EVERLAND
 
 | Peer ID | Addresses |

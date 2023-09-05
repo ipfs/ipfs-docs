@@ -46,12 +46,8 @@
     "useTabs": false
   },
   "lint-staged": {
-    "*.{js,json,css,less,scss,html,md,vue}": [
-      "prettier --write"
-    ],
-    "*.styl": [
-      "stylus-supremacy format --replace"
-    ]
+    "*.{js,json,css,less,scss,html,md,vue}": ["prettier --write"],
+    "*.styl": ["stylus-supremacy format --replace"]
   },
   "husky": {
     "hooks": {
