@@ -5,7 +5,7 @@ description: 'Learn how to publish content with IPFS by pinning a file to a pinn
 
 # Publish a file with IPFS using the command line
 
-Similar to the [Publish a file with IPFS](./publish.md) quickstart, this guide will teach you about [pinning services](../concepts/persistence.md#pinning-in-context) and how to use them to publish content-addressed data with IPFS. However, instead of using the [Web3 UI used in the related guide](./publish.md#upload-and-pin-a-file) , you will upload the file to [web3.storage](https://web3.storage/) using the [w3 command line interface](https://github.com/web3-storage/w3cli) or [Spheron](https://spheron.network) using [spheron command line interface](https://docs.spheron.network/cli/). By the end of this guide, you should have a better understanding of how content addressing and CIDs work from a high level, as well as how to use the w3 command line interface to publish data to IPFS.
+Similar to the [Publish a file with IPFS](./publish.md) quickstart, this guide will teach you about [pinning services](../concepts/persistence.md#pinning-in-context) and how to use them to publish content-addressed data with IPFS. However, instead of using the [Web3 UI used in the related guide](./publish.md#upload-and-pin-a-file) , you will upload the file to [web3.storage](https://web3.storage/) using the [w3 command line interface](https://github.com/web3-storage/w3cli). By the end of this guide, you should have a better understanding of how content addressing and CIDs work from a high level, as well as how to use the w3 command line interface to publish data to IPFS.
 
 :::callout
 The web3.storage pinning service was chosen purely for demonstration purposes, and is one of many [pinning services](../concepts/persistence.md#pinning-in-context) you can choose from. While each pinning services has different SDKs and APIs, their fundamental role is the same - to store files and make them available to the IPFS network. In fact, one of the main benefits of IPFS is that files can be pinned to multiple pinning services, thereby reducing vendor lock-in.
@@ -49,13 +49,11 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 
    ```shell
    npm install -g @web3-storage/w3cli
-   ```
 
 1. Authorize the w3 tool to act on behalf of the account associated with your email address `<your@email.com>`:
 
    ```shell
    w3 authorize <your@email.com>
-   ```
 
 ## Upload and pin a file
 
@@ -69,28 +67,6 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 
    ```shell
    w3 up welcome-to-IPFS.jpg
-   ```
-
-## Install and register to spheron
-
-1. Install the [spheron command line interface](https://docs.spheron.network/cli/).
-
-   ```shell
-   sudo npm install -g @spheron/cli
-   ```
-
-1. Login to allows you to connect to your Spheron account. It is necessary to execute this command before running upload command:
-
-   ```shell
-   spheron login
-   ```
-
-## Upload and pin a file
-
-1. Upload your file.
-
-   ```shell
-   spheron upload --path welcome-to-IPFS.jpg
    ```
 
 Congratulations, you have successfully **pinned** a file to IPFS using the w3 & spheron cli! 🎉
@@ -141,5 +117,4 @@ Possible next steps include:
 - Check out [the lifecycle of data in IPFS](../concepts/lifecycle.md) to learn more about how publishing by pinning fits into the full lifecycle of data in IPFS.
 - Try fetching the pinned file by following the [retrieval quickstart](./retrieve.md).
 - If you prefer to upload a file programmatically with JavaScript or Go, check out the [Web3.storage docs](https://web3.storage/docs/how-tos/store/).
-- If you prefer to upload a file programmatically with JavaScript, check out the [Spheron docs](https://docs.spheron.network/sdk/storage/).
 - Alternatively, try out [Filebase](https://filebase.com/), a pinning service that offers an [AWS S3-compatible API for pinning](https://docs.filebase.com/getting-started/s3-api-getting-started-guide), so you can use any S3-compatible SDK, e.g. [aws-sdk](https://www.npmjs.com/package/aws-sdk), and [many](https://github.com/s3tools/s3cmd) more.
