@@ -35,7 +35,7 @@ Or, check out the [Building Web3 video series](https://www.youtube.com/playlist?
 
 - With implementations in [Go](https://github.com/ipfs/kubo) and [JavaScript](https://js.ipfs.tech/) (plus [Rust](https://github.com/rs-ipfs/rust-ipfs) in the works), options for **directly integrating IPFS into your codebase** are versatile.
 - For **IPFS-based deployment and dev tools**, the options are growing every day — including [Spheron](https://spheron.network) (deployment, storage, app tooling, gateways and compute deployments), [Fleek](https://fleek.co) (deployment, storage, and app tooling), [Textile](https://textile.io) (databases, storage, CDN, Filecoin integration), and [Fission](https://fission.codes) (front-end app publishing using web3 back-end tools), to name just a few.
-- Want to integrate **Filecoin** into your architecture in addition to IPFS? [Learn how Filecoin and IPFS work together](https://docs.filecoin.io/about-filecoin/ipfs-and-filecoin/).
+- Want to integrate **Filecoin** into your architecture in addition to IPFS? [Learn how Filecoin and IPFS work together](https://docs.filecoin.io/basics/how-storage-works/filecoin-and-ipfs/).
 - For hosting large amounts of data on multiple nodes, [IPFS Cluster](https://ipfscluster.io/) helps you with **data orchestration across many peers**.
 - Or, to **ensure availability** without having to maintain your own IPFS infrastructure, you can use a [third-party pinning service](concepts/persistence.md#pinning-services) to host your files on their own nodes.
 

@@ -77,7 +77,7 @@ Options in this category include:
 - [Web3.Storage](https://Web3.Storage)
 - [NFT.storage](https://nft.storage/)
 - [Estuary](https://estuary.tech)
-- [Powergate](https://docs.filecoin.io/build/tools/powergate/)
+- [Powergate](https://github.com/textileio/powergate)
 - [ChainSafe Storage](https://storage.chainsafe.io)
 - [Fleek Storage](https://fleek.co/storage)
 - [Spheron](https://spheron.network)
