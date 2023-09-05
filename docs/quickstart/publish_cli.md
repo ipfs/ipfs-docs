@@ -61,7 +61,6 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 
    ```shell
     w3 space create Pictures
-   ```
 
 1. Upload your file.
 
@@ -69,7 +68,7 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
    w3 up welcome-to-IPFS.jpg
    ```
 
-Congratulations, you have successfully **pinned** a file to IPFS using the w3 & spheron cli! 🎉
+Congratulations, you have successfully **pinned** a file to IPFS using the w3 cli! 🎉
 
 Let's unpack what just happened, by looking at CIDs.
 
