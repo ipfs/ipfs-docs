@@ -99,7 +99,7 @@ Configuring a reverse proxy is the most popular way for providers handling authe
 
 ![Auth with Reverse proxy](./images/ipfs-gateways/public-authed-gateway.png)
 
-Providers can design their own centralized authentication service like [Infura IPFS Auth](https://infura.io/docs/ipfs#section/Authentication/Overview), or a decentralized authentication service like [IPFS W3Auth](https://wiki.crust.network/docs/en/buildIPFSWeb3AuthGW)).
+Providers can design their own centralized authentication service like [Infura IPFS Auth](https://docs.infura.io/networks/ipfs/how-to/authenticate-requests), or a decentralized authentication service like [IPFS W3Auth](https://wiki.crust.network/docs/en/buildIPFSWeb3AuthGW)).
 
 ### Resolution style
 
