@@ -6,7 +6,7 @@ description: Hands-on guides to using and developing with IPFS to build decentra
 # IPFS Guides and Tutorials
 
 ::: callout
-Want to find even more resources for learning about IPFS and the technologies that power it? [Visit ProtoSchool](https://proto.school) for interactive tutorials that help you learn about the decentralized web by writing code and solving challenges, all from your browser!
+Check out the new [Ecosystem guides](#ecosystem-guides) section to learn more about the amazing tools, software and implementations created by IPFS ecosystem partners.
 :::
 
 No matter what you're looking to do with IPFS, you can find how-tos and tutorials here. These items are a work in progress, so please check back periodically to check what we've added!
@@ -19,6 +19,12 @@ See the site navigation menu for all our how-tos, organized by topic area, inclu
 - **Understand website hosting** by starting with how to [host a simple single-page site](websites-on-ipfs/single-page-website.md)
 - **Learn how to build apps** on IPFS, starting with [exploring the IPFS API](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_C) and [making a basic libp2p app](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_B)
 - **Understand how IPFS works in the browser** by learning how to [address IPFS on the Web](address-ipfs-on-web.md) and [how IPFS can be used in your favorite browser tools and frameworks](browser-tools-frameworks.md)
+
+## Ecosystem guides
+
+Interested in learning more about tools, software and implementations in the wider IPFS ecosystem? Check out these guides, created by IPFS ecosystem partners. 
+
+- [Spheron](./spheron.md)
 
 ## Don't see what you're looking for?
 

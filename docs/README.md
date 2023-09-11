@@ -24,8 +24,8 @@ New to IPFS? Start with
 
 ## Develop
 
-:::tip
-Are you developing with IPFS implementations and tools, and looking for technical support from IPFS experts? For the fastest possible assistance and resolution of your support needs, see the [guide to getting technical help and support](./community/README.md#get-technical-support-and-help).
+::: callout
+Check out the new [Ecosystem guides](./how-to/README.md#ecosystem-guides) section to learn more about the amazing tools, software and implementations created by IPFS ecosystem partners.
 :::
 
 - Install and set up various IPFS implementations and tools in [Get Started](./install/README.md).
@@ -35,5 +35,9 @@ Are you developing with IPFS implementations and tools, and looking for technica
 
 
 ## Join the IPFS community
+
+:::tip
+Are you developing with IPFS implementations and tools, and looking for technical support from IPFS experts? For the fastest possible assistance and resolution of your support needs, see the [guide to getting technical help and support](./community/README.md#get-technical-support-and-help).
+:::
 
 IPFS has a bustling community of designers, developers, writers, and activists who are all helping to improve the project. Find out about the events and resources available, and how to get involved in the [Community section](./community/README.md)

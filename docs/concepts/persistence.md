@@ -46,6 +46,7 @@ Some available pinning service providers are:
 Some of the pinning services listed below are operated by third party companies. There is no guarantee that these third party companies will continue to maintain their pinning service. It is strongly recommended that you thoroughly research a pinning service before using it to host your data.
 :::
 
+- [Spheron](https://spheron.network/)
 - [4EVERLAND Bucket](https://www.4everland.org/bucket/)
 - [Estuary](https://estuary.tech/)
 - [Filebase](https://filebase.com/)
@@ -76,6 +77,7 @@ Options in this category include:
 - [Web3.Storage](https://Web3.Storage)
 - [NFT.storage](https://nft.storage/)
 - [Estuary](https://estuary.tech)
-- [Powergate](https://docs.filecoin.io/build/tools/powergate/)
+- [Powergate](https://github.com/textileio/powergate)
 - [ChainSafe Storage](https://storage.chainsafe.io)
 - [Fleek Storage](https://fleek.co/storage)
+- [Spheron](https://spheron.network)
