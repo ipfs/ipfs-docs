@@ -28,8 +28,8 @@ This not only makes DNSLink lookup more efficient by only returning relevant `TX
 For example, [`docs.ipfs.tech`](https://docs.ipfs.tech) loads because a `TXT` record exists for `_dnslink.docs.ipfs.tech`. If you look up the DNS records for `_dnslink.docs.ipfs.tech`, you'll see the DNSLink entry:
 
 ```shell
-dig +noall +answer TXT \_dnslink.docs.ipfs.tech
-> \_dnslink.docs.ipfs.tech. 30 IN TXT "dnslink=/ipfs/bafybeieenxnjdjm7vbr5zdwemaun4sw4iy7h4imlvvl433q6gzjg6awdpq"
+dig +noall +answer TXT _dnslink.docs.ipfs.tech
+> _dnslink.docs.ipfs.tech. 30 IN TXT "dnslink=/ipfs/bafybeieenxnjdjm7vbr5zdwemaun4sw4iy7h4imlvvl433q6gzjg6awdpq"
 
 ```
 
