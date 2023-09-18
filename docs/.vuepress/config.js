@@ -301,7 +301,7 @@ module.exports = {
               children: [
                 '/how-to/spheron', 
               ]
-            }
+            },
           ],
           '/reference/': [
             '/reference/diagnostic-tools',
