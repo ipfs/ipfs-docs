@@ -7,6 +7,8 @@ description: "There isn't just one canonical IPFS implementation. Learn about th
 
 IPFS is an open-source project that encourages the development of multiple implementations of the protocol, each of which seeks to optimize for various use cases. Below is non-exhaustive list of IPFS implementations, grouped by development and maintenance status ([Popular or Actively Maintained](#popular-or-actively-maintained), [Lite or Experimental](#lite-or-experimental) and [Inactive](#inactive)) and ordered alphabetically. To propose additions or edits, [edit this page in GitHub](https://github.com/ipfs/ipfs-docs/edit/main/docs/concepts/ipfs-implementations.md) or [open an issue](https://github.com/ipfs/ipfs-docs/issues/new?assignees=&labels=need%2Ftriage&template=open_an_issue.md&title=IPFS%20Implementations).
 
+You can learn more about the principles that define what an IPFS implementation is [here](./implementations.md).
+
 ::: tip
 Looking for an easy, user-friendly way to get started with IPFS? Try any of the options listed below:
 

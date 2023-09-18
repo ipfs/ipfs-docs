@@ -176,7 +176,15 @@ module.exports = {
                 '/concepts/merkle-dag'
               ]
             },
-            '/concepts/ipfs-implementations',
+            {
+              title: 'Implementations',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
+                ['/concepts/implementations', 'Implementations explained'],
+                ['/concepts/ipfs-implementations', 'List of implementations']
+              ]
+            },
             '/concepts/comparisons',
             '/concepts/usage-ideas-examples',
             '/concepts/faq',

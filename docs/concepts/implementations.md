@@ -7,6 +7,8 @@ description: Learn about the principles that define what an IPFS implementation 
 
 Software, written in any programming language, is considered to be an _IPFS implementation_ if it adheres to the core principles listed below. However, there are characteritics that  characteristics that an IPFS implementation _may_ have, but are not strictly _required_. IPFS principles are broad by design because, like HTTP, IPFS supports an open-ended set of use cases and is adaptable to a broad array of operating conditions. Some implementations are optimized for specific use cases or devices, or use different subsystems to handle content-addressed data. There are multiple specifications in IPFS for handling content-addressed data, and not all implementations implement them.
 
+You can see the list of implementations [here](./ipfs-implementations.md).
+
 ## Core principles
 
 IPFS implementations must:
