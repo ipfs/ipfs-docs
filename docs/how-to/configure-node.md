@@ -1,6 +1,6 @@
 ---
 title: Configure a node
-description: IPFS nodes can be customzied using the configuration file. The default values should be fine for most use-cases. However, you may want to make some changes if you are running a specialized IPFS node, or simply want to tweak things to your liking.
+description: IPFS nodes can be customized using the configuration file. The default values should be fine for most use-cases. However, you may want to make some changes if you are running a specialized IPFS node, or simply want to tweak things to your liking.
 ---
 
 # Configure a node

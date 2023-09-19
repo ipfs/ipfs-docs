@@ -58,7 +58,7 @@ By storing small scripts or big databases of your project on IPFS, depending on 
 
 ### Decentralized virtual reality
 
-[Decentraland](https://decentraland.org/) is a virtual world you can explore with a VR set, your computer, or your smartphone. They store all the assets on IPFS, so these heavy files can be fetched from several other users at the same time for faster loading and synching.
+[Decentraland](https://decentraland.org/) is a virtual world you can explore with a VR set, your computer, or your smartphone. They store all the assets on IPFS, so these heavy files can be fetched from several other users at the same time for faster loading and syncing.
 
 ### Video hosting platform
 
