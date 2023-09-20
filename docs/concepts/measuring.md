@@ -5,7 +5,7 @@ description: Learn about the lifecycle of data in IPFS.
 
 # Measuring the IPFS network
 
-The IPFS network is a complex system that relies on the coordinated participation of a swarm of independent peers. Therefore, to ensure its reliability and efficiency, the Protocol Labs Protocol Benchmarking & Optimization Team (ProbeLab) regularly measures the performance and health of the network, and reports these measurements to the public. In addition to these key perfromance indicators (KPIs), ProbeLab has created a number of custom tools to calculate these measurements. 
+The IPFS network is a complex system that relies on the coordinated participation of a swarm of independent peers. Therefore, to ensure its reliability and efficiency, the [Protocol Labs Protocol Benchmarking & Optimization Team (ProbeLab)](https://probelab.io/) regularly measures the performance and health of the network, and reports these measurements to the public. In addition to these [key performance indicators (KPIs)](#kpis), ProbeLab has created a number of custom tools to calculate these measurements. 
 
 ## KPIs
 
@@ -56,3 +56,5 @@ For more info and the latest data, see [https://probelab.io/ipfskpi/#dht-lookup-
 #### IPNI utilization
 
 [IPNI](ipni.md) utilization is measured by calculating the number of requests made per day to the network indexers operated by [cid.contact](https://cid.contact/). For more info and the latest data, see [https://probelab.io/ipfskpi/#ipni-utilization](https://probelab.io/ipfskpi/#ipni-utilization).
+
+## Tools
