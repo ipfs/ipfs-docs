@@ -18,4 +18,4 @@ New to IPFS Helia? The [Helia 101 example](https://github.com/ipfs-examples/heli
 
 ### js-kubo-rpc-client
 
-First, [install the client using `npm` or as a browser script tag](https://github.com/ipfs/js-kubo-rpc-client#install). Then, consult the [command reference](https://github.com/ipfs/js-kubo-rpc-client#usage) for usage information.
+First, make sure you have [kubo](https://github.com/ipfs/kubo) running, there are multiple ways to get [kubo](https://github.com/ipfs/kubo), since we're working with node, you can [get kubo using npm](https://www.npmjs.com/package/kubo). Next, [install the client using `npm` or as load it as a browser script tag](https://github.com/ipfs/js-kubo-rpc-client#install). Then, consult the [command reference](https://github.com/ipfs/js-kubo-rpc-client#usage) for usage information.
