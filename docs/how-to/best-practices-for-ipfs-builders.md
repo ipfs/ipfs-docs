@@ -8,7 +8,7 @@ date: 2022-03-11
 
 Some IPFS features are not enabled or set as defaults, but we encourage you to use them under the right circumstances.
 
-## Use CIDv1 for future-proof addressing and case-insenstive contexts
+## Use CIDv1 for future-proof addressing and case-insensitive contexts
 
 There are two versions of CIDs ([Content Identifiers](../concepts/content-addressing.md)), CIDv0 and CIDv1.
 

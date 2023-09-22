@@ -1,6 +1,6 @@
 ---
 title: Using ipfs-update
-description: This page provides installation and usage guidance for ipfs-update, a command-line utility that can be used to install, uninstall, dowgrade and upgrade IPFS Kubo.
+description: This page provides installation and usage guidance for ipfs-update, a command-line utility that can be used to install, uninstall, downgrade and upgrade IPFS Kubo.
 current-ipfs-updater-version: v1.9.0
 ---
 
