@@ -320,6 +320,7 @@ module.exports = {
               collapsable: true,
               path: '/reference/kubo/rpc'
             },
+            '/reference/kubo-rpc-cli.md'
 
           ],
           '/community/': [
