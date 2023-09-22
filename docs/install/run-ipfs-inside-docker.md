@@ -38,8 +38,10 @@ You can run Kubo IPFS inside Docker to simplify your deployment processes, as we
 1. Wait for IPFS to start:
 
     ```shell
-    Gateway (readonly) server
-    listening on /ip4/0.0.0.0/tcp/8080
+    RPC API server listening on /ip4/0.0.0.0/tcp/5001
+    WebUI: http://0.0.0.0:5001/webui
+    Gateway server listening on /ip4/0.0.0.0/tcp/8080
+    Daemon is ready
     ```
 
     You can now stop watching the log.
