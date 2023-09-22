@@ -203,6 +203,7 @@ module.exports = {
                 ],
                 '/how-to/kubo-garbage-collection',
                 '/how-to/troubleshooting',   
+                '/how-to/webtransport',   
               ]
             },
             {
