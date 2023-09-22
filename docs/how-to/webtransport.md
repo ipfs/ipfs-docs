@@ -11,7 +11,7 @@ Kubo v0.16 introduced [optional support for WebTransport](https://github.com/ipf
 
 ## How it works
 
-Conceptually, WebTransport is similar to [WebSocket](https://en.wikipedia.org/wiki/WebSocket). The browser can “upgrade” an [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2/) or an [HTTP/3 connection](https://en.wikipedia.org/wiki/HTTP/3), which runs on top of [QUIC](https://en.wikipedia.org/wiki/QUIC), to a WebTransport session. A WebTransport session over HTTP/3 allows both endpoints to open very thinly wrapped QUIC streams to each other. This enables WebTransport to take advantage of QUIC's offerings:
+Conceptually, WebTransport is similar to [WebSocket](https://en.wikipedia.org/wiki/WebSocket). The browser can “upgrade” an [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) or an [HTTP/3 connection](https://en.wikipedia.org/wiki/HTTP/3), which runs on top of [QUIC](https://en.wikipedia.org/wiki/QUIC), to a WebTransport session. A WebTransport session over HTTP/3 allows both endpoints to open very thinly wrapped QUIC streams to each other. This enables WebTransport to take advantage of QUIC's offerings:
 
 - Speedy time to connect using a fast handshake (one network roundtrip).
 - Native stream multiplexing without head-of-line blocking.
