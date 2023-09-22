@@ -11,7 +11,7 @@ jobs:
     name: Close empty issues and templates
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3 
+    - uses: actions/checkout@v4 
     - name: Run empty issues closer action
       uses: rickstaa/empty-issues-closer-action@v1
       env:
