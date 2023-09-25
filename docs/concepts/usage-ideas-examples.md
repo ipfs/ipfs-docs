@@ -98,7 +98,7 @@ The robotics company [KODA](https://www.koda9.com/) is developing the world's fi
 
 ## IPFS as infrastructure
 
-Using IPFS allows you to abstract away a lot of the complexity of coordination between machines. No matter your architecture IPFS handles load balancing, de-duplication, caching, and high availability out-of-the-box. It's highly modular design also means you can easily customize it to your need.
+Using IPFS allows you to abstract away a lot of the complexity of coordination between machines. No matter your architecture IPFS handles load balancing, de-duplication, caching, and high availability out-of-the-box. Its highly modular design also means you can easily customize it to your need.
 
 ### Decentralized clusters
 

@@ -45,7 +45,7 @@ If your router supports UPnP, IPFS will attempt to automatically allow inbound t
 
 As of Kubo v0.13, [DCUtR hole punching is enabled by default](https://github.com/ipfs/kubo/blob/master/docs/changelogs/v0.13.md#-relay-v2-client-with-auto-discovery-swarmrelayclient).
 
-DCUtR holepunching has various drawbacks and tradeoffs. Currently, the connection signaling goes through a relay, which adds an average latency of 5 seconds when opening a connection. Once a direct connection is established, latency is normal. Additionally, DCUtR holepunching does not have a 100% success rate and can fail. For a deeper dive into how holepunching works in Kubo, it's drawbacks, and more information on using DCUtR, see the [_Hole punching in libp2p - Overcoming Firewalls_ blog post](https://blog.ipfs.tech/2022-01-20-libp2p-hole-punching/). 
+DCUtR holepunching has various drawbacks and tradeoffs. Currently, the connection signaling goes through a relay, which adds an average latency of 5 seconds when opening a connection. Once a direct connection is established, latency is normal. Additionally, DCUtR holepunching does not have a 100% success rate and can fail. For a deeper dive into how holepunching works in Kubo, its drawbacks, and more information on using DCUtR, see the [_Hole punching in libp2p - Overcoming Firewalls_ blog post](https://blog.ipfs.tech/2022-01-20-libp2p-hole-punching/). 
 
 Because of these drawbacks, you may want to use another solution, like manual port forwarding. To enable manual port forwarding, see the instructions below.
 

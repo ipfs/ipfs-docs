@@ -17,7 +17,7 @@ These record types hold slightly different semantics, but they are all updated a
 
 ## Kademlia
 
-The Kademlia algorithm has been around for a while, and it's purpose is to build a DHT on top of three system parameters:
+The Kademlia algorithm has been around for a while, and its purpose is to build a DHT on top of three system parameters:
 
 1. An _address space_ as a way that all of the network peers can be uniquely identified. In IPFS, this is all the numbers from `0` to `2^256-1`.
 1. A _metric_ to order the peers in the address space and therefore visualize all the peers along a line ordered from smallest to largest. IPFS takes `SHA256(PeerID)` and interprets it as an integer between `0` and `2^256-1`.
