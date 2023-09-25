@@ -14,7 +14,7 @@ _&mdash; Noam Eppel, COO and co-founder, Morpheus.Network_
 ## Overview
 
 ::: right
-<img src="images/logo-morpheus.jpg" alt="Morpheus.Network logo" width="150">
+<img src="./images/logo-morpheus.png" alt="Morpheus.Network logo" width="100">
 :::
 
 [Morpheus.Network](https://morpheus.network/) is a supply chain software-as-a-service (SaaS) platform that uses IPFS for reliable, distributed, verifiable storage and retrieval of international customs and shipping documentation. For shipping of goods across borders, it's critical — both functionally and legally — to have verifiable, consistently accessible documentation for every shipment. Morpheus.Network's usage of IPFS is a live, enterprise-level example of how IPFS can store and deliver documentation that stands up to the stringent requirements of international customs authorities.
