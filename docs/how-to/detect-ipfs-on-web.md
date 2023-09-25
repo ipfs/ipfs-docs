@@ -124,7 +124,7 @@ Firefox and Chromium-based browsers such as Google Chrome or Microsoft Edge can 
 
 ## FAQ
 
-**What if a browser does not support `ipfs://` and `ipns://` natively?** Implementations can use an [HTTP Gateway](../reference/http/gateway.md) as a fallback, convert ththe path to `//gatewayhost/ipxs/id/..`-type paths, or leverage the built-in URI router at `//gatewayhost/ipfs/?uri=%s`
+**What if a browser does not support `ipfs://` and `ipns://` natively?** Implementations can use an [HTTP Gateway](../reference/http/gateway.md) as a fallback, convert the path to `//gatewayhost/ipxs/id/..`-type paths, or leverage the built-in URI router at `//gatewayhost/ipfs/?uri=%s`
 
 **Why should `?query` or `#hash` from the original HTTP URL be preserved?** The link could point at specific `#section` of  a longer article. It is also common for JavaScript running on a page to use the `?query` and `#hash` for navigation and ad-hoc storage of some state.
 
