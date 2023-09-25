@@ -249,7 +249,7 @@ module.exports = {
               children: [
                 '/how-to/address-ipfs-on-web',
                 '/how-to/browser-tools-frameworks',
-                'how-to/detect-ipfs-on-web',
+                '/how-to/detect-ipfs-on-web',
               ]
             },
             {
