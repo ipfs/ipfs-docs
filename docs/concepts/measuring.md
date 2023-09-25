@@ -63,11 +63,11 @@ For more info and the latest data, see [https://probelab.io/ipfskpi/#dht-lookup-
 
 ### Nebula 
 
-[Nebula](https://github.com/dennis-tra/nebula) is a libp2p DHT crawler that is used to calculate [DHT server availability](#dht-server-availability). It periodically tries to connect to DHT Server peers within the IPFS DHT. Upon discovering a new peer, the crawler notes the beginning of an availability session, extending this session with each successful connection attempt. Conversely, a failed connection ends the session, with a subsequent successful attempt initiating a new one. During each measurement period, peers may experience multiple availability sessions. Learn more about Parsect at [probelab.io/tools/nebula/](https://probelab.io/tools/nebula/).
+[Nebula](https://github.com/dennis-tra/nebula) is a libp2p DHT crawler that is used to calculate [DHT server availability](#dht-server-availability). It periodically tries to connect to DHT Server peers within the IPFS DHT. Upon discovering a new peer, the crawler notes the beginning of an availability session, extending this session with each successful connection attempt. Conversely, a failed connection ends the session, with a subsequent successful attempt initiating a new one. During each measurement period, peers may experience multiple availability sessions. Learn more about Parsec at [probelab.io/tools/nebula/](https://probelab.io/tools/nebula/).
 
 ### Parsec
 
-[Parsec](https://github.com/dennis-tra/nebula) is a tool for measuring [DHT lookup performance](#dht-lookup-performance), specifically focusing on the PUT and GET performance of the IPFS public DHT. It can also be adapted to assess other [libp2p-kad-dht](https://github.com/libp2p/specs/blob/master/kad-dht/README.md) networks. The configuration is divided into two parts: a scheduler and a server. Learn more about Parsect at [probelab.io/tools/parsec/](https://probelab.io/tools/parsec/).
+[Parsec](https://github.com/dennis-tra/nebula) is a tool for measuring [DHT lookup performance](#dht-lookup-performance), specifically focusing on the PUT and GET performance of the IPFS public DHT. It can also be adapted to assess other [libp2p-kad-dht](https://github.com/libp2p/specs/blob/master/kad-dht/README.md) networks. The configuration is divided into two parts: a scheduler and a server. Learn more about Parsec at [probelab.io/tools/parsec/](https://probelab.io/tools/parsec/).
 
 #### Parsec server
 
