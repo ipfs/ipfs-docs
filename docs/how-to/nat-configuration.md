@@ -25,7 +25,7 @@ While NATs are generally transparent for outgoing connections, listening for inc
 The appropriate configuration option for your router depends on your specific setup:
 
 - If your router supports them, [enable IPv6](#enable-ipv6) or [enable UPnP](#enable-upnp) to solve most connection issues
-- [Use DCUtR holepunching](#use-dcutr-holepunching), which is enabled by default as of Kubo v0.13
+- [Use DCUtR hole punching](#use-dcutr-holepunching), which is enabled by default as of Kubo v0.13
 - If IPv6 or UPnP are not available, or DCUtR holepunching doesn't meet your performance and reliability requirements, [enable manual port forwarding](#enable-manual-port-forwarding)
 
 ### Enable IPv6
@@ -41,11 +41,11 @@ If your router and internet service provider (ISP) support IPv6, enabling it wil
 If your router supports UPnP, IPFS will attempt to automatically allow inbound traffic to access your local content. Some home routers may need to be configured to explicitly enable UPnP. We are unable to give detailed information about each router's settings and preferences here. Search your router manufacturer's website for _UPnP_.
 
 
-### Use DCUtR holepunching
+### Use DCUtR hole punching
 
 As of Kubo v0.13, [DCUtR hole punching is enabled by default](https://github.com/ipfs/kubo/blob/master/docs/changelogs/v0.13.md#-relay-v2-client-with-auto-discovery-swarmrelayclient).
 
-DCUtR holepunching has various drawbacks and tradeoffs. Currently, the connection signaling goes through a relay, which adds an average latency of 5 seconds when opening a connection. Once a direct connection is established, latency is normal. Additionally, DCUtR holepunching does not have a 100% success rate and can fail. For a deeper dive into how holepunching works in Kubo, its drawbacks, and more information on using DCUtR, see the [_Hole punching in libp2p - Overcoming Firewalls_ blog post](https://blog.ipfs.tech/2022-01-20-libp2p-hole-punching/). 
+DCUtR hole punching has various drawbacks and tradeoffs. Currently, the connection signaling goes through a relay, which adds an average latency of 5 seconds when opening a connection. Once a direct connection is established, latency is normal. Additionally, DCUtR hole punching does not have a 100% success rate and can fail. For a deeper dive into how hole punching works in Kubo, its drawbacks, and more information on using DCUtR, see the [_Hole punching in libp2p - Overcoming Firewalls_ blog post](https://blog.ipfs.tech/2022-01-20-libp2p-hole-punching/). 
 
 Because of these drawbacks, you may want to use another solution, like manual port forwarding. To enable manual port forwarding, see the instructions below.
 
