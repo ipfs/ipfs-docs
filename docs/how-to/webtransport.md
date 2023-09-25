@@ -35,7 +35,7 @@ WebTransport in Kubo unlocks many use cases, including those listed below.
 - Browser nodes or light clients can function as "full" peers in a decentralized network.
 - Browser nodes can gossip directly with their peers, meaning they can receive and submit messages directly without relying on centralized infrastructure or interfaces like an HTTP/GraphQL API.
 - Fetch data from the [DHT](../concepts/dht.md) by directly connecting to a DHT server node.
-- Upload to a long term storage such as a [pinning service](../concepts/persistence.md) directly from the browser.
+- Upload data directly from the browser to long-term storage such as a [pinning service](../concepts/persistence.md) .
 - Decentralized peer-to-peer video streaming as a dApp.
 
 ## Using WebTransport with Kubo
