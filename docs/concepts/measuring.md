@@ -64,15 +64,7 @@ The ProbeLab team is developing tools to continuously monitor the performance of
 
 ### Parsec
 
-[Parsec](https://github.com/dennis-tra/nebula) is a tool for measuring [DHT lookup performance](#dht-lookup-performance), specifically focusing on the PUT and GET performance of Amino (the IPFS public DHT). It can also be adapted to assess other [libp2p-kad-dht](https://github.com/libp2p/specs/blob/master/kad-dht/README.md) networks. The configuration is divided into two parts: a scheduler and a server. Learn more about Parsec at [probelab.io/tools/parsec/](https://probelab.io/tools/parsec/).
-
-#### Parsec server
-
-The server functions as a standard libp2p peer, participating in the public IPFS DHT and offering a streamlined HTTP API. This API enables the scheduler to execute publication and retrieval tasks. All servers record the timing data related to publication or retrieval latencies and send the results back to the scheduler. 
-
-#### Parsec scheduler
-
-The scheduler circulates among all server nodes, directing one to publish provider records for a random data piece and requesting the others to search for the data. The publication or retrieval latency data provided by the servers is then stored in a database by the scheduler for future analysis.
+[Parsec](https://github.com/dennis-tra/nebula) is a tool for measuring [DHT lookup performance](#dht-lookup-performance), specifically focusing on the PUT and GET performance of the IPFS public DHT. It can also be adapted to assess other [libp2p-kad-dht](https://github.com/libp2p/specs/blob/master/kad-dht/README.md) networks. The configuration is divided into a scheduler and a server. Learn more about Parsec at [probelab.io/tools/parsec/](https://probelab.io/tools/parsec/).
 
 ### Tiros
 
