@@ -31,6 +31,7 @@ The following metrics are used to estimate the total number of unique software a
 1. Unique software agents seen in Amino (the public IPFS [DHT](dht.md))
 
 For more info and the latest data, see [https://probelab.io/ipfskpi/#unique-software-agents](https://probelab.io/ipfskpi/#unique-software-agents).
+https://probelab.io/ipfskpi/#unique-software-agents
 
 ### Content routing
 
