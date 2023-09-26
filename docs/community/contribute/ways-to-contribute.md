@@ -68,7 +68,7 @@ A few ways to discover applications, solutions, and tools built with IPFS.
 
 ## Protocol Design
 
-IPFS is ultimately about building better protocols, and we always welcome ideas and feedback on how to improve those protocols. Post feedback, issues, and proposals via Github.
+IPFS is ultimately about building better protocols, and we always welcome ideas and feedback on how to improve those protocols. Post feedback, issues, and proposals via GitHub.
 
 - [ipfs/specs](https://github.com/ipfs/specs)
 - [libp2p/specs](https://github.com/libp2p/specs)
