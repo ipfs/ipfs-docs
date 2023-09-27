@@ -1,11 +1,16 @@
 ---
-title: "IPFS implementations"
+title: "IPFS implementations and tools"
 description: "There isn't just one canonical IPFS implementation. Learn about the various IPFS implementations available for different use cases."
 ---
 
 # IPFS implementations
 
-[Popular or Actively Maintained](#implementations-catalog)
+The purpose of this page is to catalog the many IPFS <VueCustomTooltip label="Software, written in any programming language, with functionality to process and transmit content-addressed data. Some implementations are optimized for specific use cases or devices, or use different subsystems to handle content-addressed data. There are multiple specififactions in IPFS for handling content-addressed data, and not all implementations implement them." underlined multiline is-medium>implementations</VueCustomTooltip> and tools, as well as provide general guidance on choosing and implementation or tool to work with.
+
+- [Choose an implementation or tool](#choose-an-implementation-or-tool)
+- [Implementations and tools catalog](#implementations-and-tools-catalog)
+
+## Choose an implementation or tool
 
 ::: tip
 Looking for an easy, user-friendly way to get started with IPFS? Try any of the options listed below:
@@ -14,9 +19,13 @@ Looking for an easy, user-friendly way to get started with IPFS? Try any of the 
 - [Brave Browser](../how-to/companion-node-types.md#native), native support for IPFS in a browser with a Kubo node built directly into the browser itself.
 :::
 
-## Choose an implementation or tool
-
 ### Use IPFS with your browser
+
+Interact with the network using any Brave, Chrome, Edge, Firefox, Opera, and any other Chromium-based web browser using the [IPFS Companion browser extension](./install/ipfs-companion.md).
+
+### Interact with IPFS without code
+
+The IPFS Desktop implementation is a desktop-based application that bundles an IPFS node, file manager, peer manager, and content explorer together. No need to touch the terminal or use code. Just [install Desktop](../install/ipfs-desktop.md) and quickly access the network.
 
 ### Interact via the CLI
 
@@ -26,19 +35,23 @@ You can interact with the IPFS network via the terminal:
 
 - For a wider range of features, use [IPFS Kubo as a command-line tool](../reference/kubo/cli.md).
 
-### Interact with IPFS without code
-
-The IPFS Desktop implementation is a desktop-based application that bundles an IPFS node, file manager, peer manager, and content explorer together. No need to touch the terminal or use code. Just [install Desktop](../install/ipfs-desktop.md) and quickly access the network.
-
 ### Develop applications
 
 #### Language agnostic
+
+If you'd like to use IPFS over standard HTTP, you havve several options:
+
+- If you simply want to retrieve data, use the [Lassie client HTTP API](https://github.com/filecoin-project/lassie/#http-api).
+
+- You can control an IPFS Kubo node using HTTP via the [Kubo RPC API](../reference/kubo/rpc.md), with the same range of functionality available via the [Kubo CLI](../reference/kubo/cli.md). There are multiple [RPC API clients in multiple languages](../reference/kubo-rpc-cli.md) to choose from.
+
+- For an implementation and runtime agnostic HTTP interface, use an [IPFS gateway](./reference/http/gateway.md).
 
 #### Go
 
 Looking for to add IPFS functionality to your Go application? Try these implementations:
 
-- To quickly retrieve data with minimal complexity and overhead, use the [Lassie client](https://github.com/filecoin-project/lassie/), which provides a [Golang library](https://github.com/filecoin-project/lassie/#golang-library) that you can use in your applications, in addition to other features.
+- To quickly retrieve data with minimal complexity and overhead, use the [Lassie client Golang library](https://github.com/filecoin-project/lassie/#golang-library) in your applications.
 
 - For more complicated applications requiring the full range of IPFS functionality, use Kubo or Boxo.
 
@@ -57,6 +70,10 @@ Looking for to add IPFS functionality to your Go application? Try these implemen
 
 #### JavaScript
 
+To create IPFS applications in JavaScript, use the [IPFS Helia implementation in JavaScript](https://github.com/ipfs/helia).
+
+#### Rust 
+
 #### Embedded applications / Java
 
 If you're looking to develop embedded applications and/or applications in Java, use [Nabu](https://github.com/peergos/nabu).
@@ -65,11 +82,9 @@ If you're looking to develop embedded applications and/or applications in Java, 
 
 You can interact with IPFS via HTTP using the following implementations:
 
-- To quickly retrieve data with minimal complexity and overhead, use the [Lassie client](https://github.com/filecoin-project/lassie/), which provides an [HTTP API](https://github.com/filecoin-project/lassie/#http-api) that can be used by your applications, in addition to other features.
+-
 
-- You can also control an IPFS Kubo node using HTTP via the [Kubo RPC API](../reference/kubo/rpc.md)
-
-## Implementations catalog
+## Implementations and tools catalog
 
 IPFS implementations are listed below, and are grouped into the following categories:
 
@@ -98,7 +113,6 @@ IPFS implementations are listed below, and are grouped into the following catego
 | Name             | URL                                                              | Language(s)            | What it's trying to do                                                                                                   |
 |------------------|------------------------------------------------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | auspinner        | <https://github.com/2color/auspinner>                            | go                     | CLI tool to deal with the pinning service API and upload files through bitswap.                                          |
-| barge            | <https://github.com/application-research/barge>                  | go                     | CLI tool with a git like workflow to upload deltas to estuary.                                                           |
 | durin            | <https://github.com/ipfs-shipyard/Durin>                         | N/A                    | An iOS and Android app for exploring IPFS functionality and use-cases.                                                   |
 | gomobile-ipfs    | <https://github.com/ipfs-shipyard/gomobile-ipfs>                 | go                     | Library oriented ipfs daemon to help embedding Kubo into a mobile app.                                                   |
 | homestar         | <https://github.com/ipvm-wg/homestar/>                           | rust                   | The core implementation and runtime of [IPVM](https://github.com/ipvm-wg).                                               |
@@ -112,6 +126,7 @@ IPFS implementations are listed below, and are grouped into the following catego
 | Name             | URL                                                              | Language(s)            | What it's trying to do                                                                                                   |
 |------------------|------------------------------------------------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | Agregore         | <https://github.com/AgregoreWeb/agregore-ipfs-daemon>            | go, javascript         | Mobile friendly Kubo daemon.                                                                                             |
+| barge            | <https://github.com/application-research/barge>                  | go                     | CLI tool with a git like workflow to upload deltas to estuary.                                                           |
 | c-ipfs           | <https://git.agorise.net/agorise/c-ipfs>                         | C                      | IPFS implementation in C.                                                                                                |
 | Estuary          | <https://github.com/application-research/estuary/>               | go                     | Daemon oriented service to pin and onboard IPFS data into Filecoin.                                                      |
 | ipfs tiny        | <https://gitlab.com/librespacefoundation/ipfs-tiny>              | c++                    | Tiny embeddable, os-independent IPFS implementation.                                                                     |
