@@ -47,7 +47,9 @@ If you'd like to use IPFS over standard HTTP, you havve several options:
 
 - For an implementation and runtime agnostic HTTP interface, use an [IPFS gateway](./reference/http/gateway.md).
 
-#### Go
+#### Language specific 
+
+##### Go
 
 Looking for to add IPFS functionality to your Go application? Try these implementations:
 
@@ -63,26 +65,26 @@ Looking for to add IPFS functionality to your Go application? Try these implemen
 **Use Boxo if you**:
 
 - Are building a modular application that interacts with the IPFS network
-- You want more choice in which features you include in your application
+- Want more choice in which features you include in your application
 - Are building an IPFS implementation
 - Want to reuse some components of IPFS such as the Kademlia DHT, Bitswap, data encoding, etc., without the full featureset of Kubo
 - Want to experiment with IPFS
 
-#### JavaScript
+##### JavaScript
 
 To create IPFS applications in JavaScript, use the [IPFS Helia implementation in JavaScript](https://github.com/ipfs/helia).
 
-#### Rust 
+##### Rust 
 
-#### Embedded applications / Java
+##### C
+
+#### Specialized use cases
+
+##### Embedded applications / Java
 
 If you're looking to develop embedded applications and/or applications in Java, use [Nabu](https://github.com/peergos/nabu).
 
-### Interact with IPFS via HTTP
-
-You can interact with IPFS via HTTP using the following implementations:
-
--
+##### Mobile applications
 
 ## Implementations and tools catalog
 
