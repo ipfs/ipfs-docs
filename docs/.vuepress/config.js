@@ -176,7 +176,6 @@ module.exports = {
                 '/concepts/merkle-dag'
               ]
             },
-            '/concepts/ipfs-implementations',
             '/concepts/comparisons',
             '/concepts/usage-ideas-examples',
             ['/concepts/measuring', 'Measuring the network'],
@@ -307,6 +306,7 @@ module.exports = {
           ],
           '/reference/': [
             '/reference/diagnostic-tools',
+            '/reference/ipfs-implementations',
             '/reference/http/gateway',
             '/reference/js/api',
             '/reference/go/api',
