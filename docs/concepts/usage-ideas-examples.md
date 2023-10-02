@@ -58,7 +58,7 @@ By storing small scripts or big databases of your project on IPFS, depending on 
 
 ### Decentralized virtual reality
 
-[Decentraland](https://decentraland.org/) is a virtual world you can explore with a VR set, your computer, or your smartphone. They store all the assets on IPFS, so these heavy files can be fetched from several other users at the same time for faster loading and synching.
+[Decentraland](https://decentraland.org/) is a virtual world you can explore with a VR set, your computer, or your smartphone. They store all the assets on IPFS, so these heavy files can be fetched from several other users at the same time for faster loading and syncing.
 
 ### Video hosting platform
 
@@ -98,7 +98,7 @@ The robotics company [KODA](https://www.koda9.com/) is developing the world's fi
 
 ## IPFS as infrastructure
 
-Using IPFS allows you to abstract away a lot of the complexity of coordination between machines. No matter your architecture IPFS handles load balancing, de-duplication, caching, and high availability out-of-the-box. It's highly modular design also means you can easily customize it to your need.
+Using IPFS allows you to abstract away a lot of the complexity of coordination between machines. No matter your architecture IPFS handles load balancing, de-duplication, caching, and high availability out-of-the-box. Its highly modular design also means you can easily customize it to your need.
 
 ### Decentralized clusters
 

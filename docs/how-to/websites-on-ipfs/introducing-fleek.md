@@ -1,6 +1,6 @@
 ---
 title: Introducing Fleek
-descripton: Fleek is a service that lets you host a website on IPFS without needing to install anything on your computer or run command-line scripts.
+description: Fleek is a service that lets you host a website on IPFS without needing to install anything on your computer or run command-line scripts.
 ---
 
 # Introducing Fleek

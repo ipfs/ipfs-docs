@@ -185,8 +185,10 @@ module.exports = {
                 ['/concepts/ipfs-implementations', 'List of implementations']
               ]
             },
+            '/concepts/cod',
             '/concepts/comparisons',
             '/concepts/usage-ideas-examples',
+            ['/concepts/measuring', 'Measuring the network'],
             '/concepts/faq',
             '/concepts/glossary',
             '/concepts/further-reading/academic-papers'
@@ -211,6 +213,7 @@ module.exports = {
                 ],
                 '/how-to/kubo-garbage-collection',
                 '/how-to/troubleshooting',   
+                '/how-to/webtransport',   
               ]
             },
             {
@@ -328,6 +331,7 @@ module.exports = {
               collapsable: true,
               path: '/reference/kubo/rpc'
             },
+            '/reference/kubo-rpc-cli.md'
 
           ],
           '/community/': [

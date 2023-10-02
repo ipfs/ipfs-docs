@@ -46,15 +46,15 @@ Some available pinning service providers are:
 Some of the pinning services listed below are operated by third party companies. There is no guarantee that these third party companies will continue to maintain their pinning service. It is strongly recommended that you thoroughly research a pinning service before using it to host your data.
 :::
 
-- [Spheron](https://spheron.network/)
 - [4EVERLAND Bucket](https://www.4everland.org/bucket/)
 - [Estuary](https://estuary.tech/)
 - [Filebase](https://filebase.com/)
 - [Infura](https://infura.io/)
+- [Kriptonio](https://kriptonio.com/)
 - [NFT.Storage](https://nft.storage/)
 - [Pinata](https://pinata.cloud/)
+- [Spheron](https://spheron.network/)
 - [Web3.Storage](https://web3.storage/)
-- [Kriptonio](https://kriptonio.com/)
 
 See how to [work with remote pinning services](../how-to/work-with-pinning-services.md).
 

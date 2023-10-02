@@ -5,10 +5,21 @@ description: Developer resources for working in JavaScript with IPFS, the InterP
 
 # IPFS in JavaScript
 
-Developers can get started with IPFS in JavaScript using Helia, a lean, modular, and modern implementation of IPFS for the JS and browser environments. Helia superseded [js-ipfs](https://github.com/ipfs/js-ipfs), which was the first JS implementation. Learn more at [https://github.com/ipfs/helia](https://github.com/ipfs/helia).
+Developers can get started with IPFS in JavaScript (JS)  using several options:
 
-## Hands-on examples
+- [IPFS Helia](https://helia.io): a lean, modular, and modern implementation of IPFS for the JS and browser environment
+- [js-kubo-rpc-client](https://github.com/ipfs/js-kubo-rpc-client): A JS client library for the [Kubo RPC API](../kubo/rpc.md)
 
-New to IPFS or JavaScript? Get started with the [Helia 101 example](https://github.com/ipfs-examples/helia-examples/tree/main/examples/helia-101), which will walk you through spawning a Helia node, adding a file, and `cat`-ing the file CID both locally and through an IPFS gateway.
+## Get started
 
-Additional Helia examples can be found [here](https://github.com/ipfs-examples/helia-examples/tree/main).
+### Helia
+
+New to IPFS Helia? The [Helia 101 example](https://github.com/ipfs-examples/helia-examples/tree/main/examples/helia-101) will walk you through spawning a Helia node, adding a file, and `cat`-ing the file CID both locally and through an IPFS gateway. More advanced Helia examples can be found [here](https://github.com/ipfs-examples/helia-examples/tree/main).
+
+### js-kubo-rpc-client
+
+To get started with the js-kubo-rpc-client, do the following:
+
+1. Ensure that you have [kubo](https://github.com/ipfs/kubo) running. Since we're working with Node.js, you can [install kubo using npm](https://www.npmjs.com/package/kubo). 
+1. Next, [install the client using `npm`, or load it as a browser script tag](https://github.com/ipfs/js-kubo-rpc-client#install). 
+1. Then, consult the [command reference](https://github.com/ipfs/js-kubo-rpc-client#usage) for usage information.

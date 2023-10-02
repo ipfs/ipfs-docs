@@ -5,15 +5,16 @@ description: The IPFS Companion browser extension allows you to interact with yo
 
 # Install the IPFS Companion Browser Extension
 
-IPFS Companion allows you to interact with your IPFS node and the extended IPFS network through your browser. The add-on is available for Brave, Chrome, Edge, Firefox, and Opera. It enables support for `ipfs://` addresses, automatically loads websites and file paths from an IPFS gateway, allows you to easily import and share a file with IPFS, and more.
+IPFS Companion allows you to interact with your IPFS node and the extended IPFS network through your browser. The add-on is available for Brave, Chrome, Edge, Firefox, Opera, and any other Chromium-based web browser.
+
+It enables support for `ipfs://` and `ipns://` addresses, automatically loads websites and file paths from a local IPFS gateway, allows you to easily import and share a file with IPFS, and more.
 
 ## Prerequisites
 
 For its full functionality to be enabled, IPFS Companion requires a local IPFS node. As such, it is recommended that you have an IPFS node installed and running on your computer. Any one of the following will satisfy the requirement:
 
-- [Install IPFS Desktop](../install/ipfs-desktop.md)
-- [Install IPFS Kubo for Go](../install/command-line.md)
-- [Install IPFS Helia for JavaScript](https://github.com/ipfs/helia)
+- [Install IPFS Desktop App](../install/ipfs-desktop.md)
+- [Install IPFS Kubo CLI and Daemon](../install/command-line.md)
 
 ## Install
 
@@ -65,9 +66,9 @@ IPFS Companion enables you to quickly and easily access common actions from your
 - Choose the _Quick Import/Share..._ option in the main menu for quick drag-and-drop import from a browser tab.
 - Pin or unpin IPFS resources directly from the main menu.
 - Copy shareable public gateway links, IPFS content paths, or CIDs of IPFS resources directly from the main menu.
-- Launch the [IPFS Web UI dashboard](https://github.com/ipfs-shipyard/ipfs-webui) from the main menu with a single click.
+- Launch the [IPFS Web UI dashboard](https://github.com/ipfs/ipfs-webui) from the main menu with a single click.
 - Toggle gateway redirects or switch all IPFS Companion features on or off quickly and easily from the main menu.
 
 ## Further documentation
 
-If you want to delve deeper into IPFS Companion, check out the project's documentation at [github.com/ipfs-shipyard/ipfs-companion →](https://github.com/ipfs-shipyard/ipfs-companion)
+If you want to delve deeper into IPFS Companion, check out the project's documentation at [github.com/ipfs/ipfs-companion →](https://github.com/ipfs/ipfs-companion)
