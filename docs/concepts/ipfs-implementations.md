@@ -19,7 +19,7 @@ Looking for an easy, user-friendly way to get started with IPFS? Try any of the 
 - [Brave Browser](../how-to/companion-node-types.md#native), native support for IPFS in a browser with a Kubo node built directly into the browser itself.
 :::
 
-The implementation or tool that you use to interact with and use IPFS depends on your partiuclar use case. 
+The implementation or tool that you use to interact with and use IPFS depends on your particular use case. 
 
 - [Use IPFS with your browser](#use-ipfs-with-your-browser)
 - [Use IPFS without code](#use-ipfs-without-code)
@@ -28,7 +28,7 @@ The implementation or tool that you use to interact with and use IPFS depends on
 
 ### Use IPFS with your browser
 
-Interact with the network using any Brave, Chrome, Edge, Firefox, Opera, and any other Chromium-based web browser using the [IPFS Companion browser extension](./install/ipfs-companion.md).
+Interact with the network using any Brave, Chrome, Edge, Firefox, Opera, and any other Chromium-based web browser using the [IPFS Companion browser extension](../install/ipfs-companion.md).
 
 ### Use IPFS without code
 
@@ -39,8 +39,8 @@ Interact with the network using any Brave, Chrome, Edge, Firefox, Opera, and any
 
 You can interact with the IPFS network via the terminal:
 
-- To quickly retreive data with minimal complexity and overhead, use the [Lassie client](https://github.com/filecoin-project/lassie/), which provides a [simple command-line interface](https://github.com/filecoin-project/lassie/#command-line-interface), in addition to other features.
-- For a wider range of features, use [IPFS Kubo as a command-line tool](kubo/cli.md).
+- To quickly retrieve data with minimal complexity and overhead, use the [Lassie client](https://github.com/filecoin-project/lassie/), which provides a [simple command-line interface](https://github.com/filecoin-project/lassie/#command-line-interface), in addition to other features.
+- For a wider range of features, use [IPFS Kubo as a command-line tool](../reference/kubo/cli.md).
 
 ### Develop applications
 
@@ -51,8 +51,8 @@ You can develop IPFS applications with native support in languages such as [Go](
 If you'd like to use IPFS over standard HTTP, you have several options:
 
 - If you simply want to retrieve data, use the [Lassie client HTTP API](https://github.com/filecoin-project/lassie/#http-api).
-- You can control an IPFS Kubo node using HTTP via the [Kubo RPC API](kubo/rpc.md), with the same range of functionality available via the [Kubo CLI](kubo/cli.md). There are multiple [RPC API clients in multiple languages](kubo-rpc-cli.md) to choose from.
-- For an implementation and runtime agnostic HTTP interface, use an [IPFS gateway](./reference/http/gateway.md).
+- You can control an IPFS Kubo node using HTTP via the [Kubo RPC API](../reference/kubo/rpc.md), with the same range of functionality available via the [Kubo CLI](kubo/cli.md). There are multiple [RPC API clients in multiple languages](../reference/kubo-rpc-cli.md) to choose from.
+- For an implementation and runtime agnostic HTTP interface, use an [IPFS gateway](../reference/http/gateway.md).
 
 #### Go
 
@@ -75,7 +75,7 @@ Use Boxo if you:
 - Are building a modular application that interacts with the IPFS network.
 - Want more choice in which features you include in your application.
 - Are building an IPFS implementation.
-- Want to reuse some components of IPFS such as the Kademlia DHT, Bitswap, data encoding, etc., without the full featureset of Kubo.
+- Want to reuse some components of IPFS such as the Kademlia DHT, Bitswap, data encoding, etc.
 - Want to experiment with IPFS.
 
 #### JavaScript
