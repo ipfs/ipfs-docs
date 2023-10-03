@@ -57,12 +57,12 @@ Both Kubo and Helia _nodes_ use bootstrap _nodes_ to initially enter the DHT.
 
 #### Features of a bootstrap node:
 
-- All default bootstrap _nodes_ are part of the public DHT.
+- All default bootstrap _nodes_ are part of the Amino DHT.
 - The list of bootstrap _nodes_ a Helia _node_ connects to is controlled by configuring [libp2p's peerDiscovery option](https://github.com/libp2p/js-libp2p/blob/master/doc/CONFIGURATION.md#peer-discovery).
 
 #### Limitations of a bootstrap node:
 
-- If an IPFS _node_ only has one bootstrap _node_ listed in that configuration and that bootstrap node goes offline, the IPFS node will lose access to the public DHT if it were to restart.
+- If an IPFS _node_ only has one bootstrap _node_ listed in that configuration and that bootstrap node goes offline, the IPFS node will lose access to the Amino DHT if it were to restart.
 - You can configure your _peer_ store in your implementation to cache healthy connectable _peers_ so that you can connect to them again after a restart, instead of bootstrap _nodes_. [Issue 8856 in the Kubo repository](https://github.com/ipfs/kubo/pull/8856), which addressed this, provides further information and context.
 
 [More about Bootstrapping](../how-to/modify-bootstrap-list.md)

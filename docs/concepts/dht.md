@@ -41,9 +41,9 @@ IPFS exposes a _rate-limited_ AutoNAT service on all IPFS nodes that have discov
 
 ## Dual DHT
 
-Many IPFS nodes utilize the publicly shared DHT to discover and advertise content. However, some nodes operate in segregated networks such as local networks or isolated VPNs. For these users, having a DHT where all non-publicly dialable nodes are clients is very problematic since none of them are publicly dialable.
+Many IPFS nodes utilize the public [Amino DHT](../concepts/glossary.md#amino) to discover and advertise content. However, some nodes operate in segregated networks such as local networks or isolated VPNs. For these users, having a DHT where all non-publicly dialable nodes are clients is very problematic since none of them are publicly dialable.
 
-A separate DHT is available to nodes that are not part of the public network called _LAN DHT_. This is completely separate from the public _WAN DHT_. These two DHTs are separated by utilizing different DHT protocol names:
+A separate DHT is available to nodes that are not part of the public network called _LAN DHT_. This is completely separate from the public Amino _WAN DHT_. These two DHTs are separated by utilizing different DHT protocol names:
 
 | DHT | Path                  |
 | --- | --------------------- |
@@ -68,7 +68,7 @@ There are three properties of note here: [qualification](#qualification), [bucke
 Qualifying peers that can be added into a routing table fit these two criteria:
 
 1. Ensure the peer is a DHT server that is advertising the DHT protocol ID, `/ipfs/kad/1.0.0` for the WAN DHT, and `/ipfs/lan/kad/1.0.0` for the LAN DHT.
-1. Ensure the peer has IP addresses that match the ranges we expect. For example, members of the public DHT having at least one public range IP address as opposed to only addresses like `192.168.X.Y`
+1. Ensure the peer has IP addresses that match the ranges we expect. For example, members of the Amino DHT having at least one public range IP address as opposed to only addresses like `192.168.X.Y`
 
 ### Peer buckets
 
