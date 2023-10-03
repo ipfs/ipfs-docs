@@ -9,7 +9,7 @@ The InterPlanetary File System (IPFS) is a set of composable, peer-to-peer proto
 
 ## Get started
 
-You can quickly and easily [store and retrieve data](#store-and-retrieve-data) and [interact with the network via a simple GUI app or a standard browser](#interact-with-the-network). If you'd rather develop applications, learn how to build IPFS-native apps or use standard HTTP/S in the [Build](#build) section.
+You can quickly [store and retrieve data](#store-and-retrieve-data) and [interact with the network via a simple GUI app or a standard browser](#interact-with-the-network). If you'd rather develop applications, learn how to build IPFS-native apps or use standard HTTP in the [Build](#build) section.
 
 :::callout
 New to IPFS? Start with
@@ -21,40 +21,34 @@ New to IPFS? Start with
 Quickly store data and retrieve data, no complex applications or programming required:
 
 - Publish content to the IPFS network with a pinning service by following this [quickstart guide](./quickstart/publish.md).
-
-- Fetch data via it's <VueCustomTooltip label="An address used to point to data in IPFS, based on the content itself, as opposed to the location." underlined multiline is-medium>content identifier (CID)</VueCustomTooltip> [using an IPFS gateway](./quickstart/retrieve.md#fetching-the-cid-with-an-ipfs-gateway)
-
-- For long-term storage, use [Filecoin](https://docs.filecoin.io/), the peer-to-peer network with built-in economic incentives that stores data using IPFS.
+- Fetch data via it's <VueCustomTooltip label="An address used to point to data in IPFS, based on the content itself, as opposed to the location." underlined multiline is-medium>content identifier (CID)</VueCustomTooltip> [using an IPFS gateway](./quickstart/retrieve.md#fetching-the-cid-with-an-ipfs-gateway).
+- For long-term storage, use [Filecoin](https://docs.filecoin.io/), the peer-to-peer network with built-in economic incentives that stores data on IPFS.
 
 ### Interact with the network 
 
 You can quickly interact the IPFS network using a simple GUI or a standard browser:
 
 - For a simple, easy-to-use GUI application that bundles an IPFS node, file manager, peer manager, and content explorer, use [IPFS Desktop](./install/ipfs-desktop.md).
-
 - Interact with the network using any Brave, Chrome, Edge, Firefox, Opera, and any other Chromium-based web browser using the [IPFS Companion browser extension](./install/ipfs-companion.md).
 
 ### Build
 
-You can [build IPFS-native apps and interact with the network using one of the implementations](#ipfs-native-apps), or [connect your Web 2 apps and interact with the network using HTTP/S](#web2-native-apps).
+You can build apps that leverage IPFS implementations, or use HTTP instead:
 
-#### IPFS-native apps
+#### Using IPFS
 
 Build an IPFS-native app using one of the many IPFS <VueCustomTooltip label="Software, written in any programming language, with functionality to process and transmit content-addressed data. Some implementations are optimized for specific use cases or devices, or use different subsystems to handle content-addressed data. There are multiple specififactions in IPFS for handling content-addressed data, and not all implementations implement them." underlined multiline is-medium>implementations</VueCustomTooltip> and tools built by and for Web3 users:
 
 - To develop IPFS applications using Go and/or interact with IPFS from the terminal, use the [IPFS Kubo implementation in Go](./install/command-line.md). 
-
 - If you'd rather use JavaScript, try the [IPFS Helia implementation in JavaScript](https://github.com/ipfs/helia).
-
 - Try any of the [many other tools and implementations](./concepts/ipfs-implementations.md), which are written in different languages and tailored to specific needs and use cases.
 
-#### Web2-native apps
+#### Using HTTP
 
-Connect you Web2 application to the IPFS network using standard HTTP/S:
+Connect your Web2 application to the IPFS network using standard HTTP:
 
 - Control an IPFS Kubo node via HTTP using the [Kubo RPC API](./reference/kubo/rpc.md), which supports [multiple clients in multiple languages](./reference/kubo-rpc-cli.md).
-
-- For an implementation and runtime agnostic HTTP interface, use an [IPFS gateway](./reference/http/gateway.md).
+- For an implementation and runtime agnostic HTTP interface for retrieving data, use an [IPFS gateway](./reference/http/gateway.md).
 
 ## Learn
 
