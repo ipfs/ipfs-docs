@@ -22,6 +22,10 @@ In computer security, an access-control list (ACL) is a list of permissions asso
 
 ADL is short for _Advanced Data Layout_, a concept in [IPLD](#ipld). See [IPLD docs](https://ipld.io/glossary/#adl).
 
+### Amino
+
+Formerly referred to as the "public DHT", Amino is the public Kademlia-based [DHT](#dht) that [Kubo](#kubo) and other implementations default to bootstrapping into with the [libp2p](#libp2p) protocol `/ipfs/kad/1.0.0`. See the [blog post](https://blog.ipfs.tech/2023-09-amino-refactoring/) for more info.
+
 ### Announcing
 
 Announcing is a function of the IPFS networking layer in [libp2p](#libp2p), wherein a peer can tell other peers that it has data blocks available.
