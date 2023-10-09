@@ -12,7 +12,7 @@ RPC API clients are available in multiple languages, and are listed below. You c
 
 | Language      | Client library                                            | Status              |
 |---------------|-----------------------------------------------------------|---------------------|
-| Go            | [ipfs/go-ipfs-api](https://github.com/ipfs/go-ipfs-api)                | Active              |
+| Go            | [ipfs/kubo/client/rpc](https://pkg.go.dev/github.com/ipfs/kubo/client/rpc)                | Active              |
 | Java          | [ipfs-shipyard/java-ipfs-http-client](https://github.com/ipfs-shipyard/java-ipfs-http-client)     | Active              |
 | JavaScript    | [ipfs/js-ipfs/tree/master/packages/ipfs-http-client](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client)  | Active |
 | Python        | [ipfs-shipyard/py-ipfs-http-client](https://github.com/ipfs-shipyard/py-ipfs-http-client)       | Active |
