@@ -40,8 +40,6 @@ If you are running Kubo as a separate process, you should use the [Kubo RPC Clie
 
 ## Packages
 
-> This table is generated using the module [`package-table`](https://github.com/ipfs-shipyard/package-table) with `package-table --data=package-list.json`.
-
 Listing of the main go packages in the IPFS ecosystem:
 
 | Name                                                                         | Go Reference                                                                                                                                              | Coverage                                                                                                                                                                   | Description                                               |
