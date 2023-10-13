@@ -146,8 +146,6 @@ The CI/CD production workflow builds on the `main` branch and deploys the docume
 
 ## Primary maintainers
 
-- [@ElPaisano](https://github.com/ElPaisano): Primary contact, technical writing
-- [@johnnymatthews](https://github.com/johnnymatthews): Primary contact, technical writing
 - [@2color](https://github.com/2color): Developer relations & technical writing(ecosystem)
 
 ## License
