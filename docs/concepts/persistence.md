@@ -53,6 +53,7 @@ Some of the pinning services listed below are operated by third party companies.
 - [Kriptonio](https://kriptonio.com/)
 - [NFT.Storage](https://nft.storage/)
 - [Pinata](https://pinata.cloud/)
+- [Scaleway](https://labs.scaleway.com/en/ipfs-pinning/)
 - [Spheron](https://spheron.network/)
 - [Web3.Storage](https://web3.storage/)
 
