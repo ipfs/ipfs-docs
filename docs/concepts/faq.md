@@ -63,7 +63,7 @@ If you want to develop an IPFS implementation or are already working on one, the
 
 In addition to these core documents, `specs.ipfs.tech` documents standards for IPFS subsystems such as the [InterPlanetary Naming System](https://specs.ipfs.tech/http-gateways/) and [HTTP Gateways](https://specs.ipfs.tech/http-gateways/).
 
-### can I use IPFS offline?
+### Can I use IPFS offline?
 
 Yes, IPFS supports offline use. While the initial retrieval of content may require an internet connection, once the data is cached locally, it can be accessed offline. This is particularly useful in scenarios with intermittent connectivity or when creating applications for areas with limited internet access. Keep in mind that regularly connecting to the network ensures that you have the latest version of the content.
 
