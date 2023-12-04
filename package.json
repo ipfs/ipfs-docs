@@ -13,7 +13,7 @@
     "@vuepress/plugin-last-updated": "^1.9.8",
     "@vuepress/plugin-search": "^1.9.8",
     "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
+    "lint-staged": "^15.2.0",
     "markdown-it-deflist": "^2.1.0",
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-image-lazy-loading": "^1.2.0",
