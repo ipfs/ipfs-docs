@@ -65,7 +65,7 @@ In addition to these core documents, `specs.ipfs.tech` documents standards for I
 
 ### Can I use IPFS offline?
 
-Yes, IPFS supports offline use. While the initial retrieval of content may require an internet connection, once the data is cached locally, it can be accessed offline. This is particularly useful in scenarios with intermittent connectivity or when creating applications for areas with limited internet access. Keep in mind that regularly connecting to the network ensures that you have the latest version of the content.
+Yes, all locally pinned CIDs on an IPFS node are available offline. While the initial retrieval of content may require an internet connection, once the data is cached locally, it can be accessed offline. This is particularly useful in scenarios with intermittent connectivity or when creating applications for areas with limited internet access. 
 
 ## IPFS and Filecoin
 
