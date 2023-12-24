@@ -63,6 +63,10 @@ If you want to develop an IPFS implementation or are already working on one, the
 
 In addition to these core documents, `specs.ipfs.tech` documents standards for IPFS subsystems such as the [InterPlanetary Naming System](https://specs.ipfs.tech/http-gateways/) and [HTTP Gateways](https://specs.ipfs.tech/http-gateways/).
 
+### Can I use IPFS offline?
+
+Yes, all locally pinned CIDs on an IPFS node are available offline. While the initial retrieval of content may require an internet connection, once the data is cached locally, it can be accessed offline. This is particularly useful in scenarios with intermittent connectivity or when creating applications for areas with limited internet access. 
+
 ## IPFS and Filecoin
 
 ### What is the connection between IPFS and Filecoin?
@@ -72,6 +76,7 @@ Filecoin and IPFS are two separate, complementary protocols, both created by Pro
 In short: IPFS addresses and moves content, while Filecoin is an incentive layer to persist data.
 
 These components are separable - you can use one without the other, and IPFS already supports more self-organized or altruistic forms of data persistence via tools like [IPFS Cluster](https://ipfscluster.io/). Compatibility between IPFS and Filecoin is intended to be as seamless as possible, but we expect it to evolve. You can view the [draft spec for IPFS-Filecoin Interoperability](https://github.com/filecoin-project/specs/issues/143) and [ideas for future improvements](https://github.com/filecoin-project/specs/issues/144) to learn more.
+
 
 ## IPFS and Protocol Labs
 
