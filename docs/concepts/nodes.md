@@ -6,7 +6,7 @@ sidebarDepth: 2
 
 # Nodes
 
-Participants in the IPFS network are called _nodes_. A _node_ is a program or process implementing IPFS that you run on your local computer (directly or via a browser) to store files and connect to the IPFS network. They're the most crucial aspect of IPFS. Without nodes running as an IPFS _daemon_ (explained below), there would be no IPFS Network.
+Participants in the IPFS network are called _nodes_. A _node_ is an instance of an implemention IPFS that you run on your local computer (directly or via a browser) to store files and connect to the IPFS network. They're the most crucial aspect of IPFS. Without IPFS nodes, there would be no IPFS Network.
 
 You're likely to see the term _node_ throughout the IPFS docs, issues, and related code. It's a very general term, so its meaning depends on the context. There are three main categories of nodes: IPFS nodes, data nodes, and libp2p nodes for applications.
 
@@ -28,7 +28,7 @@ There are different types of IPFS nodes. And depending on the use-case, a single
 
 - [Relay](#relay)
 - [Bootstrap](#bootstrap)
-- [Delegate routing](#delegate-routing-node)
+- [Delegate routing](#delegate-routing)
 
 ### Relay
 
@@ -67,22 +67,21 @@ Both Kubo and Helia _nodes_ use bootstrap _nodes_ to initially enter the DHT.
 
 [More about Bootstrapping](../how-to/modify-bootstrap-list.md)
 
-### Delegate routing node
+### Delegated Routing
 
-When IPFS nodes are unable to run Distributed Hash Table (DHT) logic on their own, they _delegate_ the task to a delegate routing node. Publishing works with arbitrary CID codecs (compression/decompression technology), as the [js-libp2p-delegated-content-routing module](https://github.com/libp2p/js-libp2p-delegated-content-routing/blob/master/src/index.ts) publishes CIDs at the block level rather than the IPLD or DAG level.
+IPFS nodes _delegate_ the content and peer routing tasks to a **Delegated Routing V1 HTTP API** ([spec](https://specs.ipfs.tech/routing/http-routing-v1/)).
 
-#### Features of a delegate routing node:
+Delegated routing over HTTP is not a routing system but a general API to offload routing work. This is useful in browsers and other constrained environments where it's infeasible to be a DHT server/client contacting many other peers. More broadly, it enables experimentation and innovation in content routing while maintaining interoperability.
 
-- They are IPFS _nodes_ with their API ports exposed and some [Kubo RPC API](../reference/kubo/rpc.md) commands accessible at path `/api/v0`.
-- Usable by both Kubo and Helia _nodes_.
-- Helia _nodes_ can use them to query the DHT and also publish content without having to actually run DHT logic on their own.
-  - The libp2p _node_ configured for a Helia _node_ can be configured for delegate routing by following instructions at in the [js-libp2p configuration doc](https://github.com/libp2p/js-libp2p/blob/master/doc/CONFIGURATION.md#setup-with-content-and-peer-routing)
+The [HTTP API](https://specs.ipfs.tech/routing/http-routing-v1/) can used to resolve **content**, **peer**, and **IPNS name** routing requests.
 
-#### Limitations of a delegate routing node:
+#### Support for delegated routing in IPFS implementations
 
-- On default delegate _nodes_ provided by Protocol Labs, the garbage collection happens every hour, so provided content only survives for that long.
-- Only Kubo is known to implement the [Kubo RPC API](../reference/kubo/rpc.md) at the time of writing.
-  - There is a successor to the delegated routing functionality of the Kubo RPC API called [Routing V1 HTTP API](https://specs.ipfs.tech/routing/http-routing-v1/)
+- [someguy](https://github.com/ipfs-shipyard/someguy) is a Delegated Routing V1 server that proxies requests to the IPFS Amino DHT and the [cid.contact Network Indexer](https://cid.contact/). The IPFS Foundation operates a public good delegated routing endpoint backed by someguy with the URL https://delegated-ipfs.dev.
+- The [cid.contact Network Indexer](https://cid.contact/) also implements the Delegated Routing V1 HTTP API.
+- [Helia](https://github.com/ipfs/helia/tree/main/packages/http#example---with-custom-gateways-and-delegated-routing-endpoints) can be configured to use a delegated routing endpoint.
+- [`Kubo`](https://github.com/ipfs/kubo/blob/master/docs/delegated-routing.md) can be configured with multiple delegated routing endpoints (Kubo as a client) in addition to exposing the delegated routing endpoint on the [gateway](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewayexposeroutingapi) (Kubo as a delegated routing server).
+
 
 ## Implementations
 
