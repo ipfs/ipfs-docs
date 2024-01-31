@@ -6,7 +6,7 @@ sidebarDepth: 2
 
 # Nodes
 
-Participants in the IPFS network are called _nodes_. A _node_ is an instance of an implemention IPFS that you run on your local computer (directly or via a browser) to store files and connect to the IPFS network. They're the most crucial aspect of IPFS. Without IPFS nodes, there would be no IPFS Network.
+Participants in the IPFS network are called _nodes_. A _node_ is an instance of an implementation IPFS that you run on your local computer (directly or via a browser) to store files and connect to the IPFS network. They're the most crucial aspect of IPFS. Without IPFS nodes, there would be no IPFS Network.
 
 You're likely to see the term _node_ throughout the IPFS docs, issues, and related code. It's a very general term, so its meaning depends on the context. There are three main categories of nodes: IPFS nodes, data nodes, and libp2p nodes for applications.
 
@@ -53,7 +53,7 @@ See [p2p-circuit relay](https://github.com/libp2p/specs/tree/master/relay)
 
 ### Bootstrap
 
-Both Kubo and Helia _nodes_ use bootstrap _nodes_ to initially enter the DHT.
+Both Kubo and Helia _nodes_ use bootstrap _nodes_ to find peers on the DHT.
 
 #### Features of a bootstrap node:
 
