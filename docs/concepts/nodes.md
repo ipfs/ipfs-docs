@@ -28,7 +28,7 @@ There are different types of IPFS nodes. And depending on the use-case, a single
 
 - [Relay](#relay)
 - [Bootstrap](#bootstrap)
-- [Delegate routing](#delegate-routing)
+- [Delegated Routing](#delegated-routing)
 
 ### Relay
 
@@ -47,7 +47,6 @@ If an IPFS node deems itself unreachable by the public internet, IPFS nodes may 
 
 #### Limitations of relay nodes:
 - v2 relays are "limited relays" that are designed to be used for [Direct Connection Upgrade through Relay](https://github.com/libp2p/specs/blob/master/relay/DCUtR.md) (aka hole punching).
-- Not configurable in Kubo; uses a preset list of relays
 
 See [p2p-circuit relay](https://github.com/libp2p/specs/tree/master/relay)
 
@@ -80,11 +79,8 @@ The [HTTP API](https://specs.ipfs.tech/routing/http-routing-v1/) can used to res
 - [someguy](https://github.com/ipfs-shipyard/someguy) is a Delegated Routing V1 server that proxies requests to the IPFS Amino DHT and the [cid.contact Network Indexer](https://cid.contact/). The IPFS Foundation operates a public good delegated routing endpoint backed by someguy with the URL https://delegated-ipfs.dev.
 - The [cid.contact Network Indexer](https://cid.contact/) also implements the Delegated Routing V1 HTTP API.
 - [Helia](https://github.com/ipfs/helia/tree/main/packages/http#example---with-custom-gateways-and-delegated-routing-endpoints) can be configured to use a delegated routing endpoint.
-- [`Kubo`](https://github.com/ipfs/kubo/blob/master/docs/delegated-routing.md) can be configured with multiple delegated routing endpoints (Kubo as a client) in addition to exposing the delegated routing endpoint on the [gateway](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewayexposeroutingapi) (Kubo as a delegated routing server).
-
+- [Kubo](https://github.com/ipfs/kubo/blob/master/docs/delegated-routing.md) can be configured with multiple delegated routing endpoints (Kubo as a client), in addition to exposing the delegated routing endpoint on the [gateway](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewayexposeroutingapi) (Kubo as a delegated routing server).
 
 ## Implementations
 
-Protocol Labs manages two implementations of the IPFS spec: Kubo and Helia. These implementations use specific types of _nodes_ to perform server, browser, and other client functions.
-
-[Read more about our implementations](./ipfs-implementations.md)
+[Read more about IPFS implementations](./ipfs-implementations.md)
