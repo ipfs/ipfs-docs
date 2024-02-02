@@ -5,6 +5,10 @@ description: 'Learn how to publish content with IPFS by pinning a file to a pinn
 
 # Publish a file with IPFS
 
+:::warning
+This guide is currently outdated due to changes with web3.storage.
+:::
+
 In this quickstart guide, you will learn about [pinning services](../concepts/persistence.md#pinning-in-context) and how to use them to publish content-addressed data with IPFS. To learn the process, you will upload the file to a pinning service called [web3.storage](https://web3.storage/). By the end of this guide, you should have a better understanding of how content addressing and CIDs work from a high level.
 
 :::callout
