@@ -76,10 +76,10 @@ The [HTTP API](https://specs.ipfs.tech/routing/http-routing-v1/) can used to res
 
 #### Support for delegated routing in IPFS implementations
 
-- [someguy](https://github.com/ipfs-shipyard/someguy) is a Delegated Routing V1 server that proxies requests to the IPFS Amino DHT and the [cid.contact Network Indexer](https://cid.contact/). The IPFS Foundation operates a public good delegated routing endpoint backed by someguy with the URL https://delegated-ipfs.dev.
+- [someguy](https://github.com/ipfs-shipyard/someguy) is a Delegated Routing V1 server that proxies requests to the IPFS Amino DHT and the [cid.contact Network Indexer](https://cid.contact/). The IPFS Foundation operates a public good delegated routing endpoint backed by someguy with the URL `https://delegated-ipfs.dev/routing/v1`.
 - The [cid.contact Network Indexer](https://cid.contact/) also implements the Delegated Routing V1 HTTP API.
 - [Helia](https://github.com/ipfs/helia/tree/main/packages/http#example---with-custom-gateways-and-delegated-routing-endpoints) can be configured to use a delegated routing endpoint.
-- [Kubo](https://github.com/ipfs/kubo/blob/master/docs/delegated-routing.md) can be configured with multiple delegated routing endpoints (Kubo as a client), in addition to exposing the delegated routing endpoint on the [gateway](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewayexposeroutingapi) (Kubo as a delegated routing server).
+- [Kubo](https://github.com/ipfs/kubo/blob/master/docs/delegated-routing.md) can be configured with multiple delegated routing endpoints ([Kubo as a client](https://github.com/ipfs/kubo/blob/master/docs/config.md#routingtype)), in addition to exposing the delegated routing endpoint on the gateway ([Kubo as a delegated routing server](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewayexposeroutingapi)).
 
 ## Implementations
 
