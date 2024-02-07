@@ -164,9 +164,13 @@ The Datastore is the on-disk storage system used by an IPFS node. Configuration 
 
 Direct Connection Upgrade through Relay (DCUtR) protocol enables [hole punching](#hole-punching) for NAT traversal when port forwarding is not possible. A peer will coordinate with the counterparty using a [relayed connection](#circuit-relay-v2), to upgrade to a direct connection through a NAT/firewall whenever possible. [More about DCUtR](https://github.com/libp2p/specs/blob/master/relay/DCUtR.md)
 
-### Delegate routing node
+### Delegated routing
 
-[Kubo](#kubo) nodes with a subset of RPC API commands exposed. JS-IPFS nodes use them to query the DHT and also publish content without having to actually run DHT logic on their own. See [Delegate routing](../concepts/nodes.md#types)
+Delegated routing is a mechanism by which IPFS implementations can offload content routing, peer routing, and naming (IPNS) to another process/server. The most widely adopted vendor-agnostic spec for delegated routing is the [Delegated Routing V1 HTTP API](https://specs.ipfs.tech/routing/http-routing-v1/).
+
+Delegated routing is useful in browsers and other constrained environments where it's infeasible to be a DHT client/server. More broadly, it enables experimentation and innovation in content routing while maintaining interoperability and modularity.
+
+[More about delegated routing](../concepts/nodes.md#types)
 
 ### DHT
 
