@@ -33,7 +33,7 @@ When a client request for a CID reaches an IPFS gateway, the gateway first check
 
 The CID retrieval process is composed of two parts, content discovery / routing and content retrieval:
 
-1. In the **content discovery / routing** step, the gateway will determine <VueCustomTooltip label="An IPFS network peer that can provide data specified by a particular CID upon request." underlined multiline>provider</VueCustomTooltip>  location; that is, _where_ the data specified by the CID can be found:
+1. In the **content discovery / routing** step, the gateway will determine <VueCustomTooltip label="An IPFS network peer that can provide data specified by a particular CID upon request." underlined multiline>provider</VueCustomTooltip> location; that is, _where_ the data specified by the CID can be found:
 
    - Asking peers that it is directly connected to if they have the data specified by the CID.
    - Query the DHT for the IDs and network addresses of peers that have the data specified by the CID.
@@ -65,14 +65,8 @@ A gateway behind a firewall represents just one potential location for a private
 
 ### Public gateways
 
-Public gateway operators include:
+For more information about public gateways, see the [](./public-utilities.md#public-ipfs-gateways)
 
-- Protocol Labs, which deploys the public gateway `https://ipfs.io`.
-- Third-party public gateways, such as `https://cf-ipfs.com`.
-
-Protocol Labs maintains a [list of public gateways](https://ipfs.github.io/public-gateway-checker/) and their status.
-
-[Web3IMG](https://web3img.com) also maintains an unofficial [list of public gateways](https://bestipfs.net). Please do your research before using any third-party gateways or websites.
 
 ## Gateway types
 
@@ -89,7 +83,7 @@ There are multiple gateway types, each with specific use case, security, perform
 
 ### Read-only gateways
 
-_Read-only gateways_ are the simplest kind of gateway. This gateway type provides a way to fetch IPFS content using the HTTP GET method. 
+_Read-only gateways_ are the simplest kind of gateway. This gateway type provides a way to fetch IPFS content using the HTTP GET method.
 
 ### Authenticated gateways
 
@@ -213,4 +207,4 @@ No. The ipfs.io gateway is one of many portals used to view content stored by th
 
 - [A Practical Explainer for IPFS Gateways – Part 1](https://blog.ipfs.tech/2022-06-09-practical-explainer-ipfs-gateways-1/), [Part 2](https://blog.ipfs.tech/2022-06-30-practical-explainer-ipfs-gateways-2/)
 - [Kubo: Gateway configuration options](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway)
-- [IPFS HTTP Gateways specification](https://specs.ipfs.tech/http-gateways/) 
+- [IPFS HTTP Gateways specification](https://specs.ipfs.tech/http-gateways/)
