@@ -5,6 +5,10 @@ description: 'Learn how to publish content with IPFS by pinning a file to a pinn
 
 # Publish a file with IPFS using the command line
 
+:::warning
+Some steps of this guide are currently outdated due to [changes with web3.storage](https://blog.web3.storage/posts/the-data-layer-is-here-with-the-new-web3-storage).
+:::
+
 Similar to the [Publish a file with IPFS](./publish.md) quickstart, this guide will teach you about [pinning services](../concepts/persistence.md#pinning-in-context) and how to use them to publish content-addressed data with IPFS. However, instead of using the [Web3 UI used in the related guide](./publish.md#upload-and-pin-a-file) , you will upload the file to [web3.storage](https://web3.storage/) using the [w3 command line interface](https://github.com/web3-storage/w3cli). By the end of this guide, you should have a better understanding of how content addressing and CIDs work from a high level, as well as how to use the w3 command line interface to publish data to IPFS.
 
 :::callout
