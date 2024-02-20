@@ -6,7 +6,7 @@ description: Information about hosted public utilities such as public gateways a
 
 # Public IPFS Utilities
 
-The IPFS Foundation (and Protocol Labs in the past), Cloudflare, and several other organizations provide hosted public utilities to the community on a best-effort basis. As such, it is not intended to be part of your critical path or production infrastructure.
+The IPFS Foundation (and Protocol Labs in the past) and several other organizations provide hosted public utilities to the community on a best-effort basis. As such, it is not intended to be part of your critical path or production infrastructure.
 
 These include [IPFS Gateways](./ipfs-gateway.md) and hosted [Delegated Routing V1 endpoints](./nodes#delegated-routing).
 
@@ -16,7 +16,7 @@ These IPFS gateways and delegated routing endpoints make it easier to retrieve d
 
 ## Waterworks
 
-The IP Shipyard team with support from the IPFS Foundation, operates the Waterwork infrastructure:
+The IPFS Foundation provides the following Waterworks infrastructure:
 
 - **`https://ipfs.io`**: Path resolution gateway
 - **`https://dweb.link`**: Subdomain resolution gateway
@@ -51,7 +51,7 @@ Browsers and low-powered devices can make a single HTTP call to a _Delegated Rou
 
 ### Waterworks Delegating Routing Endpoint
 
-The IP Shipyard team with support from the IPFS Foundation, operates a public good delegated routing endpoint backed by [**someguy**](https://github.com/ipfs/someguy) with the URL **`https://delegated-ipfs.dev/routing/v1`**
+The IPFS Foundation provides a public good delegated routing endpoint backed by [**someguy**](https://github.com/ipfs/someguy) with the URL **`https://delegated-ipfs.dev/routing/v1`**
 
 Under the hood, someguy handles requests by looking up the DHT and Network Indexer.
 
