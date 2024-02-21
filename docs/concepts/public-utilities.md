@@ -10,24 +10,21 @@ The IPFS Foundation (and Protocol Labs in the past) and several other organizati
 
 These include [IPFS Gateways](./ipfs-gateway.md) and hosted [Delegated Routing V1 endpoints](./nodes#delegated-routing).
 
-These IPFS gateways and delegated routing endpoints make it easier to retrieve data from the IPFS network in resource-constrained environments such as browsers and low-powered devices.
+These utilities make it easier to retrieve data from the IPFS network in resource-constrained environments such as browsers and low-powered devices.
 
 ## Public IPFS Gateways
 
-## Waterworks
-
-The IPFS Foundation provides the following Waterworks infrastructure:
+The IPFS Foundation provides the following public gateways:
 
 - **`https://ipfs.io`**: Path resolution gateway
 - **`https://dweb.link`**: Subdomain resolution gateway
 - **`https://trustless-gateway.link`**: [trustless only gateway](https://specs.ipfs.tech/http-gateways/trustless-gateway/)
-- **`https://delegated-ipfs.dev/routing/v1`**: Hosted Delegated Routing V1 endpoint backed by [**someguy**](https://github.com/ipfs/someguy)
 
-The Waterworks gateways block abusive content using the [Bad Bits Denylist](https://badbits.dwebops.pub/).
+These gateways block abusive content using the [Bad Bits Denylist](https://badbits.dwebops.pub/).
 
 To report abusive content and content breaches of the [IPFS Community Code of Conduct](https://ipfs.fyi/coc), please send an email with the CIDs to abuse@ipfs.io.
 
-To report any technical problems with these gateways, you can open an issue in the [Waterworks Community repository](https://github.com/ipshipyard/waterworks-community)
+Technical operations are run by the Waterworks Community on behalf of the IPFS Foundation. To report any technical problems with these gateways, you can open an issue in the [Waterworks Community repository](https://github.com/ipshipyard/waterworks-community).
 
 ### Abuse Policy
 
@@ -45,13 +42,13 @@ Additionally, there's a community-maintained [tool for finding and testing publi
 
 While IPFS Gateways are immensely helpful in doing all the heavy lifting of finding providers for CIDs and retrieving them, they can be a choke point for retrieval and a point of centralization.
 
-Hosted [_Delegated Routing_](./nodes.md#delegated-routing) endpoints are a key step towards eliminating the emergent centralization of public gateways thereby increasing the health of the network.
+[_Delegated Routing_](./nodes.md#delegated-routing) endpoints are a key step towards eliminating the emergent centralization of public gateways thereby increasing the health of the network.
 
 Browsers and low-powered devices can make a single HTTP call to a _Delegated Routing_ endpoint with the CID they are looking to retrieve. The endpoint returns the [multiaddresses](./glossary.md#multiaddr) of the providers for the CID, from which the browser can download directly.
 
-### Waterworks Delegating Routing Endpoint
+### Delegated Routing Endpoint
 
-The IPFS Foundation provides a public good delegated routing endpoint backed by [**someguy**](https://github.com/ipfs/someguy) with the URL **`https://delegated-ipfs.dev/routing/v1`**
+The IPFS Foundation provides a public delegated routing endpoint backed by [**someguy**](https://github.com/ipfs/someguy) with the URL **`https://delegated-ipfs.dev/routing/v1`**
 
 Under the hood, someguy handles requests by looking up the DHT and Network Indexer.
 
