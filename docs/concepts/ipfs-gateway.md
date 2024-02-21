@@ -11,13 +11,16 @@ related:
 
 # IPFS Gateway
 
-An _IPFS gateway_ provides an HTTP-based service that allows IPFS-incompatible browsers, tools and software to access IPFS content. For example, some browsers or tools like [Curl](https://curl.haxx.se/) or [Wget](https://www.gnu.org/software/wget/) don't support IPFS natively and cannot access to IPFS content using canonical addressing like `ipfs://{CID}/{optional path to resource}`. While tools like [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) add browser support for native IPFS URLs, this is not always an option. As such, there are multiple gateway types and <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>gateway providers</VueCustomTooltip> available so that applications of all kinds can interface with IPFS using HTTP.
+An _IPFS gateway_ is a web-based service that gets content from the IPFS network and makes it available via HTTP, allowing IPFS-incompatible browsers, tools and software to benefit from the IPFS public network. For example, some browsers or tools like [Curl](https://curl.haxx.se/) or [Wget](https://www.gnu.org/software/wget/) don't support IPFS natively and cannot access to IPFS content using canonical addressing like `ipfs://{CID}/{optional path to resource}`. While tools like [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) add browser support for native IPFS URLs, this is not always an option. As such, there are multiple gateway types and <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>gateway providers</VueCustomTooltip> available so that applications of all kinds can interface with IPFS using HTTP.
 
 This page discusses:
 
-- The IPFS gateway request lifecycle
-- The several types of gateways.
-- Gateway role in the use of IPFS.
+- [Gateway request lifecycle](#gateway-request-lifecycle)
+- [Gateway providers](#gateway-providers)
+- [Gateway types](#gateway-types)
+- [Working with gateways](#working-with-gateways)
+- [Implementing gateways](#implementing-gateways)
+- [FAQs](#frequently-asked-questions-faqs)
 
 ## Gateway request lifecycle
 
@@ -59,9 +62,11 @@ Your machine may host a gateway as a local service; e.g., at `localhost:8080`. Y
 
 ### Private gateways
 
-Running [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node triggers connection attempts to other IPFS peers. Private network administrators may treat such connection attempts as potential security vulnerabilities. Private IPFS gateway servers located inside the private network and running a trusted code base provide an alternative architecture for read/write access to externally-hosted IPFS content.
+_Private gateways_ are configured to limit access to requests from specific domains or parts of the public internet. 
 
-A gateway behind a firewall represents just one potential location for a private gateway. More generally, one may consider any gateway as a _private gateway_ when configured to limit access to requests from specific domains or parts of the public internet. This [tutorial configuring an IPFS gateway on a Google Cloud platform](https://blog.stacktical.com/ipfs/gateway/dapp/2019/09/21/ipfs-server-google-cloud-platform.html) includes a description of constraining access.
+They are frequently, but not exclusively, used behind firewalls. Running [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node triggers connection attempts to other IPFS peers. Private network administrators may treat such connection attempts as potential security vulnerabilities. Private IPFS gateway servers located inside the private network and running a trusted code base provide an alternative architecture for read/write access to externally-hosted IPFS content.
+
+This [tutorial configuring an IPFS gateway on a Google Cloud platform](https://blog.stacktical.com/ipfs/gateway/dapp/2019/09/21/ipfs-server-google-cloud-platform.html) includes information on constraining access for a private gateway setup.
 
 ### Public gateways
 
@@ -157,7 +162,7 @@ Currently HTTP gateways may access both IPFS and IPNS services:
 
 For more information on working with gateways, see [best practices](../how-to/gateway-best-practices.md) and [troubleshooting](../how-to/gateway-troubleshooting.md).
 
-## Implementing using the spec
+## Implementing gateways
 
 If you would like to read the technical specifications for the various gateway types, and learn more about how to implement a gateway, see the [IPFS HTTP Gateways specification](https://specs.ipfs.tech/http-gateways/) page for more information.
 
