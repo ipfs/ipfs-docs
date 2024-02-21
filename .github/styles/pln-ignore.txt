@@ -54,11 +54,13 @@ Datastore
 datastore
 dClimate
 deduplicate
+Denylist
 deserialization
 Dheeraj
 DHT
 DHTs
 dialable
+discoverability
 DNS
 DNSAddr
 DNSLink
@@ -148,6 +150,7 @@ Minty
 Minty's
 multiaddr
 Multiaddress
+multiaddresses
 Multibase
 multibase
 Multicodec
@@ -214,9 +217,11 @@ sharding
 snapshotted
 stackparse
 stdout
+someguy
 Storj
 substring
 Sztandera
+takedown
 Testground
 testnet
 toolkits
