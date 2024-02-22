@@ -14,6 +14,9 @@ Audius
 auspinner
 BitSwap
 bitswap
+bootstrappers
+bootstrapper
+bootstrap
 Blockchain
 blockchain
 blockchains
