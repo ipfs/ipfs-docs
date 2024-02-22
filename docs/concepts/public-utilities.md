@@ -16,9 +16,9 @@ These utilities make it easier to retrieve data from the IPFS network in resourc
 
 The IPFS Foundation provides the following public gateways:
 
-- **`https://ipfs.io`**: Path resolution gateway
-- **`https://dweb.link`**: Subdomain resolution gateway
-- **`https://trustless-gateway.link`**: [trustless only gateway](https://specs.ipfs.tech/http-gateways/trustless-gateway/)
+- **`https://ipfs.io`**: [Path resolution](https://docs.ipfs.tech/how-to/address-ipfs-on-web/#path-gateway) gateway
+- **`https://dweb.link`**: [Subdomain resolution](https://docs.ipfs.tech/how-to/address-ipfs-on-web/#subdomain-gateway) gateway
+- **`https://trustless-gateway.link`**: Gateway limited to [trustless and verifiable responses](https://docs.ipfs.tech/reference/http/gateway/#trustless-verifiable-retrieval)
 
 These gateways block abusive content using the [Bad Bits Denylist](https://badbits.dwebops.pub/).
 
@@ -28,7 +28,7 @@ Technical operations are run by the Waterworks Community on behalf of the IPFS F
 
 ### Abuse Policy
 
-When a takedown request for the ipfs.io and/or `dweb.link` gateway(s) is first received at abuse@ipfs.io, the sender will receive an automated system receipt. Next, someone from the takedown team will vet the request to validate that it is legitimate and should be accepted. Once the validity of the request has been established, it will be submitted for further processing.
+When a takedown request for the `ipfs.io` and/or `dweb.link` gateway(s) is first received at abuse@ipfs.io, the sender will receive an automated system receipt. Next, someone from the takedown team will vet the request to validate that it is legitimate and should be accepted. Once the validity of the request has been established, it will be submitted for further processing.
 
 From there, an internal system extracts the relevant information from the request and generates an entry for it in our takedown lists. The list is then published to our gateway nodes, and the content in question will return a 410 status when visited.
 

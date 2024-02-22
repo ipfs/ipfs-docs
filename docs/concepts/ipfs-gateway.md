@@ -11,7 +11,7 @@ related:
 
 # IPFS Gateway
 
-An _IPFS gateway_ is a web-based service that gets content from the IPFS network and makes it available via HTTP, allowing IPFS-incompatible browsers, tools and software to benefit from the IPFS public network. For example, some browsers or tools like [Curl](https://curl.haxx.se/) or [Wget](https://www.gnu.org/software/wget/) don't support IPFS natively and cannot access to IPFS content using canonical addressing like `ipfs://{CID}/{optional path to resource}`. While tools like [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) add browser support for native IPFS URLs, this is not always an option. As such, there are multiple gateway types and <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>gateway providers</VueCustomTooltip> available so that applications of all kinds can interface with IPFS using HTTP.
+An _IPFS gateway_ is a web-based service that gets content from an IPFS network (private, or the public swarm backed by Amino DHT), and makes it available via HTTP, allowing IPFS-incompatible browsers, tools and software to benefit from [content-addressing](https://docs.ipfs.tech/concepts/content-addressing/). For example, some browsers or tools like [Curl](https://curl.haxx.se/) or [Wget](https://www.gnu.org/software/wget/) don't support IPFS natively and cannot access to IPFS content using canonical addressing like `ipfs://{CID}/{optional path to resource}`. While tools like [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) add browser support for native IPFS URLs, this is not always an option. As such, there are multiple gateway types and <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>gateway providers</VueCustomTooltip> available so that applications of all kinds can interface with IPFS using HTTP.
 
 This page discusses:
 
@@ -70,7 +70,7 @@ This [tutorial configuring an IPFS gateway on a Google Cloud platform](https://b
 
 ### Public gateways
 
-For more information about public gateways, see the [](./public-utilities.md#public-ipfs-gateways)
+For more information about public gateways, see the [Public IPFS Gateways](./public-utilities.md#public-ipfs-gateways)
 
 
 ## Gateway types
