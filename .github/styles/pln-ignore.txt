@@ -14,6 +14,9 @@ Audius
 auspinner
 BitSwap
 bitswap
+bootstrappers
+bootstrapper
+bootstrap
 Blockchain
 blockchain
 blockchains
@@ -54,11 +57,13 @@ Datastore
 datastore
 dClimate
 deduplicate
+Denylist
 deserialization
 Dheeraj
 DHT
 DHTs
 dialable
+discoverability
 DNS
 DNSAddr
 DNSLink
@@ -148,6 +153,7 @@ Minty
 Minty's
 multiaddr
 Multiaddress
+multiaddresses
 Multibase
 multibase
 Multicodec
@@ -214,9 +220,11 @@ sharding
 snapshotted
 stackparse
 stdout
+someguy
 Storj
 substring
 Sztandera
+takedown
 Testground
 testnet
 toolkits
