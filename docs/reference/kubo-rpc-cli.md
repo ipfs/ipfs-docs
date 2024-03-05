@@ -13,8 +13,8 @@ RPC API clients are available in multiple languages, and are listed below. You c
 | Language      | Client library                                            | Status              |
 |---------------|-----------------------------------------------------------|---------------------|
 | Go            | [ipfs/kubo/client/rpc](https://pkg.go.dev/github.com/ipfs/kubo/client/rpc)                | Active              |
+| JavaScript    | [ipfs/js-kubo-rpc-client](https://www.npmjs.com/package/kubo-rpc-client)  | Active |
 | Java          | [ipfs-shipyard/java-ipfs-http-client](https://github.com/ipfs-shipyard/java-ipfs-http-client)     | Active              |
-| JavaScript    | [ipfs/js-ipfs/tree/master/packages/ipfs-http-client](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client)  | Active |
 | Python        | [ipfs-shipyard/py-ipfs-http-client](https://github.com/ipfs-shipyard/py-ipfs-http-client)       | Active |
 | Scala         | [ipfs-shipyard/scala-ipfs-api](https://github.com/ipfs-shipyard/scala-ipfs-api)            | Inactive |
 | Clojure       | [keorn/clj-ipfs-http-client](https://github.com/keorn/clj-ipfs-http-client)              | Inactive |
@@ -32,7 +32,8 @@ RPC API clients are available in multiple languages, and are listed below. You c
 | Pharo         | [khinsen/ipfs-pharo](https://github.com/khinsen/ipfs-pharo)                      | Inactive   |
 | PHP           | [cloutier/php-ipfs-api](https://github.com/cloutier/php-ipfs-api)                   | Inactive |
 |               | [digitalkaoz/php-ipfs-api](https://github.com/digitalkaoz/php-ipfs-api)                | Inactive |
-| C#            | [jeremy-ellis-tech/net-ipfs-http-client](https://github.com/jeremy-ellis-tech/net-ipfs-http-client)  | Inactive |
+| C#            | [ipfs-shipyard/net-ipfs-http-client](https://github.com/ipfs-shipyard/net-ipfs-http-client) | Active |
+|               | [jeremy-ellis-tech/net-ipfs-http-client](https://github.com/jeremy-ellis-tech/net-ipfs-http-client)  | Inactive |
 |               | [richardschneider/net-ipfs-http-client](https://github.com/richardschneider/net-ipfs-http-client)   | Inactive   |
 | C++           | [vasild/cpp-ipfs-api](https://github.com/vasild/cpp-ipfs-api)                    | Active   |
 | Erlang        | [hendry19901990/erlang-ipfs-http-client](https://github.com/hendry19901990/erlang-ipfs-http-client) | Inactive |
