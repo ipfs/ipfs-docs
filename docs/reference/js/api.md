@@ -8,7 +8,7 @@ description: Developer resources for working in JavaScript with IPFS, the InterP
 Developers can get started with IPFS in JavaScript (JS)  using several options:
 
 - [IPFS Helia](https://helia.io): a lean, modular, and modern implementation of IPFS for the JS and browser environment
-- [@helia/verified-fetch](https://github.com/ipfs/helia-verified-fetch/tree/main/packages/verified-fetch): A [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)-like API for obtaining verified & trustless IPFS CIDs on the web
+- [@helia/verified-fetch](https://github.com/ipfs/helia-verified-fetch/tree/main/packages/verified-fetch): A [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)-like API for obtaining verified & trustless IPFS content on the web
 - [js-kubo-rpc-client](https://github.com/ipfs/js-kubo-rpc-client): A JS client library for the [Kubo RPC API](../kubo/rpc.md)
 
 ## Get started
