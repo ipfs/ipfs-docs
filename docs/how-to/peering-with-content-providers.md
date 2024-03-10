@@ -126,6 +126,12 @@ See [web3.storage/PEERS](https://github.com/web3-storage/web3.storage/blob/main/
 | ------- | --------- |
 |`12D3KooWQ85aSCFwFkByr5e3pUCQeuheVhobVxGSSs1DrRQHGv1t`|`/dnsaddr/node-1.ipfs.4everland.net`|
 
+### bit.site
+
+| Peer ID | Addresses |
+| ------- | --------- |
+|`12D3KooWJ6MTkNM8Bu8DzNiRm1GY3Wqh8U8Pp1zRWap6xY3MvsNw`|`/dnsaddr/node-1.ipfs.bit.site`|
+
 ### StorryTV
 
 | Peer ID | Addresses |
