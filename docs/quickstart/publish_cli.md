@@ -57,7 +57,7 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 1. Authorize the w3 tool to act on behalf of the account associated with your email address `<your@email.com>`:
 
    ```shell
-   w3 authorize <your@email.com>
+   w3 login <your@email.com>
 
 ## Upload and pin a file
 
