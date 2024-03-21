@@ -37,7 +37,7 @@ Below is a community-maintained list of nodes that provide a lot of content to t
 
 If you're running a public IPFS gateway, you may see improved performance for popular queries by adding these nodes to your [Peering configuration][docs-peering-config].
 
-To add add your platform to this list, please [open a PR to edit this page](https://github.com/ipfs/ipfs-docs/edit/main/docs/how-to/peering-with-content-providers.md) and add yourself to the list in alphabetical order.
+To add your platform to this list, please [open a PR to edit this page](https://github.com/ipfs/ipfs-docs/edit/main/docs/how-to/peering-with-content-providers.md) and add yourself to the list in alphabetical order.
 
 :::warning
 This list is provided for informational purposes only. The IPFS Project does not endorse or guarantee any of the content providers listed here, nor does it have any control over their operations or services. Users should exercise their own discretion and conduct their own due diligence when selecting and interacting with content providers. 
