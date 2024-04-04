@@ -5,7 +5,7 @@ description: There are several different ways you can install and interact with 
 
 # Get Started
 
-IPFS is a collection of protocols, packages, and specifications that allow computers to send and receive data. Because of this, users can interact with and use IPFS in many different ways. A developer building network applications will use a different set of tools to interact with IPFS than than someone who wants to store files on IPFS. Pick the one that best suits what you're here to do.
+IPFS is a collection of protocols, packages, and specifications that allow computers to send and receive data. Because of this, users can interact with and use IPFS in many different ways. A developer building network applications will use a different set of tools to interact with IPFS than someone who wants to store files on IPFS. Pick the one that best suits what you're here to do.
 
 ## Publish files with a pinning service
 
