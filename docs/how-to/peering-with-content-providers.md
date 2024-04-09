@@ -130,7 +130,7 @@ See [web3.storage/PEERS](https://github.com/web3-storage/web3.storage/blob/main/
 
 | Peer ID | Addresses |
 | ------- | --------- |
-|`12D3KooWJ6MTkNM8Bu8DzNiRm1GY3Wqh8U8Pp1zRWap6xY3MvsNw`|`/dnsaddr/node-1.ipfs.bit.site`|
+|`12D3KooWKNJDVqWKdGH5PJUpgG7JwSQnJCHSt2abfRMht2yjyV5x`|`/dnsaddr/node-1.ipfs.bit.site`|
 
 ### StorryTV
 
