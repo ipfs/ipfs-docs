@@ -39,3 +39,4 @@ RPC API clients are available in multiple languages, and are listed below. You c
 | Erlang        | [hendry19901990/erlang-ipfs-http-client](https://github.com/hendry19901990/erlang-ipfs-http-client) | Inactive |
 | Scheme        | [siiky/ipfs.scm](https://git.sr.ht/~siiky/ipfs.scm) | Active |
 | Lua           | [siiky/ipfs.lua](https://git.sr.ht/~siiky/ipfs.lua) | Active |
+| Elixir        | [bahner/ex-ipfs](https://github.com/bahner/ex-ipfs) | Active |
