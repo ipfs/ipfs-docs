@@ -60,6 +60,12 @@ This list is provided for informational purposes only. The IPFS Project does not
 | `Qmcfuo1TM9uUiJp6dTbm915Rf1aTqm3a3dnmCdDQLHgvL5` | `/dnsaddr/node-11.ingress.cloudflare-ipfs.com` |
 | `QmcfV2sg9zaq7UUHVCGuSvT2M2rnLBAPsiE79vVyK3Cuev` | `/dnsaddr/node-12.ingress.cloudflare-ipfs.com` |
 
+### European EPC Competence Center
+
+| Peer ID | Addresses |
+| ------- | --------- |
+|`12D3KooWGaHbxpDWn4JVYud899Wcpa4iHPa3AMYydfxQDb3MhDME`|`/dnsaddr/ipfs.ssi.eecc.de`|
+
 ### Filebase
 
 | Peer ID | Addresses |
