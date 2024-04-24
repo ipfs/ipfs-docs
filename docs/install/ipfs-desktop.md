@@ -25,7 +25,7 @@ If you already have an IPFS node on your computer, IPFS Desktop will act as a co
 - **Quick download for CIDs, IPFS paths, and IPNS paths** — choose `Download...` by right-clicking the IPFS icon on your computer's menu bar, paste in a hash, and you're good to go.
 - **Visualize your IPFS peers worldwide** on a map depicting what nodes you're connected to, where they are, the connections they're using, and more.
 - **Explore the "Merkle Forest" of IPFS files** with a visualizer that lets you see firsthand how example datasets stored on IPFS — or your own IPFS files — are broken down into content-addressed pieces.
-- **OS-wide support for IPFS files and links** (on Mac, Windows, and some Linux flavors) automatically hands off links starting with `ipfs://`, `ipns://` and `dweb:` to be opened in IPFS Desktop.
+- **OS-wide support for IPFS files and links** (on Mac, Windows, and some Linux flavors) automatically hands off links starting with `ipfs://` and `ipns://` to be opened in IPFS Desktop.
 - **CLI Tutor Mode** helps you learn IPFS commands as you go.
 
 ### Install instructions
