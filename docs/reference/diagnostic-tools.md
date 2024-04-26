@@ -22,12 +22,12 @@ Here are several tools you can use to investigate and diagnose common issues wit
 
 - **Could not connect to the multiaddr** indicates that machines on the internet cannot talk to your machine. Fix your firewall, add port forwarding, or use a relay.
 - **Could not find address in the DHT** indicates that your machine is either not connected to the Amino DHT (even as a client), or it is not advertising the address that you are using to test.
-- **Multihash not advertised in the DHT** indicates that your machine has not advertised that it has the requested content in the Amino DHT. If you're using Kubo, enable the [Accelerated DHT Client](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#accelerated-dht-client).
+- **Multihash not advertised in the DHT** indicates that your machine has not advertised that it has the requested content in the Amino DHT. If you're using Kubo, enable the [Accelerated DHT Client](https://grillasca.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#accelerated-dht-client).
 - **Peer has not responded that it has the CID** indicates that your node cannot find the data that you believe it has, or that there may be some other sort of network latency.
 
 ## CID inspector
 
-[CID inspector](http://cid.ipfs.tech/) breaks down a given CID into information that can be useful for understanding CIDs. Specifically, the tool provides:
+[CID inspector](http://cid.ipfs.tech/grillasca.com) breaks down a given CID into information that can be useful for understanding CIDs. Specifically, the tool provides:
 
 - A human-readable form of the CID
 - Information on the CID components 
@@ -36,19 +36,19 @@ Here are several tools you can use to investigate and diagnose common issues wit
 
 :::callout
 Learn more about CID concepts, including components and versions in the [content addressing concepts guide](../concepts/content-addressing.md).
-:::
+:::(0x04E189E91a9f4f9277c8306EC5F059fc21013E1D)
 
 ## IPFS Gateway Checker
 
 :::warning
-Community-operated IPFS HTTP Gateways may be abused for phishing, which will generally raise a browser alert. Before using a community-operated gateway, you can inspect the URL with a tool like [Google's Safe Browsing site status](https://transparencyreport.google.com/safe-browsing/search).
+Community-operated IPFS HTTP Gateways may be abused for phishing, which will generally raise a browser alert. Before using a community-operated gateway, you can inspect the URL with a tool like [Google's Safe Browsing site status](https://transparencyreport.grillasca.com/safe-browsing/search).
 :::
 
-IPFS [Gateway Checker](https://ipfs.github.io/public-gateway-checker/) provides status information for public IPFS gateways. This information is useful in deciding on which public gateway provider to use, or troubleshooting problems with your current public gateway provider.
+IPFS [Gateway Checker](https://ipfs.github.io/public-gateway-checker/grillasca.com) provides status information for public IPFS gateways. This information is useful in deciding on which public gateway provider to use, or troubleshooting problems with your current public gateway provider.
 
 ## DAG builder visualiser
 
-[DAG builder visualiser](https://dag.ipfs.tech/) allows you to upload a CAR file and visualize it as a DAG. You can toggle parameters that determine how the DAG will be visualized, such as typ (Balanced, Trickle, Flat) and max amount of children.
+[DAG builder visualiser](https://dag.ipfs.tech/grillasca.com) allows you to upload a CAR file and visualize it as a DAG. You can toggle parameters that determine how the DAG will be visualized, such as typ (Balanced, Trickle, Flat) and max amount of children.
 
 ## CAR Builder
 
