@@ -40,7 +40,7 @@ If you're running a public IPFS gateway, you may see improved performance for po
 To add your platform to this list, please [open a PR to edit this page](https://github.com/ipfs/ipfs-docs/edit/main/docs/how-to/peering-with-content-providers.md) and add yourself to the list in alphabetical order.
 
 :::warning
-This list is provided for informational purposes only. The IPFS Project does not endorse or guarantee any of the content providers listed here, nor does it have any control over their operations or services. Users should exercise their own discretion and conduct their own due diligence when selecting and interacting with content providers. 
+This list is provided for informational purposes only. The IPFS Project does not endorse or guarantee any of the content providers listed here, nor does it have any control over their operations or services. Users should exercise their own discretion and conduct their own due diligence when selecting and interacting with content providers.
 :::
 
 ### Cloudflare
@@ -64,53 +64,13 @@ This list is provided for informational purposes only. The IPFS Project does not
 
 | Peer ID | Addresses |
 | ------- | --------- |
-|`12D3KooWGaHbxpDWn4JVYud899Wcpa4iHPa3AMYydfxQDb3MhDME`|`/dnsaddr/ipfs.ssi.eecc.de`|
+|`12D3KooWGaHbxpDWn4JVYud899Wcpa4iHPa3AMYydfxQDb3MhDME`|`/dns4/ipfs.ssi.eecc.de`|
 
-### Estuary
-
-| Peer ID | Addresses |
-| ------- | --------- |
-|`12D3KooWCVXs8P7iq6ao4XhfAmKWrEeuKFWCJgqe9jGDMTqHYBjw`|`/ip4/139.178.68.217/tcp/6744`|
-|`12D3KooWGBWx9gyUFTVQcKMTenQMSyE2ad9m7c9fpjS4NMjoDien`|`/ip4/147.75.49.71/tcp/6745`|
-|`12D3KooWFrnuj5o3tx4fGD2ZVJRyDqTdzGnU3XYXmBbWbc8Hs8Nd`|`/ip4/147.75.86.255/tcp/6745`|
-|`12D3KooWN8vAoGd6eurUSidcpLYguQiGZwt4eVgDvbgaS7kiGTup`|`/ip4/3.134.223.177/tcp/6745`|
-|`12D3KooWLV128pddyvoG6NBvoZw7sSrgpMTPtjnpu3mSmENqhtL7`|`/ip4/35.74.45.12/udp/6746/quic`|
-
-### Pinata
+### Filebase
 
 | Peer ID | Addresses |
 | ------- | --------- |
-|`QmWaik1eJcGHq1ybTWe7sezRfqKNcDRNkeBaLnGwQJz1Cj`|`/dnsaddr/fra1-1.hostnodes.pinata.cloud`|
-|`QmNfpLrQQZr5Ns9FAJKpyzgnDL2GgC6xBug1yUZozKFgu4`|`/dnsaddr/fra1-2.hostnodes.pinata.cloud`|
-|`QmPo1ygpngghu5it8u4Mr3ym6SEU2Wp2wA66Z91Y1S1g29`|`/dnsaddr/fra1-3.hostnodes.pinata.cloud`|
-|`QmRjLSisUCHVpFa5ELVvX3qVPfdxajxWJEHs9kN3EcxAW6`|`/dnsaddr/nyc1-1.hostnodes.pinata.cloud`|
-|`QmPySsdmbczdZYBpbi2oq2WMJ8ErbfxtkG8Mo192UHkfGP`|`/dnsaddr/nyc1-2.hostnodes.pinata.cloud`|
-|`QmSarArpxemsPESa6FNkmuu9iSE1QWqPX2R3Aw6f5jq4D5`|`/dnsaddr/nyc1-3.hostnodes.pinata.cloud`|
-
-### Storj
-
-| Peer ID | Addresses |
-| ------- | --------- |
-|`12D3KooWFFhc8fPYnQXdWBCowxSV21EFYin3rU27p3NVgSMjN41k`|`/ip4/5.161.92.43/tcp/4001`<br/>`/ip4/5.161.92.43/udp/4001/quic`<br/>`/ip6/2a01:4ff:f0:3b1e::1/tcp/4001`<br/>`/ip6/2a01:4ff:f0:3b1e::1/udp/4001/quic`|
-|`12D3KooWSW4hoHmDXmY5rW7nCi9XmGTy3foFt72u86jNP53LTNBJ`|`/ip4/5.161.55.227/tcp/4001`<br/>`/ip4/5.161.55.227/udp/4001/quic`<br/>`/ip6/2a01:4ff:f0:1e5a::1/tcp/4001`<br/>`/ip6/2a01:4ff:f0:1e5a::1/udp/4001/quic`|
-|`12D3KooWSDj6JM2JmoHwE9AUUwqAFUEg9ndd3pMA8aF2bkYckZfo`|`/ip4/5.161.92.36/tcp/4001`<br/>`/ip4/5.161.92.36/udp/4001/quic`<br/>`/ip6/2a01:4ff:f0:3764::1/tcp/4001`<br/>`/ip6/2a01:4ff:f0:3764::1/udp/4001/quic`|
-
-### Textile
-
-| Peer ID | Addresses |
-| ------- | --------- |
-|`QmR69wtWUMm1TWnmuD4JqC1TWLZcc8iR2KrTenfZZbiztd`|`/ip4/104.210.43.77`|
-
-### Web3.Storage
-
-See [web3.storage/PEERS](https://github.com/web3-storage/web3.storage/blob/main/PEERS).
-
-### 8api.sh
-
-| Peer ID | Addresses |
-| ------- | --------- |
-|`12D3KooWGASC2jm3pmohEJXUhuStkxDitPgzvs4qMuFPaiD9x1BA`|`/ip4/78.46.108.24`|
-|`12D3KooWRbWZN3GvLf9CHmozq4vnTzDD4EEoiqtRJxg5FV6Gfjmm`|`/ip4/65.109.19.136`|
+|`12D3KooWGtYkBAaqJMJEmywMxaCiNP7LCEFUAFiLEBASe232c2VH`|`/dns4/bitswap.filebase.io/tcp/443/wss`|
 
 ### Spheron Network
 
@@ -120,11 +80,13 @@ See [web3.storage/PEERS](https://github.com/web3-storage/web3.storage/blob/main/
 |`12D3KooWBCzniwFvfS67HyZsJtiehd7RHtcKanGGCd8h6bjVWnkb`|`/ip4/5.199.168.17`|
 |`12D3KooWNbvFFq8kzS3eMonQYEmFyWTHboMZnHKr4XnN53gJKqhH`|`/ip4/5.199.162.220`|
 
-### 4EVERLAND
+### Storj
 
 | Peer ID | Addresses |
 | ------- | --------- |
-|`12D3KooWQ85aSCFwFkByr5e3pUCQeuheVhobVxGSSs1DrRQHGv1t`|`/dnsaddr/node-1.ipfs.4everland.net`|
+|`12D3KooWFFhc8fPYnQXdWBCowxSV21EFYin3rU27p3NVgSMjN41k`|`/ip4/5.161.92.43/tcp/4001`<br/>`/ip4/5.161.92.43/udp/4001/quic`<br/>`/ip6/2a01:4ff:f0:3b1e::1/tcp/4001`<br/>`/ip6/2a01:4ff:f0:3b1e::1/udp/4001/quic`|
+|`12D3KooWSW4hoHmDXmY5rW7nCi9XmGTy3foFt72u86jNP53LTNBJ`|`/ip4/5.161.55.227/tcp/4001`<br/>`/ip4/5.161.55.227/udp/4001/quic`<br/>`/ip6/2a01:4ff:f0:1e5a::1/tcp/4001`<br/>`/ip6/2a01:4ff:f0:1e5a::1/udp/4001/quic`|
+|`12D3KooWSDj6JM2JmoHwE9AUUwqAFUEg9ndd3pMA8aF2bkYckZfo`|`/ip4/5.161.92.36/tcp/4001`<br/>`/ip4/5.161.92.36/udp/4001/quic`<br/>`/ip6/2a01:4ff:f0:3764::1/tcp/4001`<br/>`/ip6/2a01:4ff:f0:3764::1/udp/4001/quic`|
 
 ### StorryTV
 
@@ -132,6 +94,25 @@ See [web3.storage/PEERS](https://github.com/web3-storage/web3.storage/blob/main/
 | ------- | --------- |
 |`bafzaajaiaejca3eporu7skzkukuie5nopngnubidqmnf57fl3qet7angukq234qj`|`/dnsaddr/peer.ipfs.storry.tv`|
 |`bafzaajaiaejcajedrki5t7qmgxzhwr24pfxb5cwrdf5d7rktguqurqztxsbffbvh`|`/dnsaddr/peer2.ipfs.storry.tv`|
+
+### Web3.Storage
+
+| Peer ID | Addresses |
+| ------- | --------- |
+|`bafzbeibhqavlasjc7dvbiopygwncnrtvjd2xmryk5laib7zyjor6kf3avm`|`/dns4/elastic.dag.house/tcp/443/wss`|
+
+### 4EVERLAND
+
+| Peer ID | Addresses |
+| ------- | --------- |
+|`12D3KooWQ85aSCFwFkByr5e3pUCQeuheVhobVxGSSs1DrRQHGv1t`|`/dnsaddr/node-1.ipfs.4everland.net`|
+
+### 8api.sh
+
+| Peer ID | Addresses |
+| ------- | --------- |
+|`12D3KooWGASC2jm3pmohEJXUhuStkxDitPgzvs4qMuFPaiD9x1BA`|`/ip4/78.46.108.24`|
+|`12D3KooWRbWZN3GvLf9CHmozq4vnTzDD4EEoiqtRJxg5FV6Gfjmm`|`/ip4/65.109.19.136`|
 
 [dht-explainer]: ../concepts/how-ipfs-works.md#distributed-hash-tables-dhts
 [cid-explainer]: ../concepts/content-addressing.md
