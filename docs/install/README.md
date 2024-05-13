@@ -27,7 +27,7 @@ Want to build decentralized applications and store your application data on IPFS
 
 To get started with a hands-on example, see [Helia 101](https://github.com/ipfs-examples/helia-examples/blob/main/examples/helia-101/README.md) in [ipfs-examples/helia-examples](https://github.com/ipfs-examples/helia-examples/tree/main).
 
-If you are looking for simple `fetch`-like API for use on the web, see [@helia/verified-fetch](https://www.npmjs.com/package/@helia/verified-fetch).
+If you are looking for simple [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)-like API for use on the web, see [@helia/verified-fetch](https://www.npmjs.com/package/@helia/verified-fetch).
 
 ## IPFS Cluster
 
