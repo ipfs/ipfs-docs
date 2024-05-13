@@ -17,18 +17,22 @@ Anyone can use IPFS to store files in a _decentralized_ way. The easiest way to 
 
 For long-term storage, users can use the Filecoin network! Filecoin is a peer-to-peer network that stores files on the internet, with built-in economic incentives to ensure files are stored reliably over time. Available storage and pricing are not controlled by any single company. Instead, Filecoin facilitates open markets for storing and retrieving files that anyone can participate in. Learn more over on the [Filecoin docs website.](https://docs.filecoin.io/)
 
-## IPFS Kubo
+## IPFS Kubo Node and CLI
 
 Want to build decentralized applications and store your application data on IPFS? You'll likely want to install the command-line version of IPFS. There's no GUI to deal with, just raw input and output through your terminal. [Find out more →](./command-line.md)
 
-## IPFS Helia
+## IPFS Helia for JS
 
-[Helia](https://github.com/ipfs/helia) is a new implementation of IPFS in JavaScript that is designed to be more modular and lightweight than the deprecated [js-ipfs project](https://github.com/ipfs/js-ipfs). To get started with a hands-on example, see [Helia 101](https://github.com/ipfs-examples/helia-examples/blob/main/examples/helia-101/README.md) in [ipfs-examples/helia-examples](https://github.com/ipfs-examples/helia-examples/tree/main).
+[Helia](https://github.com/ipfs/helia) is a new implementation of IPFS in JavaScript that is designed to be more modular and lightweight than the [deprecated js-ipfs project](https://github.com/ipfs/js-ipfs).
+
+To get started with a hands-on example, see [Helia 101](https://github.com/ipfs-examples/helia-examples/blob/main/examples/helia-101/README.md) in [ipfs-examples/helia-examples](https://github.com/ipfs-examples/helia-examples/tree/main).
+
+If you are looking for simple [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)-like API for use on the web, see [@helia/verified-fetch](https://www.npmjs.com/package/@helia/verified-fetch).
 
 ## IPFS Cluster
 
-Planning to set up several IPFS nodes within one network? You'll want to take a look at installing [IPFS Cluster →](./server-infrastructure.md)
+Planning to set up several Kubo nodes within one network? You'll want to take a look at installing [IPFS Cluster →](./server-infrastructure.md)
 
-## IPFS Companion
+## IPFS Companion Browser Extension
 
 Some browsers such as [Brave](https://brave.com/) and [Opera](https://www.opera.com/) come with IPFS built-in. If your browser doesn't support IPFS yet, you can install an IPFS companion extension that will let you view decentralized web content! [Learn more →](./ipfs-companion.md)
