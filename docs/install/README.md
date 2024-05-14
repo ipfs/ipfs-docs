@@ -15,8 +15,6 @@ Do you want to quickly and easily publish content with IPFS without complex tool
 
 Anyone can use IPFS to store files in a _decentralized_ way. The easiest way to get up and running is by installing the IPFS Desktop application. This app has Kubo built-in and lets you interact with the network through a simple user-interface. [Check it out →](./ipfs-desktop.md)
 
-For long-term storage, users can use the Filecoin network! Filecoin is a peer-to-peer network that stores files on the internet, with built-in economic incentives to ensure files are stored reliably over time. Available storage and pricing are not controlled by any single company. Instead, Filecoin facilitates open markets for storing and retrieving files that anyone can participate in. Learn more over on the [Filecoin docs website.](https://docs.filecoin.io/)
-
 ## IPFS Kubo Node and CLI
 
 Want to build decentralized applications and store your application data on IPFS? You'll likely want to install the command-line version of IPFS. There's no GUI to deal with, just raw input and output through your terminal. [Find out more →](./command-line.md)
