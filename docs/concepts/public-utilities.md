@@ -38,6 +38,8 @@ Your browser may have a local cache of the content in question and might not ref
 
 Additionally, there's a community-maintained [tool for finding and testing public gateways](https://ipfs.github.io/public-gateway-checker/) such as the one operated by Cloudflare: `https://cf-ipfs.com`.
 
+Please note that all traffic using the `https://cf-ipfs.com` or `https://cloudflare-ipfs.com` hostnames will continue to work without interruption and be redirected to ipfs.io or dweb.link until August 14th, 2024. After this date, the [Cloudflare hostnames will no longer connect to IPFS](https://blog.cloudflare.com/cloudflares-public-ipfs-gateways-and-supporting-interplanetary-shipyard). To ensure no service interruption, all users must switch to using ipfs.io or dweb.link as soon as possible ahead of the transition date. If you are using either of the Cloudflare hostnames, please be sure to switch to one of the new ones promptly to avoid any service disruptions.
+
 ## Delegated Routing
 
 While IPFS Gateways are immensely helpful in doing all the heavy lifting of finding providers for CIDs and retrieving them, they can be a choke point for retrieval and a point of centralization.
