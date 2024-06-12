@@ -20,7 +20,7 @@
     "markdown-it-imsize": "^2.0.1",
     "markdown-it-task-lists": "^2.1.1",
     "markdown-it-video": "^0.6.3",
-    "prettier": "^3.0.3",
+    "prettier": "^3.1.1",
     "stylus-supremacy": "^2.17.3",
     "vuepress": "^1.9.10",
     "vuepress-plugin-canonical": "^1.0.0",
