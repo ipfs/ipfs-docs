@@ -36,16 +36,16 @@ Your browser may have a local cache of the content in question and might not ref
 
 ### Supported Features
 
-IPFS implementations can support a variety of protocols and specifications. The above public gateways support the following:
+The above public gateways support the following:
 
-- ipfs.io and dweb.link support the full set of IPFS Gateway specifications: https://specs.ipfs.tech/http-gateways/
-- trustless-gateway.link supports only the Trustless Gateway subset: https://specs.ipfs.tech/http-gateways/trustless-gateway/
+- `ipfs.io` and `dweb.link` support the [full set of IPFS Gateway specifications](https://specs.ipfs.tech/http-gateways/).
+- `trustless-gateway.link` supports only the [Trustless Gateway subset of the specification](https://specs.ipfs.tech/http-gateways/trustless-gateway/).
 
 They support HTTP clients reaching them over both ipv4 and ipv6 addresses
 
 The underlying IPFS nodes backing the gateways support the following mutable identifiers under the `/ipns` namespace:
-- IPNS Public Keys
-- DNSLink for all IANA registered domains as well as .crypto and .eth
+- IPNS Public Keys, e.g. `ipfs.io/ipns/k51q....`
+- DNSLink for all IANA registered domains as well as `.crypto` and `.eth`, e.g. `vitalik-eth.ipns.dweb.link`
 
 The underlying IPFS nodes backing the gateways support retrieving data from peers that:
 - Have either ipv4 or ipv6 addresses
