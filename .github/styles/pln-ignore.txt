@@ -95,6 +95,7 @@ FQDNs
 gasless
 geospatial
 Git
+Git's
 GitHub
 Gnutella
 goroutine
@@ -108,6 +109,7 @@ Hareesh
 Helia
 homebrew
 hostname
+hostnames
 HTML
 HTTPS
 identafiability
@@ -161,16 +163,19 @@ Minty
 Minty's
 Mojitos
 multiaddr
+Multiaddrs
 Multiaddress
 multiaddresses
 Multibase
 multibase
 Multicodec
 multicodec
+Multicodecs
 Multiformat
 Multiformats
 multiformat
 Multihash
+Multihashes
 multihash
 multipage
 Nagaraj
@@ -220,6 +225,7 @@ README
 READMEs
 reachability
 referenceable
+Repo
 reprovider
 reproviding
 retrievability
