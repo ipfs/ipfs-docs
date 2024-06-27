@@ -42,7 +42,7 @@ Additionally, there's a community-maintained [tool for finding and testing publi
 
 While IPFS Gateways are immensely helpful in doing all the heavy lifting of finding providers for CIDs and retrieving them, they can be a choke point for retrieval and a point of centralization.
 
-[_Delegated Routing_](./nodes.md#delegated-routing) endpoints are a key step towards eliminating the emergent centralization of public gateways thereby increasing the health of the network.
+[_Delegated Routing_](../nodes.md#delegated-routing) endpoints are a key step towards eliminating the emergent centralization of public gateways thereby increasing the health of the network.
 
 Browsers and low-powered devices can make a single HTTP call to a _Delegated Routing_ endpoint with the CID they are looking to retrieve. The endpoint returns the [multiaddresses](./glossary.md#multiaddr) of the providers for the CID, from which the browser can download directly.
 
