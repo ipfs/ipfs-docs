@@ -8,7 +8,7 @@ description: Information about hosted public utilities such as public gateways a
 
 The IPFS Foundation (and Protocol Labs in the past) and several other organizations provide hosted public utilities to the community on a best-effort basis. As such, it is not intended to be part of your critical path or production infrastructure.
 
-These include [IPFS Gateways](./ipfs-gateway.md), hosted [Delegated Routing V1 endpoints](./nodes#delegated-routing), and the [Amino DHT](./glossary.md#amino) [Bootstrappers](./nodes.md#bootstrap).
+These include [IPFS Gateways](./ipfs-gateway.md), hosted [Delegated Routing V1 endpoints](./glossary.md#delegated-routing), and the [Amino DHT](./glossary.md#amino) [Bootstrappers](./nodes.md#bootstrap).
 
 These utilities make it easier to retrieve data from the IPFS network in resource-constrained environments such as browsers and low-powered devices.
 
@@ -36,13 +36,13 @@ Your browser may have a local cache of the content in question and might not ref
 
 ## Other Public Gateways
 
-Additionally, there's a community-maintained [tool for finding and testing public gateways](https://ipfs.github.io/public-gateway-checker/) such as the one operated by Cloudflare: `https://cf-ipfs.com`.
+Additionally, there's a community-maintained [tool for finding and testing public gateways](https://ipfs.github.io/public-gateway-checker/).
 
 ## Delegated Routing
 
 While IPFS Gateways are immensely helpful in doing all the heavy lifting of finding providers for CIDs and retrieving them, they can be a choke point for retrieval and a point of centralization.
 
-[_Delegated Routing_](./nodes.md#delegated-routing) endpoints are a key step towards eliminating the emergent centralization of public gateways thereby increasing the health of the network.
+[_Delegated Routing_](./glossary.md#delegated-routing) endpoints are a key step towards eliminating the emergent centralization of public gateways thereby increasing the health of the network.
 
 Browsers and low-powered devices can make a single HTTP call to a _Delegated Routing_ endpoint with the CID they are looking to retrieve. The endpoint returns the [multiaddresses](./glossary.md#multiaddr) of the providers for the CID, from which the browser can download directly.
 
