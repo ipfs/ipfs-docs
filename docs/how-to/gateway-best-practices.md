@@ -89,7 +89,7 @@ A compromised writeable gateway may inject falsified content into the IPFS netwo
 1. Alice gives the falsified content CID to Bob.
 1. Bob fetches the content with this CID and cryptographically validates the balance of `0.00`.
 
-To partially address this exposure, you may wish to use the public gateway [cf-ipfs.com](https://cf-ipfs.com) as an independent, trusted reference with both same-origin policy and CORS support.
+To address this exposure, public gateways should only be limited to [trustless and verifiable response types](https://docs.ipfs.tech/reference/http/gateway/#trustless-verifiable-retrieval).
 
 ## Assumed filenames when downloading files
 

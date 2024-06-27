@@ -36,7 +36,7 @@ Your browser may have a local cache of the content in question and might not ref
 
 ## Other Public Gateways
 
-Additionally, there's a community-maintained [tool for finding and testing public gateways](https://ipfs.github.io/public-gateway-checker/) such as the one operated by Cloudflare: `https://cf-ipfs.com`.
+Additionally, there's a community-maintained [tool for finding and testing public gateways](https://ipfs.github.io/public-gateway-checker/).
 
 ## Delegated Routing
 
