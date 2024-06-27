@@ -37,6 +37,7 @@ CNAME
 CNAMEs
 codec
 Coinlist
+Combinator
 Composable
 composable
 config
@@ -59,6 +60,7 @@ dClimate
 deduplicate
 Denylist
 deserialization
+deserialized
 Dheeraj
 DHT
 DHTs
@@ -67,7 +69,9 @@ discoverability
 DNS
 DNSAddr
 DNSLink
+DNSLinks
 dnslink
+dnslinks
 dotgraph
 DWeb
 dweb
@@ -78,6 +82,7 @@ ethereum
 explainers
 Fabien
 failover
+Fastly
 Filebase
 Filecoin
 filecoin
@@ -89,6 +94,7 @@ FQDN
 FQDNs
 gasless
 geospatial
+Git
 GitHub
 Gnutella
 goroutine
@@ -107,6 +113,8 @@ HTTPS
 identafiability
 Infura
 interop
+iotop
+iostat
 IPFS
 IPFS's
 ipget
@@ -151,6 +159,7 @@ metadata's
 Metamask
 Minty
 Minty's
+Mojitos
 multiaddr
 Multiaddress
 multiaddresses
@@ -209,15 +218,18 @@ Rabin
 rasterio
 README
 READMEs
+reachability
 referenceable
 reprovider
 reproviding
+retrievability
 roadmaps
 sandboxed
 Satoshi
 serverless
 sharding
 snapshotted
+Speedtest
 stackparse
 stdout
 someguy
