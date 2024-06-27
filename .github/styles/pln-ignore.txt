@@ -55,6 +55,7 @@ data
 data's
 Datastore
 datastore
+dialback
 dClimate
 deduplicate
 Denylist
@@ -265,3 +266,4 @@ WiFi
 WS
 WSS
 YouTube
+Yamux
