@@ -43,15 +43,15 @@ If you've decided that creating your own pinning service is right for you, learn
 Third-party pinning services allow you to purchase pinning capacity for important data. Each service has its own approach to pinning data and managing pins, so users should do their research to ensure that the service meets their particular needs. Service providers include, but are not limited to:
 
 - [Pinata](https://pinata.cloud/)
-- [Functionland](https://fx.land/)
 - [Filebase](https://filebase.com/)
+- [Functionland Fula](https://fx.land/)
 - [Temporal](https://temporal.cloud/)
 - [Crust](https://crust.network/)
 - [Infura](https://infura.io/)
 - [Scaleway](https://labs.scaleway.com/en/ipfs-pinning/)
 
 ::: callout 
-As of June 2024, [Functionland](https://fx.land/), [Filebase](https://filebase.com) and [Pinata](https://pinata.cloud/) support the [IPFS Pinning Service API endpoint](https://github.com/ipfs/pinning-services-api-spec).
+As of June 2024, [Filebase](https://filebase.com), [Functionland Fula](https://fx.land/) and [Pinata](https://pinata.cloud/) support the [IPFS Pinning Service API endpoint](https://github.com/ipfs/pinning-services-api-spec).
 ::: 
 
 To add and use a remote pinning service directly in IPFS, you'll first need to have an account with that service.

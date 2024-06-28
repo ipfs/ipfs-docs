@@ -97,10 +97,10 @@ explainers?
 Fabien
 failovers?
 Filebase
-Functionland
 filesizes?
 Filestore
 FQDNs?
+Functionland
 gasless
 geospatial
 Gnutella

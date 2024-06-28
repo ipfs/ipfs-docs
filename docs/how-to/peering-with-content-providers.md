@@ -66,17 +66,17 @@ This list is provided for informational purposes only. The IPFS Project does not
 | ------- | --------- |
 |`12D3KooWGaHbxpDWn4JVYud899Wcpa4iHPa3AMYydfxQDb3MhDME`|`/dns4/ipfs.ssi.eecc.de`|
 
-### Functionland Fula Network
-
-| Peer ID | Addresses |
-| ------- | --------- |
-|`12D3KooWEGy1b9QLiQ4kyjk9GhF3vcWj3aQyVzfbuW7JeS1NdWhb`|`/dns4/ipfs.cloud.fx.land/tcp/443/wss`|
-
 ### Filebase
 
 | Peer ID | Addresses |
 | ------- | --------- |
 |`12D3KooWGtYkBAaqJMJEmywMxaCiNP7LCEFUAFiLEBASe232c2VH`|`/dns4/bitswap.filebase.io/tcp/443/wss`|
+
+### Functionland Fula Network
+
+| Peer ID | Addresses |
+| ------- | --------- |
+|`12D3KooWEGy1b9QLiQ4kyjk9GhF3vcWj3aQyVzfbuW7JeS1NdWhb`|`/dns4/ipfs.cloud.fx.land/tcp/443/wss`|
 
 ### Spheron Network
 

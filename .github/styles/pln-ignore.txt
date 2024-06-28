@@ -79,7 +79,6 @@ explainers
 Fabien
 failover
 Filebase
-Functionland
 Filecoin
 filecoin
 Filestore
@@ -88,6 +87,7 @@ flatfs
 Fleek
 FQDN
 FQDNs
+Functionland
 gasless
 geospatial
 GitHub
