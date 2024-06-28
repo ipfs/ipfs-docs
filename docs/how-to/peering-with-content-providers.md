@@ -84,9 +84,9 @@ This list is provided for informational purposes only. The IPFS Project does not
 
 | Peer ID | Addresses |
 | ------- | --------- |
-|`12D3KooWFFhc8fPYnQXdWBCowxSV21EFYin3rU27p3NVgSMjN41k`|`/ip4/5.161.92.43/tcp/4001`<br/>`/ip4/5.161.92.43/udp/4001/quic`<br/>`/ip6/2a01:4ff:f0:3b1e::1/tcp/4001`<br/>`/ip6/2a01:4ff:f0:3b1e::1/udp/4001/quic`|
-|`12D3KooWSW4hoHmDXmY5rW7nCi9XmGTy3foFt72u86jNP53LTNBJ`|`/ip4/5.161.55.227/tcp/4001`<br/>`/ip4/5.161.55.227/udp/4001/quic`<br/>`/ip6/2a01:4ff:f0:1e5a::1/tcp/4001`<br/>`/ip6/2a01:4ff:f0:1e5a::1/udp/4001/quic`|
-|`12D3KooWSDj6JM2JmoHwE9AUUwqAFUEg9ndd3pMA8aF2bkYckZfo`|`/ip4/5.161.92.36/tcp/4001`<br/>`/ip4/5.161.92.36/udp/4001/quic`<br/>`/ip6/2a01:4ff:f0:3764::1/tcp/4001`<br/>`/ip6/2a01:4ff:f0:3764::1/udp/4001/quic`|
+|`12D3KooWFFhc8fPYnQXdWBCowxSV21EFYin3rU27p3NVgSMjN41k`|`/ip4/5.161.92.43/tcp/4001`<br/>`/ip4/5.161.92.43/udp/4001/quic-v1`<br/>`/ip6/2a01:4ff:f0:3b1e::1/tcp/4001`<br/>`/ip6/2a01:4ff:f0:3b1e::1/udp/4001/quic-v1`|
+|`12D3KooWSW4hoHmDXmY5rW7nCi9XmGTy3foFt72u86jNP53LTNBJ`|`/ip4/5.161.55.227/tcp/4001`<br/>`/ip4/5.161.55.227/udp/4001/quic-v1`<br/>`/ip6/2a01:4ff:f0:1e5a::1/tcp/4001`<br/>`/ip6/2a01:4ff:f0:1e5a::1/udp/4001/quic-v1`|
+|`12D3KooWSDj6JM2JmoHwE9AUUwqAFUEg9ndd3pMA8aF2bkYckZfo`|`/ip4/5.161.92.36/tcp/4001`<br/>`/ip4/5.161.92.36/udp/4001/quic-v1`<br/>`/ip6/2a01:4ff:f0:3764::1/tcp/4001`<br/>`/ip6/2a01:4ff:f0:3764::1/udp/4001/quic-v1`|
 
 ### bit.site
 
