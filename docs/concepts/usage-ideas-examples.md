@@ -128,7 +128,7 @@ Netflix is on its way to using IPFS to [synchronize their Docker containers worl
 
 ### Decentralized storage
 
-The [web3.storage](https://web3.storage) platform provides an IPFS-based storage service to safely secure and make your data available - giving developers the power of decentralized storage and content addressing via simple client libraries or an HTTP API. Similarly, the [Spheron Network](https://spheron.network) also provides an IPFS-based storage service.
+The [web3.storage](https://web3.storage) platform provides an IPFS-based storage service to safely secure and make your data available - giving developers the power of decentralized storage and content addressing via simple client libraries or an HTTP API. Similarly, the [Spheron Network](https://spheron.network) also provides an IPFS-based storage service. An alternative option is [Functionland Fula Network](https://fx.land), which leverages the unused storage space of personal devices to provide a cloud-like storage for real-time data storage needs.
 
 ## Lower your storage usage
 
