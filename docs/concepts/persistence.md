@@ -48,6 +48,7 @@ Some of the pinning services listed below are operated by third party companies.
 
 - [4EVERLAND Bucket](https://www.4everland.org/bucket/)
 - [Estuary](https://estuary.tech/)
+- [Functionland](https://fx.land/)
 - [Filebase](https://filebase.com/)
 - [Infura](https://infura.io/)
 - [Kriptonio](https://kriptonio.com/)

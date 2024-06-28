@@ -17,13 +17,14 @@ The web3.storage pinning service was chosen purely for demonstration purposes, a
 
 ## Contents <!-- omit from toc -->
 
-- [Overview](#overview)
-- [Pinning services](#pinning-services)
-- [Prerequisites](#prerequisites)
-- [Uploading and pinning a file](#uploading-and-pinning-a-file)
-- [CIDs explained](#cids-explained)
-- [Retrieving with a gateway](#retrieving-with-a-gateway)
-- [Summary and next steps](#summary-and-next-steps)
+- [Publish a file with IPFS using the command line](#publish-a-file-with-ipfs-using-the-command-line)
+  - [Overview](#overview)
+  - [Pinning services](#pinning-services)
+  - [Prerequisites](#prerequisites)
+  - [Install and register to w3](#install-and-register-to-w3)
+  - [CIDs explained](#cids-explained)
+  - [Retrieving with a gateway](#retrieving-with-a-gateway)
+  - [Summary and next steps](#summary-and-next-steps)
 
 ## Overview
 
@@ -120,4 +121,5 @@ Possible next steps include:
 - Check out [the lifecycle of data in IPFS](../concepts/lifecycle.md) to learn more about how publishing by pinning fits into the full lifecycle of data in IPFS.
 - Try fetching the pinned file by following the [retrieval quickstart](./retrieve.md).
 - If you prefer to upload a file programmatically with JavaScript or Go, check out the [Web3.storage docs](https://web3.storage/docs/how-tos/store/).
+- You can also try out [Functionland](https://fx.land), a pinning service that provides a true globally distributed and individually-owned nodes [Fula Network](https://docs.fx.land). The SDK supports mobile-native applications and offers built-in encryption. As an example, you can checkout the FxFotos app, which is designed as an alternative to Media Sync applications [GitHub Repo](https://github.com/functionland/fotos) and live on [Google Play](https://play.google.com/store/apps/details?id=land.fx.fotos)
 - Alternatively, try out [Filebase](https://filebase.com/), a pinning service that offers an [AWS S3-compatible API for pinning](https://docs.filebase.com/getting-started/s3-api-getting-started-guide), so you can use any S3-compatible SDK, e.g. [aws-sdk](https://www.npmjs.com/package/aws-sdk), and [many](https://github.com/s3tools/s3cmd) more.
