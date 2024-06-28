@@ -20,6 +20,10 @@ The [Brave](https://brave.com/) web browser has [built-in IPFS support](https://
 
 [Arbore](https://arbo.re) is a free and open-source file-sharing application that enables you to send your pictures, documents, and files to your contacts privately and without limits.
 
+### Mobile-Native applications
+
+[Functionland](https://fx.land) is leveraging IPFS, IPFS-Cluster and WNFS to build mobie-native SDKs that can be imported to easily create a decentralized application. [FxFotos](https://github.com/functionland/fotos) is an example and is published on [Google Play](https://play.google.com/store/apps/details?id=land.fx.fotos).
+
 ### Share your files
 
 [FileNation](https://github.com/FileNation/FileNation) is an open-source tool for sharing files using IPFS.
@@ -171,7 +175,7 @@ Several plugins exist to decentralize your website built with popular static-sit
 
 ## Build a dApp
 
-There are many available frameworks to build decentralized apps on IPFS. [Fission](https://fission.codes/), [Fleek](https://fleek.co/), [Spheron](https://spheron.network/), and [Textile](https://textile.io/) are great examples.
+There are many available frameworks to build decentralized apps on IPFS. [Fission](https://fission.codes/), [Fleek](https://fleek.co/), [Functionland Fula](https://fx.land/), [Spheron](https://spheron.network/), and [Textile](https://textile.io/) are great examples.
 
 ### WebNative SDK
 
@@ -246,6 +250,8 @@ IPFS is a natural fit for [blockchain](https://en.wikipedia.org/wiki/Blockchain)
 ### Global marketplace for data storage
 
 [Filecoin](https://filecoin.io/) lets any storage owner host data for users who need additional space. It is one of the reasons IPFS exists in the first place and will be a great accelerator of the IPFS growth once fully online later this year. The project is developed by [Protocol Labs](https://protocol.ai/).
+
+[Functionland](https://fx.land) has built Fula protocol and chain, which leverages unused storage resources on any personal device, such as laptop, to provide a decentralized, cost-effective cloud-like storage solution with full user control and superior functionality.
 
 Textile.io is building the [Powergate](https://blog.textile.io/filecoin-developer-tools-concepts/) tool for your app to interact with Filecoin once the main net is launched.
 
