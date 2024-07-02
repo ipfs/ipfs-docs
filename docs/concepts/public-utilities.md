@@ -34,6 +34,29 @@ From there, an internal system extracts the relevant information from the reques
 
 Your browser may have a local cache of the content in question and might not reflect that something has been blocked on the gateways. To avoid browser caching, attempt to view the content using your browser's incognito or private mode. You can also prevent caching issues by using a command-line tool such as Curl or Wget.
 
+### Supported Features
+
+The above public gateways support the following:
+
+- `ipfs.io` and `dweb.link` support the [full set of IPFS Gateway specifications](https://specs.ipfs.tech/http-gateways/).
+- `trustless-gateway.link` supports only the [Trustless Gateway subset of the specification](https://specs.ipfs.tech/http-gateways/trustless-gateway/).
+
+They support HTTP clients reaching them over both ipv4 and ipv6 addresses
+
+The underlying IPFS nodes backing the gateways support the following mutable identifiers under the `/ipns` namespace:
+- IPNS Public Keys, e.g. `dweb.link/ipns/k51q....`
+- DNSLink for all [ICANN](https://en.wikipedia.org/wiki/ICANN) registered domains as well as `.crypto` and `.eth`, e.g. `dweb.link/ipns/vitalik.eth`
+
+The underlying IPFS nodes backing the gateways support retrieving data from peers that:
+- Have either ipv4 or ipv6 addresses
+- Are either reachable over the public internet or are accessible via libp2p's relay-v2 protocol and reach out to the gateway nodes via dialback
+- Support one of the following libp2p transport configurations:
+   - QUIC-v1
+   - TCP or WS or WSS, Yamux, TLS or Noise
+   - WebTransport
+- Support the [Bitswap](./bitswap.md) protocol ([v1.2](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-2-0), [v1.1](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-1-0) or [v1.0](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-0-0))
+- Have either advertised their data to the Amino DHT, or have advertised to IPNI such that their data has been indexed by [cid.contact](https://cid.contact)
+
 ## Other Public Gateways
 
 Additionally, there's a community-maintained [tool for finding and testing public gateways](https://ipfs.github.io/public-gateway-checker/).
