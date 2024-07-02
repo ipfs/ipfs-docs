@@ -8,7 +8,7 @@ description: Information about hosted public utilities such as public gateways a
 
 The IPFS Foundation (and Protocol Labs in the past) and several other organizations provide hosted public utilities to the community on a best-effort basis. As such, it is not intended to be part of your critical path or production infrastructure.
 
-These include [IPFS Gateways](./ipfs-gateway.md), hosted [Delegated Routing V1 endpoints](./nodes#delegated-routing), and the [Amino DHT](./glossary.md#amino) [Bootstrappers](./nodes.md#bootstrap).
+These include [IPFS Gateways](./ipfs-gateway.md), hosted [Delegated Routing V1 endpoints](./glossary.md#delegated-routing), and the [Amino DHT](./glossary.md#amino) [Bootstrappers](./nodes.md#bootstrap).
 
 These utilities make it easier to retrieve data from the IPFS network in resource-constrained environments such as browsers and low-powered devices.
 
@@ -34,15 +34,38 @@ From there, an internal system extracts the relevant information from the reques
 
 Your browser may have a local cache of the content in question and might not reflect that something has been blocked on the gateways. To avoid browser caching, attempt to view the content using your browser's incognito or private mode. You can also prevent caching issues by using a command-line tool such as Curl or Wget.
 
+### Supported Features
+
+The above public gateways support the following:
+
+- `ipfs.io` and `dweb.link` support the [full set of IPFS Gateway specifications](https://specs.ipfs.tech/http-gateways/).
+- `trustless-gateway.link` supports only the [Trustless Gateway subset of the specification](https://specs.ipfs.tech/http-gateways/trustless-gateway/).
+
+They support HTTP clients reaching them over both ipv4 and ipv6 addresses
+
+The underlying IPFS nodes backing the gateways support the following mutable identifiers under the `/ipns` namespace:
+- IPNS Public Keys, e.g. `dweb.link/ipns/k51q....`
+- DNSLink for all [ICANN](https://en.wikipedia.org/wiki/ICANN) registered domains as well as `.crypto` and `.eth`, e.g. `dweb.link/ipns/vitalik.eth`
+
+The underlying IPFS nodes backing the gateways support retrieving data from peers that:
+- Have either ipv4 or ipv6 addresses
+- Are either reachable over the public internet or are accessible via libp2p's relay-v2 protocol and reach out to the gateway nodes via dialback
+- Support one of the following libp2p transport configurations:
+   - QUIC-v1
+   - TCP or WS or WSS, Yamux, TLS or Noise
+   - WebTransport
+- Support the [Bitswap](./bitswap.md) protocol ([v1.2](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-2-0), [v1.1](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-1-0) or [v1.0](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-0-0))
+- Have either advertised their data to the Amino DHT, or have advertised to IPNI such that their data has been indexed by [cid.contact](https://cid.contact)
+
 ## Other Public Gateways
 
-Additionally, there's a community-maintained [tool for finding and testing public gateways](https://ipfs.github.io/public-gateway-checker/) such as the one operated by Cloudflare: `https://cf-ipfs.com`.
+Additionally, there's a community-maintained [tool for finding and testing public gateways](https://ipfs.github.io/public-gateway-checker/).
 
 ## Delegated Routing
 
 While IPFS Gateways are immensely helpful in doing all the heavy lifting of finding providers for CIDs and retrieving them, they can be a choke point for retrieval and a point of centralization.
 
-[_Delegated Routing_](./nodes.md#delegated-routing) endpoints are a key step towards eliminating the emergent centralization of public gateways thereby increasing the health of the network.
+[_Delegated Routing_](./glossary.md#delegated-routing) endpoints are a key step towards eliminating the emergent centralization of public gateways thereby increasing the health of the network.
 
 Browsers and low-powered devices can make a single HTTP call to a _Delegated Routing_ endpoint with the CID they are looking to retrieve. The endpoint returns the [multiaddresses](./glossary.md#multiaddr) of the providers for the CID, from which the browser can download directly.
 

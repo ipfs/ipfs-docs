@@ -54,7 +54,7 @@ Case-sensitive [Multibase](#multibase), uses modified Base64 with URL and filena
 
 ### Bitswap
 
-Bitswap is IPFS's central block exchange protocol. Its purpose is to request blocks from and send blocks to other peers in the network. [More about Bitswap](https://github.com/ipfs/specs/blob/master/BITSWAP.md)
+Bitswap is IPFS's central block exchange protocol. Its purpose is to request blocks from and send blocks to other peers in the network. [More about Bitswap](../concepts/bitswap.md)
 
 ### BitTorrent
 
@@ -166,7 +166,7 @@ Direct Connection Upgrade through Relay (DCUtR) protocol enables [hole punching]
 
 ### Delegated routing
 
-Delegated routing is a mechanism by which IPFS implementations can offload content routing, peer routing, and naming (IPNS) to another process/server. The most widely adopted vendor-agnostic spec for delegated routing is the [Delegated Routing V1 HTTP API](https://specs.ipfs.tech/routing/http-routing-v1/).
+Delegated routing is a mechanism by which IPFS implementations can offload content routing, peer routing, and naming (IPNS) to another process/server. The most widely adopted vendor-agnostic spec for delegated routing is the [Delegated Routing V1 HTTP API](https://specs.ipfs.tech/routing/http-routing-v1/) with [public utility instance at `delegated-ipfs.dev/routing/v1`](../concepts/public-utilities.md#delegated-routing).
 
 Delegated routing is useful in browsers and other constrained environments where it's infeasible to be a DHT client/server. More broadly, it enables experimentation and innovation in content routing while maintaining interoperability and modularity.
 
