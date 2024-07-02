@@ -55,7 +55,7 @@ The underlying IPFS nodes backing the gateways support retrieving data from peer
    - TCP or WS or WSS, Yamux, TLS or Noise
    - WebTransport
 - Support the Bitswap protocol (any versions 1 through 1.2)
-- Have either advertised their data to the Amino DHT, or have advertised to IPNI such that their data has been indexed by cid.contact
+- Have either advertised their data to the Amino DHT, or have advertised to IPNI such that their data has been indexed by [cid.contact](https://cid.contact)
 
 ## Other Public Gateways
 
