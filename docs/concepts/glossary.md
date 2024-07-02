@@ -54,7 +54,7 @@ Case-sensitive [Multibase](#multibase), uses modified Base64 with URL and filena
 
 ### Bitswap
 
-Bitswap is IPFS's central block exchange protocol. Its purpose is to request blocks from and send blocks to other peers in the network. [More about Bitswap](https://github.com/ipfs/specs/blob/master/BITSWAP.md)
+Bitswap is IPFS's central block exchange protocol. Its purpose is to request blocks from and send blocks to other peers in the network. [More about Bitswap](../concepts/bitswap.md)
 
 ### BitTorrent
 
