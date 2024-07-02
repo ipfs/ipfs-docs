@@ -35,7 +35,7 @@ If you are running an IPFS node that is also configured as an IPFS gateway, each
 - Put a CDN like Cloudflare in front of the IPFS gateway.
 - Consider enabling the [Accelerated DHT Client](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#accelerated-dht-client). 
 - Test and monitor your internet connection speed, with a tool like [Speedtest CLI](https://www.speedtest.net/apps/cli).
-- Monitor disk I/O and make sure that no other processes are causing disk I/O bottlenecks with a tool like [iotop](https://linux.die.net/man/1/iotop) or [iostat](https://linux.die.net/man/1/iostat).
+- Monitor disk I/O and make sure that no other processes are causing disk I/O bottlenecks with a tool like [iotop](https://github.com/Tomas-M/iotop) or [iostat](https://github.com/sysstat/sysstat).
 
 
 
@@ -89,7 +89,7 @@ A compromised writeable gateway may inject falsified content into the IPFS netwo
 1. Alice gives the falsified content CID to Bob.
 1. Bob fetches the content with this CID and cryptographically validates the balance of `0.00`.
 
-To partially address this exposure, you may wish to use the public gateway [cf-ipfs.com](https://cf-ipfs.com) as an independent, trusted reference with both same-origin policy and CORS support.
+To address this exposure, public gateways should only be limited to [trustless and verifiable response types](https://docs.ipfs.tech/reference/http/gateway/#trustless-verifiable-retrieval).
 
 ## Assumed filenames when downloading files
 
