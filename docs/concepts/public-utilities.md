@@ -44,8 +44,8 @@ The above public gateways support the following:
 They support HTTP clients reaching them over both ipv4 and ipv6 addresses
 
 The underlying IPFS nodes backing the gateways support the following mutable identifiers under the `/ipns` namespace:
-- IPNS Public Keys, e.g. `ipfs.io/ipns/k51q....`
-- DNSLink for all IANA registered domains as well as `.crypto` and `.eth`, e.g. `vitalik-eth.ipns.dweb.link`
+- IPNS Public Keys, e.g. `dweb.link/ipns/k51q....`
+- DNSLink for all [ICANN](https://en.wikipedia.org/wiki/ICANN) registered domains as well as `.crypto` and `.eth`, e.g. `dweb.link/ipns/vitalik.eth`
 
 The underlying IPFS nodes backing the gateways support retrieving data from peers that:
 - Have either ipv4 or ipv6 addresses
@@ -54,7 +54,7 @@ The underlying IPFS nodes backing the gateways support retrieving data from peer
    - QUIC-v1
    - TCP or WS or WSS, Yamux, TLS or Noise
    - WebTransport
-- Support the Bitswap protocol (any versions 1 through 1.2)
+- Support the [Bitswap](./bitswap.md) protocol ([v1.2](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-2-0), [v1.1](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-1-0) or [v1.0](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-0-0))
 - Have either advertised their data to the Amino DHT, or have advertised to IPNI such that their data has been indexed by [cid.contact](https://cid.contact)
 
 ## Other Public Gateways
