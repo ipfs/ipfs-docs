@@ -17,14 +17,13 @@ The web3.storage pinning service was chosen purely for demonstration purposes, a
 
 ## Contents <!-- omit from toc -->
 
-- [Publish a file with IPFS](#publish-a-file-with-ipfs)
-  - [Overview](#overview)
-  - [Pinning services](#pinning-services)
-  - [Prerequisites](#prerequisites)
-  - [Upload and pin a file](#upload-and-pin-a-file)
-  - [CIDs explained](#cids-explained)
-  - [Retrieving with a gateway](#retrieving-with-a-gateway)
-  - [Summary and next steps](#summary-and-next-steps)
+- [Overview](#overview)
+- [Pinning services](#pinning-services)
+- [Prerequisites](#prerequisites)
+- [Upload and pin a file](#upload-and-pin-a-file)
+- [CIDs explained](#cids-explained)
+- [Retrieving with a gateway](#retrieving-with-a-gateway)
+- [Summary and next steps](#summary-and-next-steps)
 
 ## Overview
 
