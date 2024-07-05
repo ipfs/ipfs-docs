@@ -17,14 +17,13 @@ The web3.storage pinning service was chosen purely for demonstration purposes, a
 
 ## Contents <!-- omit from toc -->
 
-- [Publish a file with IPFS using the command line](#publish-a-file-with-ipfs-using-the-command-line)
-  - [Overview](#overview)
-  - [Pinning services](#pinning-services)
-  - [Prerequisites](#prerequisites)
-  - [Install and register to w3](#install-and-register-to-w3)
-  - [CIDs explained](#cids-explained)
-  - [Retrieving with a gateway](#retrieving-with-a-gateway)
-  - [Summary and next steps](#summary-and-next-steps)
+- [Overview](#overview)
+- [Pinning services](#pinning-services)
+- [Prerequisites](#prerequisites)
+- [Install and register to w3](#install-and-register-to-w3)
+- [CIDs explained](#cids-explained)
+- [Retrieving with a gateway](#retrieving-with-a-gateway)
+- [Summary and next steps](#summary-and-next-steps)
 
 ## Overview
 
