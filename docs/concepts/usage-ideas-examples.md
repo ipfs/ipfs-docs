@@ -253,8 +253,6 @@ IPFS is a natural fit for [blockchain](https://en.wikipedia.org/wiki/Blockchain)
 
 [Functionland](https://fx.land) has built Fula protocol and chain, which leverages unused storage resources on any personal device, such as laptop, to provide a decentralized, cost-effective cloud-like storage solution with full user control and superior functionality.
 
-Textile.io is building the [Powergate](https://blog.textile.io/filecoin-developer-tools-concepts/) tool for your app to interact with Filecoin once the main net is launched.
-
 ### Exchange Internet-of-Things data
 
 [IOTA](https://www.iota.org/) is a foundation maintaining _the Tangle_, a blockchain-like network with zero fees. Their vision is to automate the exchange of data between sensors, machines, and other devices, for free or sold by the provider. IOTA [announced](https://wiki.iota.org/legacy) that data can now be hosted on IPFS. The demo for this is no longer maintained.
