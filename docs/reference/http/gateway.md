@@ -110,7 +110,7 @@ A Client SHOULD include the [`format` query parameter](https://specs.ipfs.tech/h
 
 ## Specifications
 
-The HTTP Gateway specification for IPFS implementers is available in [ipfs/specs repository](https://github.com/ipfs/specs/blob/main/http-gateways/#readme).
+The HTTP Gateway specification for IPFS implementers is available at [specs.ipfs.tech](https://specs.ipfs.tech/http-gateways/).
 Below are links for the most useful specifications.
 
 
@@ -118,15 +118,15 @@ Below are links for the most useful specifications.
 
 These are "low level" gateways that expose IPFS resources over HTTP protocol.
 
-* [Path Gateway](https://github.com/ipfs/specs/blob/main/http-gateways/PATH_GATEWAY.md) ← **START HERE**, other types of gateway are specified as a delta against this specification.
-* [Trustless Gateway](https://github.com/ipfs/specs/blob/main/http-gateways/TRUSTLESS_GATEWAY.md) is a subset that returns verifiable response types (raw [blocks](../../concepts/glossary.md#block) and [CARs](../../concepts/glossary.md#car))
+* [Path Gateway](https://specs.ipfs.tech/http-gateways/path-gateway/) ← **START HERE**, other types of gateway are specified as a delta against this specification.
+* [Trustless Gateway](https://specs.ipfs.tech/http-gateways/trustless-gateway/) is a subset that returns verifiable response types (raw [blocks](../../concepts/glossary.md#block) and [CARs](../../concepts/glossary.md#car))
 
 ### Web
 
 Special types of gateway which leverage `Host` header in addition to URL `pathname`. Designed for website hosting and improved interoperability with web browsers and [origin-based security model](https://en.wikipedia.org/wiki/Same-origin_policy).
 
-* [Subdomain Gateway](https://github.com/ipfs/specs/blob/main/http-gateways/SUBDOMAIN_GATEWAY.md)
-* [DNSLink Website Hosting](https://github.com/ipfs/specs/blob/main/http-gateways/DNSLINK_GATEWAY.md)
+* [Subdomain Gateway](https://specs.ipfs.tech/http-gateways/subdomain-gateway/)
+* [DNSLink Website Hosting](https://specs.ipfs.tech/http-gateways/dnslink-gateway/)
 
 ::: tip
 
