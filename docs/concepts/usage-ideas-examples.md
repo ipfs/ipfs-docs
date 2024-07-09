@@ -20,6 +20,10 @@ The [Brave](https://brave.com/) web browser has [built-in IPFS support](https://
 
 [Arbore](https://arbo.re) is a free and open-source file-sharing application that enables you to send your pictures, documents, and files to your contacts privately and without limits.
 
+### Mobile-Native applications
+
+[Functionland](https://fx.land) is leveraging IPFS, IPFS-Cluster and WNFS to build mobie-native SDKs that can be imported to easily create a decentralized application. [FxFotos](https://github.com/functionland/fotos) is an example and is published on [Google Play](https://play.google.com/store/apps/details?id=land.fx.fotos).
+
 ### Share your files
 
 [FileNation](https://github.com/FileNation/FileNation) is an open-source tool for sharing files using IPFS.
@@ -124,7 +128,7 @@ Netflix is on its way to using IPFS to [synchronize their Docker containers worl
 
 ### Decentralized storage
 
-The [web3.storage](https://web3.storage) platform provides an IPFS-based storage service to safely secure and make your data available - giving developers the power of decentralized storage and content addressing via simple client libraries or an HTTP API. Similarly, the [Spheron Network](https://spheron.network) also provides an IPFS-based storage service.
+The [web3.storage](https://web3.storage) platform provides an IPFS-based storage service to safely secure and make your data available - giving developers the power of decentralized storage and content addressing via simple client libraries or an HTTP API. Similarly, the [Spheron Network](https://spheron.network) also provides an IPFS-based storage service. An alternative option is [Functionland Fula Network](https://fx.land), which leverages the unused storage space of personal devices to provide a cloud-like storage for real-time data storage needs.
 
 ## Lower your storage usage
 
@@ -171,7 +175,7 @@ Several plugins exist to decentralize your website built with popular static-sit
 
 ## Build a dApp
 
-There are many available frameworks to build decentralized apps on IPFS. [Fission](https://fission.codes/), [Fleek](https://fleek.co/), [Spheron](https://spheron.network/), and [Textile](https://textile.io/) are great examples.
+There are many available frameworks to build decentralized apps on IPFS. [Fission](https://fission.codes/), [Fleek](https://fleek.co/), [Functionland Fula](https://fx.land/), [Spheron](https://spheron.network/), and [Textile](https://textile.io/) are great examples.
 
 ### WebNative SDK
 
@@ -247,7 +251,7 @@ IPFS is a natural fit for [blockchain](https://en.wikipedia.org/wiki/Blockchain)
 
 [Filecoin](https://filecoin.io/) lets any storage owner host data for users who need additional space. It is one of the reasons IPFS exists in the first place and will be a great accelerator of the IPFS growth once fully online later this year. The project is developed by [Protocol Labs](https://protocol.ai/).
 
-Textile.io is building the [Powergate](https://blog.textile.io/filecoin-developer-tools-concepts/) tool for your app to interact with Filecoin once the main net is launched.
+[Functionland](https://fx.land) has built Fula protocol and chain, which leverages unused storage resources on any personal device, such as laptop, to provide a decentralized, cost-effective cloud-like storage solution with full user control and superior functionality.
 
 ### Exchange Internet-of-Things data
 
