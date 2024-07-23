@@ -48,7 +48,6 @@ Some of the pinning services listed below are operated by third party companies.
 
 - [4EVERLAND Bucket](https://www.4everland.org/bucket/)
 - [Filebase](https://filebase.com/)
-- [Infura](https://www.infura.io/product/ipfs)
 - [NFT.Storage](https://nft.storage/)
 - [Pinata](https://pinata.cloud/)
 - [Scaleway](https://labs.scaleway.com/en/ipfs-pinning/)
