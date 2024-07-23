@@ -306,14 +306,6 @@ module.exports = {
                 ['/how-to/privacy-best-practices', 'Privacy and Encryption'], 
               ]
             },
-            {
-              title: 'Ecosystem Guides',
-              sidebarDepth: 1,
-              collapsable: true,
-              children: [
-                '/how-to/spheron', 
-              ]
-            },
           ],
           '/reference/': [
             '/reference/diagnostic-tools',

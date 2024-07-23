@@ -20,11 +20,6 @@ See the site navigation menu for all our how-tos, organized by topic area, inclu
 - **Learn how to build apps** on IPFS, starting with [exploring the IPFS API](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_C) and [making a basic libp2p app](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_B)
 - **Understand how IPFS works in the browser** by learning how to [address IPFS on the Web](address-ipfs-on-web.md) and [how IPFS can be used in your favorite browser tools and frameworks](browser-tools-frameworks.md)
 
-## Ecosystem guides
-
-Interested in learning more about tools, software and implementations in the wider IPFS ecosystem? Check out these guides, created by IPFS ecosystem partners. 
-
-- [Spheron](./spheron.md)
 
 ## Don't see what you're looking for?
 

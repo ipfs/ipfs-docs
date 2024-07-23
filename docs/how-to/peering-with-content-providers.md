@@ -72,14 +72,6 @@ This list is provided for informational purposes only. The IPFS Project does not
 | ------- | --------- |
 |`12D3KooWGtYkBAaqJMJEmywMxaCiNP7LCEFUAFiLEBASe232c2VH`|`/dns4/bitswap.filebase.io/tcp/443/wss`|
 
-### Spheron Network
-
-| Peer ID | Addresses |
-| ------- | --------- |
-|`12D3KooWFdciAga3zq3TZdrmDospFNrWRALe6VM6JpoKGEfVrqEi`|`/ip4/5.199.162.230`|
-|`12D3KooWBCzniwFvfS67HyZsJtiehd7RHtcKanGGCd8h6bjVWnkb`|`/ip4/5.199.168.17`|
-|`12D3KooWNbvFFq8kzS3eMonQYEmFyWTHboMZnHKr4XnN53gJKqhH`|`/ip4/5.199.162.220`|
-
 ### Storj
 
 | Peer ID | Addresses |
