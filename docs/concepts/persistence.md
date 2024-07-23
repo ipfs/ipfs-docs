@@ -47,14 +47,11 @@ Some of the pinning services listed below are operated by third party companies.
 :::
 
 - [4EVERLAND Bucket](https://www.4everland.org/bucket/)
-- [Estuary](https://estuary.tech/)
 - [Filebase](https://filebase.com/)
-- [Infura](https://infura.io/)
-- [Kriptonio](https://kriptonio.com/)
+- [Infura](https://www.infura.io/product/ipfs)
 - [NFT.Storage](https://nft.storage/)
 - [Pinata](https://pinata.cloud/)
 - [Scaleway](https://labs.scaleway.com/en/ipfs-pinning/)
-- [Spheron](https://spheron.network/)
 - [Web3.Storage](https://web3.storage/)
 
 See how to [work with remote pinning services](../how-to/work-with-pinning-services.md).
@@ -72,13 +69,3 @@ Filecoin provides users with a dependable, long-term storage solution. However, 
 ### IPFS + Filecoin solutions
 
 Fortunately, there is a growing community of tools and service providers that help simplify the process of making content available over IPFS while also persisting the data via Filecoin. These solutions make it simple to store data using decentralized protocols by acting both as IPFS pinning services and Filecoin storage platforms. Combining the two means that when you upload a file, that file is immediately available for download. Additionally, combined IPFS + Filecoin solutions will periodically bundle data and create a deal with a reputable Filecoin storage provider, ensuring that the data is available in long-term storage. Many solutions include API client libraries for developers to integrate into their apps and services, as well as web interfaces for quickly managing and inspecting files.
-
-Options in this category include:
-
-- [Web3.Storage](https://Web3.Storage)
-- [NFT.storage](https://nft.storage/)
-- [Estuary](https://estuary.tech)
-- [Powergate](https://github.com/textileio/powergate)
-- [ChainSafe Storage](https://storage.chainsafe.io)
-- [Fleek Storage](https://fleek.co/storage)
-- [Spheron](https://spheron.network)
