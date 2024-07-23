@@ -188,7 +188,6 @@ module.exports = {
             '/concepts/cod',
             '/concepts/comparisons',
             '/concepts/public-utilities',
-            '/concepts/usage-ideas-examples',
             ['/concepts/measuring', 'Measuring the network'],
             '/concepts/faq',
             '/concepts/glossary',

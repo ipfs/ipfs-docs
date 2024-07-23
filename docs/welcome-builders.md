@@ -31,7 +31,7 @@ Or, check out the [Building Web3 video series](https://www.youtube.com/playlist?
 
 ## IPFS and you
 
-**What can _you_ build using IPFS?** Thanks to a rapidly growing developer community, global traction for a wide variety of use cases, and active open-source development, the possibilities are virtually endless. Check out these [usage ideas and examples](concepts/usage-ideas-examples.md) for inspiration, plus these pointers for getting started integrating IPFS into your project:
+**What can _you_ build using IPFS?** Thanks to a rapidly growing developer community, global traction for a wide variety of use cases, and active open-source development, the possibilities are virtually endless. Check out these pointers for getting started integrating IPFS into your project:
 
 - With implementations in [Go](https://github.com/ipfs/kubo) and [JavaScript](https://js.ipfs.tech/) (plus [Rust](https://github.com/rs-ipfs/rust-ipfs) in the works), options for **directly integrating IPFS into your codebase** are versatile.
 - For **IPFS-based deployment and dev tools**, the options are growing every day — including [Fleek](https://fleek.co) (deployment, storage, and app tooling), [Textile](https://textile.io) (databases, storage, CDN, Filecoin integration), and [Fission](https://fission.codes) (front-end app publishing using web3 back-end tools), to name just a few.
