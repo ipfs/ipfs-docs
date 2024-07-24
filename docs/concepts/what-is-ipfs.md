@@ -32,5 +32,4 @@ While IPFS shares similarities with, and is often used in architectures with the
 
 ## Further reading
 - For an overview of the problems that IPFS solves, see part 2 of a 3-part introduction to [the basic concepts of IPFS](../concepts/README.md#learn-the-basics), [**IPFS and the problems it solves**](../concepts/ipfs-solves.md).
-- To learn how IPFS is used by storage networks and other applications, see the [usage ideas and examples](../concepts/usage-ideas-examples.md).
 - Looking for a deeper dive on IPFS compared to other similar technologies? See the [IPFS Comparisons page](../concepts/comparisons.md).
