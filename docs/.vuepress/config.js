@@ -5,11 +5,11 @@ const SPEEDCURVE_ID = process.env.SPEEDCURVE_ID || ''
 const pageSuffix = '/'
 
 const installMenuChildren = [
-  ['/install/command-line','IPFS Kubo for Go'],
-  ['/install/run-ipfs-inside-docker', 'IPFS Kubo in Docker'],
+  ['/install/ipfs-desktop', 'IPFS Desktop (Kubo)'],
+  ['/install/command-line','Kubo (CLI) '],
+  ['/install/run-ipfs-inside-docker', 'Kubo in Docker'],
   ['https://github.com/ipfs/helia','IPFS Helia for JavaScript'],
   ['https://iroh.computer/docs/install/', "IPFS Iroh for Rust"],
-  ['/install/ipfs-desktop', 'IPFS Desktop App'],
   ['/install/ipfs-companion', 'IPFS Companion Browser Extension'],
   ['/install/server-infrastructure', 'IPFS Cluster']
 ]
@@ -44,7 +44,7 @@ module.exports = {
     defaultImage: '/images/social-card.png',
     author: {
       name: 'IPFS Team',
-      twitter: '@ipfsbot'
+      twitter: '@ipfs'
     },
     keywords:
       'IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
