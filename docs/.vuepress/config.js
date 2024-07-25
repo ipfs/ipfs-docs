@@ -5,11 +5,11 @@ const SPEEDCURVE_ID = process.env.SPEEDCURVE_ID || ''
 const pageSuffix = '/'
 
 const installMenuChildren = [
-  ['/install/command-line','IPFS Kubo for Go'],
-  ['/install/run-ipfs-inside-docker', 'IPFS Kubo in Docker'],
+  ['/install/ipfs-desktop', 'IPFS Desktop (Kubo)'],
+  ['/install/command-line','Kubo (CLI) '],
+  ['/install/run-ipfs-inside-docker', 'Kubo in Docker'],
   ['https://github.com/ipfs/helia','IPFS Helia for JavaScript'],
   ['https://iroh.computer/docs/install/', "IPFS Iroh for Rust"],
-  ['/install/ipfs-desktop', 'IPFS Desktop App'],
   ['/install/ipfs-companion', 'IPFS Companion Browser Extension'],
   ['/install/server-infrastructure', 'IPFS Cluster']
 ]
@@ -44,7 +44,7 @@ module.exports = {
     defaultImage: '/images/social-card.png',
     author: {
       name: 'IPFS Team',
-      twitter: '@ipfsbot'
+      twitter: '@ipfs'
     },
     keywords:
       'IPFS, dweb, protocol, libp2p, ipld, multiformats, bitswap, decentralized web, InterPlanetary File System, dapp, documentation, docs, Protocol Labs',
@@ -253,12 +253,12 @@ module.exports = {
               ]
             },
             {
-              title: 'IPFS in the browser',
+              title: 'IPFS on the web',
               sidebarDepth: 1,
               collapsable: true,
               children: [
+                '/how-to/ipfs-on-the-web',
                 '/how-to/address-ipfs-on-web',
-                '/how-to/browser-tools-frameworks'
               ]
             },
             {
@@ -275,7 +275,7 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/gateway-best-practices',
-                '/how-to/gateway-troubleshooting'
+                '/how-to/gateway-troubleshooting',
               ]
             },
             {
@@ -309,6 +309,10 @@ module.exports = {
           '/reference/': [
             '/reference/diagnostic-tools',
             '/reference/http/gateway',
+            {
+              path: 'https://specs.ipfs.tech/architecture/principles/',
+              title: 'IPFS Principles',
+            },
             '/reference/js/api',
             '/reference/go/api',
             {
@@ -323,8 +327,11 @@ module.exports = {
               collapsable: true,
               path: '/reference/kubo/rpc'
             },
-            '/reference/kubo-rpc-cli.md'
-
+            '/reference/kubo-rpc-cli.md',
+            {
+              path: 'https://specs.ipfs.tech',
+              title: 'IPFS Specifications',
+            },
           ],
           '/community/': [
             ['/community/', 'Join the community'],

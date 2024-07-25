@@ -5,9 +5,9 @@ description: IPFS Desktop gives you all the power of IPFS in a convenient deskto
 
 # Install the IPFS Desktop App
 
-**IPFS Desktop bundles an IPFS node, file manager, peer manager, and content explorer into a single, easy-to-use application.**
+**IPFS Desktop bundles a Kubo IPFS node, file manager, peer manager, and content explorer into a single, easy-to-use application.**
 
-Use IPFS Desktop to get acquainted with IPFS without needing to touch the terminal — or, if you're already experienced, use the powerful menubar/taskbar shortcuts alongside the command line to make your IPFS workflow faster.
+Use IPFS Desktop to get acquainted with [Kubo](https://github.com/ipfs/kubo/), a popular  IPFS implementation without needing to touch the terminal — or, if you're already experienced, use the powerful menubar/taskbar shortcuts alongside the command line to make your IPFS workflow faster.
 
 If you already have an IPFS node on your computer, IPFS Desktop will act as a control panel and file browser for that node. If you don't have a node, it'll install one for you. And either way, IPFS Desktop will automatically check for updates.
 
