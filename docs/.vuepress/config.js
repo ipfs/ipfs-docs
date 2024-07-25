@@ -309,6 +309,10 @@ module.exports = {
           '/reference/': [
             '/reference/diagnostic-tools',
             '/reference/http/gateway',
+            {
+              path: 'https://specs.ipfs.tech/architecture/principles/',
+              title: 'IPFS Principles',
+            },
             '/reference/js/api',
             '/reference/go/api',
             {
@@ -323,8 +327,11 @@ module.exports = {
               collapsable: true,
               path: '/reference/kubo/rpc'
             },
-            '/reference/kubo-rpc-cli.md'
-
+            '/reference/kubo-rpc-cli.md',
+            {
+              path: 'https://specs.ipfs.tech',
+              title: 'IPFS Specifications',
+            },
           ],
           '/community/': [
             ['/community/', 'Join the community'],
