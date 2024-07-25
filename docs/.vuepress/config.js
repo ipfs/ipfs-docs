@@ -253,12 +253,12 @@ module.exports = {
               ]
             },
             {
-              title: 'IPFS in the browser',
+              title: 'IPFS on the web',
               sidebarDepth: 1,
               collapsable: true,
               children: [
+                '/how-to/ipfs-on-the-web',
                 '/how-to/address-ipfs-on-web',
-                '/how-to/browser-tools-frameworks'
               ]
             },
             {
@@ -275,7 +275,7 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/gateway-best-practices',
-                '/how-to/gateway-troubleshooting'
+                '/how-to/gateway-troubleshooting',
               ]
             },
             {
