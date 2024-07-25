@@ -76,7 +76,7 @@ A Bootstrap Node is a trusted peer on the IPFS network through which an IPFS nod
 
 ### CAR
 
-The CAR (Content Addressable aRchives) is a format for serialized representation of any [IPLD](#ipld) [DAG](#dag). Typically in a file with a .car filename extension or a byte stream marked as [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) media type. [More about CAR](https://ipld.io/specs/transport/car/)
+The CAR (Content Addressable aRchives) is a format for serialized representation of any [IPLD](#ipld) [DAG](#dag). The CAR format is a way of packaging up content-addressed data into archive files that can be easily stored and transferred. Typically in a file with a `.car` filename extension or a byte stream marked as [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) media type. [More about CAR](https://ipld.io/specs/transport/car/)
 
 ### CAR v1
 
