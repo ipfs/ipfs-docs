@@ -208,7 +208,7 @@ An experimental data store used when `--nocopy` is passed to `ipfs add`. It stor
 
 ### Gateway
 
-An IPFS Gateway acts as a bridge between traditional web browsers and IPFS. Through the gateway, users can browse files and websites stored in IPFS as if they were stored on a traditional web server. [More about Gateway](../concepts/ipfs-gateway.md) and [addressing IPFS on the web](../how-to/address-ipfs-on-web.md)
+An IPFS Gateway acts as a bridge between HTTP-based protocols and IPFS. Through the gateway, users can browse files and websites stored in IPFS as if they were stored on a HTTP web server. [More about Gateway](../concepts/ipfs-gateway.md) and [addressing IPFS on the web](../how-to/address-ipfs-on-web.md)
 
 ### Garbage Collection
 
@@ -297,6 +297,10 @@ Listening is a function of the IPFS networking layer in libp2p, wherein an incom
 In IPFS and [IPLD](#ipld), a _link_ usually means a pointer to some [CID](#cid).
 
 ## M
+
+### IPFS Mainnet
+
+IPFS Mainnet is a term used to describe the default or "main" network that many IPFS implementations connect to. Mainnet is a subset of all the [IPFS implementations](https://specs.ipfs.tech/architecture/principles/#ipfs-implementation-requirements) and typically includes implementations that connect to the [Amino DHT](#amino) and support [Bitswap](#bitswap), [UnixFS](#unixfs), and the [IPFS Gateway](#gateway). This has mostly been assumed for the IPFS network and is not emphasized for anyone other than protocol experts. Nonetheless, IPFS Mainnet is a useful distinction in a world of many [IPFS implementations](../concepts/implementations.md) with varying degrees of interoperability.
 
 ### Merkle-DAG
 
