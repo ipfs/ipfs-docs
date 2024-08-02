@@ -188,7 +188,7 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
    ```
 
 2. Open IPFS desktop and go to the **Files** page.
-3. Click **Add** → **File**.
+3. Click **+Import** → **File**.
 4. Navigate to your `index.html` file and select **Open**.
 
    ![Choose a file window open in IPFS desktop.](./images/single-page-website/add-ipfs-desktop-open-file.png)
