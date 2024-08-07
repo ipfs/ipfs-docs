@@ -104,4 +104,4 @@ ipfs name publish --key=SecondKey /ipfs/bafybeicklkqcnlvtiscr2hzkubjwnwjinvskffn
 ```
 ## Publishing IPNS names with helia-ipns
 
-Learn more about using IPNS with JavaScript at the [helia-ipns](https://github.com/ipfs/helia-ipns) repository.
+Learn more about using IPNS with JavaScript with the [helia-ipns](https://github.com/ipfs/helia/tree/main/packages/ipns) package.
