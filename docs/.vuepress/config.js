@@ -188,7 +188,6 @@ module.exports = {
             '/concepts/cod',
             '/concepts/comparisons',
             '/concepts/public-utilities',
-            '/concepts/usage-ideas-examples',
             ['/concepts/measuring', 'Measuring the network'],
             '/concepts/faq',
             '/concepts/glossary',
@@ -304,14 +303,6 @@ module.exports = {
               collapsable: true,
               children: [
                 ['/how-to/privacy-best-practices', 'Privacy and Encryption'], 
-              ]
-            },
-            {
-              title: 'Ecosystem Guides',
-              sidebarDepth: 1,
-              collapsable: true,
-              children: [
-                '/how-to/spheron', 
               ]
             },
           ],
