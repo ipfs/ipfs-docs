@@ -300,7 +300,7 @@ In IPFS and [IPLD](#ipld), a _link_ usually means a pointer to some [CID](#cid).
 
 ### IPFS Mainnet
 
-IPFS Mainnet is a term used to describe the default or "main" network that many IPFS implementations connect to. Mainnet is a subset of all the [IPFS implementations](https://specs.ipfs.tech/architecture/principles/#ipfs-implementation-requirements) and typically includes implementations that connect to the [Amino DHT](#amino) and support [Bitswap](#bitswap), [UnixFS](#unixfs), and the [IPFS Gateway](#gateway). This has mostly been assumed for the IPFS network and is not emphasized for anyone other than protocol experts. Nonetheless, IPFS Mainnet is a useful distinction in a world of many [IPFS implementations](../concepts/implementations.md) with varying degrees of interoperability.
+IPFS Mainnet is a term used to describe the default or "main" public network that most IPFS implementations connect to by default. Most [IPFS implementations](https://specs.ipfs.tech/architecture/principles/#ipfs-implementation-requirements) were designed to work with Mainnet (but some can be configured instead to form a private swarm). Mainnet IPFS nodes typically join the [Amino DHT](#amino) for content routing with the help of the [Bootstrap nodes](#bootstrap-node), rely on [Bitswap](#bitswap) for data transfer, [UnixFS](#unixfs) for encoding files and directories, and typically expose an [IPFS Gateway](#gateway). This has mostly been assumed for the IPFS network. Nonetheless, IPFS Mainnet is a useful distinction in a world of many [IPFS implementations](../concepts/implementations.md) with varying degrees of interoperability.
 
 ### Merkle-DAG
 
