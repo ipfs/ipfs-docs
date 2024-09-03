@@ -75,10 +75,6 @@ For more information about public gateways, see the [Public IPFS Gateways](./pub
 
 ## Gateway types
 
-:::warning
-[Path resolution style gateways](#path) do not provide origin isolation.
-:::
-
 There are multiple gateway types, each with specific use case, security, performance, and functional implications.
 
 - [Read support](#read-only-gateways)
@@ -118,11 +114,21 @@ https://{gateway URL}/ipfs/{content ID}/{optional path to resource}
 
 Path-resolving gateways, however, violate the [same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy) that protects one website from improperly accessing session data of another website.
 
+:::warning
+This type of gateway does not provide origin isolation and should not be used for hosting web apps.
+
+Learn more at [Address IPFS on the web: Path Gateway](../how-to/address-ipfs-on-web.md#path-gateway)
+:::
+
 #### Subdomain
 
 Subdomain resolution style maintains compliance with the [single-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy). The canonical form of access, `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}`, causes the browser to interpret each returned file as being from a different origin.
 
-Subdomain resolution support began with [Kubo](https://github.com/ipfs/kubo) release `0.5.0`.
+::: callout
+This type of gateway does provide origin isolation and should be used for hosting web apps.
+
+Learn more at [Address IPFS on the web: Subdomain Gateway](../how-to/address-ipfs-on-web.md#subdomain-gateway)
+:::
 
 #### DNSlink
 
@@ -144,6 +150,10 @@ DNSLink resolution occurs when the gateway recognizes an IPNS identifier contain
 3. The `Alias` record redirects any access to that `example.com` to the specified gateway. Hence the browser's request to `https://{example.com}/{optional path to resource}` redirects to the gateway specified in the `Alias`.
 4. The gateway employs DNSLink resolution to return the current content version from IPFS.
 5. The browser does not perceive the gateway as the origin of the content and therefore enforces the single-origin policy to protect `example.com`.
+
+::: callout
+Learn more at [Address IPFS on the web: DNSLink Gateway](../how-to/address-ipfs-on-web.md#dnslink-gateway)
+:::
 
 ### Gateway services
 
