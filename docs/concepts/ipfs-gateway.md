@@ -4,9 +4,7 @@ description: Learn why gateways are an important part of using IPFS in conjuncti
 related:
   'IPFS Docs: Address IPFS on the Web': /how-to/address-ipfs-on-web/
   'IPFS public gateway checker': https://ipfs.github.io/public-gateway-checker/
-  'Gateway specifications': https://github.com/ipfs/specs/blob/main/http-gateways/#readme
-  'Article: Solving the IPFS Gateway Problem (Pinata)': https://medium.com/pinata/the-ipfs-gateway-problem-64bbe7eb8170
-  'Tutorial: Setting up an IPFS gateway on Google Cloud Platform (Stacktical)': https://blog.stacktical.com/ipfs/gateway/dapp/2019/09/21/ipfs-server-google-cloud-platform.html
+  'Gateway specifications': https://specs.ipfs.tech/http-gateways/
 ---
 
 # IPFS Gateway
@@ -66,12 +64,9 @@ _Private gateways_ are configured to limit access to requests from specific doma
 
 They are frequently, but not exclusively, used behind firewalls. Running [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node triggers connection attempts to other IPFS peers. Private network administrators may treat such connection attempts as potential security vulnerabilities. Private IPFS gateway servers located inside the private network and running a trusted code base provide an alternative architecture for read/write access to externally-hosted IPFS content.
 
-This [tutorial configuring an IPFS gateway on a Google Cloud platform](https://blog.stacktical.com/ipfs/gateway/dapp/2019/09/21/ipfs-server-google-cloud-platform.html) includes information on constraining access for a private gateway setup.
-
 ### Public gateways
 
 For more information about public gateways, see the [Public IPFS Gateways](./public-utilities.md#public-ipfs-gateways)
-
 
 ## Gateway types
 
