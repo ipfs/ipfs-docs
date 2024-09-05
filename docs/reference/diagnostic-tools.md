@@ -18,7 +18,7 @@ Here are several tools you can use to investigate and diagnose common issues wit
 
 ## IPFS check
 
-[IPFS check](https://check.ipfs.network/) helps determine the retrievability of a CID from IPFS Mainnet, either from a specific peer given a multiaddress, or from multiple providers.
+[IPFS Check](https://check.ipfs.network/) helps determine the retrievability of a CID from IPFS Mainnet, either from a specific peer given a multiaddress, or from multiple providers.
 
 @[youtube](XeNOQDOrdC0)
 
