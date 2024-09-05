@@ -190,6 +190,7 @@ repos
 reprovider
 reproviding
 requesters
+retrievability
 roadmaps
 rsa
 sandboxed
