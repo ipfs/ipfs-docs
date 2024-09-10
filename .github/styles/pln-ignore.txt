@@ -21,6 +21,7 @@ bool(ean)
 boolean
 boxo
 browserify
+callout
 callouts
 cas
 cdns
