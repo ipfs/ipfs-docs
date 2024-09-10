@@ -112,7 +112,7 @@ Path-resolving gateways, however, violate the [same-origin policy](https://en.wi
 :::warning
 This type of gateway does not provide origin isolation and should not be used for hosting web apps.
 
-Learn more at [Address IPFS on the web: Path Gateway](../how-to/address-ipfs-on-web.md#path-gateway)
+Learn more at [Address IPFS on the web: Path Gateway](../how-to/address-ipfs-on-web.md#path-gateway) and [Path Gateway Specification](https://specs.ipfs.tech/http-gateways/path-gateway/).
 :::
 
 #### Subdomain
@@ -122,7 +122,7 @@ Subdomain resolution style maintains compliance with the [single-origin policy](
 ::: callout
 This type of gateway does provide origin isolation and should be used for hosting web apps.
 
-Learn more at [Address IPFS on the web: Subdomain Gateway](../how-to/address-ipfs-on-web.md#subdomain-gateway)
+Learn more at [Address IPFS on the web: Subdomain Gateway](../how-to/address-ipfs-on-web.md#subdomain-gateway) and [Subdomain Gateway Specification](https://specs.ipfs.tech/http-gateways/subdomain-gateway/).
 :::
 
 #### DNSlink
@@ -147,7 +147,7 @@ DNSLink resolution occurs when the gateway recognizes an IPNS identifier contain
 5. The browser does not perceive the gateway as the origin of the content and therefore enforces the single-origin policy to protect `example.com`.
 
 ::: callout
-Learn more at [Address IPFS on the web: DNSLink Gateway](../how-to/address-ipfs-on-web.md#dnslink-gateway)
+Learn more at [Address IPFS on the web: DNSLink Gateway](../how-to/address-ipfs-on-web.md#dnslink-gateway) and [DNSLink Gateway Specification](https://specs.ipfs.tech/http-gateways/dnslink-gateway/).
 :::
 
 ### Gateway services
