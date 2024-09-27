@@ -250,9 +250,21 @@ A  technique for [NAT](#nat) or firewall traversal that relies on coordinated si
 
 Information Space is the set of concepts, and relations among them, held by an information system. This can be thought of as a conceptual framework or tool for studying how knowledge and information are codified, abstracted, and diffused through a social system. [More about Information Space](https://en.wikipedia.org/wiki/Information_space)
 
+### IPFS Desktop
+
+An unobtrusive and user-friendly desktop application for IPFS on Windows, macOS and Linux. Uses [Kubo](#kubo) implementation as IPFS backend. See: [Install the IPFS Desktop App](../install/ipfs-desktop.md).
+
+### IPFS Mainnet
+
+See [Mainnet](#mainnet).
+
 ### IPLD
 
 The InterPlanetary Linked Data (IPLD) model is a set of specifications in support of decentralized data structures for the content-addressable web. Key features are interoperable protocols, easily upgradeable, backward compatible. A single namespace for all hash-based protocols. [More about IPLD](https://ipld.io/)
+
+### IPNI
+
+The InterPlanetary Network Indexer (IPNI), also referred to as Network Indexer, indexer and IPNI, enables quick and efficient search of content-addressable data. IPNI is designed to improve the performance and efficiency of IPFS by providing an alternate method of content routing to the [Amino](#amino) DHT. [More about IPNI](../concepts/ipni.md)
 
 ### IPNS
 
@@ -272,7 +284,7 @@ JavaScript Object Notation (JSON) is a lightweight data-interchange format. JSON
 
 ### Kubo
 
-AKA [go-ipfs](#go-ipfs). The earliest and most widely used implementation of IPFS, written in Go. It runs on servers and user machines with full IPFS capabilities. See [Nodes > Kubo](../concepts/nodes.md#kubo).
+Kubo (previously known as [go-ipfs](#go-ipfs)) is the earliest and most widely used implementation of IPFS, written in Go. It runs on servers and user machines with full IPFS capabilities. [Install IPFS Kubo](../install/command-line.md).
 
 ## L
 
@@ -298,7 +310,7 @@ In IPFS and [IPLD](#ipld), a _link_ usually means a pointer to some [CID](#cid).
 
 ## M
 
-### IPFS Mainnet
+### Mainnet
 
 IPFS Mainnet is a term used to describe the default or "main" public network that most IPFS implementations connect to by default. Most [IPFS implementations](https://specs.ipfs.tech/architecture/principles/#ipfs-implementation-requirements) were designed to work with Mainnet (but some can be configured instead to form a private swarm). Mainnet IPFS nodes typically join the [Amino DHT](#amino) for content routing with the help of the [Bootstrap nodes](#bootstrap-node), rely on [Bitswap](#bitswap) for data transfer, [UnixFS](#unixfs) for encoding files and directories, and typically expose an [IPFS Gateway](#gateway). This has mostly been assumed for the IPFS network. Nonetheless, IPFS Mainnet is a useful distinction in a world of many [IPFS implementations](../concepts/implementations.md) with varying degrees of interoperability.
 

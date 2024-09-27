@@ -33,6 +33,8 @@ Note the following:
 - The amount of disk space your IPFS installation uses depends on how much data you're sharing. A base installation uses around 12MB of disk space.
 - You can enable automatic garbage collection via [--enable-gc](../reference/kubo/cli.md#ipfs-daemon) and adjust using [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.30.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
 
+
+<!-- TODO: hide this footgun until https://github.com/ipfs/kubo/pull/10524 is merged and released in stable kubo 
 ### Kubo on resource-constrained systems 
 
 If you are running Kubo on a resource-constrained system (such as a Raspberry Pi), you should initialize your daemon with the `lowpower` profile. 
@@ -42,6 +44,8 @@ If you are running Kubo on a resource-constrained system (such as a Raspberry Pi
   ```
 
 This reduces daemon overhead on the system but may degrade content discovery and data fetching performance.
+
+-->
 
 ## Install official binary distributions
 
