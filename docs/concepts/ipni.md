@@ -65,7 +65,73 @@ When a user searches for a piece of data using a CID or multihash, the indexer i
 
 By providing this additional layer of information, the indexer helps to speed up data location and retrieval, reduce resource consumption, and improve the overall scalability of IPFS.
 
-## Example application
+### Example: finding providers via `/routing/v1`
+
+Most of the time, IPFS implementations interact with IPNI by querying the HTTP endpoint compatible with [Delegated Routing V1 API Specification](https://specs.ipfs.tech/routing/http-routing-v1/).
+
+```plaintext
+$ curl https://cid.contact/routing/v1/providers/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
+```
+
+Endpoint produces human-readable JSON objects:
+
+```json
+{
+  "Providers": [
+    {
+      "Addrs": [
+        "/dns4/bitswap.filebase.io/tcp/443/wss"
+      ],
+      "ID": "12D3KooWGtYkBAaqJMJEmywMxaCiNP7LCEFUAFiLEBASe232c2VH",
+      "Protocols": [
+        "transport-bitswap"
+      ],
+      "Schema": "peer",
+      "transport-bitswap": "gBI="
+    },
+    {
+      "Addrs": [
+        "/ip4/212.6.53.27/tcp/80/http"
+      ],
+      "ID": "12D3KooWHEzPJNmo4shWendFFrxDNttYf8DW4eLC7M2JzuXHC1hE",
+      "Protocols": [
+        "transport-ipfs-gateway-http"
+      ],
+      "Schema": "peer",
+      "transport-ipfs-gateway-http": "oBIA"
+    },
+    {
+      "Addrs": [
+        "/ip4/72.52.65.166/tcp/26101"
+      ],
+      "ID": "12D3KooWHKChM2uYi4EXREaCGtaxersCsp7hbFiMqMUK8o7CgV6Q",
+      "Protocols": [
+        "transport-graphsync-filecoinv1"
+      ],
+      "Schema": "peer",
+      "transport-graphsync-filecoinv1": "kBKjaFBpZWNlQ0lE2CpYKAABgeIDkiAg1l4zEzA4zeGlv3N7u4iMbysxTBMRUrquyMVzQejTeh9sVmVyaWZpZWREZWFs9W1GYXN0UmV0cmlldmFs9Q=="
+    }
+  ]
+}
+```
+
+Each result follows [PeerSchema](https://specs.ipfs.tech/routing/http-routing-v1/#peer-schema), and is the same format as every other delegated routing endpoint in the IPFS ecosystem. This allows clients to write code once and use across all routing systems.
+
+:::callout TIP
+To start receiving results immediatelly, enable [streaming responses](https://specs.ipfs.tech/routing/http-routing-v1/#streaming) by passing `Accept: application/x-ndjson` HTTP Header.
+
+```plaintext
+$ curl -H 'Accept: application/x-ndjson' https://cid.contact/routing/v1/providers/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
+```
+:::
+
+:::callout FYI
+Light IPFS clients may prefer to query [delegated-ipfs.dev/routing/v1](https://docs.ipfs.tech/concepts/public-utilities/#delegated-routing) endpoint, which is a [`someguy` caching proxy](https://github.com/ipfs/someguy#readme) for both Amino DHT and IPNI at `cid.contact`.
+:::
+
+### Example: finding providers via IPNI-specific `/cid` endpoint
+
+IPNI also provides own HTTP API(s) which may be preferable when IPNI-specific information is desired.
 
 To demonstrate the practical application and usage of IPNI, this section will walk through a hands-on example involving the `cid.contact` indexer tool. The `cid.contact` tool leverages IPNI to return provider record information for a given CID.
 
@@ -213,7 +279,7 @@ To demonstrate the practical application and usage of IPNI, this section will wa
     }
     ```
 
-### Response explained
+#### Response explained
 
 This response returns multiple provider records, which indicates that the data identified by this CID was found at multiple providers. For example, the first provider is specified by the following record:
 
