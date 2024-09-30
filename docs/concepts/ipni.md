@@ -118,7 +118,7 @@ Endpoint produces human-readable JSON objects:
 Each result follows [PeerSchema](https://specs.ipfs.tech/routing/http-routing-v1/#peer-schema), and is the same format as every other delegated routing endpoint in the IPFS ecosystem. This allows clients to write code once and use across all routing systems.
 
 :::callout TIP
-To start receiving results immediatelly, enable [streaming responses](https://specs.ipfs.tech/routing/http-routing-v1/#streaming) by passing `Accept: application/x-ndjson` HTTP Header.
+To start receiving results immediately, enable [streaming responses](https://specs.ipfs.tech/routing/http-routing-v1/#streaming) by passing `Accept: application/x-ndjson` HTTP Header.
 
 ```plaintext
 $ curl -H 'Accept: application/x-ndjson' https://cid.contact/routing/v1/providers/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
