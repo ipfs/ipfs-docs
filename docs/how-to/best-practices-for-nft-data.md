@@ -12,8 +12,6 @@ Since an NFT can't be easily changed after it's been created, it's a good idea t
 
 This guide is aimed at developers building NFT platforms and other tools, and it's focused on how to format your data and link to it for the best long-term results. 
 
-If you're interested in a deeper dive in the world of NFT best practices and NFT development in general, head over to [NFT School](https://nftschool.dev) for concept guides, tutorials, and how-tos.
-
 ## Types of IPFS links and when to use them
 
 There are a few different ways to refer to data on IPFS, each of which is best suited to different use cases.
