@@ -33,4 +33,4 @@ Planning to set up several Kubo nodes within one network? You'll want to take a 
 
 ## IPFS Companion Browser Extension
 
-Some browsers such as [Brave](https://brave.com/) and [Opera](https://www.opera.com/) come with IPFS built-in. If your browser doesn't support IPFS yet, you can install an IPFS companion extension that will let you view decentralized web content! [Learn more →](./ipfs-companion.md)
+If your browser doesn't support IPFS yet, you can install an IPFS companion extension that will let you view decentralized web content! [Learn more →](./ipfs-companion.md)
