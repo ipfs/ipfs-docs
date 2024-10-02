@@ -205,7 +205,6 @@ module.exports = {
                 '/how-to/configure-node',
                 '/how-to/modify-bootstrap-list',
                 '/how-to/nat-configuration',
-                '/how-to/default-profile',
                 '/how-to/ipfs-updater', 
                 [
                   'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
