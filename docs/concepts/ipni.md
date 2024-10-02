@@ -67,7 +67,7 @@ By providing this additional layer of information, the indexer helps to speed up
 
 ### Example: finding providers via `/routing/v1`
 
-Most of the time, IPFS implementations interact with IPNI by querying the HTTP endpoint compatible with [Delegated Routing V1 API Specification](https://specs.ipfs.tech/routing/http-routing-v1/).
+Most of the time, IPFS implementations interact with the IPNI by querying the HTTP endpoint compatible with [Delegated Routing V1 API Specification](https://specs.ipfs.tech/routing/http-routing-v1/).
 
 ```plaintext
 $ curl https://cid.contact/routing/v1/providers/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
@@ -115,7 +115,7 @@ Endpoint produces human-readable JSON objects:
 }
 ```
 
-Each result follows [PeerSchema](https://specs.ipfs.tech/routing/http-routing-v1/#peer-schema), and is the same format as every other delegated routing endpoint in the IPFS ecosystem. This allows clients to write code once and use across all routing systems.
+Each result follows [PeerSchema](https://specs.ipfs.tech/routing/http-routing-v1/#peer-schema), and is the same format as every other delegated routing endpoint in the IPFS ecosystem. This allows client code reuse across all compatible routing systems.
 
 :::callout TIP
 To start receiving results immediately, enable [streaming responses](https://specs.ipfs.tech/routing/http-routing-v1/#streaming) by passing `Accept: application/x-ndjson` HTTP Header.
@@ -131,7 +131,7 @@ Light IPFS clients may prefer to query [delegated-ipfs.dev/routing/v1](https://d
 
 ### Example: finding providers via IPNI-specific `/cid` endpoint
 
-IPNI also provides own HTTP API(s) which may be preferable when IPNI-specific information is desired.
+The IPNI also provides its own HTTP API(s) which may be preferable when IPNI-specific information is desired.
 
 To demonstrate the practical application and usage of IPNI, this section will walk through a hands-on example involving the `cid.contact` indexer tool. The `cid.contact` tool leverages IPNI to return provider record information for a given CID.
 
