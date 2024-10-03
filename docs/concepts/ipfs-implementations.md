@@ -9,14 +9,20 @@ IPFS is an open-source project that encourages the development of multiple imple
 
 You can learn more about the principles that define what an IPFS implementation is [here](./implementations.md).
 
-::: callout TLDR
-Looking for an easy, user-friendly way to get started with IPFS?
-Try any of the options listed below:
 
-- [IPFS Desktop](../install/ipfs-desktop.md), an user-friendly GUI application that bundles an IPFS Kubo node, file manager, peer manager, and content explorer.
-- [IPFS Companion](../install/ipfs-companion.md), a browser extension that compliments IPFS Desktop, loads compatible websites and file paths from a local IPFS Kubo node.
-- [IPFS Kubo](../install/command-line.md), standalone demon service with command-line and HTTP RPC interface for power users who don't need GUI.
-  :::
+::: callout Mainnet TLDR
+
+Looking for an easy and opinionated way to get started with IPFS [Mainnet](../concepts/glossary.md#mainnet)?
+
+**User-Friendly Options**
+  - [IPFS Desktop](../install/ipfs-desktop.md), an user-friendly GUI application that bundles an IPFS Kubo node for self-hosting, file manager, peer manager, and content explorer.
+  - [IPFS Companion](../install/ipfs-companion.md), a browser extension that compliments IPFS Desktop, loads compatible websites and file paths from a local IPFS Kubo node.
+
+**Command-Line & Infrastructure Tools**
+  - [Kubo](../install/command-line.md), all-in-one demon service with command-line and HTTP RPC interface for power users who want to self-host, but don't need GUI.
+  - [IPFS Cluster](../install/server-infrastructure.md), data orchestration across a swarm of IPFS daemons by allocating, replicating and tracking a global pinset distributed among multiple peers.
+  - [Rainbow](https://github.com/ipfs/rainbow/#readme), production-grade standalone IPFS HTTP [Gateway](../concepts/glossary.md#gateway) service powering [public gateways](../concepts/public-utilities.md#public-ipfs-gateways).
+:::
 
 ## Popular or Actively Maintained
 
