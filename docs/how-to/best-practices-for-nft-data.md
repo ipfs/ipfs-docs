@@ -12,8 +12,6 @@ Since an NFT can't be easily changed after it's been created, it's a good idea t
 
 This guide is aimed at developers building NFT platforms and other tools, and it's focused on how to format your data and link to it for the best long-term results. 
 
-If you're interested in a deeper dive in the world of NFT best practices and NFT development in general, head over to [NFT School](https://nftschool.dev) for concept guides, tutorials, and how-tos.
-
 ## Types of IPFS links and when to use them
 
 There are a few different ways to refer to data on IPFS, each of which is best suited to different use cases.
@@ -28,7 +26,7 @@ bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 
 There are two versions of CIDs used by IPFS. The example above is a version 1 CID (or CIDv1), and it has some advantages over the older "version 0" format, especially when viewing IPFS content on the web using an IPFS gateway. It's best to use version 1 CIDs for addressing NFT data, in the base32 encoding.
 
-To enable CIDv1 when using the IPFS command line, add the `--cid-version=1` flag when running the `ipfs add` command:
+To enable CIDv1 when using the [IPFS command line provided by Kubo](../install/command-line.md), add the `--cid-version=1` flag when running the `ipfs add` command:
 
 ```shell
 ipfs add --cid-version=1 ~/no-time-to-explain.jpeg
@@ -44,7 +42,7 @@ const cid = await ipfs.add({ content }, {
 })
 ```
 
-If you already have a version 0 CID for your content, there's no need to add it to IPFS again just to get the new CID format! You can convert a v0 CID to v1 using [the ipfs command line](address-ipfs-on-web.md#manual-use-cid-ipfs-io-or-the-command-line) or on the web at [cid.ipfs.io](https://cid.ipfs.io). If you're not sure which version you have, it's easy to tell the difference. Version 0 CIDs are always 46 characters long, starting with `Qm`.
+If you already have a version 0 CID for your content, there's no need to add it to IPFS again just to get the new CID format! You can convert a v0 CID to v1 using [the ipfs command line](address-ipfs-on-web.md#manual-use-cid-ipfs-io-or-the-command-line) or on the web at [cid.ipfs.tech](https://cid.ipfs.tech). If you're not sure which version you have, it's easy to tell the difference. Version 0 CIDs are always 46 characters long, starting with `Qm`.
 
 ::: tip
 You can learn more about CIDs in our [guide to Content Addressing][docs-cid], or by following the [interactive tutorials on ProtoSchool][protoschool-cid].
@@ -74,7 +72,7 @@ HTTP gateways provide interoperability for legacy user-agents that cannot resolv
 
 Here's an example: `https://dweb.link/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi`
 
-User agents with built-in support for IPFS (either via the IPFS Companion browser extension, or via native support, such as provided by Brave) will be able to recognize gateway links and resolve the content using native IPFS protocols. Other user-agents will simply follow the link to the gateway, which will load the content over IPFS and serve it using HTTP. You can learn more details about HTTP gateways in our [concept article on IPFS Gateway][docs-gateway].
+User agents with built-in support for IPFS (either via the [IPFS Companion browser extension](../install/ipfs-companion.md), or via native support) will be able to recognize gateway links and resolve the content using native IPFS protocols. Other user-agents will simply follow the link to the gateway, which will load the content over IPFS and serve it using HTTP. You can learn more details about HTTP gateways in our [concept article on IPFS Gateway][docs-gateway].
 
 Gateway links are great for interoperability, but they should not be the primary or canonical link to your data on IPFS. While an IPFS URI will remain accessible as long as anyone on IPFS has the data, a gateway link can fail if the gateway operator goes offline. 
 
