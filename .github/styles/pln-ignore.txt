@@ -76,6 +76,7 @@ flatf[ss]
 flatfs
 fleek
 fqdns
+functionland
 gasless
 geospatial
 git(hub)
