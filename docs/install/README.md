@@ -13,7 +13,7 @@ Looking for an easy and opinionated way to get started with IPFS [Mainnet](../co
 
 ### IPFS Desktop
 
-Anyone can use IPFS to store files in a _decentralized_ way. The easiest way to get up and running is by installing the IPFS Desktop application. This app has Kubo built-in and lets you interact with the network through a simple user-interface. [Check it out →](./ipfs-desktop.md)
+Anyone can use IPFS to store files in a _decentralized_ way. The easiest way to get up and running is by installing the IPFS Desktop application. This app has a Kubo node built-in and lets you interact with the network through a simple user interface. [Check it out →](./ipfs-desktop.md)
 
 ### IPFS Companion
 
