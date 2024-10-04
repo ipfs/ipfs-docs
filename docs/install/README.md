@@ -23,7 +23,7 @@ If your browser doesn't support IPFS yet, you can install an IPFS companion exte
 
 Do you want to quickly and easily publish content with IPFS without complex tools? See the [Publish with IPFS quickstart](../quickstart/publish.md), where you'll learn how to use third-party pinning services to pin and provide files to the IPFS network.
 
-## Command-Line & Infrastructure Tools
+## Infrastructure Tools
 
 ### Kubo
 
