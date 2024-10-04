@@ -10,9 +10,9 @@ IPFS is an open-source project that encourages the development of multiple imple
 You can learn more about the principles that define what an IPFS implementation is [here](./implementations.md).
 
 
-::: callout Mainnet TLDR
+::: callout TLDR
 
-Looking for an easy and opinionated way to get started with IPFS [Mainnet](../concepts/glossary.md#mainnet)?
+Looking for an easy and opinionated way to get started with IPFS?
 
 **User-Friendly Options**
   - [IPFS Desktop](../install/ipfs-desktop.md), an user-friendly GUI application that bundles an IPFS Kubo node for self-hosting, file manager, peer manager, and content explorer.
