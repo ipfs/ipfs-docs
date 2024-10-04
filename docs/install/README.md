@@ -9,7 +9,7 @@ IPFS is a collection of protocols, packages, and specifications that allow compu
 
 Looking for an easy and opinionated way to get started with IPFS [Mainnet](../concepts/glossary.md#mainnet)? Try any of the options listed below:
 
-## User-Friendly Options
+## Desktop Users
 
 ### IPFS Desktop
 
