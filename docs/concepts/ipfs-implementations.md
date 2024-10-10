@@ -20,7 +20,7 @@ Looking for an easy and opinionated way to get started with IPFS?
 
 **Command-Line & Infrastructure Tools**
   - [Kubo](../install/command-line.md), all-in-one demon service with command-line and HTTP RPC interface for power users who want to self-host, but don't need GUI.
-  - [IPFS Cluster](../install/server-infrastructure.md), data orchestration across a swarm of IPFS daemons by allocating, replicating and tracking a global pinset distributed among multiple peers.
+  - [IPFS Cluster](../install/server-infrastructure.md), data orchestration across a swarm of IPFS Kubo daemons by allocating, replicating and tracking a global pinset distributed among multiple peers.
   - [Rainbow](https://github.com/ipfs/rainbow/#readme), production-grade standalone IPFS HTTP [Gateway](../concepts/glossary.md#gateway) service powering [public gateways](../concepts/public-utilities.md#public-ipfs-gateways).
 :::
 
