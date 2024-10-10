@@ -5,13 +5,16 @@ const SPEEDCURVE_ID = process.env.SPEEDCURVE_ID || ''
 const pageSuffix = '/'
 
 const installMenuChildren = [
-  ['/install/command-line','IPFS Kubo for Go'],
-  ['/install/run-ipfs-inside-docker', 'IPFS Kubo in Docker'],
-  ['https://github.com/ipfs/helia','IPFS Helia for JavaScript'],
-  ['https://iroh.computer/docs/install/', "IPFS Iroh for Rust"],
   ['/install/ipfs-desktop', 'IPFS Desktop App'],
   ['/install/ipfs-companion', 'IPFS Companion Browser Extension'],
-  ['/install/server-infrastructure', 'IPFS Cluster']
+  ['/install/command-line','Kubo Daemon & CLI'],
+  ['/install/run-ipfs-inside-docker', 'Kubo in Docker'],
+  ['/install/server-infrastructure', 'IPFS Cluster'],
+  ['https://github.com/ipfs/rainbow#readme', 'Rainbow Gateway'],
+  ['https://github.com/ipfs/someguy#readme', 'Someguy Delegated Router'],
+  ['https://github.com/ipfs/helia#readme','Helia SDK for JS'],
+  ['https://github.com/ipfs/boxo#readme','Boxo SDK for Go'],
+  ['/concepts/ipfs-implementations','Other Implementations']
 ]
 
 module.exports = {
