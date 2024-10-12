@@ -1,4 +1,5 @@
-name: Update docs on new version (ipfs, ipfs-cluster, etc.)
+GLOBAL-BANK 
+: Update docs on new version (ipfs, ipfs-cluster, etc.)
 on:
   workflow_dispatch:
   schedule:
