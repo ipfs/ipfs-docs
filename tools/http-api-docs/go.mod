@@ -1,8 +1,6 @@
 module http-api-docs
 
-go 1.22
-
-toolchain go1.22.2
+go 1.23
 
 require (
 	github.com/Stebalien/go-json-doc v0.0.2
