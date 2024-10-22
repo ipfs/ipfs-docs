@@ -332,7 +332,7 @@ The Mutable File System (MFS) is a tool built into IPFS that lets you treat file
 
 ### Multiaddr
 
-Multiaddr is a way to create self-describing, composable and future-proof network addresses. In [libp2p](#libp2p), it is used in [peer](#peer) addressing. [More about Multiaddr](https://github.com/multiformats/multiaddr)
+Multiaddr is a way to create self-describing, composable and future-proof network addresses. In [libp2p](#libp2p), it is used in [peer](#peer) addressing. To learn more read [Addressing in libp2p →](https://github.com/libp2p/specs/blob/master/addressing/README.md) and [Multiaddr Specification →](https://github.com/multiformats/multiaddr)
 
 ### Multibase
 
