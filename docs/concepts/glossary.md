@@ -202,13 +202,13 @@ The Decentralized Web (DWeb) looks like today's World Wide Web, but it is built 
 
 ### Filestore
 
-An experimental data store used when `--nocopy` is passed to `ipfs add`. It stores the [UnixFS](#unixfs) data components of blocks as files on the file system instead of as blocks. This allows adding content to IPFS without duplicating the content in the IPFS datastore. [More about Filestore experiment](https://github.com/ipfs/kubo/blob/master/docs/experimental-features.md#ipfs-filestore)
+An experimental data store in [Kubo](#kubo). Used when `--nocopy` is passed to `ipfs add`. It stores the [UnixFS](#unixfs) data components of blocks as files on the file system instead of as blocks. This allows adding content to IPFS without duplicating the content in the IPFS datastore. [More about Filestore experiment](https://github.com/ipfs/kubo/blob/master/docs/experimental-features.md#ipfs-filestore)
 
 ## G
 
 ### Gateway
 
-An IPFS Gateway is an HTTP server that acts as a bridge between web browsers and IPFS. Through a gateway, users can browse files and websites stored in IPFS as if they were stored on a HTTP web server. Most commonly, an IPFS Gateway is an IPFS node that also exposes an HTTP IPFS Gateway endpoint. [More about Gateway](../concepts/ipfs-gateway.md) and [addressing IPFS on the web](../how-to/address-ipfs-on-web.md)
+An IPFS Gateway is an HTTP server that acts as a bridge between web browsers and IPFS. Through a gateway, users can browse files and websites stored in IPFS as if they were stored on a HTTP web server. Most commonly, an IPFS Gateway is an IPFS node that also exposes an HTTP IPFS Gateway endpoint. See [more about Gateway](../concepts/ipfs-gateway.md), [addressing IPFS on the web](../how-to/address-ipfs-on-web.md), and [HTTP Gateway specifications](https://specs.ipfs.tech/http-gateways/)
 
 ### Garbage Collection
 
@@ -224,7 +224,7 @@ In computer science, a Graph is an abstract data type from the field of graph th
 
 ### Graphsync
 
-Graphsync is an alternative content replication protocol under discussion, similar to [Bitswap](#bitswap). Like Bitswap, the primary job is to synchronize data blocks across peers. [More about Graphsync](https://github.com/ipld/specs/blob/master/block-layer/graphsync/graphsync.md)
+Graphsync is a legacy content replication protocol, similar to [Bitswap](#bitswap), but focusing on graphs rather than blocks. It is not supported by [Kubo](#kubo) due to protocol complexity, and [IPIP-402](https://specs.ipfs.tech/ipips/ipip-0402/) providing a simpler way of synchronizing partial [DAGs](#dag). [More about Graphsync](https://github.com/ipld/specs/blob/master/block-layer/graphsync/graphsync.md)
 
 ## H
 
@@ -274,7 +274,7 @@ The InterPlanetary Name System (IPNS) is a system for creating and updating muta
 
 ### JS-IPFS
 
-An [implementation of IPFS written entirely in JavaScript](https://github.com/ipfs/js-ipfs). It runs in a browser, a service worker, Electron and Node.js. Deprecated and superseded by [Helia](#helia).
+A legacy implementation of IPFS written entirely in JavaScript. The [js-ipfs is deprecated](https://github.com/ipfs/js-ipfs?tab=readme-ov-file#%EF%B8%8F-deprecated-js-ipfs-has-been-superseded-by-helia) and superseded by [Helia](#helia).
 
 ### JSON
 
@@ -284,7 +284,7 @@ JavaScript Object Notation (JSON) is a lightweight data-interchange format. JSON
 
 ### Kubo
 
-Kubo (previously known as [go-ipfs](#go-ipfs)) is the earliest and most widely used implementation of IPFS, written in Go. It runs on servers and user machines with full IPFS capabilities. [Install IPFS Kubo](../install/command-line.md).
+Kubo (previously known as [go-ipfs](#go-ipfs)) is the earliest and most widely used implementation of IPFS, written in Go. It runs on servers and user machines with full IPFS capabilities. [Install IPFS Kubo](../install/command-line.md) or see [Kubo README](https://github.com/ipfs/kubo#readme).
 
 ## L
 
@@ -350,6 +350,14 @@ Multihash is a protocol for differentiating outputs from various well-establishe
 
 The Multiformats project is a collection of protocols that aim to future-proof systems today. A key element is enhancing format values with self-description. This allows for interoperability, protocol agility, and promotes extensibility. [More about Multiformats](https://multiformats.io/) and [Multihash](https://github.com/multiformats/multihash)
 
+### Multiplexer
+
+Multiplexing allows for the creation of multiple “virtual” connections within a single [libp2p](#libp2p) connection. [More about Stream Multiplexing in libp2p docs](https://docs.libp2p.io/concepts/multiplex/overview/)
+
+### Mplex
+
+mplex is a deprecated stream multiplexer that was designed in the early days of [libp2p](#libp2p). [More about mplex](https://docs.libp2p.io/concepts/multiplex/mplex/)
+
 ## N
 
 ### NAT
@@ -408,11 +416,15 @@ Publish-subscribe (Pubsub) is an experimental feature in IPFS. Publishers send m
 
 ## Q
 
+### QUIC
+
+QUIC (`/quic-v1`) is one of [libp2p](#libp2p) [transport](#transport) protocols. It provides an always-encrypted, stream-multiplexed connection built on top of UDP. [More about QUIC in libp2p](https://docs.libp2p.io/concepts/transports/quic/)
+
 ## R
 
 ### Relay node
 
-A means to establish connectivity between libp2p nodes (e.g., IPFS nodes) that wouldn't otherwise be able to establish a direct connection to each other. This may be due to nodes that are behind NAT (Network Address Translation), reverse proxies, firewalls, etc. See [Nodes > Relay](../concepts/nodes.md#relay)
+A means to establish connectivity between libp2p nodes (e.g., IPFS nodes) that wouldn't otherwise be able to establish a direct connection to each other. This may be due to nodes that are behind NAT (Network Address Translation), reverse proxies, firewalls, etc. See [Nodes > Relay](../concepts/nodes.md#relay) and [libp2p docs about Circuit Relay](https://docs.libp2p.io/concepts/nat/circuit-relay/).
 
 ### Remote Pinning
 
@@ -420,7 +432,7 @@ A variant of [pinning](#pinning) that uses a third-party service to ensure that 
 
 ### Repo
 
-The Repository (Repo) is a directory where IPFS stores all its settings and internal data. It is created with the `ipfs init` command. [More about Repo](../how-to/command-line-quick-start.md#install-ipfs)
+The Repository (Repo) is a directory where IPFS stores all its settings and internal data. In [Kubo](#kubo) it is created with the `ipfs init` command. [More about Repo in Kubo](../how-to/command-line-quick-start.md#install-ipfs)
 
 ### Root
 
@@ -478,7 +490,7 @@ Sometimes called [swarm](#swarm) for historical reasons.
 
 ### Transport
 
-In [libp2p](#libp2p), transport refers to the technology that lets us move data from one machine to another. This may be a TCP network, a WebSocket connection in a browser, or anything else capable of implementing the transport interface.
+In [libp2p](#libp2p), transport refers to the technology that lets us move data from one machine to another. This may be a TCP, UDP ([QUIC](#quic)) network, a [WebSocket](#websocket) connection in a browser, or anything else capable of implementing the transport interface. [More about libp2p transports](https://docs.libp2p.io/concepts/transports/overview/)
 
 ### Traversal
 
@@ -492,7 +504,7 @@ The Unix File System (UnixFS) is the data format used to represent files and all
 
 ### Urlstore
 
-An experimental data store similar to [`filestore`](#filestore), but it retrieves blocks contents via a HTTP URL instead of a local filesystem. [More about urlstore experiment](https://github.com/ipfs/kubo/blob/master/docs/experimental-features.md#ipfs-urlstore)
+An experimental data store in [Kubo](#kubo) similar to [`filestore`](#filestore), but it retrieves blocks contents via a HTTP URL instead of a local filesystem. [More about urlstore experiment](https://github.com/ipfs/kubo/blob/master/docs/experimental-features.md#ipfs-urlstore)
 
 ## V
 
@@ -502,8 +514,24 @@ An experimental data store similar to [`filestore`](#filestore), but it retrieve
 
 Wide Area Network (WAN) is a type of (usually public) computer network that spans over a large geographic area. [More about WAN](https://en.wikipedia.org/wiki/Wide_area_network)
 
+### WebRTC
+
+WebRTC (Web Real-Time Communications) is a framework for real-time communication and in libp2p is used to establish browser-to-server and browser-to-browser connections between applications. [Libp2p](#libp2p) supports WebRTC as multiple [transports](#transport) (`/webrtc`, `/webrtc-direct`). [More about WebRTC in libp2p](https://docs.libp2p.io/concepts/transports/webrtc/)
+
+### WebSocket
+
+WebSockets are a way for web applications to maintain bidirectional communications with server-side processes, and are one of [transports](#transport) supported by [libp2p](#libp2p) (`/ws`). [More about libp2p WebSockets support](https://github.com/libp2p/specs/blob/master/websockets/README.md)
+
+### WebTransport
+
+WebTransport is a new specification that uses QUIC to offer an alternative to [WebSocket](#websocket). Conceptually, it can be considered WebSocket over [QUIC](#quic). [Libp2p](#libp2p) supports is indicated by `/webtransport` [Multiaddr](#multiaddr). [More about WebTransport in libp2p](https://docs.libp2p.io/concepts/transports/webtransport/)
+
 ## X
 
 ## Y
+
+### Yamux
+
+Yamux (Yet another Multiplexer) is a powerful stream [multiplexer](#multiplexer) used in [libp2p](#libp2p). [More about Yamux in libp2p docs](https://docs.libp2p.io/concepts/multiplex/yamux/)
 
 ## Z
