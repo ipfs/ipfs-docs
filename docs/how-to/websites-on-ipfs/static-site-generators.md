@@ -97,3 +97,13 @@ Upload the `_site` folder to IPFS.
 While WordPress is not a static site generator, it is possible to turn it into a static website and migrate it over to a static-hosting service. [Take a look at this blog post from Fleek that walks you through the whole process](https://blog.fleek.co/posts/wordpress+fleek)!
 
 Keep in mind that you will lose the ability to manage your website's content through the WordPress _back-end_, and that this process requires that you install a plugin along-side your WordPress site.
+
+## Next.js
+
+Refer to Next.js's [output](https://nextjs.org/docs/app/api-reference/next-config-js/output) guide to install Ruby and Jekyll.
+
+Use the following commands to compile and then output your application into static html
+```bash
+npm run build
+npm run output
+```
