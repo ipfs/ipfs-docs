@@ -80,11 +80,11 @@ module.exports = {
         },
         nav: require('./nav/en'),
         nav: [
-          { text: 'Get Started', link: '/install/' },
           { text: 'Concepts', link: '/concepts/' },
+          { text: 'Installation', link: '/install/' },
           { text: 'Guides', link: '/how-to/' },
           { text: 'Reference', link: '/reference/' },
-          { text: 'Project', link: '/project/' },
+          { text: 'Ecosystem', link: '/ecosystem/' },
           { text: 'Case Studies',
             items: [
               {text: 'Arbol', link : '/case-studies/arbol/'},
@@ -99,7 +99,6 @@ module.exports = {
 
         sidebar: {
           '/install/':  [
-            ['/concepts/what-is-ipfs','Basic Concepts'],
             {
               title: 'Quickstart',
               sidebarDepth: 1,
@@ -342,9 +341,9 @@ module.exports = {
                 '/community/contribute/contribution-tutorial'
               ]
             },
-            '/project/history',
-            '/project/repository-guide',
-            '/project/related-projects',
+            '/ecosystem/history',
+            '/ecosystem/repository-guide',
+            '/ecosystem/related-projects',
             ['https://github.com/ipfs/specs', 'Specifications'],
             ['/concepts/further-reading/academic-papers', 'Research'],
             [
@@ -352,7 +351,7 @@ module.exports = {
               'Code of conduct'
             ],
           ],
-          '/project/' : [
+          '/ecosystem/' : [
                 ['/community/',  'Join the community'],
                 '/community/contribute/ways-to-contribute',
                 {
@@ -366,9 +365,9 @@ module.exports = {
                     '/community/contribute/contribution-tutorial'
                   ]
                 },
-                '/project/history',
-                '/project/repository-guide',
-                '/project/related-projects',
+                '/ecosystem/history',
+                '/ecosystem/repository-guide',
+                '/ecosystem/related-projects',
                 ['https://github.com/ipfs/specs', 'Specifications'],
                 ['/concepts/further-reading/academic-papers', 'Research'],
                 [
@@ -395,7 +394,7 @@ module.exports = {
             '/concepts/',
             '/how-to/',
             '/reference/',
-            '/project/',
+            '/ecosystem/',
             {
               title: 'Case Studies',
               collapsable: true,
