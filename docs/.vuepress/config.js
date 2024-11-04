@@ -178,6 +178,8 @@ module.exports = {
                 ['https://ipld.io/docs/intro/primer/', 'IPLD (InterPlanetaryLinkedData)' ],
               ]
             },
+            ['/concepts/comparisons','IPFS In Comparison'],
+            '/concepts/cod',
             {
               title: 'Implementations',
               sidebarDepth: 1,
@@ -187,9 +189,7 @@ module.exports = {
                 ['/concepts/ipfs-implementations', 'List of implementations']
               ]
             },
-            '/concepts/cod',
-            '/concepts/comparisons',
-            '/concepts/public-utilities',
+            ['/concepts/public-utilities','Public Utilities'],
             ['/concepts/measuring', 'Measuring the network'],
             '/concepts/faq',
             '/concepts/glossary',
