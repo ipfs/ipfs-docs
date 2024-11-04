@@ -166,16 +166,16 @@ module.exports = {
               collapsable: true,
               children: [
                 '/concepts/content-addressing',
-                '/concepts/bitswap',
-                '/concepts/dht',
-                '/concepts/dnslink',
                 '/concepts/file-systems',
-                '/concepts/ipfs-gateway',
-                ['https://ipld.io/docs/intro/primer/', 'IPLD (InterPlanetaryLinkedData)' ],
+                '/concepts/dht',
                 '/concepts/ipni',
+                ['/concepts/ipfs-gateway', 'Gateways'],
+                '/concepts/bitswap',
+                '/concepts/dnslink',
                 '/concepts/ipns',
                 '/concepts/libp2p',
                 '/concepts/merkle-dag'
+                ['https://ipld.io/docs/intro/primer/', 'IPLD (InterPlanetaryLinkedData)' ],
               ]
             },
             {
