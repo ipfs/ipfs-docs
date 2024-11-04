@@ -174,7 +174,7 @@ module.exports = {
                 '/concepts/dnslink',
                 '/concepts/ipns',
                 '/concepts/libp2p',
-                '/concepts/merkle-dag'
+                '/concepts/merkle-dag',
                 ['https://ipld.io/docs/intro/primer/', 'IPLD (InterPlanetaryLinkedData)' ],
               ]
             },
@@ -186,14 +186,14 @@ module.exports = {
               collapsable: true,
               children: [
                 ['/concepts/implementations', 'Implementations explained'],
-                ['/concepts/ipfs-implementations', 'List of implementations']
+                ['/concepts/ipfs-implementations', 'List of implementations'],
               ]
             },
             ['/concepts/public-utilities','Public Utilities'],
             ['/concepts/measuring', 'Measuring the network'],
             '/concepts/faq',
             '/concepts/glossary',
-            '/concepts/further-reading/academic-papers'
+            '/concepts/further-reading/academic-papers',
           ],
           '/how-to/': [
             '/how-to/desktop-app',
@@ -237,7 +237,7 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/observe-peers',
-                '/how-to/peering-with-content-providers'
+                '/how-to/peering-with-content-providers',
               ]
             },
             {
@@ -250,7 +250,7 @@ module.exports = {
                 '/how-to/websites-on-ipfs/link-a-domain',
                 '/how-to/websites-on-ipfs/introducing-fleek',
                 '/how-to/websites-on-ipfs/static-site-generators',
-                '/how-to/websites-on-ipfs/redirects-and-custom-404s'
+                '/how-to/websites-on-ipfs/redirects-and-custom-404s',
               ]
             },
             {
@@ -259,7 +259,7 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/address-ipfs-on-web',
-                '/how-to/browser-tools-frameworks'
+                '/how-to/browser-tools-frameworks',
               ]
             },
             {
@@ -267,7 +267,7 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
-                '/how-to/publish-ipns'
+                '/how-to/publish-ipns',
               ]
             },
             {
@@ -276,7 +276,7 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/gateway-best-practices',
-                '/how-to/gateway-troubleshooting'
+                '/how-to/gateway-troubleshooting',
               ]
             },
             {
@@ -287,7 +287,7 @@ module.exports = {
                 '/how-to/companion-node-types',
                 '/how-to/dnslink-companion',
                 '/how-to/companion-window-ipfs',
-                '/how-to/companion-x-ipfs-path-header'
+                '/how-to/companion-x-ipfs-path-header',
               ]
             },
             {
@@ -295,7 +295,7 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
-                '/how-to/best-practices-for-nft-data'         
+                '/how-to/best-practices-for-nft-data',        
               ]
             },
             {
@@ -338,7 +338,7 @@ module.exports = {
                 '/community/contribute/grammar-formatting-and-style',
                 '/community/contribute/writing-guide',
                 '/community/contribute/code-persona',
-                '/community/contribute/contribution-tutorial'
+                '/community/contribute/contribution-tutorial',
               ]
             },
             '/ecosystem/history',
@@ -362,7 +362,7 @@ module.exports = {
                     '/community/contribute/grammar-formatting-and-style',
                     '/community/contribute/writing-guide',
                     '/community/contribute/code-persona',
-                    '/community/contribute/contribution-tutorial'
+                    '/community/contribute/contribution-tutorial',
                   ]
                 },
                 '/ecosystem/history',
@@ -372,7 +372,7 @@ module.exports = {
                 ['/concepts/further-reading/academic-papers', 'Research'],
                 [
                   'https://github.com/ipfs/community/blob/master/code-of-conduct.md',
-                  'Code of conduct'
+                  'Code of conduct',
                 ],
           ],
           '/case-studies/' : [
@@ -385,7 +385,7 @@ module.exports = {
                 ['/case-studies/fleek', 'Fleek'],
                 ['/case-studies/likecoin', 'LikeCoin'],
                 ['/case-studies/morpheus', 'Morpheus.Network'],
-                ['/case-studies/snapshot', 'Snapshot']
+                ['/case-studies/snapshot', 'Snapshot'],
               ]
             }
           ],
@@ -404,7 +404,7 @@ module.exports = {
                 ['/case-studies/fleek', 'Fleek'],
                 ['/case-studies/likecoin', 'LikeCoin'],
                 ['/case-studies/morpheus', 'Morpheus.Network'],
-                ['/case-studies/snapshot', 'Snapshot']
+                ['/case-studies/snapshot', 'Snapshot'],
               ]
             },
           ]
