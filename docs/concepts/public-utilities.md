@@ -86,9 +86,14 @@ The IPFS Foundation provides several public bootstrap nodes that are published a
 - `/dnsaddr/sg1.bootstrap.libp2p.io/p2p/QmcZf59bWwK5XFi76CZX8cbJ4BhTzzA3gU1ZjYZcYW3dwt`
 - `/dnsaddr/sv15.bootstrap.libp2p.io/p2p/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN`
 - `/dnsaddr/am6.bootstrap.libp2p.io/p2p/QmbLHAnMoJPWSCR5Zhtx6BHJX9KiKNN6tpvbUcqanj75Nb`
-- `/dnsaddr/ny5.bootstrap.libp2p.io/p2p/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa`
+- `/dnsaddr/ny5.bootstrap.libp2p.io/p2p/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa` ([Rust based](https://blog.ipfs.tech/2023-rust-libp2p-based-ipfs-bootstrap-node/))
+
 
 > **Note:** You can query DNS for the specific records with the following command: `dig +short TXT _dnsaddr.bootstrap.libp2p.io`
+
+To increase resilience and implementation diversity, as of 2024, the IPFS Foundation also provides a bootstrap node powered by [js-libp2p](https://github.com/libp2p/js-libp2p-amino-dht-bootstrapper) at:
+
+`/dnsaddr/va1.bootstrap.libp2p.io/p2p/12D3KooWKnDdG3iXw9eTFijk3EWSunZcFi54Zka4wmtqtt6rPxc8`.
 
 ## Frequently Asked Questions (FAQs)
 
