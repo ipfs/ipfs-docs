@@ -101,13 +101,13 @@ If you feel intrepid, you can dump this information and investigate it yourself:
 1. goroutine dump:
 
     ```shell
-    curl localhost:5001/debug/pprof/goroutine\?debug=2 > ipfs.stacks`
+    curl localhost:5001/debug/pprof/goroutine\?debug=2 > ipfs.stacks
     ```
 
 1. 30-second cpu profile:
 
     ```shell
-    curl localhost:5001/debug/pprof/profile > ipfs.cpuprof`
+    curl localhost:5001/debug/pprof/profile > ipfs.cpuprof
     ```
 
 1. heap trace dump:
@@ -125,7 +125,7 @@ If you feel intrepid, you can dump this information and investigate it yourself:
 1. System information:
 
     ```shell
-    ipfs diag sys > ipfs.sysinfo`
+    ipfs diag sys > ipfs.sysinfo
     ```
 
 ### Analyzing the stack dump
