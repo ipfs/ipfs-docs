@@ -22,6 +22,7 @@ bool(ean)
 boolean
 boxo
 browserify
+callout
 callouts
 cas
 cdns
@@ -191,6 +192,7 @@ repos
 reprovider
 reproviding
 requesters
+retrievability
 roadmaps
 rsa
 sandboxed
@@ -204,6 +206,7 @@ sneakernets
 stackparse
 stdout
 storj
+Someguy
 subcommand
 substring
 sys

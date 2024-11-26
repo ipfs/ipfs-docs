@@ -55,7 +55,7 @@ The underlying IPFS nodes backing the gateways support retrieving data from peer
    - TCP or WS or WSS, Yamux, TLS or Noise
    - WebTransport
 - Support the [Bitswap](./bitswap.md) protocol ([v1.2](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-2-0), [v1.1](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-1-0) or [v1.0](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-0-0))
-- Have either advertised their data to the Amino DHT, or have advertised to IPNI such that their data has been indexed by [cid.contact](https://cid.contact)
+- Have either advertised their data to the [Amino DHT](./glossary.md#amino), or have advertised to [IPNI](./glossary.md#ipni) such that their data has been indexed by [cid.contact](https://cid.contact)
 
 ## Other Public Gateways
 
@@ -86,9 +86,14 @@ The IPFS Foundation provides several public bootstrap nodes that are published a
 - `/dnsaddr/sg1.bootstrap.libp2p.io/p2p/QmcZf59bWwK5XFi76CZX8cbJ4BhTzzA3gU1ZjYZcYW3dwt`
 - `/dnsaddr/sv15.bootstrap.libp2p.io/p2p/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN`
 - `/dnsaddr/am6.bootstrap.libp2p.io/p2p/QmbLHAnMoJPWSCR5Zhtx6BHJX9KiKNN6tpvbUcqanj75Nb`
-- `/dnsaddr/ny5.bootstrap.libp2p.io/p2p/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa`
+- `/dnsaddr/ny5.bootstrap.libp2p.io/p2p/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa` ([Rust based](https://blog.ipfs.tech/2023-rust-libp2p-based-ipfs-bootstrap-node/))
+
 
 > **Note:** You can query DNS for the specific records with the following command: `dig +short TXT _dnsaddr.bootstrap.libp2p.io`
+
+To increase resilience and implementation diversity, as of 2024, the IPFS Foundation also provides a bootstrap node powered by [js-libp2p](https://github.com/libp2p/js-libp2p-amino-dht-bootstrapper) at:
+
+`/dnsaddr/va1.bootstrap.libp2p.io/p2p/12D3KooWKnDdG3iXw9eTFijk3EWSunZcFi54Zka4wmtqtt6rPxc8`.
 
 ## Frequently Asked Questions (FAQs)
 

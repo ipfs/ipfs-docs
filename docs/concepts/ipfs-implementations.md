@@ -9,29 +9,37 @@ IPFS is an open-source project that encourages the development of multiple imple
 
 You can learn more about the principles that define what an IPFS implementation is [here](./implementations.md).
 
-::: tip
-Looking for an easy, user-friendly way to get started with IPFS? Try any of the options listed below:
 
-- [IPFS Desktop](../install/ipfs-desktop.md), a single application that bundles an IPFS Kubo node, file manager, peer manager, and content explorer.
-- [Brave Browser](../how-to/companion-node-types.md#native), native support for IPFS in a browser with a Kubo node built directly into the browser itself.
-  :::
+::: callout TLDR
+
+Looking for an easy and opinionated way to get started with IPFS?
+
+**User-Friendly Options**
+  - [IPFS Desktop](../install/ipfs-desktop.md), an user-friendly GUI application that bundles an IPFS Kubo node for self-hosting, file manager, peer manager, and content explorer.
+  - [IPFS Companion](../install/ipfs-companion.md), a browser extension that compliments IPFS Desktop, loads compatible websites and file paths from a local IPFS Kubo node.
+
+**Command-Line & Infrastructure Tools**
+  - [Kubo](../install/command-line.md), all-in-one demon service with command-line and HTTP RPC interface for power users who want to self-host, but don't need GUI.
+  - [IPFS Cluster](../install/server-infrastructure.md), data orchestration across a swarm of IPFS Kubo daemons by allocating, replicating and tracking a global pinset distributed among multiple peers.
+  - [Rainbow](https://github.com/ipfs/rainbow/#readme), production-grade standalone IPFS HTTP [Gateway](../concepts/glossary.md#gateway) service powering [public gateways](../concepts/public-utilities.md#public-ipfs-gateways).
+:::
 
 ## Popular or Actively Maintained
 
 | Name            | URL                                                | Language(s)            | What it's trying to do                                                                          |
 | --------------- | -------------------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------- |
-| bifrost-gateway | <https://github.com/ipfs/bifrost-gateway>          | go                     | Lightweight IPFS HTTP Gateway daemon backed by a remote data store.                             |
-| boost           | <https://github.com/filecoin-project/boost>        | go                     | Daemon to get IPFS data in and out of a Filecoin storage provider.                              |
-| boxo            | <https://github.com/ipfs/boxo>                     | go                     | A component library for building IPFS applications and implementations in Go.                   |
+| Boost           | <https://github.com/filecoin-project/boost>        | go                     | Daemon to get IPFS data in and out of a Filecoin storage provider.                              |
+| Boxo (GO SDK)   | <https://github.com/ipfs/boxo>                     | go                     | A component library for building IPFS applications and implementations in Go.                   |
 | Elastic IPFS    | <https://github.com/elastic-ipfs/elastic-ipfs>     | javascript, typescript | Scalable cloud-native implementation.                                                           |
-| Estuary         | <https://github.com/application-research/estuary/> | go                     | Daemon oriented service to pin and onboard IPFS data into Filecoin.                             |
-| helia           | <https://github.com/ipfs/helia>                    | javascript             | A lean, modular, and modern implementation of IPFS for the prolific JS and browser environments |
-| ipfs cluster    | <https://github.com/ipfs/ipfs-cluster>             | go                     | Orchestration for multiple Kubo nodes via CRDT / Raft consensus                                 |
-| iroh            | <https://github.com/n0-computer/iroh>              | rust                   | Extreme-efficiency oriented IPFS implementation.                                                |
+| Helia (JS SDK)  | <https://github.com/ipfs/helia>                    | javascript             | A lean, modular, and modern implementation of IPFS for the prolific JS and browser environments |
+| IPFS Cluster    | <https://github.com/ipfs/ipfs-cluster>             | go                     | Orchestration for multiple Kubo nodes via CRDT / Raft consensus                                 |
+| Iroh            | <https://github.com/n0-computer/iroh>              | rust                   | Extreme-efficiency oriented IPFS implementation.                                                |
 | Kubo            | <https://github.com/ipfs/kubo>                     | go                     | Generalist daemon oriented IPFS implementation with an extensive HTTP RPC API.                  |
 | Lassie          | <https://github.com/filecoin-project/lassie/>      | go                     | A minimal universal retrieval client library for IPFS and Filecoin.                             |
 | Lotus           | <https://github.com/filecoin-project/lotus>        | go                     | Filecoin node handling consensus, storage providing, making storage deals, importing data, ...  |
 | Nabu            | <https://github.com/peergos/nabu>                  | java                   | A minimalistic, fast and embeddable IPFS implementation.                                        |
+| Rainbow         | <https://github.com/ipfs/rainbow/>                 | go                     | A specialized IPFS HTTP gateway implementation.                                                 |
+| Someguy         | <https://github.com/ipfs/someguy/>                 | go                     | A Delegated Routing V1 server and client for all your HTTP/IPFS routing needs.                  |
 
 ## Lite or Experimental
 
@@ -53,6 +61,7 @@ Looking for an easy, user-friendly way to get started with IPFS? Try any of the 
 | ---------- | ----------------------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | Agregore   | <https://github.com/AgregoreWeb/agregore-ipfs-daemon> | go, javascript         | Mobile friendly Kubo daemon.                                                                                                              |
 | c-ipfs     | <https://git.agorise.net/agorise/c-ipfs>              | C                      | IPFS implementation in C.                                                                                                                 |
+| Estuary    | <https://github.com/application-research/estuary/>    | go                     | Daemon oriented service to pin and onboard IPFS data into Filecoin.                                                                       |
 | ipfs tiny  | <https://gitlab.com/librespacefoundation/ipfs-tiny>   | c++                    | Tiny embeddable, os-independent IPFS implementation.                                                                                      |
 | ipget      | <https://github.com/ipfs/ipget>                       | go                     | Minimal wget inspired tool to download files from IPFS nodes over bitswap.                                                                |
 | js-ipfs    | <https://github.com/ipfs/js-ipfs>                     | javascript, typescript | Javascript implementation targeting nodejs and browsers. [Deprecated and replaced by Helia](https://github.com/ipfs/js-ipfs/issues/4336). |

@@ -169,6 +169,7 @@ READMEs?
 referenceable
 reprovider
 reproviding
+retrievability
 roadmaps
 sandboxed
 Satoshi

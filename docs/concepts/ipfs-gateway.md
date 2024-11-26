@@ -4,9 +4,7 @@ description: Learn why gateways are an important part of using IPFS in conjuncti
 related:
   'IPFS Docs: Address IPFS on the Web': /how-to/address-ipfs-on-web/
   'IPFS public gateway checker': https://ipfs.github.io/public-gateway-checker/
-  'Gateway specifications': https://github.com/ipfs/specs/blob/main/http-gateways/#readme
-  'Article: Solving the IPFS Gateway Problem (Pinata)': https://medium.com/pinata/the-ipfs-gateway-problem-64bbe7eb8170
-  'Tutorial: Setting up an IPFS gateway on Google Cloud Platform (Stacktical)': https://blog.stacktical.com/ipfs/gateway/dapp/2019/09/21/ipfs-server-google-cloud-platform.html
+  'Gateway specifications': https://specs.ipfs.tech/http-gateways/
 ---
 
 # IPFS Gateway
@@ -66,18 +64,11 @@ _Private gateways_ are configured to limit access to requests from specific doma
 
 They are frequently, but not exclusively, used behind firewalls. Running [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node triggers connection attempts to other IPFS peers. Private network administrators may treat such connection attempts as potential security vulnerabilities. Private IPFS gateway servers located inside the private network and running a trusted code base provide an alternative architecture for read/write access to externally-hosted IPFS content.
 
-This [tutorial configuring an IPFS gateway on a Google Cloud platform](https://blog.stacktical.com/ipfs/gateway/dapp/2019/09/21/ipfs-server-google-cloud-platform.html) includes information on constraining access for a private gateway setup.
-
 ### Public gateways
 
 For more information about public gateways, see the [Public IPFS Gateways](./public-utilities.md#public-ipfs-gateways)
 
-
 ## Gateway types
-
-:::warning
-[Path resolution style gateways](#path) do not provide origin isolation.
-:::
 
 There are multiple gateway types, each with specific use case, security, performance, and functional implications.
 
@@ -118,11 +109,21 @@ https://{gateway URL}/ipfs/{content ID}/{optional path to resource}
 
 Path-resolving gateways, however, violate the [same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy) that protects one website from improperly accessing session data of another website.
 
+:::warning
+This type of gateway does not provide origin isolation and should not be used for hosting web apps.
+
+Learn more at [Address IPFS on the web: Path Gateway](../how-to/address-ipfs-on-web.md#path-gateway) and [Path Gateway Specification](https://specs.ipfs.tech/http-gateways/path-gateway/).
+:::
+
 #### Subdomain
 
 Subdomain resolution style maintains compliance with the [single-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy). The canonical form of access, `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}`, causes the browser to interpret each returned file as being from a different origin.
 
-Subdomain resolution support began with [Kubo](https://github.com/ipfs/kubo) release `0.5.0`.
+::: callout
+This type of gateway does provide origin isolation and should be used for hosting web apps.
+
+Learn more at [Address IPFS on the web: Subdomain Gateway](../how-to/address-ipfs-on-web.md#subdomain-gateway) and [Subdomain Gateway Specification](https://specs.ipfs.tech/http-gateways/subdomain-gateway/).
+:::
 
 #### DNSlink
 
@@ -144,6 +145,10 @@ DNSLink resolution occurs when the gateway recognizes an IPNS identifier contain
 3. The `Alias` record redirects any access to that `example.com` to the specified gateway. Hence the browser's request to `https://{example.com}/{optional path to resource}` redirects to the gateway specified in the `Alias`.
 4. The gateway employs DNSLink resolution to return the current content version from IPFS.
 5. The browser does not perceive the gateway as the origin of the content and therefore enforces the single-origin policy to protect `example.com`.
+
+::: callout
+Learn more at [Address IPFS on the web: DNSLink Gateway](../how-to/address-ipfs-on-web.md#dnslink-gateway) and [DNSLink Gateway Specification](https://specs.ipfs.tech/http-gateways/dnslink-gateway/).
+:::
 
 ### Gateway services
 

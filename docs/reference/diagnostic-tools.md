@@ -9,21 +9,20 @@ Here are several tools you can use to investigate and diagnose common issues wit
 
 ## IPLD Explorer
 
-[IPLD Explorer](https://explore.ipld.io/) allows you to visualize and explore the IPLD DAG representing a given CID or CAR file. The tool provides the following featured datasets to explore:
-
-- [Project Apollo archives](https://explore.ipld.io/#/explore/QmSnuWmxptJZdLJpKRarxBMS2Ju2oANVrgbr2xWbie9b2D)
-- [IGIS Git repository](https://explore.ipld.io/#/explore/baf4bcfg4ep767tjp5lxyanx5urpjjgx5q2volvy)
-- [An Ethereum block](https://explore.ipld.io/#/explore/bagiacgzah24drzou2jlkixpblbgbg6nxfrasoklzttzoht5hixhxz3rlncyq)
-- [XKCD archives](https://explore.ipld.io/#/explore/QmdmQXB2mzChmMeKY47C43LxUdg1NDJ5MWcKMKxDu7RgQm)
+[IPLD Explorer](https://explore.ipld.io/) allows you to visualize and explore the [IPLD](../concepts/glossary.md#ipld) [DAG](../concepts/glossary.md#dag) representing a given [CID](../concepts/glossary.md#cid) or [CAR](../concepts/glossary.md#car) file. 
 
 ## IPFS check
 
-[IPFS check](https://check.ipfs.network/) determines the retrievability of a given CID from an IPFS node given its multiaddress. Each error type output by the tool can indicate a solution to your problem:
+[IPFS Check](https://check.ipfs.network/) helps determine the retrievability of a CID from IPFS [Mainnet](../concepts/glossary.md#mainnet), either from a specific [peer](../concepts/glossary.md#peer) given a [multiaddress](../concepts/glossary.md#multiaddr), or from multiple providers.
+
+@[youtube](XeNOQDOrdC0)
+
+Each error type output by the tool can indicate a solution to your problem:
 
 - **Could not connect to the multiaddr** indicates that machines on the internet cannot talk to your machine. Fix your firewall, add port forwarding, or use a relay.
-- **Could not find address in the DHT** indicates that your machine is either not connected to the Amino DHT (even as a client), or it is not advertising the address that you are using to test.
-- **Multihash not advertised in the DHT** indicates that your machine has not advertised that it has the requested content in the Amino DHT. If you're using Kubo, enable the [Accelerated DHT Client](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#accelerated-dht-client).
-- **Peer has not responded that it has the CID** indicates that your node cannot find the data that you believe it has, or that there may be some other sort of network latency.
+- **Could not find address in the DHT** indicates that your machine is either not connected to the [Amino](../concepts/glossary.md#amino) DHT (even as a client), or it is not advertising the address that you are using to test.
+- **Multihash not advertised in the DHT** indicates that your machine has not advertised that it has the requested content in the Amino DHT. 
+- **Peer has not responded that it has the CID** indicates that your node cannot find the block that you believe it has, or that there may be some other sort of network latency.
 
 ## CID inspector
 
