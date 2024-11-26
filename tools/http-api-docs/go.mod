@@ -6,7 +6,7 @@ require (
 	github.com/Stebalien/go-json-doc v0.0.2
 	github.com/ipfs/go-cid v0.4.1
 	github.com/ipfs/go-ipfs-cmds v0.14.0
-	github.com/ipfs/kubo v0.32.0
+	github.com/ipfs/kubo v0.32.1
 	github.com/libp2p/go-libp2p v0.37.0
 	github.com/multiformats/go-multiaddr v0.13.0
 )
@@ -125,7 +125,7 @@ require (
 	github.com/libp2p/go-doh-resolver v0.4.0 // indirect
 	github.com/libp2p/go-flow-metrics v0.2.0 // indirect
 	github.com/libp2p/go-libp2p-asn-util v0.4.1 // indirect
-	github.com/libp2p/go-libp2p-kad-dht v0.28.0 // indirect
+	github.com/libp2p/go-libp2p-kad-dht v0.28.1 // indirect
 	github.com/libp2p/go-libp2p-kbucket v0.6.4 // indirect
 	github.com/libp2p/go-libp2p-pubsub v0.12.0 // indirect
 	github.com/libp2p/go-libp2p-pubsub-router v0.6.0 // indirect

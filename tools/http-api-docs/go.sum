@@ -403,8 +403,8 @@ github.com/ipfs/go-unixfsnode v1.9.2 h1:0A12BYs4XOtDPJTMlwmNPlllDfqcc4yie4e919hc
 github.com/ipfs/go-unixfsnode v1.9.2/go.mod h1:v1nuMFHf4QTIhFUdPMvg1nQu7AqDLvIdwyvJ531Ot1U=
 github.com/ipfs/go-verifcid v0.0.3 h1:gmRKccqhWDocCRkC+a59g5QW7uJw5bpX9HWBevXa0zs=
 github.com/ipfs/go-verifcid v0.0.3/go.mod h1:gcCtGniVzelKrbk9ooUSX/pM3xlH73fZZJDzQJRvOUw=
-github.com/ipfs/kubo v0.32.0 h1:0in5oT7WaCkkJ6JyOFH/NiNFYK7z1oELpFLgKTXU7Ak=
-github.com/ipfs/kubo v0.32.0/go.mod h1:vtxKR1IburF+anxjesDMp39LT8H5YYmZV/Yk5t5xNAk=
+github.com/ipfs/kubo v0.32.1 h1:nkx5qrkMeJ2f1ET7v3vx7U1ycurM0dC9R7AnsuSrNjk=
+github.com/ipfs/kubo v0.32.1/go.mod h1:7fi1IMPgW5fupyMFUjJ4d4zbvkTEwq6tV3T+EQvtF28=
 github.com/ipld/go-car v0.6.2 h1:Hlnl3Awgnq8icK+ze3iRghk805lu8YNq3wlREDTF2qc=
 github.com/ipld/go-car v0.6.2/go.mod h1:oEGXdwp6bmxJCZ+rARSkDliTeYnVzv3++eXajZ+Bmr8=
 github.com/ipld/go-car/v2 v2.14.2 h1:9ERr7KXpCC7If0rChZLhYDlyr6Bes6yRKPJnCO3hdHY=
@@ -481,8 +481,8 @@ github.com/libp2p/go-libp2p-asn-util v0.4.1 h1:xqL7++IKD9TBFMgnLPZR6/6iYhawHKHl9
 github.com/libp2p/go-libp2p-asn-util v0.4.1/go.mod h1:d/NI6XZ9qxw67b4e+NgpQexCIiFYJjErASrYW4PFDN8=
 github.com/libp2p/go-libp2p-core v0.2.4/go.mod h1:STh4fdfa5vDYr0/SzYYeqnt+E6KfEV5VxfIrm0bcI0g=
 github.com/libp2p/go-libp2p-core v0.3.0/go.mod h1:ACp3DmS3/N64c2jDzcV429ukDpicbL6+TrrxANBjPGw=
-github.com/libp2p/go-libp2p-kad-dht v0.28.0 h1:sDqfW784w7CZQLlnMUwfeqWfXcpedKeZIM/B9/w0Tbk=
-github.com/libp2p/go-libp2p-kad-dht v0.28.0/go.mod h1:0wHURlSFdAC42+wF7GEmpLoARw8JuS8do2guCtc/Y/w=
+github.com/libp2p/go-libp2p-kad-dht v0.28.1 h1:DVTfzG8Ybn88g9RycIq47evWCRss5f0Wm8iWtpwyHso=
+github.com/libp2p/go-libp2p-kad-dht v0.28.1/go.mod h1:0wHURlSFdAC42+wF7GEmpLoARw8JuS8do2guCtc/Y/w=
 github.com/libp2p/go-libp2p-kbucket v0.3.1/go.mod h1:oyjT5O7tS9CQurok++ERgc46YLwEpuGoFq9ubvoUOio=
 github.com/libp2p/go-libp2p-kbucket v0.6.4 h1:OjfiYxU42TKQSB8t8WYd8MKhYhMJeO2If+NiuKfb6iQ=
 github.com/libp2p/go-libp2p-kbucket v0.6.4/go.mod h1:jp6w82sczYaBsAypt5ayACcRJi0lgsba7o4TzJKEfWA=
