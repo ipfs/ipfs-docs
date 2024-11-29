@@ -20,7 +20,7 @@ The web3.storage pinning service was chosen purely for demonstration purposes, a
 - [Overview](#overview)
 - [Pinning services](#pinning-services)
 - [Prerequisites](#prerequisites)
-- [Uploading and pinning a file](#uploading-and-pinning-a-file)
+- [Upload and pin a file](#upload-and-pin-a-file)
 - [CIDs explained](#cids-explained)
 - [Retrieving with a gateway](#retrieving-with-a-gateway)
 - [Summary and next steps](#summary-and-next-steps)
@@ -117,3 +117,4 @@ Possible next steps include:
 - Try fetching the pinned file by following the [retrieval quickstart](./retrieve.md).
 - If you prefer to upload a file programmatically with JavaScript or Go, check out the [Web3.storage docs](https://web3.storage/docs/how-tos/store/).
 - Alternatively, try out [Filebase](https://filebase.com/), a pinning service that offers an [AWS S3-compatible API for pinning](https://docs.filebase.com/getting-started/s3-api-getting-started-guide), so you can use any S3-compatible SDK, e.g. [aws-sdk](https://www.npmjs.com/package/aws-sdk), and [many](https://github.com/s3tools/s3cmd) more.
+- You can also try out [Functionland Fula network](https://fx.land), a pinning service that provides a true globally distributed and individually-owned nodes [Fula Network](https://docs.fx.land). The SDK supports mobile-native applications and offers built-in encryption.
