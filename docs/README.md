@@ -57,7 +57,7 @@ Connect your Web2 application to the IPFS network using standard HTTP:
 - Learn more about the subsystems that IPFS is composed of in [Subsystems and components](./concepts/README.md#subsystems-and-components)
 - Get an [overview of IPFS implementations](./concepts/ipfs-implementations.md).
 - [Compare IPFS to other similar systems](./concepts/comparisons.md).
-- Understand the project history, ecosystem status and more in the [Project section](./project/README.md).
+- Understand the project history, ecosystem status, code governance, and more in the [Ecosystem section](./ecosystem/README.md).
 - See how other software systems leverage IPFS in the [Case Studies section](./case-studies/arbol.md).
 
 ## Join the IPFS community

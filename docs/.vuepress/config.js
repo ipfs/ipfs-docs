@@ -80,11 +80,11 @@ module.exports = {
         },
         nav: require('./nav/en'),
         nav: [
-          { text: 'Get Started', link: '/install/' },
           { text: 'Concepts', link: '/concepts/' },
+          { text: 'Installation', link: '/install/' },
           { text: 'Guides', link: '/how-to/' },
           { text: 'Reference', link: '/reference/' },
-          { text: 'Project', link: '/project/' },
+          { text: 'Ecosystem', link: '/ecosystem/' },
           { text: 'Case Studies',
             items: [
               {text: 'Arbol', link : '/case-studies/arbol/'},
@@ -99,7 +99,6 @@ module.exports = {
 
         sidebar: {
           '/install/':  [
-            ['/concepts/what-is-ipfs','Basic Concepts'],
             {
               title: 'Quickstart',
               sidebarDepth: 1,
@@ -167,34 +166,34 @@ module.exports = {
               collapsable: true,
               children: [
                 '/concepts/content-addressing',
-                '/concepts/bitswap',
-                '/concepts/dht',
-                '/concepts/dnslink',
                 '/concepts/file-systems',
-                '/concepts/ipfs-gateway',
-                ['https://ipld.io/docs/intro/primer/', 'IPLD (InterPlanetaryLinkedData)' ],
+                '/concepts/dht',
                 '/concepts/ipni',
+                ['/concepts/ipfs-gateway', 'Gateways'],
+                '/concepts/bitswap',
+                '/concepts/dnslink',
                 '/concepts/ipns',
                 '/concepts/libp2p',
-                '/concepts/merkle-dag'
+                '/concepts/merkle-dag',
+                ['https://ipld.io/docs/intro/primer/', 'IPLD (InterPlanetaryLinkedData)' ],
               ]
             },
+            ['/concepts/comparisons','IPFS In Comparison'],
+            '/concepts/cod',
             {
               title: 'Implementations',
               sidebarDepth: 1,
               collapsable: true,
               children: [
                 ['/concepts/implementations', 'Implementations explained'],
-                ['/concepts/ipfs-implementations', 'List of implementations']
+                ['/concepts/ipfs-implementations', 'List of implementations'],
               ]
             },
-            '/concepts/cod',
-            '/concepts/comparisons',
-            '/concepts/public-utilities',
+            ['/concepts/public-utilities','Public Utilities'],
             ['/concepts/measuring', 'Measuring the network'],
             '/concepts/faq',
             '/concepts/glossary',
-            '/concepts/further-reading/academic-papers'
+            '/concepts/further-reading/academic-papers',
           ],
           '/how-to/': [
             '/how-to/desktop-app',
@@ -238,7 +237,7 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/observe-peers',
-                '/how-to/peering-with-content-providers'
+                '/how-to/peering-with-content-providers',
               ]
             },
             {
@@ -251,7 +250,7 @@ module.exports = {
                 '/how-to/websites-on-ipfs/link-a-domain',
                 '/how-to/websites-on-ipfs/introducing-fleek',
                 '/how-to/websites-on-ipfs/static-site-generators',
-                '/how-to/websites-on-ipfs/redirects-and-custom-404s'
+                '/how-to/websites-on-ipfs/redirects-and-custom-404s',
               ]
             },
             {
@@ -260,7 +259,7 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/address-ipfs-on-web',
-                '/how-to/browser-tools-frameworks'
+                '/how-to/browser-tools-frameworks',
               ]
             },
             {
@@ -268,7 +267,7 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
-                '/how-to/publish-ipns'
+                '/how-to/publish-ipns',
               ]
             },
             {
@@ -277,7 +276,7 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/gateway-best-practices',
-                '/how-to/gateway-troubleshooting'
+                '/how-to/gateway-troubleshooting',
               ]
             },
             {
@@ -288,7 +287,7 @@ module.exports = {
                 '/how-to/companion-node-types',
                 '/how-to/dnslink-companion',
                 '/how-to/companion-window-ipfs',
-                '/how-to/companion-x-ipfs-path-header'
+                '/how-to/companion-x-ipfs-path-header',
               ]
             },
             {
@@ -296,7 +295,7 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
-                '/how-to/best-practices-for-nft-data'         
+                '/how-to/best-practices-for-nft-data',        
               ]
             },
             {
@@ -339,12 +338,12 @@ module.exports = {
                 '/community/contribute/grammar-formatting-and-style',
                 '/community/contribute/writing-guide',
                 '/community/contribute/code-persona',
-                '/community/contribute/contribution-tutorial'
+                '/community/contribute/contribution-tutorial',
               ]
             },
-            '/project/history',
-            '/project/repository-guide',
-            '/project/related-projects',
+            '/ecosystem/history',
+            '/ecosystem/repository-guide',
+            '/ecosystem/related-projects',
             ['https://github.com/ipfs/specs', 'Specifications'],
             ['/concepts/further-reading/academic-papers', 'Research'],
             [
@@ -352,7 +351,7 @@ module.exports = {
               'Code of conduct'
             ],
           ],
-          '/project/' : [
+          '/ecosystem/' : [
                 ['/community/',  'Join the community'],
                 '/community/contribute/ways-to-contribute',
                 {
@@ -363,17 +362,17 @@ module.exports = {
                     '/community/contribute/grammar-formatting-and-style',
                     '/community/contribute/writing-guide',
                     '/community/contribute/code-persona',
-                    '/community/contribute/contribution-tutorial'
+                    '/community/contribute/contribution-tutorial',
                   ]
                 },
-                '/project/history',
-                '/project/repository-guide',
-                '/project/related-projects',
+                '/ecosystem/history',
+                '/ecosystem/repository-guide',
+                '/ecosystem/related-projects',
                 ['https://github.com/ipfs/specs', 'Specifications'],
                 ['/concepts/further-reading/academic-papers', 'Research'],
                 [
                   'https://github.com/ipfs/community/blob/master/code-of-conduct.md',
-                  'Code of conduct'
+                  'Code of conduct',
                 ],
           ],
           '/case-studies/' : [
@@ -386,7 +385,7 @@ module.exports = {
                 ['/case-studies/fleek', 'Fleek'],
                 ['/case-studies/likecoin', 'LikeCoin'],
                 ['/case-studies/morpheus', 'Morpheus.Network'],
-                ['/case-studies/snapshot', 'Snapshot']
+                ['/case-studies/snapshot', 'Snapshot'],
               ]
             }
           ],
@@ -395,7 +394,7 @@ module.exports = {
             '/concepts/',
             '/how-to/',
             '/reference/',
-            '/project/',
+            '/ecosystem/',
             {
               title: 'Case Studies',
               collapsable: true,
@@ -405,7 +404,7 @@ module.exports = {
                 ['/case-studies/fleek', 'Fleek'],
                 ['/case-studies/likecoin', 'LikeCoin'],
                 ['/case-studies/morpheus', 'Morpheus.Network'],
-                ['/case-studies/snapshot', 'Snapshot']
+                ['/case-studies/snapshot', 'Snapshot'],
               ]
             },
           ]
