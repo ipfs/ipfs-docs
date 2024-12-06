@@ -3,27 +3,85 @@ title: IPFS Gateway
 description: Learn why gateways are an important part of using IPFS in conjunction with the legacy web.
 related:
   'IPFS Docs: Address IPFS on the Web': /how-to/address-ipfs-on-web/
-  'IPFS public gateway checker': https://ipfs.github.io/public-gateway-checker/
+  'IPFS public gateway checker': https://ipfs.fyi/gateways
   'Gateway specifications': https://specs.ipfs.tech/http-gateways/
 ---
 
 # IPFS Gateway
 
-An _IPFS gateway_ is a web-based service that gets content from an IPFS network (private, or the public swarm backed by Amino DHT), and makes it available via HTTP, allowing IPFS-incompatible browsers, tools and software to benefit from [content-addressing](https://docs.ipfs.tech/concepts/content-addressing/). For example, some browsers or tools like [Curl](https://curl.haxx.se/) or [Wget](https://www.gnu.org/software/wget/) don't support IPFS natively and cannot access to IPFS content using canonical addressing like `ipfs://{CID}/{optional path to resource}`. While tools like [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) add browser support for native IPFS URLs, this is not always an option. As such, there are multiple gateway types and <VueCustomTooltip label="A way to address data by its hash rather than its location (IPs)." underlined multiline>gateway providers</VueCustomTooltip> available so that applications of all kinds can interface with IPFS using HTTP.
+An _IPFS gateway_ is a standardized HTTP API for getting content-addressed data from IPFS nodes and CID providers (private, or the public IPFS Mainnet). It allows using HTTP semantics for interaction with IPFS. For example, some browsers or tools like [Curl](https://curl.haxx.se/) or [Wget](https://www.gnu.org/software/wget/) don't support IPFS natively and cannot access to IPFS content using canonical addressing like `ipfs://{CID}/{optional path to resource}`. While tools like [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) add browser support for native IPFS URLs, this is not always an option. As such, IPFS gateways enable a broad range of applications to interface with IPFS using HTTP.
 
 This page discusses:
 
-- [Gateway request lifecycle](#gateway-request-lifecycle)
 - [Gateway providers](#gateway-providers)
 - [Gateway types](#gateway-types)
+  - [Recursive vs. non-recursive gateways](#recursive-vs-non-recursive-gateways)
+  - [Trusted vs. trustless gateways](#trusted-vs-trustless-gateways)
+  - [Read-only gateways](#read-only-gateways)
+  - [Authenticated gateways](#authenticated-gateways)
+- [Gateway request lifecycle](#gateway-request-lifecycle)
+- [Resolution styles](#resolution-styles)
+  - [Path](#path)
+  - [Subdomain](#subdomain)
+  - [DNSLink](#dnslink)
+- [Gateway URL formats](#gateway-url-formats)
 - [Working with gateways](#working-with-gateways)
 - [Implementing gateways](#implementing-gateways)
-- [FAQs](#frequently-asked-questions-faqs)
+- [Learning more](#learning-more)
+
+## Gateway providers
+
+Regardless of who deploys a gateway and where, any IPFS gateway resolves access to any requested IPFS [content identifier](content-addressing.md).
+
+### Your local gateway
+
+Your machine may host a gateway as a local service; e.g., at `localhost:8080`. You have a local gateway service if you installed [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node.
+
+### Public gateways
+
+Public ([recursive](#recursive-vs-non-recursive-gateways)) gateways are provided by the IPFS various other organizations, including the [IPFS Foundation](./public-utilities.md#public-ipfs-gateways) as a public utility.
+
+For a list of public gateways, see the [IPFS Gateways Checker](https://ipfs.fyi/gateways).
+
+## Gateway types
+
+There are multiple gateway types, each with specific use case, security, performance, and functional implications.
+
+- [Recursive vs. non-recursive gateways](#recursive-vs-non-recursive-gateways)
+- [Trusted vs. trustless gateways](#trusted-vs-trustless-gateways)
+- [Authentication support](#authenticated-gateways)
+- [Read support](#read-only-gateways)
+
+### Recursive vs. non-recursive gateways
+
+Recursive gateways are gateways that will attempt to retrieve content from other peers on the network if they do not have it locally.
+
+Non-recursive gateways are gateways that only serve content that they have themselves. For example, [Kubo](https://github.com/ipfs/kubo) can be configured to act as a non-recursive gateway by setting the [`NoFetch`](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewaynofetch) option.
+
+In general, recursive gateways are more powerful for end-users because they abstract away all details of the peer-to-peer network. However, they are much more resource-intensive for operators and prone to abuse.
+
+Non-recursive gateways are becoming a popular way to provide IPFS content to the network (as an alternative or in addition to Bitswap). Non-recursive provider records can only be announced to the [IPNI](../concepts/ipni/), but not the [DHT](../concepts/dht.md).
+
+## Trusted vs. trustless gateways
+
+See [Trusted vs. Trustless Gateways](../reference/http/gateway/#trusted-vs-trustless) for more information.
+
+### Read-only gateways
+
+_Read-only gateways_ are the simplest kind of gateway. This gateway type provides a way to fetch IPFS content using the HTTP GET method.
+
+## Authenticated gateways
+
+If a gateway provider wants to limit access to requests with authentication, they may need to configure a reverse proxy, develop an IPFS plugin, or set a cache-layer above IPFS.
+
+Configuring a reverse proxy is the most popular way for providers handling authentication. Reverse proxy can also keep the original IPFS API calls which makes gateway adaptable to all IPFS SDK and toolkits.
+
+![Auth with Reverse proxy](./images/ipfs-gateways/public-authed-gateway.png)
 
 ## Gateway request lifecycle
 
 :::callout
-This section uses the _default_ gateway request lifecycle of [IPFS Kubo](https://github.com/ipfs/kubo) to introduce the basic concepts in the lifecycle. However, some gateways only serve content that they have and/or want to provide. For example, a Kubo gateway with `NoFetch` enabled will not attempt to retrieve content from the network.
+This section uses the _default_ recursive gateway request lifecycle of [IPFS Kubo](https://github.com/ipfs/kubo) to introduce the basic concepts in the lifecycle. However, non-recursive gateways only serve content that they have and/or want to provide. For example, a Kubo gateway with `NoFetch` enabled will **not** attempt to retrieve content from the network.
 :::
 
 When a client request for a CID reaches an IPFS gateway, the gateway first checks whether the CID is cached locally. At this point, one of the following occurs:
@@ -50,56 +108,15 @@ The CID retrieval process is composed of two parts, content discovery / routing 
 - Dive into the technical specifications for gateways in the [IPFS HTTP Gateways specification](https://specs.ipfs.tech/http-gateways/) page.
 :::
 
-## Gateway providers
- 
-Regardless of who deploys a gateway and where, any IPFS gateway resolves access to any requested IPFS [content identifier](content-addressing.md). Therefore, for best performance, when you need the service of a gateway, you should use the one closest to you.
+## Resolution styles
 
-### Your local gateway
-
-Your machine may host a gateway as a local service; e.g., at `localhost:8080`. You have a local gateway service if you installed [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node.
-
-### Private gateways
-
-_Private gateways_ are configured to limit access to requests from specific domains or parts of the public internet. 
-
-They are frequently, but not exclusively, used behind firewalls. Running [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node triggers connection attempts to other IPFS peers. Private network administrators may treat such connection attempts as potential security vulnerabilities. Private IPFS gateway servers located inside the private network and running a trusted code base provide an alternative architecture for read/write access to externally-hosted IPFS content.
-
-### Public gateways
-
-For more information about public gateways, see the [Public IPFS Gateways](./public-utilities.md#public-ipfs-gateways)
-
-## Gateway types
-
-There are multiple gateway types, each with specific use case, security, performance, and functional implications.
-
-- [Read support](#read-only-gateways)
-- [Authentication support](#authenticated-gateways)
-- [Resolution style](#resolution-style)
-- [Service](#gateway-services)
-
-### Read-only gateways
-
-_Read-only gateways_ are the simplest kind of gateway. This gateway type provides a way to fetch IPFS content using the HTTP GET method.
-
-### Authenticated gateways
-
-If a gateway provider wants to limit access to requests with authentication, they may need to configure a reverse proxy, develop an IPFS plugin, or set a cache-layer above IPFS.
-
-Configuring a reverse proxy is the most popular way for providers handling authentication. Reverse proxy can also keep the original IPFS API calls which makes gateway adaptable to all IPFS SDK and toolkits.
-
-![Auth with Reverse proxy](./images/ipfs-gateways/public-authed-gateway.png)
-
-Providers can design their own centralized authentication service like [Infura IPFS Auth](https://docs.infura.io/networks/ipfs/how-to/authenticate-requests), or a decentralized authentication service like [IPFS W3Auth](https://wiki.crust.network/docs/en/buildIPFSWeb3AuthGW)).
-
-### Resolution style
-
-Three resolution styles exist:
+Gateways typically support three resolution styles:
 
 - [Path](#path)
 - [Subdomain](#subdomain)
 - [DNSLink](#dnslink)
 
-#### Path
+### Path
 
 The examples discussed above employed path resolution:
 
@@ -115,17 +132,17 @@ This type of gateway does not provide origin isolation and should not be used fo
 Learn more at [Address IPFS on the web: Path Gateway](../how-to/address-ipfs-on-web.md#path-gateway) and [Path Gateway Specification](https://specs.ipfs.tech/http-gateways/path-gateway/).
 :::
 
-#### Subdomain
+### Subdomain
 
-Subdomain resolution style maintains compliance with the [single-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy). The canonical form of access, `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}`, causes the browser to interpret each returned file as being from a different origin.
+Subdomain resolution style ensures compliance with the [single-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy). The canonical form of access, `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}`, ensures origin isolation per CID.
 
 ::: callout
-This type of gateway does provide origin isolation and should be used for hosting web apps.
+Subdomain gateways provide origin isolation and should be used for hosting web apps.
 
 Learn more at [Address IPFS on the web: Subdomain Gateway](../how-to/address-ipfs-on-web.md#subdomain-gateway) and [Subdomain Gateway Specification](https://specs.ipfs.tech/http-gateways/subdomain-gateway/).
 :::
 
-#### DNSlink
+### DNSLink
 
 Whenever the content of data within IPFS changes, IPFS creates a new CID based on the content of that data. Many applications require access to the latest version of a file or website but will not know the exact CID for that latest version. The [InterPlanetary Name Service (IPNS)](ipns.md) allows a version-independent IPNS identifier to resolve into the current version's IPFS CID.
 
@@ -141,7 +158,7 @@ DNSLink resolution occurs when the gateway recognizes an IPNS identifier contain
    https://{gateway URL}/ipns/{example.com}/{optional path}
    ```
 
-2. The gateway searches the DNS TXT records of the requested domain `{example.com}` for a string of the form `dnslink=/ipfs/{CID}` or `_dnslink=/ipfs/{CID}`. If found, the gateway uses the specified CID to serve up `ipfs://{CID}/{optional path}`. As with path resolution, this form of DNSLink resolution violates the single-origin policy. The domain operator may ensure single-origin policy compliance — and the delivery of the current version of content — by adding an `Alias` record in the DNS that refers to a suitable IPFS gateway; e.g., `gateway.ipfs.io`.
+2. The gateway searches the DNS TXT records of the requested domain `{_dnslink.example.com}` for a string of the form `dnslink=/ipfs/{CID}`. If found, the gateway uses the specified CID to serve up `ipfs://{CID}/{optional path}`. As with path resolution, this form of DNSLink resolution violates the single-origin policy. The domain operator may ensure single-origin policy compliance — and the delivery of the current version of content — by adding an `Alias` record in the DNS that refers to a suitable IPFS gateway; e.g., `gateway.ipfs.io`.
 3. The `Alias` record redirects any access to that `example.com` to the specified gateway. Hence the browser's request to `https://{example.com}/{optional path to resource}` redirects to the gateway specified in the `Alias`.
 4. The gateway employs DNSLink resolution to return the current content version from IPFS.
 5. The browser does not perceive the gateway as the origin of the content and therefore enforces the single-origin policy to protect `example.com`.
@@ -150,18 +167,18 @@ DNSLink resolution occurs when the gateway recognizes an IPNS identifier contain
 Learn more at [Address IPFS on the web: DNSLink Gateway](../how-to/address-ipfs-on-web.md#dnslink-gateway) and [DNSLink Gateway Specification](https://specs.ipfs.tech/http-gateways/dnslink-gateway/).
 :::
 
-### Gateway services
+## Gateway URL formats
 
-Currently HTTP gateways may access both IPFS and IPNS services:
+Currently HTTP gateways typically expose both immutable IPFS and mutable IPNS (either IPNS names or DNSLink) resources using the following URL formats:
 
-| Service | Style     | Canonical form of access                                                                                                                                                                      |
-| ------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| IPFS    | path      | `https://{gateway URL}/ipfs/{CID}/{optional path to resource}`                                                                                                                                |
-| IPFS    | subdomain | `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}`                                                                                                                                 |
-| IPFS    | DNSLink   | `https://{example.com}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{example.com}/{optional path to resource}`                                              |
-| IPNS    | path      | `https://{gateway URL}/ipns/{IPNS identifier}/{optional path to resource}`                                                                                                                    |
-| IPNS    | subdomain | `https://{IPNS identifier}.ipns.{gatewayURL}/{optional path to resource}`                                                                                                                     |
-| IPNS    | DNSLink   | Useful when IPNS identifier is a domain: <br>`https://{example.com}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{example.com}/{optional path to resource}` |
+| Service | Resolution style | Canonical form of access                                                                                                                                                                      |
+| ------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| IPFS    | path             | `https://{gateway URL}/ipfs/{CID}/{optional path to resource}`                                                                                                                                |
+| IPFS    | subdomain        | `https://{CID}.ipfs.{gatewayURL}/{optional path to resource}`                                                                                                                                 |
+| IPFS    | DNSLink          | `https://{example.com}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{example.com}/{optional path to resource}`                                              |
+| IPNS    | path             | `https://{gateway URL}/ipns/{IPNS identifier}/{optional path to resource}`                                                                                                                    |
+| IPNS    | subdomain        | `https://{IPNS identifier}.ipns.{gatewayURL}/{optional path to resource}`                                                                                                                     |
+| IPNS    | DNSLink          | Useful when IPNS identifier is a domain: <br>`https://{example.com}/{optional path to resource}` **preferred**, or <br>`https://{gateway URL}/ipns/{example.com}/{optional path to resource}` |
 
 ## Working with gateways
 
