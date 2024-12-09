@@ -44,7 +44,7 @@ For developers and operators.
 
 ## Content-Addressed Data
 
-Lightweight libraries for working IPFS-style data (CID, IPLD, CAR). Most of these do not include networking functionality. For more content-addressed data tools, see <https://github.com/ipld>.
+Lightweight libraries for working with IPFS data (CID, IPLD, CAR). Most of these do not include networking functionality. For more content-addressed data tools, see <https://github.com/ipld>.
 
 | Name            | URL                                                | Language(s)            | What it's trying to do                                                                          |
 | --------------- | -------------------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------- |
