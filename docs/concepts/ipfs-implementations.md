@@ -50,6 +50,7 @@ Lightweight libraries for working with IPFS data (CID, IPLD, CAR). Most of these
 | --------------- | -------------------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------- |
 | atcute          | <https://github.com/mary-ext/atcute>               | typescript             | Modern implementation of CID and multiformats for JavaScript/TypeScript                         |
 | dag-cbrrr       | <https://github.com/DavidBuchanan314/dag-cbrrr>    | python                 | Fast CBOR-based DAG encoding/decoding implementation                                            |
+| js-multiformats          | <https://github.com/multiformats/js-multiformats>                   | TypeScript                     |  SDK  for multicodec, multihash, multibase, and CIDs with encoding/decoding support                   |
 | go-cid          | <https://github.com/ipfs/go-cid>                   | go                     | Go implementation of CIDs (Content IDentifiers) with encoding/decoding support                  |
 | go-ipld-prime   | <https://github.com/ipld/go-ipld-prime>            | go                     | Popular library for working with IPLD data in Golang                                            |
 | python-libipld  | <https://github.com/MarshalX/python-libipld>       | python                 | Python bindings for libipld, providing IPLD functionality in Python                             |
