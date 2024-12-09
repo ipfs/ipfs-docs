@@ -9,7 +9,7 @@ related:
 
 # IPFS Gateway
 
-An _IPFS gateway_ is a standardized HTTP API for getting content-addressed data from IPFS nodes and CID providers (private, or the public IPFS Mainnet). It allows using HTTP semantics for interaction with IPFS. For example, some browsers or tools like [Curl](https://curl.haxx.se/) or [Wget](https://www.gnu.org/software/wget/) don't support IPFS natively and cannot access to IPFS content using canonical addressing like `ipfs://{CID}/{optional path to resource}`. While tools like [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) add browser support for native IPFS URLs, this is not always an option. As such, IPFS gateways enable a broad range of applications to interface with IPFS using HTTP.
+An _IPFS gateway_ is a standardized HTTP API for getting content-addressed data from IPFS nodes and CID providers (private, or the public IPFS Mainnet). It allows using HTTP semantics for interaction with IPFS. For example, some browsers or tools like [Curl](https://curl.haxx.se/) or [Wget](https://www.gnu.org/software/wget/) don't support IPFS natively and cannot access to IPFS content using canonical addressing like `ipfs://{CID}/{optional path to resource}`. While tools like [IPFS Companion](../install/ipfs-companion.md) add browser support for native IPFS URLs, this is not always an option. As such, IPFS gateways enable a broad range of applications to interface with IPFS using HTTP.
 
 This page discusses:
 
@@ -35,11 +35,11 @@ Regardless of who deploys a gateway and where, any IPFS gateway resolves access 
 
 ### Your local gateway
 
-Your machine may host a gateway as a local service; e.g., at `localhost:8080`. You have a local gateway service if you installed [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop#ipfs-desktop) or another form of IPFS node.
+Your machine may host a gateway as a local service; e.g., at `localhost:8080`. You have a local gateway service if you installed [IPFS Desktop](../install/ipfs-desktop.md), [Kubo](../install/command-line.md) or another form of IPFS node.
 
 ### Public gateways
 
-Public ([recursive](#recursive-vs-non-recursive-gateways)) gateways are provided by the IPFS various other organizations, including the [IPFS Foundation](./public-utilities.md#public-ipfs-gateways) as a public utility.
+Public ([recursive](#recursive-vs-non-recursive-gateways)) gateways are provided by various organizations, including the IPFS Foundation as a [public utility](./public-utilities.md#public-ipfs-gateways).
 
 For a list of public gateways, see the [IPFS Gateways Checker](https://ipfs.fyi/gateways).
 
@@ -54,13 +54,13 @@ There are multiple gateway types, each with specific use case, security, perform
 
 ### Recursive vs. non-recursive gateways
 
-Recursive gateways are gateways that will attempt to retrieve content from other peers on the network if they do not have it locally.
+Recursive gateways are gateways that will attempt to retrieve content from other peers on the network if they do not have it locally. This is the default behavior in [Rainbow](https://github.com/ipfs/rainbow/#readme) and [Kubo](../install/command-line.md) running with [`Gateway.NoFetch=false`](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewaynofetch).
 
-Non-recursive gateways are gateways that only serve content that they have themselves. For example, [Kubo](https://github.com/ipfs/kubo) can be configured to act as a non-recursive gateway by setting the [`NoFetch`](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewaynofetch) option.
+Non-recursive gateways are gateways that only serve content that they have themselves. For example, [Kubo](../install/command-line.md) can be configured to act as a non-recursive gateway by setting the [`Gateway.NoFetch=true`](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewaynofetch) option.
 
 In general, recursive gateways are more powerful for end-users because they abstract away all details of the peer-to-peer network. However, they are much more resource-intensive for operators and prone to abuse.
 
-Non-recursive gateways are becoming a popular way to provide IPFS content to the network (as an alternative or in addition to Bitswap). Non-recursive provider records can only be announced to the [IPNI](../concepts/ipni/), but not the [DHT](../concepts/dht.md).
+[Trustless, verifiable retrieval](../reference/http/gateway.md#trustless-verifiable-retrieval) from non-recursive gateways is becoming a popular way to provide IPFS content to the network ([HTTP](https://docs.ipfs.tech/reference/http/gateway/#trustless-verifiable-retrieval) as an alternative or in addition to [Bitswap](../concepts/glossary.md#bitswap)).
 
 ## Trusted vs. trustless gateways
 
@@ -76,19 +76,18 @@ If a gateway provider wants to limit access to requests with authentication, the
 
 Configuring a reverse proxy is the most popular way for providers handling authentication. Reverse proxy can also keep the original IPFS API calls which makes gateway adaptable to all IPFS SDK and toolkits.
 
-![Auth with Reverse proxy](./images/ipfs-gateways/public-authed-gateway.png)
 
 ## Gateway request lifecycle
 
 :::callout
-This section uses the _default_ recursive gateway request lifecycle of [IPFS Kubo](https://github.com/ipfs/kubo) to introduce the basic concepts in the lifecycle. However, non-recursive gateways only serve content that they have and/or want to provide. For example, a Kubo gateway with `NoFetch` enabled will **not** attempt to retrieve content from the network.
+This section uses the _default_ recursive gateway request lifecycle of [IPFS Kubo](https://github.com/ipfs/kubo) to introduce the basic concepts in the lifecycle. However, non-recursive gateways only serve content that they have and/or want to provide. For example, a Kubo gateway with [`Gateway.NoFetch=true`](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewaynofetch) will **not** attempt to retrieve content from the network.
 :::
 
 When a client request for a CID reaches an IPFS gateway, the gateway first checks whether the CID is cached locally. At this point, one of the following occurs:
 
 - **If the CID is cached locally**, the gateway responds with the content referred to by the CID, and the lifecycle is complete.
 
-- **If the CID is not in the local cache**, the gateway will attempt to retrieve it from the network.
+- **If the CID is not in the local cache**, a non-recursive gateway would error, however our gateway is recursive and will attempt to retrieve it from the network.
 
 The CID retrieval process is composed of two parts, content discovery / routing and content retrieval:
 
@@ -158,10 +157,18 @@ DNSLink resolution occurs when the gateway recognizes an IPNS identifier contain
    https://{gateway URL}/ipns/{example.com}/{optional path}
    ```
 
-2. The gateway searches the DNS TXT records of the requested domain `{_dnslink.example.com}` for a string of the form `dnslink=/ipfs/{CID}`. If found, the gateway uses the specified CID to serve up `ipfs://{CID}/{optional path}`. As with path resolution, this form of DNSLink resolution violates the single-origin policy. The domain operator may ensure single-origin policy compliance — and the delivery of the current version of content — by adding an `Alias` record in the DNS that refers to a suitable IPFS gateway; e.g., `gateway.ipfs.io`.
-3. The `Alias` record redirects any access to that `example.com` to the specified gateway. Hence the browser's request to `https://{example.com}/{optional path to resource}` redirects to the gateway specified in the `Alias`.
-4. The gateway employs DNSLink resolution to return the current content version from IPFS.
-5. The browser does not perceive the gateway as the origin of the content and therefore enforces the single-origin policy to protect `example.com`.
+2. The gateway searches the DNS TXT records on the `_dnslink.` subdomain (`_dnslink.example.com`) for a string of the form `dnslink=/ipfs/{CID}`. If found, the gateway uses the specified content identifier to find and serve up `ipfs://{CID}/{optional path}`. 
+
+It is possible to use an HTTP gateway for serving content on the DNSLink domain itself:
+
+1. Point `example.com` at IP of your HTTP gateway, make sure `A`/`AAAA`/`HTTPS` records are set, and TLS termination is configured.
+2. Client sends request to:
+
+   ```bash
+   https://{example.com}/{optional path}
+   ```
+
+3. Gateway detects HTTP header `Host: example.com` in the incoming request and searches DNSLink the same way as in previous example.
 
 ::: callout
 Learn more at [Address IPFS on the web: DNSLink Gateway](../how-to/address-ipfs-on-web.md#dnslink-gateway) and [DNSLink Gateway Specification](https://specs.ipfs.tech/http-gateways/dnslink-gateway/).
