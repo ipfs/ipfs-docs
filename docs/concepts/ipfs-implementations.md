@@ -22,7 +22,7 @@ Looking for an easy way to get started? Install these tools for no-code access t
 | Name           | URL                                   | Language(s)    | What it's trying to do                                                                        |
 |----------------|---------------------------------------|----------------|-----------------------------------------------------------------------------------------------|
 | IPFS Desktop   | <https://github.com/ipfs/ipfs-desktop>| javascript    | Desktop application bundling a Kubo node with file manager, peer manager and content explorer  |
-| IPFS Companion | <https://github.com/ipfs/ipfs-companion>| javascript  | Browser extension that runs a local Kubo node and gets content from the public network         |
+| IPFS Companion | <https://github.com/ipfs/ipfs-companion>| javascript  | Browser extension adding support for `ipfs://` addresses which are fetched from the public network by a local Kubo node          |
 
 ## Popular Node Implementations and Tools
 
