@@ -33,7 +33,8 @@ For developers and operators.
 | Kubo            | <https://github.com/ipfs/kubo>                     | go                     | Popular, all-in-one IPFS daemon with an extensive HTTP RPC API.                                 |
 | Boost           | <https://github.com/filecoin-project/boost>        | go                     | Daemon to get IPFS data in and out of a Filecoin storage provider.                              |
 | Boxo (GO SDK)   | <https://github.com/ipfs/boxo>                     | go                     | A component library for building IPFS applications and implementations in Go.                   |
-| Helia (JS SDK)  | <https://github.com/ipfs/helia>                    | javascript             | A lean, modular, and modern implementation of IPFS for the prolific JS and browser environments |
+| Helia (JS SDK)  | <https://github.com/ipfs/helia>                    | typescript             | A lean, modular, and modern implementation of IPFS for the prolific JS and browser environments |
+| Verified Fetch  | <https://github.com/ipfs/helia-verified-fetch>                    | typescript             | A fetch-like retrieval client for IPFS |
 | IPFS Cluster    | <https://github.com/ipfs/ipfs-cluster>             | go                     | Orchestration for multiple Kubo nodes via CRDT / Raft consensus                                 |
 | Iroh            | <https://github.com/n0-computer/iroh>              | rust                   | Extreme-efficiency oriented IPFS implementation.                                                |
 | Lassie          | <https://github.com/filecoin-project/lassie/>      | go                     | A minimal universal retrieval client library for IPFS and Filecoin.                             |
