@@ -64,7 +64,7 @@ In general, recursive gateways are more powerful for end-users because they abst
 
 ## Trusted vs. trustless gateways
 
-See [Trusted vs. Trustless Gateways](../reference/http/gateway/#trusted-vs-trustless) for more information.
+See [Trusted vs. Trustless Gateways](../reference/http/gateway.md#trusted-vs-trustless) for more information.
 
 ### Read-only gateways
 
