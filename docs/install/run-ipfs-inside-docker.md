@@ -115,7 +115,7 @@ When deploying IPFS Kubo in containerized environments, it's crucial to align th
 Example:
 
 ```shell
-docker run --cpus="4.0" --memory="8000MiB" \
+docker run # (....)
     --cpus="4.0" -e GOMAXPROCS=4 \
     --memory="8000m" -e GOMEMLIMIT=7500MiB \
     ipfs/kubo:latest
