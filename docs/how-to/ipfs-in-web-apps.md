@@ -1,6 +1,6 @@
 ---
 title: IPFS in web applications
-description: How to use IPFS in web applications, including IPFS retrieval and pinning in browsers using implementations such as Helia.
+description: How to develop applications that use IPFS in web browsers, including IPFS retrieval and pinning in browsers using implementations such as Helia.
 ---
 
 # IPFS in web-applications and resource-constrained environments
@@ -25,7 +25,6 @@ As a developer, IPFS exposes three main operations for interacting with the netw
 - **Providing data by CID**: making data addressed by a CID retrievable by other peers, either by running a node or with a pinning service.
 - **Retrieving data by CID**: given a CID, IPFS finds providers (peers who share the block), connects to them, fetches the blocks, and verifies.
 
-<!-- Therefore, this guide will focus on how to address and retrieve in the browser,  -->
 
 ## Addressing by CID
 
@@ -60,15 +59,14 @@ console.info(cid)
 
 ### Example: Addressing a file by CID with unixfs
 
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="zxONqPj" data-pen-title="Addressing an image by CID with Helia and UnixFS" data-user="2color" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/2color/pen/zxONqPj">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Addressing an image by CID with Helia and UnixFS" src="https://codepen.io/2color/embed/zxONqPj?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/2color/pen/zxONqPj">
   Addressing an image by CID with Helia and UnixFS</a> by Daniel Norman (<a href="https://codepen.io/2color">@2color</a>)
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+</iframe>
 
 ## Providing data
 
-In the examples above you saw how to address data by CID. But what you do with it depends on your use case. 
+In the examples above you saw how to address data by CID. But what you do with it depends on your use case.
 
 If you want to data to be retrievable by other peers on [Mainnet](../concepts/glossary.md#ipfs-mainnet) you will want to upload it to a pinning service or an IPFS node you run.
 
@@ -80,20 +78,16 @@ For this reason, you should almost never count on providing data from a browser 
 
 Instead, you should provide data from a long-running server that runs reliably and has a public IP. That can be a Kubo node that you run, or a [pinning service](../concepts/persistence.md#pinning-services).
 
-
 ### CAR files
 
-### Example: Uploading a file to a pinning service
+CAR files offer a serialized representation of content-addressed resources in one single concatenated stream, alongside a header that describes that content. This makes them a great way to store content-addressed data in a way that is easy to transport and store.
 
-TODO:
 
 ## Retrieval
 
 ### With Verified-fetch
 
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="QWXKZGx" data-pen-title="Fetch an image on IPFS Mainnet @helia/verified-fetch" data-user="2color" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/2color/pen/QWXKZGx">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Fetch an image on IPFS Mainnet @helia/verified-fetch" src="https://codepen.io/2color/embed/QWXKZGx?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/2color/pen/QWXKZGx">
   Fetch an image on IPFS Mainnet @helia/verified-fetch</a> by Daniel Norman (<a href="https://codepen.io/2color">@2color</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+</iframe>

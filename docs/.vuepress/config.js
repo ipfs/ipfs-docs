@@ -259,7 +259,7 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
-                '/how-to/ipfs-on-the-web',
+                '/how-to/ipfs-in-web-apps',
                 '/how-to/address-ipfs-on-web',
               ]
             },
