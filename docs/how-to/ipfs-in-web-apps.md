@@ -21,7 +21,7 @@ There are good reasons for this like security and resource management, but ultim
 
 As a developer, IPFS exposes three main operations for interacting with the network:
 
-- **Addressing data with CIDs** (also known as merkelising): taking arbitrary data and encoding so its addressable by CID. For example, given a file and encoding it so it can be addressed by a CID.
+- **Addressing data with CIDs** (also known as merklizing): taking arbitrary data and encoding so its addressable by CID. For example, given a file and encoding it so it can be addressed by a CID.
 - **Providing data by CID**: making data addressed by a CID retrievable by other peers, either by running a node or with a pinning service.
 - **Retrieving data by CID**: given a CID, IPFS finds providers (peers who share the block), connects to them, fetches the blocks, and verifies.
 
