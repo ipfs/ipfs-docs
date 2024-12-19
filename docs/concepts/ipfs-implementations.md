@@ -17,7 +17,7 @@ To propose additions or edits, [edit this page in GitHub](https://github.com/ipf
 
 ## Desktop Implementations
 
-Looking for an easy way to get started? Install these tools for no-code access to the IPFS Amino Public Network.
+Looking for an easy way to get started? Install these tools for no-code access to the Public IPFS Mainnet Network.
 
 | Name           | URL                                   | Language(s)    | What it's trying to do                                                                        |
 |----------------|---------------------------------------|----------------|-----------------------------------------------------------------------------------------------|
