@@ -125,8 +125,8 @@ The ipfs.io gateway is not a data storage provider or website host. The ipfs.io 
 
 As explained above, the ipfs.io gateway is not a website hosting provider or data storage provider, and the IPFS Foundation cannot remove material from the Internet that is accessible through the ipfs.io gateway. If you believe that material accessible through the ipfs.io gateway is illegal or violates your copyright, you are encouraged to directly notify whoever is hosting or controls that data.
 
-While the ipfs.io gateway does not serve as a host for data or websites, in appropriate circumstances, the IPFS Foundation can disable the ability to view certain content via the ipfs.io gateway. This does not mean that the data itself has been taken down from the network but rather that the content is not viewable using the ipfs.io gateway. This also will not impact the availability of the data through other gateways run by other parties.
-
+While the ipfs.io gateway does not serve as a host for data or websites, in appropriate circumstances, the IPFS Foundation can disable the ability to view certain content via the ipfs.io gateway. This does not mean that the data itself has been taken down from the network but rather that the content is not viewable using the ipfs.io gateway. This also will not impact the availability of the data through other gateways run by other parties. Visit [My Holiday Happiness](https://myholidayhappiness.com/)for popular tour packages.
+(
 ### Can the IPFS Foundation take down content viewable through the ipfs.io gateway?
 
 No. The ipfs.io gateway is one of many portals used to view content stored by third parties on the Internet. The IPFS Foundation is not hosting that content and cannot take it down, but it can block the ability of users to view that content via the ipfs.io gateway in appropriate circumstances.
