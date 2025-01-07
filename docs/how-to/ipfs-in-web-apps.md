@@ -5,17 +5,19 @@ description: How to develop applications that use IPFS in web browsers, includin
 
 # IPFS in web-applications and resource-constrained environments
 
-This guide covers the key operations of IPFS in the context of web applications, including addressing, retrieving, and providing.
+In this guide you will learn how to use IPFS in web applications, including addressing, retrieving, and providing.
 
-For demonstration purposes, this guide uses [Helia](https://github.com/ipfs/helia), the most actively maintained library for using IPFS on the web and is the recommended library for most use cases.
+In this guide, you will use [Helia](https://github.com/ipfs/helia), the most actively maintained TypeScript IPFS library for use on the web and the recommended library for most use cases.
 
-## Challenges with IPFS on the Web
+> **Note:** this guide is focused solely on using IPFS for data within a web application. It does _not_ cover using IPFS for static website distribution with IPFS Gateways.
+
+## Challenges with IPFS on the web
 
 IPFS allows you to fetch data by CID from multiple providers without being reliant on a single authoritative server.
 
-However, making all of this work on the Web is tricky due to networking constraints. Browsers impose many restrictions on Web apps, for example, opening TCP/UDP connections is not possible. Instead, Web apps are constrained to HTTP, WebSockets, WebRTC, and most recently WebTransport.
+However, making all of this work on the web is tricky due to networking constraints. Browsers impose many restrictions on web apps, for example, opening TCP/UDP connections is not possible. Instead, web apps are constrained to HTTP, WebSockets, WebRTC, and most recently WebTransport.
 
-There are good reasons for this like security and resource management, but ultimately, it means that using IPFS on the Web is different to native binaries.
+There are good reasons for this like security and resource management, but ultimately, it means that using IPFS on the web is different to native binaries.
 
 ## Key IPFS operations: Addressing, Retrieving, and Providing
 
@@ -25,8 +27,7 @@ As a developer, IPFS exposes three main operations for interacting with the netw
 - **Providing data by CID**: making data addressed by a CID retrievable by other peers, either by running a node or with a pinning service.
 - **Retrieving data by CID**: given a CID, IPFS finds providers (peers who share the block), connects to them, fetches the blocks, and verifies.
 
-
-## Addressing by CID
+## Addressing data by CID
 
 As mentioned above, the first step in the [lifecycle of data in IPFS](../concepts/lifecycle.md) is to address it by CID.
 
@@ -37,29 +38,22 @@ When addressing data by [CIDs](https://proto.school/anatomy-of-a-cid/03) you wil
   - [unixfs](../concepts/file-systems.md#unix-file-system-unixfs) for files and directories.
   - [dag-cbor](../concepts/glossary.md#dag-cbor) for json-like structured data with binary encoding. DAG-CBOR is an extension of CBOR that adds a "link" type for CIDs, allowing for the creation of interlinked CBOR objects (which can be used to form larger linked data structures).
 
-As you can see, there are multiple ways to address data by CID.
+### CID Determinism
 
-One important thing to note is that **the same data can result in different CIDs** depending on a number of factors, including the hash function, the multicodec you use, and the way you encode the data. **This is especially true for files**, where the same file, hash function and multicodec can still result in different CIDs depending on the different options that UnixFS supports. See the [forum discussion](https://discuss.ipfs.tech/t/should-we-profile-cids/18507) for more details and a possible solution.
+One important thing to note is that **the same data can result in different CIDs** depending on a number of factors, including the hash function, the multicodec you use, and the multicodec. **This is especially true for files**, where the same file, hash function and multicodec can still result in different CIDs depending on the different options that UnixFS supports. See the [forum discussion](https://discuss.ipfs.tech/t/should-we-profile-cids/18507) for more details.
 
 ### Example: Addressing an object by CID with dag-cbor
 
 For example, to address an object by CID with the `dag-cbor` multicodec and `sha2-256` hash function, you can use the following code using [Helia](https://github.com/ipfs/helia):
 
-```ts
-import { createHelia } from 'helia'
-import { dagCbor } from '@helia/dag-cbor'
-
-const helia = await createHelia()
-const d = dagCbor(helia)
-const cid = await d.add({ hello: 'world' })
-
-console.info(cid)
-// CID(bafyreidykglsfhoixmivffc5uwhcgshx4j465xwqntbmu43nb2dzqwfvae)
-```
+<iframe height="300" style="width: 100%;" scrolling="no" title="Addressing an object by CID with Helia and dag-cbor" src="https://codepen.io/2color/embed/xbKpJKx?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/2color/pen/xbKpJKx">
+  Addressing an object by CID with Helia and dag-cbor</a> by Daniel Norman (<a href="https://codepen.io/2color">@2color</a>)
+</iframe>
 
 ### Example: Addressing a file by CID with unixfs
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Addressing an image by CID with Helia and UnixFS" src="https://codepen.io/2color/embed/zxONqPj?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Addressing an image by CID with Helia and UnixFS" src="https://codepen.io/2color/embed/zxONqPj?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/2color/pen/zxONqPj">
   Addressing an image by CID with Helia and UnixFS</a> by Daniel Norman (<a href="https://codepen.io/2color">@2color</a>)
 </iframe>
@@ -72,7 +66,7 @@ If you want to data to be retrievable by other peers on [Mainnet](../concepts/gl
 
 ### You probably don't want to provide data from a browser
 
-Browsers make for lousy servers. It's difficult to make a Web page "dialable", i.e. allow network incoming connections from other computers. There's one exception, namely WebRTC, however, it has many caveats.
+Browsers make for lousy servers. It's difficult to make a Web page a server, i.e. allow network incoming connections from other computers. There's one exception, namely WebRTC, however, it has many caveats.
 
 For this reason, you should almost never count on providing data from a browser to work.
 
@@ -82,12 +76,11 @@ Instead, you should provide data from a long-running server that runs reliably a
 
 CAR files offer a serialized representation of content-addressed resources in one single concatenated stream, alongside a header that describes that content. This makes them a great way to store content-addressed data in a way that is easy to transport and store.
 
-
 ## Retrieval
 
 ### With Verified-fetch
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Fetch an image on IPFS Mainnet @helia/verified-fetch" src="https://codepen.io/2color/embed/QWXKZGx?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Fetch an image on IPFS Mainnet @helia/verified-fetch" src="https://codepen.io/2color/embed/QWXKZGx?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/2color/pen/QWXKZGx">
-  Fetch an image on IPFS Mainnet @helia/verified-fetch</a> by Daniel Norman (<a href="https://codepen.io/2color">@2color</a>)
+  Fetch an image on IPFS Mainnet @helia/verified-fetch</a> by Daniel Norman
 </iframe>
