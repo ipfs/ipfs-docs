@@ -1102,22 +1102,11 @@ Argument `path` is of file type. This endpoint expects one or several files (dep
 
 ### Response
 
-On success, the call to this endpoint will return with 200 and the following body:
+On success, the call to this endpoint will return with 200 and the following JSONL body (if the `stats=true` argument is included):
 
 ```json
-{
-  "Root": {
-    "Cid": {
-      "/": "<cid-string>"
-    },
-    "PinErrorMsg": "<string>"
-  },
-  "Stats": {
-    "BlockBytesCount": "<uint64>",
-    "BlockCount": "<uint64>"
-  }
-}
-
+{"Root":{"Cid":{"/":"<cid-string>"},"PinErrorMsg":"string"}}
+{"Stats":{"BlockCount":<uint64>,"BlockBytesCount":<uint64>}}
 ```
 
 ### cURL Example
