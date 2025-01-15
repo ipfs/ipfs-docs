@@ -44,13 +44,14 @@ Third-party pinning services allow you to purchase pinning capacity for importan
 
 - [Pinata](https://pinata.cloud/)
 - [Filebase](https://filebase.com/)
+- [Functionland Fula](https://fx.land/)
 - [Temporal](https://temporal.cloud/)
 - [Crust](https://crust.network/)
 - [Infura](https://infura.io/)
 - [Scaleway](https://labs.scaleway.com/en/ipfs-pinning/)
 
 ::: callout 
-As of June 2023, [Filebase](https://filebase.com) and [Pinata](https://pinata.cloud/) support the [IPFS Pinning Service API endpoint](https://github.com/ipfs/pinning-services-api-spec).
+As of June 2024, [Filebase](https://filebase.com), [Functionland Fula](https://fx.land/) and [Pinata](https://pinata.cloud/) support the [IPFS Pinning Service API endpoint](https://github.com/ipfs/pinning-services-api-spec).
 ::: 
 
 To add and use a remote pinning service directly in IPFS, you'll first need to have an account with that service.
