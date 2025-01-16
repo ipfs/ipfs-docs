@@ -24,8 +24,8 @@ There are good reasons for this like security and resource management, but ultim
 As a developer, IPFS exposes three main operations for interacting with the network:
 
 - **Addressing data with CIDs** (also known as merklizing): taking arbitrary data and encoding so its addressable by CID. For example, given a file and encoding it so it can be addressed by a CID.
-- **Providing data by CID**: making data addressed by a CID retrievable by other peers, either by running a node or with a pinning service.
 - **Retrieving data by CID**: given a CID, IPFS finds providers (peers who share the block), connects to them, fetches the blocks, and verifies.
+- **Providing data by CID**: making data addressed by a CID retrievable by other peers, either by running a node or with a pinning service.
 
 ## Addressing data by CID
 
@@ -35,12 +35,16 @@ When addressing data by [CIDs](https://proto.school/anatomy-of-a-cid/03) you wil
 
 - [hash function](../concepts/glossary.md#hash-function). For use in browsers, the default and recommended hash function is `sha2-256` which is also the default for [helia](https://github.com/ipfs/helia).
 - [multicodec](../concepts/glossary.md#multicodec), which is the format of the data you are addressing and is used to help decode data. CIDs support a wide range of multicodecs, but for most intents and purposes, you will likely either want use:
-  - [unixfs](../concepts/file-systems.md#unix-file-system-unixfs) for files and directories.
+  - [UnixFS](../concepts/file-systems.md#unix-file-system-unixfs) for files and directories.
   - [dag-cbor](../concepts/glossary.md#dag-cbor) for json-like structured data with binary encoding. DAG-CBOR is an extension of CBOR that adds a "link" type for CIDs, allowing for the creation of interlinked CBOR objects (which can be used to form larger linked data structures).
 
 ### CID Determinism
 
-One important thing to note is that **the same data can result in different CIDs** depending on a number of factors, including the hash function, the multicodec you use, and the multicodec. **This is especially true for files**, where the same file, hash function and multicodec can still result in different CIDs depending on the different options that UnixFS supports. See the [forum discussion](https://discuss.ipfs.tech/t/should-we-profile-cids/18507) for more details.
+One important thing to note is that **the same data can result in different CIDs** depending on a number of factors, including the hash function, the multicodec you use, and the multicodec. **This is especially true for files**, where the same file, hash function and multicodec can still result in different CIDs depending on the different options that UnixFS supports.
+
+See the [forum discussion on CID profiles](https://discuss.ipfs.tech/t/should-we-profile-cids/18507) and the [DASL](https://dasl.ing/) initiative for more for more information on the nature of this problem and how the community is addressing it.
+
+[DAG Builder](https://dag.ipfs.tech/) is a web app that visualises UnixFS and demonstrates how the same file can result in different CIDs, depending on the different options that UnixFS supports.
 
 ### Example: Addressing an object by CID with dag-cbor
 
@@ -58,29 +62,46 @@ For example, to address an object by CID with the `dag-cbor` multicodec and `sha
   Addressing an image by CID with Helia and UnixFS</a> by Daniel Norman (<a href="https://codepen.io/2color">@2color</a>)
 </iframe>
 
+## Retrieval
+
+From a high level, there are several ways to retrieve data with IPFS in web applications:
+
+- Using the [`Verified Fetch`](https://www.npmjs.com/package/@helia/verified-fetch) library, which was modelled after the `fetch` API and returns `Response` objects, with the main difference being that it allows you to fetch data by CID, abstracting away the details of content routing, transports and retrieval. For more examples and background see the [release blog post](https://blog.ipfs.tech/verified-fetch/).
+- Using the [`helia`](https://github.com/ipfs/helia/) library, which is the foundation for the `verified-fetch` library, and provides a more comprehensive and modular API for interacting with the IPFS network, beyond just retrieval.
+- Using public recursive gateways, e.g. `ipfs.io` with HTTP. This is not recommended for most use cases, because it forgoes the verifiability and trustlessness enabled by content addressing. Granted, it might be the easiest way to retrieve data in a web application, but is also the most fraught with security and centralization concerns.
+
+### Example: Image retrieval with Verified Fetch
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="Fetch an image on IPFS Mainnet @helia/verified-fetch" src="https://codepen.io/2color/embed/QWXKZGx?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/2color/pen/QWXKZGx">
+  Fetch an image on IPFS Mainnet @helia/verified-fetch</a> by Daniel Norman
+</iframe>
+
 ## Providing data
 
-In the examples above you saw how to address data by CID. But what you do with it depends on your use case.
+For data to be retrievable by other peers on [IPFS Mainnet](../concepts/glossary.md#ipfs-mainnet) it will need to be uploaded to a pinning service or an IPFS node.
 
-If you want to data to be retrievable by other peers on [Mainnet](../concepts/glossary.md#ipfs-mainnet) you will want to upload it to a pinning service or an IPFS node you run.
+When possible, it's best to rely on client-side merklization to address data by CID and then upload it to a pinning service or a node. [CAR files](#car-files) are a great way to do this, though they are not supported by all pinning services.
 
 ### You probably don't want to provide data from a browser
 
-Browsers make for lousy servers. It's difficult to make a Web page a server, i.e. allow network incoming connections from other computers. There's one exception, namely WebRTC, however, it has many caveats.
+Browsers make for lousy servers. It's difficult to make a Web page a server, i.e. allow network incoming connections from other computers. WebRTC is the only exception, however, it has many caveats, and doesn't work in all networks.
 
-For this reason, you should almost never count on providing data from a browser to work.
+For this reason, you should never count on providing data from a browser to work.
 
 Instead, you should provide data from a long-running server that runs reliably and has a public IP. That can be a Kubo node that you run, or a [pinning service](../concepts/persistence.md#pinning-services).
 
 ### CAR files
 
-CAR files offer a serialized representation of content-addressed resources in one single concatenated stream, alongside a header that describes that content. This makes them a great way to store content-addressed data in a way that is easy to transport and store.
+The Content Archive format is a way of packaging up content addressed data into archive files that can be easily stored and transferred over the network. You can think of them like TAR files that are designed for storing collections of content addressed data.
 
-## Retrieval
+So why would you want to use CAR files?
 
-### With Verified-fetch
+One of the main reasons is related to [CID determinism](#cid-determinism). As mentioned above, the same data can result in different CIDs, which can make it difficult to verify data without its content addressed representation. By packaging up the data into a CAR file, you can upload the CAR to multiple pinning services and nodes knowing they are providing the same data, while also reducing the trust on third party pinning services.
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Fetch an image on IPFS Mainnet @helia/verified-fetch" src="https://codepen.io/2color/embed/QWXKZGx?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/2color/pen/QWXKZGx">
-  Fetch an image on IPFS Mainnet @helia/verified-fetch</a> by Daniel Norman
+Car files are a great way to store content-addressed data in a way that is easy to transport and store, and Helia (and other implementations) allow you to both export and import any data you've addressed by CID into a CAR file.
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="CAR export with Helia and dag-cbor" src="https://codepen.io/2color/embed/EaYoegX?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/2color/pen/EaYoegX">
+  CAR export with Helia and dag-cbor</a> by Daniel Norman (<a href="https://codepen.io/2color">@2color</a>)
 </iframe>
