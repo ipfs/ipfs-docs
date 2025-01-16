@@ -44,8 +44,7 @@ Third-party pinning services allow you to purchase pinning capacity for importan
 
 - [Pinata](https://pinata.cloud/)
 - [Filebase](https://filebase.com/)
-- [Temporal](https://temporal.cloud/)
-- [Crust](https://crust.network/)
+- [Storacha (formerly web3.storage)](https://storacha.network/)
 - [Infura](https://infura.io/)
 - [Scaleway](https://labs.scaleway.com/en/ipfs-pinning/)
 
