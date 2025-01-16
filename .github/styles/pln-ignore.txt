@@ -195,6 +195,8 @@ reproviding
 requesters
 retrievability
 roadmaps
+runtime
+runtime's
 rsa
 sandboxed
 satoshi
@@ -216,7 +218,7 @@ testground
 testnet
 toolkits
 trustlessly
-uncensorable 
+uncensorable
 undialable
 uniswap
 unreachability
