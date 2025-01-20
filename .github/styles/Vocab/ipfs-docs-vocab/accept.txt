@@ -169,7 +169,7 @@ Qm
 rasterio
 READMEs?
 referenceable
-reprovider
+reprovide(r)
 reproviding
 retrievability
 roadmaps
