@@ -64,6 +64,7 @@ Arbol('s)?
 auditable
 Audius
 auspinner
+blockchain
 blockstore
 Browserify
 callouts?
