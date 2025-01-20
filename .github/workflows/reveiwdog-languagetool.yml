@@ -1,0 +1,19 @@
+name: Check Spelling
+on:
+  pull_request:
+    paths:
+      - 'docs/**/*.md'
+jobs:
+  languagetool:
+    name: languagetool
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Spelling
+        uses: reviewdog/action-languagetool@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          level: info
+          patterns: 'docs/**/*.md'
+
