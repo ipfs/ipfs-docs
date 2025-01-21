@@ -64,6 +64,7 @@ Arbol('s)?
 auditable
 Audius
 auspinner
+blockchain
 blockstore
 Browserify
 callouts?
@@ -169,7 +170,8 @@ Qm
 rasterio
 READMEs?
 referenceable
-reprovider
+reprovide
+reprovide(r)
 reproviding
 retrievability
 roadmaps
