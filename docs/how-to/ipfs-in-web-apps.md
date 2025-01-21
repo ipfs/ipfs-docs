@@ -44,7 +44,7 @@ One important thing to note is that **the same data can result in different CIDs
 
 See the [forum discussion on CID profiles](https://discuss.ipfs.tech/t/should-we-profile-cids/18507) and the [DASL](https://dasl.ing/) initiative for more for more information on the nature of this problem and how the community is addressing it.
 
-[DAG Builder](https://dag.ipfs.tech/) is a web app that visualises UnixFS and demonstrates how the same file can result in different CIDs, depending on the different options that UnixFS supports.
+For a visual demonstration of this, try the [DAG Builder](https://dag.ipfs.tech/), which visualises how files are addressed by CID with UnixFS and demonstrates how the same file can result in different CIDs, depending on the different options that UnixFS supports.
 
 ### Example: Addressing an object by CID with dag-cbor
 
@@ -97,7 +97,7 @@ The Content Archive format is a way of packaging up content addressed data into 
 
 So why would you want to use CAR files?
 
-One of the main reasons is related to [CID determinism](#cid-determinism). As mentioned above, the same data can result in different CIDs, which can make it difficult to verify data without its content addressed representation. By packaging up the data into a CAR file, you can upload the CAR to multiple pinning services and nodes knowing they are providing the same data, while also reducing the trust on third party pinning services.
+One of the main reasons is related to [CID determinism](#cid-determinism). As mentioned above, the same data can result in different CIDs, which can make it difficult to verify data without its content addressed representation. By packaging up the data into a CAR file, you can upload the CAR to multiple pinning services and nodes knowing they are providing the same CIDs
 
 Car files are a great way to store content-addressed data in a way that is easy to transport and store, and Helia (and other implementations) allow you to both export and import any data you've addressed by CID into a CAR file.
 
