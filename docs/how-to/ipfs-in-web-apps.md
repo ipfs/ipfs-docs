@@ -5,9 +5,9 @@ description: How to develop applications that use IPFS in web browsers, includin
 
 # IPFS in web-applications and resource-constrained environments
 
-In this guide you will learn how to use IPFS in web applications, including addressing, retrieving, and providing.
+In this guide you will learn how to use IPFS using JavaScript/TypeScript in web applications, including addressing data with CIDs, retrieval by CID, working with CAR files, and the the nuances of providing.
 
-In this guide, you will use [Helia](https://github.com/ipfs/helia), the most actively maintained TypeScript IPFS library for use on the web and the recommended library for most use cases.
+For this, you will use [Helia](https://github.com/ipfs/helia), the most actively maintained implementation of IPFS in TypeScript for use on the web.
 
 > **Note:** this guide is focused solely on using IPFS for data within a web application. It does _not_ cover using IPFS for static website distribution with IPFS Gateways.
 
@@ -23,8 +23,8 @@ There are good reasons for this like security and resource management, but ultim
 
 As a developer, IPFS exposes three main operations for interacting with the network:
 
-- **Addressing data with CIDs** (also known as merklizing): taking arbitrary data and encoding so its addressable by CID. For example, given a file and encoding it so it can be addressed by a CID.
-- **Retrieving data by CID**: given a CID, IPFS finds providers (peers who share the block), connects to them, fetches the blocks, and verifies.
+- **Addressing data with CIDs** (also known as merkleizing): taking arbitrary data and encoding so its addressable by CID. For example, given a file and encoding it so it can be addressed by a CID.
+- **Retrieving data by CID**: given a CID, IPFS finds providers (peers who share the block), connects to them, fetches the blocks, and verifies that the retrieved data is what the CID represents.
 - **Providing data by CID**: making data addressed by a CID retrievable by other peers, either by running a node or with a pinning service.
 
 ## Addressing data by CID
