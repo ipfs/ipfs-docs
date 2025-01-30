@@ -1,7 +1,7 @@
 ---
 title: Kubo
 description: Using IPFS Kubo through the command-line allows you to do everything that IPFS Desktop can do, but at a more granular level, since you can specify which commands to run. Learn how to install it here.
-current-ipfs-version: v0.32.1
+current-ipfs-version: v0.33.0
 ---
 
 # Install IPFS Kubo
@@ -31,7 +31,7 @@ Kubo runs on most Windows, MacOS, Linux, FreeBSD and OpenBSD systems that meet t
 
 Note the following:
 - The amount of disk space your IPFS installation uses depends on how much data you're sharing. A base installation uses around 12MB of disk space.
-- You can enable automatic garbage collection via [--enable-gc](../reference/kubo/cli.md#ipfs-daemon) and adjust using [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.32.1/docs/config.md#datastorestoragemax) for data retrieved from other peers.
+- You can enable automatic garbage collection via [--enable-gc](../reference/kubo/cli.md#ipfs-daemon) and adjust using [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.33.0/docs/config.md#datastorestoragemax) for data retrieved from other peers.
 
 
 <!-- TODO: hide this footgun until https://github.com/ipfs/kubo/pull/10524 is merged and released in stable kubo 
@@ -76,19 +76,19 @@ For installation instructions for your operating system, select the appropriate 
 1. Download the Windows binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
    ```powershell
-   wget https://dist.ipfs.tech/kubo/v0.32.1/kubo_v0.32.1_windows-amd64.zip -Outfile kubo_v0.32.1.zip
+   wget https://dist.ipfs.tech/kubo/v0.33.0/kubo_v0.33.0_windows-amd64.zip -Outfile kubo_v0.33.0.zip
    ```
 
-1. Unzip the file to a sensible location, such as `~\Apps\kubo_v0.32.1`.
+1. Unzip the file to a sensible location, such as `~\Apps\kubo_v0.33.0`.
 
    ```powershell
-   Expand-Archive -Path kubo_v0.32.1.zip -DestinationPath ~\Apps\kubo_v0.32.1
+   Expand-Archive -Path kubo_v0.33.0.zip -DestinationPath ~\Apps\kubo_v0.33.0
    ```
 
-1. Move into the `kubo_v0.32.1` folder
+1. Move into the `kubo_v0.33.0` folder
 
    ```powershell
-   cd ~\Apps\kubo_v0.32.1\kubo
+   cd ~\Apps\kubo_v0.33.0\kubo
    ```
 
 1. Check that the `ipfs.exe` works:
@@ -96,7 +96,7 @@ For installation instructions for your operating system, select the appropriate 
    ```powershell
    .\ipfs.exe --version
 
-   > ipfs version 0.32.1
+   > ipfs version 0.33.0
    ```
 
    At this point, Kubo is usable. However, it's strongly recommended that you first add `ipfs.exe` to your `PATH` using the following steps:
@@ -142,7 +142,7 @@ For installation instructions for your operating system, select the appropriate 
    ```powershell
    ipfs --version
 
-   > ipfs version 0.32.1
+   > ipfs version 0.33.0
    ```
 
 :::
@@ -170,7 +170,7 @@ For installation instructions for your operating system, select the appropriate 
    If Kubo is installed, the version number displays. For example:
 
    ```bash
-   > ipfs version 0.32.1
+   > ipfs version 0.33.0
    ```
 :::
 
@@ -181,13 +181,13 @@ For installation instructions for your operating system, select the appropriate 
 1. Download the Linux binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
    ```bash
-   wget https://dist.ipfs.tech/kubo/v0.32.1/kubo_v0.32.1_linux-amd64.tar.gz
+   wget https://dist.ipfs.tech/kubo/v0.33.0/kubo_v0.33.0_linux-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf kubo_v0.32.1_linux-amd64.tar.gz
+   tar -xvzf kubo_v0.33.0_linux-amd64.tar.gz
 
    > x kubo/install.sh
    > x kubo/ipfs
@@ -216,7 +216,7 @@ For installation instructions for your operating system, select the appropriate 
    ```bash
    ipfs --version
 
-   > ipfs version 0.32.1
+   > ipfs version 0.33.0
    ```
 
 :::
@@ -228,13 +228,13 @@ For installation instructions for your operating system, select the appropriate 
 1. Download the FreeBSD binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
    ```bash
-   wget https://dist.ipfs.tech/kubo/v0.32.1/kubo_v0.32.1_freebsd-amd64.tar.gz
+   wget https://dist.ipfs.tech/kubo/v0.33.0/kubo_v0.33.0_freebsd-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf kubo_v0.32.1_freebsd-amd64.tar.gz
+   tar -xvzf kubo_v0.33.0_freebsd-amd64.tar.gz
 
    > x kubo/install.sh
    > x kubo/ipfs
@@ -263,7 +263,7 @@ For installation instructions for your operating system, select the appropriate 
    ```bash
    ipfs --version
 
-   > ipfs version 0.32.1
+   > ipfs version 0.33.0
    ```
 
 :::
@@ -275,13 +275,13 @@ For installation instructions for your operating system, select the appropriate 
 1. Download the OpenBSD binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
    ```bash
-   wget https://dist.ipfs.tech/kubo/v0.32.1/kubo_v0.32.1_openbsd-amd64.tar.gz
+   wget https://dist.ipfs.tech/kubo/v0.33.0/kubo_v0.33.0_openbsd-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf kubo_v0.32.1_openbsd-amd64.tar.gz
+   tar -xvzf kubo_v0.33.0_openbsd-amd64.tar.gz
 
    > x kubo/install.sh
    > x kubo/ipfs
@@ -310,7 +310,7 @@ For installation instructions for your operating system, select the appropriate 
    ```bash
    ipfs --version
 
-   > ipfs version 0.32.1
+   > ipfs version 0.33.0
    ```
 
 :::
@@ -322,7 +322,7 @@ For installation instructions for your operating system, select the appropriate 
 
 ## Build Kubo from source
 
-For the current instructions on how to manually download, compile and build Kubo from source, see the [Build from Source](https://github.com/ipfs/kubo/blob/v0.32.1/README.md#build-from-source) section in the Kubo repository.
+For the current instructions on how to manually download, compile and build Kubo from source, see the [Build from Source](https://github.com/ipfs/kubo/blob/v0.33.0/README.md#build-from-source) section in the Kubo repository.
 
 ## Determining which node to use with the command line
 
