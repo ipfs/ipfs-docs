@@ -1,6 +1,6 @@
 ---
 title: TLS and HTTP Auth for Kubo
-description: Learn how to set up TLS and basic HTTP auth for Kubo with Caddy reverse proxy for secure API access over public networks.
+description: Learn how to set up TLS for Kubo with Caddy reverse proxy for secure API access over public networks.
 ---
 
 # Setting up TLS and basic HTTP auth for Kubo with Caddy reverse proxy
@@ -45,7 +45,7 @@ First, you'll need to configure Kubo to work with the reverse proxy. Edit your K
 This configuration:
 
 - Sets CORS headers to allow requests from `YOUR_DOMAIN`. Kubo will match the `host` header in the request with the `Access-Control-Allow-Origin` from the configuration, so you need to ensure the origin is correct.
-- Restricts API access to the Kubo RPC API, allowing access to the `/api/v0` endpoints with basic http authentication.
+- Restricts API access to the Kubo RPC API, allowing access to the `/api/v0` endpoints with basic HTTP authentication.
 
 > **Note:** You should set the `AuthSecret` to a stronger username and password combination.
 
