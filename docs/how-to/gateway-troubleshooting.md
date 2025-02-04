@@ -106,7 +106,7 @@ If providers were found in the DHT, do the following:
 
 ### No providers returned
 
-If no providers are returned, the issue may lie in the content publishing lifecycle, specifically _reprovider runs_, the continuous process in which a node advertises provider records. _Provider records_ are mappings of CIDs to network addresses, and have an expiration time of 24 hours, which accounts for provider churn. Generally speaking, as more files are added to an IPFS node, the longer reprovide runs take. When a reprovide run takes longer than 24 hours (the expiration time for provider records), CIDs will no longer be discoverable.
+If no providers are returned, the issue may lie in the content publishing lifecycle, specifically _reprovider runs_, the continuous process in which a node advertises provider records. _Provider records_ are mappings of CIDs to network addresses, and have an expiration time of 48 hours, which accounts for provider churn. Generally speaking, as more files are added to an IPFS node, the longer reprovide runs take. When a reprovide run takes longer than 48 hours (the expiration time for provider records), CIDs will no longer be discoverable.
 
 :::
 You can learn more about the content publishing lifecycle in [How IPFS works](../concepts/how-ipfs-works.md).
@@ -129,7 +129,7 @@ With this in mind, if no providers are returned, do the following:
    LastReprovideBatchSize: 1k (1,858)
    ```
 
-1. Note the value for `LastReprovideDuration`. If it is close to 24 hours, select one of the following options, keeping in mind that each has tradeoffs:
+2. Note the value for `LastReprovideDuration`. If it is close to 48 hours, select one of the following options, keeping in mind that each has tradeoffs:
 
    - **Enable the [Accelerated DHT Client](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#accelerated-dht-client) in Kubo**. This configuration improves content publishing times significantly by maintaining more connections to peers and a larger routing table and batching advertising of provider records. However, this performance boost comes at the cost of increased resource consumption.
 
@@ -137,7 +137,7 @@ With this in mind, if no providers are returned, do the following:
       - The `pinned` strategy will advertise both the root CIDs and child block CIDs (the entire DAG) of explicitly pinned content.
       - The `roots` strategy will only advertise the root CIDs of pinned content, reducing the total number of provides in each run. This strategy is the most efficient, but should be done with caution, as it will limit discoverability only to root CIDs. In other words, if you are adding folders of files to an IPFS node, only the CID for the pinned folder will be advertised. All the blocks will still be retrievable with Bitswap once a connection to the node is established.
 
-1. Manually trigger a reprovide run:
+3. Manually trigger a reprovide run:
 
    ```shell
    ipfs bitswap reprovide

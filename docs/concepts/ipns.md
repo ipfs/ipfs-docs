@@ -33,6 +33,8 @@ Yet, there are many situations where content-addressed data needs to be regularl
 
 The InterPlanetary Name System (IPNS) is a system for creating such mutable pointers to CIDs known as **names** or **IPNS names**. IPNS names can be thought of as links that can be updated over time, while retaining the verifiability of content addressing.
 
+By analogy, IPNS names are like tags in git, which can be updated over time, and CIDs are like commit hashes in Git, which point to a snapshot of the files in the repository.
+
 ::: callout
 An IPNS name can point to any arbitrary content path (`/ipfs/` or `/ipns/`), *including another IPNS name or DNSLink path*. However, it most commonly points to a fully resolved and immutable path, i.e. `/ipfs/[CID]`.
 :::
@@ -121,7 +123,7 @@ The main implication of this difference is that IPNS operations (publishing and 
 
 The DHT is the default transport mechanism for IPNS records in many IPFS implementations.
 
-Due to the ephemeral nature of the DHT, peers forget records after 24 hours. This applies to any record in the DHT, irrespective of the `validity` (also referred to as `lifetime`) field in the IPNS record.
+Due to the ephemeral nature of the DHT, records expire [after 48 hours](https://github.com/libp2p/specs/tree/b5f7fce29b32d4c7d0efe37b019936a11e5db872/kad-dht#content-provider-advertisement-and-discovery). This applies to any record in the DHT, irrespective of the `validity` (also referred to as `lifetime`) field in the IPNS record.
 
 Therefore, IPNS records need to be regularly (re-)published to the DHT. Moreover, publishing to the DHT at regular intervals ensures that the IPNS name can be resolved even when there's high node churn (nodes coming and going.)
 
@@ -173,7 +175,7 @@ Availability means resolving to a valid IPNS record, at the cost of potentially 
 
 #### IPNS record validity
 
-When setting the `validity` (referred to as [`lifetime` by Kubo](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsrecordlifetime)) field of an IPNS record, you typically need to choose whether you favor **consistency** (short validity period, e.g. 24 hours) or **availability** (long validity period, e.g. 1 month), due to the inherent trade-off between the two.
+When setting the `validity` (referred to as [`lifetime` by Kubo](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsrecordlifetime)) field of an IPNS record, you typically need to choose whether you favor **consistency** (short validity period, e.g. 48 hours) or **availability** (long validity period, e.g. 1 month), due to the inherent trade-off between the two.
 
 #### Practical considerations
 
