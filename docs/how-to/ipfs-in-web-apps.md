@@ -1,6 +1,6 @@
 ---
 title: IPFS in web applications
-description: How to develop applications that use IPFS in web browsers, including IPFS retrieval and pinning in browsers using implementations such as Helia.
+description: How to develop applications that use IPFS on the Web including addressing by CID, merkleizing, retrieval, providing, and CAR files with Helia.
 ---
 
 # IPFS in web-applications and resource-constrained environments
@@ -23,7 +23,7 @@ There are good reasons for this like security and resource management, but ultim
 
 As a developer, IPFS exposes three main operations for interacting with the network:
 
-- **Addressing data with CIDs** (also known as merkleizing): taking arbitrary data and encoding so its addressable by CID. For example, given a file and encoding it so it can be addressed by a CID.
+- **Addressing data with CIDs** (also known as **merkleizing**): taking arbitrary data and encoding so its addressable by CID. For example, given a directory of files, merkleizing it so it can be addressed and retrieved by CID.
 - **Retrieving data by CID**: given a CID, IPFS finds providers (peers who share the block), connects to them, fetches the blocks, and verifies that the retrieved data is what the CID represents.
 - **Providing data by CID**: making data addressed by a CID retrievable by other peers, either by running a node or with a pinning service.
 
@@ -95,7 +95,7 @@ Instead, you should provide data from a long-running server that runs reliably a
 
 The Content Archive format is a way of packaging up content addressed data into archive files that can be easily stored and transferred over the network. You can think of them like TAR files that are designed for storing collections of content addressed data.
 
-So why would you want to use CAR files?
+**So why would you want to use CAR files?**
 
 One of the main reasons is related to [CID determinism](#cid-determinism). As mentioned above, the same data can result in different CIDs, which can make it difficult to verify data without its content addressed representation. By packaging up the data into a CAR file, you can upload the CAR to multiple pinning services and nodes knowing they are providing the same CIDs
 
@@ -105,3 +105,23 @@ Car files are a great way to store content-addressed data in a way that is easy 
   See the Pen <a href="https://codepen.io/2color/pen/EaYoegX">
   CAR export with Helia and dag-cbor</a> by Daniel Norman (<a href="https://codepen.io/2color">@2color</a>)
 </iframe>
+
+At the time of writing, not all pinning services support CAR files, but it is a feature that is being added to more and more services. Therefore, it is a good idea to check the documentation for the pinning service you are using to see if it supports CAR files.
+
+## Conclusion
+
+This guide has covered the essential aspects of using IPFS in web applications:
+
+- The main operations: addressing/merkleizing data with CIDs, retrieving data, and providing data.
+- The challenges and limitations of using IPFS in browser environments.
+- Practical examples using modern tools like [Helia](https://github.com/ipfs/helia) and [Verified Fetch](https://www.npmjs.com/package/@helia/verified-fetch).
+- Best practices for handling data persistence through pinning services and CAR files.
+
+When building web applications with IPFS, remember these key takeaways:
+
+1. Use client-side merkleization (addressing) when onboarding new data to IPFS, but rely on pinning services or IPFS nodes for providing data.
+1. Be mindful of CID determinism when working with files and structured data.
+1. Consider using CAR files where possible for storage and transport of content-addressed data.
+1. Use Verified Fetch for simple retrieval or Helia for more complex IPFS interactions.
+
+By following these guidelines, you can reap the benefits of IPFS while working within the constraints of the web.
