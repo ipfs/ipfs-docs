@@ -81,7 +81,7 @@ From a high level, there are several ways to retrieve data with IPFS in web appl
 
 For data to be retrievable by other peers on [IPFS Mainnet](../concepts/glossary.md#ipfs-mainnet) it will need to be uploaded to a pinning service or an IPFS node.
 
-When possible, it's best to rely on client-side merklization to address data by CID and then upload it to a pinning service or a node. [CAR files](#car-files) are a great way to do this, though they are not supported by all pinning services.
+When possible, it's best to rely on client-side merkleization to address data by CID and then upload it to a pinning service or a node. [CAR files](#car-files) are a great way to do this, though they are not supported by all pinning services.
 
 ### You probably don't want to provide data from a browser
 
