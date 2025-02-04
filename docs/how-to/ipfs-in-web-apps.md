@@ -119,7 +119,7 @@ This guide has covered the essential aspects of using IPFS in web applications:
 
 When building web applications with IPFS, remember these key takeaways:
 
-1. Use client-side merkleization (addressing) when onboarding new data to IPFS, but rely on pinning services or IPFS nodes for providing data.
+1. Use client-side merkleization (addressing) when adding new data to IPFS, but rely on pinning services or IPFS nodes for providing data.
 1. Be mindful of CID determinism when working with files and structured data.
 1. Consider using CAR files where possible for storage and transport of content-addressed data.
 1. Use Verified Fetch for simple retrieval or Helia for more complex IPFS interactions.
