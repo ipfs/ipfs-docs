@@ -315,8 +315,8 @@ github.com/ipfs-shipyard/nopfs/ipfs v0.25.0 h1:OqNqsGZPX8zh3eFMO8Lf8EHRRnSGBMqcd
 github.com/ipfs-shipyard/nopfs/ipfs v0.25.0/go.mod h1:BxhUdtBgOXg1B+gAPEplkg/GpyTZY+kCMSfsJvvydqU=
 github.com/ipfs/bbloom v0.0.4 h1:Gi+8EGJ2y5qiD5FbsbpX/TMNcJw8gSqr7eyjHa4Fhvs=
 github.com/ipfs/bbloom v0.0.4/go.mod h1:cS9YprKXpoZ9lT0n/Mw/a6/aFV6DTjTLYHeA+gyqMG0=
-github.com/ipfs/boxo v0.27.2 h1:sGo4KdwBaMjdBjH08lqPJyt27Z4CO6sugne3ryX513s=
-github.com/ipfs/boxo v0.27.2/go.mod h1:qEIRrGNr0bitDedTCzyzBHxzNWqYmyuHgK8LG9Q83EM=
+github.com/ipfs/boxo v0.27.4 h1:6nC8lY5GnR6whAbW88hFz6L13wZUj2vr5BRe3iTvYBI=
+github.com/ipfs/boxo v0.27.4/go.mod h1:qEIRrGNr0bitDedTCzyzBHxzNWqYmyuHgK8LG9Q83EM=
 github.com/ipfs/go-bitfield v1.1.0 h1:fh7FIo8bSwaJEh6DdTWbCeZ1eqOaOkKFI74SCnsWbGA=
 github.com/ipfs/go-bitfield v1.1.0/go.mod h1:paqf1wjq/D2BBmzfTVFlJQ9IlFOZpg422HL0HqsGWHU=
 github.com/ipfs/go-bitswap v0.11.0 h1:j1WVvhDX1yhG32NTC9xfxnqycqYIlhzEzLXG/cU1HyQ=
@@ -409,8 +409,8 @@ github.com/ipfs/go-unixfsnode v1.9.2 h1:0A12BYs4XOtDPJTMlwmNPlllDfqcc4yie4e919hc
 github.com/ipfs/go-unixfsnode v1.9.2/go.mod h1:v1nuMFHf4QTIhFUdPMvg1nQu7AqDLvIdwyvJ531Ot1U=
 github.com/ipfs/go-verifcid v0.0.3 h1:gmRKccqhWDocCRkC+a59g5QW7uJw5bpX9HWBevXa0zs=
 github.com/ipfs/go-verifcid v0.0.3/go.mod h1:gcCtGniVzelKrbk9ooUSX/pM3xlH73fZZJDzQJRvOUw=
-github.com/ipfs/kubo v0.33.0 h1:kWPDNzTzKi6L77sGJXJzgyEgfd/Wq0f6RjWhpz5nOxU=
-github.com/ipfs/kubo v0.33.0/go.mod h1:3J0Xwq3wFe0xEt1OzI6iJB9rBmvn8MAvzNU1s2ILO1Q=
+github.com/ipfs/kubo v0.33.1 h1:dvc1o7j//9HAKjZg1d1ODSPVxmUn5YR7Ut5JPnR+H+Q=
+github.com/ipfs/kubo v0.33.1/go.mod h1:qc3gVRqjx5y9mPvsEz+CO5nc1mXvy4r9Etvqga2lnMo=
 github.com/ipld/go-car v0.6.2 h1:Hlnl3Awgnq8icK+ze3iRghk805lu8YNq3wlREDTF2qc=
 github.com/ipld/go-car v0.6.2/go.mod h1:oEGXdwp6bmxJCZ+rARSkDliTeYnVzv3++eXajZ+Bmr8=
 github.com/ipld/go-car/v2 v2.14.2 h1:9ERr7KXpCC7If0rChZLhYDlyr6Bes6yRKPJnCO3hdHY=

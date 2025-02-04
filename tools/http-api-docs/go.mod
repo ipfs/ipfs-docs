@@ -6,7 +6,7 @@ require (
 	github.com/Stebalien/go-json-doc v0.0.2
 	github.com/ipfs/go-cid v0.4.1
 	github.com/ipfs/go-ipfs-cmds v0.14.1
-	github.com/ipfs/kubo v0.33.0
+	github.com/ipfs/kubo v0.33.1
 	github.com/libp2p/go-libp2p v0.38.2
 	github.com/multiformats/go-multiaddr v0.14.0
 )
@@ -79,7 +79,7 @@ require (
 	github.com/ipfs-shipyard/nopfs v0.0.14 // indirect
 	github.com/ipfs-shipyard/nopfs/ipfs v0.25.0 // indirect
 	github.com/ipfs/bbloom v0.0.4 // indirect
-	github.com/ipfs/boxo v0.27.2 // indirect
+	github.com/ipfs/boxo v0.27.4 // indirect
 	github.com/ipfs/go-bitfield v1.1.0 // indirect
 	github.com/ipfs/go-block-format v0.2.0 // indirect
 	github.com/ipfs/go-blockservice v0.5.2 // indirect
