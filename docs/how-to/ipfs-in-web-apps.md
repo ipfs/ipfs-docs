@@ -5,7 +5,7 @@ description: How to develop applications that use IPFS on the Web including addr
 
 # IPFS in web-applications and resource-constrained environments
 
-In this guide you will learn how to use IPFS using JavaScript/TypeScript in web applications, including addressing data with CIDs, retrieval by CID, working with CAR files, and the the nuances of providing.
+In this guide you will learn how to use IPFS using JavaScript/TypeScript in web applications, including addressing data with CIDs, retrieval by CID, working with CAR files, and the nuances of providing.
 
 For this, you will use [Helia](https://github.com/ipfs/helia), the most actively maintained implementation of IPFS in TypeScript for use on the web.
 
