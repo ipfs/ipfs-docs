@@ -10,7 +10,7 @@ description: Learn about the lifecycle of data in IPFS.
 - [3. Retrieving](#3-retrieving)
 - [Learn more](#learn-more)
 
-## 1. Content-addressing / Merkelizing
+## 1. Content-addressing / Merkleizing
 
 The first stage in the lifecycle of data in IPFS is to address it by CID. This is a local operation that takes arbitrary data and encodes it so it can be addressed by a CID.
 
