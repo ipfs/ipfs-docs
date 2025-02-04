@@ -33,14 +33,14 @@ As mentioned above, the first step in the [lifecycle of data in IPFS](../concept
 
 When addressing data by [CIDs](https://proto.school/anatomy-of-a-cid/03) you will need to choose:
 
-- [hash function](../concepts/glossary.md#hash-function). For use in browsers, the default and recommended hash function is `sha2-256` which is also the default for [helia](https://github.com/ipfs/helia).
+- [hash function](../concepts/glossary.md#hash-function). For use in browsers, the default and recommended hash function is `sha2-256` which is also the default for [Helia](https://github.com/ipfs/helia).
 - [multicodec](../concepts/glossary.md#multicodec), which is the format of the data you are addressing and is used to help decode data. CIDs support a wide range of multicodecs, but for most intents and purposes, you will likely either want use:
   - [UnixFS](../concepts/file-systems.md#unix-file-system-unixfs) for files and directories.
   - [dag-cbor](../concepts/glossary.md#dag-cbor) for json-like structured data with binary encoding. DAG-CBOR is an extension of CBOR that adds a "link" type for CIDs, allowing for the creation of interlinked CBOR objects (which can be used to form larger linked data structures).
 
 ### CID Determinism
 
-One important thing to note is that **the same data can result in different CIDs** depending on a number of factors, including the hash function, the multicodec you use, and the multicodec. **This is especially true for files**, where the same file, hash function and multicodec can still result in different CIDs depending on the different options that UnixFS supports.
+One important thing to note is that **the same data can result in different CIDs** depending on a number of factors, including the hash function, and the multicodec you use. **This is especially true for files**, where the same file, hash function and multicodec can still result in different CIDs depending on the different options that UnixFS supports.
 
 See the [forum discussion on CID profiles](https://discuss.ipfs.tech/t/should-we-profile-cids/18507) and the [DASL](https://dasl.ing/) initiative for more for more information on the nature of this problem and how the community is addressing it.
 
@@ -66,8 +66,8 @@ For example, to address an object by CID with the `dag-cbor` multicodec and `sha
 
 From a high level, there are several ways to retrieve data with IPFS in web applications:
 
-- Using the [`Verified Fetch`](https://www.npmjs.com/package/@helia/verified-fetch) library, which was modelled after the `fetch` API and returns `Response` objects, with the main difference being that it allows you to fetch data by CID, abstracting away the details of content routing, transports and retrieval. For more examples and background see the [release blog post](https://blog.ipfs.tech/verified-fetch/).
-- Using the [`helia`](https://github.com/ipfs/helia/) library, which is the foundation for the `verified-fetch` library, and provides a more comprehensive and modular API for interacting with the IPFS network, beyond just retrieval.
+- Using the [`Verified Fetch`](https://www.npmjs.com/package/@helia/verified-fetch) library, which was modelled after the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and returns [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) objects, with the main difference being that it allows you to fetch data by CID, abstracting away the details of content routing, transports and retrieval. For more examples and background see the [release blog post](https://blog.ipfs.tech/verified-fetch/).
+- Using the [`Helia`](https://github.com/ipfs/helia/) library, which is the foundation for the `verified-fetch` library, and provides a more comprehensive and modular API for interacting with the IPFS network, beyond just retrieval.
 - Using public recursive gateways, e.g. `ipfs.io` with HTTP. This is not recommended for most use cases, because it forgoes the verifiability and trustlessness enabled by content addressing. Granted, it might be the easiest way to retrieve data in a web application, but is also the most fraught with security and centralization concerns.
 
 ### Example: Image retrieval with Verified Fetch
