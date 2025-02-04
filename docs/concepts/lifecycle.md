@@ -16,6 +16,10 @@ The first stage in the lifecycle of data in IPFS is to address it by CID. This i
 
 The exact process depends on the type of data. For files and directories, this is done by constructing a [UnixFS](./file-systems.md#unix-file-system-unixfs) [Merkle DAG](./merkle-dag.md). For other data types, such as dag-cbor, this is done by encoding the data with [dag-cbor](https://ipld.io/docs/codecs/known/dag-cbor/) which is hashed to produce a CID.
 
+For example, merkleizing a static web application into a UnixFS DAG looks like this, where the whole application is addressed by the CID in the top block (`bafy...jomu`):
+
+![UnixFS Dag](./images/unixfs-dag-diagram.png)
+
 ## 2. Providing
 
 In this stage, the blocks of the CID are saved on an IPFS node (or pinning service) and made retrievable to the network. Simply saving the CID on the node does not mean the CID is retrievable, so pinning must be used. Pinning allows the node to advertise that it has the CID, and provide it to the network.
