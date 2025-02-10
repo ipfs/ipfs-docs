@@ -3,7 +3,7 @@ title: IPFS in web applications
 description: How to develop applications that use IPFS on the Web including addressing by CID, merkleizing, retrieval, providing, and CAR files with Helia.
 ---
 
-# IPFS in web-applications and resource-constrained environments
+# IPFS in web applications and resource-constrained environments
 
 In this guide you will learn how to use IPFS using JavaScript/TypeScript in web applications, including addressing data with CIDs, retrieval by CID, working with CAR files, and the nuances of providing.
 
