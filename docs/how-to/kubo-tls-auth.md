@@ -1,5 +1,5 @@
 ---
-title: TLS and HTTP Auth for Kubo
+title: TLS and HTTP Auth for Kubo with Caddy
 description: Learn how to set up TLS for Kubo with Caddy reverse proxy for secure API access over public networks.
 ---
 
