@@ -31,9 +31,9 @@ As a developer, IPFS exposes three main operations for interacting with the netw
 
 As mentioned above, the first step in the [lifecycle of data in IPFS](../concepts/lifecycle.md) is to address it by CID.
 
-When addressing data by [CIDs](https://proto.school/anatomy-of-a-cid/03) you will need to choose:
+When addressing data by [CIDs](../concepts/glossary.md#cid) you will need to choose:
 
-- [hash function](../concepts/glossary.md#hash-function). For use in browsers, the default and recommended hash function is `sha2-256` which is also the default for [Helia](https://github.com/ipfs/helia).
+- [hash function](../concepts/glossary.md#hash). For use in browsers, the default and recommended hash function is `sha2-256` which is also the default for [Helia](https://github.com/ipfs/helia).
 - [multicodec](../concepts/glossary.md#multicodec), which is the format of the data you are addressing and is used to help decode data. CIDs support a wide range of multicodecs, but for most intents and purposes, you will likely either want use:
   - [UnixFS](../concepts/file-systems.md#unix-file-system-unixfs) for files and directories.
   - [dag-cbor](../concepts/glossary.md#dag-cbor) for json-like structured data with binary encoding. DAG-CBOR is an extension of CBOR that adds a "link" type for CIDs, allowing for the creation of interlinked CBOR objects (which can be used to form larger linked data structures).
