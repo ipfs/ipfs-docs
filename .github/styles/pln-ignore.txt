@@ -130,6 +130,9 @@ mainnet
 markdown(lint)
 markdownlint
 merkle
+merklizing
+merkleizing
+merkleization
 metadata('s)
 metamask
 minimalistic
@@ -142,6 +145,8 @@ multiaddrs
 multibase
 multicast
 multicodec
+multicodecs
+multicodec(s)
 multiformats
 multihash
 multihashes
@@ -218,9 +223,11 @@ testground
 testnet
 toolkits
 trustlessly
-uncensorable
+trustlessness
+uncensorable 
 undialable
 uniswap
+unixfs
 unreachability
 untrusted
 upgradeability
