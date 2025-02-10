@@ -3,14 +3,14 @@ title: TLS and HTTP Auth for Kubo
 description: Learn how to set up TLS for Kubo with Caddy reverse proxy for secure API access over public networks.
 ---
 
-# Setting up TLS and basic HTTP auth for Kubo with Caddy reverse proxy
+# Setting up TLS and HTTP authentication for Kubo with Caddy reverse proxy
 
 This guide will help you set up two things:
 
-- **Transport Encryption:** Caddy as a reverse proxy with automatic TLS certificate management for your Kubo node.
-- **Authentication:** Basic HTTP auth for the Kubo RPC API.
+- **Transport Encryption:** Caddy as a reverse proxy with automatic TLS certificate management for your Kubo node using a domain you control.
+- **Authentication:** Basic HTTP authentication for the Kubo RPC API.
 
-This is highly recommended if you run your own Kubo node and want to use the Kubo RPC API over public networks, for example, to pin data from CI, or other services. Since the Kubo RPC API is exposed over plain HTTP, you will need to use TLS to ensure the connection to the API is encrypted.
+This is highly recommended if you run your own Kubo node and want to use the Kubo RPC API over public networks, for example, to pin CIDs from CI, or other services. Since the Kubo RPC API is exposed over plain HTTP, TLS is used to ensure the connection to the API is encrypted.
 
 ## Prerequisites
 
@@ -20,6 +20,8 @@ Before starting, ensure you have:
 - Kubo running on a server/VM with a public IP address
 - Port 443 open on your server's firewall
 - [Caddy web server](https://caddyserver.com/) installed on the server
+
+The guide assumes the Caddy process is managed by systemd. If you are using a different process manager or Docker, you will need to adjust the configuration accordingly.
 
 ## Configure Kubo
 
@@ -72,19 +74,21 @@ This configuration:
 
 ## Restart Caddy
 
+Restart the Caddy service to apply the changes:
+
 ```bash
 sudo systemctl restart caddy
 ```
 
 ## Test the Connection
 
-To verify everything is working correctly, test the connection using the IPFS CLI:
+To verify everything is working correctly, test the connection using the IPFS CLI, making sure to replace `YOUR_DOMAIN` with your actual domain name:
 
 ```bash
 ipfs id --api /dns/YOUR_DOMAIN/tcp/443/https --api-auth basic:hello:world123
 ```
 
-If successful, you should see your node's information displayed. The command connects to your Kubo node through the secure HTTPS endpoint using basic authentication.
+If successful, you should see your node's identify displayed. The command connects to your Kubo node through the secure HTTPS endpoint using basic authentication.
 
 ## Security Considerations
 
@@ -98,6 +102,6 @@ If successful, you should see your node's information displayed. The command con
 If you encounter issues:
 
 1. Check Caddy logs
-2. Verify your domain's DNS settings, ensuring the A record is correct
+2. Verify your domain's DNS settings, ensuring the A record is correct. Sometimes changes can take a few minutes to propagate (depending on the TTL of the DNS record).
 3. Ensure port 443 is open and not blocked by your firewall
 4. Check that Kubo is running and accessible on localhost:5001
