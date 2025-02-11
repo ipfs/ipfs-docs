@@ -55,7 +55,7 @@ For example, to address an object by CID with the `dag-cbor` multicodec and `sha
   Addressing an object by CID with Helia and dag-cbor</a> by Daniel Norman (<a href="https://codepen.io/2color">@2color</a>)
 </iframe>
 
-### Example: Addressing a file by CID with unixfs
+### Example: Addressing a file by CID with UnixFS
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Addressing an image by CID with Helia and UnixFS" src="https://codepen.io/2color/embed/zxONqPj?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/2color/pen/zxONqPj">
