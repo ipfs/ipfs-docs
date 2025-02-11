@@ -66,7 +66,7 @@ For example, to address an object by CID with the `dag-cbor` multicodec and `sha
 
 From a high level, there are several ways to retrieve data with IPFS in web applications:
 
-- Using the [`Verified Fetch`](https://www.npmjs.com/package/@helia/verified-fetch) library, which was modelled after the [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and returns [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) objects, with the main difference being that it allows you to fetch data by CID, abstracting away the details of content routing, transports and retrieval. For more examples and background see the [release blog post](https://blog.ipfs.tech/verified-fetch/).
+- Using the [`@helia/verified-fetch`](https://www.npmjs.com/package/@helia/verified-fetch) library, which was modelled after the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and returns [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) objects, with the main difference being that it allows you to fetch data by CID, abstracting away the details of content routing, transports and retrieval. For more examples and background see the [release blog post](https://blog.ipfs.tech/verified-fetch/).
 - Using the [`Helia`](https://github.com/ipfs/helia/) library, which is the foundation for the `verified-fetch` library, and provides a more comprehensive and modular API for interacting with the IPFS network, beyond just retrieval.
 - Using public recursive gateways, e.g. `ipfs.io` with HTTP. This is not recommended for most use cases, because it forgoes the verifiability and trustlessness enabled by content addressing. Granted, it might be the easiest way to retrieve data in a web application, but is also the most fraught with security and centralization concerns.
 
@@ -99,7 +99,7 @@ The Content Archive format is a way of packaging up content addressed data into 
 
 One of the main reasons is related to [CID determinism](#cid-determinism). As mentioned above, the same data can result in different CIDs, which can make it difficult to verify data without its content addressed representation. By packaging up the data into a CAR file, you can upload the CAR to multiple pinning services and nodes knowing they are providing the same CIDs
 
-Car files are a great way to store content-addressed data in a way that is easy to transport and store, and Helia (and other implementations) allow you to both export and import any data you've addressed by CID into a CAR file.
+CAR files are a great way to store content-addressed data in a way that is easy to transport and store, and Helia (and other implementations) allow you to both export and import any data you've addressed by CID into a CAR file.
 
 <iframe height="300" style="width: 100%;" scrolling="no" title="CAR export with Helia and dag-cbor" src="https://codepen.io/2color/embed/EaYoegX?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/2color/pen/EaYoegX">
