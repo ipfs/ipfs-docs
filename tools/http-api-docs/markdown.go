@@ -82,7 +82,7 @@ The RPC API provides admin-level access to your Kubo IPFS node, including `+"`/a
 
 It is bound to `+"`localhost`"+` by default on purpose. You should never expose it to the public internet, just like you would never expose a SQL database or other backend service.
 
-To expose the RPC API to the public internet with TLS encryption and HTTP authentication, check out the [TLS and HTTP Auth for Kubo with Caddy](../../how-to/kubo-tls-auth.md) guide.
+To expose the RPC API to the public internet with TLS encryption and HTTP authentication, check out the [TLS and HTTP Auth for Kubo with Caddy](../../how-to/kubo-rpc-tls-auth.md) guide.
 
 If you are looking for an interface designed for browsers and public internet, consider implementation-agnostic [HTTP Gateway](../../reference/http/gateway.md) instead.
 :::
