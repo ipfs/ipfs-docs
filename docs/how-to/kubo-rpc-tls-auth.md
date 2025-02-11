@@ -1,14 +1,14 @@
 ---
-title: TLS and HTTP Auth for Kubo with Caddy
-description: Learn how to set up TLS for Kubo with Caddy reverse proxy for secure API access over public networks.
+title: TLS and HTTP Auth for Kubo RPC with Caddy
+description: Learn how to set up TLS for Kubo with Caddy reverse proxy for secure RPC API access over public networks.
 ---
 
-# Setting up TLS and HTTP authentication for Kubo with Caddy reverse proxy
+# Setting up TLS and HTTP authentication for Kubo RPC with Caddy reverse proxy
 
 This guide will help you set up two things:
 
 - **Transport Encryption:** Caddy as a reverse proxy with automatic TLS certificate management for your Kubo node using a domain you control.
-- **Authentication:** Basic HTTP authentication for the Kubo RPC API.
+- **Authentication:** Basic HTTP authentication for the [Kubo RPC API](../reference/kubo/rpc.md).
 
 This is highly recommended if you run your own Kubo node and want to use the Kubo RPC API over public networks, for example, to pin CIDs from CI, or other services. Since the Kubo RPC API is exposed over plain HTTP, TLS is used to ensure the connection to the API is encrypted.
 

@@ -207,7 +207,7 @@ module.exports = {
                 '/how-to/command-line-quick-start',
                 '/how-to/configure-node',
                 '/how-to/modify-bootstrap-list',
-                '/how-to/kubo-tls-auth',
+                '/how-to/kubo-rpc-tls-auth',
                 '/how-to/nat-configuration',
                 '/how-to/ipfs-updater', 
                 [

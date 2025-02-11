@@ -23,6 +23,7 @@ boolean
 boxo
 browserify
 caddy
+Caddyfile
 callout
 callouts
 cas
@@ -115,6 +116,7 @@ keepalive
 keypair
 keystores
 kubo
+Kubo's
 kubuxu
 laika
 lan
@@ -214,6 +216,7 @@ Someguy
 subcommand
 substring
 sys
+systemd
 sztandera
 testground
 testnet
