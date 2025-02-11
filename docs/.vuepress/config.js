@@ -207,8 +207,8 @@ module.exports = {
                 '/how-to/command-line-quick-start',
                 '/how-to/configure-node',
                 '/how-to/modify-bootstrap-list',
-                '/how-to/kubo-rpc-tls-auth',
                 '/how-to/nat-configuration',
+                '/how-to/kubo-rpc-tls-auth',
                 '/how-to/ipfs-updater', 
                 [
                   'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
