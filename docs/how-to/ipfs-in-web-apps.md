@@ -66,8 +66,8 @@ For example, to address an object by CID with the `dag-cbor` multicodec and `sha
 
 From a high level, there are several ways to retrieve data with IPFS in web applications:
 
-- Using the [`@helia/verified-fetch`](https://www.npmjs.com/package/@helia/verified-fetch) library, which was modelled after the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and returns [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) objects, with the main difference being that it allows you to fetch data by CID, abstracting away the details of content routing, transports and retrieval. For more examples and background see the [release blog post](https://blog.ipfs.tech/verified-fetch/).
-- Using the [`Helia`](https://github.com/ipfs/helia/) library, which is the foundation for the `verified-fetch` library, and provides a more comprehensive and modular API for interacting with the IPFS network, beyond just retrieval.
+- Using the [Verified Fetch](https://www.npmjs.com/package/@helia/verified-fetch) library, which was modelled after the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and returns [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) objects, with the main difference being that it allows you to fetch data by CID, abstracting away the details of content routing, transports and retrieval. For more examples and background see the [release blog post](https://blog.ipfs.tech/verified-fetch/).
+- Using the [Helia](https://github.com/ipfs/helia/) library, which is the foundation for the `@helia/verified-fetch` library, and provides a more comprehensive and modular API for interacting with the IPFS network, beyond just retrieval.
 - Using public recursive gateways, e.g. `ipfs.io` with HTTP. This is not recommended for most use cases, because it forgoes the verifiability and trustlessness enabled by content addressing. Granted, it might be the easiest way to retrieve data in a web application, but is also the most fraught with security and centralization concerns.
 
 ### Example: Image retrieval with Verified Fetch
