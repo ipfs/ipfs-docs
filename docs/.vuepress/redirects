@@ -43,6 +43,7 @@
 /how-to/browser-tools-frameworks /how-to/ipfs-on-the-web
 /how-to/troubleshoot-file-transfers /how-to/troubleshooting
 /how-to/run-ipfs-inside-docker /install/run-ipfs-inside-docker
+/how-to/ipfs-updater /install/command-line
 /install/command-line-quick-start/ /how-to/command-line-quick-start
 /install/js-ipfs/ https://github.com/ipfs/helia/wiki
 /introduction/ /concepts
@@ -50,7 +51,7 @@
 /introduction/how-ipfs-works/ /concepts/how-ipfs-works
 /introduction/overview/ /concepts/what-is-ipfs
 /introduction/usage/ /how-to/command-line-quick-start
-/install/ipfs-updater /how-to/ipfs-updater
+/install/ipfs-updater /how-to/ipfs-updater/
 /install/recent-releases/ https://github.com/ipfs/kubo/releases
 /install/recent-releases/go-ipfs-0-5/ https://github.com/ipfs/kubo/releases 
 /install/recent-releases/go-ipfs-0-5/features/ https://github.com/ipfs/kubo/releases
