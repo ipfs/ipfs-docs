@@ -10,11 +10,11 @@ This guide describes the available installation processes for IPFS Kubo, a Go-ba
 
 - Runs an IPFS-Node as a network service that is part of LAN and WAN ([Amino](https://probelab.io/ipfs/amino/)) DHT
 - [HTTP Gateway](https://specs.ipfs.tech/http-gateways/) (`/ipfs` and `/ipns`) functionality for trusted and [trustless](https://docs.ipfs.tech/reference/http/gateway/#trustless-verifiable-retrieval) content retrieval
-- [HTTP Routing V1](https://specs.ipfs.tech/routing/http-routing-v1/) (`/routing/v1`) client and server implementation for [delegated routing](./docs/delegated-routing.md) lookups
+- [HTTP Routing V1](https://specs.ipfs.tech/routing/http-routing-v1/) (`/routing/v1`) client and server implementation for [delegated routing](https://github.com/ipfs/kubo/blob/master/docs/delegated-routing.md) lookups
 - [HTTP Kubo RPC API](https://docs.ipfs.tech/reference/kubo/rpc/) (`/api/v0`) to access and control the daemon
 - [Command Line Interface](https://docs.ipfs.tech/reference/kubo/cli/) (`ipfs --help`) based on (`/api/v0`) RPC API
 - [WebUI](https://github.com/ipfs/ipfs-webui/#readme) to manage the Kubo node
-- [Content blocking](/docs/content-blocking.md) support for operators of public nodes
+- [Content blocking](https://github.com/ipfs/kubo/blob/master/docs/content-blocking.md) support for operators of public nodes
 - Binaries for Windows, MacOS, Linux, FreeBSD and OpenBSD
 
 Installing Kubo in the command line is handy for many use cases, such as building applications and services on top of an IPFS node, or setting up a node without a user interface (which is usually the case with remote servers or virtual machines).  
@@ -63,7 +63,7 @@ Binaries are available for the following operating systems:
 | OS      | 64-bit | ARM | ARM-64 |
 |---------|--------|-----|--------|
 | Linux   | Yes    | Yes | Yes    |
-| Windows | Yes    | No  | No     |
+| Windows | Yes    | No  | Yes    |
 | macOS   | Yes    | No  | Yes    |
 | FreeBSD | Yes    | Yes | No     |
 | OpenBSD | Yes    | Yes | No     |
@@ -347,9 +347,9 @@ When an IPFS command executes without parameters, the CLI client checks whether 
 
 ::: tip
 
-If you plan to expose safe subset of RPC API to the public internet with TLS encryption and HTTP authentication, check out the [TLS and HTTP Auth for Kubo with Caddy](../../how-to/kubo-rpc-tls-auth.md) guide.
+If you plan to expose safe subset of RPC API to the public internet with TLS encryption and HTTP authentication, check out the [TLS and HTTP Auth for Kubo with Caddy](../how-to/kubo-rpc-tls-auth.md) guide.
 
-If you are looking for an interface designed for browsers and public internet, with [proper HTTP Cache Control](https://specs.ipfs.tech/http-gateways/path-gateway/#cache-control-response-header), consider implementation-agnostic [HTTP Gateway](../../reference/http/gateway.md) instead.
+If you are looking for HTTP Fetch API designed for browsers and public internet, with [proper HTTP Cache Control](https://specs.ipfs.tech/http-gateways/path-gateway/#cache-control-response-header), see implementation-agnostic [HTTP Gateway](../reference/http/gateway.md) instead. It can be used in web apps thanks to [Verified Fetch](https://www.npmjs.com/package/@helia/verified-fetch)
 
 :::
 
@@ -366,4 +366,3 @@ You can use `mkdir -p ~/.ipfs && echo "/ip4/<ip>/tcp/<rpc-port>" > ~/.ipfs/api` 
 Now that you've installed IPFS Kubo:
 
 - Check out the [IPFS Kubo Tutorial in Guides](../how-to/command-line-quick-start.md), which will guide you through taking a Kubo node online and interacting with the network.
-- Learn how to quickly install, uninstall, upgrade and downgrade Kubo using [ipfs-update](../how-to/ipfs-updater.md).
