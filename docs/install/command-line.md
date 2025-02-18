@@ -58,16 +58,6 @@ This section describes how to download and install the Kubo binary from `dist.ip
 If you are unable to access [dist.ipfs.tech](https://dist.ipfs.tech#kubo), you can also download Kubo (go-ipfs) from the project's GitHub [releases](https://github.com/ipfs/kubo/releases/latest) page or `/ipns/dist.ipfs.tech` at the [dweb.link](https://dweb.link/ipns/dist.ipfs.tech#kubo) gateway.
 :::
 
-Binaries are available for the following operating systems:
-
-| OS      | 64-bit | ARM | ARM-64 |
-|---------|--------|-----|--------|
-| Linux   | Yes    | Yes | Yes    |
-| Windows | Yes    | No  | Yes    |
-| macOS   | Yes    | No  | Yes    |
-| FreeBSD | Yes    | Yes | No     |
-| OpenBSD | Yes    | Yes | No     |
-
 For installation instructions for your operating system, select the appropriate tab.
 
 :::: tabs
