@@ -101,7 +101,7 @@ For installation instructions for your operating system, select the appropriate 
    cd kubo
    ```
 
-1. Run the install script
+1. Run the installation script
 
    ```bash
    sudo bash install.sh
