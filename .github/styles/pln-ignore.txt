@@ -22,6 +22,8 @@ bool(ean)
 boolean
 boxo
 browserify
+caddy
+Caddyfile
 callout
 callouts
 cas
@@ -114,6 +116,7 @@ keepalive
 keypair
 keystores
 kubo
+Kubo's
 kubuxu
 laika
 lan
@@ -130,6 +133,9 @@ mainnet
 markdown(lint)
 markdownlint
 merkle
+merklizing
+merkleizing
+merkleization
 metadata('s)
 metamask
 minimalistic
@@ -142,6 +148,8 @@ multiaddrs
 multibase
 multicast
 multicodec
+multicodecs
+multicodec(s)
 multiformats
 multihash
 multihashes
@@ -213,14 +221,17 @@ Someguy
 subcommand
 substring
 sys
+systemd
 sztandera
 testground
 testnet
 toolkits
 trustlessly
-uncensorable
+trustlessness
+uncensorable 
 undialable
 uniswap
+unixfs
 unreachability
 untrusted
 upgradeability

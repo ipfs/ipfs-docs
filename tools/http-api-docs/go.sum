@@ -409,8 +409,8 @@ github.com/ipfs/go-unixfsnode v1.9.2 h1:0A12BYs4XOtDPJTMlwmNPlllDfqcc4yie4e919hc
 github.com/ipfs/go-unixfsnode v1.9.2/go.mod h1:v1nuMFHf4QTIhFUdPMvg1nQu7AqDLvIdwyvJ531Ot1U=
 github.com/ipfs/go-verifcid v0.0.3 h1:gmRKccqhWDocCRkC+a59g5QW7uJw5bpX9HWBevXa0zs=
 github.com/ipfs/go-verifcid v0.0.3/go.mod h1:gcCtGniVzelKrbk9ooUSX/pM3xlH73fZZJDzQJRvOUw=
-github.com/ipfs/kubo v0.33.1 h1:dvc1o7j//9HAKjZg1d1ODSPVxmUn5YR7Ut5JPnR+H+Q=
-github.com/ipfs/kubo v0.33.1/go.mod h1:qc3gVRqjx5y9mPvsEz+CO5nc1mXvy4r9Etvqga2lnMo=
+github.com/ipfs/kubo v0.33.2 h1:lHB3FhXk9yFjCiYNTNLqOjlUy7WWrIFQzVvOkJg0Ohg=
+github.com/ipfs/kubo v0.33.2/go.mod h1:Ie+fLMp88GbFt1K3xjG6sxfzXwoAYlYRMM/DFHtYf8I=
 github.com/ipld/go-car v0.6.2 h1:Hlnl3Awgnq8icK+ze3iRghk805lu8YNq3wlREDTF2qc=
 github.com/ipld/go-car v0.6.2/go.mod h1:oEGXdwp6bmxJCZ+rARSkDliTeYnVzv3++eXajZ+Bmr8=
 github.com/ipld/go-car/v2 v2.14.2 h1:9ERr7KXpCC7If0rChZLhYDlyr6Bes6yRKPJnCO3hdHY=
@@ -480,8 +480,8 @@ github.com/libp2p/go-flow-metrics v0.0.1/go.mod h1:Iv1GH0sG8DtYN3SVJ2eG221wMiNpZ
 github.com/libp2p/go-flow-metrics v0.0.3/go.mod h1:HeoSNUrOJVK1jEpDqVEiUOIXqhbnS27omG0uWU5slZs=
 github.com/libp2p/go-flow-metrics v0.2.0 h1:EIZzjmeOE6c8Dav0sNv35vhZxATIXWZg6j/C08XmmDw=
 github.com/libp2p/go-flow-metrics v0.2.0/go.mod h1:st3qqfu8+pMfh+9Mzqb2GTiwrAGjIPszEjZmtksN8Jc=
-github.com/libp2p/go-libp2p v0.38.2 h1:9SZQDOCi82A25An4kx30lEtr6kGTxrtoaDkbs5xrK5k=
-github.com/libp2p/go-libp2p v0.38.2/go.mod h1:QWV4zGL3O9nXKdHirIC59DoRcZ446dfkjbOJ55NEWFo=
+github.com/libp2p/go-libp2p v0.38.3 h1:80lm2PNwBMIFFnkSd6QGaqeKpxFrkGTRHB4AlNxLVR8=
+github.com/libp2p/go-libp2p v0.38.3/go.mod h1:QWV4zGL3O9nXKdHirIC59DoRcZ446dfkjbOJ55NEWFo=
 github.com/libp2p/go-libp2p-asn-util v0.4.1 h1:xqL7++IKD9TBFMgnLPZR6/6iYhawHKHl950SO9L6n94=
 github.com/libp2p/go-libp2p-asn-util v0.4.1/go.mod h1:d/NI6XZ9qxw67b4e+NgpQexCIiFYJjErASrYW4PFDN8=
 github.com/libp2p/go-libp2p-core v0.2.4/go.mod h1:STh4fdfa5vDYr0/SzYYeqnt+E6KfEV5VxfIrm0bcI0g=

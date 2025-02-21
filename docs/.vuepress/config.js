@@ -208,6 +208,7 @@ module.exports = {
                 '/how-to/configure-node',
                 '/how-to/modify-bootstrap-list',
                 '/how-to/nat-configuration',
+                '/how-to/kubo-rpc-tls-auth',
                 '/how-to/ipfs-updater', 
                 [
                   'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
@@ -255,12 +256,12 @@ module.exports = {
               ]
             },
             {
-              title: 'IPFS in the browser',
+              title: 'IPFS on the web',
               sidebarDepth: 1,
               collapsable: true,
               children: [
+                '/how-to/ipfs-in-web-apps',
                 '/how-to/address-ipfs-on-web',
-                '/how-to/browser-tools-frameworks'
               ]
             },
             {
@@ -277,7 +278,7 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/gateway-best-practices',
-                '/how-to/gateway-troubleshooting'
+                '/how-to/gateway-troubleshooting',
               ]
             },
             {

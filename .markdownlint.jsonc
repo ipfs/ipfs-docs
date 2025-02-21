@@ -175,7 +175,7 @@
 
   "MD033": {
     // Allowed elements
-    "allowed_elements": []
+    "allowed_elements": [""]
   },
 
   // MD034/no-bare-urls - Bare URL used
