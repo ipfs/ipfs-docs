@@ -32,8 +32,8 @@ IPFS nodes announce CID(s) to either the [DHT](./dht.md) or the [IPNI](./ipni.md
 
 From a high level, pinning can mean either:
 
-- **Pin by CID:** Requesting a pinning service or IPFS Node to pin a CID, without uploading the data, in this case the pinning service or IPFS node handles retrieval from provider nodes; a process that can fail if no providers are available. Once pinned, the pinning service or IPFS node will keep a copy of the data locally and typically provide the CIDs it is pinning to the network. The [Pinning API spec](https://ipfs.github.io/pinning-services-api-spec/) provides a standard way to do this with pinning services, though some pinning services have their own APIs. With Kubo, the the `ipfs pin add CID` command can be used to pin a CID.
-- **Pin data:** Uploading data (files, directories, etc.) to the pinning service and get back a CID, in this case the pinning service handles merkleizing the data so it is addressed by a CID. With Kubo, the the `ipfs add file` command is used to both merkleize the data and pin it.
+- **Pin by CID:** Requesting a pinning service or IPFS Node to pin a CID, without uploading the data, in this case the pinning service or IPFS node handles retrieval from provider nodes; a process that can fail if no providers are available. Once pinned, the pinning service or IPFS node will keep a copy of the data locally and typically provide the CIDs it is pinning to the network. The [Pinning API spec](https://ipfs.github.io/pinning-services-api-spec/) provides a standard way to do this with pinning services, though some pinning services have their own APIs. With Kubo, the `ipfs pin add CID` command can be used to pin a CID.
+- **Pin data:** Uploading data (files, directories, etc.) to the pinning service and get back a CID, in this case the pinning service handles merkleizing the data so it is addressed by a CID. With Kubo, the `ipfs add file` command is used to both merkleize the data and pin it.
 
 To summarize, pinning, when successful, results in a node or pinning service providing the CIDs to the network.
 
