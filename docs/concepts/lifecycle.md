@@ -47,7 +47,7 @@ In this stage, an IPFS node fetches the blocks of the CID and constructs the Mer
 
 - **Verification:** The IPFS node verifies the blocks fetched by hashing them and ensuring that the resulting hash is correct. Note that this type of retrieval is _trustless_; that is, blocks can come from any node in the network.
 
-- **Local access:** Once all blocks are present the data is successfully replicated locally.
+- **Local access:** Once all blocks of the DAG with the requested CID are successfully replicated locally, the data is available for local access.
 
 ## Learn more
 
