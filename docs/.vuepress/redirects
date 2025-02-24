@@ -51,7 +51,7 @@
 /introduction/how-ipfs-works/ /concepts/how-ipfs-works
 /introduction/overview/ /concepts/what-is-ipfs
 /introduction/usage/ /how-to/command-line-quick-start
-/install/ipfs-updater /how-to/ipfs-updater/
+/install/ipfs-updater /install/command-line
 /install/recent-releases/ https://github.com/ipfs/kubo/releases
 /install/recent-releases/go-ipfs-0-5/ https://github.com/ipfs/kubo/releases 
 /install/recent-releases/go-ipfs-0-5/features/ https://github.com/ipfs/kubo/releases
