@@ -209,14 +209,10 @@ module.exports = {
                 '/how-to/modify-bootstrap-list',
                 '/how-to/nat-configuration',
                 '/how-to/kubo-rpc-tls-auth',
-                '/how-to/ipfs-updater', 
-                [
-                  'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
-                  'Customize an IPFS repo'
-                ],
                 '/how-to/kubo-garbage-collection',
                 '/how-to/troubleshooting',   
                 '/how-to/webtransport',   
+                '/install/run-ipfs-inside-docker',
               ]
             },
             {
