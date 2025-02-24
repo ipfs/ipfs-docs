@@ -337,9 +337,9 @@ When an IPFS command executes without parameters, the CLI client checks whether 
 
 ::: tip
 
-If you plan to expose safe subset of RPC API to the public internet with TLS encryption and HTTP authentication, check out the [TLS and HTTP Auth for Kubo with Caddy](../how-to/kubo-rpc-tls-auth.md) guide.
+If you plan to expose the RPC API to the public internet with TLS encryption and HTTP authentication, check out the [TLS and HTTP Auth for Kubo with Caddy](../how-to/kubo-rpc-tls-auth.md) guide.
 
-If you are looking for HTTP Fetch API designed for browsers and public internet, with [proper HTTP Cache Control](https://specs.ipfs.tech/http-gateways/path-gateway/#cache-control-response-header), see implementation-agnostic [HTTP Gateway](../reference/http/gateway.md) instead. It can be used in web apps thanks to [Verified Fetch](https://www.npmjs.com/package/@helia/verified-fetch)
+If you are just interested in retrieval, see implementation-agnostic [HTTP Gateway](../reference/http/gateway.md) instead.
 
 :::
 
