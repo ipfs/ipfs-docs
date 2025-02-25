@@ -1,6 +1,6 @@
 ---
 title: Deploying Static Web Applications to IPFS
-description: This guide covers how to configure a GitHub Actions workflow to deploy static web applications to IPFS using the IPFS Deploy Action.
+description: Guide on how to setup GitHub Actions to deploy static web applications to IPFS using the IPFS Deploy Action.
 ---
 
 # Deploying Static Web Applications to IPFS with GitHub Actions
