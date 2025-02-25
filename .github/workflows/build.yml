@@ -31,7 +31,7 @@ jobs:
       - name: Build project
         run: npm run docs:build
 
-      - uses: ipfs/ipfs-deploy-action@v1
+      - uses: ipfs/ipfs-deploy-action@993ddf5ebbdfe7b3f602e99522bd4716736c95dc
         name: Deploy to IPFS
         id: deploy
         with:
