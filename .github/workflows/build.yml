@@ -35,7 +35,7 @@ jobs:
         name: Deploy to IPFS
         id: deploy
         with:
-          path-to-deploy: dist
+          path-to-deploy: docs/.vuepress/dist
           storacha-key: ${{ secrets.STORACHA_KEY }}
           storacha-proof: ${{ secrets.STORACHA_PROOF }}
           github-token: ${{ github.token }}
