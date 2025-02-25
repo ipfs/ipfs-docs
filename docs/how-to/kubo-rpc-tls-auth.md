@@ -9,7 +9,7 @@ This guide will help you set up several things:
 
 - **Transport Encryption:** Caddy as a reverse proxy with automatic TLS certificate management for your Kubo node using a domain you control.
 - **Authentication:** Basic HTTP authentication for the [Kubo RPC API](../reference/kubo/rpc.md).
-- **CORS (Cross-origin resource sharing):** Allow web requests from a additional domains to the Kubo RPC API.
+- **CORS (Cross-origin resource sharing):** Allow web requests from additional domains to the Kubo RPC API.
 
 This is highly recommended if you run your own Kubo node and want to use the Kubo RPC API over public networks, for example, to pin CIDs from CI, or other services. Since the Kubo RPC API is exposed over plain HTTP, TLS is used to ensure the connection to the API is encrypted.
 
@@ -184,7 +184,7 @@ https://hello:world123@YOUR_DOMAIN
 
 ![WebUI Config](./images/ipfs-webui-config-domain.png)
 
-Click on the "Submit" button and you should see the IPFS Web UI connected to your Kubo node.
+Click on the "Submit" button, and you should see the IPFS Web UI connected to your Kubo node.
 
 ![WebUI Connected](./images/ipfs-webui-config-connected.png)
 
