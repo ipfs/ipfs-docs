@@ -18,6 +18,7 @@ description: Learn about mutability in IPFS, InterPlanetary Name System (IPNS), 
         - [Publishing IPNS records over PubSub lifecycle](#publishing-ipns-records-over-pubsub-lifecycle)
     - [Tradeoffs between consistency vs. availability](#tradeoffs-between-consistency-vs-availability)
       - [IPNS record validity](#ipns-record-validity)
+      - [IPNS record TTL](#ipns-record-ttl)
       - [Practical considerations](#practical-considerations)
   - [IPNS in practice](#ipns-in-practice)
     - [Resolving IPNS names using IPFS gateways](#resolving-ipns-names-using-ipfs-gateways)
@@ -172,6 +173,17 @@ The self-certifying nature of IPNS comes with an inherent tradeoff between **con
 Consistency means ensuring that users resolve to the latest published IPNS record for the name (with the highest sequence number) at the cost of potentially not being able to resolve.
 
 Availability means resolving to a valid IPNS record, at the cost of potentially resolving to an outdated record.
+
+#### IPNS record TTL
+
+If experience slow IPNS update propagation, TTL is the first thing to check.
+
+- **As Publisher:** when you publish IPNS Record, the default TTL that controls caching may be set to high value, such as 1h. If you want third-party gateways and nodes to skip cache and look for updates more often, consider lowering this value.
+  - Kubo: see `--ttl` in `ipfs name publish --help`
+  - **Note:** If you use IPNS Record behind a DNSLink (`/ipns/example.com` pointing at `/ipns/k51..libp2p-key`), the DNS   TXT record at `_dnslink.example.com`) has its own TTL, and it will also impact caching. Make sure both TTLs are the same.
+- **As Gateway Operator:** you should have the ability to override publisher-provided TTL  and cap caching resolution results at a lower value.  
+  - Kubo: [`Ipns.MaxCacheTTL`](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsmaxcachettl)
+  - Rainbow: [`RAINBOW_IPNS_MAX_CACHE_TTL`](https://github.com/ipfs/rainbow/blob/main/docs/environment-variables.md#rainbow_ipns_max_cache_ttl)
 
 #### IPNS record validity
 
