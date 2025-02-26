@@ -174,20 +174,27 @@ Consistency means ensuring that users resolve to the latest published IPNS recor
 
 Availability means resolving to a valid IPNS record, at the cost of potentially resolving to an outdated record.
 
-#### IPNS record TTL
-
-If experience slow IPNS update propagation, TTL is the first thing to check.
-
-- **As Publisher:** when you publish IPNS Record, the default TTL that controls caching may be set to high value, such as 1h. If you want third-party gateways and nodes to skip cache and look for updates more often, consider lowering this value.
-  - Kubo: see `--ttl` in `ipfs name publish --help`
-  - **Note:** If you use IPNS Record behind a DNSLink (`/ipns/example.com` pointing at `/ipns/k51..libp2p-key`), the DNS   TXT record at `_dnslink.example.com`) has its own TTL, and it will also impact caching. Make sure both TTLs are the same.
-- **As Gateway Operator:** you should have the ability to override publisher-provided TTL  and cap caching resolution results at a lower value.  
-  - Kubo: [`Ipns.MaxCacheTTL`](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsmaxcachettl)
-  - Rainbow: [`RAINBOW_IPNS_MAX_CACHE_TTL`](https://github.com/ipfs/rainbow/blob/main/docs/environment-variables.md#rainbow_ipns_max_cache_ttl)
-
 #### IPNS record validity
 
 When setting the `validity` (referred to as [`lifetime` by Kubo](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsrecordlifetime)) field of an IPNS record, you typically need to choose whether you favor **consistency** (short validity period, e.g. 48 hours) or **availability** (long validity period, e.g. 1 month), due to the inherent trade-off between the two.
+
+#### IPNS record TTL
+
+If you experience slow IPNS update propagation, the Time-to-Live (TTL) setting is the first thing to check.
+
+##### TTL as a Publisher
+
+When you publish an IPNS Record, the default TTL, which controls caching, might be set to a high value, such as one hour. If you want third-party gateways and nodes to bypass the cache and check for updates more frequently, consider lowering this value.
+
+- **Kubo**: Refer to the `--ttl` option in [`ipfs name publish --help`](https://docs.ipfs.tech/reference/kubo/cli/#ipfs-name-publish) for details on adjusting this setting.
+- **Note**: If your IPNS Record is used behind a DNSLink (e.g., `/ipns/example.com` pointing to `/ipns/k51..libp2p-key`), the DNS TXT record at `_dnslink.example.com` has its own TTL. This DNS TTL also affects caching. Ensure that both TTL values are aligned for consistent behavior.
+
+##### TTL as a Gateway Operator
+
+You should have the ability to override the TTL provided by the publisher and set a lower cap on how long resolution results are cached.
+
+- **Kubo**: Configure this using the [`Ipns.MaxCacheTTL`](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsmaxcachettl) setting.
+- **Rainbow**: Adjust this with the [`RAINBOW_IPNS_MAX_CACHE_TTL`](https://github.com/ipfs/rainbow/blob/main/docs/environment-variables.md#rainbow_ipns_max_cache_ttl) environment variable.
 
 #### Practical considerations
 
