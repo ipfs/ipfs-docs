@@ -203,7 +203,7 @@ The most important thing to consider with IPNS names is **how frequently you int
 Practically, levers within your control determine where your IPNS name is on the spectrum between consistency and availability:
 
 - **IPNS record validity:** longer validity will veer towards availability. Moreover, longer validity will reduce the dependence on the key holder (which for most purposes is stored on a single machine and rare shared) since the record can continue to persist without requiring the private key holder to sign a new record. Another benefit of a longer validity is that the transport can be delegated to other nodes or services (such as [w3name](https://docs.storacha.network/how-to/w3name/)), without compromising the private key.
-- **IPNS record TTL:** longer TTL wil trade update propagation speed for better page load performance and resiliency.
+- **IPNS record TTL:** longer TTL trades update propagation speed for better page load performance and resiliency.
 - **Transport mechanism:** the DHT veers towards consistency while PubSub veers towards availability. However, with Kubo, IPNS names are always published to the DHT, while PubSub is opt-in. For most purposes, enabling PubSub is a net gain unless you hit the upper limit of connections as a result of too many PubSub subscriptions.
 
 ## IPNS in practice
