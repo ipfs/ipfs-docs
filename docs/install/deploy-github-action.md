@@ -91,10 +91,14 @@ Before you begin, make sure you have:
 4. Create a signing key:
 
    ```bash
-   w3 key create --json
+   $ w3 key create --json
+   {
+     "did": "did:key:YOUR_KEY_DID",
+     "key": "STORACHA_KEY"
+   }
    ```
 
-   Save the output as a GitHub secret named `STORACHA_KEY`
+   Save the key value as a GitHub secret named `STORACHA_KEY`
 
 5. Create a UCAN proof:
    ```bash
