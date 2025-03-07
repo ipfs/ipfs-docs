@@ -1,17 +1,17 @@
 ---
-title: Deploying Static Web Applications to IPFS
-description: Guide on how to setup GitHub Actions to deploy static web applications to IPFS using the IPFS Deploy Action.
+title: Deploy Static Apps to IPFS with GitHub Actions
+description: Guide on how to setup GitHub Actions to deploy static sites/apps to IPFS using the IPFS Deploy Action.
 ---
 
-# Deploying Static Web Applications to IPFS with GitHub Actions
+# Deploy Static Apps to IPFS with GitHub Actions
 
-This guide will walk you through the process of configureing a GitHub Actions workflow to deploy a repository containing a static web application to IPFS using the [IPFS Deploy Action](https://github.com/ipfs/ipfs-deploy-action).
+This guide will walk you through the process of configureing a GitHub Actions workflow to deploy a repository containing a static site or app to IPFS using the [IPFS Deploy Action](https://github.com/ipfs/ipfs-deploy-action).
 
 By the end of this guide, your app will be deployed to IPFS automatically when you push to your repository. It will also deploy pull request previews for each commit, and provide some other developer experience features, like commit status updates with the CID of the build, and a comment on pull requests with the IPFS CID and preview links.
 
 Once deployed, each deployment of your app will be addressed by a CID and accessible via [recursive gateways](https://docs.ipfs.tech/concepts/ipfs-gateway/#recursive-vs-non-recursive-gateways), as well as the [Service Worker Gateway](https://inbrowser.link).
 
-To see what this looks like in a real-world example, check out the [IPNS Inspector](https://github.com/ipfs-shipyard/ipfs-deploy-action-demo).
+To see what this looks like in a real-world example, check out the [IPNS Inspector](https://github.com/ipshipyard/ipns-inspector).
 
 ## What is the IPFS Deploy Action?
 
@@ -28,52 +28,24 @@ The IPFS Deploy Action works with both self-hosted IPFS nodes (Kubo or IPFS Clus
 
 The IPFS Deploy Action makes no assumptions about your build process. Whether you're using React, Vuepress, Astro, Next.js, or any other static site generator, this guide will help you get your web application deployed on IPFS. The only requirement is that your web application is static, meaning that once built, it is a folder containing HTML, CSS, and JavaScript files that are served as-is to the client.
 
-## Custom domains and DNSLink
-
-**TODO: This whole section should probably move to a separate guide that can be linked to from here**
-
-By default, each deployment will be addressed with a CID. Since CIDs are long and hard to remember, they're not very user friendly, for example, `https://bafybeifhgtpm6kmbyqszbardceszvkv5rsi3dodtuufpcfskzggekcfl2y.ipfs.inbrowser.link/`.
-
-To make your deployments easier to access, you can optionally configure a custom domain for your app, depending on how you want users to access your app.
-
-### CID Signaling with DNSLink
-
-DNSLink is a standard way to map human-readable domain names (DNS) to CIDs. For example, for the IPFS Docs, `docs.ipfs.tech`, the DNSLink record is a TXT record at `_dnslink.docs.ipfs.tech` with the value `dnslink=/ipfs/bafybeicv5tbyeahgm4pyskd2nverwsqxpiqloikqrufvof7vausglw6avm` (the CID will likely be different once you read this guide).
-
-The main benefit of DNSLink is that it allows users to determine the latest CID for a given domain name, while leaving it up to the user how to retrieve the deployment addressed by the CID. For example, a user might have a local IPFS node, and want to access the latest deployment of your app, they can do so by resolving the DNSLink record and fetching the content from their local node. `http://localhost:8080/ipns/docs.ipfs.tech` will serve the CID found in the DNSLink record.
-
-When a DNSLink record is present, any IPFS gateway (local or public) can take the DNS name and resolve it to the CID, and serve the content, for example, both `http://inbrowser.link/ipns/docs.ipfs.tech` and `http://ipfs.io/ipns/docs.ipfs.tech` will serve the same site, albeit with different origins.
-
-When loading the site this way, you benefit from the resilience and censorship resistance of the IPFS network, because it's content addressed (addressed by CID) rather than being tied to a canonical origin. As long as there's at least one reachable provider for the CID, you can access the site.
-
-The disadvantage is that loading the site this way is that the [origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) can vary depending on where the user is accessing the site from, which can impact how your app functions, like CORS access to external APIs.
-
-## Access via custom domain
-
-In the previous section, we discussed how DNSLink can be used to signal the CID for a domain name, while leaving it up to the user how to retrieve the content, be it a local node, service worker gateway or any other [public recursive gateway](https://docs.ipfs.tech/concepts/ipfs-gateway/#recursive-vs-non-recursive-gateways). In this instance, the user provides the domain name as input, instead of the CID.
-
-To provide access to the app directly via the custom domain, you have the following options:
-
-1. Deploy an IPFS Gateway that supports DNSLink, e.g. [Rainbow](https://github.com/ipfs/rainbow/) and point the CNAME/A record for your custom domain to it. You will likely want to also configure TLS with a reverse proxy like Caddy.
-2. Use a service like Fleek
-3. Deploy the site to a web hosting service like Cloudflare/GitHub Pages, and point the CNAME/A record for your custom domain to it, essentially getting the benefits of both IPFS and traditional web hosting.
-
-Access via a custom domain is useful if you want to serve your app via a domain name that you own, for example, `app.example.com`.
-
 ## Prerequisites
 
 Before you begin, make sure you have:
 
 1. A GitHub repository with your static web application
-2. GitHub Actions enabled on your repository
-3. A Storacha account or running your own IPFS Node (Kubo or IPFS Cluster)
+2. A [Storacha](https://storacha.network) account or an IPFS Node (Kubo or IPFS Cluster) with the RPC endpoint publicly reachable (see [this guide](../how-to/kubo-rpc-tls-auth.md) for instructions on how to secure the Kubo RPC endpoint with TLS and authentication)
 
-## Step 1: Setting Up Storacha (Easiest way to get started)
+This guide will use Storacha for simplicity. If you have an IPFS Node, you can skip the Storacha setup and use your own node instead.
+
+## Step 1: Setting Up Storacha
+
+If you don't have a Storacha account, you can create one at [https://storacha.network](https://storacha.network).
+
 
 1. Install the w3cli tool:
 
    ```bash
-   npm install -g @storacha/w3cli
+   npm install -g @web3-storage/w3cli
    ```
 
 2. Login to your Storacha account:
@@ -100,7 +72,8 @@ Before you begin, make sure you have:
 
    Save the key value as a GitHub secret named `STORACHA_KEY`
 
-5. Create a UCAN proof:
+5. Create a UCAN proof. Note that the command will create a UCAN proof allowing uploads to the space created in step 3:
+
    ```bash
    w3 delegation create did:key:YOUR_KEY_DID -c space/blob/add -c space/index/add -c filecoin/offer -c upload/add --base64
    ```
@@ -153,21 +126,75 @@ jobs:
           github-token: ${{ github.token }}
 ```
 
-## Step 3: Customize Build Output Directory
+A couple of things to note:
 
-Modify the `path-to-deploy` input based on your build tool:
+- This workflow assumes that your build command is `npm run build`. If your build command is different, you can change the `run` command in the build step.
+- The `path-to-deploy` input is set to `dist` by default. If your build output directory is different, you can change the `path-to-deploy` input.
 
-- React (Create React App): `build`
-- Next.js: `out` (when using `next export`) or `.next` (for server-side rendering)
-- Vue.js: `dist`
-- Vite: `dist`
-- Gatsby: `public`
+## Step 3: Optional Configurations
 
-## Step 4: Optional Configurations
+### Uploading the CAR file to a Kubo Node
 
-### Adding Pinata Backup
+To upload the CAR file to a Kubo node instead of or in addition to Storacha:
 
-To add redundancy with Pinata pinning:
+1. Get your Kubo RPC endpoint and API token
+2. Add them as GitHub secrets named `KUBO_API_URL` and `KUBO_API_AUTH`
+3. Add these lines to your workflow:
+
+```yaml
+- name: Deploy to IPFS
+  uses: ipfs/ipfs-deploy-action@v1
+  with:
+    # ... other inputs ...
+    kubo-api-url: ${{ secrets.KUBO_API_URL }}
+    kubo-api-auth: ${{ secrets.KUBO_API_AUTH }}
+```
+
+You can also customize the Kubo version used for merkleizing your content:
+
+```yaml
+- name: Deploy to IPFS
+  uses: ipfs/ipfs-deploy-action@v1
+  with:
+    # ... other inputs ...
+    kubo-version: 'v0.33.0' # Default, change if needed
+    ipfs-add-options: '--cid-version 1 --chunker size-1048576' # Default options
+```
+
+### Using IPFS Cluster
+
+To upload the CAR file to an IPFS Cluster:
+
+1. Get your IPFS Cluster URL, username, and password
+2. Add them as GitHub secrets
+3. Add these lines to your workflow:
+
+```yaml
+- name: Deploy to IPFS
+  uses: ipfs/ipfs-deploy-action@v1
+  with:
+    # ... other inputs ...
+    cluster-url: ${{ secrets.CLUSTER_URL }}
+    cluster-user: ${{ secrets.CLUSTER_USER }}
+    cluster-password: ${{ secrets.CLUSTER_PASSWORD }}
+```
+
+You can also configure additional IPFS Cluster options:
+
+```yaml
+- name: Deploy to IPFS
+  uses: ipfs/ipfs-deploy-action@v1
+  with:
+    # ... other inputs ...
+    cluster-retry-attempts: '3' # Default number of retry attempts
+    cluster-timeout-minutes: '5' # Default timeout in minutes per attempt
+    ipfs-cluster-ctl-version: 'v1.1.2' # Default version
+    cluster-pin-expire-in: '720h' # Optional: Set pin to expire after time period (e.g., 30 days)
+```
+
+This works by sending a request to the Pinning API with the CID of the deployment, and Pinata handles pinning in the background.
+
+To pin your content to Pinata:
 
 1. Get your Pinata JWT token from the Pinata dashboard
 2. Add it as a GitHub secret named `PINATA_JWT`
@@ -178,7 +205,8 @@ To add redundancy with Pinata pinning:
   uses: ipfs/ipfs-deploy-action@v1
   with:
     # ... other inputs ...
-    pinata-jwt-token: ${{ secrets.PINATA_JWT }}
+    pinata-jwt-token: ${{ secrets.PINATA_JWT_TOKEN }}
+    pinata-pinning-url: 'https://api.pinata.cloud/psa' # Default URL
 ```
 
 ### Adding Filebase Storage
@@ -200,24 +228,6 @@ To store CAR files on Filebase:
     filebase-secret-key: ${{ secrets.FILEBASE_SECRET_KEY }}
 ```
 
-### Customizing IPFS Cluster Upload Settings
-
-When using IPFS Cluster, you can customize both the number of retry attempts and the timeout duration for uploads:
-
-```yaml
-- name: Deploy to IPFS
-  uses: ipfs/ipfs-deploy-action@v1
-  with:
-    # ... other inputs ...
-    cluster-retry-attempts: '10' # Default is 5
-    cluster-timeout-minutes: '5' # Default is 2
-```
-
-These settings are particularly useful when:
-
-- Dealing with larger files that need more time to upload
-- Working with slower or less reliable network connections
-- Need to adjust the balance between retry attempts and timeout duration
 
 ## Accessing Your Deployed Site
 
@@ -231,6 +241,7 @@ Your site will be accessible through:
 
 - [Storacha Gateway](https://docs.storacha.network/concepts/ipfs-gateways/): `https://<CID>.ipfs.w3s.link`
 - [Public Good Gateway](../concepts/public-utilities.md#public-ipfs-gateways): `https://<CID>.ipfs.dweb.link`
+- [Service Worker Gateway](https://inbrowser.link): `https://inbrowser.link/ipfs/<CID>`
 
 ## Troubleshooting
 
@@ -241,8 +252,11 @@ Your site will be accessible through:
 
 2. **Authentication Issues**
 
-   - Verify your Storacha key and proof are correctly set in GitHub secrets
+   - Verify your credentials are correctly set in GitHub secrets
    - Check that the secrets are properly referenced in the workflow file
+   - For Storacha, ensure both the key and proof are provided
+   - For IPFS Cluster, ensure URL, username, and password are all provided
+   - For Kubo, ensure both API URL and auth are provided
 
 3. **Workflow Permission Issues**
    - Ensure the `permissions` block is included in your workflow
@@ -254,6 +268,7 @@ Your site will be accessible through:
 2. Set up proper caching for your dependencies to speed up builds
 3. Consider using multiple IPFS providers for redundancy
 4. Use environment-specific configurations when needed
+
 
 ## Getting Help
 
