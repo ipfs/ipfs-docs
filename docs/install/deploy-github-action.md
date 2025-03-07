@@ -229,9 +229,8 @@ After successful deployment, you can find your site:
 
 Your site will be accessible through:
 
-- Storacha Gateway: `https://<CID>.ipfs.storacha.network`
-- IPFS.io Gateway: `https://ipfs.io/ipfs/<CID>`
-- Cloudflare Gateway: `https://cloudflare-ipfs.com/ipfs/<CID>`
+- [Storacha Gateway](https://docs.storacha.network/concepts/ipfs-gateways/): `https://<CID>.ipfs.w3s.link`
+- [Public Good Gateway](../concepts/public-utilities.md#public-ipfs-gateways): `https://<CID>.ipfs.dweb.link`
 
 ## Troubleshooting
 
