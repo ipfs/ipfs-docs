@@ -33,7 +33,7 @@ The IPFS Deploy Action makes no assumptions about your build process. Whether yo
 Before you begin, make sure you have:
 
 1. A GitHub repository with your static web application
-2. A [Storacha](https://storacha.network) account or an IPFS Node (Kubo or IPFS Cluster) with the RPC endpoint publicly reachable (see [this guide](../how-to/kubo-rpc-tls-auth.md) for instructions on how to secure the Kubo RPC endpoint with TLS and authentication)
+2. A [Storacha](https://storacha.network) account or an IPFS Node (Kubo or IPFS Cluster) with the RPC endpoint publicly reachable (see [this guide](../kubo-rpc-tls-auth.md) for instructions on how to secure the Kubo RPC endpoint with TLS and authentication)
 
 This guide will use Storacha for simplicity. If you have an IPFS Node, you can skip the Storacha setup and use your own node instead.
 
@@ -268,7 +268,7 @@ Your site will be accessible through:
 2. Set up proper caching for your dependencies to speed up builds
 3. Consider using multiple IPFS providers for redundancy
 4. Use environment-specific configurations when needed
-
+  
 
 ## Getting Help
 

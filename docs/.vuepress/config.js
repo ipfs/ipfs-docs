@@ -105,7 +105,7 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: false,
               children: [
-                ['/quickstart/publish_cli', 'Publish with IPFS (command line)' ], 
+                ['/how-to/websites-on-ipfs/deploy-github-action', 'Deploy to IPFS with GitHub Actions' ],
                 ['/quickstart/retrieve','Retrieve with IPFS'],
               ]
             },
