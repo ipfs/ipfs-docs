@@ -5,7 +5,7 @@ description: Guide on how to setup GitHub Actions to deploy static sites/apps to
 
 # Deploy Static Apps to IPFS with GitHub Actions
 
-This guide will walk you through the process of configureing a GitHub Actions workflow to deploy a repository containing a static site or app to IPFS using the [IPFS Deploy Action](https://github.com/ipfs/ipfs-deploy-action).
+This guide will walk you through the process of configuring a GitHub Actions workflow to deploy a repository containing a static site or app to IPFS using the [IPFS Deploy Action](https://github.com/ipfs/ipfs-deploy-action).
 
 By the end of this guide, your app will be deployed to IPFS automatically when you push to your repository. It will also deploy pull request previews for each commit, and provide some other developer experience features, like commit status updates with the CID of the build, and a comment on pull requests with the IPFS CID and preview links.
 
