@@ -9,6 +9,11 @@ This guide will walk you through the process of configureing a GitHub Actions wo
 
 By the end of this guide, your app will be deployed to IPFS automatically when you push to your repository. It will also deploy pull request previews for each commit, and provide some other developer experience features, like commit status updates with the CID of the build, and a comment on pull requests with the IPFS CID and preview links.
 
+![IPFS Deploy Action](./images/github-action/commit-status.png)
+
+
+![IPFS Deploy Action](./images/github-action/pr-comment.png)
+
 Once deployed, each deployment of your app will be addressed by a CID and accessible via [recursive gateways](https://docs.ipfs.tech/concepts/ipfs-gateway/#recursive-vs-non-recursive-gateways), as well as the [Service Worker Gateway](https://inbrowser.link).
 
 To see what this looks like in a real-world example, check out the [IPNS Inspector](https://github.com/ipshipyard/ipns-inspector).
@@ -231,17 +236,31 @@ To store CAR files on Filebase:
 
 ## Accessing Your Deployed Site
 
-After successful deployment, you can find your site:
+After successful deployment, you can find the CID for commits:
 
 1. In the GitHub Actions run output, which will contain the IPFS CID
 2. In the PR comments (if deploying from a PR)
 3. In the commit status checks
 
-Your site will be accessible through:
+For example, here's where you can find the CID for a [given commit on GitHub]():
 
-- [Storacha Gateway](https://docs.storacha.network/concepts/ipfs-gateways/): `https://<CID>.ipfs.w3s.link`
+![IPFS Deploy Action](./images/github-action/commit-status.gif)
+
+You can load the app using the CID from the commit status, and it will be accessible through:
+
 - [Public Good Gateway](../concepts/public-utilities.md#public-ipfs-gateways): `https://<CID>.ipfs.dweb.link`
 - [Service Worker Gateway](https://inbrowser.link): `https://inbrowser.link/ipfs/<CID>`
+- [Storacha Gateway](https://docs.storacha.network/concepts/ipfs-gateways/) (if using Storacha): `https://<CID>.ipfs.w3s.link`.
+
+### With IPFS Desktop or Kubo
+
+If you have IPFS Desktop or Kubo installed, you can load with the local gateway exposed by IPFS Desktop or Kubo.
+
+For example, here's the URL for a given CID:
+
+[`bafybeicbpllqfrjfygcdwkz2q5prdtu4q7obmsqr2fkk5byn45rs24ypcu.ipfs.localhost:8080`](http://bafybeicbpllqfrjfygcdwkz2q5prdtu4q7obmsqr2fkk5byn45rs24ypcu.ipfs.localhost:8080)
+
+Note that by using the subdomain resolution (where the CID has its own subdomain), you ensure [origin isolation](./how-to/gateway-best-practices/#use-subdomain-gateway-resolution-for-origin-isolation).
 
 ## Troubleshooting
 
