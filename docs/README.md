@@ -33,7 +33,7 @@ You can build apps that leverage IPFS implementations, or use HTTP instead:
 
 #### Using IPFS
 
-Build an IPFS-native app using one of the many IPFS <VueCustomTooltip label="Software, written in any programming language, with functionality to process and transmit content-addressed data. Some implementations are optimized for specific use cases or devices, or use different subsystems to handle content-addressed data. There are multiple specififactions in IPFS for handling content-addressed data, and not all implementations implement them." underlined multiline is-medium>implementations</VueCustomTooltip> and tools built by and for Web3 users:
+Build an IPFS-native app using one of the many IPFS <VueCustomTooltip label="Software, written in any programming language, with functionality to process and transmit content-addressed data. Some implementations are optimized for specific use cases or devices, or use different subsystems to handle content-addressed data. There are multiple specifications in IPFS for handling content-addressed data, and not all implementations implement them." underlined multiline is-medium>implementations</VueCustomTooltip> and tools built by and for Web3 users:
 
 - If you are familiar with JavaScript, checkout the[IPFS in web apps guide](./how-to/ipfs-in-web-apps.md), which covers how to use [Helia](https://github.com/ipfs/helia) and related libraries to build IPFS-native apps.
 - To develop IPFS applications using Go and/or interact with IPFS from the terminal, use the [IPFS Kubo implementation in Go](./install/command-line.md). 

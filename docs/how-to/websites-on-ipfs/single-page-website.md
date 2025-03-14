@@ -170,7 +170,7 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
              'Only one spacecraft has flown by Uranus, the Voyager 2.',
              'Neptune was discovered in 1846 by Urbain Le Verrier and Johann Galle.',
              'Neptune has 14 moons.',
-             'The average temperatue of Neptune is about -201 °C.',
+             'The average temperature of Neptune is about -201 °C.',
              'There is a 1:20 million scale model of the solar system in Sweden.',
              'The gap between the Earth and our moon is bigger than the diameters of all the planets combined.',
              "The first accurate calculation of the speed of light was using Jupiter's moons",

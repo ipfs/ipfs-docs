@@ -5,14 +5,14 @@ description: Learn about the lifecycle of data in IPFS.
 
 # The lifecycle of data in IPFS
 
-- [1. Content-addressing](#1-content-addressing)
+- [1. Content-addressing / Merkleizing](#1-content-addressing--merkleizing)
 - [2. Providing](#2-providing)
 - [3. Retrieving](#3-retrieving)
 - [Learn more](#learn-more)
 
 ## 1. Content-addressing / Merkleizing
 
-The first stage in the lifecycle of data in IPFS is to address it by CID. This is a local operation that takes arbitrary data and encodes it so it can be addressed by a CID.
+The first stage in the lifecycle of data in IPFS is to address it by CID. This is a local operation that takes arbitrary data and encodes it so it can be addressed by a CID. This is also known as _merkleizing_ the data, because the input data is transformed into a [Merkle DAG](./merkle-dag.md).
 
 The exact process depends on the type of data. For files and directories, this is done by constructing a [UnixFS](./file-systems.md#unix-file-system-unixfs) [Merkle DAG](./merkle-dag.md). For other data types, such as dag-cbor, this is done by encoding the data with [dag-cbor](https://ipld.io/docs/codecs/known/dag-cbor/) which is hashed to produce a CID.
 
@@ -22,11 +22,20 @@ For example, merkleizing a static web application into a UnixFS DAG looks like t
 
 ## 2. Providing
 
-In this stage, the blocks of the CID are saved on an IPFS node (or pinning service) and made retrievable to the network. Simply saving the CID on the node does not mean the CID is retrievable, so pinning must be used. Pinning allows the node to advertise that it has the CID, and provide it to the network.
+Once the input data has been merkleized and addressed by a CID, the node announces itself as a provider of the CID(s) to the IPFS network, thereby creating a public mapping between the CID and the node. This is typically known as **providing**, other names for this step are **publishing** and **advertising**.
 
-- **Advertising:** In this step, a CID is made discoverable to the IPFS network by advertising a record linking the CID and the server's IP address to the [DHT](./dht.md). Advertising is a continuous process that repeats typically every 12 hours. The term **publishing** is also commonly used to refer to this step.
+IPFS nodes announce CID(s) to either the [DHT](./dht.md) or the [IPNI](./ipni.md) — the two content routing systems supported by [IPFS Mainnet](./glossary.md#mainnet).
 
-- **Providing:** The content-addressable representation of the CID is persisted on one of web3.storage's IPFS nodes (servers running an IPFS node) and made publicly available to the IPFS network.
+### What about Pinning?
+
+[Pinning](./glossary.md#pinning) can have slightly different meanings depending on the context:
+
+From a high level, pinning can mean either:
+
+- **Pin by CID:** Requesting a pinning service or IPFS Node to pin a CID, without uploading the data, in this case the pinning service or IPFS node handles retrieval from provider nodes; a process that can fail if no providers are available. Once pinned, the pinning service or IPFS node will keep a copy of the data locally and typically provide the CIDs it is pinning to the network. The [Pinning API spec](https://ipfs.github.io/pinning-services-api-spec/) provides a standard way to do this with pinning services, though some pinning services have their own APIs. With Kubo, the `ipfs pin add CID` command can be used to pin a CID.
+- **Pin data:** Uploading data (files, directories, etc.) to the pinning service and get back a CID, in this case the pinning service handles merkleizing the data so it is addressed by a CID. With Kubo, the `ipfs add file` command is used to both merkleize the data and pin it.
+
+To summarize, pinning, when successful, results in a node or pinning service **providing** the CIDs to the network.
 
 ## 3. Retrieving
 
@@ -38,15 +47,7 @@ In this stage, an IPFS node fetches the blocks of the CID and constructs the Mer
 
 - **Verification:** The IPFS node verifies the blocks fetched by hashing them and ensuring that the resulting hash is correct. Note that this type of retrieval is _trustless_; that is, blocks can come from any node in the network.
 
-- **Local access:** Once all blocks are present, the Merkle DAG can be constructed, making the file or directory underlying the CID successfully replicated and accessible.
-
-<!-- ## 4. Deleting
-
-At this point, the blocks associated with a CID are deleted from a node. **Deletion is always a local operation**. If a CID has been replicated to other nodes, it will continue to be available on the IPFS network.
-
-:::callout
-Once the CID is replicated by another node, it is typically advertised to DHT by default, even if it isn't explicitly pinned.
-::: -->
+- **Local access:** Once all blocks of the DAG with the requested CID are successfully replicated locally, the data is available for local access.
 
 ## Learn more
 

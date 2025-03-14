@@ -135,9 +135,11 @@ mainnet
 markdown(lint)
 markdownlint
 merkle
+merkleize
 merklizing
 merkleizing
 merkleizes
+merkleized
 merkleization
 metadata('s)
 metamask
