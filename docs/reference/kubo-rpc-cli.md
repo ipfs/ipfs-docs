@@ -30,8 +30,7 @@ RPC API clients are available in multiple languages, and are listed below. You c
 |               | [tbenett/ruby-ipfs-http-client](https://github.com/tbenett/ruby-ipfs-http-client)           | Inactive   |
 | Mac Automator | [NeoTeo/ipfs-osx-service](https://github.com/NeoTeo/ipfs-osx-service)                 | Inactive |
 | Pharo         | [khinsen/ipfs-pharo](https://github.com/khinsen/ipfs-pharo)                      | Inactive   |
-| PHP           | [cloutier/php-ipfs-api](https://github.com/cloutier/php-ipfs-api)                   | Inactive |
-|               | [digitalkaoz/php-ipfs-api](https://github.com/digitalkaoz/php-ipfs-api)                | Inactive |
+| PHP           |  [EdouardCourty/ipfs-php](https://github.com/EdouardCourty/ipfs-php)                | Active |
 | C#            | [ipfs-shipyard/net-ipfs-http-client](https://github.com/ipfs-shipyard/net-ipfs-http-client) | Active |
 |               | [jeremy-ellis-tech/net-ipfs-http-client](https://github.com/jeremy-ellis-tech/net-ipfs-http-client)  | Inactive |
 |               | [richardschneider/net-ipfs-http-client](https://github.com/richardschneider/net-ipfs-http-client)   | Inactive   |
