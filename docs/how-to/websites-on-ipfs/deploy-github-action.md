@@ -248,7 +248,7 @@ For example, here's where you can find the CID for a [given commit on GitHub]():
 
 You can load the app using the CID from the commit status, and it will be accessible through:
 
-- [Public Good Gateway](/concepts/public-utilities.md#public-ipfs-gateways): `https://<CID>.ipfs.dweb.link`
+- [Public Good Gateway](../../concepts/public-utilities.md#public-ipfs-gateways): `https://<CID>.ipfs.dweb.link`
 - [Service Worker Gateway](https://inbrowser.link): `https://inbrowser.link/ipfs/<CID>`
 - [Storacha Gateway](https://docs.storacha.network/concepts/ipfs-gateways/) (if using Storacha): `https://<CID>.ipfs.w3s.link`.
 
