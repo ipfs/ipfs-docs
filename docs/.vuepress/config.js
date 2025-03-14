@@ -105,8 +105,8 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: false,
               children: [
-                ['/how-to/websites-on-ipfs/deploy-github-action', 'Deploy to IPFS with GitHub Actions' ],
                 ['/quickstart/retrieve','Retrieve with IPFS'],
+                ['/how-to/websites-on-ipfs/deploy-github-action', 'Deploy to IPFS with GitHub Actions' ],
               ]
             },
             {
@@ -123,9 +123,8 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: false,
               children: [
-                ['/quickstart/publish','Publish with IPFS (UI)'],
-                ['/quickstart/publish_cli', 'Publish with IPFS (command line)' ],
                 ['/quickstart/retrieve','Retrieve with IPFS'],
+                ['/how-to/websites-on-ipfs/deploy-github-action', 'Deploy to IPFS with GitHub Actions' ],
                 
               ]
             },
@@ -246,6 +245,7 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
+                '/how-to/websites-on-ipfs/deploy-github-action',
                 '/how-to/websites-on-ipfs/single-page-website',
                 '/how-to/websites-on-ipfs/multipage-website',
                 '/how-to/websites-on-ipfs/link-a-domain',
