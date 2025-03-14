@@ -248,7 +248,7 @@ For example, here's where you can find the CID for a [given commit on GitHub]():
 
 You can load the app using the CID from the commit status, and it will be accessible through:
 
-- [Public Good Gateway](../concepts/public-utilities.md#public-ipfs-gateways): `https://<CID>.ipfs.dweb.link`
+- [Public Good Gateway](/concepts/public-utilities#public-ipfs-gateways): `https://<CID>.ipfs.dweb.link`
 - [Service Worker Gateway](https://inbrowser.link): `https://inbrowser.link/ipfs/<CID>`
 - [Storacha Gateway](https://docs.storacha.network/concepts/ipfs-gateways/) (if using Storacha): `https://<CID>.ipfs.w3s.link`.
 
@@ -256,11 +256,9 @@ You can load the app using the CID from the commit status, and it will be access
 
 If you have IPFS Desktop or Kubo installed, you can load with the local gateway exposed by IPFS Desktop or Kubo.
 
-For example, here's the URL for a given CID:
+For example, here's the URL for a given CID: `bafybeicbpllqfrjfygcdwkz2q5prdtu4q7obmsqr2fkk5byn45rs24ypcu.ipfs.localhost:8080`
 
-[`bafybeicbpllqfrjfygcdwkz2q5prdtu4q7obmsqr2fkk5byn45rs24ypcu.ipfs.localhost:8080`](http://bafybeicbpllqfrjfygcdwkz2q5prdtu4q7obmsqr2fkk5byn45rs24ypcu.ipfs.localhost:8080)
-
-Note that by using the subdomain resolution (where the CID has its own subdomain), you ensure [origin isolation](./how-to/gateway-best-practices/#use-subdomain-gateway-resolution-for-origin-isolation).
+This URL uses subdomain resolution (where the CID has its own subdomain), which ensures [origin isolation](../gateway-best-practices/#use-subdomain-gateway-resolution-for-origin-isolation) per CID.
 
 ## Troubleshooting
 
