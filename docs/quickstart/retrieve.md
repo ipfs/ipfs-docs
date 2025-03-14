@@ -88,7 +88,7 @@ For example, the following code fetches the image using the `verifiedFetch` libr
 
 
 :::callout
-You may notices that there's a path following the CID, e.g. `bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4/welcome-to-IPFS.jpg`, because the starting CID is a directory containing the `welcome-to-IPFS.jpg` file, which you can fetch directly with: `verifiedFetch('ipfs://bafkreie7ohywtosou76tasm7j63yigtzxe7d5zqus4zu3j6oltvgtibeom')`.
+You may notice that there's a path following the CID, e.g. `bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4/welcome-to-IPFS.jpg`, because the starting CID is a directory containing the `welcome-to-IPFS.jpg` file, which you can fetch directly with: `verifiedFetch('ipfs://bafkreie7ohywtosou76tasm7j63yigtzxe7d5zqus4zu3j6oltvgtibeom')`.
 :::
 
 
