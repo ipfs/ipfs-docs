@@ -22,9 +22,9 @@ Quickly retrieve data from the IPFS network, no programming required:
 Provide data to the IPFS network with IPFS Desktop or a pinning service:
 
 - [Install IPFS Desktop which bundles an IPFS node (Kubo) and a UI to manage files, peers, and explore content on IPFS](./install/ipfs-desktop.md).
-- [Publish content to the IPFS network with IPFS Desktop](./how-to/desktop-app/).
-- [Publish content to the IPFS network with a pinning service](./how-to/websites-on-ipfs/single-page-website/#pinning-files).
-- [Deploy static sites to the IPFS network with a GitHub Action](./how-to/websites-on-ipfs/deploy-github-action/).
+- [Publish content to the IPFS network with IPFS Desktop](./how-to/desktop-app.md).
+- [Publish content to the IPFS network with a pinning service](./how-to/websites-on-ipfs/single-page-website.md#pinning-files).
+- [Deploy static sites to the IPFS network with a GitHub Action](./how-to/websites-on-ipfs/deploy-github-action.md).
 
 
 ### Build
