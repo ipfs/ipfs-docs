@@ -5,9 +5,9 @@ description: Guide on how to setup GitHub Actions to deploy static sites/apps to
 
 # Deploy Static Apps to IPFS with GitHub Actions
 
-This guide will walk you through the process of configuring a GitHub Actions workflow to deploy a repository containing a static site or app to IPFS using the [IPFS Deploy Action](https://github.com/ipfs/ipfs-deploy-action).
+This guide will walk you through the process of configuring a [GitHub Actions](https://docs.github.com/en/actions) workflow to deploy a repository containing a static site or app to IPFS using the [IPFS Deploy Action](https://github.com/ipfs/ipfs-deploy-action).
 
-By the end of this guide, your app will be deployed to IPFS automatically when you push to your repository. It will also deploy pull request previews for each commit, and provide some other developer experience features, like commit status updates with the CID of the build, and a comment on pull requests with the IPFS CID and preview links.
+By the end of this guide, your web app (or just a static website) will be deployed to IPFS automatically when you push to your repository. It will also deploy pull request previews for each commit, and provide some other developer experience features, like commit status updates with the CID of the build, and a comment on pull requests with the IPFS CID and preview links.
 
 ![IPFS Deploy Action](./images/github-action/commit-status.png)
 
@@ -20,12 +20,12 @@ To see what this looks like in a real-world example, check out the [IPNS Inspect
 
 ## What is the IPFS Deploy Action?
 
-The IPFS Deploy Action is a [composite action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action), that can be called as a step in a GitHub Actions workflow, and combines the following features:
+The IPFS Deploy Action is a [composite action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action), that can be called as a step in a [GitHub Actions workflow](https://docs.github.com/en/actions/writing-workflows), and combines the following features:
 
-- 📦 Merkleizes your static site into a CAR file
-- 🚀 Uploads CAR file to either Storacha, IPFS Cluster, or Kubo
-- 📍 Optional pinning to Pinata
-- 💾 Optional CAR file upload to Filebase
+- 📦 Merkleizes your static site into a [CAR](../../concepts/glossary.md#car) file
+- 🚀 Uploads CAR file to either [Storacha](https://storacha.network/), [IPFS Cluster](https://ipfscluster.io/), or [Kubo](https://github.com/ipfs/kubo#readme)
+- 📍 Optional CID pinning to [Pinata](https://pinata.cloud/)
+- 💾 Optional CAR file upload to [Filebase](https://filebase.com/)
 - 💬 PR Previews, with a comment containing the CID and preview links
 - ✅ Commit Status updates
 
@@ -38,16 +38,16 @@ The IPFS Deploy Action makes no assumptions about your build process. Whether yo
 Before you begin, make sure you have:
 
 1. A GitHub repository with your static web application
-2. A [Storacha](https://storacha.network) account or an IPFS Node (Kubo or IPFS Cluster) with the RPC endpoint publicly reachable (see [this guide](../kubo-rpc-tls-auth.md) for instructions on how to secure the Kubo RPC endpoint with TLS and authentication)
+2. A [Storacha](https://storacha.network) account or an IPFS Node ([Kubo](https://github.com/ipfs/kubo#readme) or [IPFS Cluster](https://ipfscluster.io/)) with the [Kubo RPC](../../reference/kubo/rpc.md) endpoint publicly reachable (see [this guide](../kubo-rpc-tls-auth.md) for instructions on how to secure the Kubo RPC endpoint with TLS and authentication)
 
 This guide will use Storacha for simplicity. If you have an IPFS Node, you can skip the Storacha setup and use your own node instead.
 
 ## Step 1: Setting Up Storacha
 
-If you don't have a Storacha account, you can create one at [https://storacha.network](https://storacha.network).
+If you don't have a Storacha account, you can create one at [storacha.network](https://storacha.network).
 
 
-1. Install the w3cli tool:
+1. Install the [`w3cli`](https://www.npmjs.com/package/@web3-storage/w3cli) tool:
 
    ```bash
    npm install -g @web3-storage/w3cli
@@ -77,7 +77,7 @@ If you don't have a Storacha account, you can create one at [https://storacha.ne
 
    Save the key value as a GitHub secret named `STORACHA_KEY`
 
-5. Create a UCAN proof. Note that the command will create a UCAN proof allowing uploads to the space created in step 3:
+5. Create a [UCAN](https://docs.storacha.network/concepts/ucans-and-storacha/) proof. Note that the command will create a UCAN proof allowing uploads to the space created in step 3:
 
    ```bash
    w3 delegation create did:key:YOUR_KEY_DID -c space/blob/add -c space/index/add -c filecoin/offer -c upload/add --base64
@@ -112,7 +112,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 'lts/*'
           cache: 'npm'
 
       - name: Install dependencies
@@ -142,8 +142,8 @@ A couple of things to note:
 
 To upload the CAR file to a Kubo node instead of or in addition to Storacha:
 
-1. Get your Kubo RPC endpoint and API token
-2. Add them as GitHub secrets named `KUBO_API_URL` and `KUBO_API_AUTH`
+1. Get your [Kubo RPC endpoint](https://github.com/ipfs/kubo/blob/master/docs/config.md#addressesapi) and [API token](https://github.com/ipfs/kubo/blob/master/docs/config.md#apiauthorizations)
+2. Add them as [GitHub secrets](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions) named `KUBO_API_URL` and `KUBO_API_AUTH`
 3. Add these lines to your workflow:
 
 ```yaml
@@ -155,7 +155,7 @@ To upload the CAR file to a Kubo node instead of or in addition to Storacha:
     kubo-api-auth: ${{ secrets.KUBO_API_AUTH }}
 ```
 
-You can also customize the Kubo version used for merkleizing your content:
+You can also customize the Kubo version and [`ipfs add` parameters](https://docs.ipfs.tech/reference/kubo/cli/#ipfs-add) used for merkleizing your content:
 
 ```yaml
 - name: Deploy to IPFS
@@ -170,7 +170,7 @@ You can also customize the Kubo version used for merkleizing your content:
 
 To upload the CAR file to an IPFS Cluster:
 
-1. Get your IPFS Cluster URL, username, and password
+1. Get your [IPFS Cluster CTL](https://ipfscluster.io/documentation/reference/ctl/) endpoint, username, and password
 2. Add them as GitHub secrets
 3. Add these lines to your workflow:
 
@@ -191,17 +191,19 @@ You can also configure additional IPFS Cluster options:
   uses: ipfs/ipfs-deploy-action@v1
   with:
     # ... other inputs ...
-    cluster-retry-attempts: '3' # Default number of retry attempts
-    cluster-timeout-minutes: '5' # Default timeout in minutes per attempt
+    cluster-retry-attempts: '5' # Override number of retry attempts
+    cluster-timeout-minutes: '15' # Override timeout in minutes per attempt
     ipfs-cluster-ctl-version: 'v1.1.2' # Default version
     cluster-pin-expire-in: '720h' # Optional: Set pin to expire after time period (e.g., 30 days)
 ```
 
-This works by sending a request to the Pinning API with the CID of the deployment, and Pinata handles pinning in the background.
+### Pinning with Pinata
+
+This works by sending a request to the [Pinning API](https://docs.pinata.cloud/api-reference/pinning-service-api) with the CID of the deployment, and Pinata handles pinning in the background.
 
 To pin your content to Pinata:
 
-1. Get your Pinata JWT token from the Pinata dashboard
+1. Get your [Pinata JWT token](https://docs.pinata.cloud/api-reference/pinning-service-api#authentication) from the Pinata dashboard
 2. Add it as a GitHub secret named `PINATA_JWT`
 3. Add these lines to your workflow:
 
@@ -215,10 +217,10 @@ To pin your content to Pinata:
 ```
 
 ### Adding Filebase Storage
-
+Note that Filebase only supports static websites for paid accounts.
 To store CAR files on Filebase:
 
-1. Create a Filebase account and bucket
+1. [Create a Filebase account](https://docs.filebase.com/archive/content-archive/ipfs-getting-started-guide#signing-up-for-filebase) and [bucket](https://docs.filebase.com/archive/content-archive/ipfs-getting-started-guide#how-to-create-an-ipfs-bucket)
 2. Get your access and secret keys
 3. Add them as GitHub secrets
 4. Add these lines to your workflow:
@@ -249,7 +251,7 @@ For example, here's where you can find the CID for a [given commit on GitHub]():
 You can load the app using the CID from the commit status, and it will be accessible through:
 
 - [Public Good Gateway](../../concepts/public-utilities.md#public-ipfs-gateways): `https://<CID>.ipfs.dweb.link`
-- [Service Worker Gateway](https://inbrowser.link): `https://inbrowser.link/ipfs/<CID>`
+- [Service Worker Gateway](https://inbrowser.link): `https://<CID>.ipfs.inbrowser.link`
 - [Storacha Gateway](https://docs.storacha.network/concepts/ipfs-gateways/) (if using Storacha): `https://<CID>.ipfs.w3s.link`.
 
 ### With IPFS Desktop or Kubo
