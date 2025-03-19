@@ -15,9 +15,9 @@ You can quickly [retrieve data](#retrieve-data) and [provide data](#provide-data
 
 Quickly retrieve data from the IPFS network, no programming required:
 
-- Fetch data via it's <VueCustomTooltip label="An address used to point to data in IPFS, based on the content itself, as opposed to the location." underlined multiline is-medium>content identifier (CID)</VueCustomTooltip> [using an IPFS gateway](./quickstart/retrieve.md).
+- Fetch data via it's <VueCustomTooltip label="An address used to point to data in IPFS, based on the content itself, as opposed to the location." underlined multiline is-medium>[content identifier (CID)](concepts/glossary.md#cid)</VueCustomTooltip> [using an IPFS gateway](./quickstart/retrieve.md).
 
-### Publish data
+### Provide data
 
 Provide data to the IPFS network with IPFS Desktop or a pinning service:
 
@@ -34,7 +34,7 @@ You can build apps that leverage IPFS implementations, or use HTTP instead:
 
 Build an IPFS-native app using one of the many IPFS <VueCustomTooltip label="Software, written in any programming language, with functionality to process and transmit content-addressed data. Some implementations are optimized for specific use cases or devices, or use different subsystems to handle content-addressed data. There are multiple specifications in IPFS for handling content-addressed data, and not all implementations implement them." underlined multiline is-medium>implementations</VueCustomTooltip> and tools built by and for Web3 users:
 
-- If you are familiar with JavaScript, checkout the[IPFS in web apps guide](./how-to/ipfs-in-web-apps.md), which covers how to use [Helia](https://github.com/ipfs/helia) and related libraries to build IPFS-native apps.
+- If you are familiar with JavaScript, checkout the [IPFS in web apps guide](./how-to/ipfs-in-web-apps.md), which covers how to use [Helia](https://github.com/ipfs/helia) and related libraries to build IPFS-native apps.
 - To develop IPFS applications using Go and/or interact with IPFS from the terminal, use the [IPFS Kubo implementation in Go](./install/command-line.md). 
 - Try any of the [many other tools and implementations](./concepts/ipfs-implementations.md), which are written in different languages and tailored to specific needs and use cases.
 

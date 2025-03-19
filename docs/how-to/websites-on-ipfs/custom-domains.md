@@ -17,19 +17,19 @@ This guide will walk you through the process of configuring a custom domain for 
 
 The main benefit of DNSLink is that it allows users to determine the latest CID for a given domain name, while leaving it up to the user how to retrieve the deployment addressed by the CID. For example, a user might have a local IPFS node, and want to access the latest deployment of your app, they can do so by resolving the DNSLink record and fetching the content from their local node. `http://localhost:8080/ipns/docs.ipfs.tech` will serve the CID found in the DNSLink record.
 
-When a DNSLink record is present, any IPFS gateway (local or public) can take the DNS name and resolve it to the CID, and serve the content, for example, both `http://inbrowser.link/ipns/docs.ipfs.tech` and `http://ipfs.io/ipns/docs.ipfs.tech` will serve the same site, albeit with different origins.
+When a DNSLink record is present, any IPFS gateway (local or public) can take the DNS name and resolve it to the CID, and serve the content, for example, both `https://inbrowser.link/ipns/docs.ipfs.tech` and `https://dweb.link/ipns/docs.ipfs.tech` will serve the same site, albeit with different origins.
 
-When loading the site this way, you benefit from the resilience and censorship resistance of the IPFS network, because it's content addressed (addressed by CID) rather than being tied to a canonical origin. As long as there's at least one reachable provider for the CID, you can access the site.
+If you run your own IPFS node, such as [IPFS Desktop](../../install/ipfs-desktop.md) or [Kubo](../../install/command-line.md), and load the site from a local gateway at `http://localhost:8080/ipns/docs.ipfs.tech`, you benefit from the resilience and censorship resistance of the IPFS network, because it's content addressed (addressed by CID) rather than being tied to a canonical origin. As long as there's at least one reachable provider for the CID, and use a trusted [DNS over HTTPS resolver](https://github.com/ipfs/kubo/blob/master/docs/config.md#dnsresolvers), you can access the site.
 
-The disadvantage is that loading the site this way is that the [origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) can vary depending on where the user is accessing the site from, which can impact how your app functions, like CORS access to external APIs.
+Loading the site this way ties the website's cookies, storage, and Web API permissions to the [origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) of a specific gateway. When using public gateways, the user experience can vary depending on the gateway's origin, which may impact app functionality, including cookies, storage, and CORS access to external APIs. That is why a local gateway is advantageous, as it does not depend on external domains or origins.
 
-## Access via custom domain
+## Access via a custom domain
 
 In the previous section, we discussed how DNSLink can be used to signal the CID for a domain name, while leaving it up to the user how to retrieve the content, be it a local node, service worker gateway or any other [public recursive gateway](https://docs.ipfs.tech/concepts/ipfs-gateway/#recursive-vs-non-recursive-gateways). In this instance, the user provides the domain name as input, instead of the CID.
 
 To provide access to the app directly via the custom domain, you have the following options:
 
-1. Deploy an IPFS Gateway that supports DNSLink, e.g. [Rainbow](https://github.com/ipfs/rainbow/) and point the CNAME/A record for your custom domain to it. You will likely want to also configure TLS with a reverse proxy like Caddy.
+1. Self-host both the IPFS provider (e.g. [Kubo](https://github.com/ipfs/kubo)) and the HTTP gateway (e.g. [Kubo](https://github.com/ipfs/kubo) or [Rainbow](https://github.com/ipfs/rainbow/)). Deploy an IPFS Gateway that supports DNSLink resolution and point the `CNAME`/`A` DNS record for your custom domain to it and  update the `TXT` record on `_dnslink` subdomain to match CID of your website. Set up CI automation to update TXT record every time your CID changes. You will likely want to also configure TLS with a reverse proxy like Caddy or use a CDN like Cloudflare for TLS termination.
 2. Use a service like Fleek
 3. Deploy the site to a web hosting service like Cloudflare/GitHub Pages, and point the CNAME/A record for your custom domain to it, essentially getting the benefits of both IPFS and traditional web hosting.
 
