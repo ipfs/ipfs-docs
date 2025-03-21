@@ -92,7 +92,6 @@ You may notice that there's a path following the CID, e.g. `bafybeicn7i3soqdgr7d
 :::
 
 
-
 ## Fetching the CID with an IPFS Gateway
 
 To fetch the CID using an IPFS gateway is as simple as loading one of the following URLs:
@@ -102,7 +101,7 @@ To fetch the CID using an IPFS gateway is as simple as loading one of the follow
 - [https://inbrowser.link/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4](https://inbrowser.link/ipfs/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4)
 
 
-Note that `inbrowser.link` is a special gateway that handles retrieval and verification in the browser, also leveraging in-browser caching, making subsequent loads faster and local, working when you're offline.
+> `inbrowser.link` is powered by the [Service Worker Gateway](https://github.com/ipfs/service-worker-gateway) which handles retrieval and verification in the browser, also leveraging in-browser caching, making subsequent loads faster, and local when you're offline.
 
 ## Summary and next steps
 
