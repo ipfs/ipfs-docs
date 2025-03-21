@@ -7,7 +7,10 @@ description: Guide on how to configure custom domains and DNSLink for your IPFS 
 
 By default, when you deploy a static web application to IPFS, it will be addressed with a CID. Since CIDs are long and hard to remember, they're not very user-friendly, for example, `https://bafybeifhgtpm6kmbyqszbardceszvkv5rsi3dodtuufpcfskzggekcfl2y.ipfs.inbrowser.link/` or `https://bafybeifhgtpm6kmbyqszbardceszvkv5rsi3dodtuufpcfskzggekcfl2y.ipfs.dweb.link/`.
 
-To make your app easier to access, you can optionally configure a custom domain for your app, depending on how you want users to access your app.
+To make your website or app easier to access, you can link a custom domain for your website in a number of ways, depending on how you want users to access your app. The main options are:
+
+- [DNSLink](#cid-signaling-with-dnslink): allowing users to access your website with IPFS Gateways, using the custom domain
+- [Access via a custom domain](#access-via-a-custom-domain) - Access your website via a custom domain name.
 
 This guide will walk you through the process of configuring a custom domain for your app, and how to configure DNSLink to signal the CID for your app.
 

@@ -1,6 +1,6 @@
 ---
 title: Link a domain
-description: Allow users to access your IPFS hosted site by linking up a domain name.
+description: Guide on how to link custom domains (DNS, ENS, and Handshake) to CIDs, allowing users to access your website or app via a custom domain.
 ---
 
 # Link a domain

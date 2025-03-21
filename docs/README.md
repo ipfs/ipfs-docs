@@ -5,7 +5,11 @@ description: The home page for developer documentation for IPFS, the InterPlanet
 
 # Welcome to the IPFS docs
 
-The InterPlanetary File System (IPFS) is a set of composable, peer-to-peer protocols for addressing, routing, and transferring [content-addressed](concepts/glossary.md#content-addressing) data in a decentralized file system. Many popular projects are built on IPFS - see the [ecosystem directory](https://ecosystem.ipfs.tech) for a list of some of these projects.
+IPFS is a set of building blocks for a better web. Open protocols to make your data smarter: content-addressed, verifiable, unstoppable 💎.
+
+On a more technical level, the InterPlanetary File System (IPFS) is a set of protocols for addressing, routing, and transferring data on the web, built on the ideas of [content-addressed](concepts/glossary.md#content-addressing) and peer-to-peer networking.
+
+Many popular projects are built on IPFS - see the [ecosystem directory](https://ecosystem.ipfs.tech) for a list of some of these projects.
 
 ## Get started
 
@@ -15,7 +19,8 @@ You can quickly [retrieve data](#retrieve-data) and [provide data](#provide-data
 
 Quickly retrieve data from the IPFS network, no programming required:
 
-- Fetch data via it's <VueCustomTooltip label="An address used to point to data in IPFS, based on the content itself, as opposed to the location." underlined multiline is-medium>[content identifier (CID)](concepts/glossary.md#cid)</VueCustomTooltip> [using an IPFS gateway](./quickstart/retrieve.md).
+- Fetch data via it's [content identifier (CID)](concepts/glossary.md#cid)[using an IPFS gateway](./quickstart/retrieve.md).
+- Install the [IPFS Companion](./install/ipfs-companion.md) browser extension to add support for `ipfs://` and `ipns://` addresses to your browser.
 
 ### Provide data
 
@@ -32,10 +37,10 @@ You can build apps that leverage IPFS implementations, or use HTTP instead:
 
 #### Using IPFS
 
-Build an IPFS-native app using one of the many IPFS <VueCustomTooltip label="Software, written in any programming language, with functionality to process and transmit content-addressed data. Some implementations are optimized for specific use cases or devices, or use different subsystems to handle content-addressed data. There are multiple specifications in IPFS for handling content-addressed data, and not all implementations implement them." underlined multiline is-medium>implementations</VueCustomTooltip> and tools built by and for Web3 users:
+Build an IPFS-native app using one of the many IPFS [implementations](./concepts/ipfs-implementations.md) and tools:
 
 - If you are familiar with JavaScript, checkout the [IPFS in web apps guide](./how-to/ipfs-in-web-apps.md), which covers how to use [Helia](https://github.com/ipfs/helia) and related libraries to build IPFS-native apps.
-- To develop IPFS applications using Go and/or interact with IPFS from the terminal, use the [IPFS Kubo implementation in Go](./install/command-line.md). 
+- To develop IPFS applications using Go and/or interact with IPFS from the terminal, use the [IPFS Kubo implementation](./install/command-line.md).
 - Try any of the [many other tools and implementations](./concepts/ipfs-implementations.md), which are written in different languages and tailored to specific needs and use cases.
 
 #### Using HTTP
