@@ -250,8 +250,6 @@ We used Namecheap, but the process is very similar across all domain name servic
 
 Domain name services are fairly slow to update. You should be able to go to your domain and see the website you pinned in a few hours.
 
-![Random planet facts site with the randomplanetfacts.xyz URL.](./images/single-page-website/random-planets-with-correct-url.png)
-
 ## Up next
 
 This project was designed to get you up and running quickly, but there are many improvements we can make here.
