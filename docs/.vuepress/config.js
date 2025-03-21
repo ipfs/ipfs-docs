@@ -105,9 +105,8 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: false,
               children: [
-                ['/quickstart/publish','Publish with IPFS (UI)'],
-                ['/quickstart/publish_cli', 'Publish with IPFS (command line)' ], 
                 ['/quickstart/retrieve','Retrieve with IPFS'],
+                ['/how-to/websites-on-ipfs/deploy-github-action', 'Deploy to IPFS with GitHub Actions' ],
               ]
             },
             {
@@ -124,9 +123,8 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: false,
               children: [
-                ['/quickstart/publish','Publish with IPFS (UI)'],
-                ['/quickstart/publish_cli', 'Publish with IPFS (command line)' ],
                 ['/quickstart/retrieve','Retrieve with IPFS'],
+                ['/how-to/websites-on-ipfs/deploy-github-action', 'Deploy to IPFS with GitHub Actions' ],
                 
               ]
             },
@@ -243,10 +241,10 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
+                '/how-to/websites-on-ipfs/deploy-github-action',
+                '/how-to/websites-on-ipfs/custom-domains',
                 '/how-to/websites-on-ipfs/single-page-website',
                 '/how-to/websites-on-ipfs/multipage-website',
-                '/how-to/websites-on-ipfs/link-a-domain',
-                '/how-to/websites-on-ipfs/introducing-fleek',
                 '/how-to/websites-on-ipfs/static-site-generators',
                 '/how-to/websites-on-ipfs/redirects-and-custom-404s'
               ]

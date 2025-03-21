@@ -29,7 +29,7 @@ For example, [`docs.ipfs.tech`](https://docs.ipfs.tech) loads because a `TXT` re
 
 ```shell
 dig +noall +answer TXT _dnslink.docs.ipfs.tech
-> _dnslink.docs.ipfs.tech. 30 IN TXT "dnslink=/ipfs/bafybeieenxnjdjm7vbr5zdwemaun4sw4iy7h4imlvvl433q6gzjg6awdpq"
+> _dnslink.docs.ipfs.tech. 30 IN TXT "dnslink=/ipfs/bafybeifld3uybj6azujisdnxu6cm7mombldpbt3au4g33nwnqx7dsgjrta"
 
 ```
 
@@ -47,7 +47,7 @@ For example, let's go back to when we looked up the DNS records for `_dnslink.do
 
 ```sh
 $ dig +noall +answer TXT _dnslink.docs.ipfs.tech
-_dnslink.docs.ipfs.tech.  34  IN  TXT "dnslink=/ipfs/QmVMxjouRQCA2QykL5Rc77DvjfaX6m8NL6RyHXRTaZ9iya"
+_dnslink.docs.ipfs.tech.  34  IN  TXT "dnslink=/ipfs/bafybeifld3uybj6azujisdnxu6cm7mombldpbt3au4g33nwnqx7dsgjrta"
 ```
 
 Based on that, this address:
@@ -59,9 +59,12 @@ Based on that, this address:
 Will get you this block:
 
 ```
-/ipfs/QmVMxjouRQCA2QykL5Rc77DvjfaX6m8NL6RyHXRTaZ9iya/introduction/
+/ipfs/bafybeifld3uybj6azujisdnxu6cm7mombldpbt3au4g33nwnqx7dsgjrta/introduction/
 ```
 
 ## Further Resources
 
+For more information on how to use DNSLink for your website or app, check out the [Custom domains and DNSLink](/how-to/websites-on-ipfs/custom-domains) guide.
+
 For a complete guide to DNSLink — including tutorials, usage examples, and FAQs — check out [dnslink.dev](https://dnslink.dev/).
+

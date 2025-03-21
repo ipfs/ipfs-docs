@@ -12,9 +12,11 @@ arbol('s)
 arg
 auditable
 audius
+astro
 auspinner
 bit[ss]wap
 bitswap
+blockchain
 blockchains
 blockstore
 bool
@@ -136,6 +138,7 @@ merkle
 merkleize
 merklizing
 merkleizing
+merkleizes
 merkleized
 merkleization
 metadata('s)
@@ -219,6 +222,7 @@ sneakernets
 stackparse
 stdout
 storj
+storacha
 Someguy
 subcommand
 substring
@@ -245,6 +249,7 @@ userspace
 vpns
 vscode
 vue
+Vuepress
 wantlist
 wantlists
 web
