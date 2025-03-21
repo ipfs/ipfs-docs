@@ -33,7 +33,7 @@ In the previous section, we discussed how DNSLink can be used to signal the CID 
 To provide access to the app directly via the custom domain, you have the following options:
 
 1. Self-host both the IPFS provider (e.g. [Kubo](https://github.com/ipfs/kubo)) and the HTTP gateway (e.g. [Kubo](https://github.com/ipfs/kubo) or [Rainbow](https://github.com/ipfs/rainbow/)). Deploy an IPFS Gateway that supports DNSLink resolution and point the `CNAME`/`A` DNS record for your custom domain to it and  update the `TXT` record on `_dnslink` subdomain to match CID of your website. Set up CI automation to update TXT record every time your CID changes. You will likely want to also configure TLS with a reverse proxy like Caddy or use a CDN like Cloudflare for TLS termination.
-2. Use a service like Fleek
+2. Use a service like Fleek (HTTP + TLS + CDN + [automatic DNSLink management](https://fleek.xyz/docs/platform/domains/#dnslink)).
 3. Deploy the site to a web hosting service like [Cloudflare Pages](https://pages.cloudflare.com/) or [GitHub Pages](https://pages.github.com/), and point the `CNAME`/`A` record for your main domain and `TXT` record with CID on `_dnslink` subdomain, essentially getting the benefits of both IPFS and traditional web hosting. Remember to set up CI automation to update TXT record every time your CID changes.
 
 Access via a custom domain is useful if you want to serve your app via a domain name that you own, for example, `app.example.com`.
