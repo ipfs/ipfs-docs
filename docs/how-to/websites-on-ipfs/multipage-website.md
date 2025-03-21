@@ -236,7 +236,4 @@ Instead of sharing the CID of your website, you publish the root CID of your web
 
 This is just the tip of the iceberg when it comes to IPNS. [Check out the IPNS page to learn more →](../../concepts/ipns.md)
 
-## Up next
-
-In the next tutorial, we'll look at [linking a domain name to your site!](../../how-to/websites-on-ipfs/link-a-domain.md)
 

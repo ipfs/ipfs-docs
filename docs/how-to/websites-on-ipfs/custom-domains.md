@@ -1,18 +1,24 @@
 ---
 title: Custom domains and DNSLink
-description: Guide on how to configure custom domains and DNSLink for your IPFS deployments.
+description: Guide on how to use custom domains and DNSLink with IPFS deployed websites, allowing users to access your website or app via a custom domain.
 ---
 
 # Custom domains and DNSLink
 
-By default, when you deploy a static web application to IPFS, it will be addressed with a CID. Since CIDs are long and hard to remember, they're not very user-friendly, for example, `https://bafybeifhgtpm6kmbyqszbardceszvkv5rsi3dodtuufpcfskzggekcfl2y.ipfs.inbrowser.link/` or `https://bafybeifhgtpm6kmbyqszbardceszvkv5rsi3dodtuufpcfskzggekcfl2y.ipfs.dweb.link/`.
+By default, when you deploy a static web application to IPFS, it will be addressed with a CID. But CIDs are long, hard to remember, and not very user-friendly. For example,
 
-To make your website or app easier to access, you can link a custom domain for your website in a number of ways, depending on how you want users to access your app. The main options are:
+ - `https://bafybeifhgtpm6kmbyqszbardceszvkv5rsi3dodtuufpcfskzggekcfl2y.ipfs.inbrowser.link/` or
+ - `https://bafybeifhgtpm6kmbyqszbardceszvkv5rsi3dodtuufpcfskzggekcfl2y.ipfs.dweb.link/`.
+ - `ipfs://bafybeifhgtpm6kmbyqszbardceszvkv5rsi3dodtuufpcfskzggekcfl2y` (if you have the [IPFS Companion](https://github.com/ipfs/ipfs-companion) browser extension installed)
 
-- [DNSLink](#cid-signaling-with-dnslink): allowing users to access your website with IPFS Gateways, using the custom domain
-- [Access via a custom domain](#access-via-a-custom-domain) - Access your website via a custom domain name.
+To make your website or app easier to access, you can link a custom domain for your website or web app using two approaches that can be used in combination:
 
-This guide will walk you through the process of configuring a custom domain for your app, and how to configure DNSLink to signal the CID for your app.
+- [CID signaling with DNSLink](#cid-signaling-with-dnslink): allowing users to access your website from IPFS Gateways using the custom domain, e.g. `https://ipfs.io/ipns/docs.ipfs.tech` (note that it will redirect to a subdomain gateway `https://docs-ipfs-tech.ipns.dweb.link/` to ensure origin isolation). With this approach, you can access your website from a local IPFS Gateway or the Service Worker Gateway, benefiting from local verification and all the other benefits of IPFS like peer-to-peer retrieval and censorship resistance.
+- [Access via a custom domain](#access-via-a-custom-domain) - Access your website via a custom domain name, e.g. `https://docs.ipfs.tech`.
+
+The main difference between the two options is that CID signaling with DNSLink is mainly concerned with resolving a memorable domain name to a CID, while access via a custom domain is mainly concerned with accessing your website via a custom domain name, and in many cases, you can use both approaches together.
+
+This guide will walk you through the nuances of each of these options, and how to configure them for your app.
 
 ### CID Signaling with DNSLink
 
