@@ -1,6 +1,8 @@
 ---
 title: Deploy Static Apps to IPFS with GitHub Actions
 description: Guide on how to setup GitHub Actions to deploy static sites/apps to IPFS using the IPFS Deploy Action.
+current-ipfs-version: v0.34.0
+current-ipfs-cluster-version: v1.1.2
 ---
 
 # Deploy Static Apps to IPFS with GitHub Actions
@@ -162,7 +164,7 @@ You can also customize the Kubo version and [`ipfs add` parameters](https://docs
   uses: ipfs/ipfs-deploy-action@v1
   with:
     # ... other inputs ...
-    kubo-version: 'v0.33.0' # Default, change if needed
+    kubo-version: 'v0.34.0' # Default, change if needed
     ipfs-add-options: '--cid-version 1 --chunker size-1048576' # Default options
 ```
 
