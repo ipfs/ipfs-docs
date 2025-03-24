@@ -260,7 +260,7 @@ You can load the app using the CID from the commit status, and it will be access
 
 If you have IPFS Desktop or Kubo installed, you can load with the local gateway exposed by IPFS Desktop or Kubo.
 
-For example, here's the URL for a given CID: `bafybeicbpllqfrjfygcdwkz2q5prdtu4q7obmsqr2fkk5byn45rs24ypcu.ipfs.localhost:8080`
+For example, here's the URL for a given CID: `http://bafybeicbpllqfrjfygcdwkz2q5prdtu4q7obmsqr2fkk5byn45rs24ypcu.ipfs.localhost:8080`
 
 This URL uses subdomain resolution (where the CID has its own subdomain), which ensures [origin isolation](../gateway-best-practices.md/#use-subdomain-gateway-resolution-for-origin-isolation) per CID.
 
