@@ -1,11 +1,45 @@
 ---
 title: Static-site generators
-description:
+description: A guide to configuring popular static-site generators (Next.js, Hugo, VuePress, Middleman, Jekyll) for optimal deployment to IPFS, including best practices and configuration tips
 ---
 
 # Static-site generators
 
-Static-site generators like Hugo, Jekyll, Middleman, Next.js, and VuePress are all incredibly popular platforms building websites quickly. This guide walks through how to integrate IPFS into each of these workflows.
+Static-site generators like Hugo, Jekyll, Middleman, Next.js, and VuePress are all popular platforms for building static sites quickly. This guide walks through how to configure each of these generators to build for deployment to IPFS.
+
+Check out the [IPFS Deploy GitHub Action Guide](./deploy-github-action.md) to automate the deployment of your static site to IPFS using GitHub Actions.
+
+## Next.js
+
+When deploying a Next.js site to IPFS, make sure that your site uses [Static Site Generation (SSG)](https://nextjs.org/docs/pages/building-your-application/rendering/static-site-generation), so that it can be [built as a static site]((https://nextjs.org/docs/pages/building-your-application/deploying/static-exports)).
+
+1. First, ensure your `next.config.js` file has the following settings:
+
+```js
+module.exports = {
+  output: "export",  // Enables static exports
+  trailingSlash: true,  // Required for IPFS gateway compatibility
+};
+```
+
+Key points about the configuration:
+- `output: "export"` tells Next.js to generate a static site
+- `trailingSlash: true` ensures routing is functional when served from IPFS gateways (which require an index.html file for each route)
+
+To build your Next.js site:
+
+```bash
+npx next build
+```
+
+The static site will be generated in the `./out` directory.
+
+### Important Considerations
+
+- Only use [Static Site Generation (SSG)](https://nextjs.org/docs/pages/building-your-application/rendering/static-site-generation) features.
+- Server-side features like `getServerSideProps` or API routes won't work.
+- Dynamic routes need to be pre-rendered at build time.
+- Use relative URLs for all internal links.
 
 ## Hugo
 
