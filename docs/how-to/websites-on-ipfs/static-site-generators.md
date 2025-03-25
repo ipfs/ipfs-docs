@@ -11,7 +11,7 @@ Check out the [IPFS Deploy GitHub Action Guide](./deploy-github-action.md) to au
 
 ## Next.js
 
-When deploying a Next.js site to IPFS, make sure that your site uses [Static Site Generation (SSG)](https://nextjs.org/docs/pages/building-your-application/rendering/static-site-generation), so that it can be [built as a static site](<(https://nextjs.org/docs/pages/building-your-application/deploying/static-exports)>).
+When deploying a Next.js site to IPFS, make sure that your site uses [Static Site Generation (SSG)](https://nextjs.org/docs/pages/building-your-application/rendering/static-site-generation), so that it can be [built as a static site](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports).
 
 1. First, ensure your `next.config.js` file has the following settings:
 
