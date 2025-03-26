@@ -350,7 +350,7 @@ Argument `+"`%s`"+` is of file type. This endpoint expects one or several files 
 		if bodyArg.Endpoint == "/api/v0/add" {
 			fmt.Fprintln(buf, `
 
-The `+"`add`"+` command not only allows adding files, but also uploading directories and complex hierarchies. (For example, in cURL, you can upload multiple files and have them show up in a folder by running `+"`curl -sLk -XPOST -F \"file=@file1.txt;filename=path1/file1.txt\" -F \"file=@file2.txt;filename=path2/file2.txt\" \"http://127.0.0.1:5001/api/v0/add?recursive=true&wrap-with-directory=true\"`"+`.)
+The `+"`add`"+` command not only allows adding files, but also uploading directories and complex hierarchies. (For example, in cURL, you can upload multiple files and have them show up in a folder by running `+"`curl -sLk -XPOST -F \"file=@file1.txt;filename=path1/file1.txt\" -F \"file=@file2.txt;filename=path2/file2.txt\" \"http://127.0.0.1:5001/api/v0/add?recursive=true&wrap-with-directory=true\"`"+`; -F is specified multiple times along with recursive and wrap-with-directory.)
 
 This happens as follows: Every part in the multipart request is a *directory* or a *file* to be added to IPFS.
 
