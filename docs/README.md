@@ -44,7 +44,7 @@ Build an IPFS-native app using one of the many IPFS [implementations](./concepts
 
 #### Using HTTP
 
-As the IPFS ecosystem has grown and evolved with multiple implementations in different languages, HTTP has become an important foundation for interopability. Check out the following resources to learn more:
+As the IPFS ecosystem has grown and evolved with multiple implementations in different languages, HTTP has become an important foundation for interoperability. Check out the following resources to learn more:
 
 - Control an IPFS Kubo node via HTTP using the [Kubo RPC API](./reference/kubo/rpc.md), which supports [multiple clients in multiple languages](./reference/kubo-rpc-cli.md).
 - For an implementation and runtime agnostic HTTP interface for retrieving data, use an [IPFS gateway](./reference/http/gateway.md).
