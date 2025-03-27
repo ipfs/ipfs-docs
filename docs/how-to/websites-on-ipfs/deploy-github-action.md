@@ -292,7 +292,6 @@ This URL uses subdomain resolution (where the CID has its own subdomain), which 
 ## Best Practices
 
 1. Always use a specific version of the action (e.g., `@v1`)
-2. Set up proper caching for your dependencies to speed up builds
 3. Consider using multiple IPFS providers for redundancy
 4. Use environment-specific configurations when needed
 
@@ -302,4 +301,4 @@ If you encounter any issues:
 
 1. Check the GitHub Actions run logs for detailed error messages
 2. Review the [action's README](https://github.com/ipfs/ipfs-deploy-action) for updates
-3. Open an issue in the action's repository with detailed information about your setup and the problem you're experiencing
+3. Open an issue in the [action's repository](https://github.com/ipfs/ipfs-deploy-action/issues/new) with detailed information about your setup and the problem you're experiencing
