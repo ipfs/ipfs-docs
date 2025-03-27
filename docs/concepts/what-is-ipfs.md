@@ -7,7 +7,7 @@ description:  Learn what IPFS is and isn't.
 
 IPFS is a set of building blocks for a better web. Open protocols to make your data smarter: content-addressed, verifiable, and unstoppable.
 
-On a more technical level, IPFS is a set of open protocols for addressing, routing, and transferring data on the web, built on the ideas of [content addressing](concepts/glossary.md#content-addressing) and peer-to-peer networking.
+On a more technical level, IPFS is a set of open protocols for addressing, routing, and transferring data on the web, built on the ideas of [content addressing](../concepts/glossary.md#content-addressing) and peer-to-peer networking.
 
 
 :::callout
