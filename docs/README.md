@@ -3,17 +3,17 @@ title: IPFS Documentation
 description: The home page for developer documentation for IPFS, the InterPlanetary File System.
 ---
 
-# Welcome to the IPFS docs
+# Welcome to the IPFS Docs
 
 IPFS is a set of building blocks for a better web. Open protocols to make your data smarter: content-addressed, verifiable, and unstoppable.
 
-On a more technical level, the InterPlanetary File System (IPFS) is a set of protocols for addressing, routing, and transferring data on the web, built on the ideas of [content-addressed](concepts/glossary.md#content-addressing) and peer-to-peer networking.
+On a more technical level, IPFS is a set of open protocols for addressing, routing, and transferring data on the web, built on the ideas of [content addressing](concepts/glossary.md#content-addressing) and peer-to-peer networking.
 
-Many popular projects are built on IPFS - see the [ecosystem directory](https://ecosystem.ipfs.tech) for a list of some of these projects.
+Many popular projects are built with IPFS - see the [ecosystem directory](https://ecosystem.ipfs.tech) and the [awesome-ipfs](https://github.com/ipfs/awesome-ipfs) list to find some of these projects.
 
 ## Get started
 
-You can quickly [retrieve data](#retrieve-data) and [provide data](#provide-data) to the IPFS network, and [interact with the network](#interact-with-the-network) using a simple GUI app or a standard browser. If you'd rather develop applications, learn how to build IPFS-native apps or use standard HTTP in the [Build](#build) section.
+You can get started [retrieving data](#retrieve-data) and [providing data](#provide-data) to the IPFS network. If you'd rather develop applications, learn how to build IPFS-native apps or use standard HTTP in the [Build](#build) section.
 
 ### Retrieve data
 
@@ -30,7 +30,6 @@ Provide data to the IPFS network with IPFS Desktop or a pinning service:
 - [Publish content to the IPFS network with IPFS Desktop](./how-to/desktop-app.md).
 - [Deploy static sites to the IPFS network with a GitHub Action](./how-to/websites-on-ipfs/deploy-github-action.md).
 
-
 ### Build
 
 You can build apps that leverage IPFS implementations, or use HTTP instead:
@@ -45,7 +44,7 @@ Build an IPFS-native app using one of the many IPFS [implementations](./concepts
 
 #### Using HTTP
 
-Connect your Web2 application to the IPFS network using standard HTTP:
+As the IPFS ecosystem has grown and evolved with multiple implementations in different languages, HTTP has become an important foundation for interopability. Check out the following resources to learn more:
 
 - Control an IPFS Kubo node via HTTP using the [Kubo RPC API](./reference/kubo/rpc.md), which supports [multiple clients in multiple languages](./reference/kubo-rpc-cli.md).
 - For an implementation and runtime agnostic HTTP interface for retrieving data, use an [IPFS gateway](./reference/http/gateway.md).

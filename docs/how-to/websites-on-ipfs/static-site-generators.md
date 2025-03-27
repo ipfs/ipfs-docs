@@ -62,7 +62,7 @@ Output will be in `./public/` directory by default. Upload the public folder to 
 
 ## VuePress
 
-Refer to VuePress' [Getting Started](https://vuepress.vuejs.org/guide/) to install and set up your project.
+Refer to VuePress' [Getting Started](https://vuepress.vuejs.org/guide/getting-started.html) to install and set up your project.
 
 To build a static site:
 

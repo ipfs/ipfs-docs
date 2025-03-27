@@ -13,7 +13,6 @@ By the end of this guide, your web app (or just a static website) will be deploy
 
 ![IPFS Deploy Action](./images/github-action/commit-status.png)
 
-
 ![IPFS Deploy Action](./images/github-action/pr-comment.png)
 
 Once deployed, each deployment of your app will be addressed by a CID and accessible via [recursive gateways](https://docs.ipfs.tech/concepts/ipfs-gateway/#recursive-vs-non-recursive-gateways), as well as the [Service Worker Gateway](https://inbrowser.link).
@@ -22,7 +21,7 @@ To see what this looks like in a real-world example, check out the [IPNS Inspect
 
 ## What is the IPFS Deploy Action?
 
-The IPFS Deploy Action is a [composite action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action), that can be called as a step in a [GitHub Actions workflow](https://docs.github.com/en/actions/writing-workflows), and combines the following features:
+The [IPFS Deploy Action](https://github.com/ipfs/ipfs-deploy-action) is a [composite action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action), that can be called as a step in a [GitHub Actions workflow](https://docs.github.com/en/actions/writing-workflows), and combines the following features:
 
 - 📦 Merkleizes your static site into a [CAR](../../concepts/glossary.md#car) file
 - 🚀 Uploads CAR file to either [Storacha](https://storacha.network/), [IPFS Cluster](https://ipfscluster.io/), or [Kubo](https://github.com/ipfs/kubo#readme)
@@ -35,11 +34,18 @@ The IPFS Deploy Action works with both self-hosted IPFS nodes (Kubo or IPFS Clus
 
 The IPFS Deploy Action makes no assumptions about your build process. Whether you're using React, Vuepress, Astro, Next.js, or any other static site generator, this guide will help you get your web application deployed on IPFS. The only requirement is that your web application is static, meaning that once built, it is a folder containing HTML, CSS, and JavaScript files that are served as-is to the client.
 
+Note the IPFS Deploy Action is built on top of the following CLIs:
+
+- [Kubo CLI](https://github.com/ipfs/kubo#readme) for merkleizing builds with UnixFS, uploading CAR files to Kubo, and interacting with Pinning APIs
+- [IPFS Cluster CTL](https://ipfscluster.io/documentation/reference/ctl/) for IPFS Cluster uploads
+- [w3cli](https://docs.storacha.network/w3cli/) for Storacha uploads
+- [AWS S3 CLI](https://aws.amazon.com/s3/) for Filebase CAR uploads
+
 ## Prerequisites
 
 Before you begin, make sure you have:
 
-1. A GitHub repository with your static web application
+1. A GitHub repository with your static web application, this can be a single page application, or multi-page application (like Next.js) that requires no special server-side rendering or backend logic.
 2. A [Storacha](https://storacha.network) account or an IPFS Node ([Kubo](https://github.com/ipfs/kubo#readme) or [IPFS Cluster](https://ipfscluster.io/)) with the [Kubo RPC](../../reference/kubo/rpc.md) endpoint publicly reachable (see [this guide](../kubo-rpc-tls-auth.md) for instructions on how to secure the Kubo RPC endpoint with TLS and authentication)
 
 This guide will use Storacha for simplicity. If you have an IPFS Node, you can skip the Storacha setup and use your own node instead.
@@ -47,7 +53,6 @@ This guide will use Storacha for simplicity. If you have an IPFS Node, you can s
 ## Step 1: Setting Up Storacha
 
 If you don't have a Storacha account, you can create one at [storacha.network](https://storacha.network).
-
 
 1. Install the [`w3cli`](https://www.npmjs.com/package/@web3-storage/w3cli) tool:
 
@@ -84,6 +89,7 @@ If you don't have a Storacha account, you can create one at [storacha.network](h
    ```bash
    w3 delegation create did:key:YOUR_KEY_DID -c space/blob/add -c space/index/add -c filecoin/offer -c upload/add --base64
    ```
+
    Save the output as a GitHub secret named `STORACHA_PROOF`
 
 ## Step 2: Configure Your Workflow
@@ -219,6 +225,7 @@ To pin your content to Pinata:
 ```
 
 ### Adding Filebase Storage
+
 Note that Filebase only supports static websites for paid accounts.
 To store CAR files on Filebase:
 
@@ -237,7 +244,6 @@ To store CAR files on Filebase:
     filebase-secret-key: ${{ secrets.FILEBASE_SECRET_KEY }}
 ```
 
-
 ## Accessing Your Deployed Site
 
 After successful deployment, you can find the CID for commits:
@@ -246,7 +252,7 @@ After successful deployment, you can find the CID for commits:
 2. In the PR comments (if deploying from a PR)
 3. In the commit status checks
 
-For example, here's where you can find the CID for a [given commit on GitHub]():
+For example, here's where you can find the CID for a given commit on GitHub:
 
 ![IPFS Deploy Action](./images/github-action/commit-status.gif)
 
@@ -289,7 +295,6 @@ This URL uses subdomain resolution (where the CID has its own subdomain), which 
 2. Set up proper caching for your dependencies to speed up builds
 3. Consider using multiple IPFS providers for redundancy
 4. Use environment-specific configurations when needed
-  
 
 ## Getting Help
 
