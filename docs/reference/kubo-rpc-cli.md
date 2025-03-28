@@ -16,6 +16,7 @@ RPC API clients are available in multiple languages, and are listed below. You c
 | JavaScript    | [ipfs/js-kubo-rpc-client](https://www.npmjs.com/package/kubo-rpc-client)  | Active |
 | Java          | [ipfs-shipyard/java-ipfs-http-client](https://github.com/ipfs-shipyard/java-ipfs-http-client)     | Active              |
 | Python        | [ipfs-shipyard/py-ipfs-http-client](https://github.com/ipfs-shipyard/py-ipfs-http-client)       | Active |
+|               | [aioipfs](https://gitlab.com/cipres/aioipfs)              | Active              |
 | Scala         | [ipfs-shipyard/scala-ipfs-api](https://github.com/ipfs-shipyard/scala-ipfs-api)            | Inactive |
 | Clojure       | [keorn/clj-ipfs-http-client](https://github.com/keorn/clj-ipfs-http-client)              | Inactive |
 | Clojurescript | [district0x/cljs-ipfs-http-client](https://github.com/district0x/cljs-ipfs-http-client)  | Inactive |
