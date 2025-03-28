@@ -44,6 +44,7 @@
 /how-to/troubleshoot-file-transfers /how-to/troubleshooting
 /how-to/run-ipfs-inside-docker /install/run-ipfs-inside-docker
 /how-to/ipfs-updater /install/command-line
+/how-to/websites-on-ipfs/link-a-domain /how-to/websites-on-ipfs/custom-domains
 /install/command-line-quick-start/ /how-to/command-line-quick-start
 /install/js-ipfs/ https://github.com/ipfs/helia/wiki
 /introduction/ /concepts
