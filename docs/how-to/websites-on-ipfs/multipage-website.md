@@ -16,7 +16,7 @@ If you followed the previous tutorial, you would already have the IPFS Desktop a
 Before we dig into IPFS, let's first create the files we'll need for this mini-project.
 
 1. Create a folder called `multi-page-first-step`.
-1. Within this new folder, create a file called `index.html` and paste in the following code. We'll continue using the [Random Planet Facts](http://randomplanetfacts.xyz) website from the previous tutorial, with an added link to an _About_ page:
+2. Within this new folder, create a file called `index.html` and paste in the following code. We'll continue using the Random Planet Facts website from the previous tutorial, with an added link to an _About_ page:
 
 ```html
 <!DOCTYPE html>
@@ -236,7 +236,4 @@ Instead of sharing the CID of your website, you publish the root CID of your web
 
 This is just the tip of the iceberg when it comes to IPNS. [Check out the IPNS page to learn more →](../../concepts/ipns.md)
 
-## Up next
-
-In the next tutorial, we'll look at [linking a domain name to your site!](../../how-to/websites-on-ipfs/link-a-domain.md)
 
