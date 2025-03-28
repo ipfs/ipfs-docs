@@ -7,5 +7,10 @@
             }
         }
     ],
+    "ignorePatterns": [
+        {
+            "pattern": "^[^/]+$"
+        }
+    ],
     "aliveStatusCodes": [200, 206, 429]
 }

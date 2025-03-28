@@ -1,17 +1,20 @@
 ---
 title: Kubo
 description: Using IPFS Kubo through the command-line allows you to do everything that IPFS Desktop can do, but at a more granular level, since you can specify which commands to run. Learn how to install it here.
-current-ipfs-version: v0.32.1
+current-ipfs-version: v0.34.1
 ---
 
 # Install IPFS Kubo
 
 This guide describes the available installation processes for IPFS Kubo, a Go-based implementation of the InterPlanetary File System (IPFS) protocol. Kubo was the first implementation of IPFS, and is the most widely used implementation today. Kubo allows you to do everything that IPFS Desktop can do, but at a more granular level, since you can specify which commands to run. Kubo has the following features:
 
-- An IPFS daemon server
-- Extensive command line tooling
-- An HTTP RPC API for controlling the node
-- An HTTP Gateway for serving content to HTTP browsers
+- Runs an IPFS-Node as a network service that is part of LAN and WAN ([Amino](https://probelab.io/ipfs/amino/)) DHT
+- [HTTP Gateway](https://specs.ipfs.tech/http-gateways/) (`/ipfs` and `/ipns`) functionality for trusted and [trustless](https://docs.ipfs.tech/reference/http/gateway/#trustless-verifiable-retrieval) content retrieval
+- [HTTP Routing V1](https://specs.ipfs.tech/routing/http-routing-v1/) (`/routing/v1`) client and server implementation for [delegated routing](https://github.com/ipfs/kubo/blob/master/docs/delegated-routing.md) lookups
+- [HTTP Kubo RPC API](https://docs.ipfs.tech/reference/kubo/rpc/) (`/api/v0`) to access and control the daemon
+- [Command Line Interface](https://docs.ipfs.tech/reference/kubo/cli/) (`ipfs --help`) based on (`/api/v0`) RPC API
+- [WebUI](https://github.com/ipfs/ipfs-webui/#readme) to manage the Kubo node
+- [Content blocking](https://github.com/ipfs/kubo/blob/master/docs/content-blocking.md) support for operators of public nodes
 - Binaries for Windows, MacOS, Linux, FreeBSD and OpenBSD
 
 Installing Kubo in the command line is handy for many use cases, such as building applications and services on top of an IPFS node, or setting up a node without a user interface (which is usually the case with remote servers or virtual machines).  
@@ -31,7 +34,7 @@ Kubo runs on most Windows, MacOS, Linux, FreeBSD and OpenBSD systems that meet t
 
 Note the following:
 - The amount of disk space your IPFS installation uses depends on how much data you're sharing. A base installation uses around 12MB of disk space.
-- You can enable automatic garbage collection via [--enable-gc](../reference/kubo/cli.md#ipfs-daemon) and adjust using [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.32.1/docs/config.md#datastorestoragemax) for data retrieved from other peers.
+- You can enable automatic garbage collection via [--enable-gc](../reference/kubo/cli.md#ipfs-daemon) and adjust using [default maximum disk storage](https://github.com/ipfs/kubo/blob/v0.34.1/docs/config.md#datastorestoragemax) for data retrieved from other peers.
 
 
 <!-- TODO: hide this footgun until https://github.com/ipfs/kubo/pull/10524 is merged and released in stable kubo 
@@ -55,40 +58,77 @@ This section describes how to download and install the Kubo binary from `dist.ip
 If you are unable to access [dist.ipfs.tech](https://dist.ipfs.tech#kubo), you can also download Kubo (go-ipfs) from the project's GitHub [releases](https://github.com/ipfs/kubo/releases/latest) page or `/ipns/dist.ipfs.tech` at the [dweb.link](https://dweb.link/ipns/dist.ipfs.tech#kubo) gateway.
 :::
 
-Binaries are available for the following operating systems:
-
-| OS      | 32-bit | 64-bit | ARM | ARM-64 |
-|---------|--------|--------|-----|--------|
-| macOS   | No     | Yes    | No  | Yes    |
-| FreeBSD | Yes    | Yes    | Yes | No     |
-| Linux   | Yes    | Yes    | Yes | Yes    |
-| OpenBSD | Yes    | Yes    | Yes | No     |
-| Windows | Yes    | Yes    | No  | No     |
-
 For installation instructions for your operating system, select the appropriate tab.
 
 :::: tabs
 
-::: tab windows id="install-kubo-windows"
+::: tab Linux id="install-kubo-linux"
+
+### Linux
+
+1. Download the Linux binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
+
+   ```bash
+   wget https://dist.ipfs.tech/kubo/v0.34.1/kubo_v0.34.1_linux-amd64.tar.gz
+   ```
+
+1. Unzip the file:
+
+   ```bash
+   tar -xvzf kubo_v0.34.1_linux-amd64.tar.gz
+
+   > x kubo/install.sh
+   > x kubo/ipfs
+   > x kubo/LICENSE
+   > x kubo/LICENSE-APACHE
+   > x kubo/LICENSE-MIT
+   > x kubo/README.md
+   ```
+
+1. Move into the `kubo` folder:
+
+   ```bash
+   cd kubo
+   ```
+
+1. Run the installation script
+
+   ```bash
+   sudo bash install.sh
+
+   > Moved ./ipfs to /usr/local/bin
+   ```
+
+1. Test that Kubo has installed correctly:
+
+   ```bash
+   ipfs --version
+
+   > ipfs version 0.34.1
+   ```
+
+:::
+
+::: tab Windows id="install-kubo-windows"
 
 ### Windows
 
 1. Download the Windows binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
    ```powershell
-   wget https://dist.ipfs.tech/kubo/v0.32.1/kubo_v0.32.1_windows-amd64.zip -Outfile kubo_v0.32.1.zip
+   wget https://dist.ipfs.tech/kubo/v0.34.1/kubo_v0.34.1_windows-amd64.zip -Outfile kubo_v0.34.1.zip
    ```
 
-1. Unzip the file to a sensible location, such as `~\Apps\kubo_v0.32.1`.
+1. Unzip the file to a sensible location, such as `~\Apps\kubo_v0.34.1`.
 
    ```powershell
-   Expand-Archive -Path kubo_v0.32.1.zip -DestinationPath ~\Apps\kubo_v0.32.1
+   Expand-Archive -Path kubo_v0.34.1.zip -DestinationPath ~\Apps\kubo_v0.34.1
    ```
 
-1. Move into the `kubo_v0.32.1` folder
+1. Move into the `kubo_v0.34.1` folder
 
    ```powershell
-   cd ~\Apps\kubo_v0.32.1\kubo
+   cd ~\Apps\kubo_v0.34.1\kubo
    ```
 
 1. Check that the `ipfs.exe` works:
@@ -96,7 +136,7 @@ For installation instructions for your operating system, select the appropriate 
    ```powershell
    .\ipfs.exe --version
 
-   > ipfs version 0.32.1
+   > ipfs version 0.34.1
    ```
 
    At this point, Kubo is usable. However, it's strongly recommended that you first add `ipfs.exe` to your `PATH` using the following steps:
@@ -142,7 +182,7 @@ For installation instructions for your operating system, select the appropriate 
    ```powershell
    ipfs --version
 
-   > ipfs version 0.32.1
+   > ipfs version 0.34.1
    ```
 
 :::
@@ -170,71 +210,24 @@ For installation instructions for your operating system, select the appropriate 
    If Kubo is installed, the version number displays. For example:
 
    ```bash
-   > ipfs version 0.32.1
+   > ipfs version 0.34.1
    ```
 :::
 
-::: tab linux id="install-kubo-linux"
-
-### Linux
-
-1. Download the Linux binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
-
-   ```bash
-   wget https://dist.ipfs.tech/kubo/v0.32.1/kubo_v0.32.1_linux-amd64.tar.gz
-   ```
-
-1. Unzip the file:
-
-   ```bash
-   tar -xvzf kubo_v0.32.1_linux-amd64.tar.gz
-
-   > x kubo/install.sh
-   > x kubo/ipfs
-   > x kubo/LICENSE
-   > x kubo/LICENSE-APACHE
-   > x kubo/LICENSE-MIT
-   > x kubo/README.md
-   ```
-
-1. Move into the `kubo` folder:
-
-   ```bash
-   cd kubo
-   ```
-
-1. Run the install script
-
-   ```bash
-   sudo bash install.sh
-
-   > Moved ./ipfs to /usr/local/bin
-   ```
-
-1. Test that Kubo has installed correctly:
-
-   ```bash
-   ipfs --version
-
-   > ipfs version 0.32.1
-   ```
-
-:::
-
-::: tab freeBSD id="install-kubo-freeBSD"
+::: tab FreeBSD id="install-kubo-freeBSD"
 
 ### FreeBSD
 
 1. Download the FreeBSD binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
    ```bash
-   wget https://dist.ipfs.tech/kubo/v0.32.1/kubo_v0.32.1_freebsd-amd64.tar.gz
+   wget https://dist.ipfs.tech/kubo/v0.34.1/kubo_v0.34.1_freebsd-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf kubo_v0.32.1_freebsd-amd64.tar.gz
+   tar -xvzf kubo_v0.34.1_freebsd-amd64.tar.gz
 
    > x kubo/install.sh
    > x kubo/ipfs
@@ -263,25 +256,25 @@ For installation instructions for your operating system, select the appropriate 
    ```bash
    ipfs --version
 
-   > ipfs version 0.32.1
+   > ipfs version 0.34.1
    ```
 
 :::
 
-::: tab openBSD id="install-kubo-openBSD"
+::: tab OpenBSD id="install-kubo-openBSD"
 
 ### OpenBSD
 
 1. Download the OpenBSD binary from [`dist.ipfs.tech`](https://dist.ipfs.tech/#kubo).
 
    ```bash
-   wget https://dist.ipfs.tech/kubo/v0.32.1/kubo_v0.32.1_openbsd-amd64.tar.gz
+   wget https://dist.ipfs.tech/kubo/v0.34.1/kubo_v0.34.1_openbsd-amd64.tar.gz
    ```
 
 1. Unzip the file:
 
    ```bash
-   tar -xvzf kubo_v0.32.1_openbsd-amd64.tar.gz
+   tar -xvzf kubo_v0.34.1_openbsd-amd64.tar.gz
 
    > x kubo/install.sh
    > x kubo/ipfs
@@ -310,7 +303,7 @@ For installation instructions for your operating system, select the appropriate 
    ```bash
    ipfs --version
 
-   > ipfs version 0.32.1
+   > ipfs version 0.34.1
    ```
 
 :::
@@ -322,7 +315,7 @@ For installation instructions for your operating system, select the appropriate 
 
 ## Build Kubo from source
 
-For the current instructions on how to manually download, compile and build Kubo from source, see the [Build from Source](https://github.com/ipfs/kubo/blob/v0.32.1/README.md#build-from-source) section in the Kubo repository.
+For the current instructions on how to manually download, compile and build Kubo from source, see the [Build from Source](https://github.com/ipfs/kubo/blob/v0.34.1/README.md#build-from-source) section in the Kubo repository.
 
 ## Determining which node to use with the command line
 
@@ -342,6 +335,14 @@ When an IPFS command executes without parameters, the CLI client checks whether 
 
 - If an `$IPFS_PATH` isn't in the default location, use the `--api <rpc-api-addr>` command-line argument. Alternatively, you can set the environment variable to `IPFS_PATH`. `IPFS_PATH` will point to a directory with the `$IPFS_PATH/api` file pointing at the Kubo RPC of the existing `ipfs` daemon instance.
 
+::: tip
+
+If you plan to expose the RPC API to the public internet with TLS encryption and HTTP authentication, check out the [TLS and HTTP Auth for Kubo with Caddy](../how-to/kubo-rpc-tls-auth.md) guide.
+
+If you are just interested in retrieval, see implementation-agnostic [HTTP Gateway](../reference/http/gateway.md) instead.
+
+:::
+
 #### Most common examples
 
 If you are an IPFS Desktop user, you can install CLI tools and an `.ipfs/api` file is automatically picked up.
@@ -355,4 +356,3 @@ You can use `mkdir -p ~/.ipfs && echo "/ip4/<ip>/tcp/<rpc-port>" > ~/.ipfs/api` 
 Now that you've installed IPFS Kubo:
 
 - Check out the [IPFS Kubo Tutorial in Guides](../how-to/command-line-quick-start.md), which will guide you through taking a Kubo node online and interacting with the network.
-- Learn how to quickly install, uninstall, upgrade and downgrade Kubo using [ipfs-update](../how-to/ipfs-updater.md).

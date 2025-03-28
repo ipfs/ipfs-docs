@@ -1,9 +1,9 @@
 ---
-title: Host a single-page website on IPFS
+title: Host a single-page website with IPFS Desktop
 description: Learn how to host a simple one-page website on IPFS and link up a domain name.
 ---
 
-# Host a single-page website on IPFS
+# Host a single-page website with IPFS Desktop
 
 In this tutorial, we will host a simple one-page website on IPFS and link up a domain name. This is the first step is a series of tutorials to teach web developers on how to build websites and applications using IPFS.
 
@@ -170,7 +170,7 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
              'Only one spacecraft has flown by Uranus, the Voyager 2.',
              'Neptune was discovered in 1846 by Urbain Le Verrier and Johann Galle.',
              'Neptune has 14 moons.',
-             'The average temperatue of Neptune is about -201 °C.',
+             'The average temperature of Neptune is about -201 °C.',
              'There is a 1:20 million scale model of the solar system in Sweden.',
              'The gap between the Earth and our moon is bigger than the diameters of all the planets combined.',
              "The first accurate calculation of the speed of light was using Jupiter's moons",
@@ -249,8 +249,6 @@ We used Namecheap, but the process is very similar across all domain name servic
 7. Save your changes.
 
 Domain name services are fairly slow to update. You should be able to go to your domain and see the website you pinned in a few hours.
-
-![Random planet facts site with the randomplanetfacts.xyz URL.](./images/single-page-website/random-planets-with-correct-url.png)
 
 ## Up next
 

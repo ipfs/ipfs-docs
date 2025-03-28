@@ -105,9 +105,8 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: false,
               children: [
-                ['/quickstart/publish','Publish with IPFS (UI)'],
-                ['/quickstart/publish_cli', 'Publish with IPFS (command line)' ], 
                 ['/quickstart/retrieve','Retrieve with IPFS'],
+                ['/how-to/websites-on-ipfs/deploy-github-action', 'Deploy to IPFS with GitHub Actions' ],
               ]
             },
             {
@@ -124,9 +123,8 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: false,
               children: [
-                ['/quickstart/publish','Publish with IPFS (UI)'],
-                ['/quickstart/publish_cli', 'Publish with IPFS (command line)' ],
                 ['/quickstart/retrieve','Retrieve with IPFS'],
+                ['/how-to/websites-on-ipfs/deploy-github-action', 'Deploy to IPFS with GitHub Actions' ],
                 
               ]
             },
@@ -208,14 +206,11 @@ module.exports = {
                 '/how-to/configure-node',
                 '/how-to/modify-bootstrap-list',
                 '/how-to/nat-configuration',
-                '/how-to/ipfs-updater', 
-                [
-                  'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
-                  'Customize an IPFS repo'
-                ],
+                '/how-to/kubo-rpc-tls-auth',
                 '/how-to/kubo-garbage-collection',
                 '/how-to/troubleshooting',   
                 '/how-to/webtransport',   
+                '/install/run-ipfs-inside-docker',
               ]
             },
             {
@@ -246,21 +241,21 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
+                '/how-to/websites-on-ipfs/deploy-github-action',
+                '/how-to/websites-on-ipfs/custom-domains',
                 '/how-to/websites-on-ipfs/single-page-website',
                 '/how-to/websites-on-ipfs/multipage-website',
-                '/how-to/websites-on-ipfs/link-a-domain',
-                '/how-to/websites-on-ipfs/introducing-fleek',
                 '/how-to/websites-on-ipfs/static-site-generators',
                 '/how-to/websites-on-ipfs/redirects-and-custom-404s'
               ]
             },
             {
-              title: 'IPFS in the browser',
+              title: 'IPFS on the web',
               sidebarDepth: 1,
               collapsable: true,
               children: [
+                '/how-to/ipfs-in-web-apps',
                 '/how-to/address-ipfs-on-web',
-                '/how-to/browser-tools-frameworks'
               ]
             },
             {
@@ -277,7 +272,7 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/gateway-best-practices',
-                '/how-to/gateway-troubleshooting'
+                '/how-to/gateway-troubleshooting',
               ]
             },
             {
