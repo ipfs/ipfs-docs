@@ -55,10 +55,11 @@ Lightweight libraries for working with IPFS data (CID, DAGs, DAG-CBOR, UnixFS, C
 | js-multiformats | <https://github.com/multiformats/js-multiformats> | TypeScript  | SDK for multicodec, multihash, multibase, and CIDs with encoding/decoding support |
 | go-cid          | <https://github.com/ipfs/go-cid>                  | go          | Go implementation of CIDs (Content IDentifiers) with encoding/decoding support    |
 | go-ipld-prime   | <https://github.com/ipld/go-ipld-prime>           | go          | Popular library for working with IPLD data in Golang                              |
+| go-fixtureplate | <https://github.com/ipld/go-fixtureplate/>        | go          | Tools to generate and inspect IPLD data to assist in testing.                     |
 | python-libipld  | <https://github.com/MarshalX/python-libipld>      | python      | Fast Python library to work with DAG-CBOR, CID, CAR, multibase                    |
 | py-ipld-car     | <https://github.com/storacha/py-ipld-car>         | python      | CAR encoder/decoder library                                                       |
 | py-ipld-dag-pb  | <https://github.com/storacha/py-ipld-dag-pb>      | python      | DAG-PB implementation                                                             |
-| py-ipld-unixfs  | https://github.com/storacha/py-ipld-unixfs        | python      | UnixFS DAG encoder (very WIP)                                                     |
+| py-ipld-unixfs  | <https://github.com/storacha/py-ipld-unixfs>      | python      | UnixFS DAG encoder (WIP)                                                          |
 | RIBS            | <https://github.com/lotus-web3/ribs>              | go          | IPFS and IPLD blockstore designed for seamless integration with Filecoin          |
 | rust-cid-npm    | <https://salsa.debian.org/debian/rust_cid_npm>    | rust        | Debian packaging of the Rust CID implementation for npm                           |
 | rust-ipld-core  | <https://github.com/ipld/rust-ipld-core>          | rust        | Core traits and types for IPLD implementations in Rust                            |
