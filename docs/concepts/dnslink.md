@@ -64,7 +64,7 @@ Will get you this block:
 
 ## Further Resources
 
-For more information on how to use DNSLink for your website or app, check out the [Custom domains and DNSLink](/how-to/websites-on-ipfs/custom-domains.md) guide.
+For more information on how to use DNSLink for your website or app, check out the [Custom domains and DNSLink](../how-to/websites-on-ipfs/custom-domains.md) guide.
 
 For a complete guide to DNSLink — including tutorials, usage examples, and FAQs — check out [dnslink.dev](https://dnslink.dev/).
 
