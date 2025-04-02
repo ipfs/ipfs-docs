@@ -7,7 +7,7 @@ current-ipfs-cluster-version: v1.1.2
 
 # Deploy Static Apps to IPFS with GitHub Actions
 
-This guide will walk you through the process of configuring a [GitHub Actions](https://docs.github.com/en/actions) workflow to deploy a repository containing a static site or app to IPFS using the [IPFS Deploy Action](https://github.com/ipfs/ipfs-deploy-action).
+This guide will walk you through the process of configuring a [GitHub Actions](https://docs.github.com/en/actions) workflow to deploy a repository containing a static site or app to IPFS using the [IPFS Deploy Action](https://github.com/ipshipyard/ipfs-deploy-action).
 
 By the end of this guide, your web app (or just a static website) will be deployed to IPFS automatically when you push to your repository. It will also deploy pull request previews for each commit, and provide some other developer experience features, like commit status updates with the CID of the build, and a comment on pull requests with the IPFS CID and preview links.
 
@@ -21,7 +21,7 @@ To see what this looks like in a real-world example, check out the [IPNS Inspect
 
 ## What is the IPFS Deploy Action?
 
-The [IPFS Deploy Action](https://github.com/ipfs/ipfs-deploy-action) is a [composite action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action), that can be called as a step in a [GitHub Actions workflow](https://docs.github.com/en/actions/writing-workflows), and combines the following features:
+The [IPFS Deploy Action](https://github.com/ipshipyard/ipfs-deploy-action) is a [composite action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action), that can be called as a step in a [GitHub Actions workflow](https://docs.github.com/en/actions/writing-workflows), and combines the following features:
 
 - 📦 Merkleizes your static site into a [CAR](../../concepts/glossary.md#car) file
 - 🚀 Uploads CAR file to either [Storacha](https://storacha.network/), [IPFS Cluster](https://ipfscluster.io/), or [Kubo](https://github.com/ipfs/kubo#readme)
@@ -300,5 +300,5 @@ This URL uses subdomain resolution (where the CID has its own subdomain), which 
 If you encounter any issues:
 
 1. Check the GitHub Actions run logs for detailed error messages
-2. Review the [action's README](https://github.com/ipfs/ipfs-deploy-action) for updates
-3. Open an issue in the [action's repository](https://github.com/ipfs/ipfs-deploy-action/issues/new) with detailed information about your setup and the problem you're experiencing
+2. Review the [action's README](https://github.com/ipshipyard/ipfs-deploy-action) for updates
+3. Open an issue in the [action's repository](https://github.com/ipshipyard/ipfs-deploy-action/issues/new) with detailed information about your setup and the problem you're experiencing

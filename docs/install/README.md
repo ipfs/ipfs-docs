@@ -19,9 +19,9 @@ Anyone can use IPFS to store files in a _decentralized_ way. The easiest way to 
 
 If your browser doesn't support IPFS yet, you can install an IPFS companion extension that will let you view decentralized web content! [Learn more →](./ipfs-companion.md)
 
-### Publish files with a pinning service
+### Deploy static sites to the IPFS network with a GitHub Action
 
-Do you want to quickly and easily publish content with IPFS without complex tools? See the [Publish with IPFS quickstart](../quickstart/publish.md), where you'll learn how to use third-party pinning services to pin and provide files to the IPFS network.
+Do you want to quickly and easily automate the deployment of static websites to the IPFS network? See the [Deploy static sites to the IPFS network with GitHub Actions](../how-to/websites-on-ipfs/deploy-github-action.md), where you'll learn how to use [GitHub Actions](https://github.com/ipshipyard/ipfs-deploy-action) to automatically deploy static websites to the IPFS network.
 
 ## Infrastructure Tools
 
@@ -43,7 +43,7 @@ If you need to run your own [delegated routing](../concepts/glossary.md#delegate
 
 ## Software Development
 
-### Helia SDK for JS
+### Helia for TypeScript/JavaScript
 
 [Helia](https://github.com/ipfs/helia) is a new implementation of IPFS in JavaScript that is designed to be more modular and lightweight than the [deprecated js-ipfs project](https://github.com/ipfs/js-ipfs).
 
