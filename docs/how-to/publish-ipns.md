@@ -75,6 +75,8 @@ IPNS names can be published programmatically.
    > Published to k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l: /ipfs/bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq
    ```
 
+> **Note:** By default, the `ipns name publish` command will use the `self` key. You can generate additional keys with the `ipfs key gen new-key` command and pass the key name to the publish command using the `--key` flag, e.g. `ipfs name publish --key new-key bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq`.
+
 1. You can now go back to `https://ipfs.io/ipns/k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l` to view your updated file using the same address:
 
    ```shell
