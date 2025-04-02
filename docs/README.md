@@ -5,7 +5,7 @@ description: The home page for developer documentation for IPFS, the InterPlanet
 
 # Welcome to the IPFS Docs
 
-IPFS is a set of building blocks for a better web. Open protocols to make your data smarter: content-addressed, verifiable, and unstoppable.
+The InterPlanetary File System (IPFS) is a set of building blocks for a better web. Open protocols to make your data smarter: content-addressed, verifiable, and unstoppable.
 
 On a more technical level, IPFS is a set of open protocols for addressing, routing, and transferring data on the web, built on the ideas of [content addressing](concepts/glossary.md#content-addressing) and peer-to-peer networking.
 
