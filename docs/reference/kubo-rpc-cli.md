@@ -23,7 +23,7 @@ RPC API clients are available in multiple languages, and are listed below. You c
 | Haskell       | [davidar/hs-ipfs-api](https://github.com/davidar/hs-ipfs-api)                     | Inactive |
 | Swift         | [ipfs-shipyard/swift-ipfs-http-client](https://github.com/ipfs-shipyard/swift-ipfs-http-client)    | Inactive |
 | CommonLisp    | [WeMeetAgain/cl-ipfs-api](https://github.com/WeMeetAgain/cl-ipfs-api)                 | Inactive |
-| Rust          | [ferristseng/rust-ipfs-api](https://github.com/ferristseng/rust-ipfs-api)               | Active |
+| Rust          | [ferristseng/rust-ipfs-api](https://github.com/ferristseng/rust-ipfs-api)               | Inactive |
 |               | [gkbrk/rust-ipfs-api](https://github.com/gkbrk/rust-ipfs-api)                     | Inactive |
 |               | [rmnoff/rust-ipfs-api](https://github.com/rmnoff/rust-ipfs-api)                    | Inactive |
 |               | [rschulman/rust-ipfs-api](https://github.com/rschulman/rust-ipfs-api)                 | Inactive |
