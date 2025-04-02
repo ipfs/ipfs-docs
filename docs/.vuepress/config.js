@@ -320,8 +320,11 @@ module.exports = {
               collapsable: true,
               path: '/reference/kubo/rpc'
             },
-            '/reference/kubo-rpc-cli.md'
-
+            '/reference/kubo-rpc-cli.md',
+            {
+              path: 'https://specs.ipfs.tech',
+              title: 'IPFS Specifications',
+            }
           ],
           '/community/': [
             ['/community/', 'Join the community'],
