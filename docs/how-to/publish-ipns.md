@@ -9,6 +9,7 @@ IPNS names can be published programmatically.
 
 - [Using Kubo (Go)](#publishing-ipns-names-with-kubo)
 - [Using helia-ipns (JavaScript)](#publishing-ipns-names-with-helia-ipns)
+- [From the browser using IPNS Inspector](#publishing-ipns-names-with-ipns-inspector)
 
 ## Publishing IPNS names with Kubo
 
@@ -107,3 +108,7 @@ ipfs name publish --key=SecondKey /ipfs/bafybeicklkqcnlvtiscr2hzkubjwnwjinvskffn
 ## Publishing IPNS names with helia-ipns
 
 Learn more about using IPNS with JavaScript with the [helia-ipns](https://github.com/ipfs/helia/tree/main/packages/ipns) package.
+
+## Publishing IPNS names with IPNS Inspector
+
+[IPNS Inspector](https://ipns.ipfs.network) is a web based tool for publishing and resolving IPNS names. To publish an resolve IPNS names, it relies on the delegated routing API, and the [public utilities](../concepts/public-utilities.md) endpoint at **`https://delegated-ipfs.dev/routing/v1`**.
