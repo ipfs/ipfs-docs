@@ -28,6 +28,9 @@ Provide data to the IPFS network with IPFS Desktop or a pinning service:
 
 - [Install IPFS Desktop which bundles an IPFS node (Kubo) and a UI to manage files, peers, and explore content on IPFS](./install/ipfs-desktop.md).
 - [Publish content to the IPFS network with IPFS Desktop](./how-to/desktop-app.md).
+
+### Deploy static sites to the IPFS network
+
 - [Deploy static sites to the IPFS network with a GitHub Action](./how-to/websites-on-ipfs/deploy-github-action.md).
 
 ### Build
