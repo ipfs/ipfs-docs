@@ -153,7 +153,7 @@ When requests are made to `thelocalgardener.com`, the DNSLink gateway will autom
     - **Type**: `TXT`
     - **Value/Content**: `dnslink=/ipfs/bafybeiay2koog2jnndn5gr2raytxh7evobry5lo2w4s7nhugc7xipy6aze` (Replace the example CID with your actual CID)
 
-    **Note:** The record name _must_ start with `_dnslink.`. DNS propagation might take some time.. You can check if it has propagated using tools like `dig` or `nslookup`:
+    **Note:** The record name _must_ start with `_dnslink.`. DNS propagation might take some time. You can check if it has propagated using tools like `dig` or `nslookup`:
 
     ```bash
     dig +short TXT _dnslink.thelocalgardener.com
@@ -164,7 +164,7 @@ When requests are made to `thelocalgardener.com`, the DNSLink gateway will autom
     # Expected Output: YOUR_SERVER_IP
     ```
 
-> **Note:** The DNSLink record will need to be updated everytime you update the site or app, leading to a new CID for the build. In order to automate this, you can use the [DNSLink GitHub Action](https://github.com/ipshipyard/dnslink-action), as part of your CI/CD pipeline.
+> **Note:** The DNSLink record will need to be updated every time you update the site or app, leading to a new CID for the build. In order to automate this, you can use the [DNSLink GitHub Action](https://github.com/ipshipyard/dnslink-action), as part of your CI/CD pipeline.
 
 ## Step 4: Verify
 
