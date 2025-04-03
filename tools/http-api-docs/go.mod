@@ -2,8 +2,6 @@ module http-api-docs
 
 go 1.24
 
-toolchain go1.24.1
-
 require (
 	github.com/Stebalien/go-json-doc v0.0.2
 	github.com/ipfs/go-cid v0.5.0
@@ -234,7 +232,7 @@ require (
 	golang.org/x/crypto v0.35.0 // indirect
 	golang.org/x/exp v0.0.0-20250218142911-aa4b98e5adaa // indirect
 	golang.org/x/mod v0.23.0 // indirect
-	golang.org/x/net v0.35.0 // indirect
+	golang.org/x/net v0.36.0 // indirect
 	golang.org/x/oauth2 v0.24.0 // indirect
 	golang.org/x/sync v0.11.0 // indirect
 	golang.org/x/sys v0.30.0 // indirect
