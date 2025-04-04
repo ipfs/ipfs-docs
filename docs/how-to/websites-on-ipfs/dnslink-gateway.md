@@ -23,7 +23,7 @@ By the end of this guide, you will have:
 
 ## Note about verification
 
-Note that the DNSLink gateway you will configure will function as a _trusted gateway_, in the sense that the readers trust the server your domain points to to serve the correct content, without verifying the content. As such, it assumes the same security assumptions and [risks of the web](https://blog.ipfs.tech/2025-could-ipfs-prevent-bybit-hack/).
+Note that the DNSLink gateway you will configure will function as a _trusted gateway_, in the sense that the readers trust the server your domain points to serve the correct content, without verifying the content. As such, it assumes the same security assumptions and [risks of the web](https://blog.ipfs.tech/2025-could-ipfs-prevent-bybit-hack/).
 
 This may be fine for your use-case. However, if the site or app you are deploying requires more security and less trust, we recommend your users to use a verifying IPFS client by viewing your site using a local IPFS Node like Kubo or using the [Service Worker Gateway](https://github.com/ipfs/service-worker-gateway) to load the site while also verifying the content matches the CID in the DNSLink TXT record.
 
