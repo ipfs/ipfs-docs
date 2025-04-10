@@ -56,11 +56,13 @@ deduplicate
 dep
 deps
 deserialization
+deserialized
 devs
 dheeraj
 dht
 dhts
 dialable
+dialback
 dns('s)
 dnsaddr
 dnslink

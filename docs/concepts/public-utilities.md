@@ -38,23 +38,25 @@ Your browser may have a local cache of the content in question and might not ref
 
 The above public gateways support the following:
 
-- `ipfs.io` and `dweb.link` support the [full set of IPFS Gateway specifications](https://specs.ipfs.tech/http-gateways/).
-- `trustless-gateway.link` supports only the [Trustless Gateway subset of the specification](https://specs.ipfs.tech/http-gateways/trustless-gateway/).
+- `ipfs.io` and `dweb.link` support the [full set of IPFS Gateway specifications](https://specs.ipfs.tech/http-gateways/), including deserialized responses to enable website hosting.
+  - [HTTP Range requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Range) support files up to a maximum size of 5GiB due to limitations of the Cloudflare CDN. Requests for larger files will result in a standard HTTP 200 response instead.
+- `trustless-gateway.link` supports only the [Trustless Gateway subset of the specification](https://specs.ipfs.tech/http-gateways/trustless-gateway/)
+  - Suppoted content types: `application/vnd.ipld.raw`, `application/vnd.ipld.car` and `application/vnd.ipfs.ipns-record`
 
-They support HTTP clients reaching them over both ipv4 and ipv6 addresses
+They support HTTP clients reaching them over both ipv4 and ipv6 addresses.
 
 The underlying IPFS nodes backing the gateways support the following mutable identifiers under the `/ipns` namespace:
-- IPNS Public Keys, e.g. `dweb.link/ipns/k51q....`
-- DNSLink for all [ICANN](https://en.wikipedia.org/wiki/ICANN) registered domains as well as `.crypto` and `.eth`, e.g. `dweb.link/ipns/vitalik.eth`
+- [IPNS Names](https://specs.ipfs.tech/ipns/ipns-record/#ipns-name), e.g. `dweb.link/ipns/k51q....`
+- [DNSLink](dnslink.md) for all [ICANN](https://en.wikipedia.org/wiki/ICANN) registered domains as well as `.eth`, e.g. `dweb.link/ipns/vitalik.eth`
 
 The underlying IPFS nodes backing the gateways support retrieving data from peers that:
 - Have either ipv4 or ipv6 addresses
-- Are either reachable over the public internet or are accessible via libp2p's relay-v2 protocol and reach out to the gateway nodes via dialback
+- Are either reachable over the public internet or are accessible via libp2p's [relay-v2 protocol](https://github.com/libp2p/specs/blob/master/relay/circuit-v2.md) and reach out to the gateway nodes via dialback
 - Support one of the following libp2p transport configurations:
    - QUIC-v1
    - TCP or WS or WSS, Yamux, TLS or Noise
    - WebTransport
-- Support the [Bitswap](./bitswap.md) protocol ([v1.2](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-2-0), [v1.1](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-1-0) or [v1.0](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-0-0))
+- Support the [Bitswap](./bitswap.md) protocol ([v1.2](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-2-0), [v1.1](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-1-0) or [v1.0](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-0-0)) <!--  TODO: or HTTP retrieval using `application/vnd.ipld.raw` responses as defined in the [Trustless Gateway Specification](https://specs.ipfs.tech/http-gateways/trustless-gateway/) -->
 - Have either advertised their data to the [Amino DHT](./glossary.md#amino), or have advertised to [IPNI](./glossary.md#ipni) such that their data has been indexed by [cid.contact](https://cid.contact)
 
 ## Other Public Gateways
