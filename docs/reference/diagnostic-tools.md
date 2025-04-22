@@ -51,14 +51,4 @@ IPFS [Gateway Checker](https://ipfs.github.io/public-gateway-checker/) provides 
 
 ## CAR Builder
 
-[CAR Builder](https://car.ipfs.io/) allows you to upload a data file and export it as an IPFS CAR file. The tool automatically chunks and hashes your files to automatically produce an IPFS compatible content-addressed archive.
-
-## pl-diagnose
-
-[pl-diagnose](https://pl-diagnose.on.fleek.co/#/diagnose/access-content) is a browser-based software application that automates diagnosis of various issues with an IPFS node. Specifically, this tool can help you answer these questions:
-
-- Is a given CID available on the IPFS network and, if so, which peers are listed in the DHT as providers?
-- Which addresses are listed in the DHT for a given IPFS node?
-- Is an IPFS node accessible by other peers?
-- Is specific content available from an IPFS node?
- 
+[CAR Builder](https://car.ipfs.io/) allows you to upload a data file and export it as an IPFS CAR file. The tool automatically chunks and hashes your files to automatically produce an IPFS compatible content-addressed archive. 
