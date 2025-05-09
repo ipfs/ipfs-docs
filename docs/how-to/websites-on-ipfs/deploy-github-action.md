@@ -1,11 +1,11 @@
 ---
-title: Deploy Static Apps to IPFS with GitHub Actions
+title: Deploy static apps to IPFS with GitHub Actions
 description: Guide on how to setup GitHub Actions to deploy static sites/apps to IPFS using the IPFS Deploy Action.
 current-ipfs-version: v0.34.1
 current-ipfs-cluster-version: v1.1.2
 ---
 
-# Deploy Static Apps to IPFS with GitHub Actions
+# Deploy static apps to IPFS with GitHub Actions
 
 This guide will walk you through the process of configuring a [GitHub Actions](https://docs.github.com/en/actions) workflow to deploy a repository containing a static site or app to IPFS using the [IPFS Deploy Action](https://github.com/ipshipyard/ipfs-deploy-action).
 

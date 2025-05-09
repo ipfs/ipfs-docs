@@ -29,9 +29,13 @@ Provide data to the IPFS network with IPFS Desktop or a pinning service:
 - [Install IPFS Desktop which bundles an IPFS node (Kubo) and a UI to manage files, peers, and explore content on IPFS](./install/ipfs-desktop.md).
 - [Publish content to the IPFS network with IPFS Desktop](./how-to/desktop-app.md).
 
-### Deploy static sites to the IPFS network
+### Deploy static sites and dapps to the IPFS network
+
+IPFS is a great fit for deploying static sites and dapps, check out the following guides to get started:
 
 - [Deploy static sites to the IPFS network with a GitHub Action](./how-to/websites-on-ipfs/deploy-github-action.md).
+- [Set up a DNSLink gateway to serve your site via a custom domain](./how-to/websites-on-ipfs/dnslink-gateway.md).
+- [Configure static site generators for publishing to IPFS](./how-to/websites-on-ipfs/static-site-generators.md).
 
 ### Build
 

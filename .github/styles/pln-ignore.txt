@@ -65,6 +65,7 @@ dialable
 dialback
 dns('s)
 dnsaddr
+dnscontrol
 dnslink
 dotgraph
 dups
@@ -179,6 +180,7 @@ nfts
 nginx
 nodejs
 npm
+octodns
 packfile
 passthrough
 peergos
