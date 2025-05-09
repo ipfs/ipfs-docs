@@ -89,7 +89,7 @@ These commands modify the `config` file in your IPFS repository (usually `~/.ipf
 
 Next, configure Caddy to handle incoming HTTPS requests for `yourdomain.com` and proxy them to the Kubo gateway, which is listening by default on `127.0.0.1:8080`.
 
-To check this, you can run the following command:
+To verify that the gateway exposed by Kubo is listening, you can run the following command:
 
 ```bash
 cat /data/kubo/config | jq .Addresses.Gateway
@@ -101,7 +101,7 @@ You should see something like this:
 "/ip4/127.0.0.1/tcp/8080"
 ```
 
-This means that the Kubo gateway is listening on `127.0.0.1:8080`.
+This confirms that the gateway exposed by Kubo is listening on `127.0.0.1:8080`.
 
 #### Caddyfile Configuration
 
@@ -191,7 +191,13 @@ Depending on how you deploy your site, you can automate DNSLink updates using th
 
 ### Common Issues and Solutions
 
-- **DNS Propagation Delays**: If your domain isn't resolving, check the DNS settings and ensure the records have propagated. Use `dig` or `nslookup` to verify.
+- **DNS Propagation Delays**: If your domain isn't resolving, check the DNS settings and ensure the DNSLink record has propagated. You can use `dig` to verify:
+
+    ```bash
+    dig +short TXT _dnslink.yourdomain.com
+    # Expected Output: "dnslink=/ipfs/bafy..."
+    ```
+
 - **Caddy Configuration Errors**: Ensure your `Caddyfile` syntax is correct. Check Caddy logs for any errors.
 - **IPFS Node Issues**: Make sure your IPFS node is running and accessible. Restart the daemon if necessary.
 
