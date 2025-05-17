@@ -2,7 +2,7 @@
 title: Deploy static apps to IPFS with GitHub Actions
 description: Guide on how to setup GitHub Actions to deploy static sites/apps to IPFS using the IPFS Deploy Action.
 current-ipfs-version: v0.34.1
-current-ipfs-cluster-version: v1.1.2
+current-ipfs-cluster-version: v1.1.4
 ---
 
 # Deploy static apps to IPFS with GitHub Actions
@@ -201,7 +201,7 @@ You can also configure additional IPFS Cluster options:
     # ... other inputs ...
     cluster-retry-attempts: '5' # Override number of retry attempts
     cluster-timeout-minutes: '15' # Override timeout in minutes per attempt
-    ipfs-cluster-ctl-version: 'v1.1.2' # Default version
+    ipfs-cluster-ctl-version: 'v1.1.4' # Default version
     cluster-pin-expire-in: '720h' # Optional: Set pin to expire after time period (e.g., 30 days)
 ```
 
