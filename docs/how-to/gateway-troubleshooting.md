@@ -12,14 +12,13 @@ IPFS HTTP Gateways are an HTTP-based service allowing browsers, tools and softwa
 
 This page summarizes the different ways to troubleshoot common issues. To learn more about the concepts behind IPFS gateways, including how they work, available providers, types and FAQs, see [IPFS Gateway](../concepts/ipfs-gateway.md). 
 
-## General advice
+## What causes retrieval to fail?
 
-In general, slow retrieval or timeouts while fetching a CID from an IPFS gateway is typically related to one of the following:
+In general, slow or failure to retrieve content from an IPFS gateway is typically related to one of the following:
 
-- The gateway itself.
-- The provider of the CID might be unreachable or down.
-- You (or the provider) are not providing your CIDs to the IPFS network via the DHT or the network indexer, so it is not discoverable.
-- Network latency between the client and the gateway, or the gateway and the provider.
+1. Gateway load: public gateways typically operate on a best effort basis, and may be slow to respond or unavailable due to high load.
+2. Network conditions of the provider(s) may prevent direct connectivity, due to firewalls, NATs, or other network restrictions.
+3. The provider is having trouble announcing the CID to the IPFS network via the DHT or the network indexer, resulting in the CID not being discoverable.
 
 :::
 When troubleshooting IPFS gateways, ensure that you are familiar with [how gateways work](../concepts/ipfs-gateway.md), as this will make the process quicker and easier.
