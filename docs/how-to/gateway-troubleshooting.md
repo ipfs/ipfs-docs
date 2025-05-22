@@ -26,29 +26,35 @@ When troubleshooting IPFS gateways, ensure that you are familiar with [how gatew
 
 To further narrow down the root cause, use one of the following methods:
 
-- If you want an automated, browser based tool that does the majority of the diagnosing and debugging for you, use [pl-diagnose](#debug-with-pl-diagnose).
+- If you want an automated, browser based tool that does the majority of the diagnosing and debugging for you, use [IPFS Check](#debug-with-ipfs-check).
 - If you are running an IPFS Kubo node, you can [manually debug using kubo and IPFS check](#debug-manually).
 
-## Debug with pl-diagnose
+## Debug with IPFS Check
 
-The pl-diagnose tool is a browser-based software application that automates a large part of the process described in [Debug manually](#debug-manually). Specifically, this tool can help you answer these questions:
+The IPFS Check tool is a browser-based software application that automates a large part of the process described in [Debug manually](#debug-manually). Specifically, IPFS Check can help you answer these questions:
 
-- Is a given piece of content, identified with a with a certain CID available on the IPFS network, and which peers does the DHT list as hosts for that content?
-- Which addresses are listed in the DHT for a given IPFS node?
-- Is an IPFS node accessible by other peers?
-- Is specific content available from an IPFS node?
+1. Is a given CID routable on IPFS Mainnet, in other words, is the CID announced to the DHT or the IPNI?
+2. Is the data for the CID retrievable from the providers that are announcing it?
+3. What multiaddresses and network transports are used to connect to successful providers for a CID?
+4. Was NAT hole punching necessary to retrieve the data?
 
-To use the tool, do the following:
+IPFS Check provides an _outside perspective_ of IPFS node's network setup, and whether they are correctly configured.
 
-1. Navigate to the [application page](https://pl-diagnose.on.fleek.co/#/diagnose/access-content).
-1. In the **Backend URL** field, enter the address of the node you are trying to check.
-1. In the menu, select from one of the options depending on your specific needs:
+### How to use IPFS Check
 
-   - **Is my content on the DHT?** - Given a CID on the node you are checking, determine if is listed in the DHT.
-   - **Is my peer in the DHT?** - Given a public network address of a node, determine if the node is listed in the DHT.
-   - **Is my node accessible by other peers?** - Given a public network address of a node, determine if that node is reachable by peers.
-   - **Is my node serving the content?** - Determine if the node is actually serving the content.
+IPFS Check supports two modes of operation:
 
+1. **CID-only checks**: you can check whether a CID is available from _any_ provider, without needing to pass a specific provider's multiaddr. In this mode, IPFS Check will search for providers both in the IPNI and the DHT.
+2. **Multiaddr-based checks**: you can check whether a CID is available from a specific provider, by passing the provider's multiaddr.
+
+To use IPFS Check, do the following:
+
+1. Navigate to the [IPFS Check](https://check.ipfs.network/) tool.
+2. In the **CID** field, enter the CID you are trying to check
+3. (Optional) In the **Multiaddr field**, enter the multiaddress of the IPFS node you are trying to check.
+
+
+@[youtube](XeNOQDOrdC0)
 
 ## Debug manually
 
@@ -62,13 +68,14 @@ This procedure assumes that you have the latest version of kubo installed. To de
    ipfs routing findprovs <CID>
    ```
 
-   **If providers are found in DHT**, their Peer IDs are returned. Example output:
+   **If providers are found**, their Peer IDs are returned. Example output:
 
    ```
-   12D3KooWChhhfGdB9GJy1GbhghAAKCUR99oCymMEVS4eUcEy67nt
-   12D3KooWJkNYFckQGPdBF57kVCLdkqZb1ZmZXAphe9MZkSh16UfP
-   QmQzqxhK82kAmKvARFZSkUVS6fo9sySaiogAnx5EnZ6ZmC
-   12D3KooWSH5uLrYe7XSFpmnQj1NCsoiGeKSRCV7T5xijpX2Po2aT
+   12D3KooWSvjCTS6w6f6nyJQ615p4ipiW3L7BTbt9XvpR6Kxi385m
+   12D3KooWDCNa4MmDPHr3916gpk2PcQJbJXyKxfByTL6UBmSwBM2H
+   12D3KooWDEYGGZAH4v1Hu75nqyF4vnN8UyfgCCwerTD98F1Z8Q1z
+   12D3KooWHr9MZJVKwe7tZyD6Z8uRcZFQ7XUqhM2nQvpeQxDyAN4E
+   12D3KooWGLyBGRMdNQe5KnkeT2g3QYp7uM71tpn77somfRHaWmmS
    ```
 
    In this case, complete the steps described in [Providers returned](#providers-returned).
@@ -139,5 +146,5 @@ With this in mind, if no providers are returned, do the following:
 3. Manually trigger a reprovide run:
 
    ```shell
-   ipfs bitswap reprovide
+   ipfs routing reprovide
    ```
