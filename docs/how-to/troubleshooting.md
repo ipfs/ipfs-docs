@@ -1,173 +1,222 @@
 ---
-title: Troubleshooting
-description: "If you're running into problems with Kubo, use this page to debug your issues and find a solution quickly."
+title: Troubleshooting IPFS
+description: Learn how to troubleshoot common issues with retrieval and providing in IPFS by identifying causes and failure modes with content routing, transfer protocols, and more.
 ---
 
-# Troubleshooting
+## TODO
+- Make it broader and split into two main topics:
+  - Troubleshooting retrieval
+    - content routing
+      - IPNI (Network Indexer)
+      - DHT
+    - content retrieval
+      - Bitswap
+      - HTTP
+  - Troubleshooting providing
+    - public reachability / NAT traversal
+    - provider configuration (decrease cids to advertise)
+    - Provider not advertising
+    - Reprovides falling behind
 
-If you're running into problems with Kubo, use this page to debug your issues and find a solution quickly.
+# Troubleshooting IPFS
 
-## Check that your Kubo daemon is running
+Troubleshooting IPFS can be divided into two main categories:
 
-If you're getting unexpected behavior when trying to run common commands such as `ipfs get <cid>` returning `Error: merkledag: not found`, the issue is likely that your daemon isn't running. This can be remedied by running `ipfs daemon`, and using a different terminal to interact with the daemon.
+- [Troubleshooting retrieval](#troubleshooting-retrieval) - When you are trying fix a problem related to retrieving data by CID from other peers in the network.
+- [Troubleshooting providing](#troubleshooting-providing) - When you are trying fix a problem related to providing data to other peers in the network.
 
-## Kubo is running slowly
+In both cases, the failure modes can be attributed to one of the following:
 
-Commands like `ipfs ls` are going to the network to try and find data. If for some reason, that data is not _findable_ then Kubo will just keep looking for who has the data forever. Common reasons for data not being _findable_ are that:
+- Content routing: providers for a CID cannot be found in the DHT or the IPNI.
+- Connectivity: the data for a CID is not retrievable from providers, either because the provider is not online, or because the provider is not reachable over the network.
 
-- Nobody online has it.
-- There is one node that has the data, but it's behind a NAT.
-- The node that has it has not yet advertised the data in a way that your node can find it.
+## Troubleshooting retrieval
 
-You can take a look at what's going on with Bitswap using `ipfs bitswap stat` to help you determine if you're stuck looking for data. If the data you are looking for is perpetually in the `wantlist` then your node may be experiencing one of the common reasons listed above.
+In this section, we will outline the different ways to troubleshoot common issues with retrieval. Everything in this section applies to fetching from recursive IPFS gateways, however it should be noted that a recursive gateway is just another IPFS node, and as such, the same principles apply.
 
-Some functions also have flags like `--stream` or `--progress` that can help you see incremental updates. For logging behavior, there is `ipfs log`, where `ipfs log level` can help you inspect subsystems further.
+### What causes failure to retrieve data by CID?
 
-You can pass a timeout flag to basically all Kubo commands if you're concerned about your CLI not responding quickly enough when the data just isn't available on the network.
+From a high level, when failing to fetch the data for a given CID, it's typically related to one of the following:
 
-## File transfers
+- Content routing: providers for the CID cannot be found in the DHT or the IPNI.
+  - This is either because there are no providers for the CID, or because the providers aren't announcing the CID.
+- Connectivity:
+  - The provider is offline or unreachable over the network due to NAT or firewall issues.
+  - The provider is not reachable over the network due to transport issues, this is especially common when trying to retrieve data from browsers.
 
-To start, make sure that Kubo is running on both machines. To verify, run `ipfs id` on each machine and check if the `Addresses` field has anything in it. If it says `null`, then your node is not online, and you will need to run `ipfs daemon`.
 
-Now, let's call the node with the file you want to transfer node 'A' and the node you want to get the file to node 'B'. On `node a`, add the file to Kubo using the `ipfs add` command. This will print out the multihash of the content you added. Now, on `node b`, you can fetch the content using `ipfs get <hash>`.
 
-```shell
-# On A
-ipfs add myfile.txt
-> added QmZJ1xT1T9KYkHhgRhbv8D7mYrbemaXwYUkg7CeHdrk1Ye myfile.txt
+This can be done either via public [recursive IPFS gateways](../concepts/ipfs-gateway.md#recursive-vs-non-recursive-gateways) or using an IPFS node, like Kubo or Helia.
 
-# On B
-ipfs get QmZJ1xT1T9KYkHhgRhbv8D7mYrbemaXwYUkg7CeHdrk1Ye
-> Saving file(s) to QmZJ1xT1T9KYkHhgRhbv8D7mYrbemaXwYUkg7CeHdrk1Ye
-> 13 B / 13 B [=====================================================] 100.00% 1s
-```
 
-If that worked and your node downloaded the file, then congratulations! You just used Kubo to move files across the internet! But, if that `ipfs get` command is hanging, with no output, continue reading.
+This page outlines the different ways to troubleshoot common issues with retrieval.
 
-### Checking for existing connections
+- How are you trying to retrieve the data?
+  - Public recursive IPFS gateways (like [ipfs.io](https://ipfs.io))
+  - IPFS node (Kubo, Helia, etc.)
+  - Are you trying to retrieve the data in a browser?
+- How is the data being provided?
+  - is the provider online?
+  - Is the provider publicly reachable?
+  - If the provider is not publicly reachable, does it have a relay
+  - is NAT hole punching working?
+  - What network transports does the provider support? (TCP, QUIC, WebSockets WebTransport, WebRTC-direct)
+  - What transfer protocols does the provider support? (Bitswap and/or HTTP trustless gateway)
+  - If the provider is announcing the CID?
 
-The first thing to do is to double-check that both nodes are, in fact, running and online. To do this, run `ipfs id` on each machine. If both nodes show some addresses (like the example below), then your nodes are online.
+### Failure to retrieve from recursive IPFS gateways
 
-```json
-{
-    "ID": "12D3KooWRaeAw2oromYUN5rAjYQ6KhqvXiWg8KuxeU9YWv7v3Ewa",
-        "PublicKey": "CAASp[...]P2nfUUIR3AgMBAAE=",
-        "Addresses": [
-            "/ip4/127.0.0.1/tcp/4001/p2p/12D3KooWRaeAw2oromYUN5rAjYQ6KhqvXiWg8KuxeU9YWv7v3Ewa",
-            "/ip4/127.0.0.1/udp/4001/quic-v1/p2p/12D3KooWRaeAw2oromYUN5rAjYQ6KhqvXiWg8KuxeU9YWv7v3Ewa",
-            "/ip4/192.168.2.131/tcp/4001/p2p/12D3KooWRaeAw2oromYUN5rAjYQ6KhqvXiWg8KuxeU9YWv7v3Ewa",
-            "/ip4/192.168.2.131/udp/4001/quic-v1/p2p/12D3KooWRaeAw2oromYUN5rAjYQ6KhqvXiWg8KuxeU9YWv7v3Ewa"
-        ],
-       "AgentVersion": "kubo/0.29.0-dev/",
-        "ProtocolVersion": "ipfs/0.1.0"
-}
-```
+Recursive IPFS gateways abstract the distributed aspect of IPFS while giving you a familiar HTTP interface, but that doesn't mean that complexity is gone.
 
-Next, check to see if the nodes have a connection to each other. You can do this by running `ipfs swarm peers` on one node and checking for the other node's peer ID in the output. If the two nodes _are_ connected, and the `ipfs get` command is still hanging, then something unexpected is going on, and Kubo maintainers recommend filing an issue about it. If they are not connected, then let's try and debug why. (Note: you can skip to [Manually connecting `node a` to `node b`](#manually-connecting-node-a-to-node-b) if you just want things to work. However, going through the debugging process and reporting what happened to the Kubo maintainers is helpful to us to understand common pitfalls that people run into).
+From a high level, when failing to fetch data from a recursive IPFS gateway, it's typically related to either:
 
-### Checking providers
+- The IPFS gateway
+- The provider for the CID
+Given all of these factors, it's difficult giving blanket advice. This is where understanding the lifecycle of a CID request to an IPFS gateway is useful as it will allow debugging problems quickly.
 
-When requesting content with Kubo, nodes search the DHT for 'provider records' to see who has what content. Let's manually do that on `node b` to make sure that `node b` is able to determine that `node a` has the data. Run `ipfs dht findprovs <hash>`. We expect to see the peer ID of `node a` printed out. If this command returns nothing (or returns IDs that are not `node a`), then no record of A having the data exists on the network. This can happen if the data is added while `node a` does not have a daemon running. If this happens, you can run `ipfs routing provide <hash>` on `node a` to announce to the network that you have that hash. Then if you restart the `ipfs get` command, `node b` should now be able to tell that `node a` has the content it wants. If `node a`'s peer ID showed up in the initial `findprovs` call or manually providing the hash didn't resolve the problem, then it's likely that `node b` is unable to make a connection to `node a`.
+One of the most common issues that users encounter when using IPFS is
+IPFS retrieval is the process of downloading content from the IPFS providers.
 
-### Checking addresses
+When using retrieval, developers may need to troubleshoot issues like a:
 
-In the case where `node b` simply cannot form a connection to `node a`, despite knowing that it needs to, the likely culprit is a bad NAT. When `node b` learns that it needs to connect to `node a`, it checks the DHT for addresses for `node a`, and then starts trying to connect to them. We can check those addresses by running `ipfs routing findpeer <node a peerID>` on `node b`. This command should return a list of addresses for `node a`. If it doesn't return any addresses, then you should try running the manual providing command from the previous steps. Example output of addresses might look something like this:
+- CID not being retrievable via public IPFS gateways.
+- CID being slow to load.
 
-```shell
-/ip4/127.0.0.1/tcp/4001
-/ip4/127.0.0.1/udp/4001/quic-v1
-/ip4/192.168.2.133/tcp/4001
-/ip4/192.168.2.133/udp/4001/quic-v1
-/ip4/88.157.217.196/tcp/63674
-/ip4/88.157.217.196/udp/63674/quic-v1
-```
+This page summarizes the different ways to troubleshoot common issues. To learn more about the concepts behind IPFS gateways, including how they work, available providers, types and FAQs, see [IPFS Gateway](../concepts/ipfs-gateway.md).
 
-In this case, we can see a localhost (127.0.0.1) address, a LAN address (the 192.168._._ one), and another address. If this third address matches your external IP, then the network knows a valid external address for your node. At this point, it's safe to assume that your node has a difficult to traverse NAT situation. If this is the case, you can try to enable UPnP or NAT-PMP on the router of `node a` and retry the process. Otherwise, you can try manually connecting `node a` to `node b`.
+## What causes retrieval from gateways to fail?
 
-### Manually connecting `node a` to `node b`
+In general, slow or failure to retrieve content from an IPFS gateway is typically related to one of the following:
 
-On `node b` run `ipfs id` and take one of the _multiaddrs_ that contains its public IP address, and then on `node a` run `ipfs swarm connect <multiaddr>`. You can also try using a relayed connection. If that _still_ doesn't work, then you should either join IRC and ask for help there or file an issue on GitHub.
+1. Gateway load: public gateways typically operate on a best effort basis, and may be slow to respond or unavailable due to high load.
+2. Network conditions of the provider(s) may prevent direct connectivity, due to firewalls, NATs, or other network restrictions.
+3. The provider is having trouble announcing the CID to the IPFS network via the DHT or the network indexer, resulting in the CID not being discoverable.
 
-If this manual step _did_ work, then you likely have an issue with NAT traversal, and IPFS cannot figure out how to make it through. Please report situations like this to us so we can work on fixing them.
+:::tip
+When troubleshooting IPFS gateways, ensure that you are familiar with [how gateways work](../concepts/ipfs-gateway.md), as this will make the process quicker and easier.
+:::
 
-## Go debugging
+To further narrow down the root cause, use one of the following methods:
 
-When you see ipfs doing something (using lots of CPU, memory, or otherwise being weird), the first thing you want to do is gather all the relevant profiling information.
+- If you want an automated, browser based tool that does the majority of the diagnosing and debugging for you, use [IPFS Check](#debug-with-ipfs-check).
+- If you are running an IPFS Kubo node, you can [manually debug using kubo and IPFS check](#debug-manually).
 
-There's a command (`ipfs diag profile`) that will do this for you and bundle the results up into a zip file, ready to be attached to a bug report.
+## Debug with IPFS Check
 
-If you feel intrepid, you can dump this information and investigate it yourself:
+The IPFS Check tool is a browser-based software application that automates a large part of the process described in [Debug manually](#debug-manually). Specifically, IPFS Check can help you answer these questions:
 
-1. goroutine dump:
+1. Is a given CID routable on IPFS Mainnet, in other words, is the CID announced to the DHT or the IPNI?
+2. Is the data for the CID retrievable from the providers that are announcing it?
+3. What multiaddresses and network transports are used to connect to successful providers for a CID?
+4. Was NAT hole punching necessary to retrieve the data?
 
-    ```shell
-    curl localhost:5001/debug/pprof/goroutine\?debug=2 > ipfs.stacks
-    ```
+IPFS Check provides an _outside perspective_ of IPFS node's network setup, and whether they are correctly configured.
 
-1. 30-second cpu profile:
+### How to use IPFS Check
 
-    ```shell
-    curl localhost:5001/debug/pprof/profile > ipfs.cpuprof
-    ```
+IPFS Check supports two modes of operation:
 
-1. heap trace dump:
+1. **CID-only checks**: you can check whether a CID is available from _any_ provider, without needing to pass a specific provider's multiaddr. In this mode, IPFS Check will search for providers both in the IPNI and the DHT.
+2. **Multiaddr-based checks**: you can check whether a CID is available from a specific provider, by passing the provider's multiaddr.
 
-    ```shell
-    curl localhost:5001/debug/pprof/heap > ipfs.heap
-    ```
+To use IPFS Check, do the following:
 
-1. memory statistics. In JSON see `memstats` object:
+1. Navigate to the [IPFS Check](https://check.ipfs.network/) tool.
+2. In the **CID** field, enter the CID you are trying to check
+3. (Optional) In the **Multiaddr field**, enter the multiaddress of the IPFS node you are trying to check.
 
-    ```shell
-    curl localhost:5001/debug/vars > ipfs.vars
-    ```
 
-1. System information:
+@[youtube](XeNOQDOrdC0)
 
-    ```shell
-    ipfs diag sys > ipfs.sysinfo
-    ```
+## Debug manually with Kubo
 
-### Analyzing the stack dump
+This procedure assumes that you have the latest version of kubo installed. To debug manually:
 
-The first thing to look for is hung goroutines - any goroutine that's been stuck for over a minute will note that in the trace. It looks something like:
+1. Open up a terminal window.
 
-```shell
-goroutine 2306090 [semacquire, 458 minutes]:
-sync.runtime_Semacquire(0xc8222fd3e4)
-    /home/whyrusleeping/go/src/runtime/sema.go:47 +0x26
-sync.(*Mutex).Lock(0xc8222fd3e0)
-    /home/whyrusleeping/go/src/sync/mutex.go:83 +0x1c4
-gx/ipfs/QmedFDs1WHcv3bcknfo64dw4mT1112yptW1H65Y2Wc7KTV/yamux.(*Session).Close(0xc8222fd340, 0x0, 0x0)
-    /home/whyrusleeping/gopkg/src/gx/ipfs/QmedFDs1WHcv3bcknfo64dw4mT1112yptW1H65Y2Wc7KTV/yamux/session.go:205 +0x55
-gx/ipfs/QmWSJzRkCMJFHYUQZxKwPX8WA7XipaPtfiwMPARP51ymfn/go-stream-muxer/yamux.(*conn).Close(0xc8222fd340, 0x0, 0x0)
-    /home/whyrusleeping/gopkg/src/gx/ipfs/QmWSJzRkCMJFHYUQZxKwPX8WA7XipaPtfiwMPARP51ymfn/go-stream-muxer/yamux/yamux.go:39 +0x2d
-gx/ipfs/QmZK81vcgMhpb2t7GNbozk7qzt6Rj4zFqitpvsWT9mduW8/go-peerstream.(*Conn).Close(0xc8257a2000, 0x0, 0x0)
-    /home/whyrusleeping/gopkg/src/gx/ipfs/QmZK81vcgMhpb2t7GNbozk7qzt6Rj4zFqitpvsWT9mduW8/go-peerstream/conn.go:156 +0x1f2
-    created by gx/ipfs/QmZK81vcgMhpb2t7GNbozk7qzt6Rj4zFqitpvsWT9mduW8/go-peerstream.(*Conn).GoClose
-    /home/whyrusleeping/gopkg/src/gx/ipfs/QmZK81vcgMhpb2t7GNbozk7qzt6Rj4zFqitpvsWT9mduW8/go-peerstream/conn.go:131 +0xab
-```
+1. Using kubo, determine if any peers are advertising the `<CID>` you are requesting:
 
-At the top, you can see that this goroutine (number 2306090) has been waiting to acquire a semaphore for 458 minutes. That seems bad. Looking at the rest of the trace, we see the exact line it's waiting on is line 47 of runtime/sema.go. That's not particularly helpful, so we move on. Next, we see that call was made by line 205 of yamux/session.go in the `Close` method of `yamux.Session`. This one appears to be the issue.
+   ```shell
+   ipfs routing findprovs <CID>
+   ```
 
-Given that information, look for another goroutine that might be holding the semaphore in question in the rest of the stack dump.
+   **If providers are found**, their Peer IDs are returned. Example output:
 
-There are a few different reasons that goroutines can be hung:
+   ```
+   12D3KooWSvjCTS6w6f6nyJQ615p4ipiW3L7BTbt9XvpR6Kxi385m
+   12D3KooWDCNa4MmDPHr3916gpk2PcQJbJXyKxfByTL6UBmSwBM2H
+   12D3KooWDEYGGZAH4v1Hu75nqyF4vnN8UyfgCCwerTD98F1Z8Q1z
+   12D3KooWHr9MZJVKwe7tZyD6Z8uRcZFQ7XUqhM2nQvpeQxDyAN4E
+   12D3KooWGLyBGRMdNQe5KnkeT2g3QYp7uM71tpn77somfRHaWmmS
+   ```
 
-- `semacquire` means we're waiting to take a lock or semaphore.
-- `select` means that the goroutine is hanging in a select statement, and none of the cases are yielding anything.
-- `chan receive` and `chan send` are waiting for a channel to be received from or sent on, respectively.
-- `IO wait` generally means that we are waiting on a socket to read or write data, although it *can* mean we are waiting on a very slow filesystem.
+   In this case, complete the steps described in [Providers returned](#providers-returned).
 
-If you see any of those tags _without_ a `, X minutes` suffix, that generally means there isn't a problem -- you just caught that goroutine in the middle of a short wait for something. If the wait time is over a few minutes, that either means that goroutine doesn't do much, or something is pretty wrong.
+   **If no providers were returned**, the cause of your problem might be content publishing. Complete the steps described in [No providers returned](#no-providers-returned).
 
-If you see a lot of goroutines, consider using [stackparse](https://github.com/whyrusleeping/stackparse) to filter, sort, and summarize them.
+### Providers returned
 
-### Analyzing the CPU Profile
+If providers were found in the DHT, do the following:
 
-The go team wrote an [excellent article on profiling go programs](http://blog.golang.org/profiling-go-programs). If you've already gathered the above information, you can skip down to where they start talking about `go tool pprof`. My go-to method of analyzing these is to run the `web` command, which generates an SVG dotgraph and opens it in your browser. This is the quickest way to easily point out where the hot spots in the code are.
+1. In the terminal, retrieve the network addresses of one of the peers returned using its `<peer-id>`:
 
-### Analyzing vars and memory statistics
+   ```shell
+   ipfs id -f '<addrs>' <peer-id>
+   ```
 
-The output is JSON formatted and includes badger store statistics, the command line run, and the output from Go's [runtime.ReadMemStats](https://golang.org/pkg/runtime/#ReadMemStats). The [MemStats](https://golang.org/pkg/runtime/#MemStats) has useful information about memory allocation and garbage collection.
+   Upon success, you'll see a list of addresses like:
 
+   ```
+   /ip4/145.40.90.155/tcp/4001/p2p/12D3KooWSH5uLrYe7XSFpmnQj1NCsoiGeKSRCV7T5xijpX2Po2aT
+   /ip4/145.40.90.155/tcp/4002/ws/p2p/12D3KooWSH5uLrYe7XSFpmnQj1NCsoiGeKSRCV7T5xijpX2Po2aT
+   ip6/2604:1380:45e1:2700::d/tcp/4001/p2p/12D3KooWSH5uLrYe7XSFpmnQj1NCsoiGeKSRCV7T5xijpX2Po2aT
+   /ip6/2604:1380:45e1:2700::d/tcp/4002/ws/p2p/12D3KooWSH5uLrYe7XSFpmnQj1NCsoiGeKSRCV7T5xijpX2Po2aT
+   ```
+
+1. Note the returned addresses, as you'll use them in step 4.
+1. Navigate to [IPFS Check](https://check.ipfs.network/).
+1. Enter the following information:
+   - In the **CID** field, enter the `<CID>` you are requesting.
+   - In the **Multiaddr field**, enter one of the peer addresses noted in step 2.
+1. Click **Run Test**.
+
+   If the test is unsuccessful, complete the steps described in [No providers returned](#no-providers-returned).
+
+### No providers returned
+
+If no providers are returned, the issue may lie in the content publishing lifecycle, specifically _reprovider runs_, the continuous process in which a node advertises provider records. _Provider records_ are mappings of CIDs to network addresses, and have an expiration time of 48 hours, which accounts for provider churn. Generally speaking, as more files are added to an IPFS node, the longer reprovide runs take. When a reprovide run takes longer than 48 hours (the expiration time for provider records), CIDs will no longer be discoverable.
+
+:::
+You can learn more about the content publishing lifecycle in [How IPFS works](../concepts/how-ipfs-works.md).
+:::
+
+With this in mind, if no providers are returned, do the following:
+
+1. First, determine how long a reprovide run takes:
+
+   ```shell
+   ipfs stats provide
+   ```
+
+   The output should look something like:
+
+   ```shell
+   TotalProvides:          7k (7,401)
+   AvgProvideDuration:     271.271ms
+   LastReprovideDuration:  13m16.104781s
+   LastReprovideBatchSize: 1k (1,858)
+   ```
+
+2. Note the value for `LastReprovideDuration`. If it is close to 48 hours, select one of the following options, keeping in mind that each has tradeoffs:
+
+   - **Enable the [Accelerated DHT Client](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#accelerated-dht-client) in Kubo**. This configuration improves content publishing times significantly by maintaining more connections to peers and a larger routing table and batching advertising of provider records. However, this performance boost comes at the cost of increased resource consumption.
+
+   - **Change the reprovider strategy from `all` to either `pinned` or `roots`.** In both cases, only provider records for explicitly pinned content are advertised. Differences and tradeoffs are noted below:
+      - The `pinned` strategy will advertise both the root CIDs and child block CIDs (the entire DAG) of explicitly pinned content.
+      - The `roots` strategy will only advertise the root CIDs of pinned content, reducing the total number of provides in each run. This strategy is the most efficient, but should be done with caution, as it will limit discoverability only to root CIDs. In other words, if you are adding folders of files to an IPFS node, only the CID for the pinned folder will be advertised. All the blocks will still be retrievable with Bitswap once a connection to the node is established.
+
+3. Manually trigger a reprovide run:
+
+   ```shell
+   ipfs routing reprovide
+   ```
