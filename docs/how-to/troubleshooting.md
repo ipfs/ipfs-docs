@@ -2,7 +2,7 @@
 title: Troubleshooting IPFS
 description: Learn how to troubleshoot common issues with retrieval and providing in IPFS by identifying causes and failure modes with content routing, transfer protocols, and more.
 ---
-
+<!--
 ## TODO
 - Make it broader and split into two main topics:
   - Troubleshooting retrieval
@@ -17,6 +17,22 @@ description: Learn how to troubleshoot common issues with retrieval and providin
     - provider configuration (decrease cids to advertise)
     - Provider not advertising
     - Reprovides falling behind
+
+## Questions / checks for guiding troubleshooting process
+
+- How are you trying to retrieve the data?
+  - Public recursive IPFS gateways (like [ipfs.io](https://ipfs.io))
+  - IPFS node (Kubo, Helia, etc.)
+  - Are you trying to retrieve the data from a browser? (service worker gateway or with Helia/verified-fetch)
+- How is the data being provided?
+  - is the provider online?
+  - Is the provider publicly reachable?
+  - If the provider is not publicly reachable, does it have a relay
+  - is NAT hole punching possible?
+  - What network transports does the provider support? (TCP, QUIC, WebSockets WebTransport, WebRTC-direct)
+  - What transfer protocols does the provider support? (Bitswap and/or HTTP trustless gateway)
+  - If the provider is announcing the CID?
+    - -->
 
 # Troubleshooting IPFS
 
@@ -48,21 +64,7 @@ From a high level, when failing to fetch the data for a given CID, it's typicall
 
 This can be done either via public [recursive IPFS gateways](../concepts/ipfs-gateway.md#recursive-vs-non-recursive-gateways) or using an IPFS node, like Kubo or Helia.
 
-
 This page outlines the different ways to troubleshoot common issues with retrieval.
-
-- How are you trying to retrieve the data?
-  - Public recursive IPFS gateways (like [ipfs.io](https://ipfs.io))
-  - IPFS node (Kubo, Helia, etc.)
-  - Are you trying to retrieve the data in a browser?
-- How is the data being provided?
-  - is the provider online?
-  - Is the provider publicly reachable?
-  - If the provider is not publicly reachable, does it have a relay
-  - is NAT hole punching working?
-  - What network transports does the provider support? (TCP, QUIC, WebSockets WebTransport, WebRTC-direct)
-  - What transfer protocols does the provider support? (Bitswap and/or HTTP trustless gateway)
-  - If the provider is announcing the CID?
 
 ### Failure to retrieve from recursive IPFS gateways
 
