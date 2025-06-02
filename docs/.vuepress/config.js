@@ -208,9 +208,19 @@ module.exports = {
                 '/how-to/nat-configuration',
                 '/how-to/kubo-rpc-tls-auth',
                 '/how-to/kubo-garbage-collection',
-                '/how-to/troubleshooting',   
+                '/how-to/troubleshooting-kubo',   
                 '/how-to/webtransport',   
                 '/install/run-ipfs-inside-docker',
+              ]
+            },
+            {
+              title: 'Troubleshooting',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
+                '/how-to/troubleshooting',
+                '/how-to/troubleshooting-kubo',
+                '/reference/diagnostic-tools',
               ]
             },
             {
