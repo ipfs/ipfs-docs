@@ -36,81 +36,62 @@ description: Learn how to troubleshoot common issues with retrieval and providin
 
 # Troubleshooting IPFS
 
-Troubleshooting IPFS can be divided into two main categories:
+From a high level, troubleshooting IPFS typically comes down to finding the root cause of a problem in one of the following operations:
 
-- [Troubleshooting retrieval](#troubleshooting-retrieval) - When you are trying fix a problem related to retrieving data by CID from other peers in the network.
-- [Troubleshooting providing](#troubleshooting-providing) - When you are trying fix a problem related to providing data to other peers in the network.
+- [**Retrieval**](#troubleshooting-retrieval) - Retrieving data by CID from other peers in the network.
+- [**Providing**](#troubleshooting-providing) - Providing data to other peers in the network.
 
-In both cases, the failure modes can be attributed to one of the following:
+In both cases, the failure modes can be attributed to the following:
 
-- Content routing: providers for a CID cannot be found in the DHT or the IPNI.
-- Connectivity: the data for a CID is not retrievable from providers, either because the provider is not online, or because the provider is not reachable over the network.
+- **Content routing**: providers for a CID cannot be found in the DHT or the IPNI.
+- **Network connectivity**: a connection to provider is not possible, either because the provider is not online, or because the provider is not reachable over the network.
+
+This guide outlines techniques to troubleshoot and identify the root cause of common issues with retrieval and providing.
+
+For the purposes of this guide, we will use the following tools:
+- [IPFS Check](https://check.ipfs.network) - A browser-based debugging tool that can help you identify the root cause of a problem with retrieval.
+- [Kubo](https://github.com/ipfs/kubo) - A command-line debugging tool that can help you identify the root cause of a problem with retrieval.
+- [Public Delegated Routing Endpoint](../concepts/public-utilities.md#delegated-routing-endpoint) at `https://delegated-ipfs.dev/routing/v1` - which
 
 ## Troubleshooting retrieval
 
-In this section, we will outline the different ways to troubleshoot common issues with retrieval. Everything in this section applies to fetching from recursive IPFS gateways, however it should be noted that a recursive gateway is just another IPFS node, and as such, the same principles apply.
+In this section, you will learn to troubleshoot common issues with retrieval. For a more detailed overview of the retrieval process, see [the lifecycle of data in IPFS](../concepts/lifecycle.md#3-retrieving).
+
+
+::: callout
+If you are troubleshooting retrieval from a public recursive IPFS gateway, keep in mind that the gateway is just another IPFS node and an additional point of failure that you commonly have no insight into. This can make it harder to troubleshoot, because it's not clear whether the problem is with the gateway or the provider node.
+
+We therefore recommended using Kubo or IPFS Check to troubleshoot retrieval, which give you direct insight into the retrievability of the data by CID.
+:::
 
 ### What causes failure to retrieve data by CID?
 
-From a high level, when failing to fetch the data for a given CID, it's typically related to one of the following:
+When failing to fetch the data for a given CID, there are main classes of errors that may be the reason for this:
 
-- Content routing: providers for the CID cannot be found in the DHT or the IPNI.
-  - This is either because there are no providers for the CID, or because the providers aren't announcing the CID.
+- Content routing: providers for the CID cannot be found in the DHT or the IPNI:
+  - Because there are no providers for the CID.
+  - Because the providers aren't announcing the CID to the DHT or IPNI
+  - Because there are problems with the [DHT](https://discuss.ipfs.tech/t/incident-report-increased-latency-on-the-amino-dht/17338) or the [IPNI](https://blog.ipfs.tech/newsletter-205/#ipni-service-update).
 - Connectivity:
   - The provider is offline or unreachable over the network due to NAT or firewall issues.
-  - The provider is not reachable over the network due to transport issues, this is especially common when trying to retrieve data from browsers.
+  - The provider is not dialable from browsers:
+    - Because the provider doesn't have a public IP.
+    - Because the provider doesn't support browser transports like Secure WebSockets, WebTransport, or WebRTC.
 
+In the next section, you will learn how to determine the root cause with IPFS Check.
 
+### Troubleshooting retrieval with IPFS Check
 
-This can be done either via public [recursive IPFS gateways](../concepts/ipfs-gateway.md#recursive-vs-non-recursive-gateways) or using an IPFS node, like Kubo or Helia.
+The IPFS Check tool is a web app that automates a large part of the process described in [Debug manually](#debug-manually-with-kubo).
 
-This page outlines the different ways to troubleshoot common issues with retrieval.
+IPFS Check can help you answer these questions:
 
-### Failure to retrieve from recursive IPFS gateways
-
-Recursive IPFS gateways abstract the distributed aspect of IPFS while giving you a familiar HTTP interface, but that doesn't mean that complexity is gone.
-
-From a high level, when failing to fetch data from a recursive IPFS gateway, it's typically related to either:
-
-- The IPFS gateway
-- The provider for the CID
-Given all of these factors, it's difficult giving blanket advice. This is where understanding the lifecycle of a CID request to an IPFS gateway is useful as it will allow debugging problems quickly.
-
-One of the most common issues that users encounter when using IPFS is
-IPFS retrieval is the process of downloading content from the IPFS providers.
-
-When using retrieval, developers may need to troubleshoot issues like a:
-
-- CID not being retrievable via public IPFS gateways.
-- CID being slow to load.
-
-This page summarizes the different ways to troubleshoot common issues. To learn more about the concepts behind IPFS gateways, including how they work, available providers, types and FAQs, see [IPFS Gateway](../concepts/ipfs-gateway.md).
-
-## What causes retrieval from gateways to fail?
-
-In general, slow or failure to retrieve content from an IPFS gateway is typically related to one of the following:
-
-1. Gateway load: public gateways typically operate on a best effort basis, and may be slow to respond or unavailable due to high load.
-2. Network conditions of the provider(s) may prevent direct connectivity, due to firewalls, NATs, or other network restrictions.
-3. The provider is having trouble announcing the CID to the IPFS network via the DHT or the network indexer, resulting in the CID not being discoverable.
-
-:::tip
-When troubleshooting IPFS gateways, ensure that you are familiar with [how gateways work](../concepts/ipfs-gateway.md), as this will make the process quicker and easier.
-:::
-
-To further narrow down the root cause, use one of the following methods:
-
-- If you want an automated, browser based tool that does the majority of the diagnosing and debugging for you, use [IPFS Check](#debug-with-ipfs-check).
-- If you are running an IPFS Kubo node, you can [manually debug using kubo and IPFS check](#debug-manually).
-
-## Debug with IPFS Check
-
-The IPFS Check tool is a browser-based software application that automates a large part of the process described in [Debug manually](#debug-manually). Specifically, IPFS Check can help you answer these questions:
-
-1. Is a given CID routable on IPFS Mainnet, in other words, is the CID announced to the DHT or the IPNI?
-2. Is the data for the CID retrievable from the providers that are announcing it?
-3. What multiaddresses and network transports are used to connect to successful providers for a CID?
-4. Was NAT hole punching necessary to retrieve the data?
+1. How many providers for this CID could be found on IPFS Mainnet?
+1. In which routing system was each of those providers found, the Amino DHT or the IPNI?
+1. Is the data for the CID retrievable from the providers that are announcing it?
+1. Is the data for the CID retrievable over Bitswap and/or HTTP?
+1. What multiaddresses and network transports are used to connect to successful providers for a CID?
+1. Was NAT hole punching necessary to retrieve the data?
 
 IPFS Check provides an _outside perspective_ of IPFS node's network setup, and whether they are correctly configured.
 
