@@ -2,7 +2,7 @@
 title: Troubleshooting IPFS
 description: Learn how to troubleshoot common issues with retrieval and providing in IPFS by identifying causes and failure modes with content routing, transfer protocols, and more.
 ---
-<!--
+<!-- 
 ## TODO
 - Make it broader and split into two main topics:
   - Troubleshooting retrieval
@@ -16,7 +16,7 @@ description: Learn how to troubleshoot common issues with retrieval and providin
     - public reachability / NAT traversal
     - provider configuration (decrease cids to advertise)
     - Provider not advertising
-    - Reprovides falling behind
+    - Reprovides falling behind 
 
 ## Questions / checks for guiding troubleshooting process
 
@@ -51,7 +51,8 @@ This guide outlines techniques to troubleshoot and identify the root cause of co
 For the purposes of this guide, we will use the following tools:
 - [IPFS Check](https://check.ipfs.network) - A browser-based debugging tool that can help you identify the root cause of a problem with retrieval.
 - [Kubo](https://github.com/ipfs/kubo) - A command-line debugging tool that can help you identify the root cause of a problem with retrieval.
-- [Public Delegated Routing Endpoint](../concepts/public-utilities.md#delegated-routing-endpoint) at `https://delegated-ipfs.dev/routing/v1` - which
+- [Helia Identify tool](https://ipfs.fyi/identify) - A browser-based tool to run libp2p identify with a given peer id, testing whether the peer is dialable from a browser.
+- [Public Delegated Routing Endpoint](../concepts/public-utilities.md#delegated-routing-endpoint) at `https://delegated-ipfs.dev/routing/v1` - which can be used to find providers for a CID.
 
 ## Troubleshooting retrieval
 
@@ -78,13 +79,13 @@ When failing to fetch the data for a given CID, there are main classes of errors
     - Because the provider doesn't have a public IP.
     - Because the provider doesn't support browser transports like Secure WebSockets, WebTransport, or WebRTC.
 
-In the next section, you will learn how to determine the root cause with IPFS Check.
+In the next section, you will learn how to determine the root cause with IPFS Check. 
 
 ### Troubleshooting retrieval with IPFS Check
 
-The IPFS Check tool is a web app that automates a large part of the process described in [Debug manually](#debug-manually-with-kubo).
+[IPFS Check](https://check.ipfs.network) is a web app that helps you troubleshoot retrieval by CID. 
 
-IPFS Check can help you answer these questions:
+It helps you answer the following questions:
 
 1. How many providers for this CID could be found on IPFS Mainnet?
 1. In which routing system was each of those providers found, the Amino DHT or the IPNI?
@@ -93,23 +94,84 @@ IPFS Check can help you answer these questions:
 1. What multiaddresses and network transports are used to connect to successful providers for a CID?
 1. Was NAT hole punching necessary to retrieve the data?
 
-IPFS Check provides an _outside perspective_ of IPFS node's network setup, and whether they are correctly configured.
+IPFS Check is comprised of a frontend interacting with a backend. The backend is a set of Go libraries that are used to query the DHT and IPNI, and to probe retrieval from the providers for a given CID. The frontend is a web app that allows you to interact with the backend and see the results.
 
-### How to use IPFS Check
+### IPFS Check modes of operation
 
 IPFS Check supports two modes of operation:
 
-1. **CID-only checks**: you can check whether a CID is available from _any_ provider, without needing to pass a specific provider's multiaddr. In this mode, IPFS Check will search for providers both in the IPNI and the DHT.
-2. **Multiaddr-based checks**: you can check whether a CID is available from a specific provider, by passing the provider's multiaddr.
+1. **Multi-provider check**: you pass a CID and IPFS Check will search for providers both in the IPNI and the DHT, and return the retrievability results for multiple providers.
+2. **Provider-specific check**: you pass a CID and a provider's multiaddr or peer id, with `/p2p/` prepended.
 
-To use IPFS Check, do the following:
+### Provider-specific checks with IPFS Check
 
 1. Navigate to the [IPFS Check](https://check.ipfs.network/) tool.
 2. In the **CID** field, enter the CID you are trying to check
-3. (Optional) In the **Multiaddr field**, enter the multiaddress of the IPFS node you are trying to check.
+3. In the **Multiaddr field**, enter the multiaddress (either Peer ID or full multiaddr) of the IPFS peer you are trying to check.
+4. Click **Run Test**.
 
+The **Multiaddr** field can be either:
+- Just the Peer ID, with `/p2p/` prepended, e.g. `/p2p/12D3KooWBgwLwbTX5YYgASx8sqv49WBhy9gzLCLFVCP9jshfVdC5`. IPFS Check will route the Peer ID to find the full multiaddr.
+- The full multiaddr, e.g. `/ip4/1.1.1.1/tcp/4001/p2p/12D3KooWBgwLwbTX5YYgASx8sqv49WBhy9gzLCLFVCP9jshfVdC5`.
+
+For example, the output will look as follows, when doing a Peer ID specific check for a CID:
+
+![ipfs-check provider-specific check](images/ipfs-check-peer-result.jpg)
+
+Looking at the output, you can know the following:
+
+- The provider and the CID were routable via the DHT.
+- The provider is online, and the data for the CID is retrievable over Bitswap.
+- The provider was reachable over IPv6 with the QUIC transport, and also supports Secure WebSockets (the multiaddr with `dns4.../...libp2p.direct/tls/`, ), WebTransport,
+- No NAT hole punching was necessary to retrieve the data, you can know this because there is a single connection multiaddr in the output and it doesn't contain `p2p-circuit`.
+
+You can also test a specific multiaddr and transport combination, by entering the full multiaddr in the **Multiaddr** field. For example, this is what the output looks like when testing the Secure WebSockets multiaddr:
+
+![ipfs-check multiaddr check](images/ipfs-check-multiaddr-result.jpg)
+
+Since the Secure WebSockets multiaddr is also supported by all browsers, you can also test connectivity to the provider directly from a browser (rather than the IPFS Check backend like in this example) with the [Helia Identify tool](#debug-web-dialability-with-helia-identify).
+
+### Multi-provider checks with IPFS Check
+
+In this mode, IPFS Check will search for providers both in the IPNI and the DHT, and return the retrievability results for multiple providers.
+
+1. Navigate to the [IPFS Check](https://check.ipfs.network/) tool.
+2. In the **CID** field, enter the CID you are trying to check
+3. Click **Run Test**.
+
+The output will look as follows:
+
+![ipfs-check multi-provider check](images/ipfs-check-cid-results.jpg)
+
+Looking at the output, you can know the following:
+
+- There are 9 working providers for the CID.
+- Some providers were found in the IPNI, some in the DHT.
+- Some providers are providing the data with HTTP (the first result), and others with Bitswap over a libp2p QUIC connection (the second result).
+
+### Identifying NAT hole punching
+
+When using IPFS Check, you can identify whether NAT hole punching was necessary to connect to a provider, by looking at the connection multiaddrs in the output. If there are two connection multiaddrs, and one of them contains `p2p-circuit`, for example:
+
+![ipfs-check multi-provider check with NAT hole punching](images/ipfs-check-cid-result-nat.jpg)
+
+This is because when a provider peer is behind NAT, it will aquire a circuit relay reservation as part of the [NAT hole punching process (DCUtR)](https://blog.ipfs.tech/2022-01-20-libp2p-hole-punching/).
+
+If NAT traversal is necessary to connect to a provider, and you are also behind NAT, there's a chance that NAT hole punching will fail for you, because unlike the IPFS Check backend which has a public IP, allowing DCUtR to leverage dialback for direct connection, when two peers are behind NAT, they cannot dial back to each other, and require hole punching, which is not guaranteed to be successful.
+
+### IPFS Check video guide
+
+The following video gives an overview of how to use IPFS Check and its different modes of operation.
 
 @[youtube](XeNOQDOrdC0)
+
+## Debug browser connectivity with Helia Identify
+
+[Helia Identify](https://ipfs.fyi/identify) is a browser-based tool to run libp2p identify with a given peer id, testing whether the peer is dialable from a browser. This is useful to test whether a provider is reachable from a browser, which is a common cause of browser-based retrieval failures.
+
+The following gif shows how to use Helia Identify to test whether a provider is reachable from a browser, by entering a Peer ID in the input field and clicking the **Identify** button.
+
+![helia identify](images/helia-identify.gif)
 
 ## Debug manually with Kubo
 

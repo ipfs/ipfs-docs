@@ -221,6 +221,7 @@ module.exports = {
                 '/how-to/troubleshooting',
                 '/how-to/troubleshooting-kubo',
                 '/reference/diagnostic-tools',
+                '/how-to/nat-configuration',
               ]
             },
             {
@@ -283,7 +284,7 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/gateway-best-practices',
-                '/how-to/gateway-troubleshooting',
+                '/how-to/troubleshooting',
               ]
             },
             {
