@@ -173,7 +173,7 @@ The following gif shows how to use Helia Identify to test whether a provider is 
 
 ![helia identify](images/helia-identify.gif)
 
-## Debug manually with Kubo
+## Troubleshooting with Kubo
 
 This procedure assumes that you have the latest version of kubo installed. To debug manually:
 
@@ -201,7 +201,7 @@ This procedure assumes that you have the latest version of kubo installed. To de
 
 ### Providers returned
 
-If providers were found in the DHT, do the following:
+If providers were found, do the following:
 
 1. In the terminal, retrieve the network addresses of one of the peers returned using its `<peer-id>`:
 
@@ -218,22 +218,43 @@ If providers were found in the DHT, do the following:
    /ip6/2604:1380:45e1:2700::d/tcp/4002/ws/p2p/12D3KooWSH5uLrYe7XSFpmnQj1NCsoiGeKSRCV7T5xijpX2Po2aT
    ```
 
-1. Note the returned addresses, as you'll use them in step 4.
-1. Navigate to [IPFS Check](https://check.ipfs.network/).
-1. Enter the following information:
+2. Note the returned addresses, as you'll use them in step 4.
+3. Navigate to [IPFS Check](https://check.ipfs.network/).
+4. Enter the following information:
    - In the **CID** field, enter the `<CID>` you are requesting.
    - In the **Multiaddr field**, enter one of the peer addresses noted in step 2.
-1. Click **Run Test**.
-
-   If the test is unsuccessful, complete the steps described in [No providers returned](#no-providers-returned).
+5. Click **Run Test**.
 
 ### No providers returned
 
-If no providers are returned, the issue may lie in the content publishing lifecycle, specifically _reprovider runs_, the continuous process in which a node advertises provider records. _Provider records_ are mappings of CIDs to network addresses, and have an expiration time of 48 hours, which accounts for provider churn. Generally speaking, as more files are added to an IPFS node, the longer reprovide runs take. When a reprovide run takes longer than 48 hours (the expiration time for provider records), CIDs will no longer be discoverable.
+If no providers are returned, it could be due to one of the following reasons:
 
-:::
-You can learn more about the content publishing lifecycle in [How IPFS works](../concepts/how-ipfs-works.md).
-:::
+- All providers for the CID are currently offline.
+- There is a problem with the content routing system (either the DHT or IPNI).
+- The provider is having trouble announcing the CID to the DHT or IPNI.
+- The provider is not online.
+
+To get an additional confirmation that the CID is not being advertised, you can try the delegated routing endpoint at `https://delegated-ipfs.dev/routing/v1` with the CID.
+
+```shell
+curl "https://delegated-ipfs.dev/routing/v1/providers/<CID>"
+```
+
+If the CID is not being advertised, you will see an empty array in the response.
+
+If that happens, check the [IPNI website](https://cid.contact/) to rule out an issue with the IPNI.
+
+Broadly speaking, the Amino DHT is more resilient to outages, so it's less likely to be the cause of the issue. A more likely cause is that the provider is having trouble announcing the CID to the DHT.
+
+If you are the provider for the CID, see the next section on [troubleshooting providing](#troubleshooting-providing).
+
+If you are not the provider for the CID and you cannot find any providers for the CID there's not much more you can do. If you have a copy of the content or a `.car` file, you can provide it to the network by importing it into Kubo with `ipfs dag import <file>.car`.
+
+## Troubleshooting providing
+
+In this section, you will learn to troubleshoot common issues with providing. For a more detailed overview of the providing process, see [the lifecycle of data in IPFS](../concepts/lifecycle.md#2-providing).
+
+If no providers are returned, the issue may lie in the content providing lifecycle, specifically _reprovider runs_, the continuous process in which a node advertises provider records. _Provider records_ are mappings of CIDs to network addresses, and have an expiration time of 48 hours, which accounts for provider churn. Generally speaking, as more files are added to an IPFS node, the longer reprovide runs take. When a reprovide run takes longer than 48 hours (the expiration time for provider records), CIDs will no longer be discoverable.
 
 With this in mind, if no providers are returned, do the following:
 
@@ -254,7 +275,7 @@ With this in mind, if no providers are returned, do the following:
 
 2. Note the value for `LastReprovideDuration`. If it is close to 48 hours, select one of the following options, keeping in mind that each has tradeoffs:
 
-   - **Enable the [Accelerated DHT Client](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#accelerated-dht-client) in Kubo**. This configuration improves content publishing times significantly by maintaining more connections to peers and a larger routing table and batching advertising of provider records. However, this performance boost comes at the cost of increased resource consumption.
+   - **Enable the [Accelerated DHT Client](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#accelerated-dht-client) in Kubo**. This configuration improves content providing times significantly by maintaining more connections to peers and a larger routing table and batching advertising of provider records. However, this performance boost comes at the cost of increased resource consumption, most notably network connections to other peers, and can lead to degraded network performance in home networks.
 
    - **Change the reprovider strategy from `all` to either `pinned` or `roots`.** In both cases, only provider records for explicitly pinned content are advertised. Differences and tradeoffs are noted below:
       - The `pinned` strategy will advertise both the root CIDs and child block CIDs (the entire DAG) of explicitly pinned content.
