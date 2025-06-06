@@ -97,6 +97,15 @@ To increase resilience and implementation diversity, as of 2024, the IPFS Founda
 
 `/dnsaddr/va1.bootstrap.libp2p.io/p2p/12D3KooWKnDdG3iXw9eTFijk3EWSunZcFi54Zka4wmtqtt6rPxc8`.
 
+
+## IPFS Check
+
+[IPFS Check](https://check.ipfs.network) is a tool for debugging retrieval by CID. It works by routing CIDs the DHT and IPNI, and then probing retrieval from the providers for a given CID over both Bitswap and HTTP (depending on the provider's support).
+
+The IPFS Foundation provides a hosted version of IPFS Check as a public good, and is available at [check.ipfs.network](https://check.ipfs.network).
+
+The backend is open source at [`ipfs/ipfs-check`](https://github.com/ipfs/ipfs-check), and can be run self-hosted, ideally on a remote server in order to get an external perspective.
+
 ## Frequently Asked Questions (FAQs)
 
 ### How is the ipfs.io gateway different from other gateways?
