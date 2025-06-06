@@ -127,7 +127,7 @@ Looking at the output, you can know the following:
 
 You can also test a specific multiaddr and transport combination, by entering the full multiaddr in the **Multiaddr** field. For example, this is what the output looks like when testing the Secure WebSockets multiaddr:
 
-![ipfs-check multiaddr check](images/ipfs-check-multiaddr-result.jpg)
+![ipfs-check multiaddr check](images/ipfs-check-peer-wss-maddr-result.jpg)
 
 Since the Secure WebSockets multiaddr is also supported by all browsers, you can also test connectivity to the provider directly from a browser (rather than the IPFS Check backend like in this example) with the [Helia Identify tool](#debug-browser-connectivity-with-helia-identify).
 
