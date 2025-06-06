@@ -123,13 +123,13 @@ Looking at the output, you can know the following:
 - The provider and the CID were routable via the DHT.
 - The provider is online, and the data for the CID is retrievable over Bitswap.
 - The provider was reachable over IPv6 with the QUIC transport, and also supports Secure WebSockets (the multiaddr with `dns4.../...libp2p.direct/tls/`, ), WebTransport,
-- No NAT hole punching was necessary to retrieve the data, you can know this because there is a single connection multiaddr in the output and it doesn't contain `p2p-circuit`.
+- No NAT hole punching was necessary to retrieve the data, you can know this because there is a single connection multiaddr in the output, and it doesn't contain `p2p-circuit`.
 
 You can also test a specific multiaddr and transport combination, by entering the full multiaddr in the **Multiaddr** field. For example, this is what the output looks like when testing the Secure WebSockets multiaddr:
 
 ![ipfs-check multiaddr check](images/ipfs-check-multiaddr-result.jpg)
 
-Since the Secure WebSockets multiaddr is also supported by all browsers, you can also test connectivity to the provider directly from a browser (rather than the IPFS Check backend like in this example) with the [Helia Identify tool](#debug-web-dialability-with-helia-identify).
+Since the Secure WebSockets multiaddr is also supported by all browsers, you can also test connectivity to the provider directly from a browser (rather than the IPFS Check backend like in this example) with the [Helia Identify tool](#debug-browser-connectivity-with-helia-identify).
 
 ### Multi-provider checks with IPFS Check
 
