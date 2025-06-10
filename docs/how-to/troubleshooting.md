@@ -2,37 +2,6 @@
 title: Troubleshooting IPFS
 description: Learn how to troubleshoot common issues with retrieval and providing in IPFS by identifying causes and failure modes with content routing, transfer protocols, and more.
 ---
-<!-- 
-## TODO
-- Make it broader and split into two main topics:
-  - Troubleshooting retrieval
-    - content routing
-      - IPNI (Network Indexer)
-      - DHT
-    - content retrieval
-      - Bitswap
-      - HTTP
-  - Troubleshooting providing
-    - public reachability / NAT traversal
-    - provider configuration (decrease cids to advertise)
-    - Provider not advertising
-    - Reprovides falling behind 
-
-## Questions / checks for guiding troubleshooting process
-
-- How are you trying to retrieve the data?
-  - Public recursive IPFS gateways (like [ipfs.io](https://ipfs.io))
-  - IPFS node (Kubo, Helia, etc.)
-  - Are you trying to retrieve the data from a browser? (service worker gateway or with Helia/verified-fetch)
-- How is the data being provided?
-  - is the provider online?
-  - Is the provider publicly reachable?
-  - If the provider is not publicly reachable, does it have a relay
-  - is NAT hole punching possible?
-  - What network transports does the provider support? (TCP, QUIC, WebSockets WebTransport, WebRTC-direct)
-  - What transfer protocols does the provider support? (Bitswap and/or HTTP trustless gateway)
-  - If the provider is announcing the CID?
-    - -->
 
 # Introduction to troubleshooting IPFS
 
@@ -46,9 +15,10 @@ Retrieval and providing are complementary operations, as one cannot be done with
 - **Content routing**: providers for a CID cannot be found in the DHT or the IPNI.
 - **Network connectivity**: connecting to a provider is not possible, either because the provider is offline, or because the provider is not reachable over the network.
 
-This guide outlines techniques to troubleshoot and identify the root cause of common issues with retrieval and providing.
+This guide outlines techniques to troubleshoot and identify the root cause of common issues with retrieval and providing in the [public IPFS Mainnet](../concepts/glossary.md#mainnet) network.
 
 For the purposes of this guide, we will use the following tools:
+
 - [IPFS Check](https://check.ipfs.network) - A browser-based debugging tool that can help you identify the root cause of a problem with retrieval.
 - [Kubo](https://github.com/ipfs/kubo) - A command-line debugging tool that can help you identify the root cause of a problem with retrieval.
 - [Helia Identify tool](https://ipfs.fyi/identify) - A browser-based tool to run libp2p identify with a given peer id, testing whether the peer is dialable from a browser.
@@ -58,12 +28,11 @@ For the purposes of this guide, we will use the following tools:
 
 In this section, you will learn to troubleshoot common issues with retrieval. For a more detailed overview of the retrieval process, see [the lifecycle of data in IPFS](../concepts/lifecycle.md#3-retrieving).
 
+### Troubleshooting retrieval from public recursive IPFS gateways
 
-::: callout
-If you are troubleshooting retrieval from a public recursive IPFS gateway, keep in mind that the gateway is just another IPFS node and an additional point of failure that you commonly have no insight into. This can make it harder to troubleshoot, because it's not clear whether the problem is with the gateway or the provider node.
+If you are troubleshooting retrieval from a [public recursive IPFS gateway](../concepts/ipfs-gateway.md#recursive-vs-non-recursive-gateways), keep in mind that the gateway is just another IPFS node and an additional point of failure that you commonly have no insight into. This means that it's harder to troubleshoot, because as a user you cannot determine whether the problem is with the gateway or the provider node.
 
-We therefore recommended using Kubo or IPFS Check to troubleshoot retrieval, which give you direct insight into the retrievability of the data by CID.
-:::
+We therefore recommended using Kubo or IPFS Check to troubleshoot retrieval, which give you direct insight into the retrievability of the data by CID from providers
 
 ### What causes failure to retrieve data by CID?
 
@@ -79,11 +48,23 @@ When failing to fetch the data for a given CID, there are main classes of errors
     - Because the provider doesn't have a public IP.
     - Because the provider doesn't support browser transports like Secure WebSockets, WebTransport, or WebRTC.
 
-In the next section, you will learn how to determine the root cause with IPFS Check. 
+In the next section, you will learn how to to use the delegated routing endpoint to check for providers for a CID, and how to get a more detailed overview of the root cause with IPFS Check.
+
+### Checking for providers with the Delegated Routing Endpoint
+
+To get a quick overview of the providers for a given CID from both the DHT and the IPNI, you can use the [Delegated Routing Endpoint](../concepts/public-utilities.md#delegated-routing-endpoint) at `https://delegated-ipfs.dev/routing/v1`, which you can query with a simple HTTP GET request, either in a browser or with a command-line tool like `curl`.
+
+```shell
+curl "https://delegated-ipfs.dev/routing/v1/providers/<CID>"
+```
+
+If the response body contains be an array of providers with Peer IDs and Multiaddrs, and other information, [as defined in the spec](https://specs.ipfs.tech/routing/http-routing-v1/#known-schemas), you can proceed to the next section to troubleshoot retrieval with IPFS Check.
+
+If you get back a 404 with the response body `{"Providers": null}`, check out the section on [No providers returned](#no-providers-returned) for more information.
 
 ### Troubleshooting retrieval with IPFS Check
 
-[IPFS Check](https://check.ipfs.network) is a web app that helps you troubleshoot retrieval by CID. 
+[IPFS Check](https://check.ipfs.network) is a web app that helps you troubleshoot retrieval by CID.
 
 It helps you answer the following questions:
 
@@ -111,6 +92,7 @@ IPFS Check supports two modes of operation:
 4. Click **Run Test**.
 
 The **Multiaddr** field can be either:
+
 - Just the Peer ID, with `/p2p/` prepended, e.g. `/p2p/12D3KooWBgwLwbTX5YYgASx8sqv49WBhy9gzLCLFVCP9jshfVdC5`. IPFS Check will route the Peer ID to find the full multiaddr.
 - The full multiaddr, e.g. `/ip4/1.1.1.1/tcp/4001/p2p/12D3KooWBgwLwbTX5YYgASx8sqv49WBhy9gzLCLFVCP9jshfVdC5`.
 
@@ -227,26 +209,19 @@ If providers were found, do the following:
 
 ### No providers returned
 
-If no providers are returned, it could be due to one of the following reasons:
+If no providers are could be found in the DHT or IPNI, it could be due to one of the following reasons:
 
 - All providers for the CID are currently offline.
-- There is a problem with the content routing system (either the DHT or IPNI).
 - The provider is having trouble announcing the CID to the DHT or IPNI.
-- The provider is not online.
-
-To get an additional confirmation that the CID is not being advertised, you can try the delegated routing endpoint at `https://delegated-ipfs.dev/routing/v1` with the CID.
-
-```shell
-curl "https://delegated-ipfs.dev/routing/v1/providers/<CID>"
-```
-
-If the CID is not being advertised, you will see an empty array in the response.
+- There is a problem with the content routing system (either the DHT or IPNI).
 
 If that happens, check the [IPNI website](https://cid.contact/) to rule out an issue with the IPNI.
 
-Broadly speaking, the Amino DHT is more resilient to outages, so it's less likely to be the cause of the issue. A more likely cause is that the provider is having trouble announcing the CID to the DHT.
+Broadly speaking, the Amino DHT is resilient to outages, so it's less likely to be the cause of the issue. A more likely cause is that the provider is having trouble announcing the CID to the DHT.
 
 If you are the provider for the CID, see the next section on [troubleshooting providing](#troubleshooting-providing).
+
+If you rely on a pinning service to provide the content, check the status page of the pinning service.
 
 If you are not the provider for the CID and you cannot find any providers for the CID there's not much more you can do. If you have a copy of the content or a `.car` file, you can provide it to the network by importing it into Kubo with `ipfs dag import <file>.car`.
 
@@ -254,23 +229,27 @@ If you are not the provider for the CID and you cannot find any providers for th
 
 In this section, you will learn to troubleshoot common issues with providing. For a more detailed overview of the providing process, see [the lifecycle of data in IPFS](../concepts/lifecycle.md#2-providing).
 
-If no providers are returned, the issue may lie in the content providing lifecycle, specifically _reprovider runs_, the continuous process in which a node advertises provider records. _Provider records_ are mappings of CIDs to network addresses, and have an expiration time of 48 hours, which accounts for provider churn. Generally speaking, as more files are added to an IPFS node, the longer reprovide runs take. When a reprovide run takes longer than 48 hours (the expiration time for provider records), CIDs will no longer be discoverable.
+If clients are unable to find providers for a CID, the issue may lie in the content providing lifecycle, specifically _reprovider runs_, the continuous process in which a node advertises provider records. _Provider records_ are mappings of CIDs to network addresses, and have an expiration time of 48 hours, which accounts for provider churn.
+
+Generally speaking, as more files are added to an IPFS node, the longer reprovide runs take. When a reprovide run takes longer than 48 hours (the expiration time for provider records), CIDs will no longer be discoverable.
+
+### Troubleshooting providing with Kubo
 
 With this in mind, if no providers are returned, do the following:
 
 1. First, determine how long a reprovide run takes:
 
    ```shell
-   ipfs stats provide
+   ipfs stats reprovide
    ```
 
-   The output should look something like:
+   The output should look something like this:
 
    ```shell
-   TotalProvides:          7k (7,401)
-   AvgProvideDuration:     271.271ms
-   LastReprovideDuration:  13m16.104781s
-   LastReprovideBatchSize: 1k (1,858)
+   TotalReprovides:       4k (4,140)
+   AvgReprovideDuration:  12.870309s
+   LastReprovideDuration: 44m32.507618s
+   LastReprovide:         2025-06-10 09:45:18
    ```
 
 2. Note the value for `LastReprovideDuration`. If it is close to 48 hours, select one of the following options, keeping in mind that each has tradeoffs:
@@ -278,8 +257,8 @@ With this in mind, if no providers are returned, do the following:
    - **Enable the [Accelerated DHT Client](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#accelerated-dht-client) in Kubo**. This configuration improves content providing times significantly by maintaining more connections to peers and a larger routing table and batching advertising of provider records. However, this performance boost comes at the cost of increased resource consumption, most notably network connections to other peers, and can lead to degraded network performance in home networks.
 
    - **Change the reprovider strategy from `all` to either `pinned` or `roots`.** In both cases, only provider records for explicitly pinned content are advertised. Differences and tradeoffs are noted below:
-      - The `pinned` strategy will advertise both the root CIDs and child block CIDs (the entire DAG) of explicitly pinned content.
-      - The `roots` strategy will only advertise the root CIDs of pinned content, reducing the total number of provides in each run. This strategy is the most efficient, but should be done with caution, as it will limit discoverability only to root CIDs. In other words, if you are adding folders of files to an IPFS node, only the CID for the pinned folder will be advertised. All the blocks will still be retrievable with Bitswap once a connection to the node is established.
+     - The `pinned` strategy will advertise both the root CIDs and child block CIDs (the entire DAG) of explicitly pinned content.
+     - The `roots` strategy will only advertise the root CIDs of pinned content, reducing the total number of provides in each run. This strategy is the most efficient, but should be done with caution, as it will limit discoverability only to root CIDs. In other words, if you are adding folders of files to an IPFS node, only the CID for the pinned folder will be advertised. All the blocks will still be retrievable with Bitswap once a connection to the node is established.
 
 3. Manually trigger a reprovide run:
 
