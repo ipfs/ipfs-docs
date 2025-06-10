@@ -155,7 +155,7 @@ When using IPFS Check, you can identify whether NAT hole punching was necessary 
 
 ![ipfs-check multi-provider check with NAT hole punching](images/ipfs-check-cid-result-nat.jpg)
 
-This is because when a provider peer is behind NAT, it will aquire a circuit relay reservation as part of the [NAT hole punching process (DCUtR)](https://blog.ipfs.tech/2022-01-20-libp2p-hole-punching/).
+This is because when a provider peer is behind NAT, it will acquire a circuit relay reservation as part of the [NAT hole punching process (DCUtR)](https://blog.ipfs.tech/2022-01-20-libp2p-hole-punching/).
 
 If NAT traversal is necessary to connect to a provider, and you are also behind NAT, there's a chance that NAT hole punching will fail for you, because unlike the IPFS Check backend which has a public IP, allowing DCUtR to leverage dialback for direct connection, when two peers are behind NAT, they cannot dial back to each other, and require hole punching, which is not guaranteed to be successful.
 
