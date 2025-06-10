@@ -19,7 +19,7 @@ This can be remedied by running `ipfs daemon`, and using a different terminal to
 
 ## Kubo is running slowly
 
-Commands like `ipfs ls` are going to the network to try and find data. If for some reason, that data is not _routble_ then Kubo will just keep looking for who has the data forever. Common reasons for data not being _routble_ are that:
+Commands like `ipfs ls` are going to the network to try and find data. If for some reason, that data is not _routable_ then Kubo will just keep looking for who has the data forever. Common reasons for data not being _routable_ are that:
 
 - There are no providers for the CID.
 - There are providers for the CID, but they are not reachable over the network (due to NAT related issues, firewalls, etc.).
