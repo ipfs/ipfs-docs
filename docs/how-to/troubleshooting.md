@@ -48,7 +48,7 @@ When failing to fetch the data for a given CID, there are main classes of errors
     - Because the provider doesn't have a public IP.
     - Because the provider doesn't support browser transports like Secure WebSockets, WebTransport, or WebRTC.
 
-In the next section, you will learn how to to use the delegated routing endpoint to check for providers for a CID, and how to get a more detailed overview of the root cause with IPFS Check.
+In the next section, you will learn how to use the delegated routing endpoint to check for providers for a CID, and how to get a more detailed overview of the root cause with IPFS Check.
 
 ### Checking for providers with the Delegated Routing Endpoint
 
