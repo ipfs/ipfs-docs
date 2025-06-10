@@ -34,17 +34,17 @@ description: Learn how to troubleshoot common issues with retrieval and providin
   - If the provider is announcing the CID?
     - -->
 
-# Troubleshooting IPFS
+# Introduction to troubleshooting IPFS
 
 From a high level, troubleshooting IPFS typically comes down to finding the root cause of a problem in one of the following operations:
 
 - [**Retrieval**](#troubleshooting-retrieval) - Retrieving data by CID from other peers in the network.
 - [**Providing**](#troubleshooting-providing) - Providing data to other peers in the network.
 
-In both cases, the failure modes can be attributed to the following:
+Retrieval and providing are complementary operations, as one cannot be done without the other. Hence, their failure modes are closely related, and can be attributed to the following causes:
 
 - **Content routing**: providers for a CID cannot be found in the DHT or the IPNI.
-- **Network connectivity**: a connection to provider is not possible, either because the provider is not online, or because the provider is not reachable over the network.
+- **Network connectivity**: connecting to a provider is not possible, either because the provider is offline, or because the provider is not reachable over the network.
 
 This guide outlines techniques to troubleshoot and identify the root cause of common issues with retrieval and providing.
 
@@ -136,8 +136,8 @@ Since the Secure WebSockets multiaddr is also supported by all browsers, you can
 In this mode, IPFS Check will search for providers both in the IPNI and the DHT, and return the retrievability results for multiple providers.
 
 1. Navigate to the [IPFS Check](https://check.ipfs.network/) tool.
-2. In the **CID** field, enter the CID you are trying to check
-3. Click **Run Test**.
+1. In the **CID** field, enter the CID you are trying to check
+1. Click **Run Test**.
 
 The output will look as follows:
 
@@ -218,12 +218,12 @@ If providers were found, do the following:
    /ip6/2604:1380:45e1:2700::d/tcp/4002/ws/p2p/12D3KooWSH5uLrYe7XSFpmnQj1NCsoiGeKSRCV7T5xijpX2Po2aT
    ```
 
-2. Note the returned addresses, as you'll use them in step 4.
-3. Navigate to [IPFS Check](https://check.ipfs.network/).
-4. Enter the following information:
+1. Note the returned addresses, as you'll use them in step 4.
+1. Navigate to [IPFS Check](https://check.ipfs.network/).
+1. Enter the following information:
    - In the **CID** field, enter the `<CID>` you are requesting.
    - In the **Multiaddr field**, enter one of the peer addresses noted in step 2.
-5. Click **Run Test**.
+1. Click **Run Test**.
 
 ### No providers returned
 
