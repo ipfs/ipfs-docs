@@ -100,7 +100,10 @@ To increase resilience and implementation diversity, as of 2024, the IPFS Founda
 
 ## IPFS Check
 
-[IPFS Check](https://check.ipfs.network) is a tool for debugging retrieval by CID. It works by routing CIDs the DHT and IPNI, and then probing retrieval from the providers for a given CID over both Bitswap and HTTP (depending on the provider's support).
+[IPFS Check](https://check.ipfs.network) is a diagnostic tool for debugging retrieval by CID. It works by probing retrieval from either a single provider or a set of providers with Bitswap and HTTP (depending on the provider's support). It supports two modes:
+
+- **Single Provider Mode**: Probes retrieval from a single provider with a given CID and multiaddress.
+- **Multi Provider Mode**: Probes retrieval from a set of providers with a given CID. This mode works by routing CIDs the DHT and IPNI, and then probing retrieval from the providers.
 
 The IPFS Foundation provides a hosted version of IPFS Check as a public good, and is available at [check.ipfs.network](https://check.ipfs.network).
 
