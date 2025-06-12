@@ -104,7 +104,7 @@ To increase resilience and implementation diversity, as of 2024, the IPFS Founda
 
 The IPFS Foundation provides a hosted version of IPFS Check as a public good, and is available at [check.ipfs.network](https://check.ipfs.network).
 
-The backend is open source at [`ipfs/ipfs-check`](https://github.com/ipfs/ipfs-check), and can be run self-hosted, ideally on a remote server in order to get an external perspective.
+The backend is open source at [`ipfs/ipfs-check`](https://github.com/ipfs/ipfs-check), and can be run self-hosted, ideally on a remote server with a public IPv4/IPv6 address in order to get an external perspective.
 
 ## Frequently Asked Questions (FAQs)
 
