@@ -21,7 +21,7 @@ For the purposes of this guide, we will use the following tools:
 
 - [IPFS Check](https://check.ipfs.network) - A browser-based debugging tool that can help you identify the root cause of a problem with retrieval.
 - [Kubo](https://github.com/ipfs/kubo) -  A popular implementation of IPFS with a CLI that can be used to troubleshoot retrieval and providing from the terminal.
-- [Helia Identify tool](https://ipfs.fyi/identify) - A browser-based tool to run libp2p identify with a given peer id, testing whether the peer is dialable from a browser.
+- [Helia Identify tool](https://ipfs.fyi/identify) - A browser-based tool to run [libp2p identify](https://github.com/libp2p/specs/blob/master/identify/README.md) with a given peer id, testing whether the peer is dialable from a browser.
 - [Public Delegated Routing Endpoint](../concepts/public-utilities.md#delegated-routing-endpoint) at `https://delegated-ipfs.dev/routing/v1` - which can be used to find providers for a CID.
 
 ## Troubleshooting retrieval
@@ -127,7 +127,7 @@ The output will look as follows:
 
 Looking at the output, you can know the following:
 
-- There are 9 working providers for the CID.
+- The routing query found 9 working providers for the CID.
 - Some providers were found in the IPNI, some in the DHT.
 - Some providers are providing the data with HTTP (the first result), and others with Bitswap over a libp2p QUIC connection (the second result).
 
@@ -139,7 +139,7 @@ When using IPFS Check, you can identify whether NAT hole punching was necessary 
 
 This is because when a provider peer is behind NAT, it will acquire a circuit relay reservation as part of the [NAT hole punching process (DCUtR)](https://blog.ipfs.tech/2022-01-20-libp2p-hole-punching/).
 
-If NAT traversal is necessary to connect to a provider, and you are also behind NAT, there's a chance that NAT hole punching will fail for you, because unlike the IPFS Check backend which has a public IP, allowing DCUtR to leverage dialback for direct connection, when two peers are behind NAT, they cannot dial back to each other, and require hole punching, which is not guaranteed to be successful.
+If NAT traversal is necessary to connect to a provider, and you are also behind NAT, there's a chance that NAT hole punching will fail for you. Unlike the IPFS Check backend which has a public IP (allowing DCUtR to leverage dialback for direct connection), when two peers are behind NAT, they cannot dial back to each other and require hole punching, which is not guaranteed to be successful.
 
 ### IPFS Check video guide
 
@@ -147,7 +147,7 @@ The following video gives an overview of how to use IPFS Check and its different
 
 @[youtube](XeNOQDOrdC0)
 
-## Debug browser connectivity with Helia Identify
+## Debug browser connectivity
 
 [Helia Identify](https://ipfs.fyi/identify) is a browser-based tool to run libp2p identify with a given peer id, testing whether the peer is dialable from a browser. This is useful to test whether a provider is reachable from a browser, which is a common cause of browser-based retrieval failures.
 
@@ -157,11 +157,11 @@ The following gif shows how to use Helia Identify to test whether a provider is 
 
 ## Troubleshooting with Kubo
 
-This procedure assumes that you have the latest version of kubo installed. To debug manually:
+This procedure assumes that you have the latest version of Kubo [installed](../install/command-line.md). To debug manually:
 
 1. Open up a terminal window.
 
-1. Using kubo, determine if any peers are advertising the `<CID>` you are requesting:
+1. Using Kubo, determine if any peers are advertising the `<CID>` you are requesting:
 
    ```shell
    ipfs routing findprovs <CID>
@@ -223,7 +223,7 @@ If you are the provider for the CID, see the next section on [troubleshooting pr
 
 If you rely on a pinning service to provide the content, check the status page of the pinning service.
 
-If you are not the provider for the CID and you cannot find any providers for the CID there's not much more you can do. If you have a copy of the content or a `.car` file, you can provide it to the network by importing it into Kubo with `ipfs dag import <file>.car`.
+If you are not the provider for the CID and cannot find any providers, there's not much more you can do. However, if you still have a copy of the content or can fetch it as a `.car` file from somewhere, you can provide it to the network by importing it into Kubo with `ipfs dag import <file>.car`.
 
 ## Troubleshooting providing
 
@@ -252,12 +252,12 @@ With this in mind, if no providers are returned, do the following:
    LastReprovide:         2025-06-10 09:45:18
    ```
 
-2. Note the value for `LastReprovideDuration`. If it is close to 48 hours, select one of the following options, keeping in mind that each has tradeoffs:
+2. Note the value for `LastReprovideDuration`. If it is close to 48 hours, or if you notice a "reprovide taking too long" warning in your `ipfs daemon` output log, select one of the following options, keeping in mind that each has tradeoffs:
 
    - **Enable the [Accelerated DHT Client](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#accelerated-dht-client) in Kubo**. This configuration improves content providing times significantly by maintaining more connections to peers and a larger routing table and batching advertising of provider records. However, this performance boost comes at the cost of increased resource consumption, most notably network connections to other peers, and can lead to degraded network performance in home networks.
 
-   - **Change the reprovider strategy from `all` to either `pinned` or `roots`.** In both cases, only provider records for explicitly pinned content are advertised. Differences and tradeoffs are noted below:
-     - The `pinned` strategy will advertise both the root CIDs and child block CIDs (the entire DAG) of explicitly pinned content.
+   - **Change the [Reprovider Strategy](https://github.com/ipfs/kubo/blob/master/docs/config.md#reproviderstrategy) from `all` to either `pinned+mfs` or `roots`.** In both cases, only provider records for explicitly pinned content are advertised. Differences and tradeoffs are noted below:
+     - The `pinned+mfs` strategy will advertise both the root CIDs and child block CIDs (the entire DAG) of explicitly pinned content and the locally available part of MFS.
      - The `roots` strategy will only advertise the root CIDs of pinned content, reducing the total number of provides in each run. This strategy is the most efficient, but should be done with caution, as it will limit discoverability only to root CIDs. In other words, if you are adding folders of files to an IPFS node, only the CID for the pinned folder will be advertised. All the blocks will still be retrievable with Bitswap once a connection to the node is established.
 
 3. Manually trigger a reprovide run:
