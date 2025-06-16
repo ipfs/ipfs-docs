@@ -37,6 +37,10 @@ IPFS is a great fit for deploying static sites and dapps, check out the followin
 - [Set up a DNSLink gateway to serve your site via a custom domain](./how-to/websites-on-ipfs/dnslink-gateway.md).
 - [Configure static site generators for publishing to IPFS](./how-to/websites-on-ipfs/static-site-generators.md).
 
+## Troubleshooting
+
+If you're having trouble retrieving or providing data to the IPFS network, check out the [troubleshooting guide](./how-to/troubleshooting.md).
+
 ### Build
 
 You can build apps that leverage IPFS implementations, or use HTTP instead:
