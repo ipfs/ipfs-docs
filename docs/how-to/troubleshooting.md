@@ -52,11 +52,17 @@ In the next section, you will learn how to use the delegated routing endpoint to
 
 ### Checking for providers with the Delegated Routing Endpoint
 
-To get a quick overview of the providers for a given CID from both the DHT and the IPNI, you can use the [Delegated Routing Endpoint](../concepts/public-utilities.md#delegated-routing-endpoint) at `https://delegated-ipfs.dev/routing/v1`, which you can query with a simple HTTP GET request, either in a browser or with a command-line tool like `curl`.
+To get a quick overview of the providers for a given CID from both the DHT and the IPNI, you can use the [Delegated Routing Endpoint](../concepts/public-utilities.md#delegated-routing-endpoint) at `https://delegated-ipfs.dev/routing/v1`, which you can query with a simple HTTP GET request.
+
+For example, open [`delegated-ipfs.dev/routing/v1/providers/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi`](https://delegated-ipfs.dev/routing/v1/providers/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi) in your browser.
+
+Or alternatively, use `curl` to query the endpoint:
 
 ```shell
-curl "https://delegated-ipfs.dev/routing/v1/providers/<CID>"
+curl -H "Accept: application/x-ndjson" "https://delegated-ipfs.dev/routing/v1/providers/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi"
 ```
+
+> _Note_: By setting the Accept header to `application/x-ndjson`, the response will be streamed, so you don't need to wait for the entire response to be received before you can start processing the results.
 
 If the response body contains be an array of providers with Peer IDs and Multiaddrs, and other information, [as defined in the spec](https://specs.ipfs.tech/routing/http-routing-v1/#known-schemas), you can proceed to the next section to troubleshoot retrieval with IPFS Check.
 
