@@ -98,7 +98,7 @@ The **Multiaddr** field can be either:
 
 For example, the output will look as follows, when doing a Peer ID specific check for a CID:
 
-![ipfs-check provider-specific check](images/ipfs-check-peer-result.jpg)
+![ipfs-check provider-specific check](./images/ipfs-check-peer-result.jpg)
 
 Looking at the output, you can know the following:
 
@@ -109,7 +109,7 @@ Looking at the output, you can know the following:
 
 You can also test a specific multiaddr and transport combination, by entering the full multiaddr in the **Multiaddr** field. For example, this is what the output looks like when testing the Secure WebSockets multiaddr:
 
-![ipfs-check multiaddr check](images/ipfs-check-peer-wss-maddr-result.jpg)
+![ipfs-check multiaddr check](./images/ipfs-check-peer-wss-maddr-result.jpg)
 
 Since the Secure WebSockets multiaddr is also supported by all browsers, you can also test connectivity to the provider directly from a browser (rather than the IPFS Check backend like in this example) with the [Helia Identify tool](#debug-browser-connectivity-with-helia-identify).
 
@@ -123,7 +123,7 @@ In this mode, IPFS Check will search for providers both in the IPNI and the DHT,
 
 The output will look as follows:
 
-![ipfs-check multi-provider check](images/ipfs-check-cid-results.jpg)
+![ipfs-check multi-provider check](./images/ipfs-check-cid-results.jpg)
 
 Looking at the output, you can know the following:
 
@@ -135,7 +135,7 @@ Looking at the output, you can know the following:
 
 When using IPFS Check, you can identify whether NAT hole punching was necessary to connect to a provider, by looking at the connection multiaddrs in the output. If there are two connection multiaddrs, and one of them contains `p2p-circuit`, for example:
 
-![ipfs-check multi-provider check with NAT hole punching](images/ipfs-check-cid-result-nat.jpg)
+![ipfs-check multi-provider check with NAT hole punching](./images/ipfs-check-cid-result-nat.jpg)
 
 This is because when a provider peer is behind NAT, it will acquire a circuit relay reservation as part of the [NAT hole punching process (DCUtR)](https://blog.ipfs.tech/2022-01-20-libp2p-hole-punching/).
 
@@ -153,7 +153,7 @@ The following video gives an overview of how to use IPFS Check and its different
 
 The following gif shows how to use Helia Identify to test whether a provider is reachable from a browser, by entering a Peer ID in the input field and clicking the **Identify** button.
 
-![helia identify](images/helia-identify.gif)
+![helia identify](./images/helia-identify.gif)
 
 ## Troubleshooting with Kubo
 
