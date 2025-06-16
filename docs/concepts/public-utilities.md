@@ -97,6 +97,18 @@ To increase resilience and implementation diversity, as of 2024, the IPFS Founda
 
 `/dnsaddr/va1.bootstrap.libp2p.io/p2p/12D3KooWKnDdG3iXw9eTFijk3EWSunZcFi54Zka4wmtqtt6rPxc8`.
 
+
+## IPFS Check
+
+[IPFS Check](https://check.ipfs.network) is a diagnostic tool for debugging retrieval by CID. It works by probing retrieval from either a single provider or a set of providers with Bitswap and HTTP (depending on the provider's support). It supports two modes:
+
+- **Single Provider Mode**: Probes retrieval from a single provider with a given CID and multiaddress.
+- **Multi Provider Mode**: Probes retrieval from a set of providers with a given CID. This mode works by routing CIDs the DHT and IPNI, and then probing retrieval from the providers.
+
+The IPFS Foundation provides a hosted version of IPFS Check as a public good, and is available at [check.ipfs.network](https://check.ipfs.network).
+
+The backend is open source at [`ipfs/ipfs-check`](https://github.com/ipfs/ipfs-check), and can be run self-hosted, ideally on a remote server with a public IPv4/IPv6 address in order to get an external perspective.
+
 ## Frequently Asked Questions (FAQs)
 
 ### How is the ipfs.io gateway different from other gateways?

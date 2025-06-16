@@ -37,6 +37,10 @@ Each error type output by the tool can indicate a solution to your problem:
 Learn more about CID concepts, including components and versions in the [content addressing concepts guide](../concepts/content-addressing.md).
 :::
 
+## Helia Identify
+
+[Helia Identify](https://ipfs.fyi/identify) is a browser-based tool to run [libp2p identify](https://github.com/libp2p/specs/blob/master/identify/README.md) with Peer IDs / multiaddrs, testing whether an IPFS peer is Web friendly, i.e. whether it can be connected to from a browser. This is useful to test whether content can be directly retrieved from a provider node.
+
 ## IPFS Gateway Checker
 
 :::warning
