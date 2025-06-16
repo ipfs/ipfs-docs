@@ -20,7 +20,7 @@ This guide outlines techniques to troubleshoot and identify the root cause of co
 For the purposes of this guide, we will use the following tools:
 
 - [IPFS Check](https://check.ipfs.network) - A browser-based debugging tool that can help you identify the root cause of a problem with retrieval.
-- [Kubo](https://github.com/ipfs/kubo) - A command-line debugging tool that can help you identify the root cause of a problem with retrieval.
+- [Kubo](https://github.com/ipfs/kubo) -  A popular implementation of IPFS with a CLI that can be used to troubleshoot retrieval and providing from the terminal.
 - [Helia Identify tool](https://ipfs.fyi/identify) - A browser-based tool to run libp2p identify with a given peer id, testing whether the peer is dialable from a browser.
 - [Public Delegated Routing Endpoint](../concepts/public-utilities.md#delegated-routing-endpoint) at `https://delegated-ipfs.dev/routing/v1` - which can be used to find providers for a CID.
 
