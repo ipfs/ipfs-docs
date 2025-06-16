@@ -157,7 +157,7 @@ The following gif shows how to use Helia Identify to test whether a provider is 
 
 ![helia identify](./images/helia-identify.gif)
 
-## Troubleshooting with Kubo
+### Troubleshooting retrieval with Kubo
 
 This procedure assumes that you have the latest version of Kubo [installed](../install/command-line.md). To debug manually:
 
@@ -202,12 +202,13 @@ If providers were found, do the following:
    /ip6/2604:1380:45e1:2700::d/tcp/4002/ws/p2p/12D3KooWSH5uLrYe7XSFpmnQj1NCsoiGeKSRCV7T5xijpX2Po2aT
    ```
 
-1. Note the returned addresses, as you'll use them in step 4.
-1. Navigate to [IPFS Check](https://check.ipfs.network/).
-1. Enter the following information:
-   - In the **CID** field, enter the `<CID>` you are requesting.
-   - In the **Multiaddr field**, enter one of the peer addresses noted in step 2.
-1. Click **Run Test**.
+2. Try fetching the block:
+
+   ```shell
+   ipfs block get <CID>
+   ```
+
+   If the block is successfully retrieved, you'll see the block data in the terminal.
 
 ### No providers returned
 
