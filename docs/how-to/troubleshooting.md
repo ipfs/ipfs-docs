@@ -83,6 +83,8 @@ It helps you answer the following questions:
 
 IPFS Check is comprised of a frontend interacting with a backend. The backend is a set of Go libraries that are used to query the DHT and IPNI, and to probe retrieval from the providers for a given CID. The frontend is a web app that allows you to interact with the backend and see the results.
 
+@[youtube](XeNOQDOrdC0)
+
 ### IPFS Check modes of operation
 
 IPFS Check supports two modes of operation:
@@ -146,12 +148,6 @@ When using IPFS Check, you can identify whether NAT hole punching was necessary 
 This is because when a provider peer is behind NAT, it will acquire a circuit relay reservation as part of the [NAT hole punching process (DCUtR)](https://blog.ipfs.tech/2022-01-20-libp2p-hole-punching/).
 
 If NAT traversal is necessary to connect to a provider, and you are also behind NAT, there's a chance that NAT hole punching will fail for you. Unlike the IPFS Check backend which has a public IP (allowing DCUtR to leverage dialback for direct connection), when two peers are behind NAT, they cannot dial back to each other and require hole punching, which is not guaranteed to be successful.
-
-### IPFS Check video guide
-
-The following video gives an overview of how to use IPFS Check and its different modes of operation.
-
-@[youtube](XeNOQDOrdC0)
 
 ## Debug browser connectivity
 
