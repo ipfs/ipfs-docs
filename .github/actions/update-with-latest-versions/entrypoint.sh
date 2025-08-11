@@ -69,7 +69,6 @@ update_version() {
 }
 
 cd "${ROOT}"
-update_version ipfs/ipfs-update current-ipfs-updater-version
 update_version ipfs-cluster/ipfs-cluster current-ipfs-cluster-version
 update_version ipfs/kubo current-ipfs-version
 

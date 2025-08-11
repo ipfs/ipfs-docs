@@ -7,7 +7,9 @@ description: Explore frequently asked questions about IPFS, the InterPlanetary F
 
 ## What is IPFS?
 
-The InterPlanetary File System (IPFS) is a set of composable, peer-to-peer protocols for addressing, routing, and transferring [content-addressed](../concepts/glossary.md#content-addressing) data in a decentralized file system. Many popular Web3 projects are built on IPFS - see the [ecosystem directory](https://ecosystem.ipfs.tech) for a list of some of these projects.
+IPFS is a set of building blocks for a better web. Open protocols to make your data smarter: content-addressed, verifiable, and unstoppable.
+
+On a more technical level, IPFS is a set of open protocols for addressing, routing, and transferring data on the web, built on the ideas of [content addressing](../concepts/glossary.md#content-addressing) and peer-to-peer networking.
 
 New to IPFS? Start with
 [the 3-page Basic Concepts](../concepts/README.md#learn-the-basics).
@@ -63,6 +65,10 @@ If you want to develop an IPFS implementation or are already working on one, the
 
 In addition to these core documents, `specs.ipfs.tech` documents standards for IPFS subsystems such as the [InterPlanetary Naming System](https://specs.ipfs.tech/http-gateways/) and [HTTP Gateways](https://specs.ipfs.tech/http-gateways/).
 
+### Can I use IPFS offline?
+
+Yes, all locally pinned CIDs on an IPFS node are available offline. While the initial retrieval of content may require an internet connection, once the data is cached locally, it can be accessed offline. This is particularly useful in scenarios with intermittent connectivity or when creating applications for areas with limited internet access. 
+
 ## IPFS and Filecoin
 
 ### What is the connection between IPFS and Filecoin?
@@ -73,6 +79,7 @@ In short: IPFS addresses and moves content, while Filecoin is an incentive layer
 
 These components are separable - you can use one without the other, and IPFS already supports more self-organized or altruistic forms of data persistence via tools like [IPFS Cluster](https://ipfscluster.io/). Compatibility between IPFS and Filecoin is intended to be as seamless as possible, but we expect it to evolve. You can view the [draft spec for IPFS-Filecoin Interoperability](https://github.com/filecoin-project/specs/issues/143) and [ideas for future improvements](https://github.com/filecoin-project/specs/issues/144) to learn more.
 
+
 ## IPFS and Protocol Labs
 
 ### How are the IPFS Project and Protocol Labs related?
@@ -81,4 +88,4 @@ IPFS is an open-source project with a community of more than four thousand contr
 
 ## Don't see your question?
 
-We're working on expanding this FAQ with more content, including questions from the original-generation [IPFS forums](https://discuss.ipfs.tech/c/help/old-faq/5), so please watch this space! However, if you don't see your question, please [ask in the forums](https://discuss.ipfs.tech/), so you can get the answers you need and make us aware of new FAQ items.
+If you don't see your question, please [ask in the IPFS forums](https://discuss.ipfs.tech/).

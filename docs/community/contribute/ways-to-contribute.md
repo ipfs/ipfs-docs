@@ -18,7 +18,7 @@ IPFS and its sister-projects are big, with lots of code written in multiple lang
 The biggest and most active repositories we have today are:
 
 - [ipfs/kubo](https://github.com/ipfs/kubo)
-- [ipfs/js-ipfs](https://github.com/ipfs/js-ipfs)
+- [ipfs/helia](https://github.com/ipfs/helia)
 - [libp2p/go-libp2p](https://github.com/libp2p/go-libp2p)
 - [libp2p/js-libp2p](https://github.com/libp2p/js-libp2p)
 

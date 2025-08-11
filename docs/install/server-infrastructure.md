@@ -1,12 +1,12 @@
 ---
 title: IPFS Cluster
 description: IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pin-set distributed among multiple peers. Learn how to install it here.
-current-ipfs-cluster-version: v1.0.7
+current-ipfs-cluster-version: v1.1.4
 ---
 
 # Set up server infrastructure with IPFS Cluster
 
-If you want to install IPFS in a server environment and offer IPFS as a service, you should look at [IPFS Cluster](https://cluster.ipfs.io/) as a way to scale your IPFS deployment beyond a single IPFS daemon. IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pin-set distributed among multiple peers. This makes it significantly easier to manage multiple IPFS nodes and ensure that data is available across an internal network.
+If you want to install IPFS in a server environment and offer IPFS as a service, you should look at [IPFS Cluster](https://ipfscluster.io/) as a way to scale your IPFS deployment beyond a single IPFS daemon. IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pin-set distributed among multiple peers. This makes it significantly easier to manage multiple IPFS nodes and ensure that data is available across an internal network.
 
 IPFS Cluster is a distributed application that works as a sidecar to IPFS peers, maintaining a global cluster pinset and intelligently allocating its items to the IPFS peers. This makes it significantly easier to manage multiple IPFS nodes and ensure that data is available across an internal network. IPFS Cluster powers large IPFS storage services like [nft.storage](https://nft.storage/) and [web3.storage](https://web3.storage/). 
 
@@ -44,7 +44,7 @@ _No central server to manage:_ Cluster peers form a distributed network and main
 To see if IPFS Cluster is suitable for your project, follow this quick start guide and spin up a local IPFS Cluster instance. At the end of this guide, you will have a solid understanding of how IPFS Cluster is set up and how to interact with it. To create a local cluster, complete the prerequisites. Then, follow the procedure.
 
 :::tip
-If you'd rather create a production-ready cluster, take a look at the [official IPFS Cluster documentation →](https://cluster.ipfs.io/)
+If you'd rather create a production-ready cluster, take a look at the [official IPFS Cluster documentation →](https://ipfscluster.io/)
 :::
 
 ### Prerequisites
@@ -73,13 +73,13 @@ If you're having issues installing or using Docker or Docker-Compose, see the [o
 1. Download the latest `ipfs-cluster-ctl` package from [dist.ipfs.tech](https://dist.ipfs.tech/#ipfs-cluster-ctl):
 
     ```shell
-    wget https://dist.ipfs.tech/ipfs-cluster-ctl/v1.0.7/ipfs-cluster-ctl_v1.0.7_linux-amd64.tar.gz
+    wget https://dist.ipfs.tech/ipfs-cluster-ctl/v1.1.4/ipfs-cluster-ctl_v1.1.4_linux-amd64.tar.gz
     ```
 
 1. Unzip the package:
 
     ```shell
-    tar xvzf ipfs-cluster-ctl_v1.0.7_linux-amd64.tar.gz
+    tar xvzf ipfs-cluster-ctl_v1.1.4_linux-amd64.tar.gz
 
     > ipfs-cluster-ctl/ipfs-cluster-ctl
     > ipfs-cluster-ctl/LICENSE
@@ -88,10 +88,10 @@ If you're having issues installing or using Docker or Docker-Compose, see the [o
     > ipfs-cluster-ctl/README.md
     ```
 
-1. Download the [`docker-compose.yml` file](https://raw.githubusercontent.com/ipfs/ipfs-cluster/v1.0.7/docker-compose.yml) and place it into the `ipfs-cluster-ctl` directory:
+1. Download the [`docker-compose.yml` file](https://raw.githubusercontent.com/ipfs/ipfs-cluster/v1.1.4/docker-compose.yml) and place it into the `ipfs-cluster-ctl` directory:
 
     ```shell
-    wget https://raw.githubusercontent.com/ipfs/ipfs-cluster/v1.0.7/docker-compose.yml
+    wget https://raw.githubusercontent.com/ipfs/ipfs-cluster/v1.1.4/docker-compose.yml
     ```
 
 1. Start the cluster using `docker-compose`:
@@ -207,4 +207,4 @@ If you're having issues installing or using Docker or Docker-Compose, see the [o
 
 ## Next steps
 
-If you want to delve deeper into IPFS Cluster, check out the project's documentation at [cluster.ipfs.io →](https://cluster.ipfs.io/)
+If you want to delve deeper into IPFS Cluster, check out the project's documentation at [ipfscluster.io →](https://ipfscluster.io/)

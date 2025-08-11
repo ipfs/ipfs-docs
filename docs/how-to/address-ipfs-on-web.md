@@ -66,7 +66,6 @@ IPFS clients, user agents, tools and extensions should detect CIDs in URLs, DNSL
 
 Examples of user agents that support IPFS natively are:
 
-- [Brave](https://brave.com/ipfs-support/)
 - A standard web browser with [IPFS Companion](https://docs.ipfs.tech/install/ipfs-companion/) installed next to an IPFS node, such as [IPFS Desktop](https://docs.ipfs.tech/install/ipfs-desktop/)
 
 ## Path gateway
@@ -135,18 +134,8 @@ Examples:
 
 ```plaintext
 https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.dweb.link/wiki/
-https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.cf-ipfs.com/wiki/Vincent_van_Gogh.html
-https://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.localhost:8080/wiki/
+http://bafybeiemxf5abjwjbikoz4mc3a3dla6ual3jsgpdr4cjr3oz3evfyavhwq.ipfs.localhost:8080/wiki/Vincent_van_Gogh.html
 ```
-
-#### Native support in Kubo
-
-[Kubo](https://dist.ipfs.tech/#kubo) provides native support for subdomain gateways on hostnames defined in the [`Gateway.PublicGateways`](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewaypublicgateways) configuration map.
-
-Learn more about Kubo configuration for hosting a public gateway:
-
-- [`Gateway.PublicGateways`](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewaypublicgateways) for defining gateway behavior on specified hostnames
-- [`Gateway` recipes](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes) with ready to use one-liners for most common use cases
 
 ::: warning Known issues
 
@@ -159,6 +148,12 @@ Base32 is the safe default; the less-popular Base36 can be used for longer ED255
 See the next section to learn how to convert an existing CIDv0 to a DNS-safe representation.
 
 :::
+
+#### Native support in Kubo and Rainbow
+
+[Kubo](https://dist.ipfs.tech/#kubo) provides native support for subdomain gateway, see  [`Gateway` recipes](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes) with ready to use one-liners for most common use cases.
+
+If you need a high-performance HTTP gateway, you may want to deploy [Rainbow](https://github.com/ipfs/rainbow/) instead. Rainbow is a specialized IPFS HTTP gateway which makes it easier to scale HTTP retrieval and isolate it from your Bitswap provider backend, such as Kubo or IPFS Cluster. See `rainbow --help` for relevant configuration (`--subdomain-gateway-domains` and `RAINBOW_SUBDOMAIN_GATEWAY_DOMAINS`).
 
 #### CID conversion for subdomains
 
@@ -286,11 +281,4 @@ Discussions around IPFS addressing have been ongoing since [@jbenet](https://git
 [IPFS Companion](https://github.com/ipfs/ipfs-companion#readme) is a browser extension that simplifies access to IPFS resources.
 
 It provides support for native URLs and will automatically redirect IPFS gateway requests to your local Kubo daemon so that you are not relying on or trusting remote gateways.
-
-### Shared dWeb namespace
-
-This concept isn't yet built, but may be explored and experimented with in the future. The distributed web community is exploring the idea of a shared `dweb` namespace to remove the complexity of addressing IPFS and other content-addressed protocols. Approaches currently being investigated are:
-
-- `dweb://` protocol handler ([arewedistributedyet/issues/28](https://github.com/arewedistributedyet/arewedistributedyet/issues/28))
-- `.dweb` special-use top-level domain name ([arewedistributedyet/issues/34](https://github.com/arewedistributedyet/arewedistributedyet/issues/34))
 
