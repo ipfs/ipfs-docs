@@ -5,14 +5,10 @@ description: 'Learn how to publish content with IPFS by pinning a file to a pinn
 
 # Publish a file with IPFS
 
-:::warning
-Some steps of this guide are currently outdated due to [changes with web3.storage](https://blog.web3.storage/posts/the-data-layer-is-here-with-the-new-web3-storage).
-:::
-
-In this quickstart guide, you will learn about [pinning services](../concepts/persistence.md#pinning-in-context) and how to use them to publish content-addressed data with IPFS. To learn the process, you will upload the file to a pinning service called [web3.storage](https://web3.storage/). By the end of this guide, you should have a better understanding of how content addressing and CIDs work from a high level.
+In this quickstart guide, you will learn about [pinning services](../concepts/persistence.md#pinning-in-context) and how to use their **web interfaces** to publish content with IPFS. By the end of this guide, you should have a better understanding of how content addressing and CIDs work from a high level.
 
 :::callout
-The web3.storage pinning service was chosen purely for demonstration purposes, and is one of many [pinning services](../concepts/persistence.md#pinning-in-context) you can choose from. While each pinning services has different SDKs and APIs, their fundamental role is the same - to store files and make them available to the IPFS network. In fact, one of the main benefits of IPFS is that files can be pinned to multiple pinning services, thereby reducing vendor lock-in.
+If you prefer command-line tools, see [Publish using the command line](./publish_cli.md).
 :::
 
 ## Contents <!-- omit from toc -->
@@ -20,7 +16,7 @@ The web3.storage pinning service was chosen purely for demonstration purposes, a
 - [Overview](#overview)
 - [Pinning services](#pinning-services)
 - [Prerequisites](#prerequisites)
-- [Uploading and pinning a file](#uploading-and-pinning-a-file)
+- [Upload and pin a file](#upload-and-pin-a-file)
 - [CIDs explained](#cids-explained)
 - [Retrieving with a gateway](#retrieving-with-a-gateway)
 - [Summary and next steps](#summary-and-next-steps)
@@ -41,36 +37,25 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 
 ## Prerequisites
 
-- A free [web3.storage](https://web3.storage/) account.
-- The [following image](../quickstart/images/welcome-to-IPFS.jpg), downloaded and saved on your computer:
+To follow along with this guide, you'll need:
+
+- An account with at least one pinning service (free tier is sufficient):
+  - [Pinata](https://pinata.cloud/) - Popular IPFS pinning service with simple web interface
+  - [Filebase](https://filebase.com) - S3-compatible pinning service with web dashboard
+  - [Storacha](https://storacha.network) - Decentralized storage network
+- A sample file to upload, such as the [following image](../quickstart/images/welcome-to-IPFS.jpg):
 
 ![image](../quickstart/images/welcome-to-IPFS.jpg)
 
 ## Upload and pin a file
 
-1. Sign into your account on web3.storage.
+Choose one of the following pinning services and use their web interface to upload your first file:
 
-   ![web3.storage login window](./images/login-web3-storage.png)
+- **Pinata**: Use the [Pinata App](https://app.pinata.cloud) for a simple drag-and-drop upload experience - see their [quickstart tutorial](https://docs.pinata.cloud/quickstart)
+- **Filebase**: Access their web dashboard and follow their [pin your first file guide](https://docs.filebase.com/getting-started/getting-started-guides/pin-your-first-file-to-ipfs)
+- **Storacha**: Requires some technical skills, but their [browser upload guide](https://docs.storacha.network/how-to/upload/) may be a useful option if you are developing a web application. You can also visit [console.storacha.network](https://console.storacha.network) for web-based uploads
 
-1. After logging in, click on **Upload files** to open the upload tab.
-
-   ![web3.storage upload button](./images/web3-upload-button.png)
-
-1. Upload and pin the file by doing either dragging the [image file](../quickstart/images/welcome-to-IPFS.jpg) to the dashed rectangle labeled **Drag and drop your files here**, or clicking on the dashed rectangle to select the [image](../quickstart/images/welcome-to-IPFS.jpg) file.
-
-   ![web3.storage upload tab](./images/web3-upload-tab.png)
-
-   Once the file has been successfully uploaded, the following displays:
-
-   ![web3.storage file uploaded](./images/web3-file-uploaded.png)
-
-   If you close the upload tab, you should also be able to see a shortened **Content Identifier (CID)** of the uploaded image, **`bafyb...d32wm3q4`**, similar to the image below:
-
-   ![file after upload](./images/web3-file-after-upload.png)
-
-Congratulations, you have successfully **pinned** a file to IPFS! 🎉
-
-Let's unpack what just happened, by looking at CIDs.
+Each service will provide you with a **CID** (Content Identifier) after uploading your file. Save this CID as you'll use it to retrieve your file in the next sections.
 
 ## CIDs explained
 
@@ -78,7 +63,7 @@ In IPFS, every file and directory is identified with a Content Identifier ([CID]
 
 When a file is first added to an IPFS node (like the image used in this guide), it's first transformed into a content-addressable representation in which the file is split into smaller chunks (if above ~1MB) which are linked together and hashed to produce the CID.
 
-In this guide, the CID for the uploaded image is:
+For example, a CID might look like:
 
 ```plaintext
 bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4
@@ -89,31 +74,57 @@ You can now share the CID with anyone and they can fetch the file using IPFS.
 To dive deeper into the anatomy of the CID, check out the [CID inspector](https://cid.ipfs.tech/#bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4)
 
 :::callout
-The transformation into a content-addressable representation is a local operation that doesn't require any network connectivity. With web3.storage, this transformation happens client-side (in the browser).
+The transformation into a content-addressable representation is a local operation that doesn't require any network connectivity. With many pinning services, this transformation happens client-side (in the browser).
 :::
 
 ## Retrieving with a gateway
 
-Now that your file is pinned to a pinning service, you will fetch it using an IPFS gateway. An [**IPFS Gateway**](../concepts/ipfs-gateway.md) is an HTTP interface that serves as a bridge to the IPFS network. In other words, it allows you to fetch CIDs from IPFS using HTTP.
+Now that your file is pinned to a pinning service, you can fetch it using an IPFS gateway. An [**IPFS Gateway**](../concepts/ipfs-gateway.md) is an HTTP interface that serves as a bridge to the IPFS network. In other words, it allows you to fetch CIDs from IPFS using HTTP in your web browser.
 
-Pinning services typically offer an IPFS gateway as a way to easily retrieve your CIDs. For example, Web3.storage operates the [w3s.link](https://w3s.link) gateway, from which you can retrieve the uploaded CID.
+Pinning services typically offer their own IPFS gateways:
 
-To retrieve the CID, open the following URL:
-[bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4.ipfs.w3s.link](https://bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4.ipfs.w3s.link/)
+### Pinata Gateway
+Pinata offers both public and dedicated gateway options. Their dedicated gateways provide better performance and reliability for production use. Access your content via:
+- `https://gateway.pinata.cloud/ipfs/[CID]`
+
+Learn more about the differences between public and dedicated gateways in [Pinata's gateway guide](https://knowledge.pinata.cloud/en/articles/6297294-public-gateways-vs-dedicated-gateways).
+
+### Filebase Gateway
+Filebase provides gateway access with the format:
+- `https://[BUCKET_NAME].ipfs.filebase.io/ipfs/[CID]`
+
+Note that Filebase's gateway may refuse HTML hosting and primarily works with assets like images or videos. For details, see [Filebase's IPFS gateway documentation](https://docs.filebase.com/ipfs-concepts/what-is-an-ipfs-gateway).
+
+### Storacha Gateway
+Storacha provides gateway access through w3s.link. You can retrieve content using formats like:
+- `https://[CID].ipfs.w3s.link`
+- `https://w3s.link/ipfs/[CID]`
+
+For more details about their gateway options, see [Storacha's IPFS gateway documentation](https://docs.storacha.network/concepts/ipfs-gateways/).
+
+### Public Gateways
+You can also use public IPFS gateways to retrieve any CID:
+- `https://ipfs.io/ipfs/[CID]`
+- `https://dweb.link/ipfs/[CID]`
+
+Simply replace `[CID]` with your actual CID in your browser's address bar to retrieve your file.
 
 :::callout
-When pinning a file to IPFS, the filename is not stored by default. To ensure the filename is retained, it's common to wrap the file in a directory. In such instances, both the file and the directory will have unique CIDs. Web3.storage wraps files in a directory by default, which is why you see a directory listing with the file `welcome-to-IPFS.jpg` followed by a shorthand CID: `bafk…beom` of the file.
+When pinning a file to IPFS, the filename is not stored by default. To ensure the filename is retained, it's common to wrap the file in a directory. In such instances, both the file and the directory will have unique CIDs. Many pinning services wrap files in a directory by default.
 :::
 
 ## Summary and next steps
 
-In this quickstart guide, you learned about [pinning services](../concepts/persistence.md#pinning-in-context), and how to use them to publish content-addressed data with IPFS. You also learned how CIDs address files and directories in IPFS by uploading a file to a pinning service called [web3.storage](https://web3.storage/).
+In this quickstart guide, you learned about [pinning services](../concepts/persistence.md#pinning-in-context), and how to use them to publish content-addressed data with IPFS through web interfaces. You explored different pinning service options and learned how to retrieve your content through IPFS gateways.
 
 Pinning services provide a convenient alternative to running IPFS nodes and infrastructure. However, the two are not mutually exclusive; you can combine a pinning service with an IPFS node on your computer to increase the resilience of your CIDs.
 
 Possible next steps include:
 
-- Check out [the lifecycle of data in IPFS](../concepts/lifecycle.md) to learn more about how publishing by pinning fits into the full lifecycle of data in IPFS.
-- Try fetching the pinned file by following the [retrieval quickstart](./retrieve.md).
-- If you prefer to upload a file programmatically with JavaScript or Go, check out the [Web3.storage docs](https://web3.storage/docs/how-tos/store/).
-- Alternatively, try out [Filebase](https://filebase.com/), a pinning service that offers an [AWS S3-compatible API for pinning](https://docs.filebase.com/getting-started/s3-api-getting-started-guide), so you can use any S3-compatible SDK, e.g. [aws-sdk](https://www.npmjs.com/package/aws-sdk), and [many](https://github.com/s3tools/s3cmd) more.
+- Check out [the lifecycle of data in IPFS](../concepts/lifecycle.md) to learn more about how publishing by pinning fits into the full lifecycle of data in IPFS
+- Try fetching the pinned file by following the [retrieval quickstart](./retrieve.md)
+- Learn how to [pin files using the command line](./publish_cli.md)
+- Explore service-specific documentation:
+  - [Pinata documentation](https://docs.pinata.cloud/)
+  - [Filebase documentation](https://docs.filebase.com/)
+  - [Storacha documentation](https://docs.storacha.network)

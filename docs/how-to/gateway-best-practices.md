@@ -33,7 +33,7 @@ If you are running an IPFS node that is also configured as an IPFS gateway, each
    - If your node is not reachable because you are behind NAT, see the [NAT configuration](https://docs.ipfs.tech/how-to/nat-configuration/#ipv6) docs.
 - Ensure that you are correctly returning HTTP cache headers to the client if the IPFS gateway node is behind a reverse proxy. Pay extra attention to `Etag`, `Cache-Control`, and `Last-Modified headers`. Consider leveraging the list of CIDs in `X-Ipfs-Roots` for smarter HTTP caching strategies.
 - Put a CDN like Cloudflare in front of the IPFS gateway.
-- Consider enabling the [Accelerated DHT Client](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#accelerated-dht-client). 
+- Consider enabling the [Accelerated DHT Client](https://github.com/ipfs/kubo/blob/master/docs/config.md#routingaccelerateddhtclient). 
 - Test and monitor your internet connection speed, with a tool like [Speedtest CLI](https://www.speedtest.net/apps/cli).
 - Monitor disk I/O and make sure that no other processes are causing disk I/O bottlenecks with a tool like [iotop](https://github.com/Tomas-M/iotop) or [iostat](https://github.com/sysstat/sysstat).
 
