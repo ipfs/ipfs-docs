@@ -42,6 +42,7 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
   - [Storacha](https://storacha.network) - Requires Node.js for their CLI
   - [Pinata](https://pinata.cloud/) - Uses REST API with curl
   - [Filebase](https://filebase.com) - S3-compatible, works with AWS CLI
+
 - A sample file to upload, such as the [following image](../quickstart/images/welcome-to-IPFS.jpg):
 
 ![image](../quickstart/images/welcome-to-IPFS.jpg)

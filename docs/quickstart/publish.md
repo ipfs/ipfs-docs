@@ -43,6 +43,7 @@ To follow along with this guide, you'll need:
   - [Pinata](https://pinata.cloud/) - Popular IPFS pinning service with simple web interface
   - [Filebase](https://filebase.com) - S3-compatible pinning service with web dashboard
   - [Storacha](https://storacha.network) - Decentralized storage network
+
 - A sample file to upload, such as the [following image](../quickstart/images/welcome-to-IPFS.jpg):
 
 ![image](../quickstart/images/welcome-to-IPFS.jpg)
