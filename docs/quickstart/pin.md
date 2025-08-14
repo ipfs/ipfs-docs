@@ -1,14 +1,14 @@
 ---
-title: 'Publish a file with IPFS using a pinning service'
+title: 'Pin a file with IPFS using a pinning service'
 description: 'Learn how to publish content with IPFS by pinning a file to a pinning service.'
 ---
 
-# Publish a file with IPFS
+# Pin a file with IPFS
 
 In this quickstart guide, you will learn about [pinning services](../concepts/persistence.md#pinning-in-context) and how to use their **web interfaces** to publish content with IPFS. By the end of this guide, you should have a better understanding of how content addressing and CIDs work from a high level.
 
 :::callout
-If you prefer command-line tools, see [Publish using the command line](./publish_cli.md).
+If you prefer command-line tools, see [Pin using the command line](./pin-cli.md).
 :::
 
 ## Contents <!-- omit from toc -->
@@ -124,7 +124,7 @@ Possible next steps include:
 
 - Check out [the lifecycle of data in IPFS](../concepts/lifecycle.md) to learn more about how publishing by pinning fits into the full lifecycle of data in IPFS
 - Try fetching the pinned file by following the [retrieval quickstart](./retrieve.md)
-- Learn how to [pin files using the command line](./publish_cli.md)
+- Learn how to [pin files using the command line](./pin-cli.md)
 - Explore service-specific documentation:
   - [Pinata documentation](https://docs.pinata.cloud/)
   - [Filebase documentation](https://docs.filebase.com/)

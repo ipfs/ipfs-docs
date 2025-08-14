@@ -19,9 +19,9 @@ Anyone can use IPFS to store files in a _decentralized_ way. The easiest way to 
 
 If your browser doesn't support IPFS yet, you can install an IPFS companion extension that will let you view decentralized web content! [Learn more →](./ipfs-companion.md)
 
-### Publish files with a pinning service
+### Pin files with a pinning service
 
-Do you want to quickly and easily publish content with IPFS without complex tools? See the [Publish with IPFS quickstart](../quickstart/publish.md), where you'll learn how to use third-party pinning services to pin and provide files to the IPFS network.
+Do you want to quickly and easily publish content with IPFS without complex tools? See the [Pin with IPFS quickstart](../quickstart/pin.md), where you'll learn how to use third-party pinning services to pin and provide files to the IPFS network.
 
 ### Deploy static sites to the IPFS network with a GitHub Action
 

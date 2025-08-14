@@ -1,14 +1,14 @@
 ---
-title: 'Publish using the command line'
+title: 'Pin using the command line'
 description: 'Learn how to publish content with IPFS by pinning a file to a pinning service using the command line.'
 ---
 
-# Publish a file with IPFS using the command line
+# Pin a file with IPFS using the command line
 
-Similar to the [Publish a file with IPFS](./publish.md) quickstart, this guide will teach you about [pinning services](../concepts/persistence.md#pinning-in-context) and how to use them to publish content-addressed data with IPFS. However, instead of using a web UI, you will upload files using **command-line tools and APIs** provided by various pinning services. By the end of this guide, you should have a better understanding of how content addressing and CIDs work from a high level, as well as how to use CLI tools to publish data to IPFS.
+Similar to the [Pin a file with IPFS](./pin.md) quickstart, this guide will teach you about [pinning services](../concepts/persistence.md#pinning-in-context) and how to use them to publish content-addressed data with IPFS. However, instead of using a web UI, you will upload files using **command-line tools and APIs** provided by various pinning services. By the end of this guide, you should have a better understanding of how content addressing and CIDs work from a high level, as well as how to use CLI tools to publish data to IPFS.
 
 :::callout
-If you prefer a graphical interface, see [Publish with web interfaces](./publish.md).
+If you prefer a graphical interface, see [Pin with browser interfaces](./pin.md).
 :::
 
 ## Contents <!-- omit from toc -->
@@ -169,7 +169,7 @@ Possible next steps include:
 
 - Check out [the lifecycle of data in IPFS](../concepts/lifecycle.md) to learn more about how publishing by pinning fits into the full lifecycle of data in IPFS
 - Try fetching the pinned file by following the [retrieval quickstart](./retrieve.md)
-- Explore the web-based upload experience in the [UI-based publish guide](./publish.md)
+- Explore the web-based upload experience in the [browser-based pin guide](./pin.md)
 - Learn more about each service's API and SDKs:
   - [Storacha CLI documentation](https://docs.storacha.network/cli/)
   - [Pinata API reference](https://docs.pinata.cloud/api-reference)
