@@ -107,7 +107,7 @@ module.exports = {
               children: [
                 ['/quickstart/retrieve','Retrieve from IPFS'],
                 ['/quickstart/pin','Pin (Browser)'],
-                ['/quickstart/pin-cli','Pin with Command Line'],
+                ['/quickstart/pin-cli','Pin (CLI)'],
                 ['/how-to/websites-on-ipfs/deploy-github-action', 'Deploy to IPFS with GitHub Actions' ],
               ]
             },
