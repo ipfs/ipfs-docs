@@ -117,14 +117,14 @@ Learn more about the differences between public and dedicated gateways in [Pinat
 Filebase provides gateway access with the format:
 - `https://[BUCKET_NAME].ipfs.filebase.io/ipfs/[CID]`
 
-Note that Filebase's gateway may refuse HTML hosting and primarily works with assets like images or videos. For details, see [Filebase's IPFS gateway documentation](https://docs.filebase.com/ipfs-concepts/what-is-an-ipfs-gateway).
+Note that the Filebase gateway may refuse HTML hosting and primarily works with assets like images or videos. For details, see [Filebase IPFS gateway documentation](https://docs.filebase.com/ipfs-concepts/what-is-an-ipfs-gateway).
 
 ### Storacha Gateway
 Storacha provides gateway access through w3s.link. You can retrieve content using formats like:
 - `https://[CID].ipfs.w3s.link`
 - `https://w3s.link/ipfs/[CID]`
 
-For more details about their gateway options, see [Storacha's IPFS gateway documentation](https://docs.storacha.network/concepts/ipfs-gateways/).
+For more details about their gateway options, see [Storacha IPFS gateway documentation](https://docs.storacha.network/concepts/ipfs-gateways/).
 
 ### Public Gateways
 You can also use public IPFS gateways to retrieve any CID:

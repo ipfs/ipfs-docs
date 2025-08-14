@@ -188,7 +188,7 @@ Possible next steps include:
 - Check out [the lifecycle of data in IPFS](../concepts/lifecycle.md) to learn more about how publishing by pinning fits into the full lifecycle of data in IPFS
 - Try fetching the pinned file by following the [retrieval quickstart](./retrieve.md)
 - Explore the web-based upload experience in the [browser-based pin guide](./pin.md)
-- Learn more about each service's API and SDKs:
+- Learn more about each service's API and software development kits:
   - [Storacha CLI documentation](https://docs.storacha.network/cli/)
   - [Pinata API reference](https://docs.pinata.cloud/api-reference)
   - [Filebase S3 API guide](https://docs.filebase.com/api-documentation/s3-compatible-api)
