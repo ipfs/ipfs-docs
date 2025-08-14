@@ -40,7 +40,7 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 You can also run your own IPFS node to pin files locally! [IPFS Desktop](../install/ipfs-desktop.md) provides an easy-to-use graphical interface for managing your own IPFS node:
 
 - **Pin files locally**: Use the Files screen in IPFS Desktop to import and pin files. Right-click any file to access the Pin option in the context menu
-- **Combine with pinning services**: For better [redundancy](../concepts/glossary.md#redundancy), you can pin files to both your local node AND remote pinning services
+- **Combine with pinning services**: For better [redundancy](../concepts/glossary.md#redundancy), you can pin files to both your local node, and remote pinning services
 - **Learn more**: Follow the [IPFS Desktop tutorial](../how-to/desktop-app.md) to get started with [self-hosting](../concepts/glossary.md#self-hosting)
 
 Running your own node gives you full control over your data while still participating in the global IPFS network.
