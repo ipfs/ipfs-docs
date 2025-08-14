@@ -5,7 +5,7 @@ description: Learn best practices for working with IPFS HTTP Gateways
 
 # Best practices for HTTP Gateways
 
-Various best practices for the use of IPFS gateways are listed below. To learn more about the concepts behind IPFS gateways, including how they work, available providers, types and FAQs, see [IPFS Gateway](../concepts/ipfs-gateway.md). For troubleshooting information, see [Troubleshooting](./gateway-troubleshooting.md).
+Various best practices for the use of IPFS gateways are listed below. To learn more about the concepts behind IPFS gateways, including how they work, available providers, types and FAQs, see [IPFS Gateway](../concepts/ipfs-gateway.md). For troubleshooting information, see [Troubleshooting](./troubleshooting.md).
 
 ## Selecting a gateway type to use
 

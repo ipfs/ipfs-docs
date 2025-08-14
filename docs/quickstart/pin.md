@@ -35,11 +35,24 @@ Pinning can be done at various levels, from individual files to entire directori
 Data pinned to the IPFS network is public by default and retrievable by anyone. Avoid publishing private data or adequately encrypt it before publishing.
 :::
 
+## Self-hosting option
+
+You can also run your own IPFS node to pin files locally! [IPFS Desktop](../install/ipfs-desktop.md) provides an easy-to-use graphical interface for managing your own IPFS node:
+
+- **Pin files locally**: Use the Files screen in IPFS Desktop to import and pin files. Right-click any file to access the Pin option in the context menu
+- **Combine with pinning services**: For better redundancy, you can pin files to both your local node AND remote pinning services
+- **Learn more**: Follow the [IPFS Desktop tutorial](../how-to/desktop-app.md) to get started with self-hosting
+
+Running your own node gives you full control over your data while still participating in the global IPFS network.
+
 ## Prerequisites
 
 To follow along with this guide, you'll need:
 
-- An account with at least one pinning service (free tier is sufficient):
+- **Option A**: Your own IPFS node
+  - Install [IPFS Desktop](../install/ipfs-desktop.md) for a graphical interface
+
+- **Option B**: An account with at least one pinning service (free tier is sufficient):
   - [Pinata](https://pinata.cloud/) - Popular IPFS pinning service with simple web interface
   - [Filebase](https://filebase.com) - S3-compatible pinning service with web dashboard
   - [Storacha](https://storacha.network) - Decentralized storage network
@@ -50,13 +63,23 @@ To follow along with this guide, you'll need:
 
 ## Upload and pin a file
 
-Choose one of the following pinning services and use their web interface to upload your first file:
+Choose one of the following options to upload and pin your first file:
+
+### Using IPFS Desktop (self-hosted)
+
+If you're running IPFS Desktop, follow the [add local files](../how-to/desktop-app.md#add-local-files) tutorial to import your file. Once imported, right-click the file and select **Pin** to ensure it stays on your node. To get the CID, see [sharing files](../how-to/desktop-app.md#share-files).
+
+You can also configure remote pinning services in IPFS Desktop. See [working with remote pinning services](../how-to/work-with-pinning-services.md) for details.
+
+### Using a pinning service
+
+Choose one of the following pinning services and use their web interface:
 
 - **Pinata**: Use the [Pinata App](https://app.pinata.cloud) for a simple drag-and-drop upload experience - see their [quickstart tutorial](https://docs.pinata.cloud/quickstart)
 - **Filebase**: Access their web dashboard and follow their [pin your first file guide](https://docs.filebase.com/getting-started/getting-started-guides/pin-your-first-file-to-ipfs)
 - **Storacha**: Requires some technical skills, but their [browser upload guide](https://docs.storacha.network/how-to/upload/) may be a useful option if you are developing a web application. You can also visit [console.storacha.network](https://console.storacha.network) for web-based uploads
 
-Each service will provide you with a **CID** (Content Identifier) after uploading your file. Save this CID as you'll use it to retrieve your file in the next sections.
+Each option will provide you with a **CID** (Content Identifier) after uploading your file. Save this CID as you'll use it to retrieve your file in the next sections.
 
 ## CIDs explained
 

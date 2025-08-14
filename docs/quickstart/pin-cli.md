@@ -35,10 +35,24 @@ Pinning can be done at various levels, from individual files to entire directori
 Data pinned to the IPFS network is public by default and retrievable by anyone. Avoid publishing private data or adequately encrypt it before publishing.
 :::
 
+## Self-hosting option
+
+You can run your own IPFS node using [Kubo](../install/command-line.md) to pin files locally:
+
+- **Full control**: Run `ipfs daemon` to start your node and use `ipfs pin` commands to manage pinned content
+- **Combine with pinning services**: Use both local pinning and remote services for redundancy - your data stays available even if your node goes offline
+- **Learn more**: See the [Kubo quickstart](../how-to/command-line-quick-start.md) and [pinning files guide](../how-to/pin-files.md) for detailed instructions
+
+Running your own node gives you complete control over your data while participating in the IPFS network.
+
 ## Prerequisites
 
 - A unix-like terminal or command prompt
-- An account with at least one pinning service (free tier is sufficient):
+- **Option A**: Your own IPFS node
+  - Install [Kubo](../install/command-line.md) for command-line access
+  - Run `ipfs init` followed by `ipfs daemon` to start your node
+  
+- **Option B**: An account with at least one pinning service (free tier is sufficient):
   - [Storacha](https://storacha.network) - Requires Node.js for their CLI
   - [Pinata](https://pinata.cloud/) - Uses REST API with curl
   - [Filebase](https://filebase.com) - S3-compatible, works with AWS CLI
@@ -49,7 +63,11 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 
 ## Upload and pin a file
 
-Choose one of the following methods based on your preferred pinning service:
+Choose one of the following methods based on your setup:
+
+### Using Kubo (self-hosted)
+
+If you're running your own Kubo node, use the `ipfs add` and `ipfs pin` commands. See the [pinning files guide](../how-to/pin-files.md) for detailed instructions and the [working with remote pinning services](../how-to/work-with-pinning-services.md) guide to configure remote pinning.
 
 ### Option 1: Storacha CLI
 
