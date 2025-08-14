@@ -29,7 +29,7 @@ Pinning can be done at various levels, from individual files to entire directori
 
 ## Pinning services
 
-[Pinning services](../concepts/persistence.md#pinning-services) are similar to hosting services, in that they run an IPFS node for you and ensure that your files are available to the IPFS network.
+[Pinning services](../concepts/glossary.md#pinning-service) are similar to hosting services, in that they run an IPFS node for you and ensure that your files are available to the IPFS network.
 
 :::callout
 Data pinned to the IPFS network is public by default and retrievable by anyone. Avoid publishing private data or adequately encrypt it before publishing.
@@ -40,7 +40,7 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 You can run your own IPFS node using [Kubo](../install/command-line.md) to pin files locally:
 
 - **Full control**: Run `ipfs daemon` to start your node and use `ipfs pin` commands to manage pinned content
-- **Combine with pinning services**: Use both local pinning and remote services for redundancy - your data stays available even if your node goes offline
+- **Combine with pinning services**: Use both local pinning and remote services for [redundancy](../concepts/glossary.md#redundancy) - your data stays available even if your node goes offline
 - **Learn more**: See the [Kubo quickstart](../how-to/command-line-quick-start.md) and [pinning files guide](../how-to/pin-files.md) for detailed instructions
 
 Running your own node gives you complete control over your data while participating in the IPFS network.

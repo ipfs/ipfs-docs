@@ -29,7 +29,7 @@ Pinning can be done at various levels, from individual files to entire directori
 
 ## Pinning services
 
-[Pinning services](../concepts/persistence.md#pinning-services) are similar to hosting services, in that they run an IPFS node for you and ensure that your files are available to the IPFS network.
+[Pinning services](../concepts/glossary.md#pinning-service) are similar to hosting services, in that they run an IPFS node for you and ensure that your files are available to the IPFS network.
 
 :::callout
 Data pinned to the IPFS network is public by default and retrievable by anyone. Avoid publishing private data or adequately encrypt it before publishing.
@@ -40,8 +40,8 @@ Data pinned to the IPFS network is public by default and retrievable by anyone. 
 You can also run your own IPFS node to pin files locally! [IPFS Desktop](../install/ipfs-desktop.md) provides an easy-to-use graphical interface for managing your own IPFS node:
 
 - **Pin files locally**: Use the Files screen in IPFS Desktop to import and pin files. Right-click any file to access the Pin option in the context menu
-- **Combine with pinning services**: For better redundancy, you can pin files to both your local node AND remote pinning services
-- **Learn more**: Follow the [IPFS Desktop tutorial](../how-to/desktop-app.md) to get started with self-hosting
+- **Combine with pinning services**: For better [redundancy](../concepts/glossary.md#redundancy), you can pin files to both your local node AND remote pinning services
+- **Learn more**: Follow the [IPFS Desktop tutorial](../how-to/desktop-app.md) to get started with [self-hosting](../concepts/glossary.md#self-hosting)
 
 Running your own node gives you full control over your data while still participating in the global IPFS network.
 
