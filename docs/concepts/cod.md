@@ -29,8 +29,7 @@ Bacalhau can:
 
 ### More Bacalhau resources 
 
-- [Getting started tutorial](https://docs.bacalhau.org/getting-started/installation/)
-- [Bacalhau platform architecture](https://docs.bacalhau.org/getting-started/architecture/)
+- [Bacalhau documentation](https://docs.bacalhau.org/)
 - [GitHub](https://github.com/bacalhau-project/bacalhau)
 
 ## IPVM

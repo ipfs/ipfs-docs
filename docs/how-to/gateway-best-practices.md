@@ -73,7 +73,7 @@ These pages do not share the same origin. Similarly, the use of DNSLink gateway 
 
 ## Cross-origin resource sharing (CORS)
 
-[CORS](https://web.archive.org/web/20200418003728/https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#The_HTTP_response_headers) allows a webpage to permit access to specified data by pages with a different origin. The [IPFS public gateway checker](https://ipfs.github.io/public-gateway-checker/) identifies those public gateways that support CORS.
+[CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) allows a webpage to permit access to specified data by pages with a different origin. The [IPFS public gateway checker](https://ipfs.github.io/public-gateway-checker/) identifies those public gateways that support CORS.
 
 ## Gateway man-in-the-middle vulnerability
 
