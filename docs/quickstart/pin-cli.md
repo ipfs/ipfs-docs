@@ -90,7 +90,7 @@ storacha up welcome-to-IPFS.jpg
 
 ### Option 2: Pinata API
 
-Pinata provides a REST API that you can use with curl or any HTTP client. See their [API reference](https://docs.pinata.cloud/api-reference) for authentication setup.
+Pinata provides a REST API that you can use with curl or any HTTP client. See their [API documentation](https://docs.pinata.cloud/) for authentication setup.
 
 Basic usage with curl:
 ```shell
@@ -190,6 +190,6 @@ Possible next steps include:
 - Explore the web-based upload experience in the [browser-based pin guide](./pin.md)
 - Learn more about each service's API and software development kits:
   - [Storacha CLI documentation](https://docs.storacha.network/cli/)
-  - [Pinata API reference](https://docs.pinata.cloud/api-reference)
+  - [Pinata API documentation](https://docs.pinata.cloud/)
   - [Filebase S3 API guide](https://docs.filebase.com/api-documentation/s3-compatible-api)
   - [Filebase IPFS RPC API](https://docs.filebase.com/api-documentation/ipfs-rpc-api)
