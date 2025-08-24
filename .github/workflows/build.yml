@@ -31,7 +31,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         # No ref parameter needed - uses correct ref automatically:
-        # - For PRs: merge commit or PR head
+        # - For PRs: merge commit (PR changes + latest main)
         # - For pushes: the pushed commit
 
       - name: Setup Node.js
