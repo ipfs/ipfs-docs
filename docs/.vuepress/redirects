@@ -77,3 +77,5 @@
 /reference/api/http/ /reference/http/api
 /reference/go/overview/ /reference/go/api
 /reference/js/overview/ /reference/js/api
+/quickstart/publish /quickstart/pin
+/quickstart/publish_cli /quickstart/pin-cli
