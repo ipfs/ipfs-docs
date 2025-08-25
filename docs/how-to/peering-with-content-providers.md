@@ -5,7 +5,7 @@ description: Optimize retrieval speed by making direct connections to large cont
 
 # Peering with content providers
 
-IPFS allows you to request data from any IPFS node with a copy using the data's [CID][cid-explainer]. This process usually involves a content routing lookup in the [DHT][dht-explainer] to find providers.
+IPFS allows you to fetch data from providers using [CIDs][cid-explainer]. This process usually involves a content routing lookup to find providers for the CID in the [DHT][dht-explainer] and IPNI.
 
 If you're running an IPFS node that serves many requests, such as a public HTTP gateway, you may be able to speed up queries by maintaining long-lived connections to nodes that provide many CIDs.
 
@@ -33,5 +33,5 @@ Peering is most helpful for nodes that have a lot of concurrent connections sinc
 
 [dht-explainer]: ../concepts/how-ipfs-works.md#distributed-hash-tables-dhts
 [cid-explainer]: ../concepts/content-addressing.md
-[docs-peering-config]: ../how-to/configure-node.md
-[docs-connmgr]: ../how-to/configure-node.md
+[docs-peering-config]: https://github.com/ipfs/kubo/blob/master/docs/config.md#peering
+[docs-connmgr]: https://github.com/ipfs/kubo/blob/master/docs/config.md#swarmconnmgr
