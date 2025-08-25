@@ -40,7 +40,7 @@ jobs:
           echo "Event:                  ${{ github.event_name }}"
           echo "SHA:                    ${{ github.sha }}"
           echo "Head SHA:               ${{ github.event.pull_request.head.sha }}"
-          echo "workflow_run.head_sha:  ${{ context.payload.workflow_run.head_sha }}"
+          echo "workflow_run.head_sha:  ${{ github.event.workflow_run.head_sha }}"
 
       - name: Deploy to IPFS
         uses: ipfs/ipfs-deploy-action@b491fdc2b1ca70a9b11b1a26dd4d36210c46653f # ipfs-deploy-action/pull/37
