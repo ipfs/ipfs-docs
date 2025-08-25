@@ -41,7 +41,7 @@ The above public gateways support the following:
 - `ipfs.io` and `dweb.link` support the [full set of IPFS Gateway specifications](https://specs.ipfs.tech/http-gateways/), including deserialized responses to enable website hosting.
   - [HTTP Range requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Range) support files up to a maximum size of 5GiB due to limitations of the Cloudflare CDN. Requests for larger files will result in a standard HTTP 200 response instead.
 - `trustless-gateway.link` supports only the [Trustless Gateway subset of the specification](https://specs.ipfs.tech/http-gateways/trustless-gateway/)
-  - Suppoted content types: `application/vnd.ipld.raw`, `application/vnd.ipld.car` and `application/vnd.ipfs.ipns-record`
+  - Supported content types: `application/vnd.ipld.raw`, `application/vnd.ipld.car` and `application/vnd.ipfs.ipns-record`
 
 They support HTTP clients reaching them over both ipv4 and ipv6 addresses.
 
