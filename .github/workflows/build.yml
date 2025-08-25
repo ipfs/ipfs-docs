@@ -30,9 +30,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        # No ref parameter needed - uses correct ref automatically:
-        # - For PRs: merge commit (PR changes + latest main)
-        # - For pushes: the pushed commit
+        with:
+          # - For PRs: PR head commit
+          # - For pushes: the pushed commit
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
