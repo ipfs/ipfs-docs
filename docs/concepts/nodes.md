@@ -6,20 +6,20 @@ sidebarDepth: 2
 
 # Nodes
 
-Participants in the IPFS network are called _nodes_. A _node_ is an instance of an implementation IPFS that you run on your local computer (directly or via a browser) to store files and connect to the IPFS network. They're the most crucial aspect of IPFS. Without IPFS nodes, there would be no IPFS Network.
+Participants in the IPFS network are called _nodes_. A _node_ is an instance of an implementation of IPFS that you run on your local computer (directly or via a browser) to store files and connect to the IPFS network. They're the most crucial aspect of IPFS. Without IPFS nodes, there would be no IPFS Network.
 
 You're likely to see the term _node_ throughout the IPFS docs, issues, and related code. It's a very general term, so its meaning depends on the context. There are three main categories of nodes: IPFS nodes, data nodes, and libp2p nodes for applications.
 
-* __IPFS Nodes__ are programs that run on a computer that can exchange data with other IPFS nodes. They go by several different names, but we refer to them by a different term, depending on the context:
+* __IPFS nodes__ are programs that run on a computer that can exchange data with other IPFS nodes. They go by several different names, but we refer to them by a different term, depending on the context:
 
   * _node_: Use _node_ when you're referring to an individual point on the network. It's a very general term. For example, when you open IPFS Desktop, you establish yourself as a node with the potential to interact with other nodes. See [Configure a node](../how-to/configure-node.md).
   * _peer_: Use _peer_ when you're talking about the relationship of one node (even your own) to other nodes. It refers to their relationship as equals, with no central authority, so your node is a peer to other peers. See [Observe peers](../how-to/observe-peers.md) and [Peering with content providers](../how-to/peering-with-content-providers.md).
   * _daemon_: Use _daemon_ when talking about a node's activity status. When a node is online and running in the background, listening for requests for its data, it's called a _daemon_. See [Take your node online](../how-to/command-line-quick-start.md#take-your-node-online). Note that an IPFS Helia _node_ in the browser is not generally referred to as a _daemon_. However, in the context of this document, we will refer to a Helia _instance_ acting as a _node_ in the browser as a _daemon_ . For more information, see the [Helia documentation](https://github.com/ipfs/helia/wiki).
-  * _instance_: Use _instance_ when talking about a library or program, such as a Go or JS version, running on as an IPFS node at a particular point in time. The peer ID is the same, so it's still the same _node_ as far as the IPFS network is concerned. See [Kubo](../reference/go/api.md) and [Helia](../reference/js/api.md#TODO_JS_IPFS_DEPRECATION).
+  * _instance_: Use _instance_ when talking about a library or program, such as a Go or JS version, running as an IPFS node at a particular point in time. The peer ID is the same, so it's still the same _node_ as far as the IPFS network is concerned. See [Kubo](../reference/go/api.md) and [Helia](../reference/js/api.md#TODO_JS_IPFS_DEPRECATION).
 
 * __Data nodes__, Use _data nodes_ when talking about actual pieces of data on IPFS, such as DAG nodes, UnixFS nodes, and IPLD nodes. When you add a file with the `ipfs add myfile.txt` command, IPFS breaks them up into several nodes that each contain a chunk of the file and are linked to each other. See [Merkle Directed Acyclic Graphs (DAGs)](../concepts/merkle-dag.md), [Unix File System (UnixFS)](../concepts/file-systems.md#unix-file-system-unixfs), and stay tuned for [InterPlanetary Linked Data (IPLD) model](../concepts/ipld.md) docs, which is in progress.
 
-* __libp2p peer__ Use _libp2p peer_ when talking about libp2p nodes on which you can build applications. They're usually referred to as _peers_ in libp2p, because it provides solutions for essential peer-to-peer elements like transport, security, peer routing, and content discovery. See [concepts](../concepts/libp2p.md)
+* __libp2p peer__ Use _libp2p peer_ when talking about libp2p nodes on which you can build applications. They're usually referred to as _peers_ in libp2p, because it provides solutions for essential peer-to-peer operations like transport, security, routing, and content discovery. See [concepts](../concepts/libp2p.md)
 
 
 ## Types
