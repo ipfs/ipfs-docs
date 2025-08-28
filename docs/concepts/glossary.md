@@ -230,7 +230,7 @@ Graphsync is a legacy content replication protocol, similar to [Bitswap](#bitswa
 
 ### HAMT-sharding
 
-The sharding technique used for [sharding](#sharding) big UnixFS directories. It leverages properties of hash array mapped tries (HAMT). [More about HAMT](https://en.wikipedia.org/wiki/Hash_array_mapped_trie).
+The sharding technique used for [sharding](#sharding) big UnixFS directories. It leverages properties of hash array mapped tries (HAMT). [UnixFS HAMT specification](https://specs.ipfs.tech/unixfs/#dag-pb-hamtdirectory) | [More about HAMT](https://en.wikipedia.org/wiki/Hash_array_mapped_trie).
 
 ### Hash
 
@@ -512,7 +512,7 @@ In [IPLD](#ipld), the act of walking across the [Data Model](#data-model). [More
 
 ### UnixFS
 
-The Unix File System (UnixFS) is the data format used to represent files and all their links and metadata in IPFS. It is loosely based on how files work in Unix. Adding a file to IPFS creates a block, or a _tree_ of blocks, in the UnixFS format and protects it from being garbage-collected. [More about UnixFS](file-systems.md#unix-file-system-unixfs)
+The Unix File System (UnixFS) is the data format used to represent files and all their links and metadata in IPFS. It is loosely based on how files work in Unix. Adding a file to IPFS creates a block, or a _tree_ of blocks, in the UnixFS format and protects it from being garbage-collected. [UnixFS specification](https://specs.ipfs.tech/unixfs/) | [More about UnixFS](file-systems.md#unix-file-system-unixfs)
 
 ### Urlstore
 
