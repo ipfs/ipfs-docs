@@ -51,7 +51,7 @@ jobs:
           storacha-proof: ${{ secrets.STORACHA_PROOF }}
           github-token: ${{ github.token }}
           retention-count: 10
-          retential-dry-run: 'true'
+          retention-dry-run: 'true'
 
       # TODO: Add DNSLink update when needed
       #- name: Update DNSLink
