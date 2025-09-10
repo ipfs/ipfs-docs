@@ -50,18 +50,5 @@ jobs:
           storacha-key: ${{ secrets.STORACHA_KEY }}
           storacha-proof: ${{ secrets.STORACHA_PROOF }}
           github-token: ${{ github.token }}
-          retention-max-removals: 30
-          retention-count: 5
-
-      # TODO: Add DNSLink update when needed
-      #- name: Update DNSLink
-      #  if: github.event.workflow_run.head_branch == 'main'
-      #  uses: ipfs/dnslink-action@v0.1
-      #  with:
-      #    cid: ${{ steps.deploy.outputs.cid }}
-      #    dnslink_domain: 'docs.ipfs.tech'
-      #    cf_record_id: ${{ secrets.CF_RECORD_ID }}
-      #    cf_zone_id: ${{ secrets.CF_ZONE_ID }}
-      #    cf_auth_token: ${{ secrets.CF_AUTH_TOKEN }}
-      #    github_token: ${{ github.token }}
-      #    set_github_status: true
+          retention-count: 10
+          retention-days: 30
