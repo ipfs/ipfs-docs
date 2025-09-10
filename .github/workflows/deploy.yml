@@ -43,7 +43,7 @@ jobs:
           echo "workflow_run.head_sha:  ${{ github.event.workflow_run.head_sha }}"
 
       - name: Deploy to IPFS
-        uses: ipfs/ipfs-deploy-action@07c9786c620cec27ed38ec1d56ed31c506ef8fa4
+        uses: ipfs/ipfs-deploy-action@9b87b16d0e3c81d119911e846122d28bf5fae43b
         id: deploy
         with:
           path-to-deploy: ${{ env.BUILD_PATH }}
