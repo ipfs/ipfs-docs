@@ -147,6 +147,13 @@ v0.toV1().toString()
 
 ### v1 to v0 
 
+Similarly, the built-in `ipfs cid format` command can be used to convert the other way from the command line:
+
+```
+$ ipfs cid format -v 0 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
+QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
+```
+
 Given a CID v1, JS users can convert back to v0 using the `toV0()` method provided by the [`multiformats`](https://www.npmjs.com/package/multiformats) library:
 
 ```js
