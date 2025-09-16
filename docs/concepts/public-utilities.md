@@ -22,13 +22,15 @@ The IPFS Foundation provides the following public gateways:
 
 These gateways block abusive content using the [Bad Bits Denylist](https://badbits.dwebops.pub/).
 
-To report abusive content and content breaches of the [IPFS Community Code of Conduct](https://ipfs.fyi/coc), please send an email with the CIDs to abuse@ipfs.io.
+To report abusive content and content breaches of the [IPFS Community Code of Conduct](https://ipfs.fyi/coc), please use the [web form](https://ipfs.fyi/report-abuse). Alternatively, you can send an email with the CIDs to abuse@ipfs.io.
 
 Technical operations are run by the Waterworks Community on behalf of the IPFS Foundation. To report any technical problems with these gateways, you can open an issue in the [Waterworks Community repository](https://github.com/ipshipyard/waterworks-community).
 
 ### Abuse Policy
 
-When a takedown request for the `ipfs.io` and/or `dweb.link` gateway(s) is first received at abuse@ipfs.io, the sender will receive an automated system receipt. Next, someone from the takedown team will vet the request to validate that it is legitimate and should be accepted. Once the validity of the request has been established, it will be submitted for further processing.
+To submit a takedown request for the `ipfs.io` and/or `dweb.link` gateway(s), follow the instructions at [https://about.ipfs.io/#reporting-abuse](https://about.ipfs.io/#reporting-abuse). The recommended method is to use the [web form](https://ipfs.fyi/report-abuse). Alternatively, requests can be sent via email to abuse@ipfs.io.
+
+When a takedown request is received, the sender will receive an automated system receipt. Next, someone from the takedown team will vet the request to validate that it is legitimate and should be accepted. Once the validity of the request has been established, it will be submitted for further processing.
 
 From there, an internal system extracts the relevant information from the request and generates an entry for it in our takedown lists. The list is then published to our gateway nodes, and the content in question will return a 410 status when visited.
 

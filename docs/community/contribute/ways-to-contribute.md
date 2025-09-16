@@ -8,7 +8,7 @@ description: Learn about how to contribute to IPFS, the InterPlanetary File Syst
 So you want to contribute to IPFS and the ecosystem? Here is a quick listing of things we need help with and how you can get started. Even if what you want to do is not listed here, we probably accept contributions for it! If you're unsure, please open an issue.
 
 :::callout
-The IPFS community believes that our mission is best served in an environment that is friendly, safe, and accepting, and free from intimidation or harassment. To that end, we ask that everyone involved in IPFS read and respect our [code of conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md). Please contact [abuse@ipfs.tech](mailto:abuse@ipfs.tech) if you need to report a problem or address a grievance related to an abuse report.
+The IPFS community believes that our mission is best served in an environment that is friendly, safe, and accepting, and free from intimidation or harassment. To that end, we ask that everyone involved in IPFS read and respect our [code of conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md). Please contact [abuse@ipfs.tech](mailto:abuse@ipfs.tech) if you need to report a problem or address a grievance related to an abuse report. For reporting abuse at public utilities such as gateways, see the [abuse policy](https://about.ipfs.io/#reporting-abuse).
 :::
 
 ## Code
