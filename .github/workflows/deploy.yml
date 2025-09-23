@@ -43,23 +43,12 @@ jobs:
           echo "workflow_run.head_sha:  ${{ github.event.workflow_run.head_sha }}"
 
       - name: Deploy to IPFS
-        uses: ipshipyard/ipfs-deploy-action@v1
+        uses: ipfs/ipfs-deploy-action@1c46c3a36faff36031c94c8e8f4563ee5c38f172
         id: deploy
         with:
           path-to-deploy: ${{ env.BUILD_PATH }}
           storacha-key: ${{ secrets.STORACHA_KEY }}
           storacha-proof: ${{ secrets.STORACHA_PROOF }}
           github-token: ${{ github.token }}
-
-      # TODO: Add DNSLink update when needed
-      #- name: Update DNSLink
-      #  if: github.event.workflow_run.head_branch == 'main'
-      #  uses: ipfs/dnslink-action@v0.1
-      #  with:
-      #    cid: ${{ steps.deploy.outputs.cid }}
-      #    dnslink_domain: 'docs.ipfs.tech'
-      #    cf_record_id: ${{ secrets.CF_RECORD_ID }}
-      #    cf_zone_id: ${{ secrets.CF_ZONE_ID }}
-      #    cf_auth_token: ${{ secrets.CF_AUTH_TOKEN }}
-      #    github_token: ${{ github.token }}
-      #    set_github_status: true
+          retention-count: 10
+          retention-days: 30
