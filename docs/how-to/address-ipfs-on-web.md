@@ -217,12 +217,12 @@ An example is this website, [https://docs.ipfs.tech](https://docs.ipfs.tech).
 For a complete DNSLink guide, including tutorials, usage examples, and FAQs, see [dnslink.io](https://dnslink.io).
 :::
 
-## Native URLs
+## <a name=native-urls>IPFS-Scheme URLs</a>
 
-The native address format is the same as a [subdomain gateway](https://docs.ipfs.tech/how-to/address-ipfs-on-web/#subdomain-gateway) HTTP URL, but with two differences:
+URLs that combine the "native" IPFS address format with an IPFS-specific scheme are structured in a way very similar to `http`/`https`-scheme URLs" that rely on a [subdomain gateway](https://docs.ipfs.tech/how-to/address-ipfs-on-web/#subdomain-gateway) for their location-based authority component. These were historically called "Native URLs" since they combine a native IPFS address with an IPFS-native scheme, but note the differences between a subdomain-gateway HTTP(S) URL and a IPFS-scheme URL:
 
-- The protocol scheme is replaced by the `ipfs` or `ipns` namespace
-- The location-based authority component (the gateway host and port) is replaced with a CID
+- The `ipfs` or `ipns` protocol schemes are used instead of `http`
+- The location-based authority component (the gateway host and port) is replaced with a bare, native CID
 
 ```plaintext
 ipfs://{cid}/path/to/subresource/cat.jpg
