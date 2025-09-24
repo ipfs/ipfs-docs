@@ -16,7 +16,7 @@ IPFS is a general-purpose file system that uses a distributed hash table (DHT) t
   Filecoin is built on IPFS and uses the IPFS network for data storage and retrieval. Filecoin and IPFS are complementary technologies providing decentralized and efficient storage solutions.
   :::
 
-- [Hypercore](https://hypercore-protocol.org/) is a decentralized data-sharing tool that uses a distributed hash table (DHT) for data storage. It focuses on enabling data sharing and collaboration.
+- [Hypercore](https://hypercore-protocol.github.io/new-website/) is a decentralized data-sharing tool that uses a distributed hash table (DHT) for data storage. It focuses on enabling data sharing and collaboration.
 - [Holo](https://holochain.org/) is a decentralized hosting platform that uses a unique data storage and sharing mechanism called Holochain. It allows users to host and run web-based applications on a peer-to-peer network.
 - [Swarm](https://swarm-gateways.net/bzz:/theswarm.eth/) is a decentralized storage and sharing platform built on the Ethereum blockchain. It uses smart contracts and cryptographic techniques to securely store and share data. It focuses on providing a decentralized, secure, and censorship-resistant storage solution.
 
@@ -32,8 +32,8 @@ All of these solutions use content-based addressing.
 
 | technology            | storage mechanism         | data model            | networking stack | identifier          | address composition | links                 | use cases                | similarity to IPFS | hashing algorithm |
 | --------------------- | ------------------------- | --------------------- | ---------------- | ------------------- | ------------------- | ---------------------- | -------------------- | ------------------ | --------------------- |
-| [bittorrent](https://www.bittorrent.com/protocols/bittorrent-rfc.html) | P2P file-sharing          | merkle DAG             | TCP/IP           | torrent file        | filename + sha1 hash    | -                     | file sharing              | low                 | SHA-256          |
-| [hypercore](https://hypercore-protocol.org/guides/)                   | decentralized data-sharing| merkle DAG                 | UDP           | dat key             | dat key             | dat://{key}            | decentralized data sharing| medium              | SHA-256          |
+| [bittorrent](https://www.bittorrent.com/) | P2P file-sharing          | merkle DAG             | TCP/IP           | torrent file        | filename + sha1 hash    | -                     | file sharing              | low                 | SHA-256          |
+| [hypercore](https://hypercore-protocol.github.io/new-website/)                   | decentralized data-sharing| merkle DAG                 | UDP           | dat key             | dat key             | dat://{key}            | decentralized data sharing| medium              | SHA-256          |
 | [git](https://git-scm.com/)                                          |  version control| commit history          | TCP/IP           | commit hash        | commit hash           | -                     | version control           | medium              | SHA-1, SHA-256   |
 | [Secure Scuttlebutt (SSB)](https://ssbc.github.io/scuttlebutt-protocol-guide/) | decentralized social network | append-only log       | Scuttlebutt Protocol | feed id            | feed id              | ssb://{feed id}         | decentralized social networking| high                | SHA-256          |
 
