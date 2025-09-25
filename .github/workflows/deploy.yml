@@ -2,7 +2,7 @@
 # This workflow has access to secrets but never executes untrusted code
 # It only downloads and deploys pre-built artifacts from the build workflow
 # Security: Fork code cannot access secrets as it only runs in build workflow
-# Deploys to IPFS for all branches
+# Deploys to IPFS for all branches and GitHub Pages for main branch only
 
 name: Deploy
 
@@ -52,3 +52,32 @@ jobs:
           github-token: ${{ github.token }}
           retention-count: 10
           retention-days: 30
+
+  deploy-gh-pages:
+    if: |
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_branch == 'main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: docs-build-${{ github.event.workflow_run.id }}
+          path: docs-build
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs-build
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
