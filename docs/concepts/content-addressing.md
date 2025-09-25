@@ -145,7 +145,18 @@ v0.toV1().toString()
 //> 'bafybeihdwdcefgh4dqkjv67uzcmw7ojee6xedzdetojuzjevtenxquvyku'
 ```
 
-### v1 to v0 
+### v1 to v0
+
+Conversion from CIDv1 to CIDv0 is only possible when the CIDv1 uses the `dag-pb` codec (0x70), as CIDv0 only supports `dag-pb`. CIDs using other codecs like `raw` (0x55), `dag-cbor` (0x71), or `dag-json` (0x0129) cannot be converted to CIDv0.
+
+The built-in `ipfs cid format` command can be used to convert `dag-pb` from CIDv1 to CIDv0 from the command line:
+
+```
+$ ipfs cid format -v 0 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
+QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR
+```
+
+Note: The above example works because `bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi` uses the `dag-pb` codec. Attempting to convert a CIDv1 with a different codec will result in an error.
 
 Given a CID v1, JS users can convert back to v0 using the `toV0()` method provided by the [`multiformats`](https://www.npmjs.com/package/multiformats) library:
 
