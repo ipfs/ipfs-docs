@@ -109,7 +109,7 @@ We're in a lot of places. Here's [how to find them all](social-media.md) for you
 
 ### IPFS newsletter
 
-Sign up for the IPFS Weekly newsletter to get project updates, community news, event details, and more. In your inbox every Tuesday. [Subscribe now!](https://ipfs.us4.list-manage.com/subscribe?u=25473244c7d18b897f5a1ff6b&id=cad54b2230)
+Sign up for the IPFS Weekly newsletter to get project updates, community news, event details, and more. In your inbox every Tuesday. [Subscribe now!](https://newsletter.ipfs.tech/)
 
 ### IPFS Blog 
 
