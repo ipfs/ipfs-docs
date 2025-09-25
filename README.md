@@ -64,7 +64,7 @@ To build the site locally, follow the steps below.
    npm start
    ```
 
-1. Open [localhost:8080](http://localhost:8080) in your browser.
+1. Open `http://localhost:8080` in your browser.
 1. Close the local server with `CTRL` + `c`.
 1. To restart the local server, run `npm start` from within the `ipfs-docs` folder.
 
