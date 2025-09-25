@@ -47,8 +47,12 @@ jobs:
         id: deploy
         with:
           path-to-deploy: ${{ env.BUILD_PATH }}
-          storacha-key: ${{ secrets.STORACHA_KEY }}
-          storacha-proof: ${{ secrets.STORACHA_PROOF }}
+          cluster-url: "/dnsaddr/ipfs-websites.collab.ipfscluster.io"
+          cluster-user: ${{ secrets.CLUSTER_USER }}
+          cluster-password: ${{ secrets.CLUSTER_PASSWORD }}
+          cluster-pin-expire-in: ${{ github.event.workflow_run.head_branch != 'main' && '2160h' || '' }}
+          #storacha-key: ${{ secrets.STORACHA_KEY }}
+          #storacha-proof: ${{ secrets.STORACHA_PROOF }}
           github-token: ${{ github.token }}
 
   deploy-gh-pages:

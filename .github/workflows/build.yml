@@ -37,7 +37,7 @@ jobs:
 
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '20'
           cache: 'npm'
@@ -54,4 +54,4 @@ jobs:
         with:
           name: docs-build-${{ github.run_id }}
           path: ${{ env.BUILD_PATH }}
-          retention-days: 1
+          retention-days: 90
