@@ -54,4 +54,4 @@ jobs:
         with:
           name: docs-build-${{ github.run_id }}
           path: ${{ env.BUILD_PATH }}
-          retention-days: 1
+          retention-days: 90
