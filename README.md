@@ -7,7 +7,7 @@
 <br>
 
 [![Project icon.](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.tech/)
-[![Build status icon.](https://img.shields.io/github/actions/workflow/status/ipfs/ipfs-docs/build.yml?branch=main&style=flat-square)](https://github.com/ipfs/ipfs-docs/actions)
+[![Build status icon.](https://img.shields.io/github/actions/workflow/status/ipfs/ipfs-docs/build.yml?branch=main&style=flat-square)](https://github.com/ipfs/ipfs-docs/actions/workflows/build.yml)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 </div>
 
