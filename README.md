@@ -6,9 +6,8 @@
 <h3> IPFS is an open system to manage data without a central server </h3>
 <br>
 
-[![Made by icon.](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](https://protocol.ai/)
 [![Project icon.](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.tech/)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/ipfs/ipfs-docs/build.yml?branch=main)](https://github.com/ipfs/ipfs-docs/actions)
+[![Build status icon.](https://img.shields.io/github/actions/workflow/status/ipfs/ipfs-docs/build.yml?branch=main&style=flat-square)](https://github.com/ipfs/ipfs-docs/actions)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 </div>
 
@@ -26,7 +25,6 @@
   - [Static-site generator](#static-site-generator)
   - [Automated deployments](#automated-deployments)
   - [Translation](#translation)
-- [Primary maintainers](#primary-maintainers)
 - [License](#license)
 <!-- /TOC -->
 
@@ -142,11 +140,7 @@ The IPFS documentation site uses the [VuePress static website generator](https:/
 
 When opening a pull request, CI scripts will run against your feature branch to test your changes.
 
-The CI/CD production workflow builds on the `main` branch and deploys the documentation site on [fleek](https://fleek.co/). The site reflects the latest commit on `main`.
-
-## Primary maintainers
-
-- [@2color](https://github.com/2color): Developer relations & technical writing(ecosystem)
+The CI/CD production workflow builds on the `main` branch and deploys the documentation site via GitHub Pages for HTTPS hosting. PR and IPFS (CAR) previews are provided by [ipfs-deploy-action](https://github.com/ipfs/ipfs-deploy-action). The site reflects the latest commit on `main`.
 
 ## License
 
