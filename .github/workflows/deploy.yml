@@ -1,0 +1,85 @@
+# Deploy workflow - triggered by workflow_run after successful build
+# This workflow has access to secrets but never executes untrusted code
+# It only downloads and deploys pre-built artifacts from the build workflow
+# Security: Fork code cannot access secrets as it only runs in build workflow
+# Deploys to IPFS for all branches and GitHub Pages for main branch only
+
+name: Deploy
+
+# Explicitly declare permissions
+permissions:
+  contents: read
+  pull-requests: write
+  statuses: write
+
+on:
+  workflow_run:
+    workflows: ["Build"]
+    types: [completed]
+
+env:
+  BUILD_PATH: 'docs-build'
+
+jobs:
+  deploy-ipfs:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    outputs:
+      cid: ${{ steps.deploy.outputs.cid }}
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: docs-build-${{ github.event.workflow_run.id }}
+          path: ${{ env.BUILD_PATH }}
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: Debug PR context and SHA
+        run: |
+          echo "Event:                  ${{ github.event_name }}"
+          echo "SHA:                    ${{ github.sha }}"
+          echo "Head SHA:               ${{ github.event.pull_request.head.sha }}"
+          echo "workflow_run.head_sha:  ${{ github.event.workflow_run.head_sha }}"
+
+      - name: Deploy to IPFS
+        uses: ipfs/ipfs-deploy-action@v1
+        id: deploy
+        with:
+          path-to-deploy: ${{ env.BUILD_PATH }}
+          cluster-url: "/dnsaddr/ipfs-websites.collab.ipfscluster.io"
+          cluster-user: ${{ secrets.CLUSTER_USER }}
+          cluster-password: ${{ secrets.CLUSTER_PASSWORD }}
+          cluster-pin-expire-in: ${{ github.event.workflow_run.head_branch != 'main' && '2160h' || '' }}
+          #storacha-key: ${{ secrets.STORACHA_KEY }}
+          #storacha-proof: ${{ secrets.STORACHA_PROOF }}
+          github-token: ${{ github.token }}
+
+  deploy-gh-pages:
+    if: |
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_branch == 'main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: docs-build-${{ github.event.workflow_run.id }}
+          path: docs-build
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs-build
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
