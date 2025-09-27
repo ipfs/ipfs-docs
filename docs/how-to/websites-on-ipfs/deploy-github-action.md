@@ -1,11 +1,11 @@
 ---
-title: Deploy Static Apps to IPFS with GitHub Actions
+title: Deploy static apps to IPFS with GitHub Actions
 description: Guide on how to setup GitHub Actions to deploy static sites/apps to IPFS using the IPFS Deploy Action.
-current-ipfs-version: v0.34.1
-current-ipfs-cluster-version: v1.1.2
+current-ipfs-version: v0.37.0
+current-ipfs-cluster-version: v1.1.4
 ---
 
-# Deploy Static Apps to IPFS with GitHub Actions
+# Deploy static apps to IPFS with GitHub Actions
 
 This guide will walk you through the process of configuring a [GitHub Actions](https://docs.github.com/en/actions) workflow to deploy a repository containing a static site or app to IPFS using the [IPFS Deploy Action](https://github.com/ipshipyard/ipfs-deploy-action).
 
@@ -170,7 +170,7 @@ You can also customize the Kubo version and [`ipfs add` parameters](https://docs
   uses: ipfs/ipfs-deploy-action@v1
   with:
     # ... other inputs ...
-    kubo-version: 'v0.34.1' # Default, change if needed
+    kubo-version: 'v0.37.0' # Default, change if needed
     ipfs-add-options: '--cid-version 1 --chunker size-1048576' # Default options
 ```
 
@@ -201,7 +201,7 @@ You can also configure additional IPFS Cluster options:
     # ... other inputs ...
     cluster-retry-attempts: '5' # Override number of retry attempts
     cluster-timeout-minutes: '15' # Override timeout in minutes per attempt
-    ipfs-cluster-ctl-version: 'v1.1.2' # Default version
+    ipfs-cluster-ctl-version: 'v1.1.4' # Default version
     cluster-pin-expire-in: '720h' # Optional: Set pin to expire after time period (e.g., 30 days)
 ```
 
