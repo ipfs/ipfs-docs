@@ -37,6 +37,10 @@ Each error type output by the tool can indicate a solution to your problem:
 Learn more about CID concepts, including components and versions in the [content addressing concepts guide](../concepts/content-addressing.md).
 :::
 
+## Helia Identify
+
+[Helia Identify](https://ipfs.fyi/identify) is a browser-based tool to run [libp2p identify](https://github.com/libp2p/specs/blob/master/identify/README.md) with Peer IDs / multiaddrs, testing whether an IPFS peer is Web friendly, i.e. whether it can be connected to from a browser. This is useful to test whether content can be directly retrieved from a provider node.
+
 ## IPFS Gateway Checker
 
 :::warning
@@ -51,14 +55,4 @@ IPFS [Gateway Checker](https://ipfs.github.io/public-gateway-checker/) provides 
 
 ## CAR Builder
 
-[CAR Builder](https://car.ipfs.io/) allows you to upload a data file and export it as an IPFS CAR file. The tool automatically chunks and hashes your files to automatically produce an IPFS compatible content-addressed archive.
-
-## pl-diagnose
-
-[pl-diagnose](https://pl-diagnose.on.fleek.co/#/diagnose/access-content) is a browser-based software application that automates diagnosis of various issues with an IPFS node. Specifically, this tool can help you answer these questions:
-
-- Is a given CID available on the IPFS network and, if so, which peers are listed in the DHT as providers?
-- Which addresses are listed in the DHT for a given IPFS node?
-- Is an IPFS node accessible by other peers?
-- Is specific content available from an IPFS node?
- 
+[CAR Builder](https://car.ipfs.io/) allows you to upload a data file and export it as an IPFS CAR file. The tool automatically chunks and hashes your files to automatically produce an IPFS compatible content-addressed archive. 

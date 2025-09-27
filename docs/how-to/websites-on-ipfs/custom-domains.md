@@ -20,7 +20,7 @@ The main difference between the two options is that CID signaling with DNSLink i
 
 This guide will walk you through the nuances of each of these options, and how to configure them for your app.
 
-### CID Signaling with DNSLink
+## CID Signaling with DNSLink
 
 [DNSLink](../../concepts/dnslink.md) is a standard way to map human-readable domain names (DNS) to CIDs. For example, for the IPFS Docs, `docs.ipfs.tech`, the DNSLink record is a TXT record at `_dnslink.docs.ipfs.tech` with the value `dnslink=/ipfs/bafybeicv5tbyeahgm4pyskd2nverwsqxpiqloikqrufvof7vausglw6avm` (the CID will likely be different once you read this guide).
 
@@ -40,7 +40,7 @@ With this approach, users can access your website via a custom domain name, e.g.
 
 To provide access to the app directly via the custom domain, you have the following options:
 
-1. Self-host both the IPFS provider (e.g. [Kubo](https://github.com/ipfs/kubo)) and the HTTP gateway (e.g. [Kubo](https://github.com/ipfs/kubo) or [Rainbow](https://github.com/ipfs/rainbow/)). Deploy an IPFS Gateway that supports DNSLink resolution and point the `CNAME`/`A` DNS record for your custom domain to it and  update the `TXT` record on `_dnslink` subdomain to match CID of your website. Set up CI automation to update TXT record every time your CID changes. You will likely want to also configure TLS with a reverse proxy like Caddy or use a CDN like Cloudflare for TLS termination.
+1. Self-host both the IPFS provider (e.g. [Kubo](https://github.com/ipfs/kubo)) and the IPFS HTTP gateway (e.g. [Kubo](https://github.com/ipfs/kubo)). Deploy an IPFS Gateway that supports DNSLink resolution and point the `CNAME`/`A` DNS record for your custom domain to it and update the `TXT` record on `_dnslink` subdomain to match CID of your website. [See the guide on setting up a DNSLink gateway](./dnslink-gateway.md) for more details.
 2. Use a service like Fleek which encompasses both DNSLink and traditional web hosting (HTTP + TLS + CDN + [automatic DNSLink management](https://fleek.xyz/docs/platform/domains/#dnslink)).
 3. Deploy the site to a web hosting service like [Cloudflare Pages](https://pages.cloudflare.com/) or [GitHub Pages](https://pages.github.com/) with a custom domain (pointing and configuring the `CNAME`/`A` record for your custom domain on the web hosting service), while managing the DNSLink `TXT` record on `_dnslink` subdomain separately, essentially getting the benefits of both IPFS and traditional web hosting. Remember to set up CI automation to update the DNSLink `TXT` record for every deployment that changes the CID.
 
