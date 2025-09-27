@@ -8,15 +8,15 @@ current-ipfs-cluster-version: v1.1.4
 
 If you want to install IPFS in a server environment and offer IPFS as a service, you should look at [IPFS Cluster](https://ipfscluster.io/) as a way to scale your IPFS deployment beyond a single IPFS daemon. IPFS Cluster provides data orchestration across a swarm of IPFS daemons by allocating, replicating, and tracking a global pin-set distributed among multiple peers. This makes it significantly easier to manage multiple IPFS nodes and ensure that data is available across an internal network.
 
-IPFS Cluster is a distributed application that works as a sidecar to IPFS peers, maintaining a global cluster pinset and intelligently allocating its items to the IPFS peers. This makes it significantly easier to manage multiple IPFS nodes and ensure that data is available across an internal network. IPFS Cluster powers large IPFS storage services like [nft.storage](https://nft.storage/) and [web3.storage](https://web3.storage/). 
+IPFS Cluster is a distributed application that works as a sidecar to IPFS peers, maintaining a global cluster pinset and intelligently allocating its items to the IPFS peers. This makes it significantly easier to manage multiple IPFS nodes and ensure that data is available across an internal network.
 
 :::tip
 As a Kubernetes user, you can use a Kubernetes operator for IPFS called [IPFS operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) to easily create and manage clusters consisting of hundreds of peers.
-The IPFS operator is in active development and not yet recommended for production use cases. If the operator is something you would like to include in your infrastructure, 
+The IPFS operator is in active development and not yet recommended for production use cases. If the operator is something you would like to include in your infrastructure,
 check out the [official documentation](https://ipfs-operator.readthedocs.io/) and [operator source code](https://github.com/redhat-et/ipfs-operator) for instructions and the latest progress.
 :::
 
-## Features 
+## Features
 
 IPFS Cluster has the following features:
 
@@ -109,7 +109,7 @@ If you're having issues installing or using Docker or Docker-Compose, see the [o
     > Recreating cluster2 ... done
     > ...
     ```
-    
+
     :::warning
 
     Errors such as the following may display:
@@ -131,7 +131,7 @@ If you're having issues installing or using Docker or Docker-Compose, see the [o
 1. Open a new terminal window.
 
 1. You can now interact with your cluster. In a new terminal window, navigate to the `ipfs-cluster-ctl` directory.
- 
+
 1. List the peers within the cluster:
 
     ```shell
