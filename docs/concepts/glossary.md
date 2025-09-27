@@ -230,7 +230,7 @@ Graphsync is a legacy content replication protocol, similar to [Bitswap](#bitswa
 
 ### HAMT-sharding
 
-The sharding technique used for [sharding](#sharding) big UnixFS directories. It leverages properties of hash array mapped tries (HAMT). [More about HAMT](https://en.wikipedia.org/wiki/Hash_array_mapped_trie).
+The sharding technique used for [sharding](#sharding) big UnixFS directories. It leverages properties of hash array mapped tries (HAMT). [UnixFS HAMT specification](https://specs.ipfs.tech/unixfs/#dag-pb-hamtdirectory) | [More about HAMT](https://en.wikipedia.org/wiki/Hash_array_mapped_trie).
 
 ### Hash
 
@@ -398,6 +398,10 @@ A Peer ID is how each unique IPFS node is identified on the network. The Peer ID
 
 Pinning is the method of telling an IPFS node that particular data is important and so it will never be removed from that node's cache. To learn more, start by understanding [persistence, permanence, and pinning](persistence.md); then, see how to [add local pin](../how-to/pin-files.md) and read [what remote pins are](#remote-pinning).
 
+### Pinning service
+
+Third-party services that run IPFS nodes and [pin](#pinning) content on behalf of users, ensuring data remains available on the IPFS network even when the user's local node is offline. See [working with pinning services](../how-to/work-with-pinning-services.md).
+
 ### Pinning Service API
 
 A vendor-agnostic [API specification](https://ipfs.github.io/pinning-services-api-spec/) that anyone can implement to provide a service for [remote pinning](#remote-pinning).
@@ -421,6 +425,10 @@ Publish-subscribe (Pubsub) is an experimental feature in IPFS. Publishers send m
 QUIC (`/quic-v1`) is one of [libp2p](#libp2p) [transport](#transport) protocols. It provides an always-encrypted, stream-multiplexed connection built on top of UDP. [More about QUIC in libp2p](https://docs.libp2p.io/concepts/transports/quic/)
 
 ## R
+
+### Redundancy
+
+In IPFS context, the practice of [pinning](#pinning) the same content to multiple nodes or [pinning services](#pinning-service) to ensure availability even if one source goes offline. This increases the resilience and availability of data on the [network](#mainnet).
 
 ### Relay node
 
@@ -457,6 +465,10 @@ In IPFS, IPLD Schemas are a system for describing data with structural types. [M
 ### Selectors
 
 IPLD selectors are a form of graph query over IPLD data. They can also be thought of as a way to specify a [traversal](#traversal). [More about IPLD Selectors](https://ipld.io/glossary/#selectors)
+
+### Self-hosting
+
+Running your own IPFS node (using [Kubo](#kubo), [IPFS Desktop](#ipfs-desktop), or other implementations) to [pin](#pinning) and serve content, as opposed to relying solely on third-party [pinning services](#pinning-service). Self-hosting gives you full control over your data while participating in the IPFS network.
 
 ### SFS
 
@@ -500,7 +512,7 @@ In [IPLD](#ipld), the act of walking across the [Data Model](#data-model). [More
 
 ### UnixFS
 
-The Unix File System (UnixFS) is the data format used to represent files and all their links and metadata in IPFS. It is loosely based on how files work in Unix. Adding a file to IPFS creates a block, or a _tree_ of blocks, in the UnixFS format and protects it from being garbage-collected. [More about UnixFS](file-systems.md#unix-file-system-unixfs)
+The Unix File System (UnixFS) is the data format used to represent files and all their links and metadata in IPFS. It is loosely based on how files work in Unix. Adding a file to IPFS creates a block, or a _tree_ of blocks, in the UnixFS format and protects it from being garbage-collected. [UnixFS specification](https://specs.ipfs.tech/unixfs/) | [More about UnixFS](file-systems.md#unix-file-system-unixfs)
 
 ### Urlstore
 

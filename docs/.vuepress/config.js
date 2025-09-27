@@ -105,7 +105,9 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: false,
               children: [
-                ['/quickstart/retrieve','Retrieve with IPFS'],
+                ['/quickstart/retrieve','Retrieve from IPFS'],
+                ['/quickstart/pin','Pin (Browser)'],
+                ['/quickstart/pin-cli','Pin (CLI)'],
                 ['/how-to/websites-on-ipfs/deploy-github-action', 'Deploy to IPFS with GitHub Actions' ],
               ]
             },
@@ -123,7 +125,9 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: false,
               children: [
-                ['/quickstart/retrieve','Retrieve with IPFS'],
+                ['/quickstart/retrieve','Retrieve from IPFS'],
+                ['/quickstart/pin','Pin (Browser)'],
+                ['/quickstart/pin-cli','Pin (CLI)'],
                 ['/how-to/websites-on-ipfs/deploy-github-action', 'Deploy to IPFS with GitHub Actions' ],
                 
               ]
@@ -208,9 +212,20 @@ module.exports = {
                 '/how-to/nat-configuration',
                 '/how-to/kubo-rpc-tls-auth',
                 '/how-to/kubo-garbage-collection',
-                '/how-to/troubleshooting',   
+                '/how-to/troubleshooting-kubo',   
                 '/how-to/webtransport',   
                 '/install/run-ipfs-inside-docker',
+              ]
+            },
+            {
+              title: 'Troubleshooting',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
+                '/how-to/troubleshooting',
+                '/how-to/troubleshooting-kubo',
+                '/reference/diagnostic-tools',
+                '/how-to/nat-configuration',
               ]
             },
             {
@@ -244,6 +259,7 @@ module.exports = {
                 '/how-to/websites-on-ipfs/deploy-github-action',
                 '/how-to/websites-on-ipfs/custom-domains',
                 '/how-to/websites-on-ipfs/single-page-website',
+                '/how-to/websites-on-ipfs/dnslink-gateway',
                 '/how-to/websites-on-ipfs/multipage-website',
                 '/how-to/websites-on-ipfs/static-site-generators',
                 '/how-to/websites-on-ipfs/redirects-and-custom-404s'
@@ -272,7 +288,7 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/gateway-best-practices',
-                '/how-to/gateway-troubleshooting',
+                '/how-to/troubleshooting',
               ]
             },
             {
