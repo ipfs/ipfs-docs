@@ -51,7 +51,7 @@ Some of the pinning services listed below are operated by third party companies.
 - [NFT.Storage](https://nft.storage/)
 - [Pinata](https://pinata.cloud/)
 - [Scaleway](https://labs.scaleway.com/en/ipfs-pinning/)
-- [Web3.Storage](https://web3.storage/)
+- [Storacha (formerly web3.storage)](https://storacha.network/)
 
 See how to [work with remote pinning services](../how-to/work-with-pinning-services.md).
 
