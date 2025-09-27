@@ -53,7 +53,6 @@ We're adding more documentation all the time and making ongoing revisions to exi
 
 ## Examples and case studies
 
-- [Usage ideas & examples](usage-ideas-examples.md)
 - [Case study: Arbol](../case-studies/arbol.md)
 - [Case study: Audius](../case-studies/audius.md)
 - [Case study: Fleek](../case-studies/fleek.md)

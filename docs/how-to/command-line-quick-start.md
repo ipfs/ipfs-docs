@@ -35,26 +35,23 @@ If you have not yet installed Kubo, follow the [Kubo install guide](../install/c
    Output similar to the following displays:
 
     ```bash
-    > initializing ipfs node at /Users/jbenet/.ipfs
-    > generating 2048-bit RSA keypair...done
-    > peer identity: Qmcpo2iLBikrdf1d6QU6vXuNb6P7hwrbNPW9kLAH8eG67z
-    > to get started, enter:
-    >
-    >   ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme
+    > generating ED25519 keypair...done
+    > peer identity: 12D3KooWMkNK8zgTQvtinDY8nuKmMAPBi3fBmvZj6W5huokJxekm
+    > initializing IPFS node at /Users/jbenet/.ipfs
     ```
     
     :::tip
-    The hash next to `peer identity` is your node’s ID and will be different from the one shown in the above output. Other nodes on the network use `peer identity` to find and connect to you. 
+    The `peer identity` is your node’s libp2p PeerID and will be different from the one shown in the above output. Other nodes on the network use `peer identity` to find and connect to you.
     
-    Run `ipfs id` to display the `peer identity` if you need it.
+    Run `ipfs id` to display your node's PeerID.
     :::
 
 
 
-2. Now, try running the command suggested to you in the output of `ipfs init` (i.e. `ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme`):
+2. Now, try running the following command:  `ipfs cat /ipfs/bafybeie5nqv6kd3qnfjupgvz34woh3oksc3iau6abmyajn7qvtf6d2ho34/readme`:
 
    ```bash
-   ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme
+   ipfs cat /ipfs/bafybeie5nqv6kd3qnfjupgvz34woh3oksc3iau6abmyajn7qvtf6d2ho34/readme
    ```
 
     You should see something like this:
@@ -91,7 +88,7 @@ If you have not yet installed Kubo, follow the [Kubo install guide](../install/c
 1. The `quick-start` directory shows other example commands to try. To display the contents of `quick-start, run:
 
     ```bash
-    ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/quick-start
+    ipfs cat /ipfs/bafybeie5nqv6kd3qnfjupgvz34woh3oksc3iau6abmyajn7qvtf6d2ho34/quick-start
     ```
 
    :::tip
@@ -249,12 +246,12 @@ For more information on IPFS companion, including how to install it, see the [IP
 
 ### Check your Go version
 
-IPFS works with Go 1.12.0 or later. To check what go version you have installed, type `go version`:
+IPFS works with Go 1.24.0 or later. To check what go version you have installed, type `go version`:
 
 ```bash
 go version
 
-> go version go1.12.2 linux/amd64
+> go version go1.24.0 linux/amd64
 ```
 
 If you need to update, we recommend you install from the [canonical Go packages](https://go.dev/doc/install). Package managers often contain out-of-date Go packages.

@@ -18,6 +18,7 @@ description: Learn about mutability in IPFS, InterPlanetary Name System (IPNS), 
         - [Publishing IPNS records over PubSub lifecycle](#publishing-ipns-records-over-pubsub-lifecycle)
     - [Tradeoffs between consistency vs. availability](#tradeoffs-between-consistency-vs-availability)
       - [IPNS record validity](#ipns-record-validity)
+      - [IPNS record TTL](#ipns-record-ttl)
       - [Practical considerations](#practical-considerations)
   - [IPNS in practice](#ipns-in-practice)
     - [Resolving IPNS names using IPFS gateways](#resolving-ipns-names-using-ipfs-gateways)
@@ -32,6 +33,8 @@ description: Learn about mutability in IPFS, InterPlanetary Name System (IPNS), 
 Yet, there are many situations where content-addressed data needs to be regularly updated, for example, when publishing a website that frequently changes. It would be impractical to share a new CID every time you update the website. With **mutable pointers**, you can share the address of the pointer once, and update the pointer – to the new CID – every time you publish a change.
 
 The InterPlanetary Name System (IPNS) is a system for creating such mutable pointers to CIDs known as **names** or **IPNS names**. IPNS names can be thought of as links that can be updated over time, while retaining the verifiability of content addressing.
+
+By analogy, IPNS names are like tags in git, which can be updated over time, and CIDs are like commit hashes in Git, which point to a snapshot of the files in the repository.
 
 ::: callout
 An IPNS name can point to any arbitrary content path (`/ipfs/` or `/ipns/`), *including another IPNS name or DNSLink path*. However, it most commonly points to a fully resolved and immutable path, i.e. `/ipfs/[CID]`.
@@ -121,7 +124,7 @@ The main implication of this difference is that IPNS operations (publishing and 
 
 The DHT is the default transport mechanism for IPNS records in many IPFS implementations.
 
-Due to the ephemeral nature of the DHT, peers forget records after 24 hours. This applies to any record in the DHT, irrespective of the `validity` (also referred to as `lifetime`) field in the IPNS record.
+Due to the ephemeral nature of the DHT, records expire [after 48 hours](https://github.com/libp2p/specs/tree/b5f7fce29b32d4c7d0efe37b019936a11e5db872/kad-dht#content-provider-advertisement-and-discovery). This applies to any record in the DHT, irrespective of the `validity` (also referred to as `lifetime`) field in the IPNS record.
 
 Therefore, IPNS records need to be regularly (re-)published to the DHT. Moreover, publishing to the DHT at regular intervals ensures that the IPNS name can be resolved even when there's high node churn (nodes coming and going.)
 
@@ -173,15 +176,34 @@ Availability means resolving to a valid IPNS record, at the cost of potentially 
 
 #### IPNS record validity
 
-When setting the `validity` (referred to as [`lifetime` by Kubo](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsrecordlifetime)) field of an IPNS record, you typically need to choose whether you favor **consistency** (short validity period, e.g. 24 hours) or **availability** (long validity period, e.g. 1 month), due to the inherent trade-off between the two.
+When setting the `validity` (referred to as [`lifetime` by Kubo](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsrecordlifetime)) field of an IPNS record, you typically need to choose whether you favor **consistency** (short validity period, e.g. 48 hours) or **availability** (long validity period, e.g. 1 month), due to the inherent trade-off between the two.
+
+#### IPNS record TTL
+
+If you experience slow IPNS update propagation, the Time-to-Live (TTL) setting is the first thing to check.
+
+##### TTL as a Publisher
+
+When you publish an IPNS Record, the default TTL, which controls caching, might be set to a high value, such as one hour. If you want third-party gateways and nodes to bypass the cache and check for updates more frequently, consider lowering this value.
+
+- **Kubo**: Refer to the `--ttl` option in [`ipfs name publish --help`](https://docs.ipfs.tech/reference/kubo/cli/#ipfs-name-publish) for details on adjusting this setting.
+- **Note**: If your IPNS Record is used behind a DNSLink (e.g., `/ipns/example.com` pointing to `/ipns/k51..libp2p-key`), the DNS TXT record at `_dnslink.example.com` has its own TTL. This DNS TTL also affects caching. Ensure that both TTL values are aligned for consistent behavior.
+
+##### TTL as a Gateway Operator
+
+You should have the ability to override the TTL provided by the publisher and set a lower cap on how long resolution results are cached.
+
+- **Kubo**: Configure this using the [`Ipns.MaxCacheTTL`](https://github.com/ipfs/kubo/blob/master/docs/config.md#ipnsmaxcachettl) setting.
+- **Rainbow**: Adjust this with the [`RAINBOW_IPNS_MAX_CACHE_TTL`](https://github.com/ipfs/rainbow/blob/main/docs/environment-variables.md#rainbow_ipns_max_cache_ttl) environment variable.
 
 #### Practical considerations
 
-One of the most important things to consider with IPNS names is **how frequently you intend on updating the name**.
+The most important thing to consider with IPNS names is **how frequently you intend on updating the name** and **how long a valid record should be cached before checking for an update**.
 
-Practically, two levers within your control determine where your IPNS name is on the spectrum between consistency and availability:
+Practically, levers within your control determine where your IPNS name is on the spectrum between consistency and availability:
 
-- **IPNS record validity:** longer validity will veer towards availability. Moreover, longer validity will reduce the dependence on the key holder (which for most purposes is stored on a single machine and rare shared) since the record can continue to persist without requiring the private key holder to sign a new record. Another benefit of a longer validity is that the transport can be delegated to other nodes or services (such as [w3name](https://staging.web3.storage/docs/how-tos/w3name/)), without compromising the private key.
+- **IPNS record validity:** longer validity will veer towards availability. Moreover, longer validity will reduce the dependence on the key holder (which for most purposes is stored on a single machine and rare shared) since the record can continue to persist without requiring the private key holder to sign a new record. Another benefit of a longer validity is that the transport can be delegated to other nodes or services (such as [w3name](https://docs.storacha.network/how-to/w3name/)), without compromising the private key.
+- **IPNS record TTL:** longer TTL trades update propagation speed for better page load performance and resiliency.
 - **Transport mechanism:** the DHT veers towards consistency while PubSub veers towards availability. However, with Kubo, IPNS names are always published to the DHT, while PubSub is opt-in. For most purposes, enabling PubSub is a net gain unless you hit the upper limit of connections as a result of too many PubSub subscriptions.
 
 ## IPNS in practice

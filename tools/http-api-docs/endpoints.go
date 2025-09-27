@@ -11,7 +11,7 @@ import (
 	cmds "github.com/ipfs/go-ipfs-cmds"
 	config "github.com/ipfs/kubo"
 	corecmds "github.com/ipfs/kubo/core/commands"
-	peer "github.com/libp2p/go-libp2p-core/peer"
+	peer "github.com/libp2p/go-libp2p/core/peer"
 	multiaddr "github.com/multiformats/go-multiaddr"
 )
 
