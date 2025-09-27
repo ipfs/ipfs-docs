@@ -8,7 +8,7 @@ description: Learn about how to contribute to IPFS, the InterPlanetary File Syst
 So you want to contribute to IPFS and the ecosystem? Here is a quick listing of things we need help with and how you can get started. Even if what you want to do is not listed here, we probably accept contributions for it! If you're unsure, please open an issue.
 
 :::callout
-The IPFS community believes that our mission is best served in an environment that is friendly, safe, and accepting, and free from intimidation or harassment. To that end, we ask that everyone involved in IPFS read and respect our [code of conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md). Please contact [abuse@ipfs.tech](mailto:abuse@ipfs.tech) if you need to report a problem or address a grievance related to an abuse report.
+The IPFS community believes that our mission is best served in an environment that is friendly, safe, and accepting, and free from intimidation or harassment. To that end, we ask that everyone involved in IPFS read and respect our [code of conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md). Please contact [abuse@ipfs.tech](mailto:abuse@ipfs.tech) if you need to report a problem or address a grievance related to an abuse report. For reporting abuse at public utilities such as gateways, see the [abuse policy](https://about.ipfs.io/#reporting-abuse).
 :::
 
 ## Code
@@ -18,6 +18,7 @@ IPFS and its sister-projects are big, with lots of code written in multiple lang
 The biggest and most active repositories we have today are:
 
 - [ipfs/kubo](https://github.com/ipfs/kubo)
+- [ipfs/boxo](https://github.com/ipfs/boxo)
 - [ipfs/helia](https://github.com/ipfs/helia)
 - [libp2p/go-libp2p](https://github.com/libp2p/go-libp2p)
 - [libp2p/js-libp2p](https://github.com/libp2p/js-libp2p)
@@ -56,7 +57,7 @@ We're continuously improving IPFS every day, but mistakes can happen, and we cou
 
 ## Design
 
-We have many design needs, but only a small team of visual and UX designers who divide their time between IPFS-related projects and other work here. That means there are a number of issues that could use your design contributions. As home to IPFS Desktop and Companion, the [ipfs-gui](https://github.com/ipfs/ipfs-gui) repo is a good place to look for opportunities to help move our design work forward. Simply filter by the label that best fits your skill set, such as [design-visual](https://github.com/ipfs/ipfs-gui/issues?q=is%3Aissue+is%3Aopen+label%3Atopic/design-visual) or [design-ux](https://github.com/ipfs/ipfs-gui/labels/topic/design-ux).
+We have many design needs, but only a small team of visual and UX designers who divide their time between IPFS-related projects and other work here. That means there are a number of issues that could use your design contributions. As home to IPFS Desktop and Companion, the [ipfs-gui](https://github.com/ipfs/ipfs-gui) repo is a good place to look for opportunities to help move our design work forward. Simply filter by the label that best fits your skill set, such as [design-visual](https://github.com/ipfs/ipfs-gui/issues?q=is%3Aissue+is%3Aopen+label%3Atopic/design-visual) or [design-ux](https://github.com/ipfs/ipfs-gui/issues?q=is%3Aissue+is%3Aopen+label%3Atopic/design-ux).
 
 ## Applications
 

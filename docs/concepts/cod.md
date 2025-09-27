@@ -29,8 +29,7 @@ Bacalhau can:
 
 ### More Bacalhau resources 
 
-- [Getting started tutorial](https://docs.bacalhau.org/getting-started/installation/)
-- [Bacalhau platform architecture](https://docs.bacalhau.org/getting-started/architecture/)
+- [Bacalhau documentation](https://docs.bacalhau.org/)
 - [GitHub](https://github.com/bacalhau-project/bacalhau)
 
 ## IPVM
@@ -39,7 +38,7 @@ The InterPlanetary Virtual Machine (IPVM) specification defines the easiest, fas
 
 IPVM uses [WebAssembly (Wasm)](https://webassembly.org/), content addressing, [simple public key infrastructure (SPKI)](https://en.wikipedia.org/wiki/Simple_public-key_infrastructure), and object capabilities to liberate computation from specific, prenegotiated services, such as large cloud computing providers. By default, execution scales flexibly on-device, all the way up to edge points-of-presence (PoPs) and data centers. 
 
-The core, Rust-based implementation and runtime of IPVM is the [Homestar project](https://github.com/ipvm-wg/homestar/). IPVM supports interoperability with [Bacalhau](https://bacalhau.org) and [Web3Storage](https://web3.storage/)
+The core, Rust-based implementation and runtime of IPVM is the [Homestar project](https://github.com/ipvm-wg/homestar/). IPVM supports interoperability with [Bacalhau](https://bacalhau.org) and [Storacha (formerly web3.storage)](https://storacha.network/)
 
 ### More IPVM resources
 
