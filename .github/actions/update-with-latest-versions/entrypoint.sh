@@ -69,7 +69,6 @@ update_version() {
 }
 
 cd "${ROOT}"
-update_version ipfs/ipfs-update current-ipfs-updater-version
 update_version ipfs-cluster/ipfs-cluster current-ipfs-cluster-version
 update_version ipfs/kubo current-ipfs-version
 
@@ -86,4 +85,4 @@ git config --global user.name "${GITHUB_ACTOR}@users.noreply.github.com"
 git add -u
 git commit -m "Bumped documentation & installation docs."
 git push -fu origin ${BRANCH}
-echo "::set-output name=updated_branch::${BRANCH}"
+echo "updated_branch=${BRANCH}" >> $GITHUB_OUTPUT

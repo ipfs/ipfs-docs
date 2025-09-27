@@ -2,15 +2,11 @@
 title: Bitswap
 sidebarDepth: 0
 description: Learn about Bitswap and how it plays into the overall architecture of IPFS, the InterPlanetary File System.
-related:
-  'Article: Swapping bits and distributing hashes on the decentralized web (Textile)': https://medium.com/textileio/swapping-bits-and-distributing-hashes-on-the-decentralized-web-5da98a3507
-  'GitHub repo: Go Bitswap implementation': https://github.com/ipfs/go-bitswap
-  'GitHub repo: JavaScript Bitswap implementation': https://github.com/ipfs/js-ipfs-bitswap
 ---
 
 # Bitswap
 
-Bitswap is a core module of IPFS for exchanging blocks of data. It directs the requesting and sending of blocks to and from other peers in the network. Bitswap is a _message-based protocol_ where all messages contain [want-lists](#want-lists) or blocks. Bitswap has a [Go implementation](https://github.com/ipfs/go-bitswap) and a [JavaScript implementation](https://github.com/ipfs/js-ipfs-bitswap).
+Bitswap is a core module of IPFS for exchanging blocks of data. It directs the requesting and sending of blocks to and from other peers in the network. Bitswap is a _message-based protocol_ where all messages contain [want-lists](#want-lists) or blocks. Bitswap has a [Go implementation](https://github.com/ipfs/boxo/tree/main/bitswap) and a [JavaScript implementation](https://github.com/ipfs/js-ipfs-bitswap).
 
 Bitswap has two main jobs:
 
@@ -45,10 +41,16 @@ To find peers that have a file, a node running the Bitswap protocol first sends 
 
 Bitswap sends _want-block_ to peers that have the block, and they respond with the block itself. If none of the peers have the root block, Bitswap queries the Distributed Hash Table (DHT) to ask who can provide the root block.
 
+### Technical specification
+
+- [Bitswap Protocol Specifications](https://specs.ipfs.tech/bitswap-protocol/)
+  - [v1.0.0](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-0-0)
+  - [v1.1.0](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-1-0)
+  - [v1.2.0](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-2-0)
+
 ### Additional references
 
 - [February 2020: New improvements to IPFS Bitswap](https://blog.ipfs.tech/2020-02-14-improved-bitswap-for-container-distribution/)
 - [Technical overview of the Go implementation of Bitswap](https://docs.google.com/presentation/d/1mbFFGIIKNvboHyLn-k26egOSWkt9nXjlNbxpmCEQfqQ/edit#slide=id.p)
 - [Article: Swapping bits and distributing hashes on the decentralized web (Textile)](https://medium.com/textileio/swapping-bits-and-distributing-hashes-on-the-decentralized-web-5da98a3507)
-- "About Bitswap" Go implementation poster from the IPFS developer summit in Berlin in July 2018:
-  !['About Bitswap' poster](https://user-images.githubusercontent.com/74178/43230914-f818dab2-901e-11e8-876b-73ba6a084f76.jpg 'Bitswap-Poster_Berlin-July-2018')
+- ["About Bitswap" Go implementation poster from the IPFS developer summit in Berlin in July 2018](https://user-images.githubusercontent.com/74178/43230914-f818dab2-901e-11e8-876b-73ba6a084f76.jpg)

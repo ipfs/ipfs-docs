@@ -82,6 +82,8 @@ The RPC API provides admin-level access to your Kubo IPFS node, including `+"`/a
 
 It is bound to `+"`localhost`"+` by default on purpose. You should never expose it to the public internet, just like you would never expose a SQL database or other backend service.
 
+To expose the RPC API to the public internet with TLS encryption and HTTP authentication, check out the [TLS and HTTP Auth for Kubo with Caddy](../../how-to/kubo-rpc-tls-auth.md) guide.
+
 If you are looking for an interface designed for browsers and public internet, consider implementation-agnostic [HTTP Gateway](../../reference/http/gateway.md) instead.
 :::
 
@@ -350,6 +352,12 @@ Argument `+"`%s`"+` is of file type. This endpoint expects one or several files 
 
 The `+"`add`"+` command not only allows adding files, but also uploading directories and complex hierarchies.
 
+For example, to upload multiple files and have them show up in a specific folder structure:
+
+`+"```"+`
+curl -sLk -XPOST -F "file=@file1.txt;filename=path1/file1.txt" -F \file=@file2.txt;filename=path2/file2.txt" "http://127.0.0.1:5001/api/v0/add?recursive=true&wrap-with-directory=true"
+`+"```"+`
+
 This happens as follows: Every part in the multipart request is a *directory* or a *file* to be added to IPFS.
 
 Directory parts have a special content type `+"`application/x-directory`"+`. These parts do not carry any data. The part headers look as follows:
@@ -371,7 +379,8 @@ Content-Type: application/octet-stream
 
 The above file includes its path in the "folderName/file.txt" hierarchy and IPFS will therefore be able to add it inside "folderName". The parts declaring the directories are optional when they have files inside and will be inferred from the filenames. In any case, a depth-first traversal of the directory tree is recommended to order the different parts making the request.
 
-The `+"`Abspath`"+` header is included for filestore/urlstore features that are enabled with the `+"`nocopy`"+` option and it can be set to the location of the file in the filesystem (within the IPFS root), or to its full web URL.
+NOTE: The `+"`Abspath`"+` header is included for experimental filestore/urlstore features that are enabled with the `+"`nocopy`"+` option and it can be set to the location of the file in the filesystem (within the IPFS root), or to its full web URL.
+
 `)
 		}
 		return buf.String()

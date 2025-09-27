@@ -44,10 +44,8 @@ Third-party pinning services allow you to purchase pinning capacity for importan
 
 - [Pinata](https://pinata.cloud/)
 - [Filebase](https://filebase.com/)
-- [Temporal](https://temporal.cloud/)
-- [Crust](https://crust.network/)
+- [Storacha (formerly web3.storage)](https://storacha.network/)
 - [Infura](https://infura.io/)
-- [Scaleway](https://labs.scaleway.com/en/ipfs-pinning/)
 
 ::: callout 
 As of June 2023, [Filebase](https://filebase.com) and [Pinata](https://pinata.cloud/) support the [IPFS Pinning Service API endpoint](https://github.com/ipfs/pinning-services-api-spec).
@@ -86,7 +84,7 @@ To add a new pinning service to IPFS Desktop or Web UI:
 
     - A **nickname** for this service. This can be helpful if, for example, you want to add two accounts from the same service.
     - Your service's **API endpoint URL**. This field only appears if you've selected a custom pinning service.
-    - You **secret access token**, provided to you by the pinning service. See the your specific pinning service documentation for more info.
+    - You **secret access token**, provided to you by the pinning service. See your specific pinning service documentation for more info.
 
     Example using Pinata and [pinata.cloud/keys](https://app.pinata.cloud/keys):
     ![Pinata secret access token](./images/work-with-pinning-services/add-service-pinata-token.jpg)
@@ -190,5 +188,5 @@ Once you're ready to open the doors to the public, create a pull request against
 
 ## Other options
 
-Pinning services that implement the the vendor-agnostic [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/) specification are supported directly in IPFS Kubo itself. To learn more, run the `ipfs pin remote --help` command.
+Pinning services that implement the vendor-agnostic [IPFS Pinning Service API](https://ipfs.github.io/pinning-services-api-spec/) specification are supported directly in IPFS Kubo itself. To learn more, run the `ipfs pin remote --help` command.
 

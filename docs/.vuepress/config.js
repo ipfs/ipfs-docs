@@ -5,13 +5,16 @@ const SPEEDCURVE_ID = process.env.SPEEDCURVE_ID || ''
 const pageSuffix = '/'
 
 const installMenuChildren = [
-  ['/install/command-line','IPFS Kubo for Go'],
-  ['/install/run-ipfs-inside-docker', 'IPFS Kubo in Docker'],
-  ['https://github.com/ipfs/helia','IPFS Helia for JavaScript'],
-  ['https://iroh.computer/docs/install/', "IPFS Iroh for Rust"],
   ['/install/ipfs-desktop', 'IPFS Desktop App'],
   ['/install/ipfs-companion', 'IPFS Companion Browser Extension'],
-  ['/install/server-infrastructure', 'IPFS Cluster']
+  ['/install/command-line','Kubo Daemon & CLI'],
+  ['/install/run-ipfs-inside-docker', 'Kubo in Docker'],
+  ['/install/server-infrastructure', 'IPFS Cluster'],
+  ['https://github.com/ipfs/rainbow#readme', 'Rainbow Gateway'],
+  ['https://github.com/ipfs/someguy#readme', 'Someguy Delegated Router'],
+  ['https://github.com/ipfs/helia#readme','Helia SDK for JS'],
+  ['https://github.com/ipfs/boxo#readme','Boxo SDK for Go'],
+  ['/concepts/ipfs-implementations','Other Implementations']
 ]
 
 module.exports = {
@@ -102,9 +105,10 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: false,
               children: [
-                ['/quickstart/publish','Publish with IPFS (UI)'],
-                ['/quickstart/publish_cli', 'Publish with IPFS (command line)' ], 
-                ['/quickstart/retrieve','Retrieve with IPFS'],
+                ['/quickstart/retrieve','Retrieve from IPFS'],
+                ['/quickstart/pin','Pin (Browser)'],
+                ['/quickstart/pin-cli','Pin (CLI)'],
+                ['/how-to/websites-on-ipfs/deploy-github-action', 'Deploy to IPFS with GitHub Actions' ],
               ]
             },
             {
@@ -121,9 +125,10 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: false,
               children: [
-                ['/quickstart/publish','Publish with IPFS (UI)'],
-                ['/quickstart/publish_cli', 'Publish with IPFS (command line)' ],
-                ['/quickstart/retrieve','Retrieve with IPFS'],
+                ['/quickstart/retrieve','Retrieve from IPFS'],
+                ['/quickstart/pin','Pin (Browser)'],
+                ['/quickstart/pin-cli','Pin (CLI)'],
+                ['/how-to/websites-on-ipfs/deploy-github-action', 'Deploy to IPFS with GitHub Actions' ],
                 
               ]
             },
@@ -187,7 +192,7 @@ module.exports = {
             },
             '/concepts/cod',
             '/concepts/comparisons',
-            '/concepts/usage-ideas-examples',
+            '/concepts/public-utilities',
             ['/concepts/measuring', 'Measuring the network'],
             '/concepts/faq',
             '/concepts/glossary',
@@ -205,15 +210,22 @@ module.exports = {
                 '/how-to/configure-node',
                 '/how-to/modify-bootstrap-list',
                 '/how-to/nat-configuration',
-                '/how-to/default-profile',
-                '/how-to/ipfs-updater', 
-                [
-                  'https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-ipfs-repo',
-                  'Customize an IPFS repo'
-                ],
+                '/how-to/kubo-rpc-tls-auth',
                 '/how-to/kubo-garbage-collection',
-                '/how-to/troubleshooting',   
+                '/how-to/troubleshooting-kubo',   
                 '/how-to/webtransport',   
+                '/install/run-ipfs-inside-docker',
+              ]
+            },
+            {
+              title: 'Troubleshooting',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
+                '/how-to/troubleshooting',
+                '/how-to/troubleshooting-kubo',
+                '/reference/diagnostic-tools',
+                '/how-to/nat-configuration',
               ]
             },
             {
@@ -244,21 +256,22 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
+                '/how-to/websites-on-ipfs/deploy-github-action',
+                '/how-to/websites-on-ipfs/custom-domains',
                 '/how-to/websites-on-ipfs/single-page-website',
+                '/how-to/websites-on-ipfs/dnslink-gateway',
                 '/how-to/websites-on-ipfs/multipage-website',
-                '/how-to/websites-on-ipfs/link-a-domain',
-                '/how-to/websites-on-ipfs/introducing-fleek',
                 '/how-to/websites-on-ipfs/static-site-generators',
                 '/how-to/websites-on-ipfs/redirects-and-custom-404s'
               ]
             },
             {
-              title: 'IPFS in the browser',
+              title: 'IPFS on the web',
               sidebarDepth: 1,
               collapsable: true,
               children: [
+                '/how-to/ipfs-in-web-apps',
                 '/how-to/address-ipfs-on-web',
-                '/how-to/browser-tools-frameworks'
               ]
             },
             {
@@ -275,7 +288,7 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/gateway-best-practices',
-                '/how-to/gateway-troubleshooting'
+                '/how-to/troubleshooting',
               ]
             },
             {
@@ -305,14 +318,6 @@ module.exports = {
                 ['/how-to/privacy-best-practices', 'Privacy and Encryption'], 
               ]
             },
-            {
-              title: 'Ecosystem Guides',
-              sidebarDepth: 1,
-              collapsable: true,
-              children: [
-                '/how-to/spheron', 
-              ]
-            },
           ],
           '/reference/': [
             '/reference/diagnostic-tools',
@@ -331,8 +336,11 @@ module.exports = {
               collapsable: true,
               path: '/reference/kubo/rpc'
             },
-            '/reference/kubo-rpc-cli.md'
-
+            '/reference/kubo-rpc-cli.md',
+            {
+              path: 'https://specs.ipfs.tech',
+              title: 'IPFS Specifications',
+            }
           ],
           '/community/': [
             ['/community/', 'Join the community'],
