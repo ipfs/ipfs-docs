@@ -217,9 +217,9 @@ await ipfs.files.rm('/my/beautiful/directory')
 
 ## Unix File System (UnixFS)
 
-When you add a _file_ to IPFS, it might be too big to fit in a single block, so it needs metadata to link all its blocks together. UnixFS is a [protocol-buffers](https://developers.google.com/protocol-buffers/)-based format for describing files, directories, and symlinks in IPFS. This data format is used to represent files and all their links and metadata in IPFS. UnixFS creates a block (or a tree of blocks) of linked objects.
+When you add a _file_ to IPFS, it might be too big to fit in a single block, so it needs metadata to link all its blocks together. UnixFS is a [protocol-buffers](https://developers.google.com/protocol-buffers/)-based format for describing files, directories, and symlinks in IPFS. This data format is used to represent files and all their links and metadata in IPFS. UnixFS creates a block (or a tree of blocks) of linked objects. See the [UnixFS specification](https://specs.ipfs.tech/unixfs/) for the complete technical details.
 
-UnixFS currently has [Javascript](https://github.com/ipfs/helia/tree/main/packages/unixfs) and [Go](https://github.com/ipfs/kubo/tree/b3faaad1310bcc32dc3dd24e1919e9edf51edba8/unixfs) implementations. These implementations have modules written in to run different functions:
+UnixFS currently has [Javascript](https://github.com/ipfs/helia/tree/main/packages/unixfs) and [Go](https://github.com/ipfs/boxo/tree/v0.34.0/ipld/unixfs) implementations. These implementations have modules written in to run different functions:
 
 - **Data Formats**: manage the serialization/deserialization of UnixFS objects to protocol buffers
 
@@ -229,50 +229,11 @@ UnixFS currently has [Javascript](https://github.com/ipfs/helia/tree/main/packag
 
 ### Data Formats
 
-On UnixFS-v1 the data format is represented by this protobuf:
+UnixFS uses protocol buffers to define how files and directories are represented in IPFS. The data format includes fields for file types, sizes, permissions, and timestamps.
 
-```
-message Data {
-    enum DataType {
-        Raw = 0;
-        Directory = 1;
-        File = 2;
-        Metadata = 3;
-        Symlink = 4;
-        HAMTShard = 5;
-    }
-
-    required DataType Type = 1;
-    optional bytes Data = 2;
-    optional uint64 filesize = 3;
-    repeated uint64 blocksizes = 4;
-    optional uint64 hashType = 5;
-    optional uint64 fanout = 6;
-    optional uint32 mode = 7;
-    optional UnixTime mtime = 8;
-}
-
-message Metadata {
-    optional string MimeType = 1;
-}
-
-message UnixTime {
-    required int64 Seconds = 1;
-    optional fixed32 FractionalNanoseconds = 2;
-}
-```
-
-This `Data` object is used for all non-leaf nodes in UnixFS:
-
-- For files that are comprised of more than a single block, the `Type` field will be set to `File`, the `filesize` field will be set to the total number of bytes in the files, and `blocksizes` will contain a list of the filesizes of each child node.
-
-- For files comprised of a single block, the `Type` field will be set to `File`, `filesize` will be set to the total number of bytes in the file, and file data will be stored in the `Data` field.
-
-UnixFS also supports two optional metadata format fields:
-
-- `mode` - used for persisting the file permissions in [numeric notation](https://en.wikipedia.org/wiki/File_system_permissions#Numeric_notation). If unspecified, this field defaults to `0755` for directories/HAMT shards and `0644` for all the other types where applicable.
-
-- `mtime` - is a two-element structure (`Seconds`, `FractionalNanoseconds`) representing the modification time in seconds relative to the Unix epoch `1970-01-01T00:00:00Z`.
+::: tip Want to see the complete specification?
+For the full protobuf definitions, field descriptions, and technical details about how UnixFS nodes are structured, visit the [official UnixFS specification](https://specs.ipfs.tech/unixfs/#dag-pb-node).
+:::
 
 ### Importer
 
@@ -286,7 +247,7 @@ The leaf format takes two format options, UnixFS leaves and raw leaves:
 
 - The UnixFS leaves format adds a data wrapper on newly added objects to produce UnixFS leaves with additional data sizes. This wrapper is used to determine whether newly added objects are files or directories. This format is the default for CIDv0.
 
-- The raw leaves format on IPFS where nodes output from chunking will be raw data from the file with a CID codec of 'raw'. This is mainly configured for backward compatibility with formats that used a UnixFS Data object. This format is the default for CIDv1 created with `ipfs add --cid-version 1`, soon to become the global default.
+- The raw leaves format on IPFS where nodes output from chunking will be raw data from the file with a CID codec of 'raw' (0x55). This format provides canonical CIDs for single-block files and is recommended over dag-pb wrapped blocks. This format is the default for CIDv1 created with `ipfs add --cid-version 1`.
 
 The chunking strategy is used to determine the size options available during the chunking process. The strategy currently has two different options, 'fixed size' and 'rabin'.
 
@@ -315,5 +276,5 @@ You can find additional resources to familiarize with these file systems at:
 - [Protoschool MFS tutorial](https://proto.school/mutable-file-system)
 - [Understanding how the InterPlanetary File System deals with Files](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_A), from IPFS Camp 2019
 - [Jeromy Coffee Talks - Files API](https://www.youtube.com/watch?v=FX_AXNDsZ9k)
-- [UnixFS Specification](https://github.com/ipfs/specs/blob/master/UNIXFS.md)
+- [UnixFS Specification](https://specs.ipfs.tech/unixfs/)
 - [ResNetLab on Tour - Mutable Content](https://research.protocol.ai/tutorials/resnetlab-on-tour/mutable-content/)

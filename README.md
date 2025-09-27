@@ -6,9 +6,8 @@
 <h3> IPFS is an open system to manage data without a central server </h3>
 <br>
 
-[![Made by icon.](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](https://protocol.ai/)
 [![Project icon.](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.tech/)
-[![Build status icon.](https://img.shields.io/circleci/project/github/ipfs/ipfs-docs/master.svg?style=flat-square)](https://circleci.com/gh/ipfs/ipfs-docs)
+[![Build status icon.](https://img.shields.io/github/actions/workflow/status/ipfs/ipfs-docs/build.yml?branch=main&style=flat-square)](https://github.com/ipfs/ipfs-docs/actions/workflows/build.yml)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 </div>
 
@@ -26,7 +25,6 @@
   - [Static-site generator](#static-site-generator)
   - [Automated deployments](#automated-deployments)
   - [Translation](#translation)
-- [Primary maintainers](#primary-maintainers)
 - [License](#license)
 <!-- /TOC -->
 
@@ -66,7 +64,7 @@ To build the site locally, follow the steps below.
    npm start
    ```
 
-1. Open [localhost:8080](http://localhost:8080) in your browser.
+1. Open `http://localhost:8080` in your browser.
 1. Close the local server with `CTRL` + `c`.
 1. To restart the local server, run `npm start` from within the `ipfs-docs` folder.
 
@@ -110,7 +108,7 @@ You can return to the [Project set-up](#project-set-up) section above and contin
 
 ## Contribute to documentation
 
-We would **love ❤️ your help** to improve existing items or make new ones even better! [We also have bounties available](https://github.com/ipfs/devgrants/projects/1)!
+We would **love ❤️ your help** to improve existing items or make new ones even better! See the [IPFS Bounties page](https://github.com/ipfs/devgrants/blob/main/BOUNTIES.md)!
 
 ### Issues
 
@@ -118,7 +116,7 @@ If you find something wrong within this repository, please raise an issue [here 
 
 ### Bounties
 
-You can earn the undying love of the IPFS community, _and_ get rewarded by closing an issue containing the [`bounty` tag](https://github.com/ipfs/ipfs-docs/issues?q=is%3Aopen+is%3Aissue+label%3Abounty). Submissions must be production-ready and meet all the specifications listed on the issue page. To get started, check out the [current list of open bounties →](https://github.com/ipfs/devgrants/projects/1).
+You can earn the undying love of the IPFS community, _and_ get rewarded by closing an issue containing the [`bounty` tag](https://github.com/ipfs/ipfs-docs/issues?q=is%3Aopen+is%3Aissue+label%3Abounty). Submissions must be production-ready and meet all the specifications listed on the issue page. To get started, check out [IPFS Bounties](https://github.com/ipfs/devgrants/blob/main/BOUNTIES.md).
 
 If you are attempting to close an issue, great! Thanks for the help! Please leave a comment within the issue requesting to be assigned to that issue **before** submitting a pull request. This minimizes the chance of multiple contributors duplicating work by submitting pull requests for the same issue. If you submit a pull request to an issue _without_ first being assigned to it, your pull request may not be accepted.
 
@@ -142,11 +140,7 @@ The IPFS documentation site uses the [VuePress static website generator](https:/
 
 When opening a pull request, CI scripts will run against your feature branch to test your changes.
 
-The CI/CD production workflow builds on the `main` branch and deploys the documentation site on [fleek](https://fleek.co/). The site reflects the latest commit on `main`.
-
-## Primary maintainers
-
-- [@2color](https://github.com/2color): Developer relations & technical writing(ecosystem)
+The CI/CD production workflow builds on the `main` branch and deploys the documentation site via GitHub Pages for HTTPS hosting. PR and IPFS (CAR) previews are provided by [ipfs-deploy-action](https://github.com/ipfs/ipfs-deploy-action). The site reflects the latest commit on `main`.
 
 ## License
 

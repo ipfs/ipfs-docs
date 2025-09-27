@@ -10,7 +10,7 @@ IPFS is home to a vibrant, diverse community of thousands of contributors and pa
 
 
 :::callout
-The IPFS community believes that our mission is best served in an environment that is friendly, safe, and accepting, and free from intimidation or harassment. To that end, we ask that everyone involved in IPFS read and respect our [code of conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md). Please contact [abuse@ipfs.tech](mailto:abuse@ipfs.tech) if you need to report a problem or address a grievance related to an abuse report.
+The IPFS community believes that our mission is best served in an environment that is friendly, safe, and accepting, and free from intimidation or harassment. To that end, we ask that everyone involved in IPFS read and respect our [code of conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md). Please contact [abuse@ipfs.tech](mailto:abuse@ipfs.tech) if you need to report a problem or address a grievance related to an abuse report. For reporting abuse at public utilities such as gateways, see the [abuse policy](https://about.ipfs.io/#reporting-abuse).
 :::
 
 - [Get technical support and help in the IPFS forum](#get-technical-support-and-help) as you develop on IPFS.
@@ -109,7 +109,7 @@ We're in a lot of places. Here's [how to find them all](social-media.md) for you
 
 ### IPFS newsletter
 
-Sign up for the IPFS Weekly newsletter to get project updates, community news, event details, and more. In your inbox every Tuesday. [Subscribe now!](https://ipfs.us4.list-manage.com/subscribe?u=25473244c7d18b897f5a1ff6b&id=cad54b2230)
+Sign up for the IPFS Weekly newsletter to get project updates, community news, event details, and more. In your inbox every Tuesday. [Subscribe now!](https://newsletter.ipfs.tech/)
 
 ### IPFS Blog 
 

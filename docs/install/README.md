@@ -19,6 +19,10 @@ Anyone can use IPFS to store files in a _decentralized_ way. The easiest way to 
 
 If your browser doesn't support IPFS yet, you can install an IPFS companion extension that will let you view decentralized web content! [Learn more →](./ipfs-companion.md)
 
+### Pin files with a pinning service
+
+Do you want to quickly and easily publish content with IPFS without complex tools? See the [Pin with IPFS quickstart](../quickstart/pin.md), where you'll learn how to use third-party pinning services to pin and provide files to the IPFS network.
+
 ### Deploy static sites to the IPFS network with a GitHub Action
 
 Do you want to quickly and easily automate the deployment of static websites to the IPFS network? See the [Deploy static sites to the IPFS network with GitHub Actions](../how-to/websites-on-ipfs/deploy-github-action.md), where you'll learn how to use [GitHub Actions](https://github.com/ipshipyard/ipfs-deploy-action) to automatically deploy static websites to the IPFS network.
@@ -53,7 +57,7 @@ To get started with a hands-on example, see [Helia 101](https://github.com/ipfs-
 If you are looking for simple [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)-like API for use on the web, see [@helia/verified-fetch](https://www.npmjs.com/package/@helia/verified-fetch).
 :::
 
-### Boxo SDK for GO
+### Boxo SDK for Go
 
 [Boxo](https://github.com/ipfs/boxo#readme) is a set of reference libraries for building IPFS applications and implementations in Go.
 
