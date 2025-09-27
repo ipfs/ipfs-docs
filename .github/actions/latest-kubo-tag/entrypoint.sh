@@ -14,4 +14,4 @@ cd kubo
 git describe --tags "${LATEST_IPFS_TAG}"
 
 echo "The latest Kubo tag is ${LATEST_IPFS_TAG}"
-echo "::set-output name=latest_tag::${LATEST_IPFS_TAG}"
+echo "latest_tag=${LATEST_IPFS_TAG}" >> $GITHUB_OUTPUT

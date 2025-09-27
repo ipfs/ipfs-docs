@@ -13,28 +13,30 @@ RPC API clients are available in multiple languages, and are listed below. You c
 | Language      | Client library                                            | Status              |
 |---------------|-----------------------------------------------------------|---------------------|
 | Go            | [ipfs/kubo/client/rpc](https://pkg.go.dev/github.com/ipfs/kubo/client/rpc)                | Active              |
+| JavaScript    | [ipfs/js-kubo-rpc-client](https://www.npmjs.com/package/kubo-rpc-client)  | Active |
 | Java          | [ipfs-shipyard/java-ipfs-http-client](https://github.com/ipfs-shipyard/java-ipfs-http-client)     | Active              |
-| JavaScript    | [ipfs/js-ipfs/tree/master/packages/ipfs-http-client](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client)  | Active |
 | Python        | [ipfs-shipyard/py-ipfs-http-client](https://github.com/ipfs-shipyard/py-ipfs-http-client)       | Active |
+|               | [aioipfs](https://gitlab.com/cipres/aioipfs)              | Active              |
 | Scala         | [ipfs-shipyard/scala-ipfs-api](https://github.com/ipfs-shipyard/scala-ipfs-api)            | Inactive |
-| Clojure       | [keorn/clj-ipfs-http-client](https://github.com/keorn/clj-ipfs-http-client)              | Active |
-| Clojurescript | [district0x/cljs-ipfs-http-client](https://github.com/district0x/cljs-ipfs-http-client)  | Active |
+| Clojure       | [keorn/clj-ipfs-http-client](https://github.com/keorn/clj-ipfs-http-client)              | Inactive |
+| Clojurescript | [district0x/cljs-ipfs-http-client](https://github.com/district0x/cljs-ipfs-http-client)  | Inactive |
 | Haskell       | [davidar/hs-ipfs-api](https://github.com/davidar/hs-ipfs-api)                     | Inactive |
-| Swift         | [ipfs-shipyard/swift-ipfs-http-client](https://github.com/ipfs-shipyard/swift-ipfs-http-client)    | Active |
+| Swift         | [ipfs-shipyard/swift-ipfs-http-client](https://github.com/ipfs-shipyard/swift-ipfs-http-client)    | Inactive |
 | CommonLisp    | [WeMeetAgain/cl-ipfs-api](https://github.com/WeMeetAgain/cl-ipfs-api)                 | Inactive |
-| Rust          | [ferristseng/rust-ipfs-api](https://github.com/ferristseng/rust-ipfs-api)               | Active |
+| Rust          | [ferristseng/rust-ipfs-api](https://github.com/ferristseng/rust-ipfs-api)               | Inactive |
 |               | [gkbrk/rust-ipfs-api](https://github.com/gkbrk/rust-ipfs-api)                     | Inactive |
 |               | [rmnoff/rust-ipfs-api](https://github.com/rmnoff/rust-ipfs-api)                    | Inactive |
 |               | [rschulman/rust-ipfs-api](https://github.com/rschulman/rust-ipfs-api)                 | Inactive |
 | Ruby          | [Fryie/ipfs-ruby](https://github.com/Fryie/ipfs-ruby)                         | Inactive |
-|               | [tbenett/ruby-ipfs-http-client](https://github.com/tbenett/ruby-ipfs-http-client)           | Active   |
+|               | [tbenett/ruby-ipfs-http-client](https://github.com/tbenett/ruby-ipfs-http-client)           | Inactive   |
 | Mac Automator | [NeoTeo/ipfs-osx-service](https://github.com/NeoTeo/ipfs-osx-service)                 | Inactive |
-| Pharo         | [khinsen/ipfs-pharo](https://github.com/khinsen/ipfs-pharo)                      | Active   |
-| PHP           | [cloutier/php-ipfs-api](https://github.com/cloutier/php-ipfs-api)                   | Inactive |
-|               | [digitalkaoz/php-ipfs-api](https://github.com/digitalkaoz/php-ipfs-api)                | Inactive |
-| C#            | [jeremy-ellis-tech/net-ipfs-http-client](https://github.com/jeremy-ellis-tech/net-ipfs-http-client)  | Inactive |
-|               | [richardschneider/net-ipfs-http-client](https://github.com/richardschneider/net-ipfs-http-client)   | Active   |
+| Pharo         | [khinsen/ipfs-pharo](https://github.com/khinsen/ipfs-pharo)                      | Inactive   |
+| PHP           |  [EdouardCourty/ipfs-php](https://github.com/EdouardCourty/ipfs-php)                | Active |
+| C#            | [ipfs-shipyard/net-ipfs-http-client](https://github.com/ipfs-shipyard/net-ipfs-http-client) | Active |
+|               | [jeremy-ellis-tech/net-ipfs-http-client](https://github.com/jeremy-ellis-tech/net-ipfs-http-client)  | Inactive |
+|               | [richardschneider/net-ipfs-http-client](https://github.com/richardschneider/net-ipfs-http-client)   | Inactive   |
 | C++           | [vasild/cpp-ipfs-api](https://github.com/vasild/cpp-ipfs-api)                    | Active   |
 | Erlang        | [hendry19901990/erlang-ipfs-http-client](https://github.com/hendry19901990/erlang-ipfs-http-client) | Inactive |
 | Scheme        | [siiky/ipfs.scm](https://git.sr.ht/~siiky/ipfs.scm) | Active |
 | Lua           | [siiky/ipfs.lua](https://git.sr.ht/~siiky/ipfs.lua) | Active |
+| Elixir        | [bahner/ex-ipfs](https://github.com/bahner/ex-ipfs) | Active |

@@ -1,9 +1,9 @@
 ---
-title: Host a single-page website on IPFS
+title: Host a single-page website with IPFS Desktop
 description: Learn how to host a simple one-page website on IPFS and link up a domain name.
 ---
 
-# Host a single-page website on IPFS
+# Host a single-page website with IPFS Desktop
 
 In this tutorial, we will host a simple one-page website on IPFS and link up a domain name. This is the first step is a series of tutorials to teach web developers on how to build websites and applications using IPFS.
 
@@ -170,7 +170,7 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
              'Only one spacecraft has flown by Uranus, the Voyager 2.',
              'Neptune was discovered in 1846 by Urbain Le Verrier and Johann Galle.',
              'Neptune has 14 moons.',
-             'The average temperatue of Neptune is about -201 °C.',
+             'The average temperature of Neptune is about -201 °C.',
              'There is a 1:20 million scale model of the solar system in Sweden.',
              'The gap between the Earth and our moon is bigger than the diameters of all the planets combined.',
              "The first accurate calculation of the speed of light was using Jupiter's moons",
@@ -188,7 +188,7 @@ The next step is to import your site into IPFS using the IPFS desktop app you ju
    ```
 
 2. Open IPFS desktop and go to the **Files** page.
-3. Click **Add** → **File**.
+3. Click **+Import** → **File**.
 4. Navigate to your `index.html` file and select **Open**.
 
    ![Choose a file window open in IPFS desktop.](./images/single-page-website/add-ipfs-desktop-open-file.png)
@@ -250,12 +250,9 @@ We used Namecheap, but the process is very similar across all domain name servic
 
 Domain name services are fairly slow to update. You should be able to go to your domain and see the website you pinned in a few hours.
 
-![Random planet facts site with the randomplanetfacts.xyz URL.](./images/single-page-website/random-planets-with-correct-url.png)
-
 ## Up next
 
 This project was designed to get you up and running quickly, but there are many improvements we can make here.
-
-You may have noticed that when visiting [randomplanetfacts.xyz](http://randomplanetfacts.xyz), your browser redirects to [gateway.pinata.cloud/ipfs/QmW7S5HR...](https://gateway.pinata.cloud/ipfs/QmW7S5HRLkP4XtPNyT1vQSjP3eRdtZaVtF6FAPvUfduMjA). This isn't great for the user's experience, and it can cause issues with security certificates and other website validation methods. Also, this website is incredibly simple. There are no images, external stylesheets, or javascript files. 
+ 
 If you're interested in building a more complex site using IPFS and securing it properly, [carry on with this tutorial series by hosting a multipage website on IPFS.](multipage-website.md)
 

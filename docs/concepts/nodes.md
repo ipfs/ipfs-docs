@@ -6,20 +6,20 @@ sidebarDepth: 2
 
 # Nodes
 
-Participants in the IPFS network are called _nodes_. A _node_ is a program or process implementing IPFS that you run on your local computer (directly or via a browser) to store files and connect to the IPFS network. They're the most crucial aspect of IPFS. Without nodes running as an IPFS _daemon_ (explained below), there would be no IPFS Network.
+Participants in the IPFS network are called _nodes_. A _node_ is an instance of an implementation of IPFS that you run on your local computer (directly or via a browser) to store files and connect to the IPFS network. They're the most crucial aspect of IPFS. Without IPFS nodes, there would be no IPFS Network.
 
 You're likely to see the term _node_ throughout the IPFS docs, issues, and related code. It's a very general term, so its meaning depends on the context. There are three main categories of nodes: IPFS nodes, data nodes, and libp2p nodes for applications.
 
-* __IPFS Nodes__ are programs that run on a computer that can exchange data with other IPFS nodes. They go by several different names, but we refer to them by a different term, depending on the context:
+* __IPFS nodes__ are programs that run on a computer that can exchange data with other IPFS nodes. They go by several different names, but we refer to them by a different term, depending on the context:
 
   * _node_: Use _node_ when you're referring to an individual point on the network. It's a very general term. For example, when you open IPFS Desktop, you establish yourself as a node with the potential to interact with other nodes. See [Configure a node](../how-to/configure-node.md).
   * _peer_: Use _peer_ when you're talking about the relationship of one node (even your own) to other nodes. It refers to their relationship as equals, with no central authority, so your node is a peer to other peers. See [Observe peers](../how-to/observe-peers.md) and [Peering with content providers](../how-to/peering-with-content-providers.md).
   * _daemon_: Use _daemon_ when talking about a node's activity status. When a node is online and running in the background, listening for requests for its data, it's called a _daemon_. See [Take your node online](../how-to/command-line-quick-start.md#take-your-node-online). Note that an IPFS Helia _node_ in the browser is not generally referred to as a _daemon_. However, in the context of this document, we will refer to a Helia _instance_ acting as a _node_ in the browser as a _daemon_ . For more information, see the [Helia documentation](https://github.com/ipfs/helia/wiki).
-  * _instance_: Use _instance_ when talking about a library or program, such as a Go or JS version, running on as an IPFS node at a particular point in time. The peer ID is the same, so it's still the same _node_ as far as the IPFS network is concerned. See [Kubo](../reference/go/api.md) and [Helia](../reference/js/api.md#TODO_JS_IPFS_DEPRECATION).
+  * _instance_: Use _instance_ when talking about a library or program, such as a Go or JS version, running as an IPFS node at a particular point in time. The peer ID is the same, so it's still the same _node_ as far as the IPFS network is concerned. See [Kubo](../reference/go/api.md) and [Helia](../reference/js/api.md#TODO_JS_IPFS_DEPRECATION).
 
 * __Data nodes__, Use _data nodes_ when talking about actual pieces of data on IPFS, such as DAG nodes, UnixFS nodes, and IPLD nodes. When you add a file with the `ipfs add myfile.txt` command, IPFS breaks them up into several nodes that each contain a chunk of the file and are linked to each other. See [Merkle Directed Acyclic Graphs (DAGs)](../concepts/merkle-dag.md), [Unix File System (UnixFS)](../concepts/file-systems.md#unix-file-system-unixfs), and stay tuned for [InterPlanetary Linked Data (IPLD) model](../concepts/ipld.md) docs, which is in progress.
 
-* __libp2p peer__ Use _libp2p peer_ when talking about libp2p nodes on which you can build applications. They're usually referred to as _peers_ in libp2p, because it provides solutions for essential peer-to-peer elements like transport, security, peer routing, and content discovery. See [concepts](../concepts/libp2p.md)
+* __libp2p peer__ Use _libp2p peer_ when talking about libp2p nodes on which you can build applications. They're usually referred to as _peers_ in libp2p, because it provides solutions for essential peer-to-peer operations like transport, security, routing, and content discovery. See [concepts](../concepts/libp2p.md)
 
 
 ## Types
@@ -28,7 +28,7 @@ There are different types of IPFS nodes. And depending on the use-case, a single
 
 - [Relay](#relay)
 - [Bootstrap](#bootstrap)
-- [Delegate routing](#delegate-routing-node)
+- [Delegated Routing](#delegated-routing)
 
 ### Relay
 
@@ -47,13 +47,12 @@ If an IPFS node deems itself unreachable by the public internet, IPFS nodes may 
 
 #### Limitations of relay nodes:
 - v2 relays are "limited relays" that are designed to be used for [Direct Connection Upgrade through Relay](https://github.com/libp2p/specs/blob/master/relay/DCUtR.md) (aka hole punching).
-- Not configurable in Kubo; uses a preset list of relays
 
 See [p2p-circuit relay](https://github.com/libp2p/specs/tree/master/relay)
 
 ### Bootstrap
 
-Both Kubo and Helia _nodes_ use bootstrap _nodes_ to initially enter the DHT.
+Both Kubo and Helia _nodes_ use bootstrap _nodes_ to find peers on the DHT.
 
 #### Features of a bootstrap node:
 
@@ -67,25 +66,21 @@ Both Kubo and Helia _nodes_ use bootstrap _nodes_ to initially enter the DHT.
 
 [More about Bootstrapping](../how-to/modify-bootstrap-list.md)
 
-### Delegate routing node
+### Delegated Routing
 
-When IPFS nodes are unable to run Distributed Hash Table (DHT) logic on their own, they _delegate_ the task to a delegate routing node. Publishing works with arbitrary CID codecs (compression/decompression technology), as the [js-libp2p-delegated-content-routing module](https://github.com/libp2p/js-libp2p-delegated-content-routing/blob/master/src/index.ts) publishes CIDs at the block level rather than the IPLD or DAG level.
+IPFS nodes _delegate_ the content and peer routing tasks to a **Delegated Routing V1 HTTP API** ([spec](https://specs.ipfs.tech/routing/http-routing-v1/)).
 
-#### Features of a delegate routing node:
+Delegated routing over HTTP is not a routing system but a general API to offload routing work. This is useful in browsers and other constrained environments where it's infeasible to be a DHT server/client contacting many other peers. More broadly, it enables experimentation and innovation in content routing while maintaining interoperability.
 
-- They are IPFS _nodes_ with their API ports exposed and some [Kubo RPC API](../reference/kubo/rpc.md) commands accessible at path `/api/v0`.
-- Usable by both Kubo and Helia _nodes_.
-- Helia _nodes_ can use them to query the DHT and also publish content without having to actually run DHT logic on their own.
-  - The libp2p _node_ configured for a Helia _node_ can be configured for delegate routing by following instructions at in the [js-libp2p configuration doc](https://github.com/libp2p/js-libp2p/blob/master/doc/CONFIGURATION.md#setup-with-content-and-peer-routing)
+The [HTTP API](https://specs.ipfs.tech/routing/http-routing-v1/) can used to resolve **content**, **peer**, and **IPNS name** routing requests.
 
-#### Limitations of a delegate routing node:
+#### Support for delegated routing in IPFS implementations
 
-- On default delegate _nodes_ provided by Protocol Labs, the garbage collection happens every hour, so provided content only survives for that long.
-- Only Kubo is known to implement the [Kubo RPC API](../reference/kubo/rpc.md) at the time of writing.
-  - There is a successor to the delegated routing functionality of the Kubo RPC API called [Routing V1 HTTP API](https://specs.ipfs.tech/routing/http-routing-v1/)
+- [someguy](https://github.com/ipfs-shipyard/someguy) is a Delegated Routing V1 server that proxies requests to the IPFS Amino DHT and the [cid.contact Network Indexer](https://cid.contact/). The IPFS Foundation operates a public good delegated routing endpoint backed by someguy with the URL `https://delegated-ipfs.dev/routing/v1`.
+- The [cid.contact Network Indexer](https://cid.contact/) also implements the Delegated Routing V1 HTTP API.
+- [Helia](https://github.com/ipfs/helia/tree/main/packages/http#example---with-custom-gateways-and-delegated-routing-endpoints) can be configured to use a delegated routing endpoint.
+- [Kubo](https://github.com/ipfs/kubo/blob/master/docs/delegated-routing.md) can be configured with multiple delegated routing endpoints ([Kubo as a client](https://github.com/ipfs/kubo/blob/master/docs/config.md#routingtype)), in addition to exposing the delegated routing endpoint on the gateway ([Kubo as a delegated routing server](https://github.com/ipfs/kubo/blob/master/docs/config.md#gatewayexposeroutingapi)).
 
 ## Implementations
 
-Protocol Labs manages two implementations of the IPFS spec: Kubo and Helia. These implementations use specific types of _nodes_ to perform server, browser, and other client functions.
-
-[Read more about our implementations](./ipfs-implementations.md)
+[Read more about IPFS implementations](./ipfs-implementations.md)

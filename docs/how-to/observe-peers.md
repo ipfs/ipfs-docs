@@ -22,5 +22,5 @@ Manually connect to a specific peer. If the peer below doesn't work, choose one 
 Search for a given peer on the network:
 
 ```sh
-> ipfs dht findpeer QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN
+> ipfs routing findpeer QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN
 ```
