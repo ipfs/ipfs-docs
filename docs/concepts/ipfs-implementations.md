@@ -8,10 +8,12 @@ description: 'List of various IPFS implementations for different use cases and l
 A comprehensive list of [IPFS implementations](./implementations.md) across different languages and use cases, from desktop applications to specialized libraries.
 
 - [Desktop Implementations](#desktop-implementations)
-- [Popular Node Implementations and Tools](#popular-node-implementations-and-tools)
+- [Popular Node Implementations](#popular-node-implementations)
+- [Popular Node Extensions and Tools](#popular-node-extensions-and-tools)
+- [Filecoin Tooling](#filecoin-tooling)
 - [Content-Addressed Data](#content-addressed-data)
-- [Lite or Experimental](#lite-or-experimental)
-- [Inactive](#inactive))
+- [Lite Nodes or Experimental](#lite-nodes-or-experimental)
+- [Inactive](#inactive)
 
 To propose additions or edits, [edit this page in GitHub](https://github.com/ipfs/ipfs-docs/edit/main/docs/concepts/ipfs-implementations.md) or [open an issue](https://github.com/ipfs/ipfs-docs/issues/new?assignees=&labels=need%2Ftriage&template=open_an_issue.md&title=IPFS%20Implementations).
 
@@ -24,25 +26,39 @@ Looking for an easy way to get started? Install these tools for no-code access t
 | IPFS Desktop   | <https://github.com/ipfs/ipfs-desktop>   | javascript  | Desktop application bundling a Kubo node with file manager, peer manager and content explorer                           |
 | IPFS Companion | <https://github.com/ipfs/ipfs-companion> | javascript  | Browser extension adding support for `ipfs://` addresses which are fetched from the public network by a local Kubo node |
 
-## Popular Node Implementations and Tools
+## Popular Node Implementations
 
 For developers and operators.
 
 | Name           | URL                                            | Language(s) | What it's trying to do                                                                          |
 | -------------- | ---------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------- |
 | Kubo           | <https://github.com/ipfs/kubo>                 | go          | Popular, all-in-one IPFS daemon with an extensive HTTP RPC API.                                 |
-| Boost          | <https://github.com/filecoin-project/boost>    | go          | Daemon to get IPFS data in and out of a Filecoin storage provider.                              |
 | Boxo (GO SDK)  | <https://github.com/ipfs/boxo>                 | go          | A component library for building IPFS applications and implementations in Go.                   |
 | Helia (JS SDK) | <https://github.com/ipfs/helia>                | typescript  | A lean, modular, and modern implementation of IPFS for the prolific JS and browser environments |
+| Iroh           | <https://github.com/n0-computer/iroh>          | rust        | Extreme-efficiency oriented IPFS implementation.                                                |
+| Nabu           | <https://github.com/peergos/nabu>              | java        | A minimalistic, fast and embeddable IPFS implementation.                                        |
+
+## Popular Node Extensions and Tools
+
+These adapt one or more of the above to specific use-cases and topologies.
+
+| Name           | URL                                            | Language(s) | What it's trying to do                                                                          |
+| -------------- | ---------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------- |
 | Verified Fetch | <https://github.com/ipfs/helia-verified-fetch> | typescript  | A fetch-like retrieval client for IPFS                                                          |
 | inbrowser.link | <https://github.com/ipfs/service-worker-gateway> | typescript | IPFS Gateway implemented in Service Worker, built with Helia and Verified Fetch                |
 | IPFS Cluster   | <https://github.com/ipfs/ipfs-cluster>         | go          | Orchestration for multiple Kubo nodes via CRDT / Raft consensus                                 |
 | Iroh           | <https://github.com/n0-computer/iroh>          | rust        | Extreme-efficiency oriented IPFS implementation.                                                |
-| Lassie         | <https://github.com/filecoin-project/lassie/>  | go          | A minimal universal retrieval client library for IPFS and Filecoin.                             |
-| Lotus          | <https://github.com/filecoin-project/lotus>    | go          | Filecoin node handling consensus, storage providing, making storage deals, importing data.      |
 | Nabu           | <https://github.com/peergos/nabu>              | java        | A minimalistic, fast and embeddable IPFS implementation.                                        |
 | Rainbow        | <https://github.com/ipfs/rainbow/>             | go          | A specialized IPFS HTTP gateway implementation.                                                 |
 | Someguy        | <https://github.com/ipfs/someguy/>             | go          | A Delegated Routing V1 server and client for all your HTTP/IPFS routing needs.                  |
+
+## Filecoin Tooling
+
+| Name           | URL                                            | Language(s) | What it's trying to do                                                                          |
+| -------------- | ---------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------- |
+| Boost          | <https://github.com/filecoin-project/boost>    | go          | Daemon to get IPFS data in and out of a Filecoin storage provider.                              |
+| Lassie         | <https://github.com/filecoin-project/lassie/>  | go          | A minimal universal retrieval client library for IPFS and Filecoin.                             |
+| Lotus          | <https://github.com/filecoin-project/lotus>    | go          | Filecoin node handling consensus, storage providing, making storage deals, importing data.      |
 
 ## Content-Addressed Data
 
