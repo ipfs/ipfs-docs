@@ -47,8 +47,6 @@ These adapt one or more of the above to specific use-cases and topologies.
 | Verified Fetch | <https://github.com/ipfs/helia-verified-fetch> | typescript  | A fetch-like retrieval client for IPFS                                                          |
 | inbrowser.link | <https://github.com/ipfs/service-worker-gateway> | typescript | IPFS Gateway implemented in Service Worker, built with Helia and Verified Fetch                |
 | IPFS Cluster   | <https://github.com/ipfs/ipfs-cluster>         | go          | Orchestration for multiple Kubo nodes via CRDT / Raft consensus                                 |
-| Iroh           | <https://github.com/n0-computer/iroh>          | rust        | Extreme-efficiency oriented IPFS implementation.                                                |
-| Nabu           | <https://github.com/peergos/nabu>              | java        | A minimalistic, fast and embeddable IPFS implementation.                                        |
 | Rainbow        | <https://github.com/ipfs/rainbow/>             | go          | A specialized IPFS HTTP gateway implementation.                                                 |
 | Someguy        | <https://github.com/ipfs/someguy/>             | go          | A Delegated Routing V1 server and client for all your HTTP/IPFS routing needs.                  |
 
@@ -57,6 +55,7 @@ These adapt one or more of the above to specific use-cases and topologies.
 | Name           | URL                                            | Language(s) | What it's trying to do                                                                          |
 | -------------- | ---------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------- |
 | Boost          | <https://github.com/filecoin-project/boost>    | go          | Daemon to get IPFS data in and out of a Filecoin storage provider.                              |
+| Curio          | <https://github.com/filecoin-project/curio>    | go          | Newer Filecoin node with similar goals to Lotus but more scalable and automatable               |
 | Lassie         | <https://github.com/filecoin-project/lassie/>  | go          | A minimal universal retrieval client library for IPFS and Filecoin.                             |
 | Lotus          | <https://github.com/filecoin-project/lotus>    | go          | Filecoin node handling consensus, storage providing, making storage deals, importing data.      |
 
