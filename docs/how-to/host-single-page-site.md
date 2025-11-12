@@ -11,6 +11,12 @@ A great way to get to know IPFS is to use it to host a simple, single-page websi
 We've put together a series of tutorials to walk you through hosting a full website on IPFS. [Take a look!](websites-on-ipfs/single-page-website.md)
 :::
 
+:::callout
+This guide uses `gateway.example.net` as a placeholder for an IPFS gateway. You can replace it with:
+- A self-hosted [Kubo](../install/command-line.md) gateway
+- For best-effort hosting and testing try [public good `ipfs.io` (`dweb.link` variant)](../concepts/public-utilities.md#public-ipfs-gateways), or any of the [public gateways](https://ipfs.github.io/public-gateway-checker/) that support "Origin" isolation ([subdomain mode](./address-ipfs-on-web.md#subdomain-gateway))
+:::
+
 ## Create your site
 
 Assume you have a static website in a directory `mysite`.
@@ -37,7 +43,7 @@ The last hash, next to the folder name, `mysite/` is the one to remember, call i
 
 You can test it out locally by opening `http://localhost:8080/ipfs/$SITE_CID` in a browser or with `wget` or `curl` from the command line.
 
-To view it from another ipfs node, you can try `http://gateway.ipfs.io/ipfs/$SITE_CID` in a browser. This will work from a browser on another device, inside or outside the network where you added the site's file.
+To view it from another ipfs node, you can try `http://gateway.example.net/ipfs/$SITE_CID` in a browser. This will work from a browser on another device, inside or outside the network where you added the site's file.
 
 Those hashes are difficult to remember. Let's look at some ways to get rid of them.
 
@@ -56,7 +62,7 @@ your.domain.            60      IN      TXT     "dnslink=/ipfs/$SITE_CID"
 
 Now you can view your site at `http://localhost:8080/ipns/your.domain`.
 
-You can also try this on the gateway at `http://gateway.ipfs.io/ipns/your.domain`.
+You can also try this on the gateway at `http://gateway.example.net/ipns/your.domain`.
 
 More questions about DNSLink? Check out the [DNSLink website](http://dnslink.io/) for tutorials, examples, and FAQs.
 
@@ -79,9 +85,9 @@ Published to $PEER_ID: /ipfs/$SITE_CID
 
 You will need to note and save that value of `$PEER_ID` for the next steps.
 
-Load the URLs `http://localhost:8080/ipns/$PEER_ID` and `http://gateway.ipfs.io/ipns/$PEER_ID` to confirm this step.
+Load the URLs `http://localhost:8080/ipns/$PEER_ID` and `http://gateway.example.net/ipns/$PEER_ID` to confirm this step.
 
-Return to your registrar's control panel, change the DNS TXT record with the key of `your.domain` to `dnslink=/ipns/$PEER_ID`, wait for that record to propagate, and then try the URLs `http://localhost:8080/ipns/your.domain` and `http://gateway.ipfs.io/ipns/your.domain`.
+Return to your registrar's control panel, change the DNS TXT record with the key of `your.domain` to `dnslink=/ipns/$PEER_ID`, wait for that record to propagate, and then try the URLs `http://localhost:8080/ipns/your.domain` and `http://gateway.example.net/ipns/your.domain`.
 
 **Note:** When using IPNS to update websites, assets may be loaded from two different resolved hashes while the update propagates. This may result in outdated URLs or missing assets until the update has completely propagated.
 
@@ -91,10 +97,10 @@ You now have a website on ipfs/ipns, but your visitors can't access it at `http:
 
 What we can do is have requests for `http://your.domain` resolved by an IPFS gateway daemon.
 
-Return to your registrar's control panel and add an A record with key of `your.domain` and value of the IP address of an ipfs daemon that listens on port 80 for HTTP requests (such as `gateway.ipfs.io`). If you don't know the IP address of the daemon you plan to use, you can find it using the command like:
+Return to your registrar's control panel and add an A record with key of `your.domain` and value of the IP address of an ipfs daemon that listens on port 80 for HTTP requests (such as `gateway.example.net`). If you don't know the IP address of the daemon you plan to use, you can find it using the command like:
 
 ```bash
-$ nslookup gateway.ipfs.io
+$ nslookup gateway.example.net
 ```
 
 1. Note the IP addresses returned.
@@ -105,7 +111,7 @@ Note: The ipfs.io gateway IP addresses won't change, so you can set them and for
 
 Visitors' browsers will send `your.domain` in the Host header of their requests. The ipfs gateway will recognize `your.domain`, look up the value of the DNS TXT for your domain, then serve the files in `/ipns/your.domain/` instead of `/`.
 
-If you point `your.domain`'s A and AAAA record to the IP addresses of `gateway.ipfs.io`, and then wait for the DNS to propagate, then anyone should be able to access your ipfs-hosted site without any extra configuration at `http://your.domain`.
+If you point `your.domain`'s A and AAAA record to the IP addresses of `gateway.example.net`, and then wait for the DNS to propagate, then anyone should be able to access your ipfs-hosted site without any extra configuration at `http://your.domain`.
 
 ## Use CNAMEs
 
@@ -113,4 +119,4 @@ Alternatively, it is possible to use CNAME records to point at the DNS records o
 
 However you will need to change the key for the TXT record from `your.domain` to `_dnslink.your.domain`.
 
-So by creating a CNAME for `your.domain` to `gateway.ipfs.io` and adding a `_dnslink.your.domain` record with `dnslink=/ipns/<your peer id>` you can host your website without explicitly referring to IP addresses of the ipfs gateway.
+So by creating a CNAME for `your.domain` to `gateway.example.net` and adding a `_dnslink.your.domain` record with `dnslink=/ipns/<your peer id>` you can host your website without explicitly referring to IP addresses of the ipfs gateway.

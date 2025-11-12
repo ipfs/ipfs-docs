@@ -10,6 +10,12 @@ Have you ever said to yourself: "Man, my Git server isn't distributed enough" or
 
 In this guide, we discuss how to serve a Git repository through the IPFS network. The end result will be a `git clone`able URL served through IPFS!
 
+:::callout
+This guide uses `gateway.example.net` as a placeholder for an IPFS gateway. You can replace it with:
+- A self-hosted [Kubo](../install/command-line.md) gateway
+- For best-effort hosting and testing try [public good `ipfs.io` (`dweb.link` variant)](../concepts/public-utilities.md#public-ipfs-gateways), or any of the [public gateways](https://ipfs.github.io/public-gateway-checker/) that support "Origin" isolation ([subdomain mode](./address-ipfs-on-web.md#subdomain-gateway))
+:::
+
 To start, select a Git repository you want to host, and do a bare clone of it:
 
 ```bash
@@ -71,7 +77,7 @@ paths will now look something like:
 
 ```go
 import (
-	mylib "gateway.ipfs.io/ipfs/QmX679gmfyaRkKMvPA4WGNWXj9PtpvKWGPgtXaF18etC95"
+	mylib "gateway.example.net/ipfs/QmX679gmfyaRkKMvPA4WGNWXj9PtpvKWGPgtXaF18etC95"
 )
 ```
 

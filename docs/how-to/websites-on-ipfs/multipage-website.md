@@ -7,6 +7,12 @@ description: Learn how to host a website with multiple pages and external assets
 
 In this guide, you will learn how to host a website with multiple pages and external assets on IPFS. This tutorial is the second in a series of tutorials aimed at teaching web developers how to build websites and applications using IPFS. You don't need to have completed the previous tutorial to understand what's going on here, but if you're new to the IPFS ecosystem, it's a good idea to follow through the [single page website guide](../../how-to/websites-on-ipfs/single-page-website.md) before you start this one. It will give you a solid foundation to work off.
 
+:::callout
+This guide uses `gateway.example.net` as a placeholder for an IPFS gateway. You can replace it with:
+- A self-hosted [Kubo](../../install/command-line.md) gateway
+- For best-effort hosting and testing try [public good `ipfs.io` (`dweb.link` variant)](../../concepts/public-utilities.md#public-ipfs-gateways), or any of the [public gateways](https://ipfs.github.io/public-gateway-checker/) that support "Origin" isolation ([subdomain mode](../address-ipfs-on-web.md#subdomain-gateway))
+:::
+
 ## Prerequisites
 
 If you followed the previous tutorial, you would already have the IPFS Desktop application installed. If not, you can grab it from the [IPFS Shipyard](https://github.com/ipfs-shipyard/ipfs-desktop).
@@ -217,7 +223,7 @@ Instead of sharing the CID of your website, you publish the root CID of your web
 
     The `k51qzi...` is your IPFS installation's key! This is what you can use to point people to your content.
 
-1. You should now be able to view your project by going to `https://gateway.ipfs.io/ipns/k51qzi...`. Replace `k51qzi...` with the output from the previous step.
+1. You should now be able to view your project by going to `https://gateway.example.net/ipns/k51qzi...`. Replace `k51qzi...` with the output from the previous step.
 1. Whenever you make any changes to your project, simply re-add your content to IPFS and publish it to IPNS:
 
     ```shell
@@ -232,7 +238,7 @@ Instead of sharing the CID of your website, you publish the root CID of your web
     > Published to k51qzi5uqu5dh9gnl66grpnpuhj245ha1xq9ajtmuf7swe847zovdg1t9a0xiz: /ipfs/QmchJPQNLE5EUSYTzfzUsNFyPozXyANiZHFDSFKWdLNdRR
     ```
 
-    Now, just head back to the `https://gateway.ipfs.io/ipns/k51qzi...` link to view your updates!
+    Now, just head back to the `https://gateway.example.net/ipns/k51qzi...` link to view your updates!
 
 This is just the tip of the iceberg when it comes to IPNS. [Check out the IPNS page to learn more →](../../concepts/ipns.md)
 
