@@ -18,7 +18,7 @@ IPFS is a general-purpose file system that uses a distributed hash table (DHT) t
 
 - [Hypercore](https://hypercore-protocol.github.io/new-website/) is a decentralized data-sharing tool that uses a distributed hash table (DHT) for data storage. It focuses on enabling data sharing and collaboration.
 - [Holo](https://holochain.org/) is a decentralized hosting platform that uses a unique data storage and sharing mechanism called Holochain. It allows users to host and run web-based applications on a peer-to-peer network.
-- [Swarm](https://swarm-gateways.net/bzz:/theswarm.eth/) is a decentralized storage and sharing platform built on the Ethereum blockchain. It uses smart contracts and cryptographic techniques to securely store and share data. It focuses on providing a decentralized, secure, and censorship-resistant storage solution.
+- [Swarm](https://www.ethswarm.org/) is a decentralized storage and sharing platform built on the Ethereum blockchain. It uses smart contracts and cryptographic techniques to securely store and share data. It focuses on providing a decentralized, secure, and censorship-resistant storage solution.
 
 ## Comparing the key features of other solutions to IPFS
 
