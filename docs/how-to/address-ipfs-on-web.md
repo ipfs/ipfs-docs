@@ -122,6 +122,10 @@ In this scheme, all pages share a [single origin](https://en.wikipedia.org/wiki/
 When in doubt, use a [subdomain gateway](#subdomain-gateway).
 :::
 
+::: tip
+Gateway implementers and operators can find more details in the [Path Gateway Specification](https://specs.ipfs.tech/http-gateways/path-gateway/).
+:::
+
 ## Subdomain gateway
 
 When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) is needed, a [CIDv1](../concepts/content-addressing.md#identifier-formats) in a case-insensitive encoding such as Base32 or Base36 should be used in the subdomain:
@@ -205,6 +209,10 @@ ipfs cid format -v 1 -b base36 --codec libp2p-key QmNnooDu7bfjPFoTZYxMNLWUQJyrVw
 k2k4r8jl0yz8qjgqbmc2cdu5hkqek5rj6flgnlkyywynci20j0iuyfuj
 ```
 
+::: tip
+Gateway implementers and operators can find more details in the [Subdomain Gateway Specification](https://specs.ipfs.tech/http-gateways/subdomain-gateway/).
+:::
+
 ## DNSLink gateway
 
 The gateway provided by Kubo understands the `Host` header present in HTTP requests and will check if [DNSLink](../concepts/dnslink.md) exists for a specified [domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name).
@@ -214,7 +222,9 @@ This type of gateway provides full [origin isolation](https://en.wikipedia.org/w
 An example is this website, [https://docs.ipfs.tech](https://docs.ipfs.tech).
 
 ::: tip
-For a complete DNSLink guide, including tutorials, usage examples, and FAQs, see [dnslink.io](https://dnslink.io).
+For a complete DNSLink guide, including tutorials, usage examples, and FAQs, see [dnslink.dev](https://dnslink.dev).
+
+Gateway implementers and operators can find more details in the [DNSLink Gateway Specification](https://specs.ipfs.tech/http-gateways/dnslink-gateway/).
 :::
 
 ## Native URLs
