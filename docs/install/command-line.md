@@ -319,37 +319,14 @@ For the current instructions on how to manually download, compile and build Kubo
 
 ## Determining which node to use with the command line
 
-The command line can detect and use any node that's running, unless it's configured to use an external binary file. Here's which node to use for the local daemon or a remote client:
+The CLI automatically connects to a running IPFS daemon by reading the `$IPFS_PATH/api` file (usually `~/.ipfs/api`), which contains the [RPC API](../reference/kubo/rpc.md) address.
 
-### Local daemon
+- **Local daemon**: Running `ipfs daemon` creates this file automatically.
+- **Remote node**: To connect to a daemon on another machine or in a container, see [Interact with a remote node](../how-to/command-line-quick-start.md#interact-with-a-remote-node).
 
-The local daemon process is automatically started in the CLI with the command `ipfs daemon`. It creates an `$IPFS_PATH/api` file with an [RPC API](../reference/kubo/rpc.md#http-rpc-api-reference) address.
-
-### Remote client
-
-You can install the standalone IPFS CLI client independently and use it to talk to an IPFS Desktop (Kubo) node. Use the [RPC API](../reference/kubo/rpc.md#http-rpc-api-reference) to talk to the `ipfs` daemon.
-
-When an IPFS command executes without parameters, the CLI client checks whether the `$IPFS_PATH/api` file exists and connects to the address listed there.
-
-- If an `$IPFS_PATH` is in the default location (for example, `~/.ipfs` on Linux), then it works automatically and the IPFS CLI client talks to the locally running `ipfs` daemon without any extra configuration.
-
-- If an `$IPFS_PATH` isn't in the default location, use the `--api <rpc-api-addr>` command-line argument. Alternatively, you can set the environment variable to `IPFS_PATH`. `IPFS_PATH` will point to a directory with the `$IPFS_PATH/api` file pointing at the Kubo RPC of the existing `ipfs` daemon instance.
-
-::: tip
-
-If you plan to expose the RPC API to the public internet with TLS encryption and HTTP authentication, check out the [TLS and HTTP Auth for Kubo with Caddy](../how-to/kubo-rpc-tls-auth.md) guide.
-
-If you are just interested in retrieval, see implementation-agnostic [HTTP Gateway](../reference/http/gateway.md) instead.
-
+:::tip
+For TLS-secured APIs, see [Secure Kubo RPC with TLS and HTTP Auth](../how-to/kubo-rpc-tls-auth.md). If you are just interested in retrieval, see implementation-agnostic [HTTP Gateway](../reference/http/gateway.md) instead.
 :::
-
-#### Most common examples
-
-If you are an IPFS Desktop user, you can install CLI tools and an `.ipfs/api` file is automatically picked up.
-
-If you're not running IPFS Desktop, specify a custom port with `ipfs --api /ip4/127.0.0.1/tcp/<port> id` in the CLI.
-
-You can use `mkdir -p ~/.ipfs && echo "/ip4/<ip>/tcp/<rpc-port>" > ~/.ipfs/api` to avoid passing `--api` every time.
 
 ## Next steps
 
