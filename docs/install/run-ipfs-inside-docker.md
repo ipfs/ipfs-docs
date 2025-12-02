@@ -62,6 +62,10 @@ You can run Kubo IPFS inside Docker to simplify your deployment processes, as we
     docker exec ipfs_host ipfs add -r /export/<something>
     ```
 
+    :::tip Using your local ipfs CLI
+    If you have `ipfs` installed on the host and the RPC API port is exposed, you can run commands without `docker exec`. See [Interact with a remote node](../how-to/command-line-quick-start.md#interact-with-a-remote-node) for details.
+    :::
+
 1. Stop the running container:
 
     ```shell
