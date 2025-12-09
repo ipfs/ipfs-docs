@@ -5,6 +5,11 @@ description: There are several different ways you can install and interact with 
 
 # Get Started
 
+:::tip Quick Downloads
+Looking for downloads? Get [IPFS Desktop](./ipfs-desktop.md#install-instructions) (GUI), [Kubo](./command-line.md#install-official-binary-distributions) (CLI), or [IPFS Companion](./ipfs-companion.md#install) (browser extension).
+Running IPFS infrastructure? See [IPFS Cluster, Rainbow, and Someguy](#infrastructure-tools).
+:::
+
 IPFS is a collection of protocols, packages, and specifications that allow computers to send and receive data. Because of this, users can interact with and use IPFS in many different ways. A developer building network applications will use a different set of tools to interact with IPFS than someone who wants to store files on IPFS. Pick the one that best suits what you're here to do.
 
 Looking for an easy and opinionated way to get started with IPFS [Mainnet](../concepts/glossary.md#mainnet)? Try any of the options listed below:
