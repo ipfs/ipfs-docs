@@ -27,5 +27,6 @@ Want to see a real-world example of Merkle DAGs in action? It's easy to see a Me
 
 ## Further resources
 
-- Full [draft Merkle-CRDTs paper](https://hector.link/presentations/merkle-crdts/merkle-crdts.pdf) by [@hsanjuan](https://www.github.com/hsanjuan), [@haadcode](https://www.github.com/haadcode), and [@pgte](https://www.github.com/pgte)
+- [Directed acyclic graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph) on Wikipedia
+- Full [draft Merkle-CRDTs paper](https://web.archive.org/web/20250424020909/https://hector.link/presentations/merkle-crdts/merkle-crdts.pdf) by [@hsanjuan](https://www.github.com/hsanjuan), [@haadcode](https://www.github.com/haadcode), and [@pgte](https://www.github.com/pgte)
 - [DAG Builder visualizer](https://dag.ipfs.io/)
