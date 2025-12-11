@@ -216,9 +216,13 @@ ipfs --api /ip4/192.168.1.100/tcp/5001 id
 
 The address uses [multiaddr](../concepts/glossary.md#multiaddr) format. Some common examples:
 
-- `/ip4/192.168.1.100/tcp/5001` - IPv4 address
-- `/ip6/::1/tcp/5001` - IPv6 address
-- `/dns/node.example.com/tcp/5001` - DNS name
+- `/ip4/192.168.1.100/tcp/5001` - IPv4 address on a trusted local network
+- `/ip6/::1/tcp/5001` - IPv6 loopback (localhost)
+- `/dns/node.example.com/tcp/443/https` - DNS name with TLS (for public internet)
+
+:::warning Exposing RPC API to public internet
+When connecting over untrusted networks, always use TLS (`/https`) and authentication (`--api-auth`). See [Securing Kubo RPC API](kubo-rpc-tls-auth.md) for setup instructions.
+:::
 
 ### Using the `api` file
 
@@ -243,8 +247,6 @@ Kubo creates `$IPFS_PATH/api` automatically when `ipfs daemon` starts. You can a
 
 The `--api` flag takes precedence over the `api` file.
 :::
-
-For TLS-secured remote APIs with authentication (`--api-auth`), see [Securing Kubo RPC API](kubo-rpc-tls-auth.md).
 
 :::tip Read-only access
 If you only need to retrieve content without pinning or adding files, consider using the [HTTP Gateway](../reference/http/gateway.md) instead.
