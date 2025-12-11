@@ -202,6 +202,56 @@ Next, take your node online and interact with the IPFS network:
 
     By default, your gateway is not exposed to the world. It only works locally.
 
+## Interact with a remote node
+
+By default, CLI commands talk to the daemon running on your local machine. If your daemon runs on a different machine or inside a container, there are two ways to connect to it.
+
+### Using the --api flag
+
+Use the `--api` flag to specify the remote API address:
+
+```bash
+ipfs --api /ip4/192.168.1.100/tcp/5001 id
+```
+
+The address uses [multiaddr](../concepts/glossary.md#multiaddr) format. Some common examples:
+
+- `/ip4/192.168.1.100/tcp/5001` - IPv4 address on a trusted local network
+- `/ip6/::1/tcp/5001` - IPv6 loopback (localhost)
+- `/dns/node.example.com/tcp/443/https` - DNS name with TLS (for public internet)
+
+:::warning Exposing RPC API to public internet
+When connecting over untrusted networks, always use TLS (`/https`) and authentication (`--api-auth`). See [Securing Kubo RPC API](kubo-rpc-tls-auth.md) for setup instructions.
+:::
+
+### Using the `api` file
+
+To avoid passing `--api` to every command, create an `api` file in your IPFS repository containing the multiaddr of the remote API:
+
+```bash
+echo "/ip4/192.168.1.100/tcp/5001" > ~/.ipfs/api
+```
+
+Now all commands will use the remote node:
+
+```bash
+ipfs id
+```
+
+:::tip
+Kubo creates `$IPFS_PATH/api` automatically when `ipfs daemon` starts. You can also create this file manually to connect to:
+
+- A Kubo node running in Docker or another container
+- A remote server running `ipfs daemon`
+- An [IPFS Desktop](../install/ipfs-desktop.md) node (the `api` file is created automatically at `~/.ipfs/api`)
+
+The `--api` flag takes precedence over the `api` file.
+:::
+
+:::tip Read-only access
+If you only need to retrieve content without pinning or adding files, consider using the [HTTP Gateway](../reference/http/gateway.md) instead.
+:::
+
 ## Interact with the node using the web console
 
 You can view the web console for your local node by navigating to `localhost:5001/webui`. 

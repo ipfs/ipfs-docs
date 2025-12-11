@@ -21,14 +21,14 @@ For issues and support, check out the [generate-cli-docs.sh](https://github.com/
 
 IPFS can run in either _online_ or _offline_ mode. Online mode is when you have IPFS running separately as a daemon process. If you do not have an IPFS daemon running, you are in offline mode. Some commands, like \`ipfs swarm peers\`, are only supported when online.
 
-The [command-line quickstart guide](/how-to/command-line-quick-start/#take-your-node-online) explains how to start the IPFS daemon and take your node online.
+The [command-line quickstart guide](../../how-to/command-line-quick-start.md#take-your-node-online) explains how to start the IPFS daemon and take your node online.
 
 "
 
 echo "
 ### Alignment with Kubo RPC API
 
-Every command usable from the CLI is also available through the [RPC API v0](/reference/kubo/rpc). For example:
+Every command usable from the CLI is also available through the [RPC API v0](rpc.md). For example:
 
 \`\`\`sh
 > ipfs swarm peers
@@ -46,6 +46,26 @@ Every command usable from the CLI is also available through the [RPC API v0](/re
 }
 \`\`\`
 
+### Connecting to a Remote API
+
+By default, CLI commands connect to the local daemon at \`/ip4/127.0.0.1/tcp/5001\`. There are two ways to connect to a different instance:
+
+1. Use the \`--api\` flag:
+
+   \`\`\`sh
+   ipfs --api /ip4/192.168.1.100/tcp/5001 id
+   \`\`\`
+
+2. Create an \`api\` file in your IPFS repository (\`\$IPFS_PATH/api\`, usually \`~/.ipfs/api\`) containing the [multiaddr](../../concepts/glossary.md#multiaddr) of the API endpoint:
+
+   \`\`\`sh
+   echo "/ip4/192.168.1.100/tcp/5001" > ~/.ipfs/api
+   ipfs id
+   \`\`\`
+
+   Kubo creates this file automatically when \`ipfs daemon\` starts. Creating it manually lets you use a remote node without passing \`--api\` to every command.
+
+For a step-by-step guide, see [Interact with a remote node](../../how-to/command-line-quick-start.md#interact-with-a-remote-node). For TLS-secured APIs with authentication (\`--api-auth\`), see [Securing Kubo RPC API](../../how-to/kubo-rpc-tls-auth.md).
 "
 printf "\n"
 ipfs commands | while read line ; do
