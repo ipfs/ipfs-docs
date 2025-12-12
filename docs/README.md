@@ -15,6 +15,11 @@ Many popular projects are built with IPFS - see the [ecosystem directory](https:
 
 You can get started [retrieving data](#retrieve-data) and [providing data](#provide-data) to the IPFS network. If you'd rather develop applications, learn how to build IPFS-native apps or use standard HTTP in the [Build](#build) section.
 
+:::tip Quick Downloads
+Looking for downloads? Get [IPFS Desktop](./install/ipfs-desktop.md#install-instructions) (GUI), [Kubo](./install/command-line.md#install-official-binary-distributions) (CLI), or [IPFS Companion](./install/ipfs-companion.md#install) (browser extension).
+Running IPFS infrastructure? See [IPFS Cluster, Rainbow, and Someguy](./install/README.md#infrastructure-tools).
+:::
+
 ### Retrieve data
 
 Quickly retrieve data from the IPFS network, no programming required:
