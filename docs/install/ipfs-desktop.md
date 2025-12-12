@@ -44,6 +44,7 @@ Or, if you'd rather use a package manager, check this [list of third-party packa
 2. Find the link ending in `.exe` for the latest version of IPFS Desktop:
 
    ![The IPFS Desktop download page.](./images/ipfs-desktop/install-windows-download-exe-page.png)
+   (If the list is long, it may be hidden under the "Show all assets" link.)
 
 3. Run the `.exe` file to start the installation.
 4. Select whether you want to install the application for just yourself or all users on the computer. Click **Next**:
