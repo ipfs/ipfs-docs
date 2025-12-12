@@ -27,6 +27,7 @@ boolean
 Bootstrappers
 boxo
 browserify
+buzhash
 caddy
 Caddyfile
 callout
@@ -41,6 +42,7 @@ clis
 cmds
 cnames
 codec
+codecs
 codecov
 coinlist
 composable
@@ -56,6 +58,7 @@ dapps
 data('s)
 datastore
 deduplicate
+deduplication
 Denylist
 denylist
 dep
@@ -200,6 +203,7 @@ philz
 pinset
 pipeable
 plaintext
+PLNSpelling
 pluggable
 powergate
 powershell
