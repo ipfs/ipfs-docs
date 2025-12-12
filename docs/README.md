@@ -11,9 +11,15 @@ On a more technical level, IPFS is a set of open protocols for addressing, routi
 
 Many popular projects are built with IPFS - see the [ecosystem directory](https://ecosystem.ipfs.tech) and the [awesome-ipfs](https://github.com/ipfs/awesome-ipfs) list to find some of these projects.
 
+::: tip New to IPFS?
+Check out the [Glossary](./concepts/glossary.md) to learn key terms and concepts.
+:::
+
 ## Get started
 
-You can get started [retrieving data](#retrieve-data) and [providing data](#provide-data) to the IPFS network. If you'd rather develop applications, learn how to build IPFS-native apps or use standard HTTP in the [Build](#build) section.
+Install [IPFS Desktop](./install/ipfs-desktop.md) (GUI), [Kubo](./install/command-line.md) (CLI), or [IPFS Companion](./install/ipfs-companion.md) (browser extension). For infrastructure, see [IPFS Cluster, Rainbow, and Someguy](./install/README.md#infrastructure-tools).
+
+Learn how to [retrieve data](#retrieve-data), [provide content](#provide-data), [deploy websites](#deploy-static-sites-and-dapps-to-the-ipfs-network), or [build applications](#build).
 
 ### Retrieve data
 
@@ -62,6 +68,7 @@ As the IPFS ecosystem has grown and evolved with multiple implementations in dif
 
 ## Learn
 
+- Look up [key terms and definitions](./concepts/glossary.md) in the IPFS Glossary.
 - Learn what IPFS is and isn't, the problems it solves, the different subsystems that it is composed of and how each one works in [the Basic Concepts](./concepts/README.md#learn-the-basics).
 - Dive into ideas like hashing, immutability, persistence (and more) that underlie IPFS in [Ideas and theory](./concepts/README.md#ideas-and-theory).
 - Learn more about the subsystems that IPFS is composed of in [Subsystems and components](./concepts/README.md#subsystems-and-components)

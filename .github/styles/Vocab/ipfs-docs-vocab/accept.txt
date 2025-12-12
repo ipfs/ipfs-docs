@@ -223,3 +223,7 @@ performant
 sneakernet
 Sneakernet
 Bitswap
+denylist
+IPFS's
+IPIPs?
+_redirects

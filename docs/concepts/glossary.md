@@ -22,9 +22,9 @@ In computer security, an access-control list (ACL) is a list of permissions asso
 
 ADL is short for _Advanced Data Layout_, a concept in [IPLD](#ipld). See [IPLD docs](https://ipld.io/glossary/#adl).
 
-### Amino
+### Amino DHT
 
-Formerly referred to as the "public DHT", Amino is the public Kademlia-based [DHT](#dht) that [Kubo](#kubo) and other implementations default to bootstrapping into with the [libp2p](#libp2p) protocol `/ipfs/kad/1.0.0`. See the [blog post](https://blog.ipfs.tech/2023-09-amino-refactoring/) for more info.
+Formerly referred to as the "public DHT", Amino DHT is the public Kademlia-based [DHT](#dht) that [Kubo](#kubo) and other implementations default to bootstrapping into with the [libp2p](#libp2p) protocol `/ipfs/kad/1.0.0`. [Amino DHT specification](https://specs.ipfs.tech/routing/kad-dht/#amino-dht) | [Blog post](https://blog.ipfs.tech/2023-09-amino-refactoring/)
 
 ### Announcing
 
@@ -54,7 +54,7 @@ Case-sensitive [Multibase](#multibase), uses modified Base64 with URL and filena
 
 ### Bitswap
 
-Bitswap is IPFS's central block exchange protocol. Its purpose is to request blocks from and send blocks to other peers in the network. [More about Bitswap](../concepts/bitswap.md)
+Bitswap is IPFS's central block exchange protocol. Its purpose is to request blocks from and send blocks to other peers in the network. [Bitswap specification](https://specs.ipfs.tech/bitswap-protocol/) | [More about Bitswap](../concepts/bitswap.md)
 
 ### BitTorrent
 
@@ -174,7 +174,7 @@ Delegated routing is useful in browsers and other constrained environments where
 
 ### DHT
 
-A _Distributed Hash Table_ (DHT) is a distributed key-value store where keys are cryptographic hashes. In IPFS, each peer is responsible for a subset of the IPFS DHT. [More about DHT](dht.md)
+A _Distributed Hash Table_ (DHT) is a distributed key-value store where keys are cryptographic hashes. IPFS uses a modified [Kademlia](#kademlia) algorithm for its DHT. See [Amino DHT](#amino-dht) for the public network. [IPFS Kademlia DHT specification](https://specs.ipfs.tech/routing/kad-dht/) | [More about DHT](dht.md)
 
 ### DMT
 
@@ -188,9 +188,13 @@ Dialing is a function of the IPFS networking layer in [libp2p](#libp2p), wherein
 
 DNSAddr is a protocol for publishing multiple [Multiaddrs](#multiaddr) on DNS name. DNSAddr itself is a valid Multiaddr that looks like `/dnsaddr/bootstrap.libp2p.io`. Can be used for scaling, dynamic bootstrapping, or act as an additional content routing hint for [DNSLink](#dnslink) websites. [More about DNSAddr](https://github.com/multiformats/multiaddr/blob/master/protocols/DNSADDR.md)
 
+### Denylist
+
+A mechanism for IPFS node operators to block specific [CIDs](#cid) from being served. The compact denylist format enables efficient content filtering. [Compact Denylist Format specification](https://specs.ipfs.tech/compact-denylist-format/) | [Content blocking in Kubo](https://github.com/ipfs/kubo/blob/master/docs/content-blocking.md)
+
 ### DNSLink
 
-DNSLink is a protocol to link content and services directly from DNS. A DNSLink address looks like an IPNS address, but it uses a domain name instead of a hashed public key, like `/ipns/en.wikipedia-on-ipfs.org`. [More about DNSLink](https://dnslink.dev/)
+DNSLink is a protocol to link content and services directly from DNS. A DNSLink address looks like an IPNS address, but it uses a domain name instead of a hashed public key, like `/ipns/en.wikipedia-on-ipfs.org`. [DNSLink Gateway specification](https://specs.ipfs.tech/http-gateways/dnslink-gateway/) | [More about DNSLink](https://dnslink.dev/)
 
 ### DWeb
 
@@ -264,11 +268,15 @@ The InterPlanetary Linked Data (IPLD) model is a set of specifications in suppor
 
 ### IPNI
 
-The InterPlanetary Network Indexer (IPNI), also referred to as Network Indexer, indexer and IPNI, enables quick and efficient search of content-addressable data. IPNI is designed to improve the performance and efficiency of IPFS by providing an alternate method of content routing to the [Amino](#amino) DHT. [More about IPNI](../concepts/ipni.md)
+The InterPlanetary Network Indexer (IPNI), also referred to as Network Indexer, indexer and IPNI, enables quick and efficient search of content-addressable data. IPNI is designed to improve the performance and efficiency of IPFS by providing an alternate method of content routing to the [Amino DHT](#amino-dht). [More about IPNI](../concepts/ipni.md)
 
 ### IPNS
 
-The InterPlanetary Name System (IPNS) is a system for creating and updating mutable links to IPFS content. IPNS allows for publishing the latest version of any IPFS content, even though the underlying IPFS hash has changed. [More about IPNS](ipns.md)
+The InterPlanetary Name System (IPNS) is a system for creating and updating mutable links to IPFS content. IPNS allows for publishing the latest version of any IPFS content, even though the underlying IPFS hash has changed. [IPNS Record specification](https://specs.ipfs.tech/ipns/ipns-record/) | [More about IPNS](ipns.md)
+
+### IPIP
+
+An InterPlanetary Improvement Proposal (IPIP) is a design document for introducing features or changes to IPFS specifications. IPIPs provide a structured process for proposing, discussing, and documenting improvements. [IPIP process specification](https://specs.ipfs.tech/meta/spec-for-specs/) | [All IPIPs](https://specs.ipfs.tech/ipips/)
 
 ## J
 
@@ -285,6 +293,10 @@ JavaScript Object Notation (JSON) is a lightweight data-interchange format. JSON
 ### Kubo
 
 Kubo (previously known as [go-ipfs](#go-ipfs)) is the earliest and most widely used implementation of IPFS, written in Go. It runs on servers and user machines with full IPFS capabilities. [Install IPFS Kubo](../install/command-line.md) or see [Kubo README](https://github.com/ipfs/kubo#readme).
+
+### Kademlia
+
+A peer-to-peer distributed hash table algorithm using XOR-based distance metrics for efficient routing. [libp2p](#libp2p) originally implemented this as Kad-DHT, which IPFS extends with support for [CID](#cid) lookups, [IPNS](#ipns) records, and provider advertisements. See [DHT](#dht) and [Amino DHT](#amino-dht). [IPFS Kademlia DHT specification](https://specs.ipfs.tech/routing/kad-dht/) | [libp2p Kad-DHT relation](https://specs.ipfs.tech/routing/kad-dht/#relation-to-libp2p-kad-dht)
 
 ## L
 
@@ -312,7 +324,7 @@ In IPFS and [IPLD](#ipld), a _link_ usually means a pointer to some [CID](#cid).
 
 ### Mainnet
 
-IPFS Mainnet is a term used to describe the default or "main" public network that most IPFS implementations connect to by default. Most [IPFS implementations](https://specs.ipfs.tech/architecture/principles/#ipfs-implementation-requirements) were designed to work with Mainnet (but some can be configured instead to form a private swarm). Mainnet IPFS nodes typically join the [Amino DHT](#amino) for content routing with the help of the [Bootstrap nodes](#bootstrap-node), rely on [Bitswap](#bitswap) for data transfer, [UnixFS](#unixfs) for encoding files and directories, and typically expose an [IPFS Gateway](#gateway). This has mostly been assumed for the IPFS network. Nonetheless, IPFS Mainnet is a useful distinction in a world of many [IPFS implementations](../concepts/implementations.md) with varying degrees of interoperability.
+IPFS Mainnet is a term used to describe the default or "main" public network that most IPFS implementations connect to by default. Most [IPFS implementations](https://specs.ipfs.tech/architecture/principles/#ipfs-implementation-requirements) were designed to work with Mainnet (but some can be configured instead to form a private swarm). Mainnet IPFS nodes typically join the [Amino DHT](#amino-dht) for content routing with the help of the [Bootstrap nodes](#bootstrap-node), rely on [Bitswap](#bitswap) for data transfer, [UnixFS](#unixfs) for encoding files and directories, and typically expose an [IPFS Gateway](#gateway). This has mostly been assumed for the IPFS network. Nonetheless, IPFS Mainnet is a useful distinction in a world of many [IPFS implementations](../concepts/implementations.md) with varying degrees of interoperability.
 
 ### Merkle-DAG
 
@@ -378,6 +390,10 @@ For example, in a family tree each person is a _node_, while each branch connect
 
 ## P
 
+### Path Gateway
+
+An HTTP [Gateway](#gateway) that serves deserialized IPFS content at `/ipfs/{cid}` or `/ipns/{name}` paths. Good for loading files and assets, but the lack of origin isolation and URL paths prefixed with `/ipfs` or `/ipns` make it unsuitable for hosting websites or web apps. Use a [Subdomain Gateway](#subdomain-gateway) for those. Requires trust in the gateway operator as responses can be modified; only use with a local, trusted gateway to avoid MITM risks. [Path Gateway specification](https://specs.ipfs.tech/http-gateways/path-gateway/)
+
 ### Path/Address
 
 A Path/Address is the method within IPFS of referencing content on the web. Addresses for content are path-like; they are components separated by slashes. [More about Path/Address](../how-to/address-ipfs-on-web.md)
@@ -425,6 +441,10 @@ Publish-subscribe (Pubsub) is an experimental feature in IPFS. Publishers send m
 QUIC (`/quic-v1`) is one of [libp2p](#libp2p) [transport](#transport) protocols. It provides an always-encrypted, stream-multiplexed connection built on top of UDP. [More about QUIC in libp2p](https://docs.libp2p.io/concepts/transports/quic/)
 
 ## R
+
+### `_redirects` file
+
+A configuration file for defining URL redirects and rewrites on [Subdomain](#subdomain-gateway) and [DNSLink](https://specs.ipfs.tech/http-gateways/dnslink-gateway/) gateways. Useful for single-page applications and custom routing on websites hosted on IPFS. [How to use _redirects](../how-to/websites-on-ipfs/redirects-and-custom-404s.md) | [Web _redirects File specification](https://specs.ipfs.tech/http-gateways/web-redirects-file/)
 
 ### Redundancy
 
@@ -482,6 +502,10 @@ An introduction of horizontal partition of data in a database or a data structur
 
 The signing of data cryptographically allows for trusting of data from untrusted sources. Cryptographically signed values can be passed through an untrusted channel, and any tampering of the data can be detected. [More about Digital signature](https://en.wikipedia.org/wiki/Digital_signature)
 
+### Subdomain Gateway
+
+An HTTP [Gateway](#gateway) that serves deserialized content with each [CID](#cid) on its own subdomain (e.g., `{cid}.ipfs.gateway.example`). Provides [origin](https://en.wikipedia.org/wiki/Same-origin_policy) isolation, making it safe for hosting websites and web apps. Requires trust in the gateway operator; use with a local gateway to avoid MITM risks. [Subdomain Gateway specification](https://specs.ipfs.tech/http-gateways/subdomain-gateway/)
+
 ### Substrate
 
 A vocabulary term in [IPLD](#ipld), related to [ADLs](#adl).  [More in IPLD glossary](https://ipld.io/glossary/#substrate)
@@ -507,6 +531,10 @@ In [libp2p](#libp2p), transport refers to the technology that lets us move data 
 ### Traversal
 
 In [IPLD](#ipld), the act of walking across the [Data Model](#data-model). [More in IPLD glossary](https://ipld.io/glossary/#substrate)
+
+### Trustless Gateway
+
+A [Gateway](#gateway) that returns raw content-addressed data (blocks, [CAR](#car) files) that can be [verified](https://docs.ipfs.tech/reference/http/gateway/#trustless-verifiable-retrieval) by the client (e.g., [@helia/verified-fetch](https://www.npmjs.com/package/@helia/verified-fetch)). Unlike [Path](#path-gateway) or [Subdomain](#subdomain-gateway) gateways, no trust in the gateway operator is needed. Immune to MITM attacks because integrity is verified using cryptographic hashes. [Trustless Gateway specification](https://specs.ipfs.tech/http-gateways/trustless-gateway/)
 
 ## U
 
