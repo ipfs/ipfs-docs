@@ -422,6 +422,7 @@ module.exports = {
                 ['/case-studies/snapshot', 'Snapshot']
               ]
             },
+            ['/concepts/glossary', 'Glossary'],
           ]
         }
       }

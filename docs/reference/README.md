@@ -7,6 +7,15 @@ description: Reference materials for IPFS tools and implementations
 
 Looking for user and developer references for IPFS? Find them here.
 
+## Glossary
+
+New to IPFS? Start with the [Glossary](../concepts/glossary.md) to learn key terms and concepts.
+
+## IPFS Specifications
+
+- [IPFS Gateways](https://specs.ipfs.tech/http-gateways/) — HTTP Gateway specifications
+- [All IPFS Specs](https://specs.ipfs.tech/) — complete specifications for IPFS protocols
+
 ## HTTP Gateway
 
 The [Gateway API](http/gateway.md) provides implementation-agnostic HTTP interface for retrieving [content-addressed](../concepts/glossary.md#content-addressing) data from IPFS with regular HTTP clients and libraries. Use it for future-proofing your applications.
