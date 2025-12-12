@@ -50,6 +50,10 @@ If you only want to run production-grade HTTP [Gateway](../concepts/glossary.md#
 
 If you need to run your own [delegated routing](../concepts/glossary.md#delegated-routing) endpoint that hits both Amino DHT and IPNI, consider running [Someguy →](https://github.com/ipfs/someguy/#readme).
 
+### IPFS Check
+
+A tool for checking the retrievability of CIDs from the IPFS network. Useful for debugging and monitoring. [IPFS Check →](https://github.com/ipfs/ipfs-check/#readme)
+
 ## Software Development
 
 ### Helia for TypeScript/JavaScript

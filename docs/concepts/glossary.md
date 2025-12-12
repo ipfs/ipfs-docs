@@ -440,7 +440,7 @@ QUIC (`/quic-v1`) is one of [libp2p](#libp2p) [transport](#transport) protocols.
 
 ### `_redirects` file
 
-A configuration file for defining URL redirects and rewrites on [Subdomain](#subdomain-gateway) and [DNSLink](https://specs.ipfs.tech/http-gateways/dnslink-gateway/) gateways. Useful for single-page applications and custom routing on websites hosted on IPFS. [Web _redirects File specification](https://specs.ipfs.tech/http-gateways/web-redirects-file/)
+A configuration file for defining URL redirects and rewrites on [Subdomain](#subdomain-gateway) and [DNSLink](https://specs.ipfs.tech/http-gateways/dnslink-gateway/) gateways. Useful for single-page applications and custom routing on websites hosted on IPFS. [How to use _redirects](../how-to/websites-on-ipfs/redirects-and-custom-404s.md) | [Web _redirects File specification](https://specs.ipfs.tech/http-gateways/web-redirects-file/)
 
 ### Redundancy
 
