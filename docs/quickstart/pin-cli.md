@@ -134,10 +134,10 @@ bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4
 
 Once you have a CID, you can share it with anyone and they can fetch the file using IPFS.
 
-To see what's in the anatomy of a CID, check out the [CID inspector](https://cid.ipfs.tech/#bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4).
+To explore the anatomy of a CID, check out the [CID Inspector](https://cid.ipfs.tech/#bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4). To explore the anatomy of the DAG behind a CID, check out the [DAG Explorer](https://explore.ipld.io/#/explore/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4).
 
 :::callout
-**Important caveat:** Two identical files can produce different CIDs. The CID reflects the contents *and* how the file is processed: chunk size, DAG layout, hash algorithm, CID version, and other [UnixFS](https://specs.ipfs.tech/unixfs/) parameters. The same file processed with different parameters will produce different CIDs. Work is underway on [CID profiles](https://github.com/ipfs/specs/pull/499), which aims to address this by defining standard parameter sets to make CIDs reproducible and verifiable.
+**Important caveat:** Two identical files can produce different CIDs. The CID reflects the contents *and* how the file is processed: chunk size, DAG layout, hash algorithm, CID version, and other [UnixFS](https://specs.ipfs.tech/unixfs/) parameters. The same file processed with different parameters will produce different CIDs. See [CIDs are not file hashes](../concepts/content-addressing.md#cids-are-not-file-hashes) for details.
 :::
 
 ## Retrieving with a gateway
@@ -166,6 +166,8 @@ curl https://[BUCKET_NAME].ipfs.filebase.io/ipfs/[CID]
 ```
 
 ### Using public gateways
+
+You can also use [public IPFS gateways](../concepts/public-utilities.md#public-ipfs-gateways):
 
 ```shell
 curl https://ipfs.io/ipfs/[CID]
