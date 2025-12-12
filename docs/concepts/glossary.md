@@ -22,9 +22,9 @@ In computer security, an access-control list (ACL) is a list of permissions asso
 
 ADL is short for _Advanced Data Layout_, a concept in [IPLD](#ipld). See [IPLD docs](https://ipld.io/glossary/#adl).
 
-### Amino
+### Amino DHT
 
-Formerly referred to as the "public DHT", Amino is the public Kademlia-based [DHT](#dht) that [Kubo](#kubo) and other implementations default to bootstrapping into with the [libp2p](#libp2p) protocol `/ipfs/kad/1.0.0`. See the [blog post](https://blog.ipfs.tech/2023-09-amino-refactoring/) for more info.
+Formerly referred to as the "public DHT", Amino DHT is the public Kademlia-based [DHT](#dht) that [Kubo](#kubo) and other implementations default to bootstrapping into with the [libp2p](#libp2p) protocol `/ipfs/kad/1.0.0`. [Amino DHT specification](https://specs.ipfs.tech/routing/kad-dht/#amino-dht) | [Blog post](https://blog.ipfs.tech/2023-09-amino-refactoring/)
 
 ### Announcing
 
@@ -174,7 +174,7 @@ Delegated routing is useful in browsers and other constrained environments where
 
 ### DHT
 
-A _Distributed Hash Table_ (DHT) is a distributed key-value store where keys are cryptographic hashes. In IPFS, each peer is responsible for a subset of the IPFS DHT. [Kademlia DHT specification](https://specs.ipfs.tech/routing/kad-dht/) | [More about DHT](dht.md)
+A _Distributed Hash Table_ (DHT) is a distributed key-value store where keys are cryptographic hashes. IPFS uses a modified [Kademlia](#kademlia) algorithm for its DHT. See [Amino DHT](#amino-dht) for the public network. [IPFS Kademlia DHT specification](https://specs.ipfs.tech/routing/kad-dht/) | [More about DHT](dht.md)
 
 ### DMT
 
@@ -268,7 +268,7 @@ The InterPlanetary Linked Data (IPLD) model is a set of specifications in suppor
 
 ### IPNI
 
-The InterPlanetary Network Indexer (IPNI), also referred to as Network Indexer, indexer and IPNI, enables quick and efficient search of content-addressable data. IPNI is designed to improve the performance and efficiency of IPFS by providing an alternate method of content routing to the [Amino](#amino) DHT. [More about IPNI](../concepts/ipni.md)
+The InterPlanetary Network Indexer (IPNI), also referred to as Network Indexer, indexer and IPNI, enables quick and efficient search of content-addressable data. IPNI is designed to improve the performance and efficiency of IPFS by providing an alternate method of content routing to the [Amino DHT](#amino-dht). [More about IPNI](../concepts/ipni.md)
 
 ### IPNS
 
@@ -293,6 +293,10 @@ JavaScript Object Notation (JSON) is a lightweight data-interchange format. JSON
 ### Kubo
 
 Kubo (previously known as [go-ipfs](#go-ipfs)) is the earliest and most widely used implementation of IPFS, written in Go. It runs on servers and user machines with full IPFS capabilities. [Install IPFS Kubo](../install/command-line.md) or see [Kubo README](https://github.com/ipfs/kubo#readme).
+
+### Kademlia
+
+A peer-to-peer distributed hash table algorithm using XOR-based distance metrics for efficient routing. [libp2p](#libp2p) originally implemented this as Kad-DHT, which IPFS extends with support for [CID](#cid) lookups, [IPNS](#ipns) records, and provider advertisements. See [DHT](#dht) and [Amino DHT](#amino-dht). [IPFS Kademlia DHT specification](https://specs.ipfs.tech/routing/kad-dht/) | [libp2p Kad-DHT relation](https://specs.ipfs.tech/routing/kad-dht/#relation-to-libp2p-kad-dht)
 
 ## L
 
@@ -320,7 +324,7 @@ In IPFS and [IPLD](#ipld), a _link_ usually means a pointer to some [CID](#cid).
 
 ### Mainnet
 
-IPFS Mainnet is a term used to describe the default or "main" public network that most IPFS implementations connect to by default. Most [IPFS implementations](https://specs.ipfs.tech/architecture/principles/#ipfs-implementation-requirements) were designed to work with Mainnet (but some can be configured instead to form a private swarm). Mainnet IPFS nodes typically join the [Amino DHT](#amino) for content routing with the help of the [Bootstrap nodes](#bootstrap-node), rely on [Bitswap](#bitswap) for data transfer, [UnixFS](#unixfs) for encoding files and directories, and typically expose an [IPFS Gateway](#gateway). This has mostly been assumed for the IPFS network. Nonetheless, IPFS Mainnet is a useful distinction in a world of many [IPFS implementations](../concepts/implementations.md) with varying degrees of interoperability.
+IPFS Mainnet is a term used to describe the default or "main" public network that most IPFS implementations connect to by default. Most [IPFS implementations](https://specs.ipfs.tech/architecture/principles/#ipfs-implementation-requirements) were designed to work with Mainnet (but some can be configured instead to form a private swarm). Mainnet IPFS nodes typically join the [Amino DHT](#amino-dht) for content routing with the help of the [Bootstrap nodes](#bootstrap-node), rely on [Bitswap](#bitswap) for data transfer, [UnixFS](#unixfs) for encoding files and directories, and typically expose an [IPFS Gateway](#gateway). This has mostly been assumed for the IPFS network. Nonetheless, IPFS Mainnet is a useful distinction in a world of many [IPFS implementations](../concepts/implementations.md) with varying degrees of interoperability.
 
 ### Merkle-DAG
 
