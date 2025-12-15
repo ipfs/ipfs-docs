@@ -87,6 +87,47 @@ shasum: WARNING: 1 computed checksum did NOT match
 
 As we can see, the hash included in the CID does NOT match the hash of the input file `ubuntu-20.04.1-desktop-amd64.iso`.
 
+### Why the hashes differ
+
+The example above shows that the [Multihash](glossary.md#multihash) inside a CID does not match a simple file checksum. This is because the Multihash is the hash of the [root block](glossary.md#root), not a direct hash of the file's bytes.
+
+When you add a file to IPFS, the data goes through several transformations:
+
+1. **Chunking**: Large files are split into smaller [blocks](glossary.md#block) (typically 256KiB-1MiB each)
+2. **Structuring**: These blocks are organized into a [DAG](glossary.md#dag) (directed acyclic graph)
+3. **Encoding**: A [codec](glossary.md#codec) wraps the data with metadata describing its structure
+
+The root block contains links to all the other blocks, and it's this root block that gets hashed to produce the Multihash in your CID.
+
+#### When CID hash equals file hash
+
+There is one case where the Multihash does equal the file's hash: when the CID uses the `raw` [codec](glossary.md#codec) and the file fits in a single block. The `raw` codec stores bytes without any wrapper, so for small files added with `--raw-leaves`, the Multihash is a direct hash of the file contents.
+
+#### Same file, different CIDs
+
+Two identical files can produce different CIDs. The CID depends on both the content *and* how that content is structured:
+
+- **Chunk size**: Different chunking strategies produce different block trees
+- **DAG layout**: Balanced trees vs. trickle DAGs organize blocks differently
+- **Codec**: [UnixFS](glossary.md#unixfs) ([dag-pb](glossary.md#dag-pb)), [dag-cbor](glossary.md#dag-cbor), `raw`, and others each encode data differently
+- **CID version**: [CIDv0](glossary.md#cid-v0) vs [CIDv1](glossary.md#cid-v1) use different formats
+- **Hash algorithm**: sha2-256, blake3, and others produce different hashes
+
+#### Why this flexibility matters
+
+This is a feature, not a limitation. Different structures optimize for different use cases:
+
+- **DAG layout** trades off seeking against appending: balanced DAGs enable fast random access in large files like videos, trickle DAGs optimize for sequential, append-only data like logs
+- **Chunking strategy** balances retrieval overhead against sync efficiency: large chunks mean fewer blocks for bulk downloads, small chunks mean less data to transfer when syncing deltas. Strategies range from simple fixed-size chunking to content-defined algorithms like Rabin or Buzhash that fine-tune deduplication based on dataset characteristics
+- **Hash function** varies by system: legacy decisions, regulatory requirements, or interoperability needs may dictate which algorithm to use
+- **Directory sharding** threshold, in systems like [UnixFS](glossary.md#unixfs), determines when directories switch from flat listings to [HAMT](glossary.md#hamt-sharding) to seamlessly support huge directories with millions of files. This threshold also affects how much of the DAG needs to be recreated when a single file in the directory is modified
+
+[UnixFS](glossary.md#unixfs) is the default format for files and directories, but you can use other codecs or create custom ones for specialized needs.
+
+When you need reproducible CIDs across different tools, the community documents common parameter sets called [CID profiles](https://github.com/ipfs/specs/pull/499). These define standard combinations of chunking, DAG layout, and codec settings.
+
+To explore how a CID is structured, use the [CID Inspector](https://cid.ipfs.tech/#bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4). To see the DAG behind a CID, use the [DAG Explorer](https://explore.ipld.io/#/explore/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4).
+
 
 ## CID versions
 

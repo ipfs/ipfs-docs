@@ -122,22 +122,22 @@ Each method will return a **CID** (Content Identifier) for your uploaded file. S
 
 ## CIDs explained
 
-In IPFS, every file and directory is identified with a Content Identifier ([CID](../concepts/content-addressing.md)). The CID serves as the **permanent address** of the file and can be used by anyone to find it on the IPFS network.
+In IPFS, every file and directory is identified with a Content Identifier ([CID](../concepts/content-addressing.md)), a unique hash derived from the file's contents. The CID serves as the **permanent address** of the file and can be used by anyone to find it on any IPFS network or system.
 
-When a file is first added to an IPFS node (like the image used in this guide), it's first transformed into a content-addressable representation in which the file is split into smaller chunks (if above ~1MB) which are linked together and hashed to produce the CID.
+When you add a file to IPFS, the system generates its CID by hashing the contents. Larger files (above ~1MB) are split into smaller chunks, linked together, and hashed.
 
-For example, a CID might look like:
+The resulting CID might look like this:
 
 ```plaintext
 bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4
 ```
 
-You can now share the CID with anyone and they can fetch the file using IPFS.
+Once you have a CID, you can share it with anyone and they can fetch the file using IPFS.
 
-To dive deeper into the anatomy of the CID, check out the [CID inspector](https://cid.ipfs.tech/#bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4).
+To explore the anatomy of a CID, check out the [CID Inspector](https://cid.ipfs.tech/#bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4). To explore the anatomy of the DAG behind a CID, check out the [DAG Explorer](https://explore.ipld.io/#/explore/bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4).
 
 :::callout
-The transformation into a content-addressable representation is a local operation that doesn't require any network connectivity. Many CLI tools perform this transformation locally before uploading.
+**Important caveat:** Two identical files can produce different CIDs. The CID reflects the contents *and* how the file is processed: chunk size, DAG layout, hash algorithm, CID version, and other [UnixFS](https://specs.ipfs.tech/unixfs/) parameters. The same file processed with different parameters will produce different CIDs. See [CIDs are not file hashes](../concepts/content-addressing.md#cids-are-not-file-hashes) for details.
 :::
 
 ## Retrieving with a gateway
@@ -166,6 +166,8 @@ curl https://[BUCKET_NAME].ipfs.filebase.io/ipfs/[CID]
 ```
 
 ### Using public gateways
+
+You can also use [public IPFS gateways](../concepts/public-utilities.md#public-ipfs-gateways):
 
 ```shell
 curl https://ipfs.io/ipfs/[CID]
