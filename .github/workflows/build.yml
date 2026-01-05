@@ -50,7 +50,7 @@ jobs:
 
       # Upload artifact for deploy workflow
       - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: docs-build-${{ github.run_id }}
           path: ${{ env.BUILD_PATH }}
