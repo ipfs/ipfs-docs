@@ -25,7 +25,7 @@ Bacalhau can:
 - Run against data [mounted anywhere](https://docs.bacalhau.org/#how-it-works) on your machine.
 - Integrate with services running on nodes to run jobs, such as [DuckDB](https://docs.bacalhau.org/examples/data-engineering/DuckDB/).
 - Operate at scale over parallel jobs and batch process petabytes of data.
-- Auto-generate art using a [Stable Diffusion AI model](https://www.waterlily.ai/) trained on the chosen artist’s original works.
+- Auto-generate art using a [Stable Diffusion AI model](https://web.archive.org/web/20250313163631/https://www.waterlily.ai/) trained on the chosen artist’s original works.
 
 ### More Bacalhau resources 
 
