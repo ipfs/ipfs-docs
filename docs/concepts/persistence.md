@@ -48,7 +48,6 @@ Some of the pinning services listed below are operated by third party companies.
 
 - [4EVERLAND Bucket](https://www.4everland.org/bucket/)
 - [Filebase](https://filebase.com/)
-- [NFT.Storage](https://nft.storage/)
 - [Pinata](https://pinata.cloud/)
 - [Storacha (formerly web3.storage)](https://storacha.network/)
 
