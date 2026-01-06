@@ -257,6 +257,7 @@ module.exports = {
               collapsable: true,
               children: [
                 '/how-to/websites-on-ipfs/deploy-github-action',
+                '/how-to/websites-on-ipfs/dnslink-action',
                 '/how-to/websites-on-ipfs/custom-domains',
                 '/how-to/websites-on-ipfs/single-page-website',
                 '/how-to/websites-on-ipfs/dnslink-gateway',

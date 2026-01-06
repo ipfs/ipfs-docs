@@ -81,12 +81,14 @@ dns('s)
 dnsaddr
 dnscontrol
 dnslink
+DNSimple
 dotgraph
 dups
 durin
 dweb
 embeddable
 eternum
+exfiltrate
 ethereum
 explainers
 fabien
@@ -103,6 +105,7 @@ fleek
 Fleek's
 fleek('s)
 fqdns
+Gandi
 gasless
 geospatial
 gif
@@ -192,6 +195,7 @@ nakamoto
 nakamoto's
 namebase
 namecheap
+nameserver
 namespace
 nats
 neocities
@@ -292,6 +296,7 @@ vue
 Vuepress
 wantlist
 wantlists
+walkthrough
 WASM
 web
 webpack
