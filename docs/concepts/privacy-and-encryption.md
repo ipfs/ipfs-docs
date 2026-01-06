@@ -53,7 +53,6 @@ IPFS uses transport-encryption but not content encryption. This means that your 
 
 - [Ceramic](https://ceramic.network/)
 - [Fission.codes](https://fission.codes/)
-- [Fleek](../case-studies/fleek.md)
 - [Lit Protocol](https://litprotocol.com/)
 - [OrbitDB](https://github.com/orbitdb)
 - [Peergos](https://peergos.org/)

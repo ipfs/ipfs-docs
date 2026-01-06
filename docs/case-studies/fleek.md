@@ -3,6 +3,10 @@ title: 'Case study: Fleek'
 description: Explore some helpful use cases, ideas, and examples for the InterPlanetary File System (IPFS).
 ---
 
+::: warning Fleek hosting discontinued
+Fleek's IPFS hosting service was discontinued on January 31st, 2026. This case study is preserved for historical purposes.
+:::
+
 # Case study: Fleek
 
 ::: callout
