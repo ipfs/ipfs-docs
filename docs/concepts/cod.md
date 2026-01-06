@@ -11,7 +11,7 @@ IPFS users can perform CoD on IPFS data with the [Bacalhau platform](#bacalhau) 
 
 ## Bacalhau
 
-Bacalhau is a platform for fast, cost-efficient,  secure, distributed computation. Bacalhau works by running jobs where the data is generated and stored, also referred to as Compute Over Data (or CoD). Using Bacalhau, you can streamline existing workflows without extensive refactoring by running arbitrary Docker containers and WebAssembly (Wasm) images as compute tasks. The name _Bacalhau_ was coined from the Portuguese word for "salted cod fish".
+Bacalhau is a platform for fast, cost-efficient,  secure, distributed computation. Bacalhau works by running jobs where the data is generated and stored, also referred to as Compute Over Data (or CoD). Using Bacalhau, you can streamline existing workflows without extensive refactoring by running arbitrary Docker containers and WebAssembly (WASM) images as compute tasks. The name _Bacalhau_ was coined from the Portuguese word for "salted cod fish".
 
 ### Features
 
@@ -36,7 +36,7 @@ Bacalhau can:
 
 The InterPlanetary Virtual Machine (IPVM) specification defines the easiest, fastest, most secure, and open way to run decentralized compute jobs on IPFS. One way to describe IPVM would be as "an open, decentralized, and local-first competitor to AWS Lambda".
 
-IPVM uses [WebAssembly (Wasm)](https://webassembly.org/), content addressing, [simple public key infrastructure (SPKI)](https://en.wikipedia.org/wiki/Simple_public-key_infrastructure), and object capabilities to liberate computation from specific, prenegotiated services, such as large cloud computing providers. By default, execution scales flexibly on-device, all the way up to edge points-of-presence (PoPs) and data centers. 
+IPVM uses [WebAssembly (WASM)](https://webassembly.org/), content addressing, [simple public key infrastructure (SPKI)](https://en.wikipedia.org/wiki/Simple_public-key_infrastructure), and object capabilities to liberate computation from specific, prenegotiated services, such as large cloud computing providers. By default, execution scales flexibly on-device, all the way up to edge points-of-presence (PoPs) and data centers. 
 
 The core, Rust-based implementation and runtime of IPVM is the [Homestar project](https://github.com/ipvm-wg/homestar/). IPVM supports interoperability with [Bacalhau](https://bacalhau.org) and [Storacha (formerly web3.storage)](https://storacha.network/)
 
