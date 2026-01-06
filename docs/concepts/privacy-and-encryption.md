@@ -55,4 +55,3 @@ IPFS uses transport-encryption but not content encryption. This means that your 
 - [Lit Protocol](https://litprotocol.com/)
 - [OrbitDB](https://github.com/orbitdb)
 - [Peergos](https://peergos.org/)
-- [Textile](https://www.textile.io/)
