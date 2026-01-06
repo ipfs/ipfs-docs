@@ -33,6 +33,8 @@ Caddyfile
 callout
 callouts
 cas
+cdn('s)
+CDN's
 cdns
 certbot
 cid
@@ -55,6 +57,7 @@ crowdsourcing
 crypto(currencies)
 daos
 dapps
+dClimate
 data('s)
 datastore
 deduplicate
@@ -68,6 +71,8 @@ deserialized
 devs
 dheeraj
 dht
+dht('s)
+DHT's
 dhts
 dialable
 dialback
@@ -95,6 +100,8 @@ filestore
 flatfs
 flatf[ss]
 fleek
+Fleek's
+fleek('s)
 fqdns
 gasless
 geospatial
@@ -114,7 +121,7 @@ hostname
 hostnames
 html
 https
-identafiability
+identifiability
 infura
 interop
 ipfs
@@ -136,6 +143,7 @@ keypair
 keystores
 kubo
 Kubo's
+Lakhani
 kubuxu
 laika
 lan
@@ -189,6 +197,8 @@ nats
 neocities
 netlify
 next.js
+nft('s)
+NFT's
 nfts
 nginx
 nodejs
@@ -208,6 +218,7 @@ pluggable
 powergate
 powershell
 preload
+prenegotiated
 prepended
 processannounce
 protobuf
@@ -238,6 +249,7 @@ sandboxed
 satoshi
 satoshi nakamoto
 SDKs
+se
 serverless
 sharding
 snapshotted
@@ -259,6 +271,7 @@ takedown
 testground
 testnet
 toolkits
+toolset
 trustlessly
 trustlessness
 uncensorable 
@@ -279,6 +292,7 @@ vue
 Vuepress
 wantlist
 wantlists
+WASM
 web
 webpack
 webpages
@@ -298,4 +312,6 @@ youtube
 IPFS's
 IPIPs
 IPIP
+Zeeshan
+Zelenka
 _redirects
