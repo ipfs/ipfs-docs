@@ -66,12 +66,12 @@ IPNS names can be published programmatically.
 
    ```shell
    echo "Hello again IPFS" > hello.txt
-   ipfs add hello.txt
+   ipfs add --cid-version 1 hello.txt
 
    > added bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq hello.txt
    > 17 B / 17 B [=====================================================] 100.00%
 
-   ipfs name publish bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq
+   ipfs name publish /ipfs/bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq
 
    > Published to k51qzi5uqu5dgy6fu9073kabgj2nuq3qyo4f2rcnn4380z6n8i4v2lvo8dln6l: /ipfs/bafkreidbbor7mvra2xzzl4kmr2sxrtkzaxlzs6rsr5ktgmbtousuzrhlxq
    ```
