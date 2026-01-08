@@ -31,7 +31,7 @@ jobs:
       name: 'ipfs-publish'
     steps:
       - name: Download build artifact
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: docs-build-${{ github.event.workflow_run.id }}
           path: ${{ env.BUILD_PATH }}
@@ -82,7 +82,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Download build artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: docs-build-${{ github.event.workflow_run.id }}
           path: docs-build
