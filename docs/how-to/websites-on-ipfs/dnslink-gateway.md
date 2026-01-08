@@ -185,7 +185,13 @@ Your gateway will now automatically serve the content specified in the `_dnslink
 
 ## Automate DNSLink Updates
 
-Depending on how you deploy your site, you can automate DNSLink updates using the [DNSLink GitHub Action](https://github.com/ipshipyard/dnslink-action), as part of your CI/CD pipeline, or other DNS management tools like [dnscontrol](https://github.com/StackExchange/dnscontrol) or [octodns](https://github.com/octodns/octodns).
+Depending on how you deploy your site, you can automate DNSLink updates using the [DNSLink Action](./dnslink-action.md) as part of your CI/CD pipeline. For a step-by-step guide, see [Automate DNSLink updates with GitHub Actions](./dnslink-action.md).
+
+::: tip Security Best Practice
+For production deployments, consider using a [sandboxed DNS zone](./dnslink-action.md#security-sandboxed-dns-zone) to limit what your CI API token can modify. This way, if credentials are compromised, attackers can only modify the DNSLink TXT record, not other DNS records like A, MX, or NS.
+:::
+
+You can also use other DNS management tools like [dnscontrol](https://github.com/StackExchange/dnscontrol) or [octodns](https://github.com/octodns/octodns).
 
 ## Troubleshooting
 

@@ -130,7 +130,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to IPFS
-        uses: ipfs/ipfs-deploy-action@v1
+        uses: ipshipyard/ipfs-deploy-action@v1
         id: deploy
         with:
           path-to-deploy: dist # Change this to your build output directory
@@ -156,7 +156,7 @@ To upload the CAR file to a Kubo node instead of or in addition to Storacha:
 
 ```yaml
 - name: Deploy to IPFS
-  uses: ipfs/ipfs-deploy-action@v1
+  uses: ipshipyard/ipfs-deploy-action@v1
   with:
     # ... other inputs ...
     kubo-api-url: ${{ secrets.KUBO_API_URL }}
@@ -167,7 +167,7 @@ You can also customize the Kubo version and [`ipfs add` parameters](https://docs
 
 ```yaml
 - name: Deploy to IPFS
-  uses: ipfs/ipfs-deploy-action@v1
+  uses: ipshipyard/ipfs-deploy-action@v1
   with:
     # ... other inputs ...
     kubo-version: 'v0.39.0' # Default, change if needed
@@ -184,7 +184,7 @@ To upload the CAR file to an IPFS Cluster:
 
 ```yaml
 - name: Deploy to IPFS
-  uses: ipfs/ipfs-deploy-action@v1
+  uses: ipshipyard/ipfs-deploy-action@v1
   with:
     # ... other inputs ...
     cluster-url: ${{ secrets.CLUSTER_URL }}
@@ -196,7 +196,7 @@ You can also configure additional IPFS Cluster options:
 
 ```yaml
 - name: Deploy to IPFS
-  uses: ipfs/ipfs-deploy-action@v1
+  uses: ipshipyard/ipfs-deploy-action@v1
   with:
     # ... other inputs ...
     cluster-retry-attempts: '5' # Override number of retry attempts
@@ -217,7 +217,7 @@ To pin your content to Pinata:
 
 ```yaml
 - name: Deploy to IPFS
-  uses: ipfs/ipfs-deploy-action@v1
+  uses: ipshipyard/ipfs-deploy-action@v1
   with:
     # ... other inputs ...
     pinata-jwt-token: ${{ secrets.PINATA_JWT_TOKEN }}
@@ -236,7 +236,7 @@ To store CAR files on Filebase:
 
 ```yaml
 - name: Deploy to IPFS
-  uses: ipfs/ipfs-deploy-action@v1
+  uses: ipshipyard/ipfs-deploy-action@v1
   with:
     # ... other inputs ...
     filebase-bucket: 'your-bucket-name'
@@ -294,6 +294,14 @@ This URL uses subdomain resolution (where the CID has its own subdomain), which 
 1. Always use a specific version of the action (e.g., `@v1`)
 3. Consider using multiple IPFS providers for redundancy
 4. Use environment-specific configurations when needed
+
+## Next Steps
+
+After deploying your site to IPFS, you may want to:
+
+- **Add a custom domain**: Use [DNSLink](./dnslink-action.md) to automatically update DNS records so users can access your site via a human-readable domain name like `yourdomain.com` instead of a CID.
+- **Set up a DNSLink gateway**: If you want to serve your site directly from your own domain over HTTPS, see [Setup a DNSLink Gateway](./dnslink-gateway.md).
+- **Learn about custom domains**: For an overview of domain options, see [Custom domains and DNSLink](./custom-domains.md).
 
 ## Getting Help
 
