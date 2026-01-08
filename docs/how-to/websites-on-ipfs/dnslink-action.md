@@ -14,7 +14,7 @@ DNSLink lets users access your IPFS-hosted content through a human-readable doma
 Before you begin, make sure you have:
 
 1. Your site deployed to IPFS with a CID (see [Deploy static apps to IPFS with GitHub Actions](./deploy-github-action.md))
-2. A domain name with DNS managed by [Cloudflare](https://www.cloudflare.com/), [DNSimple](https://dnsimple.com/), or [Gandi](https://www.gandi.net/en/domain/dns)
+2. A domain name with DNS managed by a [supported provider](#step-1-configure-dns-provider) (Cloudflare, DNSimple, or Gandi), or any provider via [generic DNS tools](#alternative-generic-dns-tools)
 3. A GitHub repository with Actions enabled
 
 ## Security Considerations
@@ -26,6 +26,8 @@ For open source projects that accept pull requests from forks, use the [two-work
 :::
 
 ## Step 1: Configure DNS Provider
+
+The [dnslink-action](https://github.com/ipshipyard/dnslink-action) provides turn-key DNSLink updates with built-in safety features for the providers below. If your provider is not listed, see [Alternative: Generic DNS Tools](#alternative-generic-dns-tools).
 
 ### Option A: Cloudflare (recommended)
 
@@ -77,6 +79,24 @@ You should see output like:
 ```
 "dnslink=/ipfs/bafybeic..."
 ```
+
+## Alternative: Generic DNS Tools
+
+If your DNS provider is not supported by dnslink-action, or you need more control over DNS updates, you can use generic DNS automation tools in a custom workflow step.
+
+DNSLink is a TXT record on the `_dnslink` subdomain. To update it, set a TXT record on `_dnslink.yourdomain.com` with the value:
+
+```
+dnslink=/ipfs/<CID>
+```
+
+Where `<CID>` is the output from [ipshipyard/ipfs-deploy-action](https://github.com/ipshipyard/ipfs-deploy-action).
+
+Tools that support many DNS providers:
+
+- [OctoDNS](https://github.com/octodns/octodns) - supports [many providers](https://octodns.readthedocs.io/en/latest/#providers) including AWS Route53, Google Cloud DNS, Azure DNS, DigitalOcean, and NS1. Can run in CI to sync DNS records from config files.
+- [Terraform DNS providers](https://registry.terraform.io/search/providers?q=dns) - useful if you already manage infrastructure with Terraform.
+- Your provider's API directly via a custom script or GitHub Action step.
 
 ## Two-Workflow Pattern for Open Source Projects
 
