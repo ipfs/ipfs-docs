@@ -256,14 +256,14 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
-                '/how-to/websites-on-ipfs/deploy-github-action',
-                '/how-to/websites-on-ipfs/dnslink-action',
-                '/how-to/websites-on-ipfs/custom-domains',
                 '/how-to/websites-on-ipfs/single-page-website',
-                '/how-to/websites-on-ipfs/dnslink-gateway',
                 '/how-to/websites-on-ipfs/multipage-website',
                 '/how-to/websites-on-ipfs/static-site-generators',
-                '/how-to/websites-on-ipfs/redirects-and-custom-404s'
+                '/how-to/websites-on-ipfs/redirects-and-custom-404s',
+                '/how-to/websites-on-ipfs/custom-domains',
+                '/how-to/websites-on-ipfs/deploy-github-action',
+                '/how-to/websites-on-ipfs/dnslink-action',
+                '/how-to/websites-on-ipfs/dnslink-gateway',
               ]
             },
             {
