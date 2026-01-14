@@ -5,13 +5,7 @@
     <Content class="theme-default-content" />
 
     <div class="content-footer" v-if="!isContentStatus">
-      <Feedback
-        class="content-feedback"
-        evtYes="information_helpful"
-        evtNo="information_not_helpful"
-      />
-      <LegacyCallout />
-      <PageEdit />
+      <HelpCallout />
       <PageNav v-bind="{ sidebarItems }" />
     </div>
 
@@ -22,20 +16,16 @@
 </template>
 
 <script>
-import PageEdit from '@parent-theme/components/PageEdit.vue'
 import PageNav from '@parent-theme/components/PageNav.vue'
 
-import Feedback from './Feedback.vue'
-import LegacyCallout from './LegacyCallout.vue'
+import HelpCallout from './HelpCallout.vue'
 import Analytics from './Analytics.vue'
 
 export default {
   name: 'Page',
   components: {
-    PageEdit,
     PageNav,
-    Feedback,
-    LegacyCallout,
+    HelpCallout,
     Analytics
   },
   props: ['sidebarItems'],
@@ -107,36 +97,10 @@ export default {
   max-width: $contentWidth;
 }
 
-.page-edit {
-  max-width: 100%;
-  padding: 2rem 2rem;
-}
-
-.content-feedback {
-  padding: 0 2rem;
-}
-
 @media (min-width: $MQMobile) {
   .content-footer {
     padding: 0 2.5rem;
     padding-top: 0;
-  }
-
-  .content-feedback {
-    padding: 0;
-    margin: 0;
-  }
-
-  .page-edit {
-    padding: 2.5rem 0;
-  }
-
-  section {
-    display: flex;
-
-    .block {
-      flex: 1;
-    }
   }
 }
 </style>
