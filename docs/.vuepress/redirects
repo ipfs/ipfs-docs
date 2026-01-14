@@ -45,6 +45,7 @@
 /how-to/run-ipfs-inside-docker /install/run-ipfs-inside-docker
 /how-to/ipfs-updater /install/command-line
 /how-to/websites-on-ipfs/link-a-domain /how-to/websites-on-ipfs/custom-domains
+/how-to/websites-on-ipfs/introducing-fleek /how-to/websites-on-ipfs/static-site-generators
 /how-to/gateway-troubleshooting /how-to/troubleshooting
 /install/command-line-quick-start/ /how-to/command-line-quick-start
 /install/js-ipfs/ https://github.com/ipfs/helia/wiki
