@@ -55,7 +55,6 @@ We're adding more documentation all the time and making ongoing revisions to exi
 
 - [Case study: Arbol](../case-studies/arbol.md)
 - [Case study: Audius](../case-studies/audius.md)
-- [Case study: Fleek](../case-studies/fleek.md)
 - [Case study: LikeCoin](../case-studies/likecoin.md)
 - [Case study: Morpheus.Network](../case-studies/morpheus.md)
 - [Case study: Snapshot](../case-studies/snapshot.md)
