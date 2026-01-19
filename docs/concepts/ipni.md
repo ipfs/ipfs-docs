@@ -23,7 +23,7 @@ For a deeper dive into the technical specification for IPNI, see [https://github
 
 ## What use-cases IPNI serves
 
-While in-protocol routing and discovery have [advanced leaps and bounds in recent versions of Kubo and Helia](https://ipshipyard.com/blog/2025-dht-provide-sweep/), there continue to be use-cases where keeping announcements live on the DHT is onerous.
+While in-protocol routing and discovery have [advanced leaps and bounds in recent versions of Kubo and Helia](https://ipshipyard.com/blog/2025-dht-provide-sweep/), with well-tuned test server performance benchmarked in the high tens of millions of CIDs announce-able within the 24th recursion window, there continue to be use-cases where keeping announcements live on the DHT is onerous, or swarms where that volume of message would not be propagated before the cycle recursed and began again.
 By comparison, announcements to an IPNI indexer only need to be made once, making them particularly attractive to announcers of large volumes of infrequently-sought CIDs, like large-scale providers of "cold storage" in the Filecoin economy or archivers of public open data.
 
 To support performant _retrievals_ of unsealed Filecoin and IPFS pinned data with a speed comparable to a CDN, a reliable, distributed index of all data and the peer(s) hosting and/or caching it must be assembled, and this index must be replicated to be geographically near the lookups. Comparable lookup and time-to-first-byte metrics are quite difficult to achieve on the DHT.
