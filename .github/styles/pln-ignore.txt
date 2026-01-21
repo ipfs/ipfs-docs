@@ -9,6 +9,7 @@ apis
 arbol
 arbol's
 arbol('s)
+archivers
 arg
 astro
 atcute
@@ -16,6 +17,7 @@ auditable
 audius
 auspinner
 Bacalhau
+benchmarked
 bitswap
 bit[ss]wap
 blockchain
@@ -235,6 +237,7 @@ qm
 rabin
 rasterio
 reachability
+realtime
 readmes
 referenceable
 repo

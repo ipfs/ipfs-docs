@@ -15,7 +15,7 @@ Opting into indexing by IPNI can be done from:
 - A self-hosted IPFS server with the [someguy](https://github.com/ipfs/someguy) caching proxy for routing lookups to IPNI (read path).
 - A production-grade IPFS deployment configured to support the [IPNI index-provider](https://github.com/ipni/index-provider) sidecar for publishing to IPNI (write path).
 
-IPNI is designed to create an alternate routing and discovery infrastructure outside of and independent from the [Kademlia Distributed Hash Table (DHT)](../concepts/dht.md#kademlia).
+IPNI is designed to create an alternate routing and discovery infrastructure outside and independent of the [Kademlia Distributed Hash Table (DHT)](../concepts/dht.md#kademlia).
 
 :::callout
 For a deeper dive into the technical specification for IPNI, see [https://github.com/ipni/specs/blob/main/IPNI.md](https://github.com/ipni/specs/blob/main/IPNI.md).
