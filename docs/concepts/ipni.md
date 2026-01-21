@@ -8,30 +8,37 @@ description: Learn about mutability in IPFS, InterPlanetary Name System (IPNS), 
 [InterPlanetary Network Indexer (IPNI)](https://github.com/ipni), also referred to as _Network Indexer_, _indexer_ and _IPNI_, enables quick and efficient search of content-addressable data available on the InterPlanetary File System (IPFS) and Filecoin networks.
 
 Using IPNI, IPFS nodes can publish the content IDs (CIDs) of their data to an indexer, and clients can query the indexer to learn where to retrieve the content associated with those CIDs.
-To publish CIDs, IPNI uses:
+Opting into indexing by IPNI can be done from:
 
 - [Lotus](https://lotus.filecoin.io/), the reference implementation for the [Filecoin network](https://docs.filecoin.io/).
 - [Boost](https://boost.filecoin.io/), a tool for Filecoin storage providers to manage Filecoin data onboarding and retrieval.
+- A self-hosted IPFS server with the [someguy](https://github.com/ipfs/someguy) caching proxy for routing lookups to IPNI (read path).
+- A production-grade IPFS deployment configured to support the [IPNI index-provider](https://github.com/ipni/index-provider) sidecar for publishing to IPNI (write path).
 
-IPNI is designed to improve the performance and efficiency of IPFS by providing an alternate method of content routing to the [Kademlia Distributed Hash Table (DHT)](../concepts/dht.md#kademlia).
+IPNI is designed to create an alternate routing and discovery infrastructure outside and independent of the [Kademlia Distributed Hash Table (DHT)](../concepts/dht.md#kademlia).
 
 :::callout
 For a deeper dive into the technical specification for IPNI, see [https://github.com/ipni/specs/blob/main/IPNI.md](https://github.com/ipni/specs/blob/main/IPNI.md).
 :::
 
-## Design rationale
+## What use-cases IPNI serves
 
-To support retrievals of unsealed Filecoin and IPFS pinned data with a speed comparable to a CDN, a reliable, distributed index of all data and its associated peer must be maintained geographically near the lookups. This is necessary to fulfill lookups that cannot be quickly fulfilled using the DHT.
+While in-protocol routing and discovery have [advanced leaps and bounds in recent versions of Kubo and Helia](https://ipshipyard.com/blog/2025-dht-provide-sweep/), with well-tuned test server performance benchmarked in the high tens of millions of CIDs announce-able within the 24-hour re-announcement window, there continue to be use-cases where keeping announcements live on the DHT is onerous, or swarms where that volume of messages would not be propagated before the next re-announcement cycle.
 
-With this in mind, the Network Indexer was created as an alternative content routing system to the Kadmelia DHT used by IPFS. While the DHT is a key component of the IPFS ecosystem, IPNI can support content routing at a much larger scale and speed using Lotus and Boost.
+By comparison, announcements to an IPNI indexer only need to be made once, making them particularly attractive to announcers of large volumes of infrequently-sought CIDs, like large-scale providers of "cold storage" in the Filecoin economy or archivers of public open data.
+
+To support performant _retrievals_ of unsealed Filecoin and IPFS pinned data with a speed comparable to a CDN, a reliable, distributed index must be assembled that maps data to the peer(s) hosting or caching it, and this index must be replicated to be geographically near the lookups. Comparable lookup and time-to-first-byte metrics are quite difficult to achieve on the DHT.
+
+One advantage to being completely orthogonal to DHT-based announcing and discovery is operational flexibility. Over the life of a gateway or other data provider service, one or more IPNI-style indexer systems can be opted into or out of without affecting DHT performance. The reverse is also true: DHT announcing can be taken down and brought back up independently.
+Many users have found value in opting into IPNI indexing for long-tail discovery while still announcing all new content to peers in the DHT at time of publication to allow for resilience and caching in realtime. This mixed approach also sidesteps the complexity of re-announcing and keeping DHT announcements circulating over time for content that is not expected to be cached and dynamically distributed peer-to-peer over the course of its lifecycle.
 
 ### How IPNI benefits IPFS
 
 The indexer offers several benefits to IPFS, including:
 
-- **Faster data retrieval**: By maintaining an additional layer of information on top of the DHT, the indexer can help speed up data location and retrieval in IPFS.
-- **Reduced resource consumption**: The indexer can help reduce the amount of bandwidth and processing power needed to locate and retrieve data, improving the performance of individual nodes and the overall network.
-- **Improved scalability**: With the indexer, IPFS can better handle growth in user base and data volume, allowing it to scale more effectively and support larger networks.
+- **Faster data retrieval**: By maintaining an additional layer of information on top of the DHT, the indexer can help speed up data location and retrieval.
+- **Reduced resource consumption**: The indexer can help reduce the amount of bandwidth and processing power expended circulating and re-announcing CID location records. This is particularly beneficial for nodes in commercial data centers where peer-to-peer network traffic is costly. Unlike DHT announcements which must be repeated every 24 hours, IPNI announcements only need to be made once.
+- **Improved scalability**: With the indexer, IPFS can reduce the portion of network traffic used by large-volume publishers, allowing the rest of the network to scale more effectively and support broader and heterogeneous network topologies.
 
 ## The IPNI ecosystem
 
@@ -63,7 +70,7 @@ The indexer works in conjunction with the existing DHT to improve data location 
 
 When a user searches for a piece of data using a CID or multihash, the indexer is consulted first. If the data is found in the index, the user is directly connected to the node hosting the data, resulting in faster retrieval. If the data is not found in the index, the user falls back to the traditional DHT-based search, ensuring that the data can still be located even if it's not in the indexer.
 
-By providing this additional layer of information, the indexer helps to speed up data location and retrieval, reduce resource consumption, and improve the overall scalability of IPFS.
+By providing this additional layer of information, the indexer helps to speed up data location and retrieval, reduce resource consumption, and improve the overall scalability of IPFS for use-cases where DHT performance, resiliency, or security characteristics alone are insufficient.
 
 ### Example: finding providers via `/routing/v1`
 
