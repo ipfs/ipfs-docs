@@ -23,20 +23,21 @@ For a deeper dive into the technical specification for IPNI, see [https://github
 
 ## What use-cases IPNI serves
 
-While in-protocol routing and discovery have [advanced leaps and bounds in recent versions of Kubo and Helia](https://ipshipyard.com/blog/2025-dht-provide-sweep/), with well-tuned test server performance benchmarked in the high tens of millions of CIDs announce-able within the 24th recursion window, there continue to be use-cases where keeping announcements live on the DHT is onerous, or swarms where that volume of message would not be propagated before the cycle recursed and began again.
+While in-protocol routing and discovery have [advanced leaps and bounds in recent versions of Kubo and Helia](https://ipshipyard.com/blog/2025-dht-provide-sweep/), with well-tuned test server performance benchmarked in the high tens of millions of CIDs announce-able within the 24-hour re-announcement window, there continue to be use-cases where keeping announcements live on the DHT is onerous, or swarms where that volume of messages would not be propagated before the next re-announcement cycle.
+
 By comparison, announcements to an IPNI indexer only need to be made once, making them particularly attractive to announcers of large volumes of infrequently-sought CIDs, like large-scale providers of "cold storage" in the Filecoin economy or archivers of public open data.
 
-To support performant _retrievals_ of unsealed Filecoin and IPFS pinned data with a speed comparable to a CDN, a reliable, distributed index of all data and the peer(s) hosting and/or caching it must be assembled, and this index must be replicated to be geographically near the lookups. Comparable lookup and time-to-first-byte metrics are quite difficult to achieve on the DHT.
+To support performant _retrievals_ of unsealed Filecoin and IPFS pinned data with a speed comparable to a CDN, a reliable, distributed index must be assembled that maps data to the peer(s) hosting or caching it, and this index must be replicated to be geographically near the lookups. Comparable lookup and time-to-first-byte metrics are quite difficult to achieve on the DHT.
 
-One advantage to being completely orthogonal to DHT-based announcing and discovery is that over the life of a gateway or other data provider service, one or more IPNI-style indexer systems can be opted into or out of, without affecting DHT performance that can similarly be taken down and brought back up.
-Many users have found value in both opting into IPNI indexing for long-tail discovery, but still announcing all new content to peers in the DHT at time of publication to allow for resilience and caching in realtime. This mixed approach also sidesteps the complexity of re-announcing and keeping DHT announcements circulating over time for content that is not expected to be cached and dynamically distributed peer-to-peer over the course of its lifecycle.
+One advantage to being completely orthogonal to DHT-based announcing and discovery is operational flexibility. Over the life of a gateway or other data provider service, one or more IPNI-style indexer systems can be opted into or out of without affecting DHT performance. The reverse is also true: DHT announcing can be taken down and brought back up independently.
+Many users have found value in opting into IPNI indexing for long-tail discovery while still announcing all new content to peers in the DHT at time of publication to allow for resilience and caching in realtime. This mixed approach also sidesteps the complexity of re-announcing and keeping DHT announcements circulating over time for content that is not expected to be cached and dynamically distributed peer-to-peer over the course of its lifecycle.
 
 ### How IPNI benefits IPFS
 
 The indexer offers several benefits to IPFS, including:
 
 - **Faster data retrieval**: By maintaining an additional layer of information on top of the DHT, the indexer can help speed up data location and retrieval.
-- **Reduced resource consumption**: The indexer can help reduce the amount of bandwidth and processing power expended circulating and re-announcing CID location records, particularly for individual nodes for whom this peer-to-peer network traffic is costly (i.e. in commercial data centers). While the egress/networking and compute needed to periodically reannounce can now be delegated, it still needs to be done every 24 hours.
+- **Reduced resource consumption**: The indexer can help reduce the amount of bandwidth and processing power expended circulating and re-announcing CID location records. This is particularly beneficial for nodes in commercial data centers where peer-to-peer network traffic is costly. Unlike DHT announcements which must be repeated every 24 hours, IPNI announcements only need to be made once.
 - **Improved scalability**: With the indexer, IPFS can reduce the portion of network traffic used by large-volume publishers, allowing the rest of the network to scale more effectively and support broader and heterogeneous network topologies.
 
 ## The IPNI ecosystem
@@ -69,7 +70,7 @@ The indexer works in conjunction with the existing DHT to improve data location 
 
 When a user searches for a piece of data using a CID or multihash, the indexer is consulted first. If the data is found in the index, the user is directly connected to the node hosting the data, resulting in faster retrieval. If the data is not found in the index, the user falls back to the traditional DHT-based search, ensuring that the data can still be located even if it's not in the indexer.
 
-By providing this additional layer of information, the indexer helps to speed up data location and retrieval, reduce resource consumption, and improve the overall scalability of IPFS for use-cases further from the DHT.
+By providing this additional layer of information, the indexer helps to speed up data location and retrieval, reduce resource consumption, and improve the overall scalability of IPFS for use-cases where DHT performance, resiliency, or security characteristics alone are insufficient.
 
 ### Example: finding providers via `/routing/v1`
 
