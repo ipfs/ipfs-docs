@@ -12,8 +12,8 @@ Opting into indexing by IPNI can be done from:
 
 - [Lotus](https://lotus.filecoin.io/), the reference implementation for the [Filecoin network](https://docs.filecoin.io/).
 - [Boost](https://boost.filecoin.io/), a tool for Filecoin storage providers to manage Filecoin data onboarding and retrieval.
-- A self-hosted IPFS server with the [someguy](https://github.com/ipfs/someguy) sidecar integrated.
-- A production-grade IPFS deployment configured to support the [IPNI provider sidecar](https://github.com/ipni/index-provider) (configuration may be more involved)
+- A self-hosted IPFS server with the [someguy](https://github.com/ipfs/someguy) caching proxy for routing lookups to IPNI (read path).
+- A production-grade IPFS deployment configured to support the [IPNI index-provider](https://github.com/ipni/index-provider) sidecar for publishing to IPNI (write path).
 
 IPNI is designed to create an alternate routing and discovery infrastructure outside of and independent from the [Kademlia Distributed Hash Table (DHT)](../concepts/dht.md#kademlia).
 
