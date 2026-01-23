@@ -220,6 +220,14 @@ module.exports = {
               ]
             },
             {
+              title: 'Publish Scientific Data',
+              sidebarDepth: 1,
+              collapsable: true,
+              children: [
+                '/how-to/publish-geospatial-data',
+              ]
+            },
+            {
               title: 'Troubleshooting',
               sidebarDepth: 1,
               collapsable: true,
