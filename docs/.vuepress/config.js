@@ -215,6 +215,8 @@ module.exports = {
                 '/how-to/troubleshooting-kubo',   
                 '/how-to/webtransport',   
                 '/install/run-ipfs-inside-docker',
+                '/how-to/observe-peers',
+                '/how-to/peering-with-content-providers'
               ]
             },
             {
@@ -240,15 +242,6 @@ module.exports = {
                 '/how-to/store-play-videos',
                 '/how-to/host-git-repo',
                 '/how-to/move-ipfs-installation/move-ipfs-installation',
-              ]
-            },
-            {
-              title: 'Work with peers',
-              sidebarDepth: 1,
-              collapsable: true,
-              children: [
-                '/how-to/observe-peers',
-                '/how-to/peering-with-content-providers'
               ]
             },
             {
