@@ -273,8 +273,11 @@ func (md *MarkdownFormatter) GenerateEndpointBlock(endp *Endpoint) string {
 ## %s
 %s
 %s
-
 `, endp.Name, statusInfobox(endp.Status), html.EscapeString(endp.Description))
+	if endp.HTTPDescription != "" {
+		fmt.Fprintf(buf, "\n%s\n", html.EscapeString(endp.HTTPDescription))
+	}
+	fmt.Fprintln(buf)
 	return buf.String()
 }
 
@@ -388,15 +391,15 @@ NOTE: The `+"`Abspath`"+` header is included for experimental filestore/urlstore
 	return ""
 }
 
-func (md *MarkdownFormatter) GenerateResponseBlock(response string) string {
+func (md *MarkdownFormatter) GenerateResponseBlock(response string, contentType string) string {
 	buf := new(bytes.Buffer)
-	fmt.Fprintf(buf, `
-### Response
+	fmt.Fprintf(buf, "\n### Response\n\n")
 
-On success, the call to this endpoint will return with 200 and the following body:
+	if contentType != "" {
+		fmt.Fprintf(buf, "**Content-Type:** %s\n\n", contentType)
+	}
 
-`)
-
+	fmt.Fprintf(buf, "On success, the call to this endpoint will return with 200 and the following body:\n\n")
 	buf.WriteString("```json\n" + response + "\n```\n\n")
 
 	return buf.String()

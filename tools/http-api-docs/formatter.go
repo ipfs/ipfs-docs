@@ -14,7 +14,7 @@ type Formatter interface {
 	GenerateEndpointBlock(endp *Endpoint) string
 	GenerateArgumentsBlock(args []*Argument, opts []*Argument) string
 	GenerateBodyBlock(args []*Argument) string
-	GenerateResponseBlock(response string) string
+	GenerateResponseBlock(response string, contentType string) string
 	GenerateExampleBlock(endp *Endpoint) string
 }
 
@@ -33,7 +33,7 @@ func GenerateDocs(api []*Endpoint, formatter Formatter) string {
 			buf.WriteString(formatter.GenerateEndpointBlock(endp))
 			buf.WriteString(formatter.GenerateArgumentsBlock(endp.Arguments, endp.Options))
 			buf.WriteString(formatter.GenerateBodyBlock(endp.Arguments))
-			buf.WriteString(formatter.GenerateResponseBlock(endp.Response))
+			buf.WriteString(formatter.GenerateResponseBlock(endp.Response, endp.ResponseContentType))
 			buf.WriteString(formatter.GenerateExampleBlock(endp))
 		}
 	}
