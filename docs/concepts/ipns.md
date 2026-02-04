@@ -110,7 +110,7 @@ graph TB
     Publisher-- Cache -->Local-. GET .->Resolver-- Cache -->Local
 ```
 
-The self-certifying nature of IPNS records means that they are not tied to a specific transport protocol. In practice, most IPFS implementations rely on the [**DHT**](dht.md) and [**libp2p PubSub**](https://docs.libp2p.io/concepts/publish-subscribe/) to publish and resolve IPNS records.
+The self-certifying nature of IPNS records means that they are not tied to a specific transport protocol. In practice, most IPFS implementations rely on the [**DHT**](dht.md) and [**libp2p PubSub**](https://web.archive.org/web/20250827093310/https://docs.libp2p.io/concepts/publish-subscribe/) to publish and resolve IPNS records.
 
 There are nuanced differences and trade-offs between the **DHT** and **PubSub** to be aware of.
 
@@ -139,7 +139,7 @@ It's worth noting that publishing and resolving IPNS names using the DHT can be 
 
 #### IPNS over PubSub
 
-IPNS over PubSub uses the [Libp2p PubSub](https://docs.libp2p.io/concepts/publish-subscribe/) to publish records and resolve names amongst **interested peers**.
+IPNS over PubSub uses the [Libp2p PubSub](https://web.archive.org/web/20250827093310/https://docs.libp2p.io/concepts/publish-subscribe/) to publish records and resolve names amongst **interested peers**.
 
 This is achieved by deriving the PubSub topic name from the IPNS name so that each IPNS name has a unique topic.
 
