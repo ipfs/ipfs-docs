@@ -142,7 +142,7 @@ ipfs://bafybeif52irmuurpb27cujwpqhtbg5w6maw4d7zppg2lqgpew25gs5eczm
 
 ### Option B: Use IPNS for Updatable References
 
-IPNS provides a stable identifier that you can update when datasets change:
+If you want to share a stable identifier but be able to update the underlying dataset, create an [IPNS](https://docs.ipfs.tech/concepts/ipns/) identifier and share that instead. This is useful for datasets that get updated regularly —users can bookmark your IPNS name and always retrieve the latest version.
 
 ```bash
 # Publish your dataset under your node's IPNS key
