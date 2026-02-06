@@ -1,15 +1,15 @@
 ---
-title: Publish Geospatial Data with IPFS
-description:
+title: Publish Geospatial Zarr Data with IPFS
+description: Learn how to publish geospatial datasets using IPFS and Zarr for decentralized distribution, data integrity, and open access.
 ---
 
-# Publish Geospatial Data with IPFS
+# Publish Geospatial Zarr Data with IPFS
 
 In this guide, you will learn how to publish public geospatial data sets using IPFS, with a focus on the [Zarr](https://zarr.dev/) format. You'll learn how to leverage decentralized distribution with IPFS for better collaboration, data integrity, and open access.
 
 Note that while this guide focuses on Zarr, it's applicable to other data sets.
 
-By the end of this guide, you will publish a Zarr dataset to the IPFS network in a way that is retrievable directly within [Xarray](https://xarray.dev/)
+By the end of this guide, you will publish a Zarr dataset to the IPFS network in a way that is retrievable directly within [Xarray](https://xarray.dev/).
 
 If you are interested in a real-world example following the patterns in this guide, check out the [The ORCESTRA campaign](https://orcestra-campaign.org/intro.html).
 
@@ -17,7 +17,7 @@ If you are interested in a real-world example following the patterns in this gui
 - [Prerequisites](#prerequisites)
 - [Step 1: Prepare Your Zarr Data Set](#step-1-prepare-your-zarr-data-set)
 - [Step 2: Add Your Data Set to IPFS](#step-2-add-your-data-set-to-ipfs)
-  - [Step 3: Organizing Your Data](#step-3-organizing-your-data)
+- [Step 3: Organizing Your Data](#step-3-organizing-your-data)
 - [Step 4: Verify Providing Status](#step-4-verify-providing-status)
 - [Step 5: Content Discovery](#step-5-content-discovery)
   - [Option A: Share the CID Directly](#option-a-share-the-cid-directly)
@@ -61,12 +61,12 @@ Before starting, ensure you have:
 - [Kubo](/install/command-line/) or [IPFS Desktop](/install/ipfs-desktop/) installed on a machine.
 
 :::callout
-See the [NAT and port forwarding guide](../how-to/nat-configuration.md) for more information on how to configure port forwarding so that your IPFS node is publicly reachable, thus allowing reliable retrievability of data by other nodes.
+See the [NAT and port forwarding guide](../nat-configuration.md) for more information on how to configure port forwarding so that your IPFS node is publicly reachable, thus allowing reliable retrievability of data by other nodes.
 :::
 
 ## Step 1: Prepare Your Zarr Data Set
 
-When preparing your Zarr data set for IPFS, aim for approximately 1 MiB chunks to align with IPFS's 1 MiB maximum block size. While this is not a strict requirement, using larger Zarr chunks will cause IPFS to split them into multiple blocks, potentially increasing retrieval latency. Chunking in Zarr is a nuanced topic beyond the scope of this guide.
+When preparing your Zarr data set for IPFS, aim for approximately 1 MiB chunks to align with IPFS's 1 MiB maximum block size. While this is not a strict requirement, using larger Zarr chunks will cause IPFS to split them into multiple blocks, potentially increasing retrieval latency.
 
 To calculate chunk dimensions for a target byte size, work backwards from your datatype:
 
@@ -110,14 +110,14 @@ This command:
 
 1. **Merkleizes** the folder: converts files and directories into content-addressed blocks with UnixFS
 1. **Pins** the data locally: prevents garbage collection from removing it
-1. **Starts providing**: to the IPFS network that your IPFS node has this data
+1. **Provides** to the IPFS network that your node has this data
 1. **Outputs the root CID**: the identifier for your entire dataset
 
 The `--quieter` flag outputs only the root CID, which identifies the complete dataset.
 
-> **Note:** Check out the [lifecycle of data in IPFS](../../concepts/lifecycle.md), to learn more about how how merkleizing, pinning, and providing work under the hood.
+> **Note:** Check out the [lifecycle of data in IPFS](../../../concepts/lifecycle.md) to learn more about how merkleizing, pinning, and providing work under the hood.
 
-### Step 3: Organizing Your Data
+## Step 3: Organizing Your Data
 
 Two options help manage multiple data sets on your node:
 
@@ -187,7 +187,7 @@ Once published, users can access your Zarr datasets through multiple methods:
 
 ### IPFS HTTP Gateways
 
-See the [retrieval guide](../quickstart/retrieve.md)
+See the [retrieval guide](../../quickstart/retrieve.md).
 
 ### Python with ipfsspec
 
@@ -203,7 +203,7 @@ ds = xr.open_dataset(
 )
 ```
 
-**JavaScript with Verified Fetch**:
+### JavaScript with Verified Fetch
 
 ```javascript
 import { verifiedFetch } from '@helia/verified-fetch'
@@ -229,4 +229,4 @@ For most Geospatial use cases, start with a single Kubo node publishing to the p
 - [Kubo documentation](https://docs.ipfs.tech/install/command-line/)
 - [Kubo configuration options](https://github.com/ipfs/kubo/blob/master/docs/config.md)
 - [ipfsspec for Python](https://github.com/fsspec/ipfsspec/)
-- [Cloud-Optimized Geospatial Data (Zarr deep-dive)](https://tom-nicholas.com/blog/2025/cloud-optimized-Geospatial-data/)
+- [Cloud-Optimized Scientific Data (Zarr deep-dive)](https://tom-nicholas.com/blog/2025/cloud-optimized-scientific-data/)

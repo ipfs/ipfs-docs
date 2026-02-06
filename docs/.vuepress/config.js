@@ -220,11 +220,11 @@ module.exports = {
               ]
             },
             {
-              title: 'Publish Scientific Data',
+              title: 'Scientific Data',
               sidebarDepth: 1,
               collapsable: true,
               children: [
-                '/how-to/publish-geospatial-data',
+                '/how-to/scientific-data/publish-geospatial-zarr-data',
               ]
             },
             {
