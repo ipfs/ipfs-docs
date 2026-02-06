@@ -56,13 +56,17 @@ This combination has proven effective in real-world campaigns like [Orcestra](ht
 
 Before starting, ensure you have:
 
-- A Zarr data set for
-- [Kubo](/install/command-line/) or [IPFS Desktop](/install/ipfs-desktop/) installed on a machine with a public IP
+- A Zarr data set ready for publishing
 - Basic familiarity with the command line
+- [Kubo](/install/command-line/) or [IPFS Desktop](/install/ipfs-desktop/) installed on a machine.
+
+:::callout
+See the [NAT and port forwarding guide](../how-to/nat-configuration.md) for more information on how to configure port forwarding so that your IPFS node is publicly reachable, thus allowing reliable retrievability of data by other nodes.
+:::
 
 ## Step 1: Prepare Your Zarr Data Set
 
-When preparing your Zarr data set for IPFS, aim for approximately 1 MiB chunks. This aligns well with IPFS's chunking strategy and provides a good balance between granularity and overhead. Note that this is not strictly required.
+When preparing your Zarr data set for IPFS, aim for approximately 1 MiB chunks to align with IPFS's 1 MiB maximum block size. While this is not a strict requirement, using larger Zarr chunks will cause IPFS to split them into multiple blocks, potentially increasing retrieval latency. Chunking in Zarr is a nuanced topic beyond the scope of this guide.
 
 To calculate chunk dimensions for a target byte size, work backwards from your datatype:
 
@@ -77,6 +81,15 @@ ds.to_zarr('output.zarr', encoding={
 
 # Total size: 1 × 512 × 512 × 4 bytes (float32) = 1048576 bytes = 1 MiB per chunk
 ```
+
+:::callout
+Chunking in Zarr is a nuanced topic beyond the scope of this guide. For more information on optimizing chunk sizes, see:
+
+- [Zarr performance guide](https://zarr.readthedocs.io/en/stable/user-guide/performance/)
+- [Chunks and chunkability](https://element84.com/software-engineering/chunks-and-chunkability-tyranny-of-the-chunk/)
+- [Zarr chunking introduction](https://eopf-toolkit.github.io/eopf-101/03_about_chunking/31_zarr_chunking_intro.html)
+- [Cloud optimization practices](https://esipfed.github.io/cloud-computing-cluster/optimization-practices.html)
+:::
 
 ## Step 2: Add Your Data Set to IPFS
 
@@ -96,13 +109,13 @@ ipfs add --recursive \
 This command:
 
 1. **Merkleizes** the folder: converts files and directories into content-addressed blocks with UnixFS
-2. **Pins** the data locally: prevents garbage collection from removing it
-3. **Queues providing**: announces to the IPFS network that your node has this data
-4. **Outputs the root CID**: the identifier for your entire dataset
+1. **Pins** the data locally: prevents garbage collection from removing it
+1. **Starts providing**: to the IPFS network that your IPFS node has this data
+1. **Outputs the root CID**: the identifier for your entire dataset
 
 The `--quieter` flag outputs only the root CID, which identifies the complete dataset.
 
-> **Note:**
+> **Note:** Check out the [lifecycle of data in IPFS](../../concepts/lifecycle.md), to learn more about how how merkleizing, pinning, and providing work under the hood.
 
 ### Step 3: Organizing Your Data
 
@@ -142,7 +155,7 @@ ipfs://bafybeif52irmuurpb27cujwpqhtbg5w6maw4d7zppg2lqgpew25gs5eczm
 
 ### Option B: Use IPNS for Updatable References
 
-If you want to share a stable identifier but be able to update the underlying dataset, create an [IPNS](https://docs.ipfs.tech/concepts/ipns/) identifier and share that instead. This is useful for datasets that get updated regularly —users can bookmark your IPNS name and always retrieve the latest version.
+If you want to share a stable identifier but be able to update the underlying dataset, create an [IPNS](https://docs.ipfs.tech/concepts/ipns/) identifier and share that instead. This is useful for datasets that get updated regularly — users can bookmark your IPNS name and always retrieve the latest version.
 
 ```bash
 # Publish your dataset under your node's IPNS key
@@ -152,7 +165,7 @@ ipfs name publish /ipfs/<your-dataset-cid>
 ipfs name publish /ipfs/<new-dataset-cid>
 ```
 
-Users can subscribe to your IPNS name to always get the latest version.
+IPNS is supported by all the retrieval methods in the [Accessing Published Data](#accessing-published-data) section below. Keep in mind that IPNS name resolution adds latency to the retrieval process.
 
 ### Option C: Use DNSLink for Human-Readable URLs
 
@@ -172,17 +185,20 @@ https://data.example.org.ipfs.dweb.link/
 
 Once published, users can access your Zarr datasets through multiple methods:
 
-**IPFS HTTP Gateways**:
+### IPFS HTTP Gateways
 
 See the [retrieval guide](../quickstart/retrieve.md)
 
-**Python with ipfsspec**:
+### Python with ipfsspec
+
+[ipfsspec](https://pypi.org/project/ipfsspec/) brings verified IPFS retrieval to the Python ecosystem by implementing the [fsspec](https://github.com/fsspec/filesystem_spec) interface, the same abstraction layer used by xarray, pandas, Dask, and Zarr for remote data access.
 
 ```python
 import xarray as xr
 
+# after the installation of ipfsspec, `ipfs://` urls are automatically recognized
 ds = xr.open_dataset(
-    "ipfs://bafybeif52irmuurpb27cujwpqhtbg5w6maw4d7zppg2lqgpew25gs5eczm",
+    "ipfs://bafybeiesyutuduzqwvu4ydn7ktihjljicywxeth6wtgd5zi4ynxzqngx4m",
     engine="zarr"
 )
 ```
