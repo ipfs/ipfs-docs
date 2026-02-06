@@ -130,7 +130,7 @@ For detailed diagnostics, see the [provide system documentation](https://github.
 
 ## Step 5: Content Discovery
 
-Users need a way to discover your datasets. Choose an approach based on your needs:
+Now that your data is available on the public network, the next step is making it discoverable to others. Choose a sharing approach based on your needs:
 
 ### Option A: Share the CID Directly
 
