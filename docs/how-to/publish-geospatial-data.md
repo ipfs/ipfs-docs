@@ -75,7 +75,7 @@ ds.to_zarr('output.zarr', encoding={
     'var_name': {'chunks': (1, 512, 512)}
 })
 
-# Total size: 1 × 512 × 512 × 4 bytes (float32) = ~1 MB per chunk
+# Total size: 1 × 512 × 512 × 4 bytes (float32) = 1048576 bytes = 1 MiB per chunk
 ```
 
 ## Step 2: Add Your Data Set to IPFS
