@@ -62,6 +62,7 @@ Before starting, ensure you have:
 
 :::callout
 See the [NAT and port forwarding guide](../nat-configuration.md) for more information on how to configure port forwarding so that your IPFS node is publicly reachable, thus allowing reliable retrievability of data by other nodes.
+
 :::
 
 ## Step 1: Prepare Your Zarr Data Set
@@ -89,6 +90,7 @@ Chunking in Zarr is a nuanced topic beyond the scope of this guide. For more inf
 - [Chunks and chunkability](https://element84.com/software-engineering/chunks-and-chunkability-tyranny-of-the-chunk/)
 - [Zarr chunking introduction](https://eopf-toolkit.github.io/eopf-101/03_about_chunking/31_zarr_chunking_intro.html)
 - [Cloud optimization practices](https://esipfed.github.io/cloud-computing-cluster/optimization-practices.html)
+
 :::
 
 ## Step 2: Add Your Data Set to IPFS
@@ -175,11 +177,10 @@ Link a DNS name to your content by adding a TXT record:
 _dnslink.data.example.org  TXT  "dnslink=/ipfs/<cid>"
 ```
 
-Users can then access your data at:
+Users can then access your data by using the `ipns://` prefix.
 
-```
-https://data.example.org.ipfs.dweb.link/
-```
+TODO: add example.
+
 
 ## Accessing Published Data
 
