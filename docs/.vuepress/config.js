@@ -224,6 +224,7 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
+                '/how-to/scientific-data/landscape-guide',
                 '/how-to/scientific-data/publish-geospatial-zarr-data',
               ]
             },
