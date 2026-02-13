@@ -419,6 +419,7 @@ module.exports = {
               children: [
                 ['/case-studies/arbol', 'Arbol'],
                 ['/case-studies/audius', 'Audius'],
+                ['/case-studies/orcestra', 'Orcestra'],
                 ['/case-studies/fleek', 'Fleek'],
                 ['/case-studies/likecoin', 'LikeCoin'],
                 ['/case-studies/morpheus', 'Morpheus.Network'],
