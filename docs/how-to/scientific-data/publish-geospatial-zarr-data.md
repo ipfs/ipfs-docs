@@ -11,7 +11,7 @@ Note that while this guide focuses on Zarr, it's applicable to other data sets.
 
 By the end of this guide, you will publish a Zarr dataset to the IPFS network in a way that is retrievable directly within [Xarray](https://xarray.dev/).
 
-If you are interested in a real-world example following the patterns in this guide, check out the [The ORCESTRA campaign](https://orcestra-campaign.org/intro.html).
+If you are interested in a real-world example following the patterns in this guide, check out the [ORCESTRA campaign](https://orcestra-campaign.org/intro.html).
 
 - [Why IPFS for Geospatial Data?](#why-ipfs-for-geospatial-data)
 - [Prerequisites](#prerequisites)
