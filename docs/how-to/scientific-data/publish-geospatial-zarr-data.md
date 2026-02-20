@@ -171,16 +171,17 @@ IPNS is supported by all the retrieval methods in the [Accessing Published Data]
 
 ### Option C: Use DNSLink for Human-Readable URLs
 
-Link a DNS name to your content by adding a TXT record:
+Link a DNS name to your CID by adding a TXT record:
 
 ```
 _dnslink.data.example.org  TXT  "dnslink=/ipfs/<cid>"
 ```
 
-Users can then access your data by using the `ipns://` prefix.
+Users can then access your data using one of the following methods:
 
-TODO: add example.
-
+- With an IPFS gateway: `https://inbrowser.link/ipns/data.example.org`
+- With Kubo: `ipfs cat /ipns/data.example.org/zarr.json`
+- Using ipfsspec in Python as detailed below in [Python with ipfsspec](#python-with-ipfsspec), which also supports IPNS names, so you can use `ipns://data.example.org/zarr.json` directly.
 
 ## Accessing Published Data
 

@@ -13,11 +13,9 @@ In this guide, you'll find an overview of the problem space, available tools, an
 
 ## A Landscape in Flux
 
-Science advances through collaboration, yet the infrastructure for sharing scientific data has historically developed in silos. Different fields adopted different formats, metadata conventions, and distribution mechanisms. What works for genomics may not suit climate science, oceanographers face different challenges than microscopists.
+Science advances through collaboration, yet the infrastructure for sharing scientific data has historically developed in silos. Different fields adopted different formats, metadata conventions, and distribution mechanisms.
 
-This fragmentation means there is no single "right way" to publish and share scientific data. Instead, this is an area of active innovation, with new tools and conventions emerging as communities identify common needs. Standards like [Zarr](https://zarr.dev) represent convergence points where different fields have found common ground, but adoption remains uneven and context-dependent.
-
-IPFS has seen organic, bottom-up adoption in this space. Research groups and field campaigns have discovered that [content addressing](../../concepts/content-addressing.md) and peer-to-peer distribution solve real problems they face: ensuring data integrity across transfers, enabling local collaboration in bandwidth-constrained environments, and distributing the burden of hosting large datasets.
+This fragmentation means there is no single "right way" to publish and share scientific data. Instead, this is an area of active innovation, with new tools and conventions emerging as communities identify common needs. Standards like [Zarr](https://zarr.dev) represent convergence points where different fields have found common ground.
 
 This guide surveys the landscape and available tooling, but the right approach for your project depends on your specific constraints: the size and structure of your data, your collaboration patterns, your existing infrastructure, and your community's conventions. The goal is to help you understand the options so you can make informed choices.
 
