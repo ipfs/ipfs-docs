@@ -21,7 +21,7 @@ This guide surveys the landscape and available tooling, but the right approach f
 
 ## The Nature of Scientific Data
 
-Scientific data about the physical world originates from a variety of sources. For example, in the geospatial field, data is collected by sensors, measuring instruments, imaging systems, and satellites. This data is commonly structured as multidimensional arrays (tensors), representing measurements across dimensions like time, latitude, longitude, and altitude.
+Scientific data originates from a variety of sources. In the geospatial field, data is collected by sensors, measuring instruments, camera systems, and satellites. This data is commonly structured as multidimensional arrays (tensors), representing measurements across dimensions like time, latitude, longitude, and altitude.
 
 Key characteristics of scientific data include:
 
@@ -189,8 +189,6 @@ Third-party pinning services provide managed infrastructure for persistent stora
 TODO: link to pinning services list in docs
 
 ### Retrieval
-
-TODO: link to the docs retrieval guide and focus on the ipfsspec part for the Python ecosystem
 
 #### ipfsspec
 
