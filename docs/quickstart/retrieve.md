@@ -18,6 +18,7 @@ The CID you will retrieve is actually a folder containing a single image file. T
 - [IPFS retrieval methods](#ipfs-retrieval-methods)
 - [Verified vs. trusted CID retrieval](#verified-vs-trusted-cid-retrieval)
 - [Fetching the CID with Kubo](#fetching-the-cid-with-kubo)
+- [Fetching the CID with Python and ipfsspec](#fetching-the-cid-with-python-and-ipfsspec)
 - [Fetching the CID with an IPFS Gateway](#fetching-the-cid-with-an-ipfs-gateway)
 - [Summary and next steps](#summary-and-next-steps)
 
@@ -91,6 +92,37 @@ For example, the following code fetches the image using the `verifiedFetch` libr
 You may notice that there's a path following the CID, e.g. `bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4/welcome-to-IPFS.jpg`, because the starting CID is a directory containing the `welcome-to-IPFS.jpg` file, which you can fetch directly with: `verifiedFetch('ipfs://bafkreie7ohywtosou76tasm7j63yigtzxe7d5zqus4zu3j6oltvgtibeom')`.
 :::
 
+
+## Fetching the CID with Python and ipfsspec
+
+[ipfsspec](https://github.com/fsspec/ipfsspec) is a read-only [fsspec](https://filesystem-spec.readthedocs.io/) implementation for IPFS. It performs **verified** retrieval by fetching [CAR files](../concepts/glossary.md#car) containing Merkle proofs, so you don't have to trust the gateway. It works without a local IPFS node.
+
+1. Install `fsspec` and `ipfsspec`:
+
+   ```bash
+   pip install fsspec ipfsspec
+   ```
+
+1. Fetch the image using `fsspec.open`:
+
+```python
+import fsspec
+
+cid = "ipfs://bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4/welcome-to-IPFS.jpg"
+
+with fsspec.open(cid, "rb") as f:
+    image_data = f.read()
+    print(f"Retrieved {len(image_data)} bytes")
+```
+
+You can also address the file directly by its own CID:
+
+```python
+with fsspec.open("ipfs://bafkreie7ohywtosou76tasm7j63yigtzxe7d5zqus4zu3j6oltvgtibeom", "rb") as f:
+    image_data = f.read()
+```
+
+To determine which gateway to use, ipfsspec follows [IPIP-280](https://github.com/ipfs/specs/pull/280). You can point it at a different gateway, via the options, by setting the `IPFS_GATEWAY` environment variable or writing the gateway URL to `~/.ipfs/gateway`.
 
 ## Fetching the CID with an IPFS Gateway
 

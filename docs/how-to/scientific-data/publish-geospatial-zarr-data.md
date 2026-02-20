@@ -125,13 +125,11 @@ Two options help manage multiple data sets on your node:
 
 **Named pins** (`--pin-name`): Label data sets for easy identification in `ipfs pin ls`.
 
-**MFS (Mutable File System)**: Create a human-readable directory structure for your CIDs:
+**[MFS (Mutable File System)](../../concepts/file-systems.md#mutable-file-system-mfs]**: MFS gives you an interface to organize content-addressed data under a familiar file system structure with folders and names, where the root of the MFS is a CID that changes every time you change anything in the MFS tree.
 
 ```bash
-ipfs add ... --to-files=/datasets/halo-measurements-2026-01-23
+ipfs add ./halo-measurements-2026-01-23 --to-files=/datasets/halo-measurements-2026-01-23
 ```
-
-MFS gives you a familiar filesystem interface to organize content-addressed data.
 
 ## Step 4: Verify Providing Status
 
