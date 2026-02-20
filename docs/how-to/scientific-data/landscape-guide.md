@@ -1,6 +1,6 @@
 ---
 title: Scientific Data and IPFS Landscape Guide
-description: an overview of the problem space, available tools, and architectural patterns for publishing and working with scientific data usig IPFS.
+description: an overview of the problem space, available tools, and architectural patterns for publishing and working with scientific data using IPFS.
 ---
 
 # Scientific Data and IPFS Landscape Guide
@@ -55,7 +55,7 @@ IPFS addresses several pain points in scientific data distribution:
 - **Open access**: Data can be retrieved from anyone who has it, not just the original publisher
 - **Resilience**: No single point of failure when multiple providers host data
 
-To get a better sense of how these ideas which are central to IPFS' design are applied by the scientific community, it's worth looking at the [ORCESTRA Campaign Case Study](../../case-studies/orcestra.md) campaign, which uses IPFS for reap these benefits.
+To get a better sense of how these ideas which are central to IPFS' design are applied by the scientific community, it's worth looking at the [ORCESTRA Campaign Case Study](../../case-studies/orcestra.md) campaign, which uses IPFS to reap these benefits.
 
 ## Architectural Patterns
 
@@ -65,16 +65,16 @@ With this pattern, IPFS provides content-addressed verifiability by addressing d
 
 This pattern has several variants:
 
-- Data is stored as files and directories, and managed on original storage i.e. directly on the filesystem, or private networked storage and mounted as a filesystem with the Server Message Block (SMB) protocol. To generate CIDs by merklizing data sets, there are two approaches:
+- Data is stored as files and directories, and managed on original storage i.e. directly on the filesystem, or private networked storage and mounted as a filesystem with the Server Message Block (SMB) protocol. To generate CIDs by merkleizing data sets, there are two approaches:
   - Using the `ipfs add --only-hash -r <folder>` command returns the CID for the folder. This uses Kubo only for the generation of the CID.
   - A variation of the previous approach is to use the experimental [ipfs filestore](https://github.com/ipfs/kubo/blob/master/docs/experimental-features.md#ipfs-filestore) and the `ipfs add --nocopy` command with Kubo, to both generate the CID and import files in a way that doesn't duplicate the data in Kubo's blockstore. This approach allows performing read operations on the original copy on disk, which may be necessary for querying. The main benefit over the previous is that the data can also be published easily.
-- Data is stored on disk in a content-addressed format, either managed by and IPFS node that tracks and stores the chunks in a blockstore, or as CAR files (Content Addressable aRchives). With both these approaches, the data is implicitly duplicated, if the original copy is also kept. With CAR files you get all the benefits of verifiability in a storage agnostic way, since CAR files can be stored anywhere from on disk, cloud storage, to pinning services.
+- Data is stored on disk in a content-addressed format, either managed by an IPFS node that tracks and stores the chunks in a blockstore, or as CAR files (Content Addressable aRchives). With both these approaches, the data is implicitly duplicated, if the original copy is also kept. With CAR files you get all the benefits of verifiability in a storage agnostic way, since CAR files can be stored anywhere from on disk, cloud storage, to pinning services.
 
-Ultimately the choice between these approaches for content-addressed data management comes to down to the following questions:
+Ultimately the choice between these approaches for content-addressed data management comes down to the following questions:
 
 - How important is duplication? This is probably a function of the volume of your data and market costs of storage.
-- How important is having copy in content-addressed format around? If no public publishing is expected, you can forego this and only hash .
-- What libraries and which languages using to interact with the data? For example, xarray which makes use of fsspec, can read directly from a local IPFS gateway with [`ipfsspec`](https://github.com/fsspec/ipfsspec)
+- How important is it to maintain a copy of the data in a content-addressed format? If no public publishing is expected and you only need integrity checks, you may choose not to store a full content-addressed replica and instead compute hashes on demand.
+- What libraries and which programming languages will you use to interact with the data? For example, Python’s xarray library, via fsspec, can read directly from a local IPFS gateway using [`ipfsspec`](https://github.com/fsspec/ipfsspec).
 
 ### Single Publisher
 
@@ -85,7 +85,7 @@ A single institution runs Kubo nodes to publish and provide data. Users retrieve
 Multiple institutions coordinate to provide the same datasets:
 
 - Permissionless: single writer multiple follower providers
-- Coordination out-of-band like a piÏnset on GitHub, where the original publisher has to ensure their data is provided, but once it's added to a pinset, others can replicate.
+- Coordination can happen out of band, for example via a shared pinset on GitHub. The original publisher must ensure their data is provided, but once it's added to the pinset, others can replicate it.
 
 ### Connecting to Existing Infrastructure
 
@@ -112,7 +112,7 @@ NetCDF and HDF5 interleave metadata with data, requiring large sequential reads 
 - **Consolidated metadata**: All metadata can be consolidated into a single file for datasets with many arrays
 - **Designed for network access patterns**: Distributed storage tends to have high throughput and high latency
 
-> Note: To learn more about Zarr, check out the following resources: [Introduction to the Zarr format by Copernicus Marine](https://help.marine.copernicus.eu/en/articles/10401542-introduction-to-the-zarr-format), [# What is Cloud-Optimized Scientific Data?](https://tom-nicholas.com/blog/2025/cloud-optimized-scientific-data/).
+> Note: To learn more about Zarr, check out the following resources: [Introduction to the Zarr format by Copernicus Marine](https://help.marine.copernicus.eu/en/articles/10401542-introduction-to-the-zarr-format), [What is Cloud-Optimized Scientific Data?](https://tom-nicholas.com/blog/2025/cloud-optimized-scientific-data/).
 
 Zarr has seen widespread adoption across scientific domains, for example:
 
@@ -162,7 +162,7 @@ UnixFS is the default format for representing files and directories in IPFS. It 
 
 #### Mutable File System (MFS)
 
-MFS provides a familiar filesystem interface for organizing immutable content that in encoded with UnixFS (though not e. You can create directories, move files, and maintain a logical structure while the underlying data remains content-addressed.
+MFS provides a familiar filesystem interface for organizing immutable content that is encoded with UnixFS. You can create directories, move files, and maintain a logical structure while the underlying data remains content-addressed.
 
 TODO: give an example with the `kubo ipfs files api` or maybe an asciicinema
 
@@ -267,7 +267,7 @@ STAC has a web browser, making navigation discovery https://github.com/radiantea
 
 ## Next Steps
 
-- [Publishing Zarr Datasets with IPFS](./publishing-zarr-datasets.md) - A hands-on guide to publishing your first dataset
+- [Publishing Zarr Datasets with IPFS](./publish-geospatial-zarr-data.md) - A hands-on guide to publishing your first dataset
 - [Kubo Configuration Reference](https://github.com/ipfs/kubo/blob/master/docs/config.md)
 - [ipfsspec Documentation](https://github.com/fsspec/ipfsspec/)
 

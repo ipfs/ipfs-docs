@@ -60,19 +60,19 @@ When researchers collect data in the field, it follows a path from raw measureme
 
 ORCESTRA uses IPFS to make scientific data openly accessible, verifiable, and resilient.
 
-The raw data is processed by the at the Max Planck Institute for Meteorology, who process the data for publishing, where the end result is a set of CIDs corresponding to data from the different sub campaigns. allowing anyone who retrieves the data can independently verify they received exactly what was published, with no trust required in the specific server it was fetched from.
+Raw data from the different sub-campaigns is processed at the Max Planck Institute for Meteorology into publishable datasets. These datasets are added to IPFS, producing content identifiers (CIDs) that correspond to the published data from each sub-campaign. Because each CID is derived from the content itself, anyone who retrieves the data can independently verify that they received exactly what was published, without needing to trust any specific server that served it.
 
 The architecture involves several coordinated components:
 
 ### IPFS nodes for collaborative hosting
 
-A team at the Max Planck Institute for Meteorology processes the data from the different teams into Zarr and publishes them to IPFS with a fleet of [Kubo] nodes, ensuring some redundancy. The CID for the whole data set is published via [pinlist.yaml on Github](https://github.com/orcestra-campaign/ipfs_tools/blob/main/pinlist.yaml) with the CID of the whole data set, giving full snapshot history of the growing data set from all sub campaigns.
+A team at the Max Planck Institute for Meteorology processes the data from the different teams into Zarr and publishes them to IPFS with a fleet of [Kubo](https://github.com/ipfs/kubo) nodes, ensuring some redundancy. The CID for the whole data set is published via [pinlist.yaml on GitHub](https://github.com/orcestra-campaign/ipfs_tools/blob/main/pinlist.yaml) with the CID of the whole data set, giving full snapshot history of the growing data set from all sub campaigns.
 
 ### A metadata-rich data browser
 
 The [ORCESTRA data browser](http://browser.orcestra-campaign.org/) provides a web interface for discovering and retrieving datasets. Built on top of [Climate and Forecast (CF) conventions](https://cfconventions.org/) metadata embedded in the Zarr datasets, the browser lets researchers search by variable, time range, sub-campaign, and other dimensions, then retrieve data directly via IPFS.
 
-The browser leverages both Helia, the TypeScript implementation of IPFS and
+The browser leverages Helia, the TypeScript implementation of IPFS.
 
 ### Pinset tracking on GitHub
 

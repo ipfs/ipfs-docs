@@ -138,7 +138,7 @@ MFS gives you a familiar filesystem interface to organize content-addressed data
 After adding, Kubo continuously announces your content to the network. Check the status:
 
 ```bash
-ipfs stats provide
+ipfs provide stat
 ```
 
 For detailed diagnostics, see the [provide system documentation](https://github.com/ipfs/kubo/blob/master/docs/provide-stats.md).
