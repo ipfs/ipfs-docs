@@ -11,7 +11,7 @@ Note that while this guide focuses on Zarr, it's applicable to other data sets.
 
 By the end of this guide, you will publish a Zarr dataset to the IPFS network in a way that is retrievable directly within [Xarray](https://xarray.dev/).
 
-If you are interested in a real-world example following the patterns in this guide, check out the [ORCESTRA campaign](https://orcestra-campaign.org/intro.html).
+If you are interested in a real-world example following the patterns in this guide, check out the [ORCESTRA Campaign case study](../../case-studies/orcestra.md).
 
 - [Why IPFS for Geospatial Data?](#why-ipfs-for-geospatial-data)
 - [Prerequisites](#prerequisites)
@@ -121,15 +121,70 @@ The `--quieter` flag outputs only the root CID, which identifies the complete da
 
 ## Step 3: Organizing Your Data
 
-Two options help manage multiple data sets on your node:
+Two options help manage multiple datasets on your node:
 
-**Named pins** (`--pin-name`): Label data sets for easy identification in `ipfs pin ls`.
+- **Named pins** — a key/value store where the key is a name you choose and the value is a CID. Useful for labelling individual datasets without any folder structure.
+- **MFS (Mutable File System)** — a mutable file and directory hierarchy you can reorganize freely, like a local filesystem backed by immutable content-addressed data.
 
-**[MFS (Mutable File System)](../../concepts/file-systems.md#mutable-file-system-mfs]**: MFS gives you an interface to organize content-addressed data under a familiar file system structure with folders and names, where the root of the MFS is a CID that changes every time you change anything in the MFS tree.
+### **Named pins**
+
+The `--pin-name` flag attaches a human-readable label to a pin at the time you add data. This makes it easy to identify datasets when listing pins without needing to remember raw CIDs.
 
 ```bash
-ipfs add ./halo-measurements-2026-01-23 --to-files=/datasets/halo-measurements-2026-01-23
+# Pin a dataset and give it a descriptive name
+ipfs add --recursive --pin-name="sst-global-2024-q1" ./zarr-store/sst/
 ```
+
+List your pins to see the label alongside the CID:
+
+```bash
+ipfs pin ls --type=recursive --names
+# bafybeiaxkxdnj7wfivrkjw7qhglcvbulryvpxp5cqr7djjdnywefr4cmq4 recursive sst-global-2024-q1
+```
+
+You can also add a pin name retroactively:
+
+```bash
+ipfs pin add --pin-name="precipitation-monthly-2024" bafybeibpfqhzuicdpfzzfujkzaqnxz5e7c5e44erjpxjrguqxs7y6bcnve
+```
+
+Named pins are local metadata — they exist only on your node and do not affect the CID or how others see the data on the network.
+
+### **MFS (Mutable File System)**
+
+[MFS (Mutable File System)](../../concepts/file-systems.md#mutable-file-system-mfs): MFS gives you an interface to organize content-addressed data under a familiar file system structure with folders and names, where the root of the MFS is a CID that changes every time you change anything in the MFS tree.
+
+By default, Kubo has a single MFS root that you can use to organize all your data. The MFS root is mutable, but the content it points to is immutable. When you add a file or directory to MFS, it creates a new CID for the updated tree, but the original content remains unchanged and accessible by its original CID.
+
+The simplest way to add content to MFS is to pass the `--to-files` flag when adding content to IPFS. This adds the content to IPFS and also creates a path in MFS that points to the CID of the added content:
+
+```bash
+ipfs add --recursive ./halo-measurements-2026-01-23 --to-files=/datasets/halo/2026-01-23
+```
+
+You can also assemble a combined dataset from multiple sources, including datasets already published by other contributors, without fetching any remote data. Suppose two HALO flight datasets are already on the network and you want to group them with a third that you are adding locally:
+
+```bash
+# Two datasets already exist on the network from other contributors.
+# Their root CIDs are known (e.g. from a manifest or data catalogue):
+#   2026-01-21 flight → bafybeiaxkxdnj7wfivrkjw7qhglcvbulryvpxp5cqr7djjdnywefr4cmq4
+#   2026-01-22 flight → bafybeibpfqhzuicdpfzzfujkzaqnxz5e7c5e44erjpxjrguqxs7y6bcnve
+
+# Add the new local flight dataset, placing it directly into MFS
+ipfs add --recursive ./halo-measurements-2026-01-23 --to-files=/datasets/halo/2026-01-23
+# added bafybeiheegb3h5s4v4igmxqivp4mq5gvp4zyv6lc3nmjjifgybqovzh4ji  halo-measurements-2026-01-23
+
+# Link the two remote datasets into the same MFS directory —
+# the remote data stays on the network, no local download required
+ipfs files cp /ipfs/bafybeiaxkxdnj7wfivrkjw7qhglcvbulryvpxp5cqr7djjdnywefr4cmq4 /datasets/halo/2026-01-21
+ipfs files cp /ipfs/bafybeibpfqhzuicdpfzzfujkzaqnxz5e7c5e44erjpxjrguqxs7y6bcnve /datasets/halo/2026-01-22
+
+# Each mutation produces a new root CID — a lightweight versioned snapshot
+ipfs files stat --hash /datasets/halo
+# bafybeihqixf5ew7mfr74bzb74qiw2mgtnytabnpzjnf5xeejzq4p2ocygu
+```
+
+`bafybeihqixf5ew7mfr74bzb74qiw2mgtnytabnpzjnf5xeejzq4p2ocygu` is a new CID representing the combined dataset containing all three HALO flight datasets. The original CIDs are referenced, not copied, so no data is duplicated.
 
 ## Step 4: Verify Providing Status
 

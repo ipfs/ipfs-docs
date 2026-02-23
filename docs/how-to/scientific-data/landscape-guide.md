@@ -5,8 +5,6 @@ description: an overview of the problem space, available tools, and architectura
 
 # Scientific Data and IPFS Landscape Guide
 
-<!-- ## Landscape and Ecosystem Tooling -->
-
 Scientific data and IPFS are naturally aligned: research teams need to share large datasets across institutions, verify data integrity, and ensure resilient access. From sensor networks to global climate modeling efforts, scientific communities are using IPFS content addressing and peer-to-peer distribution to solve problems traditional infrastructure can't.
 
 In this guide, you'll find an overview of the problem space, available tools, and architectural patterns for publishing and working with scientific data using IPFS.
@@ -156,17 +154,17 @@ Metadata in scientific datasets serves to make the data self-describing, like wh
 
 UnixFS is the default format for representing files and directories in IPFS. It chunks large files for incremental verification and parallel retrieval.
 
+To learn more about how to use UnixFS to organize your data, check out the guide on [publishing geospatial Zarr data with IPFS](./publish-geospatial-zarr-data.md) which covers how to use UnixFS to publish Zarr datasets.
+
 [CAR (Content Addressed Archive)](https://ipld.io/specs/transport/car/carv1/) files package IPFS data for backup or storage at rest, containing blocks and their CIDs in a single file. They can be stored anywhere while still giving you all the verification properties
 
 #### Mutable File System (MFS)
 
 MFS provides a familiar filesystem interface for organizing immutable content that is encoded with UnixFS. You can create directories, move files, and maintain a logical structure while the underlying data remains content-addressed.
 
-TODO: give an example with the `kubo ipfs files api` or maybe an asciicinema
+Since UnixFS is an encoding format that is inherently mutable, MFS provides an API to construct and mutate trees, even without access to the underlying data, as long as you have the CIDs. This means that you can create new CIDs that reference existing CIDs without needing to fetch or have the data locally, which is useful for organizing and versioning datasets.
 
-- Since UnixFS is an encoding format that is inherently mutable, MFS provides an API to construct and mutate trees.
-- MFS helps you organise already merkelised data (even if you don't have it locally!)
-- You can produce new CIDs or add new CIDs to a growing data set
+To learn more about how to use MFS to organize your data, check out the guide on [publishing geospatial Zarr data with IPFS](./publish-geospatial-zarr-data.md) which covers how to use MFS to organize Zarr datasets and add new data to existing data sets without needing to fetch the existing data.
 
 ### Publishing
 

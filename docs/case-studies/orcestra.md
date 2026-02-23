@@ -3,7 +3,7 @@ title: 'Case study: ORCESTRA & IPFS'
 description: Explore how a coordinated tropical atmospheric science campaign uses IPFS to share verifiable datasets across institutions worldwide.
 ---
 
-# Case study: ORCESTRA
+# Case study: The ORCESTRA Campaign
 
 ::: callout
 **"When our server infrastructure was stuck in customs in Barbados, we got a Raspberry Pi with a 1 TB SD card running a Kubo IPFS node. Within hours, 50 scientists on site were sharing data laptop-to-laptop. That's when we realized IPFS could be at the core of our data infrastructure."**
@@ -11,7 +11,7 @@ description: Explore how a coordinated tropical atmospheric science campaign use
 
 ## Overview
 
-In this case study, you'll learn how [ORCESTRA](https://orcestra-campaign.org/), a coordinated international atmospheric science campaign, uses IPFS to ensure that scientific datasets are verifiable, openly accessible, and collaboratively distributed across institutions worldwide.
+In this case study, you'll learn how [The ORCESTRA Campaign](https://orcestra-campaign.org/), a coordinated international atmospheric science campaign, uses IPFS to ensure that scientific datasets are verifiable, openly accessible, and collaboratively distributed across institutions worldwide.
 
 ## What is ORCESTRA
 
