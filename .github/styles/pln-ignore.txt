@@ -28,6 +28,7 @@ blockstore
 bool
 bool(ean)
 boolean
+bootstrapper
 Bootstrappers
 boxo
 browserify
