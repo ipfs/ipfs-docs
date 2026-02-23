@@ -230,11 +230,17 @@ Link a DNS name to your CID by adding a TXT record:
 _dnslink.data.example.org  TXT  "dnslink=/ipfs/<cid>"
 ```
 
-Users can then access your data using one of the following methods:
+Updating the DNS record can be done whenever you publish a new version, allowing you to maintain a human-readable URL that always points to the latest dataset. This is ideal for datasets that are updated frequently and need a stable, user-friendly URL.
+
+To update the DNSLink record, you can use tools like [OctoDNS](https://github.com/octodns/octodns) or [DNSControl](https://dnscontrol.org/), which work with many DNS providers and can be integrated into CI/CD pipelines for automated updates when you publish new data. Another option, if you are using GitHub Action is to use the [DNSLink Action](https://github.com/ipshipyard/dnslink-action).
+
+To access data linked with DNSLink, you can use one of the following methods:
 
 - With an IPFS gateway: `https://inbrowser.link/ipns/data.example.org`
 - With Kubo: `ipfs cat /ipns/data.example.org/zarr.json`
 - Using ipfsspec in Python as detailed below in [Python with ipfsspec](#python-with-ipfsspec), which also supports IPNS names, so you can use `ipns://data.example.org/zarr.json` directly.
+
+> **Note:** the `ipns://` scheme can seem misleading because it's used for both IPNS and DNSLink names. The reason is that both are mutable.
 
 ## Accessing published data
 
