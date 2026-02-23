@@ -139,7 +139,7 @@ To fetch the CID using an IPFS gateway is as simple as loading one of the follow
 
 In this quickstart guide, you learned the different approaches to retrieving CIDs from the IPFS network and how to pick the most appropriate method for your specific needs.
 
-You then fetched the image that was pinned in the [publishing with a pinning service quickstart guide](./publish.md) using an IPFS Kubo node and an IPFS Gateway.
+You then fetched the image that was pinned in the [publishing with a pinning service quickstart guide](./pin.md) using an IPFS Kubo node and an IPFS Gateway.
 
 Possible next steps include:
 

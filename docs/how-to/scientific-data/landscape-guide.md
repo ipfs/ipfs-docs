@@ -1,15 +1,15 @@
 ---
-title: Scientific Data and IPFS Landscape Guide
+title: Scientific data and IPFS landscape guide
 description: an overview of the problem space, available tools, and architectural patterns for publishing and working with scientific data using IPFS.
 ---
 
-# Scientific Data and IPFS Landscape Guide
+# Scientific data and IPFS landscape guide
 
 Scientific data and IPFS are naturally aligned: research teams need to share large datasets across institutions, verify data integrity, and ensure resilient access. From sensor networks to global climate modeling efforts, scientific communities are using IPFS content addressing and peer-to-peer distribution to solve problems traditional infrastructure can't.
 
 In this guide, you'll find an overview of the problem space, available tools, and architectural patterns for publishing and working with scientific data using IPFS.
 
-## A Landscape in Flux
+## A landscape in flux
 
 Science advances through collaboration, yet the infrastructure for sharing scientific data has historically developed in silos. Different fields adopted different formats, metadata conventions, and distribution mechanisms.
 
@@ -17,7 +17,7 @@ This fragmentation means there is no single "right way" to publish and share sci
 
 This guide surveys the landscape and available tooling, but the right approach for your project depends on your specific constraints: the size and structure of your data, your collaboration patterns, your existing infrastructure, and your community's conventions. The goal is to help you understand the options so you can make informed choices.
 
-## The Nature of Scientific Data
+## The nature of scientific data
 
 Scientific data originates from a variety of sources. In the geospatial field, data is collected by sensors, measuring instruments, camera systems, and satellites. This data is commonly structured as multidimensional arrays (tensors), representing measurements across dimensions like time, latitude, longitude, and altitude.
 
@@ -28,7 +28,7 @@ Key characteristics of scientific data include:
 - **Metadata-rich**: Extensive contextual information accompanies the raw measurements
 - **Collaborative**: Research often involves multiple institutions and scientists sharing and building upon datasets
 
-## The Importance of Open Data Access
+## The importance of open data access
 
 As hinted above, open access to scientific data accelerates research, enables reproducibility, and maximizes the return on public investment in science. Organizations worldwide have recognized this, leading to mandates for open data sharing in publicly funded research.
 
@@ -42,7 +42,7 @@ These criteria are by no means exhaustive, for example initiatives like [FAIR](h
 
 With that in mind, the next section will look at how these ideas come together with IPFS.
 
-## The Benefits of IPFS for Scientific Data
+## The benefits of IPFS for scientific data
 
 IPFS addresses several pain points in scientific data distribution:
 
@@ -53,7 +53,7 @@ IPFS addresses several pain points in scientific data distribution:
 
 To get a better sense of how these ideas which are central to IPFS' design are applied by the scientific community, it's worth looking at the [ORCESTRA Campaign Case Study](../../case-studies/orcestra.md) campaign, which uses IPFS to reap these benefits.
 
-## Architectural Patterns
+## Architectural patterns
 
 ### CID-centric verifiable data management
 
@@ -72,18 +72,18 @@ Ultimately the choice between these approaches for content-addressed data manage
 - How important is it to maintain a copy of the data in a content-addressed format? If no public publishing is expected and you only need integrity checks, you may choose not to store a full content-addressed replica and instead compute hashes on demand.
 - What libraries and which programming languages will you use to interact with the data? For example, Python’s xarray library, via fsspec, can read directly from a local IPFS gateway using [`ipfsspec`](https://github.com/fsspec/ipfsspec).
 
-### Single Publisher
+### Single publisher
 
 A single institution runs Kubo nodes to publish and provide data. Users retrieve via gateways or their own nodes.
 
-### Collaborative Publishing
+### Collaborative publishing
 
 Multiple institutions coordinate to provide the same datasets:
 
 - Permissionless: single writer multiple follower providers
 - Coordination can happen out of band, for example via a shared pinset on GitHub. The original publisher must ensure their data is provided, but once it's added to the pinset, others can replicate it.
 
-### Connecting to Existing Infrastructure
+### Connecting to existing infrastructure
 
 IPFS can complement existing data infrastructure:
 
@@ -91,15 +91,15 @@ IPFS can complement existing data infrastructure:
 - Data portals can offer IPFS as an alternative retrieval method
 - CI/CD pipelines can automatically add new data to IPFS nodes
 
-## Geospatial Format Evolution: From NetCDF to Zarr
+## Geospatial format evolution: from NetCDF to Zarr
 
 The scientific community has long relied on formats like NetCDF, HDF5, and GeoTIFF for storing multidimensional n-array data (also referred to as tensors). While these formats served research well, they were designed for local filesystems and face challenges in cloud and distributed environments, that have become the norm over the last decades. This has been a trend driven by both the size of datasets growing and the advent of cloud and distributed systems enabling the storage and processing of larger volumes of data.
 
-### Limitations of Traditional Formats
+### Limitations of traditional formats
 
 NetCDF and HDF5 interleave metadata with data, requiring large sequential reads to access metadata before reaching the data itself. This creates performance bottlenecks when accessing data over networks, whether that's cloud storage or a peer-to-peer network.
 
-### The Rise of Zarr
+### The rise of Zarr
 
 [Zarr](https://zarr.dev/) has emerged as a cloud-native format optimized for distributed storage:
 
@@ -146,11 +146,11 @@ Metadata in scientific datasets serves to make the data self-describing, like wh
 
 [**GeoZarr**](https://github.com/zarr-developers/geozarr-spec) is a specification for storing geospatial raster/grid data in the Zarr format. It defines conventions for how to encode coordinate reference systems, spatial dimensions, and other geospatial metadata within Zarr stores. It's conceptually downstream of the ideas in CF CDM (from the [netCDF ecosystem](https://docs.unidata.ucar.edu/netcdf-java/5.2/userguide/common_data_model_overview.html)), but designed for the Zarr ecosystem.
 
-## Ecosystem Tooling
+## Ecosystem tooling
 
-### Organizing Content-Addressed Data
+### Organizing content-addressed data
 
-#### UnixFS and CAR Files
+#### UnixFS and CAR files
 
 UnixFS is the default format for representing files and directories in IPFS. It chunks large files for incremental verification and parallel retrieval.
 
@@ -181,7 +181,7 @@ To learn more about how to use MFS to organize your data, check out the guide on
 [IPFS Cluster](https://ipfscluster.io/) is a cluster solution built on top of Kubo for multi-node deployments. IPFS Cluster coordinates pinning across a set of Kubo nodes, ensuring data redundancy and availability.
 Support for the [Pinning API spec](https://ipfs.github.io/pinning-services-api-spec/).
 
-#### Pinning Services
+#### Pinning services
 
 Third-party pinning services provide managed infrastructure for persistent storage, useful when you don't want to run your own nodes.
 TODO: link to pinning services list in docs
@@ -201,7 +201,7 @@ ds = xr.open_dataset(
 )
 ```
 
-### Discovery, Metadata, and Data Portals: From discovery all the way to retrieval
+### Discovery, metadata, and data portals: from discovery all the way to retrieval
 
 TODO: add an intro in the form of a user journey of a scientists looking for data, all the way to retrieving it.
 
@@ -212,7 +212,7 @@ Content Discovery is an loaded term that can mean related, albeit distinct conce
   - Human-centric
 - **Content discovery:** also commonly known as **content routing**, refers to finding providers (nodes serving the data) for a given CID, including their network addresses. By default, IPFS supports a number of content routing systems: the Amino DHT, IPNI and Delegated Routing over HTTP as a common interface for interoperability.
 
-### CID Discovery
+### CID discovery
 
 When using content-addressed systems like IPFS, a new challenge emerges: how do users discover the Content Identifiers (CIDs) for datasets they want to access?
 
@@ -259,7 +259,7 @@ STAC has a web browser, making navigation discovery https://github.com/radiantea
 
 -->
 
-## Next Steps
+## Next steps
 
 - [Publishing Zarr Datasets with IPFS](./publish-geospatial-zarr-data.md) - A hands-on guide to publishing your first dataset
 - [Kubo Configuration Reference](https://github.com/ipfs/kubo/blob/master/docs/config.md)
