@@ -32,16 +32,7 @@ Key characteristics of scientific data include:
 
 As hinted above, open access to scientific data accelerates research, enables reproducibility, and maximizes the return on public investment in science. Organizations worldwide have recognized this, leading to mandates for open data sharing in publicly funded research.
 
-However, open access alone is not sufficient. In an ideal world, data needs to meet the following criteria to truly unleash the promise of open data access:
-
-- **Discoverable**: Researchers need to find relevant datasets for the research they are conducting.
-- **Interoperable**: Formats and metadata should enable cross-dataset analysis.
-- **Verifiable**: Researchers need to know they are working with valid and authentic data (corollary of reproducibility).
-
-<!-- markdown-link-check-disable-next-line -->
-These criteria are by no means exhaustive, for example initiatives like [FAIR](https://www.go-fair.org/resources/faq/what-is-fair/) have espoused similar criteria with some nuanced variations, though they all emphasise the importance of open data access.
-
-With that in mind, the next section will look at how these ideas come together with IPFS.
+IPFS is natural fit for this due to the nature of its content-addressed, peer-to-peer architecture, which embraces open access and collaborative distribution. The next section looks at these benefits in more detail.
 
 ## The benefits of IPFS for scientific data
 
@@ -55,6 +46,8 @@ IPFS addresses several pain points in scientific data distribution:
 To get a better sense of how these ideas which are central to IPFS' design are applied by the scientific community, it's worth looking at the [ORCESTRA Campaign Case Study](../../case-studies/orcestra.md) campaign, which uses IPFS to reap these benefits.
 
 ## Architectural patterns
+
+In this section, you can find architectural patterns for organizing and distributing scientific data with IPFS. See the [content routing](#content-routing) section for architectural patterns related to CID discovery.
 
 ### CID-centric verifiable data management
 
@@ -88,9 +81,19 @@ Multiple institutions coordinate to provide the same datasets:
 
 IPFS can complement existing data infrastructure:
 
-- STAC catalogs can include IPFS CIDs alongside traditional URLs
+- [STAC catalogs](#stac) can include IPFS CIDs alongside traditional URLs
 - Data portals can offer IPFS as an alternative retrieval method
 - CI/CD pipelines can automatically add new data to IPFS nodes
+
+### Content routing
+
+Given a CID, the most important question is where to find the actual data it represents. **Content routing** —also called **content discovery**— is the process of locating peers that can serve a given CID, including their network addresses. IPFS supports several routing systems, with [Delegated Routing over HTTP](https://specs.ipfs.tech/routing/http-routing-v1/) providing a common interface across them: the [Amino DHT](../../concepts/dht.md), [IPNI](../../concepts/ipni.md), and others described below.
+
+- **Mainnet [Amino DHT](../../concepts/dht.md)**: All providers announce to the main IPFS network, this is the default with Kubo, Helia, IPFS Cluster, public gateways, and pinning services. The main benefit of this approach is that it's the most decentralized and doesn't require any additional infrastructure besides a node with a public IP. The trade-off is that it is usually slower and more resource-intensive than the other approaches, especially for large datasets. One limitation of the DHT is that it doesn't support "HTTP providers" and is always tied to running a full IPFS node, which may not be ideal for all providers.
+- [**IPNI**](https://cid.contact/): The IPFS Network Index (IPNI) is a public service that indexes content providers on the IPFS network. It provides an API for announcing providers and querying for providers of specific CIDs. This is similar to a dedicated indexer, but is a public service that anyone can use. Announcing content to the IPNI isn't supported by default in IPFS implementations, but can be added using a side-car.
+- **Separate public DHT namespace**: a public but separate DHT namespace is a way to create a separate DHT for a specific community or use case, while still allowing anyone to join and participate. This requires running your own bootstrapper node so that DHT nodes can find each other. In theory, this reduces noise of Mainnet, but only makes sense at a given scale, and requires a critical mass of IPFS nodes to be effective. The main drawback is that it requires additional infrastructure and content on this network won't be discoverable from Mainnet.
+- **"Private" DHT**: A closed network with a shared key. Both discovering and anouncing providers requires nodes to have the shared key and be connected to the network. This is mostly for data that needs to be private, but can be used for public data as well.
+- **Dedicated indexer**: With this approach, an indexer you control track CIDs and related metadata. In practice, this often looks like an SQL database and a HTTP API. For interoprability with IPFS libraries and implementations, you expose an [HTTP delegated routing endpoint](https://specs.ipfs.tech/routing/http-routing-v1/). Announcement of CIDs is either via a custom API or directly by the data orchestration system writing to the database. This approach is not very decentralized but can benefits from easier scalability and better performance, especially for large datasets. The main trade-off is that it introduces a central point of failure, and leaves it up to you to implement the logic for announcing providers and tracking CIDs. Both HTTP and libp2p bitswap providers are supported.
 
 ## Geospatial format evolution: from NetCDF to Zarr
 
@@ -202,63 +205,44 @@ ds = xr.open_dataset(
 )
 ```
 
-### Discovery, metadata, and data portals: from discovery all the way to retrieval
+### Discovery, metadata, and data portals
 
-TODO: add an intro in the form of a user journey of a scientists looking for data, all the way to retrieving it.
+Consider a scientist who needs historical sea surface temperature data for their research. Their journey starts with finding that the dataset exists and understanding what it contains. This is the human side of discovery, handled by catalogues and portals of different institutions. This is known as **CID discovery**: How do you find the CID for a given data set — assuming it's already published to IPFS and therefore content addressed. CID discovery is a corollary of **trust**, because while a CID can ensure the integrity of a dataset, it cannot ensure its authenticity. In other words, CID discovery is how you find the CID for data you are interested in.
 
-Content Discovery is an loaded term that can mean related, albeit distinct concepts in IPFS. By discovery, we typically mean one of following:
-
-- **CID discovery**: How do you find the CID for a given data set. CID discovery is a corollary of **trust**, because while a CID can ensure the integrity of a dataset, the CID is the verifiable pointer to the data. In other words, CID discovery is how you find the CID for data you are interested in.
-  - Programmatic
-  - Human-centric
-- **Content discovery:** also commonly known as **content routing**, refers to finding providers (nodes serving the data) for a given CID, including their network addresses. By default, IPFS supports a number of content routing systems: the Amino DHT, IPNI and Delegated Routing over HTTP as a common interface for interoperability.
+Metadata plays a central role here: without rich, standardized metadata describing what a dataset contains and how it was collected, discovery is difficult regardless of the underlying transport. In earth science, the [CF Conventions](https://cfconventions.org/) have long served this role. Originally defined for netCDF files, but widely applied to Zarr datasets as well. Newer conventions are emerging in the [zarr-conventions](https://github.com/zarr-conventions) organization, though CF remains the dominant standard in practice.
 
 ### CID discovery
 
-When using content-addressed systems like IPFS, a new challenge emerges: how do users discover the Content Identifiers (CIDs) for datasets they want to access?
+From a high level, there are a number of common approaches to CID discovery, that vary in terms of whether they're for human or programatic discovery.
 
-From a high level, there are a number of common approaches to this problem, that vary in terms of whether they're for human or programatic discovery.
-
-- Programmatic Discovery:
-  - **DNSLink**: Maps DNS names to CIDs, allowing human-readable URLs that resolve to IPFS content. Update the DNS record when you publish new data.
-  - **IPNS + DHT**: InterPlanetary Name System provides mutable pointers to content using cryptographic keys. More self-certifying than DNS but with less tooling support.
-  - **STAC:** TODO: add brief context and link to the section below
-- Human-Centric Discovery:
-  - **Website**: websites documenting available datasets and their CIDs
-  - **GitHub repositories**: Publishing CID lists and dataset metadata in version-controlled repositories
-  - **Custom data portals/catalogue**: Purpose-built portals like the [Orcestra IPFS UI](https://github.com/orcestra-campaign/ipfsui) leverage CF
+- **DNSLink**: Maps DNS names to CIDs, allowing human-readable URLs that resolve to IPFS content. Update the DNS record when you publish new data.
+- **IPNS + DHT**: InterPlanetary Name System provides mutable pointers to content using cryptographic keys.
+- **STAC:** The SpatioTemporal Asset Catalog specification defines a common metadata schema for geospatial data, making it easier to discover and understand datasets. [See below for more details.](#stac)
+- **GitHub repositories**: Publishing CID lists and dataset metadata in version-controlled repositories, enabling collaborative discovery and maintenance.
+- **Custom data portals/catalogue**: Purpose-built portals like the [Orcestra IPFS UI](https://github.com/orcestra-campaign/ipfsui) combine discovery by integrating metadata into one interface with retrieval by integrating with IPFS nodes and gateways, providing a seamless experience from discovery to retrieval.
 
 #### STAC
 
-**STAC (SpatioTemporal Asset Catalog)** is a specification for cataloging and discovering geospatial data assets. Rather than defining how data is stored internally, STAC describes _what_ data exists, _where_ it is, and _when_ it covers. A STAC catalog might point to assets that are NetCDF files, Zarr stores
+[STAC (SpatioTemporal Asset Catalog)](https://stacspec.org/) is a specification for cataloging and discovering geospatial data assets. Rather than defining how data is stored internally, STAC describes _what_ data exists, _where_ it is, and _when_ it covers. A STAC catalog might point to assets that are NetCDF files or Zarr stores. One of the benefits of STAC is making cross-provider discovery possible, this is exemplified by the STAC web browser which works with any [STAC catalog](https://radiantearth.github.io/stac-browser).
 
-The [EASIER Data Initiative](https://easierdata.org/) has built [ipfs-stac](https://github.com/DecentralizedGeo/ipfs-stac), a Python library to help onboarding and interfacing geospatial data on IPFS. The library enables developers and researchers to leverage STAC APIs enriched with IPFS metadata to seamlessly fetch, pin, and explore data in a familiar manner.
+The [EASIER Data Initiative](https://easierdata.org/) has built [ipfs-stac](https://github.com/DecentralizedGeo/ipfs-stac), a Python library that provides functionality for querying and interacting with STAC catalogs enriched with IPFS. The library supports seamless operations between leveraging STAC APIs enriched with IPFS metadata and interfacing with IPFS itself given a node.
 
-### Content routing
+The convention recommended by [EASIER for using CIDs in STAC](https://easierdata.org/updates/2022/2022-12-02-a-new-way-to-reference-and-retrieve-geographic-data) is to specify an alternate href according to the [alternate assets extension](https://github.com/stac-extensions/alternate-assets)
 
-- **Public DHT**: All providers announce to the main IPFS network
-- **Separate public DHT namespace (not amino, i.e.`/id/ipfs/`)**: a public but separate DHT
-- **"Private" DHT**: A closed network with a shared key for institutional partners with public gateway access
-- **central indexer**: with delegated routing, you can build a central indexer (or multiples) with routing endpoints for discovery
+```json
+{
+ "alternate": {
+   "IPFS": {
+     "href": "ipfs://<CID>"
+   }
+ }
+```
 
 ### Collaboration
 
 #### Pinsets on GitHub
 
 Teams can maintain shared lists of CIDs to pin, enabling collaborative data preservation. When one institution adds data, others can pin it automatically through CI/CD pipelines or manual synchronization.
-
-<!--
-## Open Challenges in Scientific Data Distribution
-
-### Cataloging and Content Discovery
-
-Before standardization efforts like [STAC](https://stacspec.org/) (SpatioTemporal Asset Catalog), each data provider had proprietary APIs with different query syntax, metadata schemas, and response formats. Searching across Landsat, Sentinel, and other providers required learning multiple systems.
-
-STAC provides a common language for describing geospatial assets, making cross-provider discovery possible.
-
-STAC has a web browser, making navigation discovery https://github.com/radiantearth/stac-browser
-
--->
 
 ## Next steps
 
