@@ -224,7 +224,7 @@ octodns
 onboarding
 orcestra
 orcestras
-ORCESTRA('s)
+ORCESTRA's
 packfile
 passthrough
 peergos
