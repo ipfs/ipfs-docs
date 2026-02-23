@@ -38,6 +38,7 @@ However, open access alone is not sufficient. In an ideal world, data needs to m
 - **Interoperable**: Formats and metadata should enable cross-dataset analysis.
 - **Verifiable**: Researchers need to know they are working with valid and authentic data (corollary of reproducibility).
 
+<!-- markdown-link-check-disable-next-line -->
 These criteria are by no means exhaustive, for example initiatives like [FAIR](https://www.go-fair.org/resources/faq/what-is-fair/) have espoused similar criteria with some nuanced variations, though they all emphasise the importance of open data access.
 
 With that in mind, the next section will look at how these ideas come together with IPFS.
