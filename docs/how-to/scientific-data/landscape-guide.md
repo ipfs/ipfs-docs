@@ -188,7 +188,7 @@ Support for the [Pinning API spec](https://ipfs.github.io/pinning-services-api-s
 #### Pinning services
 
 Third-party pinning services provide managed infrastructure for persistent storage, useful when you don't want to run your own nodes.
-TODO: link to pinning services list in docs
+See the [IPFS pinning services documentation](https://docs.ipfs.tech/how-to/pin-files/#use-a-pinning-service) for available options and usage patterns.
 
 ### Retrieval
 
