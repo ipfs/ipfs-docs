@@ -232,7 +232,7 @@ _dnslink.data.example.org  TXT  "dnslink=/ipfs/<cid>"
 
 Updating the DNS record can be done whenever you publish a new version, allowing you to maintain a human-readable URL that always points to the latest dataset. This is ideal for datasets that are updated frequently and need a stable, user-friendly URL.
 
-To update the DNSLink record, you can use tools like [OctoDNS](https://github.com/octodns/octodns) or [DNSControl](https://dnscontrol.org/), which work with many DNS providers and can be integrated into CI/CD pipelines for automated updates when you publish new data. Another option, if you are using GitHub Action is to use the [DNSLink Action](https://github.com/ipshipyard/dnslink-action).
+To update the DNSLink record, you can use tools like [OctoDNS](https://github.com/octodns/octodns) or [DNSControl](https://dnscontrol.org/), which work with many DNS providers and can be integrated into CI/CD pipelines for automated updates when you publish new data. Another option, if you are using GitHub Actions, is to use the [DNSLink Action](https://github.com/ipshipyard/dnslink-action).
 
 To access data linked with DNSLink, you can use one of the following methods:
 
