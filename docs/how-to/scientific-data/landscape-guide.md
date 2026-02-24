@@ -32,7 +32,7 @@ Key characteristics of scientific data include:
 
 As hinted above, open access to scientific data accelerates research, enables reproducibility, and maximizes the return on public investment in science. Organizations worldwide have recognized this, leading to mandates for open data sharing in publicly funded research.
 
-IPFS is natural fit for this due to the nature of its content-addressed, peer-to-peer architecture, which embraces open access and collaborative distribution. The next section looks at these benefits in more detail.
+IPFS is a natural fit for this due to the nature of its content-addressed, peer-to-peer architecture, which embraces open access and collaborative distribution. The next section looks at these benefits in more detail.
 
 ## The benefits of IPFS for scientific data
 
@@ -93,7 +93,7 @@ Given a CID, the most important question is where to find the actual data it rep
 - [**IPNI**](https://cid.contact/): The IPFS Network Index (IPNI) is a public service that indexes content providers on the IPFS network. It provides an API for announcing providers and querying for providers of specific CIDs. This is similar to a dedicated indexer, but is a public service that anyone can use. Announcing content to the IPNI isn't supported by default in IPFS implementations, but can be added using a side-car.
 - **Separate public DHT namespace**: a public but separate DHT namespace is a way to create a separate DHT for a specific community or use case, while still allowing anyone to join and participate. This requires running your own bootstrapper node so that DHT nodes can find each other. In theory, this reduces noise of Mainnet, but only makes sense at a given scale, and requires a critical mass of IPFS nodes to be effective. The main drawback is that it requires additional infrastructure and content on this network won't be discoverable from Mainnet.
 - **"Private" DHT**: A closed network with a shared key. Both discovering and announcing providers requires nodes to have the shared key and be connected to the network. This is mostly for data that needs to be private, but can be used for public data as well.
-- **Dedicated indexer**: With this approach, an indexer you control track CIDs and related metadata. In practice, this often looks like an SQL database and a HTTP API. For interoperability with IPFS libraries and implementations, you expose an [HTTP delegated routing endpoint](https://specs.ipfs.tech/routing/http-routing-v1/). Announcement of CIDs is either via a custom API or directly by the data orchestration system writing to the database. This approach is not very decentralized but can benefits from easier scalability and better performance, especially for large datasets. The main trade-off is that it introduces a central point of failure, and leaves it up to you to implement the logic for announcing providers and tracking CIDs. Both HTTP and libp2p bitswap providers are supported.
+- **Dedicated indexer**: With this approach, an indexer you control tracks CIDs and related metadata. In practice, this often looks like an SQL database and an HTTP API. For interoperability with IPFS libraries and implementations, you expose an [HTTP delegated routing endpoint](https://specs.ipfs.tech/routing/http-routing-v1/). Announcement of CIDs is either via a custom API or directly by the data orchestration system writing to the database. This approach is not very decentralized but can benefit from easier scalability and better performance, especially for large datasets. The main trade-off is that it introduces a central point of failure, and leaves it up to you to implement the logic for announcing providers and tracking CIDs. Both HTTP and libp2p bitswap providers are supported.
 
 ## Geospatial format evolution: from NetCDF to Zarr
 
@@ -213,7 +213,7 @@ Metadata plays a central role here: without rich, standardized metadata describi
 
 ### CID discovery
 
-From a high level, there are a number of common approaches to CID discovery, that vary in terms of whether they're for human or programatic discovery.
+From a high level, there are a number of common approaches to CID discovery, that vary in terms of whether they're for human or programmatic discovery.
 
 - **DNSLink**: Maps DNS names to CIDs, allowing human-readable URLs that resolve to IPFS content. Update the DNS record when you publish new data.
 - **IPNS + DHT**: InterPlanetary Name System provides mutable pointers to content using cryptographic keys.
@@ -227,7 +227,7 @@ From a high level, there are a number of common approaches to CID discovery, tha
 
 The [EASIER Data Initiative](https://easierdata.org/) has built [ipfs-stac](https://github.com/DecentralizedGeo/ipfs-stac), a Python library that provides functionality for querying and interacting with STAC catalogs enriched with IPFS. The library supports seamless operations between leveraging STAC APIs enriched with IPFS metadata and interfacing with IPFS itself given a node.
 
-The convention recommended by [EASIER for using CIDs in STAC](https://easierdata.org/updates/2022/2022-12-02-a-new-way-to-reference-and-retrieve-geographic-data) is to specify a an `ipfs://` URI in the `href` according to the [alternate assets extension](https://github.com/stac-extensions/alternate-assets)
+The convention recommended by [EASIER for using CIDs in STAC](https://easierdata.org/updates/2022/2022-12-02-a-new-way-to-reference-and-retrieve-geographic-data) is to specify an `ipfs://` URI in the `href` according to the [alternate assets extension](https://github.com/stac-extensions/alternate-assets)
 
 ```json
 {
@@ -236,6 +236,7 @@ The convention recommended by [EASIER for using CIDs in STAC](https://easierdata
      "href": "ipfs://<CID>"
    }
  }
+}
 ```
 
 ### Collaboration

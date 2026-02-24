@@ -50,7 +50,7 @@ Some of the key properties of Zarr include:
 - **Participatory sharing**: Anyone can help distribute data sets they've downloaded
 - **Open access**: No vendor lock-in or centralized infrastructure required
 
-This combination has proven effective in real-world campaigns like [Orcestra](https://orcestra-campaign.org/orcestra.html), where scientists collaborated with limited internet connectivity in the field while sharing data globally.
+This combination has proven effective in real-world campaigns like [ORCESTRA](https://orcestra-campaign.org/orcestra.html), where scientists collaborated with limited internet connectivity in the field while sharing data globally.
 
 ## Prerequisites
 
