@@ -79,13 +79,18 @@ The API under `/api/v0/` is an RPC-style API over HTTP, not a REST API.
 /ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
 /ip4/104.236.151.122/tcp/4001/p2p/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx
 /ip4/104.236.176.52/tcp/4001/p2p/QmSoLnSGccFuZQJzRadHn95W2CrSFmZuTdDWP8HXaHca9z
+```
 
+CLI with `--enc=json` produces the same JSON as the HTTP RPC API:
+```
 > curl -X POST http://127.0.0.1:5001/api/v0/swarm/peers
 {
-  "Strings": [
-    "/ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
-    "/ip4/104.236.151.122/tcp/4001/p2p/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx",
-    "/ip4/104.236.176.52/tcp/4001/p2p/QmSoLnSGccFuZQJzRadHn95W2CrSFmZuTdDWP8HXaHca9z",
+  "Peers": [
+    {
+      "Addr": "/ip4/104.131.131.82/tcp/4001",
+      "Peer": "QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
+      ...
+    }
   ]
 }
 ```
@@ -110,21 +115,10 @@ Note that it can be used multiple times to signify multiple arguments.
 Flags are added through the query string. For example, the `--encoding=json` flag is the `&encoding=json` query parameter below:
 
 ```
-> curl -X POST "http://127.0.0.1:5001/api/v0/object/get?arg=QmaaqrHyAQm7gALkRW8DcfGX3u8q9rWKnxEMmf7m9z515w&encoding=json"
+> curl -X POST "http://127.0.0.1:5001/api/v0/block/stat?arg=QmaaqrHyAQm7gALkRW8DcfGX3u8q9rWKnxEMmf7m9z515w&encoding=json"
 {
-  "Links": [
-    {
-      "Name": "index.html",
-      "Hash": "QmYftndCvcEiuSZRX7njywX2AGSeHY2ASa7VryCq1mKwEw",
-      "Size": 1700
-    },
-    {
-      "Name": "static",
-      "Hash": "QmdtWFiasJeh2ymW3TD2cLHYxn1ryTuWoNpwieFyJriGTS",
-      "Size": 2428803
-    }
-  ],
-  "Data": "CAE="
+  "Key": "QmaaqrHyAQm7gALkRW8DcfGX3u8q9rWKnxEMmf7m9z515w",
+  "Size": 108
 }
 ```
 
@@ -245,7 +239,6 @@ Content-Type: application/octet-stream
 The above file includes its path in the "folderName/file.txt" hierarchy and IPFS will therefore be able to add it inside "folderName". The parts declaring the directories are optional when they have files inside and will be inferred from the filenames. In any case, a depth-first traversal of the directory tree is recommended to order the different parts making the request.
 
 NOTE: The `Abspath` header is included for experimental filestore/urlstore features that are enabled with the `nocopy` option and it can be set to the location of the file in the filesystem (within the IPFS root), or to its full web URL.
-
 
 
 ### Response

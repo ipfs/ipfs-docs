@@ -167,7 +167,7 @@ func Endpoints(name string, cmd *cmds.Command) (endpoints []*Endpoint) {
 	return endpoints
 }
 
-func buildResponse(res interface{}, contentType string) string {
+func buildResponse(res any, contentType string) string {
 	// Commands with a nil type return text or binary content.
 	if res == nil {
 		if contentType != "" {
