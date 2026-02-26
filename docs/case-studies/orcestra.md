@@ -17,7 +17,7 @@ In this case study, you'll learn how [The ORCESTRA Campaign](https://orcestra-ca
 
 [ORCESTRA](https://orcestra-campaign.org/) (Organized Convection and EarthCARE Studies over the Tropical Atlantic) is an international field campaign that launched in early 2024 to study tropical mesoscale convective systems: the storm systems that play a significant role in the Earth's weather and climate dynamics.
 
-The campaign brings together **over twenty scientific institutions** spanning Europe, North America, and Africa. Eight sub-campaigns (three airborne, one land-based, and four at sea) coordinate aircraft, ships, ground stations, and satellites to collect atmospheric measurements across the tropical Atlantic.
+The campaign brings together **over twenty scientific institutions** spanning Europe, North America, and Africa. Eight sub-campaigns (three airborne, one land-based, and four at sea) coordinate aircraft, ships,  and ground stations to collect atmospheric measurements across the tropical Atlantic and validate observations made by the [EarthCARE](https://earth.esa.int/eogateway/missions/earthcare) satellite, which was launched shortly before the start of the campaign.
 
 ORCESTRA represents the kind of large-scale scientific collaboration where data infrastructure can make or break a mission: dozens of research groups generating terabytes of observational data that must be shared, verified, and preserved across institutional boundaries.
 
