@@ -26,7 +26,7 @@ ORCESTRA represents the kind of large-scale scientific collaboration where data 
 <NumberBlock :items="[
   {value: '20+', text:'Research institutions'},
   {value: '8', text: 'Sub-campaigns'},
-  {value: '50+', text: 'Participating organizations'},
+  {value: '50+', text: 'Scientists on-site'},
   {value: '8+', text: 'Countries involved'}
 ]" />
 
