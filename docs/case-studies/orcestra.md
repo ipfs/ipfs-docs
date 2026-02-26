@@ -44,7 +44,7 @@ This improvised setup revealed something important: IPFS wasn't just a workaroun
 
 ## How ORCESTRA works
 
-ORCESTRA's eight sub-campaigns span sea, air, and land, collecting atmospheric measurements such as temperature, humidity, wind, radiation, aerosols, and cloud properties. This observational data is structured as multidimensional arrays and stored primarily in the [Zarr](https://zarr.dev/) format, a cloud-native format optimized for chunked, distributed access to large scientific datasets.
+ORCESTRA's eight sub-campaigns cover sea, air and land. They collect atmospheric measurements such as temperature, humidity, wind, radiation, aerosols and cloud properties, as well as oceanic measurements such as sea-surface temperature, salinity and ocean currents. This observational data is structured as multidimensional arrays and stored primarily in the [Zarr](https://zarr.dev/) format, a cloud-native format optimized for chunked, distributed access to large scientific datasets.
 
 ### From collection to publication
 
