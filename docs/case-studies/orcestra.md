@@ -6,7 +6,9 @@ description: Explore how a coordinated tropical atmospheric science campaign use
 # Case study: The ORCESTRA Campaign
 
 ::: callout
-**"When our server infrastructure was stuck in customs in Barbados, we got a Raspberry Pi with a 1 TB SD card running a Kubo IPFS node. Within hours, 50 scientists on site were sharing data laptop-to-laptop. That's when we realized IPFS could be at the core of our data infrastructure."**
+**"During the 2024 ORCESTRA campaign, our planned local data infrastructure was stuck in customs. We set up IPFS on our notebooks and a Raspberry Pi, and suddenly all scientists could sync, share data, and collaborate on a local network, with automatic uploads back to Hamburg during intermittent internet connectivity. Although addressing data with CIDs initially felt unfamiliar, it unlocked local collaboration through data sharing and later scaled to become the foundation of the ORCESTRA data browser—with little more than the initial adaptation."**
+
+_Tobias Kölling, Max Planck Institute for Meteorology_
 :::
 
 ## Overview
