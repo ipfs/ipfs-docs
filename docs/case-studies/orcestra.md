@@ -44,7 +44,7 @@ This improvised setup revealed something important: IPFS wasn't just a workaroun
 
 ## How ORCESTRA works
 
-ORCESTRA's eight sub-campaigns cover sea, air and land. They collect atmospheric measurements such as temperature, humidity, wind, radiation, aerosols and cloud properties, as well as oceanic measurements such as sea-surface temperature, salinity and ocean currents. This observational data is structured as multidimensional arrays and stored primarily in the [Zarr](https://zarr.dev/) format, a cloud-native format optimized for chunked, distributed access to large scientific datasets.
+ORCESTRA's eight sub-campaigns cover sea, air and land. They collect atmospheric measurements such as temperature, humidity, wind, radiation, aerosols and cloud properties, as well as oceanic measurements such as sea-surface temperature, salinity, and ocean currents. This observational data is structured as multidimensional arrays and stored primarily in the [Zarr](https://zarr.dev/) format, a cloud-native format optimized for chunked, distributed access to large scientific datasets.
 
 ### From collection to publication
 
@@ -110,7 +110,9 @@ With multiple institutions hosting the same content-addressed data, there is no 
 IPFS enables a model where providing data is a collaborative effort. Any institution can pin ORCESTRA datasets on their own nodes, contributing bandwidth and availability without any coordination protocol beyond the shared pinset. The more institutions that participate, the more resilient and performant the system becomes.
 
 ### Open, auditable data sharing
+
 <!-- markdown-link-check-disable-next-line -->
+
 Because every dataset, its CID, and its metadata are public, anyone can audit the data: verify its integrity, replicate it, or build upon it. This aligns with the principles of open science and the [FAIR data principles](https://www.go-fair.org/fair-principles/) (Findable, Accessible, Interoperable, Reusable) that increasingly govern publicly funded research.
 
 ### Field-ready infrastructure

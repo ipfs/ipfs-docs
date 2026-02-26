@@ -92,10 +92,9 @@ For example, the following code fetches the image using the `verifiedFetch` libr
 You may notice that there's a path following the CID, e.g. `bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4/welcome-to-IPFS.jpg`, because the starting CID is a directory containing the `welcome-to-IPFS.jpg` file, which you can fetch directly with: `verifiedFetch('ipfs://bafkreie7ohywtosou76tasm7j63yigtzxe7d5zqus4zu3j6oltvgtibeom')`.
 :::
 
-
 ## Fetching the CID with Python and ipfsspec
 
-[ipfsspec](https://github.com/fsspec/ipfsspec) is a read-only [fsspec](https://filesystem-spec.readthedocs.io/) implementation for IPFS. It performs **verified** retrieval by fetching [CAR files](../concepts/glossary.md#car) containing Merkle proofs, so you don't have to trust the gateway. It works without a local IPFS node.
+[ipfsspec](https://github.com/fsspec/ipfsspec) is a read-only [fsspec](https://filesystem-spec.readthedocs.io/) implementation for IPFS. It performs **verified** HTTP retrieval from gateways by fetching [CAR files](../concepts/glossary.md#car) containing Merkle proofs, so you don't have to trust the gateway. It works without a local IPFS node.
 
 1. Install `fsspec` and `ipfsspec`:
 
