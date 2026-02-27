@@ -6,7 +6,7 @@ description: Explore how a coordinated tropical atmospheric science campaign use
 # Case study: The ORCESTRA Campaign
 
 ::: callout
-**"During the 2024 ORCESTRA campaign, our planned local data infrastructure was stuck in customs. We set up IPFS on our notebooks and a Raspberry Pi, and suddenly all scientists could sync, share data, and collaborate on a local network, with automatic uploads back to Hamburg during intermittent internet connectivity. Although addressing data with CIDs initially felt unfamiliar, it unlocked local collaboration through data sharing and later scaled to become the foundation of the ORCESTRA data browser—with little more than the initial adaptation."**
+**"During our 2024 ORCESTRA campaign, the planned local data infrastructure was stuck in customs. We set up IPFS on our notebooks and a Raspberry Pi, and suddenly all scientists could sync, share data, and collaborate on a local network, with automatic uploads back to Hamburg during intermittent internet connectivity. Although addressing data with CIDs initially felt unfamiliar, it unlocked local collaboration through data sharing and later scaled to become the foundation of the ORCESTRA data browser—with little more than the initial adaptation."**
 
 _Tobias Kölling, Max Planck Institute for Meteorology_
 :::
