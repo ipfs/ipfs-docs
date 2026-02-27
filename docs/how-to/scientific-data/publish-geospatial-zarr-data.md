@@ -41,11 +41,11 @@ Some of the key properties of Zarr include:
 - **Chunked by default**: Arrays split into small chunks let you download only the subset you need.
 - **Consolidated metadata**: All metadata in a single `zarr.json` file speeds reads for multi-array data sets.
 
+> **Note:** For a more elaborate explanation on the underlying principles and motivation for Zarr, check out [this blog post](https://tom-nicholas.com/blog/2025/cloud-optimized-scientific-data/), by one of the Zarr contributors.
 :::callout
 This guide uses Zarr v3 conventions. Zarr v2 works the same way with IPFS, but uses different metadata files (`.zmetadata`, `.zarray`, `.zattrs`, `.zgroup`) instead of `zarr.json`. The `--hidden` flag in the `ipfs add` command ensures these files are included. See the [Zarr v2 to v3 migration guide](https://zarr.readthedocs.io/en/stable/user-guide/v3_migration.html) for more details.
 :::
 
-> **Note:** For a more elaborate explanation on the underlying principles and motivation for Zarr, check out [this blog post](https://tom-nicholas.com/blog/2025/cloud-optimized-scientific-data/), by one of the Zarr contributors.
 
 **IPFS** complements Zarr with decentralized distribution:
 
@@ -67,6 +67,7 @@ Before starting, ensure you have:
 :::callout
 See the [NAT and port forwarding guide](../nat-configuration.md) for more information on how to configure port forwarding so that your IPFS node is publicly reachable, thus allowing reliable retrievability of data by other nodes.
 
+To check if your Kubo is publicly reachable, you can use the `ipfs swarm addrs autonat` command.
 :::
 
 ## Step 1: Prepare your Zarr data set
