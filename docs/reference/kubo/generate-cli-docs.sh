@@ -35,13 +35,18 @@ Every command usable from the CLI is also available through the [RPC API v0](rpc
 /ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
 /ip4/104.236.151.122/tcp/4001/p2p/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx
 /ip4/104.236.176.52/tcp/4001/p2p/QmSoLnSGccFuZQJzRadHn95W2CrSFmZuTdDWP8HXaHca9z
+\`\`\`
 
+CLI with \`--enc=json\` produces the same JSON as the HTTP RPC API:
+\`\`\`
 > curl -X POST http://127.0.0.1:5001/api/v0/swarm/peers
 {
-  \"Strings\": [
-    \"/ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ\",
-    \"/ip4/104.236.151.122/tcp/4001/p2p/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx\",
-    \"/ip4/104.236.176.52/tcp/4001/p2p/QmSoLnSGccFuZQJzRadHn95W2CrSFmZuTdDWP8HXaHca9z\",
+  \"Peers\": [
+    {
+      \"Addr\": \"/ip4/104.131.131.82/tcp/4001\",
+      \"Peer\": \"QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ\",
+      ...
+    }
   ]
 }
 \`\`\`

@@ -44,13 +44,15 @@ const MaxIndent = 20
 
 // Endpoint defines an IPFS RPC API endpoint.
 type Endpoint struct {
-	Name        string
-	Status      cmds.Status
-	Arguments   []*Argument
-	Options     []*Argument
-	Description string
-	Response    string
-	Group       string
+	Name                string
+	Status              cmds.Status
+	Arguments           []*Argument
+	Options             []*Argument
+	Description         string
+	HTTPDescription     string // additional HTTP-specific notes, shown after Description
+	Response            string
+	ResponseContentType string
+	Group               string
 }
 
 // Argument defines an IPFS RPC API endpoint argument.
@@ -134,16 +136,25 @@ func Endpoints(name string, cmd *cmds.Command) (endpoints []*Endpoint) {
 			})
 		}
 
-		res := buildResponse(cmd.Type)
+		// Extract HTTP-specific documentation from Helptext.HTTP if present
+		var contentType, httpDescription string
+		if cmd.Helptext.HTTP != nil {
+			contentType = cmd.Helptext.HTTP.ResponseContentType
+			httpDescription = cmd.Helptext.HTTP.Description
+		}
+
+		res := buildResponse(cmd.Type, contentType)
 
 		endpoints = []*Endpoint{
 			{
-				Name:        name,
-				Status:      cmd.Status,
-				Description: cmd.Helptext.Tagline,
-				Arguments:   arguments,
-				Options:     options,
-				Response:    res,
+				Name:                name,
+				Status:              cmd.Status,
+				Description:         cmd.Helptext.Tagline,
+				HTTPDescription:     httpDescription,
+				Arguments:           arguments,
+				Options:             options,
+				Response:            res,
+				ResponseContentType: contentType,
 			},
 		}
 	}
@@ -156,10 +167,13 @@ func Endpoints(name string, cmd *cmds.Command) (endpoints []*Endpoint) {
 	return endpoints
 }
 
-func buildResponse(res interface{}) string {
-	// Commands with a nil type return text. This is a bad thing.
+func buildResponse(res any, contentType string) string {
+	// Commands with a nil type return text or binary content.
 	if res == nil {
-		return "This endpoint returns a `text/plain` response body."
+		if contentType != "" {
+			return "This endpoint returns data in the format indicated by the Content-Type header."
+		}
+		return "This endpoint returns the same output as the CLI command, or the CLI with --enc=json."
 	}
 	desc, err := JsondocGlossary.Describe(res)
 	if err != nil {
