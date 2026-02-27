@@ -114,7 +114,6 @@ IPFS enables a model where providing data is a collaborative effort. Any institu
 ### Open, auditable data sharing
 
 <!-- markdown-link-check-disable-next-line -->
-
 Because every dataset, its CID, and its metadata are public, anyone can audit the data: verify its integrity, replicate it, or build upon it. This aligns with the principles of open science and the [FAIR data principles](https://www.go-fair.org/fair-principles/) (Findable, Accessible, Interoperable, Reusable) that increasingly govern publicly funded research.
 
 ### Field-ready infrastructure
