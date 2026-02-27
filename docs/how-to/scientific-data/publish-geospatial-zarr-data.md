@@ -42,7 +42,7 @@ Some of the key properties of Zarr include:
 - **Consolidated metadata**: All metadata in a single `zarr.json` file speeds reads for multi-array data sets.
 
 :::callout
-This guide uses Zarr v3 conventions. Zarr v2 works the same way with IPFS, but uses different metadata files (`.zmetadata`, `.zarray`, `.zattrs`, `.zgroup`) instead of `zarr.json`. The `--hidden` flag in the `ipfs add` command ensures these dotfiles are included. See the [Zarr v2 to v3 migration guide](https://zarr.readthedocs.io/en/stable/user-guide/v3_migration.html) for more details.
+This guide uses Zarr v3 conventions. Zarr v2 works the same way with IPFS, but uses different metadata files (`.zmetadata`, `.zarray`, `.zattrs`, `.zgroup`) instead of `zarr.json`. The `--hidden` flag in the `ipfs add` command ensures these files are included. See the [Zarr v2 to v3 migration guide](https://zarr.readthedocs.io/en/stable/user-guide/v3_migration.html) for more details.
 :::
 
 > **Note:** For a more elaborate explanation on the underlying principles and motivation for Zarr, check out [this blog post](https://tom-nicholas.com/blog/2025/cloud-optimized-scientific-data/), by one of the Zarr contributors.
