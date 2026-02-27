@@ -95,25 +95,28 @@ Chunking in Zarr is a nuanced topic beyond the scope of this guide. For more inf
 
 ## Step 2: Add your data set to IPFS
 
-Add your Zarr folder to IPFS using the `ipfs add` command:
+First, apply the [unixfs-v1-2025 UnixFS profile](https://github.com/ipfs/specs/pull/499) which configures optimal defaults for content-addressed data (CIDv1, raw leaves, and 1 MiB chunking):
+
+```bash
+ipfs config profile apply unixfs-v1-2025
+```
+
+Then add your Zarr folder to IPFS using the `ipfs add` command:
 
 ```bash
 ipfs add --recursive \
-         --hidden \
-         --raw-leaves \
-         --chunker=size-1048576 \
-         --cid-version=1 \
-         --pin-name="halo-measurements-2026-01-23" \
-         --quieter \
-         ./my-dataset.zarr
+        --hidden \
+        --pin-name="halo-measurements-2026-01-23" \
+        --quieter \
+        ./my-dataset.zarr
 ```
 
 This command:
 
 1. **Merkleizes** the folder: converts files and directories into content-addressed blocks with UnixFS
-1. **Pins** the data locally: prevents garbage collection from removing it
-1. **Provides** to the IPFS network that your node has this data
-1. **Outputs the root CID**: the identifier for your entire dataset
+2. **Pins** the data locally: prevents garbage collection from removing it
+3. **Provides** to the IPFS network that your node has this data
+4. **Outputs the root CID**: the identifier for your entire dataset
 
 The `--quieter` flag outputs only the root CID, which identifies the complete dataset.
 
@@ -162,11 +165,10 @@ The simplest way to add content to MFS is to pass the `--to-files` flag when add
 ipfs add --recursive ./halo-measurements-2026-01-23 --to-files=/datasets/halo/2026-01-23
 ```
 
-You can also assemble a combined dataset from multiple sources, including datasets already published by other contributors, without fetching any remote data. Suppose two HALO flight datasets are already on the network and you want to group them with a third that you are adding locally:
+You can also assemble a combined dataset from multiple sources, including datasets already published by other contributors, without fetching all the data (only the root block typically well under 2 MiB is needed). For example, suppose two HALO flight datasets are already on the IPFS network and you want to group them with a third dataset that you are adding locally:
 
 ```bash
-# Two datasets already exist on the network from other contributors.
-# Their root CIDs are known (e.g. from a manifest or data catalogue):
+# Note these CIDs are for demonstration purposes only and do not correspond to real datasets on the network.
 #   2026-01-21 flight → bafybeiaxkxdnj7wfivrkjw7qhglcvbulryvpxp5cqr7djjdnywefr4cmq4
 #   2026-01-22 flight → bafybeibpfqhzuicdpfzzfujkzaqnxz5e7c5e44erjpxjrguqxs7y6bcnve
 
@@ -182,6 +184,12 @@ ipfs files cp /ipfs/bafybeibpfqhzuicdpfzzfujkzaqnxz5e7c5e44erjpxjrguqxs7y6bcnve 
 # Each mutation produces a new root CID — a lightweight versioned snapshot
 ipfs files stat --hash /datasets/halo
 # bafybeihqixf5ew7mfr74bzb74qiw2mgtnytabnpzjnf5xeejzq4p2ocygu
+
+# To list the contents of the combined dataset:
+ipfs files ls -l /datasets/halo
+# 2026-01-21/	bafybeiaxkxdnj7wfivrkjw7qhglcvbulryvpxp5cqr7djjdnywefr4cmq4	0
+# 2026-01-22/	bafybeibpfqhzuicdpfzzfujkzaqnxz5e7c5e44erjpxjrguqxs7y6bcnve	0
+# 2026-01-23/	bafybeiheegb3h5s4v4igmxqivp4mq5gvp4zyv6lc3nmjjifgybqovzh4ji	0
 ```
 
 `bafybeihqixf5ew7mfr74bzb74qiw2mgtnytabnpzjnf5xeejzq4p2ocygu` is a new CID representing the combined dataset containing all three HALO flight datasets. The original CIDs are referenced, not copied, so no data is duplicated.
