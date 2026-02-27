@@ -92,6 +92,7 @@ module.exports = {
               {text: 'Fleek', link : '/case-studies/fleek'},
               {text: 'LikeCoin', link : '/case-studies/likecoin'},
               {text: 'Morpheus.Network', link : '/case-studies/morpheus'},
+              {text: 'ORCESTRA', link : '/case-studies/orcestra'},
               {text: 'Snapshot',link : '/case-studies/snapshot'},
             ]
           }
