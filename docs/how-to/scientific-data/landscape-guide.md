@@ -130,10 +130,10 @@ Zarr has seen widespread adoption across scientific domains, for example:
 - Optimising Zarr chunk size is a nuanced topic and largely dependent on the access patterns of data
   - The established convention is to try to align Zarr chunk sizes with the IPFS maximal chunk size of 1 MiB whenever possible so that each Zarr chunk fetched maps to a single IPFS block.
   - There are many resources that cover this in more details:
-    - https://zarr.readthedocs.io/en/stable/user-guide/performance/
-    - https://element84.com/software-engineering/chunks-and-chunkability-tyranny-of-the-chunk/
-    - https://eopf-toolkit.github.io/eopf-101/03_about_chunking/31_zarr_chunking_intro.html
-    - https://esipfed.github.io/cloud-computing-cluster/optimization-practices.html
+    - [https://zarr.readthedocs.io/en/stable/user-guide/performance/](https://zarr.readthedocs.io/en/stable/user-guide/performance/)
+    - [https://element84.com/software-engineering/chunks-and-chunkability-tyranny-of-the-chunk/](https://element84.com/software-engineering/chunks-and-chunkability-tyranny-of-the-chunk/)
+    - [https://eopf-toolkit.github.io/eopf-101/03_about_chunking/31_zarr_chunking_intro.html](https://eopf-toolkit.github.io/eopf-101/03_about_chunking/31_zarr_chunking_intro.html)
+    - [https://esipfed.github.io/cloud-computing-cluster/optimization-practices.html](https://esipfed.github.io/cloud-computing-cluster/optimization-practices.html)
 - There are a number of trade-offs to consider with UnixFS:
   - Overhead of around 0.5%-1% for the additional metadata and proto
   - But you might want to keep original copy of the data before encoding with UnixFS so that might double it
