@@ -23,6 +23,16 @@ module.exports = {
       hashFunction: "sha256"
     }
   },
+  chainWebpack: config => {
+    config.module
+      .rule('vue')
+      .use('vue-loader')
+      .tap(options => {
+        options.compilerOptions = options.compilerOptions || {}
+        options.compilerOptions.prettify = false
+        return options
+      })
+  },
   base: '/',
   head: require('./head'),
   locales: {
@@ -130,7 +140,7 @@ module.exports = {
                 ['/quickstart/pin','Pin (Browser)'],
                 ['/quickstart/pin-cli','Pin (CLI)'],
                 ['/how-to/websites-on-ipfs/deploy-github-action', 'Deploy to IPFS with GitHub Actions' ],
-                
+
               ]
             },
             {
