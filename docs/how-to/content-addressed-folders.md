@@ -179,16 +179,17 @@ These are standard BLAKE3 hashes, but they can be encoded as CIDs for interopera
 
 ## Comparison
 
-| Criteria        | iroh collections           | UnixFS                                   | MASL/DRISL                                                                            |
-| --------------- | -------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------- |
-| Encoding        | Postcard (tag-free binary) | Protobuf (dag-pb)                        | [CBOR (deterministic subset with support for CIDs)](https://dasl.ing/drisl.html)      |
-| Hash            | BLAKE3                     | Configurable (SHA-256 default)           | Configurable via CID multihash                                                        |
-| Directory model | Flat path→hash list        | DAG with directory nodes + HAMT sharding | Flat path→CID map                                                                     |
-| Overhead        | ~0% (names + hashes only)  | 0.005–1% (depends on file count/size)    | Minimal (CBOR framing)                                                                |
-| Identifiers     | BLAKE3 hash (CID-encodable via `blake3` + `blake3_hashseq` multicodecs) | CID (self-describing)                    | CID (self-describing)                                                                 |
-| File lookup     | O(1) offset from root      | DAG traversal, depth varies              | O(1) key lookup from root                                                             |
-| Subsetting      | Individual files only      | Files and folders (subtree by CID)       | Individual files only                                                                 |
-| Byte ranges     | No (whole-file hashes)     | Yes (chunked DAG allows partial reads)   | No (whole-file CIDs)                                                                  |
-| Determinism     | By construction            | Depends on DAG construction choices      | By construction (DRISL)                                                               |
-| Implementations | Rust only                  | Go, JavaScript, Rust                     | Wide See [cross-implementation test suite](https://hyphacoop.github.io/dasl-testing/) |
-| Ecosystem       | iroh/n0                    | IPFS (broad)                             | AT Protocol/Bluesky (emerging)                                                        |
+| Criteria             | iroh collections                                                        | UnixFS                                   | MASL/DRISL                                                                            |
+| -------------------- | ----------------------------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------- |
+| Encoding             | Postcard (tag-free binary)                                              | Protobuf (dag-pb)                        | [CBOR (deterministic subset with support for CIDs)](https://dasl.ing/drisl.html)      |
+| Hash                 | BLAKE3                                                                  | Configurable (SHA-256 default)           | Configurable via CID multihash                                                        |
+| Directory model      | Flat path→hash list                                                     | DAG with directory nodes + HAMT sharding | Flat path→CID map                                                                     |
+| Overhead             | ~0% (names + hashes only)                                               | 0.005–1% (depends on file count/size)    | Minimal (CBOR framing)                                                                |
+| Identifiers          | BLAKE3 hash (CID-encodable via `blake3` + `blake3_hashseq` multicodecs) | CID (self-describing)                    | CID (self-describing)                                                                 |
+| File lookup          | O(1) offset from root                                                   | DAG traversal, depth varies              | O(1) key lookup from root                                                             |
+| Subsetting           | Individual files only                                                   | Files and folders (subtree by CID)       | Individual files only                                                                 |
+| Byte ranges          | No (whole-file hashes)                                                  | Yes (chunked DAG allows partial reads)   | No (whole-file CIDs)                                                                  |
+| Determinism          | By construction                                                         | Depends on DAG construction choices      | By construction (DRISL)                                                               |
+| Implementations      | Rust only                                                               | Go, JavaScript, Rust                     | Wide See [cross-implementation test suite](https://hyphacoop.github.io/dasl-testing/) |
+| IPFS Gateway support | No                                                                      | Yes                                      | Yes                                                                                   |
+| Ecosystem            | iroh/n0                                                                 | IPFS (broad)                             | AT Protocol/Bluesky (emerging)                                                        |
