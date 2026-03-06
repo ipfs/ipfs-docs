@@ -110,13 +110,13 @@ Because DRISL and MASL build on CBOR — a widely supported serialization format
 
 ## iroh collections
 
-An iroh `Collection` is a flat list of `(String, blake3::Hash)` pairs. Filenames are mapped to 32-byte BLAKE3 content hashes. Directory structure is encoded in the name strings as relative paths (e.g. `"assets/style.css"`, `"js/app.js"`), keeping the format flat while representing arbitrary directory trees.
+An iroh `Collection` is a way to represent a directory of files as a single content hash, designed for efficient verification and distribution with [iroh-blobs](https://docs.iroh.computer/protocols/blobs). The format is simple by design: a flat list of `(String, blake3::Hash)` pairs. Filenames are mapped to 32-byte BLAKE3 content hashes. Directory structure is encoded in the name strings as relative paths (e.g. `"assets/style.css"`, `"js/app.js"`), keeping the format flat while representing arbitrary directory trees.
 
 On the wire, a collection splits into two blobs:
 
 ### The metadata blob (`CollectionMeta`)
 
-Serialized with [postcard](https://docs.rs/postcard) (a compact, no_std-friendly binary format):
+Serialized with [postcard](https://docs.rs/postcard):
 
 ```
 ┌──────────────────────────────┐
@@ -165,7 +165,7 @@ These are standard BLAKE3 hashes, but they can be encoded as CIDs for interopera
 - **Compact.** The overhead per file is a varint-prefixed filename in the metadata blob and a 32-byte hash in the root blob.
 - **O(1) file lookup.** The root blob is a flat array of fixed-size 32-byte hashes, so finding the Nth file is a constant-time offset (`N * 32` bytes) with no parsing required.
 - **Streaming verification.** The root blob is a hash sequence, so a verifier can check individual files incrementally as they arrive.
-- **Ready-made distribution.** Collections can be distributed directly over iroh's peer-to-peer network without conversion.
+- **Ready-made distribution.** Collections can be distributed in a peer-to-peer fashion with iroh-blobs.
 - **BLAKE3.** Fast (parallelizable, SIMD-accelerated), 256-bit digests, and adopted by the [BDASL](https://dasl.ing/bdasl.html) spec.
 - **File-level subsetting only.** Individual files can be fetched and verified by their BLAKE3 hash, but there is no way to address a subdirectory as a unit. Fetching a subset means filtering the path list and requesting files one by one.
 - **Rust only (for now).** The reference implementation is in Rust. The format is simple enough to implement in other languages — it's just postcard-encoded strings and a flat array of BLAKE3 hashes — but no other implementations exist yet.
