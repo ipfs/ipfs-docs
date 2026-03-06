@@ -15,13 +15,6 @@ The goal is to have a single content hash that represents a directory of files, 
 
 This matters for build outputs, software distributions, large datasets, website archives — any case where you need to verify that a collection of files hasn't changed. A naive approach like hashing a tarball is fragile: tar archives encode metadata (timestamps, permissions, ordering) that vary between machines, producing different hashes for identical file contents. Content addressing solves this, but the choice of format has real consequences — particularly for overhead, determinism, language support and existing tooling, and whether you can fetch subsets without downloading the whole thing. These differences compound as dataset size grows: what's negligible at megabyte scale — a few extra bytes of framing, an extra round of parsing per block — becomes a meaningful cost at terabyte scale across millions of files.
 
-A content-addressed directory representation should be:
-
-- **Deterministic**: the same files always produce the same hash, regardless of where or when they were produced
-- **Lightweight**: minimal overhead beyond the file data itself
-- **Canonical**: one correct representation, no ambiguity
-- **Subsetable**: consumers should be able to fetch individual files or subdirectories without downloading everything
-
 ## Subsetting: files vs folders
 
 For large directories, you rarely want the whole thing. You might need one component's assets from a monorepo build, a single day's logs from an archive, or one region's data from a dataset. The ability to fetch a verified subset — and know it's authentic without downloading everything else — is important.
@@ -93,7 +86,7 @@ Large individual files also benefit: because UnixFS splits files into a DAG of c
 - **HAMT sharding.** Large directories automatically switch to hash-array-mapped-trie sharding, which adds traversal complexity and means the same logical directory can have different structures depending on size.
 - **Optionality over determinism.** UnixFS embraces optionality, meaning the same data can produce different CIDs depending on how the underlying Merkle DAG is constructed. Parameters like chunk size, chunking algorithm (fixed-size vs Rabin vs Buzhash), DAG balancing strategy (balanced vs trickle), max link count per node, and whether to use raw leaves or dag-pb leaves all affect the resulting CID. Two different tools ingesting the same directory with different defaults will produce different CIDs. [IPIP-499: UnixFS CID Profiles](https://github.com/ipfs/specs/pull/499) aims to solve this by standardising a single set of parameters — defining one canonical way to construct the DAG so that any conforming implementation produces the same CID for the same input. Until that lands, determinism requires all parties to agree on identical parameters out of band.
 - **Deep DAG traversal.** Resolving a file means walking the directory DAG node by node — `a/b/c.csv` requires resolving `a`, then `b`, then the file, each a separate block fetch and decode. Nested directories and HAMT shards make the depth unpredictable.
-- **Mature ecosystem.** UnixFS has the broadest tooling support and is the de facto standard for IPFS content addressing, with implementations in Go ([Kubo](https://github.com/ipfs/kubo)), JavaScript ([Helia](https://github.com/ipfs/helia)), and Rust ([beetle](https://github.com/n0-computer/beetle)).
+- **Mature ecosystem.** UnixFS has the broadest tooling support and is the de facto standard for IPFS content addressing, with implementations in Go ([Kubo](https://github.com/ipfs/kubo)) and TypeScript ([Helia](https://github.com/ipfs/helia)).
 
 ## DASL: MASL and DRISL
 
