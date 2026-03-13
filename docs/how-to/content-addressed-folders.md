@@ -1,9 +1,9 @@
 ---
-title: Content addressing directories of files
-description: A comparison of UnixFS, iroh collections, and DASL/MASL for content addressing directories of files, covering overhead, determinism, subsetting, and ecosystem support.
+title: Content addressing data sets
+description: A comparison of UnixFS, iroh collections, and DASL/MASL for content addressing data sets like directories of files, with a focus on overhead, determinism, subsetting, and ecosystem support.
 ---
 
-# Content addressing directories of files
+# Content addressing data sets
 
 This guide compares three approaches to content addressing directories of files:
 
@@ -11,9 +11,19 @@ This guide compares three approaches to content addressing directories of files:
 - [iroh collections](https://docs.iroh.computer/protocols/blobs#collections)
 - [DASL](https://dasl.ing) along with its metadata system [MASL](https://dasl.ing/masl.html)
 
-The goal is to have a single content hash that represents a directory of files, such that verifying that hash verifies the entire contents.
+## Merkle DAGs: the common foundation
 
-This matters for build outputs, software distributions, large datasets, website archives — any case where you need to verify that a collection of files hasn't changed. A naive approach like hashing a tarball is fragile: tar archives encode metadata (timestamps, permissions, ordering) that vary between machines, producing different hashes for identical file contents. Content addressing solves this, but the choice of format has real consequences — particularly for overhead, determinism, language support and existing tooling, and whether you can fetch subsets without downloading the whole thing. These differences compound as dataset size grows: what's negligible at megabyte scale — a few extra bytes of framing, an extra round of parsing per block — becomes a meaningful cost at terabyte scale across millions of files.
+Before comparing formats, it helps to understand what they all share: every approach effectively constructs a [_Merkle DAG_](../concepts/merkle-dag.md), a data structure which allows you to derive a small verification identifier like a CID to represents a collection of data.
+
+The formats below vary in how they construct the Merkle DAG and the trade-offs they make, but in essence they all allow you to produce a CID that represents a collection of files, such that verifying that hash verifies the entire contents.
+
+This matters for build outputs, software distributions, large datasets, website archives — any case where you need to verify that a collection of files hasn't changed.
+
+A naive approach like hashing a tarball is fragile: tar archives encode metadata (timestamps, permissions, ordering) that vary between machines, producing different hashes for identical file contents. It's also impractical for large datasets where you cannot afford to store two copies of the data.
+
+Content addressing solves this, but the choice of format has real consequences, particularly for overhead, determinism, language support and interoprability within an ecosystem.
+
+These differences compound as dataset size grows: what's negligible at megabyte scale —a few extra bytes of framing, an extra round of parsing per block— becomes a meaningful cost at terabyte scale across millions of files.
 
 ## Subsetting: files vs folders
 
@@ -118,14 +128,14 @@ On the wire, a collection splits into two blobs:
 
 Serialized with [postcard](https://docs.rs/postcard):
 
-```
+```ascii
 ┌──────────────────────────────┐
 │ header: "CollectionV0."      │  13 bytes, magic/version tag
 ├──────────────────────────────┤
 │ names: Vec<String>           │  varint-prefixed length, then
-│   "assets/style.css"        │  each string is varint-length
-│   "js/app.js"               │  prefixed + raw UTF-8 bytes
-│   "index.html"              │
+│   "assets/style.css"         │  each string is varint-length
+│   "js/app.js"                │  prefixed + raw UTF-8 bytes
+│   "index.html"               │
 └──────────────────────────────┘
 ```
 
@@ -135,12 +145,12 @@ No delimiters between strings — postcard uses length-prefixed encoding through
 
 A sequence of 32-byte BLAKE3 hashes:
 
-```
+```ascii
 ┌─────────────────────────────────┐
 │ hash(metadata blob)             │  32 bytes
-│ hash("assets/style.css")       │  32 bytes
-│ hash("js/app.js")              │  32 bytes
-│ hash("index.html")             │  32 bytes
+│ hash("assets/style.css")        │  32 bytes
+│ hash("js/app.js")               │  32 bytes
+│ hash("index.html")              │  32 bytes
 └─────────────────────────────────┘
 ```
 
@@ -150,7 +160,7 @@ The first entry is the hash of the metadata blob. The remaining entries correspo
 
 The **BLAKE3 hash of the root blob** is the single hash that identifies the entire collection. Verifying this one hash verifies every **file name** and every **file's contents**.
 
-```
+```code
 Collection Hash = blake3(root blob)
                 = blake3(hash(meta) ‖ hash(file₁) ‖ hash(file₂) ‖ …)
 ```
@@ -160,14 +170,12 @@ These are standard BLAKE3 hashes, but they can be encoded as CIDs for interopera
 ### Characteristics
 
 - **No metadata pollution.** Unlike tar/zip, there are no timestamps, permissions, or ownership fields. Two directories with identical file names and contents always produce the same hash, regardless of when or where they were produced.
-- **Flat representation of trees.** Directory structure lives in the name strings as relative paths, not as separate directory entries with their own metadata. One entry per file, no ambiguity about empty directories or nested paths.
 - **Positional, tag-free encoding.** Postcard serializes fields in declaration order with no field numbers or type tags. The `"CollectionV0."` magic header handles versioning.
 - **Compact.** The overhead per file is a varint-prefixed filename in the metadata blob and a 32-byte hash in the root blob.
-- **O(1) file lookup.** The root blob is a flat array of fixed-size 32-byte hashes, so finding the Nth file is a constant-time offset (`N * 32` bytes) with no parsing required.
+- **O(1) hash retrieval by index.** Once you know a file's index N, its hash is at a constant-time offset (`N * 32` bytes) in the root blob — no parsing required. Finding N by filename requires a linear scan of the metadata blob to match the path string, but the hash fetch itself is O(1).
 - **Streaming verification.** The root blob is a hash sequence, so a verifier can check individual files incrementally as they arrive.
 - **Ready-made distribution.** Collections can be distributed in a peer-to-peer fashion with iroh-blobs.
 - **BLAKE3.** Fast (parallelizable, SIMD-accelerated), 256-bit digests, and adopted by the [BDASL](https://dasl.ing/bdasl.html) spec.
-- **File-level subsetting only.** Individual files can be fetched and verified by their BLAKE3 hash, but there is no way to address a subdirectory as a unit. Fetching a subset means filtering the path list and requesting files one by one.
 - **Rust only (for now).** The reference implementation is in Rust. The format is simple enough to implement in other languages — it's just postcard-encoded strings and a flat array of BLAKE3 hashes — but no other implementations exist yet.
 
 ## Comparison
@@ -175,14 +183,13 @@ These are standard BLAKE3 hashes, but they can be encoded as CIDs for interopera
 | Criteria             | iroh collections                                                        | UnixFS                                   | MASL/DRISL                                                                            |
 | -------------------- | ----------------------------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------- |
 | Encoding             | Postcard (tag-free binary)                                              | Protobuf (dag-pb)                        | [CBOR (deterministic subset with support for CIDs)](https://dasl.ing/drisl.html)      |
-| Hash                 | BLAKE3                                                                  | Configurable (SHA-256 default)           | Configurable via CID multihash                                                        |
+| Hash                 | BLAKE3                                                                  | Configurable (SHA-256 default)           | SHA-256 (DASL-CIDs only)                                                              |
 | Directory model      | Flat path→hash list                                                     | DAG with directory nodes + HAMT sharding | Flat path→CID map                                                                     |
 | Overhead             | ~0% (names + hashes only)                                               | 0.005–1% (depends on file count/size)    | Minimal (CBOR framing)                                                                |
 | Identifiers          | BLAKE3 hash (CID-encodable via `blake3` + `blake3_hashseq` multicodecs) | CID (self-describing)                    | CID (self-describing)                                                                 |
 | File lookup          | O(1) offset from root                                                   | DAG traversal, depth varies              | O(1) key lookup from root                                                             |
 | Subsetting           | Individual files only                                                   | Files and folders (subtree by CID)       | Individual files only                                                                 |
-| Byte ranges          | No (whole-file hashes)                                                  | Yes (chunked DAG allows partial reads)   | No (whole-file CIDs)                                                                  |
 | Determinism          | By construction                                                         | Depends on DAG construction choices      | By construction (DRISL)                                                               |
 | Implementations      | Rust only                                                               | Go, JavaScript, Rust                     | Wide See [cross-implementation test suite](https://hyphacoop.github.io/dasl-testing/) |
 | IPFS Gateway support | No                                                                      | Yes                                      | Yes                                                                                   |
-| Ecosystem            | iroh/n0                                                                 | IPFS (broad)                             | AT Protocol/Bluesky (emerging)                                                        |
+| Ecosystem            | iroh/n0                                                                 | IPFS (broad)                             | AT Protocol/Bluesky                                                                   |
