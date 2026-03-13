@@ -1,3 +1,4 @@
+
 _redirects
 aave
 accessor
@@ -99,6 +100,7 @@ ethereum
 exfiltrate
 explainers
 fabien
+facto
 failovers
 filebase
 Filebase's
@@ -188,6 +190,7 @@ metamask
 minimalistic
 minty('s)
 mojitos
+monorepo
 multiaddr
 multiaddr(ess)
 multiaddress
@@ -224,9 +227,10 @@ npm
 octodns
 onboarding
 orcestra
-orcestras
 ORCESTRA's
+orcestras
 packfile
+parallelizable
 passthrough
 peergos
 performant
@@ -244,7 +248,6 @@ preload
 prenegotiated
 prepended
 processannounce
-
 proto
 protobuf
 protocol labs
@@ -277,6 +280,7 @@ satoshi nakamoto
 SDKs
 se
 serverless
+sharded
 sharding
 snapshotted
 sneakernet
@@ -289,7 +293,9 @@ storacha
 Storacha's
 storj
 subcommand
+subsetting
 substring
+subtree
 sys
 systemd
 sztandera
@@ -298,10 +304,12 @@ testground
 testnet
 toolkits
 toolset
+trie
 trustlessly
 trustlessness
 uncensorable 
 undialable
+unencoded
 uniswap
 unixfs
 unreachability
