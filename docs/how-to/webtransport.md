@@ -5,7 +5,7 @@ description: Learn how your files are broken down into blocks in IPFS and how to
 
 # WebTransport and Kubo
 
-[WebTransport](https://docs.libp2p.io/concepts/transports/webtransport/), a new libp2p transport protocol, allows browsers to contact [Kubo](../install/command-line.md) nodes, so instead of serving requests for other system level application nodes, you can serve requests directly to a browser. This guide will explain how WebTransport works, Kubo-WebTransport integration use cases, and how to get started with WebTransport in Kubo.
+[WebTransport](https://web.archive.org/web/20260128152314/https://docs.libp2p.io/concepts/transports/webtransport/), a new libp2p transport protocol, allows browsers to contact [Kubo](../install/command-line.md) nodes, so instead of serving requests for other system level application nodes, you can serve requests directly to a browser. This guide will explain how WebTransport works, Kubo-WebTransport integration use cases, and how to get started with WebTransport in Kubo.
 
 Kubo v0.16 introduced [optional support for WebTransport](https://github.com/ipfs/kubo/releases?q=0.16.0&expanded=true#-webtransport-new-experimental-transport), and Kubo v0.18 [enabled support by default](https://github.com/ipfs/kubo/blob/release-v0.18/docs/changelogs/v0.18.md#webtransport-enabled-by-default).  
 
@@ -46,6 +46,6 @@ To get started with using WebTransport with Kubo, you can use follow this GitHub
 
 You can learn more about WebTransport with the following resources:
 
-- [libp2p documentation: WebTransport](https://docs.libp2p.io/concepts/transports/webtransport/)
-- [connectivity.libp2p.io](https://connectivity.libp2p.io/#webtransport)
+- [libp2p documentation: WebTransport](https://web.archive.org/web/20260128152314/https://docs.libp2p.io/concepts/transports/webtransport/)
+- [connectivity.libp2p.io](https://web.archive.org/web/20251118040510/https://connectivity.libp2p.io/#webtransport)
 - [WebTransport spec](https://github.com/libp2p/specs/tree/master/webtransport)
