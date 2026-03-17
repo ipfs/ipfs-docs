@@ -189,6 +189,45 @@ The API will return HTTP Error 403 when Origin is missing, does not match the AP
 	return buf.String()
 }
 
+// GenerateGlobalOptionsBlock produces a markdown section documenting global
+// options that apply to every RPC endpoint. These are defined on Kubo's root
+// command but were previously omitted because the root command has no handler
+// of its own (Run == nil). Query parameter options (--offline, --timeout, etc.)
+// are listed as a standard arguments block. The --api-auth option is documented
+// separately since it is sent as an HTTP Authorization header, not a query param.
+func (md *MarkdownFormatter) GenerateGlobalOptionsBlock(queryOpts []*Argument, authOpt *Argument) string {
+	buf := new(bytes.Buffer)
+
+	fmt.Fprint(buf, `## Global options
+
+The following options apply to all endpoints and can be passed as query parameters on every request.
+These correspond to global flags on the `+"`ipfs`"+` CLI (e.g. `+"`--offline`"+`, `+"`--encoding`"+`, `+"`--timeout`"+`).
+
+`)
+
+	for _, opt := range queryOpts {
+		fmt.Fprint(buf, genArgument(opt, false))
+	}
+
+	// Document the api-auth option separately: it is relevant to the RPC API
+	// but travels as an HTTP header rather than a URL query parameter.
+	if authOpt != nil {
+		fmt.Fprintf(buf, `
+### Authentication
+
+The `+"`--%s`"+` option is used for [RPC API authorization](https://github.com/ipfs/kubo/blob/master/docs/config.md#apiauthorizations).
+Unlike the query parameter options above, it must be sent as an HTTP header:
+
+`+"```"+`
+Authorization: Bearer <secret>
+`+"```"+`
+
+`, authOpt.Name)
+	}
+
+	return buf.String()
+}
+
 func (md *MarkdownFormatter) GenerateStatusIntro(status cmds.Status) string {
 	return fmt.Sprintf(`
 ## %s RPC commands

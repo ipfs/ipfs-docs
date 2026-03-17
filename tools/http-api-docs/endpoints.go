@@ -92,6 +92,61 @@ func IPFSVersion() string {
 	return config.CurrentVersionNumber
 }
 
+// cliOnlyOptions lists root-level flags that only apply to the CLI client
+// and are not meaningful when passed as query parameters to the HTTP RPC API.
+// For example, --repo-dir and --config-file refer to local filesystem paths,
+// --api tells the CLI which daemon to connect to, and --help/--debug control
+// local CLI behavior.
+var cliOnlyOptions = map[string]struct{}{
+	corecmds.RepoDirOption:    {},
+	corecmds.ConfigFileOption: {},
+	corecmds.ConfigOption:     {},
+	corecmds.DebugOption:      {},
+	corecmds.LocalOption:      {}, // deprecated alias for --offline
+	corecmds.ApiOption:        {},
+	"help":                    {}, // cmds.OptLongHelp
+	"h":                       {}, // cmds.OptShortHelp
+}
+
+// GlobalOptions extracts the options defined on corecmds.Root that are
+// relevant to the HTTP RPC API. The Root command itself has Run == nil so
+// Endpoints() skips it, but its Options slice contains global flags
+// (--offline, --timeout, --encoding, etc.) that can be passed as query
+// parameters to any endpoint. CLI-only flags are filtered out.
+//
+// The --api-auth flag is a special case: it controls RPC authentication
+// but is sent as an HTTP Authorization header, not a query parameter.
+// It is returned separately so the formatter can document it differently.
+func GlobalOptions() (queryOpts []*Argument, authOpt *Argument) {
+	for _, opt := range corecmds.Root.Options {
+		name := opt.Names()[0]
+		if _, skip := cliOnlyOptions[name]; skip {
+			continue
+		}
+
+		def := fmt.Sprint(opt.Default())
+		if def == "<nil>" {
+			def = ""
+		}
+
+		arg := &Argument{
+			Name:        name,
+			Type:        opt.Type().String(),
+			Description: opt.Description(),
+			Default:     def,
+		}
+
+		// api-auth is sent as an HTTP header, not a query parameter
+		if name == corecmds.ApiAuthOption {
+			authOpt = arg
+			continue
+		}
+
+		queryOpts = append(queryOpts, arg)
+	}
+	return queryOpts, authOpt
+}
+
 // Endpoints receives a name and a go-ipfs command and returns the endpoints it
 // defines] (sorted). It does this by recursively gathering endpoints defined by
 // subcommands. Thus, calling it with the core command Root generates all
