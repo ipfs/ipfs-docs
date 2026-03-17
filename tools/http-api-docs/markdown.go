@@ -201,7 +201,7 @@ func (md *MarkdownFormatter) GenerateGlobalOptionsBlock(queryOpts []*Argument, a
 	fmt.Fprint(buf, `## Global options
 
 The following options apply to all endpoints and can be passed as query parameters on every request.
-These correspond to global flags on the `+"`ipfs`"+` CLI (e.g. `+"`--offline`"+`, `+"`--encoding`"+`, `+"`--timeout`"+`).
+These correspond to global flags on the `+"`ipfs`"+` CLI (e.g. `+"`--offline`"+`, `+"`--cid-base`"+`, `+"`--timeout`"+`).
 
 `)
 

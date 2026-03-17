@@ -24,16 +24,21 @@ func TestGlobalOptions(t *testing.T) {
 	}
 
 	// Key RPC-relevant flags should be present
-	for _, expected := range []string{"offline", "cid-base", "encoding", "timeout"} {
+	for _, expected := range []string{"offline", "cid-base", "timeout"} {
 		if !slices.Contains(names, expected) {
 			t.Errorf("expected global option %q not found in %v", expected, names)
 		}
 	}
 
-	// CLI-only flags should be filtered out
-	for _, excluded := range []string{"repo-dir", "config-file", "config", "debug", "local", "api", "help", "h"} {
+	// Ignored flags should be filtered out: CLI-only flags, plus encoding
+	// (HTTP defaults to JSON, documented in intro), stream-channels
+	// (no-op over HTTP), and upgrade-cidv0-in-output (deprecated).
+	for _, excluded := range []string{
+		"repo-dir", "config-file", "config", "debug", "local", "api", "help", "h",
+		"encoding", "stream-channels", "upgrade-cidv0-in-output",
+	} {
 		if slices.Contains(names, excluded) {
-			t.Errorf("CLI-only option %q should not appear in global RPC options", excluded)
+			t.Errorf("ignored option %q should not appear in global RPC options", excluded)
 		}
 	}
 

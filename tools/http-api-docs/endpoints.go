@@ -92,12 +92,17 @@ func IPFSVersion() string {
 	return config.CurrentVersionNumber
 }
 
-// cliOnlyOptions lists root-level flags that only apply to the CLI client
-// and are not meaningful when passed as query parameters to the HTTP RPC API.
-// For example, --repo-dir and --config-file refer to local filesystem paths,
-// --api tells the CLI which daemon to connect to, and --help/--debug control
-// local CLI behavior.
-var cliOnlyOptions = map[string]struct{}{
+// ignoredGlobalOptions lists root-level flags that should not appear in the
+// HTTP RPC API reference. This includes:
+//   - CLI-only flags (--repo-dir, --config-file, --api, --debug, --help)
+//     that refer to local paths or control CLI behavior
+//   - --encoding: the HTTP handler defaults to JSON and this is already
+//     documented in the "Flags" intro section of the reference
+//   - --stream-channels: parsed by the HTTP handler but has no effect;
+//     HTTP response streaming is determined by the response type, not this flag
+//   - --upgrade-cidv0-in-output: deprecated, --cid-base with a non-base58btc
+//     value now automatically upgrades CIDv0 to CIDv1
+var ignoredGlobalOptions = map[string]struct{}{
 	corecmds.RepoDirOption:    {},
 	corecmds.ConfigFileOption: {},
 	corecmds.ConfigOption:     {},
@@ -106,13 +111,17 @@ var cliOnlyOptions = map[string]struct{}{
 	corecmds.ApiOption:        {},
 	"help":                    {}, // cmds.OptLongHelp
 	"h":                       {}, // cmds.OptShortHelp
+	cmds.EncLong:              {}, // --encoding: HTTP defaults to JSON, documented in intro
+	cmds.ChanOpt:              {}, // --stream-channels: no-op over HTTP
+	"upgrade-cidv0-in-output": {}, // deprecated: --cid-base auto-upgrades for non-base58btc
 }
 
 // GlobalOptions extracts the options defined on corecmds.Root that are
 // relevant to the HTTP RPC API. The Root command itself has Run == nil so
 // Endpoints() skips it, but its Options slice contains global flags
-// (--offline, --timeout, --encoding, etc.) that can be passed as query
-// parameters to any endpoint. CLI-only flags are filtered out.
+// (--offline, --timeout, --cid-base, etc.) that can be passed as query
+// parameters to any endpoint. Flags listed in ignoredGlobalOptions are
+// filtered out.
 //
 // The --api-auth flag is a special case: it controls RPC authentication
 // but is sent as an HTTP Authorization header, not a query parameter.
@@ -120,7 +129,7 @@ var cliOnlyOptions = map[string]struct{}{
 func GlobalOptions() (queryOpts []*Argument, authOpt *Argument) {
 	for _, opt := range corecmds.Root.Options {
 		name := opt.Names()[0]
-		if _, skip := cliOnlyOptions[name]; skip {
+		if _, skip := ignoredGlobalOptions[name]; skip {
 			continue
 		}
 
