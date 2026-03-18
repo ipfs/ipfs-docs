@@ -5,7 +5,7 @@ description: A comparison of UnixFS, iroh collections, and DASL/MASL for content
 
 # Content addressing data sets
 
-This guide compares three approaches to content addressing directories of files:
+This guide compares three binary formats for content addressing collections of files organised in a directory tree structure:
 
 - [UnixFS](https://specs.ipfs.tech/unixfs/)
 - [iroh collections](https://docs.iroh.computer/protocols/blobs#collections)
@@ -115,9 +115,9 @@ Large individual files also benefit: because UnixFS splits files into a DAG of c
 **[MASL](https://dasl.ing/masl.html)** is a CBOR-based metadata system built on DRISL, designed for content-addressed and decentralized systems. It operates in two modes:
 
 - **Single mode** (`src`): wraps one resource with metadata (content type, etc.)
-- **Bundle mode** (`resources`): maps file paths to resource CIDs with per-file metadata — essentially a directory representation
+- **Bundle mode** (`resources`): maps file paths to resource CIDs with per-file metadata forming a directory tree representation
 
-MASL bundles are conceptually similar to iroh collections: a flat map of paths to content hashes, no directory hierarchy nodes. The key difference is MASL also carries per-resource metadata (like content types) and uses CIDs (self-describing, multi-codec identifiers) rather than raw BLAKE3 hashes. Like iroh collections, subsetting operates at the individual resource level — there is no native subdirectory addressing.
+MASL bundles are conceptually similar to iroh collections: a flat map of paths to content hashes, no directory hierarchy nodes. The key difference is MASL also carries per-resource metadata (modelled after HTTP headers) and uses CIDs rather than raw BLAKE3 hashes. Like iroh collections, subsetting operates at the individual file level — there is no native subdirectory addressing.
 
 Because DRISL and MASL build on CBOR — a widely supported serialization format with libraries in virtually every language — they likely have the widest potential for cross-language implementation. A [cross-implementation test suite](https://hyphacoop.github.io/dasl-testing/) tracks conformance across languages.
 
