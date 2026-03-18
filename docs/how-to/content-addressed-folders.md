@@ -129,11 +129,11 @@ On the wire, a collection splits into two blobs:
 
 ### The metadata blob (`CollectionMeta`)
 
-Serialized with [postcard](https://docs.rs/postcard):
+Serialized with [postcard]:
 
 ```ascii
 ┌──────────────────────────────┐
-│ header: "CollectionV0."      │  13 bytes, magic/version tag
+│ header: "CollectionV0."      │  13 bytes, version tag
 ├──────────────────────────────┤
 │ names: Vec<String>           │  varint-prefixed length, then
 │   "assets/style.css"         │  each string is varint-length
@@ -173,7 +173,7 @@ These are standard BLAKE3 hashes, but they can be encoded as CIDs for interopera
 ### Characteristics
 
 - **No metadata pollution.** Unlike tar/zip, there are no timestamps, permissions, or ownership fields. Two directories with identical file names and contents always produce the same hash, regardless of when or where they were produced.
-- **Positional, tag-free encoding.** Postcard serializes fields in declaration order with no field numbers or type tags. The `"CollectionV0."` magic header handles versioning.
+- **Positional, tag-free encoding.** [Postcard] serializes fields in declaration order with no field numbers or type tags. The `"CollectionV0."` header serves like a [file signature](https://en.wikipedia.org/wiki/List_of_file_signatures) and allows evolution via versioning.
 - **Compact.** The overhead per file is a varint-prefixed filename in the metadata blob and a 32-byte hash in the root blob.
 - **Streaming verification.** The root blob is a hash sequence, so a verifier can check individual files incrementally as they arrive.
 - **Ready-made distribution.** Collections can be distributed in a peer-to-peer fashion with iroh-blobs.
@@ -195,3 +195,6 @@ These are standard BLAKE3 hashes, but they can be encoded as CIDs for interopera
 | Implementations      | Rust only                                                               | Go, JavaScript, Rust                     | Wide See [cross-implementation test suite](https://hyphacoop.github.io/dasl-testing/) |
 | IPFS Gateway support | No                                                                      | Yes                                      | Yes                                                                                   |
 | Ecosystem            | iroh/n0                                                                 | IPFS (broad)                             | AT Protocol/Bluesky                                                                   |
+
+
+[postcard]: https://github.com/jamesmunns/postcard
