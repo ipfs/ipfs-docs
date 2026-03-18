@@ -24,7 +24,7 @@ This matters for build outputs, software distributions, large datasets, website 
 
 A naive approach like hashing a tarball is fragile: tar archives encode metadata (timestamps, permissions, ordering) that vary between machines, producing different hashes for identical file contents. It's also impractical for large datasets where you cannot afford to store two copies of the data.
 
-Content addressing solves this, but the choice of format has real consequences, particularly for overhead, determinism, language support and interoprability within an ecosystem.
+Content addressing solves this, but the choice of format has real consequences, particularly for overhead, determinism, language support and interoperability within an ecosystem.
 
 These differences compound as dataset size grows: what's negligible at megabyte scale —a few extra bytes of framing, an extra round of parsing per block— becomes a meaningful cost at terabyte scale across millions of files.
 
@@ -103,7 +103,7 @@ Large individual files also benefit: because UnixFS splits files into a DAG of c
 
 ## DASL, MASL, and DRISL
 
-[DASL](https://dasl.ing) (Data Addressed Structures and Links) is a family of specs emerging from the Bluesky/AT Protocol ecosystem that provide content-addressed data structures built on CBOR rather than protobuf.
+[DASL](https://dasl.ing) (Data Addressed Structures and Links) is a set of simple, standard primitives for working with content-addressed, linked data. Designed as a web-friendly, interoperable subset of IPFS and IPLD primitives, DASL is used in production by the AT Protocol ecosystem, including Bluesky.
 
 **[DRISL](https://dasl.ing/drisl.html)** (Deterministic Representation for Interoperable Structures & Links) is a constrained CBOR application profile designed for deterministic serialization:
 
@@ -117,7 +117,7 @@ Large individual files also benefit: because UnixFS splits files into a DAG of c
 - **Single mode** (`src`): wraps one resource with metadata (content type, etc.)
 - **Bundle mode** (`resources`): maps file paths to resource CIDs with per-file metadata — essentially a directory representation
 
-MASL bundles are conceptually similar to iroh collections: a flat map of paths to content hashes, no directory hierarchy nodes. The key difference is MASL also carries per-resource metadata (like content types) and uses CIDs (self-describing, multi-codec identifiers) rather than raw BLAKE3 hashes. Like iroh collections, subsetting operates at the individual file level — there is no native subdirectory addressing.
+MASL bundles are conceptually similar to iroh collections: a flat map of paths to content hashes, no directory hierarchy nodes. The key difference is MASL also carries per-resource metadata (like content types) and uses CIDs (self-describing, multi-codec identifiers) rather than raw BLAKE3 hashes. Like iroh collections, subsetting operates at the individual resource level — there is no native subdirectory addressing.
 
 Because DRISL and MASL build on CBOR — a widely supported serialization format with libraries in virtually every language — they likely have the widest potential for cross-language implementation. A [cross-implementation test suite](https://hyphacoop.github.io/dasl-testing/) tracks conformance across languages.
 
