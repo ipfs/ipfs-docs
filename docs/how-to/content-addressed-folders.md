@@ -117,7 +117,7 @@ Large individual files also benefit: because UnixFS splits files into a DAG of c
 - **Single mode** (`src`): wraps one resource with metadata (content type, etc.)
 - **Bundle mode** (`resources`): maps file paths to resource CIDs with per-file metadata forming a directory tree representation
 
-MASL bundles are conceptually similar to iroh collections: a flat map of paths to content hashes, no directory hierarchy nodes. The key difference is MASL also carries per-resource metadata (modelled after HTTP headers) and uses CIDs rather than raw BLAKE3 hashes. Like iroh collections, subsetting operates at the individual file level — there is no native subdirectory addressing.
+MASL bundles are conceptually similar to iroh collections: a flat map of relative paths to content hashes, no directory hierarchy nodes. The key difference is MASL also carries per-resource metadata (modelled after HTTP headers) and uses CIDs rather than raw BLAKE3 hashes. Like iroh collections, subsetting operates at the individual file level — there is no native subdirectory addressing.
 
 Because DRISL and MASL build on CBOR — a widely supported serialization format with libraries in virtually every language — they likely have the widest potential for cross-language implementation. A [cross-implementation test suite](https://hyphacoop.github.io/dasl-testing/) tracks conformance across languages.
 
