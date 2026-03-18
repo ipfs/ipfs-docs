@@ -178,7 +178,7 @@ These are standard BLAKE3 hashes, but they can be encoded as CIDs for interopera
 - **Streaming verification.** The root blob is a hash sequence, so a verifier can check individual files incrementally as they arrive.
 - **Ready-made distribution.** Collections can be distributed in a peer-to-peer fashion with iroh-blobs.
 - **BLAKE3.** Fast (parallelizable, SIMD-accelerated), 256-bit digests, and adopted by the [BDASL](https://dasl.ing/bdasl.html) spec.
-- **Rust only (for now).** The reference implementation is in Rust. The format is simple enough to implement in other languages — it's just postcard-encoded strings and a flat array of BLAKE3 hashes — but no other implementations exist yet.
+- **Rust only** The reference implementation is in Rust and there's an [open issue to add WebAssembly support](https://github.com/n0-computer/iroh-blobs/issues/90). The format is simple enough to implement in other languages — it's just postcard-encoded strings and a flat array of BLAKE3 hashes — but no other implementations exist yet.
 
 ## Comparison
 
@@ -194,7 +194,6 @@ These are standard BLAKE3 hashes, but they can be encoded as CIDs for interopera
 | Determinism          | By construction                                                         | Depends on DAG construction choices      | By construction (DRISL)                                                               |
 | Implementations      | Rust only                                                               | Go, JavaScript, Rust                     | Wide See [cross-implementation test suite](https://hyphacoop.github.io/dasl-testing/) |
 | IPFS Gateway support | No                                                                      | Yes                                      | Yes                                                                                   |
-| Ecosystem            | iroh/n0                                                                 | IPFS (broad)                             | AT Protocol/Bluesky                                                                   |
-
+| Ecosystem            | iroh/n0                                                                 | IPFS (broad)                             | Multiple (AT Protocol, Bluesky, IPFS, and others)                                     |
 
 [postcard]: https://github.com/jamesmunns/postcard
