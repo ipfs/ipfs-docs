@@ -17,7 +17,7 @@ Before comparing formats, it helps to understand what they all share: every appr
 
 The formats below vary in how they construct the Merkle DAG and the trade-offs they make, but in essence they all allow you to produce a CID that represents a collection of files, such that you can easily verify two properties:
 
-- **Inclusion** in the collection: a file (`cat.jpg`) is in the collection addressed by the CID (`bafy..`).
+- **Inclusion** in the collection: a file (`cat.jpg`) is in the collection addressed by the CID (`bafy...`).
 - **Integrity** of the collection as a whole: none of the contents of the collection have been modified since the CID was generated.
 
 This matters for build outputs, software distributions, large datasets, website archives — any case where you need to verify that a collection of files hasn't changed.
@@ -175,7 +175,6 @@ These are standard BLAKE3 hashes, but they can be encoded as CIDs for interopera
 - **No metadata pollution.** Unlike tar/zip, there are no timestamps, permissions, or ownership fields. Two directories with identical file names and contents always produce the same hash, regardless of when or where they were produced.
 - **Positional, tag-free encoding.** Postcard serializes fields in declaration order with no field numbers or type tags. The `"CollectionV0."` magic header handles versioning.
 - **Compact.** The overhead per file is a varint-prefixed filename in the metadata blob and a 32-byte hash in the root blob.
-- **O(1) hash retrieval by index.** Once you know a file's index N, its hash is at a constant-time offset (`N * 32` bytes) in the root blob — no parsing required. Finding N by filename requires a linear scan of the metadata blob to match the path string, but the hash fetch itself is O(1).
 - **Streaming verification.** The root blob is a hash sequence, so a verifier can check individual files incrementally as they arrive.
 - **Ready-made distribution.** Collections can be distributed in a peer-to-peer fashion with iroh-blobs.
 - **BLAKE3.** Fast (parallelizable, SIMD-accelerated), 256-bit digests, and adopted by the [BDASL](https://dasl.ing/bdasl.html) spec.
