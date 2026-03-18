@@ -15,7 +15,10 @@ This guide compares three approaches to content addressing directories of files:
 
 Before comparing formats, it helps to understand what they all share: every approach effectively constructs a [_Merkle DAG_](../concepts/merkle-dag.md), a data structure which allows you to derive a small verification identifier like a CID to represents a collection of data.
 
-The formats below vary in how they construct the Merkle DAG and the trade-offs they make, but in essence they all allow you to produce a CID that represents a collection of files, such that verifying that hash verifies the entire contents.
+The formats below vary in how they construct the Merkle DAG and the trade-offs they make, but in essence they all allow you to produce a CID that represents a collection of files, such that you can easily verify two properties:
+
+- **Inclusion** in the collection: a file (`cat.jpg`) is in the collection addressed by the CID (`bafy..`).
+- **Integrity** of the collection as a whole: none of the contents of the collection have been modified since the CID was generated.
 
 This matters for build outputs, software distributions, large datasets, website archives — any case where you need to verify that a collection of files hasn't changed.
 
@@ -98,7 +101,7 @@ Large individual files also benefit: because UnixFS splits files into a DAG of c
 - **Deep DAG traversal.** Resolving a file means walking the directory DAG node by node — `a/b/c.csv` requires resolving `a`, then `b`, then the file, each a separate block fetch and decode. Nested directories and HAMT shards make the depth unpredictable.
 - **Mature ecosystem.** UnixFS has the broadest tooling support and is the de facto standard for IPFS content addressing, with implementations in Go ([Kubo](https://github.com/ipfs/kubo)) and TypeScript ([Helia](https://github.com/ipfs/helia)).
 
-## DASL: MASL and DRISL
+## DASL, MASL, and DRISL
 
 [DASL](https://dasl.ing) (Data Addressed Structures and Links) is a family of specs emerging from the Bluesky/AT Protocol ecosystem that provide content-addressed data structures built on CBOR rather than protobuf.
 
