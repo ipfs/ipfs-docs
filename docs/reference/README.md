@@ -3,53 +3,40 @@ title: Reference
 description: Reference materials for IPFS tools and implementations
 ---
 
-# API & CLI reference
+# Reference
 
-Looking for user and developer references for IPFS? Find them here.
-
-## Glossary
+Developer and operator references for IPFS tools, APIs, and implementations.
 
 New to IPFS? Start with the [Glossary](../concepts/glossary.md) to learn key terms and concepts.
 
-## IPFS Specifications
+## Diagnostic tools
 
-- [IPFS Gateways](https://specs.ipfs.tech/http-gateways/) — HTTP Gateway specifications
-- [All IPFS Specs](https://specs.ipfs.tech/) — complete specifications for IPFS protocols
+Web-based [diagnostic tools](diagnostic-tools.md) for debugging, troubleshooting, and inspecting IPFS data. Includes DAG Explorer, IPFS Check, CID Inspector, and more.
 
 ## HTTP Gateway
 
-The [Gateway API](http/gateway.md) provides implementation-agnostic HTTP interface for retrieving [content-addressed](../concepts/glossary.md#content-addressing) data from IPFS with regular HTTP clients and libraries. Use it for future-proofing your applications.
+The [HTTP Gateway API](http/gateway.md) provides an implementation-agnostic HTTP interface for retrieving [content-addressed](../concepts/glossary.md#content-addressing) data from IPFS with regular HTTP clients and libraries. Use it for building applications that are not tied to a specific IPFS implementation.
 
-## Custom APIs
+## IPFS in JavaScript
 
-Implementation and language specific interfaces can be used when [HTTP Gateway API](http/gateway.md) is not enough, or you need additional flexibility.
+[Developer resources for working with IPFS in JavaScript](js/api.md), including Helia, `@helia/verified-fetch`, and `js-kubo-rpc-client`.
 
-### Kubo 
+## IPFS in Go
 
-Kubo is the earliest and most widely used implementation of IPFS, written in Go.
+[Developer resources for working with IPFS in Go](go/api.md):
 
-Use it as:
+- [Boxo](https://github.com/ipfs/boxo): Go SDK with reusable building blocks for composing custom IPFS implementations
+- [Kubo RPC client](https://pkg.go.dev/github.com/ipfs/kubo/client/rpc): talk to a Kubo node over its `/api/v0` HTTP RPC endpoint
 
-- **CLI tool**
-  Working in the terminal? Here's where you'll find [Kubo's command-line interface (CLI) reference](kubo/cli.md).
+## Kubo
 
-- **HTTP RPC endpoint**
-  [RPC API v0 reference for Kubo](kubo/rpc.md) — control your node over HTTP using the same commands you can from the command line!
+[Kubo](https://github.com/ipfs/kubo) is the earliest and most widely used IPFS implementation, written in Go.
 
-- **Go library**
-  See [Go API reference for Kubo](go/api.md), including the Go CoreAPI, the Go embedded client, and a Go client for interacting with Kubo over HTTP RPC API.
+- [CLI reference](kubo/cli.md): command-line interface
+- [RPC API reference](kubo/rpc.md): control your node over HTTP
+- [RPC API clients](kubo-rpc-cli.md): client libraries in Go, JavaScript, Python, Java, and other languages
 
+## IPFS Specifications
 
-### Helia 
-
-Helia is the next generation IPFS JavaScript implementation that applies lessons learned from [js-ipfs](https://github.com/ipfs/js-ipfs) to create a more modern, modular, and efficient codebase. 
-
-Learn more about Helia in the [official GitHub repository](https://github.com/ipfs/helia). If you'd like to quickly get started developing with Helia, see the [Helia examples repository](https://github.com/ipfs-examples/helia-examples).
-
-:::warning 
-### js-ipfs project discontinued
-Development of the [js-ipfs project](https://github.com/ipfs/js-ipfs) has been discontinued in favor of [Helia](https://github.com/ipfs/helia). 
-
-Because of this, js-ipfs content may be out of date, and will eventually be archived.
-
-:::
+- [HTTP Gateway specifications](https://specs.ipfs.tech/http-gateways/)
+- [All IPFS specifications](https://specs.ipfs.tech/)
