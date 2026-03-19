@@ -23,10 +23,10 @@ For example, the previous linked list, assuming that the payload of each node is
 
 Merkle DAGs are _self-verified_ structures. The CID of a node is univocally linked to the contents of its payload and those of all its descendants. Thus two nodes with the same CID univocally represent exactly the same DAG. This will be a key property to efficiently sync Merkle-CRDTs (Conflict-free Replicated Data Types) without having to copy the full DAG, as exploited by systems like IPFS. Merkle DAGs are very widely used. Source control systems like git and others use them to efficiently store the repository history in a way that enables de-duplicating the objects and detecting conflicts between branches.
 
-Want to see a real-world example of Merkle DAGs in action? It's easy to see a Merkle DAG representation of a file of your choice using the [DAG Builder visualizer](https://dag.ipfs.io/).
+Want to see a real-world example of Merkle DAGs in action? It's easy to see a Merkle DAG representation of a file of your choice using the [DAG Builder visualizer](https://dag.ipfs.tech/).
 
 ## Further resources
 
 - [Directed acyclic graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph) on Wikipedia
 - Full [draft Merkle-CRDTs paper](https://web.archive.org/web/20250424020909/https://hector.link/presentations/merkle-crdts/merkle-crdts.pdf) by [@hsanjuan](https://www.github.com/hsanjuan), [@haadcode](https://www.github.com/haadcode), and [@pgte](https://www.github.com/pgte)
-- [DAG Builder visualizer](https://dag.ipfs.io/)
+- [DAG Builder visualizer](https://dag.ipfs.tech/)
