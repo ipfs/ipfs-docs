@@ -5,20 +5,13 @@ description: Hands-on guides to using and developing with IPFS to build decentra
 
 # IPFS Guides and Tutorials
 
-::: callout
-Check out the new [Ecosystem guides](#ecosystem-guides) section to learn more about the amazing tools, software and implementations created by IPFS ecosystem partners.
-:::
-
-No matter what you're looking to do with IPFS, you can find how-tos and tutorials here. These items are a work in progress, so please check back periodically to check what we've added!
-
 See the site navigation menu for all our how-tos, organized by topic area, including favorites like these:
 
 - **Customize your install** by [configuring a node](configure-node.md), modifying the [bootstrap list](modify-bootstrap-list.md), and more
-- **Learn how to manage files** in IPFS with tutorials on concepts like [pinning](pin-files.md), how to [work with blocks](work-with-blocks.md), learning how to [troubleshoot file transfers](https://github.com/ipfs/kubo/blob/master/docs/file-transfer.md), and understanding [working with large datasets](https://github.com/ipfs/archives/tree/master/tutorials/replicating-large-datasets)
-- **See how to work with peers** using methods like [customizing libp2p bundles](https://github.com/ipfs-examples/js-ipfs-examples/tree/master/examples/custom-libp2p) and using circuit relay
+- **Learn how to manage files** in IPFS with tutorials on concepts like [pinning](pin-files.md), how to [work with blocks](work-with-blocks.md), learning how to [content address data sets](content-addressing-data-sets.md).
+- **Publish scientific data** by exploring the [scientific data and IPFS landscape guide](scientific-data/landscape-guide.md) or learning how to [publish geospatial Zarr data with IPFS](scientific-data/publish-geospatial-zarr-data.md)
 - **Understand website hosting** by starting with how to [host a simple single-page site](websites-on-ipfs/single-page-website.md)
-- **Learn how to build apps** on IPFS, starting with [exploring the IPFS API](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_C) and [making a basic libp2p app](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_B)
-- **Understand how IPFS works in the browser** by learning how to [address IPFS on the Web](address-ipfs-on-web.md) and [how IPFS can be used in your favorite browser tools and frameworks](browser-tools-frameworks.md)
+- **Understand how to use IPFS in the browser** by learning how to [address IPFS on the Web](address-ipfs-on-web.md) and [IPFS in web applications](ipfs-in-web-apps.md)
 
 
 ## Don't see what you're looking for?
