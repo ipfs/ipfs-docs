@@ -20,6 +20,10 @@ For example, merkleizing a static web application into a UnixFS DAG looks like t
 
 ![UnixFS Dag](./images/unixfs-dag-diagram.png)
 
+::: tip
+See the [content-addressing data sets guide](../how-to/content-addressing-data-sets.md) for more on the different approaches to content-addressing data sets with IPFS.
+:::
+
 ## 2. Providing
 
 Once the input data has been merkleized and addressed by a CID, the node announces itself as a provider of the CID(s) to the IPFS network, thereby creating a public mapping between the CID and the node. This is typically known as **providing**, other names for this step are **publishing** **advertising**. On routing systems with built-in expiration/TTL like the Amino DHT, this is also known as **reproviding** to emphasize the continuous nature of the process in which a node advertises provider records.
