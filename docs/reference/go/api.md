@@ -46,25 +46,25 @@ description: Developer resources for working in Go with IPFS.
 | Name | Go Reference | Description |
 | ---- | ------------ | ----------- |
 | **Libp2p** |
-| [`go-libp2p`](//github.com/libp2p/go-libp2p) | [![Go Reference](https://pkg.go.dev/badge/github.com/libp2p/go-libp2p.svg)](https://pkg.go.dev/github.com/libp2p/go-libp2p) | p2p networking library |
-| [`go-libp2p-pubsub`](//github.com/libp2p/go-libp2p-pubsub) | [![Go Reference](https://pkg.go.dev/badge/github.com/libp2p/go-libp2p-pubsub.svg)](https://pkg.go.dev/github.com/libp2p/go-libp2p-pubsub) | pubsub built on libp2p |
-| [`go-libp2p-kad-dht`](//github.com/libp2p/go-libp2p-kad-dht) | [![Go Reference](https://pkg.go.dev/badge/github.com/libp2p/go-libp2p-kad-dht.svg)](https://pkg.go.dev/github.com/libp2p/go-libp2p-kad-dht) | dht-backed router |
+| [`go-libp2p`](https://github.com/libp2p/go-libp2p) | [![Go Reference](https://pkg.go.dev/badge/github.com/libp2p/go-libp2p.svg)](https://pkg.go.dev/github.com/libp2p/go-libp2p) | p2p networking library |
+| [`go-libp2p-pubsub`](https://github.com/libp2p/go-libp2p-pubsub) | [![Go Reference](https://pkg.go.dev/badge/github.com/libp2p/go-libp2p-pubsub.svg)](https://pkg.go.dev/github.com/libp2p/go-libp2p-pubsub) | pubsub built on libp2p |
+| [`go-libp2p-kad-dht`](https://github.com/libp2p/go-libp2p-kad-dht) | [![Go Reference](https://pkg.go.dev/badge/github.com/libp2p/go-libp2p-kad-dht.svg)](https://pkg.go.dev/github.com/libp2p/go-libp2p-kad-dht) | dht-backed router |
 | **Multiformats** |
-| [`go-cid`](//github.com/ipfs/go-cid) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-cid.svg)](https://pkg.go.dev/github.com/ipfs/go-cid) | CID implementation |
-| [`go-multiaddr`](//github.com/multiformats/go-multiaddr) | [![Go Reference](https://pkg.go.dev/badge/github.com/multiformats/go-multiaddr.svg)](https://pkg.go.dev/github.com/multiformats/go-multiaddr) | multiaddr implementation |
-| [`go-multihash`](//github.com/multiformats/go-multihash) | [![Go Reference](https://pkg.go.dev/badge/github.com/multiformats/go-multihash.svg)](https://pkg.go.dev/github.com/multiformats/go-multihash) | multihash implementation |
-| [`go-multibase`](//github.com/multiformats/go-multibase) | [![Go Reference](https://pkg.go.dev/badge/github.com/multiformats/go-multibase.svg)](https://pkg.go.dev/github.com/multiformats/go-multibase) | multibase implementation |
+| [`go-cid`](https://github.com/ipfs/go-cid) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-cid.svg)](https://pkg.go.dev/github.com/ipfs/go-cid) | CID implementation |
+| [`go-multiaddr`](https://github.com/multiformats/go-multiaddr) | [![Go Reference](https://pkg.go.dev/badge/github.com/multiformats/go-multiaddr.svg)](https://pkg.go.dev/github.com/multiformats/go-multiaddr) | multiaddr implementation |
+| [`go-multihash`](https://github.com/multiformats/go-multihash) | [![Go Reference](https://pkg.go.dev/badge/github.com/multiformats/go-multihash.svg)](https://pkg.go.dev/github.com/multiformats/go-multihash) | multihash implementation |
+| [`go-multibase`](https://github.com/multiformats/go-multibase) | [![Go Reference](https://pkg.go.dev/badge/github.com/multiformats/go-multibase.svg)](https://pkg.go.dev/github.com/multiformats/go-multibase) | multibase implementation |
 | **IPLD** |
-| [`go-block-format`](//github.com/ipfs/go-block-format) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-block-format.svg)](https://pkg.go.dev/github.com/ipfs/go-block-format) | block interfaces and implementations |
-| [`go-ipld-format`](//github.com/ipfs/go-ipld-format) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-ipld-format.svg)](https://pkg.go.dev/github.com/ipfs/go-ipld-format) | IPLD interfaces |
+| [`go-block-format`](https://github.com/ipfs/go-block-format) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-block-format.svg)](https://pkg.go.dev/github.com/ipfs/go-block-format) | block interfaces and implementations |
+| [`go-ipld-format`](https://github.com/ipfs/go-ipld-format) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-ipld-format.svg)](https://pkg.go.dev/github.com/ipfs/go-ipld-format) | IPLD interfaces |
 | **Datastores** |
-| [`go-datastore`](//github.com/ipfs/go-datastore) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-datastore.svg)](https://pkg.go.dev/github.com/ipfs/go-datastore) | datastore interfaces, adapters, and basic implementations |
-| [`go-ds-flatfs`](//github.com/ipfs/go-ds-flatfs) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-ds-flatfs.svg)](https://pkg.go.dev/github.com/ipfs/go-ds-flatfs) | a filesystem-based datastore |
-| [`go-ds-leveldb`](//github.com/ipfs/go-ds-leveldb) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-ds-leveldb.svg)](https://pkg.go.dev/github.com/ipfs/go-ds-leveldb) | a leveldb based datastore |
-| [`go-ds-pebble`](//github.com/ipfs/go-ds-pebble) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-ds-pebble.svg)](https://pkg.go.dev/github.com/ipfs/go-ds-pebble) | a pebble based datastore |
+| [`go-datastore`](https://github.com/ipfs/go-datastore) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-datastore.svg)](https://pkg.go.dev/github.com/ipfs/go-datastore) | datastore interfaces, adapters, and basic implementations |
+| [`go-ds-flatfs`](https://github.com/ipfs/go-ds-flatfs) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-ds-flatfs.svg)](https://pkg.go.dev/github.com/ipfs/go-ds-flatfs) | a filesystem-based datastore |
+| [`go-ds-leveldb`](https://github.com/ipfs/go-ds-leveldb) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-ds-leveldb.svg)](https://pkg.go.dev/github.com/ipfs/go-ds-leveldb) | a leveldb based datastore |
+| [`go-ds-pebble`](https://github.com/ipfs/go-ds-pebble) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-ds-pebble.svg)](https://pkg.go.dev/github.com/ipfs/go-ds-pebble) | a pebble based datastore |
 | **Other** |
-| [`go-ipfs-cmds`](//github.com/ipfs/go-ipfs-cmds) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-ipfs-cmds.svg)](https://pkg.go.dev/github.com/ipfs/go-ipfs-cmds) | CLI & HTTP commands library |
-| [`go-log`](//github.com/ipfs/go-log) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-log.svg)](https://pkg.go.dev/github.com/ipfs/go-log) | logging framework |
+| [`go-ipfs-cmds`](https://github.com/ipfs/go-ipfs-cmds) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-ipfs-cmds.svg)](https://pkg.go.dev/github.com/ipfs/go-ipfs-cmds) | CLI & HTTP commands library |
+| [`go-log`](https://github.com/ipfs/go-log) | [![Go Reference](https://pkg.go.dev/badge/github.com/ipfs/go-log.svg)](https://pkg.go.dev/github.com/ipfs/go-log) | logging framework |
 
 ## Kubo RPC Client
 
