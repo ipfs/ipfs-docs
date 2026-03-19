@@ -30,6 +30,7 @@ bool
 bool(ean)
 boolean
 bootstrapper
+bootstrappers
 Bootstrappers
 boxo
 browserify
@@ -67,6 +68,8 @@ dapps
 dask
 data('s)
 datastore
+datastores
+Datastores
 dClimate
 deduplicate
 deduplication
