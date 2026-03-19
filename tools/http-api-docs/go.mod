@@ -6,7 +6,7 @@ require (
 	github.com/Stebalien/go-json-doc v0.0.2
 	github.com/ipfs/go-cid v0.6.0
 	github.com/ipfs/go-ipfs-cmds v0.16.0
-	github.com/ipfs/kubo v0.40.0
+	github.com/ipfs/kubo v0.40.1
 	github.com/libp2p/go-libp2p v0.47.0
 	github.com/multiformats/go-multiaddr v0.16.1
 )

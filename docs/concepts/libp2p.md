@@ -3,9 +3,9 @@ title: libp2p
 sidebarDepth: 0
 description: Learn about the libp2p protocol and why it's an important ingredient in how IPFS works.
 related:
-  'What is libp2p?': https://docs.libp2p.io/concepts/introduction/overview/
-  'Foundational libp2p concepts': https://docs.libp2p.io/concepts/
-  'Getting started with libp2p': https://docs.libp2p.io/guides/
+  'What is libp2p?': https://web.archive.org/web/20260119023244/https://docs.libp2p.io/concepts/introduction/overview/
+  'Foundational libp2p concepts': https://web.archive.org/web/20251113174247/https://docs.libp2p.io/concepts/
+  'Getting started with libp2p': https://web.archive.org/web/20250624052058/https://docs.libp2p.io/guides/
 ---
 
 # libp2p
@@ -44,19 +44,19 @@ libp2p was designed to address these limitations.
 
 ## Features
 
-The features of libp2p are listed below. For more information on each feature, click the link to navigate to the appropriate page in the [official libp2p documentation](https://docs.libp2p.io).
+The features of libp2p are listed below. For more information on each feature, click the link to navigate to the appropriate page in the [official libp2p documentation](https://web.archive.org/web/20260128151944/https://docs.libp2p.io/).
 
-- [Flexible addressing](https://docs.libp2p.io/concepts/addressing/)
+- [Flexible addressing](https://web.archive.org/web/20251224030222/https://docs.libp2p.io/concepts/addressing/)
 
-- [Transport agnostic](https://docs.libp2p.io/concepts/transports/overview/)
+- [Transport agnostic](https://web.archive.org/web/20260128152051/https://docs.libp2p.io/concepts/transports/overview/)
 
-- [Customizable security](https://docs.libp2p.io/concepts/secure-comm/overview/)
+- [Customizable security](https://web.archive.org/web/20250624052827/https://docs.libp2p.io/concepts/secure-comm/overview/)
 
-- [Peer identity](https://docs.libp2p.io/concepts/fundamentals/peers/#peer-id)
+- [Peer identity](https://web.archive.org/web/20251112181025/https://docs.libp2p.io/concepts/fundamentals/peers/#peer-id)
 
-- [Peer routing](https://docs.libp2p.io/concepts/appendix/glossary/#peer-routing)
+- [Peer routing](https://web.archive.org/web/20260130063617/https://docs.libp2p.io/concepts/appendix/glossary/#peer-routing)
 
-- [NAT traversal](https://docs.libp2p.io/concepts/nat/)
+- [NAT traversal](https://web.archive.org/web/20260115071913/https://docs.libp2p.io/concepts/nat/)
 
 ### Publish/subscribe
 
@@ -64,13 +64,13 @@ _Publish/Subscribe_ (PubSub) is a messaging model where peers congregate around 
 
 One of the key challenges in P2P-based PubSub systems is the prompt and efficient delivery of messages to all subscribers, especially in large and dynamic networks. To overcome these challenges, IPFS utilizes libp2p's _GossipSub_ protocol, which operates by "gossiping" with peers about the messages they have received, enabling an efficient message delivery network.
 
-Check out the [libp2p documentation](https://docs.libp2p.io/concepts/pubsub/overview/) to learn more about PubSub in libp2p.
+Check out the [libp2p documentation](https://web.archive.org/web/20260116065034/https://docs.libp2p.io/concepts/pubsub/overview/) to learn more about PubSub in libp2p.
 
 ## Additional resources
 
-- [The libp2p documentation](https://docs.libp2p.io/)
+- [The libp2p documentation](https://web.archive.org/web/20260128151944/https://docs.libp2p.io/)
 - [The libp2p website](https://libp2p.io/)
-- [The libp2p connectivity site](https://connectivity.libp2p.io/)
+- [The libp2p connectivity site](https://web.archive.org/web/20251118040510/https://connectivity.libp2p.io/)
 - [The libp2p YouTube channel to libp2p](https://www.youtube.com/@libp2p630)
 - [The libp2p technical specifications](https://github.com/libp2p/specs)
 - [Protocol Labs Research - ResNetLab on Tour](https://research.protocol.ai/tutorials/resnetlab-on-tour/)

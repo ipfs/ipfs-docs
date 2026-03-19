@@ -3,7 +3,7 @@ title: Glossary
 sidebarDepth: 0
 description: A glossary guide to key terminology for IPFS, the InterPlanetary File System.
 related:
-  'Guide to libp2p terminology': https://docs.libp2p.io/reference/glossary/
+  'Guide to libp2p terminology': https://web.archive.org/web/20260130120408/https://docs.libp2p.io/reference/glossary/
   'Guide to IPLD terminology': https://ipld.io/glossary/
   'IPFS Course at ProtoSchool': https://proto.school/course/ipfs
 ---
@@ -104,7 +104,7 @@ Version 1 (v1) of the IPFS content identifier. This CID version contains some le
 
 ### Circuit relay
 
-A [libp2p](#libp2p) term for transport protocol that routes traffic between two peers over a third-party [_relay_ peer](#relay-node). [More about Circuit Relay](https://docs.libp2p.io/concepts/circuit-relay/).
+A [libp2p](#libp2p) term for transport protocol that routes traffic between two peers over a third-party [_relay_ peer](#relay-node). [More about Circuit Relay](https://web.archive.org/web/20260128152445/https://docs.libp2p.io/concepts/nat/circuit-relay/).
 
 ### Circuit relay v1
 
@@ -364,11 +364,11 @@ The Multiformats project is a collection of protocols that aim to future-proof s
 
 ### Multiplexer
 
-Multiplexing allows for the creation of multiple “virtual” connections within a single [libp2p](#libp2p) connection. [More about Stream Multiplexing in libp2p docs](https://docs.libp2p.io/concepts/multiplex/overview/)
+Multiplexing allows for the creation of multiple "virtual" connections within a single [libp2p](#libp2p) connection. [More about Stream Multiplexing in libp2p docs](https://web.archive.org/web/20260128163648/https://docs.libp2p.io/concepts/multiplex/overview/)
 
 ### Mplex
 
-mplex is a deprecated stream multiplexer that was designed in the early days of [libp2p](#libp2p). [More about mplex](https://docs.libp2p.io/concepts/multiplex/mplex/)
+mplex is a deprecated stream multiplexer that was designed in the early days of [libp2p](#libp2p). [More about mplex](https://web.archive.org/web/20250624193954/https://docs.libp2p.io/concepts/multiplex/mplex/)
 
 ## N
 
@@ -404,7 +404,7 @@ In system architecture, a Peer is an equal player in the peer-to-peer model of d
 
 ### Peer routing
 
-Peer routing is the process of discovering the network _route_ or address for a network peer using various methods. The primary peer routing mechanism in IPFS is a distributed hash table that uses the [Kademlia routing algorithm](dht.md#lookup-algorithm) to efficiently locate peers. However, other methods, like local discovery, are also used. Learn more in the [libp2p documentation](https://docs.libp2p.io/concepts/).
+Peer routing is the process of discovering the network _route_ or address for a network peer using various methods. The primary peer routing mechanism in IPFS is a distributed hash table that uses the [Kademlia routing algorithm](dht.md#lookup-algorithm) to efficiently locate peers. However, other methods, like local discovery, are also used. Learn more in the [libp2p documentation](https://web.archive.org/web/20251113174247/https://docs.libp2p.io/concepts/).
 
 ### Peer ID
 
@@ -438,7 +438,7 @@ Publish-subscribe (Pubsub) is an experimental feature in IPFS. Publishers send m
 
 ### QUIC
 
-QUIC (`/quic-v1`) is one of [libp2p](#libp2p) [transport](#transport) protocols. It provides an always-encrypted, stream-multiplexed connection built on top of UDP. [More about QUIC in libp2p](https://docs.libp2p.io/concepts/transports/quic/)
+QUIC (`/quic-v1`) is one of [libp2p](#libp2p) [transport](#transport) protocols. It provides an always-encrypted, stream-multiplexed connection built on top of UDP. [More about QUIC in libp2p](https://web.archive.org/web/20260128152146/https://docs.libp2p.io/concepts/transports/quic/)
 
 ## R
 
@@ -452,7 +452,7 @@ In IPFS context, the practice of [pinning](#pinning) the same content to multipl
 
 ### Relay node
 
-A means to establish connectivity between libp2p nodes (e.g., IPFS nodes) that wouldn't otherwise be able to establish a direct connection to each other. This may be due to nodes that are behind NAT (Network Address Translation), reverse proxies, firewalls, etc. See [Nodes > Relay](../concepts/nodes.md#relay) and [libp2p docs about Circuit Relay](https://docs.libp2p.io/concepts/nat/circuit-relay/).
+A means to establish connectivity between libp2p nodes (e.g., IPFS nodes) that wouldn't otherwise be able to establish a direct connection to each other. This may be due to nodes that are behind NAT (Network Address Translation), reverse proxies, firewalls, etc. See [Nodes > Relay](../concepts/nodes.md#relay) and [libp2p docs about Circuit Relay](https://web.archive.org/web/20260128152445/https://docs.libp2p.io/concepts/nat/circuit-relay/).
 
 ### Remote Pinning
 
@@ -518,7 +518,7 @@ _Swarm_ is a term for the network of IPFS peers with which your local node has c
 
 In [libp2p](#libp2p), a _switch_ is a component responsible for composing multiple [transports](#transport) into a single interface, allowing application code to [dial](#dialing) peers without having to specify which transport to use.
 
-Switches also coordinate the _connection upgrade_ process, which promotes a _raw_ connection from the transport layer into one that supports [protocol negotiation](https://docs.libp2p.io/concepts/protocols/#protocol-negotiation), [stream multiplexing](../concepts/libp2p.md#stream-multiplexing), and secure communications.
+Switches also coordinate the _connection upgrade_ process, which promotes a _raw_ connection from the transport layer into one that supports [protocol negotiation](https://web.archive.org/web/20260113172348/https://docs.libp2p.io/concepts/protocols/#protocol-negotiation), [stream multiplexing](../concepts/libp2p.md#stream-multiplexing), and secure communications.
 
 Sometimes called [swarm](#swarm) for historical reasons.
 
@@ -526,7 +526,7 @@ Sometimes called [swarm](#swarm) for historical reasons.
 
 ### Transport
 
-In [libp2p](#libp2p), transport refers to the technology that lets us move data from one machine to another. This may be a TCP, UDP ([QUIC](#quic)) network, a [WebSocket](#websocket) connection in a browser, or anything else capable of implementing the transport interface. [More about libp2p transports](https://docs.libp2p.io/concepts/transports/overview/)
+In [libp2p](#libp2p), transport refers to the technology that lets us move data from one machine to another. This may be a TCP, UDP ([QUIC](#quic)) network, a [WebSocket](#websocket) connection in a browser, or anything else capable of implementing the transport interface. [More about libp2p transports](https://web.archive.org/web/20260128152051/https://docs.libp2p.io/concepts/transports/overview/)
 
 ### Traversal
 
@@ -556,7 +556,7 @@ Wide Area Network (WAN) is a type of (usually public) computer network that span
 
 ### WebRTC
 
-WebRTC (Web Real-Time Communications) is a framework for real-time communication and in libp2p is used to establish browser-to-server and browser-to-browser connections between applications. [Libp2p](#libp2p) supports WebRTC as multiple [transports](#transport) (`/webrtc`, `/webrtc-direct`). [More about WebRTC in libp2p](https://docs.libp2p.io/concepts/transports/webrtc/)
+WebRTC (Web Real-Time Communications) is a framework for real-time communication and in libp2p is used to establish browser-to-server and browser-to-browser connections between applications. [Libp2p](#libp2p) supports WebRTC as multiple [transports](#transport) (`/webrtc`, `/webrtc-direct`). [More about WebRTC in libp2p](https://web.archive.org/web/20260128152341/https://docs.libp2p.io/concepts/transports/webrtc/)
 
 ### WebSocket
 
@@ -564,7 +564,7 @@ WebSockets are a way for web applications to maintain bidirectional communicatio
 
 ### WebTransport
 
-WebTransport is a new specification that uses QUIC to offer an alternative to [WebSocket](#websocket). Conceptually, it can be considered WebSocket over [QUIC](#quic). [Libp2p](#libp2p) supports is indicated by `/webtransport` [Multiaddr](#multiaddr). [More about WebTransport in libp2p](https://docs.libp2p.io/concepts/transports/webtransport/)
+WebTransport is a new specification that uses QUIC to offer an alternative to [WebSocket](#websocket). Conceptually, it can be considered WebSocket over [QUIC](#quic). [Libp2p](#libp2p) supports is indicated by `/webtransport` [Multiaddr](#multiaddr). [More about WebTransport in libp2p](https://web.archive.org/web/20260128152314/https://docs.libp2p.io/concepts/transports/webtransport/)
 
 ## X
 
@@ -572,6 +572,6 @@ WebTransport is a new specification that uses QUIC to offer an alternative to [W
 
 ### Yamux
 
-Yamux (Yet another Multiplexer) is a powerful stream [multiplexer](#multiplexer) used in [libp2p](#libp2p). [More about Yamux in libp2p docs](https://docs.libp2p.io/concepts/multiplex/yamux/)
+Yamux (Yet another Multiplexer) is a powerful stream [multiplexer](#multiplexer) used in [libp2p](#libp2p). [More about Yamux in libp2p docs](https://web.archive.org/web/20250917025649/https://docs.libp2p.io/concepts/multiplex/yamux/)
 
 ## Z
