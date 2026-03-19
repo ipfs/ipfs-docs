@@ -237,7 +237,7 @@ For the full protobuf definitions, field descriptions, and technical details abo
 
 ### Importer
 
-Importing a file into UnixFS is split into two processes. A chunking function and a layout function. You can test these features using the IPFS [DAG builder](https://dag.ipfs.io).
+Importing a file into UnixFS is split into two processes. A chunking function and a layout function. You can test these features using the IPFS [DAG builder](https://dag.ipfs.tech).
 
 #### Chunking
 

@@ -20,7 +20,7 @@ For example:
 https://ipfs.io/ipfs/bafybeihkoviema7g3gxyt6la7vd5ho32ictqbilu3wnlo3rs7ewhnp7lly
 ```
 
-A [self-hosted local gateway](https://docs.ipfs.io/install/) can also be used, instead of `ipfs.io`. 
+A [self-hosted local gateway](https://docs.ipfs.tech/install/) can also be used, instead of `ipfs.io`. 
 
 ## IPFS addressing in brief
 
@@ -182,11 +182,11 @@ returns a redirect to a CIDv1 representation at [`https://bafybeicgmdpvw4duutrmd
 The gateway converts the CID to case-insensitive encoding.
 The multihash in CIDv1 is the same as in the original CIDv0.
 
-#### Manual — use cid.ipfs.io or the command line
+#### Manual — use cid.ipfs.tech or the command line
 
 The conversion can also be done manually.
 
-To convert a CID to Base32 with no padding ([RFC4648](https://datatracker.ietf.org/doc/html/rfc4648#section-6)), use [cid.ipfs.io](https://cid.ipfs.io), or the command line. Below is an example using the command line:
+To convert a CID to Base32 with no padding ([RFC4648](https://datatracker.ietf.org/doc/html/rfc4648#section-6)), use [cid.ipfs.tech](https://cid.ipfs.tech), or the command line. Below is an example using the command line:
 
 ```shell
 ipfs cid base32 QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR

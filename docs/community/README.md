@@ -114,7 +114,7 @@ Sign up for the IPFS Weekly newsletter to get project updates, community news, e
 ### IPFS Blog 
 
 The latest updates and info on IPFS in one place, from blog posts and release notes to videos, tutorials, news coverage, and events.
-[Read the blog here](https://blog.ipfs.io/).
+[Read the blog here](https://blog.ipfs.tech/).
 
 ### YouTube
 
@@ -124,7 +124,7 @@ Learn more about IPFS in [the official IPFS YouTube channel](https://www.youtube
 
 ### Ecosystem directory
 
-Explore the world of projects and products built on IPFS in the [Ecosystem directory](https://ecosystem.ipfs.io/) – an interactive showcase filterable by industry, tooling, and more.
+Explore the world of projects and products built on IPFS in the [Ecosystem directory](https://ecosystem.ipfs.tech/) – an interactive showcase filterable by industry, tooling, and more.
 
 If you want to add a new project to the IPFS ecosystem directory, use [this form](https://airtable.com/shrjwvk9pAeAk0Ci7).
 

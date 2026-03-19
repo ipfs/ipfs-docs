@@ -55,4 +55,4 @@ IPFS [Gateway Checker](https://ipfs.github.io/public-gateway-checker/) provides 
 
 ## CAR Builder
 
-[CAR Builder](https://car.ipfs.io/) allows you to upload a data file and export it as an IPFS CAR file. The tool automatically chunks and hashes your files to automatically produce an IPFS compatible content-addressed archive. 
+[CAR Builder](https://web.archive.org/web/20260113100754/https://car.ipfs.io/) allows you to upload a data file and export it as an IPFS CAR file. The tool automatically chunks and hashes your files to automatically produce an IPFS compatible content-addressed archive.
