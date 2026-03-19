@@ -15,7 +15,7 @@ Web-based [diagnostic tools](diagnostic-tools.md) for debugging, troubleshooting
 
 ## HTTP Gateway
 
-The [HTTP Gateway API](http/gateway.md) provides an implementation-agnostic HTTP interface for retrieving [content-addressed](../concepts/glossary.md#content-addressing) data from IPFS with regular HTTP clients and libraries. Use it for building applications that are not tied to a specific IPFS implementation.
+The [HTTP Gateway API](http/gateway.md) provides an implementation-agnostic HTTP interface for retrieving [content-addressed](../concepts/glossary.md#content-addressing) data from IPFS with regular HTTP clients and libraries. Use it for building applications that are not tied to a specific IPFS implementation. See also the [HTTP Gateway specifications](https://specs.ipfs.tech/http-gateways/).
 
 ## IPFS in JavaScript
 
