@@ -252,7 +252,7 @@ module.exports = {
                 '/how-to/store-play-videos',
                 '/how-to/host-git-repo',
                 '/how-to/move-ipfs-installation/move-ipfs-installation',
-                '/how-to/content-addressed-folders',
+                '/how-to/content-addressing-data-sets',
               ]
             },
             {
