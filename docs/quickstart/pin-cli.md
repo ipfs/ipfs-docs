@@ -55,6 +55,7 @@ Running your own node gives you complete control over your data while participat
 - **Option B**: An account with at least one pinning service (free tier is sufficient):
   - [Storacha](https://storacha.network) - Requires Node.js for their CLI
   - [Pinata](https://pinata.cloud/) - Uses REST API with curl
+  - [Pinion build](https://pinion.build) - Uses REST API
   - [Filebase](https://filebase.com) - S3-compatible, works with AWS CLI
 
 - A sample file to upload, such as the [following image](../quickstart/images/welcome-to-IPFS.jpg):
@@ -105,7 +106,47 @@ curl -X POST https://api.pinata.cloud/pinning/pinFileToIPFS \
   -F "file=@welcome-to-IPFS.jpg"
 ```
 
-### Option 3: Filebase S3-Compatible API and Kubo RPC
+### Option 3: Pinion build upload API
+
+Pinion build provides a writable gateway you can use to upload files or car files.
+Files added this way are immediately viewable through the gateway and broadcast to the IPFS network, and managable through the standard pinning service API
+or the web dashboard. Additional information can be found in their [API documentation](https://pinion.build/docs/)
+
+Basic file upload with curl:
+```shell
+curl -X POST https://<environment>.pinion.build/upload/api/v1/?name=my-file \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/octet-stream" \
+  --data-binary @./myfile.txt
+```
+
+
+Their API also supports uploading multi-root CAR files. When done this way, each root CID in the CAR is pinned and managed indivdually.
+
+Car file upload with curl:
+```shell
+curl -X POST https://<environment>.pinion.build/upload/api/v1/?name=my-dag \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/vnd.ipld.car" \
+  --data-binary @./content.car
+```
+
+The response of this API will include relevant information about the upload that (conveniently, perhaps) matches the PinStatus schema used by the pinning service API.
+The pin will be available immediately through the pinion gateway, but the status will be "pinning" until the content is fully processed by the pinion bitswap providers and available on the IPFS network.
+
+```json
+{
+  "requestid": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+  "status": "pinning",
+  "created": "2025-01-15T12:00:00Z",
+  "pin": {
+    "cid": "Qm...",
+    "name": "my-file"
+  }
+}
+```
+
+### Option 4: Filebase S3-Compatible API and Kubo RPC
 
 Filebase offers an S3-compatible API, making it easy to use with AWS CLI or any S3 SDK. See their [S3-compatible API documentation](https://docs.filebase.com/api-documentation/s3-compatible-api) and [developer quick start guide](https://docs.filebase.com/getting-started/getting-started-guides/developer-quick-start-guide). They also offer a subset of Kubo RPC API - see their [IPFS RPC API documentation](https://docs.filebase.com/api-documentation/ipfs-rpc-api).
 

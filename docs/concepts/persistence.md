@@ -49,6 +49,7 @@ Some of the pinning services listed below are operated by third party companies.
 - [4EVERLAND Bucket](https://www.4everland.org/bucket/)
 - [Filebase](https://filebase.com/)
 - [Pinata](https://pinata.cloud/)
+- [Pinion Build](https://pinion.build/)
 - [Storacha (formerly web3.storage)](https://storacha.network/)
 
 See how to [work with remote pinning services](../how-to/work-with-pinning-services.md).
