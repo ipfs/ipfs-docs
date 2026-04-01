@@ -8,7 +8,7 @@ date: 2021-04-02
 
 IPFS is a great fit for storing and addressing data for NFTs, or non-fungible tokens. This guide is all about how to store the data for NFTs on IPFS so that NFT creators and owners have a great experience that can stand the test of time.
 
-Since an NFT can't be easily changed after it's been created, it's a good idea to think about how the data for your NFTs is stored, addressed, and made persistent over time. That's why we'll be getting into the specifics of [how to prepare your NFT metadata](#metadata), and we'll also look at [the different kinds of links to IPFS content](#types-of-ipfs-links-and-when-to-use-them) and when you should use each one. Finally, we'll see why [making a plan for your data's persistence](#persistence-and-availability) is important for a good user experience. By following these recommendations, you can help ensure a long and healthy future for your NFT data.
+Since an NFT can't be easily changed after it's been created, it's a good idea to think about how the data for your NFTs is stored, addressed, and made persistent over time. That's why we'll be getting into the specifics of [how to prepare your NFT metadata](#metadata), and we'll also look at [the different kinds of links to IPFS content](#types-of-ipfs-links-and-when-to-use-them) and when you should use each one. Finally, we'll see why [making a plan for the persistence of your data](#persistence-and-availability) is important for a good user experience. By following these recommendations, you can help ensure a long and healthy future for your NFT data.
 
 This guide is aimed at developers building NFT platforms and other tools, and it's focused on how to format your data and link to it for the best long-term results. 
 
@@ -112,7 +112,7 @@ To link to images, videos and other media, simply use an [IPFS URI](#ipfs-uri). 
 ::: tip
 Using IPFS URIs inside your metadata to link to images and other media helps preserve the integrity of your NFT data! IPFS links can't be tampered with or altered to point to different data after they've been created.
 
-Even if you're not storing your data with IPFS today, generating an IPFS URI for your media and including it in your metadata will allow anyone to validate the data's integrity once they download it from another source. If you (or anyone else) later adds the data to IPFS, the URI will start working!
+Even if you're not storing your data with IPFS today, generating an IPFS URI for your media and including it in your metadata will allow anyone to validate integrity of your data once they download it from another source. If you (or anyone else) later adds the data to IPFS, the URI will start working!
 :::
 
 Because you need to know the CID of images and other media that you want to reference in your metadata, it's simplest to create the metadata after you've added your media assets to IPFS.
