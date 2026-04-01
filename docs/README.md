@@ -40,6 +40,7 @@ Provide data to the IPFS network with IPFS Desktop or a pinning service:
 IPFS is a great fit for deploying static sites and dapps, check out the following guides to get started:
 
 - [Deploy static sites to the IPFS network with a GitHub Action](./how-to/websites-on-ipfs/deploy-github-action.md).
+- [Deploy to IPFS with the Pinion Build GitHub App](./how-to/websites-on-ipfs/pinion-build-github-app.md).
 - [Set up a DNSLink gateway to serve your site via a custom domain](./how-to/websites-on-ipfs/dnslink-gateway.md).
 - [Configure static site generators for publishing to IPFS](./how-to/websites-on-ipfs/static-site-generators.md).
 

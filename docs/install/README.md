@@ -32,6 +32,8 @@ Do you want to quickly and easily publish content with IPFS without complex tool
 
 Do you want to quickly and easily automate the deployment of static websites to the IPFS network? See the [Deploy static sites to the IPFS network with GitHub Actions](../how-to/websites-on-ipfs/deploy-github-action.md), where you'll learn how to use [GitHub Actions](https://github.com/ipshipyard/ipfs-deploy-action) to automatically deploy static websites to the IPFS network.
 
+Alternatively, the [Pinion Build GitHub App](../how-to/websites-on-ipfs/pinion-build-github-app.md) provides OAuth-based pinning without requiring a workflow file or long-lived tokens in your repository.
+
 ## Infrastructure Tools
 
 ### Kubo
