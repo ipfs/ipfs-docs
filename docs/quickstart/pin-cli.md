@@ -109,7 +109,7 @@ curl -X POST https://api.pinata.cloud/pinning/pinFileToIPFS \
 ### Option 3: Pinion build upload API
 
 Pinion build provides a writable gateway you can use to upload files or car files.
-Files added this way are immediately viewable through the gateway and broadcast to the IPFS network, and managable through the standard pinning service API
+Files added this way are immediately viewable through the gateway and broadcast to the IPFS network, and manageable through the standard pinning service API
 or the web dashboard. Additional information can be found in their [API documentation](https://pinion.build/docs/)
 
 Basic file upload with curl:
@@ -121,7 +121,7 @@ curl -X POST https://<environment>.pinion.build/upload/api/v1/?name=my-file \
 ```
 
 
-Their API also supports uploading multi-root CAR files. When done this way, each root CID in the CAR is pinned and managed indivdually.
+Their API also supports uploading multi-root CAR files. When done this way, each root CID in the CAR is pinned and managed individually.
 
 Car file upload with curl:
 ```shell
