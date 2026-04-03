@@ -92,6 +92,70 @@ func IPFSVersion() string {
 	return config.CurrentVersionNumber
 }
 
+// ignoredGlobalOptions lists root-level flags that should not appear in the
+// HTTP RPC API reference. This includes:
+//   - CLI-only flags (--repo-dir, --config-file, --api, --debug, --help)
+//     that refer to local paths or control CLI behavior
+//   - --encoding: the HTTP handler defaults to JSON and this is already
+//     documented in the "Flags" intro section of the reference
+//   - --stream-channels: parsed by the HTTP handler but has no effect;
+//     HTTP response streaming is determined by the response type, not this flag
+//   - --upgrade-cidv0-in-output: deprecated, --cid-base with a non-base58btc
+//     value now automatically upgrades CIDv0 to CIDv1
+var ignoredGlobalOptions = map[string]struct{}{
+	corecmds.RepoDirOption:    {},
+	corecmds.ConfigFileOption: {},
+	corecmds.ConfigOption:     {},
+	corecmds.DebugOption:      {},
+	corecmds.LocalOption:      {}, // deprecated alias for --offline
+	corecmds.ApiOption:        {},
+	"help":                    {}, // cmds.OptLongHelp
+	"h":                       {}, // cmds.OptShortHelp
+	cmds.EncLong:              {}, // --encoding: HTTP defaults to JSON, documented in intro
+	cmds.ChanOpt:              {}, // --stream-channels: no-op over HTTP
+	"upgrade-cidv0-in-output": {}, // deprecated: --cid-base auto-upgrades for non-base58btc
+}
+
+// GlobalOptions extracts the options defined on corecmds.Root that are
+// relevant to the HTTP RPC API. The Root command itself has Run == nil so
+// Endpoints() skips it, but its Options slice contains global flags
+// (--offline, --timeout, --cid-base, etc.) that can be passed as query
+// parameters to any endpoint. Flags listed in ignoredGlobalOptions are
+// filtered out.
+//
+// The --api-auth flag is a special case: it controls RPC authentication
+// but is sent as an HTTP Authorization header, not a query parameter.
+// It is returned separately so the formatter can document it differently.
+func GlobalOptions() (queryOpts []*Argument, authOpt *Argument) {
+	for _, opt := range corecmds.Root.Options {
+		name := opt.Names()[0]
+		if _, skip := ignoredGlobalOptions[name]; skip {
+			continue
+		}
+
+		def := fmt.Sprint(opt.Default())
+		if def == "<nil>" {
+			def = ""
+		}
+
+		arg := &Argument{
+			Name:        name,
+			Type:        opt.Type().String(),
+			Description: opt.Description(),
+			Default:     def,
+		}
+
+		// api-auth is sent as an HTTP header, not a query parameter
+		if name == corecmds.ApiAuthOption {
+			authOpt = arg
+			continue
+		}
+
+		queryOpts = append(queryOpts, arg)
+	}
+	return queryOpts, authOpt
+}
+
 // Endpoints receives a name and a go-ipfs command and returns the endpoints it
 // defines] (sorted). It does this by recursively gathering endpoints defined by
 // subcommands. Thus, calling it with the core command Root generates all
