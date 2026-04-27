@@ -155,6 +155,16 @@ To see the multiaddr used for the connection run:
 ipfs swarm peers -v | grep <peerId>
 ```
 
+## A configured Swarm listener appears unreachable
+
+If a listener you put in [`Addresses.Swarm`](https://github.com/ipfs/kubo/blob/master/docs/config.md#addressesswarm) does not work and Kubo logs an ERROR like
+
+```
+Addresses.Swarm listener "/ip4/127.0.0.1/tcp/8081/ws" matches Swarm.AddrFilters rule "/ip4/127.0.0.0/ipcidr/8", so Kubo rejects every incoming connection to it. Remove "/ip4/127.0.0.0/ipcidr/8" from Swarm.AddrFilters to allow connections to this listener.
+```
+
+(or the matching `Addresses.NoAnnounce` variant) at startup, the gate or announcement filter you configured covers that listener. The most common trigger is applying the [`server` profile](https://github.com/ipfs/kubo/blob/master/docs/config.md#server-profile) while keeping a `127.0.0.1` listener fronted by a local reverse proxy (nginx, Caddy). Remove the offending CIDR from the field named in the log line. The kubo [`server` profile override table](https://github.com/ipfs/kubo/blob/master/docs/config.md#overriding-specific-entries) lists the recommended removals for the common cases (multiple loopback daemons, LAN peering, Tailscale or other CGNAT overlays, IPv6 ULA mesh, Yggdrasil, NAT64).
+
 ## Go debugging
 
 When you see ipfs doing something (using lots of CPU, memory, or otherwise being weird), the first thing you want to do is gather all the relevant profiling information.

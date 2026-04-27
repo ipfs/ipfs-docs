@@ -98,7 +98,14 @@ In this step, you will update your Kubo configuration to set `Swarm.AppendAnnoun
         "API": "/ip4/127.0.0.1/tcp/5001",
         "Gateway": "/ip4/127.0.0.1/tcp/8080"
     },
-    ``` 
+    ```
+
+   :::tip
+   `Addresses.NoAnnounce` and [`Swarm.AddrFilters`](https://github.com/ipfs/kubo/blob/master/docs/config.md#swarmaddrfilters) are not the same thing:
+
+   - `Addresses.NoAnnounce` is a publish-side filter. It strips matching addresses from what other peers learn about you. Use it to hide LAN or loopback addresses from your DHT self-record.
+   - `Swarm.AddrFilters` is a connection gate. It refuses libp2p dial and accept on matching addresses. Putting loopback here will also break a local reverse proxy talking to Kubo on `127.0.0.1`.
+   :::
 
 1. Update `AppendAnnounce`, where `<public-ip>` is your public IP address and `<port>` is the port number set in the previous step: 
 
