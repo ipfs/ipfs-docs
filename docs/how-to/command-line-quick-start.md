@@ -16,11 +16,13 @@ If you have not yet installed Kubo, follow the [Kubo install guide](../install/c
 `ipfs` stores all its settings and internal data in a directory called _the repository._ Before using Kubo for the first time, you’ll need to initialize the repository. 
 
 :::tip
- - If you are running a Kubo node in a data center, you should initialize IPFS with the `server` profile. Doing so will prevent IPFS from creating data center-internal traffic trying to discover local nodes:
+ - If you are running Kubo on a public-internet host (data center, VPS, cloud), initialize with the `server` profile. It disables local-network discovery and refuses libp2p connections to and from non-globally-routable address ranges, so the node does not generate discovery traffic that some hosting providers flag as abuse:
 
     ```bash
     ipfs init --profile server
     ```
+
+    See the [`server` profile reference](https://github.com/ipfs/kubo/blob/master/docs/config.md#server-profile) for the full filter list, override rows, and the reverse-proxy interaction (a `/ip4/127.0.0.1/tcp/.../ws` listener fronted by a local nginx or Caddy proxy needs one of those overrides to keep working).
  - Be careful using `sudo` on Unix platforms (including macOS)! Running `sudo ipfs init` will create the repository for the `root` user, instead of your local user account. Kubo doesn't require root privileges, so it's best to run all `ipfs` commands as a regular user!
 :::
 
