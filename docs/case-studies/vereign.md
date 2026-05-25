@@ -11,6 +11,8 @@ description: Explore how Vereign uses IPFS to deliver verifiable, encrypted mess
 _Georg Greve, CEO and Co-founder, Vereign_
 :::
 
+@[youtube](uHFmRsRrjro)
+
 ## Overview
 
 In this case study, you'll learn how [Vereign](https://www.vereign.com/) uses IPFS as the transport layer for a secure messaging system that serves Swiss healthcare, processing close to a million verified messages every month in partnership with the Swiss [Health Info Net (HIN)](https://www.hin.ch/).
@@ -51,7 +53,7 @@ A doctor in HIN's network sends a message intended for a patient. From that poin
 1. **Encryption**: The SEAL engine, operated by HIN, encrypts the message using AES-GCM-256. Each message gets multiple keys — one per MIME container, plus a message-level key — and all key material is held in [HashiCorp Vault](https://www.vaultproject.io/) TODO: verify vault.
 2. **Fragmentation**: The encrypted message is broken into fragments. Fragment boundaries deliberately don't align with the GCM blocks, making partial recovery harder for an attacker who finds a single fragment.
 3. **Distribution**: Fragments are pinned across an IPFS swarm operated by HIN and Vereign.
-4. **Delivery**: The patient receives a link (or QR code) that contains *one* fragment, the encrypted message key, and the URL of the SEAL web app.
+4. **Delivery**: The patient receives a link (or QR code) that contains _one_ fragment, the encrypted message key, and the URL of the SEAL web app.
 5. **Edge decryption**: The web app launches on the patient's device, retrieves the remaining fragments over IPFS, asks HIN's key service to release the decryption key (gated by an mTAN sent to the patient's phone), and reassembles and decrypts the message locally.
 6. **Reply path**: Replies travel back through HIN's existing secure email infrastructure into the doctor's inbox.
 
@@ -111,6 +113,6 @@ Running IPFS in a regulated production environment came with a few sharp edges w
 
 SEAL is one component of a larger trust layer that Vereign is building, currently being rebranded from "Stargate" to **VeryMesh**. VeryMesh extends the same principles (decentralized key management, verifiable credentials, peer-to-peer trust between organizations) to cross-institutional data exchange more broadly.
 
-The longer-term aim is a technology stack where hospitals, government registries, identity providers, and individuals can verify each other's credentials and exchange data without ceding control to any central trust authority. SEAL fits into that picture as the bridge for the participants who are *not yet* in the mesh — the patients, recipients, and partners reached through ordinary email and ordinary web browsers.
+The longer-term aim is a technology stack where hospitals, government registries, identity providers, and individuals can verify each other's credentials and exchange data without ceding control to any central trust authority. SEAL fits into that picture as the bridge for the participants who are _not yet_ in the mesh — the patients, recipients, and partners reached through ordinary email and ordinary web browsers.
 
 _Note: Details in this case study are current as of mid-2026. SEAL, VeryMesh, and the underlying infrastructure continue to evolve._
