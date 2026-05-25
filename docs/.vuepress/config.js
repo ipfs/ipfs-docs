@@ -94,6 +94,7 @@ module.exports = {
               {text: 'Morpheus.Network', link : '/case-studies/morpheus'},
               {text: 'ORCESTRA', link : '/case-studies/orcestra'},
               {text: 'Snapshot',link : '/case-studies/snapshot'},
+              {text: 'Vereign', link : '/case-studies/vereign'},
             ]
           }
         ],
@@ -406,7 +407,8 @@ module.exports = {
                 ['/case-studies/fleek', 'Fleek'],
                 ['/case-studies/likecoin', 'LikeCoin'],
                 ['/case-studies/morpheus', 'Morpheus.Network'],
-                ['/case-studies/snapshot', 'Snapshot']
+                ['/case-studies/snapshot', 'Snapshot'],
+                ['/case-studies/vereign', 'Vereign']
               ]
             }
           ],
@@ -426,7 +428,8 @@ module.exports = {
                 ['/case-studies/fleek', 'Fleek'],
                 ['/case-studies/likecoin', 'LikeCoin'],
                 ['/case-studies/morpheus', 'Morpheus.Network'],
-                ['/case-studies/snapshot', 'Snapshot']
+                ['/case-studies/snapshot', 'Snapshot'],
+                ['/case-studies/vereign', 'Vereign']
               ]
             },
             ['/concepts/glossary', 'Glossary'],
