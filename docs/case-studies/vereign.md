@@ -44,7 +44,7 @@ A few years ago, HIN began a sweeping modernization effort known internally as P
 
 The result was [SEAL](https://vereign.com/seal/). From the patient's perspective, it feels like opening a web page: tap a link, enter a code, read the message. Underneath, the message itself is encrypted, broken into fragments, and spread across an IPFS swarm; nothing reassembles until it reaches the patient's device.
 
-A year after rollout, SEAL is delivering more than 880,000 verified messages a month, more than twice the volume the old system carried, and HIN reports near-zero support load.
+A year after roll-out, SEAL is delivering more than 880,000 verified messages a month, more than twice the volume the old system carried, and HIN reports near-zero support load.
 
 ## How SEAL works
 

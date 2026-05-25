@@ -120,6 +120,7 @@ fqdns
 fsspec
 Gandi
 gasless
+georg
 geospatial
 gif
 git(hub)
@@ -127,10 +128,13 @@ gnutella
 goroutine
 goroutines
 graphsync
+greve
 guis
 hackathons
 hareesh
 helia
+HIN
+HIN's
 homebrew
 homestar
 hostname
@@ -264,6 +268,7 @@ rasterio
 reachability
 readmes
 realtime
+rebranded
 referenceable
 repo
 repos
@@ -291,6 +296,7 @@ sneakernets
 someguy
 Someguy
 stackparse
+stargate
 stdout
 storacha
 Storacha's
@@ -325,6 +331,8 @@ urls
 urlstore
 userland
 userspace
+vereign
+Vereign's
 vpns
 vscode
 vue
