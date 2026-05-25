@@ -13,13 +13,13 @@ _Georg Greve, CEO and Co-founder, Vereign_
 
 ## Overview
 
-In this case study, you'll learn how [Vereign](https://www.vereign.com/) uses IPFS as the delivery substrate for a secure messaging system that serves Swiss healthcare, processing close to a million verified messages every month in partnership with the Swiss Health Info Net.
+In this case study, you'll learn how [Vereign](https://www.vereign.com/) uses IPFS as the transport layer for a secure messaging system that serves Swiss healthcare, processing close to a million verified messages every month in partnership with the Swiss [Health Info Net (HIN)](https://www.hin.ch/).
 
 ## What is Vereign
 
-Vereign, short for *sovereign* in German, is an infrastructure company building the trust layer for regulated digital communication. Its work spans decentralized key management, verifiable credentials, and secure data exchange, with a focus on environments where authenticity, privacy, and compliance are not optional.
+Vereign is an infrastructure company building the trust layer for regulated digital communication. Its work spans decentralized key management, verifiable credentials, and secure data exchange, with a focus on environments where authenticity, privacy, and compliance are not optional.
 
-Vereign's flagship system, [**SEAL**](https://vereign.com/seal/) (Secure Edge Application Layer), is deployed in Swiss healthcare in partnership with [HIN (Health Info Net)](https://www.hin.ch/), the secure communications provider owned by the Swiss Doctors Association. SEAL is the system that doctors and hospitals use to send sensitive messages to patients.
+Vereign's flagship system, [**SEAL**](https://vereign.com/seal/) (Secure Edge Application Layer), is deployed in Swiss healthcare in partnership with [HIN](https://www.hin.ch/), the secure communications provider owned by the Swiss Doctors Association. SEAL is the system that doctors and hospitals use to send sensitive messages to patients.
 
 SEAL replaced HIN's previous patient-messaging system in 2025 and now handles the majority of patient-facing secure email across Swiss healthcare.
 
@@ -63,7 +63,7 @@ SEAL is built around several IPFS-native design choices that make the system bot
 
 ### Encrypted swarm delivery
 
-Rather than store a complete encrypted message on a single server, SEAL distributes encrypted fragments across an IPFS swarm. Combined with the encrypted message key delivered separately to the patient, this means the complete data never exists in one place. Even if a single node —or HIN's own infrastructure— were compromised, no complete message would be sitting there to steal.
+Rather than store a complete encrypted message on a single server, SEAL distributes encrypted fragments across an IPFS swarm. Combined with the encrypted message key delivered separately to the patient, this means the complete data never exists in one place. Even if a single node — or HIN's own infrastructure — were compromised, no complete message would be sitting there to steal.
 
 ### A public swarm with curated pinning
 
@@ -71,13 +71,13 @@ The SEAL swarm is public: any node can connect, and any client can retrieve cont
 
 ### A web app at the edge
 
-The patient-facing application is a React Native app that runs in any environment that can execute JavaScript: a browser, a phone, a laptop. It can be served over plain HTTPS or, in clients that support it, over IPFS via DNSLink. The same architecture has been used to build companion apps for documents and other content types as the underlying delivery primitive is application-agnostic.
+The patient-facing application is a React Native app that runs in any environment that can execute JavaScript: a browser, a phone, a laptop. It can be served over plain HTTPS or, in clients that support it, over IPFS via DNSLink. The same architecture has been used to build companion apps for documents and other content types; the underlying delivery primitive is application-agnostic.
 
 For performance, the app does not rely on DHT-based content routing. Because the location of HIN's gateways is known ahead of time, the app fetches fragments directly from the relevant gateway endpoints.
 
 ### Cluster-managed pinsets
 
-The swarm is running [IPFS Cluster](https://ipfscluster.io/), which coordinates pinning across multiple [Kubo](https://github.com/ipfs/kubo) nodes for redundancy.
+Pinning is managed by [IPFS Cluster](https://ipfscluster.io/), which coordinates pin state across multiple [Kubo](https://github.com/ipfs/kubo) nodes for redundancy.
 
 ## IPFS benefits
 
@@ -93,7 +93,7 @@ Because the message exists only as encrypted fragments spread across multiple no
 
 ### Compliance through architecture
 
-SEAL's design sidesteps a tension that often arises with replicated storage: the right to deletion. Because a SEAL message is only readable if its session key is available —and that key is held in HIN's key service— destroying the key effectively destroys the message, even if some fragments remain pinned elsewhere. Compliance is enforced through key lifecycle, not by chasing replicated data.
+SEAL's design sidesteps a tension that often arises with replicated storage: the right to deletion. Because a SEAL message is only readable if its session key is available — and that key is held in HIN's key service — destroying the key effectively destroys the message, even if some fragments remain pinned elsewhere. Compliance is enforced through key lifecycle, not by chasing replicated data.
 
 ### A universal delivery substrate
 
@@ -104,12 +104,12 @@ The same swarm-delivery primitive that powers SEAL email is reused for document 
 Running IPFS in a regulated production environment came with a few sharp edges worth flagging for other teams:
 
 - **Garbage collection is disruptive.** On a busy node, garbage collection effectively takes that node out of service while it runs. The operational pattern is to rotate a node out of the cluster, garbage-collect, then rotate it back in.
-- **Corporate firewalls distrust IPFS.** Several enterprise environments inspect traffic and block requests that appear like IPFS traffic, i.e. request headers. The SEAL gateway strips any IPFS headers on the patient-facing path so that messages reach users behind aggressive firewalls.
+- **Corporate firewalls distrust IPFS.** Several enterprise environments inspect traffic and block requests that look like IPFS traffic. The SEAL gateway strips any IPFS headers on the patient-facing path so that messages reach users behind aggressive firewalls.
 - **Production deployment patterns are under-documented.** Best practices for scaling, redundancy, and Kubernetes/OpenShift recipes for IPFS aren't well covered in public documentation. Teams adopting IPFS for production workloads should expect to invest in their own deployment patterns.
 
 ## Vereign & IPFS: the future
 
-SEAL is one component of a larger trust layer that Vereign is building, currently being rebranded from "Stargate" to **VeryMesh**. VeryMesh extends the same principles: decentralized key management, verifiable credentials, peer-to-peer trust between organizations, to inter-institutional data exchange more broadly.
+SEAL is one component of a larger trust layer that Vereign is building, currently being rebranded from "Stargate" to **VeryMesh**. VeryMesh extends the same principles (decentralized key management, verifiable credentials, peer-to-peer trust between organizations) to cross-institutional data exchange more broadly.
 
 The longer-term aim is a technology stack where hospitals, government registries, identity providers, and individuals can verify each other's credentials and exchange data without ceding control to any central trust authority. SEAL fits into that picture as the bridge for the participants who are *not yet* in the mesh — the patients, recipients, and partners reached through ordinary email and ordinary web browsers.
 
