@@ -50,12 +50,12 @@ A year after roll-out, SEAL is delivering more than 880,000 verified messages a 
 
 A doctor in HIN's network sends a message intended for a patient. From that point, the flow looks like this:
 
-1. **Encryption**: The SEAL engine, operated by HIN, encrypts the message using AES-GCM-256. Each message gets multiple keys — one per MIME container, plus a message-level key — and all key material is held in [HashiCorp Vault](https://www.vaultproject.io/) TODO: verify vault.
-2. **Fragmentation**: The encrypted message is broken into fragments. Fragment boundaries deliberately don't align with the GCM blocks, making partial recovery harder for an attacker who finds a single fragment.
-3. **Distribution**: Fragments are pinned across an IPFS swarm operated by HIN and Vereign.
-4. **Delivery**: The patient receives a link (or QR code) that contains _one_ fragment, the encrypted message key, and the URL of the SEAL web app.
-5. **Edge decryption**: The web app launches on the patient's device, retrieves the remaining fragments over IPFS, asks HIN's key service to release the decryption key (gated by an mTAN sent to the patient's phone), and reassembles and decrypts the message locally.
-6. **Reply path**: Replies travel back through HIN's existing secure email infrastructure into the doctor's inbox.
+1. **Encryption**: The SEAL engine, operated by HIN, encrypts the message using AES-GCM-256. Each message gets multiple keys — one per MIME container, plus a message-level key — and all key material is held in [HashiCorp Vault](https://www.vaultproject.io/).
+1. **Fragmentation**: The encrypted message is broken into fragments. Fragment boundaries deliberately don't align with the GCM blocks, making partial recovery harder for an attacker who finds a single fragment.
+1. **Distribution**: Fragments are pinned across an IPFS swarm operated by HIN and Vereign.
+1. **Delivery**: The patient receives a link (or QR code) that contains _one_ fragment, the encrypted message key, and the URL of the SEAL web app.
+1. **Edge decryption**: The web app launches on the patient's device, retrieves the remaining fragments over IPFS, asks HIN's key service to release the decryption key (gated by an mTAN sent to the patient's phone), and reassembles and decrypts the message locally.
+1. **Reply path**: Replies travel back through HIN's existing secure email infrastructure into the doctor's inbox.
 
 Because the key service logs the moment the patient decrypts the key, the doctor receives proof of delivery, useful both clinically and for liability.
 
