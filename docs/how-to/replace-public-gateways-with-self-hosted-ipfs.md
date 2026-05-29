@@ -101,7 +101,7 @@ Replace the example domains with your own. See the [`@helia/verified-fetch` READ
 
 ### Point your own Kubo or Rainbow at Someguy (optional)
 
-Since Someguy caches routing answers, you can also point your backend Kubo or Rainbow node at it. By default both reach out to public delegated routing endpoints; this override sends them through your Someguy instead. Skip this step if you do not run a backend node.
+Since Someguy caches routing answers, you can also point your backend Kubo or Rainbow node at it. By default, both reach out to public delegated routing endpoints; this override sends them through your Someguy instead. Skip this step if you do not run a backend node.
 
 For Kubo, override the delegated routers and restart the daemon:
 
@@ -121,7 +121,7 @@ RAINBOW_HTTP_ROUTERS=https://someguy-routing.example.net/routing/v1
 
 ### Run it
 
-Follow the install steps in the [Rainbow README](https://github.com/ipfs/rainbow#readme). Once running, Rainbow serves a gateway on `http://127.0.0.1:8090` by default.
+Follow the installation steps in the [Rainbow README](https://github.com/ipfs/rainbow#readme). Once running, Rainbow serves a gateway on `http://127.0.0.1:8090` by default.
 
 ### Swap your URLs
 
