@@ -25,15 +25,6 @@ Vereign's flagship system, [**SEAL**](https://vereign.com/seal/) (Secure Edge Ap
 
 SEAL replaced HIN's previous patient-messaging system in 2025 and now handles the majority of patient-facing secure email across Swiss healthcare.
 
-### Vereign by the numbers
-
-<NumberBlock :items="[
-  {value: '880K+', text: 'Verified messages per month'},
-  {value: '2x+', text: 'Volume vs. the previous system'},
-  {value: '~0', text: 'Level-3 support tickets per month'},
-  {value: '30', text: 'Years HIN has run secure messaging for Swiss doctors'}
-]" />
-
 ## The story
 
 Switzerland's HIN has been running secure email for the country's doctors for nearly thirty years. For most of that time, the model was S/MIME: encryption between professionals who could be issued certificates, software, and training.
