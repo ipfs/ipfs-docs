@@ -191,7 +191,7 @@ Currently HTTP gateways typically expose both immutable IPFS and mutable IPNS (e
 
 ## Working with gateways
 
-For more information on working with gateways, see [best practices](../how-to/gateway-best-practices.md) and [troubleshooting](../how-to/gateway-troubleshooting.md).
+For more information on working with gateways, see [best practices](../how-to/gateway-best-practices.md) and [troubleshooting](../how-to/troubleshooting.md).
 
 ## Implementing gateways
 

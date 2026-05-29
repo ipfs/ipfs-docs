@@ -13,6 +13,9 @@
         },
         {
             "pattern": "^https://www.npmjs.com/"
+        },
+        {
+            "pattern": "^https://www.gnu.org/"
         }
     ],
     "aliveStatusCodes": [200, 206, 429]
