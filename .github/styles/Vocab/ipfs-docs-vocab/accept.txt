@@ -227,8 +227,3 @@ denylist
 IPFS's
 IPIPs?
 _redirects
-[Hh]otlink(ed|ing|s)?
-[Ss]ubresources?
-[Nn]avigations?
-[Dd]eserialize[sd]?
-env
