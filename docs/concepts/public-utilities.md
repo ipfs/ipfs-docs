@@ -12,6 +12,8 @@ These include [IPFS Gateways](./ipfs-gateway.md), hosted [Delegated Routing V1 e
 
 These utilities make it easier to retrieve data from the IPFS network in resource-constrained environments such as browsers and low-powered devices.
 
+They are a great way to get started. When your app outgrows best-effort traffic and you want infrastructure you control, see [Replace public gateways with self-hosted IPFS](../how-to/replace-public-gateways-with-self-hosted-ipfs.md).
+
 ## Public IPFS Gateways
 
 The IPFS Foundation provides the following public gateways:

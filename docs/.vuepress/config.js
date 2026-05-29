@@ -292,8 +292,8 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
-                '/how-to/replace-public-gateways-with-self-hosted-ipfs',
                 '/how-to/gateway-best-practices',
+                '/how-to/replace-public-gateways-with-self-hosted-ipfs',
                 '/how-to/troubleshooting',
               ]
             },

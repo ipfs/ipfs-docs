@@ -11,7 +11,7 @@ When you are done, your app fetches the same content by CID from a gateway you r
 
 ## Why this guide
 
-The public gateways at `ipfs.io` and `dweb.link` are not the right place to send production traffic. They are a shared [public good (best-effort)](../concepts/public-utilities.md) with no SLA and no performance knobs you control. Running your own infrastructure puts you in charge of both: you set the SLA your users get, and you tune for the performance your app needs. Read [A post-gateway world](https://ipshipyard.com/blog/2025-a-post-gateway-world/) and [IPFS gateways: redirect to in-browser](https://ipshipyard.com/blog/2026-ipfs-gateways-redirect-inbrowser-link/) for the background.
+The public gateways at `ipfs.io` and `dweb.link` are a great way to get started, and plenty of apps lean on them early on. They are a shared [public good (best-effort)](../concepts/public-utilities.md), though, with no SLA and no performance knobs you control, so they are not built for production traffic. Running your own infrastructure puts you in charge of both: you set the SLA your users get, and you tune for the performance your app needs. Read [A post-gateway world](https://ipshipyard.com/blog/2025-a-post-gateway-world/) and [IPFS gateways: redirect to in-browser](https://ipshipyard.com/blog/2026-ipfs-gateways-redirect-inbrowser-link/) for the background.
 
 This guide covers two audiences: code in a browser page that fetches from `ipfs.io` via the Fetch API, a Service Worker, or hotlinked subresources (`<img>`, `<script>`, CSS `url()`); and non-browser clients (server code, scripts, mobile apps, CLI tools). Top-level browser navigations (the address bar case) are out of scope; the in-browser redirect linked above handles those without code changes.
 
@@ -37,6 +37,83 @@ Every path ends with the same drop-in change: swap the `ipfs.io` or `dweb.link` 
 **Use path-style URLs for non-browser clients.** Point at the path-style local gateway: `http://127.0.0.1:{port}/ipfs/{CID}/path/to/file`. Subdomain URLs like `{CID}.ipfs.{host}` only add value for top-level browser navigation, where the browser uses the subdomain to give each site its own origin. If your old code already uses subdomain URLs from `dweb.link`, switch to path-style against your local gateway. The examples below do that.
 
 **Internal-only backends: think Redis, not CDN.** If your backend uses IPFS the way it would use Redis (fetch JSON or a blob by CID, then act on it; nothing reaches end users directly), deploy Rainbow or Kubo on the same host as your app and call it over localhost. The URL swap above is the whole setup. The "Put it on your own domain" and "Trustless vs deserialized" subsections in each backend section below only apply when you also expose the gateway to clients outside your own infrastructure.
+
+## Browser apps
+
+If you fetch IPFS content from JavaScript in a web page, switch to [`@helia/verified-fetch`](https://www.npmjs.com/package/@helia/verified-fetch). It is a drop-in replacement for `fetch` that retrieves content in the browser itself.
+
+### Install
+
+```bash
+npm install @helia/verified-fetch
+```
+
+### Swap your fetches
+
+```js
+// Before
+const res = await fetch('https://ipfs.io/ipfs/bafy.../path/to/file')
+
+// After
+import { verifiedFetch } from '@helia/verified-fetch'
+const res = await verifiedFetch('ipfs://bafy.../path/to/file')
+```
+
+You can also pass plain HTTP-style URLs like `verifiedFetch('https://bafy....ipfs.example.com/path/to/file')` if you already use subdomain URLs. See the [`@helia/verified-fetch` README](https://www.npmjs.com/package/@helia/verified-fetch) for the full API.
+
+To confirm the swap, load your page and open the browser network panel: requests to the content no longer go to `ipfs.io` or `dweb.link`.
+
+### How it works, and what you still depend on
+
+The main win: `verified-fetch` retrieves content directly from peers, in the browser, over libp2p (the peer-to-peer networking stack IPFS uses). Shared HTTP gateways drop out of the data path.
+
+Two pieces still use HTTP, and they default to public endpoints:
+
+- **Routing** finds which peers have a given CID. Default: `https://delegated-ipfs.dev` ([HTTP delegated routing v1](https://specs.ipfs.tech/routing/http-routing-v1/)).
+- **Trustless gateway fallback** kicks in only when peer-to-peer retrieval fails in the browser. Default: `https://trustless-gateway.link`. Pass `gateways: []` to disable it.
+
+For production, point both at your own infrastructure: run [Someguy](#run-someguy) for `/routing/v1`, and [Rainbow](#backend-retrieve-only-rainbow) or [Kubo](#backend-retrieve-and-publish-kubo) for the trustless gateway. The next section shows the configuration.
+
+## Stay independent of public utilities
+
+Run [Someguy](https://github.com/ipfs/someguy#readme) as your `/routing/v1` endpoint, run [Rainbow](#backend-retrieve-only-rainbow) or [Kubo](#backend-retrieve-and-publish-kubo) as your trustless gateway, and point your clients at both. This swaps out the best-effort public endpoints that `@helia/verified-fetch` uses out of the box, so your routing and fallback stay on infrastructure you control too.
+
+### Run Someguy
+
+Follow the [Someguy README](https://github.com/ipfs/someguy#readme). It exposes a `/routing/v1` HTTP endpoint that answers "who has this CID" for your clients.
+
+### Point `@helia/verified-fetch` at your own infrastructure
+
+Combine your Someguy for routing with your Rainbow or Kubo for retrieval. Use HTTPS endpoints under your own domains; browsers block plain HTTP requests from HTTPS pages, and the [Caddy setup](./kubo-rpc-tls-auth.md) handles TLS for you:
+
+```js
+import { createVerifiedFetch } from '@helia/verified-fetch'
+
+const verifiedFetch = await createVerifiedFetch({
+  gateways: ['https://rainbow-gateway.example.net'],
+  routers: ['https://someguy-routing.example.net']
+})
+
+const res = await verifiedFetch('ipfs://bafy.../path/to/file')
+```
+
+Replace the example domains with your own. See the [`@helia/verified-fetch` README](https://www.npmjs.com/package/@helia/verified-fetch) for the current option names.
+
+### Point your own Kubo or Rainbow at Someguy (optional)
+
+Since Someguy caches routing answers, you can also point your backend Kubo or Rainbow node at it. By default both reach out to public delegated routing endpoints; this override sends them through your Someguy instead. Skip this step if you do not run a backend node.
+
+For Kubo, override the delegated routers and restart the daemon:
+
+```bash
+ipfs config --json Routing.DelegatedRouters '["https://someguy-routing.example.net/routing/v1"]'
+```
+
+For Rainbow, set the env var before startup:
+
+```bash
+RAINBOW_HTTP_ROUTERS=https://someguy-routing.example.net/routing/v1
+```
 
 ## Backend, retrieve only: Rainbow
 
@@ -80,20 +157,22 @@ A gateway can answer in two modes:
 - **Deserialized**: the gateway returns the final file, HTML, or JSON. Convenient, but the client has to trust that the gateway returned the correct bytes for the CID. Fine on your own backend, where you trust the node.
 - **Trustless**: the gateway returns raw blocks or CAR streams, selected with `?format=raw`, `?format=car`, or a matching `Accept` header. The client cryptographically checks the response against the requested CID, so a tampering gateway is detectable. See the [trustless gateway spec](https://specs.ipfs.tech/http-gateways/trustless-gateway/).
 
-On a public HTTPS domain, serve trustless responses only. Keep the deserialized mode for your own internal callers. Rainbow reads this from environment variables, so set them before launching it (export them in your shell, put them in your `.env`, or add `Environment=` lines to your systemd unit):
+On a public HTTPS domain, serve trustless responses only. Keep the deserialized mode for your own internal callers. If your web or mobile app needs the final file, HTML, or JSON rather than raw blocks, it can still get that from a trustless endpoint: [`@helia/verified-fetch`](#browser-apps) fetches the trustless response and deserializes it on the client after verifying it against the CID, so you get deserialized data without trusting the gateway. Rainbow reads this from environment variables, so set them before launching it (export them in your shell, put them in your `.env`, or add `Environment=` lines to your systemd unit):
 
 ```bash
 # Public-facing domain: serve only verifiable formats
 RAINBOW_TRUSTLESS_GATEWAY_DOMAINS=rainbow-gateway.example.net
 
-# Keep deserialized path gateway on localhost for internal use
+# Deserialized path gateway on localhost, for internal backend (non-browser) use
 RAINBOW_GATEWAY_DOMAINS=127.0.0.1
 
-# Keep deserialized subdomain gateway on localhost
+# Deserialized subdomain gateway; use localhost or a Public Suffix List domain (see note below)
 RAINBOW_SUBDOMAIN_GATEWAY_DOMAINS=localhost
 ```
 
 If the same domain appears in both `RAINBOW_TRUSTLESS_GATEWAY_DOMAINS` and `RAINBOW_GATEWAY_DOMAINS`, the trustless setting wins, so it is safe to list the public hostname in both. See [Rainbow environment variables](https://github.com/ipfs/rainbow/blob/main/docs/environment-variables.md) for the full list.
+
+Only set `RAINBOW_SUBDOMAIN_GATEWAY_DOMAINS` to `localhost` or to a hostname listed in the [Public Suffix List](https://publicsuffix.org/). Browsers rely on that list to give each `{CID}.ipfs.{host}` subdomain its own origin, so origin isolation only works on a registered suffix.
 
 ## Backend, retrieve and publish: Kubo
 
@@ -146,83 +225,6 @@ ipfs config --json Gateway.PublicGateways '{"kubo-gateway.example.net": {"Paths"
 ```
 
 See [Gateway recipes](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway) in the Kubo config docs for more options.
-
-## Browser apps
-
-If you fetch IPFS content from JavaScript in a web page, switch to [`@helia/verified-fetch`](https://www.npmjs.com/package/@helia/verified-fetch). It is a drop-in replacement for `fetch` that retrieves content in the browser itself.
-
-### Install
-
-```bash
-npm install @helia/verified-fetch
-```
-
-### Swap your fetches
-
-```js
-// Before
-const res = await fetch('https://ipfs.io/ipfs/bafy.../path/to/file')
-
-// After
-import { verifiedFetch } from '@helia/verified-fetch'
-const res = await verifiedFetch('ipfs://bafy.../path/to/file')
-```
-
-You can also pass plain HTTP-style URLs like `verifiedFetch('https://bafy....ipfs.example.com/path/to/file')` if you already use subdomain URLs. See the [`@helia/verified-fetch` README](https://www.npmjs.com/package/@helia/verified-fetch) for the full API.
-
-To confirm the swap, load your page and open the browser network panel: requests to the content no longer go to `ipfs.io` or `dweb.link`.
-
-### How it works, and what you still depend on
-
-The main win: `verified-fetch` retrieves content directly from peers, in the browser, over libp2p (the peer-to-peer networking stack IPFS uses). Shared HTTP gateways drop out of the data path.
-
-Two pieces still use HTTP, and they default to public endpoints:
-
-- **Routing** finds which peers have a given CID. Default: `https://delegated-ipfs.dev` ([HTTP delegated routing v1](https://specs.ipfs.tech/routing/http-routing-v1/)).
-- **Trustless gateway fallback** kicks in only when peer-to-peer retrieval fails in the browser. Default: `https://trustless-gateway.link`. Pass `gateways: []` to disable it.
-
-For production, point both at your own infrastructure: run [Someguy](#run-someguy) for `/routing/v1`, and [Rainbow](#backend-retrieve-only-rainbow) or [Kubo](#backend-retrieve-and-publish-kubo) for the trustless gateway. The next section shows the configuration.
-
-## Stay independent of public utilities
-
-Run [Someguy](https://github.com/ipfs/someguy#readme) as your `/routing/v1` endpoint, run [Rainbow](#backend-retrieve-only-rainbow) or [Kubo](#backend-retrieve-and-publish-kubo) as your trustless gateway, and point your clients at both. You really want to swap the public good (best-effort) HTTP endpoints that `@helia/verified-fetch` uses out of the box.
-
-### Run Someguy
-
-Follow the [Someguy README](https://github.com/ipfs/someguy#readme). It exposes a `/routing/v1` HTTP endpoint that answers "who has this CID" for your clients.
-
-### Point `@helia/verified-fetch` at your own infrastructure
-
-Combine your Someguy for routing with your Rainbow or Kubo for retrieval. Use HTTPS endpoints under your own domains; browsers block plain HTTP requests from HTTPS pages, and the [Caddy setup](./kubo-rpc-tls-auth.md) handles TLS for you:
-
-```js
-import { createVerifiedFetch } from '@helia/verified-fetch'
-
-const verifiedFetch = await createVerifiedFetch({
-  gateways: ['https://rainbow-gateway.example.net'],
-  routers: ['https://someguy-routing.example.net']
-})
-
-const res = await verifiedFetch('ipfs://bafy.../path/to/file')
-```
-
-Replace the example domains with your own. See the [`@helia/verified-fetch` README](https://www.npmjs.com/package/@helia/verified-fetch) for the current option names.
-
-### Point your own Kubo or Rainbow at Someguy (optional)
-
-Since Someguy caches routing answers, you can also point your backend Kubo or Rainbow node at it. By default both reach out to public delegated routing endpoints; this override sends them through your Someguy instead. Skip this step if you do not run a backend node.
-
-For Kubo, override the delegated routers and restart the daemon:
-
-```bash
-ipfs config --json Routing.DelegatedRouters '["https://someguy-routing.example.net/routing/v1"]'
-```
-
-For Rainbow, set the env var before startup:
-
-```bash
-RAINBOW_HTTP_ROUTERS=https://someguy-routing.example.net/routing/v1
-```
 
 ## Further reading
 

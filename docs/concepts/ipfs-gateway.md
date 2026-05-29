@@ -43,6 +43,8 @@ Public ([recursive](#recursive-vs-non-recursive-gateways)) gateways are provided
 
 For a list of public gateways, see the [IPFS Gateways Checker](https://ipfs.fyi/gateways).
 
+If your app already calls a public gateway and you want to run your own instead, see [Replace public gateways with self-hosted IPFS](../how-to/replace-public-gateways-with-self-hosted-ipfs.md).
+
 ## Gateway types
 
 There are multiple gateway types, each with specific use case, security, performance, and functional implications.

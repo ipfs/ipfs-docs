@@ -23,6 +23,8 @@ Any form of gateway provides a bridge for apps without native support of IPFS. B
 
 If you are running an IPFS node that is also configured as an IPFS gateway, each of the tips below can help improve the discovery and retrievability of your CIDs.
 
+If you are moving off the public `ipfs.io` or `dweb.link` gateways, see [Replace public gateways with self-hosted IPFS](./replace-public-gateways-with-self-hosted-ipfs.md) for a drop-in migration path.
+
 - Pin your CIDs to multiple IPFS nodes to ensure reliable availability and resilience to failures of nodes and network partitions. To make pinning easier, use the vendor-agnostic [Pinning Service OpenAPI Specification](https://ipfs.github.io/pinning-services-api-spec/) that is already [supported by many IPFS node implementations, client libraries, and existing pinning services](https://github.com/ipfs/pinning-services-api-spec#adoption).
 - Use a custom domain that you control as your IPFS gateway for flexibility in implementing performance optimizations. You can do this using one of the following methods:
   - Point a domain you control like `mydomain.ipfs.yourdomain.io` to a reverse proxy like nginx, which will proxy requests to a public gateway, allowing you to switch public gateways if there's downtime.

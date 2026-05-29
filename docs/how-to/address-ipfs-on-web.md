@@ -20,7 +20,7 @@ For example:
 https://ipfs.io/ipfs/bafybeihkoviema7g3gxyt6la7vd5ho32ictqbilu3wnlo3rs7ewhnp7lly
 ```
 
-A [self-hosted local gateway](https://docs.ipfs.tech/install/) can also be used, instead of `ipfs.io`. 
+A [self-hosted local gateway](https://docs.ipfs.tech/install/) can also be used, instead of `ipfs.io`. To move an existing app off the public gateways, see [Replace public gateways with self-hosted IPFS](./replace-public-gateways-with-self-hosted-ipfs.md).
 
 ## IPFS addressing in brief
 
