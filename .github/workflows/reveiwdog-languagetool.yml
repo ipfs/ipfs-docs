@@ -13,7 +13,14 @@ jobs:
         uses: reviewdog/action-languagetool@v1
         with:
           github_token: ${{ secrets.github_token }}
-          reporter: github-pr-review
+          # github-pr-check posts findings as check-run annotations instead of
+          # review comments. Each run replaces the previous run's annotations, so
+          # pushes do not pile up duplicate comments and fixed findings disappear
+          # on the next run, rather than lingering as stale review threads.
+          reporter: github-pr-check
           level: info
+          # Action defaults plus rules that misfire on code fences (```js), inline
+          # code, shell snippets (quotes), and domain names (ipfs.io) in our docs.
+          disabled_rules: WHITESPACE_RULE,EN_QUOTES,DASH_RULE,WORD_CONTAINS_UNDERSCORE,UPPERCASE_SENTENCE_START,ARROWS,COMMA_PARENTHESIS_WHITESPACE,UNLIKELY_OPENING_PUNCTUATION,SENTENCE_WHITESPACE,CURRENCY,EN_UNPAIRED_BRACKETS,PHRASE_REPETITION,PUNCTUATION_PARAGRAPH_END,METRIC_UNITS_EN_US,ENGLISH_WORD_REPEAT_BEGINNING_RULE,FILE_EXTENSIONS_CASE,EN_UNPAIRED_QUOTES,A_INSTALL,LC_AFTER_PERIOD
           patterns: 'docs/**/*.md'
 
