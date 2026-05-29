@@ -7,6 +7,7 @@ description: Hands-on guides to using and developing with IPFS to build decentra
 
 See the site navigation menu for all our how-tos, organized by topic area, including favorites like these:
 
+- **Move off public gateways** by [replacing `ipfs.io` and `dweb.link` with self-hosted IPFS](replace-public-gateways-with-self-hosted-ipfs.md)
 - **Customize your install** by [configuring a node](configure-node.md), modifying the [bootstrap list](modify-bootstrap-list.md), and more
 - **Learn how to manage files** in IPFS with tutorials on concepts like [pinning](pin-files.md), how to [work with blocks](work-with-blocks.md), learning how to [content address data sets](content-addressing-data-sets.md).
 - **Publish scientific data** by exploring the [scientific data and IPFS landscape guide](scientific-data/landscape-guide.md) or learning how to [publish geospatial Zarr data with IPFS](scientific-data/publish-geospatial-zarr-data.md)
