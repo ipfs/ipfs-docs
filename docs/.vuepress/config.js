@@ -110,6 +110,7 @@ module.exports = {
                 ['/quickstart/pin','Pin (Browser)'],
                 ['/quickstart/pin-cli','Pin (CLI)'],
                 ['/how-to/websites-on-ipfs/deploy-github-action', 'Deploy to IPFS with GitHub Actions' ],
+                ['/how-to/websites-on-ipfs/pinion-build-github-app', 'Deploy to IPFS with the Pinion Build GitHub App' ],
               ]
             },
             {
@@ -130,7 +131,8 @@ module.exports = {
                 ['/quickstart/pin','Pin (Browser)'],
                 ['/quickstart/pin-cli','Pin (CLI)'],
                 ['/how-to/websites-on-ipfs/deploy-github-action', 'Deploy to IPFS with GitHub Actions' ],
-                
+                ['/how-to/websites-on-ipfs/pinion-build-github-app', 'Deploy to IPFS with the Pinion Build GitHub App' ],
+
               ]
             },
             {
@@ -266,6 +268,7 @@ module.exports = {
                 '/how-to/websites-on-ipfs/redirects-and-custom-404s',
                 '/how-to/websites-on-ipfs/custom-domains',
                 '/how-to/websites-on-ipfs/deploy-github-action',
+                '/how-to/websites-on-ipfs/pinion-build-github-app',
                 '/how-to/websites-on-ipfs/dnslink-action',
                 '/how-to/websites-on-ipfs/dnslink-gateway',
               ]
