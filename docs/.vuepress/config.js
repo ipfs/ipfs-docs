@@ -89,6 +89,7 @@ module.exports = {
             items: [
               {text: 'Arbol', link : '/case-studies/arbol/'},
               {text: 'Audius', link : '/case-studies/audius'},
+              {text: 'Bitsocial', link : '/case-studies/bitsocial'},
               {text: 'LikeCoin', link : '/case-studies/likecoin'},
               {text: 'Morpheus.Network', link : '/case-studies/morpheus'},
               {text: 'ORCESTRA', link : '/case-studies/orcestra'},
@@ -403,6 +404,7 @@ module.exports = {
               children: [
                 ['/case-studies/arbol', 'Arbol'],
                 ['/case-studies/audius', 'Audius'],
+                ['/case-studies/bitsocial', 'Bitsocial'],
                 ['/case-studies/orcestra', 'ORCESTRA'],
                 ['/case-studies/likecoin', 'LikeCoin'],
                 ['/case-studies/morpheus', 'Morpheus.Network'],
@@ -423,6 +425,7 @@ module.exports = {
               children: [
                 ['/case-studies/arbol', 'Arbol'],
                 ['/case-studies/audius', 'Audius'],
+                ['/case-studies/bitsocial', 'Bitsocial'],
                 ['/case-studies/orcestra', 'ORCESTRA'],
                 ['/case-studies/likecoin', 'LikeCoin'],
                 ['/case-studies/morpheus', 'Morpheus.Network'],

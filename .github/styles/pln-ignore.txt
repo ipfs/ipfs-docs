@@ -20,6 +20,7 @@ auspinner
 Bacalhau
 benchmarked
 bioimaging
+bitsocial
 bit[ss]wap
 bitswap
 blockchain
@@ -287,6 +288,7 @@ satoshi
 satoshi nakamoto
 SDKs
 se
+seedit
 serverless
 sharded
 sharding
