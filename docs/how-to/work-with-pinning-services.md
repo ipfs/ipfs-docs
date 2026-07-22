@@ -43,6 +43,7 @@ If you've decided that creating your own pinning service is right for you, learn
 Third-party pinning services allow you to purchase pinning capacity for important data. Each service has its own approach to pinning data and managing pins, so users should do their research to ensure that the service meets their particular needs. Service providers include, but are not limited to:
 
 - [Pinata](https://pinata.cloud/)
+- [Pinion Build](https://pinion.build/)
 - [Filebase](https://filebase.com/)
 - [Storacha (formerly web3.storage)](https://storacha.network/)
 

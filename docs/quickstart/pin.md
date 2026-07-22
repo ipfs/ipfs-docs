@@ -54,6 +54,7 @@ To follow along with this guide, you'll need:
 
 - **Option B**: An account with at least one pinning service (free tier is sufficient):
   - [Pinata](https://pinata.cloud/) - Popular IPFS pinning service with simple web interface
+  - [Pinion Build](https://pinion.build/) - Pinning service with a simple writable gateway, web dashboard, and integrations.
   - [Filebase](https://filebase.com) - S3-compatible pinning service with web dashboard
   - [Storacha](https://storacha.network) - Decentralized storage network
 
@@ -76,6 +77,7 @@ You can also configure remote pinning services in IPFS Desktop. See [working wit
 Choose one of the following pinning services and use their web interface:
 
 - **Pinata**: Use the [Pinata App](https://app.pinata.cloud) for a simple drag-and-drop upload experience - see their [quickstart tutorial](https://docs.pinata.cloud/quickstart)
+- **Pinion Build**: Use their [Dashboard](https://pinion.build/dashboard) to upload files and manage pins.
 - **Filebase**: Access their web dashboard and follow their [pin your first file guide](https://docs.filebase.com/getting-started/getting-started-guides/pin-your-first-file-to-ipfs)
 - **Storacha**: Requires some technical skills, but their [browser upload guide](https://docs.storacha.network/how-to/upload/) may be a useful option if you are developing a web application. You can also visit [console.storacha.network](https://console.storacha.network) for web-based uploads
 
@@ -150,5 +152,6 @@ Possible next steps include:
 - Learn how to [pin files using the command line](./pin-cli.md)
 - Explore service-specific documentation:
   - [Pinata documentation](https://docs.pinata.cloud/)
+  - [Pinion Build documentation](https://pinion.build/docs)
   - [Filebase documentation](https://docs.filebase.com/)
   - [Storacha documentation](https://docs.storacha.network)
