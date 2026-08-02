@@ -70,7 +70,7 @@ A Block is a binary blob of data identified by a [CID](#cid). It could be raw by
 
 ### Bootstrap node
 
-A Bootstrap Node is a trusted peer on the IPFS network through which an IPFS node learns about other peers on the network. Both Kubo and js-ipfs use bootstrap nodes to enter the Distributed Hash Table (DHT). See [Bootstrap](../concepts/nodes.md#bootstrap)
+A Bootstrap Node is a trusted peer on the IPFS network through which an IPFS node learns about other peers on the network. Both Kubo and Helia use bootstrap nodes to enter the Distributed Hash Table (DHT). See [Bootstrap](../concepts/nodes.md#bootstrap)
 
 ## C
 

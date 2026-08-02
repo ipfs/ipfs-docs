@@ -19,16 +19,16 @@ Organization and repository links for the top-level projects shipped as part of 
 ### Protocol implementations
 
 :::warning 
-### js-ipfs being discontinued
-Development of the [js-ipfs project](https://github.com/ipfs/js-ipfs) is being discontinued to focus on [Helia](https://github.com/ipfs/helia), a leaner, more modular, modern implementation of IPFS in JavaScript that was released in 2023. To learn more about Helia and the current state of IPFS in JS, see the [blog post](https://blog.ipfs.tech/state-of-ipfs-in-js/).
+### js-ipfs was discontinued
+The [js-ipfs project](https://github.com/ipfs/js-ipfs) was archived in 2023 in favor of [Helia](https://github.com/ipfs/helia), a leaner, more modular, modern implementation of IPFS in JavaScript. See the [deprecation announcement](https://blog.ipfs.tech/202305-js-ipfs-deprecation-for-helia/) for the migration path.
 
-Because of this, js-ipfs tutorials may be out of date, and will eventually be archived.
+Any js-ipfs tutorial you find is out of date. Use Helia instead.
 
 :::
 
 - [Kubo](https://github.com/ipfs/kubo): The reference implementation written in Go.
-- [js-ipfs](https://github.com/ipfs/js-ipfs): The JavaScript implementation of IPFS.
-- [rust-ipfs](https://github.com/rs-ipfs/rust-ipfs): Alpha implementation in Rust.
+- [Helia](https://github.com/ipfs/helia): The JavaScript and TypeScript implementation of IPFS.
+- [rust-ipfs](https://github.com/dariusc93/rust-ipfs): Implementation in Rust.
 - [Other implementations](../concepts/ipfs-implementations.md): Up-to-date links to all other protocol implementations.
 
 ### Client implementations
@@ -59,7 +59,6 @@ Because of this, js-ipfs tutorials may be out of date, and will eventually be ar
 - [IPFS Desktop](https://github.com/ipfs/ipfs-desktop): Standalone IPFS app with an easy-to-use node interface, plus menubar/tray shortcuts
 - [ipfs-gui](https://github.com/ipfs/ipfs-gui): Coordinating development, user experience, and maintenance of IPFS GUIs.
 - [IPFS Shipyard](https://github.com/ipfs-shipyard): GitHub org showcasing incubated projects of all types created by the global IPFS community.
-- [Testground](https://github.com/testground/testground): A platform for testing, benchmarking, and simulating distributed and p2p systems at scale.
 
 ### Interoperability, platforms, and standards
 

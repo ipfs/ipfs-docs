@@ -55,7 +55,6 @@ To follow along with this guide, you'll need:
 - **Option B**: An account with at least one pinning service (free tier is sufficient):
   - [Pinata](https://pinata.cloud/) - Popular IPFS pinning service with simple web interface
   - [Filebase](https://filebase.com) - S3-compatible pinning service with web dashboard
-  - [Storacha](https://storacha.network) - Decentralized storage network
 
 - A sample file to upload, such as the [following image](../quickstart/images/welcome-to-IPFS.jpg):
 
@@ -77,7 +76,6 @@ Choose one of the following pinning services and use their web interface:
 
 - **Pinata**: Use the [Pinata App](https://app.pinata.cloud) for a simple drag-and-drop upload experience - see their [quickstart tutorial](https://docs.pinata.cloud/quickstart)
 - **Filebase**: Access their web dashboard and follow their [pin your first file guide](https://docs.filebase.com/getting-started/getting-started-guides/pin-your-first-file-to-ipfs)
-- **Storacha**: Requires some technical skills, but their [browser upload guide](https://docs.storacha.network/how-to/upload/) may be a useful option if you are developing a web application. You can also visit [console.storacha.network](https://console.storacha.network) for web-based uploads
 
 Each option will provide you with a **CID** (Content Identifier) after uploading your file. Save this CID as you'll use it to retrieve your file in the next sections.
 
@@ -119,13 +117,6 @@ Filebase provides gateway access with the format:
 
 Note that the Filebase gateway may refuse HTML hosting and primarily works with assets like images or videos. For details, see [Filebase IPFS gateway documentation](https://docs.filebase.com/ipfs-concepts/what-is-an-ipfs-gateway).
 
-### Storacha Gateway
-Storacha provides gateway access through w3s.link. You can retrieve content using formats like:
-- `https://[CID].ipfs.w3s.link`
-- `https://w3s.link/ipfs/[CID]`
-
-For more details about their gateway options, see [Storacha IPFS gateway documentation](https://docs.storacha.network/concepts/ipfs-gateways/).
-
 ### Public Gateways
 You can also use public IPFS gateways to retrieve any CID:
 - `https://ipfs.io/ipfs/[CID]`
@@ -151,4 +142,3 @@ Possible next steps include:
 - Explore service-specific documentation:
   - [Pinata documentation](https://docs.pinata.cloud/)
   - [Filebase documentation](https://docs.filebase.com/)
-  - [Storacha documentation](https://docs.storacha.network)

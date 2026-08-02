@@ -53,7 +53,6 @@ The [IPFS forum](https://discuss.ipfs.tech/) is the best place to go if you're l
 We're continuously improving IPFS every day, but mistakes can happen, and we could release something that doesn't work as well as it should — or simply doesn't work at all! If you enjoy instrumentation and testing, check out these projects.
 
 - [ProbeLab](https://probelab.io/)
-- [Interplanetary Testground](https://github.com/testground/testground)
 
 ## Design
 

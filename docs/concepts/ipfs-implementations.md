@@ -76,6 +76,7 @@ Lightweight libraries for working with IPFS data (CID, DAGs, DAG-CBOR, UnixFS, C
 | ipfs-embed    | <https://github.com/ipfs-rust/ipfs-embed>        | rust        | Small embeddable ipfs implementation.                                                                   |
 | ipfs-lite     | <https://github.com/hsanjuan/ipfs-lite>          | go          | Minimal library oriented ipfs daemon building on the same blocks as Kubo but with a minimal glue layer. |
 | ipfs-nucleus  | <https://github.com/peergos/ipfs-nucleus/>       | go          | Minimal IPFS replacement for P2P IPLD apps.                                                             |
+| rust-ipfs (dariusc93) | <https://github.com/dariusc93/rust-ipfs> | rust        | IPFS implementation with a blockstore and libp2p integration providing DHT content discovery and pubsub. |
 
 ## Inactive
 
@@ -90,5 +91,5 @@ Lightweight libraries for working with IPFS data (CID, DAGs, DAG-CBOR, UnixFS, C
 | js-ipfs      | <https://github.com/ipfs/js-ipfs>                     | javascript, typescript | Javascript implementation targeting nodejs and browsers [deprecated, replaced by Helia]         |
 | Linux2ipfs   | <https://github.com/Jorropo/linux2ipfs>               | go                     | Small pipeline and extreme-performance oriented implementation for fast pinning service uploads |
 | py-ipfs      | <https://github.com/ipfs-shipyard/py-ipfs>            | python                 | Python IPFS implementation                                                                      |
-| rust-ipfs    | <https://github.com/rs-ipfs/rust-ipfs>                | rust                   | Rust IPFS implementation                                                                        |
+| rust-ipfs    | <https://github.com/rs-ipfs/rust-ipfs>                | rust                   | Rust IPFS implementation [archived in 2022]                                                     |
 | whypfs       | <https://github.com/whyrusleeping/whypfs>             | go                     | Daemon based on Kubo building blocks with performance-oriented options                          |

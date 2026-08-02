@@ -21,78 +21,28 @@ To see what this looks like in a real-world example, check out the [IPNS Inspect
 
 ## What is the IPFS Deploy Action?
 
-The [IPFS Deploy Action](https://github.com/ipshipyard/ipfs-deploy-action) is a [composite action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action), that can be called as a step in a [GitHub Actions workflow](https://docs.github.com/en/actions/writing-workflows), and combines the following features:
+The [IPFS Deploy Action](https://github.com/ipshipyard/ipfs-deploy-action) is a [composite action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action) that you call as a step in a [GitHub Actions workflow](https://docs.github.com/en/actions/writing-workflows). It owns one stage of the deploy: turning your build into a [CAR](../../concepts/glossary.md#car) file with a deterministic root CID.
 
-- 📦 Merkleizes your static site into a [CAR](../../concepts/glossary.md#car) file
-- 🚀 Uploads CAR file to either [Storacha](https://storacha.network/), [IPFS Cluster](https://ipfscluster.io/), or [Kubo](https://github.com/ipfs/kubo#readme)
-- 📍 Optional CID pinning to [Pinata](https://pinata.cloud/)
-- 💾 Optional CAR file upload to [Filebase](https://filebase.com/)
-- 💬 PR Previews, with a comment containing the CID and preview links
-- ✅ Commit Status updates
+- 📦 Merkleizes your static site into a CAR file
+- 🚀 Pins the CAR to your own [IPFS Cluster](https://ipfscluster.io/) or [Kubo](https://github.com/ipfs/kubo#readme) node, when you configure one
+- 🧩 Hands the same CAR to any third-party pinning service as a follow-up step
+- 💬 PR previews, with a comment containing the CID and preview links
+- ✅ Commit status updates
 
-The IPFS Deploy Action works with both self-hosted IPFS nodes (Kubo or IPFS Cluster) and pinning services (Storacha, Pinata, Filebase) and was built based on the best practices in 2025.
+Because the CAR is finished before any third party sees it, pinning is composable. A pinning service stores the bytes; it does not re-derive the CID. You can pass one CAR to as many services as you like.
 
-The IPFS Deploy Action makes no assumptions about your build process. Whether you're using React, Vuepress, Astro, Next.js, or any other static site generator, this guide will help you get your web application deployed on IPFS. The only requirement is that your web application is static, meaning that once built, it is a folder containing HTML, CSS, and JavaScript files that are served as-is to the client.
-
-Note the IPFS Deploy Action is built on top of the following CLIs:
-
-- [Kubo CLI](https://github.com/ipfs/kubo#readme) for merkleizing builds with UnixFS, uploading CAR files to Kubo, and interacting with Pinning APIs
-- [IPFS Cluster CTL](https://ipfscluster.io/documentation/reference/ctl/) for IPFS Cluster uploads
-- [w3cli](https://docs.storacha.network/w3cli/) for Storacha uploads
-- [AWS S3 CLI](https://aws.amazon.com/s3/) for Filebase CAR uploads
+The action makes no assumptions about your build process. Whether you use React, Vuepress, Astro, Next.js, or any other static site generator, this guide applies. The only requirement is that your app is static: once built, it is a folder of HTML, CSS, and JavaScript served as-is to the client.
 
 ## Prerequisites
 
 Before you begin, make sure you have:
 
-1. A GitHub repository with your static web application, this can be a single page application, or multi-page application (like Next.js) that requires no special server-side rendering or backend logic.
-2. A [Storacha](https://storacha.network) account or an IPFS Node ([Kubo](https://github.com/ipfs/kubo#readme) or [IPFS Cluster](https://ipfscluster.io/)) with the [Kubo RPC](../../reference/kubo/rpc.md) endpoint publicly reachable (see [this guide](../kubo-rpc-tls-auth.md) for instructions on how to secure the Kubo RPC endpoint with TLS and authentication)
+1. A GitHub repository with your static web application. This can be a single page application, or a multi-page application (like Next.js) that requires no server-side rendering or backend logic.
+2. Somewhere to pin the result. Either your own IPFS node ([Kubo](https://github.com/ipfs/kubo#readme) or [IPFS Cluster](https://ipfscluster.io/)) with a publicly reachable [Kubo RPC](../../reference/kubo/rpc.md) endpoint (see [securing the Kubo RPC endpoint](../kubo-rpc-tls-auth.md)), or an account with a third-party pinning service.
 
-This guide will use Storacha for simplicity. If you have an IPFS Node, you can skip the Storacha setup and use your own node instead.
+Pinning is optional. You can start without it: the action still produces a CAR file and attaches it to the workflow run, which is enough to inspect the CID before you commit to a provider.
 
-## Step 1: Setting Up Storacha
-
-If you don't have a Storacha account, you can create one at [storacha.network](https://storacha.network).
-
-1. Install the [`w3cli`](https://www.npmjs.com/package/@web3-storage/w3cli) tool:
-
-   ```bash
-   npm install -g @web3-storage/w3cli
-   ```
-
-2. Login to your Storacha account:
-
-   ```bash
-   w3 login
-   ```
-
-3. Create a new space for your deployments:
-
-   ```bash
-   w3 space create my-app-space
-   ```
-
-4. Create a signing key:
-
-   ```bash
-   $ w3 key create --json
-   {
-     "did": "did:key:YOUR_KEY_DID",
-     "key": "STORACHA_KEY"
-   }
-   ```
-
-   Save the key value as a GitHub secret named `STORACHA_KEY`
-
-5. Create a [UCAN](https://docs.storacha.network/concepts/ucans-and-storacha/) proof. Note that the command will create a UCAN proof allowing uploads to the space created in step 3:
-
-   ```bash
-   w3 delegation create did:key:YOUR_KEY_DID -c space/blob/add -c space/index/add -c filecoin/offer -c upload/add --base64
-   ```
-
-   Save the output as a GitHub secret named `STORACHA_PROOF`
-
-## Step 2: Configure Your Workflow
+## Step 1: Create the CAR
 
 Create a new file `.github/workflows/deploy.yml` in your repository:
 
@@ -130,61 +80,33 @@ jobs:
         run: npm run build
 
       - name: Deploy to IPFS
-        uses: ipshipyard/ipfs-deploy-action@v1
+        uses: ipshipyard/ipfs-deploy-action@v2
         id: deploy
         with:
           path-to-deploy: dist # Change this to your build output directory
-          storacha-key: ${{ secrets.STORACHA_KEY }}
-          storacha-proof: ${{ secrets.STORACHA_PROOF }}
           github-token: ${{ github.token }}
 ```
 
 A couple of things to note:
 
-- This workflow assumes that your build command is `npm run build`. If your build command is different, you can change the `run` command in the build step.
-- The `path-to-deploy` input is set to `dist` by default. If your build output directory is different, you can change the `path-to-deploy` input.
+- This workflow assumes your build command is `npm run build`. If yours differs, change the `run` command in the build step.
+- Set `path-to-deploy` to whatever directory your build writes to, such as `dist`, `out`, `public`, or `_site`.
 
-## Step 3: Optional Configurations
+With only `path-to-deploy` and `github-token` set, the action produces the CAR and stops. The root CID is exposed as the `cid` output and the file path as `car-path`, so later steps can pin it. PR comments and commit status stay quiet until you pin somewhere or set `set-pr-comment` and `set-github-status` explicitly.
 
-### Uploading the CAR file to a Kubo Node
+If your repository accepts pull requests from forks, secrets are not available to fork builds. Use the [dual-workflow setup](https://github.com/ipshipyard/ipfs-deploy-action#dual-workflows-with-fork-prs) instead, which splits building from deploying.
 
-To upload the CAR file to a Kubo node instead of or in addition to Storacha:
+## Step 2: Pin the CAR
 
-1. Get your [Kubo RPC endpoint](https://github.com/ipfs/kubo/blob/master/docs/config.md#addressesapi) and [API token](https://github.com/ipfs/kubo/blob/master/docs/config.md#apiauthorizations)
-2. Add them as [GitHub secrets](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions) named `KUBO_API_URL` and `KUBO_API_AUTH`
-3. Add these lines to your workflow:
+### Pin to your own node
 
-```yaml
-- name: Deploy to IPFS
-  uses: ipshipyard/ipfs-deploy-action@v1
-  with:
-    # ... other inputs ...
-    kubo-api-url: ${{ secrets.KUBO_API_URL }}
-    kubo-api-auth: ${{ secrets.KUBO_API_AUTH }}
-```
+The action pins to IPFS Cluster and Kubo natively. Add your credentials as [GitHub secrets](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions), then pass them in.
 
-You can also customize the Kubo version and [`ipfs add` parameters](https://docs.ipfs.tech/reference/kubo/cli/#ipfs-add) used for merkleizing your content:
+For an IPFS Cluster:
 
 ```yaml
 - name: Deploy to IPFS
-  uses: ipshipyard/ipfs-deploy-action@v1
-  with:
-    # ... other inputs ...
-    kubo-version: 'v0.42.0' # Default, change if needed
-    ipfs-add-options: '--cid-version 1 --chunker size-1048576' # Default options
-```
-
-### Using IPFS Cluster
-
-To upload the CAR file to an IPFS Cluster:
-
-1. Get your [IPFS Cluster CTL](https://ipfscluster.io/documentation/reference/ctl/) endpoint, username, and password
-2. Add them as GitHub secrets
-3. Add these lines to your workflow:
-
-```yaml
-- name: Deploy to IPFS
-  uses: ipshipyard/ipfs-deploy-action@v1
+  uses: ipshipyard/ipfs-deploy-action@v2
   with:
     # ... other inputs ...
     cluster-url: ${{ secrets.CLUSTER_URL }}
@@ -192,64 +114,37 @@ To upload the CAR file to an IPFS Cluster:
     cluster-password: ${{ secrets.CLUSTER_PASSWORD }}
 ```
 
-You can also configure additional IPFS Cluster options:
+For a Kubo node, using its [RPC endpoint](https://github.com/ipfs/kubo/blob/master/docs/config.md#addressesapi) and [API token](https://github.com/ipfs/kubo/blob/master/docs/config.md#apiauthorizations):
 
 ```yaml
 - name: Deploy to IPFS
-  uses: ipshipyard/ipfs-deploy-action@v1
+  uses: ipshipyard/ipfs-deploy-action@v2
   with:
     # ... other inputs ...
-    cluster-retry-attempts: '5' # Override number of retry attempts
-    cluster-timeout-minutes: '15' # Override timeout in minutes per attempt
-    ipfs-cluster-ctl-version: 'v1.1.6' # Default version
-    cluster-pin-expire-in: '720h' # Optional: Set pin to expire after time period (e.g., 30 days)
+    kubo-api-url: ${{ secrets.KUBO_API_URL }}
+    kubo-api-auth: ${{ secrets.KUBO_API_AUTH }}
 ```
 
-### Pinning with Pinata
+Configure a provider fully or not at all. Setting `cluster-url` without `cluster-user` and `cluster-password` is a hard error rather than a silent skip, and the same rule applies to the two Kubo inputs.
 
-This works by sending a request to the [Pinning API](https://docs.pinata.cloud/api-reference/pinning-service-api) with the CID of the deployment, and Pinata handles pinning in the background.
+For the full list of tuning options, including `kubo-version`, `cid-profile`, pin expiry, and retry behavior, see [Inputs](https://github.com/ipshipyard/ipfs-deploy-action#inputs) in the action's README.
 
-To pin your content to Pinata:
+### Pin with a third-party service
 
-1. Get your [Pinata JWT token](https://docs.pinata.cloud/api-reference/pinning-service-api#authentication) from the Pinata dashboard
-2. Add it as a GitHub secret named `PINATA_JWT`
-3. Add these lines to your workflow:
+Third-party pinning is a follow-up step that consumes the CAR the action just produced. Each recipe below is copy-pasteable and reads `steps.deploy.outputs.car-path` and `steps.deploy.outputs.cid`:
 
-```yaml
-- name: Deploy to IPFS
-  uses: ipshipyard/ipfs-deploy-action@v1
-  with:
-    # ... other inputs ...
-    pinata-jwt-token: ${{ secrets.PINATA_JWT_TOKEN }}
-    pinata-pinning-url: 'https://api.pinata.cloud/psa' # Default URL
-```
+- [Filecoin via the `filecoin-pin` CLI](https://github.com/ipshipyard/ipfs-deploy-action/blob/main/docs/recipes/filecoin-pin.md)
+- [Pinata via the V3 Files API](https://github.com/ipshipyard/ipfs-deploy-action/blob/main/docs/recipes/pinata.md)
+- [Filebase via the S3 endpoint](https://github.com/ipshipyard/ipfs-deploy-action/blob/main/docs/recipes/filebase.md)
 
-### Adding Filebase Storage
+The CAR is also uploaded as a workflow artifact by default, so a pinning step can run in a separate job that downloads it.
 
-Note that Filebase only supports static websites for paid accounts.
-To store CAR files on Filebase:
+## Accessing your deployed site
 
-1. [Create a Filebase account](https://docs.filebase.com/archive/content-archive/ipfs-getting-started-guide#signing-up-for-filebase) and [bucket](https://docs.filebase.com/archive/content-archive/ipfs-getting-started-guide#how-to-create-an-ipfs-bucket)
-2. Get your access and secret keys
-3. Add them as GitHub secrets
-4. Add these lines to your workflow:
+After a successful deployment, you can find the CID for a commit:
 
-```yaml
-- name: Deploy to IPFS
-  uses: ipshipyard/ipfs-deploy-action@v1
-  with:
-    # ... other inputs ...
-    filebase-bucket: 'your-bucket-name'
-    filebase-access-key: ${{ secrets.FILEBASE_ACCESS_KEY }}
-    filebase-secret-key: ${{ secrets.FILEBASE_SECRET_KEY }}
-```
-
-## Accessing Your Deployed Site
-
-After successful deployment, you can find the CID for commits:
-
-1. In the GitHub Actions run output, which will contain the IPFS CID
-2. In the PR comments (if deploying from a PR)
+1. In the GitHub Actions run output
+2. In the PR comment, if deploying from a PR
 3. In the commit status checks
 
 For example, here's where you can find the CID for a given commit on GitHub:
@@ -260,11 +155,12 @@ You can load the app using the CID from the commit status, and it will be access
 
 - [Public Good Gateway](../../concepts/public-utilities.md#public-ipfs-gateways): `https://<CID>.ipfs.dweb.link`
 - [Service Worker Gateway](https://inbrowser.link): `https://<CID>.ipfs.inbrowser.link`
-- [Storacha Gateway](https://docs.storacha.network/concepts/ipfs-gateways/) (if using Storacha): `https://<CID>.ipfs.w3s.link`.
+
+If your pinning service runs its own gateway, that will work too.
 
 ### With IPFS Desktop or Kubo
 
-If you have IPFS Desktop or Kubo installed, you can load with the local gateway exposed by IPFS Desktop or Kubo.
+If you have IPFS Desktop or Kubo installed, you can load the site with the local gateway they expose.
 
 For example, here's the URL for a given CID: `http://bafybeicbpllqfrjfygcdwkz2q5prdtu4q7obmsqr2fkk5byn45rs24ypcu.ipfs.localhost:8080`
 
@@ -272,30 +168,30 @@ This URL uses subdomain resolution (where the CID has its own subdomain), which 
 
 ## Troubleshooting
 
-1. **Build Output Directory Not Found**
+1. **Build output directory not found**
 
-   - Double-check the `path-to-deploy` matches your build output directory
+   - Double-check that `path-to-deploy` matches your build output directory
    - Ensure your build command is completing successfully
 
-2. **Authentication Issues**
+2. **Authentication issues**
 
    - Verify your credentials are correctly set in GitHub secrets
    - Check that the secrets are properly referenced in the workflow file
-   - For Storacha, ensure both the key and proof are provided
    - For IPFS Cluster, ensure URL, username, and password are all provided
    - For Kubo, ensure both API URL and auth are provided
 
-3. **Workflow Permission Issues**
+3. **Workflow permission issues**
+
    - Ensure the `permissions` block is included in your workflow
    - Check that your GitHub token has the necessary permissions
 
-## Best Practices
+## Best practices
 
-1. Always use a specific version of the action (e.g., `@v1`)
-3. Consider using multiple IPFS providers for redundancy
-4. Use environment-specific configurations when needed
+1. Pin the action to a major version, such as `@v2`
+2. Pin to more than one provider for redundancy
+3. Use environment-specific configurations when needed
 
-## Next Steps
+## Next steps
 
 After deploying your site to IPFS, you may want to:
 
@@ -303,7 +199,7 @@ After deploying your site to IPFS, you may want to:
 - **Set up a DNSLink gateway**: If you want to serve your site directly from your own domain over HTTPS, see [Setup a DNSLink Gateway](./dnslink-gateway.md).
 - **Learn about custom domains**: For an overview of domain options, see [Custom domains and DNSLink](./custom-domains.md).
 
-## Getting Help
+## Getting help
 
 If you encounter any issues:
 

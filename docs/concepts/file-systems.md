@@ -33,10 +33,6 @@ MFS is accessed through the files commands in the IPFS CLI and API. The commands
 - [Read the contents of a file](#read-the-contents-of-a-file)
 - [Remove a file or directory](#remove-a-file-or-directory)
 
-::: callout
-Prefer hands-on learning? Explore these MFS methods in ProtoSchool's [Mutable File System](https://proto.school/mutable-file-system) tutorial, solving coding challenges right in your web browser.
-:::
-
 #### Create a directory
 
 The MFS method `ipfs.files.mkdir` creates a new directory at a specified path. For example, to add a directory `example` to our root directory (`/`), run:
@@ -273,7 +269,6 @@ To export or read the file data out of the UnixFS graph, perform an in-order tra
 
 You can find additional resources to familiarize with these file systems at:
 
-- [Protoschool MFS tutorial](https://proto.school/mutable-file-system)
 - [Understanding how the InterPlanetary File System deals with Files](https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_A), from IPFS Camp 2019
 - [Jeromy Coffee Talks - Files API](https://www.youtube.com/watch?v=FX_AXNDsZ9k)
 - [UnixFS Specification](https://specs.ipfs.tech/unixfs/)

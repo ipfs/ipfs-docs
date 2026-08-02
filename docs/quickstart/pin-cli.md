@@ -53,7 +53,6 @@ Running your own node gives you complete control over your data while participat
   - Run `ipfs init` followed by `ipfs daemon` to start your node
   
 - **Option B**: An account with at least one pinning service (free tier is sufficient):
-  - [Storacha](https://storacha.network) - Requires Node.js for their CLI
   - [Pinata](https://pinata.cloud/) - Uses REST API with curl
   - [Filebase](https://filebase.com) - S3-compatible, works with AWS CLI
 
@@ -69,26 +68,7 @@ Choose one of the following methods based on your setup:
 
 If you're running your own Kubo node, use the `ipfs add` and `ipfs pin` commands. See the [pinning files guide](../how-to/pin-files.md) for detailed instructions and the [working with remote pinning services](../how-to/work-with-pinning-services.md) guide to configure remote pinning.
 
-### Option 1: Storacha CLI
-
-Storacha provides a command-line interface through their storacha tool. For detailed installation and usage instructions, see their [CLI documentation](https://docs.storacha.network/cli/).
-
-Basic usage:
-```shell
-# Install the CLI (requires Node.js)
-npm install -g @storacha/cli
-
-# Authenticate
-storacha login your@email.com
-
-# Create a space for your files
-storacha space create MySpace
-
-# Upload a file
-storacha up welcome-to-IPFS.jpg
-```
-
-### Option 2: Pinata API
+### Option 1: Pinata API
 
 Pinata provides a REST API that you can use with curl or any HTTP client. See their [API documentation](https://docs.pinata.cloud/) for authentication setup.
 
@@ -105,7 +85,7 @@ curl -X POST https://api.pinata.cloud/pinning/pinFileToIPFS \
   -F "file=@welcome-to-IPFS.jpg"
 ```
 
-### Option 3: Filebase S3-Compatible API and Kubo RPC
+### Option 2: Filebase S3-Compatible API and Kubo RPC
 
 Filebase offers an S3-compatible API, making it easy to use with AWS CLI or any S3 SDK. See their [S3-compatible API documentation](https://docs.filebase.com/api-documentation/s3-compatible-api) and [developer quick start guide](https://docs.filebase.com/getting-started/getting-started-guides/developer-quick-start-guide). They also offer a subset of Kubo RPC API - see their [IPFS RPC API documentation](https://docs.filebase.com/api-documentation/ipfs-rpc-api).
 
@@ -148,13 +128,6 @@ You can retrieve your content using curl or a web browser:
 
 ### Using service-specific gateways
 
-**Storacha Gateway:**
-```shell
-curl https://[CID].ipfs.w3s.link/
-# or
-curl https://w3s.link/ipfs/[CID]
-```
-
 **Pinata Gateway:**
 ```shell
 curl https://gateway.pinata.cloud/ipfs/[CID]
@@ -181,7 +154,7 @@ When pinning a file to IPFS, the filename is not stored by default. To ensure th
 
 ## Summary and next steps
 
-In this quickstart guide, you learned about [pinning services](../concepts/persistence.md#pinning-in-context), and how to use them to publish content-addressed data with IPFS using command-line tools. You explored different CLI options for Storacha, Pinata, and Filebase.
+In this quickstart guide, you learned about [pinning services](../concepts/persistence.md#pinning-in-context), and how to use them to publish content-addressed data with IPFS using command-line tools. You explored different CLI options for Pinata and Filebase.
 
 Pinning services provide a convenient alternative to running IPFS nodes and infrastructure. However, the two are not mutually exclusive; you can combine a pinning service with an IPFS node on your computer to increase the resilience of your CIDs.
 
@@ -191,7 +164,6 @@ Possible next steps include:
 - Try fetching the pinned file by following the [retrieval quickstart](./retrieve.md)
 - Explore the web-based upload experience in the [browser-based pin guide](./pin.md)
 - Learn more about each service's API and software development kits:
-  - [Storacha CLI documentation](https://docs.storacha.network/cli/)
   - [Pinata API documentation](https://docs.pinata.cloud/)
   - [Filebase S3 API guide](https://docs.filebase.com/api-documentation/s3-compatible-api)
   - [Filebase IPFS RPC API](https://docs.filebase.com/api-documentation/ipfs-rpc-api)

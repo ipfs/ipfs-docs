@@ -29,4 +29,4 @@ The Multiformats Project is a collection of protocols which aim to future-proof 
 
 ## ProtoSchool
 
-Interactive tutorials on decentralized web protocols, designed to introduce you to decentralized web concepts, protocols, and tools. Complete code challenges right in your web browser and track your progress as you go. Learn more at [https://proto.school/](https://proto.school/).
+Interactive tutorials on decentralized web protocols, with code challenges you complete in your web browser. The project is archived: [https://proto.school/](https://proto.school/) is still online, but the last tutorial landed in February 2021 and the code challenges use js-ipfs, which Helia replaced in 2023.
