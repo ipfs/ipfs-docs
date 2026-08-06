@@ -50,7 +50,6 @@ You can disable and re-enable local gateway redirects in several ways:
 
 - Suspend redirects globally in IPFS Companion's preferences.
 - Suspend redirects per site using the toggle under the _current tab_ or in IPFS Companion's preferences.
-- Add `x-ipfs-companion-no-redirect` to the URL itself as a hash ([example](https://ipfs.io/ipfs/QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR#x-ipfs-companion-no-redirect)) or query parameter ([example](https://ipfs.io/ipfs/QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR?x-ipfs-companion-no-redirect)).
 
 ### Access frequently-used IPFS actions from your browser bar
 
