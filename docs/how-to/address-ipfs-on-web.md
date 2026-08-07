@@ -5,7 +5,7 @@ description: Hands-on guides to using and developing with IPFS to build decentra
 
 # Address IPFS on the web
 
-This page describes how to address a node in the IPFS network. Clients that support the IPFS protocol can ignore HTTP details and retrieve data natively, while those that don't can fetch the resource from HTTP server at `ipfs.io` gateway, as long as they have the content identifier (CID).
+This page describes how to address IPFS content on the web. Clients that support the IPFS protocol can ignore HTTP details and retrieve data natively, while those that don't can fetch the resource from HTTP server at `ipfs.io` gateway, as long as they have the content identifier (CID).
 When `ipfs.io` or any other [public gateway](https://ipfs.github.io/public-gateway-checker/) goes down, IPFS aware clients will still be able to fetch the content from the IPFS network as long as at least one node still provides the data behind the CID to the network:
 
 Addresses using a gateway use the following form, where `<gateway>` is the gateway address, and `<CID>` is the content identifier
@@ -100,7 +100,7 @@ https://<gateway-host>.tld/ipns/<ipns-name>/path/to/resource
 Example:
 
 ```plaintext
-https://ipfs.io/ipns/k51qzi5uqu5dlvj2baxnqndepeb86cbk3ng7n3i46uzyxzyqj2xjonzllnv0v8
+https://ipfs.io/ipns/k51qzi5uqu5dgutdk6i1ynyzgkqngpha5xpgia3a5qqp4jsh0u4csozksxel2r
 ```
 
 ### DNSLink
@@ -113,7 +113,7 @@ https://<gateway-host>.tld/ipns/<dnslink>/path/to/resource
 Example:
 
 ```plaintext
-https://ipfs.io/ipns/tr.wikipedia-on-ipfs.org/wiki/Anasayfa.html
+https://ipfs.io/ipns/docs.ipfs.tech/concepts/
 ```
 
 ::: danger
@@ -128,7 +128,7 @@ Gateway implementers and operators can find more details in the [Path Gateway Sp
 
 ## Subdomain gateway
 
-When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) is needed, a [CIDv1](../concepts/content-addressing.md#identifier-formats) in a case-insensitive encoding such as Base32 or Base36 should be used in the subdomain:
+When [origin-based security](https://en.wikipedia.org/wiki/Same-origin_policy) is needed, a [CIDv1](../concepts/content-addressing.md#cid-versions) in a case-insensitive encoding such as Base32 or Base36 should be used in the subdomain:
 
 ```plaintext
 https://<cidv1b32>.ipfs.<gateway-host>.tld/path/to/resource
@@ -155,7 +155,7 @@ See the next section to learn how to convert an existing CIDv0 to a DNS-safe rep
 
 #### Native support in Kubo and Rainbow
 
-[Kubo](https://dist.ipfs.tech/#kubo) provides native support for subdomain gateway, see  [`Gateway` recipes](https://github.com/ipfs/kubo/blob/master/docs/config.md#gateway-recipes) with ready to use one-liners for most common use cases.
+[Kubo](https://dist.ipfs.tech/#kubo) provides native support for subdomain gateway, see [`Gateway` recipes](https://github.com/ipfs/kubo/blob/master/docs/gateway.md#gateway-recipes) with ready to use one-liners for most common use cases.
 
 If you need a high-performance HTTP gateway, you may want to deploy [Rainbow](https://github.com/ipfs/rainbow/) instead. Rainbow is a specialized IPFS HTTP gateway which makes it easier to scale HTTP retrieval and isolate it from your Bitswap provider backend, such as Kubo or IPFS Cluster. See `rainbow --help` for relevant configuration (`--subdomain-gateway-domains` and `RAINBOW_SUBDOMAIN_GATEWAY_DOMAINS`).
 
@@ -163,8 +163,8 @@ If you need a high-performance HTTP gateway, you may want to deploy [Rainbow](ht
 
 If you have content identified by an older CIDv0, there are an automatic and a manual option to safely represent it as CIDv1 for use in subdomains and other case-insensitive contexts.
 
-- [Automatic](#automatic--leverage-the-gateway-in-kubo)
-- [Manual](#manual--use-cidipfsio-or-the-command-line)
+- [Automatic](#automatic-leverage-the-gateway-in-kubo)
+- [Manual](#manual-use-cid-ipfs-tech-or-the-command-line)
 
 ##### Automatic — leverage the gateway in Kubo
 
@@ -205,7 +205,7 @@ Base36 is suggested as a safer default for longer keys:
 ipfs key list -l --ipns-base base36
 k51qzi5uqu5dh9ihj4p2v5sl3hxvv27ryx2w0xrsv6jmmqi91t9xp8p9kaipc2 self
 
-ipfs cid format -v 1 -b base36 --codec libp2p-key QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN
+ipfs cid format -v 1 -b base36 --mc libp2p-key QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN
 k2k4r8jl0yz8qjgqbmc2cdu5hkqek5rj6flgnlkyywynci20j0iuyfuj
 ```
 
@@ -268,6 +268,10 @@ Some user agents will force-lowercase the CID component of URL-like address.
 To ensure interoperability with existing libraries and software, use case-insensitive CID encoding. Use of CIDv1 in Base32 or Base36 is advised.
 :::
 
+::: tip
+Implementers can find more details in the [IPFS URI (`ipfs://`)](https://specs.ipfs.tech/ipfs-uri/) and [IPNS URI (`ipns://`)](https://specs.ipfs.tech/ipns-uri/) specifications.
+:::
+
 ### Turning native address to a canonical content path
 
 Every "URL" address can be turned back into a content path with ease:
@@ -280,7 +284,7 @@ Examples:
 
 ### Technical specification for implementers
 
-See the [IPFS in-web-browsers repository](https://github.com/ipfs/in-web-browsers/blob/master/ADDRESSING.md).
+Gateway addressing is specified at [specs.ipfs.tech/http-gateways](https://specs.ipfs.tech/http-gateways/). The native address schemes are specified in [IPFS URI (`ipfs://`)](https://specs.ipfs.tech/ipfs-uri/) and [IPNS URI (`ipns://`)](https://specs.ipfs.tech/ipns-uri/).
 
 ### Background on address scheme discussions
 

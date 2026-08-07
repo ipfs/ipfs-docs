@@ -66,7 +66,7 @@ curl -H "Accept: application/x-ndjson" "https://delegated-ipfs.dev/routing/v1/pr
 
 If the response body contains be an array of providers with Peer IDs and Multiaddrs, and other information, [as defined in the spec](https://specs.ipfs.tech/routing/http-routing-v1/#known-schemas), you can proceed to the next section to troubleshoot retrieval with IPFS Check.
 
-If you get back a 404 with the response body `{"Providers": null}`, check out the section on [No providers returned](#no-providers-returned) for more information.
+If you get back an HTTP 200 response with no providers (an empty body when using the `application/x-ndjson` Accept header shown above, or `{"Providers":[]}` in the default JSON response), check out the section on [No providers returned](#no-providers-returned) for more information. Some older routing endpoints signal the same outcome with a 404 response, which clients must treat as zero results.
 
 ### Troubleshooting retrieval with IPFS Check
 

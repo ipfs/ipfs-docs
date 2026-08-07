@@ -13,13 +13,17 @@ Gateways provide implementation and runtime agnostic HTTP interface for retrievi
 ### `GET /ipfs/{cid}[/{path}][?{params}]`
 
 - `cid` is a [CID](../../concepts/glossary.md#cid), the root identifier of the requested content path
-- `path` – optional path under the root CID
+- `path` is an optional path under the root CID
 
 Optional query parameters:
 
 - `filename` sets the name returned in `Content-Disposition` HTTP header
 - `download` set to `true` will skip rendering and force browsers to present a 'Save as' dialog
-- `format` URL-friendly alternative to sending `Accept` header
+- `format` URL-friendly alternative to sending an `Accept` header, one of `raw`, `car`, `tar`, `dag-json`, `dag-cbor`, `json`, `cbor`, `ipns-record` (see [format values and their `Accept` equivalents](https://specs.ipfs.tech/http-gateways/path-gateway/#format-request-query-parameter)); when both are present, `format` takes precedence over `Accept`
+
+### `GET /ipns/{name}[/{path}][?{params}]`
+
+Same as above, but `name` is a mutable identifier that the gateway resolves to a CID before fetching the content path: either an [IPNS name](https://specs.ipfs.tech/ipns/ipns-record/#ipns-name) or a domain with a [DNSLink](../../concepts/dnslink.md) record.
 
 ::: tip Before you continue
 
@@ -50,7 +54,9 @@ When fetching a CID directly, one can include a `filename` parameter with file n
 
 ### Trustless, verifiable retrieval
 
-Clients capable of verifying content-addressed data on their own, should use [application/vnd.ipld.raw](https://www.iana.org/assignments/media-types/application/vnd.ipld.raw) and [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) response types (raw [blocks](../../concepts/glossary.md#block) and [CARs](../../concepts/glossary.md#car)) and always ask for CIDs directly (`/ipfs/{cid}`).
+Clients capable of verifying content-addressed data on their own should use verifiable response types: [application/vnd.ipld.raw](https://www.iana.org/assignments/media-types/application/vnd.ipld.raw) (raw [blocks](../../concepts/glossary.md#block)), [application/vnd.ipld.car](https://www.iana.org/assignments/media-types/application/vnd.ipld.car) ([CARs](../../concepts/glossary.md#car)), and [application/vnd.ipfs.ipns-record](https://www.iana.org/assignments/media-types/application/vnd.ipfs.ipns-record) (signed [IPNS](../../concepts/ipns.md) records).
+
+Raw block requests must ask for CIDs directly (`/ipfs/{cid}`). CAR requests may include a path (`/ipfs/{cid}/{path}`), because the CAR response includes the blocks needed to verify path resolution.
 
 ::: callout
 
@@ -75,13 +81,15 @@ A Client SHOULD include the [`format` query parameter](https://specs.ipfs.tech/h
 
 :::
 
+CAR requests can also fetch only a part of a DAG: [`dag-scope=block|entity|all`](https://specs.ipfs.tech/http-gateways/trustless-gateway/#dag-scope-request-query-parameter) controls how much of the DAG around the resolved path is returned, and [`entity-bytes=from:to`](https://specs.ipfs.tech/http-gateways/trustless-gateway/#entity-bytes-request-query-parameter) requests only the blocks needed for a specific byte range of a file.
+
 ::: tip Verify CAR without running full IPFS node
 
 CAR verification does not require running IPFS node. Clients can leverage standalone tools and libraries such as [ipfs-car](https://www.npmjs.com/package/ipfs-car):
 
 ```bash
 $ npm i -g ipfs-car
-$ curl "https://ipfs.io/ipfs/bafybeiakou6e7hnx4ms2yangplzl6viapsoyo6phlee6bwrg4j2xt37m3q?format=car" -L | ipfs-car
+$ curl "https://ipfs.io/ipfs/bafybeiakou6e7hnx4ms2yangplzl6viapsoyo6phlee6bwrg4j2xt37m3q?format=car" -L | ipfs-car unpack -o bafybeiakou6e7hnx4ms2yangplzl6viapsoyo6phlee6bwrg4j2xt37m3q
 $ ls ./bafybeiakou6e7hnx4ms2yangplzl6viapsoyo6phlee6bwrg4j2xt37m3q/
 1007 - Sustainable - alt.txt
 1007 - Sustainable - transcript.txt
@@ -96,7 +104,7 @@ To request [application/vnd.ipld.raw](https://www.iana.org/assignments/media-typ
 
 ```bash
 $ curl -H "Accept: application/vnd.ipld.raw" "https://ipfs.io/ipfs/bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi?format=raw" -L > raw-block.bin
-$ ipfs block put raw-block.bin
+$ ipfs block put --cid-codec=dag-pb raw-block.bin
 bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi
 ```
 
@@ -119,7 +127,7 @@ Below are links for the most useful specifications.
 These are "low level" gateways that expose IPFS resources over HTTP protocol.
 
 * [Path Gateway](https://specs.ipfs.tech/http-gateways/path-gateway/) ← **START HERE**, other types of gateway are specified as a delta against this specification.
-* [Trustless Gateway](https://specs.ipfs.tech/http-gateways/trustless-gateway/) is a subset that returns verifiable response types (raw [blocks](../../concepts/glossary.md#block) and [CARs](../../concepts/glossary.md#car))
+* [Trustless Gateway](https://specs.ipfs.tech/http-gateways/trustless-gateway/) is a subset that returns verifiable response types: raw [blocks](../../concepts/glossary.md#block), [CARs](../../concepts/glossary.md#car), and signed [IPNS](../../concepts/ipns.md) records
 
 ### Web
 
@@ -127,6 +135,7 @@ Special types of gateway which leverage `Host` header in addition to URL `pathna
 
 * [Subdomain Gateway](https://specs.ipfs.tech/http-gateways/subdomain-gateway/)
 * [DNSLink Website Hosting](https://specs.ipfs.tech/http-gateways/dnslink-gateway/)
+* [Web `_redirects` File](https://specs.ipfs.tech/http-gateways/web-redirects-file/) enables URL redirects and rewrites for websites hosted on subdomain and DNSLink gateways
 
 ::: tip
 

@@ -194,7 +194,7 @@ A mechanism for IPFS node operators to block specific [CIDs](#cid) from being se
 
 ### DNSLink
 
-DNSLink is a protocol to link content and services directly from DNS. A DNSLink address looks like an IPNS address, but it uses a domain name instead of a hashed public key, like `/ipns/en.wikipedia-on-ipfs.org`. [DNSLink Gateway specification](https://specs.ipfs.tech/http-gateways/dnslink-gateway/) | [More about DNSLink](https://dnslink.dev/)
+DNSLink is a protocol to link content and services directly from DNS. A DNSLink address looks like an IPNS address, but it uses a domain name instead of a hashed public key, like `/ipns/docs.ipfs.tech`. [DNSLink Gateway specification](https://specs.ipfs.tech/http-gateways/dnslink-gateway/) | [More about DNSLink](https://dnslink.dev/)
 
 ### DWeb
 

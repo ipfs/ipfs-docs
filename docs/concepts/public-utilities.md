@@ -60,7 +60,7 @@ The underlying IPFS nodes backing the gateways support retrieving data from peer
    - QUIC-v1
    - TCP or WS or WSS, Yamux, TLS or Noise
    - WebTransport
-- Support the [Bitswap](./bitswap.md) protocol ([v1.2](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-2-0), [v1.1](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-1-0) or [v1.0](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-0-0)) <!--  TODO: or HTTP retrieval using `application/vnd.ipld.raw` responses as defined in the [Trustless Gateway Specification](https://specs.ipfs.tech/http-gateways/trustless-gateway/) -->
+- Support the [Bitswap](./bitswap.md) protocol ([v1.2](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-2-0), [v1.1](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-1-0) or [v1.0](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-0-0)), or HTTP retrieval of `application/vnd.ipld.raw` responses as defined in the [Trustless Gateway specification](https://specs.ipfs.tech/http-gateways/trustless-gateway/)
 - Have either advertised their data to the [Amino DHT](./glossary.md#amino), or have advertised to [IPNI](./glossary.md#ipni) such that their data has been indexed by [cid.contact](https://cid.contact)
 
 ## Other Public Gateways

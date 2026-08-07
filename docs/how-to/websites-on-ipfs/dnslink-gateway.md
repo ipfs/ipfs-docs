@@ -76,9 +76,9 @@ With this configuration, Kubo will match the domain in the [`host` header](https
       }'
     ```
 
-4. **Restart the Kubo daemon** for the changes to take effect:
+4. **Restart the Kubo daemon** for the changes to take effect. Stop and re-run `ipfs daemon`, or, if you run Kubo as a systemd service:
     ```bash
-    systemctl restart ipfs
+    sudo systemctl restart ipfs
     ```
 
 These commands modify the `config` file in your IPFS repository (usually `~/.ipfs/config`). The `Gateway.PublicGateways` setting defines specific configurations for different hostnames. Here, you override the global `NoDNSLink` setting specifically for `yourdomain.com`.
@@ -92,13 +92,13 @@ Next, configure Caddy to handle incoming HTTPS requests for `yourdomain.com` and
 To verify that the gateway exposed by Kubo is listening, you can run the following command:
 
 ```bash
-cat /data/kubo/config | jq .Addresses.Gateway
+ipfs config Addresses.Gateway
 ```
 
 You should see something like this:
 
-```json
-"/ip4/127.0.0.1/tcp/8080"
+```shell
+/ip4/127.0.0.1/tcp/8080
 ```
 
 This confirms that the gateway exposed by Kubo is listening on `127.0.0.1:8080`.
@@ -145,17 +145,23 @@ caddy run
 
 Now, you will create the DNSLink `TXT` record for your domain to point to CID of the site or app you want to serve, which is necessary in addition to the `A` record pointing to your server's IP address.
 
-When requests are made to `yourdomain.com`, the DNSLink gateway will automatically resolve the DNSLink TXT record, retrieve the data from providers (unless the data is already pinned to your IPFS node) and serve the content of the CID.
+When requests are made to `yourdomain.com`, the DNSLink gateway will automatically resolve the DNSLink TXT record and serve the content of the CID. Because `Gateway.NoFetch` is set to `true`, the gateway will not retrieve data from other providers: the content must already be present on your Kubo node.
 
 #### Steps to Create a TXT Record
 
 1.  **Get the CID** of the content you want to serve.
 
-2.  **Go to your DNS provider's dashboard** for `yourdomain.com`.
+2.  **Pin the CID on your server's Kubo node**, so the gateway can serve it despite `Gateway.NoFetch` being `true`:
 
-3.  **Create a `TXT` record**:
+    ```bash
+    ipfs pin add YOUR_CID
+    ```
 
-    - **Name/Host**: `_dnslink.yourdomain` (or `_dnslink.yourdomain.com` depending on your provider's interface)
+3.  **Go to your DNS provider's dashboard** for `yourdomain.com`.
+
+4.  **Create a `TXT` record**:
+
+    - **Name/Host**: `_dnslink` (or the full name `_dnslink.yourdomain.com`, depending on your provider's interface)
     - **Type**: `TXT`
     - **Value/Content**: `dnslink=/ipfs/bafybeiay2koog2jnndn5gr2raytxh7evobry5lo2w4s7nhugc7xipy6aze` (Replace the example CID with your actual CID)
 
@@ -181,7 +187,7 @@ Once both DNS records (`A` and `TXT`) have propagated and both Kubo and Caddy ar
 1. Open your web browser and navigate to that domain, e.g. `https://yourdomain.com`.
 2. You should see the content associated with your CID served securely over HTTPS via your Caddy server, which fetched it from your Kubo node using the DNSLink record.
 
-Your gateway will now automatically serve the content specified in the `_dnslink.yourdomain.com` TXT record. To update the site, simply pin the new version to IPFS, get the new CID, and update the `TXT` record's value with the new CID path (`dnslink=/ipfs/NEW_CID_HERE`).
+Your gateway will now automatically serve the content specified in the `_dnslink.yourdomain.com` TXT record. To update the site, pin the new version to your Kubo node, get the new CID, and update the `TXT` record's value with the new CID path (`dnslink=/ipfs/NEW_CID_HERE`).
 
 ## Automate DNSLink Updates
 

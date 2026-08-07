@@ -123,7 +123,7 @@ If you're having issues installing or using Docker or Docker-Compose, see the [o
     ```shell
     > ipfs1       | API server listening on /ip4/0.0.0.0/tcp/5001
     > ipfs1       | WebUI: http://0.0.0.0:5001/webui
-    > ipfs1       | Gateway (readonly) server listening on /ip4/0.0.0.0/tcp/8080
+    > ipfs1       | Gateway server listening on /ip4/0.0.0.0/tcp/8080
     > ipfs1       | Daemon is ready
     ```
     :::

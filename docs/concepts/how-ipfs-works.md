@@ -143,7 +143,7 @@ Want to learn more about Bitswap? See the [Bitswap deep dive](../concepts/bitswa
 
 ### IPFS HTTP Gateways
 
-HTTP Gateways allow applications that do not support or implement all IPFS subsystems to fetch data from the IPFS network using an HTTP interface. In its simplest form, a gateway is an IPFS Node that also exposes an [HTTP Gateway API](https://github.com/ipfs/specs/blob/main/http-gateways/README.md).
+HTTP Gateways allow applications that do not support or implement all IPFS subsystems to fetch data from the IPFS network using an HTTP interface. In its simplest form, a gateway is an IPFS Node that also exposes an [HTTP Gateway API](https://specs.ipfs.tech/http-gateways/).
 
 :::callout
 **Learn more**

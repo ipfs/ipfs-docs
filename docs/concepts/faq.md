@@ -63,7 +63,7 @@ If you want to develop an IPFS implementation or are already working on one, the
 - The [Meta](https://specs.ipfs.tech/meta/) section describes important non-technical information for contributors, like the core project values, the governance model, how to produce documents, and more. 
 - [InterPlanetary Improvement Proposals (IPIPs)](https://specs.ipfs.tech/meta/ipip-process/) are a focused, transparent, community-driven process for protocol design discussions. They are not changes to the specification itself, but their approval leads to a change in the specification.
 
-In addition to these core documents, `specs.ipfs.tech` documents standards for IPFS subsystems such as the [InterPlanetary Naming System](https://specs.ipfs.tech/http-gateways/) and [HTTP Gateways](https://specs.ipfs.tech/http-gateways/).
+In addition to these core documents, `specs.ipfs.tech` documents standards for IPFS subsystems such as the [InterPlanetary Naming System](https://specs.ipfs.tech/ipns/) and [HTTP Gateways](https://specs.ipfs.tech/http-gateways/).
 
 ### Can I use IPFS offline?
 
