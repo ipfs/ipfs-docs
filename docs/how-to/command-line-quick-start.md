@@ -1,6 +1,6 @@
 ---
 title: Initialize a Kubo node and interact with the IPFS Network
-description: Initialize a Kubo node repository, take your node online, interact with the IPFS network, and view the web console on your local node using IPFS Desktop
+description: Initialize a Kubo node repository, take your node online, interact with the IPFS network, and view the web console on your local node
 ---
 
 # Initialize a Kubo node and interact with the IPFS Network
@@ -39,7 +39,7 @@ If you have not yet installed Kubo, follow the [Kubo install guide](../install/c
     ```bash
     > generating ED25519 keypair...done
     > peer identity: 12D3KooWMkNK8zgTQvtinDY8nuKmMAPBi3fBmvZj6W5huokJxekm
-    > initializing IPFS node at /Users/jbenet/.ipfs
+    > initializing IPFS node at /home/user/.ipfs
     ```
     
     :::tip
@@ -50,52 +50,19 @@ If you have not yet installed Kubo, follow the [Kubo install guide](../install/c
 
 
 
-2. Now, try running the following command:  `ipfs cat /ipfs/bafybeie5nqv6kd3qnfjupgvz34woh3oksc3iau6abmyajn7qvtf6d2ho34/readme`:
-
-   ```bash
-   ipfs cat /ipfs/bafybeie5nqv6kd3qnfjupgvz34woh3oksc3iau6abmyajn7qvtf6d2ho34/readme
-   ```
-
-    You should see something like this:
-
-    ```
-    Hello and Welcome to IPFS!
-
-    ██╗██████╗ ███████╗███████╗
-    ██║██╔══██╗██╔════╝██╔════╝
-    ██║██████╔╝█████╗  ███████╗
-    ██║██╔═══╝ ██╔══╝  ╚════██║
-    ██║██║     ██║     ███████║
-    ╚═╝╚═╝     ╚═╝     ╚══════╝
-
-    If you see this, you have successfully installed
-    IPFS and are now interfacing with the ipfs merkledag!
-
-    -------------------------------------------------------
-    | Warning:                                              |
-    |   This is alpha software. use at your own discretion! |
-    |   Much is missing or lacking polish. There are bugs.  |
-    |   Not yet secure. Read the security notes for more.   |
-    -------------------------------------------------------
-
-    Check out some of the other files in this directory:
-
-      ./about
-      ./help
-      ./quick-start     <-- usage examples
-      ./readme          <-- this file
-      ./security-notes
-    ```
-
-1. The `quick-start` directory shows other example commands to try. To display the contents of `quick-start, run:
+1. Choose how Kubo turns files into [CIDs](../concepts/content-addressing.md) by applying an import profile:
 
     ```bash
-    ipfs cat /ipfs/bafybeie5nqv6kd3qnfjupgvz34woh3oksc3iau6abmyajn7qvtf6d2ho34/quick-start
+    ipfs config profile apply unixfs-v1-2025
     ```
 
-   :::tip
-   There are a whole host of other configuration options you can set — see the [the full reference](https://github.com/ipfs/kubo/blob/master/docs/config.md) for more.
-   :::
+    Import profiles define how files are chunked and encoded when you add them to your node, which determines the CIDs they produce. Two profiles are available: [`unixfs-v1-2025`](https://github.com/ipfs/kubo/blob/master/docs/config.md#unixfs-v1-2025-profile), the modern profile recommended for new projects, and [`unixfs-v0-2015`](https://github.com/ipfs/kubo/blob/master/docs/config.md#legacy-cid-v0-profile) (alias `legacy-cid-v0`) for projects that require backward-compatible CIDv0. Both are defined in [IPIP-0499](https://specs.ipfs.tech/ipips/ipip-0499/) and produce the same CIDs across IPFS implementations.
+
+    :::tip
+    If you depend on your files producing the same CIDs over the years, opt in to an explicit import profile as shown above. Implicit defaults can change between Kubo releases.
+
+    There are a whole host of other configuration options you can set; see [the full reference](https://github.com/ipfs/kubo/blob/master/docs/config.md) for more.
+    :::
 
 ## Take your node online
 
@@ -109,12 +76,15 @@ Next, take your node online and interact with the IPFS network:
     ipfs daemon
     ```
 
-   After a few moments, output like the following displays, and your node is ready:
+   After a few moments, output like the following displays, ending with `Daemon is ready`:
 
     ```bash
     > Initializing daemon...
-    > API server listening on /ip4/127.0.0.1/tcp/5001
+    > ...
+    > RPC API server listening on /ip4/127.0.0.1/tcp/5001
+    > WebUI: http://127.0.0.1:5001/webui
     > Gateway server listening on /ip4/127.0.0.1/tcp/8080
+    > Daemon is ready
     ```
 
     Make a note of the TCP ports in the output. If they are different, use yours in the commands below.
@@ -136,15 +106,58 @@ Next, take your node online and interact with the IPFS network:
     Output similar to the following displays:
 
     ```bash
-    > /ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
-    > /ip4/104.236.151.122/tcp/4001/p2p/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx
-    > /ip4/134.121.64.93/tcp/1035/p2p/QmWHyrPWQnsz1wxHR219ooJDYTvxJPyZuDUPSDpdsAovN5
-    > /ip4/178.62.8.190/tcp/4002/p2p/QmdXzZ25cyzSF99csCQmmPZ1NTbWTe8qtKFaZKpZQPdTFB
+    > /ip4/192.0.2.10/udp/4001/quic-v1/p2p/12D3KooWGCbmjcHecEsV1ZqS2yBQa5Ayx2ho55ZGuqZ94iRCFRn2
+    > /ip4/198.51.100.24/tcp/4001/p2p/12D3KooWLT8NHzZsjCVqurv5jFbGgqXnYS8iJLYxFojrY8KCCXtv
+    > /ip4/203.0.113.9/udp/4001/quic-v1/p2p/12D3KooWCRbYM9TutELSMzxgVjToexLdhqixYjyZJ37k5NyJizEL
+    > /ip4/203.0.113.201/tcp/4002/p2p/12D3KooWBt4YgEDqEW9fpDPqCBjPT82z9FR7mMP5XX7PNpDAFFJs
     ```
 
-    The addresses displayed are composed of a `<transport address>` (i.e. `/ip4/104.131.131.82/tcp/4001`) and a `<hash-of-public-key>` (i.e. `QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx`), resulting in an address of the form `<transport address>/p2p/<hash-of-public-key>`.
+    The addresses displayed are [multiaddrs](../concepts/glossary.md#multiaddr) composed of a `<transport address>` (i.e. `/ip4/192.0.2.10/udp/4001/quic-v1`) and a [`<peer-id>`](../concepts/glossary.md#peer-id) (i.e. `12D3KooWGCbmjcHecEsV1ZqS2yBQa5Ayx2ho55ZGuqZ94iRCFRn2`), resulting in an address of the form `<transport address>/p2p/<peer-id>`.
 
-1. Now, fetch a cool picture of a spaceship launch from the network using `ipfs cat`:
+1. Now that your node is online, fetch Kubo's welcome page from the network using `ipfs cat`:
+
+    ```bash
+    ipfs cat /ipfs/bafybeie5nqv6kd3qnfjupgvz34woh3oksc3iau6abmyajn7qvtf6d2ho34/readme
+    ```
+
+    You should see something like this:
+
+    ```
+    Hello and Welcome to IPFS!
+
+    ██╗██████╗ ███████╗███████╗
+    ██║██╔══██╗██╔════╝██╔════╝
+    ██║██████╔╝█████╗  ███████╗
+    ██║██╔═══╝ ██╔══╝  ╚════██║
+    ██║██║     ██║     ███████║
+    ╚═╝╚═╝     ╚═╝     ╚══════╝
+
+    If you're seeing this, you have successfully installed
+    IPFS and are now interfacing with the ipfs merkledag!
+
+     -------------------------------------------------------
+    | Warning:                                              |
+    |   This is alpha software. Use at your own discretion! |
+    |   Much is missing or lacking polish. There are bugs.  |
+    |   Not yet secure. Read the security notes for more.   |
+     -------------------------------------------------------
+
+    Check out some of the other files in this directory:
+
+      ./about
+      ./help
+      ./quick-start     <-- usage examples
+      ./readme          <-- this file
+      ./security-notes
+    ```
+
+1. The `quick-start` file in the same directory lists other example commands to try. To display it, run:
+
+    ```bash
+    ipfs cat /ipfs/bafybeie5nqv6kd3qnfjupgvz34woh3oksc3iau6abmyajn7qvtf6d2ho34/quick-start
+    ```
+
+1. Next, fetch a cool picture of a spaceship launch from the network using `ipfs cat`:
 
     ```bash
     ipfs cat /ipfs/QmSgvgwxZGaBLqkGyWemEDqikCqU52XxsYLKtdy3vGZ8uq > ~/Desktop/spaceship-launch.jpg
@@ -169,12 +182,12 @@ Next, take your node online and interact with the IPFS network:
    Output similar to the following displays:
 
    ```bash
-   > added QmabZ1pL9npKXJg8JGdMwQMJo2NCVy9yDVYjhiHK4LTJQH meow.txt
+   > added bafkreifq6dmp7dgjmwt3ocyh4ddljqbi6ezfs4mwv2ohbrrazopecncbay meow.txt
    ```
 
-   Make note of the CID (i.e. `QmabZ1..`), as you'll need it in the next step.
+   Make note of the CID (i.e. `bafkrei..`), as you'll need it in the next step.
 
-1. View the objects by specifying the CID `<CID>` returned in the previous step:
+1. View the file on a public gateway by specifying the CID `<CID>` returned in the previous step:
 
     :::tip
     The example below uses `curl` as the browser, but you can open the IPFS address in other browsers. Depending on the state of the network, `curl` may take a while due to public gateways being overloaded or having a hard time reaching you.
@@ -192,7 +205,7 @@ Next, take your node online and interact with the IPFS network:
 
     In this step, the gateway served a file _from your computer_. The gateway queried the distributed hash table (DHT), found your machine, requested the file, your computer sent it to the gateway, and the gateway sent it to your browser.
 
-1. View the objects on your own local gateway:
+1. View the file on your own local gateway:
 
     ```bash
     curl "http://127.0.0.1:8080/ipfs/<CID>"
@@ -262,7 +275,7 @@ You can view the web console for your local node by navigating to `localhost:500
 
 The web console shows files that are in your [Mutable File System (MFS)](../concepts/file-systems.md#mutable-file-system-mfs). MFS is a tool built into the web console that helps you navigate IPFS files in the same way you would a standard, name-based file system.
 
-When you add files using the [CLI command `ipfs add ...`](../reference/kubo/cli.md#ipfs-add), these files are not automatically available within the MFS. To view files in IPFS Desktop that you added using the CLI, you must copy the files over to the MFS:
+When you add files using the [CLI command `ipfs add ...`](../reference/kubo/cli.md#ipfs-add), these files are not automatically available within the MFS. To view files in the web console that you added using the CLI, you must copy the files over to the MFS:
 
 1. Enter `localhost:5001/webui` into your browser to view the web console.
 
@@ -280,10 +293,10 @@ When you add files using the [CLI command `ipfs add ...`](../reference/kubo/cli.
     ipfs files cp /ipfs/<CID> /meow.txt
     ```
 
-    For example, if the `<CID>` of `meow.txt` is `QmabZ1pL9npKXJg8JGdMwQMJo2NCVy9yDVYjhiHK4LTJQH`, it would be copied to the MFS with:
+    For example, if the `<CID>` of `meow.txt` is `bafkreifq6dmp7dgjmwt3ocyh4ddljqbi6ezfs4mwv2ohbrrazopecncbay`, it would be copied to the MFS with:
 
     ```shell
-    ipfs files cp /ipfs/QmabZ1pL9npKXJg8JGdMwQMJo2NCVy9yDVYjhiHK4LTJQH /meow.txt
+    ipfs files cp /ipfs/bafkreifq6dmp7dgjmwt3ocyh4ddljqbi6ezfs4mwv2ohbrrazopecncbay /meow.txt
     ```
 
 1. In your browser, refresh the **Files** page. The list of files displays `meow.txt`.
@@ -298,12 +311,12 @@ For more information on IPFS companion, including how to install it, see the [IP
 
 ### Check your Go version
 
-IPFS works with Go 1.24.0 or later. To check what go version you have installed, type `go version`:
+Building Kubo from source requires the Go version listed in its [`go.mod`](https://github.com/ipfs/kubo/blob/master/go.mod) file or later. To check what go version you have installed, type `go version`:
 
 ```bash
 go version
 
-> go version go1.24.0 linux/amd64
+> go version go1.26.5 linux/amd64
 ```
 
 If you need to update, we recommend you install from the [canonical Go packages](https://go.dev/doc/install). Package managers often contain out-of-date Go packages.
