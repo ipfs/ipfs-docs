@@ -436,6 +436,10 @@ module.exports = {
   },
   plugins: [
     [require('./plugins/vuepress-plugin-speedcurve'), { id: SPEEDCURVE_ID }],
+    [
+      require('./plugins/vuepress-plugin-security-txt'),
+      { domain: DEPLOY_DOMAIN }
+    ],
     '@vuepress/plugin-back-to-top',
     ['@adamdehaven/vuepress-plugin-custom-tooltip'],
     [
