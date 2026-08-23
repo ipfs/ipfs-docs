@@ -16,21 +16,25 @@ They are a great way to get started. When your app outgrows best-effort traffic 
 
 ## Public IPFS Gateways
 
-The IPFS Foundation provides the following public gateways:
+The IPFS Foundation provides three public gateway hostnames. They are not three separate services: each one is a different interface to the same backend, built for a different kind of task.
 
-- **`https://ipfs.io`**: [Path resolution](https://docs.ipfs.tech/how-to/address-ipfs-on-web/#path-gateway) gateway
-- **`https://dweb.link`**: [Subdomain resolution](https://docs.ipfs.tech/how-to/address-ipfs-on-web/#subdomain-gateway) gateway
-- **`https://trustless-gateway.link`**: Gateway limited to [trustless and verifiable responses](https://docs.ipfs.tech/reference/http/gateway/#trustless-verifiable-retrieval)
+- **`https://ipfs.io`**: [path resolution](https://docs.ipfs.tech/how-to/address-ipfs-on-web/#path-gateway) gateway. Use it for plain links and command-line fetches, where a `https://ipfs.io/ipfs/{cid}` URL is all you need.
+- **`https://dweb.link`**: [subdomain resolution](https://docs.ipfs.tech/how-to/address-ipfs-on-web/#subdomain-gateway) gateway. Use it for websites and anything a browser loads, because every CID gets its own origin and its own browser security sandbox.
+- **`https://trustless-gateway.link`**: gateway limited to [trustless and verifiable responses](https://docs.ipfs.tech/reference/http/gateway/#trustless-verifiable-retrieval). Use it when your client verifies the bytes itself, such as a browser app built on [Helia](https://helia.io) or [`@helia/verified-fetch`](https://www.npmjs.com/package/@helia/verified-fetch).
 
-These gateways block abusive content using the [Bad Bits Denylist](https://badbits.dwebops.pub/).
+:::warning Pick one, do not query all three
+The three hostnames are served by the same pool of servers, sharing the same cache, the same connections to the IPFS network, and the same rate limits. Asking all three for the same CID at once returns the same answer three times. It is no faster, it is no more reliable, it burns your rate limit three times as fast, and it takes capacity away from everyone else using a shared community resource. Retrying a failed request on a sibling hostname does not help either: it reaches the same backend.
 
-To report abusive content and content breaches of the [IPFS Community Code of Conduct](https://ipfs.fyi/coc), please use the [web form](https://ipfs.fyi/report-abuse). Alternatively, you can send an email with the CIDs to abuse@ipfs.io.
+For real redundancy you need a second backend, not a second hostname on this one. Run [your own gateway](../how-to/replace-public-gateways-with-self-hosted-ipfs.md), or add one operated by someone else from the [public gateway checker](https://ipfs.github.io/public-gateway-checker/).
+:::
 
 Technical operations are run by the Waterworks Community on behalf of the IPFS Foundation. To report any technical problems with these gateways, you can open an issue in the [Waterworks Community repository](https://github.com/ipshipyard/waterworks-community).
 
 ### Abuse Policy
 
-To submit a takedown request for the `ipfs.io` and/or `dweb.link` gateway(s), follow the instructions at [https://about.ipfs.io/#reporting-abuse](https://about.ipfs.io/#reporting-abuse). The recommended method is to use the [web form](https://ipfs.fyi/report-abuse). Alternatively, requests can be sent via email to abuse@ipfs.io.
+These gateways block abusive content using the [Bad Bits Denylist](https://badbits.dwebops.pub/).
+
+To report abusive content, or content that breaches the [IPFS Community Code of Conduct](https://ipfs.fyi/coc), use the [web form](https://ipfs.fyi/report-abuse). If you prefer email, send the CIDs to abuse@ipfs.io. The full policy is at [about.ipfs.io](https://about.ipfs.io/#reporting-abuse). Because the three hostnames share one backend, a single report covers all of them.
 
 When a takedown request is received, the sender will receive an automated system receipt. Next, someone from the takedown team will vet the request to validate that it is legitimate and should be accepted. Once the validity of the request has been established, it will be submitted for further processing.
 
