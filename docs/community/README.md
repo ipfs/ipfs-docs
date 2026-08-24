@@ -86,7 +86,7 @@ Casual chat fan? You can engage with the IPFS community in one of the channels l
 In general, public IPFS Discord channels are bridged to Matrix and Slack. As a result, you can usually use your preferred chat application to engage with the community. IPFS channels/rooms are usually prefixed with "#ipfs-".
 :::
 
-- **Discord**: Join the [IPFS Discord server](https://discord.gg/ipfs) for synchronous chat.
+- **Discord**: Join the [IPFS Discord server](https://discord.com/invite/KKucsCpZmY) for synchronous chat.
 
 - **Matrix**: Join the [Matrix space](https://matrix.to/#/#ipfs-space:ipfs.io). 
 
