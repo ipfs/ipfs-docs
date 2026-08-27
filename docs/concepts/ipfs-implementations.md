@@ -8,10 +8,12 @@ description: 'List of various IPFS implementations for different use cases and l
 A comprehensive list of [IPFS implementations](./implementations.md) across different languages and use cases, from desktop applications to specialized libraries.
 
 - [Desktop Implementations](#desktop-implementations)
-- [Popular Node Implementations and Tools](#popular-node-implementations-and-tools)
+- [Popular Mainnet-compatible Implementations and Tools](#popular-mainnet-compatible-implementations-and-tools)
+- [Filecoin](#filecoin)
+- [Limited Mainnet Interop](#limited-mainnet-interop)
 - [Content-Addressed Data](#content-addressed-data)
-- [Lite or Experimental](#lite-or-experimental)
-- [Inactive](#inactive))
+- [Lite Nodes or Experimental](#lite-nodes-or-experimental)
+- [Inactive](#inactive)
 
 To propose additions or edits, [edit this page in GitHub](https://github.com/ipfs/ipfs-docs/edit/main/docs/concepts/ipfs-implementations.md) or [open an issue](https://github.com/ipfs/ipfs-docs/issues/new?assignees=&labels=need%2Ftriage&template=open_an_issue.md&title=IPFS%20Implementations).
 
@@ -24,26 +26,41 @@ Looking for an easy way to get started? Install these tools for no-code access t
 | IPFS Desktop   | <https://github.com/ipfs/ipfs-desktop>   | javascript  | Desktop application bundling a Kubo node with file manager, peer manager and content explorer                           |
 | IPFS Companion | <https://github.com/ipfs/ipfs-companion> | javascript  | Browser extension adding support for `ipfs://` addresses which are fetched from the public network by a local Kubo node |
 
-## Popular Node Implementations and Tools
+## Popular Mainnet-compatible Implementations and Tools
 
-For developers and operators.
+For developers and operators. Everything here interoperates with [IPFS Mainnet](https://docs.ipfs.tech/concepts/glossary/#mainnet); rows note any intentional subset.
 
 | Name           | URL                                            | Language(s) | What it's trying to do                                                                          |
 | -------------- | ---------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------- |
 | Kubo           | <https://github.com/ipfs/kubo>                 | go          | Popular, all-in-one IPFS daemon implementing the full protocol stack (bitswap, UnixFS, IPNS, Amino DHT, HTTP gateways) with an extensive HTTP RPC API. |
-| Boost          | <https://github.com/filecoin-project/boost>    | go          | Daemon to get IPFS data in and out of a Filecoin storage provider; serves deal data to IPFS clients over bitswap and the trustless HTTP gateway API. Being superseded by [Curio](https://github.com/filecoin-project/curio). |
 | Boxo (GO SDK)  | <https://github.com/ipfs/boxo>                 | go          | A component library for building IPFS applications and implementations in Go; provides the bitswap, UnixFS, IPNS, and gateway building blocks used by Kubo and Rainbow. |
-| Curio          | <https://github.com/filecoin-project/curio>    | go          | Successor to Boost and lotus-miner for Filecoin storage providers; serves deal data to IPFS clients over the trustless HTTP gateway API. |
 | Helia (JS SDK) | <https://github.com/ipfs/helia>                | typescript  | A lean, modular, and modern implementation of IPFS for the prolific JS and browser environments; interoperable with the network via bitswap, UnixFS, IPNS, and trustless gateway retrieval |
 | Verified Fetch | <https://github.com/ipfs/helia-verified-fetch> | typescript  | A fetch-like retrieval client for IPFS; fetches content over trustless gateways and bitswap, verifies it locally, and finds providers via delegated routing |
 | inbrowser.link | <https://github.com/ipfs/service-worker-gateway> | typescript | IPFS Gateway implemented in Service Worker, built with Helia and Verified Fetch                |
 | IPFS Cluster   | <https://github.com/ipfs-cluster/ipfs-cluster> | go          | Orchestration for multiple Kubo nodes via CRDT / Raft consensus                                 |
-| Iroh           | <https://github.com/n0-computer/iroh>          | rust        | A general-purpose peer-to-peer library built on QUIC and BLAKE3 hashing; not interoperable with [IPFS Mainnet](https://docs.ipfs.tech/concepts/glossary/#mainnet) due to lack of CIDs, bitswap, and UnixFS support. |
-| Lassie         | <https://github.com/filecoin-project/lassie/> | go          | A minimal retrieval client library for IPFS and Filecoin that fetches content into CAR files over graphsync and trustless gateways; no bitswap support (removed in v0.25.0). In maintenance mode. |
-| Lotus          | <https://github.com/filecoin-project/lotus>    | go          | Filecoin node handling consensus, storage providing, and making storage deals; uses CIDs, IPLD, and CAR for chain state but does not exchange IPFS content (no bitswap serving, UnixFS, or gateway; see Boost). |
 | Nabu           | <https://github.com/peergos/nabu>              | java        | A minimalistic, fast, and embeddable block-level IPFS implementation, wire-compatible with Kubo (bitswap, Amino DHT, IPNS); no UnixFS or gateway. Used in production by Peergos. |
 | Rainbow        | <https://github.com/ipfs/rainbow/>             | go          | A specialized IPFS HTTP gateway implementation.                                                 |
 | Someguy        | <https://github.com/ipfs/someguy/>             | go          | A Delegated Routing V1 server and client for all your HTTP/IPFS routing needs.                  |
+
+## Filecoin
+
+Tools bridging IPFS data and Filecoin storage; each row states which IPFS protocols it speaks.
+
+| Name   | URL                                           | Language(s) | What it's trying to do                                                                          |
+| ------ | --------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------- |
+| Boost  | <https://github.com/filecoin-project/boost>   | go          | Daemon to get IPFS data in and out of a Filecoin storage provider; serves deal data to IPFS clients over bitswap and the trustless HTTP gateway API. Being superseded by [Curio](https://github.com/filecoin-project/curio). |
+| Curio  | <https://github.com/filecoin-project/curio>   | go          | Successor to Boost and lotus-miner for Filecoin storage providers; serves deal data to IPFS clients over the trustless HTTP gateway API. |
+| Lassie | <https://github.com/filecoin-project/lassie/> | go          | A minimal retrieval client library for IPFS and Filecoin that fetches content into CAR files over graphsync and trustless gateways; no bitswap support (removed in v0.25.0). In maintenance mode. |
+| Lotus  | <https://github.com/filecoin-project/lotus>   | go          | Filecoin node handling consensus, storage providing, and making storage deals; uses CIDs, IPLD, and CAR for chain state but does not exchange IPFS content (no bitswap serving, UnixFS, or gateway; see Boost). |
+| RIBS   | <https://github.com/CIDgravity/gw>            | go          | Experimental blockstore that plugs into Kubo (which provides bitswap and gateway serving) and offloads data to Filecoin deals; work in progress, no releases |
+
+## Limited Mainnet Interop
+
+Projects with limited or no interoperability with IPFS Mainnet; each row states what it speaks.
+
+| Name | URL                                   | Language(s) | What it's trying to do                                                                          |
+| ---- | ------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------- |
+| Iroh | <https://github.com/n0-computer/iroh> | rust        | A general-purpose peer-to-peer library built on QUIC and BLAKE3 hashing. In theory, small blocks up to 1MiB addressed by BLAKE3 CIDs can be imported and exported; in practice there is no common transport or protocol for data exchange (no bitswap or UnixFS), so [IPFS Mainnet](https://docs.ipfs.tech/concepts/glossary/#mainnet) and Iroh nodes remain distinct swarms. |
 
 ## Content-Addressed Data
 
@@ -68,7 +85,6 @@ Lightweight libraries for working with IPFS data (CID, DAGs, DAG-CBOR, UnixFS, C
 | Name          | URL                                              | Language(s) | What it's trying to do                                                                                  |
 | ------------- | ------------------------------------------------ | ----------- | ------------------------------------------------------------------------------------------------------- |
 | ipfs-lite     | <https://github.com/hsanjuan/ipfs-lite>          | go          | Minimal library oriented ipfs daemon building on the same boxo blocks as Kubo: adds and fetches UnixFS files over bitswap with Amino DHT routing; no gateway or IPNS |
-| RIBS          | <https://github.com/CIDgravity/gw>               | go          | Experimental blockstore that plugs into Kubo (which provides bitswap and gateway serving) and offloads data to Filecoin deals; work in progress, no releases |
 | rust-ipfs (dariusc93) | <https://github.com/dariusc93/rust-ipfs> | rust        | Kubo-interoperable implementation: bitswap, Amino DHT, UnixFS, IPNS, CAR import/export, and pubsub; fetches from gateways and pinning services as a client but does not serve a gateway. |
 
 ## Inactive
