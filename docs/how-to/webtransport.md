@@ -1,6 +1,6 @@
 ---
 title: WebTransport and Kubo
-description: Learn how your files are broken down into blocks in IPFS and how to work with them.
+description: Learn how the WebTransport libp2p transport lets browsers connect directly to Kubo nodes.
 ---
 
 # WebTransport and Kubo
@@ -40,7 +40,7 @@ WebTransport in Kubo unlocks many use cases, including those listed below.
 
 ## Using WebTransport with Kubo
 
-To get started with using WebTransport with Kubo, you can use follow this GitHub example which will teach you [how to use the browser to fetch a file directly from Kubo](https://github.com/libp2p/js-libp2p-webtransport/tree/main/examples/fetch-file-from-kubo). You can also view the demo on [YouTube](https://youtu.be/Dt42Ss6X_Vk?feature=shared&t=145).
+To get started with using WebTransport with Kubo, you can follow this archived GitHub example which will teach you [how to use the browser to fetch a file directly from Kubo](https://github.com/libp2p/js-libp2p-webtransport/tree/main/examples/fetch-file-from-kubo). You can also view the demo on [YouTube](https://youtu.be/Dt42Ss6X_Vk?feature=shared&t=145).
 
 ## Learn more
 

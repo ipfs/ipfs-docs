@@ -11,12 +11,12 @@ Learn about exposing IPFS API in IPFS Companion via "window.ipfs".
 
 ## `window.ipfs` is currently disabled
 
-IPFS Companion 2.11 stopped injecting `window.ipfs`. It is currently permanently disabled per comments on the [window.ipfs Meta Issue](https://github.com/ipfs-shipyard/ipfs-companion/issues/589#issuecomment-712356448), as of October 19, 2020, and [Remove legacy window.ipfs](https://github.com/ipfs/in-web-browsers/issues/172) as of December 14, 2020. This page is provided for reference only.
+IPFS Companion 2.11 stopped injecting `window.ipfs`. It is currently permanently disabled per comments on the [window.ipfs Meta Issue](https://github.com/ipfs/ipfs-companion/issues/589#issuecomment-712356448), as of October 19, 2020, and [Remove legacy window.ipfs](https://github.com/ipfs/in-web-browsers/issues/172) as of December 14, 2020. This page is provided for reference only.
 
 <!-- below disclaimer will be restored  when window.ipfs injection resumes
 ### Disclaimer
 
-The interface is experimental and might change: there is a substantial amount of [ongoing work](https://github.com/ipfs-shipyard/ipfs-companion/issues/589). Want to help with shaping it? See [#589](https://github.com/ipfs-shipyard/ipfs-companion/issues/589) and [issues with the `area/window-ipfs` label](https://github.com/ipfs-shipyard/ipfs-companion/labels/area%2Fwindow-ipfs).
+The interface is experimental and might change: there is a substantial amount of [ongoing work](https://github.com/ipfs/ipfs-companion/issues/589). Want to help with shaping it? See [#589](https://github.com/ipfs/ipfs-companion/issues/589) and [issues with the `area/window-ipfs` label](https://github.com/ipfs-shipyard/ipfs-companion/labels/area%2Fwindow-ipfs).
 -->
 
 :::
@@ -28,7 +28,7 @@ IPFS Companion exposes a subset of IPFS APIs as `window.ipfs` on every webpage. 
 For more context, see:
 
 - First iteration: [window.ipfs v1](https://github.com/ipfs-shipyard/ipfs-companion/issues/330)
-- Second iteration (currently under development): [window.ipfs v2](https://github.com/ipfs-shipyard/ipfs-companion/issues/589)
+- Second iteration (abandoned): [window.ipfs v2](https://github.com/ipfs/ipfs-companion/issues/589)
 
 ## Creating applications using `window.ipfs`
 
@@ -98,7 +98,7 @@ For information on available functions, see the [js-ipfs](https://github.com/ipf
 
 ### How do I fall back if `window.ipfs` is not available?
 
-See the [example code](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/examples/window.ipfs-fallback.html) for getting an IPFS instance with a fallback.
+See the [example code](https://github.com/ipfs/ipfs-companion/blob/v2.19.1/examples/window.ipfs-fallback.html) for getting an IPFS instance with a fallback.
 
 **Tip:** Use the [window.ipfs-fallback](https://www.npmjs.com/package/window.ipfs-fallback) library, which takes care of the fallback ceremony. It will ensure your app follows API changes and does not break in the future.
 

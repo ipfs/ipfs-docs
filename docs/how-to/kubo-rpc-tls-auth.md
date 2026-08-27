@@ -36,7 +36,7 @@ First, you'll need to configure Kubo to work with the reverse proxy. Edit your K
   },
   "Authorizations": {
     "api": {
-      "AuthSecret": "basic:hello:world123"
+      "AuthSecret": "basic:hello:world123",
       "AllowedPaths": [
           "/api/v0"
         ]
@@ -47,7 +47,7 @@ First, you'll need to configure Kubo to work with the reverse proxy. Edit your K
 
 This configuration:
 
-- Sets CORS headers to allow requests from `YOUR_DOMAIN`. Kubo will match the `host` header in the request with the `Access-Control-Allow-Origin` from the configuration, so you need to ensure the origin is correct.
+- Sets CORS headers to allow requests from `YOUR_DOMAIN`. Kubo will match the `Origin` header in the request with the `Access-Control-Allow-Origin` values from the configuration, so you need to ensure the origin is correct.
 - Restricts API access to the Kubo RPC API, allowing access to the `/api/v0` endpoints with basic HTTP authentication.
 
 > **Note:** You should set the `AuthSecret` to a stronger username and password combination.

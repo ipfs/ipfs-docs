@@ -20,9 +20,9 @@ For its full functionality to be enabled, IPFS Companion requires a local IPFS n
 
 The easiest way to install IPFS Companion is through your browser's specific extensions and add-ons store:
 
-| [Firefox](https://www.mozilla.org/firefox/new/) \| [Firefox for Android](https://play.google.com/store/apps/details?id=org.mozilla.firefox)          | [Chrome](https://www.google.com/chrome/) \| [Brave](https://brave.com/) \| [Opera](https://www.opera.com/) \| [Edge](https://www.microsoftedgeinsider.com/)                                    |
+| [Firefox](https://www.mozilla.org/firefox/new/) \| [Firefox for Android](https://play.google.com/store/apps/details?id=org.mozilla.firefox)          | [Chrome](https://www.google.com/chrome/) \| [Brave](https://brave.com/) \| [Opera](https://www.opera.com/) \| [Edge](https://www.microsoft.com/en-us/edge/download)                                    |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [![Install From AMO](https://ipfs.io/ipfs/QmWNa64XjA78QvK3zG2593bSMizkDXXcubDHjnRDYUivqt)](https://addons.mozilla.org/firefox/addon/ipfs-companion/) | [![Install from Chrome Store](https://ipfs.io/ipfs/QmU4Qm5YEKy5yHmdAgU2fD7PjZLgrYTUUbxTydqG2QK3TT)](https://chrome.google.com/webstore/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch) |
+| [![Install From AMO](https://ipfs.io/ipfs/QmWNa64XjA78QvK3zG2593bSMizkDXXcubDHjnRDYUivqt)](https://addons.mozilla.org/firefox/addon/ipfs-companion/) | [![Install from Chrome Store](https://ipfs.io/ipfs/QmU4Qm5YEKy5yHmdAgU2fD7PjZLgrYTUUbxTydqG2QK3TT)](https://chromewebstore.google.com/detail/ipfs-companion/nibjojkomfdiaoajekhjakgkdhaomnch) |
 
 
 ## Features
@@ -58,7 +58,7 @@ IPFS Companion enables you to quickly and easily access common actions from your
 - See how many peers you're connected with a glance at the cube icon in your browser bar.
 - Check your IPFS API and gateway status by clicking the cube icon to reveal the main menu.
 - Right-click images and other page assets to easily add them to IPFS, including the option to preserve file names.
-- Choose the _Quick Import/Share..._ option in the main menu for quick drag-and-drop import from a browser tab.
+- Choose the _Import_ option in the main menu for quick drag-and-drop import from a browser tab.
 - Pin or unpin IPFS resources directly from the main menu.
 - Copy shareable public gateway links, IPFS content paths, or CIDs of IPFS resources directly from the main menu.
 - Launch the [IPFS Web UI dashboard](https://github.com/ipfs/ipfs-webui) from the main menu with a single click.

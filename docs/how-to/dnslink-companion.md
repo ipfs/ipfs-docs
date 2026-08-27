@@ -27,7 +27,7 @@ When off, detection still works and the toolbar actions still appear, but sites 
 
 ## Lookup cache
 
-Results of DNS TXT lookups are stored in a [Least Recently Used (LRU)](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_Recently_Used) cache of size 1000 and max-age 12h. The cache is in-memory and does not persist between restarts.
+Results of DNS TXT lookups are stored in a [Least Recently Used (LRU)](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_Recently_Used_%28LRU%29) cache of size 1000 and max-age 12h. The cache is in-memory and does not persist between restarts.
 
 ## Further resources
 

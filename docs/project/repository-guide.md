@@ -33,14 +33,14 @@ Any js-ipfs tutorial you find is out of date. Use Helia instead.
 
 ### Client implementations
 
-- [Current list](https://github.com/ipfs/ipfs#http-client-libraries) of HTTP client libraries.
+- [Current list](../reference/kubo-rpc-cli.md) of HTTP client libraries.
 
 ### Underlying components
 
 | Subsystem  | Go                                                                  | JavaScript                     | Rust                            |
 |------------|---------------------------------------------------------------------------------------|-------------------------------------------------|------------------------------------------------|
 | [LibP2P](https://github.com/libp2p)     | [ go-libp2p ]( https://github.com/libp2p/go-libp2p )                                  | [js-libp2p](https://github.com/libp2p/js-libp2p)             | [rust-libp2p](https://github.com/libp2p/rust-libp2p)          |
-| [IPLD](https://github.com/ipld)       | [ go-ipld ]( https://github.com/ipld/go-ipld ), [go-ipld-prime](https://github.com/ipld/go-ipld-prime) | [js-ipld](https://github.com/ipld/js-ipld)                 | [libipld](https://github.com/ipld/libipld)                |
+| [IPLD](https://github.com/ipld)       | [ go-ipld ]( https://github.com/ipld/go-ipld ), [go-ipld-prime](https://github.com/ipld/go-ipld-prime) | [js-multiformats](https://github.com/multiformats/js-multiformats)                 | [libipld](https://github.com/ipld/libipld)                |
 | IPNS       | [go-ipns](https://github.com/ipfs/go-ipns)                                                       | [js-ipns](https://github.com/ipfs/js-ipns)                 | [rust-ipns](https://lib.rs/crates/rust-ipns)                |
 | [Multiaddr](https://github.com/multiformats/multiaddr)  | [go-multiaddr](https://github.com/multiformats/go-multiaddr)                                          | [js-multiaddr](https://github.com/multiformats/js-multiaddr)    | [rust-multiaddr](https://github.com/multiformats/rust-multiaddr) |
 | [Multicodec](https://github.com/multiformats/multicodec) | [go-multicodec](https://github.com/multiformats/go-multicodec)                                         | [js-multiformats](https://github.com/multiformats/js-multiformats) | N/A                                            |
@@ -65,7 +65,7 @@ Any js-ipfs tutorial you find is out of date. Use Helia instead.
 - [IPFS Web Browsers Integration](https://github.com/ipfs/in-web-browsers): Tracking progress toward native IPFS support in web browsers.
 - [Are We Distributed Yet?](https://github.com/arewedistributedyet/arewedistributedyet): Prioritized listing of progress toward making peer-to-peer a first-class part of the web.
 - [IPFS Mobile Design Guidelines](https://github.com/ipfs/mobile-design-guidelines): Best practices for making IPFS work for mobile.
-- [Interoperability Tests for IPFS](https://github.com/ipfs/interop): On-the-wire interop for IPFS.
+- [Interoperability Tests for IPFS](https://github.com/ipfs/interop) (archived): On-the-wire interop for IPFS.
 
 ## Participate in IPFS project operations
 

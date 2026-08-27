@@ -8,7 +8,7 @@ description: "If you're running into problems with Kubo, use this page to debug 
 If you're running into problems providing or retrieving content with Kubo, use this page to debug your issues and find a solution quickly.
 
 :::tip
-You can use [IPFS Check](https://check.ipfs.network) to help troubleshoot your Kubo node and get an external perspective on your Kubo node's network reachability. See the [Troubleshooting retrieval](./troubleshooting.md#debug-with-ipfs-check) page for more information.
+You can use [IPFS Check](https://check.ipfs.network) to help troubleshoot your Kubo node and get an external perspective on your Kubo node's network reachability. See the [Troubleshooting retrieval](./troubleshooting.md#troubleshooting-retrieval-with-ipfs-check) page for more information.
 :::
 
 ## Check that your Kubo daemon is running
@@ -90,7 +90,7 @@ The first thing to do is to double-check that both nodes are, in fact, running a
 }
 ```
 
-Next, check to see if the nodes have a connection to each other. You can do this by running `ipfs swarm peers` on one node and checking for the other node's peer ID in the output. If the two nodes _are_ connected, and the `ipfs get` command is still hanging, then something unexpected is going on, and Kubo maintainers recommend filing an issue about it. If they are not connected, then let's try and debug why. (Note: you can skip to [Manually connecting `node a` to `node b`](#manually-connecting-node-a-to-node-b) if you just want things to work. However, going through the debugging process and reporting what happened to the Kubo maintainers is helpful to us to understand common pitfalls that people run into).
+Next, check to see if the nodes have a connection to each other. You can do this by running `ipfs swarm peers` on one node and checking for the other node's peer ID in the output. If the two nodes _are_ connected, and the `ipfs get` command is still hanging, then something unexpected is going on, and Kubo maintainers recommend filing an issue about it. If they are not connected, then let's try and debug why. (Note: going through the debugging process and reporting what happened to the Kubo maintainers is helpful to us to understand common pitfalls that people run into).
 
 ### Checking for providers in the DHT and IPNI
 
@@ -104,10 +104,10 @@ You should see the peer ID of `node a` printed out.
 
 If this command returns nothing (or returns IDs that are not `node a`), then no record of node `a` being a provider for the CID. This can happen if the data is added while `node a` does not have a daemon running. 
 
-If this happens, and you don't want to wait for [`Reprovider.Interval`](https://github.com/ipfs/kubo/blob/master/docs/config.md#reproviderinterval) to trigger, you can use the `ipfs routing provide <cid>` command on `node a` to manually announce to the network that you have that CID:
+If this happens, and you don't want to wait for [`Reprovider.Interval`](https://github.com/ipfs/kubo/blob/master/docs/config.md#reproviderinterval) to trigger, you can use the `ipfs provide once <cid>` command on `node a` to manually announce to the network that you have that CID:
 
 ```shell
-ipfs routing provide <cid>
+ipfs provide once <cid>
 ```
 
 Then try running the `ipfs get` command again, `node b` should now be able to find `node a` as a provider for the content. 
@@ -135,7 +135,7 @@ In this case, we can see the following multiaddrs: IPv4, IPv6, and an AutoTLS DN
 
 If one of the addresses in the matches your public IP, then the network knows a valid external address for your node.
 
-If you see a lot of multiaddrs, you can try to use the `ipfs swarm connect <multiaddr>` command to connect to `node a` from `node b`. This command will return a list of NAT traversal methods that your node supports. If your node supports UPnP or NAT-PMP, you can try to enable them on the router of `node a` and retry the process. Otherwise, you can try manually connecting `node a` to `node b`.
+If you see a lot of multiaddrs, you can try to use the `ipfs swarm connect <multiaddr>` command to connect to `node a` from `node b`. This command reports whether the connection succeeded. If your node supports UPnP or NAT-PMP, you can try to enable them on the router of `node a` and retry the process. Otherwise, you can try manually connecting `node a` to `node b`.
 
 ### Checking connectivity with the identify protocol
 

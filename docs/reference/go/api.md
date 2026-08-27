@@ -19,7 +19,7 @@ description: Developer resources for working in Go with IPFS.
 
 - [`boxo/gateway`](https://pkg.go.dev/github.com/ipfs/boxo/gateway) -- HTTP Gateway server for serving IPFS content over HTTP
 - [`boxo/bitswap`](https://pkg.go.dev/github.com/ipfs/boxo/bitswap) -- peer-to-peer block exchange protocol
-- [`boxo/routing`](https://pkg.go.dev/github.com/ipfs/boxo/routing) -- content and peer routing (DHT, delegated)
+- [`boxo/routing`](https://pkg.go.dev/github.com/ipfs/boxo/routing) -- delegated HTTP content and peer routing
 - [`boxo/provider`](https://pkg.go.dev/github.com/ipfs/boxo/provider) -- advertise content availability to the network
 
 **Data and storage:**

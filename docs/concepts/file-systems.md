@@ -5,6 +5,10 @@ description: Learn about file systems in IPFS and why working with files in IPFS
 
 # File systems and IPFS
 
+:::warning Outdated JavaScript examples
+The JavaScript examples on this page use js-ipfs, which [reached end of life in 2023](https://blog.ipfs.tech/202305-js-ipfs-deprecation-for-helia/). See [Migrating from js-IPFS](https://github.com/ipfs/helia/wiki/Migrating-from-js-IPFS) for current alternatives.
+:::
+
 Working with files in IPFS can be a little different than you're used to for several reasons:
 
 - Content addressing means that when files change, the content identifier (CID) of those files changes too.
@@ -215,7 +219,7 @@ await ipfs.files.rm('/my/beautiful/directory')
 
 When you add a _file_ to IPFS, it might be too big to fit in a single block, so it needs metadata to link all its blocks together. UnixFS is a [protocol-buffers](https://developers.google.com/protocol-buffers/)-based format for describing files, directories, and symlinks in IPFS. This data format is used to represent files and all their links and metadata in IPFS. UnixFS creates a block (or a tree of blocks) of linked objects. See the [UnixFS specification](https://specs.ipfs.tech/unixfs/) for the complete technical details.
 
-UnixFS currently has [Javascript](https://github.com/ipfs/helia/tree/main/packages/unixfs) and [Go](https://github.com/ipfs/boxo/tree/v0.34.0/ipld/unixfs) implementations. These implementations have modules written in to run different functions:
+UnixFS currently has [Javascript](https://github.com/ipfs/helia/tree/main/packages/unixfs) and [Go](https://github.com/ipfs/boxo/tree/main/ipld/unixfs) implementations. These implementations have modules written in to run different functions:
 
 - **Data Formats**: manage the serialization/deserialization of UnixFS objects to protocol buffers
 

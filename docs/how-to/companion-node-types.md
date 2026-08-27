@@ -5,13 +5,13 @@ description: Learn about the available node types in IPFS Companion.
 
 # Understand node types in IPFS Companion
 
-IPFS Companion's preferences screen allows you to choose from different node types. The available types you'll see in your Companion preferences depends on the browser you're using (i.e. Firefox, Chrome), but the full list is as follows:
+IPFS Companion always uses an external node: a Kubo daemon running outside of your web browser.
 
 [[toc]]
 
-**If you're already running a local IPFS node, choose _External_.** If not, do one of the following:
+**If you're not already running a local IPFS node, do the following:**
 
-- [Install](../install/README.md) and run IPFS as an [external node](#external) (recommended).
+- [Install](../install/README.md) and run IPFS as an [external node](#external).
 
 ## External
 
@@ -32,5 +32,5 @@ You can get started with running a Kubo node on your local machine in several wa
 
 - [IPFS Desktop](https://github.com/ipfs-shipyard/ipfs-desktop) installs and manages a local node for you, as well as offering an easy, convenient user interface for managing files and peers.
 - If you're comfortable with the command line and don't need the convenience of the IPFS Desktop UI, follow the directions in the [command line quick-start guide](command-line-quick-start.md).
-- Docker fans can run and use Kubo from [inside a Docker container](https://github.com/ipfs/kubo#running-ipfs-inside-docker).
+- Docker fans can run and use Kubo from [inside a Docker container](../install/run-ipfs-inside-docker.md).
 

@@ -168,6 +168,8 @@ If you're interested in creating your own pinning service for personal or shared
 
 1. [Reuse an existing solution](https://github.com/ipfs/pinning-services-api-spec#adoption) to reduce development time. 
 
+Note: the [Pinning Service API spec](https://github.com/ipfs/pinning-services-api-spec) is frozen and its repository is archived. You can implement it as-is and Kubo supports it, but it will not evolve; proposals for a successor API go through the [IPIP process](https://specs.ipfs.tech/meta/spec-for-specs/).
+
 Learn more about the [Pinning Service API Spec](https://github.com/ipfs/pinning-services-api-spec).
 
 
@@ -177,7 +179,7 @@ Learn more about the [Pinning Service API Spec](https://github.com/ipfs/pinning-
 
 If you'd like to make your custom pinning service available to all IPFS users, we welcome your submissions. 
 
-First, make sure your service works correctly by running and passing [pinning-service-compliance](https://github.com/ipfs-shipyard/pinning-service-compliance) test suite.
+First, make sure your service works correctly by running the [pinning-service-compliance](https://github.com/ipfs-shipyard/pinning-service-compliance) test suite (archived and unmaintained, but still usable for a one-off check).
 
 Once you're ready to open the doors to the public, create a pull request against the [IPFS Web UI GitHub repository](https://github.com/ipfs-shipyard/ipfs-webui) in order to add it to the default list of pinning services that are displayed in the IPFS Desktop/Web UI Settings screen, and one of the core maintainers will be in touch.
 

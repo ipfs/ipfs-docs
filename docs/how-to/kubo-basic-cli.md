@@ -24,12 +24,9 @@ ipfs init
 This will output something like:
 
 ```plaintext
-initializing ipfs node at /Users/<user>/.ipfs
-generating 2048-bit RSA keypair...done
-peer identity: Qm...
-to get started, enter:
-
-  ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme
+generating ED25519 keypair...done
+peer identity: 12D3KooW...
+initializing IPFS node at /Users/<user>/.ipfs
 ```
 
 We're now ready to start the IPFS daemon to bring the node online. Run the `ipfs daemon` command:
@@ -42,8 +39,8 @@ This will output something like:
 
 ```plaintext
 Initializing daemon...
-Kubo version: 0.12.0
-Repo version: 12
+Kubo version: 0.43.0
+Repo version: 18
 System version: arm64/darwin
 [...]
 Daemon is ready

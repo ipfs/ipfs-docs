@@ -6,6 +6,10 @@ date: 2021-04-02
 
 # Best Practices for Storing NFT Data using IPFS
 
+:::warning Outdated examples and gateway links
+The JavaScript examples on this page use js-ipfs, which [reached end of life in 2023](https://blog.ipfs.tech/202305-js-ipfs-deprecation-for-helia/). See [Migrating from js-IPFS](https://github.com/ipfs/helia/wiki/Migrating-from-js-IPFS) for current alternatives. Also note that hardcoding `ipfs.io` or `dweb.link` gateway URLs is [not future-proof](https://blog.ipfs.tech/2026-08-beyond-sponsored-gateways/).
+:::
+
 IPFS is a great fit for storing and addressing data for NFTs, or non-fungible tokens. This guide is all about how to store the data for NFTs on IPFS so that NFT creators and owners have a great experience that can stand the test of time.
 
 Since an NFT can't be easily changed after it's been created, it's a good idea to think about how the data for your NFTs is stored, addressed, and made persistent over time. That's why we'll be getting into the specifics of [how to prepare your NFT metadata](#metadata), and we'll also look at [the different kinds of links to IPFS content](#types-of-ipfs-links-and-when-to-use-them) and when you should use each one. Finally, we'll see why [making a plan for your data's persistence](#persistence-and-availability) is important for a good user experience. By following these recommendations, you can help ensure a long and healthy future for your NFT data.
@@ -42,7 +46,7 @@ const cid = await ipfs.add({ content }, {
 })
 ```
 
-If you already have a version 0 CID for your content, there's no need to add it to IPFS again just to get the new CID format! You can convert a v0 CID to v1 using [the ipfs command line](address-ipfs-on-web.md#manual-use-cid-ipfs-io-or-the-command-line) or on the web at [cid.ipfs.tech](https://cid.ipfs.tech). If you're not sure which version you have, it's easy to tell the difference. Version 0 CIDs are always 46 characters long, starting with `Qm`.
+If you already have a version 0 CID for your content, there's no need to add it to IPFS again just to get the new CID format! You can convert a v0 CID to v1 using [the ipfs command line](address-ipfs-on-web.md#manual-use-cid-ipfs-tech-or-the-command-line) or on the web at [cid.ipfs.tech](https://cid.ipfs.tech). If you're not sure which version you have, it's easy to tell the difference. Version 0 CIDs are always 46 characters long, starting with `Qm`.
 
 ::: tip
 You can learn more about CIDs in our [guide to Content Addressing][docs-cid], or by following the [interactive tutorials on ProtoSchool][protoschool-cid].

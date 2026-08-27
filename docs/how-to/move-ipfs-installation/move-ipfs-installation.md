@@ -90,7 +90,7 @@ Once you have a backup of your IPFS repository in `ipfs-backup`, you can move it
 1. Once you have confirmed that everything is working as normal, you can delete your temporary `ipfs-old` backup:
 
     ```shell
-    rm -rf .ipfs-old
+    rm -rf ~/ipfs-old
     ```
 
 #### Windows
@@ -143,18 +143,18 @@ A different approach to moving your IPFS repository is to simply create a symlin
 
 ### Linux and MacOS
 
-Unix-based operating systems can use the `ln -s` command to create a symbolic link:
+Unix-based operating systems can use the `ln -s` command to create a symbolic link. After moving your repository to the new location, create the link in the original location:
 
 ```shell
-ln -s ~/.ipfs ~/new-ipfs-repo
+ln -s ~/new-ipfs-repo ~/.ipfs
 ```
 
 ### Windows
 
-Windows users can use the `mklink` command to create a symbolic link. This command is available within command-prompt or PowerShell:
+Windows users can use the `mklink` command to create a symbolic link. This command is available within command-prompt (cmd.exe); from PowerShell, run it via `cmd /c`:
 
 ```powershell
-mklink "C:\New IPFS Repo" "C:\Windows\Users\YOUR_USERNAME\.ipfs\"
+mklink /D "C:\Users\YOUR_USERNAME\.ipfs" "C:\New IPFS Repo"
 ```
 
 Make sure to replace `YOUR_USERNAME` with the name of the user you are currently logged in as.
@@ -171,7 +171,7 @@ If `ipfs daemon` doesn't run successfully then you can restore your old IPFS rep
 
 ```shell
 mv .ipfs ipfs-backup-broken
-mv .ipfs-old .ipfs
+mv ~/ipfs-old ~/.ipfs
 ```
 
 Running `ipfs daemon` now loads your old IPFS repository. Try repeating the backup and restore steps. Make sure to stop any IPFS services, daemons, or applications when backing up and restoring an IPFS repository.

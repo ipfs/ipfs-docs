@@ -135,7 +135,7 @@ curl https://gateway.pinata.cloud/ipfs/[CID]
 
 **Filebase Gateway:**
 ```shell
-curl https://[BUCKET_NAME].ipfs.filebase.io/ipfs/[CID]
+curl https://ipfs.filebase.io/ipfs/[CID]
 ```
 
 ### Using public gateways

@@ -20,7 +20,7 @@ Here are several tools you can use to investigate and diagnose common issues wit
 Each error type output by the tool can indicate a solution to your problem:
 
 - **Could not connect to the multiaddr** indicates that machines on the internet cannot talk to your machine. Fix your firewall, add port forwarding, or use a relay.
-- **Could not find address in the DHT** indicates that your machine is either not connected to the [Amino](../concepts/glossary.md#amino) DHT (even as a client), or it is not advertising the address that you are using to test.
+- **Could not find address in the DHT** indicates that your machine is either not connected to the [Amino](../concepts/glossary.md#amino-dht) DHT (even as a client), or it is not advertising the address that you are using to test.
 - **Multihash not advertised in the DHT** indicates that your machine has not advertised that it has the requested content in the Amino DHT. 
 - **Peer has not responded that it has the CID** indicates that your node cannot find the block that you believe it has, or that there may be some other sort of network latency.
 

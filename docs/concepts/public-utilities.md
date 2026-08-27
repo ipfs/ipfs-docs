@@ -8,7 +8,7 @@ description: Information about hosted public utilities such as public gateways a
 
 The IPFS Foundation (and Protocol Labs in the past) and several other organizations provide hosted public utilities to the community on a best-effort basis. As such, it is not intended to be part of your critical path or production infrastructure.
 
-These include [IPFS Gateways](./ipfs-gateway.md), hosted [Delegated Routing V1 endpoints](./glossary.md#delegated-routing), and the [Amino DHT](./glossary.md#amino) [Bootstrappers](./nodes.md#bootstrap).
+These include [IPFS Gateways](./ipfs-gateway.md), hosted [Delegated Routing V1 endpoints](./glossary.md#delegated-routing), and the [Amino DHT](./glossary.md#amino-dht) [Bootstrappers](./nodes.md#bootstrap).
 
 These utilities make it easier to retrieve data from the IPFS network in resource-constrained environments such as browsers and low-powered devices.
 
@@ -28,7 +28,7 @@ The three hostnames are served by the same pool of servers, sharing the same cac
 For real redundancy you need a second backend, not a second hostname on this one. Run [your own gateway](../how-to/replace-public-gateways-with-self-hosted-ipfs.md), or add one operated by someone else from the [public gateway checker](https://ipfs.github.io/public-gateway-checker/).
 :::
 
-Technical operations are run by the Waterworks Community on behalf of the IPFS Foundation. To report any technical problems with these gateways, you can open an issue in the [Waterworks Community repository](https://github.com/ipshipyard/waterworks-community).
+Technical operations are run by the Waterworks Community on behalf of the IPFS Foundation. To report any technical problems with these gateways, you can open an issue in the [Waterworks Community repository](https://github.com/ipshipyard/waterworks-community). The way these gateways operate is changing: see [IPFS is moving beyond the sponsored gateways](https://blog.ipfs.tech/2026-08-beyond-sponsored-gateways/).
 
 ### Abuse Policy
 
@@ -65,7 +65,7 @@ The underlying IPFS nodes backing the gateways support retrieving data from peer
    - TCP or WS or WSS, Yamux, TLS or Noise
    - WebTransport
 - Support the [Bitswap](./bitswap.md) protocol ([v1.2](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-2-0), [v1.1](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-1-0) or [v1.0](https://specs.ipfs.tech/bitswap-protocol/#bitswap-1-0-0)), or HTTP retrieval of `application/vnd.ipld.raw` responses as defined in the [Trustless Gateway specification](https://specs.ipfs.tech/http-gateways/trustless-gateway/)
-- Have either advertised their data to the [Amino DHT](./glossary.md#amino), or have advertised to [IPNI](./glossary.md#ipni) such that their data has been indexed by [cid.contact](https://cid.contact)
+- Have either advertised their data to the [Amino DHT](./glossary.md#amino-dht), or have advertised to [IPNI](./glossary.md#ipni) such that their data has been indexed by [cid.contact](https://cid.contact)
 
 ## Other Public Gateways
 

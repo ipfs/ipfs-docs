@@ -7,7 +7,7 @@ description: 'Learn about the different ways that CIDs can be fetched from the o
 
 In this quickstart guide, you will learn the different approaches to retrieving CIDs from the IPFS network and how to pick the most appropriate method for your specific needs.
 
-You will fetch the image with the following CID: `bafkreie7ohywtosou76tasm7j63yigtzxe7d5zqus4zu3j6oltvgtibeom`.
+You will fetch the image with the following CID: `bafybeicn7i3soqdgr7dwnrwytgq4zxy7a5jpkizrvhm5mv6bgjd32wm3q4`.
 
 :::callout
 The CID you will retrieve is actually a folder containing a single image file. The reason for this that when files are added to IPFS, the filename is not stored by default. To retain the filename, it's a common practice to wrap the file in a directory. In such instances, you end up with two CIDs - one for the file and another for the directory containing the file.
@@ -18,6 +18,7 @@ The CID you will retrieve is actually a folder containing a single image file. T
 - [IPFS retrieval methods](#ipfs-retrieval-methods)
 - [Verified vs. trusted CID retrieval](#verified-vs-trusted-cid-retrieval)
 - [Fetching the CID with Kubo](#fetching-the-cid-with-kubo)
+- [Verified retrieval with Helia Verified Fetch](#verified-retrieval-with-helia-verified-fetch)
 - [Fetching the CID with Python and ipfsspec](#fetching-the-cid-with-python-and-ipfsspec)
 - [Fetching the CID with an IPFS Gateway](#fetching-the-cid-with-an-ipfs-gateway)
 - [Summary and next steps](#summary-and-next-steps)
@@ -26,7 +27,7 @@ The CID you will retrieve is actually a folder containing a single image file. T
 
 There are two primary ways to retrieve files and directories published to IPFS:
 
-- Use an [**IPFS node**](../concepts/nodes.md) by installing one of the IPFS implementations, e.g. [Kubo](../concepts/nodes.md#kubo) on your computer. This allows you to fetch and verify CIDs from other nodes in the IPFS network.
+- Use an [**IPFS node**](../concepts/nodes.md) by installing one of the IPFS implementations, e.g. [Kubo](../concepts/nodes.md#implementations) on your computer. This allows you to fetch and verify CIDs from other nodes in the IPFS network.
 - Use an [**IPFS Gateway**](../concepts/ipfs-gateway.md), an HTTP interface with the IPFS network that allows you to fetch data from IPFS using HTTP. Pinning services typically offer an IPFS gateway as a way to easily retrieve your CIDs.
 
 The **node** option allows you access to the full suite of IPFS protocols. The **Gateway** option serves as a bridge in situations where you might be constrained to using HTTP, such as in web apps where your app users may not be running an IPFS node.

@@ -120,7 +120,7 @@ A function that encodes or decodes serial data into and from some data model. In
 
 ### Content addressing
 
-A way to store information so a device can retrieve the data based on its content, not its location. [Learn how IPFS uses content addressing](../concepts/how-ipfs-works.md#content-addressing).
+A way to store information so a device can retrieve the data based on its content, not its location. [Learn how IPFS uses content addressing](../concepts/how-ipfs-works.md#how-ipfs-represents-and-addresses-data).
 
 ### CRDT
 
@@ -408,7 +408,7 @@ Peer routing is the process of discovering the network _route_ or address for a 
 
 ### Peer ID
 
-A Peer ID is how each unique IPFS node is identified on the network. The Peer ID is created when the IPFS node is initialized and is essentially a cryptographic hash of the node's public key. [More about Peer ID](dht.md#peer-ids)
+A Peer ID is how each unique IPFS node is identified on the network. The Peer ID is created when the IPFS node is initialized and is essentially a cryptographic hash of the node's public key. [More about Peer ID](dht.md)
 
 ### Pinning
 
@@ -424,7 +424,7 @@ A vendor-agnostic [API specification](https://ipfs.github.io/pinning-services-ap
 
 ### Preload node
 
-Part of the process of making a UnixFS DAG publicly available via the preload node's `wantlist`, causing it to fetch data. Other nodes requesting the content can then resolve it from the preload node using Bitswap, as the data is now present in the preload node’s blockstore. See [Nodes > Preload](../concepts/nodes.md#preload).
+Part of the process of making a UnixFS DAG publicly available via the preload node's `wantlist`, causing it to fetch data. Other nodes requesting the content can then resolve it from the preload node using Bitswap, as the data is now present in the preload node’s blockstore.
 
 ### Protobuf
 
@@ -460,7 +460,7 @@ A variant of [pinning](#pinning) that uses a third-party service to ensure that 
 
 ### Repo
 
-The Repository (Repo) is a directory where IPFS stores all its settings and internal data. In [Kubo](#kubo) it is created with the `ipfs init` command. [More about Repo in Kubo](../how-to/command-line-quick-start.md#install-ipfs)
+The Repository (Repo) is a directory where IPFS stores all its settings and internal data. In [Kubo](#kubo) it is created with the `ipfs init` command. [More about Repo in Kubo](../how-to/command-line-quick-start.md#initialize-the-repository)
 
 ### Root
 
@@ -518,7 +518,7 @@ _Swarm_ is a term for the network of IPFS peers with which your local node has c
 
 In [libp2p](#libp2p), a _switch_ is a component responsible for composing multiple [transports](#transport) into a single interface, allowing application code to [dial](#dialing) peers without having to specify which transport to use.
 
-Switches also coordinate the _connection upgrade_ process, which promotes a _raw_ connection from the transport layer into one that supports [protocol negotiation](https://web.archive.org/web/20260113172348/https://docs.libp2p.io/concepts/protocols/#protocol-negotiation), [stream multiplexing](../concepts/libp2p.md#stream-multiplexing), and secure communications.
+Switches also coordinate the _connection upgrade_ process, which promotes a _raw_ connection from the transport layer into one that supports [protocol negotiation](https://web.archive.org/web/20260113172348/https://docs.libp2p.io/concepts/protocols/#protocol-negotiation), [stream multiplexing](../concepts/libp2p.md), and secure communications.
 
 Sometimes called [swarm](#swarm) for historical reasons.
 

@@ -11,8 +11,8 @@ If you want to install IPFS in a server environment and offer IPFS as a service,
 IPFS Cluster is a distributed application that works as a sidecar to IPFS peers, maintaining a global cluster pinset and intelligently allocating its items to the IPFS peers. This makes it significantly easier to manage multiple IPFS nodes and ensure that data is available across an internal network.
 
 :::tip
-As a Kubernetes user, you can use a Kubernetes operator for IPFS called [IPFS operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) to easily create and manage clusters consisting of hundreds of peers.
-The IPFS operator is in active development and not yet recommended for production use cases. If the operator is something you would like to include in your infrastructure,
+As a Kubernetes user, you can use a [Kubernetes operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) for IPFS called [IPFS operator](https://github.com/redhat-et/ipfs-operator) to easily create and manage clusters consisting of hundreds of peers.
+The IPFS operator is not actively maintained and not recommended for production use cases. If the operator is something you would like to include in your infrastructure,
 check out the [official documentation](https://ipfs-operator.readthedocs.io/) and [operator source code](https://github.com/redhat-et/ipfs-operator) for instructions and the latest progress.
 :::
 

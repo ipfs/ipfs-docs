@@ -25,7 +25,7 @@ While NATs are generally transparent for outgoing connections, listening for inc
 The appropriate configuration option for your router depends on your specific setup:
 
 - If your router supports them, [enable IPv6](#enable-ipv6) or [enable UPnP](#enable-upnp) to solve most connection issues
-- [Use DCUtR hole punching](#use-dcutr-holepunching), which is enabled by default as of Kubo v0.13
+- [Use DCUtR hole punching](#use-dcutr-hole-punching), which is enabled by default as of Kubo v0.13
 - If IPv6 or UPnP are not available, or DCUtR holepunching doesn't meet your performance and reliability requirements, [enable manual port forwarding](#enable-manual-port-forwarding)
 
 ### Enable IPv6
@@ -90,7 +90,11 @@ In this step, you will update your Kubo configuration to set `Swarm.AppendAnnoun
         "/ip4/0.0.0.0/tcp/4001",
         "/ip6/::/tcp/4001",
         "/ip4/0.0.0.0/udp/4001/quic-v1",
-        "/ip6/::/udp/4001/quic-v1"
+        "/ip4/0.0.0.0/udp/4001/quic-v1/webtransport",
+        "/ip4/0.0.0.0/udp/4001/webrtc-direct",
+        "/ip6/::/udp/4001/quic-v1",
+        "/ip6/::/udp/4001/quic-v1/webtransport",
+        "/ip6/::/udp/4001/webrtc-direct"
         ],
         "Announce": [],
         "AppendAnnounce": [],
