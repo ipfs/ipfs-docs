@@ -5006,6 +5006,17 @@ On success, the call to this endpoint will return with 200 and the following bod
 
 ```
 
+The `Type` field is an integer that indicates the kind of DHT query event:
+
+| Value | Meaning |
+| ----- | ------- |
+| `0`   | `SendingQuery` — the query is being sent to a peer |
+| `1`   | `PeerResponse` — a peer responded with its closest peers |
+| `2`   | `FinalPeer` — the peer is the closest found to the target |
+| `3`   | `QueryError` — the query to a peer failed |
+
+See the [go-libp2p routing query type definitions](https://github.com/libp2p/go-libp2p/core/routing/query.go) for the authoritative list.
+
 ### cURL Example
 
 `curl -X POST "http://127.0.0.1:5001/api/v0/dht/query?arg=<peerID>&verbose=<value>"`
