@@ -137,12 +137,13 @@ If you are certain that you do not need to use the command-line `ipfs` commands,
 
 ## Package Managers
 
-| Package Manager                                                                                                    | Command                      |
-| ------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
-| [Homebrew](https://formulae.brew.sh/formula/ipfs#default)                                                                    | `brew install ipfs --cask`     |
-| [Chocolatey](https://community.chocolatey.org/packages/ipfs-desktop)                                                         | `choco install ipfs-desktop` |
+| Package Manager                                                                                                                                 | Command                                                 |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| [Homebrew](https://formulae.brew.sh/formula/ipfs#default)                                                                                       | `brew install ipfs --cask`                              |
+| [Chocolatey](https://community.chocolatey.org/packages/ipfs-desktop)                                                                            | `choco install ipfs-desktop`                            |
+| [WinGet](https://github.com/microsoft/winget-pkgs/tree/master/manifests/i/IPFS/IPFS-Desktop)                                                    | `winget install --id IPFS.IPFS-Desktop`                 |
 | [Scoop](https://github.com/ScoopInstaller/Extras/blob/master/bucket/ipfs-desktop.json) maintained by [@NatoBoram](https://github.com/NatoBoram) | `scoop bucket add extras && scoop install ipfs-desktop` |
-| [AUR](https://aur.archlinux.org/packages/ipfs-desktop/) maintained by [@alexhenrie](https://github.com/alexhenrie) | `ipfs-desktop`               |
+| [AUR](https://aur.archlinux.org/packages/ipfs-desktop/) maintained by [@alexhenrie](https://github.com/alexhenrie)                              | `ipfs-desktop`                                          |
 
 ## Next steps
 
