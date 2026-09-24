@@ -14,7 +14,7 @@
     "@vuepress/plugin-search": "^1.9.8",
     "husky": "^8.0.3",
     "lint-staged": "^16.2.0",
-    "markdown-it-deflist": "^2.1.0",
+    "markdown-it-deflist": "^3.0.0",
     "markdown-it-footnote": "^4.0.0",
     "markdown-it-image-lazy-loading": "^1.2.0",
     "markdown-it-imsize": "^2.0.1",
