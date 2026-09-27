@@ -80,7 +80,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to IPFS
-        uses: ipshipyard/ipfs-deploy-action@v2
+        uses: ipshipyard/ipfs-deploy-action@v3
         id: deploy
         with:
           path-to-deploy: dist # Change this to your build output directory
@@ -106,7 +106,7 @@ For an IPFS Cluster:
 
 ```yaml
 - name: Deploy to IPFS
-  uses: ipshipyard/ipfs-deploy-action@v2
+  uses: ipshipyard/ipfs-deploy-action@v3
   with:
     # ... other inputs ...
     cluster-url: ${{ secrets.CLUSTER_URL }}
@@ -118,7 +118,7 @@ For a Kubo node, using its [RPC endpoint](https://github.com/ipfs/kubo/blob/mast
 
 ```yaml
 - name: Deploy to IPFS
-  uses: ipshipyard/ipfs-deploy-action@v2
+  uses: ipshipyard/ipfs-deploy-action@v3
   with:
     # ... other inputs ...
     kubo-api-url: ${{ secrets.KUBO_API_URL }}
@@ -187,7 +187,7 @@ This URL uses subdomain resolution (where the CID has its own subdomain), which 
 
 ## Best practices
 
-1. Pin the action to a major version, such as `@v2`
+1. Pin the action to a major version, such as `@v3`
 2. Pin to more than one provider for redundancy
 3. Use environment-specific configurations when needed
 
