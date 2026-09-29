@@ -1131,24 +1131,15 @@ Argument `path` is of file type. This endpoint expects one or several files (dep
 
 ### Response
 
-On success, the call to this endpoint will return with 200 and the following body:
+On success, the call to this endpoint will return with 200 and a
+**JSONL** body (one JSON object per line, not a single JSON document):
 
-```json
-{
-  "Root": {
-    "Cid": {
-      "/": "<cid-string>"
-    },
-    "PinErrorMsg": "<string>"
-  },
-  "Stats": {
-    "BlockBytesCount": "<uint64>",
-    "BlockCount": "<uint64>"
-  }
-}
-
+```jsonl
+{"Root":{"Cid":{"/":"<cid-string>"},"PinErrorMsg":"string"}}
+{"Stats":{"BlockCount":<uint64>,"BlockBytesCount":<uint64>}}
 ```
 
+The `Stats` record is only present when the `stats=true` argument is provided.
 ### cURL Example
 
 `curl -X POST -F file=@myfile "http://127.0.0.1:5001/api/v0/dag/import?pin-roots=<value>&local-only=<value>&silent=<value>&stats=<value>&fast-provide-root=<value>&fast-provide-dag=<value>&fast-provide-wait=<value>&allow-big-block=false"`
