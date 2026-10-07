@@ -319,7 +319,8 @@ module.exports = {
               sidebarDepth: 1,
               collapsable: true,
               children: [
-                ['/how-to/privacy-best-practices', 'Privacy and Encryption'], 
+                ['/how-to/privacy-best-practices', 'Privacy and Encryption'],
+                ['/how-to/private-indexer', 'Indexing a Private Network'] 
               ]
             },
           ],
