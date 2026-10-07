@@ -48,6 +48,7 @@ Some of the pinning services listed below are operated by third party companies.
 
 - [4EVERLAND Bucket](https://www.4everland.org/bucket/)
 - [Filebase](https://filebase.com/)
+- [Octopin](https://octopin.app/)
 - [Pinata](https://pinata.cloud/)
 
 See how to [work with remote pinning services](../how-to/work-with-pinning-services.md).

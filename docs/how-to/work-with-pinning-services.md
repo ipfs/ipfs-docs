@@ -44,6 +44,7 @@ Third-party pinning services allow you to purchase pinning capacity for importan
 
 - [Pinata](https://pinata.cloud/)
 - [Filebase](https://filebase.com/)
+- [Octopin](https://octopin.app/)
 
 ::: callout 
 As of June 2023, [Filebase](https://filebase.com) and [Pinata](https://pinata.cloud/) support the [IPFS Pinning Service API endpoint](https://github.com/ipfs/pinning-services-api-spec).
